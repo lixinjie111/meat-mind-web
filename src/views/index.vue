@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main">
         这是首页
     </div>
 </template>
@@ -11,5 +11,7 @@
 </script>
 
 <style scoped lang="scss">
-
+.main {
+    display: flex;
+}
 </style>
