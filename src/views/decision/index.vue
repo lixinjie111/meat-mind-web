@@ -13,7 +13,8 @@
                     <p>智能诊断</p>
                 </div>
                 <div class="chart">
-
+                    <div id="myChart" style="width:100%;height: 100%;"></div>
+                    <div></div>
                 </div>
                 <div class="info">
                     <img class="left" src="../../../src/static/img/decision/middle@2x.png"/>
@@ -86,7 +87,354 @@
 
     export default {
         name: "index",
-        components: {Header}
+        components: {Header},
+        mounted() {
+            this.initChat();
+        },
+        methods: {
+            initChat() {
+                // 初始化echarts实例
+                let myChart = this.$echarts.init(document.getElementById('myChart'))
+                // 绘制图表
+                let min = 35; //Y轴最小值
+                let max = 80; //Y轴最大值
+                let dataAxis = ['0月', '1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+                let data = [48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72]; //目标
+                let data2 = [max - 48, max - 50, max - 52, max - 54, max - 56, max - 58, max - 60, max - 62, max - 64, max - 66, max - 68, max - 70, max - 72]; //正常区域
+                let data3 = [48, 51, 52, 53, 55, 59, 64, 61, 60]; //实际数据
+                let data4 = [50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74]; //上边界
+                let data5 = [46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70]; //下边界
+                let effectValues = [
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 60,
+                        symbolSize: 10
+                    }
+                ]; //实际数据预警点
+                let effectValues1 = [
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 72,
+                        symbolSize: 10
+                    }
+                ]; //目标最后点
+                let option = {
+                    backgroundColor: "#fff",
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'line',
+                            lineStyle: {
+                                type: 'solid',
+                                width: 1,
+                                color: '#E9E9E9'
+                            }
+                        },
+                        backgroundColor: "transparent",
+                        borderWidth: 0,
+                        formatter: (params) => {
+                            let style = params[0].data < params[2].data ? "red" : "";
+                            let style1 = params[0].seriesName == '实际' ? "display:block" : "display:none";
+                            let str = '<div class="chart-tooltip ' + style + '" style="'+style1+'">' +
+                                '<div class="value">' + '<span>￥</span>' + params[0].data + '百万</div>' +
+                                '<div class="month"> ' + '2020年' + params[0].name + ' </div>' +
+                                '</div>';
+                            return str;
+                        }
+                    },
+                    grid: {
+                        left: '24px',
+                        right: '24px',
+                        top: '30px',
+                        bottom: '24px',
+                        containLabel: true
+                    },
+                    xAxis: [{
+                        type: 'category',
+                        boundaryGap: false,
+                        data: dataAxis,
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: 'rgba(0, 0, 0, 0.65)',
+                                fontSize: 12,
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                type: 'solid',
+                                color: '#E9E9E9',
+                                width: 1,
+                            }
+                        },
+                    }],
+                    yAxis: [{
+                        type: 'value',
+                        name: '百万',
+                        nameTextStyle: {
+                            color: 'rgba(0, 0, 0, 0.65)'
+                        },
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: 'rgba(0, 0, 0, 0.65)',
+                                fontSize: 12
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: '#fff',
+                                width: 1,
+                            },
+                        },
+                        splitLine: {
+                            show: true,
+                            lineStyle: {
+                                type: 'dashed',
+                                color: '#E9E9E9'
+                            }
+                        },
+                        min: min,
+                        max: max
+                    }],
+                    series: [
+                        {
+                            name: '实际',
+                            type: 'line',
+                            smooth: true,
+                            symbol: "none",
+                            itemStyle: {
+                                normal: {
+                                    lineStyle: {
+                                        width: 4,
+                                        type: 'solid',
+                                        color: "#D7D8DC"
+                                    }
+                                },
+                            },
+                            data: data3
+                        },
+                        {
+                            name: '上边界',
+                            type: 'line',
+                            smooth: true,
+                            symbol: "none",
+                            itemStyle: {
+                                normal: {
+                                    lineStyle: {
+                                        width: 1,
+                                        type: 'dashed',
+                                        color: "rgba(35, 115, 255, .5)"
+                                    }
+                                },
+                            },
+                            data: data4
+                        },
+                        {
+                            name: '下边界',
+                            type: 'line',
+                            smooth: true,
+                            symbol: "none",
+                            itemStyle: {
+                                normal: {
+                                    lineStyle: {
+                                        width: 1,
+                                        type: 'dashed',
+                                        color: "rgba(245, 74, 69, .5)"
+                                    }
+                                },
+                            },
+                            data: data5
+                        },
+                        {
+                            name: '目标',
+                            type: 'line',
+                            smooth: true,
+                            symbol: "none",
+                            stack: 100,
+                            itemStyle: {
+                                normal: {
+                                    color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                        offset: 0,
+                                        color: 'rgba(245, 74, 69, 0)'
+                                    }, {
+                                        offset: 0.5,
+                                        color: 'rgba(245, 74, 69, .1)'
+                                    }, {
+                                        offset: 1,
+                                        color: 'rgba(245, 74, 69, .2)'
+                                    }]),
+                                    lineStyle: {
+                                        width: 1,
+                                        type: 'dashed',
+                                        color: "#DFDBDD"
+                                    }
+                                },
+                            },
+                            areaStyle: {
+                                normal: {}
+                            },
+                            data: data,
+                        },
+                        {
+                            name: '正常',
+                            type: 'line',
+                            smooth: true,
+                            symbol: "none",
+                            stack: 100,
+                            itemStyle: {
+                                normal: {
+                                    color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                                        offset: 0,
+                                        color: 'rgba(35, 115, 255, 0)'
+                                    }, {
+                                        offset: 0.5,
+                                        color: 'rgba(35, 115, 255, .1)'
+                                    }, {
+                                        offset: 1,
+                                        color: 'rgba(35, 115, 255, .2)'
+                                    }]),
+                                    lineStyle: {
+                                        width: 0,
+                                        type: 'solid',
+                                        color: "#FFFFFF"
+                                    }
+                                },
+                            },
+                            areaStyle: {
+                                normal: {}
+                            },
+                            data: data2,
+                        },
+                        {
+                            name: "预警",
+                            type: 'effectScatter',
+                            coordinateSystem: 'cartesian2d',
+                            data: effectValues,
+                            symbol: 'circle',
+                            effectType: 'ripple',
+                            showEffectOn: 'render',
+                            cursor: 'pointer',
+                            rippleEffect: {
+                                period: 3,
+                                scale: 3,
+                                brushType: 'stroke',
+                            },
+                            itemStyle: {
+                                normal: {
+                                    color: '#F54A45',
+                                    shadowBlur: 5,
+                                    shadowColor: '#F54A45'
+                                }
+                            },
+                            zlevel: 1
+                        },
+                        {
+                            name: "最终目标",
+                            type: 'effectScatter',
+                            coordinateSystem: 'cartesian2d',
+                            data: effectValues1,
+                            symbol: 'circle',
+                            effectType: 'ripple',
+                            showEffectOn: 'render',
+                            cursor: 'pointer',
+                            rippleEffect: {
+                                period: 3,
+                                scale: 3,
+                                brushType: 'stroke',
+                            },
+                            itemStyle: {
+                                normal: {
+                                    color: '#2373FF',
+                                    shadowBlur: 5,
+                                    shadowColor: '#2373FF'
+                                }
+                            },
+                            zlevel: 1
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+            }
+        }
     }
 </script>
 
@@ -127,6 +475,12 @@
                         font-weight: 500;
                         color: #212121;
                     }
+                }
+
+                .chart {
+                    padding-top: 10px;
+                    width: 1392px;
+                    height: 460px;
                 }
 
                 .info {
@@ -227,6 +581,42 @@
                     }
                 }
             }
+        }
+    }
+</style>
+<style lang="scss">
+    .chart-tooltip {
+        padding: 12px 16px;
+        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+        border-radius: 2px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+
+        &.red {
+            border: 1px solid #F54A45;
+        }
+
+        .value {
+            margin-left: -5px;
+            font-size: 24px;
+            font-family: HelveticaNeue-Medium, HelveticaNeue;
+            font-weight: 500;
+            color: #212121;
+            line-height: 32px;
+
+            > span {
+                font-size: 18px;
+                font-family: HelveticaNeue-Medium, HelveticaNeue;
+                font-weight: 500;
+                color: #212121;
+            }
+        }
+
+        .month {
+            margin-top: 4px;
+            font-size: 14px;
+            font-family: HelveticaNeue;
+            color: #666666;
+            line-height: 22px;
         }
     }
 </style>
