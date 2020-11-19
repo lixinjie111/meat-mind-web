@@ -10,7 +10,7 @@
                     <img class="bottom" src="../../src/static/img/index/button@2x.png" @click="go">
                 </div>
                 <div class="video">
-                    <video class="player" width="868" height="504" autoplay loop muted :src="src"></video>
+                    <video class="player" width="100%" height="100%" autoplay loop muted :src="src"></video>
                 </div>
             </div>
         </div>
@@ -99,6 +99,8 @@
 
                     .player {
                         margin: 51px 0 0 69px;
+                        width: 868px;
+                        height: 504px;
                     }
                 }
             }
