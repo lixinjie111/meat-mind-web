@@ -15,5 +15,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .home{}
+    .home{
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
 </style>

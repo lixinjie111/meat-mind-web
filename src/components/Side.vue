@@ -1,9 +1,10 @@
 <template>
   <div class="side">
     <Menu :theme="theme">
-      <Submenu :name="item.name" v-for="(item,index) in sideList" :key="index"> 
+      <Submenu :name="item.name" v-for="(item,index) in sideList" :key="index">
         <template slot="title">
-          <Icon type="ios-paper" />{{item.name}}
+<!--          <Icon type="ios-paper" />-->
+          <img :src="item.icon" alt="">{{item.name}}
         </template>
         <MenuItem :name="ele.name" v-for="(ele,i) in item.children" :key="i">
           <router-link v-if="ele.path" :to="ele.path">{{ele.name}}</router-link>
