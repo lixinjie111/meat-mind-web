@@ -108,16 +108,15 @@
         components: {Header},
         data(){
             return {
-                date: ['2020-01-01', '2020-12-31']
+                date: ['2020-01-01', '2020-12-31'],
+                myChart: null
             }
         },
         mounted() {
             this.initChat();
-            this.$nextTick(()=>{
-                window.onresize = ()=>{
-                    this.initChat();
-                }
-            });
+            window.onresize = ()=>{
+                this.myChart.resize();
+            }
         },
         methods: {
             toDetail() {
@@ -125,7 +124,7 @@
             },
             initChat() {
                 // 初始化echarts实例
-                let myChart = this.$echarts.init(document.getElementById('myChart'))
+                this.myChart = this.$echarts.init(document.getElementById('myChart'));
                 // 绘制图表
                 let min = 35; //Y轴最小值
                 let max = 80; //Y轴最大值
@@ -517,7 +516,7 @@
                         }
                     ]
                 };
-                myChart.setOption(option);
+                this.myChart.setOption(option);
             }
         }
     }
