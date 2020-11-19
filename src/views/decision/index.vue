@@ -26,11 +26,11 @@
                         <img src="../../../src/static/img/decision/legend@2x.png">
                     </div>
                     <div class="chart-tooltip red">
-                        <div class="value"><span>￥</span>60百万</div>
+                        <div class="value"><span>￥</span>6000万</div>
                         <div class="month">2020年8月</div>
                     </div>
                     <div class="chart-tooltip blue">
-                        <div class="value"><span>￥</span>72百万</div>
+                        <div class="value"><span>￥</span>7200万</div>
                         <div class="month">目标</div>
                     </div>
                 </div>
