@@ -76,7 +76,6 @@ export default {
 <style scoped lang="scss">
 .side {
   width: 240px;
-  height: 100%;
   min-height: calc(100vh - 56px);
   background: #ffffff;
   .ivu-menu-submenu-title {
