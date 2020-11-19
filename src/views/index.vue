@@ -10,7 +10,7 @@
                     <img class="bottom" src="../../src/static/img/index/button@2x.png" @click="go">
                 </div>
                 <div class="video">
-                    <!--<iframe></iframe>-->
+                    <video class="player" width="868" height="504" autoplay loop muted :src="src"></video>
                 </div>
             </div>
         </div>
@@ -27,11 +27,18 @@
 </template>
 
 <script>
+    import video from '../../src/static/video/video.mp4'
+
     export default {
         name: 'index',
-        methods:{
-            go(){
-                this.$router.push({name:"home"})
+        data() {
+            return {
+                src: video
+            }
+        },
+        methods: {
+            go() {
+                this.$router.push({name: "home"})
             }
         }
     }
@@ -89,6 +96,10 @@
                     width: 937px;
                     height: 605px;
                     background: #F8FAFD;
+
+                    .player {
+                        margin: 51px 0 0 69px;
+                    }
                 }
             }
         }
