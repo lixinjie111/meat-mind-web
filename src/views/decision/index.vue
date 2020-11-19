@@ -253,7 +253,7 @@
                     },
                     {
                         value: 64,
-                        symbolSize: 15
+                        symbolSize: 12
                     },
                     {
                         value: 0,
@@ -629,8 +629,8 @@
 
                     .blue {
                         position: absolute;
-                        right: 30px;
-                        top: 125px;
+                        right: 25px;
+                        top: 130px;
                     }
 
                     .legend {
