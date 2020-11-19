@@ -7,7 +7,7 @@ export default [
     path:`/${moduleName}`,
     name:moduleName,
     // redirect:{name:`${moduleName}`},
-    meta:{title:"智能决策"},
+    meta:{title:"智能决策",moduleName},
     component:decision,
   }
 ]
