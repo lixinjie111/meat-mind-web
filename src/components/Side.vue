@@ -124,5 +124,19 @@ export default {
       }
     }
   }
+  .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu){
+    background:#F0F0F0;
+    .sub-name {
+      color: #333333;
+      font-weight: 500;
+    }
+  }
+  .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after{
+    background:#F0F0F0;
+  }
+  .ivu-menu-vertical.ivu-menu-light:after{
+    width: 0;
+  }
+
 }
 </style>
