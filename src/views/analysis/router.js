@@ -37,6 +37,13 @@ export default [
         meta:{title:"用户旅程",moduleName},
         component:zbjk,
         name:`${moduleName}-yhlc`
+      },
+      {
+        path:`/${moduleName}/xzyh`,
+        label:"新增用户",
+        meta:{title:"新增用户",moduleName},
+        component:zbjk,
+        name:`${moduleName}-xzyh`
       }
     ]
   }

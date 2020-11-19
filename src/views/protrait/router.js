@@ -6,37 +6,44 @@ export default [
   {
     path:`/${moduleName}`,
     name:moduleName,
-    redirect:{name:`${moduleName}/zbjk`},
+    redirect:{name:`${moduleName}-yhhx`},
     meta:{title:"画像系统"},
     component:protrait,
     children:[
       {
-        path:`/${moduleName}/zbjk`,
-        label:"指标监控",
-        meta:{title:"实时看板",moduleName},
+        path:`/${moduleName}/yhhx`,
+        label:"用户画像",
+        meta:{title:"用户画像",moduleName},
         component:zbjk,
-        name:`${moduleName}-zbjk`
+        name:`${moduleName}-yhhx`
       },
       {
-        path:`/${moduleName}/ztqs`,
-        label:"整体趋势",
-        meta:{title:"整体趋势",moduleName},
+        path:`/${moduleName}/ppjchx`,
+        label:"品牌基础画像",
+        meta:{title:"品牌基础画像",moduleName},
         component:zbjk,
-        name:`${moduleName}-ztqs`
+        name:`${moduleName}-ppjchx`
       },
       {
-        path:`/${moduleName}/zzts`,
-        label:"增长态势",
-        meta:{title:"增长态势",moduleName},
+        path:`/${moduleName}/ppyq`,
+        label:"品牌舆情",
+        meta:{title:"品牌舆情",moduleName},
         component:zbjk,
-        name:`${moduleName}-zzts`
+        name:`${moduleName}-ppyq`
       },
       {
-        path:`/${moduleName}/yhlc`,
-        label:"用户旅程",
-        meta:{title:"用户旅程",moduleName},
+        path:`/${moduleName}/tdjchx`,
+        label:"通道基础画像",
+        meta:{title:"通道基础画像",moduleName},
         component:zbjk,
-        name:`${moduleName}-yhlc`
+        name:`${moduleName}-tdjchx`
+      },
+      {
+        path:`/${moduleName}/kolsx`,
+        label:"KOL属性",
+        meta:{title:"KOL属性",moduleName},
+        component:zbjk,
+        name:`${moduleName}-kolsx`
       }
     ]
   }

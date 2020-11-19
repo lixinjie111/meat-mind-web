@@ -13,29 +13,10 @@ export default {
     data(){
     return {
       sides:[
-        {name:"整体概览",icon:"",path:"/data-center",children:[
-          {name:"指标监控",path:"/data-center/zbjk"},
-          {name:"整体趋势",path:"/data-center/ztqs"},
-          {name:"增长态势",path:"/data-center/zzts"},
-          {name:"用户旅程",path:"/data-center/yhlc"}
-        ]},
-        {name:"用户分析",icon:"",path:"data-center",children:[
-          {name:"新增用户",path:"/data-center/yhlc"},
-          {name:"留存用户",path:"/data-center/yhlc"},
-          {name:"用户参与度",path:""},
-          {name:"目标用户对照",path:""}
-        ]},
-        {name:"渠道分析",icon:"",path:"data-center",children:[
-          {name:"渠道实时",path:""},
-          {name:"渠道概况",path:""},
-          {name:"渠道质量评估",path:""}
-
-        ]},
-        {name:"品牌运营分析",icon:"",path:"data-center",children:[
-          {name:"业务概览",path:""},
-          {name:"经营概览",path:""},
-          {name:"MRR分析",path:""}
-        ]}
+        {name:"我的数据",src:require("../../static/img/datacenter/my@2x.png"),meta:"/data-center",path:"/data-center/my"},
+        {name:"付费数据",src:require("../../static/img/datacenter/pay@2x.png"),meta:"/data-center",path:"/data-center/pay"},
+        {name:"系统集成",src:require("../../static/img/datacenter/system@2x.png"),meta:"/data-center",path:"/data-center/system"},
+        {name:"元数据管理",src:require("../../static/img/datacenter/metax@2x.png"),meta:"/data-center",path:"/data-center/metax"}
       ]
     }
   }

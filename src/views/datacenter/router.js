@@ -6,37 +6,37 @@ export default [
   {
     path:`/${moduleName}`,
     name:moduleName,
-    // redirect:{name:`${moduleName}`},
+    redirect:{name:`${moduleName}-my`},
     meta:{title:"数据管理"},
     component:dataCenter,
     children:[
       {
-        path:`/${moduleName}/zbjk`,
-        label:"指标监控",
-        meta:{title:"实时看板",moduleName},
+        path:`/${moduleName}/my`,
+        label:"我的数据",
+        meta:{title:"我的数据",moduleName},
         component:zbjk,
-        name:`${moduleName}-zbjk`
+        name:`${moduleName}-my`
       },
       {
-        path:`/${moduleName}/ztqs`,
-        label:"整体趋势",
-        meta:{title:"整体趋势",moduleName},
+        path:`/${moduleName}/pay`,
+        label:"付费数据",
+        meta:{title:"付费数据",moduleName},
         component:zbjk,
-        name:`${moduleName}-ztqs`
+        name:`${moduleName}-pay`
       },
       {
-        path:`/${moduleName}/zzts`,
-        label:"增长态势",
-        meta:{title:"增长态势",moduleName},
+        path:`/${moduleName}/system`,
+        label:"系统集成",
+        meta:{title:"系统集成",moduleName},
         component:zbjk,
-        name:`${moduleName}-zzts`
+        name:`${moduleName}-system`
       },
       {
-        path:`/${moduleName}/yhlc`,
-        label:"用户旅程",
-        meta:{title:"用户旅程",moduleName},
+        path:`/${moduleName}/metax`,
+        label:"元数据管理",
+        meta:{title:"元数据管理",moduleName},
         component:zbjk,
-        name:`${moduleName}-yhlc`
+        name:`${moduleName}-metax`
       }
     ]
   }

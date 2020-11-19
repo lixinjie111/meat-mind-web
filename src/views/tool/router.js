@@ -6,37 +6,57 @@ export default [
   {
     path:`/${moduleName}`,
     name:moduleName,
-    // redirect:{name:`${moduleName}`},
+    redirect:{name:`${moduleName}-fxmx`},
     meta:{title:"分析工具"},
     component:tool,
     children:[
       {
-        path:`/${moduleName}/zbjk`,
-        label:"指标监控",
-        meta:{title:"实时看板",moduleName},
+        path:`/${moduleName}/fxmx`,
+        label:"分析模型",
+        meta:{title:"分析模型",moduleName},
         component:zbjk,
-        name:`${moduleName}-zbjk`
+        name:`${moduleName}-fxmx`
       },
       {
-        path:`/${moduleName}/ztqs`,
-        label:"整体趋势",
-        meta:{title:"整体趋势",moduleName},
+        path:`/${moduleName}/zbgl`,
+        label:"指标管理",
+        meta:{title:"指标管理",moduleName},
         component:zbjk,
-        name:`${moduleName}-ztqs`
+        name:`${moduleName}-zbgl`
       },
       {
-        path:`/${moduleName}/zzts`,
-        label:"增长态势",
-        meta:{title:"增长态势",moduleName},
+        path:`/${moduleName}/bqtx`,
+        label:"标签体系",
+        meta:{title:"标签体系",moduleName},
         component:zbjk,
-        name:`${moduleName}-zzts`
+        name:`${moduleName}-bqtx`
       },
       {
-        path:`/${moduleName}/yhlc`,
-        label:"用户旅程",
-        meta:{title:"用户旅程",moduleName},
+        path:`/${moduleName}/yhfq`,
+        label:"用户分群",
+        meta:{title:"用户分群",moduleName},
         component:zbjk,
-        name:`${moduleName}-yhlc`
+        name:`${moduleName}-yhfq`
+      },
+      {
+        path:`/${moduleName}/qdlj`,
+        label:"渠道链接",
+        meta:{title:"渠道链接",moduleName},
+        component:zbjk,
+        name:`${moduleName}-qdlj`
+      },
+      {
+        path:`/${moduleName}/qdgl`,
+        label:"渠道管理",
+        meta:{title:"渠道管理",moduleName},
+        component:zbjk,
+        name:`${moduleName}-qdgl`
+      },      {
+        path:`/${moduleName}/cjk`,
+        label:"场景库",
+        meta:{title:"场景库",moduleName},
+        component:zbjk,
+        name:`${moduleName}-cjk`
       }
     ]
   }

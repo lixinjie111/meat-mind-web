@@ -13,28 +13,14 @@ export default {
     data(){
     return {
       sides:[
-        {name:"整体概览",icon:"",path:"/portrait-system",children:[
-          {name:"指标监控",path:"/portrait-system/zbjk"},
-          {name:"整体趋势",path:"/portrait-system/ztqs"},
-          {name:"增长态势",path:"/portrait-system/zzts"},
-          {name:"用户旅程",path:"/portrait-system/yhlc"}
+        {name:"用户画像",src:"",meta:"/portrait-system",path:"/portrait-system/yhhx"},
+        {name:"品牌画像",src:"",meta:"portrait-system",path:"",children:[
+          {name:"品牌基础画像",meta:"/portrait-system",path:"/portrait-system/ppjchx"},
+          {name:"品牌舆情",meta:"/portrait-system",path:"/portrait-system/ppyq"}
         ]},
-        {name:"用户分析",icon:"",path:"portrait-system",children:[
-          {name:"新增用户",path:"/portrait-system/yhlc"},
-          {name:"留存用户",path:"/portrait-system/yhlc"},
-          {name:"用户参与度",path:""},
-          {name:"目标用户对照",path:""}
-        ]},
-        {name:"渠道分析",icon:"",path:"portrait-system",children:[
-          {name:"渠道实时",path:""},
-          {name:"渠道概况",path:""},
-          {name:"渠道质量评估",path:""}
-
-        ]},
-        {name:"品牌运营分析",icon:"",path:"portrait-system",children:[
-          {name:"业务概览",path:""},
-          {name:"经营概览",path:""},
-          {name:"MRR分析",path:""}
+        {name:"通道画像",src:"",meta:"portrait-system",path:"",children:[
+          {name:"通道基础画像",meta:"/portrait-system",path:"/portrait-system/tdjchx"},
+          {name:"KOL属性",meta:"/portrait-system",path:"/portrait-system/kolsx"}
         ]}
       ]
     }

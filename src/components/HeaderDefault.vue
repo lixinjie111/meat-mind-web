@@ -73,7 +73,7 @@ export default {
           path:"data-center"
         }
       ],
-      active: this.$route.name
+      active: this.$route.meta.moduleName
     };
   },
   methods: {

@@ -1,6 +1,6 @@
 <template>
   <div class="zbjk">
-      <img src="../../../static/img/header/header-main@2x.png" alt="">
+      <img src="../../../static/img/datacenter/data-center-main@2x.png" alt="">
   </div>
 </template>
 

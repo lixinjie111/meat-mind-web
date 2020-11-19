@@ -13,29 +13,15 @@ export default {
     data(){
     return {
       sides:[
-        {name:"整体概览",icon:"",path:"/analysis-tool",children:[
-          {name:"指标监控",path:"/analysis-tool/zbjk"},
-          {name:"整体趋势",path:"/analysis-tool/ztqs"},
-          {name:"增长态势",path:"/analysis-tool/zzts"},
-          {name:"用户旅程",path:"/analysis-tool/yhlc"}
+        {name:"分析模型",src:require("../../static/img/tool/fxmx@2x.png"),meta:"/analysis-tool",path:"/analysis-tool/fxmx"},
+        {name:"指标管理",src:require("../../static/img/tool/zbgl@2x.png"),meta:"/analysis-tool",path:"/analysis-tool/zbgl"},
+        {name:"标签体系",src:require("../../static/img/tool/bqtx@2x.png"),meta:"/analysis-tool",path:"/analysis-tool/bqtx"},
+        {name:"用户分群",src:require("../../static/img/tool/yhfq@2x.png"),meta:"/analysis-tool",path:"/analysis-tool/yhfq"},
+        {name:"渠道追踪",src:require("../../static/img/tool/qdzz@2x.png"),meta:"/analysis-tool",path:"",children:[
+          {name:"渠道链接",meta:"/analysis-tool",path:"/analysis-tool/qdlj"},
+          {name:"渠道管理",meta:"/analysis-tool",path:"/analysis-tool/qdgl"}
         ]},
-        {name:"用户分析",icon:"",path:"analysis-tool",children:[
-          {name:"新增用户",path:"/analysis-tool/yhlc"},
-          {name:"留存用户",path:"/analysis-tool/yhlc"},
-          {name:"用户参与度",path:""},
-          {name:"目标用户对照",path:""}
-        ]},
-        {name:"渠道分析",icon:"",path:"analysis-tool",children:[
-          {name:"渠道实时",path:""},
-          {name:"渠道概况",path:""},
-          {name:"渠道质量评估",path:""}
-
-        ]},
-        {name:"品牌运营分析",icon:"",path:"analysis-tool",children:[
-          {name:"业务概览",path:""},
-          {name:"经营概览",path:""},
-          {name:"MRR分析",path:""}
-        ]}
+        {name:"场景库",src:require("../../static/img/tool/cjk@2x.png"),meta:"/analysis-tool",path:"/analysis-tool/cjk"},
       ]
     }
   }
