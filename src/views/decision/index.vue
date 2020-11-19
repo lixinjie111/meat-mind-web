@@ -31,7 +31,7 @@
                     </div>
                     <div class="chart-tooltip blue">
                         <div class="value"><span>￥</span>72百万</div>
-                        <div class="month">2020年12月</div>
+                        <div class="month">目标</div>
                     </div>
                 </div>
                 <div class="info">
@@ -504,12 +504,23 @@
                         },
                         {
                             name: "6月点",
-                            type: 'scatter',
+                            type: 'effectScatter',
+                            coordinateSystem: 'cartesian2d',
                             data: effectValues2,
                             symbol: 'circle',
+                            effectType: 'ripple',
+                            showEffectOn: 'render',
+                            cursor: 'pointer',
+                            rippleEffect: {
+                                period: 100000,
+                                scale: 2,
+                                brushType: 'stroke',
+                            },
                             itemStyle: {
                                 normal: {
-                                    color: '#848484'
+                                    color: '#999999',
+                                    shadowBlur: 5,
+                                    shadowColor: '#999999'
                                 }
                             },
                             zlevel: 1
@@ -612,8 +623,8 @@
 
                     .red {
                         position: absolute;
-                        right: 350px;
-                        top: 230px;
+                        right: 320px;
+                        top: 180px;
                     }
 
                     .blue {
@@ -781,7 +792,7 @@
                 line-height: 18px;
 
                 > span {
-                    font-size: 12px;
+                    font-size: 16px;
                 }
             }
 
