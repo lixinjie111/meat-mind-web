@@ -1,6 +1,6 @@
 <template>
   <div class="side">
-    <Menu ref="side_menu" :theme="theme" :active-name="activeName" :open-names="openNames">
+    <Menu ref="side_menu" :theme="theme" :active-name="activeName" :open-names="openNames" width="auto">
       <div v-for="(item, index) in sideList" :key="index">
         <Submenu v-if="item.children" :name="item.name">
           <template slot="title">
@@ -20,7 +20,7 @@
         </Submenu>
         <MenuItem v-else :name="item.name" :to="item.path">
           <img class="icon" :src="item.src" alt="" />
-          <span class="sub-name">{{ item.name }}</span>
+          <span class="title-name">{{ item.name }}</span> 
         </MenuItem>
       </div>
     </Menu>
@@ -113,10 +113,15 @@ export default {
       .sub-name {
         font-size: 14px;
         color: #666666;
+        margin-left: 20px;
       }
       &:hover {
         background: #f0f0f0;
         .sub-name {
+          color: #333333;
+          font-weight: 500;
+        }
+        .title-name{
           color: #333333;
           font-weight: 500;
         }
