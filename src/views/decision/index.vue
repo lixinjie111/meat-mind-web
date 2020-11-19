@@ -286,7 +286,7 @@
                                 style = "display:block"
                             }
                             let str = '<div class="chart-tooltip" style="' + style + '">' +
-                                '<div class="value">' + '<span>￥</span>' + params[0].data + '百万</div>' +
+                                '<div class="value">' + '<span>￥</span>' + params[0].data * 100+ '万</div>' +
                                 '<div class="month"> ' + '2020年' + params[0].name + ' </div>' +
                                 '</div>';
                             return str;
