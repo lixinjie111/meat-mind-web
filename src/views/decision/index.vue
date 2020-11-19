@@ -11,17 +11,35 @@
             <div class="middle">
                 <div class="title">
                     <p>智能诊断</p>
+                    <div class="title-right">
+                       <div class="years">
+                          <p>季度</p>
+                          <p>半年</p>
+                          <p class="active">全年</p>
+                       </div>
+                       <DatePicker :value="date" format="yyyy/MM/dd" type="daterange" placement="bottom-end" placeholder="请选择时间" class="date-range"></DatePicker>
+                    </div>
                 </div>
                 <div class="chart">
                     <div id="myChart" style="width:100%;height: 100%;"></div>
-                    <div></div>
+                    <div class="legend">
+                        <img src="../../../src/static/img/decision/legend@2x.png">
+                    </div>
+                    <div class="chart-tooltip red">
+                        <div class="value"><span>￥</span>60百万</div>
+                        <div class="month">2020年8月</div>
+                    </div>
+                    <div class="chart-tooltip blue">
+                        <div class="value"><span>￥</span>72百万</div>
+                        <div class="month">2020年12月</div>
+                    </div>
                 </div>
                 <div class="info">
                     <img class="left" src="../../../src/static/img/decision/middle@2x.png"/>
                     <div class="right">
                         <div class="right-title">建议</div>
                         <ul class="right-ul">
-                            <li>
+                            <li @click="toDetail">
                                 <p class="li-title">消费者</p>
                                 <div class="li-content">
                                     <div class="left">
@@ -34,7 +52,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li>
+                            <li @click="toDetail">
                                 <p class="li-title">渠道</p>
                                 <div class="li-content">
                                     <div class="left">
@@ -47,7 +65,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li>
+                            <li @click="toDetail">
                                 <p class="li-title">品牌</p>
                                 <div class="li-content">
                                     <div class="left">
@@ -88,10 +106,23 @@
     export default {
         name: "index",
         components: {Header},
+        data(){
+            return {
+                date: ['2020-01-01', '2020-12-31']
+            }
+        },
         mounted() {
             this.initChat();
+            this.$nextTick(()=>{
+                window.onresize = ()=>{
+                    this.initChat();
+                }
+            });
         },
         methods: {
+            toDetail() {
+                this.$router.push({name: "business-analysis"})
+            },
             initChat() {
                 // 初始化echarts实例
                 let myChart = this.$echarts.init(document.getElementById('myChart'))
@@ -139,7 +170,7 @@
                     },
                     {
                         value: 60,
-                        symbolSize: 10
+                        symbolSize: 15
                     }
                 ]; //实际数据预警点
                 let effectValues1 = [
@@ -193,9 +224,47 @@
                     },
                     {
                         value: 72,
-                        symbolSize: 10
+                        symbolSize: 15
                     }
                 ]; //目标最后点
+                let effectValues2 = [
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 64,
+                        symbolSize: 15
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    }
+                ]; //6月份点
                 let option = {
                     backgroundColor: "#fff",
                     tooltip: {
@@ -211,9 +280,13 @@
                         backgroundColor: "transparent",
                         borderWidth: 0,
                         formatter: (params) => {
-                            let style = params[0].data < params[2].data ? "red" : "";
-                            let style1 = params[0].seriesName == '实际' ? "display:block" : "display:none";
-                            let str = '<div class="chart-tooltip ' + style + '" style="'+style1+'">' +
+                            let style = "";
+                            if (params[0].data < params[2].data || params[0].seriesName != '实际') {
+                                style = "display:none"
+                            } else {
+                                style = "display:block"
+                            }
+                            let str = '<div class="chart-tooltip" style="' + style + '">' +
                                 '<div class="value">' + '<span>￥</span>' + params[0].data + '百万</div>' +
                                 '<div class="month"> ' + '2020年' + params[0].name + ' </div>' +
                                 '</div>';
@@ -284,7 +357,7 @@
                             itemStyle: {
                                 normal: {
                                     lineStyle: {
-                                        width: 4,
+                                        width: 6,
                                         type: 'solid',
                                         color: "#D7D8DC"
                                     }
@@ -429,6 +502,18 @@
                                 }
                             },
                             zlevel: 1
+                        },
+                        {
+                            name: "6月点",
+                            type: 'scatter',
+                            data: effectValues2,
+                            symbol: 'circle',
+                            itemStyle: {
+                                normal: {
+                                    color: '#848484'
+                                }
+                            },
+                            zlevel: 1
                         }
                     ]
                 };
@@ -466,6 +551,9 @@
                 background: #FFFFFF;
 
                 .title {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
                     padding: 12px 24px;
                     border-bottom: 1px solid #F0F0F0;
 
@@ -475,12 +563,74 @@
                         font-weight: 500;
                         color: #212121;
                     }
+
+                    .title-right {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .years {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            >p {
+                                margin-right: 8px;
+                                width: 60px;
+                                height: 32px;
+                                line-height: 32px;
+                                background: #FAFAFA;
+                                border-radius: 2px;
+                                font-size: 14px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #333333;
+                                text-align: center;
+
+                                &.active {
+                                    background: rgba(35, 115, 255, 0.08);
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-weight: 500;
+                                    color: #2373FF;
+                                }
+                            }
+                        }
+
+                        .date-range {
+                            width: 200px;
+                            margin-left: 16px;
+                        }
+                    }
+
                 }
 
                 .chart {
+                    position: relative;
                     padding-top: 10px;
                     width: 1392px;
                     height: 460px;
+
+                    .red {
+                        position: absolute;
+                        right: 350px;
+                        top: 230px;
+                    }
+
+                    .blue {
+                        position: absolute;
+                        right: 30px;
+                        top: 125px;
+                    }
+
+                    .legend {
+                        text-align: center;
+
+                        >img {
+                           width: 1392px;
+                           height: 60px;
+                        }
+                    }
                 }
 
                 .info {
@@ -510,6 +660,10 @@
                                 padding: 12px 24px;
                                 cursor: pointer;
                                 border-bottom: 1px solid #F0F0F0;
+
+                                &:first-child {
+                                    border-top: 1px solid #F0F0F0;
+                                }
 
                                 &:hover {
                                     background: #F4F8FF;
@@ -591,10 +745,6 @@
         border-radius: 2px;
         border: 1px solid rgba(0, 0, 0, 0.15);
 
-        &.red {
-            border: 1px solid #F54A45;
-        }
-
         .value {
             margin-left: -5px;
             font-size: 24px;
@@ -617,6 +767,30 @@
             font-family: HelveticaNeue;
             color: #666666;
             line-height: 22px;
+        }
+
+        &.red {
+            border: 1px solid #F54A45;
+        }
+
+        &.blue {
+            padding: 3px 4px;
+            border: 1px solid #2373FF;
+
+            .value {
+                font-size: 14px;
+                line-height: 18px;
+
+                > span {
+                    font-size: 12px;
+                }
+            }
+
+            .month {
+                margin-top: 1px;
+                font-size: 12px;
+                line-height: 18px;
+            }
         }
     }
 </style>
