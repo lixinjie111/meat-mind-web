@@ -1,10 +1,10 @@
 <template>
   <div class="sass-header">
     <div class="nav">
-      <img src="../../static/header/fold@2x.png" alt />
+      <img src="../static/img/header/fold@2x.png" alt />
     </div>
     <div class="logo">
-      <img src="../../static/header/bg@2x.png" alt />
+      <img src="../static/img/header/bg@2x.png" alt />
     </div>
     <div class="route">
       <div
@@ -19,17 +19,17 @@
     </div>
     <div class="control">
       <div class="search">
-        <img src="../../static/header/search@2x.png" alt="">
+        <img src="../static/img/header/search@2x.png" alt="">
       </div>
       <div class="help">
-        <img src="../../static/header/help-doc@2x.png" alt="">
+        <img src="../static/img/header/help-doc@2x.png" alt="">
       </div>
       <div class="alarm">
-        <img class="clock" src="../../static/header/clock@2x.png" alt="">
-        <img class="group" src="../../static/header/group@2x.png" alt="">
+        <img class="clock" src="../static/img/header/clock@2x.png" alt="">
+        <img class="group" src="../static/img/header/group@2x.png" alt="">
       </div>
       <div class="avatar">
-        <img src="../../static/header/oval@2x.png" alt="">
+        <img src="../static/img/header/oval@2x.png" alt="">
         <span>分析师</span>
       </div>
     </div>
@@ -42,33 +42,33 @@ export default {
   data() {
     return {
       routes: [
-        { 
-          src: require("../../static/header/home@2x.png"),
+        {
+          src: require("../static/img/header/home@2x.png"),
           name: "首页",
           path:"home"
         },
         {
-          src: require("../../static/header/intelligent-decision@2x.png"),
+          src: require("../static/img/header/intelligent-decision@2x.png"),
           name: "智能决策",
           path:"intelligent-decision"
         },
         {
-          src: require("../../static/header/business-analysis@2x.png"),
+          src: require("../static/img/header/business-analysis@2x.png"),
           name: "经营分析",
           path:"business-analysis"
         },
         {
-          src: require("../../static/header/analysis-tool@2x.png"),
+          src: require("../static/img/header/analysis-tool@2x.png"),
           name: "分析工具",
           path:"analysis-tool"
         },
         {
-          src: require("../../static/header/portrait-system@2x.png"),
+          src: require("../static/img/header/portrait-system@2x.png"),
           name: "画像系统",
           path:"portrait-system"
         },
         {
-          src: require("../../static/header/data-center@2x.png"),
+          src: require("../static/img/header/data-center@2x.png"),
           name: "数据管理",
           path:"data-center"
         }

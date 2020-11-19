@@ -2,7 +2,7 @@
   <div class="home">
       <!-- 首页 -->
       <Header></Header>
-      <img src="../../../static/header/header-main@2x.png" alt="">
+      <img src="../../static/img/header/header-main@2x.png" alt="">
   </div>
 </template>
 

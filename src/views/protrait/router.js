@@ -6,7 +6,7 @@ export default [
   {
     path:`/${moduleName}`,
     name:moduleName,
-    // redirect:{name:`${moduleName}`},
+    redirect:{name:`${moduleName}/zbjk`},
     meta:{title:"画像系统"},
     component:protrait,
     children:[

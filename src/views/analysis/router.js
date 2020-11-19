@@ -6,14 +6,14 @@ export default [
   {
     path:`/${moduleName}`,
     name:moduleName,
-    // redirect:{name:`${moduleName}`},
+    redirect:{name:`${moduleName}-zbjk`},
     meta:{title:"经营分析"},
     component:analysis,
     children:[
       {
         path:`/${moduleName}/zbjk`,
         label:"指标监控",
-        meta:{title:"实时看板",moduleName},
+        meta:{title:"指标监控",moduleName},
         component:zbjk,
         name:`${moduleName}-zbjk`
       },

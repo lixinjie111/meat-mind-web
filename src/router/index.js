@@ -7,6 +7,7 @@ import portraitSystem from "../views/protrait/router" //画像系统
 import intelligentDecision from "../views/decision/router"//智能决策
 import dataCenter from "../views/datacenter/router"//数据管理
 import businessAnalysis from "../views/analysis/router"//经营分析
+
 Vue.use(VueRouter)
 
 const routes = [
