@@ -7,6 +7,7 @@ import 'view-design/dist/styles/iview.css';
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css';
 import echarts from 'echarts'
+import "../src/static/icon/iconfont.css"
 
 Vue.config.productionTip = false;
 Vue.prototype.$echarts = echarts;

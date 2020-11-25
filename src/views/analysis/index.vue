@@ -1,7 +1,7 @@
 <template>
   <div class="business-analysis">
       <!-- 经营分析 -->
-      <Page :side="sides"></Page>
+      <Page :side="sides" :target="'经营分析'"></Page>
   </div>
 </template>
 
