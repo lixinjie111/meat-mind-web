@@ -179,9 +179,9 @@
             }
 
             .iframe20 {
-                left: 1095px;
+                left: 1082px;
                 top: 1636px;
-                width: 100px;
+                width: 127px;
             }
 
             .iframe21 {
@@ -190,7 +190,7 @@
             }
 
             .iframe22 {
-                left: 385px;
+                left: 384px;
                 top: 1832px;
                 width: 42px;
             }
@@ -201,7 +201,7 @@
             }
 
             .iframe24 {
-                left: 1093px;
+                left: 1092px;
                 top: 1832px;
             }
         }
