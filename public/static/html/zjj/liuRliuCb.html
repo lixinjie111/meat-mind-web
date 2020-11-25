@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style type="text/css">
+        *{
+            font-family: 'Helvetica Neue','Helvetica','PingFang SC','Hiragino Sans GB','Microsoft YaHei','微软雅黑','Arial','sans-serif','PingFangSC-Medium';
+            margin: 0;
+            padding: 0;
+        }
+		html,body{
+            width: 100%;
+            height: 100%;
+		}
+		#num{
+			width: 100%;
+			height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+		}
+	</style>
+</head>
+
+<body>
+    <div id="num"></div>
+    <script lang="javascript">
+        var timer = null; 
+        var num1 = 0.6;
+        timer = setInterval(()=>{
+            num1+=0.1;
+            if(num1 >= 1){
+                num1 = 0.6;
+            }
+            var dom = document.getElementById('num');
+            dom.innerHTML = `<span style="color:#333333;font-size: 30px;">${num1.toFixed(1)}</span>`;
+        },10000);
+        var dom = document.getElementById('num');
+        dom.innerHTML = `<span style="color:#333333;font-size: 30px;">${num1.toFixed(1)}</span>`;
+        window.onunload = function(){
+            clearInterval(timer);
+        };
+    </script>
+</body>
+
+</html>

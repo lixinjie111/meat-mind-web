@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				font-family: 'Helvetica Neue','Helvetica','PingFang SC','Hiragino Sans GB','Microsoft YaHei','微软雅黑','Arial','sans-serif','PingFangSC-Medium';
+			}
+
+			#div {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="div">
+
+		</div>
+
+
+		<script src="../../js/echarts.min.js"></script>
+		<script lang="javascript">
+			setTimeout(()=>{
+				//['#4C98FB', '#83CCE7', '#26C7C8', '#73DEBD', '#26C978', '#8CDF6C', '#FBD657', '#F56679', '#E07BCE', '#9D50E0', '#634FDA']
+			var colorList = [ '#5d8bef','#84e4bd','#f9b06a','#f9da72']
+			var option = {
+				color: colorList,
+				tooltip: {
+					trigger: 'axis',
+					axisPointer: {
+						type: 'cross',
+						crossStyle: {
+							color: '#999'
+						}
+					},
+					formatter: function(list) {
+						var msg = "";
+						for (let i in list) {
+							if (i == 0) {
+								msg += list[i].name + "<br>";
+							}
+							if (list[i].seriesName == "同比") {
+								msg += list[i].seriesName + "：" + list[i].data + "%<br>";
+							}else if (list[i].seriesName == "环比") {
+								msg += list[i].seriesName + "：" + list[i].data + "%<br>";
+							}else{
+								msg += list[i].seriesName + "：" + list[i].data + "万元<br>";
+							}
+						}
+						return msg;
+					}
+				},
+				legend: {
+					top:1,
+					data: ['成本支付(MTD)', '去年同期', '同比','环比']
+				},
+				xAxis: [
+					{
+						type: 'category',
+						data: ['2018.1', '2018.2', '2018.3', '2018.4', '2018.5', '2018.6', '2018.7', '2018.8', '2018.9', '2018.10', '2018.11', '2018.12'],
+						axisPointer: {
+							type: 'shadow'
+						}
+					}
+				],
+				yAxis: [
+					{
+						type: 'value',
+						//name: '水量',
+						min: 0,
+						max: 250,
+						interval: 50,
+						axisLabel: {
+							formatter: '{value}'
+						}
+					},
+					// {
+					// 	type: 'value',
+					// 	//name: '温度',
+					// 	min: 0,
+					// 	max: 25,
+					// 	interval: 5,
+					// 	axisLabel: {
+					// 		formatter: '{value}'
+					// 	}
+					// }
+				],
+				series: [
+					{
+						name: '成本支付(MTD)',
+						type: 'bar',
+						data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+					},
+					{
+						name: '去年同期',
+						type: 'bar',
+						data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+					},
+					{
+						name: '同比',
+						type: 'line',
+						// yAxisIndex: 1,
+						data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 5.3, 9.4, 19.0, 11.5, 12.0, 6.2]
+					},
+					{
+						name: '环比',
+						type: 'line',
+						// yAxisIndex: 1,
+						data: [1.0, 1.2, 4.3, 3.5, 8.3, 4.2, 8.3, 12.4, 8.0, 14.5, 8.0, 3.2]
+					},
+					
+				]
+			};
+			let myChart = echarts.init(document.getElementById("div"));
+			myChart.setOption(option);
+			},500)
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style type="text/css">
+        *{
+            font-family: 'Helvetica Neue','Helvetica','PingFang SC','Hiragino Sans GB','Microsoft YaHei','微软雅黑','Arial','sans-serif','PingFangSC-Medium';
+            margin: 0;
+            padding: 0;
+        }
+		html,body{
+            width: 100%;
+            height: 100%;
+		}
+		#div{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+
+<body>
+    <div id="div"></div>
+    <script src="../../js/echarts.min.js"></script>
+    <script lang="javascript">
+        setTimeout(function(){
+            var myPieChart = echarts.init(document.getElementById("div"));
+            var colorList = ['#0C6CD9', '#B7EDB1']
+            var arr=[
+                {value: 123, name: '境外'},
+                {value: 102, name: '境内'}
+
+            ]
+            var option = {
+                color:colorList,
+                title: {
+                    x: 'center',
+                    y: 'center',
+                    textStyle: {
+                        color:"#fff",
+                        fontSize: 15
+                    },
+                },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{b} <br /> 金额（元）：{c} <br /> 占比：{d}%',
+            },
+            legend: {
+                bottom: 10,
+                left: 'center',
+                data: ['境外', '境内']
+            },
+            series: [{
+                type: 'pie',
+                center: ['50%', '50%'],
+                radius: ['24%', '35%'],
+                clockwise: true,
+                avoidLabelOverlap: true,
+                hoverOffset: 15,
+                itemStyle: {
+                    normal: {
+                        color: function(params) {
+                            return colorList[params.dataIndex]
+                        }
+                    }
+                },
+                label: {
+                    show: true,
+                    formatter: '{b}\n金额（元）：{c}\n占比：{d}%',
+                    borderColor: '#aaa',
+                    borderWidth: 1,
+                    borderRadius: 4,
+                    padding: [7, 12],
+                    lineHeight:20,
+                    rich: {
+                        a: {
+                            color: '#999',
+                            lineHeight: 22,
+                            align: 'right'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        length: 20,
+                        length2: 30,
+                        lineStyle: {
+                            width: 1
+                        }
+                    }
+                },
+                data: arr,
+            }]
+            };
+            setInterval(function(){
+                for(let index in arr){
+                    arr[index].value=(Math.random()*50+100).toFixed(0);
+                }
+                option.series[0].data = arr;
+                myPieChart.setOption(option);
+            },1000)
+            window.onunload = function(){
+                myPieChart.clear();
+                myPieChart.dispose();
+            }
+        },500);
+    </script>
+</body>
+
+</html>

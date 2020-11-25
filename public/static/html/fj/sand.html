@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'Arial', 'sans-serif', 'PingFangSC-Medium';
+        }
+        
+        #main {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script src="../../js/echarts.min.js"></script>
+</head>
+
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        setTimeout(() => {
+            var myChart = echarts.init(document.getElementById('main'));
+
+            // 指定图表的配置项和数据
+            var option = {
+                color: ["#315C94", "#497FB6", "#6F8FCF", "#7AA0BB", "#9FBEDD", "#BCD4E1"],
+                textStyle: {
+                    color: '#000',
+                },
+                tooltip: {
+                    trigger: "axis",
+                    axisPointer: {
+                        lineStyle: {
+                            type: 'dashed',
+                            width: 2,
+                            color: '#4B941A'
+                        },
+                        animation: true
+                    }
+                },
+                legend: {
+                    show: false,
+                    data: [], //'a', 'b', 'c', 'd'
+                    left: 'right',
+                },
+                grid: {
+                    show: false
+                },
+                yAxis: {
+                    data: ['0', '1.0', '2.0', '3.0'],
+                    splitLine: {
+                        show: true
+                    },
+                    textStyle: {
+                        fontSize: "90"
+                    },
+                    axisLine: {
+                        show: false,
+                    },
+                    axisLabel: {
+                        show: true,
+                        textStyle: {
+                            fontSize: 16 //更改坐标轴文字大小
+                        }
+                    },
+                },
+                xAxis: {
+                    data: ['1000', '1500', '2000', '3000', '4000', '5000', '6000'],
+                    //      axisLine: {
+                    //         show: true,
+                    //     lineStyle: {
+                    //         color: '#555',
+                    //         fontSize: 20
+                    //     },
+                    // },
+                    axisLabel: {
+                        show: true,
+                        textStyle: {
+                            fontSize: 16 //更改坐标轴文字大小
+                        }
+                    },
+                },
+                series: [{
+                    name: '',
+                    type: 'scatter',
+                    symbol: 'circle',
+                    symbolSize: function(data) {
+                        return Math.sqrt(data[2]) * 1;
+                    },
+                    label: {
+                        emphasis: {
+                            show: true,
+                            formatter: function(param) {
+                                return param.data[2];
+                            },
+                            position: 'top'
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: '#9CECF3'
+                        }
+                    },
+                    data: [
+                        ['1000', '2.0', 4400]
+                    ]
+                }, {
+                    name: '',
+                    type: 'scatter',
+                    symbol: 'circle', //'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow'
+                    symbolSize: function(data) {
+                        return Math.sqrt(data[2]) * 1;
+                    },
+                    label: {
+                        emphasis: {
+                            show: true,
+                            formatter: function(param) {
+                                return param.data[2];
+                            },
+                            position: 'top'
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: '#9FBCFF'
+                        }
+                    },
+                    data: [
+                        ['1500', '1.0', 6400]
+                    ]
+                }, {
+                    name: '',
+                    type: 'scatter',
+                    symbol: 'circle', //'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow'
+                    symbolSize: function(data) {
+                        return Math.sqrt(data[2]) * 1;
+                    },
+                    label: {
+                        emphasis: {
+                            show: true,
+                            formatter: function(param) {
+                                return param.data[2];
+                            },
+                            position: 'top'
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: '#DAF3C3'
+                        }
+                    },
+                    data: [
+                        ['2000', '2.0', 9000]
+                    ]
+                }, {
+                    name: '',
+                    type: 'scatter',
+                    symbol: 'circle', //'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow'
+                    symbolSize: function(data) {
+                        return Math.sqrt(data[2]) * 1;
+                    },
+                    label: {
+                        emphasis: {
+                            show: true,
+                            formatter: function(param) {
+                                return param.data[2];
+                            },
+                            position: 'top'
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: '#9CECF3'
+                        }
+                    },
+                    data: [
+                        ['3000', '3.0', 4500]
+                    ]
+                }, {
+                    name: '',
+                    type: 'scatter',
+                    symbol: 'circle', //'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow'
+                    symbolSize: function(data) {
+                        return Math.sqrt(data[2]) * 1;
+                    },
+                    label: {
+                        emphasis: {
+                            show: true,
+                            formatter: function(param) {
+                                return param.data[2];
+                            },
+                            position: 'top'
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: '#9FBCFF'
+                        }
+                    },
+                    data: [
+                        ['4000', '1.0', 6050]
+                    ]
+                }, {
+                    name: '',
+                    type: 'scatter',
+                    symbol: 'circle', //'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow'
+                    symbolSize: function(data) {
+                        return Math.sqrt(data[2]) * 1;
+                    },
+                    label: {
+                        emphasis: {
+                            show: true,
+                            formatter: function(param) {
+                                return param.data[2];
+                            },
+                            position: 'top'
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: '#B7F2E0'
+                        }
+                    },
+                    data: [
+                        ['5000', '2.0', 5000]
+                    ]
+                }, {
+                    name: '',
+                    type: 'scatter',
+                    symbol: 'circle', //'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow'
+                    symbolSize: function(data) {
+                        return Math.sqrt(data[2]) * 1;
+                    },
+                    label: {
+                        emphasis: {
+                            show: true,
+                            formatter: function(param) {
+                                return param.data[2];
+                            },
+                            position: 'top'
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: '#FBEDB5'
+                        }
+                    },
+                    data: [
+                        ['6000', '2.0', 5000]
+                    ]
+                }, ]
+            };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        }, 500)
+    </script>
+</body>

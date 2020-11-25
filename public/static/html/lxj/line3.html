@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				font-family: 'Helvetica Neue','Helvetica','PingFang SC','Hiragino Sans GB','Microsoft YaHei','微软雅黑','Arial','sans-serif','PingFangSC-Medium';
+			}
+
+			#div {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="div">
+
+		</div>
+
+
+		<script src="../../js/echarts.min.js"></script>
+		<script lang="javascript">
+			setTimeout(() => {
+				var colorList = ['#d6deed', '#d6efda', '#d6d6d6']
+				var option = {
+					// title: {
+					// 	text: '堆叠区域图'
+					// },
+					color: colorList,
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: {
+							type: 'cross',
+							label: {
+								backgroundColor: '#6a7985'
+							}
+						}
+					},
+					// legend: {
+					// 	data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+					// },
+					grid: {
+						left: '3%',
+						right: '4%',
+						bottom: '3%',
+						containLabel: true
+					},
+					xAxis: [{
+						type: 'category',
+						boundaryGap: false,
+						data: ['2018-12', '2019-01', '2019-02', '2019-03', '2019-04', '2019-05', '2019-06', '2019-07', '2019-08', '2019-09', '2019-10', '2019-11', '2019-12', '2020-01']
+					}],
+					yAxis: [{
+						type: 'value'
+					}],
+					series: [
+						{
+							name: '小红书',
+							type: 'line',
+							smooth: true,
+							stack: '总量',
+							
+							lineStyle: {
+								normal: {
+									color: '#8794a4',
+								}
+							},
+							areaStyle: {
+								normal: {
+									color: colorList[2],
+								}
+							},
+							data: [620, 182, 791, 234, 290, 130, 310,220, 82, 191, 234, 290, 330, 910]
+						},
+						{
+							name: '抖音',
+							type: 'line',
+							smooth: true,
+							stack: '总量',
+							label: {
+								normal: {
+									show: true,
+									position: 'top'
+								}
+							},
+							lineStyle: {
+								normal: {
+									color: '#83dbb3',
+								}
+							},
+							areaStyle: {
+								normal: {
+									color: colorList[1],
+								}
+							},
+							data: [120, 232, 101, 134, 90, 230, 710,120, 132, 101, 134, 90, 230, 210]
+						},
+						{
+							name: '微博',
+							type: 'line',
+							smooth: true,
+							stack: '总量',
+							lineStyle: {
+								normal: {
+									color: '#adc2ed',
+								}
+							},
+							areaStyle: {
+								normal: {
+									color: colorList[0],
+								}
+							},
+							data: [150, 232, 1201, 154, 190, 330, 1410,150, 2232, 201, 154, 190, 330, 910]
+						},
+						
+						
+						
+						// {
+						// 	name: '直接访问',
+						// 	type: 'line',
+						// 	stack: '总量',
+						// 	areaStyle: {},
+						// 	data: [320, 332, 301, 334, 390, 330, 320]
+						// },
+						// {
+						// 	name: '搜索引擎',
+						// 	type: 'line',
+						// 	stack: '总量',
+						// 	label: {
+						// 		normal: {
+						// 			show: true,
+						// 			position: 'top'
+						// 		}
+						// 	},
+						// 	areaStyle: {},
+						// 	data: [820, 932, 901, 934, 1290, 1330, 1320]
+						// }
+					]
+				};
+				let myChart = echarts.init(document.getElementById("div"));
+				myChart.setOption(option);
+			}, 500)
+		</script>
+	</body>
+
+</html>
