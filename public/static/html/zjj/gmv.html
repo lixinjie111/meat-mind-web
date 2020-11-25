@@ -1,56 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <style type="text/css">
-        *{
-            font-family: 'Helvetica Neue','Helvetica','PingFang SC','Hiragino Sans GB','Microsoft YaHei','微软雅黑','Arial','sans-serif','PingFangSC-Medium';
+        * {
+            font-family: 'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'Arial', 'sans-serif', 'PingFangSC-Medium';
             margin: 0;
             padding: 0;
         }
-		html,body{
+
+        html, body {
             width: 100%;
             height: 100%;
-		}
-		#num{
-			width: 100%;
-			height: 100%;
+        }
+
+        #num {
+            width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-		}
-	</style>
+        }
+    </style>
 </head>
 
 <body>
-    <div id="num"></div>
-    <script lang="javascript">
-        var timer = null; 
-        var num1 = 1234;
-        function toThousands(num) {
-            var result = [ ], counter = 0;
-            num = (num || 0).toString().split('');
-            for (var i = num.length - 1; i >= 0; i--) {
+<div id="num"></div>
+<script lang="javascript">
+    var timer = null;
+    var num1 = 1234;
+
+    function toThousands(num) {
+        var result = [], counter = 0;
+        num = (num || 0).toString().split('');
+        for (var i = num.length - 1; i >= 0; i--) {
             counter++;
             result.unshift(num[i]);
-            if (!(counter % 3) && i != 0) { result.unshift(','); }
+            if (!(counter % 3) && i != 0) {
+                result.unshift(',');
             }
-            return result.join('');
         }
-        timer = setInterval(()=>{
-            num1++;
-            var forNum = toThousands(num1);
-            var dom = document.getElementById('num');
-            dom.innerHTML = `<span style="color:#333333;font-size: 30px;">${forNum}</span>`;
-        },10000);
+        return result.join('');
+    }
+
+    timer = setInterval(() => {
+        num1++;
         var forNum = toThousands(num1);
         var dom = document.getElementById('num');
-        dom.innerHTML = `<span style="color:#333333;font-size: 30px;">${forNum}</span>`;
-        window.onunload = function(){
-            clearInterval(timer);
-        };
-    </script>
+        dom.innerHTML = `<span style="color:#333333;font-size: 38vw;">${forNum}</span>`;
+    }, 10000);
+    var forNum = toThousands(num1);
+    var dom = document.getElementById('num');
+    dom.innerHTML = `<span style="color:#333333;font-size: 38vw;">${forNum}</span>`;
+    window.onunload = function () {
+        clearInterval(timer);
+    };
+</script>
 </body>
 
 </html>
