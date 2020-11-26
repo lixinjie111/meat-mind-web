@@ -1,16 +1,12 @@
 <template>
-    <div class="intelligent_decision">
+    <div class="intelligent-decision-container">
         <!-- 智能决策 -->
         <Side></Side>
-        <div class="intelligent_decision-container">
+        <div class="intelligent-decision-box">
             <Header :target="'智能决策'"></Header>
             <div class="content">
                 <!-- 智能决策 -->
-                <div class="nav">智能决策</div>
                 <div class="top">
-                    <img src="../../../src/static/img/decision/top@2x.png"/>
-                </div>
-                <div class="middle">
                     <div class="title">
                         <div class="title-left">智能诊断</div>
                         <div class="title-right">
@@ -24,80 +20,25 @@
                         </div>
                     </div>
                     <div class="chart">
-                        <div id="myChart" style="width:100%;height: 100%;"></div>
-                        <div class="legend">
-                            <img src="../../../src/static/img/decision/legend@2x.png">
+                        <div class="chart-left">
+                            <div id="myChart" style="width:100%;height: 100%;"></div>
+                            <div class="legend">
+                                <img src="../../../src/static/img/decision/legend@2x.png">
+                            </div>
+                            <div class="chart-tooltip red">
+                                <div class="value"><span>￥</span>6000万</div>
+                                <div class="month">2020年8月</div>
+                            </div>
+                            <div class="chart-tooltip blue">
+                                <div class="value"><span>￥</span>7200万</div>
+                                <div class="month">目标</div>
+                            </div>
                         </div>
-                        <div class="chart-tooltip red">
-                            <div class="value"><span>￥</span>60百万</div>
-                            <div class="month">2020年8月</div>
-                        </div>
-                        <div class="chart-tooltip blue">
-                            <div class="value"><span>￥</span>72百万</div>
-                            <div class="month">2020年12月</div>
-                        </div>
-                    </div>
-                    <div class="info">
-                        <img class="left" src="../../../src/static/img/decision/middle@2x.png"/>
-                        <div class="right">
-                            <div class="right-title">建议</div>
-                            <ul class="right-ul">
-                                <li @click="toDetail">
-                                    <p class="li-title">消费者</p>
-                                    <div class="li-content">
-                                        <div class="left">
-                                            <p><span>•</span>建议及时进行引流，减少目标客群年龄限制</p>
-                                            <p><span>•</span>应加大活动力度和推广度，提高消费者活跃度和转化率</p>
-                                        </div>
-                                        <div class="right">
-                                            <span>查看详情</span>
-                                            <img src="../../../src/static/img/decision/arrow@2x.png"/>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li @click="toDetail">
-                                    <p class="li-title">渠道</p>
-                                    <div class="li-content">
-                                        <div class="left">
-                                            <p><span>•</span>建议扩充抖音、快手短视频平台的推广力度</p>
-                                            <p><span>•</span>微信公众号产品推广时间段由工作时间向休闲时间段倾斜</p>
-                                        </div>
-                                        <div class="right">
-                                            <span>查看详情</span>
-                                            <img src="../../../src/static/img/decision/arrow@2x.png"/>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li @click="toDetail">
-                                    <p class="li-title">品牌</p>
-                                    <div class="li-content">
-                                        <div class="left">
-                                            <p><span>•</span>建议及时进行公关，并监控公关效果，以便进行二次公关</p>
-                                            <p><span>•</span>建议增加产品个性化，感性化的内容推广</p>
-                                        </div>
-                                        <div class="right">
-                                            <span>查看详情</span>
-                                            <img src="../../../src/static/img/decision/arrow@2x.png"/>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        <img class="chart-right" src="../../../src/static/img/decision/right@2x.png"/>
                     </div>
                 </div>
                 <div class="bottom">
-                    <div>
-                        <img src="../../../src/static/img/decision/graph1@2x.png"/>
-                        <img src="../../../src/static/img/decision/graph2@2x.png"/>
-                    </div>
-                    <div>
-                        <img src="../../../src/static/img/decision/graph3@2x.png"/>
-                        <img src="../../../src/static/img/decision/graph4@2x.png"/>
-                    </div>
-                    <div>
-                        <img src="../../../src/static/img/decision/graph5@2x.png"/>
-                        <img src="../../../src/static/img/decision/graph6@2x.png"/>
-                    </div>
+                    <img src="../../../src/static/img/decision/bottom@2x.png"/>
                 </div>
             </div>
         </div>
@@ -125,9 +66,6 @@
             }
         },
         methods: {
-            toDetail() {
-                this.$router.push({name: "business-analysis"})
-            },
             initChat() {
                 // 初始化echarts实例
                 this.myChart = this.$echarts.init(document.getElementById('myChart'));
@@ -414,7 +352,7 @@
                                         offset: 0,
                                         color: 'rgba(245, 74, 69, 0)'
                                     }, {
-                                        offset: 0.5,
+                                        offset: 0.4,
                                         color: 'rgba(245, 74, 69, .1)'
                                     }, {
                                         offset: 1,
@@ -444,11 +382,11 @@
                                         offset: 0,
                                         color: 'rgba(35, 115, 255, 0)'
                                     }, {
-                                        offset: 0.5,
+                                        offset: 0.4,
                                         color: 'rgba(35, 115, 255, .1)'
                                     }, {
                                         offset: 1,
-                                        color: 'rgba(35, 115, 255, .2)'
+                                        color: 'rgba(35, 115, 255, .3)'
                                     }]),
                                     lineStyle: {
                                         width: 0,
@@ -540,10 +478,10 @@
 </script>
 
 <style lang="scss" scoped>
-    .intelligent_decision {
+    .intelligent-decision-container {
         display: flex;
 
-        .intelligent_decision-container {
+        .intelligent-decision-box {
             display: flex;
             flex-direction: column;
             width: calc(100vw - 88px);
@@ -554,37 +492,21 @@
                 padding: 0 24px 24px;
                 margin: 0 auto;
 
-                .nav {
-                    padding: 22px 24px;
-                    font-size: 20px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #212121;
-                }
 
                 .top {
-                    margin-bottom: 10px;
-
-                    > img {
-                        width: 100%;
-                        height: 100%;
-
-                    }
-                }
-
-                .middle {
-                    padding-bottom: 24px;
+                    margin-top: 16px;
                     background: #FFFFFF;
+                    border-radius: 4px;
 
                     .title {
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
-                        padding: 12px 24px;
+                        padding: 15px 24px 14px;
                         border-bottom: 1px solid #F0F0F0;
 
                         .title-left {
-                            font-size: 16px;
+                            font-size: 18px;
                             font-family: PingFangSC-Medium, PingFang SC;
                             font-weight: 500;
                             color: #212121;
@@ -630,135 +552,53 @@
                         }
                     }
 
-
                     .chart {
-                        position: relative;
-                        padding-top: 10px;
-                        width: 1300px;
-                        height: 440px;
-
-                        .red {
-                            position: absolute;
-                            right: 350px;
-                            top: 230px;
-                        }
-
-                        .blue {
-                            position: absolute;
-                            right: 30px;
-                            top: 125px;
-                        }
-
-                        .legend {
-                            text-align: center;
-
-                            > img {
-                                width: 1300px;
-                                height: 56px;
-                            }
-                        }
-                    }
-
-                    .info {
                         display: flex;
                         justify-content: space-between;
                         align-items: flex-start;
 
-                        .left {
-                            width: calc(50% - 30px);
-                            height: 100%;
-                        }
+                        .chart-left {
+                            position: relative;
+                            padding-top: 10px;
+                            width: 883px;
+                            height: 440px;
 
-                        .right {
-                            width: calc(50% - 30px);
-
-                            .right-title {
-                                padding: 16px 24px;
-                                font-size: 16px;
-                                font-family: PingFangSC-Medium, PingFang SC;
-                                font-weight: 500;
-                                color: #212121;
+                            .red {
+                                position: absolute;
+                                right: 350px;
+                                top: 230px;
                             }
 
-                            .right-ul {
-                                > li {
-                                    list-style-type: none;
-                                    padding: 12px 24px;
-                                    cursor: pointer;
-                                    border-bottom: 1px solid #F0F0F0;
+                            .blue {
+                                position: absolute;
+                                right: 30px;
+                                top: 125px;
+                            }
 
-                                    &:first-child {
-                                        border-top: 1px solid #F0F0F0;
-                                    }
+                            .legend {
+                                margin-top: -5px;
+                                text-align: center;
 
-                                    &:hover {
-                                        background: #F4F8FF;
-                                    }
-
-                                    .li-title {
-                                        font-size: 14px;
-                                        font-family: PingFangSC-Regular, PingFang SC;
-                                        font-weight: 400;
-                                        color: #333333;
-                                    }
-
-                                    .li-content {
-                                        display: flex;
-                                        justify-content: space-between;
-                                        align-items: center;
-
-                                        .left {
-                                            width: calc(100% - 85px);
-
-                                            > p {
-                                                margin-top: 4px;
-                                                font-size: 12px;
-                                                font-family: PingFangSC-Regular, PingFang SC;
-                                                font-weight: 400;
-                                                color: #999999;
-
-                                                > span {
-                                                    margin-right: 5px;
-                                                    color: #2373FF;
-                                                }
-                                            }
-                                        }
-
-                                        .right {
-                                            width: 80px;
-
-                                            > span {
-                                                font-size: 14px;
-                                                font-family: PingFangSC-Regular, PingFang SC;
-                                                font-weight: 400;
-                                                color: #2373FF;
-                                            }
-
-                                            > img {
-                                                margin-left: 8px;
-                                                width: 16px;
-                                                height: 16px;
-                                                vertical-align: text-bottom;
-                                            }
-                                        }
-                                    }
+                                > img {
+                                    width: 104px;
+                                    height: 22px;
                                 }
                             }
+                        }
+
+                        .chart-right {
+                            width: 421px;
+                            height: 470px;
                         }
                     }
                 }
 
                 .bottom {
-                    > div {
-                        margin-top: 16px;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
+                    margin-top: 16px;
 
-                        > img {
-                            width: calc(50% - 12px);
-                            height: 100%;
-                        }
+                    > img {
+                        width: 100%;
+                        height: 100%;
                     }
                 }
             }
