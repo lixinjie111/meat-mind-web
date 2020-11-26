@@ -12,14 +12,15 @@
                 </div>
                 <div class="middle">
                     <div class="title">
-                        <p>智能诊断</p>
+                        <div class="title-left">智能诊断</div>
                         <div class="title-right">
-                        <div class="years">
-                            <p>季度</p>
-                            <p>半年</p>
-                            <p class="active">全年</p>
-                        </div>
-                        <DatePicker :value="date" format="yyyy/MM/dd" type="daterange" placement="bottom-end" placeholder="请选择时间" class="date-range"></DatePicker>
+                            <div class="years">
+                                <div>季度</div>
+                                <div>半年</div>
+                                <div class="active">全年</div>
+                            </div>
+                            <DatePicker :value="date" format="yyyy/MM/dd" type="daterange" placement="bottom-end"
+                                        placeholder="请选择时间" class="date-range"></DatePicker>
                         </div>
                     </div>
                     <div class="chart">
@@ -110,8 +111,8 @@
 
     export default {
         name: "index",
-        components: {Side,Header},
-        data(){
+        components: {Side, Header},
+        data() {
             return {
                 date: ['2020-01-01', '2020-12-31'],
                 myChart: null
@@ -119,7 +120,7 @@
         },
         mounted() {
             this.initChat();
-            window.onresize = ()=>{
+            window.onresize = () => {
                 this.myChart.resize();
             }
         },
@@ -291,7 +292,7 @@
                                 style = "display:block"
                             }
                             let str = '<div class="chart-tooltip" style="' + style + '">' +
-                                '<div class="value">' + '<span>￥</span>' + params[0].data * 100+ '万</div>' +
+                                '<div class="value">' + '<span>￥</span>' + params[0].data * 100 + '万</div>' +
                                 '<div class="month"> ' + '2020年' + params[0].name + ' </div>' +
                                 '</div>';
                             return str;
@@ -541,10 +542,14 @@
 <style lang="scss" scoped>
     .intelligent_decision {
         display: flex;
-        .intelligent_decision-container{
+
+        .intelligent_decision-container {
             display: flex;
             flex-direction: column;
+            width: calc(100vw - 88px);
+
             .content {
+                width: 100%;
                 min-height: calc(100vh - 56px);
                 padding: 0 24px 24px;
                 margin: 0 auto;
@@ -558,6 +563,8 @@
                 }
 
                 .top {
+                    margin-bottom: 10px;
+
                     > img {
                         width: 100%;
                         height: 100%;
@@ -576,7 +583,7 @@
                         padding: 12px 24px;
                         border-bottom: 1px solid #F0F0F0;
 
-                        > p {
+                        .title-left {
                             font-size: 16px;
                             font-family: PingFangSC-Medium, PingFang SC;
                             font-weight: 500;
@@ -593,7 +600,7 @@
                                 justify-content: space-between;
                                 align-items: center;
 
-                                >p {
+                                > div {
                                     margin-right: 8px;
                                     width: 60px;
                                     height: 32px;
@@ -621,11 +628,14 @@
                                 margin-left: 16px;
                             }
                         }
+                    }
+
+
                     .chart {
                         position: relative;
                         padding-top: 10px;
-                        width: 1392px;
-                        height: 460px;
+                        width: 1300px;
+                        height: 440px;
 
                         .red {
                             position: absolute;
@@ -642,9 +652,9 @@
                         .legend {
                             text-align: center;
 
-                            >img {
-                            width: 1392px;
-                            height: 60px;
+                            > img {
+                                width: 1300px;
+                                height: 56px;
                             }
                         }
                     }
@@ -752,7 +762,6 @@
                     }
                 }
             }
-        }
         }
     }
 </style>
