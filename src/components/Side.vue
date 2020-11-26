@@ -16,17 +16,24 @@
             <i class="icon iconfont" :class="item.icon"></i>
             <span class="title-name">{{ item.name }}</span>
           </template>
+          <!-- <div  v-if="item.href">
+            <div v-for="(ele, i) in item.children" :key="i">
+              <a  :href="ele.href" class="sub-name">{{ele.name}}</a>
+            </div>
+          </div> -->
           <MenuItem
+          :to="ele.path"
             :name="ele.name"
             v-for="(ele, i) in item.children"
             :key="i">
             <!-- :to="ele.path" -->
             <!-- <router-link class="sub-name" v-if="ele.path" :to="ele.path">{{ele.name}}</router-link> -->
             <!-- <span class="sub-name" v-else>{{ele.name}}</span> -->
+            <!-- <a v-if="item.href" :href="ele.href" class="sub-name">{{ele.name}}</a> -->
             <span class="sub-name">{{ele.name}}</span>
           </MenuItem>
         </Submenu>
-        <MenuItem v-else :name="item.name">
+        <MenuItem v-else :name="item.name" :to="item.path">
         <!-- :to="item.path" -->
           <i class="icon iconfont" :class="item.icon"></i>
           <span class="title-name">{{ item.name }}</span> 
@@ -218,6 +225,9 @@ export default {
 
   .ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item{
     padding-left: 36px!important;
+    >a{
+      color:inherit
+    }
   }
 
   .ivu-menu {
@@ -293,8 +303,8 @@ export default {
     }
   }
   .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after{
-    background:#253BA0;
-    opacity:0.1
+    background:#5062B3;
+    // opacity:0.1
   }
   .ivu-menu-vertical.ivu-menu-light:after{
     width: 0;

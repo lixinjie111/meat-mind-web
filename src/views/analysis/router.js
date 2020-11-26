@@ -1,5 +1,6 @@
 const analysis=()=>import('./index');
 const zbjk=()=>import('./ztgl/zbjk.vue')
+// const anchor=()=>import('./ztgl/anchor.vue')
 const moduleName='business-analysis';
 
 export default [

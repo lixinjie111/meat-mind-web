@@ -39,7 +39,8 @@ export default {
     flex-direction: column;
     width: calc(100vw - 240px);
     .content{
-
+      height: calc(100vh - 56px);
+      overflow-y: scroll;
     }
   }
 }

@@ -15,11 +15,11 @@ export default {
       sides:[
         {name:"分析模型",icon:"iconzidingyifenxi",meta:"/analysis-tool",path:"/analysis-tool/fxmx"},
         {name:"指标管理",icon:"iconzhibiaoguanli",meta:"/analysis-tool",path:"/analysis-tool/zbgl"},
-        {name:"标签体系",icon:"iconbiaoqiantixi",meta:"/analysis-tool",path:"/analysis-tool/bqtx"},
+        {name:"标签管理",icon:"iconbiaoqiantixi",meta:"/analysis-tool",path:"/analysis-tool/bqgl"},
         {name:"用户分群",icon:"iconyonghufenqun",meta:"/analysis-tool",path:"/analysis-tool/yhfq"},
         {name:"渠道追踪",icon:"iconqudaozhuizong",meta:"/analysis-tool",path:"",children:[
           {name:"渠道链接",meta:"/analysis-tool",path:"/analysis-tool/qdlj"},
-          {name:"渠道管理",meta:"/analysis-tool",path:"/analysis-tool/qdgl"}
+          {name:"渠道管理",meta:"/analysis-tool",path:""}
         ]},
         {name:"场景库",icon:"iconchangjingku",meta:"/analysis-tool",path:"/analysis-tool/cjk"},
       ]

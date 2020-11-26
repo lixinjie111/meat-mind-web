@@ -13,11 +13,11 @@ export default {
   data(){
     return {
       sides:[
-        {name:"整体概览",icon:"iconzhinengjuece",meta:"/business-analysis",children:[
-          {name:"指标监控",meta:"/business-analysis",path:"/business-analysis/zbjk"},
-          {name:"整体趋势",meta:"/business-analysis",path:"/business-analysis/ztqs"},
-          {name:"增长态势",meta:"/business-analysis",path:"/business-analysis/zzts"},
-          {name:"用户旅程",meta:"/business-analysis",path:"/business-analysis/yhlc"}
+        {name:"整体概览",icon:"iconzhinengjuece",meta:"/business-analysis",href:"analysis",children:[
+          {name:"指标监控",meta:"/business-analysis",path:"/business-analysis/zbjk",href:"#zbjk"},
+          {name:"整体趋势",meta:"/business-analysis",path:"/business-analysis/ztqs",href:"#ztqs"},
+          {name:"增长态势",meta:"/business-analysis",path:"/business-analysis/zzts",href:"#zzts"},
+          {name:"用户旅程",meta:"/business-analysis",path:"/business-analysis/yhlc",href:"#yhlc"}
         ]},
         {name:"用户分析",icon:"iconyonghufenxi",meta:"business-analysis",children:[
           {name:"新增用户",meta:"/business-analysis",path:"/business-analysis/xzyh"},

@@ -1,6 +1,6 @@
 <template>
-  <div class="zbjk">
-      <img src="../../../static//img/tool/toll-main@2x.png" alt="">
+  <div class="zbgl">
+      <img src="../../../static/img/tool/zbgl.png" alt="">
   </div>
 </template>
 
@@ -11,12 +11,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.zbjk{
+.zbgl{
   width: 100%;
   height: 100%;
   img{
     width: 100%;
-    height: 100%;
+    // height: 100%;
   }
 }
 </style>
