@@ -570,7 +570,7 @@
 
                             .red {
                                 position: absolute;
-                                right: 145px;
+                                right: 160px;
                                 top: 170px;
                             }
 
@@ -612,7 +612,7 @@
 </style>
 <style lang="scss">
     .chart-tooltip {
-        padding: 12px 16px;
+        padding: 5px 12px;
         box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
         border-radius: 4px;
         border: 1px solid rgba(0, 0, 0, 0.15);
