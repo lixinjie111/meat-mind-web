@@ -26,7 +26,7 @@
             <span class="sub-name">{{ele.name}}</span>
           </MenuItem>
         </Submenu>
-        <MenuItem v-else :name="item.name">
+        <MenuItem v-else :name="item.name" :to="item.path">
         <!-- :to="item.path" -->
           <i class="icon iconfont" :class="item.icon"></i>
           <span class="title-name">{{ item.name }}</span> 

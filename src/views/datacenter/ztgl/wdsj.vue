@@ -1,7 +1,7 @@
 <template>
-    <div class="zbjk">
+    <div class="wdsj">
         <img v-if="resultShow" src="../../../static/img/datacenter/data-result@2x.png" alt="">
-        <img v-else src="../../../static/img/datacenter/data-center-main@2x.png" alt="">
+        <img v-else src="../../../static/img/datacenter/wdsj@2x.png" alt="">
         <div v-if="resultShow" class="back-btn" @click="resultShow = false"></div>
         <div v-else class="upload-btn" @click="uploadModal1 = true"></div>
         <Modal class-name="upload-modal1" v-model="uploadModal1" footer-hide :closable="false" width="488px">
@@ -58,7 +58,7 @@
 </script>
 
 <style scoped lang="scss">
-    .zbjk {
+    .wdsj {
         position: relative;
         width: 100%;
         height: 100%;
