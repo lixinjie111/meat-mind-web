@@ -84,8 +84,8 @@ export default {
       routes: [
         {
           // src: require("../static/img/header/home@2x.png"),
-          name: "首页",
-          icon:"iconshouye",
+          name: "Dashboard",
+          icon:"icondashboard",
           path:"home"
         },
         {
@@ -134,7 +134,6 @@ export default {
 
 <style scoped lang="scss">
 .side {
-  height: 100%;
   min-height: 100vh;
   display: flex;
   .target{
@@ -185,6 +184,7 @@ export default {
   }
   .menu{
     width: 152px;
+    background: #FFFFFF;
     .menu-name{
       width: 152px;
       height: 56px;
@@ -293,7 +293,8 @@ export default {
     }
   }
   .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after{
-    background:#F0F0F0;
+    background:#253BA0;
+    opacity:0.1
   }
   .ivu-menu-vertical.ivu-menu-light:after{
     width: 0;
