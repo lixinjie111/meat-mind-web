@@ -1,22 +1,22 @@
 <template>
   <div class="page">
-    <HeaderDefault></HeaderDefault>
-    <div class="layout">
-      <Side :sideList="side"></Side>
-      <div class="content">
-          <router-view></router-view>
-      </div>
+    <Side :sideList="side"></Side>
+    <div class="flex-container">
+        <Header :target="target"></Header>
+        <div class="content">
+            <router-view></router-view>
+        </div>
     </div>
   </div>
 </template>
 
 <script>
-import HeaderDefault from "./HeaderDefault";
-import Side from "./Side";
+import Header from "@/components/HeaderDefault"
+import Side from "@/components/Side"
 export default {
   name: "default",
   components: {
-    HeaderDefault,
+    Header,
     Side
   },
   props:{
@@ -25,6 +25,9 @@ export default {
       default:()=>{
         return []
       }
+    },
+    target:{
+      type:String
     }
   },
 };
@@ -32,16 +35,14 @@ export default {
 
 <style scoped lang="scss">
 .page {
-  width: 100%;
-  height: 100%;
-  background: #f5f5f5;
-  border-radius: 2px;
-}
-.layout {
   display: flex;
-  min-height: calc(100vh - 56px);
-  .content{
-      width: calc(100% - 240px);
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 240px);
+    .content{
+
+    }
   }
 }
 </style>

@@ -6,8 +6,8 @@
         <div class="title-box">
             <div class="info">
                 <div class="title">
-                    <img class="top" src="../../src/static/img/index/title@2x.png">
-                    <img class="bottom" src="../../src/static/img/index/button@2x.png" @click="go">
+                    <img class="top" src="../static/img/index/title@2x.png">
+                    <img class="bottom" src="../static/img/index/button@2x.png" @click="go">
                 </div>
                 <div class="video">
                     <video class="player" width="100%" height="100%" autoplay loop muted :src="src"></video>

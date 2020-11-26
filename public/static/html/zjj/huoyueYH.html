@@ -42,17 +42,17 @@
             num1--;
             if(num1 == 0){
                 var dom = document.getElementById('num');
-                dom.innerHTML = `<span style="color:#333333;font-size: 40vw;">${num1}</span>`;
+                dom.innerHTML = `<span style="color:#333333;font-size: 48vw;">${num1}</span>`;
                 clearInterval(timer);
                 return;
             }
             var forNum = toThousands(num1);
             var dom = document.getElementById('num');
-            dom.innerHTML = `<span style="color:#333333;font-size: 40vw;">${forNum}</span>`;
+            dom.innerHTML = `<span style="color:#333333;font-size: 48vw;">${forNum}</span>`;
         },10000);
         var forNum = toThousands(num1);
         var dom = document.getElementById('num');
-        dom.innerHTML = `<span style="color:#333333;font-size: 40vw;">${forNum}</span>`;
+        dom.innerHTML = `<span style="color:#333333;font-size: 48vw;">${forNum}</span>`;
         window.onunload = function(){
             clearInterval(timer);
         };

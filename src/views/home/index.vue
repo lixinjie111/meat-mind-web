@@ -1,8 +1,9 @@
 <template>
     <div class="home">
         <!-- 首页 -->
-        <Header></Header>
-        <div class="content">
+        <Side></Side>
+        <div class="home-container">
+            <Header :target="'首页'"></Header>
             <!--品牌运营概览-->
             <img src="../../static/img/header/header-main@2x.png" alt="">
             <div class="iframe1-bg"></div>
@@ -39,18 +40,23 @@
 </template>
 
 <script>
+    import Side from "../../components/Side"
     import Header from "../../components/HeaderDefault"
 
     export default {
         name: "index",
-        components: {Header}
+        components:{Side,Header}
     }
 </script>
 
 <style scoped lang="scss">
     .home {
-        .content {
+        display: flex;
+
+        .home-container {
             position: relative;
+            display: flex;
+            flex-direction: column;
 
             img {
                 width: 100%;
@@ -60,17 +66,17 @@
             .iframe1 {
                 position: absolute;
                 left: 35px;
-                top: 645px;
-                width: 160px;
-                height: 200px;
+                top: 705px;
+                width: 140px;
+                height: 140px;
                 z-index: 100;
             }
 
             .iframe1-bg {
                 position: absolute;
                 left: 50px;
-                top: 680px;
-                width: 120px;
+                top: 715px;
+                width: 110px;
                 height: 80px;
                 background: #FFFFFF;
                 z-index: 10;
@@ -79,130 +85,132 @@
             .iframe {
                 position: absolute;
                 z-index: 100;
-                width: 80px;
+                width: 78px;
                 height: 32px;
                 background: #FFFFFF;
             }
 
             .iframe2 {
-                left: 320px;
-                top: 725px;
+                left: 302px;
+                top: 755px;
             }
 
             .iframe3 {
-                left: 600px;
-                top: 725px;
+                left: 562px;
+                top: 755px;
             }
 
             .iframe4 {
-                left: 877px;
-                top: 725px;
+                left: 824px;
+                top: 755px;
             }
 
             .iframe5 {
-                left: 1155px;
-                top: 725px;
+                left: 1082px;
+                top: 755px;
             }
 
             .iframe6 {
-                left: 45px;
-                top: 980px;
+                left: 42px;
+                top: 1004px;
+                width: 74px;
             }
 
             .iframe7 {
-                left: 265px;
-                top: 980px;
-                width: 70px;
+                left: 255px;
+                top: 1004px;
+                width: 60px;
             }
 
             .iframe8 {
-                left: 515px;
-                top: 980px;
+                left: 481px;
+                top: 1004px;
             }
 
 
             .iframe9 {
-                left: 750px;
-                top: 980px;
+                left: 700px;
+                top: 1004px;
+                width: 80px;
             }
 
             .iframe10 {
-                left: 970px;
-                top: 980px;
-                width: 70px;
+                left: 913px;
+                top: 1004px;
+                width: 60px;
             }
 
             .iframe11 {
-                left: 1210px;
-                top: 980px;
+                left: 1132px;
+                top: 1004px;
             }
 
             .iframe12 {
-                left: 500px;
-                top: 1242px;
+                left: 470px;
+                top: 1256px;
             }
 
             .iframe13 {
-                left: 735px;
-                top: 1242px;
+                left: 688px;
+                top: 1256px;
             }
 
             .iframe14 {
-                left: 955px;
-                top: 1242px;
+                left: 895px;
+                top: 1256px;
             }
 
             .iframe15 {
-                left: 1190px;
-                top: 1252px;
+                left: 1112px;
+                top: 1266px;
             }
 
             .iframe16 {
-                left: 515px;
-                top: 1385px;
+                left: 485px;
+                top: 1394px;
             }
 
             .iframe17 {
-                left: 44px;
+                left: 40px;
                 top: 1636px;
             }
 
             .iframe18 {
-                left: 390px;
+                left: 365px;
                 top: 1636px;
             }
 
             .iframe19 {
-                left: 732px;
+                left: 685px;
                 top: 1636px;
                 width: 42px;
             }
 
             .iframe20 {
-                left: 1082px;
-                top: 1636px;
+                left: 1009px;
+                top: 1638px;
                 width: 127px;
             }
 
             .iframe21 {
-                left: 44px;
-                top: 1832px;
+                left: 42px;
+                top: 1825px;
             }
 
             .iframe22 {
-                left: 384px;
-                top: 1832px;
+                left: 358px;
+                top: 1825px;
                 width: 42px;
             }
 
             .iframe23 {
-                left: 738px;
-                top: 1832px;
+                left: 690px;
+                top: 1825px;
             }
 
             .iframe24 {
-                left: 1092px;
-                top: 1832px;
+                left: 1022px;
+                top: 1828px;
             }
         }
     }
