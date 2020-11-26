@@ -57,6 +57,7 @@
             position: relative;
             display: flex;
             flex-direction: column;
+            width: calc(100vw - 88px);
 
             img {
                 width: 100%;
