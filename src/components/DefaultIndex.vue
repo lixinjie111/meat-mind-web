@@ -33,6 +33,7 @@ export default {
 <style scoped lang="scss">
 .page {
   display: flex;
+  height: 100%;
   .flex-container {
     display: flex;
     flex-direction: column;
