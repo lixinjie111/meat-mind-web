@@ -2,7 +2,7 @@
   <div class="page">
     <Side :sideList="side"></Side>
     <div class="flex-container">
-        <Header :target="target"></Header>
+        <Header></Header>
         <div class="content">
             <router-view></router-view>
         </div>
@@ -25,9 +25,6 @@ export default {
       default:()=>{
         return []
       }
-    },
-    target:{
-      type:String
     }
   },
 };
@@ -39,7 +36,7 @@ export default {
   .flex-container {
     display: flex;
     flex-direction: column;
-    width: calc(100% - 240px);
+    width: calc(100vw - 240px);
     .content{
 
     }

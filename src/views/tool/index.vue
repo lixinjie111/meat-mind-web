@@ -13,15 +13,15 @@ export default {
     data(){
     return {
       sides:[
-        {name:"分析模型",src:require("../../static/img/tool/fxmx@2x.png"),meta:"/analysis-tool",path:"/analysis-tool/fxmx"},
-        {name:"指标管理",src:require("../../static/img/tool/zbgl@2x.png"),meta:"/analysis-tool",path:"/analysis-tool/zbgl"},
-        {name:"标签体系",src:require("../../static/img/tool/bqtx@2x.png"),meta:"/analysis-tool",path:"/analysis-tool/bqtx"},
-        {name:"用户分群",src:require("../../static/img/tool/yhfq@2x.png"),meta:"/analysis-tool",path:"/analysis-tool/yhfq"},
-        {name:"渠道追踪",src:require("../../static/img/tool/qdzz@2x.png"),meta:"/analysis-tool",path:"",children:[
+        {name:"分析模型",icon:"iconzidingyifenxi",meta:"/analysis-tool",path:"/analysis-tool/fxmx"},
+        {name:"指标管理",icon:"iconzhibiaoguanli",meta:"/analysis-tool",path:"/analysis-tool/zbgl"},
+        {name:"标签体系",icon:"iconbiaoqiantixi",meta:"/analysis-tool",path:"/analysis-tool/bqtx"},
+        {name:"用户分群",icon:"iconyonghufenqun",meta:"/analysis-tool",path:"/analysis-tool/yhfq"},
+        {name:"渠道追踪",icon:"iconqudaozhuizong",meta:"/analysis-tool",path:"",children:[
           {name:"渠道链接",meta:"/analysis-tool",path:"/analysis-tool/qdlj"},
           {name:"渠道管理",meta:"/analysis-tool",path:"/analysis-tool/qdgl"}
         ]},
-        {name:"场景库",src:require("../../static/img/tool/cjk@2x.png"),meta:"/analysis-tool",path:"/analysis-tool/cjk"},
+        {name:"场景库",icon:"iconchangjingku",meta:"/analysis-tool",path:"/analysis-tool/cjk"},
       ]
     }
   }

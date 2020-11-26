@@ -1,6 +1,6 @@
 <template>
   <div class="sass-header">
-    <div class="target">{{target}}</div>
+    <!-- <div class="target">{{target}}</div> -->
     <div class="control">
       <div class="search">
         <img src="../static/img/header/search@2x.png" alt="">
@@ -23,11 +23,6 @@
 <script>
 export default {
   name: "HeaderDefault",
-  props:{
-    target:{
-      type:String
-    }
-  },
   data() {
     return {
     };
@@ -42,18 +37,18 @@ export default {
   width: 100%;
   height: 56px;
   background: #FFFFFF;
-  .target{
-    width: 151px;
-    height: 56px;
-    padding-left: 36px;
-    border-right: 1px solid #F0F0F0;
-    background: #FFFFFF;
-    font-size: 14px;
-    font-family: PingFangSC-Medium, PingFang SC;
-    font-weight: 500;
-    color: #333333;
-    line-height: 56px;
-  }
+  // .target{
+  //   width: 151px;
+  //   height: 56px;
+  //   padding-left: 36px;
+  //   border-right: 1px solid #F0F0F0;
+  //   background: #FFFFFF;
+  //   font-size: 14px;
+  //   font-family: PingFangSC-Medium, PingFang SC;
+  //   font-weight: 500;
+  //   color: #333333;
+  //   line-height: 56px;
+  // }
   .control{
     display: flex;
     width: 298px;
