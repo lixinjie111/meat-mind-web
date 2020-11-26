@@ -113,7 +113,7 @@
                     },
                     {
                         value: 60,
-                        symbolSize: 15
+                        symbolSize: 7
                     }
                 ]; //实际数据预警点
                 let effectValues1 = [
@@ -167,7 +167,7 @@
                     },
                     {
                         value: 72,
-                        symbolSize: 15
+                        symbolSize: 7
                     }
                 ]; //目标最后点
                 let effectValues2 = [
@@ -197,7 +197,7 @@
                     },
                     {
                         value: 64,
-                        symbolSize: 12
+                        symbolSize: 15
                     },
                     {
                         value: 0,
@@ -302,10 +302,20 @@
                                     lineStyle: {
                                         width: 6,
                                         type: 'solid',
-                                        color: "#D7D8DC"
+                                        color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                            offset: 0,
+                                            color: 'rgba(187, 134, 252, 1)'
+                                        }, {
+                                            offset: 1,
+                                            color: 'rgba(94, 139, 255, 1)'
+                                        }]),
+                                        shadowColor: 'rgba(3, 13, 41, .3)',
+                                        shadowBlur: 10,
+                                        shadowOffsetY: 15,
                                     }
                                 },
                             },
+                            zlevel: 1,
                             data: data3
                         },
                         {
@@ -350,13 +360,13 @@
                                 normal: {
                                     color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                         offset: 0,
-                                        color: 'rgba(245, 74, 69, 0)'
+                                        color: 'rgba(252, 212, 201, 0)'
                                     }, {
-                                        offset: 0.4,
-                                        color: 'rgba(245, 74, 69, .1)'
+                                        offset: 0.5,
+                                        color: 'rgba(252, 212, 201, .5)'
                                     }, {
                                         offset: 1,
-                                        color: 'rgba(245, 74, 69, .2)'
+                                        color: 'rgba(252, 212, 201, .8)'
                                     }]),
                                     lineStyle: {
                                         width: 1,
@@ -380,13 +390,13 @@
                                 normal: {
                                     color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [{
                                         offset: 0,
-                                        color: 'rgba(35, 115, 255, 0)'
+                                        color: 'rgba(184, 205, 251, 0)'
                                     }, {
-                                        offset: 0.4,
-                                        color: 'rgba(35, 115, 255, .1)'
+                                        offset: 0.5,
+                                        color: 'rgba(184, 205, 251, .5)'
                                     }, {
                                         offset: 1,
-                                        color: 'rgba(35, 115, 255, .3)'
+                                        color: 'rgba(184, 205, 251, .8)'
                                     }]),
                                     lineStyle: {
                                         width: 0,
@@ -410,9 +420,9 @@
                             showEffectOn: 'render',
                             cursor: 'pointer',
                             rippleEffect: {
-                                period: 3,
-                                scale: 3,
-                                brushType: 'stroke',
+                                period: 5,
+                                scale: 5,
+                                brushType: 'fill',
                             },
                             itemStyle: {
                                 normal: {
@@ -433,9 +443,9 @@
                             showEffectOn: 'render',
                             cursor: 'pointer',
                             rippleEffect: {
-                                period: 3,
-                                scale: 3,
-                                brushType: 'stroke',
+                                period: 5,
+                                scale: 5,
+                                brushType: 'fill',
                             },
                             itemStyle: {
                                 normal: {
@@ -448,25 +458,20 @@
                         },
                         {
                             name: "6月点",
-                            type: 'effectScatter',
-                            coordinateSystem: 'cartesian2d',
-                            data: effectValues2,
+                            type: 'scatter',
                             symbol: 'circle',
-                            effectType: 'ripple',
-                            showEffectOn: 'render',
-                            cursor: 'pointer',
-                            rippleEffect: {
-                                period: 100000,
-                                scale: 2,
-                                brushType: 'stroke',
-                            },
+                            data: effectValues2,
                             itemStyle: {
                                 normal: {
+                                    borderWidth: '2',
+                                    borderType: 'solid',
+                                    borderColor: '#ffffff',
                                     color: '#999999',
-                                    shadowBlur: 5,
-                                    shadowColor: '#999999'
+                                    shadowColor: '#515a6e',
+                                    shadowBlur: 10
                                 }
                             },
+                            cursor: 'pointer',
                             zlevel: 1
                         }
                     ]
@@ -565,13 +570,13 @@
 
                             .red {
                                 position: absolute;
-                                right: 350px;
-                                top: 230px;
+                                right: 160px;
+                                top: 170px;
                             }
 
                             .blue {
                                 position: absolute;
-                                right: 30px;
+                                right: 10px;
                                 top: 125px;
                             }
 
@@ -607,10 +612,11 @@
 </style>
 <style lang="scss">
     .chart-tooltip {
-        padding: 12px 16px;
+        padding: 5px 12px;
         box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
-        border-radius: 2px;
+        border-radius: 4px;
         border: 1px solid rgba(0, 0, 0, 0.15);
+        background: rgba(255, 255, 255, 0.2);
 
         .value {
             margin-left: -5px;
@@ -643,6 +649,7 @@
         &.blue {
             padding: 3px 4px;
             border: 1px solid #2373FF;
+            background: rgba(255, 255, 255, 0.8);
 
             .value {
                 font-size: 14px;
