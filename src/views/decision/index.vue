@@ -17,7 +17,7 @@
                             </div>
                             <DatePicker :value="date" format="yyyy/MM/dd" type="daterange" placement="bottom-end"
                                         placeholder="请选择时间" class="date-range"></DatePicker>
-                            <div class="report-btn">一键生成报告</div>
+                            <div class="report-btn" @click="downloadModal = true">一键生成报告</div>
                         </div>
                     </div>
                     <div class="chart">
@@ -43,13 +43,20 @@
                 </div>
             </div>
         </div>
-
+        <Modal class-name="download-modal" v-model="downloadModal" footer-hide :closable="false" width="70vw">
+            <div class="download">
+                <img src="../../../src/static/img/decision/report@2x.png" alt="">
+                <div class="close-btn" @click="downloadModal = false"></div>
+<!--                <a class="download-btn" :href="reportImg" download></a>-->
+            </div>
+        </Modal>
     </div>
 </template>
 
 <script>
     import Side from "../../components/Side"
     import Header from "../../components/HeaderDefault"
+    import report from "../../../src/static/img/decision/report@2x.png"
 
     export default {
         name: "index",
@@ -57,7 +64,9 @@
         data() {
             return {
                 date: ['2020-01-01', '2020-12-31'],
-                myChart: null
+                myChart: null,
+                downloadModal: false,
+                reportImg: report
             }
         },
         mounted() {
@@ -681,6 +690,44 @@
                 margin-top: 1px;
                 font-size: 12px;
                 line-height: 18px;
+            }
+        }
+    }
+
+    .download-modal {
+        .ivu-modal-body {
+            padding: 0;
+        }
+
+        .download {
+            position: relative;
+            margin: 0 auto;
+            width: 1000px;
+
+            >img {
+                width: 1000px;
+                border-radius: 10px;
+            }
+
+            .close-btn {
+                position: absolute;
+                top: 17px;
+                right: 115px;
+                width: 80px;
+                height: 30px;
+                background: transparent;
+                cursor: pointer;
+            }
+
+            .download-btn {
+                display: inline-block;
+                position: absolute;
+                top: 17px;
+                right: 25px;
+                width: 80px;
+                height: 30px;
+                background: transparent;
+                cursor: pointer;
             }
         }
     }
