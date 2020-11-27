@@ -6,15 +6,25 @@
         <div v-else class="upload-btn" @click="uploadModal1 = true"></div>
         <Modal class-name="upload-modal1" v-model="uploadModal1" footer-hide :closable="false" width="488px">
             <div class="upload1">
-                <img src="../../../static/img/datacenter/upload1@2x.png" alt="">
+                <div class="left-btn" @click="isUpload4 = false"></div>
+                <div class="right-btn" @click="isUpload4 = true"></div>
                 <div class="close1-btn" @click="uploadModal1 = false"></div>
-                <div class="upload1-btn" @click="uploadChange1"></div>
-                <div class="upload3-btn" @click="uploadChange3"></div>
+                <div v-if="isUpload4">
+                    <img src="../../../static/img/datacenter/upload4@2x.png" alt="">
+                    <div class="upload4-btn" @click="uploadChange1"></div>
+                    <div class="upload5-btn" @click="uploadChange3"></div>
+                </div>
+                <div v-else>
+                    <img src="../../../static/img/datacenter/upload1@2x.png" alt="">
+                    <div class="upload1-btn" @click="uploadChange1"></div>
+                    <div class="upload3-btn" @click="uploadChange3"></div>
+                </div>
             </div>
         </Modal>
         <Modal class-name="upload-modal2" v-model="uploadModal2" footer-hide :closable="false" width="488px">
             <div class="upload2">
-                <img src="../../../static/img/datacenter/upload2.png" alt="">
+                <img v-if="isUpload4" src="../../../static/img/datacenter/upload5.jpeg" alt="">
+                <img v-else src="../../../static/img/datacenter/upload2.png" alt="">
                 <div class="upload2-btn" @click="uploadChange2"></div>
             </div>
         </Modal>
@@ -33,6 +43,7 @@
                 uploadModal1: false,
                 uploadModal2: false,
                 uploadModal3: false,
+                isUpload4: false,
                 resultShow: false
             }
         },
@@ -46,12 +57,18 @@
                 this.uploadModal2 = false;
             },
             uploadChange3() {
-                this.uploadModal1 = false;
-                this.uploadModal3 = true;
-                setTimeout(() => {
+                if(this.isUpload4){
+                    this.uploadModal1 = false;
                     this.uploadModal3 = false;
                     this.resultShow = true;
-                }, 1000);
+                }else {
+                    this.uploadModal1 = false;
+                    this.uploadModal3 = true;
+                    setTimeout(() => {
+                        this.uploadModal3 = false;
+                        this.resultShow = true;
+                    }, 1000);
+                }
             }
         }
     }
@@ -100,7 +117,7 @@
             width: 488px;
             height: 616px;
 
-            > img {
+            img {
                 width: 488px;
                 height: 616px;
             }
@@ -131,6 +148,46 @@
                 bottom: 10px;
                 width: 90px;
                 height: 30px;
+                background: transparent;
+                cursor: pointer;
+            }
+
+            .upload4-btn {
+                position: absolute;
+                left: 150px;
+                top: 390px;
+                width: 60px;
+                height: 30px;
+                background: transparent;
+                cursor: pointer;
+            }
+
+            .upload5-btn {
+                position: absolute;
+                right: 24px;
+                bottom: 10px;
+                width: 90px;
+                height: 30px;
+                background: transparent;
+                cursor: pointer;
+            }
+
+            .left-btn {
+                position: absolute;
+                left: 24px;
+                top: 100px;
+                width: 212px;
+                height: 90px;
+                background: transparent;
+                cursor: pointer;
+            }
+
+            .right-btn {
+                position: absolute;
+                right: 24px;
+                top: 100px;
+                width: 212px;
+                height: 90px;
                 background: transparent;
                 cursor: pointer;
             }
