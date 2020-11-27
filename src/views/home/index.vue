@@ -61,13 +61,12 @@
 
             img {
                 width: 100%;
-                height: 100%;
             }
 
             .iframe1 {
                 position: absolute;
                 left: 35px;
-                top: 705px;
+                top: 685px;
                 width: 140px;
                 height: 140px;
                 z-index: 100;
@@ -76,7 +75,7 @@
             .iframe1-bg {
                 position: absolute;
                 left: 50px;
-                top: 715px;
+                top: 690px;
                 width: 110px;
                 height: 80px;
                 background: #FFFFFF;
@@ -92,126 +91,126 @@
             }
 
             .iframe2 {
-                left: 302px;
-                top: 755px;
+                left: 301px;
+                top: 734px;
             }
 
             .iframe3 {
                 left: 562px;
-                top: 755px;
+                top: 734px;
             }
 
             .iframe4 {
                 left: 824px;
-                top: 755px;
+                top: 734px;
             }
 
             .iframe5 {
-                left: 1082px;
-                top: 755px;
+                left: 1084px;
+                top: 734px;
             }
 
             .iframe6 {
                 left: 42px;
-                top: 1004px;
+                top: 975px;
                 width: 74px;
             }
 
             .iframe7 {
-                left: 255px;
-                top: 1004px;
+                left: 253px;
+                top: 975px;
                 width: 60px;
             }
 
             .iframe8 {
                 left: 481px;
-                top: 1004px;
+                top: 975px;
             }
 
 
             .iframe9 {
                 left: 700px;
-                top: 1004px;
+                top: 975px;
                 width: 80px;
             }
 
             .iframe10 {
                 left: 913px;
-                top: 1004px;
+                top: 975px;
                 width: 60px;
             }
 
             .iframe11 {
                 left: 1132px;
-                top: 1004px;
+                top: 975px;
             }
 
             .iframe12 {
                 left: 470px;
-                top: 1256px;
+                top: 1220px;
             }
 
             .iframe13 {
-                left: 688px;
-                top: 1256px;
+                left: 689px;
+                top: 1220px;
             }
 
             .iframe14 {
-                left: 895px;
-                top: 1256px;
+                left: 896px;
+                top: 1220px;
             }
 
             .iframe15 {
-                left: 1112px;
-                top: 1266px;
+                left: 1114px;
+                top: 1230px;
             }
 
             .iframe16 {
                 left: 485px;
-                top: 1394px;
+                top: 1355px;
             }
 
             .iframe17 {
                 left: 40px;
-                top: 1636px;
+                top: 1588px;
             }
 
             .iframe18 {
                 left: 365px;
-                top: 1636px;
+                top: 1588px;
             }
 
             .iframe19 {
                 left: 685px;
-                top: 1636px;
-                width: 42px;
+                top: 1589px;
+                width: 40px;
             }
 
             .iframe20 {
                 left: 1009px;
-                top: 1638px;
+                top: 1591px;
                 width: 127px;
             }
 
             .iframe21 {
                 left: 42px;
-                top: 1825px;
+                top: 1772px;
             }
 
             .iframe22 {
                 left: 358px;
-                top: 1825px;
-                width: 42px;
+                top: 1771px;
+                width: 40px;
             }
 
             .iframe23 {
                 left: 690px;
-                top: 1825px;
+                top: 1772px;
             }
 
             .iframe24 {
                 left: 1022px;
-                top: 1828px;
+                top: 1773px;
             }
         }
     }
