@@ -74,7 +74,7 @@
                 // this.$router.push({name: "home"})
             },
             change(val){
-                console.log(val)
+                // console.log(val)
                 this.model1 = val
             },
             confirm(){
@@ -83,11 +83,10 @@
             },
             jump(){
                 this.showImg = false
-                console.log(this.model1)
                 if(this.model1=="企业主"){
-                    this.$router.push({name: "intelligent-decision"})
-                }else{
                     this.$router.push({name: "home"})
+                }else{
+                    this.$router.push({name: "intelligent-decision"})
                 }
                 
             }
