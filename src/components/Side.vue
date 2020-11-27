@@ -9,7 +9,7 @@
     </div>
     <div class="menu" v-if="sideList.length">
       <div class="menu-name">{{targetName}}</div>
-    <Menu ref="side_menu" theme="light" :active-name="activeName" :open-names="openNames" width="auto">
+    <Menu ref="side_menu" theme="light" :active-name="activeName" :open-names="openNames" width="auto" accordion>
       <div v-for="(item, index) in sideList" :key="index">
         <Submenu v-if="item.children" :name="item.name">
           <template slot="title">

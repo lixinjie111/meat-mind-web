@@ -493,10 +493,10 @@
 
             .content {
                 width: 100%;
-                min-height: calc(100vh - 56px);
+                height: calc(100vh - 56px);
                 padding: 0 24px 24px;
                 margin: 0 auto;
-
+                overflow-y: scroll;
 
                 .top {
                     margin-top: 16px;
