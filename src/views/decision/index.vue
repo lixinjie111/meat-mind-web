@@ -17,6 +17,7 @@
                             </div>
                             <DatePicker :value="date" format="yyyy/MM/dd" type="daterange" placement="bottom-end"
                                         placeholder="请选择时间" class="date-range"></DatePicker>
+                            <div class="report-btn">一键生成报告</div>
                         </div>
                     </div>
                     <div class="chart">
@@ -554,6 +555,21 @@
                             .date-range {
                                 width: 200px;
                                 margin-left: 16px;
+                            }
+
+                            .report-btn {
+                                margin-left: 24px;
+                                width: 112px;
+                                height: 32px;
+                                line-height: 32px;
+                                background: #2965FF;
+                                border-radius: 2px;
+                                font-size: 14px;
+                                font-family: PingFangSC-Medium, PingFang SC;
+                                font-weight: 500;
+                                color: #FFFFFF;
+                                text-align: center;
+                                cursor: pointer;
                             }
                         }
                     }

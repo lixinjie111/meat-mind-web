@@ -6,6 +6,7 @@
             <Header :target="'首页'"></Header>
             <!--品牌运营概览-->
             <img src="../../static/img/header/header-main@2x.png" alt="">
+            <div class="report-btn">一键生成报告</div>
             <div class="iframe1-bg"></div>
             <iframe class="iframe1" src="/static/html/lxj/yibiao.html" frameborder="0" scrolling="no"></iframe>
             <iframe class="iframe iframe2" src="/static/html/zjj/gmv.html" frameborder="0" scrolling="no"></iframe>
@@ -61,6 +62,23 @@
 
             img {
                 width: 100%;
+            }
+
+            .report-btn {
+                position: absolute;
+                right: 48px;
+                top: 96px;
+                width: 112px;
+                height: 32px;
+                line-height: 32px;
+                background: #2965FF;
+                border-radius: 2px;
+                font-size: 14px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #FFFFFF;
+                text-align: center;
+                cursor: pointer;
             }
 
             .iframe1 {
