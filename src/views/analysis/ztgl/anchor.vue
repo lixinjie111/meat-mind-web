@@ -1,5 +1,5 @@
 <template>
-  <div class="anchor">
+  <div ref="anchor" class="anchor">
           <div id="zbjk">111</div>
           <div id="ztqs">222</div>
           <div id="zzts">333</div>

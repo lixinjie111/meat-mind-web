@@ -7,39 +7,42 @@
         <div class="label">{{item.name}}</div>
       </div>
     </div>
-    <div class="menu" v-if="sideList.length">
+    <div class="menu"  v-show="sideList.length">
       <div class="menu-name">{{targetName}}</div>
-    <Menu ref="side_menu" theme="light" :active-name="activeName" :open-names="openNames" width="auto" accordion>
+    <Menu ref="side_menu" theme="light" 
+    :active-name="activeName" 
+    :open-names="openNames" 
+    @on-select="handleSelect"
+    @on-open-change="openChange"
+    width="auto" accordion>
       <div v-for="(item, index) in sideList" :key="index">
         <Submenu v-if="item.children" :name="item.name">
           <template slot="title">
             <i class="icon iconfont" :class="item.icon"></i>
             <span class="title-name">{{ item.name }}</span>
           </template>
-          <!-- <div  v-if="item.href">
-            <div v-for="(ele, i) in item.children" :key="i">
-              <a  :href="ele.href" class="sub-name">{{ele.name}}</a>
-            </div>
-          </div> -->
+          <Anchor show-ink v-if="item.href" container=".content">
+            <AnchorLink href="#zbjk" title="指标监控" />
+            <AnchorLink href="#ztqs" title="整体趋势" />
+            <AnchorLink href="#zzts" title="增长态势" />
+            <AnchorLink href="#yhlc" title="用户旅程" />
+          </Anchor>
           <MenuItem
+          v-else
           :to="ele.path"
             :name="ele.name"
             v-for="(ele, i) in item.children"
             :key="i">
-            <!-- :to="ele.path" -->
-            <!-- <router-link class="sub-name" v-if="ele.path" :to="ele.path">{{ele.name}}</router-link> -->
-            <!-- <span class="sub-name" v-else>{{ele.name}}</span> -->
-            <!-- <a v-if="item.href" :href="ele.href" class="sub-name">{{ele.name}}</a> -->
             <span class="sub-name">{{ele.name}}</span>
           </MenuItem>
         </Submenu>
         <MenuItem v-else :name="item.name" :to="item.path">
-        <!-- :to="item.path" -->
           <i class="icon iconfont" :class="item.icon"></i>
           <span class="title-name">{{ item.name }}</span> 
         </MenuItem>
       </div>
     </Menu>
+
     </div>
 
   </div>
@@ -58,20 +61,30 @@ export default {
   },
   computed:{
     activeName(){
-      if(this.sideList[0].children){
-        return this.sideList[0].children[0].name
+      if(this.sideList.length){
+        if(this.sideList[0].children){
+          return this.sideList[0].children[0].name
+        }else{
+          return this.sideList[0].name
+        }
       }else{
-        return this.sideList[0].name
+        return ""
       }
+
     },
     openNames(){
-      if(this.sideList[0].children){
-        let ary = []
-        ary.push(this.sideList[0].name)
-        return ary
+      if(this.sideList.length){
+        if(this.sideList[0].children){
+          let ary = []
+          ary.push(this.sideList[0].name)
+          return ary
+        }else{
+          return []
+        }
       }else{
         return []
       }
+
     },
     targetName:{
       get(){
@@ -135,6 +148,15 @@ export default {
       this.targetName = item.name
       this.$router.push({name:item.path})
     },
+    handleSelect(){
+      // console.log("select menuIten",name)
+    },
+    openChange(ary){
+      // console.log("open submenu",ary)
+      if(ary[0]=="整体概览"){
+        this.$router.push({name:"business-analysis-ztgl"})
+      }
+    }
   },
 };
 </script>
@@ -303,7 +325,8 @@ export default {
     }
   }
   .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after{
-    background:#5062B3;
+    // background:#DDE9FF;
+    background: rgba(221,233,255,0.4);
     // opacity:0.1
   }
   .ivu-menu-vertical.ivu-menu-light:after{

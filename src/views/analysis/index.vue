@@ -13,14 +13,18 @@ export default {
   data(){
     return {
       sides:[
-        {name:"整体概览",icon:"iconzhinengjuece",meta:"/business-analysis",href:"analysis",children:[
-          {name:"指标监控",meta:"/business-analysis",path:"/business-analysis/zbjk",href:"#zbjk"},
-          {name:"整体趋势",meta:"/business-analysis",path:"/business-analysis/ztqs",href:"#ztqs"},
-          {name:"增长态势",meta:"/business-analysis",path:"/business-analysis/zzts",href:"#zzts"},
-          {name:"用户旅程",meta:"/business-analysis",path:"/business-analysis/yhlc",href:"#yhlc"}
+        {name:"整体概览",icon:"iconzhinengjuece",meta:"/business-analysis",path:"/business-analysis/ztgl",href:"analysis",children:[
+          // {name:"指标监控",meta:"/business-analysis",path:"/business-analysis/ztgl#zbjk",href:"#zbjk"},
+          // {name:"整体趋势",meta:"/business-analysis",path:"/business-analysis/ztgl#ztqs",href:"#ztqs"},
+          // {name:"增长态势",meta:"/business-analysis",path:"/business-analysis/ztgl#zzts",href:"#zzts"},
+          // {name:"用户旅程",meta:"/business-analysis",path:"/business-analysis/ztgl#yhlc",href:"#yhlc"}
+          {name:"指标监控",meta:"/business-analysis",path:"",href:"#zbjk"},
+          {name:"整体趋势",meta:"/business-analysis",path:"",href:"#ztqs"},
+          {name:"增长态势",meta:"/business-analysis",path:"",href:"#zzts"},
+          {name:"用户旅程",meta:"/business-analysis",path:"",href:"#yhlc"}
         ]},
         {name:"用户分析",icon:"iconyonghufenxi",meta:"business-analysis",children:[
-          {name:"新增用户",meta:"/business-analysis",path:"/business-analysis/xzyh"},
+          {name:"新增用户",meta:"/business-analysis",path:"/business-analysis/yhfx/xzyh"},
           {name:"留存用户",meta:"/business-analysis",path:""},
           {name:"用户参与度",meta:"/business-analysis",path:""},
           {name:"目标用户对照",meta:"/business-analysis",path:""}
