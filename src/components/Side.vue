@@ -21,19 +21,12 @@
             <i class="icon iconfont" :class="item.icon"></i>
             <span class="title-name">{{ item.name }}</span>
           </template>
-          <Anchor show-ink v-if="item.href" container=".content">
-            <AnchorLink href="#zbjk" title="指标监控" />
-            <AnchorLink href="#ztqs" title="整体趋势" />
-            <AnchorLink href="#zzts" title="增长态势" />
-            <AnchorLink href="#yhlc" title="用户旅程" />
-          </Anchor>
           <MenuItem
-          v-else
-          :to="ele.path"
+            :to="ele.path"
             :name="ele.name"
             v-for="(ele, i) in item.children"
             :key="i">
-            <span class="sub-name">{{ele.name}}</span>
+            <span class="sub-name" :class="{'active':act==i}">{{ele.name}}</span>
           </MenuItem>
         </Submenu>
         <MenuItem v-else :name="item.name" :to="item.path">
@@ -49,6 +42,7 @@
 </template>
 
 <script>
+// import { EventBus} from "@/utils/eventbus"
 export default {
   name: "Side",
   props: {
@@ -58,6 +52,10 @@ export default {
         return [];
       },
     },
+    act:{
+      type:[Number,String],
+      default:0
+    }
   },
   computed:{
     activeName(){
@@ -148,14 +146,20 @@ export default {
       this.targetName = item.name
       this.$router.push({name:item.path})
     },
-    handleSelect(){
-      // console.log("select menuIten",name)
+    handleSelect(name){
+      console.log("select menuIten",name,this.$refs)
+      this.scrollTo(name)
     },
     openChange(ary){
       // console.log("open submenu",ary)
       if(ary[0]=="整体概览"){
         this.$router.push({name:"business-analysis-ztgl"})
+        console.log(sessionStorage.getItem('active'))
       }
+    },
+    scrollTo(name){
+      console.log('scrollTop',name);
+      this.$emit('scrollTarget',name)
     }
   },
 };
@@ -234,6 +238,7 @@ export default {
 }
 </style>
 <style lang="scss">
+
   .ivu-menu-vertical .ivu-menu-item, .ivu-menu-vertical .ivu-menu-submenu-title{
     width: 152px;
     height: 40px;
@@ -255,6 +260,10 @@ export default {
   .ivu-menu {
 
     .ivu-menu-submenu{
+      .active{
+        color: red;
+        background: red;
+      }
       .ivu-menu-submenu-title {
         width: 152px;
         height: 40px;

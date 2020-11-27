@@ -1,5 +1,8 @@
 const analysis=()=>import('./index');
-const zbjk=()=>import('./ztgl/zbjk.vue')
+// const zbjk=()=>import('./ztgl/zbjk.vue')
+const xzyh=()=>import('./ztgl/xzyh.vue')
+const qdss=()=>import('./ztgl/qdss.vue')
+const ywgl=()=>import('./ztgl/ywgl.vue')
 const anchor=()=>import('./ztgl/anchor.vue')
 const moduleName='business-analysis';
 
@@ -12,7 +15,7 @@ export default [
     component:analysis,
     children:[
       {
-        path:`/${moduleName}/ztgl#zbjk`,
+        path:`/${moduleName}/ztgl`,
         label:"整体概览",
         meta:{title:"整体概览",moduleName},
         component:anchor,
@@ -47,21 +50,25 @@ export default [
       //   name:`${moduleName}-ztgl#yhlc`
       // },
       {
-        path:`/${moduleName}/yhfx`,
-        label:"用户分析",
-        meta:{title:"用户分析",moduleName},
-        redirect:{name:`${moduleName}-yhfx-xzyh`},
-        children:[
-          {
-            path:`/${moduleName}/yhfx/xzyh`,
-            label:"新增用户",
-            meta:{title:"新增用户",moduleName},
-            component:zbjk,
-            name:`${moduleName}-yhfx-xzyh`
-          },
-        ],
-        component:zbjk,
-        name:`${moduleName}-yhfx`
+        path:`/${moduleName}/xzyh`,
+        label:"新增用户",
+        meta:{title:"新增用户",moduleName},
+        component:xzyh,
+        name:`${moduleName}-xzyh`
+      },
+      {
+        path:`/${moduleName}/qdss`,
+        label:"渠道实时",
+        meta:{title:"渠道实时",moduleName},
+        component:qdss,
+        name:`${moduleName}-qdss`
+      },
+      {
+        path:`/${moduleName}/ywgl`,
+        label:"业务概览",
+        meta:{title:"业务概览",moduleName},
+        component:ywgl,
+        name:`${moduleName}-ywgl`
       }
     ]
   }
