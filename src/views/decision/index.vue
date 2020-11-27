@@ -1,8 +1,8 @@
 <template>
-    <div class="intelligent-decision-container">
+    <div class="intelligent-decision">
         <!-- 智能决策 -->
         <Side></Side>
-        <div class="intelligent-decision-box">
+        <div class="container">
             <Header :target="'智能决策'"></Header>
             <div class="content">
                 <!-- 智能决策 -->
@@ -484,10 +484,10 @@
 </script>
 
 <style lang="scss" scoped>
-    .intelligent-decision-container {
+    .intelligent-decision {
         display: flex;
 
-        .intelligent-decision-box {
+        .container {
             display: flex;
             flex-direction: column;
             width: calc(100vw - 88px);

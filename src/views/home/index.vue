@@ -2,7 +2,7 @@
     <div class="home">
         <!-- 首页 -->
         <Side></Side>
-        <div class="home-container">
+        <div class="container">
             <Header :target="'首页'"></Header>
             <div class="content">
                 <!--品牌运营概览-->
@@ -56,7 +56,7 @@
     .home {
         display: flex;
 
-        .home-container {
+        .container {
             display: flex;
             flex-direction: column;
             width: calc(100vw - 88px);
