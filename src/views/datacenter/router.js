@@ -1,8 +1,8 @@
 const dataCenter=()=>import('./index');
-const wdsj=()=>import('./ztgl/wdsj.vue')
-const ffsj=()=>import('./ztgl/ffsj.vue')
-const xtjc=()=>import('./ztgl/xtjc.vue')
-const ysjgl=()=>import('./ztgl/ysjgl.vue')
+const wdsj=()=>import('./components/wdsj.vue')
+const ffsj=()=>import('./components/ffsj.vue')
+const xtjc=()=>import('./components/xtjc.vue')
+const ysjgl=()=>import('./components/ysjgl.vue')
 const moduleName='data-center';
 
 export default [

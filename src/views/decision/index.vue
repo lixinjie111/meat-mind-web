@@ -539,6 +539,7 @@
                                     font-weight: 400;
                                     color: #333333;
                                     text-align: center;
+                                    cursor: pointer;
 
                                     &.active {
                                         background: rgba(35, 115, 255, 0.08);
