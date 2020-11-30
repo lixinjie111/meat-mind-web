@@ -92,6 +92,7 @@ export default {
       this.actItemName = val+'-0'
     },
     $route(){
+      // console.log(this.actItemName,this.openSubMenu)
       this.openSubMenu = this.subMenuName
     }
   },
@@ -176,6 +177,7 @@ export default {
     EventBus.$on('activeTarget',(navIndex)=>{
       this.act = navIndex
     })
+    // console.log("vue created",this.$route.path,this.sideList,this.openSubMenu,this.actItemName)
   },
 };
 </script>
