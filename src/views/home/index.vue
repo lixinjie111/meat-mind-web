@@ -135,17 +135,17 @@
                     }
 
                     .iframe3 {
-                        left: 568px;
+                        left: 561px;
                         top: 155px;
                     }
 
                     .iframe4 {
-                        left: 825px;
+                        left: 818px;
                         top: 155px;
                     }
 
                     .iframe5 {
-                        left: 1086px;
+                        left: 1076px;
                         top: 154px;
                     }
 
@@ -168,13 +168,13 @@
 
 
                     .iframe9 {
-                        left: 703px;
+                        left: 694px;
                         top: 157px;
                         width: 80px;
                     }
 
                     .iframe10 {
-                        left: 913px;
+                        left: 906px;
                         top: 157px;
                         width: 60px;
                     }
@@ -190,7 +190,7 @@
                     }
 
                     .iframe13 {
-                        left: 694px;
+                        left: 688px;
                         top: 165px;
                     }
 
@@ -205,7 +205,7 @@
                     }
 
                     .iframe16 {
-                        left: 485px;
+                        left: 482px;
                         top: 305px;
                     }
 
@@ -220,7 +220,7 @@
                     }
 
                     .iframe19 {
-                        left: 682px;
+                        left: 674px;
                         top: 172px;
                         width: 40px;
                     }
@@ -233,22 +233,22 @@
 
                     .iframe21 {
                         left: 44px;
-                        bottom: 105px;
+                        bottom: 102px;
                     }
 
                     .iframe22 {
-                        left: 355px;
-                        bottom: 105px;
+                        left: 352px;
+                        bottom: 102px;
                         width: 40px;
                     }
 
                     .iframe23 {
-                        left: 696px;
-                        bottom: 105px;
+                        left: 692px;
+                        bottom: 102px;
                     }
 
                     .iframe24 {
-                        left: 1022px;
+                        left: 1014px;
                         bottom: 105px;
                     }
                 }
