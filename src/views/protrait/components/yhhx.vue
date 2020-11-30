@@ -158,32 +158,33 @@
 
                         .iframe1 {
                             left: 0;
-                            top: 50px;
+                            top: 46px;
                         }
 
                         .iframe2 {
                             width: 40%;
                             right: 60px;
-                            top: 50px;
+                            top: 46px;
                         }
 
                         .iframe3 {
-                            height: 348px;
+                            height: 336px;
                             left: 0;
-                            top: 452px;
+                            top: 448px;
                         }
 
                         .iframe4 {
-                            height: 348px;
-                            right: 0;
-                            top: 452px;
+                            height: 330px;
+                            right: 4px;
+                            top: 448px;
                         }
 
                         .player {
                             position: absolute;
-                            width: 1150px;
+                            // width: 1150px;
+                            width: 100%;
                             height: 460px;
-                            top: -10px;
+                            top: -16px;
                             left: 0;
                         }
                     }
