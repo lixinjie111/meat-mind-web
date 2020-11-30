@@ -14,20 +14,20 @@ export default [
     meta:{title:"经营分析"},
     component:analysis,
     children:[
-      {
-        path:`/${moduleName}/ztgl`,
-        label:"整体概览",
-        meta:{title:"整体概览",moduleName},
-        component:anchor,
-        name:`${moduleName}-ztgl`
-      },
       // {
       //   path:`/${moduleName}/ztgl`,
-      //   label:"指标监控",
-      //   meta:{title:"指标监控",moduleName},
+      //   label:"整体概览",
+      //   meta:{title:"整体概览",moduleName},
       //   component:anchor,
       //   name:`${moduleName}-ztgl`
       // },
+      {
+        path:`/${moduleName}/ztgl`,
+        label:"指标监控",
+        meta:{title:"指标监控",moduleName},
+        component:anchor,
+        name:`${moduleName}-ztgl`
+      },
       // {
       //   path:`/${moduleName}/ztgl#ztqs`,
       //   label:"整体趋势",

@@ -16,20 +16,20 @@
     @on-open-change="openChange"
     width="auto" accordion>
       <div v-for="(item, index) in sideList" :key="index">
-        <Submenu v-if="item.children" :name="item.name">
+        <Submenu v-if="item.children" :name="index">
           <template slot="title">
             <i class="icon iconfont" :class="item.icon"></i>
             <span class="title-name">{{ item.name }}</span>
           </template>
           <MenuItem
             :to="ele.path"
-            :name="ele.name"
+            :name="index+'-'+i"
             v-for="(ele, i) in item.children"
             :key="i">
-            <span class="sub-name" :class="{'active':act==i}">{{ele.name}}</span>
+            <span class="sub-name">{{ele.name}}</span>
           </MenuItem>
         </Submenu>
-        <MenuItem v-else :name="item.name" :to="item.path">
+        <MenuItem v-else :name="index" :to="item.path">
           <i class="icon iconfont" :class="item.icon"></i>
           <span class="title-name">{{ item.name }}</span> 
         </MenuItem>
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-// import { EventBus} from "@/utils/eventbus"
+import { EventBus} from "@/utils/eventbus"
 export default {
   name: "Side",
   props: {
@@ -51,38 +51,28 @@ export default {
       default: () => {
         return [];
       },
-    },
-    act:{
-      type:[Number,String],
-      default:0
     }
   },
   computed:{
-    activeName(){
-      if(this.sideList.length){
-        if(this.sideList[0].children){
-          return this.sideList[0].children[0].name
-        }else{
-          return this.sideList[0].name
-        }
-      }else{
-        return ""
+    // menuItem name
+    activeName:{
+      get(){
+        return this.activeN
+      },
+      set(val){
+        return val
       }
-
+      
     },
-    openNames(){
-      if(this.sideList.length){
-        if(this.sideList[0].children){
-          let ary = []
-          ary.push(this.sideList[0].name)
-          return ary
-        }else{
-          return []
-        }
-      }else{
-        return []
+    // subMenu name
+    openNames:{
+      get(){
+        return this.openN
+      },
+      set(val){
+        return val
       }
-
+      
     },
     targetName:{
       get(){
@@ -95,6 +85,11 @@ export default {
         return val
       }
 
+    }
+  },
+  watch:{
+    act(val){
+      this.activeN = '0-'+val
     }
   },
   data() {
@@ -138,6 +133,10 @@ export default {
         }
       ],
       active: this.$route.meta.moduleName,
+      act:0,
+      activeN:this.$route.path=="/business-analysis/ztgl"?"0-0":0,
+      openN:[0]
+
     };
   },
   methods: {
@@ -146,22 +145,37 @@ export default {
       this.targetName = item.name
       this.$router.push({name:item.path})
     },
+    // 选择menuItem
     handleSelect(name){
-      console.log("select menuIten",name,this.$refs)
+      this.activeN = name
       this.scrollTo(name)
     },
+    // 打开subMenu
     openChange(ary){
-      // console.log("open submenu",ary)
-      if(ary[0]=="整体概览"){
-        this.$router.push({name:"business-analysis-ztgl"})
-        console.log(sessionStorage.getItem('active'))
-      }
+      console.log(ary)
+      this.openN = ary
     },
     scrollTo(name){
-      console.log('scrollTop',name);
-      this.$emit('scrollTarget',name)
+      let index = 0
+      let ary = ["0-0","0-1","0-2","0-3"]
+      index = ary.indexOf(name)
+      if(index>-1){
+        this.$emit('handleScroll',index)
+        EventBus.$emit("index",index)
+      }
     }
   },
+  created(){
+    EventBus.$on('activeTarget',(navIndex)=>{
+      this.act = navIndex
+    })
+  },
+  mounted(){
+    this.$nextTick(()=>{
+      this.$refs.side_menu.updateOpened()
+      this.$refs.side_menu.updateActiveName()
+    })
+  }
 };
 </script>
 

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Page from "../../components/DefaultIndex"
+import Page from "../../components/AnchorIndex"
 export default {
   name:"index",
   components:{Page},
@@ -14,14 +14,14 @@ export default {
     return {
       sides:[
         {name:"整体概览",icon:"iconzhinengjuece",meta:"/business-analysis",path:"/business-analysis/ztgl",href:"analysis",children:[
-          // {name:"指标监控",meta:"/business-analysis",path:"/business-analysis/ztgl#zbjk",href:"#zbjk"},
-          // {name:"整体趋势",meta:"/business-analysis",path:"/business-analysis/ztgl#ztqs",href:"#ztqs"},
-          // {name:"增长态势",meta:"/business-analysis",path:"/business-analysis/ztgl#zzts",href:"#zzts"},
-          // {name:"用户旅程",meta:"/business-analysis",path:"/business-analysis/ztgl#yhlc",href:"#yhlc"}
-          {name:"指标监控",meta:"/business-analysis",path:"",href:"zbjk"},
-          {name:"整体趋势",meta:"/business-analysis",path:"",href:"ztqs"},
-          {name:"增长态势",meta:"/business-analysis",path:"",href:"zzts"},
-          {name:"用户旅程",meta:"/business-analysis",path:"",href:"yhlc"}
+          {name:"指标监控",meta:"/business-analysis",path:"/business-analysis/ztgl",href:"#zbjk"},
+          {name:"整体趋势",meta:"/business-analysis",path:"/business-analysis/ztgl",href:"#ztqs"},
+          {name:"增长态势",meta:"/business-analysis",path:"/business-analysis/ztgl",href:"#zzts"},
+          {name:"用户旅程",meta:"/business-analysis",path:"/business-analysis/ztgl",href:"#yhlc"}
+          // {name:"指标监控",meta:"/business-analysis",path:"",href:"zbjk"},
+          // {name:"整体趋势",meta:"/business-analysis",path:"",href:"ztqs"},
+          // {name:"增长态势",meta:"/business-analysis",path:"",href:"zzts"},
+          // {name:"用户旅程",meta:"/business-analysis",path:"",href:"yhlc"}
         ]},
         {name:"用户分析",icon:"iconyonghufenxi",meta:"business-analysis",children:[
           {name:"新增用户",meta:"/business-analysis",path:"/business-analysis/xzyh"},
