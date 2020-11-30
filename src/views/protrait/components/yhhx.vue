@@ -1,10 +1,6 @@
 <template>
     <div class="yhhx">
         <img src="../../../static/img/protrait/yhhx1@2x.png" alt="">
-        <!--      <iframe class="iframe iframe24" src="/static/html/lxj/pie1-2.html" frameborder="0" scrolling="no"></iframe>-->
-        <!--      <iframe class="iframe iframe24" src="/static/html/lxj/pie1-4.html" frameborder="0" scrolling="no"></iframe>-->
-        <!--      <iframe class="iframe iframe24" src="/static/html/lxj/pie1-3.html" frameborder="0" scrolling="no"></iframe>-->
-        <!--      <iframe class="iframe iframe24" src="/static/html/lxj/pie1-1.html" frameborder="0" scrolling="no"></iframe>-->
         <div class="content">
             <div class="card">
                 <div class="top">
@@ -17,13 +13,18 @@
                     </div>
                 </div>
                 <div class="bottom">
-                    <div v-if="tabActive==1">
+                    <div class="tab-content" v-if="tabActive==1">
                         <img src="../../../static/img/protrait/yhhx2@2x.png" alt="">
+                        <iframe class="iframe iframe1" src="/static/html/lxj/pie1-2.html" frameborder="0" scrolling="no"></iframe>
+                        <iframe class="iframe iframe2" src="/static/html/lxj/pie1-4.html" frameborder="0" scrolling="no"></iframe>
+                        <iframe class="iframe iframe3" src="/static/html/lxj/pie1-3.html" frameborder="0" scrolling="no"></iframe>
+                        <iframe class="iframe iframe4" src="/static/html/lxj/pie1-1.html" frameborder="0" scrolling="no"></iframe>
                     </div>
-                    <div v-else-if="tabActive==2">
+                    <div class="tab-content" v-else-if="tabActive==2">
                         <img src="../../../static/img/protrait/yhhx3@2x.png" alt="">
+                        <video class="player" width="100%" height="100%" autoplay loop muted src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"></video>
                     </div>
-                    <div v-else>
+                    <div class="tab-content" v-else>
                         <img src="../../../static/img/protrait/yhhx4@2x.png" alt="">
                     </div>
                 </div>
@@ -140,9 +141,49 @@
                 }
 
                 .bottom {
-                    >div {
+
+                    .tab-content {
+                        position: relative;
+
                         >img {
                             width: 100%;
+                        }
+
+                        .iframe {
+                            position: absolute;
+                            width: 49%;
+                            height: 350px;
+                            background: #FFFFFF;
+                        }
+
+                        .iframe1 {
+                            left: 0;
+                            top: 50px;
+                        }
+
+                        .iframe2 {
+                            right: 0;
+                            top: 50px;
+                        }
+
+                        .iframe3 {
+                            height: 348px;
+                            left: 0;
+                            top: 452px;
+                        }
+
+                        .iframe4 {
+                            height: 348px;
+                            right: 0;
+                            top: 452px;
+                        }
+
+                        .player {
+                            position: absolute;
+                            width: 1150px;
+                            height: 460px;
+                            top: -10px;
+                            left: 0;
                         }
                     }
                 }

@@ -1,6 +1,7 @@
 <template>
     <div class="pphx">
         <img src="../../../static/img/protrait/pphx1@2x.png" alt="">
+        <iframe class="iframe1" src="/static/html/fj/leid.html" frameborder="0" scrolling="no"></iframe>
         <div class="content">
             <div class="card">
                 <div class="top">
@@ -59,11 +60,21 @@
 
 <style scoped lang="scss">
     .pphx {
+        position: relative;
         width: 100%;
         height: 100%;
 
         >img {
             width: 100%;
+        }
+
+        .iframe1 {
+            position: absolute;
+            left: 520px;
+            top: 140px;
+            width: 300px;
+            height: 260px;
+            background: #FFFFFF;
         }
 
         .content {
