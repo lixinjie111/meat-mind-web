@@ -1,5 +1,8 @@
 const protrait=()=>import('./index');
-const zbjk=()=>import('./ztgl/zbjk.vue')
+const yhhx=()=>import('./components/yhhx.vue')
+const pphx=()=>import('./components/pphx.vue')
+const tdjchx=()=>import('./components/tdjchx.vue')
+const kolsx=()=>import('./components/kolsx.vue')
 const moduleName='portrait-system';
 
 export default [
@@ -14,35 +17,28 @@ export default [
         path:`/${moduleName}/yhhx`,
         label:"用户画像",
         meta:{title:"用户画像",moduleName},
-        component:zbjk,
+        component:yhhx,
         name:`${moduleName}-yhhx`
       },
       {
-        path:`/${moduleName}/ppjchx`,
-        label:"品牌基础画像",
-        meta:{title:"品牌基础画像",moduleName},
-        component:zbjk,
-        name:`${moduleName}-ppjchx`
-      },
-      {
-        path:`/${moduleName}/ppyq`,
-        label:"品牌舆情",
-        meta:{title:"品牌舆情",moduleName},
-        component:zbjk,
-        name:`${moduleName}-ppyq`
+        path:`/${moduleName}/pphx`,
+        label:"品牌画像",
+        meta:{title:"品牌画像",moduleName},
+        component:pphx,
+        name:`${moduleName}-pphx`
       },
       {
         path:`/${moduleName}/tdjchx`,
         label:"通道基础画像",
         meta:{title:"通道基础画像",moduleName},
-        component:zbjk,
+        component:tdjchx,
         name:`${moduleName}-tdjchx`
       },
       {
         path:`/${moduleName}/kolsx`,
         label:"KOL属性",
         meta:{title:"KOL属性",moduleName},
-        component:zbjk,
+        component:kolsx,
         name:`${moduleName}-kolsx`
       }
     ]
