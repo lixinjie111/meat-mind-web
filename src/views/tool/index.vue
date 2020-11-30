@@ -19,7 +19,7 @@ export default {
         {name:"用户分群",icon:"iconyonghufenqun",meta:"/analysis-tool",path:"/analysis-tool/yhfq"},
         {name:"渠道追踪",icon:"iconqudaozhuizong",meta:"/analysis-tool",path:"",children:[
           {name:"渠道链接",meta:"/analysis-tool",path:"/analysis-tool/qdlj"},
-          {name:"渠道管理",meta:"/analysis-tool",path:""}
+          {name:"渠道管理",meta:"/analysis-tool",path:"/analysis-tool/qdgl"}
         ]},
         {name:"场景库",icon:"iconchangjingku",meta:"/analysis-tool",path:"/analysis-tool/cjk"},
       ]

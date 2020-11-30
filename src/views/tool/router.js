@@ -4,6 +4,7 @@ const cjk=()=>import('./components/cjk.vue')
 const zbgl=()=>import('./components/zbgl.vue')
 const yhfq=()=>import('./components/yhfq.vue')
 const qdlj=()=>import('./components/qdlj.vue')
+const qdgl=()=>import('./components/qdgl.vue')
 const bqgl=()=>import('./components/bqgl.vue')
 const moduleName='analysis-tool';
 
@@ -54,7 +55,7 @@ export default [
         path:`/${moduleName}/qdgl`,
         label:"渠道管理",
         meta:{title:"渠道管理",moduleName},
-        component:cjk,
+        component:qdgl,
         name:`${moduleName}-qdgl`
       },      {
         path:`/${moduleName}/cjk`,
