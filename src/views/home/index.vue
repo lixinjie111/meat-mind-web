@@ -5,38 +5,49 @@
         <div class="container">
             <Header :target="'首页'"></Header>
             <div class="content">
-                <!--品牌运营概览-->
-                <img src="../../static/img/header/header-main@2x.png" alt="">
+                <img src="../../static/img/home/home1@2x.png" alt="">
                 <div class="report-btn">一键生成报告</div>
-                <div class="iframe1-bg"></div>
-                <iframe class="iframe1" src="/static/html/lxj/yibiao.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe2" src="/static/html/zjj/gmv.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe3" src="/static/html/zjj/dindanL.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe4" src="/static/html/zjj/kedanJ.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe5" src="/static/html/zjj/xiadanR.html" frameborder="0" scrolling="no"></iframe>
+                <!--品牌运营概览-->
+                <div class="card">
+                    <img src="../../static/img/home/home2@2x.png" alt="">
+                    <div class="iframe1-bg"></div>
+                    <iframe class="iframe1" src="/static/html/lxj/yibiao.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe2" src="/static/html/zjj/gmv.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe3" src="/static/html/zjj/dindanL.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe4" src="/static/html/zjj/kedanJ.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe5" src="/static/html/zjj/xiadanR.html" frameborder="0" scrolling="no"></iframe>
+                </div>
                 <!--用户生命周期-->
-                <iframe class="iframe iframe6" src="/static/html/zjj/xinyonH.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe7" src="/static/html/zjj/huoyueYH.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe8" src="/static/html/zjj/huiliuYH.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe9" src="/static/html/zjj/chenmoYH.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe10" src="/static/html/zjj/liushiYH.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe11" src="/static/html/zjj/liuRliuCb.html" frameborder="0" scrolling="no"></iframe>
+                <div class="card">
+                    <img src="../../static/img/home/home3@2x.png" alt="">
+                    <iframe class="iframe iframe6" src="/static/html/zjj/xinyonH.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe7" src="/static/html/zjj/huoyueYH.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe8" src="/static/html/zjj/huiliuYH.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe9" src="/static/html/zjj/chenmoYH.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe10" src="/static/html/zjj/liushiYH.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe11" src="/static/html/zjj/liuRliuCb.html" frameborder="0" scrolling="no"></iframe>
+                </div>
                 <!--通道概况-->
-                <iframe class="iframe iframe12" src="/static/html/lxj/num.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe13" src="/static/html/lxj/num1.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe14" src="/static/html/lxj/num2.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe15" src="/static/html/lxj/num3.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe16" src="/static/html/lxj/num4.html" frameborder="0" scrolling="no"></iframe>
-                <!--产品数据评估上-->
-                <iframe class="iframe iframe17" src="/static/html/fj/Active-times.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe18" src="/static/html/fj/Active-user-core.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe19" src="/static/html/fj/Active-enterprises.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe20" src="/static/html/fj/Total-core-functions.html" frameborder="0" scrolling="no"></iframe>
-                <!--产品数据评估下-->
-                <iframe class="iframe iframe21" src="/static/html/fj/Num-active-employees.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe22" src="/static/html/fj/Core-function-Enterprise.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe23" src="/static/html/fj/Active-user-core.html" frameborder="0" scrolling="no"></iframe>
-                <iframe class="iframe iframe24" src="/static/html/fj/Core-permeability.html" frameborder="0" scrolling="no"></iframe>
+                <div class="card">
+                    <img src="../../static/img/home/home4@2x.png" alt="">
+                    <iframe class="iframe iframe12" src="/static/html/lxj/num.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe13" src="/static/html/lxj/num1.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe14" src="/static/html/lxj/num2.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe15" src="/static/html/lxj/num3.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe16" src="/static/html/lxj/num4.html" frameborder="0" scrolling="no"></iframe>
+                </div>
+                <!--产品数据评估-->
+                <div class="card">
+                    <img src="../../static/img/home/home5@2x.png" alt="">
+                    <iframe class="iframe iframe17" src="/static/html/fj/Active-times.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe18" src="/static/html/fj/Active-user-core.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe19" src="/static/html/fj/Active-enterprises.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe20" src="/static/html/fj/Total-core-functions.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe21" src="/static/html/fj/Num-active-employees.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe22" src="/static/html/fj/Core-function-Enterprise.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe23" src="/static/html/fj/Active-user-core.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe24" src="/static/html/fj/Core-permeability.html" frameborder="0" scrolling="no"></iframe>
+                </div>
             </div>
         </div>
     </div>
@@ -88,154 +99,158 @@
                     cursor: pointer;
                 }
 
-                .iframe1 {
-                    position: absolute;
-                    left: 35px;
-                    top: 629px;
-                    width: 140px;
-                    height: 140px;
-                    z-index: 100;
-                }
+                .card {
+                    position: relative;
 
-                .iframe1-bg {
-                    position: absolute;
-                    left: 50px;
-                    top: 634px;
-                    width: 110px;
-                    height: 80px;
-                    background: #FFFFFF;
-                    z-index: 10;
-                }
+                    .iframe1 {
+                        position: absolute;
+                        left: 35px;
+                        top: 105px;
+                        width: 140px;
+                        height: 140px;
+                        z-index: 100;
+                    }
 
-                .iframe {
-                    position: absolute;
-                    z-index: 100;
-                    width: 78px;
-                    height: 32px;
-                    background: #FFFFFF;
-                }
+                    .iframe1-bg {
+                        position: absolute;
+                        left: 50px;
+                        top: 105px;
+                        width: 110px;
+                        height: 80px;
+                        background: #FFFFFF;
+                        z-index: 10;
+                    }
 
-                .iframe2 {
-                    left: 301px;
-                    top: 678px;
-                }
+                    .iframe {
+                        position: absolute;
+                        z-index: 100;
+                        width: 78px;
+                        height: 32px;
+                        background: #FFFFFF;
+                    }
 
-                .iframe3 {
-                    left: 562px;
-                    top: 678px;
-                }
+                    .iframe2 {
+                        left: 304px;
+                        top: 155px;
+                    }
 
-                .iframe4 {
-                    left: 824px;
-                    top: 678px;
-                }
+                    .iframe3 {
+                        left: 568px;
+                        top: 155px;
+                    }
 
-                .iframe5 {
-                    left: 1084px;
-                    top: 678px;
-                }
+                    .iframe4 {
+                        left: 825px;
+                        top: 155px;
+                    }
 
-                .iframe6 {
-                    left: 42px;
-                    top: 919px;
-                    width: 74px;
-                }
+                    .iframe5 {
+                        left: 1086px;
+                        top: 154px;
+                    }
 
-                .iframe7 {
-                    left: 253px;
-                    top: 919px;
-                    width: 60px;
-                }
+                    .iframe6 {
+                        left: 46px;
+                        top: 157px;
+                        width: 74px;
+                    }
 
-                .iframe8 {
-                    left: 481px;
-                    top: 919px;
-                }
+                    .iframe7 {
+                        left: 253px;
+                        top: 157px;
+                        width: 60px;
+                    }
+
+                    .iframe8 {
+                        left: 481px;
+                        top: 157px;
+                    }
 
 
-                .iframe9 {
-                    left: 700px;
-                    top: 919px;
-                    width: 80px;
-                }
+                    .iframe9 {
+                        left: 703px;
+                        top: 157px;
+                        width: 80px;
+                    }
 
-                .iframe10 {
-                    left: 913px;
-                    top: 919px;
-                    width: 60px;
-                }
+                    .iframe10 {
+                        left: 913px;
+                        top: 157px;
+                        width: 60px;
+                    }
 
-                .iframe11 {
-                    left: 1132px;
-                    top: 919px;
-                }
+                    .iframe11 {
+                        left: 1132px;
+                        top: 157px;
+                    }
 
-                .iframe12 {
-                    left: 470px;
-                    top: 1164px;
-                }
+                    .iframe12 {
+                        left: 470px;
+                        top: 165px;
+                    }
 
-                .iframe13 {
-                    left: 689px;
-                    top: 1164px;
-                }
+                    .iframe13 {
+                        left: 694px;
+                        top: 165px;
+                    }
 
-                .iframe14 {
-                    left: 896px;
-                    top: 1164px;
-                }
+                    .iframe14 {
+                        left: 896px;
+                        top: 165px;
+                    }
 
-                .iframe15 {
-                    left: 1114px;
-                    top: 1174px;
-                }
+                    .iframe15 {
+                        left: 1114px;
+                        top: 175px;
+                    }
 
-                .iframe16 {
-                    left: 485px;
-                    top: 1299px;
-                }
+                    .iframe16 {
+                        left: 485px;
+                        top: 305px;
+                    }
 
-                .iframe17 {
-                    left: 40px;
-                    top: 1532px;
-                }
+                    .iframe17 {
+                        left: 45px;
+                        top: 172px;
+                    }
 
-                .iframe18 {
-                    left: 365px;
-                    top: 1532px;
-                }
+                    .iframe18 {
+                        left: 370px;
+                        top: 172px;
+                    }
 
-                .iframe19 {
-                    left: 685px;
-                    top: 1532px;
-                    width: 40px;
-                }
+                    .iframe19 {
+                        left: 682px;
+                        top: 172px;
+                        width: 40px;
+                    }
 
-                .iframe20 {
-                    left: 1009px;
-                    top: 1535px;
-                    width: 127px;
-                }
+                    .iframe20 {
+                        left: 1009px;
+                        top: 172px;
+                        width: 127px;
+                    }
 
-                .iframe21 {
-                    left: 42px;
-                    top: 1716px;
-                }
+                    .iframe21 {
+                        left: 44px;
+                        bottom: 105px;
+                    }
 
-                .iframe22 {
-                    left: 358px;
-                    top: 1715px;
-                    width: 40px;
-                }
+                    .iframe22 {
+                        left: 355px;
+                        bottom: 105px;
+                        width: 40px;
+                    }
 
-                .iframe23 {
-                    left: 690px;
-                    top: 1716px;
-                }
+                    .iframe23 {
+                        left: 696px;
+                        bottom: 105px;
+                    }
 
-                .iframe24 {
-                    left: 1022px;
-                    top: 1717px;
+                    .iframe24 {
+                        left: 1022px;
+                        bottom: 105px;
+                    }
                 }
             }
         }
