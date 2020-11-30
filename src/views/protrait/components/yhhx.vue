@@ -144,7 +144,6 @@
 
                     .tab-content {
                         position: relative;
-
                         >img {
                             width: 100%;
                         }
@@ -183,8 +182,8 @@
                             position: absolute;
                             // width: 1150px;
                             width: 100%;
-                            height: 460px;
-                            top: -16px;
+                            height: 466px;
+                            top: -14px;
                             left: 0;
                         }
                     }
