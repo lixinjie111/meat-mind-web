@@ -7,45 +7,42 @@
         <div class="label">{{item.name}}</div>
       </div>
     </div>
-    <div class="menu" v-if="sideList.length">
+    <div class="menu"  v-show="sideList.length">
       <div class="menu-name">{{targetName}}</div>
-    <Menu ref="side_menu" theme="light" :active-name="activeName" :open-names="openNames" width="auto" accordion>
+    <Menu ref="side_menu" theme="light" 
+    :active-name="activeName" 
+    :open-names="openNames" 
+    @on-select="handleSelect"
+    @on-open-change="openChange"
+    width="auto" accordion>
       <div v-for="(item, index) in sideList" :key="index">
-        <Submenu v-if="item.children" :name="item.name">
+        <Submenu v-if="item.children" :name="index">
           <template slot="title">
             <i class="icon iconfont" :class="item.icon"></i>
             <span class="title-name">{{ item.name }}</span>
           </template>
-          <!-- <div  v-if="item.href">
-            <div v-for="(ele, i) in item.children" :key="i">
-              <a  :href="ele.href" class="sub-name">{{ele.name}}</a>
-            </div>
-          </div> -->
           <MenuItem
-          :to="ele.path"
-            :name="ele.name"
+            :to="ele.path"
+            :name="index+'-'+i"
             v-for="(ele, i) in item.children"
             :key="i">
-            <!-- :to="ele.path" -->
-            <!-- <router-link class="sub-name" v-if="ele.path" :to="ele.path">{{ele.name}}</router-link> -->
-            <!-- <span class="sub-name" v-else>{{ele.name}}</span> -->
-            <!-- <a v-if="item.href" :href="ele.href" class="sub-name">{{ele.name}}</a> -->
             <span class="sub-name">{{ele.name}}</span>
           </MenuItem>
         </Submenu>
-        <MenuItem v-else :name="item.name" :to="item.path">
-        <!-- :to="item.path" -->
+        <MenuItem v-else :name="index" :to="item.path">
           <i class="icon iconfont" :class="item.icon"></i>
           <span class="title-name">{{ item.name }}</span> 
         </MenuItem>
       </div>
     </Menu>
+
     </div>
 
   </div>
 </template>
 
 <script>
+import { EventBus} from "@/utils/eventbus"
 export default {
   name: "Side",
   props: {
@@ -54,24 +51,28 @@ export default {
       default: () => {
         return [];
       },
-    },
+    }
   },
   computed:{
-    activeName(){
-      if(this.sideList[0].children){
-        return this.sideList[0].children[0].name
-      }else{
-        return this.sideList[0].name
+    // menuItem name
+    activeName:{
+      get(){
+        return this.activeN
+      },
+      set(val){
+        return val
       }
+      
     },
-    openNames(){
-      if(this.sideList[0].children){
-        let ary = []
-        ary.push(this.sideList[0].name)
-        return ary
-      }else{
-        return []
+    // subMenu name
+    openNames:{
+      get(){
+        return this.openN
+      },
+      set(val){
+        return val
       }
+      
     },
     targetName:{
       get(){
@@ -84,6 +85,11 @@ export default {
         return val
       }
 
+    }
+  },
+  watch:{
+    act(val){
+      this.activeN = '0-'+val
     }
   },
   data() {
@@ -127,6 +133,10 @@ export default {
         }
       ],
       active: this.$route.meta.moduleName,
+      act:0,
+      activeN:this.$route.path=="/business-analysis/ztgl"?"0-0":0,
+      openN:[0]
+
     };
   },
   methods: {
@@ -135,7 +145,37 @@ export default {
       this.targetName = item.name
       this.$router.push({name:item.path})
     },
+    // 选择menuItem
+    handleSelect(name){
+      this.activeN = name
+      this.scrollTo(name)
+    },
+    // 打开subMenu
+    openChange(ary){
+      console.log(ary)
+      this.openN = ary
+    },
+    scrollTo(name){
+      let index = 0
+      let ary = ["0-0","0-1","0-2","0-3"]
+      index = ary.indexOf(name)
+      if(index>-1){
+        this.$emit('handleScroll',index)
+        EventBus.$emit("index",index)
+      }
+    }
   },
+  created(){
+    EventBus.$on('activeTarget',(navIndex)=>{
+      this.act = navIndex
+    })
+  },
+  mounted(){
+    this.$nextTick(()=>{
+      this.$refs.side_menu.updateOpened()
+      this.$refs.side_menu.updateActiveName()
+    })
+  }
 };
 </script>
 
@@ -212,6 +252,7 @@ export default {
 }
 </style>
 <style lang="scss">
+
   .ivu-menu-vertical .ivu-menu-item, .ivu-menu-vertical .ivu-menu-submenu-title{
     width: 152px;
     height: 40px;
@@ -233,6 +274,10 @@ export default {
   .ivu-menu {
 
     .ivu-menu-submenu{
+      .active{
+        color: red;
+        background: red;
+      }
       .ivu-menu-submenu-title {
         width: 152px;
         height: 40px;
@@ -303,7 +348,8 @@ export default {
     }
   }
   .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after{
-    background:#5062B3;
+    // background:#DDE9FF;
+    background: rgba(221,233,255,0.4);
     // opacity:0.1
   }
   .ivu-menu-vertical.ivu-menu-light:after{
