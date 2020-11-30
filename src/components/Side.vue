@@ -10,8 +10,8 @@
     <div class="menu"  v-show="sideList.length">
       <div class="menu-name">{{targetName}}</div>
     <Menu ref="side_menu" theme="light" 
-    :active-name="activeName" 
-    :open-names="openNames" 
+    :active-name="actMenuItem" 
+    :open-names="openSubMenu" 
     @on-select="handleSelect"
     @on-open-change="openChange"
     width="auto" accordion>
@@ -55,24 +55,22 @@ export default {
   },
   computed:{
     // menuItem name
-    activeName:{
+    actMenuItem:{
       get(){
-        return this.activeN
+        return this.actItemName
       },
       set(val){
         return val
       }
-      
     },
     // subMenu name
-    openNames:{
+    openSubMenu:{
       get(){
-        return this.openN
+        return this.subMenuName
       },
       set(val){
         return val
       }
-      
     },
     targetName:{
       get(){
@@ -84,12 +82,17 @@ export default {
       set(val){
         return val
       }
-
     }
   },
   watch:{
     act(val){
-      this.activeN = '0-'+val
+      this.actItemName = '0-'+val
+    },
+    subMenuName(val){
+      this.actItemName = val+'-0'
+    },
+    $route(){
+      this.openSubMenu = this.subMenuName
     }
   },
   data() {
@@ -134,9 +137,8 @@ export default {
       ],
       active: this.$route.meta.moduleName,
       act:0,
-      activeN:this.$route.path=="/business-analysis/ztgl"?"0-0":0,
-      openN:[0]
-
+      actItemName:this.$route.meta.moduleName=="business-analysis"?"0-0":0,
+      subMenuName:[0],
     };
   },
   methods: {
@@ -147,13 +149,18 @@ export default {
     },
     // 选择menuItem
     handleSelect(name){
-      this.activeN = name
+      this.actItemName = name
       this.scrollTo(name)
     },
     // 打开subMenu
     openChange(ary){
-      console.log(ary)
-      this.openN = ary
+      if(!ary.length){return}
+      let path = this.sideList[ary].children[0].path
+      if(path!=this.$route.path){
+        this.subMenuName = ary
+        this.$router.push({path})
+      }
+
     },
     scrollTo(name){
       let index = 0
@@ -170,12 +177,6 @@ export default {
       this.act = navIndex
     })
   },
-  mounted(){
-    this.$nextTick(()=>{
-      this.$refs.side_menu.updateOpened()
-      this.$refs.side_menu.updateActiveName()
-    })
-  }
 };
 </script>
 

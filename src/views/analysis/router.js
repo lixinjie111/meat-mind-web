@@ -14,13 +14,6 @@ export default [
     meta:{title:"经营分析"},
     component:analysis,
     children:[
-      // {
-      //   path:`/${moduleName}/ztgl`,
-      //   label:"整体概览",
-      //   meta:{title:"整体概览",moduleName},
-      //   component:anchor,
-      //   name:`${moduleName}-ztgl`
-      // },
       {
         path:`/${moduleName}/ztgl`,
         label:"指标监控",
@@ -29,25 +22,25 @@ export default [
         name:`${moduleName}-ztgl`
       },
       // {
-      //   path:`/${moduleName}/ztgl#ztqs`,
+      //   path:`/${moduleName}/ztgl`,
       //   label:"整体趋势",
       //   meta:{title:"整体趋势",moduleName},
       //   component:anchor,
-      //   name:`${moduleName}-ztgl#ztqs`
+      //   name:`${moduleName}-ztgls`
       // },
       // {
-      //   path:`/${moduleName}/ztgl#zzts`,
+      //   path:`/${moduleName}/ztgl`,
       //   label:"增长态势",
       //   meta:{title:"增长态势",moduleName},
       //   component:anchor,
-      //   name:`${moduleName}-ztgl#zzts`
+      //   name:`${moduleName}-ztgl`
       // },
       // {
-      //   path:`/${moduleName}/ztgl#yhlc`,
+      //   path:`/${moduleName}/ztgl`,
       //   label:"用户旅程",
       //   meta:{title:"用户旅程",moduleName},
       //   component:anchor,
-      //   name:`${moduleName}-ztgl#yhlc`
+      //   name:`${moduleName}-ztgl`
       // },
       {
         path:`/${moduleName}/xzyh`,

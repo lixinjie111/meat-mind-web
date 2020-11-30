@@ -13,7 +13,7 @@ export default {
   data(){
     return {
       sides:[
-        {name:"整体概览",icon:"iconzhinengjuece",meta:"/business-analysis",path:"/business-analysis/ztgl",href:"analysis",children:[
+        {name:"整体概览",icon:"iconzhinengjuece",meta:"business-analysis",children:[
           {name:"指标监控",meta:"/business-analysis",path:"/business-analysis/ztgl",href:"#zbjk"},
           {name:"整体趋势",meta:"/business-analysis",path:"/business-analysis/ztgl",href:"#ztqs"},
           {name:"增长态势",meta:"/business-analysis",path:"/business-analysis/ztgl",href:"#zzts"},
@@ -33,7 +33,6 @@ export default {
           {name:"渠道实时",meta:"/business-analysis",path:"/business-analysis/qdss"},
           {name:"渠道概况",meta:"/business-analysis",path:""},
           {name:"渠道质量评估",meta:"/business-analysis",path:""}
-
         ]},
         {name:"品牌运营分析",icon:"iconpinpaiyunyingfenxi",meta:"business-analysis",children:[
           {name:"业务概览",meta:"/business-analysis",path:"/business-analysis/ywgl"},
