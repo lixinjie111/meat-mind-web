@@ -162,7 +162,8 @@
                         }
 
                         .iframe2 {
-                            right: 0;
+                            width: 40%;
+                            right: 60px;
                             top: 50px;
                         }
 

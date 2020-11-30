@@ -9,10 +9,14 @@
                     </div>
                 </div>
                 <div class="bottom">
-                    <div v-if="tabActive==1">
+                    <div class="tab-content" v-if="tabActive==1">
                         <img src="../../../static/img/protrait/tdjchx2@2x.png" alt="">
+                        <iframe class="iframe iframe1" src="/static/html/lxj/pie1-1.html" frameborder="0" scrolling="no"></iframe>
+                        <iframe class="iframe iframe2" src="/static/html/lxj/pie1-2.html" frameborder="0" scrolling="no"></iframe>
+                        <iframe class="iframe iframe3" src="/static/html/lxj/pie1-3.html" frameborder="0" scrolling="no"></iframe>
+                        <iframe class="iframe iframe4" src="/static/html/lxj/pie1-4.html" frameborder="0" scrolling="no"></iframe>
                     </div>
-                    <div v-else>
+                    <div class="tab-content" v-else>
                         <img src="../../../static/img/protrait/tdjchx3@2x.png" alt="">
                     </div>
                 </div>
@@ -94,9 +98,44 @@
                 }
 
                 .bottom {
-                    >div {
+                    .tab-content {
+                        position: relative;
+
                         >img {
                             width: 100%;
+                        }
+
+                        .iframe {
+                            position: absolute;
+                            width: 330px;
+                            height: 280px;
+                            background: #FFFFFF;
+                        }
+
+                        .iframe1 {
+                            left: 40px;
+                            top: 160px;
+                        }
+
+                        .iframe2 {
+                            width: 300px;
+                            height: 325px;
+                            left: 430px;
+                            top: 150px;
+                        }
+
+                        .iframe3 {
+                            width: 300px;
+                            height: 325px;
+                            right: 60px;
+                            top: 150px;
+                        }
+
+                        .iframe4 {
+                            width: 330px;
+                            height: 325px;
+                            left: 40px;
+                            top: 530px;
                         }
                     }
                 }

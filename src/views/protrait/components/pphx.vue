@@ -14,14 +14,17 @@
                     </div>
                 </div>
                 <div class="bottom">
-                    <div v-if="tabActive==1">
+                    <div class="tab-content" v-if="tabActive==1">
                         <img src="../../../static/img/protrait/pphx2@2x.png" alt="">
                     </div>
-                    <div v-else-if="tabActive==2">
+                    <div class="tab-content" v-else-if="tabActive==2">
                         <img src="../../../static/img/protrait/pphx3@2x.png" alt="">
+                        <iframe class="iframe iframe1" src="/static/html/fj/zhu.html" frameborder="0" scrolling="no"></iframe>
+                        <iframe class="iframe iframe2" src="/static/html/zjj/ppqdkb.html" frameborder="0" scrolling="no"></iframe>
                     </div>
-                    <div v-else>
+                    <div class="tab-content" v-else>
                         <img src="../../../static/img/protrait/pphx4@2x.png" alt="">
+                        <iframe class="iframe iframe3" src="/static/html/lxj/bar1.html" frameborder="0" scrolling="no"></iframe>
                     </div>
                 </div>
             </div>
@@ -147,9 +150,32 @@
                 }
 
                 .bottom {
-                    >div {
+                    .tab-content {
+                        position: relative;
                         >img {
                             width: 100%;
+                        }
+
+                        .iframe {
+                            position: absolute;
+                            width: 48%;
+                            height: 280px;
+                            background: #FFFFFF;
+                        }
+
+                        .iframe1 {
+                            left: 20px;
+                            top: 70px;
+                        }
+
+                        .iframe2 {
+                            right: 10px;
+                            top: 50px;
+                        }
+
+                        .iframe3 {
+                            left: 10px;
+                            top: 45px;
                         }
                     }
                 }
