@@ -48,7 +48,6 @@ export default {
                 }
             }
             let a = Math.ceil(scrollHeight-scrollTop)
-            console.log(a,clientHeight)
             if(a==clientHeight){
                 navIndex = offsetTopArr.length-1
             }
