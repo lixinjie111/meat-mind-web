@@ -90,7 +90,7 @@ export default {
             } else {
                 scrollTop = targetOffsetTop
             }
-            document.body.scrollTop = scrollTop
+            // document.body.scrollTop = scrollTop
             // document.documentElement.scrollTop = scrollTop
             document.getElementsByClassName("anchor")[0].scrollTop = scrollTop
             // 关于 requestAnimationFrame 可以自己查一下，在这种场景下，相比 setInterval 性价比更高

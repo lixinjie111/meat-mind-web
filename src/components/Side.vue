@@ -57,7 +57,7 @@ export default {
     // menuItem name
     actMenuItem:{
       get(){
-        return this.actItemName
+        return this.actvieName
       },
       set(val){
         return val
@@ -66,7 +66,7 @@ export default {
     // subMenu name
     openSubMenu:{
       get(){
-        return this.subMenuName
+        return this.openName
       },
       set(val){
         return val
@@ -86,14 +86,14 @@ export default {
   },
   watch:{
     act(val){
-      this.actItemName = '0-'+val
+      this.actvieName = '0-'+val
     },
-    subMenuName(val){
-      this.actItemName = val+'-0'
+    openName(val){
+      this.actvieName = val+'-0'
     },
     $route(){
-      // console.log(this.actItemName,this.openSubMenu)
-      this.openSubMenu = this.subMenuName
+      // console.log(this.actvieName,this.openSubMenu)
+      this.openSubMenu = this.openName
     }
   },
   data() {
@@ -138,8 +138,8 @@ export default {
       ],
       active: this.$route.meta.moduleName,
       act:0,
-      actItemName:this.$route.meta.moduleName=="business-analysis"?"0-0":0,
-      subMenuName:[0],
+      actvieName:this.$route.meta.moduleName=="business-analysis"?"0-0":0,//menuItem 
+      openName:[0],//subMenu
     };
   },
   methods: {
@@ -150,7 +150,7 @@ export default {
     },
     // 选择menuItem
     handleSelect(name){
-      this.actItemName = name
+      this.actvieName = name
       this.scrollTo(name)
     },
     // 打开subMenu
@@ -158,7 +158,7 @@ export default {
       if(!ary.length){return}
       let path = this.sideList[ary].children[0].path
       if(path!=this.$route.path){
-        this.subMenuName = ary
+        this.openName = ary
         this.$router.push({path})
       }
 
@@ -177,7 +177,7 @@ export default {
     EventBus.$on('activeTarget',(navIndex)=>{
       this.act = navIndex
     })
-    // console.log("vue created",this.$route.path,this.sideList,this.openSubMenu,this.actItemName)
+    // console.log("vue created",this.$route.path,this.sideList,this.openSubMenu,this.actvieName)
   },
 };
 </script>
