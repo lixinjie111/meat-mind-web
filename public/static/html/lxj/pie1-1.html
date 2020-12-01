@@ -61,7 +61,7 @@
 					//orient: 'vertical',
 					left: 'center',
 					//top: 'center',
-					bottom: 20,
+					bottom: 5,
 					data: ['男','女'],
 				},
 				title: {
@@ -122,7 +122,10 @@
 			};
 			let myChart = echarts.init(document.getElementById("div"));
 			myChart.setOption(option);
-			  },500)
+			window.onresize = ()=>{
+				myChart.resize();
+			}
+		},500)
 		</script>
 	</body>
 

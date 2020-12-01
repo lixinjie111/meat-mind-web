@@ -119,23 +119,23 @@
 
                         .iframe2 {
                             width: 300px;
-                            height: 325px;
-                            left: 430px;
+                            height: 320px;
+                            left: 440px;
                             top: 144px;
                         }
 
                         .iframe3 {
                             width: 300px;
-                            height: 325px;
-                            right: 60px;
+                            height: 320px;
+                            right: 40px;
                             top: 144px;
                         }
 
                         .iframe4 {
                             width: 330px;
-                            height: 325px;
+                            height: 300px;
                             left: 40px;
-                            top: 520px;
+                            top: 530px;
                         }
                     }
                 }
