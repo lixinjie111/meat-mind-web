@@ -607,7 +607,7 @@
                             }
 
                             .legend {
-                                margin-top: -5px;
+                                margin-top: -3px;
                                 text-align: center;
 
                                 > img {
