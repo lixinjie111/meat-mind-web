@@ -79,7 +79,7 @@
 					y: 'center',
 					textStyle: {
 						color: "#fff",
-						fontSize: 15
+						fontSize: 12
 					},
 				},
 				legend: {
@@ -87,7 +87,7 @@
 					//orient: 'vertical',
 					left: 'center',
 					//top: 'center',
-					bottom: 15,
+					bottom: 5,
 					data: ['26-30岁','31-35岁','41-45岁','21-25岁','18-20岁','36-40岁'],
 				},
 				tooltip: {
@@ -96,7 +96,7 @@
 				series: [{
 					type: 'pie',
 					center: ['50%', '50%'],
-					radius: ['35%', '50%'],
+					radius: ['30%', '50%'],
 					clockwise: true,
 					avoidLabelOverlap: true,
 					hoverOffset: 15,
@@ -123,8 +123,8 @@
 					// },
 					labelLine: {
 						normal: {
-							length: 20,
-							length2: 30,
+							length: 10,
+							length2: 20,
 							lineStyle: {
 								width: 1
 							}
@@ -134,7 +134,10 @@
 				}]
 			};
 			let myChart = echarts.init(document.getElementById("div"));
-			myChart.setOption(option);
+			    myChart.setOption(option);
+				window.onresize = ()=>{
+					myChart.resize();
+				}
 			  },500)
 		</script>
 	</body>

@@ -71,7 +71,7 @@
 					legend: {
 						// orient: 'vertical',
 						// top: 'center',
-						bottom: 20,
+						bottom: 5,
 						// bottom: '2%',
 						data: data.map(it => it.label),
 					},
@@ -115,6 +115,9 @@
 				};
 				let myChart = echarts.init(document.getElementById("div"));
 				myChart.setOption(option);
+				window.onresize = ()=>{
+					myChart.resize();
+				}
 			}, 500)
 		</script>
 	</body>

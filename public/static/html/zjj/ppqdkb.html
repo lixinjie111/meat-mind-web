@@ -113,6 +113,9 @@
             };
             ;
             myPieChart.setOption(option);
+            window.onresize = ()=>{
+                myPieChart.resize();
+            }
         },500);
     </script>
 </body>

@@ -4,6 +4,7 @@
         <Modal title="欢迎使用智慧营销"
                 v-model="showModal"
                 footer-hide
+                :mask-closable="false"
                 class-name="vertical-center-modal">
             <div class="middle">
                 <div class="select">

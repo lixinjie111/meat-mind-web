@@ -33,7 +33,7 @@
 		<script lang="javascript">
 			setTimeout(()=>{
 				//['#4C98FB', '#83CCE7', '#26C7C8', '#73DEBD', '#26C978', '#8CDF6C', '#FBD657', '#F56679', '#E07BCE', '#9D50E0', '#634FDA']
-			var colorList = [ '#1B90FF','#34C724','#FFC60A','#F54A45','#00D6B9']
+			var colorList = [ '#fe7071','#d3d1c1','#26c9cb','#29ce9a','#9ae5ae']
 			var option = {
 				color: colorList,
 				tooltip: {
@@ -43,45 +43,55 @@
 					}
 				},
 				legend: {
-					top:20,
-					data: ['微博','微信','小红书','抖音','快手']
+					bottom:0,
+					data: ['连续活跃用户', '流失用户', '沉默用户', '新用户', '回流用户']
 				},
 				grid: {
+					top: '5%',
 					left: '3%',
-					right: '4%',
-					bottom: '3%',
+					right: '3%',
+					bottom: '10%',
 					containLabel: true
 				},
 				xAxis: {
 					type: 'category',
-					data: ['字节跳动', '巨量引擎', '西瓜视频', '空间变换', '快马加编','大眼星空']
+					data: ['10-26当周', '11-2当周', '11-9当周', '11-16当周', '11-23当周',]
 				},
 				yAxis: {
-					type: 'value'
+					type: 'value',
+					axisLine: {
+						show: false,
+					},
+					splitLine: {
+						lineStyle: {
+							type: 'dashed',
+							//color: 'rgba(135,140,147,0.8)'
+						}
+					},
 				},
 				series: [
 					{
-						name: '微博',
+						name: '连续活跃用户',
 						type: 'bar',
 						stack: '总量',
 						label: {
 							show: true,
 							position: 'insideRight'
 						},
-						data: [320, 302, 301, 334, 390, 330, 320]
+						data: [320, 302, 301, 334, 390, ]
 					},
 					{
-						name: '微信',
+						name: '流失用户',
 						type: 'bar',
 						stack: '总量',
 						label: {
 							show: true,
 							position: 'insideRight'
 						},
-						data: [120, 132, 101, 134, 90, 230, 210]
+						data: [120, 132, 101, 134, 90, ]
 					},
 					{
-						name: '小红书',
+						name: '沉默用户',
 						type: 'bar',
 						barWidth:40,
 						stack: '总量',
@@ -89,36 +99,33 @@
 							show: true,
 							position: 'insideRight'
 						},
-						data: [220, 182, 191, 234, 290, 330, 310]
+						data: [220, 182, 191, 234, 290, ]
 					},
 					{
-						name: '抖音',
+						name: '新用户',
 						type: 'bar',
 						stack: '总量',
 						label: {
 							show: true,
 							position: 'insideRight'
 						},
-						data: [150, 212, 201, 154, 190, 330, 410]
+						data: [150, 212, 201, 154, 190, ]
 					},
 					{
-						name: '快手',
+						name: '回流用户',
 						type: 'bar',
 						stack: '总量',
 						label: {
 							show: true,
 							position: 'insideRight'
 						},
-						data: [820, 832, 901, 934, 1290, 1330, 1320]
+						data: [820, 832, 901, 934, 1290, ]
 					},
 				]
 			};
 			let myChart = echarts.init(document.getElementById("div"));
 			myChart.setOption(option);
-			window.onresize = ()=>{
-				myChart.resize();
-			}
-		},500)
+			},500)
 		</script>
 	</body>
 

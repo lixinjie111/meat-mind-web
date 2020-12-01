@@ -2,15 +2,31 @@
   <div ref="anchor" class="anchor">
           <div id="zbjk">
               <img src="../../../static/img/analysis/zbjk.png" alt="">
+              <iframe class="iframe iframe1" src="/static/html/lxj1/num.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe iframe2" src="/static/html/lxj1/num1.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe iframe3" src="/static/html/lxj1/num2.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe iframe4" src="/static/html/lxj1/num3.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe iframe5" src="/static/html/lxj1/num4.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe iframe6" src="/static/html/lxj1/num5.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe iframe7" src="/static/html/lxj1/num6.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe iframe8" src="/static/html/lxj1/num7.html" frameborder="0" scrolling="no"></iframe>
           </div>
           <div id="ztqs">
               <img src="../../../static/img/analysis/ztqs.png" alt="">
+              <iframe class="iframe9" src="/static/html/lxj1/line1.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe10" src="/static/html/lxj1/line2.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe11" src="/static/html/lxj1/bar1.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe12" src="/static/html/lxj1/line3.html" frameborder="0" scrolling="no"></iframe>
           </div>
           <div id="zzts">
               <img src="../../../static/img/analysis/zzts.png" alt="">
+              <iframe class="iframe13" src="/static/html/lxj1/line4.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe14" src="/static/html/lxj1/line5.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe15" src="/static/html/lxj1/line6.html" frameborder="0" scrolling="no"></iframe>
           </div>
           <div id="yhlc">
               <img src="../../../static/img/analysis/yhlc.png" alt="">
+              <iframe class="iframe16" src="/static/html/lxj1/bar2.html" frameborder="0" scrolling="no"></iframe>
           </div>
   </div>
 </template>
@@ -133,14 +149,141 @@ export default {
             div{
                 width: 100%;
             }
+            #zbjk{
+                position: relative;
+
+                .iframe {
+                    position: absolute;
+                    width: 96px;
+                    height: 32px;
+                    z-index: 100;
+                }
+
+                .iframe1 {
+                    left: 48px;
+                    top: 120px;
+                }
+
+                .iframe2 {
+                    left: 320px;
+                    top: 120px;
+                }
+
+                .iframe3 {
+                    right: 484px;
+                    top: 120px;
+                }
+
+                .iframe4 {
+                    right: 190px;
+                    top: 120px;
+                }
+
+                .iframe5 {
+                    left: 34px;
+                    bottom: 58px;
+                }
+
+                .iframe6 {
+                    left: 320px;
+                    bottom: 58px;
+                }
+
+                .iframe7 {
+                    right: 486px;
+                    bottom: 58px;
+                }
+
+                .iframe8 {
+                    right: 174px;
+                    bottom: 58px;
+                }
+            }
             #ztqs{
+                position: relative;
                 padding: 0 24px;
+
+                .iframe9 {
+                    position: absolute;
+                    left: 42px;
+                    top: 110px;
+                    width: 45%;
+                    height: 220px;
+                    background: #fff;
+                }
+
+                .iframe10 {
+                    position: absolute;
+                    right: 50px;
+                    top: 110px;
+                    width: 45%;
+                    height: 220px;
+                    background: #fff;
+                }
+
+
+                .iframe11 {
+                    position: absolute;
+                    left: 42px;
+                    bottom: 34px;
+                    width: 45%;
+                    height: 220px;
+                    background: #fff;
+                }
+
+                .iframe12 {
+                    position: absolute;
+                    right: 50px;
+                    bottom: 34px;
+                    width: 45%;
+                    height: 220px;
+                    background: #fff;
+                }
             }
             #zzts{
+                position: relative;
                 padding: 0 24px;
+
+                .iframe13 {
+                    position: absolute;
+                    left: 42px;
+                    top: 110px;
+                    width: 45%;
+                    height: 220px;
+                    background: #fff;
+                }
+
+                .iframe14 {
+                    position: absolute;
+                    right: 50px;
+                    top: 110px;
+                    width: 45%;
+                    height: 220px;
+                    background: #fff;
+                }
+
+
+                .iframe15 {
+                    position: absolute;
+                    left: 42px;
+                    bottom: 34px;
+                    width: 45%;
+                    height: 220px;
+                    background: #fff;
+                }
             }
             #yhlc{
+                position: relative;
                 padding: 0 24px;
+
+                .iframe16 {
+                    position: absolute;
+                    left: 30px;
+                    bottom: 40px;
+                    width: 1140px;
+                    height: 300px;
+                    background: #fff;
+                }
             }
     }
 </style>

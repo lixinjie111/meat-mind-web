@@ -144,6 +144,8 @@
 
                     .tab-content {
                         position: relative;
+                        display: flex;
+
                         >img {
                             width: 100%;
                         }
@@ -169,18 +171,17 @@
                         .iframe3 {
                             height: 336px;
                             left: 0;
-                            top: 448px;
+                            top: 452px;
                         }
 
                         .iframe4 {
                             height: 330px;
-                            right: 4px;
-                            top: 448px;
+                            right: 0;
+                            top: 452px;
                         }
 
                         .player {
                             position: absolute;
-                            // width: 1150px;
                             width: 100%;
                             height: 466px;
                             top: -14px;
