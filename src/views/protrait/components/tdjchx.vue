@@ -100,6 +100,7 @@
                 .bottom {
                     .tab-content {
                         position: relative;
+                        display: flex;
 
                         >img {
                             width: 100%;

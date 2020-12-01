@@ -144,6 +144,8 @@
 
                     .tab-content {
                         position: relative;
+                        display: flex;
+
                         >img {
                             width: 100%;
                         }
@@ -180,7 +182,6 @@
 
                         .player {
                             position: absolute;
-                            // width: 1150px;
                             width: 100%;
                             height: 466px;
                             top: -14px;
