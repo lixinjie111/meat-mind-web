@@ -127,6 +127,7 @@
                         width: 90px;
                         height: 32px;
                         background: #FFFFFF;
+                        text-align: left;
                     }
 
                     .iframe2 {
@@ -140,12 +141,12 @@
                     }
 
                     .iframe4 {
-                        left: 820px;
+                        left: 818px;
                         top: 155px;
                     }
 
                     .iframe5 {
-                        left: 1080px;
+                        left: 1076px;
                         top: 154px;
                     }
 
@@ -172,9 +173,9 @@
                     }
 
                     .iframe10 {
-                        left: 902px;
+                        left: 890px;
                         top: 159px;
-                        width: 70px;
+                        width: 72px;
                     }
 
                     .iframe11 {
@@ -224,7 +225,7 @@
                     }
 
                     .iframe20 {
-                        left: 1009px;
+                        left: 998px;
                         top: 172px;
                         width: 127px;
                     }
@@ -241,7 +242,7 @@
                     }
 
                     .iframe23 {
-                        left: 692px;
+                        left: 688px;
                         bottom: 102px;
                     }
 
