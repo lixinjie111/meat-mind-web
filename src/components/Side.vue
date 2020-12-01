@@ -118,11 +118,12 @@ export default {
     checkItem(item) {
       this.active = item.path;
       this.targetName = item.name
-      this.$router.push({name:item.path})
+      if(item.path!=this.$route.meta.moduleName){
+        this.$router.push({name:item.path})
+      }
     },
     // 选择menuItem
     handleSelect(name){
-      console.log("menu Item",name)
       this.activeName = name
       this.scrollTo()
     },
@@ -160,7 +161,6 @@ export default {
     }else{
       this.activeName = this.$route.name
     }
-    console.log(this.openName,this.activeName)
     EventBus.$on('activeTarget',(curDiv)=>{
       this.activeName = curDiv
     })

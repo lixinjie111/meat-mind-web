@@ -280,7 +280,9 @@ export default {
                     position: absolute;
                     left: 30px;
                     bottom: 40px;
-                    width: 1140px;
+                    right: 0;
+                    // width: 1140px;
+                    // width: 100%;
                     height: 300px;
                     background: #fff;
                 }

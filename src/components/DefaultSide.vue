@@ -117,36 +117,37 @@ export default {
     checkItem(item) {
       this.active = item.path;
       this.targetName = item.name
-      this.$router.push({name:item.path})
+      if(item.path!=this.$route.meta.moduleName){
+        this.$router.push({name:item.path})
+      }
     },
     // 选择menuItem
     handleSelect(name){
-      console.log("menu Item",name)
       this.activeName = name
     },
     // 打开subMenu
     openChange(ary){
-        console.log("open sub",ary)
       if(!ary.length){return}
       let routeName = ary[0]
-      if(routeName!=this.$route.name){
+      let name = routeName+"-"+this.activeName
+      if(name!=this.$route.name){
+          let cur = this.sideList.find(item=>{
+              return item.name == routeName
+          }).children
         this.openName = ary
-        this.activeName = ary[0]
-        this.$router.push({name:routeName})
+        this.activeName = cur[0].name
+        this.$router.push({name:routeName+"-"+this.activeName})
       }
     }
   },
   created(){
-    this.openName = [this.$route.name]
-    // if(this.$route.meta.moduleName=="business-analysis"){
-    //   this.activeName = this.$route.name.split("-")[2]
-    // }else{
-      this.activeName = this.$route.name
-    // }
-    console.log(this.openName,this.activeName)
-  },
-  mounted(){
-    this.$nextTick()
+    let arr = this.$route.name.split("-")
+    if(arr.length>3){
+        this.openName = [arr[0]+"-"+arr[1]+"-"+arr[2]]
+        this.activeName = arr[arr.length-1]
+    }else{
+        this.activeName = this.$route.name
+    }
   }
 };
 </script>
