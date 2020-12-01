@@ -13,15 +13,15 @@ export default {
     data(){
     return {
       sides:[
-        {name:"分析模型",icon:"iconzidingyifenxi",meta:"/analysis-tool",path:"/analysis-tool/fxmx"},
-        {name:"指标管理",icon:"iconzhibiaoguanli",meta:"/analysis-tool",path:"/analysis-tool/zbgl"},
-        {name:"标签管理",icon:"iconbiaoqiantixi",meta:"/analysis-tool",path:"/analysis-tool/bqgl"},
-        {name:"用户分群",icon:"iconyonghufenqun",meta:"/analysis-tool",path:"/analysis-tool/yhfq"},
-        {name:"渠道追踪",icon:"iconqudaozhuizong",meta:"/analysis-tool",path:"",children:[
-          {name:"渠道链接",meta:"/analysis-tool",path:"/analysis-tool/qdlj"},
-          {name:"渠道管理",meta:"/analysis-tool",path:"/analysis-tool/qdgl"}
+        {label:"分析模型",name:"analysis-tool-fxmx",icon:"iconzidingyifenxi",meta:"/analysis-tool",path:"/analysis-tool/fxmx"},
+        {label:"指标管理",name:"analysis-tool-zbgl",icon:"iconzhibiaoguanli",meta:"/analysis-tool",path:"/analysis-tool/zbgl"},
+        {label:"标签管理",name:"analysis-tool-bqgl",icon:"iconbiaoqiantixi",meta:"/analysis-tool",path:"/analysis-tool/bqgl"},
+        {label:"用户分群",name:"analysis-tool-yhfq",icon:"iconyonghufenqun",meta:"/analysis-tool",path:"/analysis-tool/yhfq"},
+        {label:"渠道追踪",name:"analysis-tool-qdlj",icon:"iconqudaozhuizong",meta:"/analysis-tool",path:"",children:[
+          {label:"渠道链接",name:"qdlj",meta:"/analysis-tool",path:"/analysis-tool/qdlj"},
+          {label:"渠道管理",name:"qdgl",meta:"/analysis-tool",path:"/analysis-tool/qdgl"}
         ]},
-        {name:"场景库",icon:"iconchangjingku",meta:"/analysis-tool",path:"/analysis-tool/cjk"},
+        {label:"场景库",name:"analysis-tool-cjk",icon:"iconchangjingku",meta:"/analysis-tool",path:"/analysis-tool/cjk"},
       ]
     }
   }

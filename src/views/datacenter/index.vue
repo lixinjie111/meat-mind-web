@@ -13,10 +13,10 @@ export default {
     data(){
     return {
       sides:[
-        {name:"我的数据",icon:"iconwodeshuju",meta:"/data-center",path:"/data-center/my"},
-        {name:"付费数据",icon:"iconfufeishuju",meta:"/data-center",path:"/data-center/pay"},
-        {name:"系统集成",icon:"iconxitongjicheng",meta:"/data-center",path:"/data-center/system"},
-        {name:"元数据管理",icon:"iconyuanshujubeifen",meta:"/data-center",path:"/data-center/metax"}
+        {label:"我的数据",name:"data-center-my",icon:"iconwodeshuju",meta:"/data-center",path:"/data-center/my"},
+        {label:"付费数据",name:"data-center-pay",icon:"iconfufeishuju",meta:"/data-center",path:"/data-center/pay"},
+        {label:"系统集成",name:"data-center-system",icon:"iconxitongjicheng",meta:"/data-center",path:"/data-center/system"},
+        {label:"元数据管理",name:"data-center-metax",icon:"iconyuanshujubeifen",meta:"/data-center",path:"/data-center/metax"}
       ]
     }
   }

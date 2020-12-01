@@ -42,7 +42,6 @@
 </template>
 
 <script>
-import { EventBus} from "@/utils/eventbus"
 export default {
   name: "Side",
   props: {
@@ -124,46 +123,27 @@ export default {
     handleSelect(name){
       console.log("menu Item",name)
       this.activeName = name
-      this.scrollTo()
     },
     // 打开subMenu
     openChange(ary){
+        console.log("open sub",ary)
       if(!ary.length){return}
       let routeName = ary[0]
       if(routeName!=this.$route.name){
         this.openName = ary
-        this.activeName = ary[0].split("-")[2]
+        this.activeName = ary[0]
         this.$router.push({name:routeName})
-      }
-    },
-    scrollTo(){
-      let index = 0
-      index = this.sideList.findIndex(item=>{
-        return item.name == this.$route.name
-      })
-      if(this.sideList[index].children){
-        index = this.sideList[index].children.findIndex(ele=>{
-          return ele.name == this.activeName
-        })
-      }
-     
-      if(index>-1){
-        this.$emit('handleScroll',index)
-        EventBus.$emit("index",index)
       }
     }
   },
   created(){
     this.openName = [this.$route.name]
-    if(this.$route.meta.moduleName=="business-analysis"){
-      this.activeName = this.$route.name.split("-")[2]
-    }else{
+    // if(this.$route.meta.moduleName=="business-analysis"){
+    //   this.activeName = this.$route.name.split("-")[2]
+    // }else{
       this.activeName = this.$route.name
-    }
+    // }
     console.log(this.openName,this.activeName)
-    EventBus.$on('activeTarget',(curDiv)=>{
-      this.activeName = curDiv
-    })
   },
   mounted(){
     this.$nextTick()

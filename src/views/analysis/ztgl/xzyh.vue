@@ -4,14 +4,14 @@
       <img src="../../../static/img/analysis/yhfx.png" alt="">
       <img src="../../../static/img/analysis/xzyh.png" alt="" />
     </div>
+    <div id="hyyh">
+      <img src="../../../static/img/analysis/hyyh.png" alt="" />
+    </div>
     <div id="lcyh">
       <img src="../../../static/img/analysis/lcyh.png" alt="" />
     </div>
     <div id="yhcyd">
       <img src="../../../static/img/analysis/yhcyd.png" alt="" />
-    </div>
-    <div id="mbyhdz">
-      <img src="../../../static/img/analysis/hyyh.png" alt="" />
     </div>
   </div>
 </template>
@@ -22,7 +22,7 @@ export default {
   name:"zxyh",
   data(){
     return {
-      active:0
+      subList:["yhfx","hyyh","lcyh","yhcyd"]
     }
   },
     methods:{
@@ -56,8 +56,8 @@ export default {
             if(a==clientHeight-1){
                 navIndex = offsetTopArr.length-1
             }
-            this.active = navIndex
-            EventBus.$emit('activeTarget',navIndex)
+            let curDiv = this.subList[navIndex]
+            EventBus.$emit('activeTarget',curDiv)
         },
         // 跳转到指定索引的元素
         scrollTo(index) {

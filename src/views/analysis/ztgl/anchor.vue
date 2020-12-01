@@ -21,7 +21,7 @@ export default {
     name:"anchor",
     data(){
         return {
-            active:0
+            subList:["ztgl","ztqs","zzts","yhlc"]
         }
     },
     methods:{
@@ -58,8 +58,8 @@ export default {
                 navIndex = offsetTopArr.length-1
             }
             // 把下标赋值给 vue 的 data
-            this.active = navIndex
-            EventBus.$emit('activeTarget',navIndex)
+            let curDiv = this.subList[navIndex]
+            EventBus.$emit('activeTarget',curDiv)
         },
         // 跳转到指定索引的元素
         scrollTo(index) {

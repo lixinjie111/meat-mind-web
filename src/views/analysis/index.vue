@@ -13,27 +13,27 @@ export default {
   data(){
     return {
       sides:[
-        {name:"整体概览",icon:"iconzhinengjuece",meta:"business-analysis",children:[
-          {name:"指标监控",meta:"/business-analysis",path:"/business-analysis/ztgl"},
-          {name:"整体趋势",meta:"/business-analysis",path:"/business-analysis/ztgl"},
-          {name:"增长态势",meta:"/business-analysis",path:"/business-analysis/ztgl"},
-          {name:"用户旅程",meta:"/business-analysis",path:"/business-analysis/ztgl"}
+        {label:"整体概览",name:"business-analysis-ztgl",icon:"iconzhinengjuece",meta:"business-analysis",children:[
+          {label:"指标监控",name:"ztgl",meta:"/business-analysis",path:"/business-analysis/ztgl"},
+          {label:"整体趋势",name:"ztqs",meta:"/business-analysis",path:"/business-analysis/ztgl"},
+          {label:"增长态势",name:"zzts",meta:"/business-analysis",path:"/business-analysis/ztgl"},
+          {label:"用户旅程",name:"yhlc",meta:"/business-analysis",path:"/business-analysis/ztgl"}
         ]},
-        {name:"用户分析",icon:"iconyonghufenxi",meta:"business-analysis",children:[
-          {name:"新增用户",meta:"/business-analysis",path:"/business-analysis/xzyh"},
-          {name:"留存用户",meta:"/business-analysis",path:"/business-analysis/xzyh"},
-          {name:"用户参与度",meta:"/business-analysis",path:"/business-analysis/xzyh"},
-          {name:"目标用户对照",meta:"/business-analysis",path:"/business-analysis/xzyh"}
+        {label:"用户分析",name:"business-analysis-yhfx",icon:"iconyonghufenxi",meta:"business-analysis",children:[
+          {label:"新增用户",name:"yhfx",meta:"/business-analysis",path:"/business-analysis/yhfx"},
+          {label:"活跃用户",name:"hyyh",meta:"/business-analysis",path:"/business-analysis/yhfx"},
+          {label:"留存用户",name:"lcyh",meta:"/business-analysis",path:"/business-analysis/yhfx"},
+          {label:"用户参与度",name:"yhcyd",meta:"/business-analysis",path:"/business-analysis/yhfx"}
         ]},
-        {name:"渠道分析",icon:"iconqudaofenxi",meta:"business-analysis",children:[
-          {name:"渠道实时",meta:"/business-analysis",path:"/business-analysis/qdss"},
-          {name:"渠道概况",meta:"/business-analysis",path:"/business-analysis/qdss"},
-          {name:"渠道质量评估",meta:"/business-analysis",path:"/business-analysis/qdss"}
+        {label:"渠道分析",name:"business-analysis-qdfx",icon:"iconqudaofenxi",meta:"business-analysis",children:[
+          {label:"渠道实时",name:"qdfx",meta:"/business-analysis",path:"/business-analysis/qdfx"},
+          {label:"渠道概况",name:"qdgk",meta:"/business-analysis",path:"/business-analysis/qdfx"},
+          {label:"渠道质量评估",name:"qdzlpg",meta:"/business-analysis",path:"/business-analysis/qdfx"}
         ]},
-        {name:"品牌运营分析",icon:"iconpinpaiyunyingfenxi",meta:"business-analysis",children:[
-          {name:"业务概览",meta:"/business-analysis",path:"/business-analysis/ywgl"},
-          {name:"经营概览",meta:"/business-analysis",path:"/business-analysis/ywgl"},
-          {name:"MRR分析",meta:"/business-analysis",path:"/business-analysis/ywgl"}
+        {label:"品牌运营分析",name:"business-analysis-ywgl",icon:"iconpinpaiyunyingfenxi",meta:"business-analysis",children:[
+          {label:"业务概览",name:"ywgl",meta:"/business-analysis",path:"/business-analysis/ywgl"},
+          {label:"经营概览",name:"jygl",meta:"/business-analysis",path:"/business-analysis/ywgl"},
+          {label:"MRR分析",name:"mrrfx",meta:"/business-analysis",path:"/business-analysis/ywgl"}
         ]}
       ]
     }

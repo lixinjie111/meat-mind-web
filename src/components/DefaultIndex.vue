@@ -12,7 +12,7 @@
 
 <script>
 import Header from "@/components/HeaderDefault"
-import Side from "@/components/Side"
+import Side from "@/components/DefaultSide"
 export default {
   name: "default",
   components: {

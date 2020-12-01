@@ -13,11 +13,11 @@ export default {
     data(){
     return {
       sides:[
-        {name:"用户画像",icon:"iconyonghuhuaxiang",meta:"/portrait-system",path:"/portrait-system/yhhx"},
-        {name:"品牌画像",icon:"iconpinpaihuaxiang",meta:"/portrait-system",path:"/portrait-system/pphx"},
-        {name:"通道画像",icon:"icontongdaohuaxiang",meta:"portrait-system",path:"",children:[
-          {name:"通道基础画像",meta:"/portrait-system",path:"/portrait-system/tdjchx"},
-          {name:"KOL属性",meta:"/portrait-system",path:"/portrait-system/kolsx"}
+        {label:"用户画像",name:"portrait-system-yhhx",icon:"iconyonghuhuaxiang",meta:"portrait-system",path:"/portrait-system/yhhx"},
+        {label:"品牌画像",name:"portrait-system-pphx",icon:"iconpinpaihuaxiang",meta:"portrait-system",path:"/portrait-system/pphx"},
+        {label:"通道画像",name:"portrait-system-tdhx",icon:"icontongdaohuaxiang",meta:"portrait-system",children:[
+          {label:"通道基础画像",name:"tdhx",meta:"/portrait-system",path:"/portrait-system/tdhx"},
+          {label:"KOL属性",name:"kolsx",meta:"/portrait-system",path:"/portrait-system/kolsx"}
         ]}
       ]
     }

@@ -28,11 +28,11 @@ export default [
         name:`${moduleName}-pphx`
       },
       {
-        path:`/${moduleName}/tdjchx`,
+        path:`/${moduleName}/tdhx`,
         label:"通道基础画像",
         meta:{title:"通道基础画像",moduleName},
         component:tdjchx,
-        name:`${moduleName}-tdjchx`
+        name:`${moduleName}-tdhx`
       },
       {
         path:`/${moduleName}/kolsx`,

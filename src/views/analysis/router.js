@@ -1,7 +1,7 @@
 const analysis=()=>import('./index');
 // const zbjk=()=>import('./ztgl/zbjk.vue')
-const xzyh=()=>import('./ztgl/xzyh.vue')
-const qdss=()=>import('./ztgl/qdss.vue')
+const yhfx=()=>import('./ztgl/xzyh.vue')
+const qdfx=()=>import('./ztgl/qdss.vue')
 const ywgl=()=>import('./ztgl/ywgl.vue')
 const anchor=()=>import('./ztgl/anchor.vue')
 const moduleName='business-analysis';
@@ -43,18 +43,18 @@ export default [
       //   name:`${moduleName}-ztgl`
       // },
       {
-        path:`/${moduleName}/xzyh`,
+        path:`/${moduleName}/yhfx`,
         label:"新增用户",
         meta:{title:"新增用户",moduleName},
-        component:xzyh,
-        name:`${moduleName}-xzyh`
+        component:yhfx,
+        name:`${moduleName}-yhfx`
       },
       {
-        path:`/${moduleName}/qdss`,
+        path:`/${moduleName}/qdfx`,
         label:"渠道实时",
         meta:{title:"渠道实时",moduleName},
-        component:qdss,
-        name:`${moduleName}-qdss`
+        component:qdfx,
+        name:`${moduleName}-qdfx`
       },
       {
         path:`/${moduleName}/ywgl`,
