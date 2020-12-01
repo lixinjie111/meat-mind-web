@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				font-family: 'Helvetica Neue','Helvetica','PingFang SC','Hiragino Sans GB','Microsoft YaHei','微软雅黑','Arial','sans-serif','PingFangSC-Medium';
+			}
+
+			#div {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="div">
+
+		</div>
+
+
+		<script src="../../js/echarts.min.js"></script>
+		<script lang="javascript">
+			setTimeout(() => {
+				var colorList = [ '#5585ef', '#7fe4bc','#febd67' ]
+				var option = {
+					color: colorList,
+					tooltip: {
+						trigger: 'axis'
+					},
+					legend: {
+						bottom:15,
+						data: ['web端日活', 'app端日活','小程序端日活']
+					},
+					grid: {
+						left: '3%',
+						right: '4%',
+						bottom: '10%',
+						containLabel: true
+					},
+					xAxis: {
+						type: 'category',
+						boundaryGap: false,
+						data: ['10-01', '10-02', '10-03', '10-04', '10-05', '10-06', '10-07',]
+					},
+					yAxis: {
+						type: 'value',
+						axisLabel: {
+							formatter: '{value} '
+						},
+						axisLine: {
+							show: false,
+						},
+						splitLine: {
+							lineStyle: {
+								type: 'dashed',
+								//color: 'rgba(135,140,147,0.8)'
+							}
+						},
+					},
+					series: [
+						{
+							name: 'web端日活',
+							type: 'line',
+							stack: '总量',
+							data: [320, 132, 101, 534, 90, 230, 210,]
+						},
+						{
+							name: 'app端日活',
+							type: 'line',
+							stack: '总量',
+							data: [200, 182, 181, 234, 290, 930, 310]
+						},
+						{
+							name: '小程序端日活',
+							type: 'line',
+							stack: '总量',
+							data: [520, 232, 101, 134, 90, 230, 310,]
+						},
+					]
+				};
+				let myChart = echarts.init(document.getElementById("div"));
+				myChart.setOption(option);
+			}, 500)
+		</script>
+	</body>
+
+</html>

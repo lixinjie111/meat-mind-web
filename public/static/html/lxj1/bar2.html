@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				font-family: 'Helvetica Neue','Helvetica','PingFang SC','Hiragino Sans GB','Microsoft YaHei','微软雅黑','Arial','sans-serif','PingFangSC-Medium';
+			}
+
+			#div {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="div">
+
+		</div>
+
+
+		<script src="../../js/echarts.min.js"></script>
+		<script lang="javascript">
+			setTimeout(()=>{
+				//['#4C98FB', '#83CCE7', '#26C7C8', '#73DEBD', '#26C978', '#8CDF6C', '#FBD657', '#F56679', '#E07BCE', '#9D50E0', '#634FDA']
+			var colorList = [ '#fe7071','#d3d1c1','#26c9cb','#29ce9a','#9ae5ae']
+			var option = {
+				color: colorList,
+				tooltip: {
+					trigger: 'axis',
+					axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+						type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+					}
+				},
+				legend: {
+					bottom:15,
+					data: ['连续活跃用户', '流失用户', '沉默用户', '新用户', '回流用户']
+				},
+				grid: {
+					left: '3%',
+					right: '4%',
+					bottom: '10%',
+					containLabel: true
+				},
+				xAxis: {
+					type: 'category',
+					data: ['10-26当周', '11-2当周', '11-9当周', '11-16当周', '11-23当周',]
+				},
+				yAxis: {
+					type: 'value',
+					axisLine: {
+						show: false,
+					},
+					splitLine: {
+						lineStyle: {
+							type: 'dashed',
+							//color: 'rgba(135,140,147,0.8)'
+						}
+					},
+				},
+				series: [
+					{
+						name: '连续活跃用户',
+						type: 'bar',
+						stack: '总量',
+						label: {
+							show: true,
+							position: 'insideRight'
+						},
+						data: [320, 302, 301, 334, 390, ]
+					},
+					{
+						name: '流失用户',
+						type: 'bar',
+						stack: '总量',
+						label: {
+							show: true,
+							position: 'insideRight'
+						},
+						data: [120, 132, 101, 134, 90, ]
+					},
+					{
+						name: '沉默用户',
+						type: 'bar',
+						barWidth:40,
+						stack: '总量',
+						label: {
+							show: true,
+							position: 'insideRight'
+						},
+						data: [220, 182, 191, 234, 290, ]
+					},
+					{
+						name: '新用户',
+						type: 'bar',
+						stack: '总量',
+						label: {
+							show: true,
+							position: 'insideRight'
+						},
+						data: [150, 212, 201, 154, 190, ]
+					},
+					{
+						name: '回流用户',
+						type: 'bar',
+						stack: '总量',
+						label: {
+							show: true,
+							position: 'insideRight'
+						},
+						data: [820, 832, 901, 934, 1290, ]
+					},
+				]
+			};
+			let myChart = echarts.init(document.getElementById("div"));
+			myChart.setOption(option);
+			},500)
+		</script>
+	</body>
+
+</html>
