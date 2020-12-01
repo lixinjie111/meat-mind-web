@@ -124,64 +124,62 @@
                     .iframe {
                         position: absolute;
                         z-index: 100;
-                        width: 78px;
+                        width: 90px;
                         height: 32px;
                         background: #FFFFFF;
                     }
 
                     .iframe2 {
-                        left: 304px;
+                        left: 300px;
                         top: 155px;
                     }
 
                     .iframe3 {
-                        left: 561px;
+                        left: 560px;
                         top: 155px;
                     }
 
                     .iframe4 {
-                        left: 818px;
+                        left: 820px;
                         top: 155px;
                     }
 
                     .iframe5 {
-                        left: 1076px;
+                        left: 1080px;
                         top: 154px;
                     }
 
                     .iframe6 {
-                        left: 46px;
-                        top: 157px;
-                        width: 74px;
+                        left: 40px;
+                        top: 159px;
                     }
 
                     .iframe7 {
-                        left: 253px;
-                        top: 157px;
+                        left: 250px;
+                        top: 159px;
                         width: 60px;
                     }
 
                     .iframe8 {
-                        left: 481px;
-                        top: 157px;
+                        left: 470px;
+                        top: 159px;
                     }
 
 
                     .iframe9 {
-                        left: 694px;
-                        top: 157px;
-                        width: 80px;
+                        left: 690px;
+                        top: 159px;
                     }
 
                     .iframe10 {
-                        left: 906px;
-                        top: 157px;
-                        width: 60px;
+                        left: 902px;
+                        top: 159px;
+                        width: 70px;
                     }
 
                     .iframe11 {
-                        left: 1132px;
-                        top: 157px;
+                        left: 1110px;
+                        top: 159px;
                     }
 
                     .iframe12 {
@@ -210,19 +208,19 @@
                     }
 
                     .iframe17 {
-                        left: 45px;
+                        left: 40px;
                         top: 172px;
                     }
 
                     .iframe18 {
-                        left: 370px;
+                        left: 365px;
                         top: 172px;
                     }
 
                     .iframe19 {
-                        left: 674px;
+                        left: 680px;
                         top: 172px;
-                        width: 40px;
+                        width: 70px;
                     }
 
                     .iframe20 {
@@ -232,14 +230,14 @@
                     }
 
                     .iframe21 {
-                        left: 44px;
+                        left: 40px;
                         bottom: 102px;
                     }
 
                     .iframe22 {
-                        left: 352px;
+                        left: 355px;
                         bottom: 102px;
-                        width: 40px;
+                        width: 70px;
                     }
 
                     .iframe23 {

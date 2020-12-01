@@ -181,11 +181,10 @@
 
                         .player {
                             position: absolute;
-                            // width: 1150px;
                             width: 100%;
-                            height: 460px;
-                            top: -16px;
-                            left: 0;
+                            height: 475px;
+                            top: -17px;
+                            right: -1px;
                         }
                     }
                 }
