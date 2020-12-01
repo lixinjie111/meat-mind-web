@@ -2,6 +2,7 @@
   <div ref="anchor" class="anchor">
           <div id="zbjk">
               <img src="../../../static/img/analysis/zbjk.png" alt="">
+<!--              <iframe class="iframe1" src="/static/html/lxj1/num1.html" frameborder="0" scrolling="no"></iframe>-->
           </div>
           <div id="ztqs">
               <img src="../../../static/img/analysis/ztqs.png" alt="">
