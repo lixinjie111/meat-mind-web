@@ -127,7 +127,6 @@
                         width: 90px;
                         height: 32px;
                         background: #FFFFFF;
-                        text-align: left;
                     }
 
                     .iframe2 {
