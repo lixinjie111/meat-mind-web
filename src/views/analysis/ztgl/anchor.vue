@@ -69,7 +69,7 @@ export default {
         // 获取当前 offsetTop
         // let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
         let scrollTop =  document.getElementsByClassName("anchor")[0].scrollTop
-        // 定义一次跳 50 个像素，数字越大跳得越快，但是会有掉帧得感觉，步子迈大了会扯到蛋
+        // 定义一次跳 50 个像素，数字越大跳得越快，但是会有掉帧得感觉
         const STEP = 50
         // 判断是往下滑还是往上滑
         if (scrollTop > targetOffsetTop) {
@@ -132,23 +132,15 @@ export default {
         }
             div{
                 width: 100%;
-                // height: 1000px;
-            }
-            #zbjk{
-                // padding: 0 24px;
-                // border:1px solid yellowgreen;
             }
             #ztqs{
                 padding: 0 24px;
-                // border:1px solid blue;
             }
             #zzts{
                 padding: 0 24px;
-                //  border:1px solid green;
             }
             #yhlc{
                 padding: 0 24px;
-                // border:1px solid yellow;
             }
     }
 </style>

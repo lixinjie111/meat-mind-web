@@ -92,7 +92,6 @@ export default {
       this.actvieName = val+'-0'
     },
     $route(){
-      // console.log(this.actvieName,this.openSubMenu)
       this.openSubMenu = this.openName
     }
   },
@@ -100,37 +99,31 @@ export default {
     return {
       routes: [
         {
-          // src: require("../static/img/header/home@2x.png"),
           name: "Dashboard",
           icon:"icondashboard",
           path:"home"
         },
         {
-          // src: require("../static/img/header/intelligent-decision@2x.png"),
           name: "智能决策",
           icon:"iconzhinengjuece",
           path:"intelligent-decision"
         },
         {
-          // src: require("../static/img/header/business-analysis@2x.png"),
           name: "经营分析",
           icon:"iconjingyingfenxi",
           path:"business-analysis"
         },
         {
-          // src: require("../static/img/header/analysis-tool@2x.png"),
           name: "分析工具",
           icon:"iconfenxigongju",
           path:"analysis-tool"
         },
         {
-          // src: require("../static/img/header/portrait-system@2x.png"),
           name: "画像系统",
           icon:"iconhuaxiangxitong",
           path:"portrait-system"
         },
         {
-          // src: require("../static/img/header/data-center@2x.png"),
           name: "数据管理",
           icon:"iconshujuguanli",
           path:"data-center"

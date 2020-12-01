@@ -14,10 +14,10 @@ export default {
     return {
       sides:[
         {name:"整体概览",icon:"iconzhinengjuece",meta:"business-analysis",children:[
-          {name:"指标监控",meta:"/business-analysis",path:"/business-analysis/ztgl",href:"#zbjk"},
-          {name:"整体趋势",meta:"/business-analysis",path:"/business-analysis/ztgl",href:"#ztqs"},
-          {name:"增长态势",meta:"/business-analysis",path:"/business-analysis/ztgl",href:"#zzts"},
-          {name:"用户旅程",meta:"/business-analysis",path:"/business-analysis/ztgl",href:"#yhlc"}
+          {name:"指标监控",meta:"/business-analysis",path:"/business-analysis/ztgl"},
+          {name:"整体趋势",meta:"/business-analysis",path:"/business-analysis/ztgl"},
+          {name:"增长态势",meta:"/business-analysis",path:"/business-analysis/ztgl"},
+          {name:"用户旅程",meta:"/business-analysis",path:"/business-analysis/ztgl"}
         ]},
         {name:"用户分析",icon:"iconyonghufenxi",meta:"business-analysis",children:[
           {name:"新增用户",meta:"/business-analysis",path:"/business-analysis/xzyh"},
