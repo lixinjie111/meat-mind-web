@@ -27,20 +27,30 @@ export default [
         component:pphx,
         name:`${moduleName}-pphx`
       },
-      {
+      {        
         path:`/${moduleName}/tdhx`,
-        label:"通道基础画像",
-        meta:{title:"通道基础画像",moduleName},
+        label:"通道画像",
+        // redirect:{name:`${moduleName}-tdhx-tdjchx`},
+        meta:{title:"通道画像",moduleName},
         component:tdjchx,
-        name:`${moduleName}-tdhx`
+        name:`${moduleName}-tdhx`,
+        children:[
+          {
+            path:`/${moduleName}/tdhx/tdjchx`,
+            label:"通道基础画像",
+            meta:{title:"通道基础画像",moduleName},
+            component:tdjchx,
+            name:`${moduleName}-tdhx-tdjchx`
+          },
+          {
+            path:`/${moduleName}/tdhx/kolsx`,
+            label:"KOL属性",
+            meta:{title:"KOL属性",moduleName},
+            component:kolsx,
+            name:`${moduleName}-tdhx-kolsx`
+          }
+        ]
       },
-      {
-        path:`/${moduleName}/kolsx`,
-        label:"KOL属性",
-        meta:{title:"KOL属性",moduleName},
-        component:kolsx,
-        name:`${moduleName}-kolsx`
-      }
     ]
   }
 ]

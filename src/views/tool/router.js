@@ -45,19 +45,29 @@ export default [
         name:`${moduleName}-yhfq`
       },
       {
-        path:`/${moduleName}/qdlj`,
-        label:"渠道链接",
-        meta:{title:"渠道链接",moduleName},
+        path:`/${moduleName}/qdzz`,
+        label:"渠道追踪",
+        meta:{title:"渠道追踪",moduleName},
         component:qdlj,
-        name:`${moduleName}-qdlj`
+        name:`${moduleName}-qdzz`,
+        children:[
+          {
+            path:`/${moduleName}/qdzz/qdlj`,
+            label:"渠道链接",
+            meta:{title:"渠道链接",moduleName},
+            component:qdlj,
+            name:`${moduleName}-qdzz-qdlj`
+          },
+          {
+            path:`/${moduleName}/qdzz/qdgl`,
+            label:"渠道管理",
+            meta:{title:"渠道管理",moduleName},
+            component:qdgl,
+            name:`${moduleName}-qdzz-qdgl`
+          }
+        ]
       },
       {
-        path:`/${moduleName}/qdgl`,
-        label:"渠道管理",
-        meta:{title:"渠道管理",moduleName},
-        component:qdgl,
-        name:`${moduleName}-qdgl`
-      },      {
         path:`/${moduleName}/cjk`,
         label:"场景库",
         meta:{title:"场景库",moduleName},

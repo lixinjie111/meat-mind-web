@@ -16,8 +16,8 @@ export default {
         {label:"用户画像",name:"portrait-system-yhhx",icon:"iconyonghuhuaxiang",meta:"portrait-system",path:"/portrait-system/yhhx"},
         {label:"品牌画像",name:"portrait-system-pphx",icon:"iconpinpaihuaxiang",meta:"portrait-system",path:"/portrait-system/pphx"},
         {label:"通道画像",name:"portrait-system-tdhx",icon:"icontongdaohuaxiang",meta:"portrait-system",children:[
-          {label:"通道基础画像",name:"tdhx",meta:"/portrait-system",path:"/portrait-system/tdhx"},
-          {label:"KOL属性",name:"kolsx",meta:"/portrait-system",path:"/portrait-system/kolsx"}
+          {label:"通道基础画像",name:"tdjchx",meta:"portrait-system-tdhx",path:"/portrait-system/tdhx/tdjchx"},
+          {label:"KOL属性",name:"kolsx",meta:"portrait-system-tdhx",path:"/portrait-system/tdhx/kolsx"}
         ]}
       ]
     }

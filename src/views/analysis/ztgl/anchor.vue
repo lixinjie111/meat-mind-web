@@ -275,12 +275,13 @@ export default {
             #yhlc{
                 position: relative;
                 padding: 0 24px;
-
                 .iframe16 {
                     position: absolute;
                     left: 30px;
                     bottom: 40px;
-                    width: 1140px;
+                    // right: 0;
+                    width: 1130px;
+                    // width: 100%;
                     height: 300px;
                     background: #fff;
                 }
