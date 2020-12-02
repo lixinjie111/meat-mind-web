@@ -92,6 +92,9 @@
 				};
 				let myChart = echarts.init(document.getElementById("div"));
 				myChart.setOption(option);
+				window.onresize = ()=>{
+					myChart.resize();
+				}
 			}, 500)
 		</script>
 	</body>
