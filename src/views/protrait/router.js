@@ -1,6 +1,7 @@
 const protrait=()=>import('./index');
 const yhhx=()=>import('./components/yhhx.vue')
 const pphx=()=>import('./components/pphx.vue')
+const tdhx=()=>import('./components/tdhx.vue')
 const tdjchx=()=>import('./components/tdjchx.vue')
 const kolsx=()=>import('./components/kolsx.vue')
 const moduleName='portrait-system';
@@ -32,7 +33,7 @@ export default [
         label:"通道画像",
         // redirect:{name:`${moduleName}-tdhx-tdjchx`},
         meta:{title:"通道画像",moduleName},
-        component:tdjchx,
+        component:tdhx,
         name:`${moduleName}-tdhx`,
         children:[
           {

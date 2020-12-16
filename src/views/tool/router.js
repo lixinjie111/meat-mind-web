@@ -3,6 +3,7 @@ const fxmx=()=>import('./components/fxmx.vue')
 const cjk=()=>import('./components/cjk.vue')
 const zbgl=()=>import('./components/zbgl.vue')
 const yhfq=()=>import('./components/yhfq.vue')
+const qdzz=()=>import('./components/qdzz.vue')
 const qdlj=()=>import('./components/qdlj.vue')
 const qdgl=()=>import('./components/qdgl.vue')
 const bqgl=()=>import('./components/bqgl.vue')
@@ -48,7 +49,7 @@ export default [
         path:`/${moduleName}/qdzz`,
         label:"渠道追踪",
         meta:{title:"渠道追踪",moduleName},
-        component:qdlj,
+        component:qdzz,
         name:`${moduleName}-qdzz`,
         children:[
           {
