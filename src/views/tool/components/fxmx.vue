@@ -1,12 +1,45 @@
 <template>
   <div class="fxmx">
-      <img src="../../../static/img/tool/fxmx.png" alt="">
+      <!-- <img src="../../../static/img/tool/fxmx.png" alt=""> -->
+      <div class="title">分析模型</div>
+      <div class="container">
+        <div class="m-title">选择模型</div>
+        <div class="models">
+          <img src="../../../static/img/tool/click1-event@2x.png" alt="" @click="event">
+          <img src="../../../static/img/tool/click2-funnel@2x.png" alt="" @click="funnel">
+          <img src="../../../static/img/tool/click3-keep@2x.png" alt="" @click="keep">
+          <img src="../../../static/img/tool/click4-distribution@2x.png" alt="" @click="distribute">
+          <img src="../../../static/img/tool/click5-way@2x.png" alt="" @click="way">
+          <img src="../../../static/img/tool/click6-hot@2x.png" alt="" @click="hot">
+          <img src="../../../static/img/tool/click7-interval@2x.png" alt="" @click="interval">
+          <img src="../../../static/img/tool/click8-deined@2x.png" alt="" @click="deined">
+          <img src="../../../static/img/tool/click9-cause@2x.png" alt="" @click="cause">
+          <img src="../../../static/img/tool/click10-property@2x.png" alt="" @click="property">
+          <img src="../../../static/img/tool/click11-app@2x.png" alt="" @click="app">
+        </div>
+      </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  name:"fxmx",
+  data(){
+    return {}
+  },
+  methods:{
+    event(){},
+    funnel(){},
+    keep(){},
+    distribute(){},
+    way(){},
+    hot(){},
+    interval(){},
+    deined(){},
+    cause(){},
+    property(){},
+    app(){}
+  }
 }
 </script>
 
@@ -14,9 +47,36 @@ export default {
 .fxmx{
   width: 100%;
   height: 100%;
-  img{
+  padding: 0 24px 24px;
+  background: #F5F5F5;
+  .title{
     width: 100%;
-    // height: 100%;
+    height: 72px;
+    font-size: 20px;
+    color: #212121;
+    line-height: 72px;
+  }
+  .container{
+    height: calc(100% - 72px);
+    background: #FFFFFF;
+    .m-title{
+      height: 56px;
+      padding: 0 24px;
+      font-size: 16px;
+      color: #212121;
+      border-bottom: 1px solid #F0F0F0;
+      line-height: 55px;
+    }
+    .models{
+      display: flex;
+      flex-wrap: wrap;
+      img{
+        width: 352px;
+        height: 100px;
+        margin-left: 24px;
+        cursor: pointer;
+      }
+    }
   }
 }
 </style>
