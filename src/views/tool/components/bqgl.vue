@@ -8,8 +8,26 @@
       footer-hide
       class-name="create-target-modal">
       <div class="middle">
+        <div class="create-target">
+          <img src="../../../static/img/tool/bqgl/defined.png" alt="" @click="createTarget">
+          <img src="../../../static/img/tool/bqgl/basic.png" alt="">
+          <img src="../../../static/img/tool/bqgl/feature.png" alt="">
+          <img src="../../../static/img/tool/bqgl/event.png" alt="">
+          <img src="../../../static/img/tool/bqgl/behavior.png" alt="">
+        </div>
+        <div class="create-sql">
+          <div>SQL创建</div>
+          <img src="../../../static/img/tool/bqgl/sql.png" alt="">
+        </div>
       </div>
     </Modal>   
+    <Modal class-name="zbgl-modal" v-model="newModal" footer-hide :closable="false" width="460px">
+      <div class="content">
+        <div class="close-btn" @click="newModal = false"></div>
+        <img src="../../../static/img/tool/bqgl/click-defined.png" alt="">
+        <div class="next-btn" @click="newModal = false"></div>
+      </div>
+    </Modal>
   </div>
 </template>
 
@@ -18,12 +36,18 @@ export default {
   name:"bqgl",
   data(){
     return {
-      showModal:false
+      showModal:false,
+      newModal:false
     }
   },
   methods:{
     create(){
       this.showModal = true
+    },
+    createTarget(){
+      this.showModal = false
+      this.newModal = true
+      
     }
   }
 }
@@ -55,55 +79,84 @@ export default {
     justify-content: center;
     .ivu-modal {
       top: 0;
-      width: 684px !important;
-      min-height: 353px;
+      width: 560px !important;
+      min-height: 558px;
       background: #ffffff;
       border-radius: 4px;
       .ivu-modal-content {
-        min-height: 353px;
+        min-height: 558px;
         .ivu-modal-close{
           top: 16px;
-          right: 16px;
+          right: 24px;
+          width: 24px;
+          height: 24px;
         }
         .ivu-modal-header {
-          padding: 14px 32px;
-          border-bottom: 1px solid #f2f3f4;
+          padding: 20px 24px;
+          border-bottom: 1px solid #E8E8E8;
           .ivu-modal-header-inner {
-            height: 29px;
-            font-size: 21px;
+            height: 16px;
+            font-size: 16px;
             font-family: PingFangSC-Semibold, PingFang SC;
-            font-weight: 600;
-            color: #25272b;
-            line-height: 29px;
+            font-weight: 400;
+            color: #000000;
+            line-height: 16px;
           }
         }
         .ivu-modal-body{
-          padding: 32px 32px 64px;
+          padding: 32px 25px 27px;
           .middle{
-            .m-title{
-              height: 20px;
-              margin-bottom: 4px;
-              font-size: 14px;
-              font-family: PingFangSC-Medium, PingFang SC;
-              font-weight: 500;
-              color: #B6BBC2;
-              line-height: 20px;
+            .create-target{
+              margin-bottom: 37px;
             }
-            .date,.time{
-              display: inline-block;
-              margin-top: 16px;
-              vertical-align: top;
-            }
-            .date{
-              width: 132px;
-              margin-right: 12px;
-            }
-            .time{
-              width: 224px;
+            img{
+              width: 246px;
+              height: 84px;
+              cursor: pointer;
             }
           }
         }
       }
     }
   }
+</style>
+<style lang="scss">
+    .zbgl-modal {
+          display: flex;
+    align-items: center;
+    justify-content: center;
+        .ivu-modal {
+      top: 0;}
+        .ivu-modal-body {
+            padding: 0;
+        }
+
+        .content {
+            position: relative;
+            width: 460px;
+            height: 600px;
+
+            img {
+                width: 460px;
+                height: 600px;
+            }
+
+            .close-btn {
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+            }
+            .next-btn {
+                position: absolute;
+                right: 10px;
+                bottom: 10px;
+                width: 60px;
+                height: 20px;
+                cursor: pointer;
+            }
+        }
+    }
 </style>
