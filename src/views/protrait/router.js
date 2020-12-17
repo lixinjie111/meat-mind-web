@@ -1,5 +1,6 @@
 const protrait=()=>import('./index');
 const yhhx=()=>import('./components/yhhx.vue')
+const create=()=>import('./components/yhhx/create.vue')
 const pphx=()=>import('./components/pphx.vue')
 const tdhx=()=>import('./components/tdhx.vue')
 const tdjchx=()=>import('./components/tdjchx.vue')
@@ -20,6 +21,13 @@ export default [
         meta:{title:"用户画像",moduleName},
         component:yhhx,
         name:`${moduleName}-yhhx`
+      },
+      {
+        path:`/${moduleName}/yhhx/create`,
+        label:"创建用户画像",
+        meta:{title:"创建用户画像",moduleName},
+        component:create,
+        name:`${moduleName}-yhhx-create`,
       },
       {
         path:`/${moduleName}/pphx`,
