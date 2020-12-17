@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				font-family: 'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'Arial', 'sans-serif', 'PingFangSC-Medium';
+			}
+
+			#div {
+				width: 95%;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<div id="main" style="width: 100%;height:600px;"></div>
+		</div>
+		<script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
+		<script lang="javascript">
+			setTimeout(() => {
+				//['#4C98FB', '#83CCE7', '#26C7C8', '#73DEBD', '#26C978', '#8CDF6C', '#FBD657', '#F56679', '#E07BCE', '#9D50E0', '#634FDA']
+				var colorList = ['#1B90FF', '#73DEBD', '#FBD657', '#F54A45', '#634FDA','orange']
+				var option = {
+					color: colorList,
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: { // 坐标轴指示器，坐标轴触发有效
+							type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+						}
+					},
+					legend: {
+						bottom: 0,
+						data: ['线下门店', '360搜素', '抖音', '分享裂变', '百度', '朋友圈广告']
+					},
+					grid: {
+						left: '3%',
+						right: '4%',
+						bottom: '3%',
+						containLabel: true
+					},
+					xAxis: {
+						type: 'category',
+						data: ['11-27', '11-28', '11-29', '11-30', '12-1', '12-2', '12-3',
+							'12-4', '12-5', '12-6', '12-7', '12-8', '12-9',
+							'12-10', '12-11', '12-12', '12-13', '12-14', '12-15', '12-16', '12-17', '12-18', '12-19', '12-20', '12-21',
+							'12-22', '12-23', '12-24', '12-25'
+						]
+					},
+					yAxis: {
+						axisLine: {
+							show: false
+						},
+						axisTick: {
+							show: false
+						},
+						type: 'value'
+					},
+					series: [{
+							name: '线下门店',
+							type: 'bar',
+							stack: '总量',
+							barWidth: 20,
+							data: [100, 95, 93, 90, 89, 85, 83, 82, 80, 79, 78, 92, 95, 93, 70, 69, 68, 85, 96, 89, 75, 96, 86, 82, 86,
+								82, 89, 93, 95, 100
+							]
+						},
+						{
+							name: '360搜素',
+							type: 'bar',
+							stack: '总量',
+							barCategoryGap: '40%',
+							data: [100, 95, 93, 90, 89, 85, 83, 82, 80, 79, 78, 92, 95, 93, 70, 69, 68, 85, 96, 89, 75, 96, 86, 82, 86,
+								82, 89, 93, 95, 100
+							]
+						},
+						{
+							name: '抖音',
+							type: 'bar',
+							barWidth: 40,
+							stack: '总量',
+							barCategoryGap: '40%',
+							data:[100, 95, 93, 90, 89, 85, 83, 82, 80, 79, 78, 92, 95, 93, 70, 69, 68, 85, 96, 89, 75, 96, 86, 82, 86,
+								82, 89, 93, 95, 100
+							]
+						},
+						{
+							name: '分享裂变',
+							type: 'bar',
+							stack: '总量',
+							barCategoryGap: '40%',
+							data:[100, 95, 93, 90, 89, 85, 83, 82, 80, 79, 78, 92, 95, 93, 70, 69, 68, 85, 96, 89, 75, 96, 86, 82, 86,
+								82, 89, 93, 95, 100
+							]
+						},
+						{
+							name: '百度',
+							type: 'bar',
+							stack: '总量',
+							barCategoryGap: '40%',
+							data:[100, 95, 93, 90, 89, 85, 83, 82, 80, 79, 78, 92, 95, 93, 70, 69, 68, 85, 96, 89, 75, 96, 86, 82, 86,
+								82, 89, 93, 95, 100
+							]
+						},
+						{
+							name: '朋友圈广告',
+							type: 'bar',
+							stack: '总量',
+							barCategoryGap: '40%',
+							data:[100, 95, 93, 90, 89, 85, 83, 82, 80, 79, 78, 92, 95, 93, 70, 69, 68, 85, 96, 89, 75, 96, 86, 82, 86,
+								82, 89, 93, 95, 100
+							]
+						},
+					]
+				};
+				let myChart = echarts.init(document.getElementById("main"));
+				myChart.setOption(option);
+			}, 500)
+		</script>
+	</body>
+
+</html>

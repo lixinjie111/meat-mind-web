@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				font-family: 'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'Arial', 'sans-serif', 'PingFangSC-Medium';
+			}
+
+			#div {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="div">
+
+		</div>
+		<script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
+		<script lang="javascript">
+			setTimeout(() => {
+				var colorList = ['#5585ef', '#7fe4bc', '#febd67', '#eb7b5f', '#634FDA', '#FF9C6E']
+				var option = {
+					color: colorList,
+					tooltip: {
+						trigger: 'axis'
+					},
+					legend: {
+						bottom: 15,
+						data: ['朋友圈广告', '360搜索', '线下门店', '分享裂变', '抖音', '百度']
+					},
+					grid: {
+						left: '3%',
+						right: '4%',
+						bottom: '10%',
+						containLabel: true
+					},
+					xAxis: {
+						type: 'category',
+						boundaryGap: false,
+
+						data: ['10-27', '10-30', '11-2','11-5', '11-8', '11-11', '11-14', '11-17', '11-20', '11-23']
+					},
+					yAxis: {
+						type: 'value',
+						axisLine: {
+							show: false,
+						},
+						splitLine: {
+							lineStyle: {
+								type: 'dashed'
+							}
+						},
+					},
+					series: [{
+							symbol: 'circle',
+							name: '朋友圈广告',
+							symbolSize: 6,
+							type: 'line',
+							data: [30, 32, 20, 35, 21,25, 52, 25, 35, 89]
+						},
+						{
+							symbol: 'circle',
+							symbolSize: 6,
+							name: '360搜索',
+							type: 'line',
+							data: [42, 52, 25, 34, 86,26, 24, 15, 86, 57]
+						},
+						{
+							symbol: 'circle',
+							symbolSize: 6,
+							name: '线下门店',
+							type: 'line',
+							data: [15, 78, 35, 24, 95, 36,15, 35, 25, 15]
+						},
+						{
+							symbol: 'circle',
+							symbolSize: 6,
+							name: '分享裂变',
+							type: 'line',
+							data: [35, 58, 24, 34, 48,15, 28, 56, 25, 95]
+						},
+						{
+							symbol: 'circle',
+							symbolSize: 6,
+							name: '抖音',
+							type: 'line',
+							data: [25, 48, 69, 15, 45, 35,25, 25, 35, 56]
+						},
+						{
+							symbol: 'circle',
+							symbolSize: 6,
+							name: '百度',
+							type: 'line',
+							data: [45, 25, 15, 89, 45, 25,35, 15, 36, 15]
+						},
+					]
+				};
+				let myChart = echarts.init(document.getElementById("div"));
+				myChart.setOption(option);
+			}, 500)
+		</script>
+	</body>
+
+</html>
