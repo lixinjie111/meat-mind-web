@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "17969050",
+      "name": "icon_plus",
+      "font_class": "icon_plus",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "17994307",
+      "name": "icon_more",
+      "font_class": "icon_more2",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "17994316",
+      "name": "icon_close",
+      "font_class": "icon_close",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "18053273",
+      "name": "成员",
+      "font_class": "chengyuan",
+      "unicode": "e6a5",
+      "unicode_decimal": 59045
+    },
+    {
       "icon_id": "18473010",
       "name": "dashboard",
       "font_class": "dashboard",
