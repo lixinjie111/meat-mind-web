@@ -12,37 +12,46 @@
                 <Panel name="1">
                     用户属性满足
                     <div class="" slot="content">
-                        <Select v-model="attribute1" style="width:200px">
-                            <i class="iconfont iconchengyuan" slot="prefix" size="small"/>
-                            <Option v-for="item in attributeList1" :value="item.value" :key="item.value">{{ item.label }}</Option>
-                        </Select>
-                        <Select v-model="attribute2" style="width:200px;margin-left:12px;">
-                            <Option value="属于">属于</Option>
-                            <Option value="等于">等于</Option>
-                        </Select>
-                        <Input v-model="attribute3" style="width: 200px;margin-left:12px;"/>
+                        <div class="property" v-for="(item,index) in propertyList" :key="index">
+                            <Select v-model="attribute1" style="width:200px">
+                                <i class="iconfont iconchengyuan" slot="prefix" size="small"/>
+                                <Option v-for="item in attributeList1" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                            </Select>
+                            <Select v-model="attribute2" style="width:200px;margin-left:12px;">
+                                <Option value="属于">属于</Option>
+                                <Option value="等于">等于</Option>
+                            </Select>
+                            <Input v-model="attribute3" style="width: 200px;margin-left:12px;"/>
+                            <div>
+                                <i class="add iconfont iconicon_more2" @click="add">
+                                    新增</i>
+                            </div>
+                            <i class="del iconfont iconicon_close" @click="del"></i>
+                        </div>
                     </div>
                 </Panel>
                 <Panel name="2">
                     用户行为满足
                     <div class="" slot="content">
-                        <div>
-                            <DatePicker :value="date" format="yyyy/MM/dd" type="daterange" placement="bottom-end" placeholder="开始日期 - 结束日期" style="width: 200px"></DatePicker>
-                            <Select v-model="action1" style="width:200px;margin-left:12px;">
-                                <Option value="做过">做过</Option>
-                            </Select>
-                            <Select v-model="action2" style="width:200px;margin-left:12px;">
-                                <Option v-for="item in actionList1" :value="item.value" :key="item.value">{{ item.label }}</Option>
-                            </Select>
-                        </div>
-                        <div style="margin-top: 8px;">
-                            <Select v-model="action3" style="width:200px;">
-                                <Option value="总次数">总次数</Option>
-                            </Select>
-                            <Select v-model="action4" style="width:80px;margin-left:12px;">
-                                <Option value="≥">≥</Option>
-                            </Select>
-                            <Input v-model="action5" style="width: 60px;margin-left:12px;"/> 次
+                        <div class="behavior" v-for="(item,index) in behaviorList" :key="index">
+                            <div>
+                                <DatePicker :value="date" format="yyyy/MM/dd" type="daterange" placement="bottom-end" placeholder="开始日期 - 结束日期" style="width: 200px"></DatePicker>
+                                <Select v-model="action1" style="width:200px;margin-left:12px;">
+                                    <Option value="做过">做过</Option>
+                                </Select>
+                                <Select v-model="action2" style="width:200px;margin-left:12px;">
+                                    <Option v-for="item in actionList1" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                                </Select>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <Select v-model="action3" style="width:200px;">
+                                    <Option value="总次数">总次数</Option>
+                                </Select>
+                                <Select v-model="action4" style="width:80px;margin-left:12px;">
+                                    <Option value="≥">≥</Option>
+                                </Select>
+                                <Input v-model="action5" style="width: 60px;margin-left:12px;"/> 次
+                            </div>
                         </div>
                     </div>
                 </Panel>
@@ -116,14 +125,18 @@
                 action2: "APP元素点击",
                 action3: "总次数",
                 action4: "≥",
-                action5: "1"
+                action5: "1",
+                propertyList:[0],
+                behaviorList:[0]
 
             }
         },
         methods: {
             back() {
                 this.$router.push({name: "portrait-system-yhhx"})
-            }
+            },
+            add(){},
+            del(){}
         }
     }
 </script>
@@ -155,6 +168,28 @@
                 color: #212121;
             }
 
+            .property{
+                position: relative;
+                .add{
+                    position: absolute;
+                    top: 6px;
+                    right: 66px;
+                    color: #2373FF;
+                    font-size: 14px;
+                    cursor: pointer;
+                }
+                .del{
+                    position: absolute;
+                    top: 7px;
+                    right: 24px;
+                    width: 18px;
+                    height: 18px;
+                    font-size: 18px;
+                    color: #999999;
+                    line-height: 18px;
+                    cursor: pointer;
+                }
+            }
             .search-box {
                 margin-top: 16px;
                 display: flex;
