@@ -5,17 +5,17 @@
       <div class="container">
         <div class="m-title">选择模型</div>
         <div class="models">
-          <img src="../../../static/img/tool/click1-event@2x.png" alt="" @click="event">
-          <img src="../../../static/img/tool/click2-funnel@2x.png" alt="" @click="funnel">
-          <img src="../../../static/img/tool/click3-keep@2x.png" alt="" @click="keep">
-          <img src="../../../static/img/tool/click4-distribution@2x.png" alt="" @click="distribute">
-          <img src="../../../static/img/tool/click5-way@2x.png" alt="" @click="way">
-          <img src="../../../static/img/tool/click6-hot@2x.png" alt="" @click="hot">
-          <img src="../../../static/img/tool/click7-interval@2x.png" alt="" @click="interval">
-          <img src="../../../static/img/tool/click8-defined@2x.png" alt="" @click="defined">
-          <img src="../../../static/img/tool/click9-cause@2x.png" alt="" @click="cause">
-          <img src="../../../static/img/tool/click10-property@2x.png" alt="" @click="property">
-          <img src="../../../static/img/tool/click11-app@2x.png" alt="" @click="app">
+          <img src="../../../static/img/tool/fxmx/click1-event@2x.png" alt="" @click="event">
+          <img src="../../../static/img/tool/fxmx/click2-funnel@2x.png" alt="" @click="funnel">
+          <img src="../../../static/img/tool/fxmx/click3-keep@2x.png" alt="" @click="keep">
+          <img src="../../../static/img/tool/fxmx/click4-distribution@2x.png" alt="" @click="distribute">
+          <img src="../../../static/img/tool/fxmx/click5-way@2x.png" alt="" @click="way">
+          <img src="../../../static/img/tool/fxmx/click6-hot@2x.png" alt="" @click="hot">
+          <img src="../../../static/img/tool/fxmx/click7-interval@2x.png" alt="" @click="interval">
+          <img src="../../../static/img/tool/fxmx/click8-defined@2x.png" alt="" @click="defined">
+          <img src="../../../static/img/tool/fxmx/click9-cause@2x.png" alt="" @click="cause">
+          <img src="../../../static/img/tool/fxmx/click10-property@2x.png" alt="" @click="property">
+          <img src="../../../static/img/tool/fxmx/click11-app@2x.png" alt="" @click="app">
         </div>
       </div>
   </div>
