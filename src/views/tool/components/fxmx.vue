@@ -12,7 +12,7 @@
           <img src="../../../static/img/tool/click5-way@2x.png" alt="" @click="way">
           <img src="../../../static/img/tool/click6-hot@2x.png" alt="" @click="hot">
           <img src="../../../static/img/tool/click7-interval@2x.png" alt="" @click="interval">
-          <img src="../../../static/img/tool/click8-deined@2x.png" alt="" @click="deined">
+          <img src="../../../static/img/tool/click8-defined@2x.png" alt="" @click="defined">
           <img src="../../../static/img/tool/click9-cause@2x.png" alt="" @click="cause">
           <img src="../../../static/img/tool/click10-property@2x.png" alt="" @click="property">
           <img src="../../../static/img/tool/click11-app@2x.png" alt="" @click="app">
@@ -28,17 +28,39 @@ export default {
     return {}
   },
   methods:{
-    event(){},
-    funnel(){},
-    keep(){},
-    distribute(){},
-    way(){},
-    hot(){},
-    interval(){},
-    deined(){},
-    cause(){},
-    property(){},
-    app(){}
+    event(){
+      this.$router.push({name:"analysis-tool-fxmx-event"})
+    },
+    funnel(){
+      this.$router.push({name:"analysis-tool-fxmx-funnel"})
+    },
+    keep(){
+      this.$router.push({name:"analysis-tool-fxmx-keep"})
+    },
+    distribute(){
+      this.$router.push({name:"analysis-tool-fxmx-distribute"})
+    },
+    way(){
+      this.$router.push({name:"analysis-tool-fxmx-way"})
+    },
+    hot(){
+      this.$router.push({name:"analysis-tool-fxmx-hot"})
+    },
+    interval(){
+      this.$router.push({name:"analysis-tool-fxmx-interval"})
+    },
+    defined(){
+      this.$router.push({name:"analysis-tool-fxmx-defined"})
+    },
+    cause(){
+      this.$router.push({name:"analysis-tool-fxmx-cause"})
+    },
+    property(){
+      this.$router.push({name:"analysis-tool-fxmx-property"})
+    },
+    app(){
+      this.$router.push({name:"analysis-tool-fxmx-app"})
+    }
   }
 }
 </script>
