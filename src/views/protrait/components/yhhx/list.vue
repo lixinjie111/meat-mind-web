@@ -1,31 +1,32 @@
 <template>
     <div class="yhhx">
-        <img src="../../../static/img/protrait/yhhx1@2x.png" alt="">
+        <div class="back" @click="back"></div>
+        <img src="../../../../static/img/protrait/yhhx1@2x.png" alt="">
         <div class="content">
             <div class="card">
                 <div class="top">
                     <div class="tabs">
                         <div v-for="(item,index) in tabList" :key="index" :class="item.id == tabActive ? 'active tab' : 'tab'" @click="changeTab(item.id)">{{item.value}}</div>
                     </div>
-                    <div class="btns">
-                        <div class="report-btn">一键生成报告</div>
-                        <div class="add-btn"><Icon type="md-add-circle" color="#FFFFFF" size="18" style="vertical-align: -3px;margin-right: 9px;"/>添加卡片</div>
-                    </div>
+<!--                    <div class="btns">-->
+<!--                        <div class="report-btn">一键生成报告</div>-->
+<!--                        <div class="add-btn"><Icon type="md-add-circle" color="#FFFFFF" size="18" style="vertical-align: -3px;margin-right: 9px;"/>添加卡片</div>-->
+<!--                    </div>-->
                 </div>
                 <div class="bottom">
                     <div class="tab-content" v-if="tabActive==1">
-                        <img src="../../../static/img/protrait/yhhx2@2x.png" alt="">
+                        <img src="../../../../static/img/protrait/yhhx2@2x.png" alt="">
                         <iframe class="iframe iframe1" src="/static/html/lxj/pie1-2.html" frameborder="0" scrolling="no"></iframe>
                         <iframe class="iframe iframe2" src="/static/html/lxj/pie1-4.html" frameborder="0" scrolling="no"></iframe>
                         <iframe class="iframe iframe3" src="/static/html/lxj/pie1-3.html" frameborder="0" scrolling="no"></iframe>
                         <iframe class="iframe iframe4" src="/static/html/lxj/pie1-1.html" frameborder="0" scrolling="no"></iframe>
                     </div>
                     <div class="tab-content" v-else-if="tabActive==2">
-                        <img src="../../../static/img/protrait/yhhx3@2x.png" alt="">
+                        <img src="../../../../static/img/protrait/yhhx3@2x.png" alt="">
                         <video class="player" width="100%" height="100%" autoplay loop muted src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"></video>
                     </div>
                     <div class="tab-content" v-else>
-                        <img src="../../../static/img/protrait/yhhx4@2x.png" alt="">
+                        <img src="../../../../static/img/protrait/yhhx4@2x.png" alt="">
                     </div>
                 </div>
             </div>
@@ -55,6 +56,9 @@
             }
         },
         methods: {
+            back() {
+                this.$router.push({name: "portrait-system-yhhx"})
+            },
             changeTab(active) {
                 this.tabActive = active;
             }
@@ -64,15 +68,25 @@
 
 <style scoped lang="scss">
     .yhhx {
+        position: relative;
         width: 100%;
         height: 100%;
+
+        .back {
+            position: absolute;
+            left: 24px;
+            top: 24px;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
 
         >img {
             width: 100%;
         }
 
         .content {
-            padding: 16px 24px 24px;
+            padding: 0 24px 24px;
 
             .card {
                 width: 100%;

@@ -62,7 +62,7 @@
                 </Panel>
             </Collapse>
             <div class="search-box">
-                <div class="search-btn">查询</div>
+                <div class="search-btn" @click="toList">查询</div>
             </div>
         </div>
     </div>
@@ -139,6 +139,9 @@
         methods: {
             back() {
                 this.$router.push({name: "portrait-system-yhhx"})
+            },
+            toList() {
+                this.$router.push({name: "portrait-system-yhhx-list"})
             },
             add(){
                 this.propertyList.push({})
@@ -228,6 +231,7 @@
                     font-family: PingFangSC-Medium, PingFang SC;
                     font-weight: 500;
                     color: #FFFFFF;
+                    cursor: pointer;
                 }
             }
         }

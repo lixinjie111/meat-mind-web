@@ -1,7 +1,8 @@
 <template>
     <div class="yhhx">
-        <img src="../../../static/img/protrait/yhhx/yhhx@2x.png" alt="">
+        <img src="../../../static/img/protrait/yhhx5@2x.png" alt="">
         <div class="create" @click="toCreate"></div>
+        <div class="detail" @click="toDetail"></div>
     </div>
 </template>
 
@@ -11,6 +12,9 @@
         methods: {
             toCreate() {
                 this.$router.push({name:"portrait-system-yhhx-create"})
+            },
+            toDetail() {
+                this.$router.push({name:"portrait-system-yhhx-list"})
             }
         }
     }
@@ -30,6 +34,15 @@
             position: absolute;
             right: 45px;
             top: 95px;
+            width: 122px;
+            height: 34px;
+            cursor: pointer;
+        }
+
+        .detail {
+            position: absolute;
+            left: 45px;
+            top: 350px;
             width: 122px;
             height: 34px;
             cursor: pointer;

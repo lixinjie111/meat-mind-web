@@ -1,6 +1,7 @@
 const protrait=()=>import('./index');
 const yhhx=()=>import('./components/yhhx.vue')
 const create=()=>import('./components/yhhx/create.vue')
+const list=()=>import('./components/yhhx/list.vue')
 const pphx=()=>import('./components/pphx.vue')
 const tdhx=()=>import('./components/tdhx.vue')
 const tdjchx=()=>import('./components/tdjchx.vue')
@@ -28,6 +29,13 @@ export default [
         meta:{title:"创建用户画像",moduleName},
         component:create,
         name:`${moduleName}-yhhx-create`,
+      },
+      {
+        path:`/${moduleName}/yhhx/list`,
+        label:"用户画像信息列表",
+        meta:{title:"用户画像信息列表",moduleName},
+        component:list,
+        name:`${moduleName}-yhhx-list`,
       },
       {
         path:`/${moduleName}/pphx`,
