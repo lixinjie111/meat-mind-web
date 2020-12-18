@@ -4,7 +4,10 @@
         <Side></Side>
         <div class="container">
             <Header :target="'首页'"></Header>
-            <div class="content">
+            <div class="" v-if="flag=='企业主'">
+                aaaa 
+            </div>
+            <div class="content" v-else>
                 <img src="../../static/img/home/home1@2x.png" alt="">
                 <div class="report-btn">一键生成报告</div>
                 <!--品牌运营概览-->
@@ -59,7 +62,12 @@
 
     export default {
         name: "index",
-        components:{Side,Header}
+        components:{Side,Header},
+        data(){
+            return {
+                flag:this.$route.query.label
+            }
+        }
     }
 </script>
 

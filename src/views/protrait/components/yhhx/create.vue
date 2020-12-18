@@ -26,7 +26,7 @@
                                 <i class="add iconfont iconicon_more2" @click="add">
                                     新增</i>
                             </div>
-                            <i class="del iconfont iconicon_close" @click="del"></i>
+                            <i class="del iconfont iconicon_close" @click="del(index)"></i>
                         </div>
                     </div>
                 </Panel>
@@ -35,7 +35,7 @@
                     <div class="" slot="content">
                         <div class="behavior" v-for="(item,index) in behaviorList" :key="index">
                             <div>
-                                <DatePicker :value="date" format="yyyy/MM/dd" type="daterange" placement="bottom-end" placeholder="开始日期 - 结束日期" style="width: 200px"></DatePicker>
+                                <DatePicker :value="date" format="yyyy/MM/dd" type="daterange" placement="right-end" placeholder="开始日期 - 结束日期" style="width: 200px"></DatePicker>
                                 <Select v-model="action1" style="width:200px;margin-left:12px;">
                                     <Option value="做过">做过</Option>
                                 </Select>
@@ -52,6 +52,11 @@
                                 </Select>
                                 <Input v-model="action5" style="width: 60px;margin-left:12px;"/> 次
                             </div>
+                            <div>
+                                <i class="add iconfont iconicon_more2" @click="behaviorAdd">
+                                    新增</i>
+                            </div>
+                            <i class="del iconfont iconicon_close" @click="behaviorDel(index)"></i>
                         </div>
                     </div>
                 </Panel>
@@ -135,8 +140,24 @@
             back() {
                 this.$router.push({name: "portrait-system-yhhx"})
             },
-            add(){},
-            del(){}
+            add(){
+                this.propertyList.push({})
+            },
+            del(index){
+                if(this.propertyList.length==1){
+                    return
+                }
+                this.propertyList.splice(index,1)
+            },
+            behaviorAdd(){
+                this.behaviorList.push(0)
+            },
+            behaviorDel(index){
+                if(this.behaviorList.length==1){
+                    return
+                }
+                this.behaviorList.splice(index,1)
+            }
         }
     }
 </script>
@@ -168,8 +189,9 @@
                 color: #212121;
             }
 
-            .property{
+            .property,.behavior{
                 position: relative;
+                padding: 10px 0;
                 .add{
                     position: absolute;
                     top: 6px;

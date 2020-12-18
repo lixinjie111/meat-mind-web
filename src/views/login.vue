@@ -57,9 +57,9 @@
             jump() {
                 this.showImg = false
                 if (this.model1 == "企业主") {
-                    this.$router.push({name: "intelligent-decision"})
+                    this.$router.push({name: "home",query:{label:"企业主"}})
                 } else {
-                    this.$router.push({name: "business-analysis"})
+                    this.$router.push({name: "home"})
                 }
 
             }

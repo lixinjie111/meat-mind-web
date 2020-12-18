@@ -82,25 +82,25 @@ export default {
           icon:"icondashboard",
           path:"home"
         },
-        {
-          name: "智能决策",
-          icon:"iconzhinengjuece",
-          path:"intelligent-decision"
-        },
+        // {
+        //   name: "智能决策",
+        //   icon:"iconzhinengjuece",
+        //   path:"intelligent-decision"
+        // },
         {
           name: "经营分析",
           icon:"iconjingyingfenxi",
           path:"business-analysis"
         },
         {
-          name: "分析工具",
-          icon:"iconfenxigongju",
-          path:"analysis-tool"
-        },
-        {
           name: "画像系统",
           icon:"iconhuaxiangxitong",
           path:"portrait-system"
+        },
+        {
+          name: "分析工具",
+          icon:"iconfenxigongju",
+          path:"analysis-tool"
         },
         {
           name: "数据管理",
