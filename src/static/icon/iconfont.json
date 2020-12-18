@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "18915104",
+      "name": "营销洞察",
+      "font_class": "yingxiaodongcha",
+      "unicode": "e6a6",
+      "unicode_decimal": 59046
+    },
+    {
       "icon_id": "17969050",
       "name": "icon_plus",
       "font_class": "icon_plus",

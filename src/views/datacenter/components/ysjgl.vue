@@ -63,17 +63,19 @@
         width: 100%;
         height: 100%;
         .click-modal{
-            // display: flex;
-            // flex-wrap: wrap;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             position: absolute;
             top: 192px;
             left: 27px;
-            right: 32px;
-            height: calc(100% - 156px);
+            right: 30px;
+            padding-bottom: 30px;
             background: #F7F9FA;
             img{
                 width: 564px;
                 height: 89px;
+                margin-bottom: 6px;
                 cursor: pointer;
             }
         }
