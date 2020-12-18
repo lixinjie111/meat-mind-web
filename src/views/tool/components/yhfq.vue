@@ -1,12 +1,12 @@
 <template>
   <div class="yhfq">
-      <div class="list" v-if="page1" @click="toPage2">
+      <div class="list" v-if="page1">
         <img src="../../../static/img/tool/yhfq/list1.png" alt="">
-        <div class="page2"></div>
+        <div class="page2" @click="toPage2"></div>
       </div>
-      <div class="list" v-if="page2" @click="toPage1">
+      <div class="list" v-if="page2">
         <img src="../../../static/img/tool/yhfq/list2.png" alt="">
-        <div class="page1"></div>
+        <div class="page1" @click="toPage1"></div>
       </div>
   </div>
 </template>
