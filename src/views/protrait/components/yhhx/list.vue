@@ -1,36 +1,78 @@
 <template>
     <div class="yhhx">
         <div class="back" @click="back"></div>
-        <img src="../../../../static/img/protrait/yhhx1@2x.png" alt="">
-        <div class="content">
-            <div class="card">
-                <div class="top">
-                    <div class="tabs">
-                        <div v-for="(item,index) in tabList" :key="index" :class="item.id == tabActive ? 'active tab' : 'tab'" @click="changeTab(item.id)">{{item.value}}</div>
+        <Select class="group-select" v-model="groupValue">
+            <Option value="1">无</Option>
+            <Option value="2">用户组2</Option>
+        </Select>
+        <template v-if="groupValue == 1">
+            <img src="../../../../static/img/protrait/yhhx1@2x.png" alt="">
+            <div class="content">
+                <div class="card">
+                    <div class="top">
+                        <div class="tabs">
+                            <div v-for="(item,index) in tabList" :key="index" :class="item.id == tabActive ? 'active tab' : 'tab'" @click="changeTab(item.id)">{{item.value}}</div>
+                        </div>
+                        <!--                    <div class="btns">-->
+                        <!--                        <div class="report-btn">一键生成报告</div>-->
+                        <!--                        <div class="add-btn"><Icon type="md-add-circle" color="#FFFFFF" size="18" style="vertical-align: -3px;margin-right: 9px;"/>添加卡片</div>-->
+                        <!--                    </div>-->
                     </div>
-<!--                    <div class="btns">-->
-<!--                        <div class="report-btn">一键生成报告</div>-->
-<!--                        <div class="add-btn"><Icon type="md-add-circle" color="#FFFFFF" size="18" style="vertical-align: -3px;margin-right: 9px;"/>添加卡片</div>-->
-<!--                    </div>-->
-                </div>
-                <div class="bottom">
-                    <div class="tab-content" v-if="tabActive==1">
-                        <img src="../../../../static/img/protrait/yhhx2@2x.png" alt="">
-                        <iframe class="iframe iframe1" src="/static/html/lxj/pie1-2.html" frameborder="0" scrolling="no"></iframe>
-                        <iframe class="iframe iframe2" src="/static/html/lxj/pie1-4.html" frameborder="0" scrolling="no"></iframe>
-                        <iframe class="iframe iframe3" src="/static/html/lxj/pie1-3.html" frameborder="0" scrolling="no"></iframe>
-                        <iframe class="iframe iframe4" src="/static/html/lxj/pie1-1.html" frameborder="0" scrolling="no"></iframe>
-                    </div>
-                    <div class="tab-content" v-else-if="tabActive==2">
-                        <img src="../../../../static/img/protrait/yhhx3@2x.png" alt="">
-                        <video class="player" width="100%" height="100%" autoplay loop muted src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"></video>
-                    </div>
-                    <div class="tab-content" v-else>
-                        <img src="../../../../static/img/protrait/yhhx4@2x.png" alt="">
+                    <div class="bottom">
+                        <div class="tab-content" v-if="tabActive==1">
+                            <img src="../../../../static/img/protrait/yhhx2@2x.png" alt="">
+                            <iframe class="iframe iframe1" src="/static/html/lxj/pie1-2.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe2" src="/static/html/lxj/pie1-4.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe3" src="/static/html/lxj/pie1-3.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe4" src="/static/html/lxj/pie1-1.html" frameborder="0" scrolling="no"></iframe>
+                        </div>
+                        <div class="tab-content" v-else-if="tabActive==2">
+                            <img src="../../../../static/img/protrait/yhhx3@2x.png" alt="">
+                            <video class="player" width="100%" height="100%" autoplay loop muted src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"></video>
+                        </div>
+                        <div class="tab-content" v-else>
+                            <img src="../../../../static/img/protrait/yhhx4@2x.png" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </template>
+        <template v-else>
+            <img src="../../../../static/img/protrait/yhhx7@2x.png" alt="">
+            <div class="content">
+                <div class="card">
+                    <div class="top">
+                        <div class="tabs">
+                            <div v-for="(item,index) in tabList" :key="index" :class="item.id == tabActive ? 'active tab' : 'tab'" @click="changeTab(item.id)">{{item.value}}</div>
+                        </div>
+                        <!--                    <div class="btns">-->
+                        <!--                        <div class="report-btn">一键生成报告</div>-->
+                        <!--                        <div class="add-btn"><Icon type="md-add-circle" color="#FFFFFF" size="18" style="vertical-align: -3px;margin-right: 9px;"/>添加卡片</div>-->
+                        <!--                    </div>-->
+                    </div>
+                    <div class="bottom">
+                        <div class="tab-content" v-if="tabActive==1">
+                            <img src="../../../../static/img/protrait/yhhx6@2x.png" alt="">
+                            <iframe class="iframe iframe5" src="/static/html/lxj/pie1-2.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe6" src="/static/html/lxj/pie1-4.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe7" src="/static/html/lxj/pie1-3.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe8" src="/static/html/lxj/pie1-1.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe9" src="/static/html/lxj/pie1-2-1.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe10" src="/static/html/lxj/pie1-4-1.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe11" src="/static/html/lxj/pie1-3-1.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe12" src="/static/html/lxj/pie1-1-1.html" frameborder="0" scrolling="no"></iframe>
+                        </div>
+                        <div class="tab-content" v-else-if="tabActive==2">
+                            <img src="../../../../static/img/protrait/yhhx3@2x.png" alt="">
+                            <video class="player" width="100%" height="100%" autoplay loop muted src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"></video>
+                        </div>
+                        <div class="tab-content" v-else>
+                            <img src="../../../../static/img/protrait/yhhx4@2x.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
     </div>
 </template>
 
@@ -53,6 +95,7 @@
                         value: '心智分析'
                     }
                 ],
+                groupValue: '1'
             }
         },
         methods: {
@@ -79,6 +122,13 @@
             width: 24px;
             height: 24px;
             cursor: pointer;
+        }
+
+        .group-select {
+            position: absolute;
+            right: 40px;
+            top: 84px;
+            width: 210px;
         }
 
         >img {
@@ -192,6 +242,50 @@
                             height: 330px;
                             right: 0;
                             top: 452px;
+                        }
+
+                        .iframe5 {
+                            left: 0;
+                            top: 46px;
+                        }
+
+                        .iframe6 {
+                            left: 0;
+                            top: 446px;
+                        }
+
+                        .iframe7 {
+                            left: 0;
+                            top: 846px;
+                        }
+
+                        .iframe8 {
+                            left: 0;
+                            top: 1246px;
+                        }
+
+                        .iframe9 {
+                            right: 0;
+                            top: 46px;
+                            background: #FAFAFA;
+                        }
+
+                        .iframe10 {
+                            right: 0;
+                            top: 446px;
+                            background: #FAFAFA;
+                        }
+
+                        .iframe11 {
+                            right: 0;
+                            top: 846px;
+                            background: #FAFAFA;
+                        }
+
+                        .iframe12 {
+                            right: 0;
+                            top: 1246px;
+                            background: #FAFAFA;
                         }
 
                         .player {

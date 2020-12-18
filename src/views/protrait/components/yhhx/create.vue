@@ -2,7 +2,7 @@
     <div class="create-container">
         <div class="nav">
             <p>
-                <Icon type="md-arrow-back" color="#212121" style="margin-right: 16px;cursor: pointer;" @click="back"/>
+                <Icon type="md-arrow-back" color="#212121" style="cursor: pointer;" class="mr16" @click="back"/>
                 创建用户画像
             </p>
         </div>
@@ -13,15 +13,15 @@
                     用户属性满足
                     <div class="" slot="content">
                         <div class="property" v-for="(item,index) in propertyList" :key="index">
-                            <Select v-model="attribute1" style="width:200px">
+                            <Select v-model="attribute1" class="mr12 w200">
                                 <i class="iconfont iconchengyuan" slot="prefix" size="small"/>
-                                <Option v-for="item in attributeList1" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                                <Option v-for="item in attributeList1" :value="item.value" :key="item.value" :disabled="item.disabled">{{ item.label }}</Option>
                             </Select>
-                            <Select v-model="attribute2" style="width:200px;margin-left:12px;">
+                            <Select v-model="attribute2" class="mr12 w200">
                                 <Option value="属于">属于</Option>
                                 <Option value="等于">等于</Option>
                             </Select>
-                            <Input v-model="attribute3" style="width: 200px;margin-left:12px;"/>
+                            <Input v-model="attribute3" class="mr12 w200"/>
                             <div>
                                 <i class="add iconfont iconicon_more2" @click="add">
                                     新增</i>
@@ -35,22 +35,22 @@
                     <div class="" slot="content">
                         <div class="behavior" v-for="(item,index) in behaviorList" :key="index">
                             <div>
-                                <DatePicker :value="date" format="yyyy/MM/dd" type="daterange" placement="right-end" placeholder="开始日期 - 结束日期" style="width: 200px"></DatePicker>
-                                <Select v-model="action1" style="width:200px;margin-left:12px;">
+                                <DatePicker :value="date" format="yyyy/MM/dd" type="daterange" placement="right-end" placeholder="开始日期 - 结束日期" class="mr12 w200"></DatePicker>
+                                <Select v-model="action1" class="mr12 w200">
                                     <Option value="做过">做过</Option>
                                 </Select>
-                                <Select v-model="action2" style="width:200px;margin-left:12px;">
+                                <Select v-model="action2" class="mr12 w200">
                                     <Option v-for="item in actionList1" :value="item.value" :key="item.value">{{ item.label }}</Option>
                                 </Select>
                             </div>
-                            <div style="margin-top: 8px;">
-                                <Select v-model="action3" style="width:200px;">
+                            <div class="mt8">
+                                <Select v-model="action3" class="mr12 w200">
                                     <Option value="总次数">总次数</Option>
                                 </Select>
-                                <Select v-model="action4" style="width:80px;margin-left:12px;">
+                                <Select v-model="action4" class="mr12 w80">
                                     <Option value="≥">≥</Option>
                                 </Select>
-                                <Input v-model="action5" style="width: 60px;margin-left:12px;"/> 次
+                                <Input v-model="action5" class="mr12 w60"/> 次
                             </div>
                             <div>
                                 <i class="add iconfont iconicon_more2" @click="behaviorAdd">
@@ -77,26 +77,31 @@
                 attributeList1: [
                     {
                         value: '性别',
-                        label: '性别'
+                        label: '性别',
+                        disabled: true
                     },
                     {
                         value: '年龄',
-                        label: '年龄'
+                        label: '年龄',
+                        disabled: true
                     },
                     {
                         value: '收入',
-                        label: '收入'
+                        label: '收入',
+                        disabled: false
                     },
                     {
                         value: '受教育程度',
-                        label: '受教育程度'
+                        label: '受教育程度',
+                        disabled: true
                     },
                     {
                         value: '地区',
-                        label: '地区'
+                        label: '地区',
+                        disabled: false
                     }
                 ],
-                attribute1: "性别",
+                attribute1: "收入",
                 attribute2: "等于",
                 attribute3: "",
                 actionList1: [
@@ -168,6 +173,30 @@
 <style scoped lang="scss">
     .create-container {
         padding: 24px;
+
+        .mt8 {
+           margin-top: 8px;
+        }
+
+        .mr16 {
+            margin-right: 16px;
+        }
+
+        .mr12 {
+            margin-right: 12px;
+        }
+
+        .w200 {
+            width: 200px;
+        }
+
+        .w80 {
+            width: 80px;
+        }
+
+        .w60 {
+            width: 60px;
+        }
 
         .nav {
             > p {
