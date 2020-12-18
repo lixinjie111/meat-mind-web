@@ -122,14 +122,14 @@ export default {
 </style>
 <style lang="scss">
     .zbgl-modal {
-          display: flex;
-    align-items: center;
-    justify-content: center;
-        .ivu-modal {
-                width: 560px !important;
-      min-height: 620px;
-      background: #ffffff;
-      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .ivu-modal {
+        width: 560px !important;
+        min-height: 620px;
+        background: #ffffff;
+        top: 0;
       }
         .ivu-modal-body {
             padding: 0;
