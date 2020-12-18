@@ -126,19 +126,23 @@ export default {
     align-items: center;
     justify-content: center;
         .ivu-modal {
-      top: 0;}
+                width: 560px !important;
+      min-height: 620px;
+      background: #ffffff;
+      top: 0;
+      }
         .ivu-modal-body {
             padding: 0;
         }
 
         .content {
             position: relative;
-            width: 460px;
-            height: 600px;
+            width: 560px;
+            height: 620px;
 
             img {
-                width: 460px;
-                height: 600px;
+                width: 560px;
+                height: 620px;
             }
 
             .close-btn {
