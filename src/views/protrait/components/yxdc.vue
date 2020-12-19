@@ -29,8 +29,10 @@
         </div>
         <div class="part">
             <img src="../../../static/img/protrait/yxdc/img5.png" alt="">
+            <iframe class="zcwj-iframe zcwj-iframe1" src="/static/html/lxj2/zcwj1.html" frameborder="0" scrolling="no"></iframe>
             <iframe class="zcwj-iframe zcwj-iframe2" src="/static/html/lxj2/zcwj2.html" frameborder="0" scrolling="no"></iframe>
             <iframe class="zcwj-iframe zcwj-iframe3" src="/static/html/lxj2/zcwj3.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="zcwj-iframe zcwj-iframe4" src="/static/html/lxj2/zcwj4.html" frameborder="0" scrolling="no"></iframe>
         </div>
         <div class="part">
             <img class="tdpm" src="../../../static/img/protrait/yxdc/tdpm@2x.png" alt="">
@@ -246,14 +248,24 @@
             height: 216px;
         }
 
+        .zcwj-iframe1 {
+            top: 62px;
+            left: 400px;
+        }
+
         .zcwj-iframe2 {
             top: 62px;
             right: 24px;
         }
 
         .zcwj-iframe3 {
-            top: 282px;
+            top: 284px;
             left: 400px;
+        }
+
+        .zcwj-iframe4 {
+            top: 286px;
+            right: 24px;
         }
 
         .clfx-iframe1 {

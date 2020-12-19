@@ -36,20 +36,43 @@
 			var colorList = [ '#1B90FF','#34C724','#FFC60A','#F54A45','#00D6B9']
 			var option = {
 				color: colorList,
+				title:{
+              text:'竞品舆情总声量趋势',
+              left:'32%',
+              top:'4%',
+              textStyle:{
+                  color:'#a1a1a1',
+                  fontFamily:'Microsoft YaHei',
+                  fontWeight: 400,
+                  fontSize: 14
+              }
+          },
 				tooltip: {
 					trigger: 'axis',
 					axisPointer: {            // 坐标轴指示器，坐标轴触发有效
 						type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+					},
+					textStyle:{
+						fontSize:12
 					}
 				},
 				legend: {
-					top:20,
-					data: ['微博','微信','小红书','抖音','快手']
+					// icon: 'circle',
+					top:34,
+					itemWidth: 6,
+					itemHeight: 6,
+					itemGap: 8,
+					data: ['微博','微信','小红书','抖音','快手'],
+					textStyle: {
+					fontSize: 12,
+					color: '#424242'
+					}
 				},
 				grid: {
 					left: '4%',
 					right: '4%',
 					bottom: '4%',
+					top:"36%",
 					containLabel: true
 				},
 				xAxis: {
@@ -65,7 +88,7 @@
 						type: 'bar',
 						stack: '总量',
 						label: {
-							show: true,
+							show: false,
 							position: 'insideRight'
 						},
 						data: [320, 302, 301, 334, 390, 330, 320]
@@ -75,7 +98,7 @@
 						type: 'bar',
 						stack: '总量',
 						label: {
-							show: true,
+							show: false,
 							position: 'insideRight'
 						},
 						data: [120, 132, 101, 134, 90, 230, 210]
@@ -86,7 +109,7 @@
 						barWidth:40,
 						stack: '总量',
 						label: {
-							show: true,
+							show: false,
 							position: 'insideRight'
 						},
 						data: [220, 182, 191, 234, 290, 330, 310]
@@ -96,7 +119,7 @@
 						type: 'bar',
 						stack: '总量',
 						label: {
-							show: true,
+							show: false,
 							position: 'insideRight'
 						},
 						data: [150, 212, 201, 154, 190, 330, 410]
@@ -106,7 +129,7 @@
 						type: 'bar',
 						stack: '总量',
 						label: {
-							show: true,
+							show: false,
 							position: 'insideRight'
 						},
 						data: [820, 832, 901, 934, 1290, 1330, 1320]

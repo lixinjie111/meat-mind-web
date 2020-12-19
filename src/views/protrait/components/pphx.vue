@@ -3,6 +3,7 @@
         <img src="../../../static/img/protrait/pphx1@2x.png" alt="">
         <iframe class="iframe1" src="/static/html/fj/leid.html" frameborder="0" scrolling="no"></iframe>
         <iframe class="iframe2" src="/static/html/fj2/rdyc.html" frameborder="0" scrolling="no"></iframe>
+        <iframe class="iframe3" src="/static/html/fj2/ppjz.html" frameborder="0" scrolling="no"></iframe>
          <div class="content">
             <div class="card">
                 <div class="top">
@@ -84,6 +85,15 @@
             height: 340px;
             top: 430px;
             left: 350px;
+        }
+
+        .iframe3{
+            background: #FFFFFF;
+            position: absolute;
+            top: 480px;
+            right: 28px;
+            width: 380px;
+            height: 260px;
         }
 
         >img {
