@@ -39,25 +39,25 @@
 				let yper=['20%','19%','12%','11%','10%','9%'];
 				let yValue = [{
 					value: 37975,
-					label: '20%'
+					label: '20'
 				}, {
 					value: 36076,
-					label: '19%'
+					label: '19'
 				}, {
 					value: 22785,
-					label: '12%'
+					label: '12'
 				},
 				{
 					value: 20886,
-					label: '11%'
+					label: '11'
 				},
 				{
 					value: 18988,
-					label: '10%'
+					label: '10'
 				},
 				{
 					value: 17089,
-					label: '9%'
+					label: '9'
 				},
 			];
       			var option = {
@@ -98,7 +98,7 @@
                   }
       		},
       		axisLabel: {
-      			formatter: '{value}'
+      			formatter: '{value}%'
       		},
               // axisLabel: {
               //     show: false
@@ -139,17 +139,17 @@
 					type: 'bar',
 					barWidth:"30%",
 					data: yValue.map((item, index) => {
-						return {
-							value:item.value,
-							label: {
-								color:colorList[index]
-							},
-							itemStyle: {
-								color:colorList[index]
-							},
-							per:item.label
-
-						};
+                      return {
+                        value:item.label,
+                        label: {
+                          color:colorList[index]
+                        },
+                        itemStyle: {
+                          color:colorList[index]
+                        },
+                        per:item.label,
+                        num:item.value,
+                      };
 					}),
                 //   data: yValue.map((item, i) => {
                 //       return {
@@ -161,10 +161,10 @@
                 //   }),
                   label: {
 					  show: true,
-					  formatter:function(value) {
-							console.log(value)
-							return value.data.value+'人   '+ value.data.per
-						},
+                    formatter:function(value) {
+                      console.log(value)
+                      return value.data.num+'人   '+ value.data.per+'%'
+                    },
                       position: 'right',
                       color: '#333333',
                       fontSize: 12,

@@ -37,17 +37,17 @@
       			let yData = ['中', '高', '低', '极高'];
 				let yValue = [{
 					value: 91140,
-					label: '48%'
+					label: '48'
 				}, {
 					value: 37975,
-					label: '20%'
+					label: '20'
 				}, {
 					value: 34178,
-					label: '18%'
+					label: '18'
 				},
 				{
 					value: 26583,
-					label: '4%'
+					label: '4'
 				},
 			];
       			var option = {
@@ -88,7 +88,7 @@
                   }
       		},
       		axisLabel: {
-      			formatter: '{value}'
+      			formatter: '{value}%'
       		}
               // axisLabel: {
               //     show: false
@@ -129,17 +129,18 @@
 					type: 'bar',
 					barWidth:"30%",
 					data: yValue.map((item, index) => {
-						return {
-							value:item.value,
-							label: {
-								color:colorList[index]
-							},
-							itemStyle: {
-								color:colorList[index]
-							},
-							per:item.label
+                      return {
+                        value:item.label,
+                        label: {
+                          color:colorList[index]
+                        },
+                        itemStyle: {
+                          color:colorList[index]
+                        },
+                        per:item.label,
+                        num:item.value,
 
-						};
+                      };
 					}),
                 //   data: yValue.map((item, i) => {
                 //       return {
@@ -151,10 +152,10 @@
                 //   }),
                   label: {
 					  show: true,
-					  formatter:function(value) {
-							console.log(value)
-							return value.data.value+'人   '+ value.data.per
-						},
+                    formatter:function(value) {
+                      console.log(value)
+                      return value.data.num+'人   '+ value.data.per+'%'
+                    },
                       position: 'right',
                       color: '#333333',
                       fontSize: 12,

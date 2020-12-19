@@ -37,25 +37,25 @@
       			let yData = ['周六', '周日', '周三', '周二', '周一', '其它'];
 				let yValue = [{
 					value: 74052,
-					label: '39%'
+					label: '39'
 				}, {
 					value: 53165,
-					label: '28%'
+					label: '28'
 				}, {
 					value: 17089,
-					label: '9%'
+					label: '9'
 				},
 				{
 					value: 13291,
-					label: '7%'
+					label: '7'
 				},
 				{
 					value: 11393,
-					label: '6%'
+					label: '6'
 				},
 				{
 					value: 20886,
-					label: '11%'
+					label: '11'
 				},
 			];
       			var option = {
@@ -96,7 +96,7 @@
                   }
       		},
       		axisLabel: {
-      			formatter: '{value}'
+      			formatter: '{value}%'
       		}
               // axisLabel: {
               //     show: false
@@ -137,17 +137,18 @@
 					type: 'bar',
 					barWidth:"30%",
 					data: yValue.map((item, index) => {
-						return {
-							value:item.value,
-							label: {
-								color:colorList[index]
-							},
-							itemStyle: {
-								color:colorList[index]
-							},
-							per:item.label
+                      return {
+                        value:item.label,
+                        label: {
+                          color:colorList[index]
+                        },
+                        itemStyle: {
+                          color:colorList[index]
+                        },
+                        per:item.label,
+                        num:item.value,
 
-						};
+                      };
 					}),
                 //   data: yValue.map((item, i) => {
                 //       return {
@@ -159,10 +160,9 @@
                 //   }),
                   label: {
 					  show: true,
-					  formatter:function(value) {
-							console.log(value)
-							return value.data.value+'人   '+ value.data.per
-						},
+                    formatter:function(value) {
+                      return value.data.num+'人   '+ value.data.per+'%'
+                    },
                       position: 'right',
                       color: '#333333',
                       fontSize: 12,
