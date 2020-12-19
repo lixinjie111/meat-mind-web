@@ -14,7 +14,8 @@
       </div>
       <div class="avatar">
         <img src="../static/img/header/oval@2x.png" alt="">
-        <span>分析师</span>
+        <span v-if="flag==1">企业主</span>
+        <span v-else>分析师</span>
       </div>
     </div>
   </div>
@@ -25,6 +26,7 @@ export default {
   name: "HeaderDefault",
   data() {
     return {
+      flag:sessionStorage.getItem("dashboard")
     };
   },
   methods: {
