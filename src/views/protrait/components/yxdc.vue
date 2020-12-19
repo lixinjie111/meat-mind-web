@@ -17,14 +17,23 @@
         <div class="part">
             <img src="../../../static/img/protrait/yxdc/img3.png" alt="">
             <iframe class="iframe iframe1" src="/static/html/lxj2/xzdc1.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="iframe iframe2" src="/static/html/lxj2/xzdc2.html" frameborder="0" scrolling="no"></iframe>
         </div>
         <div class="part">
             <img src="../../../static/img/protrait/yxdc/img4.png" alt="">
+            <iframe class="xqfx-iframe xqfx-iframe1" src="/static/html/lxj2/xqfx1.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="xqfx-iframe xqfx-iframe2" src="/static/html/lxj2/xqfx2.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="xqfx-iframe xqfx-iframe3" src="/static/html/lxj2/xqfx3.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="xqfx-iframe xqfx-iframe4" src="/static/html/lxj2/xqfx4.html" frameborder="0" scrolling="no"></iframe>
         </div>
         <div class="part">
             <img src="../../../static/img/protrait/yxdc/img5.png" alt="">
+            <iframe class="zcwj-iframe zcwj-iframe2" src="/static/html/lxj2/zcwj2.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="zcwj-iframe zcwj-iframe3" src="/static/html/lxj2/zcwj3.html" frameborder="0" scrolling="no"></iframe>
         </div>
         <div class="part">
+            <img class="tdpm" src="../../../static/img/protrait/yxdc/tdpm@2x.png" alt="">
+            <img class="rd" src="../../../static/img/protrait/yxdc/rd@2x.png" alt="">
             <img src="../../../static/img/protrait/yxdc/img6.png" alt="">
         </div>    
         <Modal class-name="portrait-report" v-model="downloadModal" footer-hide :closable="false">
@@ -163,6 +172,20 @@
 
         .part {
             position: relative;
+            .tdpm{
+                position: absolute;
+                top: 71px;
+                left: 414px;
+                width: 359px;
+                height: 205px;
+            }
+            .rd{
+                position: absolute;
+                top: 309px;
+                left: 414px;
+                width: 743px;
+                height: 200px;
+            }
         }
 
         .iframe {
@@ -174,6 +197,44 @@
         .iframe1 {
             right: 40px;
             top: 65px;
+        }
+        .iframe2 {
+            right: 24px;
+            top: 266px;
+        }
+        .xqfx-iframe{
+            position: absolute;
+            width: 380px;
+            height: 208px;
+        }
+        .xqfx-iframe1{
+            top: 56px;
+            left: 400px;
+        }
+        .xqfx-iframe2{
+            top: 56px;
+            right: 24px;
+        }
+        .xqfx-iframe3{
+            top: 262px;
+            left: 400px;
+        }
+        .xqfx-iframe4{
+            top: 262px;
+            right: 24px;
+        }
+        .zcwj-iframe{
+            position: absolute;
+            width: 380px;
+            height: 216px;
+        }
+        .zcwj-iframe2{
+            top: 62px;
+            right: 24px;
+        }
+        .zcwj-iframe3{
+            top: 282px;
+            left: 400px;
         }
 
     }

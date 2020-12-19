@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        font-family: "Helvetica Neue", "Helvetica", "PingFang SC",
+          "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "Arial",
+          "sans-serif", "PingFangSC-Medium";
+      }
+
+      #div {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="div"></div>
+
+    <script src="../../js/echarts.min.js"></script>
+    <script lang="javascript">
+      			setTimeout(()=>{
+      				//['#4C98FB', '#83CCE7', '#26C7C8', '#73DEBD', '#26C978', '#8CDF6C', '#FBD657', '#F56679', '#E07BCE', '#9D50E0', '#634FDA']
+      			var colorList = [ '#5d8bef','#84e4bd','#f9b06a','#26C978','#8CDF6C', '#F56679',]
+            var index = 0;
+      			let yData = ['购买抗衰护肤产品', '做医美', '喝养生茶', '买保健品','泡脚','少吃垃圾食品','少熬夜','运动健身','都没有','其它'];
+            let yValue = [{
+					value: 91140,
+					label: '49.74'
+				}, {
+					value: 37975,
+					label: '11.25'
+				}, {
+					value: 34178,
+					label: '30.95'
+				},
+				{
+					value: 26583,
+					label: '19.09'
+				},
+				{
+					value: 26583,
+					label: '27.83'
+				},
+				{
+					value: 26583,
+					label: '45.46'
+				},
+				{
+					value: 26583,
+					label: '46.47'
+				},
+				{
+					value: 26583,
+					label: '48.12'
+				},
+				{
+					value: 26583,
+					label: '5.03'
+				},
+				{
+					value: 26583,
+					label: '0.53'
+				},
+			];
+      			var option = {
+          title:{
+              text:'话题热度关键词',
+              left:'36%',
+              top:'2%',
+              textStyle:{
+                  color:'#a1a1a1',
+                  fontFamily:'Microsoft YaHei',
+                  fontWeight:400
+              }
+          },
+          tooltip: {
+              trigger: 'axis',
+              axisPointer: {
+                  type: 'shadow'
+              }
+          },
+          legend: {
+              show: false
+          },
+          grid: {
+            left: '4%',
+            right: '28%',
+            bottom: '10%',
+            top:'16%',
+        //	padding:'0 0 10 0',
+            containLabel: true,
+        },
+          xAxis: {
+              type: 'value',
+              splitLine: {
+                show: false,
+                  lineStyle: {
+                      color:'#ebebeb'
+                  }
+      		},
+      		// axisLabel: {
+      		// 	formatter: '{value}'
+      		// }
+              axisLabel: {
+                  show: false
+              },
+              axisTick: {
+                  show: false
+              },
+              axisLine: {
+                  show: false
+              }
+
+          },
+          yAxis: {
+              type: 'category',
+              inverse: true,
+              axisLine: {
+                  show: false
+              },
+              axisTick: {
+                  show: false
+              },
+              axisPointer: {
+                  label: {
+                      show: true,
+                      margin: 30
+                  }
+              },
+              data: yData,
+              axisLabel: {
+                  fontSize: 14,
+                  align: 'right',
+      			  color: '#333',
+              }
+          },
+          series: [{
+                  z: 2,
+                  name: '人数',
+					type: 'bar',
+					barWidth:"30%",
+					data: yValue.map((item, index) => {
+            console.log(item)
+						return {
+							value:item.label,
+							// label: {
+							// 	color:colorList[0]
+							// },
+							itemStyle: {
+								color:colorList[0]
+							},
+							//per:item.label
+
+						};
+					}),
+                  label: {
+					  show: true,
+					  formatter:function(value) {
+              console.log(value)
+							return value.data.value+'%'
+						},
+                      position: 'right',
+                      color: '#333333',
+                      fontSize: 14,
+                      offset: [10, 0]
+                  }
+              }
+
+          ]
+      };
+      			let myChart = echarts.init(document.getElementById("div"));
+      			myChart.setOption(option);
+      			},500)
+    </script>
+  </body>
+</html>
