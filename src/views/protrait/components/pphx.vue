@@ -82,8 +82,8 @@
             position: absolute;
             width: 480px;
             height: 340px;
+            top: 430px;
             left: 350px;
-            bottom: 240px;
         }
 
         >img {
