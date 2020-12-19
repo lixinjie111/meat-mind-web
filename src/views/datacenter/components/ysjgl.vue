@@ -69,7 +69,7 @@
             position: absolute;
             top: 192px;
             left: 27px;
-            right: 30px;
+            right: 27px;
             padding-bottom: 30px;
             background: #F7F9FA;
             img{
