@@ -62,7 +62,7 @@
             top: 80px;
             left: 290px;
             width: 160px;
-            height: 50px;
+            height: 46px;
             padding-top: 10px;
             background: #FFFFFF;
         }
@@ -71,7 +71,7 @@
             top: 80px;
             left: 866px;
             width: 160px;
-            height: 50px;
+            height: 46px;
             padding-top: 10px;
             background: #FFFFFF;
         }
