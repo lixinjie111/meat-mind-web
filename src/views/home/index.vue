@@ -4,8 +4,11 @@
         <Side></Side>
         <div class="container">
             <Header :target="'首页'"></Header>
-            <div class="" v-if="flag=='企业主'">
-                aaaa 
+            <div class="business-owner" v-if="flag=='企业主'">
+                <img src="../../static/img/home/dashboard-part1@2x.png" alt="">
+                <div class="tool"></div>
+                <img src="../../static/img/home/dashboard-part2@2x.png" alt="">
+                <div class="protrait"></div>
             </div>
             <div class="content" v-else>
                 <img src="../../static/img/home/home1@2x.png" alt="">
@@ -79,7 +82,19 @@
             display: flex;
             flex-direction: column;
             width: calc(100vw - 88px);
-
+            .business-owner{
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                width: 100%;
+                height: calc(100vh - 56px);
+                overflow-y:scroll;
+                img{
+                    width: 100%;
+                }
+                .too{}
+                .protrait{}
+            }
             .content {
                 position: relative;
                 width: 100%;
