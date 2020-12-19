@@ -222,7 +222,7 @@
 
         .xqfx-iframe1 {
             top: 66px;
-            left: 400px;
+            left: 420px;
         }
 
         .xqfx-iframe2 {
@@ -232,7 +232,7 @@
 
         .xqfx-iframe3 {
             top: 272px;
-            left: 400px;
+            left: 420px;
         }
 
         .xqfx-iframe4 {
