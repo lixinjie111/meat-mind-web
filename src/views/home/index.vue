@@ -4,7 +4,7 @@
         <Side></Side>
         <div class="container">
             <Header :target="'首页'"></Header>
-            <div class="business-owner" v-if="flag=='企业主'">
+            <div class="business-owner" v-if="flag==1">
                 <img src="../../static/img/home/dashboard-part1@2x.png" alt="">
                 <div class="tool"></div>
                 <img src="../../static/img/home/dashboard-part2@2x.png" alt="">
@@ -68,7 +68,7 @@
         components:{Side,Header},
         data(){
             return {
-                flag:this.$route.query.label
+                flag:sessionStorage.getItem("dashboard")
             }
         }
     }
