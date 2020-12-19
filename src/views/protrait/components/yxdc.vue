@@ -10,21 +10,31 @@
             <div class="target3" @click="active=3"></div>
             <div class="target4" @click="active=4"></div>
         </div>
-        <img src="../../../static/img/protrait/yxdc/img2.png" alt="">
-<!--        <iframe class="iframe iframe1" src="/static/html/lxj2/bar2.html" frameborder="0" scrolling="no"></iframe>-->
-        <img src="../../../static/img/protrait/yxdc/img3.png" alt="">
-        <img src="../../../static/img/protrait/yxdc/img4.png" alt="">
-        <img src="../../../static/img/protrait/yxdc/img5.png" alt="">
-        <img src="../../../static/img/protrait/yxdc/img6.png" alt="">
+        <div class="part">
+            <img src="../../../static/img/protrait/yxdc/img2.png" alt="">
+        </div>
+        <div class="part">
+            <img src="../../../static/img/protrait/yxdc/img3.png" alt="">
+            <iframe class="iframe iframe1" src="/static/html/lxj2/bar2.html" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="part">
+            <img src="../../../static/img/protrait/yxdc/img4.png" alt="">
+        </div>
+        <div class="part">
+            <img src="../../../static/img/protrait/yxdc/img5.png" alt="">
+        </div>
+        <div class="part">
+            <img src="../../../static/img/protrait/yxdc/img6.png" alt="">
+        </div>
     </div>
 </template>
 
 <script>
     export default {
         name: 'yxdc',
-        data(){
+        data() {
             return {
-                active:1
+                active: 1
             }
         }
     }
@@ -36,15 +46,19 @@
         height: 100%;
         display: flex;
         flex-wrap: wrap;
-        > img {
+
+        img {
             width: 100%;
         }
-        .part1{
+
+        .part1 {
             position: relative;
-            img{
+
+            img {
                 width: 100%;
             }
-            .target1{
+
+            .target1 {
                 position: absolute;
                 top: 160px;
                 left: 226px;
@@ -52,7 +66,8 @@
                 height: 18px;
                 cursor: pointer;
             }
-            .target2{
+
+            .target2 {
                 position: absolute;
                 top: 184px;
                 left: 226px;
@@ -60,7 +75,8 @@
                 height: 18px;
                 cursor: pointer;
             }
-            .target3{
+
+            .target3 {
                 position: absolute;
                 top: 206px;
                 left: 226px;
@@ -68,7 +84,8 @@
                 height: 18px;
                 cursor: pointer;
             }
-            .target4{
+
+            .target4 {
                 position: absolute;
                 top: 226px;
                 left: 226px;
@@ -77,5 +94,21 @@
                 cursor: pointer;
             }
         }
+
+        .part {
+            position: relative;
+        }
+
+        .iframe {
+            position: absolute;
+            width: 760px;
+            height: 220px;
+        }
+
+        .iframe1 {
+            right: 40px;
+            top: 65px;
+        }
+
     }
 </style>
