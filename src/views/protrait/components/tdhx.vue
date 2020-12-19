@@ -59,18 +59,20 @@
         height: 100%;
         .select-box1{
             position: absolute;
-            top: 90px;
+            top: 80px;
             left: 290px;
             width: 160px;
-            height: 55px;
+            height: 50px;
+            padding-top: 10px;
             background: #FFFFFF;
         }
         .select-box2{
             position: absolute;
-            top: 90px;
-            left: 870px;
+            top: 80px;
+            left: 866px;
             width: 160px;
-            height: 55px;
+            height: 50px;
+            padding-top: 10px;
             background: #FFFFFF;
         }
         .select1{
