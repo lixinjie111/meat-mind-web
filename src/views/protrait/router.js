@@ -1,4 +1,5 @@
 const protrait=()=>import('./index');
+const yxdc=()=>import('./components/yxdc.vue')
 const yhhx=()=>import('./components/yhhx.vue')
 const create=()=>import('./components/yhhx/create.vue')
 const list=()=>import('./components/yhhx/list.vue')
@@ -10,10 +11,17 @@ export default [
   {
     path:`/${moduleName}`,
     name:moduleName,
-    redirect:{name:`${moduleName}-yhhx`},
+    redirect:{name:`${moduleName}-yxdc`},
     meta:{title:"画像系统"},
     component:protrait,
     children:[
+      {
+        path:`/${moduleName}/yxdc`,
+        label:"营销洞察",
+        meta:{title:"用户画像",moduleName},
+        component:yxdc,
+        name:`${moduleName}-yxdc`
+      },
       {
         path:`/${moduleName}/yhhx`,
         label:"用户画像",

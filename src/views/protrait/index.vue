@@ -13,6 +13,7 @@ export default {
     data(){
     return {
       sides:[
+        {label:"营销洞察",name:"portrait-system-yxdc",icon:"iconyingxiaodongcha",meta:"portrait-system",path:"/portrait-system/yxdc"},
         {label:"用户画像",name:"portrait-system-yhhx",icon:"iconyonghuhuaxiang",meta:"portrait-system",path:"/portrait-system/yhhx"},
         {label:"品牌画像",name:"portrait-system-pphx",icon:"iconpinpaihuaxiang",meta:"portrait-system",path:"/portrait-system/pphx"},
         {label:"通道画像",name:"portrait-system-tdhx",icon:"icontongdaohuaxiang",meta:"portrait-system",path:"/portrait-system/tdhx"}

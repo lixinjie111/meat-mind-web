@@ -1,8 +1,8 @@
 <template>
     <div class="pphx">
-        <img src="../../../static/img/protrait/pphx1@2x.png" alt="">
-        <iframe class="iframe1" src="/static/html/fj/leid.html" frameborder="0" scrolling="no"></iframe>
-        <div class="content">
+        <img src="../../../static/img/protrait/pphx/part1.png" alt="">
+        <img src="../../../static/img/protrait/pphx/part2.png" alt="">
+        <!-- <div class="content">
             <div class="card">
                 <div class="top">
                     <div class="tabs">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -69,15 +69,6 @@
 
         >img {
             width: 100%;
-        }
-
-        .iframe1 {
-            position: absolute;
-            left: 520px;
-            top: 140px;
-            width: 300px;
-            height: 260px;
-            background: #FFFFFF;
         }
 
         .content {

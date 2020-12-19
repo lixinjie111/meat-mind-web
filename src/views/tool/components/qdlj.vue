@@ -1,6 +1,6 @@
 <template>
   <div class="qdlj">
-      <img src="../../../static/img/tool/qdlj.png" alt="">
+      <img src="../../../static/img/tool/qdzz/qdlj.png" alt="">
   </div>
 </template>
 
