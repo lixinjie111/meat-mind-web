@@ -224,7 +224,7 @@
 
         .xqfx-iframe1 {
             top: 66px;
-            left: 420px;
+            left: 405px;
         }
 
         .xqfx-iframe2 {
