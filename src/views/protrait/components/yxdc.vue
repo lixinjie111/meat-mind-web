@@ -9,6 +9,7 @@
             <div class="target2" @click="active=2"></div>
             <div class="target3" @click="active=3"></div>
             <div class="target4" @click="active=4"></div>
+            <div class="report-btn" @click="downloadModal = true"></div>
         </div>
         <img src="../../../static/img/protrait/yxdc/img2.png" alt="">
 <!--        <iframe class="iframe iframe1" src="/static/html/lxj2/bar2.html" frameborder="0" scrolling="no"></iframe>-->
@@ -16,6 +17,12 @@
         <img src="../../../static/img/protrait/yxdc/img4.png" alt="">
         <img src="../../../static/img/protrait/yxdc/img5.png" alt="">
         <img src="../../../static/img/protrait/yxdc/img6.png" alt="">
+        <Modal class-name="portrait-report" v-model="downloadModal" footer-hide :closable="false">
+            <div class="download">
+                <img src="../../../static/img/decision/report@2x.png" alt="">
+                <div class="close-btn" @click="downloadModal = false"></div>
+            </div>
+        </Modal>
     </div>
 </template>
 
@@ -24,12 +31,63 @@
         name: 'yxdc',
         data(){
             return {
-                active:1
+                active:1,
+                downloadModal: false,
             }
         }
     }
 </script>
 
+<style lang="scss">
+    .portrait-report {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .ivu-modal {
+            top: 0;
+            width: 1020px !important;
+            height: 800px;
+            overflow-y: scroll;
+            background: #ffffff;
+            border-radius: 4px;
+        }
+        .ivu-modal-body {
+            padding: 0;
+        }
+
+        .download {
+            position: relative;
+            margin: 0 auto;
+            width: 1000px;
+
+            >img {
+                width: 1000px;
+                border-radius: 10px;
+            }
+
+            .close-btn {
+                position: absolute;
+                top: 17px;
+                right: 115px;
+                width: 80px;
+                height: 30px;
+                background: transparent;
+                cursor: pointer;
+            }
+
+            .download-btn {
+                display: inline-block;
+                position: absolute;
+                top: 17px;
+                right: 25px;
+                width: 80px;
+                height: 30px;
+                background: transparent;
+                cursor: pointer;
+            }
+        }
+    } 
+</style>
 <style scoped lang="scss">
     .yxdc {
         width: 100%;
@@ -41,6 +99,15 @@
         }
         .part1{
             position: relative;
+            .report-btn{
+                position: absolute;
+                top: 20px;
+                right: 24px;
+                width: 120px;
+                height: 40px;
+                // border: 1px solid red;
+                cursor: pointer;
+            }
             img{
                 width: 100%;
             }

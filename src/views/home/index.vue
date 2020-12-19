@@ -7,6 +7,7 @@
             <div class="business-owner" v-if="flag==1">
                 <div class="part1">
                     <img src="../../static/img/home/dashboard-part1@2x.png" alt="">
+                    <div class="report-btn" @click="downloadModal = true"></div>
                     <iframe class="iframe1" src="/static/html/fj2/znjc.html" frameborder="0" scrolling="no"></iframe>
                     <div class="detail" @click="toPart1Detail"></div>
                 </div>
@@ -15,6 +16,12 @@
 <!--                    <iframe class="iframe1" src="/static/html/fj/leid.html" frameborder="0" scrolling="no"></iframe>-->
                     <div class="detail" @click="toPart2Detail"></div>
                 </div>
+                <Modal class-name="dashboard-report" v-model="downloadModal" footer-hide :closable="false">
+                    <div class="download">
+                        <img src="../../../src/static/img/decision/report@2x.png" alt="">
+                        <div class="close-btn" @click="downloadModal = false"></div>
+                    </div>
+                </Modal>
             </div>
             <div class="content" v-else>
                 <img src="../../static/img/home/home1@2x.png" alt="">
@@ -74,7 +81,8 @@
         components:{Side,Header},
         data(){
             return {
-                flag:sessionStorage.getItem("dashboard")
+                flag:sessionStorage.getItem("dashboard"),
+                downloadModal: false,
             }
         },
         methods: {
@@ -88,6 +96,56 @@
     }
 </script>
 
+<style lang="scss">
+    .dashboard-report {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .ivu-modal {
+            top: 0;
+            width: 1020px !important;
+            height: 800px;
+            overflow-y: scroll;
+            background: #ffffff;
+            border-radius: 4px;
+        }
+        .ivu-modal-body {
+            padding: 0;
+        }
+
+        .download {
+            position: relative;
+            margin: 0 auto;
+            width: 1000px;
+
+            >img {
+                width: 1000px;
+                border-radius: 10px;
+            }
+
+            .close-btn {
+                position: absolute;
+                top: 17px;
+                right: 115px;
+                width: 80px;
+                height: 30px;
+                background: transparent;
+                cursor: pointer;
+            }
+
+            .download-btn {
+                display: inline-block;
+                position: absolute;
+                top: 17px;
+                right: 25px;
+                width: 80px;
+                height: 30px;
+                background: transparent;
+                cursor: pointer;
+            }
+        }
+    }
+</style>
 <style scoped lang="scss">
     .home {
         display: flex;
@@ -110,7 +168,15 @@
 
                 .part1 {
                     position: relative;
-
+                    .report-btn{
+                        position: absolute;
+                        top: 20px;
+                        right: 24px;
+                        width: 120px;
+                        height: 40px;
+                        // border: 1px solid red;
+                        cursor: pointer;
+                    }
                     .iframe1 {
                         position: absolute;
                         left: 0;
