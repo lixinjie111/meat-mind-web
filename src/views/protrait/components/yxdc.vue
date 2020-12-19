@@ -13,6 +13,7 @@
         </div>
         <div class="part">
             <img src="../../../static/img/protrait/yxdc/img2.png" alt="">
+            <iframe class="iframe0" src="/static/html/fj2/ppxx.html" frameborder="0" scrolling="no"></iframe>
         </div>
         <div class="part">
             <img src="../../../static/img/protrait/yxdc/img3.png" alt="">
@@ -192,6 +193,15 @@
             position: absolute;
             width: 760px;
             height: 220px;
+        }
+
+        .iframe0 {
+            position: absolute;
+            left: 30px;
+            top: 65px;
+            width: 760px;
+            height: 360px;
+            background: #fff;
         }
 
         .iframe1 {
