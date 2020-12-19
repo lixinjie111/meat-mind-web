@@ -336,12 +336,13 @@
     setInterval(function () {
         //用setInterval做动画感觉有问题
         draw()
-        window.onresize = () => {
-            myChart.resize();
-        }
     }, 100);
 
     myChart.setOption(option);
+
+    window.onresize = () => {
+        myChart.resize();
+    }
 </script>
 </body>
 </html>
