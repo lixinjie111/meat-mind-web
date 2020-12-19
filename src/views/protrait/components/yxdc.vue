@@ -11,6 +11,7 @@
             <div class="target4" @click="active=4"></div>
         </div>
         <img src="../../../static/img/protrait/yxdc/img2.png" alt="">
+<!--        <iframe class="iframe iframe1" src="/static/html/lxj2/bar2.html" frameborder="0" scrolling="no"></iframe>-->
         <img src="../../../static/img/protrait/yxdc/img3.png" alt="">
         <img src="../../../static/img/protrait/yxdc/img4.png" alt="">
         <img src="../../../static/img/protrait/yxdc/img5.png" alt="">
