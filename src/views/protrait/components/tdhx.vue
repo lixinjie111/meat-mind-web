@@ -69,7 +69,7 @@
         .select-box2{
             position: absolute;
             top: 80px;
-            left: 866px;
+            right: 164px;
             width: 160px;
             height: 46px;
             padding-top: 10px;
