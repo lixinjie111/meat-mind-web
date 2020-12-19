@@ -5,10 +5,16 @@
         <div class="container">
             <Header :target="'首页'"></Header>
             <div class="business-owner" v-if="flag==1">
-                <img src="../../static/img/home/dashboard-part1@2x.png" alt="">
-                <div class="tool"></div>
-                <img src="../../static/img/home/dashboard-part2@2x.png" alt="">
-                <div class="protrait"></div>
+                <div class="part1">
+                    <img src="../../static/img/home/dashboard-part1@2x.png" alt="">
+                    <iframe class="iframe1" src="/static/html/fj2/znjc.html" frameborder="0" scrolling="no"></iframe>
+                    <div class="detail" @click="toPart1Detail"></div>
+                </div>
+                <div class="part2">
+                    <img src="../../static/img/home/dashboard-part2@2x.png" alt="">
+<!--                    <iframe class="iframe1" src="/static/html/fj/leid.html" frameborder="0" scrolling="no"></iframe>-->
+                    <div class="detail" @click="toPart2Detail"></div>
+                </div>
             </div>
             <div class="content" v-else>
                 <img src="../../static/img/home/home1@2x.png" alt="">
@@ -70,6 +76,14 @@
             return {
                 flag:sessionStorage.getItem("dashboard")
             }
+        },
+        methods: {
+            toPart1Detail() {
+                this.$router.push({name:"business-analysis-ztgl"})
+            },
+            toPart2Detail() {
+                this.$router.push({name:"portrait-system-yxdc"})
+            }
         }
     }
 </script>
@@ -82,18 +96,53 @@
             display: flex;
             flex-direction: column;
             width: calc(100vw - 88px);
+
             .business-owner{
                 display: flex;
                 flex-direction: column;
-                position: relative;
                 width: 100%;
                 height: calc(100vh - 56px);
                 overflow-y:scroll;
+
                 img{
                     width: 100%;
                 }
-                .too{}
-                .protrait{}
+
+                .part1 {
+                    position: relative;
+
+                    .iframe1 {
+                        position: absolute;
+                        left: 0;
+                        top: 100px;
+                        width: 960px;
+                        height: 500px;
+                    }
+
+                    .detail {
+                        position: absolute;
+                        right: 48px;
+                        top: 84px;
+                        /*background: red;*/
+                        width: 90px;
+                        height: 34px;
+                        cursor: pointer;
+                    }
+                }
+
+                .part2 {
+                    position: relative;
+
+                    .detail {
+                        position: absolute;
+                        right: 46px;
+                        top: 26px;
+                        /*background: red;*/
+                        width: 90px;
+                        height: 34px;
+                        cursor: pointer;
+                    }
+                }
             }
             .content {
                 position: relative;

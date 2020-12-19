@@ -1,6 +1,8 @@
 <template>
     <div class="pphx">
         <img src="../../../static/img/protrait/pphx1@2x.png" alt="">
+        <iframe class="iframe1" src="/static/html/fj/leid.html" frameborder="0" scrolling="no"></iframe>
+        <iframe class="iframe2" src="/static/html/fj2/rdyc.html" frameborder="0" scrolling="no"></iframe>
          <div class="content">
             <div class="card">
                 <div class="top">
@@ -15,6 +17,7 @@
                 <div class="bottom">
                     <div class="tab-content" v-if="tabActive==1">
                         <img src="../../../static/img/protrait/pphx2@2x.png" alt="">
+                        <iframe class="iframe iframe6" src="/static/html/fj2/mbfg.html" frameborder="0" scrolling="no"></iframe>
                     </div>
                     <div class="tab-content" v-else-if="tabActive==2">
                         <img src="../../../static/img/protrait/pphx3@2x.png" alt="">
@@ -65,6 +68,23 @@
         position: relative;
         width: 100%;
         height: 100%;
+
+        .iframe1 {
+            position: absolute;
+            left: 430px;
+            top: 185px;
+            width: 300px;
+            height: 240px;
+            background: #FFFFFF;
+        }
+
+        .iframe2 {
+            position: absolute;
+            width: 480px;
+            height: 340px;
+            left: 350px;
+            bottom: 240px;
+        }
 
         >img {
             width: 100%;
@@ -168,6 +188,13 @@
                         .iframe3 {
                             left: 10px;
                             top: 45px;
+                        }
+
+                        .iframe6 {
+                            height: 300px;
+                            left: 10px;
+                            top: 50px;
+                            background: transparent;
                         }
                     }
                 }

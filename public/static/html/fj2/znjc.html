@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>柱状图</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'Arial', 'sans-serif', 'PingFangSC-Medium';
+        }
+
+        #chart-panel {
+            width: 100%;
+            height: 100%;
+        }
+
+        div {
+            color: #6a7985
+        }
+    </style>
+</head>
+<body>
+
+    <div id="chart-panel"></div>
+
+    <script src="../../js/echarts.min.js"></script>
+    <script>
+          
+    var myChart = echarts.init(document.getElementById('chart-panel'));
+      
+    const colorList = ['#739cea', '#73d9a8', '#758298', '#f7c235', '#eb7b5f', '#83cbe0', '#a282c5', '#ffa761', '#46a59d', '#ffa5c0', '#58D5FF']
+    
+    var option = {
+        // backgroundColor: '#091C3D',
+        tooltip: { //提示框组件
+            trigger: 'axis',
+            // formatter: '{b}<br />{a0}: {c0}<br />{a1}: {c1}',
+            formatter: function(params) {
+                console.log(params);
+                return `GVM: ${params[0].data}<br/>
+                    目标值: ${params[0].data}
+                `
+            },
+            axisPointer: {
+                type: 'shadow',
+                label: {
+                    backgroundColor: '#6a7985'
+                },
+                shadowStyle: {
+                    color: '#081C4F',
+                    opacity: 0.06
+                }
+            },
+            textStyle: {
+                color: '#fff',
+                fontStyle: 'normal',
+                fontFamily: '微软雅黑',
+                fontSize: 12,
+            }
+        },
+        grid: {
+            left: '8%',
+            right: '8%',
+            bottom: '10%',
+            top:'20%',
+        //	padding:'0 0 10 0',
+            containLabel: true,
+        },
+        legend: {//图例组件，颜色和名字
+            // right:'10%',
+            // top:'30%',
+            left:'50%',
+            bottom: 0,
+            itemGap: 16,
+            itemWidth: 18,
+            itemHeight: 10,
+            icon: 'circle',
+            data:[{
+                name:'GMV',
+                //icon:'image://../wwwroot/js/url2.png', //路径
+            },
+            {
+                name:'目标值',
+            }],
+            textStyle: {
+                color: '#a8aab0',
+                fontStyle: 'normal',
+                fontFamily: '微软雅黑',
+                fontSize: 12,            
+            }
+        },
+        xAxis: [
+            {
+                type: 'category',
+            	// boundaryGap: true,//坐标轴两边留白
+                data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+                axisLabel: { //坐标轴刻度标签的相关设置。
+            		interval: 0,//设置为 1，表示『隔一个标签显示一个标签』
+                //	margin:15,
+                    textStyle: {
+                        color: '#6a7985',
+                        fontStyle: 'normal',
+                        fontFamily: '微软雅黑',
+                        fontSize: 12,
+                    },
+                    // rotate:50,
+                },
+                axisTick:{//坐标轴刻度相关设置。
+                    // show: false,
+                },
+                axisLine:{//坐标轴轴线相关设置
+                    lineStyle:{
+                        color:'#6a7985',
+                        opacity: 0.6
+                    }
+                },
+                splitLine: { //坐标轴在 grid 区域中的分隔线。
+                    // show: false,
+                }
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                splitNumber: 5,
+                axisLabel: {
+                    textStyle: {
+                        color: '#a8aab0',
+                        fontStyle: 'normal',
+                        fontFamily: '微软雅黑',
+                        fontSize: 12,
+                    }
+                },
+                axisLine:{
+                    show: false
+                },
+                axisTick:{
+                    show: false
+                },
+                splitLine: {
+                    show: false,
+                    lineStyle: {
+                        color: '#6a7985',
+                        opacity:0.6
+                    }
+                }
+
+            }
+        ],
+        series : [
+            {
+                name:'GMV',
+                type:'bar',
+                data:[
+                    51.00,
+                    52.00,
+                    53.00,
+                    55.00,
+                    59.00,
+                    64.00,
+                    61.00,
+                    60.00,
+                    62.00,
+                    66.00,
+                    69.00,
+                    74.00,
+                ],
+                barWidth: 10,
+                barGap:0,//柱间距离
+                // label: {//图形上的文本标签
+                //     normal: {
+                //       show: true,
+                //       position: 'top',
+                //       textStyle: {
+                //           color: '#a8aab0',
+                //           fontStyle: 'normal',
+                //           fontFamily: '微软雅黑',
+                //           fontSize: 12,   
+                //       },
+                //     },
+                // },
+                itemStyle: {
+                    normal: {
+                        show: true,
+                        // color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        //     offset: 0,
+                        //     color: '#5768EF'
+                        // }, {
+                        //     offset: 1,
+                        //     color: '#5768EF'
+                        // }]),
+                        color: 'RGB(109,149, 251)',
+                        // barBorderRadius: 50,
+                        borderWidth: 0,
+                    }
+                },
+            },
+            {
+                name:'目标值',
+                type:'bar',
+                data:[
+                    50.00,
+                    54.00,
+                    53.00,
+                    54.00,
+                    60.00,
+                    62.00,
+                    64.00,
+                    62.00,
+                    64.00,
+                    66.00,
+                    68.00,
+                    72.00,
+                ],
+                barWidth: 10,
+                barGap:0,//柱间距离
+                // label: {//图形上的文本标签
+                //     normal: {
+                //       show: true,
+                //       position: 'top',
+                //       textStyle: {
+                //           color: '#a8aab0',
+                //           fontStyle: 'normal',
+                //           fontFamily: '微软雅黑',
+                //           fontSize: 12,   
+                //       },
+                //     },
+                // },
+                itemStyle: {
+                    normal: {
+                        show: true,
+                        // color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        //     offset: 0,
+                        //     // color: '#69CBF2'
+                        // }, {
+                        //     offset: 1,
+                        //     color: '#69CBF2'
+                        // }]),
+                        color: 'RGB(186,135, 251)',
+                        // barBorderRadius: 50,
+                        borderWidth: 0,
+                    }
+                },
+            }
+        ]
+    };
+    myChart.setOption(option);
+    
+
+  </script>
+</body>
+</html>
