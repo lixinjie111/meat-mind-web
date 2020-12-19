@@ -25,6 +25,8 @@
             <img src="../../../static/img/protrait/yxdc/img5.png" alt="">
         </div>
         <div class="part">
+            <img class="tdpm" src="../../../static/img/protrait/yxdc/tdpm@2x.png" alt="">
+            <img class="rd" src="../../../static/img/protrait/yxdc/rd@2x.png" alt="">
             <img src="../../../static/img/protrait/yxdc/img6.png" alt="">
         </div>    
         <Modal class-name="portrait-report" v-model="downloadModal" footer-hide :closable="false">
@@ -163,6 +165,20 @@
 
         .part {
             position: relative;
+            .tdpm{
+                position: absolute;
+                top: 71px;
+                left: 414px;
+                width: 359px;
+                height: 205px;
+            }
+            .rd{
+                position: absolute;
+                top: 309px;
+                left: 414px;
+                width: 743px;
+                height: 200px;
+            }
         }
 
         .iframe {
