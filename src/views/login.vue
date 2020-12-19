@@ -47,7 +47,6 @@
         },
         methods: {
             change(val) {
-                // console.log(val)
                 this.model1 = val
             },
             confirm() {
@@ -57,9 +56,11 @@
             jump() {
                 this.showImg = false
                 if (this.model1 == "企业主") {
-                    this.$router.push({name: "home",query:{label:"企业主"}})
+                    this.$router.push({name: "home"})
+                    sessionStorage.setItem("dashboard",1)
                 } else {
                     this.$router.push({name: "home"})
+                    sessionStorage.setItem("dashboard",0)
                 }
 
             }
