@@ -223,13 +223,13 @@
 
                         .iframe1 {
                             left: 0;
-                            top: 46px;
+                            top: 42px;
                         }
 
                         .iframe2 {
                             width: 40%;
                             right: 60px;
-                            top: 46px;
+                            top: 42px;
                         }
 
                         .iframe3 {
@@ -246,45 +246,53 @@
 
                         .iframe5 {
                             left: 0;
-                            top: 46px;
+                            top: 42px;
                         }
 
                         .iframe6 {
                             left: 0;
-                            top: 446px;
+                            top: 444px;
+                            height: 344px;
                         }
 
                         .iframe7 {
                             left: 0;
-                            top: 846px;
+                            top: 842px;
+                            height: 340px;
                         }
 
                         .iframe8 {
                             left: 0;
-                            top: 1246px;
+                            // top: 1240px;
+                            bottom: 806px;
+                            height: 340px;
                         }
 
                         .iframe9 {
                             right: 0;
-                            top: 46px;
+                            top: 42px;
                             background: #FAFAFA;
                         }
 
                         .iframe10 {
                             right: 0;
-                            top: 446px;
+                            top: 442px;
                             background: #FAFAFA;
+                            height: 344px;
                         }
 
                         .iframe11 {
                             right: 0;
-                            top: 846px;
+                            top: 842px;
+                            height: 340px;
                             background: #FAFAFA;
                         }
 
                         .iframe12 {
                             right: 0;
-                            top: 1246px;
+                            // top: 1240px;
+                            bottom: 806px;
+                            height: 340px;
                             background: #FAFAFA;
                         }
 
