@@ -36,6 +36,7 @@
             <img class="tdpm" src="../../../static/img/protrait/yxdc/tdpm@2x.png" alt="">
             <img class="rd" src="../../../static/img/protrait/yxdc/rd@2x.png" alt="">
             <img src="../../../static/img/protrait/yxdc/img6.png" alt="">
+            <iframe class="clfx-iframe1" src="/static/html/lxj2/clfx.html" frameborder="0" scrolling="no"></iframe>
         </div>    
         <Modal class-name="portrait-report" v-model="downloadModal" footer-hide :closable="false">
             <div class="download">
@@ -212,40 +213,55 @@
             right: 24px;
             top: 266px;
         }
-        .xqfx-iframe{
+
+        .xqfx-iframe {
             position: absolute;
             width: 380px;
             height: 208px;
         }
-        .xqfx-iframe1{
-            top: 56px;
+
+        .xqfx-iframe1 {
+            top: 66px;
             left: 400px;
         }
-        .xqfx-iframe2{
-            top: 56px;
+
+        .xqfx-iframe2 {
+            top: 66px;
             right: 24px;
         }
-        .xqfx-iframe3{
-            top: 262px;
+
+        .xqfx-iframe3 {
+            top: 272px;
             left: 400px;
         }
-        .xqfx-iframe4{
-            top: 262px;
+
+        .xqfx-iframe4 {
+            top: 272px;
             right: 24px;
         }
-        .zcwj-iframe{
+
+        .zcwj-iframe {
             position: absolute;
             width: 380px;
             height: 216px;
         }
-        .zcwj-iframe2{
+
+        .zcwj-iframe2 {
             top: 62px;
             right: 24px;
         }
-        .zcwj-iframe3{
+
+        .zcwj-iframe3 {
             top: 282px;
             left: 400px;
         }
 
+        .clfx-iframe1 {
+            position: absolute;
+            width: 380px;
+            height: 260px;
+            top: 62px;
+            right: 24px;
+        }
     }
 </style>
