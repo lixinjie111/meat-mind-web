@@ -1,8 +1,7 @@
 <template>
     <div class="pphx">
-        <img src="../../../static/img/protrait/pphx/part1.png" alt="">
-        <img src="../../../static/img/protrait/pphx/part2.png" alt="">
-        <!-- <div class="content">
+        <img src="../../../static/img/protrait/pphx1@2x.png" alt="">
+         <div class="content">
             <div class="card">
                 <div class="top">
                     <div class="tabs">
@@ -28,7 +27,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
 </template>
 
@@ -72,7 +71,7 @@
         }
 
         .content {
-            padding: 16px 24px 24px;
+            padding: 0 24px 24px;
 
             .card {
                 width: 100%;
