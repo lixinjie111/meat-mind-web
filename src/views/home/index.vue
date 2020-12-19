@@ -13,7 +13,7 @@
                 </div>
                 <div class="part2">
                     <img src="../../static/img/home/dashboard-part2@2x.png" alt="">
-<!--                    <iframe class="iframe1" src="/static/html/fj/leid.html" frameborder="0" scrolling="no"></iframe>-->
+                    <iframe class="iframe1" src="/static/html/fj2/ppxx.html" frameborder="0" scrolling="no"></iframe>
                     <div class="detail" @click="toPart2Detail"></div>
                 </div>
                 <Modal class-name="dashboard-report" v-model="downloadModal" footer-hide :closable="false">
@@ -198,6 +198,14 @@
 
                 .part2 {
                     position: relative;
+
+                    .iframe1 {
+                        position: absolute;
+                        left: 0;
+                        top: 100px;
+                        width: 960px;
+                        height: 360px;
+                    }
 
                     .detail {
                         position: absolute;
