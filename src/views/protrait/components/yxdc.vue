@@ -208,7 +208,7 @@
         }
 
         .iframe1 {
-            right: 40px;
+            right: 24px;
             top: 65px;
         }
         .iframe2 {
