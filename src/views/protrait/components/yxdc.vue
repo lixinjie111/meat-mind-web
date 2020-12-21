@@ -204,7 +204,7 @@
             top: 65px;
             width: 760px;
             height: 360px;
-            background: #fff;
+            // background: #fff;
         }
 
         .iframe1 {
