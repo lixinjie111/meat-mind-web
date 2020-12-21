@@ -42,7 +42,7 @@
         </div>    
         <Modal class-name="portrait-report" v-model="downloadModal" footer-hide :closable="false">
             <div class="download">
-                <img src="../../../static/img/decision/report@2x.png" alt="">
+                <img src="../../../static/img/protrait/yxdc/report@2x.png" alt="">
                 <div class="close-btn" @click="downloadModal = false"></div>
             </div>
         </Modal>

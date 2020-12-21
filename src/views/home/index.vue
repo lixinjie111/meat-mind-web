@@ -16,9 +16,9 @@
                     <iframe class="iframe1" src="/static/html/fj2/ppxx.html" frameborder="0" scrolling="no"></iframe>
                     <div class="detail" @click="toPart2Detail"></div>
                 </div>
-                <Modal class-name="dashboard-report" v-model="downloadModal" footer-hide :closable="false">
+                <Modal class-name="dashboard-report-modal" v-model="downloadModal" footer-hide :closable="false">
                     <div class="download">
-                        <img src="../../../src/static/img/decision/report@2x.png" alt="">
+                        <img src="../../../src/static/img/home/dashboard-report@2x.png" alt="">
                         <div class="close-btn" @click="downloadModal = false"></div>
                     </div>
                 </Modal>
@@ -97,14 +97,14 @@
 </script>
 
 <style lang="scss">
-    .dashboard-report {
+    .dashboard-report-modal {
         display: flex;
         align-items: center;
         justify-content: center;
         .ivu-modal {
             top: 0;
             width: 1020px !important;
-            height: 800px;
+            height: 680px;
             overflow-y: scroll;
             background: #ffffff;
             border-radius: 4px;
