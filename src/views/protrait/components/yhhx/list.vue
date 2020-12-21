@@ -30,7 +30,9 @@
                             <img src="../../../../static/img/protrait/yhhx3@2x.png" alt="">
                             <video class="player" width="100%" height="100%" autoplay loop muted src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"></video>
                         </div>
-                        <div class="tab-content" v-else>
+                        <div class="tab-content1" v-else>
+                            <iframe class="iframe13" src="/static/html/lxj2/xzdc1-1.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe14" src="/static/html/lxj2/xzdc2.html" frameborder="0" scrolling="no"></iframe>
                             <img src="../../../../static/img/protrait/yhhx4@2x.png" alt="">
                         </div>
                     </div>
@@ -66,7 +68,9 @@
                             <img src="../../../../static/img/protrait/yhhx3@2x.png" alt="">
                             <video class="player" width="100%" height="100%" autoplay loop muted src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"></video>
                         </div>
-                        <div class="tab-content" v-else>
+                        <div class="tab-content1" v-else>
+                            <iframe class="iframe13" src="/static/html/lxj2/xzdc1-1.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe14" src="/static/html/lxj2/xzdc2.html" frameborder="0" scrolling="no"></iframe>
                             <img src="../../../../static/img/protrait/yhhx4@2x.png" alt="">
                         </div>
                     </div>
@@ -302,6 +306,28 @@
                             height: 466px;
                             top: -14px;
                             left: 0;
+                        }
+                    }
+
+                    .tab-content1 {
+                        >img {
+                            width: 100%;
+                        }
+
+                        .iframe13 {
+                            margin-top: 10px;
+                            width: 100%;
+                            height: 350px;
+                            /*background: #FFFFFF;*/
+                            border-bottom: 1px solid #F0F0F0;
+                        }
+
+                        .iframe14 {
+                            margin-top: 10px;
+                            width: 100%;
+                            height: 350px;
+                            /*background: #FFFFFF;*/
+                            border-bottom: 1px solid #F0F0F0;
                         }
                     }
                 }
