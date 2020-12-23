@@ -9,7 +9,7 @@
         <div v-else>
             <img src="../../../static/img/tool/zbgl/khzb@2x.png" alt="">
         </div>
-        <Modal class-name="zbgl-modal" v-model="newModal" footer-hide :closable="false" width="460px">
+        <Modal class-name="zbgl-modal" v-model="newModal" footer-hide :closable="false">
             <div class="content">
                 <div class="close-btn" @click="newModal = false"></div>
                 <img src="../../../static/img/tool/zbgl/xjzb@2x.png" alt="">
