@@ -4,7 +4,7 @@
         <img v-else src="../../../static/img/datacenter/wdsj@2x.png" alt="">
         <div v-if="resultShow" class="back-btn" @click="resultShow = false"></div>
         <div v-else class="upload-btn" @click="uploadModal1 = true"></div>
-        <Modal class-name="upload-modal1" v-model="uploadModal1" footer-hide :closable="false" width="488px">
+        <Modal class-name="upload-modal1" v-model="uploadModal1" footer-hide :closable="false">
             <div class="upload1">
                 <div class="left-btn" @click="isUpload4 = false"></div>
                 <div class="right-btn" @click="isUpload4 = true"></div>
@@ -21,14 +21,14 @@
                 </div>
             </div>
         </Modal>
-        <Modal class-name="upload-modal2" v-model="uploadModal2" footer-hide :closable="false" width="488px">
+        <Modal class-name="upload-modal2" v-model="uploadModal2" footer-hide :closable="false">
             <div class="upload2">
                 <img v-if="isUpload4" src="../../../static/img/datacenter/upload5.jpeg" alt="">
                 <img v-else src="../../../static/img/datacenter/upload2.png" alt="">
                 <div class="upload2-btn" @click="uploadChange2"></div>
             </div>
         </Modal>
-        <Modal class-name="upload-modal3" v-model="uploadModal3" footer-hide :closable="false" width="488px">
+        <Modal class-name="upload-modal3" v-model="uploadModal3" footer-hide :closable="false">
             <div class="upload3">
                 <img src="../../../static/img/datacenter/upload3@2x.png" alt="">
             </div>
@@ -108,17 +108,19 @@
 </style>
 <style lang="scss">
     .upload-modal1 {
+        .ivu-modal{
+            width: 488px!important;
+            height: 616px;
+        }
         .ivu-modal-body {
             padding: 0;
-        }
-
-        .upload1 {
+            .upload1 {
             position: relative;
-            width: 488px;
+            width: 488px!important;
             height: 616px;
 
             img {
-                width: 488px;
+                width: 488px!important;
                 height: 616px;
             }
 
@@ -192,13 +194,19 @@
                 cursor: pointer;
             }
         }
+        }
+
+
     }
 
     .upload-modal2 {
         .ivu-modal-body {
             padding: 0;
         }
-
+        .ivu-modal{
+            width: 640px!important;
+            height: 400px;
+        }
         .upload2 {
             position: relative;
             width: 640px;
@@ -222,6 +230,10 @@
     }
 
     .upload-modal3 {
+        .ivu-modal{
+            width: 500px!important;
+            height: 206px;
+        }
         .ivu-modal-body {
             padding: 0;
         }

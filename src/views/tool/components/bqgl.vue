@@ -21,7 +21,7 @@
         </div>
       </div>
     </Modal>   
-    <Modal class-name="bqgl-modal" v-model="newModal" footer-hide :closable="false" width="560px">
+    <Modal class-name="bqgl-modal" v-model="newModal" footer-hide :closable="false">
       <div class="content">
         <div class="close-btn" @click="newModal = false"></div>
         <img src="../../../static/img/tool/bqgl/click-defined.png" alt="">
@@ -124,6 +124,7 @@ export default {
       align-items: center;
       justify-content: center;
       .ivu-modal {
+        width: 560px!important;
         min-height: 620px;
         background: #ffffff;
         top: 0;

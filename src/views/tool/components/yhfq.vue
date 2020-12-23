@@ -12,7 +12,7 @@
       </div>
       <Modal title="通过哪种方式进行标签的创建" class-name="create-fq-modal" v-model="createModal" footer-hide>
           <img src="../../../static/img/tool/yhfq/create1@2x.png" alt="" @click="userBehavior">
-          <img src="../../../static/img/tool/yhfq/create2@2x.png" alt="" @click="userId">
+          <img class="img2" src="../../../static/img/tool/yhfq/create2@2x.png" alt="" @click="userId">
       </Modal>
       <Modal v-model="byBehavior" class-name="create-by-behavior" footer-hide :closable="false">
         <div class="content">
@@ -139,6 +139,9 @@ export default {
               height: 97px;
               margin-bottom: 25px;
               cursor: pointer;
+            }
+            .img2{
+              height: 114px;
             }
         }
     }

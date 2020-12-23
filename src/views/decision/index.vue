@@ -43,11 +43,10 @@
                 </div>
             </div>
         </div>
-        <Modal class-name="download-modal" v-model="downloadModal" footer-hide :closable="false" width="70vw">
+        <Modal class-name="download-modal" v-model="downloadModal" footer-hide :closable="false">
             <div class="download">
                 <img src="../../../src/static/img/decision/report@2x.png" alt="">
                 <div class="close-btn" @click="downloadModal = false"></div>
-<!--                <a class="download-btn" :href="reportImg" download></a>-->
             </div>
         </Modal>
     </div>
@@ -695,6 +694,9 @@
     }
 
     .download-modal {
+        .ivu-modal{
+            width: 1000px!important;
+        }
         .ivu-modal-body {
             padding: 0;
         }
