@@ -1,17 +1,8 @@
 <template>
     <div class="cjk">
-        <!--如何分析2-->
-        <template v-if="index == 2">
-            <div class="change4" @click="change(1)"></div>
-            <div class="change5" @click="change(2)"></div>
-            <div class="change6" @click="change(3)"></div>
-        </template>
-        <!--场景应用价值1、如何配置3-->
-        <template v-else>
-            <div class="change1" @click="change(1)"></div>
-            <div class="change2" @click="change(2)"></div>
-            <div class="change3" @click="change(3)"></div>
-        </template>
+        <div class="change1" @click="change(1)"></div>
+        <div class="change2" @click="change(2)"></div>
+        <div class="change3" @click="change(3)"></div>
         <img v-if="index == 1" src="../../../static/img/tool/cjk.png" alt="">
         <img v-else-if="index == 2" src="../../../static/img/tool/cjk1.png" alt="">
         <img v-else src="../../../static/img/tool/cjk2.png" alt="">
@@ -48,7 +39,7 @@
         .change1 {
             position: absolute;
             left: 40px;
-            top: 390px;
+            top: 410px;
             width: 110px;
             height: 38px;
             cursor: pointer;
@@ -57,7 +48,7 @@
         .change2 {
             position: absolute;
             left: 170px;
-            top: 390px;
+            top: 410px;
             width: 80px;
             height: 38px;
             cursor: pointer;
@@ -66,34 +57,7 @@
         .change3 {
             position: absolute;
             left: 270px;
-            top: 390px;
-            width: 80px;
-            height: 38px;
-            cursor: pointer;
-        }
-
-        .change4 {
-            position: absolute;
-            left: 40px;
-            top: 515px;
-            width: 110px;
-            height: 38px;
-            cursor: pointer;
-        }
-
-        .change5 {
-            position: absolute;
-            left: 170px;
-            top: 515px;
-            width: 80px;
-            height: 38px;
-            cursor: pointer;
-        }
-
-        .change6 {
-            position: absolute;
-            left: 270px;
-            top: 515px;
+            top: 410px;
             width: 80px;
             height: 38px;
             cursor: pointer;
