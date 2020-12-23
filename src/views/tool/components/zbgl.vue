@@ -70,6 +70,9 @@
 </style>
 <style lang="scss">
     .zbgl-modal {
+        .ivu-modal{
+            width: 460px!important;
+        }
         .ivu-modal-body {
             padding: 0;
         }
