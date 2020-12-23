@@ -12,7 +12,7 @@
                     </div>
                     <div class="btns">
                         <div class="report-btn">一键生成报告</div>
-                        <div class="add-btn"><Icon type="md-add-circle" color="#FFFFFF" size="18" style="vertical-align: -3px;margin-right: 9px;"/>添加卡片</div>
+                        <div class="add-btn"><Icon type="md-add-circle" color="#FFFFFF" size="18"/>添加卡片</div>
                     </div>
                 </div>
                 <div class="bottom">
@@ -164,6 +164,11 @@
                                 font-family: PingFangSC-Medium, PingFang SC;
                                 font-weight: 500;
                                 color: #FFFFFF;
+
+                                >i {
+                                    vertical-align: -3px;
+                                    margin-right: 9px;
+                                }
                             }
                         }
                     }

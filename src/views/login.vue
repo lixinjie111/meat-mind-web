@@ -9,7 +9,7 @@
             <div class="middle">
                 <div class="select">
                     请选择您的身份
-                    <Select v-model="model1" @on-change="change" style="width:200px">
+                    <Select v-model="model1" @on-change="change">
                         <Option v-for="item in optList" :value="item.value" :key="item.value">{{ item.label }}</Option>
                     </Select>
                 </div>
@@ -120,6 +120,10 @@
 
                         .select {
                             margin: 20px 0 40px;
+
+                            .ivu-select {
+                               width: 200px;
+                            }
                         }
                     }
 
