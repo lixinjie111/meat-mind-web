@@ -100,7 +100,7 @@
         components:{Side,Header},
         data(){
             return {
-                flag:sessionStorage.getItem("dashboard"),
+                flag:localStorage.getItem("dashboard"),
                 downloadModal: false,
                 detailModal:false,
                 detail1:true,

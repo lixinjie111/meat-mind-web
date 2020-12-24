@@ -27,7 +27,7 @@ export default {
   name: "HeaderDefault",
   data() {
     return {
-      flag:sessionStorage.getItem("dashboard")
+      flag:localStorage.getItem("dashboard")
     };
   },
   methods: {
