@@ -25,6 +25,7 @@
             </div>
             <div class="data-admin" v-if="flag==2">
                 <div class="part1">
+                    <div class="data-canter" @click="toDateCenter"></div>
                     <img src="../../static/img/home/datacenter1@2x.png" alt="">
                 </div>
                 <div class="part2">
@@ -114,6 +115,9 @@
                 this.$router.push({name:"portrait-system-yxdc"})
             },
             // 数据管理员
+            toDateCenter(){
+                this.$router.push({name:"data-center-my"})
+            },
             showMore(){
                 this.$router.push({name:"data-center-market"})
             },
@@ -294,6 +298,15 @@
                 }
                 .part1 {
                     position: relative;
+                    .data-canter{
+                        position: absolute;
+                        top: 82px;
+                        right: 40px;
+                        width: 120px;
+                        height: 32px;
+                        // border: 1px solid red;
+                        cursor: pointer;
+                    }
                 }
                 .part2 {
                     position: relative;
