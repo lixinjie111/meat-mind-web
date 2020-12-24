@@ -23,6 +23,24 @@
                     </div>
                 </Modal>
             </div>
+            <div class="data-admin" v-if="flag==2">
+                <div class="part1">
+                    <img src="../../static/img/home/datacenter1@2x.png" alt="">
+                </div>
+                <div class="part2">
+                    <img src="../../static/img/home/datacenter2@2x.png" alt="">
+                    <div class="more" @click="showMore"></div>
+                    <div class="detail" @click="toDetail"></div>
+                    <div class="detail2" @click="toDetail2"></div>
+                    <Modal class-name="data-admin-modal" v-model="detailModal" footer-hide :closable="false">
+                        <div class="download">
+                            <img v-if="detail1" src="../../static/img/home/detail1@2x.png" alt="">
+                            <img v-if="detail2" src="../../static/img/home/detail2@2x.png" alt="">
+                            <div class="close-btn" @click="closeDetail"></div>
+                        </div>
+                    </Modal>
+                </div>
+            </div>
             <div class="content" v-else>
                 <img src="../../static/img/home/home1@2x.png" alt="">
                 <div class="report-btn">一键生成报告</div>
@@ -83,6 +101,9 @@
             return {
                 flag:sessionStorage.getItem("dashboard"),
                 downloadModal: false,
+                detailModal:false,
+                detail1:true,
+                detail2:false
             }
         },
         methods: {
@@ -91,6 +112,25 @@
             },
             toPart2Detail() {
                 this.$router.push({name:"portrait-system-yxdc"})
+            },
+            // 数据管理员
+            showMore(){
+                this.$router.push({name:"data-center-market"})
+            },
+            toDetail(){
+                this.detailModal = true
+                this.detail1 = true
+                this.detail2 = false
+            },
+            toDetail2(){
+                this.detailModal = true
+                this.detail1 = false
+                this.detail2 = true
+            },
+            closeDetail(){
+                this.detailModal = false
+                this.detail1 = true
+                this.detail2 = false
             }
         }
     }
@@ -132,16 +172,43 @@
                 background: transparent;
                 cursor: pointer;
             }
+        }
+    }
 
-            .download-btn {
-                display: inline-block;
+    .data-admin-modal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .ivu-modal {
+            top: 0;
+            width: 600px !important;
+            height: 460px;
+            background: #ffffff;
+            border-radius: 4px;
+        }
+        .ivu-modal-body {
+            padding: 0;
+        }
+
+        .download {
+            position: relative;
+            margin: 0 auto;
+            width: 600px;
+
+            >img {
+                width: 600px;
+                border-radius: 10px;
+            }
+
+            .close-btn {
                 position: absolute;
                 top: 17px;
-                right: 25px;
-                width: 80px;
+                right: 20px;
+                width: 180px;
                 height: 30px;
                 background: transparent;
                 cursor: pointer;
+                // border: 1px solid red;
             }
         }
     }
@@ -161,11 +228,9 @@
                 width: 100%;
                 height: calc(100vh - 56px);
                 overflow-y:scroll;
-
                 img{
                     width: 100%;
                 }
-
                 .part1 {
                     position: relative;
                     .report-btn{
@@ -195,7 +260,6 @@
                         cursor: pointer;
                     }
                 }
-
                 .part2 {
                     position: relative;
 
@@ -215,6 +279,50 @@
                         width: 90px;
                         height: 34px;
                         cursor: pointer;
+                    }
+                }
+            }
+
+            .data-admin{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: calc(100vh - 56px);
+                overflow-y:scroll;
+                img{
+                    width: 100%;
+                }
+                .part1 {
+                    position: relative;
+                }
+                .part2 {
+                    position: relative;
+                    .more{
+                        position: absolute;
+                        top: 10px;
+                        right: 40px;
+                        width: 100px;
+                        height: 36px;
+                        cursor: pointer;
+                        // border: 1px solid red;
+                    }
+                    .detail {
+                        position: absolute;
+                        left: 390px;
+                        top: 112px;
+                        width: 50px;
+                        height: 24px;
+                        cursor: pointer;
+                        // border: 1px solid red;
+                    }
+                    .detail2{
+                        position: absolute;
+                        top: 112px;
+                        right: 476px;
+                        width: 50px;
+                        height: 24px;
+                        cursor: pointer;
+                        // border: 1px solid green;
                     }
                 }
             }

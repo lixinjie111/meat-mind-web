@@ -15,6 +15,7 @@
       <div class="avatar">
         <img src="../static/img/header/oval@2x.png" alt="">
         <span v-if="flag==1">企业主</span>
+        <span v-else-if="flag==2">数据管理员</span>
         <span v-else>分析师</span>
       </div>
     </div>
@@ -53,13 +54,15 @@ export default {
   // }
   .control{
     display: flex;
-    width: 298px;
+    justify-content: flex-end;
+    width: 340px;
     height: 56px;
+    padding-right: 24px;
     margin-left: auto;
     .search,.help,.alarm{
       width: 56px;
       height: 56px;
-      img{
+      img{ 
         width: 24px;
         height: 24px;
         margin: 16px;
@@ -78,9 +81,9 @@ export default {
       }
     }
     .avatar{
-      width: 130px;
+      // width: 130px;
       height: 56px;
-      padding: 0 24px;
+      padding-left:24px;
       line-height: 56px;
       cursor:pointer;
       img{
@@ -90,6 +93,7 @@ export default {
         vertical-align: middle;
       }
       span{
+        display: inline-block;
         height: 22px;
         font-size: 14px;
         font-family: PingFangSC-Regular, PingFang SC;
