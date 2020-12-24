@@ -14,14 +14,16 @@
             </div>
         </div>
         <div v-else>
-            <div class="upload-btn" @click="uploadModal1 = true"></div>
             <div class="change-box">
                 <div @click="changeIndex = 1"></div>
                 <div @click="changeIndex = 2"></div>
                 <div @click="changeIndex = 3"></div>
                 <div @click="changeIndex = 4"></div>
             </div>
-            <img v-if="changeIndex == 1" src="../../../static/img/datacenter/wdsj/wscdsj@2x.png" alt="">
+            <template v-if="changeIndex == 1" >
+                <div class="upload-btn" @click="uploadModal1 = true"></div>
+                <img src="../../../static/img/datacenter/wdsj/wscdsj@2x.png" alt="">
+            </template>
             <img v-else-if="changeIndex == 2" src="../../../static/img/datacenter/wdsj/sdk@2x.png" alt="">
             <img v-else-if="changeIndex == 3" src="../../../static/img/datacenter/wdsj/api@2x.png" alt="">
             <img v-else src="../../../static/img/datacenter/wdsj/sjkzl@2x.png" alt="">
@@ -625,7 +627,7 @@
         }
 
         .result-box {
-            padding: 24px;
+            padding: 20px 24px;
 
             .title {
                 font-size: 24px;
