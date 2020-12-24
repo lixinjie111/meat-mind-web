@@ -30,8 +30,8 @@
         }
         .detail{
             position: absolute;
-            top: 150px;
-            left: 42px;
+            top: 152px;
+            left: 45px;
             width: 360px;
             height: 180px;
             border-radius: 4px;
@@ -43,7 +43,7 @@
             &:hover{
                 .show{
                     display: block;
-                    width: 360px;
+                    width: 362px;
                     height: 180px;
                     padding: 10px;
                     color:#FFFFFF;
