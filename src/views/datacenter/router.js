@@ -1,6 +1,6 @@
 const dataCenter=()=>import('./index');
 const wdsj=()=>import('./components/wdsj.vue')
-const ffsj=()=>import('./components/ffsj.vue')
+const sjsc=()=>import('./components/sjsc.vue')
 const xtjc=()=>import('./components/xtjc.vue')
 const ysjgl=()=>import('./components/ysjgl.vue')
 const rule=()=>import('./components/ysjgl/Rule.vue')
@@ -31,11 +31,11 @@ export default [
         name:`${moduleName}-my`
       },
       {
-        path:`/${moduleName}/pay`,
-        label:"付费数据",
-        meta:{title:"付费数据",moduleName},
-        component:ffsj,
-        name:`${moduleName}-pay`
+        path:`/${moduleName}/market`,
+        label:"数据市场",
+        meta:{title:"数据市场",moduleName},
+        component:sjsc,
+        name:`${moduleName}-market`
       },
       {
         path:`/${moduleName}/system`,

@@ -1,9 +1,23 @@
 <template>
     <div class="wdsj">
-        <img v-if="resultShow" src="../../../static/img/datacenter/data-result@2x.png" alt="">
-        <img v-else src="../../../static/img/datacenter/wdsj@2x.png" alt="">
-        <div v-if="resultShow" class="back-btn" @click="resultShow = false"></div>
-        <div v-else class="upload-btn" @click="uploadModal1 = true"></div>
+        <div v-if="resultShow" >
+            <div class="result-box">
+                <div class="title">查看数据</div>
+                <div class="list">
+                    <div class="back-btn" @click="resultShow = false">返回数据列表</div>
+                    <Table border :columns="columns1" :data="data1"></Table>
+                    <div class="page-box">
+                        <Page :current="currentPage" :total="totalPage" simple @on-change="changePage"/>
+                    </div>
+                </div>
+            </div>
+<!--            <img src="../../../static/img/datacenter/data-result@2x.png" alt="">-->
+
+        </div>
+        <div v-else>
+            <div class="upload-btn" @click="uploadModal1 = true"></div>
+            <img src="../../../static/img/datacenter/wdsj@2x.png" alt="">
+        </div>
         <Modal class-name="upload-modal1" v-model="uploadModal1" footer-hide :closable="false">
             <div class="upload1">
                 <div class="left-btn" @click="isUpload4 = false"></div>
@@ -44,7 +58,49 @@
                 uploadModal2: false,
                 uploadModal3: false,
                 isUpload4: false,
-                resultShow: false
+                resultShow: false,
+                currentPage: 1,
+                totalPage: 20,
+                columns1: [
+                    {
+                        title: 'Name',
+                        key: 'name'
+                    },
+                    {
+                        title: 'Age',
+                        key: 'age'
+                    },
+                    {
+                        title: 'Address',
+                        key: 'address'
+                    }
+                ],
+                data1: [
+                    {
+                        name: 'John Brown',
+                        age: 18,
+                        address: 'New York No. 1 Lake Park',
+                        date: '2016-10-03'
+                    },
+                    {
+                        name: 'Jim Green',
+                        age: 24,
+                        address: 'London No. 1 Lake Park',
+                        date: '2016-10-01'
+                    },
+                    {
+                        name: 'Joe Black',
+                        age: 30,
+                        address: 'Sydney No. 1 Lake Park',
+                        date: '2016-10-02'
+                    },
+                    {
+                        name: 'Jon Snow',
+                        age: 26,
+                        address: 'Ottawa No. 2 Lake Park',
+                        date: '2016-10-04'
+                    }
+                ]
             }
         },
         methods: {
@@ -69,6 +125,9 @@
                         this.resultShow = true;
                     }, 1000);
                 }
+            },
+            changePage() {
+
             }
         }
     }
@@ -95,14 +154,36 @@
             cursor: pointer;
         }
 
-        .back-btn {
-            position: absolute;
-            top: 88px;
-            left: 48px;
-            width: 100px;
-            height: 33px;
-            background: transparent;
-            cursor: pointer;
+        .result-box {
+            padding: 24px;
+
+            .title {
+                font-size: 24px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #212121;
+            }
+
+            .list {
+                margin-top: 24px;
+                padding: 24px;
+                background: #FFFFFF;
+                border-radius: 4px;
+
+                .back-btn {
+                    margin-bottom: 30px;
+                    font-size: 18px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 400;
+                    color: #497CFF;
+                    cursor: pointer;
+                }
+
+                .page-box {
+                    margin-top: 10px;
+                    text-align: right;
+                }
+            }
         }
     }
 </style>
