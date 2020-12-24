@@ -40,6 +40,10 @@
                     {
                         value: '企业主',
                         label: '企业主'
+                    },
+                    {
+                        value: '数据管理员',
+                        label: '数据管理员'
                     }
                 ],
                 showImg: false
@@ -58,7 +62,10 @@
                 if (this.model1 == "企业主") {
                     this.$router.push({name: "home"})
                     sessionStorage.setItem("dashboard",1)
-                } else {
+                }else if (this.model1 == "数据管理员") {
+                    this.$router.push({name: "home"})
+                    sessionStorage.setItem("dashboard",2)
+                }else {
                     this.$router.push({name: "home"})
                     sessionStorage.setItem("dashboard",0)
                 }
