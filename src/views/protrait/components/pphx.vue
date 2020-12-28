@@ -1,9 +1,9 @@
 <template>
     <div class="pphx">
         <img src="../../../static/img/protrait/pphx1@2x.png" alt="">
-        <iframe class="iframe1" src="/static/html/fj/leid.html" frameborder="0" scrolling="no"></iframe>
-        <iframe class="iframe2" src="/static/html/fj2/rdyc.html" frameborder="0" scrolling="no"></iframe>
-        <iframe class="iframe3" src="/static/html/fj2/ppjz.html" frameborder="0" scrolling="no"></iframe>
+        <iframe class="iframe1" src="/static/html/pphx/leid.html" frameborder="0" scrolling="no"></iframe>
+        <iframe class="iframe2" src="/static/html/pphx/rdyc.html" frameborder="0" scrolling="no"></iframe>
+        <iframe class="iframe3" src="/static/html/pphx/ppjz.html" frameborder="0" scrolling="no"></iframe>
         <div class="content">
             <div class="card">
                 <div class="top">

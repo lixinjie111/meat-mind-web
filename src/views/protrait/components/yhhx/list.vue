@@ -21,18 +21,18 @@
                     <div class="bottom">
                         <div class="tab-content" v-if="tabActive==1">
                             <img src="../../../../static/img/protrait/yhhx2@2x.png" alt="">
-                            <iframe class="iframe iframe1" src="/static/html/lxj/pie1-2.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe iframe2" src="/static/html/lxj/pie1-4.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe iframe3" src="/static/html/lxj/pie1-3.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe iframe4" src="/static/html/lxj/pie1-1.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe1" src="/static/html/yhhx/pie1-2.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe2" src="/static/html/yhhx/pie1-4.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe3" src="/static/html/yhhx/pie1-3.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe4" src="/static/html/yhhx/pie1-1.html" frameborder="0" scrolling="no"></iframe>
                         </div>
                         <div class="tab-content" v-else-if="tabActive==2">
                             <img src="../../../../static/img/protrait/yhhx3@2x.png" alt="">
                             <video class="player" width="100%" height="100%" autoplay loop muted src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"></video>
                         </div>
                         <div class="tab-content1" v-else>
-                            <iframe class="iframe13" src="/static/html/lxj2/xzdc1-1.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe14" src="/static/html/lxj2/xzdc2.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe13" src="/static/html/yxdc/xzdc1-1.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe14" src="/static/html/yxdc/xzdc2.html" frameborder="0" scrolling="no"></iframe>
                             <img src="../../../../static/img/protrait/yhhx4@2x.png" alt="">
                         </div>
                     </div>
@@ -55,22 +55,22 @@
                     <div class="bottom">
                         <div class="tab-content" v-if="tabActive==1">
                             <img src="../../../../static/img/protrait/yhhx6@2x.png" alt="">
-                            <iframe class="iframe iframe5" src="/static/html/lxj/pie1-2.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe iframe6" src="/static/html/lxj/pie1-4.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe iframe7" src="/static/html/lxj/pie1-3.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe iframe8" src="/static/html/lxj/pie1-1.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe iframe9" src="/static/html/lxj/pie1-2-1.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe iframe10" src="/static/html/lxj/pie1-4-1.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe iframe11" src="/static/html/lxj/pie1-3-1.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe iframe12" src="/static/html/lxj/pie1-1-1.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe5" src="/static/html/yhhx/pie1-2.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe6" src="/static/html/yhhx/pie1-4.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe7" src="/static/html/yhhx/pie1-3.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe8" src="/static/html/yhhx/pie1-1.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe9" src="/static/html/yhhx/pie1-2-1.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe10" src="/static/html/yhhx/pie1-4-1.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe11" src="/static/html/yhhx/pie1-3-1.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe iframe12" src="/static/html/yhhx/pie1-1-1.html" frameborder="0" scrolling="no"></iframe>
                         </div>
                         <div class="tab-content" v-else-if="tabActive==2">
                             <img src="../../../../static/img/protrait/yhhx3@2x.png" alt="">
                             <video class="player" width="100%" height="100%" autoplay loop muted src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"></video>
                         </div>
                         <div class="tab-content1" v-else>
-                            <iframe class="iframe13" src="/static/html/lxj2/xzdc1-1.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe14" src="/static/html/lxj2/xzdc2.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe13" src="/static/html/yxdc/xzdc1-1.html" frameborder="0" scrolling="no"></iframe>
+                            <iframe class="iframe14" src="/static/html/yxdc/xzdc2.html" frameborder="0" scrolling="no"></iframe>
                             <img src="../../../../static/img/protrait/yhhx4@2x.png" alt="">
                         </div>
                     </div>

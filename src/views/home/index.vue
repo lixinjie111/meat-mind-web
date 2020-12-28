@@ -8,12 +8,12 @@
                 <div class="part1">
                     <img src="../../static/img/home/dashboard-part1@2x.png" alt="">
                     <div class="report-btn" @click="downloadModal = true"></div>
-                    <iframe class="iframe1" src="/static/html/fj2/znjc.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe1" src="/static/html/dashboard/znjc.html" frameborder="0" scrolling="no"></iframe>
                     <div class="detail" @click="toPart1Detail"></div>
                 </div>
                 <div class="part2">
                     <img src="../../static/img/home/dashboard-part2@2x.png" alt="">
-                    <iframe class="iframe1" src="/static/html/fj2/ppxx.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe1" src="/static/html/dashboard/ppxx.html" frameborder="0" scrolling="no"></iframe>
                     <div class="detail" @click="toPart2Detail"></div>
                 </div>
                 <Modal class-name="dashboard-report-modal" v-model="downloadModal" footer-hide :closable="false">
@@ -49,42 +49,42 @@
                 <div class="card">
                     <img src="../../static/img/home/home2@2x.png" alt="">
                     <div class="iframe1-bg"></div>
-                    <iframe class="iframe1" src="/static/html/lxj/yibiao.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe2" src="/static/html/zjj/gmv.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe3" src="/static/html/zjj/dindanL.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe4" src="/static/html/zjj/kedanJ.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe5" src="/static/html/zjj/xiadanR.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe1" src="/static/html/dashboard/yibiao.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe2" src="/static/html/dashboard/gmv.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe3" src="/static/html/dashboard/dindanL.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe4" src="/static/html/dashboard/kedanJ.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe5" src="/static/html/dashboard/xiadanR.html" frameborder="0" scrolling="no"></iframe>
                 </div>
                 <!--用户生命周期-->
                 <div class="card">
                     <img src="../../static/img/home/home3@2x.png" alt="">
-                    <iframe class="iframe iframe6" src="/static/html/zjj/xinyonH.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe7" src="/static/html/zjj/huoyueYH.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe8" src="/static/html/zjj/huiliuYH.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe9" src="/static/html/zjj/chenmoYH.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe10" src="/static/html/zjj/liushiYH.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe11" src="/static/html/zjj/liuRliuCb.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe6" src="/static/html/dashboard/xinyonH.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe7" src="/static/html/dashboard/huoyueYH.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe8" src="/static/html/dashboard/huiliuYH.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe9" src="/static/html/dashboard/chenmoYH.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe10" src="/static/html/dashboard/liushiYH.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe11" src="/static/html/dashboard/liuRliuCb.html" frameborder="0" scrolling="no"></iframe>
                 </div>
                 <!--通道概况-->
                 <div class="card">
                     <img src="../../static/img/home/home4@2x.png" alt="">
-                    <iframe class="iframe iframe12" src="/static/html/lxj/num.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe13" src="/static/html/lxj/num1.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe14" src="/static/html/lxj/num2.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe15" src="/static/html/lxj/num3.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe16" src="/static/html/lxj/num4.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe12" src="/static/html/dashboard/num.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe13" src="/static/html/dashboard/num1.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe14" src="/static/html/dashboard/num2.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe15" src="/static/html/dashboard/num3.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe16" src="/static/html/dashboard/num4.html" frameborder="0" scrolling="no"></iframe>
                 </div>
                 <!--产品数据评估-->
                 <div class="card">
                     <img src="../../static/img/home/home5@2x.png" alt="">
-                    <iframe class="iframe iframe17" src="/static/html/fj/Active-times.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe18" src="/static/html/fj/Active-user-core.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe19" src="/static/html/fj/Active-enterprises.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe20" src="/static/html/fj/Total-core-functions.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe21" src="/static/html/fj/Num-active-employees.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe22" src="/static/html/fj/Core-function-Enterprise.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe23" src="/static/html/fj/Active-user-core.html" frameborder="0" scrolling="no"></iframe>
-                    <iframe class="iframe iframe24" src="/static/html/fj/Core-permeability.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe17" src="/static/html/dashboard/Active-times.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe18" src="/static/html/dashboard/Active-user-core.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe19" src="/static/html/dashboard/Active-enterprises.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe20" src="/static/html/dashboard/Total-core-functions.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe21" src="/static/html/dashboard/Num-active-employees.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe22" src="/static/html/dashboard/Core-function-Enterprise.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe23" src="/static/html/dashboard/Active-user-core.html" frameborder="0" scrolling="no"></iframe>
+                    <iframe class="iframe iframe24" src="/static/html/dashboard/Core-permeability.html" frameborder="0" scrolling="no"></iframe>
                 </div>
             </div>
         </div>

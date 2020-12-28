@@ -2,31 +2,31 @@
   <div ref="anchor" class="anchor">
           <div id="zbjk">
               <img src="../../../static/img/analysis/zbjk.png" alt="">
-              <iframe class="iframe iframe1" src="/static/html/lxj1/num.html" frameborder="0" scrolling="no"></iframe>
-              <iframe class="iframe iframe2" src="/static/html/lxj1/num1.html" frameborder="0" scrolling="no"></iframe>
-              <iframe class="iframe iframe3" src="/static/html/lxj1/num2.html" frameborder="0" scrolling="no"></iframe>
-              <iframe class="iframe iframe4" src="/static/html/lxj1/num3.html" frameborder="0" scrolling="no"></iframe>
-              <iframe class="iframe iframe5" src="/static/html/lxj1/num4.html" frameborder="0" scrolling="no"></iframe>
-              <iframe class="iframe iframe6" src="/static/html/lxj1/num5.html" frameborder="0" scrolling="no"></iframe>
-              <iframe class="iframe iframe7" src="/static/html/lxj1/num6.html" frameborder="0" scrolling="no"></iframe>
-              <iframe class="iframe iframe8" src="/static/html/lxj1/num7.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe iframe1" src="/static/html/ztgl/num.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe iframe2" src="/static/html/ztgl/num1.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe iframe3" src="/static/html/ztgl/num2.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe iframe4" src="/static/html/ztgl/num3.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe iframe5" src="/static/html/ztgl/num4.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe iframe6" src="/static/html/ztgl/num5.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe iframe7" src="/static/html/ztgl/num6.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe iframe8" src="/static/html/ztgl/num7.html" frameborder="0" scrolling="no"></iframe>
           </div>
           <div id="ztqs">
               <img src="../../../static/img/analysis/ztqs.png" alt="">
-              <iframe class="iframe9" src="/static/html/lxj1/line1.html" frameborder="0" scrolling="no"></iframe>
-              <iframe class="iframe10" src="/static/html/lxj1/line2.html" frameborder="0" scrolling="no"></iframe>
-              <iframe class="iframe11" src="/static/html/lxj1/bar1.html" frameborder="0" scrolling="no"></iframe>
-              <iframe class="iframe12" src="/static/html/lxj1/line3.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe9" src="/static/html/ztgl/line1.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe10" src="/static/html/ztgl/line2.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe11" src="/static/html/ztgl/bar1.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe12" src="/static/html/ztgl/line3.html" frameborder="0" scrolling="no"></iframe>
           </div>
           <div id="zzts">
               <img src="../../../static/img/analysis/zzts.png" alt="">
-              <iframe class="iframe13" src="/static/html/lxj1/line4.html" frameborder="0" scrolling="no"></iframe>
-              <iframe class="iframe14" src="/static/html/lxj1/line5.html" frameborder="0" scrolling="no"></iframe>
-              <iframe class="iframe15" src="/static/html/lxj1/line6.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe13" src="/static/html/ztgl/line4.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe14" src="/static/html/ztgl/line5.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe15" src="/static/html/ztgl/line6.html" frameborder="0" scrolling="no"></iframe>
           </div>
           <div id="yhlc">
               <img src="../../../static/img/analysis/yhlc.png" alt="">
-              <iframe class="iframe16" src="/static/html/lxj1/bar2.html" frameborder="0" scrolling="no"></iframe>
+              <iframe class="iframe16" src="/static/html/ztgl/bar2.html" frameborder="0" scrolling="no"></iframe>
           </div>
   </div>
 </template>

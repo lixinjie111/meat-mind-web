@@ -13,32 +13,32 @@
         </div>
         <div class="part">
             <img src="../../../static/img/protrait/yxdc/img2.png" alt="">
-            <iframe class="iframe0" src="/static/html/fj2/ppxx.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="iframe0" src="/static/html/dashboard/ppxx.html" frameborder="0" scrolling="no"></iframe>
         </div>
         <div class="part">
             <img src="../../../static/img/protrait/yxdc/img3.png" alt="">
-            <iframe class="iframe iframe1" src="/static/html/lxj2/xzdc1.html" frameborder="0" scrolling="no"></iframe>
-            <iframe class="iframe iframe2" src="/static/html/lxj2/xzdc2.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="iframe iframe1" src="/static/html/yxdc/xzdc1.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="iframe iframe2" src="/static/html/yxdc/xzdc2.html" frameborder="0" scrolling="no"></iframe>
         </div>
         <div class="part">
             <img src="../../../static/img/protrait/yxdc/img4.png" alt="">
-            <iframe class="xqfx-iframe xqfx-iframe1" src="/static/html/lxj2/xqfx1.html" frameborder="0" scrolling="no"></iframe>
-            <iframe class="xqfx-iframe xqfx-iframe2" src="/static/html/lxj2/xqfx2.html" frameborder="0" scrolling="no"></iframe>
-            <iframe class="xqfx-iframe xqfx-iframe3" src="/static/html/lxj2/xqfx3.html" frameborder="0" scrolling="no"></iframe>
-            <iframe class="xqfx-iframe xqfx-iframe4" src="/static/html/lxj2/xqfx4.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="xqfx-iframe xqfx-iframe1" src="/static/html/yxdc/xqfx1.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="xqfx-iframe xqfx-iframe2" src="/static/html/yxdc/xqfx2.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="xqfx-iframe xqfx-iframe3" src="/static/html/yxdc/xqfx3.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="xqfx-iframe xqfx-iframe4" src="/static/html/yxdc/xqfx4.html" frameborder="0" scrolling="no"></iframe>
         </div>
         <div class="part">
             <img src="../../../static/img/protrait/yxdc/img5.png" alt="">
-            <iframe class="zcwj-iframe zcwj-iframe1" src="/static/html/lxj2/zcwj1.html" frameborder="0" scrolling="no"></iframe>
-            <iframe class="zcwj-iframe zcwj-iframe2" src="/static/html/lxj2/zcwj2.html" frameborder="0" scrolling="no"></iframe>
-            <iframe class="zcwj-iframe zcwj-iframe3" src="/static/html/lxj2/zcwj3.html" frameborder="0" scrolling="no"></iframe>
-            <iframe class="zcwj-iframe zcwj-iframe4" src="/static/html/lxj2/zcwj4.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="zcwj-iframe zcwj-iframe1" src="/static/html/yxdc/zcwj1.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="zcwj-iframe zcwj-iframe2" src="/static/html/yxdc/zcwj2.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="zcwj-iframe zcwj-iframe3" src="/static/html/yxdc/zcwj3.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="zcwj-iframe zcwj-iframe4" src="/static/html/yxdc/zcwj4.html" frameborder="0" scrolling="no"></iframe>
         </div>
         <div class="part">
             <img class="tdpm" src="../../../static/img/protrait/yxdc/tdpm@2x.png" alt="">
             <img class="rd" src="../../../static/img/protrait/yxdc/rd@2x.png" alt="">
             <img src="../../../static/img/protrait/yxdc/img6.png" alt="">
-            <iframe class="clfx-iframe1" src="/static/html/lxj2/clfx.html" frameborder="0" scrolling="no"></iframe>
+            <iframe class="clfx-iframe1" src="/static/html/yxdc/clfx.html" frameborder="0" scrolling="no"></iframe>
         </div>    
         <Modal class-name="portrait-report" v-model="downloadModal" footer-hide :closable="false">
             <div class="download">
