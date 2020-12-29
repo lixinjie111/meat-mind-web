@@ -33,6 +33,7 @@
     let value = 72;
     var option = {
         backgroundColor: "#ffffff",
+        color: ['#73ACFF', '#FD866A'],
         title: {
             text: '{a|' + value + '}{c|%}',
             x: 'center',
@@ -46,36 +47,19 @@
 
                     c: {
                         fontSize: 48,
-                        color: '#83cbe0',
-                        // padding: [5,0]
+                        color: '#83cbe0'
                     }
                 }
             }
         },
         legend: {
-            type: "plain",
-            orient: "vertical",
-            right: 0,
-            top: "10%",
+            bottom: '5%',
             align: "auto",
             data: [{
-                name: '涨价后没吃过',
-                icon: "circle"
+                name: '已覆盖目标受众',
             }, {
-                name: '天天吃',
-                icon: "circle"
-            }, {
-                name: '三五天吃一次',
-                icon: "circle"
-            }, {
-                name: '半个月吃一次',
-                icon: "circle"
-            }],
-            textStyle: {
-                color: "white",
-                fontSize: 16,
-                padding: [10, 1, 10, 0]
-            },
+                name: '未覆盖目标受众',
+            },],
             selectedMode: false
         },
         series: [
@@ -226,9 +210,8 @@
                 data: [0]
             },
             {
-                name: '吃猪肉频率',
                 type: 'pie',
-                radius: ['58%', '45%'],
+                radius: ['55%', '43%'],
                 silent: true,
                 clockwise: true,
                 startAngle: 90,
@@ -236,16 +219,16 @@
                 zlevel: 0,
                 label: {
                     normal: {
-                        position: "center",
-
+                        show: false
+                        //position: "center",
                     }
                 },
                 data: [{
                     value: value,
-                    name: "",
+                    name: "已覆盖目标受众",
                     itemStyle: {
                         normal: {
-                            color: '#73ACFF'
+                            //color: '#73ACFF'
                             // { // 完成的圆环的颜色
                             //     colorStops: [{
                             //         offset: 0,
@@ -260,7 +243,7 @@
                 },
                     {
                         value: 100 - value,
-                        name: "",
+                        name: "未覆盖目标受众",
                         label: {
                             normal: {
                                 show: false
@@ -268,14 +251,13 @@
                         },
                         itemStyle: {
                             normal: {
-                                color: "#FD866A"
+                                //color: "#FD866A"
                             }
                         }
                     }
                 ]
             },
             {
-                name: "",
                 type: "gauge",
                 radius: "58%",
                 center: ['50%', '50%'],

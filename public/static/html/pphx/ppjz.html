@@ -9,14 +9,14 @@
             margin: 0;
             padding: 0;
         }
-    
+
         html,
         body {
             width: 100%;
             height: 100%;
-            font-family: 'Helvetica Neue','Helvetica','PingFang SC','Hiragino Sans GB','Microsoft YaHei','微软雅黑','Arial','sans-serif','PingFangSC-Medium';
+            font-family: 'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'Arial', 'sans-serif', 'PingFangSC-Medium';
         }
-    
+
         #chart-panel {
             width: 100%;
             height: 100%;
@@ -26,109 +26,106 @@
 </head>
 
 <body>
-
-    <div id="chart-panel"></div>
-
-    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.0.0-rc.1/echarts.min.js"></script>
-    <script>
-        var myChart = echarts.init(document.getElementById('chart-panel'));
-        const colorList = ['#739cea', '#73d9a8', '#758298', '#f7c235', '#eb7b5f', '#83cbe0', '#a282c5', '#ffa761', '#46a59d', '#ffa5c0', '#58D5FF']
-        var option = {
-            // backgroundColor: '#091C3D',
-            tooltip: { //提示框组件
-                trigger: 'axis',
-                axisPointer: {
-                    type: 'shadow',
-                    label: {
-                        backgroundColor: '#6a7985'
-                    },
-                    shadowStyle: {
-                        color: '#081C4F',
-                        opacity: 0.06
-                    }
+<div id="chart-panel"></div>
+<script src="../../js/echarts.min.js"></script>
+<script>
+    var myChart = echarts.init(document.getElementById('chart-panel'));
+    const colorList = ['#739cea', '#73d9a8', '#758298', '#f7c235', '#eb7b5f', '#83cbe0', '#a282c5', '#ffa761', '#46a59d', '#ffa5c0', '#58D5FF']
+    var option = {
+        // backgroundColor: '#091C3D',
+        tooltip: { //提示框组件
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow',
+                label: {
+                    backgroundColor: '#6a7985'
                 },
+                shadowStyle: {
+                    color: '#081C4F',
+                    opacity: 0.06
+                }
+            },
+            textStyle: {
+                color: '#fff',
+                fontStyle: 'normal',
+                fontFamily: '微软雅黑',
+                fontSize: 12,
+            }
+        },
+        grid: {
+            left: '8%',
+            right: '0%',
+            bottom: '4%',
+            top: '6%',
+            //	padding:'0 0 10 0',
+            containLabel: true,
+        },
+        xAxis: {
+            show: false
+        },
+        yAxis: [{
+            type: 'category',
+            splitNumber: 5,
+            nameTextStyle: {
+                fontSize: 18,
+                fontWeight: 'bold'
+            },
+            axisLabel: {
                 textStyle: {
-                    color: '#fff',
+                    color: '#a8aab0',
                     fontStyle: 'normal',
                     fontFamily: '微软雅黑',
                     fontSize: 12,
                 }
             },
-            grid: {
-                left: '8%',
-                right: '0%',
-                bottom: '4%',
-                top: '6%',
-                //	padding:'0 0 10 0',
-                containLabel: true,
-            },
-            xAxis: {
+            axisLine: {
                 show: false
             },
-            yAxis: [{
-                type: 'category',
-                splitNumber: 5,
-                nameTextStyle: {
-                    fontSize: 18,
-                    fontWeight: 'bold'
-                },
-                axisLabel: {
-                    textStyle: {
-                        color: '#a8aab0',
-                        fontStyle: 'normal',
-                        fontFamily: '微软雅黑',
-                        fontSize: 12,
-                    }
-                },
-                axisLine: {
-                    show: false
-                },
-                axisTick: {
-                    show: false
-                },
-                splitLine: {
-                    show: false,
-                    lineStyle: {
-                        color: '#6a7985',
-                        opacity: 0.6
-                    }
-                },
-                data: ['创新型', '品牌亲和力', '稀缺性', '社会影响力']
+            axisTick: {
+                show: false
+            },
+            splitLine: {
+                show: false,
+                lineStyle: {
+                    color: '#6a7985',
+                    opacity: 0.6
+                }
+            },
+            data: ['创新型', '品牌亲和力', '稀缺性', '社会影响力']
 
-            }],
-            series: [{
-                type: 'bar',
-                data: [
-                    8.0,
-                    8.3,
-                    5.0,
-                    6.2,
+        }],
+        series: [{
+            type: 'bar',
+            data: [
+                8.0,
+                8.3,
+                5.0,
+                6.2,
 
-                ],
-                barWidth: 22,
-                barGap: 12, //柱间距离
-                itemStyle: {
-                    normal: {
+            ],
+            barWidth: 22,
+            barGap: 12, //柱间距离
+            itemStyle: {
+                normal: {
+                    show: true,
+                    color: function (params) {
+                        const colors = ['#2c90ff', '#31d3a4', '#f8a847', '#8895ca', '#ebd93b', '#61b74c'];
+                        return colors[params.dataIndex];
+                    },
+                    // barBorderRadius: 50,
+                    borderWidth: 0,
+                    label: {
                         show: true,
-                        color: function(params) {
-                            const colors = ['#2c90ff', '#31d3a4', '#f8a847', '#8895ca', '#ebd93b', '#61b74c'];
-                            return colors[params.dataIndex];
-                        },
-                        // barBorderRadius: 50,
-                        borderWidth: 0,
-                        label: {
-                            show: true,
-                            position: 'right',
-                        }
+                        position: 'right',
                     }
-                },
-            }]
-        };
-        myChart.setOption(option);
-        window.onresize = ()=>{
-		myChart.resize();
-	}
-    </script>
+                }
+            },
+        }]
+    };
+    myChart.setOption(option);
+    window.onresize = () => {
+        myChart.resize();
+    }
+</script>
 </body>
-
 </html>
