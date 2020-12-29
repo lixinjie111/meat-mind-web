@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'Arial', 'sans-serif', 'PingFangSC-Medium';
+        }
+
+        #div {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div id="div"></div>
+<script src="../../js/echarts.min.js"></script>
+<script lang="javascript">
+    setTimeout(() => {
+        var colorList = ['#eb7b5f', '#739cea', '#f7c235', '#46a59d'];
+        var option = {
+            color: colorList,
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                bottom: 15,
+                data: ['曝光量', '曝光人数', '点击量', '点击人数']
+            },
+            grid: {
+                left: '0',
+                right: '10%',
+                bottom: '15%',
+                top: '8%',
+                containLabel: true,
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: ['2020年12月21日', '2020年12月22日', '2020年12月23日', '2020年12月24日', '2020年12月25日', '2020年12月26日', '2020年12月27日',]
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    name: '点击人数',
+                    type: 'line',
+                    data: [5327, 5037, 6158, 4937, 6784, 4770, 5550]
+                },
+                {
+                    name: '曝光量',
+                    type: 'line',
+                    data: [41579, 47315, 49250, 45315, 47330, 39510, 40030]
+                },
+                {
+                    name: '曝光人数',
+                    type: 'line',
+                    data: [20013, 24510, 27250, 24440, 22500, 17530, 19975]
+                },
+                {
+                    name: '点击量',
+                    type: 'line',
+                    data: [22740, 23159, 24924, 22370, 21150, 18547, 18940]
+                },
+
+            ]
+        };
+        let myChart = echarts.init(document.getElementById("div"));
+        myChart.setOption(option);
+        window.onresize = () => {
+            myChart.resize();
+        }
+    }, 500)
+</script>
+</body>
+</html>

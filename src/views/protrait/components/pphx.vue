@@ -1,7 +1,7 @@
 <template>
     <div class="pphx">
         <img src="../../../static/img/protrait/pphx1@2x.png" alt="">
-        <iframe class="iframe1" src="/static/html/pphx/leid.html" frameborder="0" scrolling="no"></iframe>
+        <iframe class="iframe1" src="/static/html/pphx/zhpp.html" frameborder="0" scrolling="no"></iframe>
         <iframe class="iframe2" src="/static/html/pphx/rdyc.html" frameborder="0" scrolling="no"></iframe>
         <iframe class="iframe3" src="/static/html/pphx/ppjz.html" frameborder="0" scrolling="no"></iframe>
         <div class="content">
@@ -27,56 +27,57 @@
                             <div class="col br half">
                                 <p class="title">核心目标受众覆盖度</p>
                                 <p class="sub-title">2020/12/21-2020/12/27</p>
-
+                                <iframe class="mt" src="/static/html/pphx/mbfg.html" frameborder="0" scrolling="no"></iframe>
                             </div>
                             <div class="col half">
                                 <p class="title">核心目标受众匹配度</p>
-
+                                <iframe src="/static/html/pphx/mbpp.html" frameborder="0" scrolling="no"></iframe>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col br half">
                                 <p class="title">核心受众年龄分布</p>
-
+                                <iframe class="mt" src="/static/html/yhhx/pie1-2.html" frameborder="0" scrolling="no"></iframe>
                             </div>
                             <div class="col half">
                                 <p class="title">核心受众性别分布</p>
-
+                                <iframe class="mt" src="/static/html/yhhx/pie1-1.html" frameborder="0" scrolling="no"></iframe>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col br half">
                                 <p class="title">职业结构</p>
-
+                                <iframe class="mt" src="/static/html/yhhx/pie1-3.html" frameborder="0" scrolling="no"></iframe>
                             </div>
                             <div class="col half">
                                 <p class="title">教育背景结构</p>
-
+                                <iframe src="/static/html/pphx/jybj.html" frameborder="0" scrolling="no"></iframe>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col br half">
                                 <p class="title">购买时段及频次</p>
-
+                                <iframe src="/static/html/pphx/sdpc.html" frameborder="0" scrolling="no"></iframe>
                             </div>
                             <div class="col half">
                                 <p class="title">常用高频场景</p>
-
+                                <iframe src="/static/html/pphx/gpcc.html" frameborder="0" scrolling="no"></iframe>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col br half">
                                 <p class="title">核心受众消费等级分布</p>
-
+                                <iframe class="ml" src="/static/html/yhhx/pie1-4.html" frameborder="0" scrolling="no"></iframe>
                             </div>
                             <div class="col half">
                                 <p class="title">传播内容偏好与参与度</p>
-
+                                <iframe src="/static/html/pphx/phcyd.html" frameborder="0" scrolling="no"></iframe>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col">
+                            <div class="col all">
                                 <p class="title">核心受众偏好内容分布</p>
+                                <iframe src="/static/html/pphx/phfb.html" frameborder="0" scrolling="no"></iframe>
                             </div>
                         </div>
                     </div>
@@ -364,8 +365,25 @@
                                     margin-right: 36px;
                                 }
 
+                                &.all {
+                                    width: 100%;
+                                }
+
                                 &.half {
                                     width: 50%;
+                                }
+
+                                iframe {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+
+                                .mt {
+                                    margin-top: -20px;
+                                }
+
+                                .ml {
+                                    margin-left: -20px;
                                 }
                             }
                         }
