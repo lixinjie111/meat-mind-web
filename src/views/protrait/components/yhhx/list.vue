@@ -41,13 +41,13 @@
                                     </div>
                                     <div class="col br">
                                         <p class="title">行业结构</p>
-                                        
+                                         <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-10.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                 </div>
                                 <div class="line">
                                     <div class="col">
                                         <p class="title">教育背景结构</p>
-
+                                        <iframe class="iframe iframe4" src="/static/html/pphx/jybj.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                     <div class="col br">
                                         <p class="title">性别结构</p>
@@ -99,17 +99,17 @@
                                 <div class="line">
                                     <div class="col">
                                         <p class="title">会员活跃度结构</p>
- <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-3.html" frameborder="0" scrolling="no"></iframe>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-3.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                     <div class="col br">
                                         <p class="title">会员会龄结构</p>
- <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-4.html" frameborder="0" scrolling="no"></iframe>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-4.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                 </div>
                                 <div class="line">
                                     <div class="col">
                                         <p class="title">消费能力结构</p>
-
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-1-11.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                     <div class="col br">
                                         <p class="title">会员收入结构</p>
@@ -133,7 +133,7 @@
                                     </div>
                                     <div class="col br">
                                         <p class="title">会员行业结构</p>
- <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-10.html" frameborder="0" scrolling="no"></iframe>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-10.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                 </div> 
                             </div>
