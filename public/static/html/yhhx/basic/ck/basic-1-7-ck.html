@@ -30,27 +30,8 @@
     </div>
 
 
-    <script src="../../../js/echarts.min.js"></script>
+    <script src="../../../../js/echarts.min.js"></script>
     <script lang="javascript">
-        const data = [{
-            name: '一线城市',
-            value: 22
-        }, {
-            name: '新一线城市',
-            value: 35
-        }, {
-            name: '二线城市',
-            value: 30
-        }, {
-            name: '三线城市',
-            value: 8
-        }, {
-            name: '四线城市',
-            value: 3
-        }, {
-            name: '五线城市',
-            value: 2
-        }];
         setTimeout(() => {
             //['#4C98FB', '#83CCE7', '#26C7C8', '#73DEBD', '#26C978', '#8CDF6C', '#FBD657', '#F56679', '#E07BCE', '#9D50E0', '#634FDA']
             var colorList = ['#5d8bef', '#84e4bd', '#f9b06a', '#f9da72']
@@ -84,31 +65,26 @@
                     formatter: function(list) {
                         var msg = "";
                         for (let i in list) {
-                            msg += list[i].name + "：" + list[i].data + "%<br>";
+                            msg += list[i].name + "：" + list[i].data + "<br>";
                         }
                         return msg;
                     }
                 },
                 xAxis: [{
                     type: 'category',
-                    data: data.map(e => e.name),
+                    data: ['公共交通', '自驾车', '出租车', '步行', '自行车'],
                     axisPointer: {
                         type: 'shadow'
                     }
                 }],
                 yAxis: {
-                    type: 'value',
-                    axisLabel: {
-                        formatter: function(v) {
-                            return v + '%'
-                        }
-                    }
+                    type: 'value'
                 },
                 series: [{
                         //name: '去年同期',
                         type: 'bar',
                         barWidth:30,
-                        data: data.map(e => e.value)
+                        data: [17, 16,38, 19,  10]
                     },
 
                 ]

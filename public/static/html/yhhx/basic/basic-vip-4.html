@@ -76,6 +76,10 @@
                     show: false
                 },
                 grid: {
+                    top:20,
+                    right:70,
+                    bottom:10,
+                    left:10,
                     containLabel: true,
                 },
                 xAxis: {
@@ -166,6 +170,9 @@
             };
             let myChart = echarts.init(document.getElementById("div"));
             myChart.setOption(option);
+            window.onresize = ()=>{
+                myChart.resize();
+            }
         }, 500)
     </script>
 </body>
