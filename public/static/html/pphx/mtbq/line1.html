@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'Arial', 'sans-serif', 'PingFangSC-Medium';
+        }
+
+        #div {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div id="div"></div>
+
+<script src="../../../js/echarts.min.js"></script>
+<script lang="javascript">
+    setTimeout(() => {
+        var colorList = ['#46a59d', '#739cea', '#ffa761'];
+        var option = {
+            color: colorList,
+            tooltip: {
+                trigger: 'axis',
+                formatter: function (list) {
+                    var msg = "";
+                    for (let i in list) {
+                        console.log(list[i])
+                        if (i == 0) {
+                            msg += list[i].name + "<br>";
+                        }
+                        msg += list[i].marker + list[i].seriesName + "：" + list[i].data + "<br>";
+                        //  if(list[i].data=='391'){
+                        // 	msg+=`媒体热点：“…2020年中国茶类饮料行业主管部门、监管体制、法律法规及政策”最新法规出台，受到头条、人民日报等新闻平台网友重点关注…`;
+
+                        //  }
+                    }
+                    for (let i in list) {
+                        if (list[i].data == '391') {
+                            msg += `媒体热点：“…购物中心及微博<br>“朋克养生季”落幕，线上线下<br>相关关注度回落…“`;
+                        }
+                        if (list[i].data == '670') {
+                            msg += `媒体热点：“…2020年中国茶类饮<br>料行业主管部门、监管体制、法律法<br>规及政策”最新法规出台，受到头条、<br>人民日报等新闻平台网友重点关注…`;
+                        }
+                    }
+                    return msg;
+                }
+            },
+            legend: {
+                bottom: 30,
+                data: ['邓老凉茶', '竞品A', '竞品B']
+            },
+            grid: {
+                left: '0',
+                right: '2%',
+                bottom: '20%',
+                top: '10%',
+                containLabel: true,
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    name: '邓老凉茶',
+                    type: 'line',
+                    data: [572, 530, 393, 391, 470, 451, 440, 402, 670, 531]
+                },
+                {
+                    name: '竞品A',
+                    type: 'line',
+                    data: [631, 607, 605, 581, 671, 645, 351, 390, 490, 450]
+                },
+                {
+                    name: '竞品B',
+                    type: 'line',
+                    data: [230, 270, 290, 291, 254, 307, 310, 257, 245, 259]
+                },
+
+            ]
+        };
+        let myChart = echarts.init(document.getElementById("div"));
+        myChart.setOption(option);
+        window.onresize = () => {
+            myChart.resize();
+        }
+    }, 500)
+</script>
+</body>
+
+</html>

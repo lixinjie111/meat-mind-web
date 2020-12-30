@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: "Helvetica Neue", "Helvetica", "PingFang SC",
+            "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "Arial",
+            "sans-serif", "PingFangSC-Medium";
+        }
+
+        #div {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div id="div"></div>
+
+<script src="../../../js/echarts.min.js"></script>
+<script lang="javascript">
+    setTimeout(() => {
+        let yValue = [6.2, 5, 6.3, 8];
+        var category = [{
+            name: "社会影响力",
+            value: 6.2
+        },
+            {
+                name: "稀缺性",
+                value: 5
+            },
+            {
+                name: "品牌亲和力",
+                value: 6.3
+            },
+            {
+                name: "创造性",
+                value: 8
+            },
+        ]; // 类别
+        var option = {
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                show: false
+            },
+            grid: {
+                left: '20%',
+                right: '10%',
+                bottom: '10%',
+                top: '10%',
+                containLabel: true,
+            },
+            xAxis: {
+                max: 10,
+                type: 'value',
+                splitLine: {
+                    show: false,
+                    lineStyle: {
+                        color: '#ebebeb'
+                    }
+                },
+                axisLabel: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLine: {
+                    show: false
+                }
+            },
+            yAxis: {
+                type: 'category',
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    show: false
+                }
+            },
+            series: [
+                {
+                    // 内
+                    type: "bar",
+                    barWidth: 28,
+                    silent: true,
+                    itemStyle: {
+                        normal: {
+                            color: "#83cbe0"
+                        }
+                    },
+                    label: {
+                        normal: {
+                            formatter: "{b}",
+                            textStyle: {
+                                color: "#333333",
+                                fontSize: 14
+                            },
+                            position: 'left',
+                            distance: 20, // 向右偏移位置
+                            show: true
+                        }
+                    },
+                    data: category,
+                    z: 1,
+                    animationEasing: "elasticOut"
+                },
+                {
+                    // label
+                    type: "pictorialBar",
+                    symbolBoundingData: 10,
+                    itemStyle: {
+                        normal: {
+                            color: "none"
+                        }
+                    },
+                    label: {
+                        normal: {
+                            formatter: (params) => {
+                                var text;
+                                text = '{f| ' + params.data + '}';
+                                return text;
+                            },
+                            rich: {
+                                f: {
+                                    color: "#a1a1a1"
+                                }
+                            },
+                            position: 'right',
+                            distance: 10, // 向右偏移位置
+                            show: true
+                        }
+                    },
+                    data: yValue,
+                    z: 0,
+
+                },
+                {
+                    name: "外框",
+                    type: "bar",
+                    barGap: "-130%", // 设置外框粗细
+                    data: [10, 10, 10, 10],
+                    barWidth: 45,
+                    itemStyle: {
+                        normal: {
+                            barBorderRadius: [5, 5, 5, 5],
+                            color: "transparent", // 填充色
+                            barBorderColor: "#83cbe0", // 边框色
+                            barBorderWidth: 2 // 边框宽度
+                        }
+                    },
+                    z: 0
+                },
+
+            ]
+        };
+        let myChart = echarts.init(document.getElementById("div"));
+        myChart.setOption(option);
+        window.onresize = () => {
+            myChart.resize();
+        }
+    }, 500)
+</script>
+</body>
+</html>

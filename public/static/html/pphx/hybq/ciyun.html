@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: "Helvetica Neue", "Helvetica", "PingFang SC",
+            "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "Arial",
+            "sans-serif", "PingFangSC-Medium";
+        }
+
+        #myDiv {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div id="myDiv"></div>
+<script src="../../../js/echarts.min.js"></script>
+<script src="../../../js/wordCloud.js"></script>
+<script lang="javascript">
+    setTimeout(() => {
+        var myChart = echarts.init(document.getElementById("myDiv"));
+        var myData = [{
+            name: "饮品",
+            value: 105
+        }, {
+            name: "矿泉水",
+            value: 84
+        }, {
+            name: "碳酸饮料",
+            value: 66
+        }, {
+            name: "快乐水",
+            value: 37
+        }, {
+            name: "茶π",
+            value: 37
+        }, {
+            name: "元気森林",
+            value: 37
+        }, {
+            name: "代糖",
+            value: 35
+        }, {
+            name: "水果茶",
+            value: 30
+        }, {
+            name: "苏打水",
+            value: 28
+        }, {
+            name: "碱性水",
+            value: 27
+        }, {
+            name: "功能性饮料",
+            value: 27
+        }, {
+            name: "花果轻乳",
+            value: 27
+        }];
+        var option = {
+            tooltip: {
+                show: true
+            },
+            grid: {
+                left: 0,
+                bottom: 0,
+                top: 0,
+                right: 0,
+            },
+            xAxis: {
+                type: "category",
+                show: false
+            },
+            yAxis: {
+                max: 100,
+                show: false
+            },
+            series: [{
+                type: 'wordCloud',
+                // sizeRange: [9, 20],
+                // rotationRange: [-30, 30],
+                // textPadding: 0,
+                // gridSize: 11,
+                width: '100%',
+                height: '100%',
+                left: 'center',
+                top: 'center',
+                drawOutOfBound: false,
+                textStyle: {
+                    normal: {
+                        color: function () {
+                            var colorList = ['#4C98FB', '#83CCE7', '#26C7C8', '#73DEBD', '#26C978', '#8CDF6C', '#FBD657', '#F56679', '#E07BCE', '#9D50E0', '#634FDA'];
+                            return colorList[Math.round(Math.random() * 7)];
+                        }
+                    },
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowColor: '#333'
+                    }
+                },
+                data: myData
+            }]
+        };
+        myChart.setOption(option);
+        window.onresize = () => {
+            myChart.resize();
+        }
+    }, 500)
+</script>
+</body>
+
+</html>

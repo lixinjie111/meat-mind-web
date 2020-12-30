@@ -25,11 +25,12 @@
 
 <body>
 <div id="div"></div>
-<script src="../../js/echarts.min.js"></script>
+<script src="../../../js/echarts.min.js"></script>
 <script lang="javascript">
     setTimeout(() => {
+        var colorList = ['#739cea', '#84e4bd', '#f9b06a', '#f9da72']
         var option = {
-            color: '#739cea',
+            color: colorList,
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
@@ -37,39 +38,45 @@
                     crossStyle: {
                         color: '#999'
                     }
-                },
-                formatter: function (list) {
-                    var msg = "";
-                    for (let i in list) {
-                        msg += list[i].name + "：" + list[i].data + "<br>";
-                    }
-                    return msg;
                 }
             },
             grid: {
                 left: '0',
                 right: '3%',
-                bottom: '8%',
-                top: '8%',
-                containLabel: true,
+                bottom: '15%',
+                top: '10%',
+                containLabel: true
+            },
+            legend: {
+                bottom: 10,
+                data: ['饮料整体市场规模及预测', '茶饮料整体市场规模及预测',]
             },
             xAxis: [
                 {
                     type: 'category',
-                    data: ['微博转发', '微信点赞', '线下社交活动', '新闻稿件', '深度营销稿件', '海报', '趣图', '漫画', 'KOL/KOC分享'],
+                    data: ['2015', '2020', '2025'],
                     axisPointer: {
                         type: 'shadow'
                     }
                 }
             ],
-            yAxis: {
-                type: 'value'
-            },
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
             series: [
                 {
+                    name: '饮料整体市场规模及预测',
                     type: 'bar',
-                    data: [17, 15, 14, 7, 1, 7, 9, 10, 20],
-                    barWidth: '30'
+                    data: [7433, 9914, 13230],
+                    barWidth: '50'
+                },
+                {
+                    name: '茶饮料整体市场规模及预测',
+                    type: 'bar',
+                    data: [2980, 3757, 6031],
+                    barWidth: '50'
                 }
             ]
         };
@@ -81,4 +88,5 @@
     }, 500)
 </script>
 </body>
+
 </html>

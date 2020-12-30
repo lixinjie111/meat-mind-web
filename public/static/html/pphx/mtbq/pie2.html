@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'Arial', 'sans-serif', 'PingFangSC-Medium';
+        }
+
+        #div {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div id="div"></div>
+<script src="../../../js/echarts.min.js"></script>
+<script lang="javascript">
+    setTimeout(() => {
+        var colorList = ['#739cea', '#73d9a8', '#758298', '#f7c235', '#eb7b5f', '#83cbe0', '#a282c5', '#ffa761', '#46a59d', '#ffa5c0', '#58D5FF']
+        const data = [{
+            label: "大众点评",
+            value: 131
+        },
+            {
+                label: "抖音",
+                value: 5
+            },
+            {
+                label: "微博",
+                value: 147
+            },
+            {
+                label: "公众号",
+                value: 7
+            },
+            {
+                label: "新浪微博",
+                value: 33
+            },
+            {
+                label: "微信社区",
+                value: 20
+            },
+        ]
+        var option = {
+            color: colorList,
+            title: {
+                // text: 'PM2.5含量',
+                // subtext:'50%',
+                x: 'center',
+                y: 'center',
+                textStyle: {
+                    color: "#fff",
+                    fontSize: 15
+                },
+            },
+            legend: {
+                type: 'scroll',
+                icon: 'circle',
+                bottom: 10,
+                data: data.map(it => it.label)
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            series: [{
+                type: 'pie',
+                center: ['50%', '50%'],
+                radius: ['40%', '55%'],
+                clockwise: true,
+                avoidLabelOverlap: true,
+                hoverOffset: 15,
+                label: {
+                    show: true,
+                    //position: 'inside',
+                    position: 'outside',
+                    formatter: '{a|{b}：{c} ; {d}%}\n{hr|}',
+                    rich: {
+                        hr: {
+                            backgroundColor: 't',
+                            borderRadius: 3,
+                            width: 3,
+                            height: 3,
+                            padding: [3, 3, 0, -12]
+                        },
+                        a: {
+                            padding: [-30, 15, -20, 15]
+                        }
+                    }
+                },
+                // labelLine: {
+                // 	show: false
+                // },
+                data: data.map((it, i) => {
+                    return {
+                        value: it.value,
+                        name: it.label,
+                        // itemStyle: {
+                        // 	color: `rgba(${colors[i]},0.7)`,
+                        // 	borderColor: `rgba(${colors[i]},1)`,
+                        // 	borderWidth: 1
+                        // }
+                    };
+                })
+            }]
+        };
+        let myChart = echarts.init(document.getElementById("div"));
+        myChart.setOption(option);
+        window.onresize = () => {
+            myChart.resize();
+        }
+    }, 500)
+</script>
+</body>
+
+</html>
