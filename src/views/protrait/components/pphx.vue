@@ -31,7 +31,8 @@
                             </div>
                             <div class="col half">
                                 <p class="title">核心目标受众匹配度</p>
-                                <iframe src="/static/html/pphx/xfzbq/leida.html" frameborder="0" scrolling="no"></iframe>
+                                <p class="sub-title">2020/12/21-2020/12/27</p>
+                                <iframe class="mt" src="/static/html/pphx/xfzbq/leida.html" frameborder="0" scrolling="no"></iframe>
                             </div>
                         </div>
                         <div class="row">
@@ -135,7 +136,7 @@
                     <div class="tab-content" v-else>
                         <div class="row">
                             <div class="col all">
-                                <p class="title">2014-2024中国饮料市场规模比例及预测</p>
+                                <p class="title">2015-2025中国饮料市场规模比例及预测</p>
                                 <iframe src="/static/html/pphx/hybq/bar1.html" frameborder="0" scrolling="no"></iframe>
                             </div>
                         </div>
