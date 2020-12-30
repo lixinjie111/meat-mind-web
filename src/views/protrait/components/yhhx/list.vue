@@ -13,7 +13,7 @@
                         <div class="tabs">
                             <div v-for="(item,index) in tabList" :key="index" :class="item.id == tabActive ? 'active tab' : 'tab'" @click="changeTab(item.id)">{{item.value}} </div>
                         </div>
-                        <div class="subtabs">
+                        <div class="subtabs" v-if="tabActive<2">
                             <div class="subtab" :class="{'cur':i==cur}" v-for="(ele,i) in sub[tabActive-1]" :key="i" @click="changeSubTab(i)">{{ele}}</div>
                         </div>
                         <!--                    <div class="btns">-->
@@ -27,17 +27,17 @@
                                 <div class="line">
                                     <div class="col">
                                         <p class="title">年龄结构</p>
-                                        <iframe class="iframe" src="/static/html/yhhx/pie1-2.html" frameborder="0" scrolling="no"></iframe>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-1-1.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                     <div class="col br">
                                         <p class="title">收入结构</p>
-                                        <iframe class="iframe" src="/static/html/yhhx/pie1-4.html" frameborder="0" scrolling="no"></iframe>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-1-2.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                 </div>
                                 <div class="line">
                                     <div class="col">
                                         <p class="title">职业结构</p>
-                                        <iframe class="iframe" src="/static/html/yhhx/pie1-3.html" frameborder="0" scrolling="no"></iframe>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-1-3.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                     <div class="col br">
                                         <p class="title">行业结构</p>
@@ -47,17 +47,17 @@
                                 <div class="line">
                                     <div class="col">
                                         <p class="title">教育背景结构</p>
-                                        <iframe class="iframe iframe4" src="/static/html/pphx/jybj.html" frameborder="0" scrolling="no"></iframe>
+                                        <iframe class="iframe iframe4" src="/static/html/yhhx/basic/basic-1-5.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                     <div class="col br">
                                         <p class="title">性别结构</p>
-                                        <iframe class="iframe iframe4" src="/static/html/yhhx/pie1-1.html" frameborder="0" scrolling="no"></iframe>
+                                        <iframe class="iframe iframe4" src="/static/html/yhhx/basic/basic-1-6.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                 </div>
                                 <div class="line">
                                     <div class="col">
                                         <p class="title">用户出行结构</p>
-
+                                        <iframe class="iframe iframe4" src="/static/html/yhhx/basic/basic-1-7.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                     <div class="col br">
                                         <p class="title">居住地区结构</p>
@@ -71,7 +71,7 @@
                                     </div>
                                     <div class="col br">
                                         <p class="title">婚育状态结构</p>
-
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-1-10.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                 </div>
                                 <div class="line">
@@ -89,11 +89,11 @@
                                 <div class="line">
                                     <div class="col">
                                         <p class="title">会员性别结构</p>
-                                        <iframe class="iframe iframe4" src="/static/html/yhhx/pie1-1.html" frameborder="0" scrolling="no"></iframe>
+                                        <iframe class="iframe iframe4" src="/static/html/yhhx/basic/basic-1-6.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                     <div class="col br">
                                         <p class="title">会员年龄结构</p>
-                                        <iframe class="iframe" src="/static/html/yhhx/pie1-2.html" frameborder="0" scrolling="no"></iframe>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-2.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                 </div>
                                 <div class="line">
@@ -109,17 +109,17 @@
                                 <div class="line">
                                     <div class="col">
                                         <p class="title">消费能力结构</p>
-                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-1-11.html" frameborder="0" scrolling="no"></iframe>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-5.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                     <div class="col br">
                                         <p class="title">会员收入结构</p>
-                                        <iframe class="iframe" src="/static/html/yhhx/pie1-4.html" frameborder="0" scrolling="no"></iframe>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-1-2.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                 </div>
                                 <div class="line">
                                     <div class="col">
                                         <p class="title">会员来源地结构</p>
-
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-7.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                     <div class="col br">
                                         <p class="title">居住地区结构</p>
@@ -129,7 +129,7 @@
                                 <div class="line">
                                     <div class="col">
                                         <p class="title">会员职业结构</p>
-
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-9.html" frameborder="0" scrolling="no"></iframe>
                                     </div>
                                     <div class="col br">
                                         <p class="title">会员行业结构</p>
@@ -159,7 +159,7 @@
                         <div class="tabs">
                             <div v-for="(item,index) in tabList" :key="index" :class="item.id == tabActive ? 'active tab' : 'tab'" @click="changeTab(item.id)">{{item.value}}</div>
                         </div>
-                        <div class="subtabs">
+                        <div class="subtabs" v-if="tabActive<2">
                             <div class="subtab" :class="{'cur':i==cur}" v-for="(ele,i) in sub[tabActive-1]" :key="i" @click="changeSubTab(i)">{{ele}}</div>
                         </div>
                         <!--                    <div class="btns">-->
@@ -169,15 +169,230 @@
                     </div>
                     <div class="bottom">
                         <div class="tab-content" v-if="tabActive==1">
-                            <img src="../../../../static/img/protrait/yhhx6@2x.png" alt="">
-                            <iframe class="iframe iframe5" src="/static/html/yhhx/pie1-2.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe iframe6" src="/static/html/yhhx/pie1-4.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe iframe7" src="/static/html/yhhx/pie1-3.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe iframe8" src="/static/html/yhhx/pie1-1.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe iframe9" src="/static/html/yhhx/pie1-2-1.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe iframe10" src="/static/html/yhhx/pie1-4-1.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe iframe11" src="/static/html/yhhx/pie1-3-1.html" frameborder="0" scrolling="no"></iframe>
-                            <iframe class="iframe iframe12" src="/static/html/yhhx/pie1-1-1.html" frameborder="0" scrolling="no"></iframe>
+                            <div v-if="cur==0">
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">年龄结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-1-1.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:年龄结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/ck/basic-1-1-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">收入结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-1-2.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:收入结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/ck/basic-1-2-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">职业结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-1-3.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:职业结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/ck/basic-1-3-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">行业结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-10.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:行业结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/ck/basic-vip-10-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">教育背景结构</p>
+                                        <iframe class="iframe iframe4" src="/static/html/yhhx/basic/basic-1-5.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:教育背景结构</p>
+                                        <iframe class="iframe iframe4" src="/static/html/yhhx/basic/ck/basic-1-5-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">性别结构</p>
+                                        <iframe class="iframe iframe4" src="/static/html/yhhx/basic/basic-1-6.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:性别结构</p>
+                                        <iframe class="iframe iframe4" src="/static/html/yhhx/basic/ck/basic-1-6-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">用户出行结构</p>
+                                        <iframe class="iframe iframe4" src="/static/html/yhhx/basic/basic-1-7.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:用户出行结构</p>
+                                        <iframe class="iframe iframe4" src="/static/html/yhhx/basic/ck/basic-1-7-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">居住地区结构</p>
+                                        <iframe class="iframe iframe4" src="/static/html/yhhx/basic/basic-1-8.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:居住地区结构</p>
+                                        <iframe class="iframe iframe4" src="/static/html/yhhx/basic/ck/basic-1-8-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">户籍籍贯结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-1-9.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:户籍籍贯结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/ck/basic-1-9-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">婚育状态结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-1-10.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:婚育状态结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/ck/basic-1-10-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">消费能力结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-1-11.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:消费能力结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/ck/basic-1-11-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>  
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">车辆保有结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-1-12.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:车辆保有结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/ck/basic-1-12-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div v-else>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">会员性别结构</p>
+                                        <iframe class="iframe iframe4" src="/static/html/yhhx/basic/basic-1-6.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:会员性别结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/ck/basic-1-6-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">会员年龄结构</p>
+                                        <iframe class="iframe iframe4" src="/static/html/yhhx/basic/basic-vip-2.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:会员年龄结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/ck/basic-vip-2-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">会员活跃度结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-3.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:会员活跃度结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/ck/basic-vip-3-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">会员会龄结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-4.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:会员会龄结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/ck/basic-vip-4-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">消费能力结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-1-11.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:消费能力结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-5.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">会员收入结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-1-2.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:会员收入结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/ck/basic-1-2-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">会员来源地结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-7.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:会员来源地结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/ck/basic-vip-7-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">居住地区结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-8.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:居住地区结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-1-8.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div>
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">会员职业结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-9.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:会员职业结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/ck/basic-vip-9-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div> 
+                                <div class="group">
+                                    <div class="ele">
+                                        <p class="title">会员行业结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/basic-vip-10.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                    <div class="ele ck">
+                                        <p class="title">对照组:会员行业结构</p>
+                                        <iframe class="iframe" src="/static/html/yhhx/basic/ck/basic-vip-10-ck.html" frameborder="0" scrolling="no"></iframe>
+                                    </div>
+                                </div> 
+                            </div>
                         </div>
                         <div class="tab-content" v-else-if="tabActive==2">
                             <img src="../../../../static/img/protrait/yhhx3@2x.png" alt="">
@@ -311,6 +526,7 @@
                             border: 1px solid #D9D9D9;
                             line-height: 30px;
                             text-align: center;
+                            cursor: pointer;
                             &.cur{
                                 color: #2373FF;
                                 background: #FFFFFF;
@@ -374,10 +590,12 @@
                                 height: 100%;
 
                                 .title {
+                                    height: 22px;
                                     font-size: 14px;
                                     font-family: PingFangSC-Medium, PingFang SC;
                                     font-weight: 500;
                                     color: #333333;
+                                    line-height: 22px;
                                 }
 
                                 &.br {
@@ -387,6 +605,43 @@
                                 .iframe{
                                     width: 100%;
                                     height: 100%;
+                                    // height: calc(100% - 22px);
+                                }
+                            }
+                        }
+
+                        .group{
+                            padding-left:24px;
+                            display: flex;
+                            justify-content: space-between;
+                            width: 100%;
+                            height: 379px;
+                            border-bottom: 1px solid #F0F0F0;
+                            &:last-child {
+                                border-bottom: none;
+                            }
+                            .ele{
+                                width: 50%;
+                                height: 100%;
+                                padding: 24px 0;
+                                .title {
+                                    height: 22px;
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-weight: 500;
+                                    color: #333333;
+                                    line-height: 22px;
+                                }
+
+                                &.ck {
+                                    border-left: 1px solid #F0F0F0;
+                                    padding-left: 24px;
+                                    background: #FAFAFA;
+                                }
+                                .iframe{
+                                    width: 100%;
+                                    height: 100%;
+                                    // height: calc(100% - 22px);
                                 }
                             }
                         }

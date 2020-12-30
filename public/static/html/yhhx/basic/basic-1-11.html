@@ -70,10 +70,15 @@
                     show: false
                 },
                 grid: {
+                    top:20,
+                    right:70,
+                    bottom:10,
+                    left:10,
                     containLabel: true,
                 },
                 xAxis: {
                     type: 'value',
+                    show:false,
                     splitLine: {
                         show: false,
                         lineStyle: {
@@ -124,13 +129,13 @@
                         data: yValue.map((item, index) => {
                             return {
                                 value: item.label,
-                                // label: {
-                                //     color: colorList[index]
-                                // },
+                                label: {
+                                    color: colorList[index]
+                                },
                                 itemStyle: {
                                     color: colorList[index]
                                 },
-                                // per: item.label,
+                                per: item.label,
                                 num: item.value,
 
                             };
@@ -146,7 +151,7 @@
                         label: {
                             show: true,
                             formatter: function(value) {
-                                console.log(value)
+                                // console.log(value)
                                 return value.data.num + '人'
                             },
                             position: 'right',
@@ -160,6 +165,9 @@
             };
             let myChart = echarts.init(document.getElementById("div"));
             myChart.setOption(option);
+            window.onresize = ()=>{
+                myChart.resize();
+            }
         }, 500)
     </script>
 </body>

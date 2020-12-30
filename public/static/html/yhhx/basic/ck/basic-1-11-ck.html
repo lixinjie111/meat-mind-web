@@ -27,37 +27,31 @@
 <body>
     <div id="div"></div>
 
-    <script src="../../../js/echarts.min.js"></script>
+    <script src="../../../../js/echarts.min.js"></script>
     <script lang="javascript">
         setTimeout(() => {
             //['#4C98FB', '#83CCE7', '#26C7C8', '#73DEBD', '#26C978', '#8CDF6C', '#FBD657', '#F56679', '#E07BCE', '#9D50E0', '#634FDA']
             var colorList = ['#5d8bef', '#84e4bd', '#f9b06a', '#26C978', '#8CDF6C', '#F56679', ]
             var index = 0;
-            let yData = ['流失用户', '连续活跃用户', '沉默用户', '回流用户', '新用户'];
+            let yData = ['中', '高', '低'];
             let yValue = [{
-                    value: 9504,
-                    label: '39'
-                }, {
-                    value: 6162,
+                    value: 3849,
                     label: '28'
                 }, {
-                    value: 3810,
-                    label: '9'
+                    value: 6614,
+                    label: '40'
                 }, {
-                    value: 1549,
-                    label: '7'
-                }, {
-                    value: 842,
-                    label: '6'
+                    value: 2296,
+                    label: '18'
                 },
                 // {
-                // 	value: 20886,
-                // 	label: '11'
+                // 	value: 26583,
+                // 	label: '4'
                 // },
             ];
             var option = {
                 title: {
-                    // text:'消费日偏好',
+                    // text: '消费能力等级',
                     left: 'center',
                     top: '4%',
                     textStyle: {
@@ -84,7 +78,7 @@
                 },
                 xAxis: {
                     type: 'value',
-                    show: false,
+                    show:false,
                     splitLine: {
                         show: false,
                         lineStyle: {
@@ -157,7 +151,8 @@
                         label: {
                             show: true,
                             formatter: function(value) {
-                                return value.data.num + '人   '
+                                // console.log(value)
+                                return value.data.num + '人'
                             },
                             position: 'right',
                             color: '#333333',
