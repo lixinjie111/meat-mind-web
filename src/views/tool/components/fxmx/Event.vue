@@ -8,23 +8,18 @@
         <div class="event-content">
             <div class="filter-container">
                 <p class="c-title">事件</p>
-                <Collapse v-model="panelValue">
-                    <Panel name="1">
-                        任意事件的总次数
+                <!-- <Collapse v-model="panelValue"> -->
+                    <!-- <Panel name="1"> -->
+                        <!-- 事件 -->
                         <div class="" slot="content">
                             <div class="property" v-for="(item,index) in propertyList" :key="index">
-                                <Select v-model="attribute1" class="mr12 w200">
-                                    <i class="iconfont iconchengyuan" slot="prefix" size="small"/>
-                                    <Option v-for="item in attributeList1" :value="item.value" :key="item.value"
-                                            :disabled="item.disabled">{{ item.label }}
-                                    </Option>
+                                <Select v-model="item.event" class="mr12 w200">
+                                    <!-- <i class="iconfont iconzhinengjuece" slot="prefix" size="small"/> -->
+                                    <Option v-for="ele in attributeList1" :value="ele.value" :key="ele.value">{{ ele.label }}</Option>
                                 </Select>
                                 <span class="mr12">的</span>
-                                <Select v-model="attribute2" class="mr12 w200">
-                                    <Option value="总次数">总次数</Option>
-                                    <Option value="用户数">用户数</Option>
-                                    <Option value="人均次数">人均次数</Option>
-                                    <Option value="预定义指标">预定义指标</Option>
+                                <Select v-model="item.place" class="mr12 w200">
+                                    <Option v-for="ele in placeList" :value="ele.value" :key="ele.value">{{ ele.label }}</Option>
                                 </Select>
                                 <div>
                                     <i class="add iconfont iconicon_more2" @click="add">
@@ -33,8 +28,8 @@
                                 <i class="del iconfont iconicon_close" @click="del(index)"></i>
                             </div>
                         </div>
-                    </Panel>
-                </Collapse>
+                    <!-- </Panel> -->
+                <!-- </Collapse> -->
                 <div class="filter-show">
                     按
                     <Select v-model="attribute3" class="mr12 w100">
@@ -62,7 +57,7 @@
                                 placeholder="请选择时间范围"></DatePicker>
                 </div>
                 <div class="bottom">
-                    <p>任意事件的总次数</p>
+                    <!-- <p>任意事件的总次数</p> -->
                     <div class="chart-box">
                         <iframe v-if="iframeShow == 3" class="iframe" src="/static/html/fxgj/bar3.html" frameborder="0"
                                 scrolling="no"></iframe>
@@ -84,9 +79,40 @@
 <script>
     export default {
         name: "Event",
+        watch:{
+            propertyList:{
+                handler:function(newVal,oldVal){
+                    console.log(newVal,oldVal)
+                    if(this.iframeShow == 5){
+                        this.iframeShow = 3
+                    }else{
+                        this.iframeShow = this.iframeShow + 1
+                    }
+                },
+                deep:true
+            },
+            attribute3(val){
+                switch(val){
+                    case "总体" :
+                        this.iframeShow = 3
+                        break
+                    case "事件属性" :
+                        this.iframeShow = 4
+                        break    
+                    case "用户属性" :
+                        this.iframeShow = 5
+                        break
+                    case "用户标签" :
+                        this.iframeShow = 3
+                        break   
+                }
+                
+            }
+        },
         data() {
             return {
                 panelValue: [1, 2],
+                propertyList: [{event:"任意事件",place:"总次数"}],
                 attributeList1: [
                     {
                         value: '任意事件',
@@ -109,43 +135,23 @@
                         label: '完善资料',
                     }
                 ],
+                placeList:[
+                    {
+                        value:"总次数",
+                        label:"总次数"
+                    },
+                    {
+                        value:"用户数",
+                        label:"用户数"
+                    },
+                    {
+                        value:"人均次数",
+                        label:"人均次数"
+                    }
+                ],
                 attribute1: "任意事件",
                 attribute2: "总次数",
                 attribute3: "总体",
-                actionList1: [
-                    {
-                        value: '小程序签到',
-                        label: '小程序签到'
-                    },
-                    {
-                        value: 'APP元素点击',
-                        label: 'APP元素点击'
-                    },
-                    {
-                        value: '商品购买',
-                        label: '商品购买'
-                    },
-                    {
-                        value: '加入购物车',
-                        label: '加入购物车'
-                    },
-                    {
-                        value: '评论',
-                        label: '评论'
-                    },
-                    {
-                        value: '线下店访问',
-                        label: '线下店访问'
-                    }
-                ],
-                date: [],
-                action1: "做过",
-                action2: "APP元素点击",
-                action3: "总次数",
-                action4: "≥",
-                action5: "1",
-                propertyList: [0],
-                behaviorList: [0],
                 iframeShow: 3,
                 dateValue: "1",
                 dateRangeValue: [new Date(new Date().getTime() - 3600 * 1000 * 24 * 7).toLocaleString(), new Date().toLocaleString()],
@@ -214,7 +220,7 @@
                 this.$router.push({name: "analysis-tool-fxmx"})
             },
             add() {
-                this.propertyList.push({})
+                this.propertyList.push({event:"任意事件",place:"总次数"})
             },
             del(index) {
                 if (this.propertyList.length == 1) {
@@ -222,15 +228,6 @@
                 }
                 this.propertyList.splice(index, 1)
             },
-            behaviorAdd() {
-                this.behaviorList.push(0)
-            },
-            behaviorDel(index) {
-                if (this.behaviorList.length == 1) {
-                    return
-                }
-                this.behaviorList.splice(index, 1)
-            }
         }
     }
 </script>
@@ -282,8 +279,8 @@
             line-height: 72px;
 
             img {
-                width: 24px;
-                height: 24px;
+                width: 26px;
+                height: 26px;
                 vertical-align: middle;
                 cursor: pointer;
             }
@@ -331,7 +328,9 @@
                         cursor: pointer;
                     }
                 }
-
+                .filter-show{
+                    margin-top: 20px;
+                }
             }
 
             .show-container {
