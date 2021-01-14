@@ -50,6 +50,13 @@
             xAxis: {
                 type: 'category',
                 data: [
+                    new Date((new Date).getTime()- 3600 * 1000 * 24 * 7).getMonth() + 1 + '-' + new Date((new Date).getTime()- 3600 * 1000 * 24 * 7).getDate(),
+                    new Date((new Date).getTime()- 3600 * 1000 * 24 * 6).getMonth() + 1 + '-' + new Date((new Date).getTime()- 3600 * 1000 * 24 * 6).getDate(),
+                    new Date((new Date).getTime()- 3600 * 1000 * 24 * 5).getMonth() + 1 + '-' + new Date((new Date).getTime()- 3600 * 1000 * 24 * 5).getDate(),
+                    new Date((new Date).getTime()- 3600 * 1000 * 24 * 4).getMonth() + 1 + '-' + new Date((new Date).getTime()- 3600 * 1000 * 24 * 4).getDate(),
+                    new Date((new Date).getTime()- 3600 * 1000 * 24 * 3).getMonth() + 1 + '-' + new Date((new Date).getTime()- 3600 * 1000 * 24 * 3).getDate(),
+                    new Date((new Date).getTime()- 3600 * 1000 * 24 * 2).getMonth() + 1 + '-' + new Date((new Date).getTime()- 3600 * 1000 * 24 * 2).getDate(),
+                    new Date((new Date).getTime()- 3600 * 1000 * 24 * 1).getMonth() + 1 + '-' + new Date((new Date).getTime()- 3600 * 1000 * 24 * 1).getDate(),
                     new Date().getMonth() + 1 + '-' +new Date().getDate()
                 ]
             },
@@ -69,7 +76,7 @@
             },
             series: [
                 {
-                    data: [65428],
+                    data: [54318, 41749, 44983, 56130, 36562, 38015, 64346, 64737],
                     type: 'bar',
                     barWidth: '30'
                 }

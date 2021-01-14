@@ -24,11 +24,11 @@
                 <div class="bottom">
                     <p>任意事件的总次数</p>
                     <div class="chart-box">
-                        <iframe v-if="iframeShow == 1" class="iframe" src="/static/html/fxgj/bar1.html" frameborder="0"
+                        <iframe v-if="iframeShow == 1" class="iframe" src="/static/html/fxgj/bar3.html" frameborder="0"
                                 scrolling="no"></iframe>
                         <iframe v-if="iframeShow == 2" class="iframe" src="/static/html/fxgj/bar2.html" frameborder="0"
                                 scrolling="no"></iframe>
-                        <iframe v-if="iframeShow == 3" class="iframe" src="/static/html/fxgj/bar3.html" frameborder="0"
+                        <iframe v-if="iframeShow == 3" class="iframe" src="/static/html/fxgj/bar1.html" frameborder="0"
                                 scrolling="no"></iframe>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
             return {
                 iframeShow: 1,
                 dateValue: "1",
-                dateRangeValue: [new Date().toLocaleString(), new Date().toLocaleString()],
+                dateRangeValue: [new Date(new Date().getTime() - 3600 * 1000 * 24 * 7).toLocaleString(), new Date().toLocaleString()],
                 dateOptions: {
                     shortcuts: [
                         {
@@ -56,7 +56,7 @@
                                 return [start, end];
                             },
                             onClick: () => {
-                                this.iframeShow = 1;
+                                this.iframeShow = 3;
                             }
                         },
                         {
@@ -81,7 +81,7 @@
                                 return [start, end];
                             },
                             onClick: () => {
-                                this.iframeShow = 3;
+                                this.iframeShow = 1;
                             }
                         },
                         {
