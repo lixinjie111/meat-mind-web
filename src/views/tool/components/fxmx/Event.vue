@@ -81,11 +81,12 @@
         name: "Event",
         watch:{
             propertyList:{
-                handler:function(newVal,oldVal){
-                    console.log(newVal,oldVal)
-                    if(this.iframeShow == 5){
+                handler:function(){
+                    if(this.iframeShow >= 5||this.iframeShow<2){
+                        this.dateRangeValue = [new Date(new Date().getTime() - 3600 * 1000 * 24 * 7).toLocaleString(), new Date().toLocaleString()]
                         this.iframeShow = 3
                     }else{
+                        this.dateRangeValue = [new Date(new Date().getTime() - 3600 * 1000 * 24 * 7).toLocaleString(), new Date().toLocaleString()]
                         this.iframeShow = this.iframeShow + 1
                     }
                 },
@@ -95,15 +96,19 @@
                 switch(val){
                     case "总体" :
                         this.iframeShow = 3
+                        this.dateRangeValue = [new Date(new Date().getTime() - 3600 * 1000 * 24 * 7).toLocaleString(), new Date().toLocaleString()]
                         break
                     case "事件属性" :
                         this.iframeShow = 4
+                        this.dateRangeValue = [new Date(new Date().getTime() - 3600 * 1000 * 24 * 7).toLocaleString(), new Date().toLocaleString()]
                         break    
                     case "用户属性" :
                         this.iframeShow = 5
+                        this.dateRangeValue = [new Date(new Date().getTime() - 3600 * 1000 * 24 * 7).toLocaleString(), new Date().toLocaleString()]
                         break
                     case "用户标签" :
                         this.iframeShow = 3
+                        this.dateRangeValue = [new Date(new Date().getTime() - 3600 * 1000 * 24 * 7).toLocaleString(), new Date().toLocaleString()]
                         break   
                 }
                 
