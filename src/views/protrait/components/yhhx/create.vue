@@ -13,15 +13,15 @@
                     用户属性满足
                     <div class="" slot="content">
                         <div class="property" v-for="(item,index) in propertyList" :key="index">
-                            <Select v-model="attribute1" class="mr12 w200">
+                            <Select v-model="item.select1" class="mr12 w200">
                                 <i class="iconfont iconchengyuan" slot="prefix" size="small"/>
                                 <Option v-for="item in attributeList1" :value="item.value" :key="item.value" :disabled="item.disabled">{{ item.label }}</Option>
                             </Select>
-                            <Select v-model="attribute2" class="mr12 w200">
+                            <Select v-model="item.select2" class="mr12 w200">
                                 <Option value="属于">属于</Option>
                                 <Option value="等于">等于</Option>
                             </Select>
-                            <Input v-model="attribute3" class="mr12 w200"/>
+                            <Input v-model="item.inputVal" class="mr12 w200"/>
                             <div>
                                 <i class="add iconfont iconicon_more2" @click="add">
                                     新增</i>
@@ -35,22 +35,22 @@
                     <div class="" slot="content">
                         <div class="behavior" v-for="(item,index) in behaviorList" :key="index">
                             <div>
-                                <DatePicker :value="date" format="yyyy/MM/dd" type="daterange" placement="right-end" placeholder="开始日期 - 结束日期" class="mr12 w200"></DatePicker>
-                                <Select v-model="action1" class="mr12 w200">
+                                <DatePicker :value="item.date" format="yyyy/MM/dd" type="daterange" placement="right-end" placeholder="开始日期 - 结束日期" class="mr12 w200"></DatePicker>
+                                <Select v-model="item.action1" class="mr12 w200">
                                     <Option value="做过">做过</Option>
                                 </Select>
-                                <Select v-model="action2" class="mr12 w200">
+                                <Select v-model="item.action2" class="mr12 w200">
                                     <Option v-for="item in actionList1" :value="item.value" :key="item.value">{{ item.label }}</Option>
                                 </Select>
                             </div>
                             <div class="mt8">
-                                <Select v-model="action3" class="mr12 w200">
+                                <Select v-model="item.action3" class="mr12 w200">
                                     <Option value="总次数">总次数</Option>
                                 </Select>
-                                <Select v-model="action4" class="mr12 w80">
+                                <Select v-model="item.action4" class="mr12 w80">
                                     <Option value="≥">≥</Option>
                                 </Select>
-                                <Input v-model="action5" class="mr12 w60"/> 次
+                                <Input v-model="item.action5" class="mr12 w60"/> 次
                             </div>
                             <div>
                                 <i class="add iconfont iconicon_more2" @click="behaviorAdd">
@@ -130,14 +130,21 @@
                         label: '线下店访问'
                     }
                 ],
-                date: [],
-                action1: "做过",
-                action2: "APP元素点击",
-                action3: "总次数",
-                action4: "≥",
-                action5: "1",
-                propertyList:[0],
-                behaviorList:[0]
+                // date: [],
+                // action1: "做过",
+                // action2: "APP元素点击",
+                // action3: "总次数",
+                // action4: "≥",
+                // action5: "1",
+                propertyList:[{select1:"收入",select2:"等于",inputVal:""}],
+                behaviorList:[{
+                    date: [],
+                    action1: "做过",
+                    action2: "APP元素点击",
+                    action3: "总次数",
+                    action4: "≥",
+                    action5: "1"
+                }]
 
             }
         },
@@ -149,7 +156,7 @@
                 this.$router.push({name: "portrait-system-yhhx-list"})
             },
             add(){
-                this.propertyList.push({})
+                this.propertyList.push({select1:"收入",select2:"等于",inputVal:""})
             },
             del(index){
                 if(this.propertyList.length==1){
@@ -158,7 +165,14 @@
                 this.propertyList.splice(index,1)
             },
             behaviorAdd(){
-                this.behaviorList.push(0)
+                this.behaviorList.push({
+                    date: [],
+                    action1: "做过",
+                    action2: "APP元素点击",
+                    action3: "总次数",
+                    action4: "≥",
+                    action5: "1"
+                })
             },
             behaviorDel(index){
                 if(this.behaviorList.length==1){
