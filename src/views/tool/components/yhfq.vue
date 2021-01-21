@@ -4,6 +4,24 @@
         <img src="../../../static/img/tool/yhfq/list1.png" alt="">
         <div class="create" @click="create"></div>
         <div class="page2" @click="toPage2"></div>
+        <!-- <div class="qdlj-table">
+          <Table :columns="columns" :data="data">
+            <template slot-scope="" slot="title">
+              <div class="operation">
+                <svg id="icon-right-circle-fill" viewBox="0 0 1024 1024"><path d="M512 972.8a460.8 460.8 0 1 1 0-921.6 460.8 460.8 0 0 1 0 921.6z m11.6224-384l1.1776 119.808c0 1.1776 0.4096 2.304 1.1776 3.1744a4.608 4.608 0 0 0 6.5024 0.3584L752.4864 512a4.7104 4.7104 0 0 0 0-6.9632L532.48 304.9472a4.608 4.608 0 0 0-3.072-1.2288 4.608 4.608 0 0 0-4.608 4.6592l-1.1776 118.784H296.704a4.608 4.608 0 0 0-4.608 4.7104v152.2688c0 2.56 2.048 4.6592 4.608 4.6592h226.9184z"></path></svg>
+              </div>
+            </template>
+            <template slot-scope="" slot="number">
+              <div class="operation"></div>
+            </template>
+            <template slot-scope="" slot="operation">
+              <div class="operation"></div>
+            </template>
+          </Table>
+          <div class="page-box">
+            <Page :current="currentPage" :total="totalPage" :page-size="pageSize" @on-change="changePage"/>
+          </div>
+        </div> -->
       </div>
       <div class="list" v-if="page2">
         <img src="../../../static/img/tool/yhfq/list2.png" alt="">
@@ -50,7 +68,40 @@ export default {
       byBehavior:false,
       byUserId:false,
       behavior1:true,
-      behavior2:false
+      behavior2:false,
+      currentPage:1,
+      totalPage:25,
+      pageSize:15,
+      columns: [
+        {
+          title: "分群",
+          slot: "title",
+          tooltip:true
+        },
+        {
+          title: "人数",
+          slot: "number",
+          tooltip:true
+        },
+        {
+          title: "创建方式",
+          key: "type",
+        },
+        {
+          title: "创建者",
+          key: "user",
+        },
+        {
+          title: "更新方式",
+          key: "change",
+        },
+        {
+          title: "操作",
+          slot: "operation",
+          width:120,
+          align:"center"
+        },
+      ],
     }
   },
   methods:{
@@ -64,6 +115,10 @@ export default {
     toPage2(){
       this.page1=false
       this.page2=true
+    },
+    changePage(page){
+      this.currentPage = page;
+      page == 1 ? this.data = this.data1 : this.data = this.data2;
     },
     userBehavior(){
       this.createModal = false

@@ -2,13 +2,13 @@
   <div class="qdlj">
     <img src="../../../static/img/tool/qdzz/qdlj/qdlj-header.png" alt=""/>
     <div class="qdlj-table">
-      <Table border :columns="columns" :data="data">
+      <Table :columns="columns" :data="data">
         <template slot-scope="" slot="operation">
           <div class="operation"><Icon type="ios-link" /><Icon type="ios-stats" /></div>
         </template>
       </Table>
       <div class="page-box">
-        <Page :current="currentPage" :total="totalPage" :page-size="pageSize" simple
+        <Page :current="currentPage" :total="totalPage" :page-size="pageSize"
         @on-change="changePage"/>
       </div>
     </div>

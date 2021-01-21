@@ -2,7 +2,7 @@
   <div class="qdgl">
       <img src="../../../static/img/tool/qdzz/qdgl.png" alt="">
       <div class="qdgl-table">
-        <Table border :columns="columns" :data="data">
+        <Table :columns="columns" :data="data">
           <template slot-scope="{row}" slot="event">
             <span class="status status0" v-if="row.event==0">未配置</span>
             <span class="status status1" v-if="row.event==1">已配置</span>
@@ -21,7 +21,7 @@
           </template>
         </Table>
         <div class="page-box">
-          <Page :current="currentPage" :total="totalPage" :page-size="pageSize" simple
+          <Page :current="currentPage" :total="totalPage" :page-size="pageSize"
           @on-change="changePage"/>
       </div>
     </div>
