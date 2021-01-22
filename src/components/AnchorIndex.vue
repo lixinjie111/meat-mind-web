@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Header from "@/components/HeaderDefault"
+import Header from "@/components/DefaultHeader"
 import Side from "@/components/Side"
 export default {
   name: "anchorIndex",

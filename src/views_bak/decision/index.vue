@@ -54,7 +54,7 @@
 
 <script>
     import Side from "../../components/Side"
-    import Header from "../../components/HeaderDefault"
+    import Header from "../../components/DefaultHeader"
     import report from "../../../src/static/img/decision/report@2x.png"
 
     export default {

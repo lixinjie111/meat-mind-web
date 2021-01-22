@@ -3,26 +3,12 @@
         <!-- 首页 -->
         <Side></Side>
         <div class="container">
-            <Header :target="'首页'"></Header>
+            <Header :target="'Dashboard'"></Header>
+            <!-- 企业主 -->
             <div class="business-owner" v-if="flag==1">
-                <div class="part1">
-                    <img src="../../static/img/home/dashboard-part1@2x.png" alt="">
-                    <div class="report-btn" @click="downloadModal = true"></div>
-                    <iframe class="iframe1" src="/static/html/dashboard/znjc.html" frameborder="0" scrolling="no"></iframe>
-                    <div class="detail" @click="toPart1Detail"></div>
-                </div>
-                <div class="part2">
-                    <img src="../../static/img/home/dashboard-part2@2x.png" alt="">
-                    <iframe class="iframe1" src="/static/html/dashboard/ppxx.html" frameborder="0" scrolling="no"></iframe>
-                    <div class="detail" @click="toPart2Detail"></div>
-                </div>
-                <Modal class-name="dashboard-report-modal" v-model="downloadModal" footer-hide :closable="false">
-                    <div class="download">
-                        <img src="../../../src/static/img/home/dashboard-report@2x.png" alt="">
-                        <div class="close-btn" @click="downloadModal = false"></div>
-                    </div>
-                </Modal>
+
             </div>
+            <!-- 数据管理员 -->
             <div class="data-admin" v-if="flag==2">
                 <div class="part1">
                     <div class="data-canter" @click="toDateCenter"></div>
@@ -93,7 +79,7 @@
 
 <script>
     import Side from "../../components/Side"
-    import Header from "../../components/HeaderDefault"
+    import Header from "../../components/DefaultHeader"
 
     export default {
         name: "index",
@@ -224,7 +210,7 @@
         .container {
             display: flex;
             flex-direction: column;
-            width: calc(100vw - 88px);
+            width: calc(100vw - 240px);
 
             .business-owner{
                 display: flex;

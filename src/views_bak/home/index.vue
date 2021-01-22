@@ -93,7 +93,7 @@
 
 <script>
     import Side from "../../components/Side"
-    import Header from "../../components/HeaderDefault"
+    import Header from "../../components/DefaultHeader"
 
     export default {
         name: "index",

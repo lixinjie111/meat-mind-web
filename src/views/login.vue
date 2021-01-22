@@ -60,13 +60,13 @@
             jump() {
                 this.showImg = false
                 if (this.model1 == "企业主") {
-                    this.$router.push({name: "home"})
+                    this.$router.push({name: "dashboard"})
                     localStorage.setItem("dashboard",1)
                 }else if (this.model1 == "数据管理员") {
-                    this.$router.push({name: "home"})
+                    this.$router.push({name: "dashboard"})
                     localStorage.setItem("dashboard",2)
                 }else {
-                    this.$router.push({name: "home"})
+                    this.$router.push({name: "dashboard"})
                     localStorage.setItem("dashboard",0)
                 }
 
