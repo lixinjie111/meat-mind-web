@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import echarts from 'echarts'
 export default {
 	props: ['myData',"id",'colorList'],
 	data () {
@@ -24,10 +25,14 @@ export default {
 		},
 		defaultOption() {
 			var option = {
-            color: this.colorList[0],
+            color: this.colorList,
             tooltip: {
                 trigger: 'axis'
-            },
+			},
+			legend: {
+				bottom:0,
+				data:this.myData.legName,
+			},
             grid: {
                 left: 14,
                 right: '6%',
@@ -75,25 +80,7 @@ export default {
                     }
                 },
             },
-            series: [
-                {
-                    data: this.myData.value,
-                    type: 'bar',
-					barWidth: '10',
-					label:{
-						position: 'right',
-					},
-					itemStyle: {
-                         normal: {
-							   fontSize:20,
-                               barBorderRadius:30
-						 },
-						 emphasis:{
-							 color:'#FF9F7F'
-						 }
-                    },
-                }
-            ]
+            series: this.myData.value
         };
 			return option;
 		}

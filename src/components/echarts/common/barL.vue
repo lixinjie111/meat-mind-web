@@ -35,7 +35,7 @@ export default {
                 top: '10%',
                 containLabel: true,
             },
-            xAxis: {
+            yAxis: {
                 type: 'category',
 				data: this.myData.name,
 				//设置轴线的属性
@@ -53,7 +53,7 @@ export default {
 				},
 
             },
-            yAxis: {
+            xAxis: {
                 type: 'value',
                 axisLabel: {
 					formatter: '{value} ',
@@ -80,12 +80,8 @@ export default {
                     data: this.myData.value,
                     type: 'bar',
 					barWidth: '10',
-					label:{
-						position: 'right',
-					},
 					itemStyle: {
                          normal: {
-							   fontSize:20,
                                barBorderRadius:30
 						 },
 						 emphasis:{

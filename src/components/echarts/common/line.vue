@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import echarts from 'echarts'
 export default {
 	props: ['myData',"id",'colorList'],
 	data () {
@@ -78,20 +79,28 @@ export default {
             series: [
                 {
                     data: this.myData.value,
-                    type: 'bar',
-					barWidth: '10',
-					label:{
-						position: 'right',
+					type: 'line',
+					areaStyle: {
+						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+							offset: 0,
+							color: this.colorList[0],
+						}, {
+							offset: 1,
+							color: '#fff'
+						}])
 					},
-					itemStyle: {
-                         normal: {
-							   fontSize:20,
-                               barBorderRadius:30
-						 },
-						 emphasis:{
-							 color:'#FF9F7F'
-						 }
-                    },
+					// label:{
+					// 	position: 'right',
+					// },
+					// itemStyle: {
+                    //      normal: {
+					// 		   fontSize:20,
+                    //            barBorderRadius:30
+					// 	 },
+					// 	 emphasis:{
+					// 		 color:'#FF9F7F'
+					// 	 }
+                    // },
                 }
             ]
         };
