@@ -6,7 +6,7 @@
         ref="side_menu"
         theme="light"
         :active-name="activeName"
-        :open-names="openName"
+        :open-names="[openName]"
         @on-select="handleSelect"
         @on-open-change="openChange"
         width="auto"
@@ -20,7 +20,7 @@
             <MenuItem
               v-for="(ele, i) in item.children"
               :to="ele.path"
-              :name="i"
+              :name="ele.name"
               :key="i">
               <span class="sub-name">{{ ele.label }}</span>
             </MenuItem>
@@ -38,28 +38,6 @@
 <script>
 export default {
   name: "Side",
-  computed: {
-    // subMenu name
-    openSubMenu: {
-      get() {
-        return this.openName;
-      },
-      set(val) {
-        return val;
-      },
-    },
-    targetName: {
-      get() {
-        let obj = this.menu.find((item) => {
-          return item.path == this.active;
-        });
-        return obj.name;
-      },
-      set(val) {
-        return val;
-      },
-    },
-  },
   data() {
     return {
       menu: [
@@ -94,7 +72,7 @@ export default {
           path: "/business-analysis",
           children:[
             {
-              name:"business-analysis-overview",
+              name:"business-analysis-ztgl",
               label: "整体概览",
               path: "/business-analysis/ztgl"
             },
@@ -182,36 +160,33 @@ export default {
           ]
         },
       ],
-      active: this.$route.meta.moduleName,
       activeName: "",
-      openName: [this.$route.name], //subMenu
+      openName:""
     };
   },
   methods: {
     checkItem(item) {
-      this.active = item.path;
-      this.targetName = item.name;
       if (item.path != this.$route.meta.moduleName) {
         this.$router.push({ name: item.path });
       }
     },
     // 选择menuItem
     handleSelect(name) {
-      console.log("<<<<",name)
+      console.log("<<<<",name,this.openName)
       this.activeName = name;
     },
     // 打开subMenu
     openChange(ary) {
-      console.log(">>>>>>",ary,this.$route.name)
+      console.log("ary",ary)
       if (!ary.length) {
         return;
       }
       let routeName = ary[0];
+      // this.openName = ary[0];
       if (routeName != this.$route.name) {
-        this.openName = ary;
+        // this.openName = ary[0];
         this.activeName = this.$route.name;
-        console.log("open submenu>>>>",ary,this.openName,this.activeName)
-        this.$router.push({ name: routeName });
+        // this.$router.push({ name: routeName });
       }
     }
   },
