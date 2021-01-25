@@ -1,0 +1,53 @@
+/**
+  大小
+**/
+$width-base: 1152px;
+$input-height: 32px;
+$button-height: 48px;
+$button-height-small: 38px;
+
+$margin: 24px;
+$padding: 24px;
+
+/**
+  文字
+**/
+$font-family: "PingFangSC-Regular,PingFang SC", "Microsoft YaHei", "微软雅黑", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "SimHei", "Arial", "sans-serif";
+$font-family-medium: "PingFangSC-Medium,PingFang SC", "Microsoft YaHei", "微软雅黑", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", "SimHei", "Arial", "sans-serif";
+
+$font-size-small: 12px;
+$font-size-base: 14px;
+$font-size-large: 16px;
+
+/**
+  颜色
+**/
+//主题色
+$theme-color: #2373FF;
+$second-theme-color: #4D94FF;
+$disabled-theme-color: #DDE9FF;
+// 辅助色
+$sub-color: #FF8800;
+$second-sub-color: #FFA53D;
+$disabled-sub-color: #FFF5EB;
+// 文本
+// 主要内容
+$main-text-color: #242F57;
+// 二级文本
+$second-text-color: #636E95;
+// 描述文字
+$description-text-color: #97A0C3;
+// 禁用文字
+$disabled-text-color3: #C6CBDE;
+// 图标
+$icon-color: #7C88B1;
+// 功能色
+$white: #FFFFFF;
+$background-color: #F4F7FC;
+$border-color: #EAEDF7;
+// 失败色
+$fail-color: #FB343E;
+$disabled-fail-color: #FFB4B0;
+// 成功色
+$success-color: #34C724;
+$success-fail-color: #ADED9D;

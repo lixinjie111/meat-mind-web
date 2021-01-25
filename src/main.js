@@ -6,6 +6,7 @@ import ViewUI from 'view-design'
 import 'view-design/dist/styles/iview.css'
 import echarts from 'echarts'
 import "../src/static/icon/iconfont.css"
+import "../src/static/scss/main.scss"
 
 Vue.config.productionTip = false
 Vue.prototype.$echarts = echarts
