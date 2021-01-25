@@ -25,7 +25,7 @@ export default [
     path:`/${moduleName}`,
     name:moduleName,
     redirect:{name:`${moduleName}-fxmx`},
-    meta:{title:"分析工具"},
+    meta:{title:"分析工具",moduleName},
     component:tool,
     children:[
       {

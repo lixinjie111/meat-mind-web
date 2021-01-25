@@ -6,7 +6,7 @@
         ref="side_menu"
         theme="light"
         :active-name="activeName"
-        :open-names="[openName]"
+        :open-names="openName"
         @on-select="handleSelect"
         @on-open-change="openChange"
         width="auto"
@@ -97,37 +97,37 @@ export default {
           name:"analysis-tool",
           label: "分析工具",
           icon: "iconfenxigongju",
-          path: "analysis-tool",
+          path: "/analysis-tool",
           children:[
             {
-              name:"analysis-tool",
+              name:"analysis-tool-fxmx",
               label: "分析模型",
-              path: "analysis-tool",
+              path: "/analysis-tool/fxmx",
             },
             {
-              name:"analysis-tool",
+              name:"analysis-tool-zbgl",
               label: "指标管理",
-              path: "analysis-tool",
+              path: "/analysis-tool/zbgl",
             },
             {
-              name:"analysis-tool",
+              name:"analysis-tool-bqgl",
               label: "标签管理",
-              path: "analysis-tool",
+              path: "/analysis-tool/",
             },
             {
-              name:"analysis-tool",
+              name:"analysis-tool-yhfq",
               label: "用户分群",
-              path: "analysis-tool",
+              path: "/analysis-tool/yhfq",
             },
             {
-              name:"analysis-tool",
+              name:"analysis-tool-qdzz",
               label: "渠道追踪",
-              path: "analysis-tool",
+              path: "/analysis-tool/qdzz",
             },
             {
-              name:"analysis-tool",
+              name:"analysis-tool-cjk",
               label: "场景库",
-              path: "analysis-tool",
+              path: "/analysis-tool/cjk",
             },
           ]
         },
@@ -135,33 +135,33 @@ export default {
           name:"data-center",
           label: "数据管理",
           icon: "iconshujuguanli",
-          path: "data-center",
+          path: "/data-center",
           children:[
             {
-              name:"data-center",
+              name:"data-center-my",
               label: "我的数据",
-              path: "data-center",
+              path: "/data-center/my",
             },
             {
-              name:"data-center",
+              name:"data-center-market",
               label: "数据市场",
-              path: "data-center",
+              path: "/data-center/market",
             },
             {
-              name:"data-center",
+              name:"data-center-system",
               label: "系统集成",
-              path: "data-center",
+              path: "/data-center/system",
             },
             {
-              name:"data-center",
+              name:"data-center-metax",
               label: "元数据管理",
-              path: "data-center",
+              path: "/data-center/metax",
             }
           ]
         },
       ],
-      activeName: "",
-      openName:""
+      activeName: "dashboard",
+      openName:[this.$route.meta.moduleName]
     };
   },
   methods: {
@@ -172,21 +172,21 @@ export default {
     },
     // 选择menuItem
     handleSelect(name) {
-      console.log("<<<<",name,this.openName)
       this.activeName = name;
     },
     // 打开subMenu
     openChange(ary) {
-      console.log("ary",ary)
       if (!ary.length) {
         return;
       }
       let routeName = ary[0];
-      // this.openName = ary[0];
       if (routeName != this.$route.name) {
-        // this.openName = ary[0];
-        this.activeName = this.$route.name;
-        // this.$router.push({ name: routeName });
+        this.openName.splice(0,1,ary[0]);
+        let cur = this.menu.find(item=>{
+          return item.name == ary[0]
+        }).children;
+        this.activeName = cur[0].name
+        this.$router.push({ name: routeName });
       }
     }
   },

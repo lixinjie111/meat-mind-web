@@ -21,7 +21,7 @@ export default [
     path:`/${moduleName}`,
     name:moduleName,
     redirect:{name:`${moduleName}-my`},
-    meta:{title:"数据管理"},
+    meta:{title:"数据管理",moduleName},
     component:dataCenter,
     children:[
       {
