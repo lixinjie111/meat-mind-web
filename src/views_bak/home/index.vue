@@ -93,7 +93,7 @@
 
 <script>
     import Side from "../../components/Side"
-    import Header from "../../components/HeaderDefault"
+    import Header from "../../components/DefaultHeader"
 
     export default {
         name: "index",
@@ -230,7 +230,7 @@
                 display: flex;
                 flex-direction: column;
                 width: 100%;
-                height: calc(100vh - 56px);
+                height: calc(100vh - 80px);
                 overflow-y:scroll;
                 img{
                     width: 100%;
@@ -291,7 +291,7 @@
                 display: flex;
                 flex-direction: column;
                 width: 100%;
-                height: calc(100vh - 56px);
+                height: calc(100vh - 80px);
                 overflow-y:scroll;
                 img{
                     width: 100%;
@@ -342,7 +342,7 @@
             .content {
                 position: relative;
                 width: 100%;
-                height: calc(100vh - 56px);
+                height: calc(100vh - 80px);
                 overflow-y: scroll;
 
                 img {
@@ -439,7 +439,7 @@
                     }
 
                     .iframe10 {
-                        right: 356px;
+                        right: 380px;
                         top: 159px;
                         width: 95px;
                     }

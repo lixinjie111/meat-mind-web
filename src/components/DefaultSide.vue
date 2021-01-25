@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="menu"  v-show="sideList.length">
-      <div class="menu-name">{{targetName}}</div>
+      <div class="logo"></div>
     <Menu ref="side_menu" theme="light" 
     :active-name="activeName" 
     :open-names="openName" 
@@ -43,7 +43,7 @@
 
 <script>
 export default {
-  name: "Side",
+  name: "DefaultSide",
   props: {
     sideList: {
       type: Array,
@@ -80,7 +80,7 @@ export default {
         {
           name: "Dashboard",
           icon:"icondashboard",
-          path:"home"
+          path:"dashboard"
         },
         // {
         //   name: "智能决策",
@@ -88,15 +88,30 @@ export default {
         //   path:"intelligent-decision"
         // },
         {
+          name: "用户画像",
+          icon:"iconzhinengjuece",
+          path:"user"
+        },
+                {
+          name: "品牌画像",
+          icon:"iconzhinengjuece",
+          path:"mark"
+        },
+                {
+          name: "媒介画像",
+          icon:"iconzhinengjuece",
+          path:"media"
+        },
+        {
           name: "经营分析",
           icon:"iconjingyingfenxi",
           path:"business-analysis"
         },
-        {
-          name: "画像系统",
-          icon:"iconhuaxiangxitong",
-          path:"portrait-system"
-        },
+        // {
+        //   name: "画像系统",
+        //   icon:"iconhuaxiangxitong",
+        //   path:"portrait-system"
+        // },
         {
           name: "分析工具",
           icon:"iconfenxigongju",
@@ -148,6 +163,7 @@ export default {
     }else{
         this.activeName = this.$route.name
     }
+    console.log(this.$router.options)
   }
 };
 </script>
@@ -157,66 +173,87 @@ export default {
   min-height: 100vh;
   display: flex;
   .target{
-    width: 88px;
+    width: 240px;
     height: 100%;
-    background: #253BA0;
+    background: #FFFFFF;
     .logo{
-      height: 56px;
-      margin-bottom: 16px;
-      background:center no-repeat url("../static/img/side/logo@2x.png");
-      background-size: 32px 32px ;
-      // cursor: pointer;
+      width: 144px;
+      height: 32px;
+      margin: 24px auto 40px;
+      background:url("../static/img/new/side/logo-colour@2x.png") no-repeat center / 144px 32px;
     }
     .route-item{
       display: flex;
-      justify-content: center;
       align-items: center;
-      flex-direction: column;
-      width: 88px;
-      height: 72px;
-      color: #ffffff;
+      width: 192px;
+      height: 48px;
+      margin: 24px 32px 0;
+      padding-left: 24px;
+      color: #97A0C3;
       cursor: pointer;
+            >i{
+        // width: 24px;
+        // height: 24px;
+        font-size: 24px;
+        margin-right: 12px;
+      }
+      .label{
+        height: 26px;
+        font-size: 18px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        line-height: 26px;
+      }
       &.active{
-        color: #253BA0;
-        background: url("../static/img/side/active@2x.png") no-repeat left center / 88px 72px;
+        color: #FFFFFF;
+        background: linear-gradient(71deg,  #2AC4F6 10%,#1B74FF 38%, #2373FF 50%,  #20A5F8 55%,#2AC5F6 61%, #2395FC 94%);
+        border-radius: 30px;
+        // color: #253BA0;
+        // background: url("../static/img/side/active@2x.png") no-repeat left center / 88px 72px;
+        >i{
+        // width: 24px;
+        // height: 24px;
+        font-size: 24px;
+        margin-right: 21px;
+      }
         &:hover{
-          color: #253BA0;
-          background: url("../static/img/side/active@2x.png") no-repeat left center / 88px 72px;
+          color: #FFFFFF;
+          background: linear-gradient(71deg,  #2AC4F6 10%,#1B74FF 38%, #2373FF 50%,  #20A5F8 55%,#2AC5F6 61%, #2395FC 94%);
+          border-radius: 30px;
+          // color: #253BA0;
+          // background: url("../static/img/side/active@2x.png") no-repeat left center / 88px 72px;
+                >i{
+        // width: 24px;
+        // height: 24px;
+        font-size: 24px;
+        margin-right: 21px;
+      }
         }
       }
       &:hover{
-        background: url("../static/img/side/hover1@2x.png") no-repeat left center / 88px 72px;
+        color: #FFFFFF;
+        background: linear-gradient(71deg,  #2AC4F6 10%,#1B74FF 38%, #2373FF 50%,  #20A5F8 55%,#2AC5F6 61%, #2395FC 94%);
+        border-radius: 30px;
+        // background: url("../static/img/side/hover1@2x.png") no-repeat left center / 88px 72px;
+              >i{
+        // width: 24px;
+        // height: 24px;
+        font-size: 24px;
+        margin-right: 21px;
       }
-      >i{
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        margin-bottom: 4px;
-      }
-      .label{
-        height: 22px;
-        font-size: 14px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        line-height: 22px;
       }
     }
   }
   .menu{
-    width: 152px;
-    background: #FFFFFF;
-    .menu-name{
-      width: 152px;
-      height: 56px;
-      padding-left: 36px;
-      border-right: 1px solid #F0F0F0;
-      border-bottom: 1px solid #F0F0F0;
-      background: #FFFFFF;
-      font-size: 14px;
-      font-family: PingFangSC-Medium, PingFang SC;
-      font-weight: 500;
-      color: #333333;
-      line-height: 56px;
+    width: 240px;
+    height: 100%;
+    background: #ffffff;
+    .logo{
+      width: 144px;
+      height: 32px;
+      margin: 24px auto 40px;
+      background: url("../static/img/new/side/logo-colour@2x.png") no-repeat
+        center / 144px 32px;
     }
     .ivu-menu{
       padding-top:24px;

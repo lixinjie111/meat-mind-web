@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Header from "@/components/HeaderDefault"
+import Header from "@/components/DefaultHeader"
 import Side from "@/components/DefaultSide"
 export default {
   name: "default",
@@ -44,7 +44,7 @@ export default {
     flex-direction: column;
     width: calc(100vw - 240px);
     .content{
-      height: calc(100vh - 56px);
+      height: calc(100vh - 80px);
       overflow-y: scroll;
     }
   }
