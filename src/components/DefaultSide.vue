@@ -1,12 +1,5 @@
 <template>
   <div class="side">
-    <div class="target">
-      <div class="logo"></div>
-      <div class="route-item" :class="{'active':active==item.path}" v-for="(item,index) in routes" :key="index" @click="checkItem(item,index)">
-        <i class="iconfont" :class="item.icon"></i>
-        <div class="label">{{item.name}}</div>
-      </div>
-    </div>
     <div class="menu"  v-show="sideList.length">
       <div class="logo"></div>
     <Menu ref="side_menu" theme="light" 
@@ -15,7 +8,7 @@
     @on-select="handleSelect"
     @on-open-change="openChange"
     width="auto" accordion>
-      <div v-for="(item, index) in sideList" :key="index">
+      <div v-for="(item, index) in menu" :key="index">
         <Submenu v-if="item.children" :name="item.name">
           <template slot="title">
             <i class="icon iconfont" :class="item.icon"></i>
@@ -64,7 +57,7 @@ export default {
     },
     targetName:{
       get(){
-        let obj = this.routes.find(item=>{
+        let obj = this.menu.find(item=>{
           return item.path==this.active
         })
         return obj.name
@@ -76,52 +69,125 @@ export default {
   },
   data() {
     return {
-      routes: [
+       menu: [
         {
-          name: "Dashboard",
-          icon:"icondashboard",
-          path:"dashboard"
-        },
-        // {
-        //   name: "智能决策",
-        //   icon:"iconzhinengjuece",
-        //   path:"intelligent-decision"
-        // },
-        {
-          name: "用户画像",
-          icon:"iconzhinengjuece",
-          path:"user"
-        },
-                {
-          name: "品牌画像",
-          icon:"iconzhinengjuece",
-          path:"mark"
-        },
-                {
-          name: "媒介画像",
-          icon:"iconzhinengjuece",
-          path:"media"
+          name: "dashboard",
+          label:"Dashboard",
+          icon: "icondashboard",
+          path: "dashboard",
         },
         {
-          name: "经营分析",
-          icon:"iconjingyingfenxi",
-          path:"business-analysis"
-        },
-        // {
-        //   name: "画像系统",
-        //   icon:"iconhuaxiangxitong",
-        //   path:"portrait-system"
-        // },
-        {
-          name: "分析工具",
-          icon:"iconfenxigongju",
-          path:"analysis-tool"
+          name:"user",
+          label: "用户画像",
+          icon: "iconyonghuhuaxiang",
+          path: "user",
         },
         {
-          name: "数据管理",
-          icon:"iconshujuguanli",
-          path:"data-center"
-        }
+          name:"mark",
+          label: "品牌画像",
+          icon: "iconpinpaihuaxiang",
+          path: "mark",
+        },
+        { 
+          name:"media",
+          label: "媒介画像",
+          icon: "iconhuaxiangxitong",
+          path: "media",
+        },
+        {
+          name:"business-analysis",
+          label: "经营分析",
+          icon: "iconjingyingfenxi",
+          path: "business-analysis",
+          children:[
+            {
+              name:"business-analysis-overview",
+              label: "整体概览",
+              path: "business-analysis"
+            },
+            {
+              name:"business-analysis-yhfx",
+              label: "用户分析",
+              path: "business-analysis"
+            },
+            {
+              name:"business-analysis-qdfx",
+              label: "渠道分析",
+              path: "business-analysis"
+            },
+            {
+              name:"business-analysis-ywgl",
+              label: "品牌运营分析",
+              path: "business-analysis"
+            },
+          ]
+        },
+        {
+          name:"analysis-tool",
+          label: "分析工具",
+          icon: "iconfenxigongju",
+          path: "analysis-tool",
+          children:[
+            {
+              name:"analysis-tool",
+              label: "分析模型",
+              path: "analysis-tool",
+            },
+            {
+              name:"analysis-tool",
+              label: "指标管理",
+              path: "analysis-tool",
+            },
+            {
+              name:"analysis-tool",
+              label: "标签管理",
+              path: "analysis-tool",
+            },
+            {
+              name:"analysis-tool",
+              label: "用户分群",
+              path: "analysis-tool",
+            },
+            {
+              name:"analysis-tool",
+              label: "渠道追踪",
+              path: "analysis-tool",
+            },
+            {
+              name:"analysis-tool",
+              label: "场景库",
+              path: "analysis-tool",
+            },
+          ]
+        },
+        {
+          name:"data-center",
+          label: "数据管理",
+          icon: "iconshujuguanli",
+          path: "data-center",
+          children:[
+            {
+              name:"data-center",
+              label: "我的数据",
+              path: "data-center",
+            },
+            {
+              name:"data-center",
+              label: "数据市场",
+              path: "data-center",
+            },
+            {
+              name:"data-center",
+              label: "系统集成",
+              path: "data-center",
+            },
+            {
+              name:"data-center",
+              label: "元数据管理",
+              path: "data-center",
+            }
+          ]
+        },
       ],
       active: this.$route.meta.moduleName,
       activeName:"",
@@ -142,6 +208,7 @@ export default {
     },
     // 打开subMenu
     openChange(ary){
+      console.log(ary)
       if(!ary.length){return}
       let routeName = ary[0]
       let name = routeName+"-"+this.activeName
@@ -151,6 +218,7 @@ export default {
           }).children
         this.openName = ary
         this.activeName = cur[0].name
+        console.log("open submenu>>>>",ary,this.openName,this.activeName)
         this.$router.push({name:routeName+"-"+this.activeName})
       }
     }
@@ -172,78 +240,6 @@ export default {
 .side {
   min-height: 100vh;
   display: flex;
-  .target{
-    width: 240px;
-    height: 100%;
-    background: #FFFFFF;
-    .logo{
-      width: 144px;
-      height: 32px;
-      margin: 24px auto 40px;
-      background:url("../static/img/new/side/logo-colour@2x.png") no-repeat center / 144px 32px;
-    }
-    .route-item{
-      display: flex;
-      align-items: center;
-      width: 192px;
-      height: 48px;
-      margin: 24px 32px 0;
-      padding-left: 24px;
-      color: #97A0C3;
-      cursor: pointer;
-            >i{
-        // width: 24px;
-        // height: 24px;
-        font-size: 24px;
-        margin-right: 12px;
-      }
-      .label{
-        height: 26px;
-        font-size: 18px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        line-height: 26px;
-      }
-      &.active{
-        color: #FFFFFF;
-        background: linear-gradient(71deg,  #2AC4F6 10%,#1B74FF 38%, #2373FF 50%,  #20A5F8 55%,#2AC5F6 61%, #2395FC 94%);
-        border-radius: 30px;
-        // color: #253BA0;
-        // background: url("../static/img/side/active@2x.png") no-repeat left center / 88px 72px;
-        >i{
-        // width: 24px;
-        // height: 24px;
-        font-size: 24px;
-        margin-right: 21px;
-      }
-        &:hover{
-          color: #FFFFFF;
-          background: linear-gradient(71deg,  #2AC4F6 10%,#1B74FF 38%, #2373FF 50%,  #20A5F8 55%,#2AC5F6 61%, #2395FC 94%);
-          border-radius: 30px;
-          // color: #253BA0;
-          // background: url("../static/img/side/active@2x.png") no-repeat left center / 88px 72px;
-                >i{
-        // width: 24px;
-        // height: 24px;
-        font-size: 24px;
-        margin-right: 21px;
-      }
-        }
-      }
-      &:hover{
-        color: #FFFFFF;
-        background: linear-gradient(71deg,  #2AC4F6 10%,#1B74FF 38%, #2373FF 50%,  #20A5F8 55%,#2AC5F6 61%, #2395FC 94%);
-        border-radius: 30px;
-        // background: url("../static/img/side/hover1@2x.png") no-repeat left center / 88px 72px;
-              >i{
-        // width: 24px;
-        // height: 24px;
-        font-size: 24px;
-        margin-right: 21px;
-      }
-      }
-    }
-  }
   .menu{
     width: 240px;
     height: 100%;

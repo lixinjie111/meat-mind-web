@@ -18,9 +18,9 @@
               <span class="title-name">{{ item.label }}</span>
             </template>
             <MenuItem
-              :to="ele.path"
-              :name="ele.name"
               v-for="(ele, i) in item.children"
+              :to="ele.path"
+              :name="i"
               :key="i">
               <span class="sub-name">{{ ele.label }}</span>
             </MenuItem>
@@ -67,51 +67,51 @@ export default {
           name: "dashboard",
           label:"Dashboard",
           icon: "icondashboard",
-          path: "dashboard",
+          path: "/dashboard",
         },
         {
           name:"user",
           label: "用户画像",
           icon: "iconyonghuhuaxiang",
-          path: "user",
+          path: "/user",
         },
         {
           name:"mark",
           label: "品牌画像",
           icon: "iconpinpaihuaxiang",
-          path: "mark",
+          path: "/mark",
         },
         { 
           name:"media",
           label: "媒介画像",
           icon: "iconhuaxiangxitong",
-          path: "media",
+          path: "/media",
         },
         {
           name:"business-analysis",
           label: "经营分析",
           icon: "iconjingyingfenxi",
-          path: "business-analysis",
+          path: "/business-analysis",
           children:[
             {
               name:"business-analysis-overview",
               label: "整体概览",
-              path: "business-analysis"
+              path: "/business-analysis/ztgl"
             },
             {
               name:"business-analysis-yhfx",
               label: "用户分析",
-              path: "business-analysis"
+              path: "/business-analysis/yhfx"
             },
             {
               name:"business-analysis-qdfx",
               label: "渠道分析",
-              path: "business-analysis"
+              path: "/business-analysis/qdfx"
             },
             {
               name:"business-analysis-ywgl",
               label: "品牌运营分析",
-              path: "business-analysis"
+              path: "/business-analysis/ywgl"
             },
           ]
         },
@@ -122,7 +122,7 @@ export default {
           path: "analysis-tool",
           children:[
             {
-               name:"analysis-tool",
+              name:"analysis-tool",
               label: "分析模型",
               path: "analysis-tool",
             },
@@ -197,19 +197,22 @@ export default {
     },
     // 选择menuItem
     handleSelect(name) {
+      console.log("<<<<",name)
       this.activeName = name;
     },
     // 打开subMenu
     openChange(ary) {
+      console.log(">>>>>>",ary,this.$route.name)
       if (!ary.length) {
         return;
       }
-      // let routeName = ary[0];
-      // if (routeName != this.$route.name) {
-      //   this.openName = ary;
-      //   this.activeName = ary[0].split("-")[2];
-      //   this.$router.push({ name: routeName });
-      // }
+      let routeName = ary[0];
+      if (routeName != this.$route.name) {
+        this.openName = ary;
+        this.activeName = this.$route.name;
+        console.log("open submenu>>>>",ary,this.openName,this.activeName)
+        this.$router.push({ name: routeName });
+      }
     }
   },
   created(){
@@ -222,96 +225,6 @@ export default {
 .side {
   min-height: 100vh;
   display: flex;
-  .target {
-    width: 240px;
-    height: 100%;
-    background: #ffffff;
-    .route-item {
-      display: flex;
-      align-items: center;
-      width: 192px;
-      height: 48px;
-      margin: 24px 32px 0;
-      padding-left: 24px;
-      color: #97a0c3;
-      cursor: pointer;
-      > i {
-        // width: 24px;
-        // height: 24px;
-        font-size: 24px;
-        margin-right: 12px;
-      }
-      .label {
-        height: 26px;
-        font-size: 18px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        line-height: 26px;
-      }
-      &.active {
-        color: #ffffff;
-        background: linear-gradient(
-          71deg,
-          #2ac4f6 10%,
-          #1b74ff 38%,
-          #2373ff 50%,
-          #20a5f8 55%,
-          #2ac5f6 61%,
-          #2395fc 94%
-        );
-        border-radius: 30px;
-        // color: #253BA0;
-        // background: url("../static/img/side/active@2x.png") no-repeat left center / 88px 72px;
-        > i {
-          // width: 24px;
-          // height: 24px;
-          font-size: 24px;
-          margin-right: 21px;
-        }
-        &:hover {
-          color: #ffffff;
-          background: linear-gradient(
-            71deg,
-            #2ac4f6 10%,
-            #1b74ff 38%,
-            #2373ff 50%,
-            #20a5f8 55%,
-            #2ac5f6 61%,
-            #2395fc 94%
-          );
-          border-radius: 30px;
-          // color: #253BA0;
-          // background: url("../static/img/side/active@2x.png") no-repeat left center / 88px 72px;
-          > i {
-            // width: 24px;
-            // height: 24px;
-            font-size: 24px;
-            margin-right: 21px;
-          }
-        }
-      }
-      &:hover {
-        color: #ffffff;
-        background: linear-gradient(
-          71deg,
-          #2ac4f6 10%,
-          #1b74ff 38%,
-          #2373ff 50%,
-          #20a5f8 55%,
-          #2ac5f6 61%,
-          #2395fc 94%
-        );
-        border-radius: 30px;
-        // background: url("../static/img/side/hover1@2x.png") no-repeat left center / 88px 72px;
-        > i {
-          // width: 24px;
-          // height: 24px;
-          font-size: 24px;
-          margin-right: 21px;
-        }
-      }
-    }
-  }
   .menu {
     width: 240px;
     height: 100%;
@@ -325,7 +238,7 @@ export default {
     }
     .ivu-menu > div{
       width: 240px;
-      height: 48px;
+      // height: 48px;
       padding: 0 24px;
       margin: 16px 0;
       line-height: 48px;
