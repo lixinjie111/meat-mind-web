@@ -502,7 +502,7 @@
 
             .content {
                 width: 100%;
-                height: calc(100vh - 56px);
+                height: calc(100vh - 80px);
                 padding: 0 24px 24px;
                 margin: 0 auto;
                 overflow-y: scroll;

@@ -1,9 +1,9 @@
 const analysis=()=>import('./index');
 // const zbjk=()=>import('./ztgl/zbjk.vue')
-const yhfx=()=>import('./ztgl/xzyh.vue')
-const qdfx=()=>import('./ztgl/qdss.vue')
-const ywgl=()=>import('./ztgl/ywgl.vue')
-const anchor=()=>import('./ztgl/anchor.vue')
+const yhfx=()=>import('./user/xzyh.vue')
+const qdfx=()=>import('./channel/qdss.vue')
+const ywgl=()=>import('./brand/ywgl.vue')
+const anchor=()=>import('./overview/anchor.vue')
 const moduleName='business-analysis';
 
 export default [

@@ -1,8 +1,9 @@
 const dataCenter=()=>import('./index');
-const wdsj=()=>import('./components/wdsj.vue')
-const sjsc=()=>import('./components/sjsc.vue')
-const xtjc=()=>import('./components/xtjc.vue')
-const ysjgl=()=>import('./components/ysjgl.vue')
+const Mydata=()=>import('./components/Mydata.vue')
+const Market=()=>import('./components/Market.vue')
+const System=()=>import('./components/System.vue')
+const Metax=()=>import('./components/Metax.vue')
+
 const rule=()=>import('./components/ysjgl/Rule.vue')
 const unit=()=>import('./components/ysjgl/Unit.vue')
 const event=()=>import('./components/ysjgl/EventAttribute.vue')
@@ -27,28 +28,28 @@ export default [
         path:`/${moduleName}/my`,
         label:"我的数据",
         meta:{title:"我的数据",moduleName},
-        component:wdsj,
+        component:Mydata,
         name:`${moduleName}-my`
       },
       {
         path:`/${moduleName}/market`,
         label:"数据市场",
         meta:{title:"数据市场",moduleName},
-        component:sjsc,
+        component:Market,
         name:`${moduleName}-market`
       },
       {
         path:`/${moduleName}/system`,
         label:"系统集成",
         meta:{title:"系统集成",moduleName},
-        component:xtjc,
+        component:System,
         name:`${moduleName}-system`
       },
       {
         path:`/${moduleName}/metax`,
         label:"元数据管理",
         meta:{title:"元数据管理",moduleName},
-        component:ysjgl,
+        component:Metax,
         name:`${moduleName}-metax`
       },
       {

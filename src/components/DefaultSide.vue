@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="menu"  v-show="sideList.length">
-      <div class="menu-name">{{targetName}}</div>
+      <div class="logo"></div>
     <Menu ref="side_menu" theme="light" 
     :active-name="activeName" 
     :open-names="openName" 
@@ -163,6 +163,7 @@ export default {
     }else{
         this.activeName = this.$route.name
     }
+    console.log(this.$router.options)
   }
 };
 </script>
@@ -190,28 +191,11 @@ export default {
       padding-left: 24px;
       color: #97A0C3;
       cursor: pointer;
-      &.active{
-        color: #FFFFFF;
-        background: linear-gradient(71deg,  #2AC4F6 10%,#1B74FF 38%, #2373FF 50%,  #20A5F8 55%,#2AC5F6 61%, #2395FC 94%);
-        border-radius: 30px;
-        // color: #253BA0;
-        // background: url("../static/img/side/active@2x.png") no-repeat left center / 88px 72px;
-        &:hover{
-          background: linear-gradient(71deg,  #2AC4F6 10%,#1B74FF 38%, #2373FF 50%,  #20A5F8 55%,#2AC5F6 61%, #2395FC 94%);
-          border-radius: 30px;
-          // color: #253BA0;
-          // background: url("../static/img/side/active@2x.png") no-repeat left center / 88px 72px;
-        }
-      }
-      &:hover{
-        background: linear-gradient(71deg,  #2AC4F6 10%,#1B74FF 38%, #2373FF 50%,  #20A5F8 55%,#2AC5F6 61%, #2395FC 94%);
-        border-radius: 30px;
-        // background: url("../static/img/side/hover1@2x.png") no-repeat left center / 88px 72px;
-      }
-      >i{
-        display: inline-block;
-        width: 24px;
-        height: 24px;
+            >i{
+        // width: 24px;
+        // height: 24px;
+        font-size: 24px;
+        margin-right: 12px;
       }
       .label{
         height: 26px;
@@ -220,23 +204,56 @@ export default {
         font-weight: 400;
         line-height: 26px;
       }
+      &.active{
+        color: #FFFFFF;
+        background: linear-gradient(71deg,  #2AC4F6 10%,#1B74FF 38%, #2373FF 50%,  #20A5F8 55%,#2AC5F6 61%, #2395FC 94%);
+        border-radius: 30px;
+        // color: #253BA0;
+        // background: url("../static/img/side/active@2x.png") no-repeat left center / 88px 72px;
+        >i{
+        // width: 24px;
+        // height: 24px;
+        font-size: 24px;
+        margin-right: 21px;
+      }
+        &:hover{
+          color: #FFFFFF;
+          background: linear-gradient(71deg,  #2AC4F6 10%,#1B74FF 38%, #2373FF 50%,  #20A5F8 55%,#2AC5F6 61%, #2395FC 94%);
+          border-radius: 30px;
+          // color: #253BA0;
+          // background: url("../static/img/side/active@2x.png") no-repeat left center / 88px 72px;
+                >i{
+        // width: 24px;
+        // height: 24px;
+        font-size: 24px;
+        margin-right: 21px;
+      }
+        }
+      }
+      &:hover{
+        color: #FFFFFF;
+        background: linear-gradient(71deg,  #2AC4F6 10%,#1B74FF 38%, #2373FF 50%,  #20A5F8 55%,#2AC5F6 61%, #2395FC 94%);
+        border-radius: 30px;
+        // background: url("../static/img/side/hover1@2x.png") no-repeat left center / 88px 72px;
+              >i{
+        // width: 24px;
+        // height: 24px;
+        font-size: 24px;
+        margin-right: 21px;
+      }
+      }
     }
   }
   .menu{
-    width: 152px;
-    background: #FFFFFF;
-    .menu-name{
-      width: 152px;
-      height: 56px;
-      padding-left: 36px;
-      border-right: 1px solid #F0F0F0;
-      border-bottom: 1px solid #F0F0F0;
-      background: #FFFFFF;
-      font-size: 14px;
-      font-family: PingFangSC-Medium, PingFang SC;
-      font-weight: 500;
-      color: #333333;
-      line-height: 56px;
+    width: 240px;
+    height: 100%;
+    background: #ffffff;
+    .logo{
+      width: 144px;
+      height: 32px;
+      margin: 24px auto 40px;
+      background: url("../static/img/new/side/logo-colour@2x.png") no-repeat
+        center / 144px 32px;
     }
     .ivu-menu{
       padding-top:24px;

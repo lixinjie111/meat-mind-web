@@ -18,7 +18,7 @@
 
 <script>
     export default {
-        name:"ysjgl",
+        name:"Metax",
         data(){
             return {}
         },

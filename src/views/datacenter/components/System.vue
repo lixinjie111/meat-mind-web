@@ -16,7 +16,9 @@
 </template>
 
 <script>
-    export default {}
+    export default {
+        name:"System"
+    }
 </script>
 
 <style scoped lang="scss">

@@ -2,7 +2,10 @@
   <div class="media-protrait">
       <!-- 媒介画像 -->
         <Side></Side>
-        <Header></Header>
+        <div class="container">
+          <Header :target="'媒介画像'"></Header>
+          <div class="show-content"></div>
+        </div>
   </div>
 </template>
 
@@ -16,5 +19,21 @@ export default {
 </script>
 
 <style scoped lang="scss">
+    .media-protrait {
+        display: flex;
 
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: calc(100vw - 240px);
+
+            .show-content{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: calc(100vh - 80px);
+                overflow-y:scroll;
+            }
+        }
+    } 
 </style>

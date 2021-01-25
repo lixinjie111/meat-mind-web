@@ -23,6 +23,7 @@
 
 <script>
     export default {
+        name:"Market",
         data() {
             return {
                 page: 1,
