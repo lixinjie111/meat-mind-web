@@ -12,6 +12,8 @@ import analysisTool from "../views/tool/router"//分析工具
 // import intelligentDecision from "../views/decision/router"//智能决策
 import dataCenter from "../views/datacenter/router"//数据管理
 
+import barView from "../components/echarts/barView"
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -33,6 +35,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login
+  },
+  {
+    path: '/barView',
+    name: 'barView',
+    component: barView
   }
 ]
 
