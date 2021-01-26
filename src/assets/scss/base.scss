@@ -84,9 +84,16 @@ a, input, button {
   min-width: 80px;
   height: $button-height-small;
   line-height: $button-height-small;
-  font-size: $font-size-large;
+  font-size: $font-size-base;
   font-weight: 500;
   border-radius: 19px;
+}
+
+.nav-title {
+  font-size: $font-size-large;
+  font-family: $font-family-medium;
+  font-weight: 500;
+  color: $main-text-color;
 }
 
 .card {
