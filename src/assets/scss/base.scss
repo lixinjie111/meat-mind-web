@@ -145,6 +145,16 @@ li {
     @extend .card-li ;
 
     &:before {
+      color: #F54A45;
+    }
+  }
+}
+
+.orange-card-ul {
+  li {
+    @extend .card-li ;
+
+    &:before {
       color: #FF9200;
     }
   }
