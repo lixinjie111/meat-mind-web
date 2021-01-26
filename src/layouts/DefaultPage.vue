@@ -4,7 +4,7 @@
         <div class="container">
             <Header :target="'Dashboard'"></Header>
             <div class="content">
-                <div class="nav">
+                <div class="nav" v-if="title">
                     <p class="nav-title">{{title}}</p>
                 </div>
                 <slot></slot>

@@ -6,6 +6,7 @@ body {
   height: 100%;
   background: $background-color;
   font-family: $font-family;
+  box-sizing: border-box;
 }
 
 a {
@@ -29,6 +30,10 @@ a, input, button {
   outline: none;
 }
 
+li {
+  list-style-type: none;
+}
+
 .wrapper {
   width: $width-base;
   margin: 0 auto;
@@ -41,6 +46,18 @@ a, input, button {
     overflow: hidden;
     clear: both;
   }
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .btn-basic {
@@ -100,4 +117,45 @@ a, input, button {
   background: $white;
   box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
   border-radius: 8px;
+}
+
+.card-li {
+  margin-bottom: 4px;
+  padding: 8px;
+  background: $white;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  color: $second-text-color;
+
+  &:before {
+    content: '•';
+    margin-right: 8px;
+    font-size: $font-size-base;
+    font-weight: 400;
+  }
+
+  &:hover {
+    box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16), 1px 1px 0px 0px #FFFFFF;
+  }
+}
+
+.red-card-ul {
+  li {
+    @extend .card-li ;
+
+    &:before {
+      color: #FF9200;
+    }
+  }
+}
+
+.blue-card-ul {
+  li {
+    @extend .card-li ;
+
+    &:before {
+      color: #007AFF;
+    }
+  }
 }

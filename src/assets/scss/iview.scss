@@ -108,3 +108,30 @@
     }
   }
 }
+
+// tabs
+
+.ivu-tabs-bar {
+  border-bottom: 1px solid #DEE2EE;
+}
+
+.ivu-tabs-nav {
+  .ivu-tabs-tab {
+    font-size: 16px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #636E95;
+
+    &:hover {
+      color: #242F57;
+    }
+  }
+
+  .ivu-tabs-tab-active {
+    color: #242F57;
+  }
+
+  .ivu-tabs-ink-bar {
+    height: 3px;
+  }
+}
