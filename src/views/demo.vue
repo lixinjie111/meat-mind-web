@@ -14,12 +14,12 @@
 </script>
 
 
-<template>
-    <DefaultPage :titles="titles">
-        <div slot="yxdc">123</div>
-        <div slot="jyzd">234</div>
-    </DefaultPage>
-</template>
+<!--<template>-->
+<!--    <DefaultPage :titles="titles">-->
+<!--        <div slot="yxdc">123</div>-->
+<!--        <div slot="jyzd">234</div>-->
+<!--    </DefaultPage>-->
+<!--</template>-->
 
 <!--<script>-->
 <!--    import DefaultPage from "../../layouts/DefaultTabs";-->
