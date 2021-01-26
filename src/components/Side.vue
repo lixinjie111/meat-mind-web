@@ -44,7 +44,7 @@ export default {
         {
           name: "dashboard",
           label:"Dashboard",
-          icon: "iconDashboard1",
+          icon: "iconDashboard",
           path: "/dashboard",
         },
         {
