@@ -240,6 +240,28 @@ export default {
             margin-right: 21px;
           }
         }
+      }
+      .ivu-menu-submenu{
+        padding-left: 24px;
+        .ivu-menu-submenu-title{
+          display: flex;
+          align-items: center;
+          width: 192px;
+          height: 48px;
+          border-radius: 30px;
+          i{
+            font-size: 24px;
+            margin-right: 12px;
+          }
+          .label{
+            height: 26px;
+            font-size: 18px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            line-height: 26px;
+          }
+        }
+
       } 
     }
   }
