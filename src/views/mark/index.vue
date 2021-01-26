@@ -28,8 +28,8 @@
                     </div>
                     <div class="box2">
                         <div class="name">敏感占比图</div>
-                        <ul class="red-card-ul">
-                            <li>敏感信息<p>443</p></li>
+                        <ul class="second-list red-card-ul">
+                            <li class="warning">敏感信息<p>443</p></li>
                             <li>邓老凉茶在凉茶巨头夹缝中迷失 同仁堂等遭</li>
                             <li>凉茶风光不再:负面新闻频发 高糖饮品销售</li>
                             <li>凉茶怎么“凉”的:潜规则、边缘化、互撕……_西药</li>
@@ -142,6 +142,9 @@ export default {
                 background: rgba(255, 255, 255, 0.6);
                 border-radius: 8px;
                 border: 1px solid #FFFFFF;
+            }
+            .second-list{
+                
             }
         }
   
