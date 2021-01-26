@@ -12,8 +12,17 @@
         <div class="box">
 			<barEcharts id="box13" :colorList="colorList" :myData="box13Data"></barEcharts>
 		</div>
+        <div class="box">
+			<barEcharts id="box14" :colorList="colorList" :myData="box14Data"></barEcharts>
+		</div>
+        <div class="box">
+			<barEcharts id="box15" :colorList="colorList" :myData="box15Data"></barEcharts>
+		</div>
 		<div class="box">
 			<barL id="box2" :colorList="colorList" :myData="box2Data"></barL>
+		</div>
+		<div class="box">
+			<barL id="box21" :colorList="colorList" :myData="box21Data"></barL>
 		</div>
 		<div class="box">
 			<barM id="box3" :colorList="colorList" :myData="box3Data"></barM>
@@ -28,16 +37,55 @@
 			<cLine id="box51" :colorList="colorList" :myData="box51Data"></cLine>
 		</div>
 		<div class="box">
+			<cLine id="box52" :colorList="colorList" :myData="box52Data"></cLine>
+		</div>
+		<div class="box">
+			<lineS id="box53" :colorList="colorList" :myData="box53Data"></lineS>
+		</div>
+		<div class="box">
+			<lineS id="box54" :colorList="colorList" :myData="box54Data"></lineS>
+		</div>
+		<div class="box">
+			<lineS id="box55" :colorList="colorList" :myData="box55Data"></lineS>
+		</div>
+		<div class="box">
+			<lineS id="box56" :colorList="colorList" :myData="box56Data"></lineS>
+		</div>
+		<div class="box">
+			<lineS id="box57" :colorList="colorList" :myData="box57Data"></lineS>
+		</div>
+		<div class="box">
+			<cLine id="box58" :colorList="colorList" :myData="box58Data"></cLine>
+		</div>
+		<div class="box">
 			<lineM id="box6" :colorList="colorList" :myData="box6Data"></lineM>
 		</div>
 		<div class="box">
 			<lineM id="box61" :colorList="colorList" :myData="box61Data"></lineM>
 		</div>
 		<div class="box">
+			<lineM id="box62" :colorList="colorList" :myData="box62Data"></lineM>
+		</div>
+		<div class="box">
 			<barC id="box7" :colorList="colorList" :myData="box7Data"></barC>
 		</div>
 		<div class="box">
 			<barC id="box71" :colorList="colorList" :myData="box71Data"></barC>
+		</div>
+		<div class="box">
+			<barLine id="box8" :colorList="colorList" :myData="box8Data"></barLine>
+		</div>
+		<div class="box">
+			<barT id="box9" :colorList="colorList" ></barT>
+		</div>
+		<div class="box">
+			<barLine id="box10" :colorList="colorList" :myData="box10Data"></barLine>
+		</div>
+		<div class="box">
+			<funnel id="box111" :colorList="colorList" :myData="box111Data"></funnel>
+		</div>
+		<div class="box">
+			<barLine id="box112" :colorList="colorList" :myData="box112Data"></barLine>
 		</div>
         
     </div>
@@ -48,15 +96,20 @@
 	import barL from './common/barL';
 	import barM from './common/barM';
 	import cLine from './common/line';
+	import lineS from './common/lineS';
 	import lineM from './common/lineM';
 	import barC from './common/barC';
+	import barLine from './common/barLine';
+	import barT from './common/barT';
+	import funnel from './common/funnel';
     export default {
 		components: {
-		  barEcharts,barL,barM,cLine,lineM,barC
+		  barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel
 		},
         data() {
             return {
 				colorList : ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564','#BF6E9B','#CECE7E','#91C2F2','#B7C8EA','#FF9F7F','#91C2F2','#B380B6','#EDA8AD','#738AD4','#FF9F7F'],
+				colorList1 : ['#8AE6C7','#4D94FF',  '#FC809F'],
 				box1Data:{
 					name:['研究生及以上', '本科', '大专', '职高', '高中', '初中及以下',],
 					value:[4, 20, 30, 26, 15, 5],
@@ -73,9 +126,21 @@
 					name:['单身/独身','未婚（恋爱）','已婚未育','已婚已育','离异',],
 					value:[ 24,14,7,48,7],
 				},
+				box14Data:{
+					name:['2016','2017','2018','2019','2020',],
+					value:[ 24,34,7,48,7],
+				},
+				box15Data:{
+					name:['政务','外媒','博客','报刊','新闻','视频','网站','微信','论坛','客户端','微博',],
+					value:[ 24,34,7,48,7,4, 20, 30, 26, 15, 5,],
+				},
 				box2Data:{
 					name:['视频', '外媒', '报刊', '政务', '博客', '论坛','微博','网站','微信',],
 					value:[4, 20, 30, 26, 15, 5,26, 15, 5],
+				},
+				box21Data:{
+					name:['0-20岁', '21-24岁', '25-30岁', '31-50岁', '50-100岁',],
+					value:[54, 80, 90, 126, 55, ],
 				},
 				box3Data:{
 					name:['10-26', '11-2当周', '11-9当周', '11-16当周', '11-23当周',],
@@ -114,11 +179,11 @@
 							type: 'bar',
 							barWidth: '10',
 							stack: '总量',
-							// itemStyle: {
-							// 	normal: {
-							// 		barBorderRadius:[30,30,0,0]
-							// 	},
-							// },
+							itemStyle: {
+								normal: {
+									barBorderRadius:[30,30,0,0]
+								},
+							},
 							data: [820, 832, 901, 934, 1290, ]
 						},
 					]
@@ -160,11 +225,11 @@
 							type: 'bar',
 							barWidth: '10',
 							stack: '总量',
-							// itemStyle: {
-							// 	normal: {
-							// 		barBorderRadius:[30,30,0,0]
-							// 	},
-							// },
+							itemStyle: {
+								normal: {
+									barBorderRadius:[30,30,0,0]
+								},
+							},
 							data: [820, 832, 901, 934, 1290, ]
 						},
 					]
@@ -176,6 +241,34 @@
 				box51Data:{
 					name: ['11-01', '11-02', '11-03', '11-04', '11-05', '11-06', '11-07', '11-08', '11-09', '11-10', '11-11', '11-12','11-13','11-14','11-15','11-16','11-17','11-18','11-19','11-20','11-21','11-22','11-23','11-24','11-25','11-26','11-27','11-28','11-29','11-30','11-31'],
 					value:[400, 182, 181,  150, 230, 224, 218, 235, 147, 260, 230, 210,220, 132, 101, 134, 90, 230, 210, 101,220, 132, 101, 134, 70, 230, 210, 301,50, 230, 134]
+				},
+				box52Data:{
+					name: ['餐饮', '交通出行', '休闲购物', '日用百货', '其他', ],
+					value:[400, 182, 181,  150, 230, ]
+				},
+				box53Data:{
+					name: ['1月', '2月', '3月', '4月', '5月','6月','7月','8月','9月','10月','11月','12月', ],
+					value:[300, 182, 181,  150, 230,400, 382, 181,  350, 230,400, 182,  ]
+				},
+				box54Data:{
+					name: ['1月', '2月', '3月', '4月', '5月','6月','7月','8月','9月','10月','11月','12月', ],
+					value:[300, 182, 181,  150, 130,400, 382, 181,  350, 230,400, 182,  ]
+				},
+				box55Data:{
+					name: ['1月', '2月', '3月', '4月', '5月','6月','7月','8月','9月','10月','11月','12月', ],
+					value:[300, 182, 181,  450, 230,400, 382, 181,  250, 230,400, 182,  ]
+				},
+				box56Data:{
+					name: ['1月', '2月', '3月', '4月', '5月','6月','7月','8月','9月','10月','11月','12月', ],
+					value:[300, 182, 181,  150, 230,400, 382, 181,  350, 130,400, 182,  ]
+				},
+				box57Data:{
+					name: ['1月', '2月', '3月', '4月', '5月','6月','7月','8月','9月','10月','11月','12月', ],
+					value:[300, 182, 181,  150, 430,400, 382, 181,  350, 230,400, 182,  ]
+				},
+				box58Data:{
+					name: ['中层管理者', '公司白领', '自由职业者', '全职太太', '高级管理','其他',],
+					value:[300, 182, 181,  150, 430,10 ]
 				},
 				box6Data:{
 					legName:['36Kr', '百度', '微信', '今日头条', '地推'],
@@ -234,6 +327,30 @@
 						},
 					]
 				},
+				box62Data:{
+					legName:[],
+					name: ['1周', '2周', '3周', '4周', '5周', '6周', '7周'],
+					value: [
+						{
+							name: '',
+							type: 'line',
+							data: [0, 10, 20, 30, 20, 10, 0, ],
+							smooth:true,
+						},
+						{
+							name: '',
+							type: 'line',
+							smooth:true,
+							data: [0, 20, 40, 50, 40, 20, 0, ]
+						},
+						{
+							name: '',
+							type: 'line',
+							smooth:true,
+							data:[0, 30, 60, 90, 60, 30, 0, ]
+						},
+					]
+				},
 				box7Data:{
 					name: ['互联网', '计算机软件', '电子游戏', '教育培训', '法律', '咨询分析', '学生', '电子商务', '机械设备'],
 					value: [{
@@ -281,6 +398,102 @@
 							label: '18'
 						},
 					],
+				},
+				box8Data:{
+					formatter:'E-08',
+					legName: ['Emo.I', 'SCL'],
+					name: ['5', '10', '15', '20', '25', '30', '35', '40', '45','50','55','60'],
+					value:  [
+						{
+							name: 'Emo.I',
+							type: 'bar',
+							barWidth: '10',
+							itemStyle: {
+								normal: {
+									barBorderRadius:30
+								},
+								emphasis:{
+									color:'#FF9F7F'
+								}
+							},
+							data: [0.02, 0.03, 0.01, 0.02, 0.025, 0.013, -0.015, -0.01, 0.025, -0.06, -0.03, -0.02]
+						},
+						{
+							name: 'SCL',
+							type: 'line',
+							yAxisIndex: 1,
+							data: [0.15, 0.08, 0.19,0.31, 0.58, 0.27, 0.7, 0.86, 0.64, 0.34, 0.23, 0.08]
+						},
+						
+					]
+				},
+				box10Data:{
+					formatter:'%',
+					legName: ['覆盖率', 'TGL'],
+					name: ['通讯社交', '新闻', '音乐', '出行', '游戏', '汽车服务',],
+					value:  [
+						{
+							name: '覆盖率',
+							type: 'bar',
+							barWidth: '10',
+							itemStyle: {
+								normal: {
+									barBorderRadius:30
+								},
+								emphasis:{
+									color:'#FF9F7F'
+								}
+							},
+							data: [17, 9, 7, 20, 8, 14,]
+						},
+						{
+							name: 'TGL',
+							type: 'line',
+							yAxisIndex: 1,
+							data: [9, 8, 4, 7, 8, 6,]
+						},
+						
+					]
+				},
+				box111Data:{
+					name: ['潜在用户','新增用户','留存用户','活跃用户','忠实用户','流失'],
+					value:  [
+						{value: 60, name: '留存用户'},
+						{value: 40, name: '活跃用户'},
+						{value: 20, name: '忠实用户'},
+						{value: 80, name: '新增用户'},
+						{value: 10, name: '流失'},
+						{value: 100, name: '潜在用户'}
+					]
+				},
+				box112Data:{
+					formatter:'%',
+					legName: ['时期', '价值'],
+					name: ['引入期', '成长期', '成熟期', '休眠期', '流失期'],
+					value:  [
+						{
+							name: '时期',
+							type: 'bar',
+							barWidth: '10',
+							itemStyle: {
+								normal: {
+									barBorderRadius:30
+								},
+								emphasis:{
+									color:'#FF9F7F'
+								}
+							},
+							data: [17, 9, 7, 20, 8, ]
+						},
+						{
+							name: '价值',
+							type: 'line',
+							yAxisIndex: 0,
+							smooth:true,
+							data: [0, 5, 20, 5, 0, ]
+						},
+						
+					]
 				},
             }
         }
