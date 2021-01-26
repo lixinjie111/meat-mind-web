@@ -8,49 +8,93 @@
 
                     </TabPane>
                     <TabPane label="经营诊断">
-                       <p class="tips">经营诊断可以智能监测营销活动效果，依据心智模型进行智能评测，针对性提出改进方案，提供海量新潮营销创意及案例</p>
-                       <div class="top flex">
-                           <div class="left flex-start">
-                              <div class="chart"></div>
-                              <div class="info">
-                                  <p>当前经营状况</p>
-                                  <div class="result">
-                                      <p>低于预期</p>
-                                  </div>
-                                  <p>呈现问题</p>
-                                  <ul class="red-card-ul">
-                                    <li>新增消费者数量下降</li>
-                                    <li>已有渠道扩展乏力，品牌营销卖点接受度下降，微博平台上品牌负面舆情呈上升趋势。 </li>
-                                  </ul>
-                                  <p>策略建议</p>
-                                  <ul class="blue-card-ul">
-                                      <li>及时进行引流，放宽对获客目标群体的年龄限制，增大对中低收入人群的覆盖；</li>
-                                      <li>扩充抖音、快手短视频平台的推广力度；优化KOL投放结构，以主播类、时尚类为主；</li>
-                                      <li>打造“年轻时尚”营销卖点，及时在微博平台进行公关，并监控效果。</li>
-                                  </ul>
-                                  <div class="btn">查看全部经营分析</div>
-                              </div>
-                           </div>
-                           <div class="right">
+                        <p class="tips">经营诊断可以智能监测营销活动效果，依据心智模型进行智能评测，针对性提出改进方案，提供海量新潮营销创意及案例</p>
+                        <div class="top flex">
+                            <div class="left flex-start">
+                                <div class="chart"></div>
+                                <div class="info">
+                                    <p>当前经营状况</p>
+                                    <div class="result">
+                                        <p>低于预期</p>
+                                    </div>
+                                    <p>呈现问题</p>
+                                    <ul class="orange-card-ul">
+                                        <li>新增消费者数量下降</li>
+                                        <li>已有渠道扩展乏力，品牌营销卖点接受度下降，微博平台上品牌负面舆情呈上升趋势</li>
+                                    </ul>
+                                    <p>策略建议</p>
+                                    <ul class="blue-card-ul">
+                                        <li>及时进行引流，放宽对获客目标群体的年龄限制，增大对中低收入人群的覆盖</li>
+                                        <li>扩充抖音、快手短视频平台的推广力度；优化KOL投放结构，以主播类、时尚类为主</li>
+                                        <li>打造“年轻时尚”营销卖点，及时在微博平台进行公关，并监控效果</li>
+                                    </ul>
+                                    <div class="btn">查看全部经营分析</div>
+                                </div>
+                            </div>
+                            <div class="right">
 
-                           </div>
-                       </div>
-                       <Card title="客群诊断">
-                           <div slot="right">查看用户画像详情</div>
-                           <div>
+                            </div>
+                        </div>
+                        <Card title="客群诊断">
+                            <div slot="right">查看用户画像详情</div>
+                            <div class="card-inner flex">
+                                <div class="left">
+                                   <p>诊断结果</p>
+                                   <ul class="red-ul">
+                                       <li>新增消费者数量下降，10月下降明显，后续持续低迷</li>
+                                       <li>消费者整体活跃度下降，转化率持续走低</li>
+                                   </ul>
+                                   <p class="mt-24 mb-8">建议</p>
+                                    <ul>
+                                        <li class="red-text-li">及时进行引流，与理想目标客群比对结果显示应放宽对获客目 标群体的年龄限制，增大对中低收入人群的覆盖，以扩大客群</li>
+                                        <li class="blue-text-li">应加大活动力度和推广度，提高消费者活跃度和转化率</li>
+                                    </ul>
+                                </div>
+                                <div class="right">
 
-                           </div>
-                       </Card>
+                                </div>
+                            </div>
+                        </Card>
                         <Card title="媒介诊断">
                             <div slot="right">查看媒介画像详情</div>
-                            <div>
+                            <div class="card-inner flex">
+                                <div class="left">
+                                    <p>诊断结果</p>
+                                    <ul class="red-ul">
+                                        <li>已有渠道扩展乏力，已投放的渠道如微信、微博、百度、今日头条月内触达率成连续下降趋势</li>
+                                    </ul>
+                                    <p class="mt-24 mb-8">建议</p>
+                                    <ul>
+                                        <li class="red-text-li">客群渠道匹配分析显示应扩充抖音、快手短视频平台的推广力度</li>
+                                        <li class="red-text-li">优化KOL投放结构，以主播类、时尚类为主</li>
+                                        <li class="blue-text-li">微信公众号推广时间由工作时间向休闲时间倾斜</li>
+                                    </ul>
+                                </div>
+                                <div class="right">
 
+                                </div>
                             </div>
                         </Card>
                         <Card title="品牌诊断">
                             <div slot="right">查看品牌画像详情</div>
-                            <div>
+                            <div class="card-inner flex">
+                                <div class="left">
+                                    <p>诊断结果</p>
+                                    <ul class="red-ul">
+                                        <li>品牌营销卖点接受度下降；</li>
+                                        <li>微博平台上，品牌负面舆情呈上升趋势</li>
+                                        <li>B站平台上，品牌热度下降明显，没有引起二次元群体的品牌认同</li>
+                                    </ul>
+                                    <p class="mt-24 mb-8">建议</p>
+                                    <ul>
+                                        <li class="red-text-li">品牌认知度分析显示应重点打造“年轻时尚”营销卖点</li>
+                                        <li class="red-text-li">及时在微博平台进行公关，并监控效果，适时进行二次公关</li>
+                                        <li class="blue-text-li">增加产品个性化、感性化的内容推广</li>
+                                    </ul>
+                                </div>
+                                <div class="right">
 
+                                </div>
                             </div>
                         </Card>
                         <Card title="经营过程风险预警">
@@ -289,83 +333,103 @@
 <style scoped lang="scss">
     .home {
         .business-owner {
-           padding-top: 20px;
+            padding-top: 20px;
 
-           .tips {
-               font-size: 16px;
-               font-family: PingFangSC-Regular, PingFang SC;
-               font-weight: 400;
-               color: #97A0C3;
-           }
+            .tips {
+                font-size: 16px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #97A0C3;
+            }
 
-           .top {
-               margin-top: 24px;
+            .top {
+                margin: 24px 0;
 
-              .left {
-                  width: calc(100% - 388px);
-                  height: 607px;
-                  background: #FFFFFF;
-                  box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-                  border-radius: 8px;
+                .left {
+                    width: calc(100% - 388px);
+                    height: 607px;
+                    background: #FFFFFF;
+                    box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+                    border-radius: 8px;
 
-                  .chart {
-                      width: calc(100% - 236px);
-                  }
+                    .chart {
+                        width: calc(100% - 236px);
+                    }
 
-                  .info {
-                      padding: 4px 16px 16px;
-                      width: 236px;
-                      background: #F3F7FF;
+                    .info {
+                        padding: 4px 16px 16px;
+                        width: 236px;
+                        background: #F3F7FF;
 
-                      >p {
-                          padding: 12px 8px 4px;
-                          font-size: 14px;
-                          font-family: PingFangSC-Medium, PingFang SC;
-                          font-weight: 500;
-                          color: #212121;
-                      }
+                        > p {
+                            padding: 12px 8px 4px;
+                            font-size: 14px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 500;
+                            color: #212121;
+                        }
 
-                      .result {
-                          padding: 0 16px;
-                          width: 204px;
-                          height: 49px;
-                          line-height: 49px;
-                          background: #FFE6E5;
-                          border-radius: 8px;
+                        .result {
+                            padding: 0 16px;
+                            width: 204px;
+                            height: 49px;
+                            line-height: 49px;
+                            background: #FFE6E5;
+                            border-radius: 8px;
 
-                          >p {
-                              font-size: 21px;
-                              font-family: PingFangSC-Medium, PingFang SC;
-                              font-weight: 500;
-                              color: #FB343E;
-                          }
-                      }
+                            > p {
+                                font-size: 21px;
+                                font-family: PingFangSC-Medium, PingFang SC;
+                                font-weight: 500;
+                                color: #FB343E;
+                            }
+                        }
 
-                      .btn {
-                          margin-top: 28px;
-                          width: 204px;
-                          height: 40px;
-                          line-height: 40px;
-                          background: #FFFFFF;
-                          border-radius: 20px;
-                          font-size: 14px;
-                          font-family: PingFangSC-Medium, PingFang SC;
-                          font-weight: 500;
-                          color: #2373FF;
-                          text-align: center;
-                      }
-                  }
-              }
+                        .btn {
+                            margin-top: 28px;
+                            width: 204px;
+                            height: 40px;
+                            line-height: 40px;
+                            background: #FFFFFF;
+                            border-radius: 20px;
+                            font-size: 14px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 500;
+                            color: #2373FF;
+                            text-align: center;
+                        }
+                    }
+                }
 
-              .right {
-                  width: 372px;
-                  height: 607px;
-                  box-shadow: 1px 1px 48px 0px rgba(255, 255, 255, 0.8);
-                  border-radius: 8px;
-                  border: 1px solid;
-                  border-image: linear-gradient(141deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)) 1 1;
-              }
-           }
+                .right {
+                    width: 372px;
+                    height: 607px;
+                    box-shadow: 1px 1px 48px 0px rgba(255, 255, 255, 0.8);
+                    border-radius: 8px;
+                    border: 1px solid;
+                    border-image: linear-gradient(141deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)) 1 1;
+                }
+            }
+
+            .card-inner {
+                padding-bottom: 20px;
+
+                p {
+                    font-size: 14px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #242F57;
+                }
+
+                .left {
+                    width: 40%;
+                    border-right: 1px solid #F0F0F0;
+                }
+
+                .right {
+                    width: 60%;
+                }
+            }
         }
 
         .data-admin {

@@ -48,6 +48,14 @@ li {
   }
 }
 
+.mt-24 {
+  margin-top: 24px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
 .flex {
   display: flex;
   justify-content: space-between;
@@ -120,6 +128,8 @@ li {
 }
 
 .card-li {
+  display: flex;
+  align-items: baseline;
   margin-bottom: 4px;
   padding: 8px;
   background: $white;
@@ -142,7 +152,7 @@ li {
 
 .red-card-ul {
   li {
-    @extend .card-li ;
+    @extend .card-li;
 
     &:before {
       color: #F54A45;
@@ -152,7 +162,7 @@ li {
 
 .orange-card-ul {
   li {
-    @extend .card-li ;
+    @extend .card-li;
 
     &:before {
       color: #FF9200;
@@ -162,10 +172,94 @@ li {
 
 .blue-card-ul {
   li {
-    @extend .card-li ;
+    @extend .card-li;
 
     &:before {
       color: #007AFF;
     }
+  }
+}
+
+.li {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 2px;
+  background: $white;
+  font-size: 12px;
+  font-weight: 400;
+  color: $second-text-color;
+
+  &:before {
+    content: '•';
+    margin-right: 4px;
+    font-size: $font-size-base;
+    font-weight: 400;
+  }
+}
+
+
+.red-ul {
+  li {
+    @extend .li;
+
+    &:before {
+      color: #F54A45;
+    }
+  }
+}
+
+.blue-ul {
+  li {
+    @extend .li;
+
+    &:before {
+      color: #007AFF;
+    }
+  }
+}
+
+.text-li {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 8px;
+  background: $white;
+  font-size: 12px;
+  font-weight: 400;
+  color: $second-text-color;
+
+  &:before {
+    padding: 0 3px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 2px;
+    margin-right: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+  }
+}
+
+
+.red-text-li {
+  @extend .text-li ;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+
+  &:before {
+    content: '高';
+    color: #F54A45;
+    background: #FFE9E9;
+  }
+}
+
+
+.blue-text-li {
+  @extend .text-li ;
+
+  &:before {
+    content: '低';
+    color: #007AFF;
+    background: #E3ECFE;
   }
 }
