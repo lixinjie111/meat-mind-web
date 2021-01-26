@@ -11,7 +11,34 @@
                         <p class="tips">经营诊断可以智能监测营销活动效果，依据心智模型进行智能评测，针对性提出改进方案，提供海量新潮营销创意及案例</p>
                         <div class="top flex">
                             <div class="left flex-start">
-                                <div class="chart"></div>
+                                <div class="chart">
+                                    <div class="select-box">
+                                        <Select class="w120">
+                                            <Option value="邓老凉茶">邓老凉茶</Option>
+                                        </Select>
+                                        <Select class="w120">
+                                            <Option value="淘宝旗舰店">淘宝旗舰店</Option>
+                                        </Select>
+                                        <Select class="w120">
+                                            <Option value="营收状况">营收状况</Option>
+                                        </Select>
+                                    </div>
+                                    <div id="myChart" style="width:100%;height: 100%;"></div>
+                                    <div class="chart-tooltip red">
+                                        <div class="value"><span>￥</span>6000万</div>
+                                        <div class="month">2020年8月</div>
+                                    </div>
+                                    <div class="chart-tooltip blue">
+                                        <div class="value"><span>￥</span>7200万</div>
+                                        <div class="month">目标</div>
+                                    </div>
+                                    <div class="list clearfix">
+                                        <div class="item fl"></div>
+                                        <div class="item fr"></div>
+                                        <div class="item fl"></div>
+                                        <div class="item fr"></div>
+                                    </div>
+                                </div>
                                 <div class="info">
                                     <p>当前经营状况</p>
                                     <div class="result">
@@ -32,21 +59,23 @@
                                 </div>
                             </div>
                             <div class="right">
-
+                                <img class="top-img" src="../../assets/img/dashboard/neurometrics-result@2x.png"/>
                             </div>
                         </div>
                         <Card title="客群诊断">
                             <div slot="right">查看用户画像详情</div>
                             <div class="card-inner flex">
                                 <div class="left">
-                                   <p>诊断结果</p>
-                                   <ul class="red-ul">
-                                       <li>新增消费者数量下降，10月下降明显，后续持续低迷</li>
-                                       <li>消费者整体活跃度下降，转化率持续走低</li>
-                                   </ul>
-                                   <p class="mt-24 mb-8">建议</p>
+                                    <p>诊断结果</p>
+                                    <ul class="red-ul">
+                                        <li>新增消费者数量下降，10月下降明显，后续持续低迷</li>
+                                        <li>消费者整体活跃度下降，转化率持续走低</li>
+                                    </ul>
+                                    <p class="mt-24 mb-8">建议</p>
                                     <ul>
-                                        <li class="red-text-li">及时进行引流，与理想目标客群比对结果显示应放宽对获客目 标群体的年龄限制，增大对中低收入人群的覆盖，以扩大客群</li>
+                                        <li class="red-text-li">及时进行引流，与理想目标客群比对结果显示应放宽对获客目
+                                            标群体的年龄限制，增大对中低收入人群的覆盖，以扩大客群
+                                        </li>
                                         <li class="blue-text-li">应加大活动力度和推广度，提高消费者活跃度和转化率</li>
                                     </ul>
                                 </div>
@@ -218,6 +247,14 @@
                 detail2: false
             }
         },
+        mounted() {
+            if (this.flag == 1) {
+                this.initChat();
+                window.onresize = () => {
+                    this.myChart.resize();
+                }
+            }
+        },
         methods: {
             // toPart1Detail() {
             //     this.$router.push({name:"business-analysis-ztgl"})
@@ -225,6 +262,418 @@
             // toPart2Detail() {
             //     this.$router.push({name:"portrait-system-yxdc"})
             // },
+            initChat() {
+                // 初始化echarts实例
+                this.myChart = this.$echarts.init(document.getElementById('myChart'));
+                // 绘制图表
+                let min = 35; //Y轴最小值
+                let max = 80; //Y轴最大值
+                let dataAxis = ['0月', '1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+                let data = [48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72]; //目标
+                let data2 = [max - 48, max - 50, max - 52, max - 54, max - 56, max - 58, max - 60, max - 62, max - 64, max - 66, max - 68, max - 70, max - 72]; //正常区域
+                let data3 = [48, 51, 52, 53, 55, 59, 64, 61, 60]; //实际数据
+                let data4 = [50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74]; //上边界
+                let data5 = [46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70]; //下边界
+                let effectValues = [
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 60,
+                        symbolSize: 7
+                    }
+                ]; //实际数据预警点
+                let effectValues1 = [
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 72,
+                        symbolSize: 7
+                    }
+                ]; //目标最后点
+                let effectValues2 = [
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 64,
+                        symbolSize: 15
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    },
+                    {
+                        value: 0,
+                        symbolSize: 0
+                    }
+                ]; //6月份点
+                let option = {
+                    backgroundColor: "#fff",
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'line',
+                            lineStyle: {
+                                type: 'solid',
+                                width: 1,
+                                color: '#E9E9E9'
+                            }
+                        },
+                        backgroundColor: "transparent",
+                        borderWidth: 0,
+                        formatter: (params) => {
+                            let style = "";
+                            if (params[0].data < params[2].data || params[0].seriesName != '实际') {
+                                style = "display:none"
+                            } else {
+                                style = "display:block"
+                            }
+                            let str = '<div class="chart-tooltip" style="' + style + '">' +
+                                '<div class="value">' + '<span>￥</span>' + params[0].data * 100 + '万</div>' +
+                                '<div class="month"> ' + '2020年' + params[0].name + ' </div>' +
+                                '</div>';
+                            return str;
+                        }
+                    },
+                    grid: {
+                        left: '24px',
+                        right: '24px',
+                        top: '40px',
+                        bottom: '24px',
+                        containLabel: true
+                    },
+                    xAxis: [{
+                        type: 'category',
+                        boundaryGap: false,
+                        data: dataAxis,
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: 'rgba(0, 0, 0, 0.65)',
+                                fontSize: 12,
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                type: 'solid',
+                                color: '#E9E9E9',
+                                width: 1,
+                            }
+                        },
+                    }],
+                    yAxis: [{
+                        type: 'value',
+                        name: '百万',
+                        nameTextStyle: {
+                            color: 'rgba(0, 0, 0, 0.65)'
+                        },
+                        axisLabel: {
+                            show: true,
+                            textStyle: {
+                                color: 'rgba(0, 0, 0, 0.65)',
+                                fontSize: 12
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: '#fff',
+                                width: 1,
+                            },
+                        },
+                        splitLine: {
+                            show: true,
+                            lineStyle: {
+                                type: 'dashed',
+                                color: '#E9E9E9'
+                            }
+                        },
+                        min: min,
+                        max: max
+                    }],
+                    series: [
+                        {
+                            name: '实际',
+                            type: 'line',
+                            smooth: true,
+                            symbol: "none",
+                            itemStyle: {
+                                normal: {
+                                    lineStyle: {
+                                        width: 6,
+                                        type: 'solid',
+                                        color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                            offset: 0,
+                                            color: 'rgba(187, 134, 252, 1)'
+                                        }, {
+                                            offset: 1,
+                                            color: 'rgba(94, 139, 255, 1)'
+                                        }]),
+                                        shadowColor: 'rgba(3, 13, 41, .3)',
+                                        shadowBlur: 10,
+                                        shadowOffsetY: 15,
+                                    }
+                                },
+                            },
+                            zlevel: 1,
+                            data: data3
+                        },
+                        {
+                            name: '上边界',
+                            type: 'line',
+                            smooth: true,
+                            symbol: "none",
+                            itemStyle: {
+                                normal: {
+                                    lineStyle: {
+                                        width: 1,
+                                        type: 'dashed',
+                                        color: "rgba(35, 115, 255, .5)"
+                                    }
+                                },
+                            },
+                            data: data4
+                        },
+                        {
+                            name: '下边界',
+                            type: 'line',
+                            smooth: true,
+                            symbol: "none",
+                            itemStyle: {
+                                normal: {
+                                    lineStyle: {
+                                        width: 1,
+                                        type: 'dashed',
+                                        color: "rgba(245, 74, 69, .5)"
+                                    }
+                                },
+                            },
+                            data: data5
+                        },
+                        {
+                            name: '目标',
+                            type: 'line',
+                            smooth: true,
+                            symbol: "none",
+                            stack: 100,
+                            itemStyle: {
+                                normal: {
+                                    color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                        offset: 0,
+                                        color: 'rgba(252, 212, 201, 0)'
+                                    }, {
+                                        offset: 0.5,
+                                        color: 'rgba(252, 212, 201, .5)'
+                                    }, {
+                                        offset: 1,
+                                        color: 'rgba(252, 212, 201, .8)'
+                                    }]),
+                                    lineStyle: {
+                                        width: 1,
+                                        type: 'dashed',
+                                        color: "#DFDBDD"
+                                    }
+                                },
+                            },
+                            areaStyle: {
+                                normal: {}
+                            },
+                            data: data,
+                        },
+                        {
+                            name: '正常',
+                            type: 'line',
+                            smooth: true,
+                            symbol: "none",
+                            stack: 100,
+                            itemStyle: {
+                                normal: {
+                                    color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                                        offset: 0,
+                                        color: 'rgba(184, 205, 251, 0)'
+                                    }, {
+                                        offset: 0.5,
+                                        color: 'rgba(184, 205, 251, .5)'
+                                    }, {
+                                        offset: 1,
+                                        color: 'rgba(184, 205, 251, .8)'
+                                    }]),
+                                    lineStyle: {
+                                        width: 0,
+                                        type: 'solid',
+                                        color: "#FFFFFF"
+                                    }
+                                },
+                            },
+                            areaStyle: {
+                                normal: {}
+                            },
+                            data: data2,
+                        },
+                        {
+                            name: "预警",
+                            type: 'effectScatter',
+                            coordinateSystem: 'cartesian2d',
+                            data: effectValues,
+                            symbol: 'circle',
+                            effectType: 'ripple',
+                            showEffectOn: 'render',
+                            cursor: 'pointer',
+                            rippleEffect: {
+                                period: 5,
+                                scale: 5,
+                                brushType: 'fill',
+                            },
+                            itemStyle: {
+                                normal: {
+                                    color: '#F54A45',
+                                    shadowBlur: 5,
+                                    shadowColor: '#F54A45'
+                                }
+                            },
+                            zlevel: 1
+                        },
+                        {
+                            name: "最终目标",
+                            type: 'effectScatter',
+                            coordinateSystem: 'cartesian2d',
+                            data: effectValues1,
+                            symbol: 'circle',
+                            effectType: 'ripple',
+                            showEffectOn: 'render',
+                            cursor: 'pointer',
+                            rippleEffect: {
+                                period: 5,
+                                scale: 5,
+                                brushType: 'fill',
+                            },
+                            itemStyle: {
+                                normal: {
+                                    color: '#2373FF',
+                                    shadowBlur: 5,
+                                    shadowColor: '#2373FF'
+                                }
+                            },
+                            zlevel: 1
+                        },
+                        {
+                            name: "6月点",
+                            type: 'scatter',
+                            symbol: 'circle',
+                            data: effectValues2,
+                            itemStyle: {
+                                normal: {
+                                    borderWidth: '2',
+                                    borderType: 'solid',
+                                    borderColor: '#ffffff',
+                                    color: '#999999',
+                                    shadowColor: '#515a6e',
+                                    shadowBlur: 10
+                                }
+                            },
+                            cursor: 'pointer',
+                            zlevel: 1
+                        }
+                    ]
+                };
+                this.myChart.setOption(option);
+            },
             // 数据管理员
             toDateCenter() {
                 this.$router.push({name: "data-center-my"})
@@ -252,6 +701,63 @@
 </script>
 
 <style lang="scss">
+    .chart-tooltip {
+        padding: 5px 12px;
+        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        background: rgba(255, 255, 255, 0.2);
+
+        .value {
+            margin-left: -5px;
+            font-size: 24px;
+            font-family: HelveticaNeue-Medium, HelveticaNeue;
+            font-weight: 500;
+            color: #212121;
+            line-height: 32px;
+
+            > span {
+                font-size: 18px;
+                font-family: HelveticaNeue-Medium, HelveticaNeue;
+                font-weight: 500;
+                color: #212121;
+            }
+        }
+
+        .month {
+            margin-top: 4px;
+            font-size: 14px;
+            font-family: HelveticaNeue;
+            color: #666666;
+            line-height: 22px;
+        }
+
+        &.red {
+            border: 1px solid #F54A45;
+        }
+
+        &.blue {
+            padding: 3px 4px;
+            border: 1px solid #2373FF;
+            background: rgba(255, 255, 255, 0.8);
+
+            .value {
+                font-size: 14px;
+                line-height: 18px;
+
+                > span {
+                    font-size: 16px;
+                }
+            }
+
+            .month {
+                margin-top: 1px;
+                font-size: 12px;
+                line-height: 18px;
+            }
+        }
+    }
+
     /*.dashboard-report-modal {*/
     /*    display: flex;*/
     /*    align-items: center;*/
@@ -354,6 +860,43 @@
 
                     .chart {
                         width: calc(100% - 236px);
+                        height: 310px;
+                        position: relative;
+
+                        .red {
+                            position: absolute;
+                            right: 160px;
+                            top: 170px;
+                        }
+
+                        .blue {
+                            position: absolute;
+                            right: 10px;
+                            top: 125px;
+                        }
+
+                        .select-box {
+                            padding: 12px;
+                            display: flex;
+
+                            .w120 {
+                                margin-right: 16px;
+                                width: 120px;
+                            }
+                        }
+
+                        .list {
+                            padding: 12px;
+                            border-top: 1px solid #F4F7FC;
+
+                            .item {
+                                margin-bottom: 12px;
+                                width: calc(50% - 6px);
+                                height: 102px;
+                                background: #F7F9FD;
+                                border-radius: 8px;
+                            }
+                        }
                     }
 
                     .info {
@@ -402,12 +945,17 @@
                 }
 
                 .right {
+                    padding: 24px 0;
                     width: 372px;
                     height: 607px;
-                    box-shadow: 1px 1px 48px 0px rgba(255, 255, 255, 0.8);
+                    box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+                    background: url("../../assets/img/dashboard/neurotesting-bg@2x.png") no-repeat center / 100% 100%;
                     border-radius: 8px;
-                    border: 1px solid;
-                    border-image: linear-gradient(141deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)) 1 1;
+
+                    .top-img {
+                        width: 372px;
+                        height: 224px;
+                    }
                 }
             }
 
