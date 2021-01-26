@@ -39,7 +39,7 @@
 		<div class="box">
 			<barC id="box71" :colorList="colorList" :myData="box71Data"></barC>
 		</div>
-        
+
     </div>
 </template>
 
@@ -51,9 +51,7 @@
 	import lineM from './common/lineM';
 	import barC from './common/barC';
     export default {
-		components: {
-		  barEcharts,barL,barM,cLine,lineM,barC
-		},
+		components: {barEcharts,barL,barM,cLine,lineM,barC},
         data() {
             return {
 				colorList : ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564','#BF6E9B','#CECE7E','#91C2F2','#B7C8EA','#FF9F7F','#91C2F2','#B380B6','#EDA8AD','#738AD4','#FF9F7F'],
@@ -298,5 +296,5 @@
 			border: 1px solid #f00;
 		}
 	}
-	
+
 </style>
