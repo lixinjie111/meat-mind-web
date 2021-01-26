@@ -137,7 +137,7 @@ export default [
       {
         path:`/${moduleName}/qdzz`,
         label:"渠道追踪",
-        meta:{title:"渠道追踪",moduleName},
+        meta:{title:"渠道追踪",moduleName:`${moduleName}-qdzz`},
         component:qdzz,
         name:`${moduleName}-qdzz`,
         children:[

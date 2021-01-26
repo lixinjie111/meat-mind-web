@@ -218,6 +218,7 @@
                 width: 100%;
                 height: calc(100vh - 80px);
                 overflow-y:scroll;
+                background: #F4F7FC;
                 img{
                     width: 100%;
                 }

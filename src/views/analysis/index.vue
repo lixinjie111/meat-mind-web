@@ -62,7 +62,7 @@ export default {
                 flex-direction: column;
                 width: 100%;
                 height: calc(100vh - 80px);
-                overflow-y:scroll;
+                // overflow-y:scroll;
             }
         }
     } 

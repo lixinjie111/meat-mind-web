@@ -44,31 +44,31 @@ export default {
         {
           name: "dashboard",
           label:"Dashboard",
-          icon: "icondashboard",
+          icon: "iconDashboard1",
           path: "/dashboard",
         },
         {
           name:"user",
           label: "用户画像",
-          icon: "iconyonghuhuaxiang",
+          icon: "iconyonghuhuaxiang1",
           path: "/user",
         },
         {
           name:"mark",
           label: "品牌画像",
-          icon: "iconpinpaihuaxiang",
+          icon: "iconpinpaihuaxiang1",
           path: "/mark",
         },
         { 
           name:"media",
           label: "媒介画像",
-          icon: "iconhuaxiangxitong",
+          icon: "iconmeijiehuaxiang",
           path: "/media",
         },
         {
           name:"business-analysis",
           label: "经营分析",
-          icon: "iconjingyingfenxi",
+          icon: "iconjingyingfenxi1",
           path: "/business-analysis",
           children:[
             {
@@ -96,7 +96,7 @@ export default {
         {
           name:"analysis-tool",
           label: "分析工具",
-          icon: "iconfenxigongju",
+          icon: "iconfenxigongju1",
           path: "/analysis-tool",
           children:[
             {
@@ -119,11 +119,23 @@ export default {
               label: "用户分群",
               path: "/analysis-tool/yhfq",
             },
-            {
-              name:"analysis-tool-qdzz",
-              label: "渠道追踪",
-              path: "/analysis-tool/qdzz",
-            },
+            // {
+            //   name:"analysis-tool-qdzz",
+            //   label: "渠道追踪",
+            //   path: "/analysis-tool/qdzz",
+            //   children:[
+                {
+                  name:"analysis-tool-qdzz-qdlj",
+                  label: "渠道链接",
+                  path: "/analysis-tool/qdzz/qdlj",
+                },
+                {                  
+                  name:"analysis-tool-qdzz-qdgl",
+                  label: "渠道管理",
+                  path: "/analysis-tool/qdzz/qdgl",
+                },
+              // ]
+            // },
             {
               name:"analysis-tool-cjk",
               label: "场景库",
@@ -134,7 +146,7 @@ export default {
         {
           name:"data-center",
           label: "数据管理",
-          icon: "iconshujuguanli",
+          icon: "iconshujuguanli1",
           path: "/data-center",
           children:[
             {
@@ -176,6 +188,7 @@ export default {
     },
     // 打开subMenu
     openChange(ary) {
+      console.log(ary)
       if (!ary.length) {
         return;
       }
@@ -201,27 +214,42 @@ export default {
   min-height: 100vh;
   display: flex;
   .menu {
+    position: relative;
     width: 240px;
     height: 100%;
-    background: #ffffff;
+    background: linear-gradient(270deg, #FFFFFF 0%, #FFFFFF 100%);
+    // border-right:4px solid #FAFCFF;
+    &:after{
+      position: absolute;
+      top: 0;
+      right: 0;
+      content: "";
+      width: 4px;
+      height: 100%;
+      background: #FAFCFF;
+      box-shadow:inset 1px 1px 1px 0px rgba(211,213,217,0.63);
+    }
     .logo {
       width: 144px;
       height: 32px;
-      margin: 24px auto 40px;
+      margin: 24px auto 32px;
       background: url("../static/img/new/side/logo-colour@2x.png") no-repeat
         center / 144px 32px;
     }
+    .ivu-menu-light{
+      background: none;
+    }
     .ivu-menu > div{
       width: 240px;
-      // height: 48px;
+      // height: 40px;
       padding: 0 24px;
-      margin: 16px 0;
-      line-height: 48px;
+      margin: 8px 0;
+      line-height: 40px;
       >a{
         display: flex;
         align-items: center;
         width: 192px;
-        height: 48px;
+        height: 40px;
         border-radius: 30px;
         padding-left: 24px;
         i {
@@ -230,24 +258,22 @@ export default {
         }
         .label {
           height: 26px;
-          font-size: 18px;
+          font-size: 14px;
           font-family: PingFangSC-Regular, PingFang SC;
           font-weight: 400;
           line-height: 26px;
         }
         &.ivu-menu-item-active{
           i{
-            margin-right: 21px;
+            margin-right: 12px;
           }
         }
       }
-      .ivu-menu-submenu{
-        padding-left: 24px;
-        .ivu-menu-submenu-title{
+        .ivu-menu-vertical .ivu-menu-submenu-title{
           display: flex;
           align-items: center;
           width: 192px;
-          height: 48px;
+          height: 40px;
           border-radius: 30px;
           i{
             font-size: 24px;
@@ -255,26 +281,43 @@ export default {
           }
           .label{
             height: 26px;
-            font-size: 18px;
+            font-size: 14px;
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
             line-height: 26px;
           }
         }
-
-      } 
     }
   }
 }
 </style>
 <style lang="scss">
-.ivu-menu-vertical .ivu-menu-item,
-.ivu-menu-vertical .ivu-menu-submenu-title {
-  font-size: 18px;
-  color: #97A0C3;
+.ivu-menu-vertical .ivu-menu-item{
+  font-size: 14px;
+  color: #636E95;
   padding: 0;
+  margin: 8px 0;
+}
+.ivu-menu-vertical .ivu-menu-submenu-title{
+  display: flex;
+  align-items: center;
+  width: 192px;
+  height: 40px;
+  margin: 8px 0;
+  border-radius: 30px;
+  font-size: 14px;
+  color: #636E95;
+  padding: 0;
+  padding-left: 24px;
 }
 
+.ivu-menu-submenu-title > .iconfont{
+            font-size: 24px;
+          margin-right: 12px;
+}
+.ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item{
+  padding-left: 60px!important;
+}
 // .ivu-menu-vertical .ivu-menu-submenu-title-icon {
 //   right: 8px;
 //   // color:#666666
@@ -356,17 +399,17 @@ export default {
 //   }
 // }
 .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
-  // color: #97A0C3;
+  // color: #636E95;
   // background: none;
   color: #FFFFFF;
   background: url("../static/img/new/side/rectangle@2x.png") no-repeat
-        center / 192px 48px;
+        center / 192px 40px;
   border-radius: 30px;
-  font-size: 18px;
+  font-size: 14px;
   .sub-name {
     color: #FFFFFF;
-    // color:#97A0C3;
-    font-size: 18px;
+    // color:#636E95;
+    font-size: 14px;          
   }
 }
 .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after {
@@ -377,5 +420,9 @@ export default {
 }
 .ivu-menu-vertical .ivu-menu-item:hover, .ivu-menu-vertical .ivu-menu-submenu-title:hover{
   color: #2373FF;
+  background: #FAFAFA;
+      width: 192px;
+    height: 40px;
+    border-radius: 30px;
 }
 </style>
