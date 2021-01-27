@@ -74,7 +74,7 @@
             </div>
         </div>
         <Card title="客群诊断">
-            <div slot="right" class="card-right">查看用户画像详情</div>
+            <div slot="right" class="card-right">查看用户画像详情<i class="iconfont iconarrowRight"></i></div>
             <div class="manage-card flex-start">
                 <div class="manage-card-left">
                     <p>诊断结果</p>
@@ -105,7 +105,7 @@
             </div>
         </Card>
         <Card title="媒介诊断">
-            <div slot="right" class="card-right">查看媒介画像详情</div>
+            <div slot="right" class="card-right">查看媒介画像详情<i class="iconfont iconarrowRight"></i></div>
             <div class="manage-card flex-start">
                 <div class="manage-card-left">
                     <p>诊断结果</p>
@@ -134,7 +134,7 @@
             </div>
         </Card>
         <Card title="品牌诊断">
-            <div slot="right" class="card-right">查看品牌画像详情</div>
+            <div slot="right" class="card-right">查看品牌画像详情<i class="iconfont iconarrowRight"></i></div>
             <div class="manage-card flex-start">
                 <div class="manage-card-left">
                     <p>诊断结果</p>
@@ -165,7 +165,7 @@
             </div>
         </Card>
         <Card title="经营过程风险预警">
-            <div slot="right" class="card-right">更多</div>
+            <div slot="right" class="card-right">更多<i class="iconfont iconarrowRight"></i></div>
             <div class="manage-card2">
                 <div class="manage-card2-top flex">
                     <div id="myChart2"></div>
@@ -1083,6 +1083,11 @@
             font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;
             color: #7C88B1;
+
+            >i {
+              margin-left: 4px;
+              vertical-align: -1px;
+            }
         }
 
         .manage-card {
