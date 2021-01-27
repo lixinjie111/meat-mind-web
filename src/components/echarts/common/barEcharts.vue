@@ -28,17 +28,17 @@ export default {
 			
 		}
 	},
-    mounted(){
-		this.initEcharts()
+    mounted() {
+			this.initEcharts();
     },
 	methods: {
 		initEcharts() {
 			let _option = this.defaultOption();
 			let myChart = this.$echarts.init(document.getElementById(this.id));
 			myChart.setOption(_option);
-			window.onresize = ()=>{
+			window.addEventListener('resize',()=>{
 				myChart.resize();
-			}
+			})
 		},
 		defaultOption() {
 			var option = {
@@ -102,12 +102,12 @@ export default {
 						position: 'right',
 					},
 					itemStyle: {
-                        normal: {
+                         normal: {
                                barBorderRadius:[30,30,0,0]
-						},
-						emphasis:{
-							color:'#FF9F7F'
-						}
+						 },
+						 emphasis:{
+							 color:'#FF9F7F'
+						 }
                     },
                 }
             ]
