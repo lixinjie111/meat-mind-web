@@ -35,14 +35,27 @@
           </div>
       </div>
       <div class="bottom">
-
+          <div class="pricle">
+            <Card :title="'客单价'" :colourfol="'blue'" :number="'65'"></Card>
+          </div>
+          <div class="month">
+            <Card :title="'月均销量'" :colourfol="'purple'" :number="'721,343'"></Card>
+          </div>          
+          <div class="view">
+            <Card :title="'月浏览'" :colourfol="'pink'" :number="'54,566'"></Card>
+          </div>          
+          <div class="target">
+            <Card :title="'口碑指数'" :colourfol="'orange'" :number="'4,534'"></Card>
+          </div>  
       </div>
   </div>
 </template>
 
 <script>
+import Card from "../base/Card"
 export default {
     name:"Benchmark",
+    components:{Card}
 }
 </script>
 
@@ -153,6 +166,18 @@ export default {
                         }
                     }
                 }
+            }
+        }
+
+        .bottom{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 138px;
+            margin-top: 24px;
+            .pricle,.month,.view,.target{
+                width: 24%;
+                height: 138px;
             }
         }
     }
