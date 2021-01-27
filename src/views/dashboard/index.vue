@@ -33,10 +33,26 @@
                                         <div class="month">目标</div>
                                     </div>
                                     <div class="list clearfix">
-                                        <div class="item fl"></div>
-                                        <div class="item fr"></div>
-                                        <div class="item fl"></div>
-                                        <div class="item fr"></div>
+                                        <div class="item fl">
+                                            <p>访问店铺</p>
+                                            <p>8,639<span>人</span></p>
+                                            <Compare :data="[12.73,-3.16]"></Compare>
+                                        </div>
+                                        <div class="item fr">
+                                            <p>商品访客数</p>
+                                            <p>126,470<span>次</span></p>
+                                            <Compare :data="[13.14,-11.45]"></Compare>
+                                        </div>
+                                        <div class="item fl">
+                                            <p>支付买家数</p>
+                                            <p>1,509<span>人</span></p>
+                                            <Compare :data="[8.62,-3.16]"></Compare>
+                                        </div>
+                                        <div class="item fr">
+                                            <p>平均停留时长</p>
+                                            <p>16.17<span>分</span></p>
+                                            <Compare :data="[11.45,-1.15]"></Compare>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="info">
@@ -237,10 +253,11 @@
 <script>
     import DefaultPage from "../../layouts/DefaultPage";
     import Card from "../../components/Card";
+    import Compare from "../../components/Compare";
 
     export default {
         name: "index",
-        components: {Card, DefaultPage},
+        components: {Compare, Card, DefaultPage},
         data() {
             return {
                 flag: localStorage.getItem("dashboard"),
@@ -894,10 +911,34 @@
 
                             .item {
                                 margin-bottom: 12px;
+                                padding: 16px;
                                 width: calc(50% - 6px);
                                 height: 102px;
                                 background: #F7F9FD;
                                 border-radius: 8px;
+
+                                > p {
+                                    &:nth-child(1) {
+                                        font-size: 14px;
+                                        font-family: PingFangSC-Regular, PingFang SC;
+                                        font-weight: 400;
+                                        color: #636E95;
+                                    }
+                                    &:nth-child(2) {
+                                        font-size: 24px;
+                                        font-family: HelveticaNeue-Bold, HelveticaNeue;
+                                        font-weight: bold;
+                                        color: #242F57;
+
+                                        >span {
+                                            margin-left: 4px;
+                                            font-size: 14px;
+                                            font-family: PingFangSC-Regular, PingFang SC;
+                                            font-weight: 400;
+                                            color: #636E95;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -917,7 +958,7 @@
 
                         .result {
                             padding: 0 16px;
-                            width: 204px;
+                            width: 100%;
                             height: 49px;
                             line-height: 49px;
                             background: #FFE6E5;
@@ -933,7 +974,7 @@
 
                         .btn {
                             margin-top: 28px;
-                            width: 204px;
+                            width: 100%;
                             height: 40px;
                             line-height: 40px;
                             background: #FFFFFF;
