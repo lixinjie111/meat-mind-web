@@ -5,41 +5,51 @@
     <div class="container">
       <Header :target="'用户画像'"></Header>
       <div class="show-content">
-        <div class="pinpai_container">
-          <div class="title_container">
-            <div class="left_area">
-              <span>品牌运营概览</span>
-              <img :src="gdImg" class="gdImg" />
-              <div class="time_range_container"></div>
+        <div class="yhdx_container">
+          <div class="top_title_container">
+            <div class="left_text">
+              <div class="left_title_text">用户动线</div>
+              <div class="left_desc_text">分析品牌对应的不同用户群对应的在不同时间，不同场景，使用了哪些App/Web，以及详细的数据跟踪。</div>
             </div>
-            <div class="right_area">
-              <span>前往品牌画像</span>
-              <img :src="trImg" class="trImg" />
+            <div class="right_btn">
+              <img :src="manIcon" class="manIcon" />
+              <span>自定义客群</span>
             </div>
           </div>
-          <div class="content_container">
-            <div class="pin_echarts_container">
-              <div class="pin_title">品牌测评得分</div>
-              <div class="pin_echarts_cont_container">
-                <div class="pin_content"></div>
-                <div class="num_text">78</div>
-                <div class="fen">分</div>
-              </div>
-              <div class="intro_container">
-                <span class="span1">击败北京</span>
-                <span class="span2">12.3%</span>
-                <span class="span3">品牌</span>
-              </div>
-            </div>
 
-            <vCard v-for="(item) in cardList" :key="item.id" :cardData="item"></vCard>
+          <div class="echarts_container1">
+            <div class="left_timer_container">
+              <img :src="leftTimerImg" class="leftTimerImg" />
+            </div>
+            <div class="right_qipao_container">
+              <div class="echarts_item">
+                <div class="top_panel" @mouseenter="showPop1" @mouseleave="hidePop1"></div>
+                <div class="bottom_echarts"></div>
+                <div class="model_pop" v-if="ifShowPop1" @mouseenter="showPop1" @mouseleave="hidePop1"></div>
+              </div>
+              <div class="echarts_item">
+                <div class="top_panel" @mouseenter="showPop2" @mouseleave="hidePop2"></div>
+                <div class="bottom_echarts"></div>
+                <div class="model_pop" v-if="ifShowPop2" @mouseenter="showPop2" @mouseleave="hidePop2"></div>
+              </div>
+              <div class="echarts_item">
+                <div class="top_panel" @mouseenter="showPop3" @mouseleave="hidePop3"></div>
+                <div class="bottom_echarts"></div>
+                <div class="model_pop" v-if="ifShowPop3" @mouseenter="showPop3" @mouseleave="hidePop3"></div>
+              </div>
+              <div class="echarts_item">
+                <div class="top_panel" @mouseenter="showPop4" @mouseleave="hidePop4"></div>
+                <div class="bottom_echarts"></div>
+                <div class="model_pop" v-if="ifShowPop4" @mouseenter="showPop4" @mouseleave="hidePop4"></div>
+              </div>
+              <div class="echarts_item">
+                <div class="top_panel" @mouseenter="showPop5" @mouseleave="hidePop5"></div>
+                <div class="bottom_echarts"></div>
+                <div class="model_pop" v-if="ifShowPop5" @mouseenter="showPop5" @mouseleave="hidePop5"></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="yonghu_container">
-          <div class="title_container"></div>
-        </div>
-        <div class="meijie_container"></div>
-        <div class="chanpin_container"></div>
       </div>
     </div>
   </div>
@@ -48,86 +58,52 @@
 <script>
 import Side from "../../components/Side";
 import Header from "../../components/DefaultHeader";
-import vCard from "../../components/common/card";
 export default {
   name: "index",
   data() {
     return {
-      gdImg: require("../../assets/img/dashboard/gdI.png"),
-      trImg: require("../../assets/img/dashboard/toR.png"),
-      cardList: [
-        {
-          id: 1,
-          title: "GMV",
-          timeRange: "2020.10.16～2020.10.16 I 今日",
-          time: "今日",
-          numText: 134,
-          unitText: "万",
-          leftText: "环比",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
-          leftPer: "9.07%",
-          leftPerColor: "#F54A45",
-          rightText: "同比",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
-          rightPer: "9.07%",
-          rightPerColor: "#34C724",
-          timer: 1000
-        },
-        {
-          id: 2,
-          title: "GMV",
-          timeRange: "2020.10.16～2020.10.16 I 今日",
-          time: "今日",
-          numText: 567,
-          unitText: "万",
-          leftText: "环比",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
-          leftPer: "9.07%",
-          leftPerColor: "#F54A45",
-          rightText: "同比",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
-          rightPer: "9.07%",
-          rightPerColor: "#34C724",
-          timer: 500
-        },
-        {
-          id: 3,
-          title: "GMV",
-          timeRange: "2020.10.16～2020.10.16 I 今日",
-          time: "今日",
-          numText: 734,
-          unitText: "万",
-          leftText: "环比",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
-          leftPer: "9.07%",
-          leftPerColor: "#F54A45",
-          rightText: "同比",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
-          rightPer: "9.07%",
-          rightPerColor: "#34C724",
-          timer: 200
-        },
-        {
-          id: 4,
-          title: "GMV",
-          timeRange: "2020.10.16～2020.10.16 I 今日",
-          time: "今日",
-          numText: 489,
-          unitText: "万",
-          leftText: "环比",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
-          leftPer: "9.07%",
-          leftPerColor: "#F54A45",
-          rightText: "同比",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
-          rightPer: "9.07%",
-          rightPerColor: "#34C724",
-          timer: 3000
-        }
-      ]
+      manIcon: require("../../assets/img/yhhx/man.png"),
+      leftTimerImg: require("../../assets/img/yhhx/leftTimerImg.png"),
+      ifShowPop1: false,
+      ifShowPop2:false,
+      ifShowPop3:false,
+      ifShowPop4:false,
+      ifShowPop5:false,
     };
   },
-  components: { Side, Header, vCard }
+  methods: {
+    showPop1() {
+      this.ifShowPop1 = true;
+    },
+    hidePop1() {
+      this.ifShowPop1 = false;
+    },
+    showPop2() {
+      this.ifShowPop2 = true;
+    },
+    hidePop2() {
+      this.ifShowPop2 = false;
+    },
+    showPop3() {
+      this.ifShowPop3 = true;
+    },
+    hidePop3() {
+      this.ifShowPop3 = false;
+    },
+    showPop4() {
+      this.ifShowPop4 = true;
+    },
+    hidePop4() {
+      this.ifShowPop4 = false;
+    },
+    showPop5() {
+      this.ifShowPop5 = true;
+    },
+    hidePop5() {
+      this.ifShowPop5 = false;
+    }
+  },
+  components: { Side, Header }
 };
 </script>
 
@@ -145,136 +121,108 @@ export default {
       height: calc(100vh - 80px);
       overflow-y: scroll;
       padding: 24px;
-      .pinpai_container,
-      .yonghu_container,
-      .meijie_container,
-      .chanpin_container {
+      .yhdx_container {
         width: 100%;
-        min-height: 252px;
         background: #ffffff;
         box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-        border-radius: 8px;
-        margin-bottom: 24px;
+        border-radius: 4px;
         padding: 24px;
         box-sizing: border-box;
-        .title_container {
+        .top_title_container {
           width: 100%;
-          height: 32px;
-          margin-bottom: 20px;
+          height: 51px;
           display: flex;
           align-items: center;
           justify-content: space-between;
-          .left_area {
-            display: flex;
-            align-items: center;
-            span {
+          margin-bottom: 24px;
+          .left_text {
+            .left_title_text {
               font-size: 16px;
               font-family: PingFangSC-Medium, PingFang SC;
               font-weight: 500;
               color: #242f57;
-              margin-right: 4px;
+              margin-bottom: 7px;
             }
-            .gdImg {
-              display: block;
-              width: 16px;
-              height: 16px;
-              margin-right: 40px;
-            }
-            .time_range_container {
-              width: 276px;
-              height: 32px;
+            .left_desc_text {
+              font-size: 14px;
+              font-family: PingFangSC-Regular, PingFang SC;
+              font-weight: 400;
+              color: #636e95;
             }
           }
-          .right_area {
+          .right_btn {
+            width: 128px;
+            height: 48px;
+            background: #f4f7fc;
+            box-shadow: 4px 4px 8px 0px rgba(55, 84, 170, 0.16),
+              -4px -4px 8px 0px #ffffff;
+            border-radius: 24px;
             display: flex;
             align-items: center;
-            span {
-              font-size: 14px;
-              font-family: PingFangSC-Medium, PingFang SC;
-              font-weight: 500;
-              color: #7c88b1;
-              margin-right: 4px;
-            }
-            .trImg {
+            justify-content: center;
+            font-size: 14px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242f57;
+            .manIcon {
               display: block;
-              width: 16px;
-              height: 16px;
+              width: 24px;
+              height: 24px;
             }
           }
         }
-      }
-      .pinpai_container {
-        .content_container {
+        .echarts_container1 {
           width: 100%;
+          height: 720px;
           display: flex;
           align-items: center;
-          justify-content: space-between;
-          .pin_echarts_container {
-            width: 19%;
-            min-height: 156px;
-            background: #ffffff;
-            border-radius: 8px;
-            border: 1px solid #eaedf7;
-            padding: 12px;
-            box-sizing: border-box;
-            .pin_title {
-              width: 100%;
-              font-size: 14px;
-              font-family: PingFangSC-Regular, PingFang SC;
-              font-weight: 400;
-              color: #242f57;
-              margin-bottom: 24px;
+          .left_timer_container {
+            width: 140px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            .leftTimerImg {
+              display: block;
+              width: 95px;
+              height: 703px;
             }
-            .pin_echarts_cont_container {
-              width: 100%;
+          }
+          .right_qipao_container {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .echarts_item {
+              width: 19%;
+              height: 100%;
+              background-color: darkgreen;
               display: flex;
-              align-items: flex-end;
-              .pin_content {
-                width: 109px;
-                height: 59px;
-                opacity: 0.8;
-                margin-right: 19px;
-                // border: 2px solid #4d94ff;
+              flex-direction: column;
+              position: relative;
+              .top_panel {
+                width: 100%;
+                height: 100px;
+                background-color: darkorange;
+                padding: 11px 12px;
+                box-sizing: border-box;
               }
-              .num_text {
-                margin-right: 8px;
-                font-size: 30px;
-                font-family: PingFangSC-Medium, PingFang SC;
-                font-weight: 500;
-                color: #34c724;
+              .bottom_echarts {
+                width: 100%;
+                flex: 1;
+                background-color: darkviolet;
               }
-              .fen {
-                font-size: 14px;
-                font-family: PingFangSC-Regular, PingFang SC;
-                font-weight: 400;
-                color: #7c88b1;
-              }
-            }
-            .intro_container {
-              width: 100%;
-              display: flex;
-              align-items: center;
-              font-size: 12px;
-              font-family: PingFangSC-Regular, PingFang SC;
-              font-weight: 400;
-              color: #7c88b1;
-              line-height: 18px;
-              margin-top: 12px;
-              .span2 {
-                color: #ff2744;
+              .model_pop {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                width: 175px;
+                height: 268px;
+                background-color: deeppink;
               }
             }
           }
         }
-      }
-      .yonghu_container {
-        min-height: 244px;
-      }
-      .meijie_container {
-        min-height: 414px;
-      }
-      .chanpin_container {
-        min-height: 416px;
       }
     }
   }
