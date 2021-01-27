@@ -2,9 +2,9 @@
     <div class="compare-box">
         <p>
             <span>环比</span>
-            <span :class="data[0]>0?'red':'green'">{{Math.abs(data[0])}}%</span>
+            <span :class="data[0]>0?'green':'red'">{{Math.abs(data[0])}}%</span>
             <span class="ml-8">同比</span>
-            <span :class="data[1]>0?'red':'green'">{{Math.abs(data[1])}}%</span>
+            <span :class="data[1]>0?'green':'red'">{{Math.abs(data[1])}}%</span>
         </p>
     </div>
 </template>

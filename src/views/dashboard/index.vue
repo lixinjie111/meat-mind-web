@@ -9,7 +9,7 @@
                     </TabPane>
                     <TabPane label="经营诊断">
                         <p class="tips">经营诊断可以智能监测营销活动效果，依据心智模型进行智能评测，针对性提出改进方案，提供海量新潮营销创意及案例</p>
-                        <div class="top flex">
+                        <div class="business-top flex">
                             <div class="left flex-start">
                                 <div class="chart">
                                     <div class="select-box">
@@ -36,22 +36,22 @@
                                         <div class="item fl">
                                             <p>访问店铺</p>
                                             <p>8,639<span>人</span></p>
-                                            <Compare :data="[12.73,-3.16]"></Compare>
+                                            <Compare :data="[-12.73,3.16]"></Compare>
                                         </div>
                                         <div class="item fr">
                                             <p>商品访客数</p>
                                             <p>126,470<span>次</span></p>
-                                            <Compare :data="[13.14,-11.45]"></Compare>
+                                            <Compare :data="[-13.14,11.45]"></Compare>
                                         </div>
                                         <div class="item fl">
                                             <p>支付买家数</p>
                                             <p>1,509<span>人</span></p>
-                                            <Compare :data="[8.62,-3.16]"></Compare>
+                                            <Compare :data="[-8.62,3.16]"></Compare>
                                         </div>
                                         <div class="item fr">
                                             <p>平均停留时长</p>
                                             <p>16.17<span>分</span></p>
-                                            <Compare :data="[11.45,-1.15]"></Compare>
+                                            <Compare :data="[-11.45,1.15]"></Compare>
                                         </div>
                                     </div>
                                 </div>
@@ -76,13 +76,13 @@
                             </div>
                             <div class="right">
                                 <img class="top-img" src="../../assets/img/dashboard/neurometrics-result@2x.png"/>
-                                <div class="bottom-img" >
+                                <div class="bottom-img">
                                     <img src="../../assets/img/dashboard/neurometrics-result2@2x.png"/>
                                 </div>
                             </div>
                         </div>
                         <Card title="客群诊断">
-                            <div slot="right">查看用户画像详情</div>
+                            <div slot="right" class="card-right">查看用户画像详情</div>
                             <div class="card-inner flex">
                                 <div class="left">
                                     <p>诊断结果</p>
@@ -104,7 +104,7 @@
                             </div>
                         </Card>
                         <Card title="媒介诊断">
-                            <div slot="right">查看媒介画像详情</div>
+                            <div slot="right" class="card-right">查看媒介画像详情</div>
                             <div class="card-inner flex">
                                 <div class="left">
                                     <p>诊断结果</p>
@@ -124,7 +124,7 @@
                             </div>
                         </Card>
                         <Card title="品牌诊断">
-                            <div slot="right">查看品牌画像详情</div>
+                            <div slot="right" class="card-right">查看品牌画像详情</div>
                             <div class="card-inner flex">
                                 <div class="left">
                                     <p>诊断结果</p>
@@ -146,9 +146,43 @@
                             </div>
                         </Card>
                         <Card title="经营过程风险预警">
-                            <div slot="right">更多</div>
-                            <div>
-
+                            <div slot="right" class="card-right">更多</div>
+                            <div class="card-inner2">
+                                <div class="card-inner-top flex">
+                                    <div id="myChart2"></div>
+                                    <div class="info">
+                                        <div class="item">
+                                            <p>传播理念</p>
+                                            <p>消费者心智洞察120,111条数据，10,873人</p>
+                                        </div>
+                                        <div class="item">
+                                            <p>传播目的</p>
+                                            <p>消费者需求分析210,111条数据，30,123人</p>
+                                        </div>
+                                        <div class="item">
+                                            <p>传播支撑点</p>
+                                            <p>品牌核心资产挖掘210,550条数据，20,233人</p>
+                                        </div>
+                                        <div class="item">
+                                            <p>传播策略</p>
+                                            <p>传播策略分析570,283条数据，35,866人</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-inner-bottom">
+                                   <div class="item">
+                                       <p class="title"><span>Q1</span>48.88%</p>
+                                       <p>风险预警</p>
+                                       <ul class="red-li">
+                                           <li>市场占有率有小幅下降趋势</li>
+                                       </ul>
+                                       <p>诊断分析</p>
+                                       <ul class="blue-li">
+                                           <li>品牌定位不清晰，有陷入同质化竞争的前兆</li>
+                                           <li>传播渠道和传播内容单一，无法形成差异化品牌核心资产</li>
+                                       </ul>
+                                   </div>
+                                </div>
                             </div>
                         </Card>
                     </TabPane>
@@ -261,7 +295,6 @@
         data() {
             return {
                 flag: localStorage.getItem("dashboard"),
-                // downloadModal: false,
                 detailModal: false,
                 detail1: true,
                 detail2: false
@@ -269,20 +302,16 @@
         },
         mounted() {
             if (this.flag == 1) {
-                this.initChat();
+                this.initChart();
+                this.initChart2();
                 window.onresize = () => {
                     this.myChart.resize();
+                    this.myChart2.resize();
                 }
             }
         },
         methods: {
-            // toPart1Detail() {
-            //     this.$router.push({name:"business-analysis-ztgl"})
-            // },
-            // toPart2Detail() {
-            //     this.$router.push({name:"portrait-system-yxdc"})
-            // },
-            initChat() {
+            initChart() {
                 // 初始化echarts实例
                 this.myChart = this.$echarts.init(document.getElementById('myChart'));
                 // 绘制图表
@@ -694,6 +723,187 @@
                 };
                 this.myChart.setOption(option);
             },
+            initChart2() {
+                this.myChart2 = this.$echarts.init(document.getElementById('myChart2'));
+                let echartData = [{
+                    name: "1",
+                    value: "48.88",
+                },
+                    {
+                        name: "2",
+                        value: "32.33",
+                    },
+                    {
+                        name: "3",
+                        value: "31.22",
+                    },
+                    {
+                        name: "4",
+                        value: "68.81",
+                    }
+                ];
+
+                let xAxisData = echartData.map(v => v.name);
+                let yAxisData = echartData.map(v => v.value);
+                const hexToRgba = (hex, opacity) => {
+                    let rgbaColor = "";
+                    let reg = /^#[\da-f]{6}$/i;
+                    if (reg.test(hex)) {
+                        rgbaColor = `rgba(${parseInt("0x" + hex.slice(1, 3))},${parseInt(
+                            "0x" + hex.slice(3, 5)
+                        )},${parseInt("0x" + hex.slice(5, 7))},${opacity})`;
+                    }
+                    return rgbaColor;
+                }
+                let option = {
+                    tooltip: {
+                        trigger: "axis",
+                        formatter: function (params) {
+                            let html = '';
+                            const v = params[0];
+                            let text = '';
+                            switch (v.data) {
+                                case '48.88':
+                                    text = '市场占有率有小幅下降趋势';
+                                    break;
+                                case '32.33':
+                                    text = '舆论话题热度下降';
+                                    break;
+                                case '31.22':
+                                    text = '品牌负面舆情增加，口碑出现<br/>小幅负向增长';
+                                    break;
+                                case '68.81':
+                                    text = '用户线上互动量减少，个别渠<br>道用户增长率接近峰值';
+                                    break;
+                            }
+
+                            html += `<div style="color: #666;font-size: 14px;line-height: 24px; width: 156px">
+                                        <div style="color: #333;font-weight:700;">Q${v.name}: <span style=";font-size: 18px">${v.value}%</span></div>
+                                        <div style="color: red;">风险预警：</div>
+                                        <div style="color: #999;font-size: 12px">${text}</div>
+                                    </div>`;
+                            return html
+                        },
+                        extraCssText: 'background: rgba(255, 255, 255, .8); border-radius: 0;box-shadow: 0 0 3px rgba(0, 0, 0, .2);color: red;',
+                        axisPointer: {
+                            type: 'line',
+                            lineStyle: {
+                                type: 'solid',
+                                width: 1,
+                                color: '#E9E9E9'
+                            }
+                        }
+                    },
+                    grid: {
+                        left: '10px',
+                        right: '10px',
+                        top: '20px',
+                        bottom: '20px',
+                        containLabel: true
+                    },
+                    xAxis: [{
+                        type: "category",
+                        boundaryGap: false,
+                        axisLabel: {
+                            formatter: 'Q{value}',
+                            textStyle: {
+                                color: "#333"
+                            }
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: "#D9D9D9"
+                            }
+                        },
+                        data: xAxisData
+                    }],
+                    yAxis: [{
+                        type: "value",
+                        name: '品牌信息传播效率',
+                        axisLabel: {
+                            formatter: '{value}%',
+                            textStyle: {
+                                color: "#666",
+                            }
+                        },
+                        nameTextStyle: {
+                            color: "#666",
+                            fontSize: 12,
+                            lineHeight: 40
+                        },
+                        splitLine: {
+                            lineStyle: {
+                                color: "#E9E9E9"
+                            }
+                        },
+                        axisLine: {
+                            show: false
+                        },
+                        axisTick: {
+                            show: false
+                        }
+                    }],
+                    series: [{
+                        name: "2019",
+                        type: "line",
+                        smooth: true,
+                        showSymbol: false,
+                        symbolSize: 8,
+                        zlevel: 30,
+                        lineStyle: {
+                            normal: {
+                                width: 4,
+                                shadowBlur: 3,
+                                shadowColor: 'rgba(3, 13, 41, .2)',
+                                shadowOffsetY: 8,
+                                type: 'solid',
+                                color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [{
+                                        offset: 0,
+                                        color: 'rgba(187, 134, 252, 1)'
+                                    }, {
+                                        offset: 1,
+                                        color: 'rgba(94, 139, 255, 1)'
+                                    }]
+                                )
+                            }
+                        },
+                        areaStyle: {
+                            normal: {
+                                color: new this.$echarts.graphic.LinearGradient(
+                                    0,
+                                    0,
+                                    0,
+                                    1,
+                                    [{
+                                        offset: 0,
+                                        color: hexToRgba('#2965FF', 0.8)
+                                    },
+                                        {
+                                            offset: .5,
+                                            color: hexToRgba('#2965FF', 0.3)
+                                        },
+                                        {
+                                            offset: 1,
+                                            color: hexToRgba('#2965FF', 0)
+                                        }
+                                    ],
+                                    false
+                                ),
+                                shadowColor: hexToRgba('#0090FF', 0.1),
+                                shadowBlur: 10
+                            }
+                        },
+                        data: yAxisData
+                    }]
+                };
+                this.myChart2.setOption(option);
+                //设置默认选中高亮部分
+                this.myChart2.dispatchAction({
+                    type: 'showTip',
+                    seriesIndex: 0,
+                    dataIndex: 3
+                });
+            },
             // 数据管理员
             toDateCenter() {
                 this.$router.push({name: "data-center-my"})
@@ -778,44 +988,6 @@
         }
     }
 
-    /*.dashboard-report-modal {*/
-    /*    display: flex;*/
-    /*    align-items: center;*/
-    /*    justify-content: center;*/
-    /*    .ivu-modal {*/
-    /*        top: 0;*/
-    /*        width: 1020px !important;*/
-    /*        height: 680px;*/
-    /*        overflow-y: scroll;*/
-    /*        background: #ffffff;*/
-    /*        border-radius: 4px;*/
-    /*    }*/
-    /*    .ivu-modal-body {*/
-    /*        padding: 0;*/
-    /*    }*/
-
-    /*    .download {*/
-    /*        position: relative;*/
-    /*        margin: 0 auto;*/
-    /*        width: 1000px;*/
-
-    /*        >img {*/
-    /*            width: 1000px;*/
-    /*            border-radius: 10px;*/
-    /*        }*/
-
-    /*        .close-btn {*/
-    /*            position: absolute;*/
-    /*            top: 17px;*/
-    /*            right: 115px;*/
-    /*            width: 80px;*/
-    /*            height: 30px;*/
-    /*            background: transparent;*/
-    /*            cursor: pointer;*/
-    /*        }*/
-    /*    }*/
-    /*}*/
-
     .data-admin-modal {
         display: flex;
         align-items: center;
@@ -868,7 +1040,7 @@
                 color: #97A0C3;
             }
 
-            .top {
+            .business-top {
                 margin: 24px 0;
 
                 .left {
@@ -924,13 +1096,14 @@
                                         font-weight: 400;
                                         color: #636E95;
                                     }
+
                                     &:nth-child(2) {
                                         font-size: 24px;
                                         font-family: HelveticaNeue-Bold, HelveticaNeue;
                                         font-weight: bold;
                                         color: #242F57;
 
-                                        >span {
+                                        > span {
                                             margin-left: 4px;
                                             font-size: 14px;
                                             font-family: PingFangSC-Regular, PingFang SC;
@@ -1006,12 +1179,19 @@
                         height: 330px;
                         overflow-y: auto;
 
-                        >img {
+                        > img {
                             width: 372px;
                             height: auto;
                         }
                     }
                 }
+            }
+
+            .card-right {
+                font-size: 14px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #7C88B1;
             }
 
             .card-inner {
@@ -1031,6 +1211,63 @@
 
                 .right {
                     width: 60%;
+                }
+            }
+
+            .card-inner2 {
+                padding-bottom: 20px;
+
+                .card-inner-top {
+
+                    #myChart2 {
+                        width: calc(100% - 407px);
+                        height: 311px;
+                    }
+
+                    .info {
+                        width: 382px;
+                        height: 311px;
+
+                        .item {
+                            padding: 12px 24px;
+                            width: 100%;
+                            /*background: rgba(255, 255, 255, 0.4);*/
+                            box-shadow: 0px 0px 16px 0px rgba(255, 255, 255, 0.5);
+                            border-radius: 8px;
+
+                            > p {
+                                &:nth-child(1) {
+                                    font-size: 16px;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-weight: 500;
+                                    color: #242F57;
+                                }
+
+                                &:nth-child(2) {
+                                    margin-top: 5px;
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #636E95;
+                                }
+                            }
+
+                            &:hover {
+                                background: #FFFFFF;
+                                box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16), 1px 1px 0px 0px #FFFFFF;
+                            }
+                        }
+                    }
+                }
+
+                .card-inner-bottom {
+                    .item {
+                        width: 267px;
+                        height: 256px;
+                        background: #FFFFFF;
+                        border-radius: 8px;
+                        border: 1px solid #EAEDF7;
+                    }
                 }
             }
         }
