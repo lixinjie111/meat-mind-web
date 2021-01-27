@@ -5,10 +5,11 @@ import store from './store'
 import ViewUI from 'view-design'
 import 'view-design/dist/styles/iview.css'
 import echarts from 'echarts'
-import "../src/static/icon/iconfont.css"
+import lxjData from "./utils/lxjData.js";
 
 Vue.config.productionTip = false
-Vue.prototype.$echarts = echarts
+Vue.prototype.$echarts = echarts;
+Vue.prototype.$lxjData = lxjData;
 Vue.use(ViewUI)
 
 new Vue({
