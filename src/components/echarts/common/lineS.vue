@@ -98,15 +98,15 @@ export default {
                 {
                     data: this.myData.value,
 					type: 'line',
-					areaStyle: {
-						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-							offset: 0,
-							color: this.colorList[0],
-						}, {
-							offset: 1,
-							color: '#fff'
-						}])
-					},
+					// areaStyle: {
+					// 	color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+					// 		offset: 0,
+					// 		color: this.colorList[0],
+					// 	}, {
+					// 		offset: 1,
+					// 		color: '#fff'
+					// 	}])
+					// },
 					// label:{
 					// 	position: 'right',
 					// },

@@ -4,7 +4,25 @@
 
 <script>
 export default {
-	props: ['myData',"id",'colorList'],
+	props: {
+		myData:{
+			default:()=>{
+				return [];
+			},
+		},
+		id:{
+			type:String,
+			default:()=>{
+				return '';
+			},
+		},
+		colorList:{
+			type:Array,
+			default:()=>{
+				return  ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564','#BF6E9B','#CECE7E','#91C2F2','#B7C8EA','#FF9F7F','#91C2F2','#B380B6','#EDA8AD','#738AD4','#FF9F7F'];
+			},
+		},
+	},
 	data () {
 		return {
 			
@@ -85,8 +103,7 @@ export default {
 					},
 					itemStyle: {
                          normal: {
-							   fontSize:20,
-                               barBorderRadius:30
+                               barBorderRadius:[30,30,0,0]
 						 },
 						 emphasis:{
 							 color:'#FF9F7F'

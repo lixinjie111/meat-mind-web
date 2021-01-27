@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import echarts from 'echarts'
 export default {
 	props: {
 		myData:{
@@ -43,17 +42,41 @@ export default {
 		},
 		defaultOption() {
 			var option = {
-            color: this.colorList[0],
+            color: this.colorList,
             tooltip: {
-                trigger: 'axis'
-            },
+				trigger: 'axis',
+				// formatter: function(list) {
+				// 	var msg = "";
+				// 	for (let i in list) {
+				// 		if (i == 0) {
+				// 			msg += list[i].name + "s<br>";
+				// 		}
+				// 		msg += list[i].seriesName + "：" + list[i].data + "<br>";
+				// 		// if (list[i].seriesName == "SCL") {
+				// 		// 	msg += list[i].seriesName + "：" + list[i].data + "<br>";
+				// 		// }else{
+							
+				// 		// }
+				// 	}
+				// 	return msg;
+				// }
+			},
             grid: {
                 left: 14,
-                right: '6%',
-                bottom: '6%',
+                right: 14,
+                bottom: 30,
                 top: '10%',
                 containLabel: true,
-            },
+			},
+			legend: {
+				icon: 'circle',
+				data: this.myData.legName,
+				bottom: 0,
+				textStyle: {
+					fontSize: 14,
+					color: '#424242'
+				}
+			},
             xAxis: {
                 type: 'category',
 				data: this.myData.name,
@@ -72,8 +95,14 @@ export default {
 				},
 
             },
-            yAxis: {
-                type: 'value',
+            yAxis: [
+			{
+				// name: '情绪指标',
+				type: 'value',
+				nameTextStyle:{
+					color:"#97A0C3", 
+					fontSize:12,  
+				},
                 axisLabel: {
 					formatter: '{value} ',
 					textStyle: {
@@ -92,35 +121,43 @@ export default {
 						color:'#E9EBF1',
                         //type: 'dashed',
                     }
+				},
+				
+			},
+			{
+				// type: 'value',
+				// name: '眼动注视指数',
+				// nameTextStyle:{
+				// 	color:"#97A0C3", 
+				// 	fontSize:12,  
+				// },
+				textStyle: {
+					color: "#97A0C3",   //这里用参数代替了
+					fontSize:'12'
+				},
+				axisLabel: {
+					formatter: `{value}${this.myData.formatter}`,
+					textStyle: {
+						color: "#97A0C3",   //这里用参数代替了
+						fontSize:'12'
+					}
                 },
-            },
-            series: [
-                {
-                    data: this.myData.value,
-					type: 'line',
-					areaStyle: {
-						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-							offset: 0,
-							color: this.colorList[0],
-						}, {
-							offset: 1,
-							color: '#fff'
-						}])
-					},
-					// label:{
-					// 	position: 'right',
-					// },
-					// itemStyle: {
-                    //      normal: {
-					// 		   fontSize:20,
-                    //            barBorderRadius:30
-					// 	 },
-					// 	 emphasis:{
-					// 		 color:'#FF9F7F'
-					// 	 }
-                    // },
-                }
-            ]
+				axisLine:{
+					lineStyle:{
+						color:'#E9EBF1',
+						//width:8,//这里是为了突出显示加上的
+					}
+				},
+                splitLine: {
+                    lineStyle: {
+						color:'#E9EBF1',
+                        //type: 'dashed',
+                    }
+				},
+			}
+		],
+			
+            series: this.myData.value
         };
 			return option;
 		}

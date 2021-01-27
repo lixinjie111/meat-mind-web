@@ -4,7 +4,25 @@
 
 <script>
 export default {
-	props: ['myData',"id",'colorList'],
+	props: {
+		myData:{
+			default:()=>{
+				return [];
+			},
+		},
+		id:{
+			type:String,
+			default:()=>{
+				return '';
+			},
+		},
+		colorList:{
+			type:Array,
+			default:()=>{
+				return  ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564','#BF6E9B','#CECE7E','#91C2F2','#B7C8EA','#FF9F7F','#91C2F2','#B380B6','#EDA8AD','#738AD4','#FF9F7F'];
+			},
+		},
+	},
 	data () {
 		return {
 			
@@ -32,7 +50,7 @@ export default {
 					}
 				},
 				legend: {
-					bottom:10,
+					bottom:0,
 					data: ['连续活跃用户', '流失用户', '沉默用户', '新用户', '回流用户'],
 					textStyle: {
 						color: "#97A0C3",   //这里用参数代替了
@@ -43,7 +61,7 @@ export default {
 					top: '5%',
 					left: '3%',
 					right: '3%',
-					bottom: '10%',
+					bottom: 50,
 					containLabel: true
 				},
 				xAxis: {
