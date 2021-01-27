@@ -28,9 +28,7 @@ export default {
 			
 		}
 	},
-    mounted() {
-        	this.initEcharts();
-    },
+    mounted(){this.initEcharts()},
 	methods: {
 		initEcharts() {
 			let _option = this.defaultOption();
