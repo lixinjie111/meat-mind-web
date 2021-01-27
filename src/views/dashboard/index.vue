@@ -60,6 +60,9 @@
                             </div>
                             <div class="right">
                                 <img class="top-img" src="../../assets/img/dashboard/neurometrics-result@2x.png"/>
+                                <div class="bottom-img" >
+                                    <img src="../../assets/img/dashboard/neurometrics-result2@2x.png"/>
+                                </div>
                             </div>
                         </div>
                         <Card title="客群诊断">
@@ -955,6 +958,17 @@
                     .top-img {
                         width: 372px;
                         height: 224px;
+                    }
+
+                    .bottom-img {
+                        width: 372px;
+                        height: 330px;
+                        overflow-y: auto;
+
+                        >img {
+                            width: 372px;
+                            height: auto;
+                        }
                     }
                 }
             }
