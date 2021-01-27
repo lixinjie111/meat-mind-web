@@ -7,9 +7,11 @@ import '../src/assets/viewui-theme/index.less'
 import echarts from 'echarts'
 import "../src/static/icon/iconfont.css"
 import "../src/assets/scss/main.scss"
+import lxjData from "./utils/lxjData.js";
 
 Vue.config.productionTip = false
-Vue.prototype.$echarts = echarts
+Vue.prototype.$echarts = echarts;
+Vue.prototype.$lxjData = lxjData;
 Vue.use(ViewUI)
 
 new Vue({
