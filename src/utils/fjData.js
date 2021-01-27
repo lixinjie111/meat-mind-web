@@ -100,5 +100,9 @@ const fjEData = {
         name: ['低购买力', '中购买力', '高购买力'],
         value: [15, 30, 55],
     },
+    box21Data: {
+        name: ['朝阳区', '海淀区', '东城区', '西城区', '通州区', '其他'],
+        value: [23, 29, 40, 31, 23, 18],
+    },
 }
 export default fjEData;

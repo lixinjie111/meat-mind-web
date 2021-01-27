@@ -34,9 +34,9 @@
     methods: {
       getChart() {
         this.myChart = this.$echarts.init(document.getElementById(this.chartID));
-        window.onresize = () => {
-          this.myChart.resize();
-        }
+        window.addEventListener('resize',()=>{
+                myChart.resize();
+            })
       },
       initEcharts(myData) {
         if (!myData) {
