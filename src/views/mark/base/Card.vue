@@ -3,9 +3,10 @@
     <div class="title">{{title}}</div>
     <div class="show-container">
       <div class="number" :class="colourfol">{{number}}</div>
-      <div class="echarts"></div>
+      <div class="card-echarts" :class="colourfol">
+      </div>
     </div>
-    <Compare :data="[-9.07, 2.17]"></Compare>
+    <Compare :data="data"></Compare>
   </div>
 </template>
 
@@ -25,6 +26,9 @@ export default {
       number:{
           type:String,
           default:'0'
+      },
+      data:{
+          type:Array,
       }
   }
 };
@@ -70,10 +74,22 @@ export default {
             color: #FFD98C;
         }
       }
-      .echarts{
+      .card-echarts{
         width: 50%;
         height: 56px;
         background: linear-gradient(#FFFFFF 0%, #4D94FF 100%);
+        &.blue{
+            background: url("../../../assets/img/mark/blue.png") no-repeat center center / 100% 56px;
+        }
+        &.purple{
+            background: url("../../../assets/img/mark/purple.png") no-repeat center center / 100% 56px;
+        }
+        &.pink{
+            background: url("../../../assets/img/mark/pink.png") no-repeat center center / 100% 56px;
+        }
+        &.orange{
+            background: url("../../../assets/img/mark/orange.png") no-repeat center center / 100% 56px;
+        }
       }
   }
 }

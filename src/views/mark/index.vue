@@ -40,7 +40,9 @@
                             <div class="box2-echart"></div>
                         </div>
                         <ul class="second-list red-card-ul">
-                            <li class="warning">敏感信息
+                            <li class="warning">
+                                <img src="../../assets/img/mark/warning@2x.png" alt="">
+                                敏感信息
                                 <p class="strong">443</p>
                             </li>
                             <li>邓老凉茶在凉茶巨头夹缝中迷失 同仁堂等遭</li>
@@ -242,8 +244,19 @@ export default {
                         flex-direction: row;
                         align-items: center;
                         &:first-child{
+                            // position: relative;
                             background: rgba(252,128,159,.2);
                             color: #FB343E;
+                            &:before{
+                                display: none;
+                            }
+                            img{
+                                // position: absolute;
+                                // top: 16px;
+                                // left: 16px;
+                                width: 24px;
+                                height: 24px;
+                            }
                             .strong{
                                 margin-left: 8px;
                                 font-size: 32px;
@@ -298,6 +311,7 @@ export default {
              .fourth-left-echarts{
                  width: 100%;
                  height: calc(100% - 40px);
+                 background: url("../../assets/img/mark/baiduzhishu.png") no-repeat center center / 100% 100%;
              }
          }
          .fourth-right{
