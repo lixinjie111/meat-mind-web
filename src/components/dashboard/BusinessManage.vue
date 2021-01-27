@@ -75,7 +75,7 @@
         </div>
         <Card title="客群诊断">
             <div slot="right" class="card-right">查看用户画像详情</div>
-            <div class="manage-card flex">
+            <div class="manage-card flex-start">
                 <div class="manage-card-left">
                     <p>诊断结果</p>
                     <ul class="red-ul">
@@ -91,13 +91,22 @@
                     </ul>
                 </div>
                 <div class="manage-card-right">
-
+                    <div class="manage-card-right-chart">
+                        <p>每日新增用户 | 过去30天</p>
+                        <cLine id="box5" :colorList="$lxjData.colorList"
+                               :myData="$lxjData.box5Data"></cLine>
+                    </div>
+                    <div class="manage-card-right-chart">
+                        <p>月活跃用户 | 上线至今</p>
+                        <cLine id="box51" :colorList="$lxjData.colorList"
+                               :myData="$lxjData.box51Data"></cLine>
+                    </div>
                 </div>
             </div>
         </Card>
         <Card title="媒介诊断">
             <div slot="right" class="card-right">查看媒介画像详情</div>
-            <div class="manage-card flex">
+            <div class="manage-card flex-start">
                 <div class="manage-card-left">
                     <p>诊断结果</p>
                     <ul class="red-ul">
@@ -111,13 +120,22 @@
                     </ul>
                 </div>
                 <div class="manage-card-right">
-
+                    <div class="manage-card-right-chart">
+                        <p>渠道 | 新增用户</p>
+                        <barM id="box4" :colorList="$lxjData.colorList"
+                              :myData="$lxjData.box4Data"></barM>
+                    </div>
+                    <div class="manage-card-right-chart">
+                        <p>渠道 | 新增用户</p>
+                        <lineM id="box6" :colorList="$lxjData.colorList"
+                               :myData="$lxjData.box6Data"></lineM>
+                    </div>
                 </div>
             </div>
         </Card>
         <Card title="品牌诊断">
             <div slot="right" class="card-right">查看品牌画像详情</div>
-            <div class="manage-card flex">
+            <div class="manage-card flex-start">
                 <div class="manage-card-left">
                     <p>诊断结果</p>
                     <ul class="red-ul">
@@ -133,7 +151,16 @@
                     </ul>
                 </div>
                 <div class="manage-card-right">
-
+                    <div class="manage-card-right-chart">
+                        <p>B站热度下降</p>
+                        <barL id="box2" :colorList="$lxjData.colorList"
+                              :myData="$lxjData.box2Data"></barL>
+                    </div>
+                    <div class="manage-card-right-chart">
+                        <p>品牌负面舆情监控</p>
+                        <lineM id="box61" :colorList="$lxjData.colorList"
+                               :myData="$lxjData.box61Data"></lineM>
+                    </div>
                 </div>
             </div>
         </Card>
@@ -217,10 +244,14 @@
 <script>
     import Card from "../../components/Card";
     import Compare from "../../components/Compare";
+    import barM from '../../components/echarts/common/barM';
+    import lineM from '../../components/echarts/common/lineM';
+    import barL from '../../components/echarts/common/barL';
+    import cLine from '../../components/echarts/common/line';
 
     export default {
         name: "BusinessManage",
-        components: {Compare, Card},
+        components: {Compare, Card, barL, barM, cLine, lineM},
         data() {
             return {}
         },
@@ -1072,6 +1103,26 @@
 
             .manage-card-right {
                 width: 60%;
+
+                .manage-card-right-chart {
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 50%;
+                    height: 185px;
+                    border-right: 1px solid #F0F0F0;
+
+                    > p {
+                        padding: 0 15px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #242F57;
+                    }
+
+                    &:last-child {
+                        border-right: none;
+                    }
+                }
             }
         }
 
