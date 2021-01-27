@@ -63,6 +63,28 @@
                 </div>
             </div>
             <ThirdLine></ThirdLine>
+            <div class="fourth-line">
+                <div class="fourth-left">
+                    <div class="fourth-title">品牌需求图谱</div>
+                    <div class="fourth-left-echarts"></div>
+                </div>
+                <div class="fourth-right">
+                    <div class="fourth-title">市场品类份额及品牌心智效能分析</div>
+                    <div class="fourth-right-show">
+                        <div class="fourth-right-echarts"></div>
+                        <div class="fourth-right-desc">
+                            <div class="desc">覆盖度：品牌行业市场占有率</div>
+                            <div class="desc2">近期行业态势：疫情后，2020年第三季度起增速回升，当前年均复合增长率为5.9%</div>
+                            <div class="desc">总体市场规模：国内 620.5B 海外 385B</div>
+                            <Colourfol :color="'active1'" :num="'6'"></Colourfol>
+                            <Colourfol :color="'active2'" :num="'7'"></Colourfol>
+                            <Colourfol :color="'active3'" :num="'5'"></Colourfol>
+                            <Colourfol :color="'active4'" :num="'8'"></Colourfol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Details></Details>
         </div>
     </DefaultPage>
 </template>
@@ -70,9 +92,11 @@
 <script>
 import DefaultPage from "../../layouts/DefaultPage";
 import ThirdLine from "./components/Benchmark"
+import Colourfol from "./base/Colourfol"
+import Details from "./components/Details"
 export default {
     name:"index",
-    components:{DefaultPage,ThirdLine}
+    components:{DefaultPage,ThirdLine,Colourfol,Details}
 }
 </script>
 
@@ -243,6 +267,64 @@ export default {
             }
         }
   
+     }
+
+     .fourth-line{
+         display: flex;
+         justify-content: space-between;
+         width: 100%;
+         height: 392px;
+         margin-top: 24px;
+         .fourth-left,.fourth-right{
+             display: flex;
+             flex-direction: column;
+             justify-content: space-between;
+             width: calc(50% - 12px);
+             height: 392px;
+             padding: 24px;
+             background: #FFFFFF;
+             box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+             border-radius: 8px;
+             .fourth-title{
+                height: 24px;
+                margin-bottom: 16px;
+                font-size: 16px;
+                font-weight: 500;
+                color: #242F57;
+                line-height: 24px;
+             }
+         }
+         .fourth-left{
+             .fourth-left-echarts{
+                 width: 100%;
+                 height: calc(100% - 40px);
+             }
+         }
+         .fourth-right{
+             .fourth-right-show{
+                 display: flex;
+                 width: 100%;
+                 height: calc(100% - 48px);
+                 .fourth-right-echarts,.fourth-right-desc{
+                     width: 50%;
+                     height: 100%;
+                 }
+                 .fourth-right-desc{
+                     .desc{
+                        height: 22px;
+                        margin-bottom: 8px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+                        line-height: 22px;
+                        &.desc2{
+                            height: 44px;
+                        }
+                     }
+                 }
+             }
+         }
      }
 
  }
