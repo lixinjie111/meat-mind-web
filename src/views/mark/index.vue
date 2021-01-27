@@ -62,15 +62,17 @@
                     </div>
                 </div>
             </div>
+            <ThirdLine></ThirdLine>
         </div>
     </DefaultPage>
 </template>
 
 <script>
 import DefaultPage from "../../layouts/DefaultPage";
+import ThirdLine from "./components/Benchmark"
 export default {
     name:"index",
-    components:{DefaultPage}
+    components:{DefaultPage,ThirdLine}
 }
 </script>
 

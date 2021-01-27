@@ -28,8 +28,8 @@ export default {
 			
 		}
 	},
-    mounted() {
-        	this.initEcharts();
+    mounted(){
+		this.initEcharts()
     },
 	methods: {
 		initEcharts() {
@@ -102,12 +102,12 @@ export default {
 						position: 'right',
 					},
 					itemStyle: {
-                         normal: {
+                        normal: {
                                barBorderRadius:[30,30,0,0]
-						 },
-						 emphasis:{
-							 color:'#FF9F7F'
-						 }
+						},
+						emphasis:{
+							color:'#FF9F7F'
+						}
                     },
                 }
             ]
