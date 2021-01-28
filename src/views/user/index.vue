@@ -5,6 +5,7 @@
     <div class="container">
       <Header :target="'用户画像'"></Header>
       <div class="show-content">
+        <!--用户动线部分-->
         <div class="yhdx_container">
           <div class="top_title_container">
             <div class="left_text">
@@ -45,7 +46,23 @@
                   v-if="ifShowPop1"
                   @mouseenter="showPop1"
                   @mouseleave="hidePop1"
-                ></div>
+                >
+                  <div class="mo_title">
+                    <div class="mo_title1">北京上班族</div>
+                    <div class="mo_title2">28790人</div>
+                  </div>
+                  <div class="sex_per">
+                    <div class="sex_tle">性别占比</div>
+                    <div class="sex_per_num">男 65% 女 35%</div>
+                  </div>
+                  <div class="age_per">
+                    <div class="age_item">年龄占比</div>
+                    <div class="age_item">10-25岁 65%</div>
+                    <div class="age_item">31-45岁 35%</div>
+                    <div class="age_item">26-30岁 15%</div>
+                  </div>
+                  <div class="more">查看更多</div>
+                </div>
               </div>
               <div class="echarts_item">
                 <div class="top_panel" @mouseenter="showPop2" @mouseleave="hidePop2">
@@ -68,7 +85,23 @@
                   v-if="ifShowPop2"
                   @mouseenter="showPop2"
                   @mouseleave="hidePop2"
-                ></div>
+                >
+                  <div class="mo_title">
+                    <div class="mo_title1">企业高管</div>
+                    <div class="mo_title2">3204人</div>
+                  </div>
+                  <div class="sex_per">
+                    <div class="sex_tle">性别占比</div>
+                    <div class="sex_per_num">男 85% 女 15%</div>
+                  </div>
+                  <div class="age_per">
+                    <div class="age_item">年龄占比</div>
+                    <div class="age_item">10-25岁 65%</div>
+                    <div class="age_item">31-45岁 35%</div>
+                    <div class="age_item">26-30岁 15%</div>
+                  </div>
+                  <div class="more">查看更多</div>
+                </div>
               </div>
               <div class="echarts_item">
                 <div class="top_panel" @mouseenter="showPop3" @mouseleave="hidePop3">
@@ -91,7 +124,23 @@
                   v-if="ifShowPop3"
                   @mouseenter="showPop3"
                   @mouseleave="hidePop3"
-                ></div>
+                >
+                  <div class="mo_title">
+                    <div class="mo_title1">北漂一族</div>
+                    <div class="mo_title2">18197人</div>
+                  </div>
+                  <div class="sex_per">
+                    <div class="sex_tle">性别占比</div>
+                    <div class="sex_per_num">男 55% 女 45%</div>
+                  </div>
+                  <div class="age_per">
+                    <div class="age_item">年龄占比</div>
+                    <div class="age_item">10-25岁 65%</div>
+                    <div class="age_item">31-45岁 35%</div>
+                    <div class="age_item">26-30岁 15%</div>
+                  </div>
+                  <div class="more">查看更多</div>
+                </div>
               </div>
               <div class="echarts_item">
                 <div class="top_panel" @mouseenter="showPop4" @mouseleave="hidePop4">
@@ -116,7 +165,23 @@
                   v-if="ifShowPop4"
                   @mouseenter="showPop4"
                   @mouseleave="hidePop4"
-                ></div>
+                >
+                  <div class="mo_title">
+                    <div class="mo_title1">研学青年</div>
+                    <div class="mo_title2">7930人</div>
+                  </div>
+                  <div class="sex_per">
+                    <div class="sex_tle">性别占比</div>
+                    <div class="sex_per_num">男 45% 女 55%</div>
+                  </div>
+                  <div class="age_per">
+                    <div class="age_item">年龄占比</div>
+                    <div class="age_item">10-25岁 65%</div>
+                    <div class="age_item">31-45岁 35%</div>
+                    <div class="age_item">26-30岁 15%</div>
+                  </div>
+                  <div class="more">查看更多</div>
+                </div>
               </div>
               <div class="echarts_item">
                 <div class="top_panel" @mouseenter="showPop5" @mouseleave="hidePop5">
@@ -140,9 +205,120 @@
                   v-if="ifShowPop5"
                   @mouseenter="showPop5"
                   @mouseleave="hidePop5"
-                ></div>
+                >
+                  <div class="mo_title">
+                    <div class="mo_title1">自由职业</div>
+                    <div class="mo_title2">28970人</div>
+                  </div>
+                  <div class="sex_per">
+                    <div class="sex_tle">性别占比</div>
+                    <div class="sex_per_num">男 49% 女 51%</div>
+                  </div>
+                  <div class="age_per">
+                    <div class="age_item">年龄占比</div>
+                    <div class="age_item">10-25岁 65%</div>
+                    <div class="age_item">31-45岁 35%</div>
+                    <div class="age_item">26-30岁 15%</div>
+                  </div>
+                  <div class="more">查看更多</div>
+                </div>
               </div>
             </div>
+          </div>
+
+          <div class="map_container">
+            <div class="map_content"></div>
+            <div class="map_desc_container">
+              <div class="map_title">北京上班族出行场景</div>
+              <div class="map_item">
+                <img :src="icon1" class="item_icon" />
+                <span class="item_txt">7:00-9:00</span>
+              </div>
+              <div class="map_item">
+                <img :src="icon2" class="item_icon" />
+                <span class="item_txt">写字楼、酒吧</span>
+              </div>
+              <div class="map_item">
+                <img :src="icon3" class="item_icon" />
+                <span class="item_txt">
+                  出行软件、网易云音乐、
+                  <br />地铁广告、公交广告
+                </span>
+              </div>
+              <div class="map_item" style="margin-bottom:0;">
+                <img :src="icon4" class="item_icon" />
+                <span class="item_txt">交通、餐饮、娱乐</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="radio_container">
+            <div class="radiocontent">
+              <div class="radiocontent_item">
+                <div class="radiocontent_item_label1"></div>
+                <div class="radiocontent_item_txt">娱乐APP</div>
+              </div>
+              <div class="radiocontent_item">
+                <div class="radiocontent_item_label2"></div>
+                <div class="radiocontent_item_txt">沟通APP</div>
+              </div>
+              <div class="radiocontent_item">
+                <div class="radiocontent_item_label3"></div>
+                <div class="radiocontent_item_txt">工作APP</div>
+              </div>
+              <div class="radiocontent_item">
+                <div class="radiocontent_item_label4"></div>
+                <div class="radiocontent_item_txt">新闻APP</div>
+              </div>
+              <div class="radiocontent_item">
+                <div class="radiocontent_item_label5"></div>
+                <div class="radiocontent_item_txt">视频APP</div>
+              </div>
+              <div class="radiocontent_item">
+                <div class="radiocontent_item_label6"></div>
+                <div class="radiocontent_item_txt">学术APP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--触达用户媒介-->
+        <div class="cdyhmj_container">
+          <div class="cdyhmj_title_container">
+            <div class="cdyhmj_title">触达用户媒介</div>
+            <div class="cdyhmj_title_desc">
+              <span class="title_desc_txt">查看媒介画像详情</span>
+              <img :src="toRIcon" class="toRIcon" />
+            </div>
+          </div>
+          <div class="cdyhmj_content_container">
+            <div class="cdyhmj_content_top">
+              <div class="cdyhmj_content_top_lef">
+                <div class="cdyhmj_content_item item1">自定义媒介投放预算 (元)</div>
+                <div class="cdyhmj_content_item item2">
+                  <div class="input_container">
+                    <span class="input1">￥</span>
+                    <span class="inpu2">15,000</span>
+                  </div>
+                  <div class="hg_txt"></div>
+                  <div class="input_container">
+                    <span class="input1">￥</span>
+                    <span class="inpu23"></span>
+                  </div>
+                </div>
+                <div class="cdyhmj_content_item item3">目标客群</div>
+                <div class="cdyhmj_content_item item4">
+                  <img :src="inputIcon" class="inputIcon" />
+                </div>
+                <div class="cdyhmj_content_item item1">营销关键词</div>
+                <div class="cdyhmj_content_item item5">
+                  <div class="item_xtt">青春</div>
+                  <div class="item_xtt">活力</div>
+                </div>
+              </div>
+              <div class="cdyhmj_content_top_ri"></div>
+            </div>
+            <div class="cdyhmj_content_bom"></div>
           </div>
         </div>
       </div>
@@ -163,7 +339,13 @@ export default {
       ifShowPop2: false,
       ifShowPop3: false,
       ifShowPop4: false,
-      ifShowPop5: false
+      ifShowPop5: false,
+      icon1: require("../../assets/img/yhhx/map1.png"),
+      icon2: require("../../assets/img/yhhx/map2.png"),
+      icon3: require("../../assets/img/yhhx/map3.png"),
+      icon4: require("../../assets/img/yhhx/map4.png"),
+      toRIcon: require("../../assets/img/yhhx/toR.png"),
+      inputIcon: require("../../assets/img/yhhx/input.png")
     };
   },
   mounted() {
@@ -998,13 +1180,322 @@ export default {
               }
               .model_pop {
                 position: absolute;
-                top: 10px;
-                left: 10px;
+                top: 20px;
+                left: 20px;
                 width: 175px;
                 height: 268px;
-                background-color: deeppink;
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04);
+                border-radius: 4px;
+                padding: 16px;
+                box-sizing: border-box;
+                .mo_title {
+                  width: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  margin-bottom: 16px;
+                  .mo_title1 {
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #242f57;
+                  }
+                  .mo_title2 {
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #2373ff;
+                  }
+                }
+                .sex_per,
+                .age_per {
+                  width: 100%;
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #242f57;
+                  margin-bottom: 16px;
+                  .sex_tle,
+                  .sex_per_num,
+                  .age_item {
+                    width: 100%;
+                  }
+                }
+                .age_per {
+                  margin-bottom: 27px;
+                }
+                .more {
+                  width: 100%;
+                  display: flex;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #2373ff;
+                }
               }
             }
+          }
+        }
+        .map_container {
+          width: 100%;
+          min-height: 302px;
+          padding: 20px;
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          background-color: rgba(166, 171, 189, 0.08);
+          margin-bottom: 12px;
+          .map_desc_container {
+            width: 313px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            .map_title {
+              width: 290px;
+              font-size: 16px;
+              font-family: PingFangSC-Medium, PingFang SC;
+              font-weight: 500;
+              color: #242f57;
+              margin-bottom: 12px;
+            }
+            .map_item {
+              width: 290px;
+              height: 46px;
+              background: #feffff;
+              border-radius: 8px;
+              display: flex;
+              align-items: center;
+              padding: 13px 16px;
+              box-sizing: border-box;
+              margin-bottom: 14px;
+              .item_icon {
+                display: block;
+                width: 18px;
+                height: 18px;
+                margin-right: 4px;
+              }
+              .item_txt {
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #242f57;
+              }
+            }
+          }
+          .map_content {
+            flex: 1;
+            height: 100%;
+            background-color: deepskyblue;
+          }
+        }
+        .radio_container {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          .radiocontent {
+            width: 500px;
+            height: 17px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .radiocontent_item {
+              display: flex;
+              align-items: center;
+              width: 60px;
+              height: 100%;
+              .radiocontent_item_label1,
+              .radiocontent_item_label2,
+              .radiocontent_item_label3,
+              .radiocontent_item_label4,
+              .radiocontent_item_label5,
+              .radiocontent_item_label6 {
+                width: 8px;
+                height: 8px;
+                background: #4d94ff;
+                margin-right: 4px;
+                border-radius: 50%;
+              }
+              .radiocontent_item_label2 {
+                background: #ff9f7f;
+              }
+              .radiocontent_item_label3 {
+                background: #a49dfa;
+              }
+              .radiocontent_item_label4 {
+                background: #8ae6c7;
+              }
+              .radiocontent_item_label5 {
+                background: #ffd98c;
+              }
+              .radiocontent_item_label6 {
+                background: #91c2f2;
+              }
+              .radiocontent_item_txt {
+                font-size: 12px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636e95;
+              }
+            }
+          }
+        }
+      }
+
+      .cdyhmj_container {
+        width: 100%;
+        min-height: 592px;
+        background: #ffffff;
+        box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+        border-radius: 8px;
+        margin-top: 24px;
+        padding: 20px 24px 24px 24px;
+        box-sizing: border-box;
+        .cdyhmj_title_container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          height: 24px;
+          .cdyhmj_title {
+            font-size: 16px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242f57;
+          }
+          .cdyhmj_title_desc {
+            display: flex;
+            align-items: center;
+            .title_desc_txt {
+              font-size: 14px;
+              font-family: PingFangSC-Medium, PingFang SC;
+              font-weight: 500;
+              color: #7c88b1;
+              margin-right: 4px;
+            }
+            .toRIcon {
+              display: block;
+              width: 16px;
+              height: 16px;
+            }
+          }
+        }
+        .cdyhmj_content_container {
+          width: 100%;
+          min-height: 507px;
+          border-radius: 8px;
+          border: 1px solid #eaedf7;
+          margin-top: 20px;
+          .cdyhmj_content_top {
+            width: 100%;
+            min-height: 290px;
+            border-bottom: 1px solid #eaedf7;
+            display: flex;
+            align-items: center;
+            .cdyhmj_content_top_lef {
+              width: 376px;
+              height: 100%;
+              padding: 24px;
+              box-sizing: border-box;
+              .cdyhmj_content_item {
+                width: 100%;
+              }
+              .item1 {
+                margin-bottom: 8px;
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #97a0c3;
+              }
+              .item2 {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .hg_txt {
+                  width: 12px;
+                  height: 1px;
+                  background: #c6cbde;
+                  border-radius: 2px;
+                }
+                .input_container {
+                  width: 144px;
+                  height: 40px;
+                  box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8),
+                    -2px -2px 7px 0px #fffefa;
+                  border-radius: 8px;
+                  border: 1px solid #c6cbde;
+                  padding: 4px;
+                  box-sizing: border-box;
+                  display: flex;
+                  align-items: center;
+                  .input1 {
+                    font-size: 24px;
+                    font-family: PingFangSC-Semibold, PingFang SC;
+                    font-weight: 600;
+                    color: #c5cadf;
+                  }
+                  .inpu2 {
+                    font-size: 24px;
+                    font-family: HelveticaNeue-Bold, HelveticaNeue;
+                    font-weight: bold;
+                    color: #242f57;
+                  }
+                  .inpu23 {
+                    display: block;
+                    width: 6px;
+                    height: 32px;
+                    font-size: 24px;
+                    font-family: HelveticaNeue;
+                    color: #4488ff;
+                    line-height: 32px;
+                  }
+                }
+              }
+              .item3 {
+                margin-top: 16px;
+                margin-bottom: 8px;
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #97a0c3;
+              }
+              .item4 {
+                height: 40px;
+                margin-bottom: 16px;
+                .inputIcon {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+              .item5 {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                .item_xtt {
+                  padding: 9px 16px;
+                  background: #ecf3ff;
+                  border-radius: 8px;
+                  border: 1px solid #2373ff;
+                  font-size: 18px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #2373ff;
+                  margin-right: 8px;
+                }
+              }
+            }
+            .cdyhmj_content_top_ri {
+              flex: 1;
+              height: 100%;
+              background-color: seagreen;
+            }
+          }
+          .cdyhmj_content_bom {
+            width: 100%;
+            min-height: 217px;
           }
         }
       }
