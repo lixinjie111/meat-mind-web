@@ -26,7 +26,9 @@
               <div class="show-echart">
                   <div class="age">
                     <div class="s-title">年龄分布</div>
-                    <div class="s-echart"></div>
+                    <div class="s-echart">
+                        <barL id="box21" :colorList="$lxjData.colorList" :myData="$lxjData.box21Data"></barL>
+                    </div>
                   </div>
                   <div class="sex">
                       <div class="s-title">性别分布</div>
@@ -34,7 +36,9 @@
                   </div>
                   <div class="customer">
                       <div class="s-title">客群购买力分析</div>
-                      <div class="s-echart"></div>
+                      <div class="s-echart">
+                          <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box20Data" ></PieEcharts>
+                      </div>
                   </div>
               </div>
           </div>
@@ -58,9 +62,11 @@
 
 <script>
 import Card from "../base/Card"
+import barL from '../../../components/echarts/common/barL';
+import PieEcharts from '../../../components/echarts/common/PieEcharts';
 export default {
     name:"Benchmark",
-    components:{Card}
+    components:{Card,barL,PieEcharts}
 }
 </script>
 

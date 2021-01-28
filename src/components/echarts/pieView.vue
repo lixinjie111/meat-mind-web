@@ -1,40 +1,40 @@
 <template>
   <div class="box-content">
     <!-- 教育背景结构 -->
-    <div class="box">
+    <div class="box box1">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts>
     </div>
-    <div class="box">
+    <div class="box box2">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box2Data"></PieEcharts>
     </div>
-    <div class="box">
+    <div class="box box3">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box3Data" roseType="radius"></PieEcharts>
     </div>
-    <div class="box">
+    <div class="box box4">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box4Data"></PieEcharts>
     </div>
-    <div class="box">
+    <div class="box box5">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieEcharts>
     </div>
-    <div class="box">
+    <div class="box box6">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box6Data"></PieEcharts>
     </div>
-    <div class="box">
+    <div class="box box7">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box7Data"></PieEcharts>
     </div>
-    <div class="box">
+    <div class="box box8">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box8Data"></PieEcharts>
     </div>
-    <div class="box">
+    <div class="box box9">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box9Data"></PieEcharts>
     </div>
-    <div class="box">
+    <div class="box box10">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box10Data"></PieEcharts>
     </div>
-    <div class="box">
+    <div class="box box11">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box11Data"></PieEcharts>
     </div>
-    <div class="box">
+    <div class="box box12">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box12Data"></PieEcharts>
     </div>
     <!-- <div class="box">
@@ -61,35 +61,35 @@
     <div class="box">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts>
     </div> -->
-    <div class="box">
+    <div class="box box13">
       <RotateChart :colorList="$fjData.colorList" :myData="$fjData.box13Data"></RotateChart>
     </div>
-    <div class="box">
+    <div class="box box14">
       <LeidaEcharts :colorList="$fjData.colorList" :myData="$fjData.box14Data" titleText="92"></LeidaEcharts>
     </div>
-    <div class="box">
+    <div class="box box15">
       <MatchEcharts :colorList="$fjData.colorList" :myData="$fjData.box15Data" ></MatchEcharts>
     </div>
-    <div class="box">
+    <div class="box box16">
       <Yibiao1Echarts :colorList="$fjData.colorList" :myData="$fjData.box16Data" ></Yibiao1Echarts>
     </div>
-    <div class="box">
+    <div class="box box17">
       <YibiaoCharts2 :colorList="$fjData.colorList" :myData="$fjData.box17Data" ></YibiaoCharts2>
     </div>
-    <div class="box">
+    <div class="box box18">
       <Yuanhuan1 :colorList="$fjData.colorList" :myData="$fjData.box18Data" ></Yuanhuan1>
     </div>
-    <div class="box">
+    <div class="box box19">
       <Leida2Echarts :colorList="$fjData.colorList" :myData="$fjData.box19Data" ></Leida2Echarts>
     </div>
-     <div class="box">
+     <div class="box box20">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box20Data" ></PieEcharts>
     </div>
   </div>
 </template>
 
 <script>
-import echarts from 'echarts';
+// import echarts from 'echarts';
   import PieEcharts from './common/PieEcharts';
   import RotateChart from './common/RotateChart';
   import LeidaEcharts from './common/LeidaEcharts';

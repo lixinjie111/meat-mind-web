@@ -10,7 +10,9 @@
                                 品牌综合评估
                                 <p class="t-number">92</p>
                             </div>
-                            <div class="show-echart"></div>
+                            <div class="show-echart">
+                                <LeidaEcharts :colorList="$fjData.colorList" :myData="$fjData.box14Data" titleText="92"></LeidaEcharts>
+                            </div>
                         </div>
                         <ul class="card-list blue-card-ul">
                             <li><div><b>覆盖度：</b>品牌行业市场占有率</div></li>
@@ -24,7 +26,9 @@
                 </div>
                 <div class="tea-trend">
                     <div class="title">2016-2021年中国凉茶产量规模增长</div>
-                    <div class="tea-echart"></div>
+                    <div class="tea-echart">
+                        <barEcharts id="box14" :colorList="$lxjData.colorList" :myData="$lxjData.box14Data"></barEcharts>
+                    </div>
                 </div>
             </div>
             <div class="second-line">
@@ -32,12 +36,16 @@
                 <div class="second-content">
                     <div class="box1">
                         <div class="name">信息来源占比（%）</div>
-                        <div class="box1-echart"></div>
+                        <div class="box1-echart">
+                            <barEcharts id="box15" :colorList="$lxjData.colorList" :myData="$lxjData.box15Data"></barEcharts>
+                        </div>
                     </div>
                     <div class="box2">
                         <div class="box2-left">
                             <div class="name">敏感占比图 </div>
-                            <div class="box2-echart"></div>
+                            <div class="box2-echart">
+                                <YibiaoCharts2 :colorList="$fjData.colorList" :myData="$fjData.box17Data" ></YibiaoCharts2>
+                            </div>
                         </div>
                         <ul class="second-list red-card-ul">
                             <li class="warning">
@@ -53,11 +61,15 @@
                     </div>
                     <div class="box3">
                         <div class="name">负面舆情应对说明</div>
-                        <div class="box3-echart"></div>
+                        <div class="box3-echart">
+                            <lineM id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM>
+                        </div>
                     </div>
                     <div class="box4">
                         <div class="name">舆情处理建议</div>
-                        <div class="box4-echart"></div>
+                        <div class="box4-echart">
+                            <Leida2Echarts :colorList="$fjData.colorList" :myData="$fjData.box19Data" ></Leida2Echarts>
+                        </div>
                         <div class="box4-desc">鉴于数据搜集显示负面新闻曝光量不足，
                             没有形成爆点和舆论热点，不需要过度采取媒体公关和舆论反击，否则容易造成二次传播，
                             增加负面传播强度及扩散时间，预计6-7周后可回归平静</div>
@@ -73,15 +85,17 @@
                 <div class="fourth-right">
                     <div class="fourth-title">市场品类份额及品牌心智效能分析</div>
                     <div class="fourth-right-show">
-                        <div class="fourth-right-echarts"></div>
+                        <div class="fourth-right-echarts">
+                            <Yuanhuan1 :colorList="$fjData.colorList" :myData="$fjData.box18Data" ></Yuanhuan1>
+                        </div>
                         <div class="fourth-right-desc">
                             <div class="desc">覆盖度：品牌行业市场占有率</div>
                             <div class="desc2">近期行业态势：疫情后，2020年第三季度起增速回升，当前年均复合增长率为5.9%</div>
                             <div class="desc">总体市场规模：国内 620.5B 海外 385B</div>
-                            <Colourfol :color="'active1'" :num="'6'"></Colourfol>
-                            <Colourfol :color="'active2'" :num="'7'"></Colourfol>
-                            <Colourfol :color="'active3'" :num="'5'"></Colourfol>
-                            <Colourfol :color="'active4'" :num="'8'"></Colourfol>
+                            <Colourfol :title="'感知度（整体有效性）：'" :color="'active1'" :num="'6'"></Colourfol>
+                            <Colourfol :title="'联想度（记忆触发）：'" :color="'active2'" :num="'7'"></Colourfol>
+                            <Colourfol :title="'关注度（注意力停留）：'" :color="'active3'" :num="'5'"></Colourfol>
+                            <Colourfol :title="'共鸣感（情感投入）：'" :color="'active4'" :num="'8'"></Colourfol>
                         </div>
                     </div>
                 </div>
@@ -96,9 +110,16 @@ import DefaultPage from "../../layouts/DefaultPage";
 import ThirdLine from "./components/Benchmark"
 import Colourfol from "./base/Colourfol"
 import Details from "./components/Details"
+import Yuanhuan1 from '../../components/echarts/common/Yuanhuan1';
+import LeidaEcharts from '../../components/echarts/common/LeidaEcharts';
+import barEcharts from '../../components/echarts/common/barEcharts';
+import YibiaoCharts2 from '../../components/echarts/common/YibiaoCharts2';
+import lineM from '../../components/echarts/common/lineM';
+import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
+
 export default {
     name:"index",
-    components:{DefaultPage,ThirdLine,Colourfol,Details}
+    components:{DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts}
 }
 </script>
 
@@ -152,6 +173,9 @@ export default {
                         font-weight: 500;
                         font-family: HelveticaNeue-Medium, HelveticaNeue;
                         line-height: 40px;
+                    }
+                    .show-echart{
+                        height: calc(100% - 40px);
                     }
                 }
                 .card-list{
