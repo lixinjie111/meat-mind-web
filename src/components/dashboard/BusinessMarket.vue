@@ -203,23 +203,23 @@
                 </div>
                 <div class="card-six-right clearfix">
                     <div class="card-six-right-item fl">
-                        <p>北京快销品 行业分析报告</p>
+                        <p>北京快销品<br>行业分析报告</p>
                         <p>年度/季度/月度报告</p>
                         <p>元知智能研究院</p>
                     </div>
                     <div class="card-six-right-item fl">
-                        <p>北京软饮料 市场规模跟踪</p>
-                        <p>重点市场规模数据跟踪及提取</p>
+                        <p>北京软饮料<br>市场规模跟踪</p>
+                        <p>重点市场规模<br>数据跟踪及提取</p>
                         <p>元知智能研究院</p>
                     </div>
                     <div class="card-six-right-item fl">
-                        <p>店铺分析选址 方法论</p>
+                        <p>店铺分析选址<br>方法论</p>
                         <p>宝贝优化<br>竞品分析<br>备货指导</p>
                         <p>元知智能研究院</p>
                     </div>
                     <div class="card-six-right-item fl">
-                        <p>北京快销品 行业分析报告</p>
-                        <p>年度/季度/月度报告</p>
+                        <p>正负面情绪提取</p>
+                        <p>分析销售场<br>优化品牌定位</p>
                         <p>元知智能研究院</p>
                     </div>
                     <div class="card-six-right-item fl">
@@ -228,7 +228,7 @@
                         <p>元知智能研究院</p>
                     </div>
                     <div class="card-six-right-item fl">
-                        <p>心智剖析产品 SWOT</p>
+                        <p>心智剖析产品<br>SWOT</p>
                         <p>竞品优势对比<br>查漏补缺</p>
                         <p>元知智能研究院</p>
                     </div>
@@ -718,7 +718,6 @@
                         color: #FFFFFF;
 
                         &:nth-child(1) {
-                            width: 108px;
                             font-size: 18px;
                             font-family: PingFangSC-Semibold, PingFang SC;
                             font-weight: 600;
