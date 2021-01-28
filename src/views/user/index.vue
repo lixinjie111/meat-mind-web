@@ -593,7 +593,37 @@
           </div>
         </div>
 
-        <div class="smzqfx_area_container"></div>
+        <div class="smzqfx_area_container">
+            <div class="smzqfx_title">生命周期分析</div>
+            <div class="xfsmlcpg_container">
+                <div class="xfsmlcpg_title">消费生命旅程评估</div>
+                <div></div>
+            </div>
+            <div class="xfjzg_container">
+                <div class="xfjzg_container_lef">
+                    <div class="jichuhuax_echarts_item_title">
+                        <div class="jichuhuax_echarts_item_title_lef">
+                        <div class="nljg">消费者价值评估</div>
+                        <div class="range_titme">2020.12.01-2020.12.31</div>
+                        </div>
+                        <div class="jichuhuax_echarts_item_title_rig">
+                            <img :src="threeP" class="threeP">
+                        </div>
+                    </div>
+                </div>
+                <div class="xfjzg_container_rig">
+                    <div class="jichuhuax_echarts_item_title">
+                        <div class="jichuhuax_echarts_item_title_lef">
+                        <div class="nljg">加之贡献度（按标签）</div>
+                        <div class="range_titme">2020.12.01-2020.12.31</div>
+                        </div>
+                        <div class="jichuhuax_echarts_item_title_rig">
+                            <img :src="threeP" class="threeP">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
       </div>
@@ -2396,6 +2426,77 @@ export default {
         background: #FFFFFF;
         box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
         border-radius: 8px;
+        margin-top: 24px;
+        padding: 24px;
+        box-sizing: border-box;
+        .smzqfx_title{
+            width: 100%;
+            margin-bottom: 24px;        
+            font-size: 16px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242F57;
+        }
+        .xfsmlcpg_container{
+            width: 100%;
+            height: 336px;
+            background: #FFFFFF;
+            border-radius: 8px;
+            border: 1px solid #EAEDF7;
+            padding: 16px;
+            box-sizing: border-box;
+            .xfsmlcpg_title{
+                width: 100%;
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #242F57;
+            }
+        }
+        .xfjzg_container{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 24px;
+            .xfjzg_container_lef,.xfjzg_container_rig{
+                width: 49%;
+                height: 377px;
+                background: #FFFFFF;
+                border-radius: 8px;
+                border: 1px solid #EAEDF7;
+                padding: 16px;
+                box-sizing: border-box;
+                .jichuhuax_echarts_item_title {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .jichuhuax_echarts_item_title_lef {
+                        .nljg {
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242f57;
+                        }
+                        .range_titme {
+                        margin-top: 4px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #7c88b1;
+                        }
+                    }
+                    .jichuhuax_echarts_item_title_rig {
+                        width: 16px;
+                        height: 16px;
+                        .threeP {
+                        display: block;
+                        width: 100%;
+                        }
+                    }
+                }
+            }
+        }
       }
     }
   }
