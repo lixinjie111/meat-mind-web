@@ -227,7 +227,17 @@
           </div>
 
           <div class="map_container">
-            <div class="map_content"></div>
+            <div class="map_content">
+              <video
+                class="player"
+                width="100%"
+                height="100%"
+                autoplay
+                loop
+                muted
+                src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"
+              ></video>
+            </div>
             <div class="map_desc_container">
               <div class="map_title">北京上班族出行场景</div>
               <div class="map_item">
@@ -476,7 +486,17 @@
 
         <div class="xwfx_area_container">
           <div class="xwfx_area_til">行为分析</div>
-          <div class="ditu_area"></div>
+          <div class="ditu_area">
+            <video
+              class="player"
+              width="100%"
+              height="100%"
+              autoplay
+              loop
+              muted
+              src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"
+            ></video>
+          </div>
           <div class="xwfx_area_til" style="margin-bottom:12px;">不同时段APP使用情况</div>
           <div class="use_app_area">
             <img :src="useApp" style="width:100%;" />
@@ -1465,7 +1485,6 @@ export default {
           .map_content {
             flex: 1;
             height: 100%;
-            background-color: deepskyblue;
           }
         }
         .radio_container {
@@ -2105,7 +2124,6 @@ export default {
         }
         .ditu_area {
           width: 100%;
-          height: 385px;
           background-color: silver;
           margin-bottom: 24px;
         }
@@ -2152,7 +2170,8 @@ export default {
           font-weight: 500;
           color: #242f57;
         }
-        .yhsj_echarts,.xzsk_echarts {
+        .yhsj_echarts,
+        .xzsk_echarts {
           width: 100%;
           height: 336px;
           background: #ffffff;
