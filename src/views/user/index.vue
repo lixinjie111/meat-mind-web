@@ -488,7 +488,7 @@
                   <div class="range_titme">1-4当周</div>
                 </div>
                 <div class="jichuhuax_echarts_item_title_rig">
-                    <img :src="threeP" class="threeP">
+                  <img :src="threeP" class="threeP" />
                 </div>
               </div>
               <div class="jichuhuax_echarts_item_content">
@@ -569,6 +569,28 @@
           <div class="xzfx_area_title">心智分析</div>
           <div class="yhsj_echarts">用户视觉心智动态捕捉</div>
           <div class="xzsk_echarts">心智时空曲线</div>
+          <div class="xinzfb_container">
+            <div class="xinzfb_container_lef">
+              <div class="xinzfb_container_lef_tel">心智分布</div>
+              <div></div>
+            </div>
+            <div class="xinzfb_container_rig">
+              <div class="xinzfb_container_rig_tel">心智倾向</div>
+              <div></div>
+            </div>
+          </div>
+          <div class="ppxz_container">
+            <div class="ppxz_title">品牌心智</div>
+            <div class="ppxz_title_desc">分心品牌当前受众的不同阶段的数据</div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="xzcb_container">
+            <div class="ppxz_title">心智传播网络</div>
+            <div class="ppxz_title_desc">分析传播途径</div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -618,7 +640,7 @@ export default {
       yhtIcon: require("../../assets/img/yhhx/yht.png"),
       input1: require("../../assets/img/yhhx/input1.png"),
       useApp: require("../../assets/img/yhhx/useApp.png"),
-      threeP:require("../../assets/img/yhhx/threeP.png")
+      threeP: require("../../assets/img/yhhx/threeP.png")
     };
   },
   mounted() {
@@ -2200,13 +2222,13 @@ export default {
                   color: #7c88b1;
                 }
               }
-              .jichuhuax_echarts_item_title_rig{
-                  width: 16px;
-                  height: 16px;
-                  .threeP{
-                      display: block;
-                      width: 100%;
-                  }
+              .jichuhuax_echarts_item_title_rig {
+                width: 16px;
+                height: 16px;
+                .threeP {
+                  display: block;
+                  width: 100%;
+                }
               }
             }
             .jichuhuax_echarts_item_content{
@@ -2276,6 +2298,7 @@ export default {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
+        margin-top: 24px;
         .xzfx_area_title {
           font-size: 16px;
           font-family: PingFangSC-Medium, PingFang SC;
@@ -2291,6 +2314,75 @@ export default {
           border: 1px solid #eaedf7;
           margin-bottom: 24px;
           padding: 16px;
+        }
+        .xinzfb_container {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .xinzfb_container_lef,
+          .xinzfb_container_rig {
+            width: 49%;
+            height: 393px;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #eaedf7;
+            padding: 16px;
+            box-sizing: border-box;
+            .xinzfb_container_lef_tel {
+              width: 100%;
+            }
+          }
+        }
+        .ppxz_container {
+          margin-top: 24px;
+          width: 100%;
+          height: 523px;
+          padding: 16px;
+          box-sizing: border-box;
+          background: #ffffff;
+          border-radius: 8px;
+          border: 1px solid #eaedf7;
+          margin-bottom: 24px;
+          .ppxz_title {
+            width: 100%;
+            font-size: 14px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #242f57;
+            margin-bottom: 4px;
+          }
+          .ppxz_title_desc {
+            width: 100%;
+            font-size: 12px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #636e95;
+          }
+        }
+        .xzcb_container {
+          width: 100%;
+          height: 292px;
+          background: #ffffff;
+          border-radius: 8px;
+          border: 1px solid #eaedf7;
+          padding: 16px;
+          box-sizing: border-box;
+          .ppxz_title {
+            width: 100%;
+            font-size: 14px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #242f57;
+            margin-bottom: 4px;
+          }
+          .ppxz_title_desc {
+            width: 100%;
+            font-size: 12px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #636e95;
+          }
         }
       }
     }
