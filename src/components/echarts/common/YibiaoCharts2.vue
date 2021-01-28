@@ -35,7 +35,7 @@
       getChart() {
         this.myChart = this.$echarts.init(document.getElementById(this.chartID));
         window.addEventListener('resize',()=>{
-                myChart.resize();
+                this.myChart.resize();
             })
       },
       initEcharts(myData) {

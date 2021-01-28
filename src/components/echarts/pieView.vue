@@ -85,6 +85,9 @@
      <div class="box box20">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box20Data" ></PieEcharts>
     </div>
+    <div class="box">
+      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box21Data" roseType="radius"></PieEcharts>
+    </div>
   </div>
 </template>
 
