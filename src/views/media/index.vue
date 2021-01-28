@@ -47,9 +47,62 @@
                 </div>
               </div>
           </div>
-            <div class="m-p-third-line">
-                <div class="m-p-t-title"></div>
-                <div class="m-p-t-echarts"></div>
+            <div class="m-p-pie">
+                <div class="m-pie-title">媒介用户画像</div>
+                <div class="m-pie-echarts">
+                    <Triple :title1="'性别分布'" :title2="'年龄分布'" :title3="'职业分布'">
+                        <div slot="left"></div>
+                        <div slot="mid"></div>
+                        <div slot="right"></div>
+                    </Triple>
+                    <Triple :title1="'收入分布'" :title2="'家庭情况'" :title3="'网龄结构'">
+                        <div slot="left"></div>
+                        <div slot="mid"></div>
+                        <div slot="right"></div>
+                    </Triple>
+                </div>
+            </div>
+            <div class="m-p-third-module">
+                <div class="m-p-t-left">
+                    <Full :title="'媒介领域热度排名'"></Full>
+                </div>
+                <div class="m-p-t-right">
+                    <div class="m-p-right-top">
+                        <div class="m-p-right-push">
+                            <div class="m-p-r-title">触达方案推荐</div>
+                            <div>
+                                <p>方案一</p>
+                                <img src="../../assets/img/mark/douyin.png" alt="">+
+                                <img src="../../assets/img/mark/xiaohongshu.png" alt="">+
+                                <img src="../../assets/img/mark/kuaishou.png" alt="">
+                            </div>
+                            <div>
+                                <p>方案二</p>
+                                <img src="../../assets/img/mark/douyin.png" alt="">+
+                                <img src="../../assets/img/mark/weibo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="m-p-right-media">
+                            <div class="m-p-r-title">组合媒介曝光量预期 </div>
+                            <div class="m-p-r-num">324,343</div>
+                            <div class="m-p-r-echarts"></div>
+                        </div>
+                    </div>
+                    <div class="m-p-right-bottom">
+                        <p>相关指标预期</p>
+                        <div>
+                            <div style="margin-right:16px"><Card :title="'综合预期CPE'" :colourfol="'blue'" :number="'0.35'"></Card></div>
+                            <div><Card :title="'组合互动总数'" :colourfol="'purple'" :number="'427,260'"></Card></div>  
+                        </div>
+                        <div>
+                           <div style="margin-right:16px"><Card :title="'组合粉丝数'" :colourfol="'pink'" :number="'6,968,580'"></Card></div>    
+                            <div><Card :title="'组合预算（元）'" :colourfol="'orange'" :number="'29,986'"></Card></div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m-p-last">
+                <Half :lTitle="'媒介曝光触达'" :rTitle="'媒介传播效率'"></Half>
             </div>
       </div>
 
@@ -65,16 +118,19 @@
 
 <script>
 import DefaultPage from "../../layouts/DefaultPage";
-
+import Triple from "./base/Triple"
+import Half from "./base/Half"
+import Full from "./base/Full"
+import Card from "./base/Card"
 export default {
   name: "index",
-  components: { DefaultPage },
+  components: { DefaultPage, Triple, Full, Card, Half},
   data(){
       return{
           list1:["哔哩哔哩","抖音","快手","小红书","新浪微博","头条","大众点评","360kr"],
           list2:["不限","才艺技能","财经投资","测评","动画动漫","鬼畜","国潮国创","技术流","家居家装","教育","剧情搞笑",
           "科技数码","旅行","美食","美妆","萌宠","明星","母婴","汽车","情感","三农","生活日常",
-          "时尚","舞蹈","艺术文化","个护","园艺","运动健身","奢侈品","新闻资讯","品牌组织"],
+          "时尚","舞蹈","艺术文化","个护","园艺","运动健身","奢侈品","新闻资讯","品牌组织","颜值达人","知识科普","番剧","游戏","品牌组织"],
           list3:["按照最低刊例价组合","按照最高刊例价组合"]
       }
   }
@@ -214,14 +270,15 @@ export default {
             }
         }
     }
-    .m-p-third-line{
+    .m-p-pie{
         width: 100%;
         height: 654px;
         padding: 16px;
+        margin-bottom: 24px;
         background: #FFFFFF;
         border-radius: 8px;
         border: 1px solid #EAEDF7;
-        .m-p-t-title{
+        .m-pie-title{
             height: 24px;
             margin-bottom: 16px;
             font-size: 14px;
@@ -230,9 +287,119 @@ export default {
             color: #242F57;
             line-height: 24px;
         }
-        .m-p-t-echarts{
-            height: 614px;
+        .m-pie-echarts{
+            height: 596px;
         }
+    }
+    .m-p-third-module{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        .m-p-t-left{
+            width: 50%;
+            height: 552px;
+            margin-right: 24px;
+            background: #FFFFFF;
+            border-radius: 8px;
+            border: 1px solid #EAEDF7;
+        }
+        .m-p-t-right{
+            width: 50%;
+            height: 552px;
+            .m-p-right-top{
+                display: flex;
+                justify-content: space-between;
+                .m-p-right-push,.m-p-right-media{
+                    width: 50%;
+                    height: 244px;
+                    padding: 16px;
+                    background: #FFFFFF;
+                    border-radius: 8px;
+                    border: 1px solid #EAEDF7;
+                    .m-p-r-title{
+                        height: 24px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242F57;
+                        line-height: 24px;
+                    }
+                }
+                .m-p-right-push{
+                    margin-right: 24px;
+                    .m-p-r-title{
+                        margin-bottom: 16px;
+                    }
+                    >div{
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 24px;
+                        >p{
+                            height: 20px;
+                            font-size: 12px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #636E95;
+                            line-height: 20px;
+                        }
+                        >img{
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            margin: 0 12px;
+                        }
+                    }
+                }
+                .m-p-right-media{
+                    .m-p-r-title{
+                        margin-bottom: 4px;
+                    }
+                    .m-p-r-num{
+                        height: 32px;
+                        font-size: 24px;
+                        font-family: HelveticaNeue-Medium, HelveticaNeue;
+                        font-weight: 500;
+                        color: #4D94FF;
+                        line-height: 32px;
+                    }
+                    .m-p-r-echarts{
+                        width: 100%;
+                        height: 160px;
+                    }
+                }
+            }
+            .m-p-right-bottom{
+                height: 284px;
+                padding: 16px;
+                margin-top: 24px;
+                background: #FFFFFF;
+                border-radius: 8px;
+                border: 1px solid #EAEDF7;
+                >p{
+                    height: 24px;
+                    margin-bottom: 16px;
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #242F57;
+                    line-height: 24px;
+                }
+                >div{
+                    display: flex;
+                    justify-content: space-between;
+                    >div{
+                        width: 50%;
+                        height: 98px;
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .m-p-last{
+        display: flex;
+        justify-content: space-between;
     }
   }
 
