@@ -531,6 +531,18 @@
               <div></div>
             </div>
           </div>
+          <div class="ppxz_container">
+            <div class="ppxz_title">品牌心智</div>
+            <div class="ppxz_title_desc">分心品牌当前受众的不同阶段的数据</div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="xzcb_container">
+            <div class="ppxz_title">心智传播网络</div>
+            <div class="ppxz_title_desc">分析传播途径</div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -2251,6 +2263,56 @@ export default {
             .xinzfb_container_lef_tel {
               width: 100%;
             }
+          }
+        }
+        .ppxz_container {
+          margin-top: 24px;
+          width: 100%;
+          height: 523px;
+          padding: 16px;
+          box-sizing: border-box;
+          background: #ffffff;
+          border-radius: 8px;
+          border: 1px solid #eaedf7;
+          margin-bottom: 24px;
+          .ppxz_title {
+            width: 100%;
+            font-size: 14px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #242f57;
+            margin-bottom: 4px;
+          }
+          .ppxz_title_desc {
+            width: 100%;
+            font-size: 12px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #636e95;
+          }
+        }
+        .xzcb_container {
+          width: 100%;
+          height: 292px;
+          background: #ffffff;
+          border-radius: 8px;
+          border: 1px solid #eaedf7;
+          padding: 16px;
+          box-sizing: border-box;
+          .ppxz_title {
+            width: 100%;
+            font-size: 14px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #242f57;
+            margin-bottom: 4px;
+          }
+          .ppxz_title_desc {
+            width: 100%;
+            font-size: 12px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #636e95;
           }
         }
       }
