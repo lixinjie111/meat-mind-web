@@ -480,7 +480,7 @@
         <div class="jichuhuax_area_container">
           <div class="jichuhuax_area_til">基础画像</div>
           <div class="jichuhuax_echarts_container">
-            
+
             <div class="jichuhuax_echarts_item">
               <div class="jichuhuax_echarts_item_title">
                 <div class="jichuhuax_echarts_item_title_lef">
@@ -492,6 +492,7 @@
                 </div>
               </div>
               <div class="jichuhuax_echarts_item_content">
+                 <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts>
               </div>
             </div>
 
@@ -506,6 +507,7 @@
                 </div>
               </div>
               <div class="jichuhuax_echarts_item_content">
+                 <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box2Data"></PieEcharts>
               </div>
             </div>
 
@@ -513,7 +515,7 @@
               <div class="jichuhuax_echarts_item_title">
                 <div class="jichuhuax_echarts_item_title_lef">
                   <div class="nljg">职业结构</div>
-                  <div class="range_titme">1-4当周</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
                 </div>
                 <div class="jichuhuax_echarts_item_title_rig">
                     <img :src="threeP" class="threeP">
@@ -527,8 +529,8 @@
             <div class="jichuhuax_echarts_item">
               <div class="jichuhuax_echarts_item_title">
                 <div class="jichuhuax_echarts_item_title_lef">
-                  <div class="nljg">收入结构</div>
-                  <div class="range_titme">1-4当周</div>
+                  <div class="nljg">行业结构</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
                 </div>
                 <div class="jichuhuax_echarts_item_title_rig">
                     <img :src="threeP" class="threeP">
@@ -536,6 +538,126 @@
               </div>
               <div class="jichuhuax_echarts_item_content">
                 <barC id="box7" :colorList="$lxjData.colorList" :myData="$lxjData.box7Data"></barC>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">教育背景结构</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <barEcharts id="box1" :colorList="$lxjData.colorList" :myData="$lxjData.box1Data"></barEcharts>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">性别结构</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieEcharts>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">主要出行方式</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <barEcharts id="box11" :colorList="$lxjData.colorList" :myData="$lxjData.box11Data"></barEcharts>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">户籍籍贯结构</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <barEcharts id="box12" :colorList="$lxjData.colorList" :myData="$lxjData.box12Data"></barEcharts>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">婚育状态结构</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <barEcharts id="box13" :colorList="$lxjData.colorList" :myData="$lxjData.box13Data"></barEcharts>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">消费能力结构</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <barC id="box71" :colorList="$lxjData.colorList" :myData="$lxjData.box71Data"></barC>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">车辆保有结构</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box4Data"></PieEcharts>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">居住地区</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box3Data"></PieEcharts>
               </div>
             </div>
 
@@ -614,9 +736,18 @@ import barT from '../../components/echarts/common/barT';
 import funnel from '../../components/echarts/common/funnel';
 import barHM from '../../components/echarts/common/barHM';
 import lineSp from '../../components/echarts/common/lineSp';
+
+import PieEcharts from '../../components/echarts/common/PieEcharts';
+import RotateChart from '../../components/echarts/common/RotateChart';
+import LeidaEcharts from '../../components/echarts/common/LeidaEcharts';
+import MatchEcharts from '../../components/echarts/common/MatchEcharts';
+import Yibiao1Echarts from '../../components/echarts/common/Yibiao1Echarts';
+import YibiaoCharts2 from '../../components/echarts/common/YibiaoCharts2';
+import Yuanhuan1 from '../../components/echarts/common/Yuanhuan1';
+import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
 export default {
   components: {
-    barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,Side, Header
+    barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,Side, Header, PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
   },
   name: "index",
   data() {
