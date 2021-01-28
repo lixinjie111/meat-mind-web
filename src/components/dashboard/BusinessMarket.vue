@@ -149,20 +149,115 @@
 
         </Card>
         <Card title="负面舆情的处理意见" class="card-five">
-
+            <div class="card-five-box">
+                <div class="box1">
+                    <div class="name">信息来源占比（%）</div>
+                    <div class="box1-echart">
+                        <barEcharts id="box15" :colorList="$lxjData.colorList"
+                                    :myData="$lxjData.box15Data"></barEcharts>
+                    </div>
+                </div>
+                <div class="box2">
+                    <div class="box2-left">
+                        <div class="name">敏感占比图</div>
+                        <div class="box2-echart">
+                            <YibiaoCharts2 :colorList="$fjData.colorList" :myData="$fjData.box17Data"></YibiaoCharts2>
+                        </div>
+                    </div>
+                    <ul class="second-list red-card-ul">
+                        <li class="warning">
+                            <img src="../../assets/img/mark/warning@2x.png" alt="">
+                            敏感信息
+                            <p class="strong">443</p>
+                        </li>
+                        <li>邓老凉茶在凉茶巨头夹缝中迷失 同仁堂等遭</li>
+                        <li>凉茶风光不再:负面新闻频发 高糖饮品销售</li>
+                        <li>凉茶怎么“凉”的:潜规则、边缘化、互撕……_西药</li>
+                        <li>申请挂牌新三板 邓老凉茶年销售收入不及行业龙头2%</li>
+                    </ul>
+                </div>
+                <div class="box3">
+                    <div class="name">负面舆情应对说明</div>
+                    <div class="box3-echart">
+                        <lineM id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM>
+                    </div>
+                </div>
+                <div class="box4">
+                    <div class="name">舆情处理建议</div>
+                    <div class="box4-echart">
+                        <Leida2Echarts :colorList="$fjData.colorList" :myData="$fjData.box19Data"></Leida2Echarts>
+                    </div>
+                    <div class="box4-desc">鉴于数据搜集显示负面新闻曝光量不足，
+                        没有形成爆点和舆论热点，不需要过度采取媒体公关和舆论反击，否则容易造成二次传播，
+                        增加负面传播强度及扩散时间，预计6-7周后可回归平静
+                    </div>
+                </div>
+            </div>
         </Card>
         <Card title="行业分析报告、营销创意及案例" class="card-six">
-
+            <div class="flex-start">
+                <div class="card-six-left">
+                    <img src="../../assets/img/dashboard/market/card-six-report@2x.png"/>
+                    <p>行业分析报告营销创意及案例</p>
+                    <div class="card-six-left-btn">查看全部案例</div>
+                </div>
+                <div class="card-six-right clearfix">
+                    <div class="card-six-right-item fl">
+                        <p>北京快销品 行业分析报告</p>
+                        <p>年度/季度/月度报告</p>
+                        <p>元知智能研究院</p>
+                    </div>
+                    <div class="card-six-right-item fl">
+                        <p>北京软饮料 市场规模跟踪</p>
+                        <p>重点市场规模数据跟踪及提取</p>
+                        <p>元知智能研究院</p>
+                    </div>
+                    <div class="card-six-right-item fl">
+                        <p>店铺分析选址 方法论</p>
+                        <p>宝贝优化<br>竞品分析<br>备货指导</p>
+                        <p>元知智能研究院</p>
+                    </div>
+                    <div class="card-six-right-item fl">
+                        <p>北京快销品 行业分析报告</p>
+                        <p>年度/季度/月度报告</p>
+                        <p>元知智能研究院</p>
+                    </div>
+                    <div class="card-six-right-item fl">
+                        <p>消费者关注点提取</p>
+                        <p>提取关键评论属性<br>热销宝贝备货指导</p>
+                        <p>元知智能研究院</p>
+                    </div>
+                    <div class="card-six-right-item fl">
+                        <p>心智剖析产品 SWOT</p>
+                        <p>竞品优势对比<br>查漏补缺</p>
+                        <p>元知智能研究院</p>
+                    </div>
+                    <div class="card-six-right-item fl">
+                        <p>合生汇商场报告</p>
+                        <p>专业商场案例<br>启迪营销灵感</p>
+                        <p>元知智能研究院</p>
+                    </div>
+                    <div class="card-six-right-item fl">
+                        <p>合生通商业报告</p>
+                        <p>专业商场案例<br>启迪营销灵感</p>
+                        <p>元知智能研究院</p>
+                    </div>
+                </div>
+            </div>
         </Card>
     </div>
 </template>
 
 <script>
     import Card from "../../components/Card"
+    import barEcharts from '../../components/echarts/common/barEcharts';
+    import YibiaoCharts2 from '../../components/echarts/common/YibiaoCharts2';
+    import lineM from '../../components/echarts/common/lineM';
+    import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
 
     export default {
         name: "BusinessMarket",
-        components: {Card}
+        components: {Card, barEcharts, YibiaoCharts2, lineM, Leida2Echarts}
     }
 </script>
 
@@ -191,7 +286,7 @@
                 width: 320px;
                 height: 442px;
                 box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-                background: url("../../assets/img/dashboard/business/neurotesting-bg@2x.png") no-repeat center / 100% 100%;
+                background: url("../../assets/img/dashboard/market/target-bg@2x.png") no-repeat center / 100% 100%;
                 border-radius: 8px;
 
                 .target-left-title {
@@ -267,6 +362,7 @@
 
                 video {
                     object-fit: fill;
+                    border-radius: 8px;
                 }
             }
         }
@@ -458,10 +554,189 @@
 
         .card-five {
             margin-top: 24px;
+
+            .card-five-box {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .box1, .box2, .box3, .box4 {
+                    width: calc(50% - 12px);
+                    padding: 16px;
+                    margin-bottom: 24px;
+                    border-radius: 8px;
+                    border: 1px solid #EAEDF7;
+
+                    .name {
+                        height: 24px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242F57;
+                    }
+                }
+
+                .box1, .box2 {
+                    height: 328px;
+                }
+
+                .box3, .box4 {
+                    height: 390px;
+                }
+
+                .box1, .box3 {
+                    .box1-echart, .box3-echart {
+                        width: 100%;
+                        height: calc(100% - 24px);
+                    }
+                }
+
+                .box2 {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .box2-left {
+                        width: calc(100% - 260px);
+                        height: 100%;
+
+                        .box2-echart {
+                            width: 100%;
+                            height: calc(100% - 24px);
+                        }
+                    }
+
+                    .second-list {
+                        width: 260px;
+
+                        > li {
+                            height: 56px;
+                            margin-bottom: 4px;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+
+                            &:first-child {
+                                background: rgba(252, 128, 159, .2);
+                                color: #FB343E;
+
+                                &:before {
+                                    display: none;
+                                }
+
+                                img {
+                                    width: 24px;
+                                    height: 24px;
+                                }
+
+                                .strong {
+                                    margin-left: 8px;
+                                    font-size: 32px;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .box4 {
+                    .box4-echart {
+                        width: 100%;
+                        height: calc(100% - 88px);
+                    }
+
+                    .box4-desc {
+                        height: 64px;
+                        font-size: 14px;
+                        color: #636E95;
+                        line-height: 22px;
+                    }
+                }
+            }
         }
 
         .card-six {
             margin-top: 24px;
+            height: 560px;
+            background: url("../../assets/img/dashboard/market/card-six-bg@2x.png") no-repeat left center / 100% 100%;
+
+            .card-six-left {
+                width: 296px;
+                height: 442px;
+                box-shadow: 0px 0px 48px 0px rgba(255, 255, 255, 0.8);
+                border-radius: 8px;
+                background: url("../../assets/img/dashboard/market/card-six-bg1@2x.png") no-repeat center center / 100% 100%;
+
+                > img {
+                    width: 296px;
+                    height: 230px;
+                }
+
+                > p {
+                    margin: 24px auto 42px;
+                    width: 168px;
+                    height: 64px;
+                    font-size: 24px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #242F57;
+                    line-height: 32px;
+                    text-align: center;
+                }
+
+                .card-six-left-btn {
+                    margin: 0 auto;
+                    width: 232px;
+                    height: 40px;
+                    line-height: 40px;
+                    background: #FFFFFF;
+                    border-radius: 8px;
+                    font-size: 14px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #2373FF;
+                    text-align: center;
+                }
+            }
+
+            .card-six-right {
+                width: calc(100% - 282px);
+                margin-left: 24px;
+
+                .card-six-right-item {
+                    position: relative;
+                    padding: 16px;
+                    margin: 0 0 16px 16px;
+                    width: 176px;
+                    height: 213px;
+                    background: url("../../assets/img/dashboard/market/card-six-bg2@2x.png") no-repeat center center / 100% 100%;
+
+                    > p {
+                        font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #FFFFFF;
+
+                        &:nth-child(1) {
+                            width: 108px;
+                            font-size: 18px;
+                            font-family: PingFangSC-Semibold, PingFang SC;
+                            font-weight: 600;
+                        }
+
+                        &:nth-child(2) {
+                            margin: 12px 0 0;
+                            font-size: 14px;
+                            color: rgba(255, 255, 255, 0.7);
+                        }
+
+                        &:nth-child(3) {
+                            position: absolute;
+                            bottom: 16px;
+                        }
+                    }
+                }
+            }
         }
     }
 </style>
