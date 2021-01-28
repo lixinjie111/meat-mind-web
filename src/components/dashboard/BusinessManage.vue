@@ -948,8 +948,8 @@
 
                     .red {
                         position: absolute;
-                        right: 90px;
-                        top: 180px;
+                        right: 55px;
+                        top: 200px;
                     }
 
                     .blue {

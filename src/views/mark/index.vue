@@ -234,6 +234,7 @@ export default {
                 .name{
                     height: 24px;
                     font-size: 14px;
+                    font-weight: 400;
                     color: #242F57;
                     line-height: 24px;
                 }
