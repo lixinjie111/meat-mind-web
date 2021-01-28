@@ -316,9 +316,154 @@
                   <div class="item_xtt">活力</div>
                 </div>
               </div>
-              <div class="cdyhmj_content_top_ri"></div>
+              <div class="cdyhmj_content_top_ri">
+                <div class="cdyhmj_content_top_ri_tel">选择投放媒介</div>
+                <div class="cal_item_container">
+                  <div class="cal_item">
+                    <div class="cal_item_cal_item">
+                      <img :src="toLIcon" class="toLIcon" />
+                    </div>
+                  </div>
+                  <div class="cal_item2">
+                    <div class="rt_choice"></div>
+                    <div class="logo_container">
+                      <img class="logoImg" />
+                      <span class="cal_txt">头条</span>
+                    </div>
+                    <div class="txt_area">
+                      <div class="txt_area11">触达率</div>
+                      <div>投放成本</div>
+                    </div>
+                    <div class="per_area">
+                      <div class="per_area1">51%</div>
+                      <div>¥2500/千人</div>
+                    </div>
+                  </div>
+                  <div class="cal_item2">
+                    <div class="rt_choice2">
+                      <img :src="dhIcon" class="dhIcon" />
+                    </div>
+                    <div class="logo_container">
+                      <img class="logoImg" />
+                      <span class="cal_txt">小红书</span>
+                    </div>
+                    <div class="txt_area">
+                      <div class="txt_area11">触达率</div>
+                      <div>投放成本</div>
+                    </div>
+                    <div class="per_area">
+                      <div class="per_area1">46%</div>
+                      <div>¥2300/千人</div>
+                    </div>
+                  </div>
+                  <div class="cal_item2">
+                    <div class="rt_choice2">
+                      <img :src="dhIcon" alt srcset class="dhIcon" />
+                    </div>
+                    <div class="logo_container">
+                      <img class="logoImg" />
+                      <span class="cal_txt">快手</span>
+                    </div>
+                    <div class="txt_area">
+                      <div class="txt_area11">触达率</div>
+                      <div>投放成本</div>
+                    </div>
+                    <div class="per_area">
+                      <div class="per_area1">43%</div>
+                      <div>¥2300/千人</div>
+                    </div>
+                  </div>
+                  <div class="cal_item2">
+                    <div class="rt_choice2">
+                      <img :src="dhIcon" alt srcset class="dhIcon" />
+                    </div>
+                    <div class="logo_container">
+                      <img class="logoImg" />
+                      <span class="cal_txt">抖音</span>
+                    </div>
+                    <div class="txt_area">
+                      <div class="txt_area11">触达率</div>
+                      <div>投放成本</div>
+                    </div>
+                    <div class="per_area">
+                      <div class="per_area1">69%</div>
+                      <div>¥25000/千人</div>
+                    </div>
+                  </div>
+                  <div class="cal_item cal_item1">
+                    <div class="cal_item_cal_item">
+                      <img :src="toRIcon1" class="toLIcon" />
+                    </div>
+                  </div>
+                </div>
+                <div class="cdyhmj_bom">
+                  <div class="cdyhmj_bom_lef">
+                    已选中
+                    <span style="color:#242F57">2</span>个
+                  </div>
+                  <div class="cdyhmj_bom_rig">
+                    <img class="cdyhmj_bom_rig1" />
+                    <img class="cdyhmj_bom_rig1" />
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="cdyhmj_content_bom"></div>
+            <div class="cdyhmj_content_bom">
+              <div class="cdyhmj_content_bom_lef">
+                <div class="cdyhmj_content_bom_lef_top">触达用户投放策略建议</div>
+                <div class="cdyhmj_content_bom_lef_bom">
+                  <div class="echarts1"></div>
+                  <div class="echarts1">
+                    <div class="echarts11">
+                      <div class="echarts111">建议投放金额</div>
+                      <div class="echarts112">￥19,000</div>
+                    </div>
+                    <div class="echarts12">
+                      <div class="echarts121">目标客群触达率</div>
+                      <div class="echarts122">89%</div>
+                    </div>
+                  </div>
+                  <div class="echarts1 ec1">
+                    <div class="echarts13">建议投放时间段</div>
+                    <div class="echarts14">
+                      <div class="echarts141">
+                        <div class="ech_Icon"></div>
+                        <div class="ech_txt">快手</div>
+                        <div class="ech_time">22:00 - 22:30</div>
+                      </div>
+                    </div>
+                    <div class="echarts15">
+                      <div class="echarts142">
+                        <div class="ech_Icon1"></div>
+                        <div class="ech_txt">小红书</div>
+                        <div class="ech_time">19:00 - 20:30</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cdyhmj_content_bom_rig">
+                <div class="cdyhmj_content_bom_rig_top">优化投放方案推荐</div>
+                <div class="cdyhmj_content_bom_rig_bom">
+                  <img :src="yhtIcon" class="yhtIcon" alt srcset />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--目标用户群-->
+        <div class="mubiao_container">
+          <div class="mub_titl_container">
+            <div class="mub_titl_container1">目标用户群</div>
+            <div class="mub_titl_container1">
+              <img :src="input1" class="input1" />
+            </div>
+          </div>
+          <div class="mb_echarts_container">
+            <div class="mb_echarts1"></div>
+            <div class="vscls">VS</div>
+            <div class="mb_echarts2"></div>
           </div>
         </div>
       </div>
@@ -345,7 +490,12 @@ export default {
       icon3: require("../../assets/img/yhhx/map3.png"),
       icon4: require("../../assets/img/yhhx/map4.png"),
       toRIcon: require("../../assets/img/yhhx/toR.png"),
-      inputIcon: require("../../assets/img/yhhx/input.png")
+      toRIcon1: require("../../assets/img/yhhx/toR1.png"),
+      inputIcon: require("../../assets/img/yhhx/input.png"),
+      toLIcon: require("../../assets/img/yhhx/toL.png"),
+      dhIcon: require("../../assets/img/yhhx/dhIcon.png"),
+      yhtIcon: require("../../assets/img/yhhx/yht.png"),
+      input1: require("../../assets/img/yhhx/input1.png")
     };
   },
   mounted() {
@@ -1400,6 +1550,7 @@ export default {
               height: 100%;
               padding: 24px;
               box-sizing: border-box;
+              border-right: 1px solid #eaedf7;
               .cdyhmj_content_item {
                 width: 100%;
               }
@@ -1490,12 +1641,375 @@ export default {
             .cdyhmj_content_top_ri {
               flex: 1;
               height: 100%;
-              background-color: seagreen;
+              padding: 24px 25px;
+              box-sizing: border-box;
+              .cdyhmj_content_top_ri_tel {
+                width: 100%;
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #97a0c3;
+                margin-bottom: 8px;
+              }
+              .cal_item_container {
+                width: 100%;
+                height: 168px;
+                background: #f7f9fd;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .cal_item,
+                .cal_item1 {
+                  width: 80px;
+                  height: 120px;
+                  background: #ffffff;
+                  border-radius: 0 8px 8px 0;
+                  border: 1px solid #eaedf7;
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+                  .cal_item_cal_item {
+                    width: 30px;
+                    height: 50px;
+                    background: #eaedf7;
+                    border-radius: 0 8px 8px 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .toLIcon {
+                      width: 19px;
+                      height: 19px;
+                    }
+                  }
+                }
+                .cal_item1 {
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-end;
+                  .cal_item_cal_item {
+                    border-radius: 8px 0 0 8px;
+                  }
+                }
+                .cal_item2 {
+                  width: 20%;
+                  height: 120px;
+                  background: #ffffff;
+                  border-radius: 8px;
+                  border: 1px solid #eaedf7;
+                  padding: 12px;
+                  box-sizing: border-box;
+                  position: relative;
+                  .rt_choice {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    width: 16px;
+                    height: 16px;
+                    box-shadow: 1px 1px 1px 0px #a6abbd,
+                      -1px -1px 1px 0px #fafbff;
+                    border-radius: 2px;
+                    border: 1px solid rgba(255, 255, 255, 0.4);
+                  }
+                  .rt_choice2 {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    width: 16px;
+                    height: 16px;
+                    background: #2373ff;
+                    box-shadow: 1px 1px 3px 0px rgba(166, 171, 190, 0.4),
+                      -1px -1px 3px 0px rgba(250, 251, 255, 0.4);
+                    border-radius: 2px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .dhIcon {
+                      display: block;
+                      width: 9px;
+                      height: 7px;
+                    }
+                  }
+                  .logo_container {
+                    width: 100%;
+                    height: 40px;
+                    margin-bottom: 12px;
+                    display: flex;
+                    align-items: center;
+                    .logoImg {
+                      width: 40px;
+                      height: 40px;
+                      display: block;
+                      border: 1px solid #eaedf7;
+                      border-radius: 51%;
+                      margin-right: 8px;
+                      background-color: seagreen;
+                    }
+                    .cal_txt {
+                      font-size: 14px;
+                      font-family: PingFangSC-Medium, PingFang SC;
+                      font-weight: 500;
+                      color: #242f57;
+                    }
+                  }
+                  .txt_area {
+                    font-size: 12px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #97a0c3;
+                    display: flex;
+                    align-items: center;
+                    .txt_area11 {
+                      margin-right: 40px;
+                    }
+                  }
+                  .per_area {
+                    display: flex;
+                    align-items: center;
+                    font-size: 12px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #242f57;
+                    .per_area1 {
+                      margin-right: 52px;
+                    }
+                  }
+                }
+              }
+              .cdyhmj_bom {
+                margin-top: 22px;
+                width: 100%;
+                height: 24px;
+                display: flex;
+                align-items: center;
+                .cdyhmj_bom_lef {
+                  width: 88px;
+                  height: 22px;
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #636e95;
+                  line-height: 22px;
+                }
+                .cdyhmj_bom_rig {
+                  flex: 1;
+                  display: flex;
+                  .cdyhmj_bom_rig1 {
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 8px;
+                    background-color: seagreen;
+                    border-radius: 50%;
+                  }
+                }
+              }
             }
           }
           .cdyhmj_content_bom {
             width: 100%;
             min-height: 217px;
+            background: #f7f9fd;
+            padding: 16px 24px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .cdyhmj_content_bom_lef {
+              flex: 1;
+              height: 100%;
+              .cdyhmj_content_bom_lef_top {
+                width: 100%;
+                font-size: 14px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #242f57;
+                margin-bottom: 16px;
+              }
+              .cdyhmj_content_bom_lef_bom {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding-right: 24px;
+                justify-content: space-between;
+                .echarts1 {
+                  width: 30%;
+                  height: 136px;
+                  padding: 6px 12px;
+                  box-sizing: border-box;
+                  border-radius: 8px;
+                  .echarts11 {
+                    width: 100%;
+                    min-height: 64px;
+                    background: #ffffff;
+                    border-radius: 8px;
+                    margin-bottom: 8px;
+                    padding: 6px 12px;
+                    box-sizing: border-box;
+                    .echarts111,
+                    .echarts112 {
+                      width: 100%;
+                      font-size: 12px;
+                      font-family: PingFangSC-Regular, PingFang SC;
+                      font-weight: 400;
+                      color: #97a0c3;
+                    }
+                    .echarts112 {
+                      font-size: 24px;
+                      font-family: PingFangSC-Semibold, PingFang SC;
+                      font-weight: 600;
+                      color: #242f57;
+                    }
+                  }
+                  .echarts12 {
+                    widows: 100%;
+                    min-height: 64px;
+                    background: #ffffff;
+                    border-radius: 2px;
+                    padding: 6px 12px;
+                    box-sizing: border-box;
+                    .echarts121,
+                    .echarts122 {
+                      width: 100%;
+                      font-size: 12px;
+                      font-family: PingFangSC-Regular, PingFang SC;
+                      font-weight: 400;
+                      color: #97a0c3;
+                    }
+                    .echarts122 {
+                      height: 32px;
+                      font-size: 24px;
+                      font-family: HelveticaNeue-Bold, HelveticaNeue;
+                      font-weight: bold;
+                      color: #242f57;
+                    }
+                  }
+                  .echarts13 {
+                    width: 100%;
+                    margin-bottom: 8px;
+                    font-size: 12px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #97a0c3;
+                  }
+                  .echarts14,
+                  .echarts15 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 8px;
+                    .echarts141,
+                    .echarts142 {
+                      display: flex;
+                      align-items: center;
+                      .ech_Icon,
+                      .ech_Icon1 {
+                        width: 8px;
+                        height: 8px;
+                        background: rgba(68, 136, 255, 0.85);
+                        border-radius: 50%;
+                        margin-right: 5px;
+                      }
+                      .ech_Icon1 {
+                        background: rgba(164, 157, 250, 0.85);
+                      }
+                      .ech_time,
+                      .ech_txt {
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242f57;
+                      }
+                      .ech_txt {
+                        margin-right: 40px;
+                      }
+                    }
+                  }
+                }
+                .ec1 {
+                  background: #ffffff;
+                }
+              }
+            }
+            .cdyhmj_content_bom_rig {
+              width: 421px;
+              height: 100%;
+              padding-left: 24px;
+              box-sizing: border-box;
+              border-left: 1px solid #eaedf7;
+              .cdyhmj_content_bom_rig_top {
+                width: 100%;
+                margin-bottom: 16px;
+                font-size: 14px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #242f57;
+              }
+              .cdyhmj_content_bom_rig_bom {
+                width: 100%;
+                height: 136px;
+                .yhtIcon {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .mubiao_container {
+        width: 100%;
+        min-height: 244px;
+        background: #ffffff;
+        box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+        border-radius: 8px;
+        margin-top: 24px;
+        padding: 24px;
+        box-sizing: border-box;
+        .mub_titl_container {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 24px;
+          .mub_titl_container1 {
+            font-size: 16px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242f57;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242f57;
+            .input1 {
+              display: block;
+              width: 473px;
+              height: 32px;
+            }
+          }
+        }
+        .mb_echarts_container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .mb_echarts1,
+          .mb_echarts2 {
+            width: 48%;
+            height: 148px;
+            border-radius: 8px;
+            border: 1px solid #2373ff;
+          }
+          .vscls {
+            font-size: 24px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242f57;
+          }
+          .mb_echarts2 {
+            border: 1px solid #ff8800;
           }
         }
       }
