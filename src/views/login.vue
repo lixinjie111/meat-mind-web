@@ -1,6 +1,6 @@
 <template>
     <div class="index-container">
-        <img class="bg" src="../../src/static/img/login/bg.png"/>
+        <img class="bg" src="../../src/assets/img/login/bg.png"/>
         <Modal title="欢迎使用智慧营销"
                 v-model="showModal"
                 footer-hide

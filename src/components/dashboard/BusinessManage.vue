@@ -1083,6 +1083,7 @@
             font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;
             color: #7C88B1;
+            cursor: pointer;
 
             >i {
               margin-left: 4px;
