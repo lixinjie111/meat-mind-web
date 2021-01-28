@@ -40,16 +40,18 @@
             </div>
         </div>
         <Accept :title="'品牌受众分析'"></Accept>
-        <Accept :title="'品牌舆情洞察'"></Accept>
-        <Accept :title="'品牌市场情况'"></Accept>
+        <Market :title="'品牌舆情洞察'"></Market>
+        <Public :title="'品牌市场情况'"></Public>
     </div>
 </template>
 
 <script>
 import Accept from "./Accept"
+import Market from "./Market"
+import Public from "./Public"
 export default {
     name:"Details",
-    components:{Accept}
+    components:{Accept,Market,Public}
 }
 </script>  
 

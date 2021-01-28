@@ -1,6 +1,6 @@
 <template>
   <div class="fourth-right-desc-colourfol">
-      <p class="title">感知度（整体有效性）：</p>
+      <p class="title">{{title}}</p>
       <ul class="colour-list">
           <li :class="[index<num?color:'']" v-for="(item,index) in list" :key="index"></li>
       </ul>
@@ -11,6 +11,9 @@
 export default {
     name:"Colourfol",
     props:{
+        title:{
+            type:String
+        },
         color:{
             type:String,
             default:"#FFD98C"
