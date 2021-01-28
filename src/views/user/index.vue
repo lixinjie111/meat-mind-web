@@ -480,7 +480,8 @@
         <div class="jichuhuax_area_container">
           <div class="jichuhuax_area_til">基础画像</div>
           <div class="jichuhuax_echarts_container">
-            <div class="jichuhuax_echarts_item" v-for="(item,index) in 12" :key="index">
+            
+            <div class="jichuhuax_echarts_item">
               <div class="jichuhuax_echarts_item_title">
                 <div class="jichuhuax_echarts_item_title_lef">
                   <div class="nljg">年龄结构</div>
@@ -490,7 +491,54 @@
                     <img :src="threeP" class="threeP">
                 </div>
               </div>
+              <div class="jichuhuax_echarts_item_content">
+              </div>
             </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">收入结构</div>
+                  <div class="range_titme">1-4当周</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">职业结构</div>
+                  <div class="range_titme">1-4当周</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <cLine id="box58" :colorList="$lxjData.colorList" :myData="$lxjData.box58Data"></cLine>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">收入结构</div>
+                  <div class="range_titme">1-4当周</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <barC id="box7" :colorList="$lxjData.colorList" :myData="$lxjData.box7Data"></barC>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -530,7 +578,24 @@
 <script>
 import Side from "../../components/Side";
 import Header from "../../components/DefaultHeader";
+import barEcharts from '../../components/echarts/common/barEcharts';
+import barL from '../../components/echarts/common/barL';
+import barM from '../../components/echarts/common/barM';
+import cLine from '../../components/echarts/common/line';
+import lineO from '../../components/echarts/common/lineO';
+import lineS from '../../components/echarts/common/lineS';
+import lineM from '../../components/echarts/common/lineM';
+import barC from '../../components/echarts/common/barC';
+import barCH from '../../components/echarts/common/barCH';
+import barLine from '../../components/echarts/common/barLine';
+import barT from '../../components/echarts/common/barT';
+import funnel from '../../components/echarts/common/funnel';
+import barHM from '../../components/echarts/common/barHM';
+import lineSp from '../../components/echarts/common/lineSp';
 export default {
+  components: {
+    barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,Side, Header
+  },
   name: "index",
   data() {
     return {
@@ -1223,7 +1288,6 @@ export default {
       this.ifShowPop5 = false;
     }
   },
-  components: { Side, Header }
 };
 </script>
 
@@ -2115,6 +2179,8 @@ export default {
             margin-bottom: 24px;
             padding: 16px;
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
             .jichuhuax_echarts_item_title {
               display: flex;
               align-items: center;
@@ -2142,6 +2208,9 @@ export default {
                       width: 100%;
                   }
               }
+            }
+            .jichuhuax_echarts_item_content{
+              flex:1
             }
           }
         }
