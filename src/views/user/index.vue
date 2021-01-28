@@ -480,7 +480,17 @@
         <div class="jichuhuax_area_container">
           <div class="jichuhuax_area_til">基础画像</div>
           <div class="jichuhuax_echarts_container">
-            <div class="jichuhuax_echarts_item" v-for="(item,index) in 12" :key="index"></div>
+            <div class="jichuhuax_echarts_item" v-for="(item,index) in 12" :key="index">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">年龄结构</div>
+                  <div class="range_titme">1-4当周</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -542,7 +552,8 @@ export default {
       dhIcon: require("../../assets/img/yhhx/dhIcon.png"),
       yhtIcon: require("../../assets/img/yhhx/yht.png"),
       input1: require("../../assets/img/yhhx/input1.png"),
-      useApp: require("../../assets/img/yhhx/useApp.png")
+      useApp: require("../../assets/img/yhhx/useApp.png"),
+      threeP:require("../../assets/img/yhhx/threeP.png")
     };
   },
   mounted() {
@@ -2013,6 +2024,7 @@ export default {
         margin-top: 24px;
         padding: 24px;
         box-sizing: border-box;
+        margin-bottom: 24px;
         .mub_titl_container {
           width: 100%;
           display: flex;
@@ -2101,6 +2113,36 @@ export default {
             border-radius: 8px;
             border: 1px solid #eaedf7;
             margin-bottom: 24px;
+            padding: 16px;
+            box-sizing: border-box;
+            .jichuhuax_echarts_item_title {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .jichuhuax_echarts_item_title_lef {
+                .nljg {
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #242f57;
+                }
+                .range_titme {
+                  margin-top: 4px;
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #7c88b1;
+                }
+              }
+              .jichuhuax_echarts_item_title_rig{
+                  width: 16px;
+                  height: 16px;
+                  .threeP{
+                      display: block;
+                      width: 100%;
+                  }
+              }
+            }
           }
         }
       }
@@ -2114,6 +2156,7 @@ export default {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
+        margin-top: 24px;
         .xwfx_area_til {
           width: 100%;
           margin-bottom: 24px;
