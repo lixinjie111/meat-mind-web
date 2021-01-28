@@ -146,7 +146,102 @@
             </Card>
         </div>
         <Card title="舆情热点与营销机会" class="card-four">
-
+            <div class="card-four-left">
+                <div class="card-four-left-item">
+                    <p>行业关键词</p>
+                    <ul>
+                        <li>凉茶</li>
+                        <li>功能饮料</li>
+                    </ul>
+                </div>
+                <div class="card-four-left-line"></div>
+                <div class="card-four-left-item">
+                    <p>关联关键词</p>
+                    <ul>
+                        <li>降火</li>
+                        <li>养生</li>
+                        <li>滋润</li>
+                    </ul>
+                </div>
+                <div class="card-four-left-item">
+                    <p>追加关联词汇</p>
+                    <ul>
+                        <li>礼品</li>
+                    </ul>
+                </div>
+                <div class="card-four-left-line"></div>
+                <div class="card-four-left-item">
+                    <p>负向关联词</p>
+                    <ul class="orange">
+                        <li>上火</li>
+                        <li>暴躁</li>
+                        <li>虚脱</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-four-right">
+                <div class="card-four-right-box">
+                    <div class="card-four-right-title">热点事件</div>
+                    <div class="card-four-right-list">
+                        <div class="card-four-right-item">
+                            <div class="index">1</div>
+                            <div class="desc">黄晓明发文退出《浪姐2》，自曝心悸脾…</div>
+                            <div class="time">2021/1/10</div>
+                        </div>
+                        <div class="card-four-right-item">
+                            <div class="index">2</div>
+                            <div class="desc">暴躁老哥抢茅台成瘾，期待茅台价格继…</div>
+                            <div class="time">2021/1/10</div>
+                        </div>
+                        <div class="card-four-right-item">
+                            <div class="index">3</div>
+                            <div class="desc">王阳明:常快乐,便是功夫。心态好,亦是养生</div>
+                            <div class="time">2021/1/9</div>
+                        </div>
+                        <div class="card-four-right-item">
+                            <div class="index">4</div>
+                            <div class="desc">互联网打工人不懂养生?这份年度白皮书…</div>
+                            <div class="time">2021/1/8</div>
+                        </div>
+                        <div class="card-four-right-item">
+                            <div class="index">5</div>
+                            <div class="desc">暖心礼物!扬州一高校学生为上完最后一…</div>
+                            <div class="time">2021/1/5</div>
+                        </div>
+                        <div class="card-four-right-item">
+                            <div class="index">6</div>
+                            <div class="desc">最北教师:无声滋润最北国土</div>
+                            <div class="time">2021/1/2</div>
+                        </div>
+                        <div class="card-four-right-btn">
+                            <div>查看全部</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-four-right-box">
+                    <div class="card-four-right-title">近期机会</div>
+                    <div class="card-four-right-list">
+                        <div class="card-four-right-item">
+                            <div class="index">1</div>
+                            <div class="desc">迎春大促</div>
+                            <div class="time">2021/2/1 - 2021/2/28</div>
+                        </div>
+                        <div class="card-four-right-item">
+                            <div class="index">2</div>
+                            <div class="desc">赏灯品诗喝茶</div>
+                            <div class="time">2021/2/20 - 2021/2/28</div>
+                        </div>
+                        <div class="card-four-right-item">
+                            <div class="index">3</div>
+                            <div class="desc">二月二，龙抬头</div>
+                            <div class="time">2021/3/14 - 2021/3/20</div>
+                        </div>
+                        <div class="card-four-right-btn">
+                            <div>查看全部</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </Card>
         <Card title="负面舆情的处理意见" class="card-five">
             <div class="card-five-box">
@@ -549,7 +644,142 @@
         }
 
         .card-four {
+            padding-bottom: 24px;
             margin-top: 24px;
+
+            .card-four-left {
+                display: inline-block;
+                vertical-align: top;
+                width: 248px;
+                margin-right: 24px;
+
+                .card-four-left-item {
+                    > p {
+                        margin-bottom: 16px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #97A0C3;
+                    }
+
+                    > ul {
+                        > li {
+                            display: inline-block;
+                            vertical-align: middle;
+                            padding: 4px 16px;
+                            margin-right: 8px;
+                            background: #ECF3FF;
+                            border-radius: 8px;
+                            border: 1px solid #2373FF;
+                            font-size: 16px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #2373FF;
+                            text-align: center;
+                        }
+
+                        &.orange {
+                            > li {
+                                color: #FF8800;
+                                background: #FFF7E6;
+                                border: 1px solid #FFA53D;
+                            }
+                        }
+                    }
+                }
+
+                .card-four-left-line {
+                    margin: 16px 0;
+                    width: 248px;
+                    height: 1px;
+                    background: #EAEDF7;
+                }
+            }
+
+            .card-four-right {
+                display: inline-block;
+                vertical-align: top;
+                width: calc(100% - 296px);
+
+                .card-four-right-box {
+                    display: inline-block;
+                    vertical-align: top;
+                    padding-bottom: 16px;
+                    width: calc(50% - 12px);
+                    background: #FFFFFF;
+                    border-radius: 8px;
+                    border: 1px solid #EAEDF7;
+
+                    .card-four-right-title {
+                        width: 100%;
+                        height: 72px;
+                        padding: 15px 0 0 15px;
+                        background: linear-gradient(180deg, #FFF5EB 0%, rgba(255, 245, 235, 0) 100%);
+                        border-radius: 8px 8px 0px 0px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #242F57;
+                    }
+
+                    .card-four-right-list {
+                        padding: 0 15px;
+
+                        .card-four-right-item {
+                            padding: 15px 0;
+                            border-bottom: 1px solid #F4F7FC;
+
+                            > div {
+                                display: inline-block;
+                                vertical-align: middle;
+
+                                &.index {
+                                    font-size: 18px;
+                                    font-family: Staatliches-Regular, Staatliches;
+                                    font-weight: 400;
+                                    color: #97A0C3;
+                                }
+
+                                &.desc {
+                                    padding: 0 10px 0 10px;
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #242F57;
+                                }
+
+                                &.time {
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #97A0C3;
+                                }
+                            }
+
+                            &:first-child {
+                                margin-top: -17px;
+                            }
+
+                            &:last-child {
+                                border-bottom: 0px solid #F4F7FC;
+                            }
+                        }
+
+                        .card-four-right-btn {
+                            width: 100%;
+                            height: 32px;
+                            line-height: 32px;
+                            background: #F4F7FC;
+                            border-radius: 8px;
+                            font-size: 14px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #97A0C3;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
         }
 
         .card-five {
