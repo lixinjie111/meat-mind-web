@@ -120,6 +120,7 @@ export default {
                 height: 24px;
                 margin-bottom: 24px;
                 font-size: 16px;
+                font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
                 color: #242F57;
                 line-height: 24px;
@@ -190,6 +191,7 @@ export default {
             height: 24px;
             margin-bottom: 24px;
             font-size: 16px;
+            font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;
             color: #242F57;
             line-height: 24px;
@@ -260,6 +262,7 @@ export default {
                             .strong{
                                 margin-left: 8px;
                                 font-size: 32px;
+                                font-family: PingFangSC-Medium, PingFang SC;
                                 font-weight: 500;
                             }
                         }
@@ -302,6 +305,7 @@ export default {
                 height: 24px;
                 margin-bottom: 16px;
                 font-size: 16px;
+                font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
                 color: #242F57;
                 line-height: 24px;

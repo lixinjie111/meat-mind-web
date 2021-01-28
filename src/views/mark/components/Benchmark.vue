@@ -81,6 +81,7 @@ export default {
                 height: 24px;
                 margin-right: 40px;
                 font-size: 16px;
+                font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
                 color: #242F57;
                 line-height: 24px;
@@ -98,6 +99,7 @@ export default {
                     cursor: pointer;
                     &:first-child{
                         position: relative;
+                        font-family: PingFangSC-Medium, PingFang SC;
                         font-weight: 500;
                         color: #2373FF;
                         &:after{
