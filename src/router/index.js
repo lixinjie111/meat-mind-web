@@ -13,6 +13,7 @@ import analysisTool from "../views/tool/router"//分析工具
 import dataCenter from "../views/datacenter/router"//数据管理
 // 统计图示例页面
 import barView from "../components/echarts/barView"
+import pieView from "../components/echarts/pieView"
 
 Vue.use(VueRouter)
 
@@ -40,6 +41,11 @@ const routes = [
     path: '/barView',
     name: 'barView',
     component: barView
+  },
+  {
+    path: '/pieView',
+    name: 'pieView',
+    component: pieView
   }
 ]
 

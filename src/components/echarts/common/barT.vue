@@ -36,9 +36,9 @@ export default {
 			let _option = this.defaultOption();
 			let myChart = this.$echarts.init(document.getElementById(this.id));
 			myChart.setOption(_option);
-			window.onresize = ()=>{
+			window.addEventListener('resize',()=>{
 				myChart.resize();
-			}
+			})
 		},
 		defaultOption() {
 			var option = {

@@ -36,9 +36,9 @@ export default {
 			let _option = this.defaultOption();
 			let myChart = this.$echarts.init(document.getElementById(this.id));
 			myChart.setOption(_option);
-			window.onresize = ()=>{
+			window.addEventListener('resize',()=>{
 				myChart.resize();
-			}
+			})
 		},
 		defaultOption() {
 			var option = {
@@ -51,7 +51,7 @@ export default {
 				},
 				legend: {
 					bottom:0,
-					data: ['连续活跃用户', '流失用户', '沉默用户', '新用户', '回流用户'],
+					data: this.myData.legName,
 					textStyle: {
 						color: "#97A0C3",   //这里用参数代替了
 						fontSize:'12'
@@ -61,12 +61,12 @@ export default {
 					top: '5%',
 					left: '3%',
 					right: '3%',
-					bottom: 50,
+					bottom: 30,
 					containLabel: true
 				},
 				xAxis: {
 					type: 'category',
-					data: ['10-26当周', '11-2当周', '11-9当周', '11-16当周', '11-23当周',],
+					data: this.myData.name,
 					axisLine:{
 						lineStyle:{
 							color:'#E9EBF1',
