@@ -714,6 +714,10 @@
             <div></div>
           </div>
         </div>
+
+        <div class="smzqfx_area_container"></div>
+
+
       </div>
     </div>
   </div>
@@ -2515,6 +2519,14 @@ export default {
             color: #636e95;
           }
         }
+      }
+
+      .smzqfx_area_container{
+        width: 100%;
+        min-height: 1505px;
+        background: #FFFFFF;
+        box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+        border-radius: 8px;
       }
     }
   }
