@@ -34,7 +34,7 @@
         .container {
             display: flex;
             flex-direction: column;
-            width: calc(100vw - 240px);
+            width: 100%;
 
             .content {
                 padding: 0 24px 24px 24px;
