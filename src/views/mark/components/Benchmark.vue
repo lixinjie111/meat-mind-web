@@ -13,7 +13,12 @@
           <div class="left">
               <div class="left-title">主要传播媒体</div>
               <div class="left-content">
-
+                  <img src="../../../assets/img/mark/douyin.png" alt="">
+                  <img src="../../../assets/img/mark/xiaohongshu.png" alt="">
+                  <img src="../../../assets/img/mark/kuaishou.png" alt="">
+                  <img src="../../../assets/img/mark/weibo.png" alt="">
+                  <img src="../../../assets/img/mark/facebook.png" alt="">
+                  <img src="../../../assets/img/mark/toutiao.png" alt="">
               </div>
           </div>
           <div class="right">
@@ -36,16 +41,16 @@
       </div>
       <div class="bottom">
           <div class="pricle">
-            <Card :title="'客单价'" :colourfol="'blue'" :number="'65'"></Card>
+            <Card :title="'客单价'" :colourfol="'blue'" :number="'65'" :data="[-9.07,2.17]"></Card>
           </div>
           <div class="month">
-            <Card :title="'月均销量'" :colourfol="'purple'" :number="'721,343'"></Card>
+            <Card :title="'月均销量'" :colourfol="'purple'" :number="'721,343'" :data="[-2.17,3.26]"></Card>
           </div>          
           <div class="view">
-            <Card :title="'月浏览'" :colourfol="'pink'" :number="'54,566'"></Card>
+            <Card :title="'月浏览'" :colourfol="'pink'" :number="'54,566'" :data="[-1.67,2.78]"></Card>
           </div>          
           <div class="target">
-            <Card :title="'口碑指数'" :colourfol="'orange'" :number="'4,534'"></Card>
+            <Card :title="'口碑指数'" :colourfol="'orange'" :number="'4,534'" :data="[-1.47,4.47]"></Card>
           </div>  
       </div>
   </div>
@@ -126,8 +131,10 @@ export default {
             }
             .left{
                 width: 258px;
+                padding-left: 0;
                 .left-title{
                     height: 24px;
+                    padding-left: 16px;
                     margin-bottom: 16px;
                     font-size: 14px;
                     color: #242F57;
@@ -135,6 +142,13 @@ export default {
                 }
                 .left-content{
                     height: calc(100% - 40px);
+                    img{
+                        width: 32px;
+                        height: 32px;
+                        margin-left: 16px;
+                        margin-bottom: 16px;
+                        border-radius: 50%;
+                    }
                 }
             }
             .right{
