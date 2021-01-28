@@ -466,6 +466,32 @@
             <div class="mb_echarts2"></div>
           </div>
         </div>
+
+        <div class="jichuhuax_area_container">
+          <div class="jichuhuax_area_til">基础画像</div>
+          <div class="jichuhuax_echarts_container">
+            <div class="jichuhuax_echarts_item" v-for="(item,index) in 12" :key="index"></div>
+          </div>
+        </div>
+
+        <div class="xwfx_area_container">
+          <div class="xwfx_area_til">行为分析</div>
+          <div class="ditu_area"></div>
+          <div class="xwfx_area_til" style="margin-bottom:12px;">不同时段APP使用情况</div>
+          <div class="use_app_area">
+            <img :src="useApp" style="width:100%;" />
+          </div>
+          <div class="use_echart_item" v-for="(item,index) in 2" :key="index"></div>
+          <div class="use_echart_item1_container">
+            <div class="use_echart_item1" v-for="(item,index) in 4" :key="index"></div>
+          </div>
+        </div>
+
+        <div class="xzfx_area_container">
+          <div class="xzfx_area_title">心智分析</div>
+          <div class="yhsj_echarts">用户视觉心智动态捕捉</div>
+          <div class="xzsk_echarts">心智时空曲线</div>
+        </div>
       </div>
     </div>
   </div>
@@ -495,7 +521,8 @@ export default {
       toLIcon: require("../../assets/img/yhhx/toL.png"),
       dhIcon: require("../../assets/img/yhhx/dhIcon.png"),
       yhtIcon: require("../../assets/img/yhhx/yht.png"),
-      input1: require("../../assets/img/yhhx/input1.png")
+      input1: require("../../assets/img/yhhx/input1.png"),
+      useApp: require("../../assets/img/yhhx/useApp.png")
     };
   },
   mounted() {
@@ -2011,6 +2038,128 @@ export default {
           .mb_echarts2 {
             border: 1px solid #ff8800;
           }
+        }
+      }
+
+      .row_title {
+        width: 100%;
+        text-align: center;
+        margin-top: 24px;
+        margin-bottom: 24px;
+        font-size: 18px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #242f57;
+      }
+
+      .jichuhuax_area_container {
+        width: 100%;
+        background: #ffffff;
+        box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+        border-radius: 8px;
+        padding: 24px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        .jichuhuax_area_til {
+          width: 100%;
+          font-size: 16px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #242f57;
+          margin-bottom: 24px;
+        }
+        .jichuhuax_echarts_container {
+          width: 100%;
+          flex: 1;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          .jichuhuax_echarts_item {
+            width: 49%;
+            height: 446px;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #eaedf7;
+            margin-bottom: 24px;
+          }
+        }
+      }
+
+      .xwfx_area_container {
+        width: 100%;
+        background: #ffffff;
+        box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+        border-radius: 8px;
+        padding: 24px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        .xwfx_area_til {
+          width: 100%;
+          margin-bottom: 24px;
+          font-size: 16px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #242f57;
+        }
+        .ditu_area {
+          width: 100%;
+          height: 385px;
+          background-color: silver;
+          margin-bottom: 24px;
+        }
+        .use_app_area {
+          width: 100%;
+          margin-bottom: 24px;
+        }
+        .use_echart_item {
+          width: 100%;
+          height: 400px;
+          background: #ffffff;
+          border-radius: 8px;
+          border: 1px solid #eaedf7;
+          margin-bottom: 24px;
+        }
+        .use_echart_item1_container {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          .use_echart_item1 {
+            width: 49%;
+            height: 427px;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #eaedf7;
+            margin-bottom: 24px;
+          }
+        }
+      }
+
+      .xzfx_area_container {
+        width: 100%;
+        background: #ffffff;
+        box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+        border-radius: 8px;
+        padding: 24px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        .xzfx_area_title {
+          font-size: 16px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #242f57;
+        }
+        .yhsj_echarts,.xzsk_echarts {
+          width: 100%;
+          height: 336px;
+          background: #ffffff;
+          border-radius: 8px;
+          border: 1px solid #eaedf7;
+          margin-bottom: 24px;
+          padding: 16px;
         }
       }
     }
