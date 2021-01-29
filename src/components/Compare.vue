@@ -2,8 +2,12 @@
     <div class="compare-box">
         <p>
             <span>环比</span>
+            <i class="iconfont iconjiantou_youshang icon-green" v-if="data[0]>0"></i>
+            <i class="iconfont iconjiantou_youxia icon-red" v-else></i>
             <span :class="data[0]>0?'green':'red'">{{Math.abs(data[0])}}%</span>
             <span class="ml-8">同比</span>
+            <i class="iconfont iconjiantou_youshang icon-green" v-if="data[1]>0"></i>
+            <i class="iconfont iconjiantou_youxia icon-red" v-else></i>
             <span :class="data[1]>0?'green':'red'">{{Math.abs(data[1])}}%</span>
         </p>
     </div>
@@ -25,6 +29,7 @@
 
 <style scoped lang="scss">
     .compare-box {
+
         > p {
             font-size: 14px;
             font-family: PingFangSC-Regular, PingFang SC;
@@ -32,17 +37,25 @@
             color: #636E95;
 
             .red {
-                margin-left: 4px;
                 color: #FB343E;
             }
 
             .green {
-                margin-left: 4px;
                 color: #34C724;
             }
 
             .ml-8 {
                 margin-left: 8px;
+            }
+
+            .icon-red {
+                margin-left: 2px;
+                color: #FB343E;
+            }
+
+            .icon-green {
+                margin-left: 2px;
+                color: #34C724;
             }
         }
     }
