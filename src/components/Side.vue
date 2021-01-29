@@ -402,7 +402,7 @@ export default {
   // color: #636E95;
   // background: none;
   color: #FFFFFF;
-  background: url("../static/img/new/side/rectangle@2x.png") no-repeat
+  background: url("../assets/img/side/rectangle@2x.png") no-repeat
         center / 192px 40px;
   border-radius: 30px;
   font-size: 14px;
