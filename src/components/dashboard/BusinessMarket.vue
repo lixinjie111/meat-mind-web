@@ -1864,7 +1864,7 @@
         .card-six {
             margin-top: 24px;
             height: 560px;
-            background: url("../../assets/img/dashboard/market/card-six-bg@2x.png") no-repeat left center / 100% 100%;
+            background: url("../../assets/img/dashboard/market/card-six-bg@2x.png") #ffffff no-repeat left center / 560px 100%;
 
             .card-six-left {
                 width: 296px;
