@@ -689,7 +689,14 @@
 
         <div class="xzfx_area_container">
           <div class="xzfx_area_title">心智分析</div>
-          <div class="yhsj_echarts">用户视觉心智动态捕捉</div>
+          <div class="yhsj_echarts">
+             <div class="yhsj_echarts_item_title">
+                用户视觉心智动态捕捉
+              </div>
+              <div class="yhsj_echarts_item_content">
+                <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box3Data"></PieEcharts>
+              </div>
+          </div>
           <div class="xzsk_echarts">心智时空曲线</div>
           <div class="xinzfb_container">
             <div class="xinzfb_container_lef">
@@ -2479,6 +2486,17 @@ export default {
           border: 1px solid #eaedf7;
           margin-bottom: 24px;
           padding: 16px;
+          display: flex;
+          flex-direction: column;
+          .yhsj_echarts_item_title{
+              font-size: 14px;
+              font-family: PingFangSC-Regular, PingFang SC;
+              font-weight: 400;
+              color: #242f57;
+          }
+          .yhsj_echarts_item_content{
+            flex:1
+          }
         }
         .xinzfb_container {
           width: 100%;
