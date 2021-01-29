@@ -26,8 +26,10 @@
               <div class="echarts_item">
                 <div class="top_panel" @mouseenter="showPop1" @mouseleave="hidePop1">
                   <div class="top_t">
-                    <div class="cer_icon"></div>
-                    <div class="t_text">北京上班族</div>
+                    <div class="top_l">
+                        <div class="cer_icon"></div>
+                        <div class="t_text">北京上班族</div>
+                    </div>
                     <div class="edit_text">编辑</div>
                   </div>
                   <div class="cen_num">
@@ -67,8 +69,10 @@
               <div class="echarts_item">
                 <div class="top_panel" @mouseenter="showPop2" @mouseleave="hidePop2">
                   <div class="top_t">
-                    <div class="cer_icon"></div>
-                    <div class="t_text">企业高管</div>
+                    <div class="top_l">
+                        <div class="cer_icon"></div>
+                        <div class="t_text">企业高管</div>
+                    </div>
                     <div class="edit_text">编辑</div>
                   </div>
                   <div class="cen_num">
@@ -106,8 +110,10 @@
               <div class="echarts_item">
                 <div class="top_panel" @mouseenter="showPop3" @mouseleave="hidePop3">
                   <div class="top_t">
-                    <div class="cer_icon"></div>
-                    <div class="t_text">北漂一族</div>
+                    <div class="top_l">
+                        <div class="cer_icon"></div>
+                        <div class="t_text">北漂一族</div>
+                    </div>
                     <div class="edit_text">编辑</div>
                   </div>
                   <div class="cen_num">
@@ -145,8 +151,10 @@
               <div class="echarts_item">
                 <div class="top_panel" @mouseenter="showPop4" @mouseleave="hidePop4">
                   <div class="top_t">
-                    <div class="cer_icon"></div>
-                    <div class="t_text">研学青年</div>
+                    <div class="top_l">
+                        <div class="cer_icon"></div>
+                        <div class="t_text">研学青年</div>
+                    </div>
                     <div class="edit_text">编辑</div>
                   </div>
                   <div class="cen_num">
@@ -186,8 +194,10 @@
               <div class="echarts_item">
                 <div class="top_panel" @mouseenter="showPop5" @mouseleave="hidePop5">
                   <div class="top_t">
-                    <div class="cer_icon" style="background: #FF8800;"></div>
-                    <div class="t_text">自由职业</div>
+                    <div class="top_l">
+                        <div class="cer_icon" style="background: #FF8800;"></div>
+                        <div class="t_text">自由职业</div>
+                    </div>
                     <div class="edit_text">编辑</div>
                   </div>
                   <div class="cen_num">
@@ -337,7 +347,7 @@
                   <div class="cal_item2">
                     <div class="rt_choice"></div>
                     <div class="logo_container">
-                      <img class="logoImg" />
+                      <img :src="ttIcon" class="logoImg" />
                       <span class="cal_txt">头条</span>
                     </div>
                     <div class="txt_area">
@@ -354,7 +364,7 @@
                       <img :src="dhIcon" class="dhIcon" />
                     </div>
                     <div class="logo_container">
-                      <img class="logoImg" />
+                      <img :src="xhsIcon" class="logoImg" />
                       <span class="cal_txt">小红书</span>
                     </div>
                     <div class="txt_area">
@@ -371,7 +381,7 @@
                       <img :src="dhIcon" alt srcset class="dhIcon" />
                     </div>
                     <div class="logo_container">
-                      <img class="logoImg" />
+                      <img :src="ksIcon" class="logoImg" />
                       <span class="cal_txt">快手</span>
                     </div>
                     <div class="txt_area">
@@ -388,7 +398,7 @@
                       <img :src="dhIcon" alt srcset class="dhIcon" />
                     </div>
                     <div class="logo_container">
-                      <img class="logoImg" />
+                      <img :src="dyI" class="logoImg" />
                       <span class="cal_txt">抖音</span>
                     </div>
                     <div class="txt_area">
@@ -412,8 +422,8 @@
                     <span style="color:#242F57">2</span>个
                   </div>
                   <div class="cdyhmj_bom_rig">
-                    <img class="cdyhmj_bom_rig1" />
-                    <img class="cdyhmj_bom_rig1" />
+                    <img :src="ksIcon" class="cdyhmj_bom_rig1" />
+                    <img :src="xhsIcon" class="cdyhmj_bom_rig1" />
                   </div>
                 </div>
               </div>
@@ -879,7 +889,12 @@ export default {
       yhtIcon: require("../../assets/img/yhhx/yht.png"),
       input1: require("../../assets/img/yhhx/input1.png"),
       useApp: require("../../assets/img/yhhx/useApp.png"),
-      threeP: require("../../assets/img/yhhx/threeP.png")
+      threeP: require("../../assets/img/yhhx/threeP.png"),
+      ttIcon:require("../../assets/img/yhhx/tt.png"),
+      xhsIcon:require("../../assets/img/yhhx/xhs.png"),
+      ksIcon:require("../../assets/img/yhhx/ks.png"),
+      dyIcon:require("../../assets/img/yhhx/ks.png"),
+      dyI:require("../../assets/img/yhhx/dyI.png")
     };
   },
   mounted() {
@@ -918,10 +933,12 @@ export default {
             type: "graph",
             layout: "none",
             symbolSize: 50,
-            roam: true,
             label: {
               normal: {
-                show: true
+                show: true,
+                fontWeight:600,
+                fontFamily:'PingFangSC-Semibold, PingFang SC',
+                fontSize:14
               }
             },
             data: [
@@ -932,9 +949,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "#8AE6C7",
-                    borderWidth: 4,
-                    shadowBlur: 100,
+                    
                     shadowColor: "#8AE6C7",
                     color: "#8AE6C7"
                   }
@@ -961,9 +976,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(255,217,140,0.2)",
-                    borderWidth: 0,
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,217,140,0.2)",
                     color: "rgba(255,217,140,0.2)"
                   }
@@ -978,9 +991,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(255,159,127,0.7)",
-                    borderWidth: 0,
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,159,127,0.7)",
                     color: "rgba(255,159,127,0.7)"
                   }
@@ -993,8 +1004,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(77,148,255,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
@@ -1009,8 +1019,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(164,157,250,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(164,157,250,0.7)",
                     color: "rgba(164,157,250,0.7)"
                   }
@@ -1037,10 +1046,12 @@ export default {
             type: "graph",
             layout: "none",
             symbolSize: 50,
-            roam: true,
             label: {
               normal: {
-                show: true
+                show: true,
+                fontWeight:600,
+                fontFamily:'PingFangSC-Semibold, PingFang SC',
+                fontSize:14
               }
             },
             data: [
@@ -1051,7 +1062,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "#FF9F7F",
                     color: "#FF9F7F"
                   }
@@ -1065,7 +1076,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,217,140,0.7)",
                     color: "rgba(255,217,140,0.7)"
                   }
@@ -1080,9 +1091,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(138,230,199,0.7)",
-                    borderWidth: 0,
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(138,230,199,0.7)",
                     color: "rgba(138,230,199,0.7)"
                   }
@@ -1097,9 +1106,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(183,200,234,0.7)",
-                    borderWidth: 0,
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(183,200,234,0.7)",
                     color: "rgba(183,200,234,0.7)"
                   }
@@ -1112,8 +1119,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(164,157,250,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(164,157,250,0.7)",
                     color: "rgba(164,157,250,0.7)"
                   }
@@ -1126,8 +1132,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(252,128,159,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(252,128,159,0.7)",
                     color: "rgba(252,128,159,0.7)"
                   }
@@ -1142,8 +1147,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(164,157,250,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(164,157,250,0.7)",
                     color: "rgba(164,157,250,0.7)"
                   }
@@ -1156,8 +1160,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(255,159,127,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,159,127,0.7)",
                     color: "rgba(255,159,127,0.7)"
                   }
@@ -1184,10 +1187,12 @@ export default {
             type: "graph",
             layout: "none",
             symbolSize: 50,
-            roam: true,
             label: {
               normal: {
-                show: true
+                show: true,
+                fontWeight:600,
+                fontFamily:'PingFangSC-Semibold, PingFang SC',
+                fontSize:14
               }
             },
             data: [
@@ -1198,7 +1203,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(138,230,199,0.7)",
                     color: "rgba(138,230,199,0.7)"
                   }
@@ -1211,7 +1216,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(252,128,159,0.7)",
                     color: "rgba(252,128,159,0.7)"
                   }
@@ -1224,7 +1229,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,217,140,0.7)",
                     color: "rgba(255,217,140,0.7)"
                   }
@@ -1239,7 +1244,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
@@ -1254,7 +1259,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(252,128,159,0.7)",
                     color: "rgba(252,128,159,0.7)"
                   }
@@ -1269,9 +1274,8 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(255,159,127,0.7)",
                     borderWidth: 0,
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,159,127,0.7)",
                     color: "rgba(255,159,127,0.7)"
                   }
@@ -1284,8 +1288,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(77,148,255,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
@@ -1300,8 +1303,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(164,157,250,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(164,157,250,0.7)",
                     color: "rgba(164,157,250,0.7)"
                   }
@@ -1328,10 +1330,12 @@ export default {
             type: "graph",
             layout: "none",
             symbolSize: 50,
-            roam: true,
             label: {
               normal: {
-                show: true
+                show: true,
+                fontWeight:600,
+                fontFamily:'PingFangSC-Semibold, PingFang SC',
+                fontSize:14
               }
             },
             data: [
@@ -1343,7 +1347,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,217,140,0.7)",
                     color: "rgba(255,217,140,0.7)"
                   }
@@ -1356,7 +1360,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
@@ -1371,9 +1375,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(255,159,127,0.7)",
-                    borderWidth: 0,
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,159,127,0.7)",
                     color: "rgba(255,159,127,0.7)"
                   }
@@ -1386,8 +1388,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(77,148,255,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
@@ -1414,10 +1415,12 @@ export default {
             type: "graph",
             layout: "none",
             symbolSize: 50,
-            roam: true,
             label: {
               normal: {
-                show: true
+                show: true,
+                fontWeight:600,
+                fontFamily:'PingFangSC-Semibold, PingFang SC',
+                fontSize:14
               }
             },
             data: [
@@ -1428,9 +1431,8 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "#8AE6C7",
                     borderWidth: 4,
-                    shadowBlur: 100,
+                    
                     shadowColor: "#8AE6C7",
                     color: "#8AE6C7"
                   }
@@ -1445,7 +1447,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
@@ -1459,7 +1461,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,217,140,0.7)",
                     color: "rgba(255,217,140,0.7)"
                   }
@@ -1474,9 +1476,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(255,159,127,0.7)",
-                    borderWidth: 0,
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,159,127,0.7)",
                     color: "rgba(255,159,127,0.7)"
                   }
@@ -1489,8 +1489,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(77,148,255,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
@@ -1505,8 +1504,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(164,157,250,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(164,157,250,0.7)",
                     color: "rgba(164,157,250,0.7)"
                   }
@@ -1661,6 +1659,7 @@ export default {
                   border-bottom: 1px solid #c6cbde;
                   display: flex;
                   align-items: center;
+                  justify-content: space-between;
                   .cer_icon {
                     width: 12px;
                     height: 12px;
@@ -1668,18 +1667,21 @@ export default {
                     border-radius: 50%;
                     margin-right: 5px;
                   }
-                  .t_text {
-                    font-size: 16px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    color: #242f57;
-                    margin-right: 144px;
-                  }
-                  .edit_text {
-                    font-size: 14px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    color: #2373ff;
+                  .top_l{
+                    display: flex;
+                    align-items: center;
+                    .t_text {
+                        font-size: 16px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242f57;
+                    }
+                    .edit_text {
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #2373ff;
+                    }
                   }
                 }
                 .cen_num {
@@ -1700,7 +1702,7 @@ export default {
                   .home,
                   .ggjt,
                   .gongsi {
-                    padding: 1px 16px;
+                    padding: 1px 6px;
                     box-sizing: border-box;
                     border-radius: 11px;
                     margin-right: 8px;
@@ -2074,7 +2076,7 @@ export default {
                   }
                 }
                 .cal_item2 {
-                  width: 20%;
+                  width: 18%;
                   height: 120px;
                   background: #ffffff;
                   border-radius: 8px;
@@ -2125,7 +2127,6 @@ export default {
                       border: 1px solid #eaedf7;
                       border-radius: 51%;
                       margin-right: 8px;
-                      background-color: seagreen;
                     }
                     .cal_txt {
                       font-size: 14px;
@@ -2142,7 +2143,7 @@ export default {
                     display: flex;
                     align-items: center;
                     .txt_area11 {
-                      margin-right: 40px;
+                      margin-right: 11px;
                     }
                   }
                   .per_area {
@@ -2153,7 +2154,7 @@ export default {
                     font-weight: 400;
                     color: #242f57;
                     .per_area1 {
-                      margin-right: 52px;
+                      margin-right: 10px;
                     }
                   }
                 }
@@ -2181,7 +2182,6 @@ export default {
                     width: 24px;
                     height: 24px;
                     margin-right: 8px;
-                    background-color: seagreen;
                     border-radius: 50%;
                   }
                 }
