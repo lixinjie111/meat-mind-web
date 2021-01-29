@@ -89,6 +89,10 @@ export default {
       height: calc(100% - 20px);
       margin-top: -20px;
     }
+    iframe{
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 </style>
