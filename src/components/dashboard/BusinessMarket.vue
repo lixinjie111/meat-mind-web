@@ -284,7 +284,7 @@
                         <div class="cdyhmj_content_bom_lef_top">触达用户投放策略建议</div>
                         <div class="cdyhmj_content_bom_lef_bom">
                             <div class="echarts1">
-                                <lineM id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM>
+                                <lineM id="box11111" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM>
                             </div>
                             <div class="echarts1">
                                 <div class="echarts11">
@@ -1276,7 +1276,7 @@
 
                             .echarts1 {
                                 width: 30%;
-                                height: 136px;
+                                height: 156px;
                                 padding: 6px 12px;
                                 box-sizing: border-box;
                                 border-radius: 8px;
