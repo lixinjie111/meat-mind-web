@@ -130,7 +130,7 @@ export default {
             emphasis: {
                 itemStyle: {
                     color: '#ECEFF4',
-                    borderWidth: 5,
+                    borderWidth: 5 ,
                     borderColor: '#ECEFF4'
                 }
             },
