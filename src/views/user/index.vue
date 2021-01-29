@@ -1581,12 +1581,12 @@ export default {
   .container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: calc(100% - 240px);
     .show-content {
       display: flex;
       flex-direction: column;
       width: 100%;
-      height: calc(100vh - 80px);
+      height: calc(100vh - 64px);
       overflow-y: scroll;
       padding: 24px;
       .yhdx_container {
