@@ -490,7 +490,7 @@
                     </div>
                     <div class="mb_echarts1_lef_bom">养生金融小白</div>
                 </div>
-                <div class="mb_echarts1_rig"></div>
+                <div class="mb_echarts1_rig"><pieP id="box115" :colorList="$lxjData.colorList" :myData="$lxjData.box114Data"></pieP></div>
             </div>
             <div class="vscls">VS</div>
             <div class="mb_echarts2">
@@ -500,7 +500,7 @@
                     </div>
                     <div class="mb_echarts1_lef_bom">养生金融小白</div>
                 </div>
-                <div class="mb_echarts1_rig"></div>
+                <div class="mb_echarts1_rig"><pieP id="box116" :colorList="$lxjData.colorList" :myData="$lxjData.box114Data"></pieP></div>
             </div>
           </div>
         </div>
@@ -872,6 +872,7 @@ import barT from '../../components/echarts/common/barT';
 import funnel from '../../components/echarts/common/funnel';
 import barHM from '../../components/echarts/common/barHM';
 import lineSp from '../../components/echarts/common/lineSp';
+import pieP from '../../components/echarts/common/pieP';
 
 import PieEcharts from '../../components/echarts/common/PieEcharts';
 import RotateChart from '../../components/echarts/common/RotateChart';
@@ -883,7 +884,7 @@ import Yuanhuan1 from '../../components/echarts/common/Yuanhuan1';
 import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
 export default {
   components: {
-    barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,Side, Header, PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
+   pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,Side, Header, PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
   },
   name: "index",
   data() {
@@ -2427,8 +2428,6 @@ export default {
             .mb_echarts1_rig{
                 width: 90px;
                 height: 90px;
-                border-radius: 50%;
-                background-color: chartreuse;
             }
           }
           .vscls {
