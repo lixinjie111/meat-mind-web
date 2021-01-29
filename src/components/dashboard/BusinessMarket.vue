@@ -1643,8 +1643,9 @@
                         padding: 0 15px;
 
                         .card-four-right-item {
+                            width: 100%;
                             display: flex;
-                            justify-content: space-between;
+                            justify-content: flex-start;
                             align-items: center;
                             padding: 15px 0;
                             border-bottom: 1px solid #F4F7FC;
@@ -1681,7 +1682,8 @@
                                 }
 
                                 &.desc {
-                                    width: 270px;
+                                    /*width: 270px;*/
+                                    width: calc(100% - 90px);
                                     font-size: 14px;
                                     font-family: PingFangSC-Regular, PingFang SC;
                                     font-weight: 400;
@@ -1689,7 +1691,8 @@
                                 }
 
                                 &.desc1 {
-                                    width: 180px;
+                                    /*width: 180px;*/
+                                    width: calc(100% - 160px);
                                     font-size: 14px;
                                     font-family: PingFangSC-Regular, PingFang SC;
                                     font-weight: 400;
@@ -1697,7 +1700,8 @@
                                 }
 
                                 &.desc2 {
-                                    width: 343px;
+                                    /*width: 343px;*/
+                                    width: calc(100% - 20px);
                                     font-size: 12px;
                                     font-family: PingFangSC-Regular, PingFang SC;
                                     font-weight: 400;
