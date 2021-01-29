@@ -124,6 +124,12 @@
 			<barT id="box9" :colorList="$lxjData.colorList" ></barT>
 		</div>
 		<div class="box">
+			<barT id="box91" :colorList="$lxjData.colorList" ></barT>
+		</div>
+		<div class="box">
+			<barT id="box92" :colorList="$lxjData.colorList" ></barT>
+		</div>
+		<div class="box">
 			<barLine id="box10" :colorList="$lxjData.colorList" :myData="$lxjData.box10Data"></barLine>
 		</div>
 		<div class="box">
@@ -137,6 +143,9 @@
 		</div>
 		<div class="box">
 			<barHM id="box114" :colorList="$lxjData.colorList" :myData="$lxjData.box114Data"></barHM>
+		</div>
+		<div class="box">
+			<pieP id="box115" :colorList="$lxjData.colorList"></pieP>
 		</div>
         
     </div>
@@ -158,9 +167,10 @@
 	import funnel from './common/funnel';
 	import barHM from './common/barHM';
 	import lineSp from './common/lineSp';
+	import pieP from './common/pieP';
     export default {
 		components: {
-		  barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp
+		  barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,pieP
 		},
 		created(){
 			console.log(this.$lxjData)
