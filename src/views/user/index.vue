@@ -26,8 +26,10 @@
               <div class="echarts_item">
                 <div class="top_panel" @mouseenter="showPop1" @mouseleave="hidePop1">
                   <div class="top_t">
-                    <div class="cer_icon"></div>
-                    <div class="t_text">北京上班族</div>
+                    <div class="top_l">
+                        <div class="cer_icon"></div>
+                        <div class="t_text">北京上班族</div>
+                    </div>
                     <div class="edit_text">编辑</div>
                   </div>
                   <div class="cen_num">
@@ -67,8 +69,10 @@
               <div class="echarts_item">
                 <div class="top_panel" @mouseenter="showPop2" @mouseleave="hidePop2">
                   <div class="top_t">
-                    <div class="cer_icon"></div>
-                    <div class="t_text">企业高管</div>
+                    <div class="top_l">
+                        <div class="cer_icon"></div>
+                        <div class="t_text">企业高管</div>
+                    </div>
                     <div class="edit_text">编辑</div>
                   </div>
                   <div class="cen_num">
@@ -106,8 +110,10 @@
               <div class="echarts_item">
                 <div class="top_panel" @mouseenter="showPop3" @mouseleave="hidePop3">
                   <div class="top_t">
-                    <div class="cer_icon"></div>
-                    <div class="t_text">北漂一族</div>
+                    <div class="top_l">
+                        <div class="cer_icon"></div>
+                        <div class="t_text">北漂一族</div>
+                    </div>
                     <div class="edit_text">编辑</div>
                   </div>
                   <div class="cen_num">
@@ -145,8 +151,10 @@
               <div class="echarts_item">
                 <div class="top_panel" @mouseenter="showPop4" @mouseleave="hidePop4">
                   <div class="top_t">
-                    <div class="cer_icon"></div>
-                    <div class="t_text">研学青年</div>
+                    <div class="top_l">
+                        <div class="cer_icon"></div>
+                        <div class="t_text">研学青年</div>
+                    </div>
                     <div class="edit_text">编辑</div>
                   </div>
                   <div class="cen_num">
@@ -186,8 +194,10 @@
               <div class="echarts_item">
                 <div class="top_panel" @mouseenter="showPop5" @mouseleave="hidePop5">
                   <div class="top_t">
-                    <div class="cer_icon" style="background: #FF8800;"></div>
-                    <div class="t_text">自由职业</div>
+                    <div class="top_l">
+                        <div class="cer_icon" style="background: #FF8800;"></div>
+                        <div class="t_text">自由职业</div>
+                    </div>
                     <div class="edit_text">编辑</div>
                   </div>
                   <div class="cen_num">
@@ -337,7 +347,7 @@
                   <div class="cal_item2">
                     <div class="rt_choice"></div>
                     <div class="logo_container">
-                      <img class="logoImg" />
+                      <img :src="ttIcon" class="logoImg" />
                       <span class="cal_txt">头条</span>
                     </div>
                     <div class="txt_area">
@@ -354,7 +364,7 @@
                       <img :src="dhIcon" class="dhIcon" />
                     </div>
                     <div class="logo_container">
-                      <img class="logoImg" />
+                      <img :src="xhsIcon" class="logoImg" />
                       <span class="cal_txt">小红书</span>
                     </div>
                     <div class="txt_area">
@@ -371,7 +381,7 @@
                       <img :src="dhIcon" alt srcset class="dhIcon" />
                     </div>
                     <div class="logo_container">
-                      <img class="logoImg" />
+                      <img :src="ksIcon" class="logoImg" />
                       <span class="cal_txt">快手</span>
                     </div>
                     <div class="txt_area">
@@ -388,7 +398,7 @@
                       <img :src="dhIcon" alt srcset class="dhIcon" />
                     </div>
                     <div class="logo_container">
-                      <img class="logoImg" />
+                      <img :src="dyI" class="logoImg" />
                       <span class="cal_txt">抖音</span>
                     </div>
                     <div class="txt_area">
@@ -412,8 +422,8 @@
                     <span style="color:#242F57">2</span>个
                   </div>
                   <div class="cdyhmj_bom_rig">
-                    <img class="cdyhmj_bom_rig1" />
-                    <img class="cdyhmj_bom_rig1" />
+                    <img :src="ksIcon" class="cdyhmj_bom_rig1" />
+                    <img :src="xhsIcon" class="cdyhmj_bom_rig1" />
                   </div>
                 </div>
               </div>
@@ -480,7 +490,187 @@
         <div class="jichuhuax_area_container">
           <div class="jichuhuax_area_til">基础画像</div>
           <div class="jichuhuax_echarts_container">
-            <div class="jichuhuax_echarts_item" v-for="(item,index) in 12" :key="index"></div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">年龄结构</div>
+                  <div class="range_titme">1-4当周</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                  <img :src="threeP" class="threeP" />
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                 <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">收入结构</div>
+                  <div class="range_titme">1-4当周</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                 <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box2Data"></PieEcharts>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">职业结构</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <cLine id="box58" :colorList="$lxjData.colorList" :myData="$lxjData.box58Data"></cLine>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">行业结构</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <barC id="box7" :colorList="$lxjData.colorList" :myData="$lxjData.box7Data"></barC>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">教育背景结构</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <barEcharts id="box1" :colorList="$lxjData.colorList" :myData="$lxjData.box1Data"></barEcharts>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">性别结构</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieEcharts>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">主要出行方式</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <barEcharts id="box11" :colorList="$lxjData.colorList" :myData="$lxjData.box11Data"></barEcharts>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">户籍籍贯结构</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <barEcharts id="box12" :colorList="$lxjData.colorList" :myData="$lxjData.box12Data"></barEcharts>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">婚育状态结构</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <barEcharts id="box13" :colorList="$lxjData.colorList" :myData="$lxjData.box13Data"></barEcharts>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">消费能力结构</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <barC id="box71" :colorList="$lxjData.colorList" :myData="$lxjData.box71Data"></barC>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">车辆保有结构</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box4Data"></PieEcharts>
+              </div>
+            </div>
+
+            <div class="jichuhuax_echarts_item">
+              <div class="jichuhuax_echarts_item_title">
+                <div class="jichuhuax_echarts_item_title_lef">
+                  <div class="nljg">居住地区</div>
+                  <div class="range_titme">2020.12.01-2020.12.3</div>
+                </div>
+                <div class="jichuhuax_echarts_item_title_rig">
+                    <img :src="threeP" class="threeP">
+                </div>
+              </div>
+              <div class="jichuhuax_echarts_item_content">
+                <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box3Data"></PieEcharts>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -511,7 +701,71 @@
           <div class="xzfx_area_title">心智分析</div>
           <div class="yhsj_echarts">用户视觉心智动态捕捉</div>
           <div class="xzsk_echarts">心智时空曲线</div>
+          <div class="xinzfb_container">
+            <div class="xinzfb_container_lef">
+              <div class="xinzfb_container_lef_tel">心智分布</div>
+              <div></div>
+            </div>
+            <div class="xinzfb_container_rig">
+              <div class="xinzfb_container_rig_tel">心智倾向</div>
+              <div></div>
+            </div>
+          </div>
+          <div class="ppxz_container">
+            <div class="ppxz_title">品牌心智</div>
+            <div class="ppxz_title_desc">分心品牌当前受众的不同阶段的数据</div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="xzcb_container">
+            <div class="ppxz_title">心智传播网络</div>
+            <div class="ppxz_title_desc">分析传播途径</div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
+
+        <div class="smzqfx_area_container">
+            <div class="smzqfx_title">生命周期分析</div>
+            <div class="xfsmlcpg_container">
+                <div class="xfsmlcpg_title">消费生命旅程评估</div>
+                <div></div>
+            </div>
+            <div class="xfjzg_container">
+                <div class="xfjzg_container_lef">
+                    <div class="jichuhuax_echarts_item_title">
+                        <div class="jichuhuax_echarts_item_title_lef">
+                        <div class="nljg">消费者价值评估</div>
+                        <div class="range_titme">2020.12.01-2020.12.31</div>
+                        </div>
+                        <div class="jichuhuax_echarts_item_title_rig">
+                            <img :src="threeP" class="threeP">
+                        </div>
+                    </div>
+                </div>
+                <div class="xfjzg_container_rig">
+                    <div class="jichuhuax_echarts_item_title">
+                        <div class="jichuhuax_echarts_item_title_lef">
+                        <div class="nljg">加之贡献度（按标签）</div>
+                        <div class="range_titme">2020.12.01-2020.12.31</div>
+                        </div>
+                        <div class="jichuhuax_echarts_item_title_rig">
+                            <img :src="threeP" class="threeP">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="xfzsxjcfx_container">
+                <div class="xfzsxjcfx_til">消费者时序行为决策分析</div>
+                <div class="xfzsxjcfx_ech"></div>
+            </div>
+            <div class="xfzsxjcfx_container">
+                <div class="xfzsxjcfx_til">消费者行为决策预测</div>
+                <div class="xfzsxjcfx_ech"></div>
+            </div>
+        </div>
+
+
       </div>
     </div>
   </div>
@@ -520,7 +774,33 @@
 <script>
 import Side from "../../components/Side";
 import Header from "../../components/DefaultHeader";
+import barEcharts from '../../components/echarts/common/barEcharts';
+import barL from '../../components/echarts/common/barL';
+import barM from '../../components/echarts/common/barM';
+import cLine from '../../components/echarts/common/line';
+import lineO from '../../components/echarts/common/lineO';
+import lineS from '../../components/echarts/common/lineS';
+import lineM from '../../components/echarts/common/lineM';
+import barC from '../../components/echarts/common/barC';
+import barCH from '../../components/echarts/common/barCH';
+import barLine from '../../components/echarts/common/barLine';
+import barT from '../../components/echarts/common/barT';
+import funnel from '../../components/echarts/common/funnel';
+import barHM from '../../components/echarts/common/barHM';
+import lineSp from '../../components/echarts/common/lineSp';
+
+import PieEcharts from '../../components/echarts/common/PieEcharts';
+import RotateChart from '../../components/echarts/common/RotateChart';
+import LeidaEcharts from '../../components/echarts/common/LeidaEcharts';
+import MatchEcharts from '../../components/echarts/common/MatchEcharts';
+import Yibiao1Echarts from '../../components/echarts/common/Yibiao1Echarts';
+import YibiaoCharts2 from '../../components/echarts/common/YibiaoCharts2';
+import Yuanhuan1 from '../../components/echarts/common/Yuanhuan1';
+import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
 export default {
+  components: {
+    barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,Side, Header, PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
+  },
   name: "index",
   data() {
     return {
@@ -542,7 +822,13 @@ export default {
       dhIcon: require("../../assets/img/yhhx/dhIcon.png"),
       yhtIcon: require("../../assets/img/yhhx/yht.png"),
       input1: require("../../assets/img/yhhx/input1.png"),
-      useApp: require("../../assets/img/yhhx/useApp.png")
+      useApp: require("../../assets/img/yhhx/useApp.png"),
+      threeP: require("../../assets/img/yhhx/threeP.png"),
+      ttIcon:require("../../assets/img/yhhx/tt.png"),
+      xhsIcon:require("../../assets/img/yhhx/xhs.png"),
+      ksIcon:require("../../assets/img/yhhx/ks.png"),
+      dyIcon:require("../../assets/img/yhhx/ks.png"),
+      dyI:require("../../assets/img/yhhx/dyI.png")
     };
   },
   mounted() {
@@ -581,10 +867,12 @@ export default {
             type: "graph",
             layout: "none",
             symbolSize: 50,
-            roam: true,
             label: {
               normal: {
-                show: true
+                show: true,
+                fontWeight:600,
+                fontFamily:'PingFangSC-Semibold, PingFang SC',
+                fontSize:14
               }
             },
             data: [
@@ -595,9 +883,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "#8AE6C7",
-                    borderWidth: 4,
-                    shadowBlur: 100,
+                    
                     shadowColor: "#8AE6C7",
                     color: "#8AE6C7"
                   }
@@ -624,9 +910,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(255,217,140,0.2)",
-                    borderWidth: 0,
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,217,140,0.2)",
                     color: "rgba(255,217,140,0.2)"
                   }
@@ -641,9 +925,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(255,159,127,0.7)",
-                    borderWidth: 0,
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,159,127,0.7)",
                     color: "rgba(255,159,127,0.7)"
                   }
@@ -656,8 +938,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(77,148,255,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
@@ -672,8 +953,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(164,157,250,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(164,157,250,0.7)",
                     color: "rgba(164,157,250,0.7)"
                   }
@@ -700,10 +980,12 @@ export default {
             type: "graph",
             layout: "none",
             symbolSize: 50,
-            roam: true,
             label: {
               normal: {
-                show: true
+                show: true,
+                fontWeight:600,
+                fontFamily:'PingFangSC-Semibold, PingFang SC',
+                fontSize:14
               }
             },
             data: [
@@ -714,7 +996,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "#FF9F7F",
                     color: "#FF9F7F"
                   }
@@ -728,7 +1010,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,217,140,0.7)",
                     color: "rgba(255,217,140,0.7)"
                   }
@@ -743,9 +1025,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(138,230,199,0.7)",
-                    borderWidth: 0,
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(138,230,199,0.7)",
                     color: "rgba(138,230,199,0.7)"
                   }
@@ -760,9 +1040,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(183,200,234,0.7)",
-                    borderWidth: 0,
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(183,200,234,0.7)",
                     color: "rgba(183,200,234,0.7)"
                   }
@@ -775,8 +1053,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(164,157,250,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(164,157,250,0.7)",
                     color: "rgba(164,157,250,0.7)"
                   }
@@ -789,8 +1066,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(252,128,159,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(252,128,159,0.7)",
                     color: "rgba(252,128,159,0.7)"
                   }
@@ -805,8 +1081,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(164,157,250,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(164,157,250,0.7)",
                     color: "rgba(164,157,250,0.7)"
                   }
@@ -819,8 +1094,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(255,159,127,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,159,127,0.7)",
                     color: "rgba(255,159,127,0.7)"
                   }
@@ -847,10 +1121,12 @@ export default {
             type: "graph",
             layout: "none",
             symbolSize: 50,
-            roam: true,
             label: {
               normal: {
-                show: true
+                show: true,
+                fontWeight:600,
+                fontFamily:'PingFangSC-Semibold, PingFang SC',
+                fontSize:14
               }
             },
             data: [
@@ -861,7 +1137,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(138,230,199,0.7)",
                     color: "rgba(138,230,199,0.7)"
                   }
@@ -874,7 +1150,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(252,128,159,0.7)",
                     color: "rgba(252,128,159,0.7)"
                   }
@@ -887,7 +1163,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,217,140,0.7)",
                     color: "rgba(255,217,140,0.7)"
                   }
@@ -902,7 +1178,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
@@ -917,7 +1193,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(252,128,159,0.7)",
                     color: "rgba(252,128,159,0.7)"
                   }
@@ -932,9 +1208,8 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(255,159,127,0.7)",
                     borderWidth: 0,
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,159,127,0.7)",
                     color: "rgba(255,159,127,0.7)"
                   }
@@ -947,8 +1222,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(77,148,255,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
@@ -963,8 +1237,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(164,157,250,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(164,157,250,0.7)",
                     color: "rgba(164,157,250,0.7)"
                   }
@@ -991,10 +1264,12 @@ export default {
             type: "graph",
             layout: "none",
             symbolSize: 50,
-            roam: true,
             label: {
               normal: {
-                show: true
+                show: true,
+                fontWeight:600,
+                fontFamily:'PingFangSC-Semibold, PingFang SC',
+                fontSize:14
               }
             },
             data: [
@@ -1006,7 +1281,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,217,140,0.7)",
                     color: "rgba(255,217,140,0.7)"
                   }
@@ -1019,7 +1294,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
@@ -1034,9 +1309,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(255,159,127,0.7)",
-                    borderWidth: 0,
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,159,127,0.7)",
                     color: "rgba(255,159,127,0.7)"
                   }
@@ -1049,8 +1322,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(77,148,255,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
@@ -1077,10 +1349,12 @@ export default {
             type: "graph",
             layout: "none",
             symbolSize: 50,
-            roam: true,
             label: {
               normal: {
-                show: true
+                show: true,
+                fontWeight:600,
+                fontFamily:'PingFangSC-Semibold, PingFang SC',
+                fontSize:14
               }
             },
             data: [
@@ -1091,9 +1365,8 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "#8AE6C7",
                     borderWidth: 4,
-                    shadowBlur: 100,
+                    
                     shadowColor: "#8AE6C7",
                     color: "#8AE6C7"
                   }
@@ -1108,7 +1381,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
@@ -1122,7 +1395,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,217,140,0.7)",
                     color: "rgba(255,217,140,0.7)"
                   }
@@ -1137,9 +1410,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(255,159,127,0.7)",
-                    borderWidth: 0,
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(255,159,127,0.7)",
                     color: "rgba(255,159,127,0.7)"
                   }
@@ -1152,8 +1423,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(77,148,255,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
@@ -1168,8 +1438,7 @@ export default {
                 draggable: true,
                 itemStyle: {
                   normal: {
-                    borderColor: "rgba(164,157,250,0.7)",
-                    shadowBlur: 100,
+                    
                     shadowColor: "rgba(164,157,250,0.7)",
                     color: "rgba(164,157,250,0.7)"
                   }
@@ -1212,7 +1481,6 @@ export default {
       this.ifShowPop5 = false;
     }
   },
-  components: { Side, Header }
 };
 </script>
 
@@ -1325,6 +1593,7 @@ export default {
                   border-bottom: 1px solid #c6cbde;
                   display: flex;
                   align-items: center;
+                  justify-content: space-between;
                   .cer_icon {
                     width: 12px;
                     height: 12px;
@@ -1332,18 +1601,21 @@ export default {
                     border-radius: 50%;
                     margin-right: 5px;
                   }
-                  .t_text {
-                    font-size: 16px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    color: #242f57;
-                    margin-right: 144px;
-                  }
-                  .edit_text {
-                    font-size: 14px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    color: #2373ff;
+                  .top_l{
+                    display: flex;
+                    align-items: center;
+                    .t_text {
+                        font-size: 16px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242f57;
+                    }
+                    .edit_text {
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #2373ff;
+                    }
                   }
                 }
                 .cen_num {
@@ -1364,7 +1636,7 @@ export default {
                   .home,
                   .ggjt,
                   .gongsi {
-                    padding: 1px 16px;
+                    padding: 1px 6px;
                     box-sizing: border-box;
                     border-radius: 11px;
                     margin-right: 8px;
@@ -1738,7 +2010,7 @@ export default {
                   }
                 }
                 .cal_item2 {
-                  width: 20%;
+                  width: 18%;
                   height: 120px;
                   background: #ffffff;
                   border-radius: 8px;
@@ -1789,7 +2061,6 @@ export default {
                       border: 1px solid #eaedf7;
                       border-radius: 51%;
                       margin-right: 8px;
-                      background-color: seagreen;
                     }
                     .cal_txt {
                       font-size: 14px;
@@ -1806,7 +2077,7 @@ export default {
                     display: flex;
                     align-items: center;
                     .txt_area11 {
-                      margin-right: 40px;
+                      margin-right: 11px;
                     }
                   }
                   .per_area {
@@ -1817,7 +2088,7 @@ export default {
                     font-weight: 400;
                     color: #242f57;
                     .per_area1 {
-                      margin-right: 52px;
+                      margin-right: 10px;
                     }
                   }
                 }
@@ -1845,7 +2116,6 @@ export default {
                     width: 24px;
                     height: 24px;
                     margin-right: 8px;
-                    background-color: seagreen;
                     border-radius: 50%;
                   }
                 }
@@ -2013,6 +2283,7 @@ export default {
         margin-top: 24px;
         padding: 24px;
         box-sizing: border-box;
+        margin-bottom: 24px;
         .mub_titl_container {
           width: 100%;
           display: flex;
@@ -2101,6 +2372,41 @@ export default {
             border-radius: 8px;
             border: 1px solid #eaedf7;
             margin-bottom: 24px;
+            padding: 16px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            .jichuhuax_echarts_item_title {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .jichuhuax_echarts_item_title_lef {
+                .nljg {
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #242f57;
+                }
+                .range_titme {
+                  margin-top: 4px;
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #7c88b1;
+                }
+              }
+              .jichuhuax_echarts_item_title_rig {
+                width: 16px;
+                height: 16px;
+                .threeP {
+                  display: block;
+                  width: 100%;
+                }
+              }
+            }
+            .jichuhuax_echarts_item_content{
+              flex:1
+            }
           }
         }
       }
@@ -2114,6 +2420,7 @@ export default {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
+        margin-top: 24px;
         .xwfx_area_til {
           width: 100%;
           margin-bottom: 24px;
@@ -2164,6 +2471,7 @@ export default {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
+        margin-top: 24px;
         .xzfx_area_title {
           font-size: 16px;
           font-family: PingFangSC-Medium, PingFang SC;
@@ -2179,6 +2487,172 @@ export default {
           border: 1px solid #eaedf7;
           margin-bottom: 24px;
           padding: 16px;
+        }
+        .xinzfb_container {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .xinzfb_container_lef,
+          .xinzfb_container_rig {
+            width: 49%;
+            height: 393px;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #eaedf7;
+            padding: 16px;
+            box-sizing: border-box;
+            .xinzfb_container_lef_tel {
+              width: 100%;
+            }
+          }
+        }
+        .ppxz_container {
+          margin-top: 24px;
+          width: 100%;
+          height: 523px;
+          padding: 16px;
+          box-sizing: border-box;
+          background: #ffffff;
+          border-radius: 8px;
+          border: 1px solid #eaedf7;
+          margin-bottom: 24px;
+          .ppxz_title {
+            width: 100%;
+            font-size: 14px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #242f57;
+            margin-bottom: 4px;
+          }
+          .ppxz_title_desc {
+            width: 100%;
+            font-size: 12px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #636e95;
+          }
+        }
+        .xzcb_container {
+          width: 100%;
+          height: 292px;
+          background: #ffffff;
+          border-radius: 8px;
+          border: 1px solid #eaedf7;
+          padding: 16px;
+          box-sizing: border-box;
+          .ppxz_title {
+            width: 100%;
+            font-size: 14px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #242f57;
+            margin-bottom: 4px;
+          }
+          .ppxz_title_desc {
+            width: 100%;
+            font-size: 12px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #636e95;
+          }
+        }
+      }
+
+      .smzqfx_area_container{
+        width: 100%;
+        min-height: 1505px;
+        background: #FFFFFF;
+        box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+        border-radius: 8px;
+        margin-top: 24px;
+        padding: 24px;
+        box-sizing: border-box;
+        .smzqfx_title{
+            width: 100%;
+            margin-bottom: 24px;        
+            font-size: 16px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242F57;
+        }
+        .xfsmlcpg_container{
+            width: 100%;
+            height: 336px;
+            background: #FFFFFF;
+            border-radius: 8px;
+            border: 1px solid #EAEDF7;
+            padding: 16px;
+            box-sizing: border-box;
+            .xfsmlcpg_title{
+                width: 100%;
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #242F57;
+            }
+        }
+        .xfjzg_container{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 24px;
+            .xfjzg_container_lef,.xfjzg_container_rig{
+                width: 49%;
+                height: 377px;
+                background: #FFFFFF;
+                border-radius: 8px;
+                border: 1px solid #EAEDF7;
+                padding: 16px;
+                box-sizing: border-box;
+                .jichuhuax_echarts_item_title {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .jichuhuax_echarts_item_title_lef {
+                        .nljg {
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242f57;
+                        }
+                        .range_titme {
+                        margin-top: 4px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #7c88b1;
+                        }
+                    }
+                    .jichuhuax_echarts_item_title_rig {
+                        width: 16px;
+                        height: 16px;
+                        .threeP {
+                        display: block;
+                        width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .xfzsxjcfx_container{
+            width: 100%;
+            min-height: 312px;
+            background: #FFFFFF;
+            border-radius: 8px;
+            border: 1px solid #EAEDF7;
+            margin-top: 24px;
+            padding: 16px;
+            box-sizing: border-box;
+            .xfzsxjcfx_til{
+                width: 100%;
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #242F57;
+                margin-bottom: 18px;
+            }
         }
       }
     }
