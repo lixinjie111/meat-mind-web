@@ -1729,7 +1729,7 @@ export default {
                   .home,
                   .ggjt,
                   .gongsi {
-                    padding: 1px 6px;
+                    padding: 1px 4px;
                     box-sizing: border-box;
                     border-radius: 11px;
                     margin-right: 8px;
