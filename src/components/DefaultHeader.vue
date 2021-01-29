@@ -6,7 +6,7 @@
       <input class="input-search" type="text" placeholder="输入关键词进行搜索...">
     </div>
     <div class="control">
-      <Tooltip content="content of tooltip" theme="light">
+      <Tooltip content="消息通知" theme="light">
         <div class="alarm">
           <i class="iconfont iconzhong"></i>
           <div class="group"></div>
