@@ -19,7 +19,9 @@
             </div>
           </div>
         </div>
-        <div class="m-p-rank-echarts"></div>
+        <div class="m-p-rank-echarts">
+          <barL id="box27" :colorList="$lxjData.colorList" :myData="$lxjData.box27Data"></barL>
+        </div>
       </div>
       <div class="m-p-filter">
           <div class="m-f-line">
@@ -51,20 +53,22 @@
                 <div class="m-pie-title">媒介用户画像</div>
                 <div class="m-pie-echarts">
                     <Triple :title1="'性别分布'" :title2="'年龄分布'" :title3="'职业分布'">
-                        <div slot="left"></div>
-                        <div slot="mid"></div>
-                        <div slot="right"></div>
+                          <PieCaseEcharts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieCaseEcharts>
+                          <PieCaseEcharts slot="mid" :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieCaseEcharts>
+                          <PieCaseEcharts slot="right" :colorList="$fjData.colorList" :myData="$fjData.box3Data" roseType="radius"></PieCaseEcharts>
                     </Triple>
                     <Triple :title1="'收入分布'" :title2="'家庭情况'" :title3="'网龄结构'">
-                        <div slot="left"></div>
-                        <div slot="mid"></div>
-                        <div slot="right"></div>
+                          <PieCaseEcharts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box2Data"></PieCaseEcharts>
+                          <PieCaseEcharts slot="mid" :colorList="$fjData.colorList" :myData="$fjData.box11Data"></PieCaseEcharts>
+                          <PieCaseEcharts slot="right" :colorList="$fjData.colorList" :myData="$fjData.box12Data"></PieCaseEcharts>
                     </Triple>
                 </div>
             </div>
             <div class="m-p-third-module">
                 <div class="m-p-t-left">
-                    <Full :title="'媒介领域热度排名'"></Full>
+                    <Full :title="'媒介领域热度排名'">
+                      <barL id="box28" :colorList="$lxjData.colorList" :myData="$lxjData.box28Data"></barL>
+                    </Full>
                 </div>
                 <div class="m-p-t-right">
                     <div class="m-p-right-top">
@@ -85,7 +89,9 @@
                         <div class="m-p-right-media">
                             <div class="m-p-r-title">组合媒介曝光量预期 </div>
                             <div class="m-p-r-num">324,343</div>
-                            <div class="m-p-r-echarts"></div>
+                            <div class="m-p-r-echarts">
+                              <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box111Data"></funnel>
+                            </div>
                         </div>
                     </div>
                     <div class="m-p-right-bottom">
@@ -102,7 +108,10 @@
                 </div>
             </div>
             <div class="m-p-last">
-                <Half :lTitle="'媒介曝光触达'" :rTitle="'媒介传播效率'"></Half>
+                <Half :lTitle="'媒介曝光触达'" :rTitle="'媒介传播效率'">
+                  <div class="m-p-last-touch" slot="left"></div>
+                  <barL slot="right" id="box29" :colorList="$lxjData.colorList" :myData="$lxjData.box29Data"></barL>
+                </Half>
             </div>
       </div>
 
@@ -122,9 +131,12 @@ import Triple from "./base/Triple"
 import Half from "./base/Half"
 import Full from "./base/Full"
 import Card from "./base/Card"
+import PieCaseEcharts from '../../components/echarts/common/PieCaseEcharts';
+import barL from '../../components/echarts/common/barL';
+import funnel from '../../components/echarts/common/funnel';
 export default {
   name: "index",
-  components: { DefaultPage, Triple, Full, Card, Half},
+  components: { DefaultPage, Triple, Full, Card, Half, PieCaseEcharts, barL, funnel},
   data(){
       return{
           list1:["哔哩哔哩","抖音","快手","小红书","新浪微博","头条","大众点评","360kr"],
@@ -221,7 +233,7 @@ export default {
   }
   .m-p-filter{
     width: 100%;
-    height: 1878px;
+    // height: 1878px;
     padding: 24px;
     margin-bottom: 24px;
     box-shadow: 0px 0px 48px 0px rgba(255, 255, 255, 0.8);
@@ -229,7 +241,7 @@ export default {
     opacity: 0.8;
     border: 1px solid;
     border-image: linear-gradient(141deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)) 1 1;
-    background: url("../../assets/img/media/colourfol.png") no-repeat center center / 100% 1878px;
+    background: url("../../assets/img/media/colourfol.png") no-repeat center center / 100% 100%;
     .m-f-line{
         display: flex;
         width: 100%;
@@ -364,7 +376,8 @@ export default {
                     }
                     .m-p-r-echarts{
                         width: 100%;
-                        height: 160px;
+                        height: 200px;
+                        margin-top: -50px;
                     }
                 }
             }
@@ -400,6 +413,11 @@ export default {
     .m-p-last{
         display: flex;
         justify-content: space-between;
+        .m-p-last-touch{
+          width: 100%;
+          height: 210px;
+          background: url("../../assets/img/media/touch@2x.png") no-repeat center center / 100% 210px;
+        }
     }
   }
 
@@ -407,16 +425,18 @@ export default {
     width: 100%;
     height: 510px;
     margin-bottom: 24px;
-    background: #FFFFFF;
-    box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-    border-radius: 8px;
+    // background: #FFFFFF;
+    // box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+    // border-radius: 8px;
+    background: url("../../assets/img/media/优化指标@2x.png") no-repeat center center / 100% 100%;
   }
   .m-p-kol{
     width: 100%;
     height: 952px;
-    background: #FFFFFF;
-    box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-    border-radius: 8px;
+    // background: #FFFFFF;
+    // box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+    // border-radius: 8px;
+    background: url("../../assets/img/media/KOL资源@2x.png") no-repeat center center / 100% 100%;
   }
 }
 </style>
