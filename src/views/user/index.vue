@@ -490,7 +490,9 @@
                     </div>
                     <div class="mb_echarts1_lef_bom">养生金融小白</div>
                 </div>
-                <div class="mb_echarts1_rig"><pieP id="box115" :colorList="$lxjData.colorList" :myData="$lxjData.box114Data"></pieP></div>
+                <div class="mb_echarts1_rig">
+                    <img :src="tu75" alt="" srcset="" class="tu20">
+                </div>
             </div>
             <div class="vscls">VS</div>
             <div class="mb_echarts2">
@@ -500,7 +502,9 @@
                     </div>
                     <div class="mb_echarts1_lef_bom">养生金融小白</div>
                 </div>
-                <div class="mb_echarts1_rig"><pieP id="box116" :colorList="$lxjData.colorList" :myData="$lxjData.box114Data"></pieP></div>
+                <div class="mb_echarts1_rig">
+                    <img :src="tu20" alt="" srcset="" class="tu20">
+                </div>
             </div>
           </div>
         </div>
@@ -913,7 +917,9 @@ export default {
       xhsIcon:require("../../assets/img/yhhx/xhs.png"),
       ksIcon:require("../../assets/img/yhhx/ks.png"),
       dyIcon:require("../../assets/img/yhhx/ks.png"),
-      dyI:require("../../assets/img/yhhx/dyI.png")
+      dyI:require("../../assets/img/yhhx/dyI.png"),
+      tu20:require("../../assets/img/yhhx/tu20.png"),
+      tu75:require("../../assets/img/yhhx/tu75.png")
     };
   },
   mounted() {
@@ -2428,6 +2434,11 @@ export default {
             .mb_echarts1_rig{
                 width: 90px;
                 height: 90px;
+                .tu20{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
             }
           }
           .vscls {
