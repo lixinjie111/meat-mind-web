@@ -124,6 +124,12 @@
 			<barT id="box9" :colorList="$lxjData.colorList" ></barT>
 		</div>
 		<div class="box">
+			<barT id="box91" :colorList="$lxjData.colorList" ></barT>
+		</div>
+		<div class="box">
+			<barT id="box92" :colorList="$lxjData.colorList" ></barT>
+		</div>
+		<div class="box">
 			<barLine id="box10" :colorList="$lxjData.colorList" :myData="$lxjData.box10Data"></barLine>
 		</div>
 		<div class="box">

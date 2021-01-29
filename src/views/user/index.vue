@@ -681,9 +681,43 @@
           <div class="use_app_area">
             <img :src="useApp" style="width:100%;" />
           </div>
-          <div class="use_echart_item" v-for="(item,index) in 2" :key="index"></div>
+          <div class="use_echart_item">
+              <div class="use_echart_title">不同性别APP内容偏好</div>
+              <div class="use_echart_cont">
+                <lineM id="box6" :colorList="$lxjData.colorList" :myData="$lxjData.box6Data"></lineM>
+              </div>
+          </div>
+          <div class="use_echart_item">
+              <div class="use_echart_title">不同年龄APP内容偏好</div>
+              <div class="use_echart_cont">
+                <barM id="box3" :colorList="$lxjData.colorList" :myData="$lxjData.box3Data"></barM>
+              </div>
+          </div>
           <div class="use_echart_item1_container">
-            <div class="use_echart_item1" v-for="(item,index) in 4" :key="index"></div>
+            <div class="use_echart_item1">
+                <div class="use_echart_title">时间段内APP使用结构</div>
+                <div class="use_echart_cont">
+                  <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box7Data"></PieEcharts>
+                </div>
+            </div>
+            <div class="use_echart_item1">
+                <div class="use_echart_title">APP内容偏好结构</div>
+                <div class="use_echart_cont">
+                  <barLine id="box10" :colorList="$lxjData.colorList" :myData="$lxjData.box10Data"></barLine>
+                </div>
+            </div>
+            <div class="use_echart_item1">
+                <div class="use_echart_title">用户行为分布结构</div>
+                <div class="use_echart_cont">
+                  <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box8Data"></PieEcharts>
+                </div>
+            </div>
+            <div class="use_echart_item1">
+                <div class="use_echart_title">用户行为消费结构</div>
+                <div class="use_echart_cont">
+                  <cLine id="box52" :colorList="$lxjData.colorList" :myData="$lxjData.box52Data"></cLine>
+                </div>
+            </div>
           </div>
         </div>
 
@@ -694,31 +728,44 @@
                 用户视觉心智动态捕捉
               </div>
               <div class="yhsj_echarts_item_content">
-                <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box3Data"></PieEcharts>
+                <barLine id="box8" :colorList="$lxjData.colorList" :myData="$lxjData.box8Data"></barLine>
               </div>
           </div>
-          <div class="xzsk_echarts">心智时空曲线</div>
+          <div class="xzsk_echarts">
+            <div class="yhsj_echarts_item_title">
+                心智时空曲线
+              </div>
+              <div class="yhsj_echarts_item_content">
+                <barT id="box9" :colorList="$lxjData.colorList" ></barT>
+              </div>
+          </div>
           <div class="xinzfb_container">
             <div class="xinzfb_container_lef">
               <div class="xinzfb_container_lef_tel">心智分布</div>
-              <div></div>
+              <div class="xinzfb_container_lef_content">
+                <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box6Data"></PieEcharts>
+              </div>
             </div>
             <div class="xinzfb_container_rig">
               <div class="xinzfb_container_rig_tel">心智倾向</div>
-              <div></div>
+              <div class="xinzfb_container_lef_content">
+                <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box7Data"></PieEcharts>
+              </div>
             </div>
           </div>
           <div class="ppxz_container">
             <div class="ppxz_title">品牌心智</div>
             <div class="ppxz_title_desc">分心品牌当前受众的不同阶段的数据</div>
-            <div></div>
-            <div></div>
+            <div class="xinzfb_container_lef_content">
+               <lineS id="box57" :colorList="$lxjData.colorList" :myData="$lxjData.box57Data"></lineS>
+            </div>
           </div>
           <div class="xzcb_container">
             <div class="ppxz_title">心智传播网络</div>
             <div class="ppxz_title_desc">分析传播途径</div>
-            <div></div>
-            <div></div>
+            <div class="xinzfb_container_lef_content">
+              <cLine id="box51" :colorList="$lxjData.colorList" :myData="$lxjData.box51Data"></cLine>
+            </div>
           </div>
         </div>
 
@@ -726,7 +773,9 @@
             <div class="smzqfx_title">生命周期分析</div>
             <div class="xfsmlcpg_container">
                 <div class="xfsmlcpg_title">消费生命旅程评估</div>
-                <div></div>
+                 <div class="xinzfb_container_lef_content1">
+                  <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box111Data"></funnel>
+                </div>
             </div>
             <div class="xfjzg_container">
                 <div class="xfjzg_container_lef">
@@ -739,6 +788,9 @@
                             <img :src="threeP" class="threeP">
                         </div>
                     </div>
+                    <div class="jichuhuax_echarts_item_content">
+                      <lineSp id="box112" :colorList="$lxjData.colorList"></lineSp>
+                    </div>
                 </div>
                 <div class="xfjzg_container_rig">
                     <div class="jichuhuax_echarts_item_title">
@@ -750,15 +802,22 @@
                             <img :src="threeP" class="threeP">
                         </div>
                     </div>
+                    <div class="jichuhuax_echarts_item_content">
+                      <cLine id="box53" :colorList="$lxjData.colorList" :myData="$lxjData.box52Data"></cLine>
+                    </div>
                 </div>
             </div>
             <div class="xfzsxjcfx_container">
                 <div class="xfzsxjcfx_til">消费者时序行为决策分析</div>
-                <div class="xfzsxjcfx_ech"></div>
+                <div class="xfzsxjcfx_ech">
+                    <barT id="box91" :colorList="$lxjData.colorList" ></barT>
+                </div>
             </div>
             <div class="xfzsxjcfx_container">
                 <div class="xfzsxjcfx_til">消费者行为决策预测</div>
-                <div class="xfzsxjcfx_ech"></div>
+                <div class="xfzsxjcfx_ech">
+                  <barT id="box92" :colorList="$lxjData.colorList" ></barT>
+                </div>
             </div>
         </div>
 
@@ -2452,6 +2511,14 @@ export default {
           border-radius: 8px;
           border: 1px solid #eaedf7;
           margin-bottom: 24px;
+          display: flex;
+          flex-direction: column;
+          .use_echart_title{
+            padding:10px
+          }
+          .use_echart_cont{
+           flex:1
+         }
         }
         .use_echart_item1_container {
           width: 100%;
@@ -2465,6 +2532,14 @@ export default {
             border-radius: 8px;
             border: 1px solid #eaedf7;
             margin-bottom: 24px;
+             display: flex;
+              flex-direction: column;
+              .use_echart_title{
+                padding:10px
+              }
+              .use_echart_cont{
+              flex:1
+            }
           }
         }
       }
@@ -2520,8 +2595,13 @@ export default {
             border: 1px solid #eaedf7;
             padding: 16px;
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
             .xinzfb_container_lef_tel {
               width: 100%;
+            }
+            .xinzfb_container_lef_content {
+              flex:1
             }
           }
         }
@@ -2535,6 +2615,8 @@ export default {
           border-radius: 8px;
           border: 1px solid #eaedf7;
           margin-bottom: 24px;
+          display: flex;
+          flex-direction: column;
           .ppxz_title {
             width: 100%;
             font-size: 14px;
@@ -2549,6 +2631,9 @@ export default {
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
             color: #636e95;
+          }
+          .xinzfb_container_lef_content{
+            flex:1
           }
         }
         .xzcb_container {
@@ -2559,6 +2644,8 @@ export default {
           border: 1px solid #eaedf7;
           padding: 16px;
           box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
           .ppxz_title {
             width: 100%;
             font-size: 14px;
@@ -2573,6 +2660,9 @@ export default {
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
             color: #636e95;
+          }
+          .xinzfb_container_lef_content{
+            flex:1
           }
         }
       }
@@ -2602,12 +2692,22 @@ export default {
             border: 1px solid #EAEDF7;
             padding: 16px;
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
             .xfsmlcpg_title{
                 width: 100%;
                 font-size: 14px;
                 font-family: PingFangSC-Regular, PingFang SC;
                 font-weight: 400;
                 color: #242F57;
+            }
+            .xinzfb_container_lef_content{
+              flex:1
+            }
+            .xinzfb_container_lef_content1{
+              width:40%;
+              margin:auto;
+              flex:1
             }
         }
         .xfjzg_container{
@@ -2624,6 +2724,8 @@ export default {
                 border: 1px solid #EAEDF7;
                 padding: 16px;
                 box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
                 .jichuhuax_echarts_item_title {
                     display: flex;
                     align-items: center;
@@ -2652,6 +2754,9 @@ export default {
                         }
                     }
                 }
+                .jichuhuax_echarts_item_content{
+                  flex:1
+                }
             }
         }
         .xfzsxjcfx_container{
@@ -2663,13 +2768,20 @@ export default {
             margin-top: 24px;
             padding: 16px;
             box-sizing: border-box;
+            display:flex;
+            flex-direction: column;
             .xfzsxjcfx_til{
                 width: 100%;
+                height: 21px;
                 font-size: 14px;
                 font-family: PingFangSC-Regular, PingFang SC;
                 font-weight: 400;
                 color: #242F57;
                 margin-bottom: 18px;
+            }
+            .xfzsxjcfx_ech{
+              flex:1;
+               height: 290px;
             }
         }
       }
