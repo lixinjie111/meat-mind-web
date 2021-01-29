@@ -19,7 +19,9 @@
             </div>
           </div>
         </div>
-        <div class="m-p-rank-echarts"></div>
+        <div class="m-p-rank-echarts">
+          <barL id="box27" :colorList="$lxjData.colorList" :myData="$lxjData.box27Data"></barL>
+        </div>
       </div>
       <div class="m-p-filter">
           <div class="m-f-line">
@@ -47,9 +49,69 @@
                 </div>
               </div>
           </div>
-            <div class="m-p-third-line">
-                <div class="m-p-t-title"></div>
-                <div class="m-p-t-echarts"></div>
+            <div class="m-p-pie">
+                <div class="m-pie-title">媒介用户画像</div>
+                <div class="m-pie-echarts">
+                    <Triple :title1="'性别分布'" :title2="'年龄分布'" :title3="'职业分布'">
+                          <PieCaseEcharts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieCaseEcharts>
+                          <PieCaseEcharts slot="mid" :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieCaseEcharts>
+                          <PieCaseEcharts slot="right" :colorList="$fjData.colorList" :myData="$fjData.box3Data" roseType="radius"></PieCaseEcharts>
+                    </Triple>
+                    <Triple :title1="'收入分布'" :title2="'家庭情况'" :title3="'网龄结构'">
+                          <PieCaseEcharts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box2Data"></PieCaseEcharts>
+                          <PieCaseEcharts slot="mid" :colorList="$fjData.colorList" :myData="$fjData.box11Data"></PieCaseEcharts>
+                          <PieCaseEcharts slot="right" :colorList="$fjData.colorList" :myData="$fjData.box12Data"></PieCaseEcharts>
+                    </Triple>
+                </div>
+            </div>
+            <div class="m-p-third-module">
+                <div class="m-p-t-left">
+                    <Full :title="'媒介领域热度排名'">
+                      <barL id="box28" :colorList="$lxjData.colorList" :myData="$lxjData.box28Data"></barL>
+                    </Full>
+                </div>
+                <div class="m-p-t-right">
+                    <div class="m-p-right-top">
+                        <div class="m-p-right-push">
+                            <div class="m-p-r-title">触达方案推荐</div>
+                            <div>
+                                <p>方案一</p>
+                                <img src="../../assets/img/mark/douyin.png" alt="">+
+                                <img src="../../assets/img/mark/xiaohongshu.png" alt="">+
+                                <img src="../../assets/img/mark/kuaishou.png" alt="">
+                            </div>
+                            <div>
+                                <p>方案二</p>
+                                <img src="../../assets/img/mark/douyin.png" alt="">+
+                                <img src="../../assets/img/mark/weibo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="m-p-right-media">
+                            <div class="m-p-r-title">组合媒介曝光量预期 </div>
+                            <div class="m-p-r-num">324,343</div>
+                            <div class="m-p-r-echarts">
+                              <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box111Data"></funnel>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-p-right-bottom">
+                        <p>相关指标预期</p>
+                        <div>
+                            <div style="margin-right:16px"><Card :title="'综合预期CPE'" :colourfol="'blue'" :number="'0.35'"></Card></div>
+                            <div><Card :title="'组合互动总数'" :colourfol="'purple'" :number="'427,260'"></Card></div>  
+                        </div>
+                        <div>
+                           <div style="margin-right:16px"><Card :title="'组合粉丝数'" :colourfol="'pink'" :number="'6,968,580'"></Card></div>    
+                            <div><Card :title="'组合预算（元）'" :colourfol="'orange'" :number="'29,986'"></Card></div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m-p-last">
+                <Half :lTitle="'媒介曝光触达'" :rTitle="'媒介传播效率'">
+                  <div class="m-p-last-touch" slot="left"></div>
+                  <barL slot="right" id="box29" :colorList="$lxjData.colorList" :myData="$lxjData.box29Data"></barL>
+                </Half>
             </div>
       </div>
 
@@ -65,16 +127,22 @@
 
 <script>
 import DefaultPage from "../../layouts/DefaultPage";
-
+import Triple from "./base/Triple"
+import Half from "./base/Half"
+import Full from "./base/Full"
+import Card from "./base/Card"
+import PieCaseEcharts from '../../components/echarts/common/PieCaseEcharts';
+import barL from '../../components/echarts/common/barL';
+import funnel from '../../components/echarts/common/funnel';
 export default {
   name: "index",
-  components: { DefaultPage },
+  components: { DefaultPage, Triple, Full, Card, Half, PieCaseEcharts, barL, funnel},
   data(){
       return{
           list1:["哔哩哔哩","抖音","快手","小红书","新浪微博","头条","大众点评","360kr"],
           list2:["不限","才艺技能","财经投资","测评","动画动漫","鬼畜","国潮国创","技术流","家居家装","教育","剧情搞笑",
           "科技数码","旅行","美食","美妆","萌宠","明星","母婴","汽车","情感","三农","生活日常",
-          "时尚","舞蹈","艺术文化","个护","园艺","运动健身","奢侈品","新闻资讯","品牌组织"],
+          "时尚","舞蹈","艺术文化","个护","园艺","运动健身","奢侈品","新闻资讯","品牌组织","颜值达人","知识科普","番剧","游戏","品牌组织"],
           list3:["按照最低刊例价组合","按照最高刊例价组合"]
       }
   }
@@ -165,7 +233,7 @@ export default {
   }
   .m-p-filter{
     width: 100%;
-    height: 1878px;
+    // height: 1878px;
     padding: 24px;
     margin-bottom: 24px;
     box-shadow: 0px 0px 48px 0px rgba(255, 255, 255, 0.8);
@@ -173,7 +241,7 @@ export default {
     opacity: 0.8;
     border: 1px solid;
     border-image: linear-gradient(141deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)) 1 1;
-    background: url("../../assets/img/media/colourfol.png") no-repeat center center / 100% 1878px;
+    background: url("../../assets/img/media/colourfol.png") no-repeat center center / 100% 100%;
     .m-f-line{
         display: flex;
         width: 100%;
@@ -214,14 +282,15 @@ export default {
             }
         }
     }
-    .m-p-third-line{
+    .m-p-pie{
         width: 100%;
         height: 654px;
         padding: 16px;
+        margin-bottom: 24px;
         background: #FFFFFF;
         border-radius: 8px;
         border: 1px solid #EAEDF7;
-        .m-p-t-title{
+        .m-pie-title{
             height: 24px;
             margin-bottom: 16px;
             font-size: 14px;
@@ -230,8 +299,124 @@ export default {
             color: #242F57;
             line-height: 24px;
         }
-        .m-p-t-echarts{
-            height: 614px;
+        .m-pie-echarts{
+            height: 596px;
+        }
+    }
+    .m-p-third-module{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        .m-p-t-left{
+            width: 50%;
+            height: 552px;
+            margin-right: 24px;
+            background: #FFFFFF;
+            border-radius: 8px;
+            border: 1px solid #EAEDF7;
+        }
+        .m-p-t-right{
+            width: 50%;
+            height: 552px;
+            .m-p-right-top{
+                display: flex;
+                justify-content: space-between;
+                .m-p-right-push,.m-p-right-media{
+                    width: 50%;
+                    height: 244px;
+                    padding: 16px;
+                    background: #FFFFFF;
+                    border-radius: 8px;
+                    border: 1px solid #EAEDF7;
+                    .m-p-r-title{
+                        height: 24px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242F57;
+                        line-height: 24px;
+                    }
+                }
+                .m-p-right-push{
+                    margin-right: 24px;
+                    .m-p-r-title{
+                        margin-bottom: 16px;
+                    }
+                    >div{
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 24px;
+                        >p{
+                            height: 20px;
+                            font-size: 12px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #636E95;
+                            line-height: 20px;
+                        }
+                        >img{
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            margin: 0 12px;
+                        }
+                    }
+                }
+                .m-p-right-media{
+                    .m-p-r-title{
+                        margin-bottom: 4px;
+                    }
+                    .m-p-r-num{
+                        height: 32px;
+                        font-size: 24px;
+                        font-family: HelveticaNeue-Medium, HelveticaNeue;
+                        font-weight: 500;
+                        color: #4D94FF;
+                        line-height: 32px;
+                    }
+                    .m-p-r-echarts{
+                        width: 100%;
+                        height: 200px;
+                        margin-top: -50px;
+                    }
+                }
+            }
+            .m-p-right-bottom{
+                height: 284px;
+                padding: 16px;
+                margin-top: 24px;
+                background: #FFFFFF;
+                border-radius: 8px;
+                border: 1px solid #EAEDF7;
+                >p{
+                    height: 24px;
+                    margin-bottom: 16px;
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #242F57;
+                    line-height: 24px;
+                }
+                >div{
+                    display: flex;
+                    justify-content: space-between;
+                    >div{
+                        width: 50%;
+                        height: 98px;
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .m-p-last{
+        display: flex;
+        justify-content: space-between;
+        .m-p-last-touch{
+          width: 100%;
+          height: 210px;
+          background: url("../../assets/img/media/touch@2x.png") no-repeat center center / 100% 210px;
         }
     }
   }
@@ -240,16 +425,18 @@ export default {
     width: 100%;
     height: 510px;
     margin-bottom: 24px;
-    background: #FFFFFF;
-    box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-    border-radius: 8px;
+    // background: #FFFFFF;
+    // box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+    // border-radius: 8px;
+    background: url("../../assets/img/media/优化指标@2x.png") no-repeat center center / 100% 100%;
   }
   .m-p-kol{
     width: 100%;
     height: 952px;
-    background: #FFFFFF;
-    box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-    border-radius: 8px;
+    // background: #FFFFFF;
+    // box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+    // border-radius: 8px;
+    background: url("../../assets/img/media/KOL资源@2x.png") no-repeat center center / 100% 100%;
   }
 }
 </style>

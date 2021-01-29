@@ -6,9 +6,11 @@
         </div>
         <div class="m-d-show-echarts">
             <Full :title="'品牌舆情总声量基础特征'">
+                <barEcharts id="box2" :colorList="$lxjData.colorList" :myData="$lxjData.box2Data"></barEcharts>
             </Full>
             <Half :lTitle="'舆情情感性分布'" :rTitle="'舆情热词图'">
                 <Yibiao1Echarts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box16Data" ></Yibiao1Echarts>
+                <iframe slot="right" src="/static/html/pphx/rdyc.html" frameborder="0" scrolling="no"></iframe>
             </Half>
             <Full :title="'品牌及行业竞品舆情总声量走势'">
                 <lineM id="box65" :colorList="$lxjData.colorList" :myData="$lxjData.box65Data"></lineM>
@@ -37,9 +39,10 @@ import lineM from '../../../components/echarts/common/lineM';
 import barHM from '../../../components/echarts/common/barHM';
 import barL from '../../../components/echarts/common/barL';
 import barM from '../../../components/echarts/common/barM';
+import barEcharts from '../../../components/echarts/common/barEcharts';
 export default {
     name:"Market",
-    components:{Half,Full,Yibiao1Echarts,PieEcharts,lineM,barHM,barL,barM},
+    components:{Half,Full,Yibiao1Echarts,PieEcharts,lineM,barHM,barL,barM,barEcharts},
     props:{
         title:{
             type:String

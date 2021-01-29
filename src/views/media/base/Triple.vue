@@ -1,18 +1,23 @@
 <template>
   <div class="row">
-    <div class="col br half">
-      <p class="title">{{lTitle}}</p>
+    <div class="col br triple">
+      <p class="title">{{title1}}</p>
       <p class="sub-title">{{ subDate }}</p>
-      <img src="../../../assets/img/mark/more.png" alt="" />
-      <div class="r-half-echarts">
+      <div class="r-triple-echarts">
         <slot name="left"></slot>
       </div>
     </div>
-    <div class="col half">
-      <p class="title">{{rTitle}}</p>
+    <div class="col br triple">
+      <p class="title">{{title2}}</p>
       <p class="sub-title">{{ subDate }}</p>
-      <img src="../../../assets/img/mark/more.png" alt="" />
-      <div class="r-half-echarts">
+      <div class="r-triple-echarts">
+        <slot name="mid"></slot>
+      </div>
+    </div>
+    <div class="col triple">
+      <p class="title">{{title3}}</p>
+      <p class="sub-title">{{ subDate }}</p>
+      <div class="r-triple-echarts">
         <slot name="right"></slot>
       </div>
     </div>
@@ -21,16 +26,19 @@
 
 <script>
 export default {
-  name: "Half",
+  name: "Triple",
   props: {
     subDate: {
       type: String,
       default: "",
     },
-    lTitle:{
+    title1:{
         type:String
     },
-    rTitle:{
+    title2:{
+        type:String
+    },
+    title3:{
         type:String
     }
   },
@@ -43,20 +51,19 @@ export default {
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  height: 400px;
+  height: 275px;
   margin-bottom: 24px;
   &:last-child {
     margin-bottom: 0;
   }
   .col {
-    position: relative;
     height: 100%;
     padding: 16px;
     background: #ffffff;
     border-radius: 8px;
     border: 1px solid #eaedf7;
-    &.half {
-      width: 50%;
+    &.triple {
+      width: 33.3%;
     }
     .title {
       height: 24px;
@@ -73,25 +80,14 @@ export default {
       color: #636e95;
       line-height: 18px;
     }
-    img {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 16px;
-      height: 16px;
-    }
 
     &.br {
       margin-right: 24px;
     }
-    .r-half-echarts {
+    .r-triple-echarts {
       width: 100%;
       height: calc(100% - 20px);
       margin-top: -20px;
-    }
-    iframe{
-      width: 100%;
-      height: 100%;
     }
   }
 }

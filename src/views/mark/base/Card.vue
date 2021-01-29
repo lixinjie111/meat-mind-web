@@ -43,7 +43,7 @@ export default {
   border-radius: 8px;
   border: 1px solid #eaedf7;
   .title {
-    height: 22;
+    height: 22px;
     font-size: 16px;
     color: #636e95;
     line-height: 22px;
