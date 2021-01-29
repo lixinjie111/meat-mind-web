@@ -74,7 +74,7 @@
             </div>
         </div>
         <Card title="客群诊断">
-            <div slot="right" class="card-right">查看用户画像详情<i class="iconfont iconarrowRight"></i></div>
+            <div slot="right" class="card-right" @click="toDetail1">查看用户画像详情<i class="iconfont iconarrowRight"></i></div>
             <div class="manage-card flex-start">
                 <div class="manage-card-left">
                     <p>诊断结果</p>
@@ -105,7 +105,7 @@
             </div>
         </Card>
         <Card title="媒介诊断">
-            <div slot="right" class="card-right">查看媒介画像详情<i class="iconfont iconarrowRight"></i></div>
+            <div slot="right" class="card-right" @click="toDetail2">查看媒介画像详情<i class="iconfont iconarrowRight"></i></div>
             <div class="manage-card flex-start">
                 <div class="manage-card-left">
                     <p>诊断结果</p>
@@ -134,7 +134,7 @@
             </div>
         </Card>
         <Card title="品牌诊断">
-            <div slot="right" class="card-right">查看品牌画像详情<i class="iconfont iconarrowRight"></i></div>
+            <div slot="right" class="card-right" @click="toDetail3">查看品牌画像详情<i class="iconfont iconarrowRight"></i></div>
             <div class="manage-card flex-start">
                 <div class="manage-card-left">
                     <p>诊断结果</p>
@@ -165,7 +165,7 @@
             </div>
         </Card>
         <Card title="经营过程风险预警">
-            <div slot="right" class="card-right">更多<i class="iconfont iconarrowRight"></i></div>
+            <div slot="right" class="card-right" @click="toDetail4">更多<i class="iconfont iconarrowRight"></i></div>
             <div class="manage-card2">
                 <div class="manage-card2-top flex">
                     <div id="myChart2"></div>
@@ -856,9 +856,20 @@
                     seriesIndex: 0,
                     dataIndex: 3
                 });
+            },
+            toDetail1(){
+                this.$router.push({name:"user"})
+            },
+            toDetail2(){
+                this.$router.push({name:"media"})
+            },
+            toDetail3(){
+                this.$router.push({name:"mark"})
+            },
+            toDetail4(){
+                this.$router.push({name:"business-analysis-ztgl"})
             }
         }
-
     }
 </script>
 

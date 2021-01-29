@@ -4,18 +4,21 @@
       <div class="m-p-rank">
         <div class="m-p-rank-header">
           <ul class="h-name-list">
-            <li>媒介声量排名</li>
+            <li :class="{'h-name-active':index==act}" v-for="(item,index) in target" :key="index" @click="targetClick(index)">{{item}}</li>
+            <!-- <li>媒介声量排名</li>
             <li>媒介使用时长排名</li>
             <li>媒介口碑排名</li>
-            <li>媒介价值贡献排名</li>
+            <li>媒介价值贡献排名</li> -->
           </ul>
           <div class="h-right">
             <div class="h-tab">
-              <div class="left">类型</div>
-              <div class="right">渠道名称</div>
+              <div class="left" :class="{'act':cur==0}" @click="cur=0">类型</div>
+              <div class="right" :class="{'act':cur==1}" @click="cur=1">渠道名称</div>
             </div>
             <div class="h-select">
-              <Select style="width: 120px" placeholder="过去3天"></Select>
+              <Select v-model="model1" style="width: 120px" placeholder="过去3天">
+                <Option v-for="item in dateList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+              </Select>
             </div>
           </div>
         </div>
@@ -27,7 +30,7 @@
           <div class="m-f-line">
               <div class="label">主投平台</div>
               <div class="f-list">
-                <div class="f-item" :class="{'active':index==1}" v-for="(item,index) in list1" :key="index">
+                <div class="f-item" @click="list1Act=index" :class="{'active':index==list1Act}" v-for="(item,index) in list1" :key="index">
                     <p>{{item}}</p>
                 </div>
               </div>
@@ -35,7 +38,7 @@
           <div class="m-f-line">
               <div class="label">领域</div>
               <div class="f-list">
-                <div class="f-item" :class="{'active':index==0}" v-for="(item,index) in list2" :key="index">
+                <div class="f-item" @click="list2Act=index" :class="{'active':index==list2Act}" v-for="(item,index) in list2" :key="index">
                     <p>{{item}}</p>
                 </div>
               </div>
@@ -44,7 +47,7 @@
               <div class="label"><span style="color:#FB343E">*</span>
               价格类型</div>
               <div class="f-list">
-                <div class="f-item" :class="{'active':index==0}" v-for="(item,index) in list3" :key="index">
+                <div class="f-item" @click="list3Act=index" :class="{'active':index==list3Act}" v-for="(item,index) in list3" :key="index">
                     <p>{{item}}</p>
                 </div>
               </div>
@@ -139,12 +142,38 @@ export default {
   components: { DefaultPage, Triple, Full, Card, Half, PieCaseEcharts, barL, funnel},
   data(){
       return{
+          act:0,
+          target:["媒介声量排名","媒介使用时长排名","媒介口碑排名","媒介价值贡献排名"],
+          cur:0,
+              dateList: [
+                    {
+                        value: '过去3天',
+                        label: '过去3天'
+                    },
+                    {
+                        value: '过去7天',
+                        label: '过去7天'
+                    },
+                    {
+                        value: '过去一个月',
+                        label: '过去一个月'
+                    }
+                ],
+                model1: '过去3天',
           list1:["哔哩哔哩","抖音","快手","小红书","新浪微博","头条","大众点评","360kr"],
+          list1Act:1,
+          list2Act:0,
+          list3Act:0,
           list2:["不限","才艺技能","财经投资","测评","动画动漫","鬼畜","国潮国创","技术流","家居家装","教育","剧情搞笑",
           "科技数码","旅行","美食","美妆","萌宠","明星","母婴","汽车","情感","三农","生活日常",
           "时尚","舞蹈","艺术文化","个护","园艺","运动健身","奢侈品","新闻资讯","品牌组织","颜值达人","知识科普","番剧","游戏","品牌组织"],
           list3:["按照最低刊例价组合","按照最高刊例价组合"]
       }
+  },
+  methods:{
+    targetClick(index){
+      this.act = index
+    }
   }
 };
 </script>
@@ -176,7 +205,7 @@ export default {
           color: #636e95;
           line-height: 22px;
           cursor: pointer;
-          &:first-child {
+          &.h-name-active {
             position: relative;
             font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;
@@ -186,7 +215,7 @@ export default {
               top: 30px;
               left: 0;
               content: "";
-              width: 76px;
+              width: 100%;
               height: 2px;
               background: #2373ff;
               border-radius: 1px;
@@ -208,9 +237,13 @@ export default {
             width: 76px;
             height: 32px;
             border-radius: 8px 0px 0px 8px;
+            border: 1px solid #c6cbde;
+            color: #636e95;
+            line-height: 30px;
+                      &.act{
             border: 1px solid #2373ff;
             color: #2373ff;
-            line-height: 30px;
+          }
           }
           .right {
             width: 76px;
@@ -219,6 +252,10 @@ export default {
             border: 1px solid #c6cbde;
             color: #636e95;
             line-height: 30px;
+                      &.act{
+            border: 1px solid #2373ff;
+            color: #2373ff;
+          }
           }
         }
         .h-select {
@@ -263,6 +300,7 @@ export default {
                 padding: 5px 16px;
                 margin-right: 16px;
                 margin-bottom: 16px;
+                cursor: pointer;
                 &.active{
                     background: linear-gradient(135deg, #FF8D0A 0%, #FFA733 100%);
                     box-shadow: 3px 3px 14px 0px rgba(148, 76, 46, 0.2), -3px -3px 14px 0px #FFFFFF, 1px 1px 2px 0px rgba(255, 247, 230, 0.6);
@@ -428,7 +466,7 @@ export default {
     // background: #FFFFFF;
     // box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
     // border-radius: 8px;
-    background: url("../../assets/img/media/优化指标@2x.png") no-repeat center center / 100% 100%;
+    background: url("../../assets/img/media/target@2x.png") no-repeat center center / 100% 100%;
   }
   .m-p-kol{
     width: 100%;
@@ -436,7 +474,7 @@ export default {
     // background: #FFFFFF;
     // box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
     // border-radius: 8px;
-    background: url("../../assets/img/media/KOL资源@2x.png") no-repeat center center / 100% 100%;
+    background: url("../../assets/img/media/kol@2x.png") no-repeat center center / 100% 100%;
   }
 }
 </style>

@@ -698,17 +698,17 @@
 
         <div class="xwfx_area_container">
           <div class="xwfx_area_til">行为分析</div>
-          <div class="ditu_area">
-            <video
-              class="player"
-              width="100%"
-              height="100%"
-              autoplay
-              loop
-              muted
-              src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"
-            ></video>
-          </div>
+<!--          <div class="ditu_area">-->
+<!--            <video-->
+<!--              class="player"-->
+<!--              width="100%"-->
+<!--              height="100%"-->
+<!--              autoplay-->
+<!--              loop-->
+<!--              muted-->
+<!--              src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"-->
+<!--            ></video>-->
+<!--          </div>-->
           <div class="xwfx_area_til" style="margin-bottom:12px;">不同时段APP使用情况</div>
           <div class="use_app_area">
             <img :src="useApp" style="width:100%;" />
