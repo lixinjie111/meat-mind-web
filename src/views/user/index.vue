@@ -838,13 +838,13 @@
             <div class="xfzsxjcfx_container">
                 <div class="xfzsxjcfx_til">消费者时序行为决策分析</div>
                 <div class="xfzsxjcfx_ech">
-                    <barT id="box91" :colorList="$lxjData.colorList" ></barT>
+                    <barT1 id="box91" :colorList="$lxjData.colorList" ></barT1>
                 </div>
             </div>
             <div class="xfzsxjcfx_container">
                 <div class="xfzsxjcfx_til">消费者行为决策预测</div>
                 <div class="xfzsxjcfx_ech">
-                  <barT id="box92" :colorList="$lxjData.colorList" ></barT>
+                  <barT2 id="box92" :colorList="$lxjData.colorList" ></barT2>
                 </div>
             </div>
         </div>
@@ -868,7 +868,9 @@ import lineM from '../../components/echarts/common/lineM';
 import barC from '../../components/echarts/common/barC';
 import barCH from '../../components/echarts/common/barCH';
 import barLine from '../../components/echarts/common/barLine';
-import barT from '../../components/echarts/common/barT';
+import barT from '../../components/echarts/common/barT1';
+import barT1 from '../../components/echarts/common/barT2';
+import barT2 from '../../components/echarts/common/barT';
 import funnel from '../../components/echarts/common/funnel';
 import barHM from '../../components/echarts/common/barHM';
 import lineSp from '../../components/echarts/common/lineSp';
@@ -884,7 +886,7 @@ import Yuanhuan1 from '../../components/echarts/common/Yuanhuan1';
 import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
 export default {
   components: {
-   pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,Side, Header, PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
+   barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,Side, Header, PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
   },
   name: "index",
   data() {
