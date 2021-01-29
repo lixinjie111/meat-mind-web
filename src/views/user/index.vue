@@ -337,7 +337,7 @@
                   <div class="cal_item2">
                     <div class="rt_choice"></div>
                     <div class="logo_container">
-                      <img class="logoImg" />
+                      <img :src="ttIcon" class="logoImg" />
                       <span class="cal_txt">头条</span>
                     </div>
                     <div class="txt_area">
@@ -354,7 +354,7 @@
                       <img :src="dhIcon" class="dhIcon" />
                     </div>
                     <div class="logo_container">
-                      <img class="logoImg" />
+                      <img :src="xhsIcon" class="logoImg" />
                       <span class="cal_txt">小红书</span>
                     </div>
                     <div class="txt_area">
@@ -371,7 +371,7 @@
                       <img :src="dhIcon" alt srcset class="dhIcon" />
                     </div>
                     <div class="logo_container">
-                      <img class="logoImg" />
+                      <img :src="ksIcon" class="logoImg" />
                       <span class="cal_txt">快手</span>
                     </div>
                     <div class="txt_area">
@@ -388,7 +388,7 @@
                       <img :src="dhIcon" alt srcset class="dhIcon" />
                     </div>
                     <div class="logo_container">
-                      <img class="logoImg" />
+                      <img :src="dyIcon" class="logoImg" />
                       <span class="cal_txt">抖音</span>
                     </div>
                     <div class="txt_area">
@@ -412,8 +412,8 @@
                     <span style="color:#242F57">2</span>个
                   </div>
                   <div class="cdyhmj_bom_rig">
-                    <img class="cdyhmj_bom_rig1" />
-                    <img class="cdyhmj_bom_rig1" />
+                    <img :src="ksIcon" class="cdyhmj_bom_rig1" />
+                    <img :src="xhsIcon" class="cdyhmj_bom_rig1" />
                   </div>
                 </div>
               </div>
@@ -813,7 +813,11 @@ export default {
       yhtIcon: require("../../assets/img/yhhx/yht.png"),
       input1: require("../../assets/img/yhhx/input1.png"),
       useApp: require("../../assets/img/yhhx/useApp.png"),
-      threeP: require("../../assets/img/yhhx/threeP.png")
+      threeP: require("../../assets/img/yhhx/threeP.png"),
+      ttIcon:require("../../assets/img/yhhx/tt.png"),
+      xhsIcon:require("../../assets/img/yhhx/xhs.png"),
+      ksIcon:require("../../assets/img/yhhx/ks.png"),
+      dyIcon:require("../../assets/img/yhhx/ks.png")
     };
   },
   mounted() {
@@ -2059,7 +2063,6 @@ export default {
                       border: 1px solid #eaedf7;
                       border-radius: 51%;
                       margin-right: 8px;
-                      background-color: seagreen;
                     }
                     .cal_txt {
                       font-size: 14px;
@@ -2115,7 +2118,6 @@ export default {
                     width: 24px;
                     height: 24px;
                     margin-right: 8px;
-                    background-color: seagreen;
                     border-radius: 50%;
                   }
                 }
