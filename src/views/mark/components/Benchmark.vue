@@ -32,12 +32,14 @@
                   </div>
                   <div class="sex">
                       <div class="s-title">性别分布</div>
-                      <div class="s-echart"></div>
+                      <div class="s-echart">
+                          <PieCaseEcharts :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieCaseEcharts>
+                      </div>
                   </div>
                   <div class="customer">
                       <div class="s-title">客群购买力分析</div>
                       <div class="s-echart">
-                          <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box20Data" ></PieEcharts>
+                          <PieCaseEcharts :colorList="$fjData.colorList" :myData="$fjData.box20Data" ></PieCaseEcharts>
                       </div>
                   </div>
               </div>
@@ -63,10 +65,10 @@
 <script>
 import Card from "../base/Card"
 import barL from '../../../components/echarts/common/barL';
-import PieEcharts from '../../../components/echarts/common/PieEcharts';
+import PieCaseEcharts from '../../../components/echarts/common/PieCaseEcharts';
 export default {
     name:"Benchmark",
-    components:{Card,barL,PieEcharts}
+    components:{Card,barL,PieCaseEcharts}
 }
 </script>
 

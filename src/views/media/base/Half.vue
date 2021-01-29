@@ -3,7 +3,6 @@
     <div class="col br half">
       <p class="title">{{lTitle}}</p>
       <p class="sub-title">{{ subDate }}</p>
-      <img src="../../../assets/img/mark/more.png" alt="" />
       <div class="r-half-echarts">
         <slot name="left"></slot>
       </div>
@@ -11,7 +10,6 @@
     <div class="col half">
       <p class="title">{{rTitle}}</p>
       <p class="sub-title">{{ subDate }}</p>
-      <img src="../../../assets/img/mark/more.png" alt="" />
       <div class="r-half-echarts">
         <slot name="right"></slot>
       </div>
@@ -43,13 +41,12 @@ export default {
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  height: 400px;
+  height: 264px;
   margin-bottom: 24px;
   &:last-child {
     margin-bottom: 0;
   }
   .col {
-    position: relative;
     height: 100%;
     padding: 16px;
     background: #ffffff;
@@ -73,13 +70,6 @@ export default {
       color: #636e95;
       line-height: 18px;
     }
-    img {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 16px;
-      height: 16px;
-    }
 
     &.br {
       margin-right: 24px;
@@ -88,10 +78,6 @@ export default {
       width: 100%;
       height: calc(100% - 20px);
       margin-top: -20px;
-    }
-    iframe{
-      width: 100%;
-      height: 100%;
     }
   }
 }

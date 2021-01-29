@@ -137,7 +137,7 @@ export default {
   .container {
     display: flex;
     flex-direction: column;
-    width: calc(100vw - 240px);
+    width: 100%;
     .show-content {
       display: flex;
       flex-direction: column;
