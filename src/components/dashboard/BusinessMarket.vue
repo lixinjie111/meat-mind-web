@@ -80,16 +80,25 @@
                 <div class="card-one-right-item">
                     <div class="item-line"></div>
                     <div class="item-box">
-                        <p>休息/通勤</p>
+                        <p><img src="../../assets/img/dashboard/market/icon-commute@2x.png"/>休息/通勤</p>
                     </div>
                     <div class="item-box">
-                        <p>7:00 - 9:00</p>
+                        <p>
+                            <Icon type="md-time" size="16" color="#636E95"/>
+                            7:00 - 9:00
+                        </p>
                     </div>
                     <div class="item-box">
-                        <p>头条/微博/小红书</p>
+                        <p>
+                            <Icon type="ios-phone-portrait" size="16" color="#636E95"/>
+                            头条/微博/小红书
+                        </p>
                     </div>
                     <div class="item-box">
-                        <p>一般: 35% 紧张: 29%</p>
+                        <p>
+                            <Icon type="md-happy" size="16" color="#636E95"/>
+                            一般: 35% 紧张: 29%
+                        </p>
                     </div>
                     <div class="item-box">
                         <p>用户群体处于休息及通勤状态，偏好浏览新闻资讯及社交娱乐类型的APP，处理工作相关信息，情绪分布较为平均</p>
@@ -98,16 +107,25 @@
                 <div class="card-one-right-item active">
                     <div class="item-line"></div>
                     <div class="item-box">
-                        <p>工作/休息</p>
+                        <p><img src="../../assets/img/dashboard/market/icons-working@2x.png"/>工作/休息</p>
                     </div>
                     <div class="item-box">
-                        <p>12:00 - 13:00</p>
+                        <p>
+                            <Icon type="md-time" size="16" color="#2373FF"/>
+                            12:00 - 13:00
+                        </p>
                     </div>
                     <div class="item-box">
-                        <p>大众点评/新浪微博/抖音</p>
+                        <p>
+                            <Icon type="ios-phone-portrait" size="16" color="#2373FF"/>
+                            大众点评/新浪微博/抖音
+                        </p>
                     </div>
                     <div class="item-box">
-                        <p>放松: 37% 一般: 36%</p>
+                        <p>
+                            <Icon type="md-happy" size="16" color="#2373FF"/>
+                            放松: 37% 一般: 36%
+                        </p>
                     </div>
                     <div class="item-box">
                         <p>用户群体主要处于午间休息状态，偏好浏览新闻资讯及社交娱乐类型的APP，情绪分布较为放松</p>
@@ -116,16 +134,25 @@
                 <div class="card-one-right-item">
                     <div class="item-line"></div>
                     <div class="item-box">
-                        <p>休息/放松</p>
+                        <p><img src="../../assets/img/dashboard/market/icon-relax@2x.png"/>休息/放松</p>
                     </div>
                     <div class="item-box">
-                        <p>20:00 - 22:00</p>
+                        <p>
+                            <Icon type="md-time" size="16" color="#636E95"/>
+                            20:00 - 22:00
+                        </p>
                     </div>
                     <div class="item-box">
-                        <p>抖音/小红书/快手</p>
+                        <p>
+                            <Icon type="ios-phone-portrait" size="16" color="#636E95"/>
+                            抖音/小红书/快手
+                        </p>
                     </div>
                     <div class="item-box">
-                        <p>放松: 48% 一般: 26%</p>
+                        <p>
+                            <Icon type="md-happy" size="16" color="#636E95"/>
+                            放松: 48% 一般: 26%
+                        </p>
                     </div>
                     <div class="item-box">
                         <p>用户群体处于休息及休闲状态，偏好社交娱乐、电商购物类型的APP，情绪分布较为放松</p>
@@ -135,18 +162,349 @@
             </div>
         </div>
         <Card title="触达用户媒介" class="card-two">
-
+            <div class="cdyhmj_content_container">
+                <div class="cdyhmj_content_top">
+                    <div class="cdyhmj_content_top_lef">
+                        <div class="cdyhmj_content_item item1">自定义媒介投放预算 (元)</div>
+                        <div class="cdyhmj_content_item item2">
+                            <div class="input_container">
+                                <span class="input1">￥</span>
+                                <span class="inpu2">15,000</span>
+                            </div>
+                            <div class="hg_txt"></div>
+                            <div class="input_container">
+                                <span class="input1">￥</span>
+                                <span class="inpu23"></span>
+                            </div>
+                        </div>
+                        <div class="cdyhmj_content_item item3">目标客群</div>
+                        <div class="cdyhmj_content_item item4">
+                            <img :src="inputIcon" class="inputIcon"/>
+                        </div>
+                        <div class="cdyhmj_content_item item1">营销关键词</div>
+                        <div class="cdyhmj_content_item item5">
+                            <div class="item_xtt">青春</div>
+                            <div class="item_xtt">活力</div>
+                        </div>
+                    </div>
+                    <div class="cdyhmj_content_top_ri">
+                        <div class="cdyhmj_content_top_ri_tel">选择投放媒介</div>
+                        <div class="cal_item_container">
+                            <div class="cal_item">
+                                <div class="cal_item_cal_item">
+                                    <img :src="toLIcon" class="toLIcon"/>
+                                </div>
+                            </div>
+                            <div class="cal_item2">
+                                <div class="rt_choice"></div>
+                                <div class="logo_container">
+                                    <img :src="ttIcon" class="logoImg"/>
+                                    <span class="cal_txt">头条</span>
+                                </div>
+                                <div class="txt_area">
+                                    <div class="txt_area11">触达率</div>
+                                    <div>投放成本</div>
+                                </div>
+                                <div class="per_area">
+                                    <div class="per_area1">51%</div>
+                                    <div>¥2500/千人</div>
+                                </div>
+                            </div>
+                            <div class="cal_item2">
+                                <div class="rt_choice2">
+                                    <img :src="dhIcon" class="dhIcon"/>
+                                </div>
+                                <div class="logo_container">
+                                    <img :src="xhsIcon" class="logoImg"/>
+                                    <span class="cal_txt">小红书</span>
+                                </div>
+                                <div class="txt_area">
+                                    <div class="txt_area11">触达率</div>
+                                    <div>投放成本</div>
+                                </div>
+                                <div class="per_area">
+                                    <div class="per_area1">46%</div>
+                                    <div>¥2300/千人</div>
+                                </div>
+                            </div>
+                            <div class="cal_item2">
+                                <div class="rt_choice2">
+                                    <img :src="dhIcon" alt srcset class="dhIcon"/>
+                                </div>
+                                <div class="logo_container">
+                                    <img :src="ksIcon" class="logoImg"/>
+                                    <span class="cal_txt">快手</span>
+                                </div>
+                                <div class="txt_area">
+                                    <div class="txt_area11">触达率</div>
+                                    <div>投放成本</div>
+                                </div>
+                                <div class="per_area">
+                                    <div class="per_area1">43%</div>
+                                    <div>¥2300/千人</div>
+                                </div>
+                            </div>
+                            <div class="cal_item2">
+                                <div class="rt_choice2">
+                                    <img :src="dhIcon" alt srcset class="dhIcon"/>
+                                </div>
+                                <div class="logo_container">
+                                    <img :src="dyI" class="logoImg"/>
+                                    <span class="cal_txt">抖音</span>
+                                </div>
+                                <div class="txt_area">
+                                    <div class="txt_area11">触达率</div>
+                                    <div>投放成本</div>
+                                </div>
+                                <div class="per_area">
+                                    <div class="per_area1">69%</div>
+                                    <div>¥25000/千人</div>
+                                </div>
+                            </div>
+                            <div class="cal_item cal_item1">
+                                <div class="cal_item_cal_item">
+                                    <img :src="toRIcon1" class="toLIcon"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cdyhmj_bom">
+                            <div class="cdyhmj_bom_lef">
+                                已选中
+                                <span style="color:#242F57">2</span>个
+                            </div>
+                            <div class="cdyhmj_bom_rig">
+                                <img :src="ksIcon" class="cdyhmj_bom_rig1"/>
+                                <img :src="xhsIcon" class="cdyhmj_bom_rig1"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cdyhmj_content_bom">
+                    <div class="cdyhmj_content_bom_lef">
+                        <div class="cdyhmj_content_bom_lef_top">触达用户投放策略建议</div>
+                        <div class="cdyhmj_content_bom_lef_bom">
+                            <div class="echarts1"></div>
+                            <div class="echarts1">
+                                <div class="echarts11">
+                                    <div class="echarts111">建议投放金额</div>
+                                    <div class="echarts112">￥19,000</div>
+                                </div>
+                                <div class="echarts12">
+                                    <div class="echarts121">目标客群触达率</div>
+                                    <div class="echarts122">89%</div>
+                                </div>
+                            </div>
+                            <div class="echarts1 ec1">
+                                <div class="echarts13">建议投放时间段</div>
+                                <div class="echarts14">
+                                    <div class="echarts141">
+                                        <div class="ech_Icon"></div>
+                                        <div class="ech_txt">快手</div>
+                                        <div class="ech_time">22:00 - 22:30</div>
+                                    </div>
+                                </div>
+                                <div class="echarts15">
+                                    <div class="echarts142">
+                                        <div class="ech_Icon1"></div>
+                                        <div class="ech_txt">小红书</div>
+                                        <div class="ech_time">19:00 - 20:30</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cdyhmj_content_bom_rig">
+                        <div class="cdyhmj_content_bom_rig_top">优化投放方案推荐</div>
+                        <div class="cdyhmj_content_bom_rig_bom">
+                            <img :src="yhtIcon" class="yhtIcon" alt srcset/>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </Card>
         <div class="card-three flex">
             <Card title="市场趋势" class="card-three-left">
-
+                <div slot="right" class="card-three-select">
+                    <Select value="快消品">
+                        <Option value="快消品">快消品</Option>
+                    </Select>
+                    <Select value="5年">
+                        <Option value="5年">5年</Option>
+                    </Select>
+                </div>
+                <div class="card-three-chart">
+                    <barEcharts id="box14" :colorList="$lxjData.colorList" :myData="$lxjData.box14Data"></barEcharts>
+                </div>
             </Card>
             <Card title="对标商品行情" class="card-three-right">
-
+                <div slot="right" class="card-three-date">
+                    <DatePicker type="daterange" :value="['2020-1-1','2020-2-29']" show-week-numbers
+                                placement="bottom-end" placeholder="请选择时间"></DatePicker>
+                </div>
+                <div class="card-three-right-content flex-start">
+                    <div class="card-three-right-content-left">
+                        <div :class="['card-three-right-content-item',threeActive == 1 ?'active':'']"
+                             @click="threeActive=1">
+                            <img src="../../assets/img/dashboard/market/icon-redbull@2x.png"/>
+                            <p>红牛<span>·250ml</span></p>
+                        </div>
+                        <div :class="['card-three-right-content-item',threeActive == 2 ?'active':'']"
+                             @click="threeActive=2">
+                            <img src="../../assets/img/dashboard/market/icon-jiaduobao@2x.png"/>
+                            <p>加多宝<span>·250ml</span></p>
+                        </div>
+                        <div :class="['card-three-right-content-item',threeActive == 3 ?'active':'']"
+                             @click="threeActive=3">
+                            <img src="../../assets/img/dashboard/market/icon-wanglaoji@2x.png"/>
+                            <p>王老吉<span>·250ml</span></p>
+                        </div>
+                        <div :class="['card-three-right-content-item',threeActive == 4 ?'active':'']"
+                             @click="threeActive=4">
+                            <img src="../../assets/img/dashboard/market/icon-maidong@2x.png"/>
+                            <p>脉动<span>·250ml</span></p>
+                        </div>
+                    </div>
+                    <div class="card-three-right-content-right">
+                        <div class="card-three-right-content-right-item">
+                            <p>月均销量</p>
+                            <p>4,265,322</p>
+                        </div>
+                        <div class="card-three-right-content-right-item">
+                            <p>客单价</p>
+                            <p>¥ 6.5</p>
+                        </div>
+                        <div class="card-three-right-content-right-item">
+                            <p>销量平台TOP3</p>
+                            <p>京东/淘宝/美团</p>
+                        </div>
+                        <div class="card-three-right-content-right-item">
+                            <p>营销渠道TOP3</p>
+                            <p>抖音/小红书/头条</p>
+                        </div>
+                        <div class="card-three-right-content-right-item">
+                            <p>舆情热度</p>
+                            <p>1,554,192 </p>
+                        </div>
+                        <div class="card-three-right-content-right-item">
+                            <p>舆情风向</p>
+                            <p>积极</p>
+                        </div>
+                    </div>
+                </div>
             </Card>
         </div>
         <Card title="舆情热点与营销机会" class="card-four">
-
+            <div slot="right" class="card-four-select">
+                <Select value="全国">
+                    <Option value="全国">全国</Option>
+                </Select>
+                <Select value="近3个月">
+                    <Option value="近3个月">近3个月</Option>
+                </Select>
+                <Select value="百度">
+                    <Option value="百度">百度</Option>
+                </Select>
+            </div>
+            <div class="card-four-left">
+                <div class="card-four-left-item">
+                    <p>行业关键词</p>
+                    <ul>
+                        <li>凉茶</li>
+                        <li>功能饮料</li>
+                    </ul>
+                </div>
+                <div class="card-four-left-line"></div>
+                <div class="card-four-left-item">
+                    <p>关联关键词</p>
+                    <ul>
+                        <li>降火</li>
+                        <li>养生</li>
+                        <li>滋润</li>
+                    </ul>
+                </div>
+                <div class="card-four-left-item">
+                    <p>追加关联词汇</p>
+                    <ul>
+                        <li>礼品</li>
+                    </ul>
+                </div>
+                <div class="card-four-left-line"></div>
+                <div class="card-four-left-item">
+                    <p>负向关联词</p>
+                    <ul class="orange">
+                        <li>上火</li>
+                        <li>暴躁</li>
+                        <li>虚脱</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-four-right">
+                <div class="card-four-right-box">
+                    <div class="card-four-right-title">热点事件</div>
+                    <div class="card-four-right-list">
+                        <div class="card-four-right-item">
+                            <div class="index one">1</div>
+                            <div class="desc">黄晓明发文退出《浪姐2》，自曝心悸脾…</div>
+                            <div class="time">2021/1/10</div>
+                        </div>
+                        <div class="card-four-right-item">
+                            <div class="index two">2</div>
+                            <div class="desc">暴躁老哥抢茅台成瘾，期待茅台价格继…</div>
+                            <div class="time">2021/1/10</div>
+                        </div>
+                        <div class="card-four-right-item">
+                            <div class="index three">3</div>
+                            <div class="desc">王阳明:常快乐,便是功夫。心态好,亦是养生</div>
+                            <div class="time">2021/1/9</div>
+                        </div>
+                        <div class="card-four-right-item">
+                            <div class="index">4</div>
+                            <div class="desc">互联网打工人不懂养生?这份年度白皮书…</div>
+                            <div class="time">2021/1/8</div>
+                        </div>
+                        <div class="card-four-right-item">
+                            <div class="index">5</div>
+                            <div class="desc">暖心礼物!扬州一高校学生为上完最后一…</div>
+                            <div class="time">2021/1/5</div>
+                        </div>
+                        <div class="card-four-right-item">
+                            <div class="index">6</div>
+                            <div class="desc">最北教师:无声滋润最北国土</div>
+                            <div class="time">2021/1/2</div>
+                        </div>
+                        <div class="card-four-right-btn">
+                            <div>查看全部</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-four-right-box">
+                    <div class="card-four-right-title">近期机会</div>
+                    <div class="card-four-right-list">
+                        <div class="card-four-right-item">
+                            <div class="index one">1</div>
+                            <div class="desc1">迎春大促</div>
+                            <div class="time1">2021/2/1 - 2021/2/28</div>
+                        </div>
+                        <div class="card-four-right-item card-four-right-item-desc">
+                            <div class="index"></div>
+                            <div class="desc2">春节喜庆欢乐气氛大大刺激了人们消费的欲望和冲动,春节促销活动,所参与促销的商品面广，数量多，力度大，容易形成连带销售。</div>
+                        </div>
+                        <div class="card-four-right-item">
+                            <div class="index two">2</div>
+                            <div class="desc1">赏灯品诗喝茶</div>
+                            <div class="time1">2021/2/20 - 2021/2/28</div>
+                        </div>
+                        <div class="card-four-right-item">
+                            <div class="index three">3</div>
+                            <div class="desc1">二月二，龙抬头</div>
+                            <div class="time1">2021/3/14 - 2021/3/20</div>
+                        </div>
+                        <div class="card-four-right-btn">
+                            <div>查看全部</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </Card>
         <Card title="负面舆情的处理意见" class="card-five">
             <div class="card-five-box">
@@ -257,14 +615,44 @@
 
     export default {
         name: "BusinessMarket",
-        components: {Card, barEcharts, YibiaoCharts2, lineM, Leida2Echarts}
+        components: {Card, barEcharts, YibiaoCharts2, lineM, Leida2Echarts},
+        data() {
+            return {
+                threeActive: 1,
+                toRIcon: require("../../assets/img/yhhx/toR.png"),
+                toRIcon1: require("../../assets/img/yhhx/toR1.png"),
+                inputIcon: require("../../assets/img/yhhx/input.png"),
+                toLIcon: require("../../assets/img/yhhx/toL.png"),
+                dhIcon: require("../../assets/img/yhhx/dhIcon.png"),
+                yhtIcon: require("../../assets/img/yhhx/yht.png"),
+                input1: require("../../assets/img/yhhx/input1.png"),
+                useApp: require("../../assets/img/yhhx/useApp.png"),
+                threeP: require("../../assets/img/yhhx/threeP.png"),
+                ttIcon:require("../../assets/img/yhhx/tt.png"),
+                xhsIcon:require("../../assets/img/yhhx/xhs.png"),
+                ksIcon:require("../../assets/img/yhhx/ks.png"),
+                dyIcon:require("../../assets/img/yhhx/ks.png"),
+                dyI:require("../../assets/img/yhhx/dyI.png")
+            }
+        }
     }
 </script>
 
 <style lang="scss">
     .market-box {
-        .ivu-select-selection {
+        .ivu-select-selection, .ivu-input {
             background: transparent;
+            box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
+            border-radius: 8px;
+            border: 1px solid #C6CBDE;
+        }
+
+        .card-three-right {
+            &.card-container {
+                .title {
+                    padding: 0 24px;
+                }
+            }
         }
     }
 </style>
@@ -513,6 +901,17 @@
                         &:last-child {
                             height: 120px;
                         }
+
+                        i {
+                            margin-right: 4px;
+                        }
+
+                        img {
+                            margin-right: 4px;
+                            width: 24px;
+                            height: 24px;
+                            vertical-align: -6px;
+                        }
                     }
 
                     &.active {
@@ -532,24 +931,825 @@
 
         .card-two {
             margin-top: 24px;
+            padding-bottom: 24px;
+
+            .cdyhmj_content_container {
+                width: 100%;
+                min-height: 507px;
+                border-radius: 8px;
+                border: 1px solid #eaedf7;
+
+                .cdyhmj_content_top {
+                    width: 100%;
+                    min-height: 290px;
+                    border-bottom: 1px solid #eaedf7;
+                    display: flex;
+                    align-items: center;
+
+                    .cdyhmj_content_top_lef {
+                        width: 376px;
+                        height: 100%;
+                        padding: 24px;
+                        box-sizing: border-box;
+                        border-right: 1px solid #eaedf7;
+
+                        .cdyhmj_content_item {
+                            width: 100%;
+                        }
+
+                        .item1 {
+                            margin-bottom: 8px;
+                            font-size: 14px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #97a0c3;
+                        }
+
+                        .item2 {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            .hg_txt {
+                                width: 12px;
+                                height: 1px;
+                                background: #c6cbde;
+                                border-radius: 2px;
+                            }
+
+                            .input_container {
+                                width: 144px;
+                                height: 40px;
+                                box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8),
+                                -2px -2px 7px 0px #fffefa;
+                                border-radius: 8px;
+                                border: 1px solid #c6cbde;
+                                padding: 4px;
+                                box-sizing: border-box;
+                                display: flex;
+                                align-items: center;
+
+                                .input1 {
+                                    font-size: 24px;
+                                    font-family: PingFangSC-Semibold, PingFang SC;
+                                    font-weight: 600;
+                                    color: #c5cadf;
+                                }
+
+                                .inpu2 {
+                                    font-size: 24px;
+                                    font-family: HelveticaNeue-Bold, HelveticaNeue;
+                                    font-weight: bold;
+                                    color: #242f57;
+                                }
+
+                                .inpu23 {
+                                    display: block;
+                                    width: 6px;
+                                    height: 32px;
+                                    font-size: 24px;
+                                    font-family: HelveticaNeue;
+                                    color: #4488ff;
+                                    line-height: 32px;
+                                }
+                            }
+                        }
+
+                        .item3 {
+                            margin-top: 16px;
+                            margin-bottom: 8px;
+                            font-size: 14px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #97a0c3;
+                        }
+
+                        .item4 {
+                            height: 40px;
+                            margin-bottom: 16px;
+
+                            .inputIcon {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+
+                        .item5 {
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+
+                            .item_xtt {
+                                padding: 9px 16px;
+                                background: #ecf3ff;
+                                border-radius: 8px;
+                                border: 1px solid #2373ff;
+                                font-size: 18px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #2373ff;
+                                margin-right: 8px;
+                            }
+                        }
+                    }
+
+                    .cdyhmj_content_top_ri {
+                        flex: 1;
+                        height: 100%;
+                        padding: 24px 25px;
+                        box-sizing: border-box;
+
+                        .cdyhmj_content_top_ri_tel {
+                            width: 100%;
+                            font-size: 14px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #97a0c3;
+                            margin-bottom: 8px;
+                        }
+
+                        .cal_item_container {
+                            width: 100%;
+                            height: 168px;
+                            background: #f7f9fd;
+                            border-radius: 8px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            .cal_item,
+                            .cal_item1 {
+                                width: 80px;
+                                height: 120px;
+                                background: #ffffff;
+                                border-radius: 0 8px 8px 0;
+                                border: 1px solid #eaedf7;
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+
+                                .cal_item_cal_item {
+                                    width: 30px;
+                                    height: 50px;
+                                    background: #eaedf7;
+                                    border-radius: 0 8px 8px 0;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    .toLIcon {
+                                        width: 19px;
+                                        height: 19px;
+                                    }
+                                }
+                            }
+
+                            .cal_item1 {
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-end;
+
+                                .cal_item_cal_item {
+                                    border-radius: 8px 0 0 8px;
+                                }
+                            }
+
+                            .cal_item2 {
+                                width: 18%;
+                                height: 120px;
+                                background: #ffffff;
+                                border-radius: 8px;
+                                border: 1px solid #eaedf7;
+                                padding: 12px;
+                                box-sizing: border-box;
+                                position: relative;
+
+                                .rt_choice {
+                                    position: absolute;
+                                    top: 10px;
+                                    right: 10px;
+                                    width: 16px;
+                                    height: 16px;
+                                    box-shadow: 1px 1px 1px 0px #a6abbd,
+                                    -1px -1px 1px 0px #fafbff;
+                                    border-radius: 2px;
+                                    border: 1px solid rgba(255, 255, 255, 0.4);
+                                }
+
+                                .rt_choice2 {
+                                    position: absolute;
+                                    top: 10px;
+                                    right: 10px;
+                                    width: 16px;
+                                    height: 16px;
+                                    background: #2373ff;
+                                    box-shadow: 1px 1px 3px 0px rgba(166, 171, 190, 0.4),
+                                    -1px -1px 3px 0px rgba(250, 251, 255, 0.4);
+                                    border-radius: 2px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+
+                                    .dhIcon {
+                                        display: block;
+                                        width: 9px;
+                                        height: 7px;
+                                    }
+                                }
+
+                                .logo_container {
+                                    width: 100%;
+                                    height: 40px;
+                                    margin-bottom: 12px;
+                                    display: flex;
+                                    align-items: center;
+
+                                    .logoImg {
+                                        width: 40px;
+                                        height: 40px;
+                                        display: block;
+                                        border: 1px solid #eaedf7;
+                                        border-radius: 51%;
+                                        margin-right: 8px;
+                                    }
+
+                                    .cal_txt {
+                                        font-size: 14px;
+                                        font-family: PingFangSC-Medium, PingFang SC;
+                                        font-weight: 500;
+                                        color: #242f57;
+                                    }
+                                }
+
+                                .txt_area {
+                                    font-size: 12px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #97a0c3;
+                                    display: flex;
+                                    align-items: center;
+
+                                    .txt_area11 {
+                                        margin-right: 11px;
+                                    }
+                                }
+
+                                .per_area {
+                                    display: flex;
+                                    align-items: center;
+                                    font-size: 12px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #242f57;
+
+                                    .per_area1 {
+                                        margin-right: 10px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .cdyhmj_bom {
+                            margin-top: 22px;
+                            width: 100%;
+                            height: 24px;
+                            display: flex;
+                            align-items: center;
+
+                            .cdyhmj_bom_lef {
+                                width: 88px;
+                                height: 22px;
+                                font-size: 14px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #636e95;
+                                line-height: 22px;
+                            }
+
+                            .cdyhmj_bom_rig {
+                                flex: 1;
+                                display: flex;
+
+                                .cdyhmj_bom_rig1 {
+                                    display: block;
+                                    width: 24px;
+                                    height: 24px;
+                                    margin-right: 8px;
+                                    border-radius: 50%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .cdyhmj_content_bom {
+                    width: 100%;
+                    min-height: 217px;
+                    background: #f7f9fd;
+                    padding: 16px 24px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .cdyhmj_content_bom_lef {
+                        flex: 1;
+                        height: 100%;
+
+                        .cdyhmj_content_bom_lef_top {
+                            width: 100%;
+                            font-size: 14px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 500;
+                            color: #242f57;
+                            margin-bottom: 16px;
+                        }
+
+                        .cdyhmj_content_bom_lef_bom {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            padding-right: 24px;
+                            justify-content: space-between;
+
+                            .echarts1 {
+                                width: 30%;
+                                height: 136px;
+                                padding: 6px 12px;
+                                box-sizing: border-box;
+                                border-radius: 8px;
+
+                                .echarts11 {
+                                    width: 100%;
+                                    min-height: 64px;
+                                    background: #ffffff;
+                                    border-radius: 8px;
+                                    margin-bottom: 8px;
+                                    padding: 6px 12px;
+                                    box-sizing: border-box;
+
+                                    .echarts111,
+                                    .echarts112 {
+                                        width: 100%;
+                                        font-size: 12px;
+                                        font-family: PingFangSC-Regular, PingFang SC;
+                                        font-weight: 400;
+                                        color: #97a0c3;
+                                    }
+
+                                    .echarts112 {
+                                        font-size: 24px;
+                                        font-family: PingFangSC-Semibold, PingFang SC;
+                                        font-weight: 600;
+                                        color: #242f57;
+                                    }
+                                }
+
+                                .echarts12 {
+                                    widows: 100%;
+                                    min-height: 64px;
+                                    background: #ffffff;
+                                    border-radius: 2px;
+                                    padding: 6px 12px;
+                                    box-sizing: border-box;
+
+                                    .echarts121,
+                                    .echarts122 {
+                                        width: 100%;
+                                        font-size: 12px;
+                                        font-family: PingFangSC-Regular, PingFang SC;
+                                        font-weight: 400;
+                                        color: #97a0c3;
+                                    }
+
+                                    .echarts122 {
+                                        height: 32px;
+                                        font-size: 24px;
+                                        font-family: HelveticaNeue-Bold, HelveticaNeue;
+                                        font-weight: bold;
+                                        color: #242f57;
+                                    }
+                                }
+
+                                .echarts13 {
+                                    width: 100%;
+                                    margin-bottom: 8px;
+                                    font-size: 12px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #97a0c3;
+                                }
+
+                                .echarts14,
+                                .echarts15 {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    margin-bottom: 8px;
+
+                                    .echarts141,
+                                    .echarts142 {
+                                        display: flex;
+                                        align-items: center;
+
+                                        .ech_Icon,
+                                        .ech_Icon1 {
+                                            width: 8px;
+                                            height: 8px;
+                                            background: rgba(68, 136, 255, 0.85);
+                                            border-radius: 50%;
+                                            margin-right: 5px;
+                                        }
+
+                                        .ech_Icon1 {
+                                            background: rgba(164, 157, 250, 0.85);
+                                        }
+
+                                        .ech_time,
+                                        .ech_txt {
+                                            font-size: 14px;
+                                            font-family: PingFangSC-Regular, PingFang SC;
+                                            font-weight: 400;
+                                            color: #242f57;
+                                        }
+
+                                        .ech_txt {
+                                            margin-right: 12px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .ec1 {
+                                background: #ffffff;
+                            }
+                        }
+                    }
+
+                    .cdyhmj_content_bom_rig {
+                        width: 421px;
+                        height: 100%;
+                        padding-left: 24px;
+                        box-sizing: border-box;
+                        border-left: 1px solid #eaedf7;
+
+                        .cdyhmj_content_bom_rig_top {
+                            width: 100%;
+                            margin-bottom: 16px;
+                            font-size: 14px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 500;
+                            color: #242f57;
+                        }
+
+                        .cdyhmj_content_bom_rig_bom {
+                            width: 100%;
+                            height: 136px;
+
+                            .yhtIcon {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .card-three {
             margin-top: 24px;
 
+            .card-three-select {
+                display: flex;
+
+                > div {
+                    margin-left: 16px;
+                    width: 120px;
+                }
+            }
+
+            .card-three-date {
+                > div {
+                    width: 240px;
+                }
+            }
+
             .card-three-left {
                 width: calc(50% - 12px);
                 height: 384px;
+
+                .card-three-chart {
+                    width: 100%;
+                    height: 310px;
+                }
             }
 
             .card-three-right {
+                padding: 0;
                 width: calc(50% - 12px);
                 height: 384px;
+
+                .card-three-right-content {
+
+                    .card-three-right-content-left {
+                        width: 30%;
+
+                        .card-three-right-content-item {
+                            position: relative;
+                            padding: 12px 16px;
+                            background: #FFFFFF;
+                            cursor: pointer;
+
+                            > img {
+                                display: inline-block;
+                                vertical-align: middle;
+                                margin-right: 8px;
+                                width: 24px;
+                                height: 24px;
+                                border-radius: 50%;
+                            }
+
+                            > p {
+                                display: inline-block;
+                                vertical-align: middle;
+                                font-size: 14px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #242F57;
+
+                                > span {
+                                    color: #97A0C3;
+                                }
+                            }
+
+                            &.active {
+                                background: #F7F9FD;
+
+                                > p {
+                                    color: #2373FF;
+
+                                    > span {
+                                        color: #2373FF;
+                                    }
+                                }
+
+                                &:before {
+                                    content: '';
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    width: 2px;
+                                    height: 48px;
+                                    background: #2373FF;
+                                }
+                            }
+                        }
+                    }
+
+                    .card-three-right-content-right {
+                        padding: 16px 22px;
+                        width: 70%;
+                        height: 320px;
+                        background: #F7F9FD;
+
+                        .card-three-right-content-right-item {
+                            display: inline-block;
+                            width: calc(50% - 4px);
+                            height: 64px;
+                            padding: 6px 12px;
+                            margin-bottom: 8px;
+                            background: #FFFFFF;
+                            border-radius: 8px;
+                            margin-right: 8px;
+
+                            &:nth-child(2n+2) {
+                                margin-right: 0;
+                            }
+
+                            > p {
+                                font-size: 12px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #97A0C3;
+
+                                &:last-child {
+                                    font-size: 18px;
+                                    font-family: PingFangSC-Semibold, PingFang SC;
+                                    font-weight: 600;
+                                    color: #242F57;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 
         .card-four {
+            padding-bottom: 24px;
             margin-top: 24px;
+
+            .card-four-select {
+                display: flex;
+
+                > div {
+                    margin-left: 16px;
+                    width: 120px;
+                }
+            }
+
+            .card-four-left {
+                display: inline-block;
+                vertical-align: top;
+                width: 248px;
+                margin-right: 48px;
+
+                .card-four-left-item {
+                    > p {
+                        margin-bottom: 16px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #97A0C3;
+                    }
+
+                    > ul {
+                        > li {
+                            display: inline-block;
+                            vertical-align: middle;
+                            padding: 4px 16px;
+                            margin-right: 8px;
+                            background: #ECF3FF;
+                            border-radius: 8px;
+                            border: 1px solid #2373FF;
+                            font-size: 16px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #2373FF;
+                            text-align: center;
+                        }
+
+                        &.orange {
+                            > li {
+                                color: #FF8800;
+                                background: #FFF7E6;
+                                border: 1px solid #FFA53D;
+                            }
+                        }
+                    }
+                }
+
+                .card-four-left-line {
+                    margin: 16px 0;
+                    width: 248px;
+                    height: 1px;
+                    background: #EAEDF7;
+                }
+            }
+
+            .card-four-right {
+                display: inline-block;
+                vertical-align: top;
+                width: calc(100% - 296px);
+
+                .card-four-right-box {
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: top;
+                    padding-bottom: 16px;
+                    width: calc(50% - 12px);
+                    height: 453px;
+                    background: #FFFFFF;
+                    border-radius: 8px;
+                    border: 1px solid #EAEDF7;
+
+                    &:first-child {
+                        margin-right: 24px;
+                    }
+
+                    .card-four-right-title {
+                        width: 100%;
+                        height: 72px;
+                        padding: 15px 0 0 15px;
+                        background: linear-gradient(180deg, #FFF5EB 0%, rgba(255, 245, 235, 0) 100%);
+                        border-radius: 8px 8px 0px 0px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #242F57;
+                    }
+
+                    .card-four-right-list {
+                        padding: 0 15px;
+
+                        .card-four-right-item {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: 15px 0;
+                            border-bottom: 1px solid #F4F7FC;
+
+                            &.card-four-right-item-desc {
+                                padding: 0 0 15px 0;
+                                margin-top: -7px;
+                                background: #FFFFFF;
+                                border-bottom: 1px solid #F4F7FC;
+                            }
+
+                            > div {
+                                display: inline-block;
+                                vertical-align: middle;
+
+                                &.index {
+                                    width: 20px;
+                                    font-size: 18px;
+                                    font-family: Staatliches-Regular, Staatliches;
+                                    font-weight: 400;
+                                    color: #97A0C3;
+
+                                    &.one {
+                                        color: #FA343E;
+                                    }
+
+                                    &.two {
+                                        color: #FF8800;
+                                    }
+
+                                    &.three {
+                                        color: #FFBA52;
+                                    }
+                                }
+
+                                &.desc {
+                                    width: 270px;
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #242F57;
+                                }
+
+                                &.desc1 {
+                                    width: 180px;
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #242F57;
+                                }
+
+                                &.desc2 {
+                                    width: 343px;
+                                    font-size: 12px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #97A0C3;
+                                }
+
+                                &.time {
+                                    width: 70px;
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #97A0C3;
+                                    text-align: right;
+                                }
+
+                                &.time1 {
+                                    width: 170px;
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #97A0C3;
+                                    text-align: right;
+                                }
+                            }
+
+                            &:first-child {
+                                margin-top: -17px;
+                            }
+
+                            &:last-child {
+                                border-bottom: 0px solid #F4F7FC;
+                            }
+                        }
+
+                        .card-four-right-btn {
+                            position: absolute;
+                            left: 16px;
+                            bottom: 16px;
+                            width: calc(100% - 32px);
+                            height: 32px;
+                            line-height: 32px;
+                            background: #F4F7FC;
+                            border-radius: 8px;
+                            font-size: 14px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #97A0C3;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
         }
 
         .card-five {

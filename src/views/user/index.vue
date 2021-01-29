@@ -481,9 +481,25 @@
             </div>
           </div>
           <div class="mb_echarts_container">
-            <div class="mb_echarts1"></div>
+            <div class="mb_echarts1">
+                <div class="mb_echarts1_lef">
+                    <div class="mb_echarts1_lef_top">
+                        <span class="span1">297,786</span>人
+                    </div>
+                    <div class="mb_echarts1_lef_bom">养生金融小白</div>
+                </div>
+                <div class="mb_echarts1_rig"></div>
+            </div>
             <div class="vscls">VS</div>
-            <div class="mb_echarts2"></div>
+            <div class="mb_echarts2">
+                <div class="mb_echarts1_lef">
+                    <div class="mb_echarts1_lef_top">
+                        <span class="span1" style="color:#FF8800;">97,673</span>人
+                    </div>
+                    <div class="mb_echarts1_lef_bom">养生金融小白</div>
+                </div>
+                <div class="mb_echarts1_rig"></div>
+            </div>
           </div>
         </div>
 
@@ -2318,6 +2334,34 @@ export default {
             height: 148px;
             border-radius: 8px;
             border: 1px solid #2373ff;
+            padding: 29px 35px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .mb_echarts1_lef{
+                .mb_echarts1_lef_top{
+                    margin-bottom: 8px;
+                    .span1{
+                        font-size: 32px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #2373FF;
+                    }
+                }
+                .mb_echarts1_lef_bom{
+                    font-size: 16px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #242F57;
+                }
+            }
+            .mb_echarts1_rig{
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                background-color: chartreuse;
+            }
           }
           .vscls {
             font-size: 24px;
