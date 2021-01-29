@@ -752,6 +752,14 @@
                     </div>
                 </div>
             </div>
+            <div class="xfzsxjcfx_container">
+                <div class="xfzsxjcfx_til">消费者时序行为决策分析</div>
+                <div class="xfzsxjcfx_ech"></div>
+            </div>
+            <div class="xfzsxjcfx_container">
+                <div class="xfzsxjcfx_til">消费者行为决策预测</div>
+                <div class="xfzsxjcfx_ech"></div>
+            </div>
         </div>
 
 
@@ -2644,6 +2652,24 @@ export default {
                         }
                     }
                 }
+            }
+        }
+        .xfzsxjcfx_container{
+            width: 100%;
+            min-height: 312px;
+            background: #FFFFFF;
+            border-radius: 8px;
+            border: 1px solid #EAEDF7;
+            margin-top: 24px;
+            padding: 16px;
+            box-sizing: border-box;
+            .xfzsxjcfx_til{
+                width: 100%;
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #242F57;
+                margin-bottom: 18px;
             }
         }
       }
