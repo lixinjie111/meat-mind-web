@@ -80,16 +80,25 @@
                 <div class="card-one-right-item">
                     <div class="item-line"></div>
                     <div class="item-box">
-                        <p>休息/通勤</p>
+                        <p><img src="../../assets/img/dashboard/market/icon-commute@2x.png"/>休息/通勤</p>
                     </div>
                     <div class="item-box">
-                        <p>7:00 - 9:00</p>
+                        <p>
+                            <Icon type="md-time" size="16" color="#636E95"/>
+                            7:00 - 9:00
+                        </p>
                     </div>
                     <div class="item-box">
-                        <p>头条/微博/小红书</p>
+                        <p>
+                            <Icon type="ios-phone-portrait" size="16" color="#636E95"/>
+                            头条/微博/小红书
+                        </p>
                     </div>
                     <div class="item-box">
-                        <p>一般: 35% 紧张: 29%</p>
+                        <p>
+                            <Icon type="md-happy" size="16" color="#636E95"/>
+                            一般: 35% 紧张: 29%
+                        </p>
                     </div>
                     <div class="item-box">
                         <p>用户群体处于休息及通勤状态，偏好浏览新闻资讯及社交娱乐类型的APP，处理工作相关信息，情绪分布较为平均</p>
@@ -98,16 +107,25 @@
                 <div class="card-one-right-item active">
                     <div class="item-line"></div>
                     <div class="item-box">
-                        <p>工作/休息</p>
+                        <p><img src="../../assets/img/dashboard/market/icons-working@2x.png"/>工作/休息</p>
                     </div>
                     <div class="item-box">
-                        <p>12:00 - 13:00</p>
+                        <p>
+                            <Icon type="md-time" size="16" color="#2373FF"/>
+                            12:00 - 13:00
+                        </p>
                     </div>
                     <div class="item-box">
-                        <p>大众点评/新浪微博/抖音</p>
+                        <p>
+                            <Icon type="ios-phone-portrait" size="16" color="#2373FF"/>
+                            大众点评/新浪微博/抖音
+                        </p>
                     </div>
                     <div class="item-box">
-                        <p>放松: 37% 一般: 36%</p>
+                        <p>
+                            <Icon type="md-happy" size="16" color="#2373FF"/>
+                            放松: 37% 一般: 36%
+                        </p>
                     </div>
                     <div class="item-box">
                         <p>用户群体主要处于午间休息状态，偏好浏览新闻资讯及社交娱乐类型的APP，情绪分布较为放松</p>
@@ -116,16 +134,25 @@
                 <div class="card-one-right-item">
                     <div class="item-line"></div>
                     <div class="item-box">
-                        <p>休息/放松</p>
+                        <p><img src="../../assets/img/dashboard/market/icon-relax@2x.png"/>休息/放松</p>
                     </div>
                     <div class="item-box">
-                        <p>20:00 - 22:00</p>
+                        <p>
+                            <Icon type="md-time" size="16" color="#636E95"/>
+                            20:00 - 22:00
+                        </p>
                     </div>
                     <div class="item-box">
-                        <p>抖音/小红书/快手</p>
+                        <p>
+                            <Icon type="ios-phone-portrait" size="16" color="#636E95"/>
+                            抖音/小红书/快手
+                        </p>
                     </div>
                     <div class="item-box">
-                        <p>放松: 48% 一般: 26%</p>
+                        <p>
+                            <Icon type="md-happy" size="16" color="#636E95"/>
+                            放松: 48% 一般: 26%
+                        </p>
                     </div>
                     <div class="item-box">
                         <p>用户群体处于休息及休闲状态，偏好社交娱乐、电商购物类型的APP，情绪分布较为放松</p>
@@ -139,13 +166,87 @@
         </Card>
         <div class="card-three flex">
             <Card title="市场趋势" class="card-three-left">
-
+                <div slot="right" class="card-three-select">
+                    <Select value="快消品">
+                        <Option value="快消品">快消品</Option>
+                    </Select>
+                    <Select value="5年">
+                        <Option value="5年">5年</Option>
+                    </Select>
+                </div>
+                <div class="card-three-chart">
+                    <barEcharts id="box14" :colorList="$lxjData.colorList" :myData="$lxjData.box14Data"></barEcharts>
+                </div>
             </Card>
             <Card title="对标商品行情" class="card-three-right">
-
+                <div slot="right" class="card-three-date">
+                    <DatePicker type="daterange" :value="['2020-1-1','2020-2-29']" show-week-numbers
+                                placement="bottom-end" placeholder="请选择时间"></DatePicker>
+                </div>
+                <div class="card-three-right-content flex-start">
+                    <div class="card-three-right-content-left">
+                        <div :class="['card-three-right-content-item',threeActive == 1 ?'active':'']"
+                             @click="threeActive=1">
+                            <img src="../../assets/img/dashboard/market/icon-redbull@2x.png"/>
+                            <p>红牛<span>·250ml</span></p>
+                        </div>
+                        <div :class="['card-three-right-content-item',threeActive == 2 ?'active':'']"
+                             @click="threeActive=2">
+                            <img src="../../assets/img/dashboard/market/icon-jiaduobao@2x.png"/>
+                            <p>加多宝<span>·250ml</span></p>
+                        </div>
+                        <div :class="['card-three-right-content-item',threeActive == 3 ?'active':'']"
+                             @click="threeActive=3">
+                            <img src="../../assets/img/dashboard/market/icon-wanglaoji@2x.png"/>
+                            <p>王老吉<span>·250ml</span></p>
+                        </div>
+                        <div :class="['card-three-right-content-item',threeActive == 4 ?'active':'']"
+                             @click="threeActive=4">
+                            <img src="../../assets/img/dashboard/market/icon-maidong@2x.png"/>
+                            <p>脉动<span>·250ml</span></p>
+                        </div>
+                    </div>
+                    <div class="card-three-right-content-right">
+                        <div class="card-three-right-content-right-item">
+                            <p>月均销量</p>
+                            <p>4,265,322</p>
+                        </div>
+                        <div class="card-three-right-content-right-item">
+                            <p>客单价</p>
+                            <p>¥ 6.5</p>
+                        </div>
+                        <div class="card-three-right-content-right-item">
+                            <p>销量平台TOP3</p>
+                            <p>京东/淘宝/美团</p>
+                        </div>
+                        <div class="card-three-right-content-right-item">
+                            <p>营销渠道TOP3</p>
+                            <p>抖音/小红书/头条</p>
+                        </div>
+                        <div class="card-three-right-content-right-item">
+                            <p>舆情热度</p>
+                            <p>1,554,192 </p>
+                        </div>
+                        <div class="card-three-right-content-right-item">
+                            <p>舆情风向</p>
+                            <p>积极</p>
+                        </div>
+                    </div>
+                </div>
             </Card>
         </div>
         <Card title="舆情热点与营销机会" class="card-four">
+            <div slot="right" class="card-four-select">
+                <Select value="全国">
+                    <Option value="全国">全国</Option>
+                </Select>
+                <Select value="近3个月">
+                    <Option value="近3个月">近3个月</Option>
+                </Select>
+                <Select value="百度">
+                    <Option value="百度">百度</Option>
+                </Select>
+            </div>
             <div class="card-four-left">
                 <div class="card-four-left-item">
                     <p>行业关键词</p>
@@ -184,17 +285,17 @@
                     <div class="card-four-right-title">热点事件</div>
                     <div class="card-four-right-list">
                         <div class="card-four-right-item">
-                            <div class="index">1</div>
+                            <div class="index one">1</div>
                             <div class="desc">黄晓明发文退出《浪姐2》，自曝心悸脾…</div>
                             <div class="time">2021/1/10</div>
                         </div>
                         <div class="card-four-right-item">
-                            <div class="index">2</div>
+                            <div class="index two">2</div>
                             <div class="desc">暴躁老哥抢茅台成瘾，期待茅台价格继…</div>
                             <div class="time">2021/1/10</div>
                         </div>
                         <div class="card-four-right-item">
-                            <div class="index">3</div>
+                            <div class="index three">3</div>
                             <div class="desc">王阳明:常快乐,便是功夫。心态好,亦是养生</div>
                             <div class="time">2021/1/9</div>
                         </div>
@@ -222,19 +323,23 @@
                     <div class="card-four-right-title">近期机会</div>
                     <div class="card-four-right-list">
                         <div class="card-four-right-item">
-                            <div class="index">1</div>
-                            <div class="desc">迎春大促</div>
-                            <div class="time">2021/2/1 - 2021/2/28</div>
+                            <div class="index one">1</div>
+                            <div class="desc1">迎春大促</div>
+                            <div class="time1">2021/2/1 - 2021/2/28</div>
+                        </div>
+                        <div class="card-four-right-item card-four-right-item-desc">
+                            <div class="index"></div>
+                            <div class="desc2">春节喜庆欢乐气氛大大刺激了人们消费的欲望和冲动,春节促销活动,所参与促销的商品面广，数量多，力度大，容易形成连带销售。</div>
                         </div>
                         <div class="card-four-right-item">
-                            <div class="index">2</div>
-                            <div class="desc">赏灯品诗喝茶</div>
-                            <div class="time">2021/2/20 - 2021/2/28</div>
+                            <div class="index two">2</div>
+                            <div class="desc1">赏灯品诗喝茶</div>
+                            <div class="time1">2021/2/20 - 2021/2/28</div>
                         </div>
                         <div class="card-four-right-item">
-                            <div class="index">3</div>
-                            <div class="desc">二月二，龙抬头</div>
-                            <div class="time">2021/3/14 - 2021/3/20</div>
+                            <div class="index three">3</div>
+                            <div class="desc1">二月二，龙抬头</div>
+                            <div class="time1">2021/3/14 - 2021/3/20</div>
                         </div>
                         <div class="card-four-right-btn">
                             <div>查看全部</div>
@@ -352,14 +457,30 @@
 
     export default {
         name: "BusinessMarket",
-        components: {Card, barEcharts, YibiaoCharts2, lineM, Leida2Echarts}
+        components: {Card, barEcharts, YibiaoCharts2, lineM, Leida2Echarts},
+        data() {
+            return {
+                threeActive: 1
+            }
+        }
     }
 </script>
 
 <style lang="scss">
     .market-box {
-        .ivu-select-selection {
+        .ivu-select-selection, .ivu-input {
             background: transparent;
+            box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
+            border-radius: 8px;
+            border: 1px solid #C6CBDE;
+        }
+
+        .card-three-right {
+            &.card-container {
+                .title {
+                    padding: 0 24px;
+                }
+            }
         }
     }
 </style>
@@ -608,6 +729,17 @@
                         &:last-child {
                             height: 120px;
                         }
+
+                        i {
+                            margin-right: 4px;
+                        }
+
+                        img {
+                            margin-right: 4px;
+                            width: 24px;
+                            height: 24px;
+                            vertical-align: -6px;
+                        }
                     }
 
                     &.active {
@@ -632,14 +764,129 @@
         .card-three {
             margin-top: 24px;
 
+            .card-three-select {
+                display: flex;
+
+                > div {
+                    margin-left: 16px;
+                    width: 120px;
+                }
+            }
+
+            .card-three-date {
+                > div {
+                    width: 240px;
+                }
+            }
+
             .card-three-left {
                 width: calc(50% - 12px);
                 height: 384px;
+
+                .card-three-chart {
+                    width: 100%;
+                    height: 310px;
+                }
             }
 
             .card-three-right {
+                padding: 0;
                 width: calc(50% - 12px);
                 height: 384px;
+
+                .card-three-right-content {
+
+                    .card-three-right-content-left {
+                        width: 30%;
+
+                        .card-three-right-content-item {
+                            position: relative;
+                            padding: 12px 16px;
+                            background: #FFFFFF;
+                            cursor: pointer;
+
+                            > img {
+                                display: inline-block;
+                                vertical-align: middle;
+                                margin-right: 8px;
+                                width: 24px;
+                                height: 24px;
+                                border-radius: 50%;
+                            }
+
+                            > p {
+                                display: inline-block;
+                                vertical-align: middle;
+                                font-size: 14px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #242F57;
+
+                                > span {
+                                    color: #97A0C3;
+                                }
+                            }
+
+                            &.active {
+                                background: #F7F9FD;
+
+                                > p {
+                                    color: #2373FF;
+
+                                    > span {
+                                        color: #2373FF;
+                                    }
+                                }
+
+                                &:before {
+                                    content: '';
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    width: 2px;
+                                    height: 48px;
+                                    background: #2373FF;
+                                }
+                            }
+                        }
+                    }
+
+                    .card-three-right-content-right {
+                        padding: 16px 22px;
+                        width: 70%;
+                        height: 320px;
+                        background: #F7F9FD;
+
+                        .card-three-right-content-right-item {
+                            display: inline-block;
+                            width: calc(50% - 4px);
+                            height: 64px;
+                            padding: 6px 12px;
+                            margin-bottom: 8px;
+                            background: #FFFFFF;
+                            border-radius: 8px;
+                            margin-right: 8px;
+
+                            &:nth-child(2n+2) {
+                                margin-right: 0;
+                            }
+
+                            > p {
+                                font-size: 12px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #97A0C3;
+
+                                &:last-child {
+                                    font-size: 18px;
+                                    font-family: PingFangSC-Semibold, PingFang SC;
+                                    font-weight: 600;
+                                    color: #242F57;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -647,11 +894,20 @@
             padding-bottom: 24px;
             margin-top: 24px;
 
+            .card-four-select {
+                display: flex;
+
+                > div {
+                    margin-left: 16px;
+                    width: 120px;
+                }
+            }
+
             .card-four-left {
                 display: inline-block;
                 vertical-align: top;
                 width: 248px;
-                margin-right: 24px;
+                margin-right: 48px;
 
                 .card-four-left-item {
                     > p {
@@ -702,13 +958,19 @@
                 width: calc(100% - 296px);
 
                 .card-four-right-box {
+                    position: relative;
                     display: inline-block;
                     vertical-align: top;
                     padding-bottom: 16px;
                     width: calc(50% - 12px);
+                    height: 453px;
                     background: #FFFFFF;
                     border-radius: 8px;
                     border: 1px solid #EAEDF7;
+
+                    &:first-child {
+                        margin-right: 24px;
+                    }
 
                     .card-four-right-title {
                         width: 100%;
@@ -726,33 +988,83 @@
                         padding: 0 15px;
 
                         .card-four-right-item {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
                             padding: 15px 0;
                             border-bottom: 1px solid #F4F7FC;
+
+                            &.card-four-right-item-desc {
+                                padding: 0 0 15px 0;
+                                margin-top: -7px;
+                                background: #FFFFFF;
+                                border-bottom: 1px solid #F4F7FC;
+                            }
 
                             > div {
                                 display: inline-block;
                                 vertical-align: middle;
 
                                 &.index {
+                                    width: 20px;
                                     font-size: 18px;
                                     font-family: Staatliches-Regular, Staatliches;
                                     font-weight: 400;
                                     color: #97A0C3;
+
+                                    &.one {
+                                        color: #FA343E;
+                                    }
+
+                                    &.two {
+                                        color: #FF8800;
+                                    }
+
+                                    &.three {
+                                        color: #FFBA52;
+                                    }
                                 }
 
                                 &.desc {
-                                    padding: 0 10px 0 10px;
+                                    width: 270px;
                                     font-size: 14px;
                                     font-family: PingFangSC-Regular, PingFang SC;
                                     font-weight: 400;
                                     color: #242F57;
                                 }
 
+                                &.desc1 {
+                                    width: 180px;
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #242F57;
+                                }
+
+                                &.desc2 {
+                                    width: 343px;
+                                    font-size: 12px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #97A0C3;
+                                }
+
                                 &.time {
+                                    width: 70px;
                                     font-size: 14px;
                                     font-family: PingFangSC-Regular, PingFang SC;
                                     font-weight: 400;
                                     color: #97A0C3;
+                                    text-align: right;
+                                }
+
+                                &.time1 {
+                                    width: 170px;
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #97A0C3;
+                                    text-align: right;
                                 }
                             }
 
@@ -766,7 +1078,10 @@
                         }
 
                         .card-four-right-btn {
-                            width: 100%;
+                            position: absolute;
+                            left: 16px;
+                            bottom: 16px;
+                            width: calc(100% - 32px);
                             height: 32px;
                             line-height: 32px;
                             background: #F4F7FC;
