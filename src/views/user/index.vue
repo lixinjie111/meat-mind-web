@@ -432,7 +432,9 @@
               <div class="cdyhmj_content_bom_lef">
                 <div class="cdyhmj_content_bom_lef_top">触达用户投放策略建议</div>
                 <div class="cdyhmj_content_bom_lef_bom">
-                  <div class="echarts1"></div>
+                  <div class="echarts1">
+                    <lineM id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM>
+                  </div>
                   <div class="echarts1">
                     <div class="echarts11">
                       <div class="echarts111">建议投放金额</div>
@@ -481,9 +483,13 @@
             </div>
           </div>
           <div class="mb_echarts_container">
-            <div class="mb_echarts1"></div>
+            <div class="mb_echarts1">
+              <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box9Data"></PieEcharts>
+            </div>
             <div class="vscls">VS</div>
-            <div class="mb_echarts2"></div>
+            <div class="mb_echarts2">
+               <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box10Data"></PieEcharts>
+            </div>
           </div>
         </div>
 
