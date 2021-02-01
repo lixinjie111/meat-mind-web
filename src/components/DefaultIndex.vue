@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <Side :sideList="side" @handleScroll="scrollTo"></Side>
+    <Side></Side>
     <div class="flex-container">
         <Header></Header>
         <div class="content">
@@ -28,9 +28,7 @@ export default {
     }
   },
   methods:{
-    scrollTo(index){
-      if(this.$refs.child.scrollTo){this.$refs.child.scrollTo(index)}
-    }
+
   },
 };
 </script>
