@@ -30,7 +30,12 @@ export default {
 	},
     mounted() {
         	this.initEcharts();
-    },
+	},
+	watch:{
+		myData(a,b){
+			this.initEcharts();
+		}
+	},
 	methods: {
 		initEcharts() {
 			let _option = this.defaultOption();
