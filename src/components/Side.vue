@@ -1,428 +1,337 @@
 <template>
-  <div class="side">
-    <div class="menu">
-      <div class="logo"></div>
-      <Menu
-        ref="side_menu"
-        theme="light"
-        :active-name="activeName"
-        :open-names="openName"
-        @on-select="handleSelect"
-        @on-open-change="openChange"
-        width="auto"
-        accordion>
-        <div v-for="(item, index) in menu" :key="index">
-          <Submenu v-if="item.children" :name="item.name">
-            <template slot="title">
-              <i class="icon iconfont" :class="item.icon"></i>
-              <span class="title-name">{{ item.label }}</span>
-            </template>
-            <MenuItem
-              v-for="(ele, i) in item.children"
-              :to="ele.path"
-              :name="ele.name"
-              :key="i">
-              <span class="sub-name">{{ ele.label }}</span>
-            </MenuItem>
-          </Submenu>
-          <MenuItem v-else :name="item.name" :to="item.path">
-            <i class="icon iconfont" :class="item.icon"></i>
-            <span class="title-name">{{ item.label }}</span>
-          </MenuItem>
+    <div class="side">
+        <div class="menu">
+            <div class="logo"></div>
+            <Menu ref="side_menu"
+                  theme="light"
+                  :active-name="activeName"
+                  :open-names="openName"
+                  @on-select="handleSelect"
+                  @on-open-change="openChange"
+                  width="auto"
+                  accordion>
+                <div v-for="(item, index) in menu" :key="index">
+                    <Submenu v-if="item.children" :name="item.name">
+                        <template slot="title">
+                            <i class="icon iconfont" :class="item.icon"></i>
+                            <span class="title-name">{{ item.label }}</span>
+                        </template>
+                        <MenuItem v-for="(ele, i) in item.children"
+                                  :to="ele.path"
+                                  :name="ele.name"
+                                  :key="i">
+                            <span class="sub-name">{{ ele.label }}</span>
+                        </MenuItem>
+                    </Submenu>
+                    <MenuItem v-else :name="item.name" :to="item.path">
+                        <i class="icon iconfont" :class="item.icon"></i>
+                        <span class="title-name">{{ item.label }}</span>
+                    </MenuItem>
+                </div>
+            </Menu>
         </div>
-      </Menu>
     </div>
-  </div>
 </template>
 
 <script>
-export default {
-  name: "Side",
-  data() {
-    return {
-      menu: [
-        {
-          name: "dashboard",
-          label:"Dashboard",
-          icon: "iconDashboard",
-          path: "/dashboard",
+    export default {
+        name: "Side",
+        data() {
+            return {
+                menu: [
+                    {
+                        name: "dashboard",
+                        label: "Dashboard",
+                        icon: "iconDashboard",
+                        path: "/dashboard",
+                    },
+                    {
+                        name: "user",
+                        label: "用户画像",
+                        icon: "iconyonghuhuaxiang1",
+                        path: "/user",
+                    },
+                    {
+                        name: "mark",
+                        label: "品牌画像",
+                        icon: "iconpinpaihuaxiang1",
+                        path: "/mark",
+                    },
+                    {
+                        name: "media",
+                        label: "媒介画像",
+                        icon: "iconmeijiehuaxiang",
+                        path: "/media",
+                    },
+                    {
+                        name: "business-analysis",
+                        label: "经营分析",
+                        icon: "iconjingyingfenxi1",
+                        path: "/business-analysis",
+                        children: [
+                            {
+                                name: "business-analysis-ztgl",
+                                label: "整体概览",
+                                path: "/business-analysis/ztgl"
+                            },
+                            {
+                                name: "business-analysis-yhfx",
+                                label: "用户分析",
+                                path: "/business-analysis/yhfx"
+                            },
+                            {
+                                name: "business-analysis-qdfx",
+                                label: "渠道分析",
+                                path: "/business-analysis/qdfx"
+                            },
+                            {
+                                name: "business-analysis-ywgl",
+                                label: "品牌运营分析",
+                                path: "/business-analysis/ywgl"
+                            },
+                        ]
+                    },
+                    {
+                        name: "analysis-tool",
+                        label: "分析工具",
+                        icon: "iconfenxigongju1",
+                        path: "/analysis-tool",
+                        children: [
+                            {
+                                name: "analysis-tool-fxmx",
+                                label: "分析模型",
+                                path: "/analysis-tool/fxmx",
+                            },
+                            {
+                                name: "analysis-tool-zbgl",
+                                label: "指标管理",
+                                path: "/analysis-tool/zbgl",
+                            },
+                            {
+                                name: "analysis-tool-bqgl",
+                                label: "标签管理",
+                                path: "/analysis-tool/bqgl",
+                            },
+                            {
+                                name: "analysis-tool-yhfq",
+                                label: "用户分群",
+                                path: "/analysis-tool/yhfq",
+                            },
+                            // {
+                            //   name:"analysis-tool-qdzz",
+                            //   label: "渠道追踪",
+                            //   path: "/analysis-tool/qdzz",
+                            //   children:[
+                            {
+                                name: "analysis-tool-qdzz-qdlj",
+                                label: "渠道链接",
+                                path: "/analysis-tool/qdzz/qdlj",
+                            },
+                            {
+                                name: "analysis-tool-qdzz-qdgl",
+                                label: "渠道管理",
+                                path: "/analysis-tool/qdzz/qdgl",
+                            },
+                            // ]
+                            // },
+                            {
+                                name: "analysis-tool-cjk",
+                                label: "场景库",
+                                path: "/analysis-tool/cjk",
+                            },
+                        ]
+                    },
+                    {
+                        name: "data-center",
+                        label: "数据管理",
+                        icon: "iconshujuguanli1",
+                        path: "/data-center",
+                        children: [
+                            {
+                                name: "data-center-my",
+                                label: "我的数据",
+                                path: "/data-center/my",
+                            },
+                            {
+                                name: "data-center-market",
+                                label: "数据市场",
+                                path: "/data-center/market",
+                            },
+                            {
+                                name: "data-center-system",
+                                label: "系统集成",
+                                path: "/data-center/system",
+                            },
+                            {
+                                name: "data-center-metax",
+                                label: "元数据管理",
+                                path: "/data-center/metax",
+                            }
+                        ]
+                    },
+                ],
+                activeName: "dashboard",
+                openName: [this.$route.meta.moduleName]
+            };
         },
-        {
-          name:"user",
-          label: "用户画像",
-          icon: "iconyonghuhuaxiang1",
-          path: "/user",
-        },
-        {
-          name:"mark",
-          label: "品牌画像",
-          icon: "iconpinpaihuaxiang1",
-          path: "/mark",
-        },
-        { 
-          name:"media",
-          label: "媒介画像",
-          icon: "iconmeijiehuaxiang",
-          path: "/media",
-        },
-        {
-          name:"business-analysis",
-          label: "经营分析",
-          icon: "iconjingyingfenxi1",
-          path: "/business-analysis",
-          children:[
-            {
-              name:"business-analysis-ztgl",
-              label: "整体概览",
-              path: "/business-analysis/ztgl"
+        methods: {
+            checkItem(item) {
+                if (item.path != this.$route.meta.moduleName) {
+                    this.$router.push({name: item.path});
+                }
             },
-            {
-              name:"business-analysis-yhfx",
-              label: "用户分析",
-              path: "/business-analysis/yhfx"
+            // 选择menuItem
+            handleSelect(name) {
+                this.activeName = name;
             },
-            {
-              name:"business-analysis-qdfx",
-              label: "渠道分析",
-              path: "/business-analysis/qdfx"
-            },
-            {
-              name:"business-analysis-ywgl",
-              label: "品牌运营分析",
-              path: "/business-analysis/ywgl"
-            },
-          ]
-        },
-        {
-          name:"analysis-tool",
-          label: "分析工具",
-          icon: "iconfenxigongju1",
-          path: "/analysis-tool",
-          children:[
-            {
-              name:"analysis-tool-fxmx",
-              label: "分析模型",
-              path: "/analysis-tool/fxmx",
-            },
-            {
-              name:"analysis-tool-zbgl",
-              label: "指标管理",
-              path: "/analysis-tool/zbgl",
-            },
-            {
-              name:"analysis-tool-bqgl",
-              label: "标签管理",
-              path: "/analysis-tool/bqgl",
-            },
-            {
-              name:"analysis-tool-yhfq",
-              label: "用户分群",
-              path: "/analysis-tool/yhfq",
-            },
-            // {
-            //   name:"analysis-tool-qdzz",
-            //   label: "渠道追踪",
-            //   path: "/analysis-tool/qdzz",
-            //   children:[
-                {
-                  name:"analysis-tool-qdzz-qdlj",
-                  label: "渠道链接",
-                  path: "/analysis-tool/qdzz/qdlj",
-                },
-                {                  
-                  name:"analysis-tool-qdzz-qdgl",
-                  label: "渠道管理",
-                  path: "/analysis-tool/qdzz/qdgl",
-                },
-              // ]
-            // },
-            {
-              name:"analysis-tool-cjk",
-              label: "场景库",
-              path: "/analysis-tool/cjk",
-            },
-          ]
-        },
-        {
-          name:"data-center",
-          label: "数据管理",
-          icon: "iconshujuguanli1",
-          path: "/data-center",
-          children:[
-            {
-              name:"data-center-my",
-              label: "我的数据",
-              path: "/data-center/my",
-            },
-            {
-              name:"data-center-market",
-              label: "数据市场",
-              path: "/data-center/market",
-            },
-            {
-              name:"data-center-system",
-              label: "系统集成",
-              path: "/data-center/system",
-            },
-            {
-              name:"data-center-metax",
-              label: "元数据管理",
-              path: "/data-center/metax",
+            // 打开subMenu
+            openChange(ary) {
+                // console.log(ary)
+                if (!ary.length) {
+                    return;
+                }
+                let routeName = ary[0];
+                if (routeName != this.$route.name) {
+                    this.openName.splice(0, 1, ary[0]);
+                    let cur = this.menu.find(item => {
+                        return item.name == ary[0]
+                    }).children;
+                    this.activeName = cur[0].name
+                    this.$router.push({name: routeName});
+                }
             }
-          ]
         },
-      ],
-      activeName: "dashboard",
-      openName:[this.$route.meta.moduleName]
+        created() {
+            // 登录页默认选中dashboard
+            if (this.$route.name == 'login') {
+                this.activeName = 'dashboard'
+            } else {
+                this.activeName = this.$route.name
+            }
+        }
     };
-  },
-  methods: {
-    checkItem(item) {
-      if (item.path != this.$route.meta.moduleName) {
-        this.$router.push({ name: item.path });
-      }
-    },
-    // 选择menuItem
-    handleSelect(name) {
-      this.activeName = name;
-    },
-    // 打开subMenu
-    openChange(ary) {
-      // console.log(ary)
-      if (!ary.length) {
-        return;
-      }
-      let routeName = ary[0];
-      if (routeName != this.$route.name) {
-        this.openName.splice(0,1,ary[0]);
-        let cur = this.menu.find(item=>{
-          return item.name == ary[0]
-        }).children;
-        this.activeName = cur[0].name
-        this.$router.push({ name: routeName });
-      }
-    }
-  },
-  created(){
-    this.activeName = this.$route.name
-  }
-};
 </script>
 
 <style scoped lang="scss">
-.side {
-  min-height: 100vh;
-  display: flex;
-  .menu {
-    position: relative;
-    width: 240px;
-    height: 100%;
-    background: linear-gradient(270deg, #FFFFFF 0%, #FFFFFF 100%);
-    // border-right:4px solid #FAFCFF;
-    &:after{
-      position: absolute;
-      top: 0;
-      right: 0;
-      content: "";
-      width: 4px;
-      height: 100%;
-      background: #FAFCFF;
-      box-shadow:inset 1px 1px 1px 0px rgba(211,213,217,0.63);
-    }
-    .logo {
-      width: 144px;
-      height: 32px;
-      margin: 24px auto 32px;
-      background: url("../assets/img/side/logo-colour@2x.png") no-repeat
-        center / 144px 32px;
-    }
-    .ivu-menu-light{
-      background: none;
-    }
-    .ivu-menu > div{
-      width: 240px;
-      // height: 40px;
-      padding: 0 24px;
-      margin: 8px 0;
-      line-height: 40px;
-      >a{
+    .side {
+        min-height: 100vh;
         display: flex;
-        align-items: center;
-        width: 192px;
-        height: 40px;
-        border-radius: 30px;
-        padding-left: 24px;
-        i {
-          font-size: 24px;
-          margin-right: 12px;
-        }
-        .label {
-          height: 26px;
-          font-size: 14px;
-          font-family: PingFangSC-Regular, PingFang SC;
-          font-weight: 400;
-          line-height: 26px;
-        }
-        &.ivu-menu-item-active{
-          i{
-            margin-right: 12px;
-          }
-        }
-      }
-        .ivu-menu-vertical .ivu-menu-submenu-title{
-          display: flex;
-          align-items: center;
-          width: 192px;
-          height: 40px;
-          border-radius: 30px;
-          i{
-            font-size: 24px;
-            margin-right: 12px;
-          }
-          .label{
-            height: 26px;
-            font-size: 14px;
-            font-family: PingFangSC-Regular, PingFang SC;
-            font-weight: 400;
-            line-height: 26px;
-          }
+
+        .menu {
+            position: relative;
+            width: 240px;
+            height: 100%;
+            background: linear-gradient(270deg, #FFFFFF 0%, #FFFFFF 100%);
+
+            &:after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                content: "";
+                width: 4px;
+                height: 100%;
+                background: #FAFCFF;
+                box-shadow: inset 1px 1px 1px 0px rgba(211, 213, 217, 0.63);
+            }
+
+            .logo {
+                width: 144px;
+                height: 32px;
+                margin: 24px auto 32px;
+                background: url("../assets/img/side/logo-colour@2x.png") no-repeat center / 144px 32px;
+            }
         }
     }
-  }
-}
 </style>
 <style lang="scss">
-.ivu-menu-vertical .ivu-menu-item{
-  font-size: 14px;
-  color: #636E95;
-  padding: 0;
-  margin: 8px 0;
-}
-.ivu-menu-vertical .ivu-menu-submenu-title{
-  display: flex;
-  align-items: center;
-  width: 192px;
-  height: 40px;
-  margin: 8px 0;
-  border-radius: 30px;
-  font-size: 14px;
-  color: #636E95;
-  padding: 0;
-  padding-left: 24px;
-}
+    .side {
+        .ivu-menu-light {
+            background: none;
+        }
 
-.ivu-menu-submenu-title > .iconfont{
-            font-size: 24px;
-          margin-right: 12px;
-}
-.ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item{
-  padding-left: 60px!important;
-}
-// .ivu-menu-vertical .ivu-menu-submenu-title-icon {
-//   right: 8px;
-//   // color:#666666
-// }
+        .ivu-menu-vertical {
+            > div {
+                width: 240px;
+                padding: 0 24px;
+                margin: 8px 0;
+                line-height: 40px;
+                font-size: 14px;
+                color: #636E95;
 
-// .ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item {
-//   padding-left: 36px !important;
-//   > a {
-//     color: inherit;
-//   }
-// }
+                > a {
+                    display: flex;
+                    align-items: center;
+                    width: 192px;
+                    height: 40px;
+                    border-radius: 30px;
+                    padding-left: 24px;
 
-// .ivu-menu {
-//   .ivu-menu-submenu {
-//     .active {
-//       color: red;
-//       background: red;
-//     }
-//     .ivu-menu-submenu-title {
-//       width: 152px;
-//       height: 40px;
-//       color: #666666;
-//       &:hover {
-//         color: #253ba0;
-//       }
-//       span > i,
-//       > i {
-//         margin-right: 0;
-//       }
-//       .icon {
-//         width: 16px;
-//         height: 16px;
-//         margin-right: 8px;
-//         // color: #666666;
-//       }
-//       .title-name {
-//         display: inline-block;
-//         min-width: 84px;
-//         height: 22px;
-//         // margin-right: 8px;
-//         font-size: 14px;
-//         font-family: PingFangSC-Regular, PingFang SC;
-//         font-weight: 400;
-//         // color: #666666;
-//         line-height: 22px;
-//       }
-//     }
-//     &.ivu-menu-opened {
-//       .ivu-menu-submenu-title {
-//         color: #253ba0;
-//       }
-//     }
-//   }
+                    i {
+                        font-size: 24px;
+                        margin-right: 12px;
+                    }
+                }
+            }
 
-//   .ivu-menu-item {
-//     color: #666666;
-//     .icon {
-//       width: 16px;
-//       height: 16px;
-//       margin-right: 8px;
-//     }
-//     .title-name {
-//       display: inline-block;
-//       width: 84px;
-//       height: 22px;
-//       // margin-right: 8px;
-//       font-size: 14px;
-//       font-family: PingFangSC-Regular, PingFang SC;
-//       font-weight: 400;
-//       // color: #666666;
-//       line-height: 22px;
-//     }
-//     &:hover {
-//       color: #253ba0;
-//       .title-name {
-//         color: #253ba0;
-//       }
-//     }
-//   }
-// }
-.ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
-  // color: #636E95;
-  // background: none;
-  color: #FFFFFF;
-  background: url("../assets/img/side/rectangle@2x.png") no-repeat
-        center / 192px 40px;
-  border-radius: 30px;
-  font-size: 14px;
-  .sub-name {
-    color: #FFFFFF;
-    // color:#636E95;
-    font-size: 14px;          
-  }
-}
-.ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after {
-  background:none
-}
-.ivu-menu-vertical.ivu-menu-light:after {
-  width: 0;
-}
-.ivu-menu-vertical .ivu-menu-item:hover, .ivu-menu-vertical .ivu-menu-submenu-title:hover{
-  color: #2373FF;
-  background: #FAFAFA;
-      width: 192px;
-    height: 40px;
-    border-radius: 30px;
-}
+            .ivu-menu-submenu-title {
+                display: flex;
+                align-items: center;
+                width: 192px;
+                height: 40px;
+                border-radius: 30px;
+                font-size: 14px;
+                color: #636E95;
+                padding-left: 24px !important;
+
+                i {
+                    font-size: 24px;
+                    margin-right: 12px;
+
+                    &.ivu-menu-submenu-title-icon {
+                        font-size: 14px;
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .ivu-menu {
+                .ivu-menu-item {
+                    margin: 8px 0;
+                    padding-left: 60px !important;
+                }
+            }
+        }
+
+        .ivu-menu-vertical .ivu-menu-item, .ivu-menu-vertical .ivu-menu-submenu-title {
+            padding: 0 0 0 24px !important;
+        }
+
+        .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
+            color: #FFFFFF;
+            background: url("../assets/img/side/rectangle@2x.png") no-repeat center / 192px 40px;
+            border-radius: 30px;
+            font-size: 14px;
+
+            .sub-name {
+                color: #FFFFFF;
+                font-size: 14px;
+            }
+        }
+
+        .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after {
+            background: none
+        }
+
+        .ivu-menu-vertical.ivu-menu-light:after {
+            width: 0;
+        }
+
+        .ivu-menu-vertical .ivu-menu-item:hover, .ivu-menu-vertical .ivu-menu-submenu-title:hover {
+            color: #2373FF;
+            background: #FAFAFA;
+            width: 192px;
+            height: 40px;
+            border-radius: 30px;
+        }
+    }
 </style>
