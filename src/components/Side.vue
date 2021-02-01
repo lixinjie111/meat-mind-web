@@ -233,7 +233,7 @@ export default {
       width: 144px;
       height: 32px;
       margin: 24px auto 32px;
-      background: url("../static/img/new/side/logo-colour@2x.png") no-repeat
+      background: url("../assets/img/side/logo-colour@2x.png") no-repeat
         center / 144px 32px;
     }
     .ivu-menu-light{

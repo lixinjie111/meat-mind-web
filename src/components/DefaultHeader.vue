@@ -19,7 +19,7 @@
         <span v-if="flag==1">企业主</span>
         <span v-else-if="flag==2">数据管理员</span>
         <span v-else>分析师</span>
-        <img class="triangle" src="../static/img/new/header/triangle@2x.png" alt="">
+        <img class="triangle" src="../assets/img/header/triangle@2x.png" alt="">
       </div>
     </div>
   </div>
