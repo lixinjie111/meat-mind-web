@@ -345,26 +345,27 @@
                 </div>
                 <div class="card-three-right-content flex-start">
                     <div class="card-three-right-content-left">
-                        <div :class="['card-three-right-content-item',threeActive == 1 ?'active':'']"
+                        <div :class="['card-three-right-content-left-item',threeActive == 1 ?'active':'']"
                              @click="threeActive=1">
                             <img src="../../assets/img/dashboard/market/icon-redbull@2x.png"/>
                             <p>红牛<span>·250ml</span></p>
                         </div>
-                        <div :class="['card-three-right-content-item',threeActive == 2 ?'active':'']"
+                        <div :class="['card-three-right-content-left-item',threeActive == 2 ?'active':'']"
                              @click="threeActive=2">
                             <img src="../../assets/img/dashboard/market/icon-jiaduobao@2x.png"/>
                             <p>加多宝<span>·250ml</span></p>
                         </div>
-                        <div :class="['card-three-right-content-item',threeActive == 3 ?'active':'']"
+                        <div :class="['card-three-right-content-left-item',threeActive == 3 ?'active':'']"
                              @click="threeActive=3">
                             <img src="../../assets/img/dashboard/market/icon-wanglaoji@2x.png"/>
                             <p>王老吉<span>·250ml</span></p>
                         </div>
-                        <div :class="['card-three-right-content-item',threeActive == 4 ?'active':'']"
+                        <div :class="['card-three-right-content-left-item',threeActive == 4 ?'active':'']"
                              @click="threeActive=4">
                             <img src="../../assets/img/dashboard/market/icon-maidong@2x.png"/>
                             <p>脉动<span>·250ml</span></p>
                         </div>
+                        <div class="card-three-right-content-left-btn"><Icon type="md-add" size="16"/>添加竞品</div>
                     </div>
                     <div class="card-three-right-content-right">
                         <div class="card-three-right-content-right-item">
@@ -475,7 +476,7 @@
                             <div class="time">2021/1/2</div>
                         </div>
                         <div class="card-four-right-btn">
-                            <div>查看全部</div>
+                            <div>查看全部<Icon type="ios-arrow-forward" color="#97A0C3" size="16" style="margin-left: 4px;"/></div>
                         </div>
                     </div>
                 </div>
@@ -502,7 +503,7 @@
                             <div class="time1">2021/3/14 - 2021/3/20</div>
                         </div>
                         <div class="card-four-right-btn">
-                            <div>查看全部</div>
+                            <div>查看全部<Icon type="ios-arrow-forward" color="#97A0C3" size="16" style="margin-left: 4px;"/></div>
                         </div>
                     </div>
                 </div>
@@ -1463,11 +1464,13 @@
                 height: 384px;
 
                 .card-three-right-content {
+                    position: relative;
 
                     .card-three-right-content-left {
+
                         width: 30%;
 
-                        .card-three-right-content-item {
+                        .card-three-right-content-left-item {
                             position: relative;
                             padding: 12px 16px;
                             background: #FFFFFF;
@@ -1516,6 +1519,23 @@
                                     background: #2373FF;
                                 }
                             }
+                        }
+
+                        .card-three-right-content-left-btn {
+                            position: absolute;
+                            left: 16px;
+                            bottom: 16px;
+                            width: 128px;
+                            height: 32px;
+                            line-height: 32px;
+                            border-radius: 8px;
+                            border: 1px solid #2373FF;
+                            font-size: 14px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 500;
+                            color: #2373FF;
+                            text-align: center;
+                            cursor: pointer;
                         }
                     }
 
