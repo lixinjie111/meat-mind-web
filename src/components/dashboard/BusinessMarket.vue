@@ -689,6 +689,24 @@
                 .target-left-content {
                     .target-left-select {
                         margin: 20px 0 0;
+
+                        ::v-deep .ivu-select-selection {
+                            height: 48px;
+                            border-radius: 2px;
+
+                            .ivu-select-selected-value {
+                                height: 48px;
+                                line-height: 48px;
+                                font-size: 18px;
+                                color: #242F57;
+                            }
+                        }
+
+                        ::v-deep .ivu-select-dropdown-list {
+                            .ivu-select-item {
+                                font-size: 18px!important;
+                            }
+                        }
                     }
 
                     .target-left-sub-title {
@@ -1542,7 +1560,6 @@
 
         .card-four {
             padding-bottom: 24px;
-            margin-top: 24px;
 
             .card-four-select {
                 display: flex;
