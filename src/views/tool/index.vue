@@ -35,7 +35,6 @@ export default {
       flex-direction: column;
       width: 100%;
       height: calc(100vh - 64px);
-      padding: 24px; 
    }
  }
 }

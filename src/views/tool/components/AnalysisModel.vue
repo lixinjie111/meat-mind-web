@@ -111,7 +111,7 @@ export default {
 .analysis-model{
     .title{
         height: 64px;
-        padding-left: 24px;
+        padding-left: 48px;
         font-size: 20px;
         font-family: PingFangSC-Medium, PingFang SC;
         font-weight: 500;
@@ -121,6 +121,7 @@ export default {
     .choose-model{
         height: 740px;
         padding: 24px 0 24px 24px;
+        margin:0 24px 24px;
         background: #FFFFFF;
         box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
         border-radius: 8px;
