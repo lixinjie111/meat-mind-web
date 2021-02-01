@@ -112,7 +112,7 @@ export default {
             {
               name:"analysis-tool-bqgl",
               label: "标签管理",
-              path: "/analysis-tool/",
+              path: "/analysis-tool/bqgl",
             },
             {
               name:"analysis-tool-yhfq",
@@ -188,7 +188,7 @@ export default {
     },
     // 打开subMenu
     openChange(ary) {
-      console.log(ary)
+      // console.log(ary)
       if (!ary.length) {
         return;
       }
