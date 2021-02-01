@@ -2,12 +2,12 @@
     <div class="compare-box">
         <p>
             <span>环比</span>
-            <i class="iconfont iconjiantou_youshang icon-green" v-if="data[0]>0"></i>
-            <i class="iconfont iconjiantou_youxia icon-red" v-else></i>
+            <i class="iconfont iconshangsheng icon-green" v-if="data[0]>0"></i>
+            <i class="iconfont iconxiajiang icon-red" v-else></i>
             <span :class="data[0]>0?'green':'red'">{{Math.abs(data[0])}}%</span>
             <span class="ml-8">同比</span>
-            <i class="iconfont iconjiantou_youshang icon-green" v-if="data[1]>0"></i>
-            <i class="iconfont iconjiantou_youxia icon-red" v-else></i>
+            <i class="iconfont iconshangsheng icon-green" v-if="data[1]>0"></i>
+            <i class="iconfont iconxiajiang icon-red" v-else></i>
             <span :class="data[1]>0?'green':'red'">{{Math.abs(data[1])}}%</span>
         </p>
     </div>
@@ -49,13 +49,15 @@
             }
 
             .icon-red {
-                margin-left: 2px;
+                margin: 0 2px;
                 color: #FB343E;
+                font-size: 12px;
             }
 
             .icon-green {
-                margin-left: 2px;
+                margin: 0 2px;
                 color: #34C724;
+                font-size: 12px;
             }
         }
     }

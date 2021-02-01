@@ -1,6 +1,5 @@
 <template>
   <div class="fxmx">
-      <!-- <img src="../../../static/img/tool/fxmx.png" alt=""> -->
       <div class="title">分析模型</div>
       <div class="container">
         <div class="m-title">选择模型</div>
