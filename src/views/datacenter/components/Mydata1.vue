@@ -14,7 +14,19 @@
             </div>
         </div>
         <div v-else>
-           我的数据
+            <div class="change-box">
+                <div @click="changeIndex = 1"></div>
+                <div @click="changeIndex = 2"></div>
+                <div @click="changeIndex = 3"></div>
+                <div @click="changeIndex = 4"></div>
+            </div>
+            <template v-if="changeIndex == 1" >
+                <div class="upload-btn" @click="uploadModal1 = true"></div>
+                <img src="../../../static/img/datacenter/wdsj/wscdsj@2x.png" alt="">
+            </template>
+            <img v-else-if="changeIndex == 2" src="../../../static/img/datacenter/wdsj/sdk@2x.png" alt="">
+            <img v-else-if="changeIndex == 3" src="../../../static/img/datacenter/wdsj/api@2x.png" alt="">
+            <img v-else src="../../../static/img/datacenter/wdsj/sjkzl@2x.png" alt="">
         </div>
         <Modal class-name="upload-modal1" v-model="uploadModal1" footer-hide :closable="false">
             <div class="upload1">
@@ -58,6 +70,7 @@
                 uploadModal3: false,
                 isUpload4: false,
                 resultShow: false,
+                changeIndex: 1,
                 currentPage: 1,
                 totalPage: 25,
                 pageSize: 15,
@@ -587,6 +600,31 @@
         img {
             width: 100%;
             // height: 100%;
+        }
+
+        .change-box {
+            position: absolute;
+            top: 70px;
+            left: 20px;
+            width: 1155px;
+            height: 100px;
+
+            > div {
+                display: inline-block;
+                width: 25%;
+                height: 100px;
+                cursor: pointer;
+            }
+        }
+
+        .upload-btn {
+            position: absolute;
+            right: 48px;
+            top: 189px;
+            width: 88px;
+            height: 33px;
+            background: transparent;
+            cursor: pointer;
         }
 
         .result-box {
