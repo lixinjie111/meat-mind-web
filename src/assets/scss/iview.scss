@@ -1,7 +1,6 @@
 // 复选框
 .ivu-checkbox {
   .ivu-checkbox-inner {
-    border-radius: 50%;
     background-color: #FBFCFF;
     box-shadow: 1px 1px 1px 0px #A6ABBD inset;
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -48,16 +47,30 @@
 
 // 输入框
 .ivu-input {
-  padding: 6px 18px;
+  padding: 9px 12px;
   background: #F4F7FC;
-  box-shadow: 2px 2px 8px 0px rgba(210, 213, 225, 0.5) inset;
-  border-radius: 20px;
-  border: 1px solid #D2D5E1;
+  box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
+  border-radius: 8px;
+  border: 1px solid #EAEDF7;
   font-size: 14px;
   font-family: PingFangSC-Regular, PingFang SC;
   font-weight: 400;
   color: #242F57;
   resize: none;
+}
+
+// 下拉框
+.ivu-select-selection {
+  background: transparent;
+  box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
+  border-radius: 8px;
+  border: 1px solid #C6CBDE;
+}
+
+.ivu-select-dropdown {
+  background: #FFFFFF;
+  box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16);
+  border-radius: 8px;
 }
 
 // 分页
@@ -66,11 +79,11 @@
     min-width: 28px;
     height: 28px;
     line-height: 26px;
-    font-size: 12px;
-    font-family: Helvetica;
-    background: #F4F7FC;
-    border-radius: 7px;
-    border: 1px solid #97A0C3;
+    font-family: PingFangSC-Regular, PingFang SC;
+    background: transparent;
+    //border-radius: 7px;
+    border: 1px solid transparent;
+    color: #7C88B1;
 
     &:after {
       color: #636E95;
@@ -86,12 +99,11 @@
     height: 28px;
     line-height: 28px;
     margin-right: 8px;
-    background: #F4F7FC;
-    box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
+    background: transparent;
     font-size: 12px;
-    font-family: Helvetica;
-    border-radius: 7px;
-    border: 1px solid #97A0C3;
+    font-family: PingFangSC-Regular, PingFang SC;
+    border-radius: 6px;
+    border: 1px solid transparent;
 
     a {
       color: #636E95;
@@ -99,12 +111,12 @@
   }
 
   .ivu-page-item-active {
-    background: #2373FF;
-    box-shadow: 2px 2px 4px 0px rgba(166, 171, 190, 0.4) inset;
-    border-radius: 7px;
+    background: #F4F7FC;
+    box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
+    border: 1px solid #2373FF;
 
     a {
-      color: #FFFFFF;
+      color: #2373FF;
     }
   }
 }

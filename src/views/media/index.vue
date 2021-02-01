@@ -178,16 +178,6 @@ export default {
 };
 </script>
 
-<style lang="scss">
-    .media-protrait {
-        .ivu-select-selection, .ivu-input {
-            background: transparent;
-            box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
-            border-radius: 8px;
-            border: 1px solid #C6CBDE;
-        }
-    }
-</style>
 <style scoped lang="scss">
 .media-protrait {
   .m-p-rank {

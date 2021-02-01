@@ -642,13 +642,6 @@
 
 <style lang="scss">
     .market-box {
-        .ivu-select-selection, .ivu-input {
-            background: transparent;
-            box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
-            border-radius: 8px;
-            border: 1px solid #C6CBDE;
-        }
-
         .card-three-right {
             &.card-container {
                 .title {

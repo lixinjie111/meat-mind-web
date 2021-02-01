@@ -49,13 +49,15 @@
             }
 
             .icon-red {
-                margin-left: 2px;
+                margin: 0 2px;
                 color: #FB343E;
+                font-size: 12px;
             }
 
             .icon-green {
-                margin-left: 2px;
+                margin: 0 2px;
                 color: #34C724;
+                font-size: 12px;
             }
         }
     }
