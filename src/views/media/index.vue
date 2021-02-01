@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="m-p-rank-echarts">
-          <barL id="box27" :colorList="$lxjData.colorList" :myData="$lxjData.box27Data"></barL>
+            <barL id="box27" :colorList="$lxjData.colorList" :myData="myEData"></barL>
         </div>
       </div>
       <div class="m-p-filter">
@@ -120,9 +120,76 @@
 
       <div class="m-p-target">
           <!-- 优化指标 -->
+          <div class="m-p-target-title">优化指标</div>
+          <Form :model="formTop" label-position="top"  :rules="ruleValidate">
+            <Row  :gutter="42">
+                <Col span="8">
+                  <FormItem label="项目预算（不高于)" prop="budget">
+                      <Input v-model="formTop.budget"  placeholder="请输入项目预算(元)"></Input>
+                  </FormItem>
+                </Col>
+                <Col span="8">
+                    <FormItem label="优化表现指标" prop="quota">
+                        <Select v-model="formTop.quota" placeholder="请选择指标">
+                            <Option value="1">组合预期CPE最低</Option>
+                            <Option value="2">组合互动数最高</Option>
+                            <Option value="3">组合粉丝数最高</Option>
+                        </Select>
+                    </FormItem>
+                </Col>
+                <Col span="8"></Col>
+            </Row>
+           <div class="m-p-target-title">其他限定条件</div>
+           <Row  :gutter="42">
+                <Col span="8">
+                  <FormItem label="单一 KOL 平均互动数不低于">
+                      <Input v-model="formTop.kolNum"  placeholder="请输入平均互动数"></Input>
+                  </FormItem>
+                </Col>
+                <Col span="8">
+                  <FormItem label="单一 KOL 粉丝数不低于">
+                      <Input v-model="formTop.kolFs"  placeholder="请输入粉丝数"></Input>
+                  </FormItem>
+                </Col>
+                <Col span="8">
+                    <FormItem label="包含 KOL">
+                       <Input v-model="formTop.contain"  placeholder="请输入包含 KOL"></Input>
+                    </FormItem>
+                </Col>
+                <Col span="8">
+                    <FormItem label="排除 KOL">
+                        <Input v-model="formTop.exclude"  placeholder="请输入排除 KOL"></Input>
+                    </FormItem>
+                </Col>
+                <Col span="8">
+                   <FormItem label="KOL 数量">
+                     <Row  :gutter="16">
+                       <Col span="12">
+                        <Select v-model="formTop.compare" placeholder="请选择类型">
+                            <Option value="1">等于</Option>
+                            <Option value="2">大于等于</Option>
+                            <Option value="3">小于等于</Option>
+                            <Option value="4">小于</Option>
+                        </Select>
+                        </Col>
+                        <Col span="12">
+                          <Input v-model="formTop.num"  placeholder="请输入数量"></Input>
+                        </Col>
+                      </Row>
+                  </FormItem>
+                </Col>
+            </Row>
+          </Form>
+          <div class="btnList">
+            <div class="submit">生产组合</div>
+            <div class="reset">重置条件</div>
+          </div>
+          <div class="relative-data">
+            暂无相关数据
+          </div>
       </div>
       <div class="m-p-kol">
-          <!-- KOL资源 -->
+          <img src="../../assets/img/media/kol@2x.png" alt="">
       </div>
     </div>
   </DefaultPage>
@@ -142,6 +209,32 @@ export default {
   components: { DefaultPage, Triple, Full, Card, Half, PieCaseEcharts, barL, funnel},
   data(){
       return{
+          formTop: {
+              budget: '',
+              quota: '',
+              kolNum: '',
+              kolFs: '',
+              contain: '',
+              compare: '',
+              num: '',
+          },
+          ruleValidate: {
+              budget: [
+                  { required: true, trigger: 'blur' }
+              ],
+              quota: [
+                  { required: true, trigger: 'change' }
+              ],
+              // kolNum: [
+              //     { required: true, trigger: 'blur' }
+              // ],
+              // kolFs: [
+              //     { required: true, trigger: 'blur' }
+              // ],
+              // contain: [
+              //     { required: true, trigger: 'change' }
+              // ],
+          },
           act:0,
           target:["媒介声量排名","媒介使用时长排名","媒介口碑排名","媒介价值贡献排名"],
           cur:0,
@@ -167,12 +260,22 @@ export default {
           list2:["不限","才艺技能","财经投资","测评","动画动漫","鬼畜","国潮国创","技术流","家居家装","教育","剧情搞笑",
           "科技数码","旅行","美食","美妆","萌宠","明星","母婴","汽车","情感","三农","生活日常",
           "时尚","舞蹈","艺术文化","个护","园艺","运动健身","奢侈品","新闻资讯","品牌组织","颜值达人","知识科普","番剧","游戏","品牌组织"],
-          list3:["按照最低刊例价组合","按照最高刊例价组合"]
+          list3:["按照最低刊例价组合","按照最高刊例价组合"],
+          myEData:[],
       }
+  },
+  created(){
+    this.myEData=this.$lxjData.box27Data;
   },
   methods:{
     targetClick(index){
-      this.act = index
+      this.act = index;
+      if(index==0){
+        this.myEData=this.$lxjData.box27Data;
+      }else{
+        this.myEData=this.$lxjData[`box27${index-1}Data`];
+      }
+      console.log(this.myEData)
     }
   }
 };
@@ -470,20 +573,75 @@ export default {
 
   .m-p-target{
     width: 100%;
-    height: 510px;
+    padding:24px;
     margin-bottom: 24px;
-    // background: #FFFFFF;
-    // box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-    // border-radius: 8px;
-    background: url("../../assets/img/media/target@2x.png") no-repeat center center / 100% 100%;
+    background: #FFFFFF;
+    box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+    border-radius: 8px;
+    .m-p-target-title{
+      font-size: 16px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #242F57;
+      margin-bottom: 16px;
+    }
+    .btnList{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+      .submit{
+        width:85px;
+        height: 32px;
+        font-size: 14px;
+        background: #2373FF;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .reset{
+        border: 1px solid #C6CBDE;
+        margin-left: 16px;
+        width:85px;
+        height: 32px;
+        font-size: 14px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #636E95;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        box-shadow: 2px 2px 7px 0px rgb(210 213 225 / 80%) inset;
+        cursor: pointer; 
+      }
+    }
+    .relative-data{
+      border-top:1px solid #EAEDF7;
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #636E95;
+      padding:40px 0;
+      padding-bottom: 16px;
+      text-align: center;
+    }
   }
   .m-p-kol{
     width: 100%;
-    height: 952px;
+    img{
+      width: 100%;
+      display: block;
+    }
+    // height: 952px;
     // background: #FFFFFF;
     // box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
     // border-radius: 8px;
-    background: url("../../assets/img/media/kol@2x.png") no-repeat center center / 100% 100%;
+    // background: url("../../assets/img/media/kol@2x.png") no-repeat center center / 100% 100%;
   }
 }
 </style>
