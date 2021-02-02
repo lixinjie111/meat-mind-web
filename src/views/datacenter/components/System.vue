@@ -16,8 +16,8 @@
                         <div class="boximg" @mouseenter="showBg(index)" @mouseleave="closeBg()">
                             <img :src="item.img" alt="">
                             <div class="detail" v-show="currentIndex==index">
-                                {{item.desc}}
-                                <span>详情</span>
+                            <div class="detailct">{{item.desc}}</div>
+                            <span>详情</span>
                             </div>
                         </div>
                         <div class="img-title">{{item.title}}</div>
@@ -110,6 +110,8 @@
         display: block;
         }
     .xtjc {
+        padding: 24px;
+        padding-top:0 ;
         .title{
             font-size: 20px;
             font-family: PingFangSC-Medium, PingFang SC;
@@ -178,6 +180,13 @@
                         color:#FFFFFF;
                         background: #6D6E6D;
                         border-radius: 4px;
+                        .detailct{
+                            text-align: justify;
+                             display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 5;
+                            overflow: hidden;
+                        }
                         span{
                             float: right;
                             margin-top: 25px;
