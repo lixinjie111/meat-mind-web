@@ -4,7 +4,7 @@
     <div class="time_range">{{cardData.timeRange}}</div>
     <div class="time">{{cardData.time}}</div>
     <div class="num_container">
-      <div class="num_text">{{numTxt}}</div>
+      <div class="num_text">{{formNum}}</div>
       <div class="unit_text">{{cardData.unitText}}</div>
     </div>
     <div class="per_contianer">
@@ -46,7 +46,19 @@ export default {
   destroyed() {
     clearInterval(this.timer);
   },
+  computed:{
+    formNum(){
+      return this.formatNumber(this.numTxt);
+    }
+  },
   methods: {
+    formatNumber(n){
+      var b=parseInt(n).toString();
+      var len=b.length;
+      if(len<=3){return b;}
+      var r=len%3;
+      return r>0?b.slice(0,r)+","+b.slice(r,len).match(/\d{3}/g).join(","):b.slice(r,len).match(/\d{3}/g).join(",");
+    },
     changeNum() {
       var _this = this;
       this.timer = setInterval(() => {
