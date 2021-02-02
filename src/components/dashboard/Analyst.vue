@@ -39,7 +39,40 @@
       </div>
     </div>
     <div class="kanban_container">
-      <img :src="kanbanIcon" alt="" srcset="" class="kanbanIcon" />
+        <div class="title_1container">
+            <div class="title_1lef">
+                <span>当前：</span>
+                <span style="color: #2373FF;">系统默认看板</span>
+            </div>
+            <div class="title_1rig">
+                <div class="btn_container" style="margin-right:24px;">
+                    <img :src="tvIcon" class="btn_download" />
+                    <span class="btntxt">看板管理</span>
+                </div>
+                <div class="btn_container btn2">
+                    <img :src="whitedownload" class="btn_download" />
+                    <span class="btntxt">下载报表</span>
+                </div>
+            </div>
+        </div>
+        <div class="kanban_item_container">
+            <div class="kanbanitem1">
+                <div class="kan_title">分析看板总数</div>
+                <div class="kanNum" style="color:#A49DFA;">15</div>
+            </div>
+            <div class="kanbanitem2">
+                <div class="kan_title">自定义看板</div>
+                <div class="kanNum" style="color:#8AE6C7;">3</div>
+            </div>
+            <div class="kanbanitem3">
+                <div class="kan_title">模板素材库</div>
+                <div class="kanNum" style="color:#FFD98C;">234</div>
+            </div>
+            <div class="kanbanitem4">
+                <div class="kan_title">行业报告市场</div>
+                <div class="kanNum" style="color:#BF6E9B;">125</div>
+            </div>
+        </div>
     </div>
 
     <div class="pinpai_container">
@@ -250,6 +283,8 @@ export default {
       ],
       infoIcon: require("../../assets/img/dashboard/gdI.png"),
       downLoad: require("../../assets/img/dashboard/downLoad.png"),
+      whitedownload:require("../../assets/img/dashboard/whitedownload.png"),
+      tvIcon:require("../../assets/img/dashboard/tv.png"),
       kanbanIcon: require("../../assets/img/dashboard/kbIcon.png"),
       gdImg: require("../../assets/img/dashboard/gdI.png"),
       trImg: require("../../assets/img/dashboard/toR.png"),
@@ -892,8 +927,87 @@ export default {
   .kanban_container {
     margin-top: 24px;
     width: 100%;
-    .kanbanIcon {
-      width: 100%;
+    padding: 22px 24px;
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    box-shadow: 0px 0px 48px 0px rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    border: 1px solid;
+    border-image: linear-gradient(141deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)) 1 1;
+    background: linear-gradient(180deg, rgba(248, 249, 250, 0.62) 0%, rgba(232, 241, 255, 0.72) 100%);
+    .title_1container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 21px;
+        .title_1lef{
+            font-size: 16px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242F57;
+        }
+        .title_1rig{
+            display: flex;
+            align-items: center;
+            .btn_container {
+            padding: 14px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(139deg, #f0f3f6 0%, #ffffff 100%);
+            box-shadow: 4px 4px 16px 0px rgba(55, 84, 170, 0.16),-4px -4px 16px 0px #ffffff, 1px 1px 2px 0px #ffffff;
+            border-radius: 32px;
+            font-size: 14px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242f57;
+            .btn_download {
+                display: block;
+                width: 18px;
+                height: 18px;
+                margin-right: 11px;
+            }
+            }
+            .btn2{
+                font-size: 16px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #FFFFFF;             
+                background: linear-gradient(135deg, #FF8D0A 0%, #FFA733 100%);
+                box-shadow: 4px 4px 16px 0px rgba(148, 76, 46, 0.2), -4px -4px 16px 0px #FFFFFF, 1px 1px 2px 0px rgba(255, 247, 230, 0.6); 
+            }
+        }
+    }
+    .kanban_item_container{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .kanbanitem1,.kanbanitem2,.kanbanitem3,.kanbanitem4{
+            width: 24%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 24px 0;
+            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            border: 1px solid #FFFFFF;
+            .kan_title{
+                margin-bottom: 12px;    
+                font-size: 20px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #242F57;
+            }
+            .kanNum{
+                font-size: 40px;
+                font-family: HelveticaNeue-CondensedBold, HelveticaNeue;
+                font-weight: normal;
+                line-height: 48px;
+            }
+        }
     }
   }
 
