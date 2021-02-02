@@ -290,9 +290,35 @@ export default {
 </script>
 
 <style scoped lang="scss">
+    .mt8 {
+        margin-top: 8px;
+    }
 
+    .mr16 {
+        margin-right: 16px;
+    }
+
+    .mr12 {
+        margin-right: 12px;
+    }
+
+    .w200 {
+        width: 200px;
+    }
+
+    .w100 {
+        width: 100px;
+    }
+
+    .w80 {
+        width: 80px;
+    }
+
+    .w60 {
+        width: 60px;
+    }
   .filter-container {
-    width: 1152px;
+    // width: 1152px;
     padding: 24px;
     margin-bottom: 20px;
     background: #ffffff;
