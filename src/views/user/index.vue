@@ -915,13 +915,31 @@ export default {
       dyIcon:require("../../assets/img/yhhx/ks.png"),
       dyI:require("../../assets/img/yhhx/dyI.png"),
       tu20:require("../../assets/img/yhhx/tu20.png"),
-      tu75:require("../../assets/img/yhhx/tu75.png")
+      tu75:require("../../assets/img/yhhx/tu75.png"),
+      descTitle:'北京上班族出行场景'
     };
   },
   mounted() {
     this.initPopEcharts();
   },
   methods: {
+    clickTab(arg){
+      if(arg == 1){
+        this.descTitle = '北京上班族出行场景';
+      }
+      else if(arg == 2){
+        this.descTitle = '企业高管出行场景';
+      }
+      else if(arg == 3){
+        this.descTitle = '北漂一族出行场景';
+      }
+      else if(arg == 4){
+        this.descTitle = '研学青年出行场景';
+      }
+      else if(arg == 5){
+        this.descTitle = '自由职业出行场景';
+      }
+    },
     initPopEcharts() {
       var echartsData1 = [];
       var echartsData2 = [];
