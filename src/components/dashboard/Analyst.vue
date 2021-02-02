@@ -60,7 +60,9 @@
         <div class="pin_echarts_container">
           <div class="pin_title">品牌测评得分</div>
           <div class="pin_echarts_cont_container">
-            <div class="pin_content"></div>
+            <div class="pin_content">
+                <iframe src="../../../public/static/html/dashboard/yibiao.html" frameborder="0" scrolling="no" style="width:100%;height:100%;"></iframe>
+            </div>
             <div class="num_text">78</div>
             <div class="fen">分</div>
           </div>
@@ -130,7 +132,27 @@
           <div class="til_label1">核心指标</div>
       </div>
       <div class="progress_content_container">
-          <div class="pro_lef"></div>
+          <div class="pro_lef">
+              <div class="fen_txt">86.2<span style="font-size: 14px;font-family: PingFangSC-Regular, PingFang SC;font-weight: 400;color: #7C88B1;">分</span></div>
+              <div class="pai_container">
+                  <span class="paim">排名</span><span class="goper">前 89%</span>
+              </div>
+              <div class="progress_container">
+                  <Progress :percent="85" status="active"></Progress>
+              </div>
+              <div class="pinjun_container">
+                <span class="label">平均分</span>
+                <span class="fen_text" style="color: #2373FF;">77.5</span>
+              </div>
+              <div class="zuigao_container">
+                <span class="label">最高分</span>
+                <span class="fen_text" style="color: #34C724;">95.5</span>
+              </div>
+              <div class="zuidi_container">
+                <span class="label">最低分</span>
+                <span class="fen_text" style="color: #FB343E;">54.3</span>
+              </div>
+          </div>
           <div class="cont_rig">
             <vCard1
             v-for="item in hxzbCardList"
@@ -138,6 +160,32 @@
             :cardData="item"
             ></vCard1>
           </div>
+      </div>
+    </div>
+
+    <div class="pinpai_container">
+      <div class="title_container">
+        <div class="left_area">
+          <span>产品数据评估</span>
+          <img :src="gdImg" class="gdImg" />
+          <div class="time_range_container">
+            <Select v-model="timeRange" style="width: 100%">
+              <Option
+                v-for="item in timeList"
+                :value="item.value"
+                :key="item"
+                >{{ item.label }}</Option
+              >
+            </Select>
+          </div>
+        </div>
+      </div>
+      <div class="content_container" style=" display: flex;align-items: center;justify-content: space-between;flex-wrap: wrap;">
+        <vCard1
+          v-for="item in proDataList"
+          :key="item.id"
+          :cardData="item"
+        ></vCard1>
       </div>
     </div>
 
@@ -549,7 +597,153 @@ export default {
           label: "过去十五天",
         }
       ],
-      timeRange: "go3",
+      proDataList:[
+        {
+          id: 1,
+          width: "24%",
+          title: "活跃次数",
+          timeRange: "2020.10.16～2020.10.16 | 本周",
+          time: "今日",
+          numText: 1847,
+          unitText: "人",
+          leftText: "环比",
+          leftIcon: require("../../assets/img/dashboard/upIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#34C724",
+          rightText: "同比",
+          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#34C724",
+          timer: 1000,
+        },
+        {
+          id: 2,
+          width: "24%",
+          title: "活跃员工数",
+          timeRange: "2020.10.16～2020.10.16 | 本周",
+          time: "今日",
+          numText: 1847,
+          unitText: "人",
+          leftText: "环比",
+          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#F54A45",
+          rightText: "同比",
+          rightIcon: require("../../assets/img/dashboard/downIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#F54A45",
+          timer: 500,
+        },
+        {
+          id: 3,
+          width: "24%",
+          title: "活跃企业数",
+          timeRange: "2020.10.16～2020.10.16 | 本周",
+          time: "今日",
+          numText: 1847,
+          unitText: "人",
+          leftText: "环比",
+          leftIcon: require("../../assets/img/dashboard/upIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#34C724",
+          rightText: "同比",
+          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#34C724",
+          timer: 1000,
+        },
+        {
+          id: 4,
+          width: "24%",
+          title: "核心功能使用的总次数",
+          timeRange: "2020.10.16～2020.10.16 | 本周",
+          time: "今日",
+          numText: 1847,
+          unitText: "人",
+          leftText: "环比",
+          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#F54A45",
+          rightText: "同比",
+          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#34C724",
+          timer: 1000,
+        },
+        {
+          id: 5,
+          width: "24%",
+          title: "核心功能使用员工数",
+          timeRange: "2020.10.16～2020.10.16 | 本周",
+          time: "今日",
+          numText: 1847,
+          unitText: "人",
+          leftText: "环比",
+          leftIcon:require("../../assets/img/dashboard/upIcon.png"), 
+          leftPer: "9.07%",
+          leftPerColor:"#34C724", 
+          rightText: "同比",
+          rightIcon: require("../../assets/img/dashboard/downIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#F54A45",
+          timer: 1000,
+        },
+        {
+          id: 6,
+          width: "24%",
+          title: "核心功能的企业数",
+          timeRange: "2020.10.16～2020.10.16 | 本周",
+          time: "今日",
+          numText: 972,
+          unitText: "个",
+          leftText: "环比",
+          leftIcon: require("../../assets/img/dashboard/upIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#34C724",
+          rightText: "同比",
+          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#34C724",
+          timer: 1000,
+        },
+        {
+          id: 7,
+          width: "24%",
+          title: "活跃用户中使用核心功能",
+          timeRange: "2020.10.16～2020.10.16 | 本周",
+          time: "今日",
+          numText: 92.47,
+          unitText: "%",
+          leftText: "环比",
+          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#F54A45",
+          rightText: "同比",
+          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#34C724",
+          timer: 100000,
+        },
+        {
+          id: 8,
+          width: "24%",
+          title: "核心功能渗透率",
+          timeRange: "2020.10.16～2020.10.16 | 本周",
+          time: "今日",
+          numText: 26.45,
+          unitText: "%",
+          leftText: "环比",
+          leftIcon:require("../../assets/img/dashboard/upIcon.png"), 
+          leftPer: "9.07%",
+          leftPerColor:"#34C724", 
+          rightText: "同比",
+          rightIcon: require("../../assets/img/dashboard/downIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#F54A45",
+          timer: 200000,
+        },
+      ],
+      timeRange: "go3"
     };
   },
 };
@@ -789,7 +983,58 @@ export default {
             width: 345px;
             height: 100%;
             margin-right: 30px;
-            background-color: chartreuse;
+            .fen_txt{
+                width: 100%;
+                font-size: 30px;
+                font-family: HelveticaNeue-Medium, HelveticaNeue;
+                font-weight: 500;
+                color: #2373FF;
+                margin-bottom: 10px;
+            }
+            .pai_container{
+                width: 100%;
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                margin-bottom: 24px;
+                .paim{
+                    color: #242F57;
+                    margin-right: 3px;
+                }
+                .goper{ 
+                    color: #34C724;
+                }
+            }
+            .progress_container{
+                width: 100%;
+                height: 8px;
+                padding-bottom:32px;
+                box-sizing: border-box;
+                border-bottom: 1px solid #EAEDF7;
+                margin-bottom: 33px;
+                ::v-deep .ivu-progress {
+                    width: 101%;
+                }
+                ::v-deep .ivu-progress .ivu-progress-text {
+                    display: none;
+                }
+                ::v-deep .ivu-progress .ivu-progress-outer {
+                    padding-right: 10px;
+                }
+            }
+            .pinjun_container,.zuigao_container,.zuidi_container{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                .label,.fen_text{
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #2373FF;
+                }
+            }
         }
         .cont_rig{
             flex: 1;

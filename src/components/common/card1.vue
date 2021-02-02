@@ -63,6 +63,7 @@ export default {
   border: 1px solid #eaedf7;
   padding: 12px 11px;
   box-sizing: border-box;
+  margin-bottom: 15px;
   &:hover{
     background: #FFFFFF;
     box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16);
