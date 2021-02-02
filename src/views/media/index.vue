@@ -220,10 +220,10 @@ export default {
           },
           ruleValidate: {
               budget: [
-                  { required: true, trigger: 'blur' }
+                  { required: true, message:'请输入项目预算', trigger: 'blur' }
               ],
               quota: [
-                  { required: true, trigger: 'change' }
+                  { required: true, message:' 请选择指标',trigger: 'change' }
               ],
               // kolNum: [
               //     { required: true, trigger: 'blur' }

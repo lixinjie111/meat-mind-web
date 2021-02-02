@@ -1,49 +1,193 @@
 <template>
-    <div class="ffsj">
-        <div class="recommend">
-            <img src="../../../static/img/datacenter/ffsj@2x.png" alt="">
-            <div class="detail" @click="toDetail"></div>
-            <div class="detail2" @click="toDetail2"></div>
-            <Modal class-name="data-market-modal" v-model="detailModal" footer-hide :closable="false">
-                <div class="download">
-                    <img v-if="detail1" src="../../../static/img/home/detail1@2x.png" alt="">
-                    <img v-if="detail2" src="../../../static/img/home/detail2@2x.png" alt="">
-                    <div class="close-btn" @click="closeDetail"></div>
+    <div class="data-market-container">
+        <p class="title">数据市场</p>
+        <div class="data-card">
+            <div class="data-card-title"><p>为您推荐</p></div>
+            <div class="data-card-content">
+                <div class="item" v-for="(item,index) in recommendList" :key="index">
+                    <img :src="item.img"/>
+                    <div>
+                        <div class="top flex">
+                            <div class="info">{{item.title}}
+                                <div v-if="item.new" class="new">
+                                    <div><span>New</span></div>
+                                </div>
+                            </div>
+                            <p class="detail" @click="toDetail(index)">详情</p>
+                        </div>
+                        <div class="middle">
+                            <p>{{item.price}}</p>
+                        </div>
+                        <div class="bottom">
+                            <div class="try-btn" v-if="item.try">试用三天</div>
+                            <div class="blue-btn">购入</div>
+                        </div>
+                    </div>
                 </div>
-            </Modal>
+            </div>
         </div>
-        <div class="hot">
-            <div class="page1" @click="page = 1"></div>
-            <div class="page2" @click="page = 2"></div>
-            <img src="../../../static/img/datacenter/ffsj1@2x.png" alt="" v-if="page == 1">
-            <img src="../../../static/img/datacenter/ffsj2@2x.png" alt="" v-else>
+        <div class="data-card mt-24">
+            <div class="data-card-title flex">
+                <p>热门推荐</p>
+                <Input prefix="ios-search" class="data-card-title-right" placeholder="输入关键词搜索"/>
+            </div>
+            <div class="data-card-content">
+                <div class="item" v-for="(item,index) in hotList" :key="index">
+                    <img :src="item.img"/>
+                    <div>
+                        <div class="top flex">
+                            <div class="info">{{item.title}}
+                                <div v-if="item.new" class="new">
+                                    <div><span>New</span></div>
+                                </div>
+                            </div>
+                            <p class="detail">详情</p>
+                        </div>
+                        <div class="middle">
+                            <p>{{item.price}}</p>
+                        </div>
+                        <div class="bottom">
+                            <div class="try-btn" v-if="item.try">试用三天</div>
+                            <div class="blue-btn">购入</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <Modal class-name="data-market-modal" v-model="detailModal" footer-hide :closable="false">
+            <div class="download">
+                <img v-if="detail1" src="../../../static/img/home/detail1@2x.png" alt="">
+                <img v-if="detail2" src="../../../static/img/home/detail2@2x.png" alt="">
+                <div class="close-btn" @click="closeDetail"></div>
+            </div>
+        </Modal>
     </div>
 </template>
 
 <script>
+    import Img1 from "../../../assets/img/datacenter/market/1.png"
+    import Img2 from "../../../assets/img/datacenter/market/2.png"
+    import Img3 from "../../../assets/img/datacenter/market/3.png"
+    import Img4 from "../../../assets/img/datacenter/market/4.png"
+    import Img5 from "../../../assets/img/datacenter/market/5.png"
+    import Img6 from "../../../assets/img/datacenter/market/6.png"
+    import Img7 from "../../../assets/img/datacenter/market/7.png"
+    import Img9 from "../../../assets/img/datacenter/market/9.png"
+    import Img10 from "../../../assets/img/datacenter/market/10.png"
+    import Img14 from "../../../assets/img/datacenter/market/14.png"
+    import Img15 from "../../../assets/img/datacenter/market/15.png"
+
     export default {
-        name:"Market",
+        name: "Market",
         data() {
             return {
                 page: 1,
-                detailModal:false,
-                detail1:false,
-                detail2:false
+                detailModal: false,
+                detail1: false,
+                detail2: false,
+                recommendList: [
+                    {
+                        img: Img1,
+                        title: '脑电波测试-消费场景数据包',
+                        price: '¥3,200/月'
+                    },
+                    {
+                        img: Img2,
+                        title: '视觉捕捉教育场景数据包',
+                        price: '¥5,600/月',
+                        new: true
+                    },
+                    {
+                        img: Img3,
+                        title: '用户消费场景心智测试数据包',
+                        price: '¥5,999/月'
+                    },
+                    {
+                        img: Img4,
+                        title: '重大事件记忆联想测试数据包',
+                        price: '¥4,999/月'
+                    },
+                    {
+                        img: Img5,
+                        title: '青少年课堂应激行为测试数据包',
+                        price: '¥5,999/月'
+                    },
+                    {
+                        img: Img6,
+                        title: '女性色彩感知测试数据包 ',
+                        price: '¥3,999/月'
+                    }
+                ],
+                hotList: [
+                    {
+                        img: Img7,
+                        title: '中关村人群数据包',
+                        price: '¥2,060/月',
+                        new: true,
+                        try: true
+                    },
+                    {
+                        img: Img7,
+                        title: '北京市海淀区大学城人群数据包',
+                        price: '¥4,599/月',
+                        try: true
+                    },
+                    {
+                        img: Img9,
+                        title: '美妆行业数据包-2020年度',
+                        price: '¥1,099/月',
+                        new: true,
+                        try: true
+                    },
+                    {
+                        img: Img10,
+                        title: '健身娱乐行业数据包',
+                        price: '¥1,099/月',
+                        try: true
+                    },
+                    {
+                        img: Img7,
+                        title: '北京市朝阳区九龙山人群数据包',
+                        price: '¥4,599/月'
+                    },
+                    {
+                        img: Img7,
+                        title: '北京市昌平区回龙观人群数据包',
+                        price: '¥4,599/月'
+                    },
+                    {
+                        img: Img7,
+                        title: '北京市天通苑人群数据包',
+                        price: '¥4,599/月'
+                    },
+                    {
+                        img: Img14,
+                        title: '智能城市行业数据包',
+                        price: '¥2,599/月'
+                    },
+                    {
+                        img: Img15,
+                        title: '产品金融行业数据包',
+                        price: '¥2,099/月'
+                    }
+                ]
             }
         },
-        methods:{
-            toDetail(){
-                this.detailModal = true
-                this.detail1 = true
-                this.detail2 = false
+        methods: {
+            toDetail(index) {
+                console.log(index);
+                if (index == 0) {
+                    this.detailModal = true
+                    this.detail1 = true
+                    this.detail2 = false
+                }
+                if (index == 1) {
+                    this.detailModal = true
+                    this.detail1 = false
+                    this.detail2 = true
+                }
             },
-            toDetail2(){
-                this.detailModal = true
-                this.detail1 = false
-                this.detail2 = true
-            },
-            closeDetail(){
+            closeDetail() {
                 this.detailModal = false
                 this.detail1 = false
                 this.detail2 = false
@@ -53,64 +197,193 @@
 </script>
 
 <style scoped lang="scss">
-    .ffsj {
-        width: 100%;
-        height: 100%;
+    .data-market-container {
+        padding: 0 24px 24px;
 
-        img {
-            width: 100%;
-            // height: 100%;
-        }
-        .recommend{
-            position: relative;
-            .detail {
-                position: absolute;
-                left: 340px;
-                top: 152px;
-                width: 50px;
-                height: 24px;
-                cursor: pointer;
-                // border: 1px solid red;
-            }
-            .detail2{
-                position: absolute;
-                top: 152px;
-                right: 416px;
-                width: 50px;
-                height: 24px;
-                cursor: pointer;
-                // border: 1px solid green;
-            }
+        .mt-24 {
+            margin-top: 24px;
         }
 
-        .hot {
-            position: relative;
+        .title {
+            padding: 16px 24px;
+            font-size: 20px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242F57;
+        }
 
-            .page1 {
-                position: absolute;
-                right: 120px;
-                bottom: 54px;
-                width: 28px;
-                height: 28px;
-                cursor: pointer;
+        .data-card {
+            background: #FFFFFF;
+            box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+            border-radius: 8px;
+
+            .data-card-title {
+                margin: 0 24px;
+                padding: 16px 0;
+                border-bottom: 1px dashed #242F57;
+
+                > p {
+                    font-size: 16px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #242F57;
+                }
+
+                .data-card-title-right {
+                    width: 220px;
+
+                    ::v-deep .ivu-input {
+                        padding: 9px 24px;
+                    }
+                }
             }
 
-            .page2 {
-                position: absolute;
-                right: 85px;
-                bottom: 54px;
-                width: 28px;
-                height: 28px;
-                cursor: pointer;
+            .data-card-content {
+                padding: 24px 0 24px 24px;
+
+                .item {
+                    margin: 0 16px 16px 0;
+                    display: inline-block;
+                    vertical-align: top;
+                    padding: 16px;
+                    width: 357px;
+                    height: 114px;
+                    background: #FFFFFF;
+                    border-radius: 8px;
+                    border: 1px solid #C6CBDE;
+
+                    > img {
+                        margin-right: 8px;
+                        width: 82px;
+                        height: 82px;
+                        border-radius: 8px;
+                    }
+
+                    > div {
+                        width: 230px;
+                        display: inline-block;
+                        vertical-align: top;
+
+                        .top {
+                            .info {
+                                font-size: 14px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #242F57;
+
+                                .new {
+                                    display: inline-block;
+                                    width: 26px;
+                                    height: 12px;
+                                    line-height: 10px;
+                                    background: rgba(255, 180, 176, 0.5);
+                                    border-radius: 1px;
+                                    border: 1px solid #FB343E;
+                                    transform: skewX(-10deg);
+
+                                    > div {
+                                        transform: skewX(10deg);
+
+                                        > span {
+                                            display: inline-block;
+                                            font-size: 12px;
+                                            font-family: Helvetica-Oblique, Helvetica;
+                                            font-weight: normal;
+                                            color: #FB343E;
+                                            text-align: center;
+                                            transform: scale(0.7);
+                                        }
+                                    }
+                                }
+                            }
+
+                            .detail {
+                                font-size: 14px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #2373FF;
+                                cursor: pointer;
+                            }
+                        }
+
+                        .middle {
+                            margin-top: 4px;
+                            font-size: 14px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #2373FF;
+                        }
+
+                        .bottom {
+                            display: flex;
+                            justify-content: flex-end;
+                            align-items: center;
+                            margin-top: 4px;
+
+                            .try-btn {
+                                margin-right: 8px;
+                                width: 80px;
+                                height: 30px;
+                                line-height: 30px;
+                                box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
+                                border-radius: 8px;
+                                border: 1px solid #C6CBDE;
+                                font-size: 14px;
+                                font-family: PingFangSC-Medium, PingFang SC;
+                                font-weight: 500;
+                                color: #636E95;
+                                text-align: center;
+                            }
+
+                            .blue-btn {
+                                width: 60px;
+                                height: 30px;
+                                line-height: 30px;
+                                box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
+                                border-radius: 8px;
+                                border: 1px solid #2373FF;
+                                font-size: 14px;
+                                font-family: PingFangSC-Medium, PingFang SC;
+                                font-weight: 500;
+                                color: #2373FF;
+                                text-align: center;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
             }
         }
+
+        /*.recommend{*/
+        /*    position: relative;*/
+        /*    .detail {*/
+        /*        position: absolute;*/
+        /*        left: 340px;*/
+        /*        top: 152px;*/
+        /*        width: 50px;*/
+        /*        height: 24px;*/
+        /*        cursor: pointer;*/
+        /*        border: 1px solid red;*/
+        /*    }*/
+        /*    .detail2{*/
+        /*        position: absolute;*/
+        /*        top: 152px;*/
+        /*        right: 416px;*/
+        /*        width: 50px;*/
+        /*        height: 24px;*/
+        /*        cursor: pointer;*/
+        /*        border: 1px solid green;*/
+        /*    }*/
+        /*}*/
     }
 </style>
 <style lang="scss">
-.data-market-modal {
+    .data-market-modal {
         display: flex;
         align-items: center;
         justify-content: center;
+
         .ivu-modal {
             top: 0;
             width: 600px !important;
@@ -118,6 +391,7 @@
             background: #ffffff;
             border-radius: 4px;
         }
+
         .ivu-modal-body {
             padding: 0;
         }
@@ -127,7 +401,7 @@
             margin: 0 auto;
             width: 600px;
 
-            >img {
+            > img {
                 width: 600px;
                 border-radius: 10px;
             }
@@ -140,7 +414,7 @@
                 height: 30px;
                 background: transparent;
                 cursor: pointer;
-                // border: 1px solid red;
+                /*border: 1px solid red;*/
             }
         }
     }
