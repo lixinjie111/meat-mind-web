@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <div v-else class="container ">
+    <div v-else class="page-container ">
       <div class="title">我的数据</div>
       <div class="statistics module no-padding">
         <div :class="['statistics-item-box', {current: listType === 'upload' }]" @click="changeList('upload')">
@@ -295,6 +295,8 @@
   export default {
     name: "Mydata",
     data() {
+      const width = window.innerWidth;
+      console.log(width)
       return {
         uploadModal1: false,
         uploadModal2: false,
@@ -834,22 +836,22 @@
               {
                 title: '添加时间',
                 key: 'time',
-                width: '200'
+                width: '150'
               },
               {
                 title: '最近更新版本',
                 key: 'versions',
-                width: '200'
+                width: '150'
               },
               {
                 title: '有效期至',
                 key: 'valid',
-                width: '200'
+                width: '120'
               },
               {
                 title: '状态',
                 key: 'status',
-                width: '100'
+                width: '80'
               },
               {
                 title: '操作',
@@ -889,32 +891,32 @@
             {
               title: '平台',
               key: 'platform',
-              width: '200'
+              // width: '200'
             },
             {
               title: '域名/包名',
               key: 'package',
-              width: '200'
+              // width: '200'
             },
             {
               title: 'URL Scheme',
               key: 'url',
-              width: '200'
+              // width: '200'
             },
             {
               title: '创建人',
               key: 'createUser',
-              width: '200'
+              // width: '200'
             },
             {
               title: '创建时间',
               key: 'createTime',
-              width: '200'
+              // width: '200'
             },
             {
               title: '状态',
               key: 'status',
-              width: '200'
+              // width: '200'
             },
             {
               title: '操作',
@@ -936,32 +938,32 @@
             {
               title: '平台',
               key: 'platform',
-              width: '200'
+              // width: '200'
             },
             {
               title: '域名/包名',
               key: 'package',
-              width: '200'
+              // width: '200'
             },
             {
               title: 'URL Scheme',
               key: 'url',
-              width: '200'
+              // width: '200'
             },
             {
               title: '创建人',
               key: 'createUser',
-              width: '200'
+              // width: '200'
             },
             {
               title: '创建时间',
               key: 'createTime',
-              width: '200'
+              // width: '200'
             },
             {
               title: '状态',
               key: 'status',
-              width: '200'
+              // width: '200'
             },
             {
               title: '操作',
@@ -983,12 +985,12 @@
             {
               title: '类型',
               key: 'type',
-              width: '200'
+              // width: '200'
             },
             {
               title: '添加时间',
               key: 'addTime',
-              width: '200'
+              // width: '200'
             },
             {
               title: '更新时间',
@@ -1046,6 +1048,7 @@
     position: relative;
     width: 100%;
     height: 100%;
+    padding: 0 24px;
 
     img {
       width: 100%;
@@ -1236,8 +1239,7 @@
     }
   }
 
-  .container {
-    padding: 0 24px;
+  .page-container {
     .title{
       height: 64px;
       line-height: 64px;
