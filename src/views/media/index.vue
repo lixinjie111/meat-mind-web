@@ -220,10 +220,10 @@ export default {
           },
           ruleValidate: {
               budget: [
-                  { required: true, trigger: 'blur' }
+                  { required: true, trigger: 'blur' ,message:'请输入内容'}
               ],
               quota: [
-                  { required: true, trigger: 'change' }
+                  { required: true, trigger: 'change',message:'请选择内容' }
               ],
               // kolNum: [
               //     { required: true, trigger: 'blur' }
@@ -556,7 +556,7 @@ export default {
         .m-p-last-touch{
           width: 100%;
           height: 210px;
-          background: url("../../assets/img/media/touch@2x.png") no-repeat center center / 100% 210px;
+          background: url("../../assets/img/media/touch@2x.png") no-repeat center center / 100% 100%;
         }
     }
   }
