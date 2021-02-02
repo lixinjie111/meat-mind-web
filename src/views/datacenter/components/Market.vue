@@ -3,7 +3,7 @@
         <p class="title">数据市场</p>
         <div class="data-card">
             <div class="data-card-title"><p>为您推荐</p></div>
-            <div class="data-card-content">
+            <div class="data-card-content pb-24">
                 <div class="item" v-for="(item,index) in recommendList" :key="index">
                     <img :src="item.img"/>
                     <div>
@@ -53,6 +53,10 @@
                     </div>
                 </div>
             </div>
+            <div class="data-card-page pb-24">
+                <Page :current="currentPage" :total="totalPage" :page-size="pageSize" simple
+                      @on-change="changePage"/>
+            </div>
         </div>
         <Modal class-name="data-market-modal" v-model="detailModal" footer-hide :closable="false">
             <div class="download">
@@ -81,7 +85,9 @@
         name: "Market",
         data() {
             return {
-                page: 1,
+                currentPage: 1,
+                totalPage: 9,
+                pageSize: 9,
                 detailModal: false,
                 detail1: false,
                 detail2: false,
@@ -174,6 +180,9 @@
             }
         },
         methods: {
+            changePage() {
+
+            },
             toDetail(index) {
                 console.log(index);
                 if (index == 0) {
@@ -202,6 +211,10 @@
 
         .mt-24 {
             margin-top: 24px;
+        }
+
+        .pb-24 {
+            padding-bottom: 24px!important;
         }
 
         .title {
@@ -239,7 +252,7 @@
             }
 
             .data-card-content {
-                padding: 24px 0 24px 24px;
+                padding: 24px 0 0 24px;
 
                 .item {
                     margin: 0 16px 16px 0;
@@ -353,29 +366,12 @@
                     }
                 }
             }
-        }
 
-        /*.recommend{*/
-        /*    position: relative;*/
-        /*    .detail {*/
-        /*        position: absolute;*/
-        /*        left: 340px;*/
-        /*        top: 152px;*/
-        /*        width: 50px;*/
-        /*        height: 24px;*/
-        /*        cursor: pointer;*/
-        /*        border: 1px solid red;*/
-        /*    }*/
-        /*    .detail2{*/
-        /*        position: absolute;*/
-        /*        top: 152px;*/
-        /*        right: 416px;*/
-        /*        width: 50px;*/
-        /*        height: 24px;*/
-        /*        cursor: pointer;*/
-        /*        border: 1px solid green;*/
-        /*    }*/
-        /*}*/
+            .data-card-page {
+                padding: 0 24px;
+                text-align: right;
+            }
+        }
     }
 </style>
 <style lang="scss">
