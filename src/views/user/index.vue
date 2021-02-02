@@ -20,7 +20,7 @@
           </div>
           <div class="right_qipao_container">
             <div class="echarts_item">
-              <div class="top_panel" @mouseenter="showPop1" @mouseleave="hidePop1">
+              <div class="top_panel" @mouseenter="showPop1" @mouseleave="hidePop1" @click="clickTab(1)">
                 <div class="top_t">
                   <div class="top_l">
                     <div class="cer_icon"></div>
@@ -63,7 +63,7 @@
               </div>
             </div>
             <div class="echarts_item">
-              <div class="top_panel" @mouseenter="showPop2" @mouseleave="hidePop2">
+              <div class="top_panel" @mouseenter="showPop2" @mouseleave="hidePop2" @click="clickTab(2)">
                 <div class="top_t">
                   <div class="top_l">
                     <div class="cer_icon"></div>
@@ -104,7 +104,7 @@
               </div>
             </div>
             <div class="echarts_item">
-              <div class="top_panel" @mouseenter="showPop3" @mouseleave="hidePop3">
+              <div class="top_panel" @mouseenter="showPop3" @mouseleave="hidePop3" @click="clickTab(3)">
                 <div class="top_t">
                   <div class="top_l">
                     <div class="cer_icon"></div>
@@ -145,7 +145,7 @@
               </div>
             </div>
             <div class="echarts_item">
-              <div class="top_panel" @mouseenter="showPop4" @mouseleave="hidePop4">
+              <div class="top_panel" @mouseenter="showPop4" @mouseleave="hidePop4" @click="clickTab(4)">
                 <div class="top_t">
                   <div class="top_l">
                     <div class="cer_icon"></div>
@@ -188,7 +188,7 @@
               </div>
             </div>
             <div class="echarts_item">
-              <div class="top_panel" @mouseenter="showPop5" @mouseleave="hidePop5">
+              <div class="top_panel" @mouseenter="showPop5" @mouseleave="hidePop5" @click="clickTab(5)">
                 <div class="top_t">
                   <div class="top_l">
                     <div class="cer_icon" style="background: #FF8800;"></div>
@@ -915,13 +915,31 @@ export default {
       dyIcon:require("../../assets/img/yhhx/ks.png"),
       dyI:require("../../assets/img/yhhx/dyI.png"),
       tu20:require("../../assets/img/yhhx/tu20.png"),
-      tu75:require("../../assets/img/yhhx/tu75.png")
+      tu75:require("../../assets/img/yhhx/tu75.png"),
+      descTitle:'北京上班族出行场景'
     };
   },
   mounted() {
     this.initPopEcharts();
   },
   methods: {
+    clickTab(arg){
+      if(arg == 1){
+        this.descTitle = '北京上班族出行场景';
+      }
+      else if(arg == 2){
+        this.descTitle = '企业高管出行场景';
+      }
+      else if(arg == 3){
+        this.descTitle = '北漂一族出行场景';
+      }
+      else if(arg == 4){
+        this.descTitle = '研学青年出行场景';
+      }
+      else if(arg == 5){
+        this.descTitle = '自由职业出行场景';
+      }
+    },
     initPopEcharts() {
       var echartsData1 = [];
       var echartsData2 = [];

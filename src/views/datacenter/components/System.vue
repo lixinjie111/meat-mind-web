@@ -1,64 +1,205 @@
 <template>
     <div class="xtjc">
-        <img src="../../../static/img/datacenter/xtjc/xtjc@2x.png" alt="">
-        <div class="detail">
-            <div class="show">
-                PhysioLAB 无线生理仪是德国 ERGONEERS 
-                公司新推出的无线人体生理数据记录系统，可以记录所有的人体生理相关的数据，
-                包括配 ECG 心电、EEG 脑电、EMG 肌电、
-                Temp 温度、Resp 呼吸、ACC 加速度、眼电 EOG、EGG 胃电、血压 BPR、
-                Handgrip 抓握力等传感器，被广泛应用于
-                 心理认知、人因工程、用户体验、运动科学、医疗康复等领域...
-                 <span>详情</span>
+        <div class="title">系统集成</div>
+        <div class="content">
+            <div class="top">
+               <div class="topzi">
+                    尚未接入开通该功能，请联系我们的<br>
+                    <span class="link">技术人员</span> 为您开通
+                </div>
+                <div class="btn">了解详情</div>
+            </div>
+            <div class="bottom">
+                <div class="bottom-title">您可以接入系统集成</div>
+                <Row  :gutter="24">
+                    <Col span="6" v-for='(item,index) in imgList' :key="index">
+                        <div class="boximg" @mouseenter="showBg(index)" @mouseleave="closeBg()">
+                            <img :src="item.img" alt="">
+                            <div class="detail" v-show="currentIndex==index">
+                                {{item.desc}}
+                                <span>详情</span>
+                            </div>
+                        </div>
+                        <div class="img-title">{{item.title}}</div>
+                    </Col>
+                </Row>
+            </Form>
             </div>
         </div>
+        
+        
     </div>
 </template>
 
 <script>
     export default {
-        name:"System"
+        name:"System",
+        data(){
+            return{
+                currentIndex:'',
+                imgList:[
+                    {
+                        img:require('../../../assets/img/xtjc/1.png'),
+                        title:'与经颅电刺激系统集成',
+                        desc:`PhysioLAB 无线生理仪是德国 ERGONEERS 
+                                公司新推出的无线人体生理数据记录系统，可以记录所有的人体生理相关的数据，
+                                包括配 ECG 心电、EEG 脑电、EMG 肌电、
+                                Temp 温度、Resp 呼吸、ACC 加速度、眼电 EOG、EGG 胃电、血压 BPR、
+                                Handgrip 抓握力等传感器，被广泛应用于
+                                心理认知、人因工程、用户体验、运动科学、医疗康复等领域...`
+                    },
+                    {
+                        img:require('../../../assets/img/xtjc/2.png'),
+                        title:'与桌面式眼动追踪系统集成',
+                        desc:``
+                    },
+                    {
+                        img:require('../../../assets/img/xtjc/3.png'),
+                        title:'与Sophia系统集成',
+                        desc:``
+                    },
+                    {
+                        img:require('../../../assets/img/xtjc/4.png'),
+                        title:'与外呼系统集成',
+                        desc:``
+                    },
+                    {
+                        img:require('../../../assets/img/xtjc/5.png'),
+                        title:'与推荐系统集成',
+                        desc:``
+                    },
+                    {
+                        img:require('../../../assets/img/xtjc/6.png'),
+                        title:'与CRM系统集成',
+                        desc:``
+                    },
+                    {
+                        img:require('../../../assets/img/xtjc/7.png'),
+                        title:'与Meta-X系统集成',
+                        desc:``
+                    },
+                    {
+                        img:require('../../../assets/img/xtjc/8.png'),
+                        title:'与近红外脑成像系统集成',
+                        desc:``
+                    },
+                ]
+            }
+        },
+        //  methods:{
+        //     click1(){
+        //         this.$router.push({name:"data-center-metax-rule"})
+        //     },
+        //  }
+        methods:{
+            showBg(index){
+                if(index==0){
+                    this.currentIndex=0;
+                }
+            },
+            closeBg(){
+                this.currentIndex=-1;
+            }
+        }
     }
 </script>
 
 <style scoped lang="scss">
-    .xtjc {
-        position: relative;
+    img{
         width: 100%;
-        height: 100%;
+        display: block;
+        }
+    .xtjc {
+        .title{
+            font-size: 20px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242F57;
+            padding:16px 24px;
+        }
+        .content{
+            background: #FFFFFF;
+            box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+            border-radius: 8px;
+            padding: 0 24px;
+            font-size: 14px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #636E95;
+            line-height: 20px;
+            .top{
+                padding:40px 0;
+                border-bottom:1px dashed #000; 
+                .topzi{
+                    text-align: center;
+                    .link{
+                        color:#2373FF;
+                        cursor: pointer;
+                    }
+                }
+                .btn{
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #2373FF;
+                    width: 88px;
+                    height: 32px;
+                    box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
+                    border-radius: 8px;
+                    border: 1px solid rgba(135,133,127,1);
+                    line-height: 32px;
+                    text-align: center;
+                    margin: 0 auto;
+                    margin-top: 16px;
+                    cursor: pointer;
+                }
+            }
+            .bottom{
+                margin-bottom: 8px;
+                .bottom-title{
+                    font-size: 16px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #242F57;
+                    padding: 24px 0;
+                }
+                .boximg{
+                    position: relative;
+                    cursor: pointer;
+                    .detail{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 8px;
+                        cursor: pointer;
+                        padding: 10px;
+                        color:#FFFFFF;
+                        background: #6D6E6D;
+                        border-radius: 4px;
+                        span{
+                            float: right;
+                            margin-top: 25px;
+                            margin-right: 4px;
+                            color: #10eee6;
+                        }
+                    }
+                }
+                .img-title{
+                    margin-top: 12px;
+                    margin-bottom: 24px; 
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #636E95;
+                }
+            }
+        }
         img {
             width: 100%;
             // height: 100%;
         }
-        .detail{
-            position: absolute;
-            top: 152px;
-            left: 45px;
-            width: 360px;
-            height: 180px;
-            border-radius: 4px;
-            // border: 1px solid red;
-            cursor: pointer;
-            .show{
-                display: none;
-            }
-            &:hover{
-                .show{
-                    display: block;
-                    width: 362px;
-                    height: 180px;
-                    padding: 10px;
-                    color:#FFFFFF;
-                    background: #6D6E6D;
-                    border-radius: 4px;
-                    span{
-                        float: right;
-                        margin-top: 14px;
-                        margin-right: 4px;
-                        color: #10eee6;
-                    }
-                }
-            }
-        }
+        
     }
 </style>

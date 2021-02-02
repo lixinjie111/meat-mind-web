@@ -1,22 +1,22 @@
 <template>
-  <div class="card-container">
+  <div class="card-container" :style="{width:cardData.width}">
     <div class="card_title">{{cardData.title}}</div>
     <div class="time_range">{{cardData.timeRange}}</div>
     <div class="time">{{cardData.time}}</div>
     <div class="num_container">
-      <div class="num_text">{{numTxt}}</div>
+      <div class="num_text">{{formNum}}</div>
       <div class="unit_text">{{cardData.unitText}}</div>
     </div>
     <div class="per_contianer">
       <div class="per_left">
-        <span class="per_title">{{cardData.leftText}}</span>
-        <img :src="cardData.leftIcon" class="per_status" />
-        <span class="per_num" :style="{color:cardData.leftPerColor}">{{cardData.leftPer}}</span>
+        <span class="per_title" v-if="cardData.leftText">{{cardData.leftText}}</span>
+        <img v-if="cardData.leftIcon" :src="cardData.leftIcon" class="per_status" />
+        <span v-if="cardData.leftPer" class="per_num" :style="{color:cardData.leftPerColor}" style="margin-right:10px;">{{cardData.leftPer}}</span>
       </div>
       <div class="per_right">
-        <span class="per_title">{{cardData.rightText}}</span>
-        <img :src="cardData.rightIcon" class="per_status" />
-        <span class="per_num" :style="{color:cardData.rightPerColor}">{{cardData.rightPer}}</span>
+        <span class="per_title" v-if="cardData.rightText">{{cardData.rightText}}</span>
+        <img v-if="cardData.rightIcon" :src="cardData.rightIcon" class="per_status" />
+        <span v-if="cardData.rightPer" class="per_num" :style="{color:cardData.rightPerColor}">{{cardData.rightPer}}</span>
       </div>
     </div>
   </div>
@@ -46,7 +46,19 @@ export default {
   destroyed() {
     clearInterval(this.timer);
   },
+  computed:{
+    formNum(){
+      return this.formatNumber(this.numTxt);
+    }
+  },
   methods: {
+    formatNumber(n){
+      var b=parseInt(n).toString();
+      var len=b.length;
+      if(len<=3){return b;}
+      var r=len%3;
+      return r>0?b.slice(0,r)+","+b.slice(r,len).match(/\d{3}/g).join(","):b.slice(r,len).match(/\d{3}/g).join(",");
+    },
     changeNum() {
       var _this = this;
       this.timer = setInterval(() => {
@@ -59,11 +71,15 @@ export default {
 
 <style scoped lang="scss">
 .card-container {
-  width: 19%;
-  min-height: 156px;
+  min-height: 125px;
   border: 1px solid #eaedf7;
   padding: 12px 11px;
   box-sizing: border-box;
+  margin-bottom: 15px;
+  &:hover{
+    background: #FFFFFF;
+    box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16);
+  }
   .card_title {
     width: 100%;
     margin-bottom: 8px;
@@ -112,7 +128,6 @@ export default {
     align-items: center;
     .per_left,
     .per_right {
-      width: 50%;
       display: flex;
       .per_status {
         display: block;

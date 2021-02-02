@@ -2,7 +2,8 @@
     <div class="fxmx-event">
         <!-- <img src="../../../../static/img/tool/fxmx/event@2x.png" alt=""> -->
         <div class="title">
-            <img class="back" @click="back" src="../../../../static/img/tool/fxmx/back@2x.png" alt="">
+            <!-- <img class="back"  src="../../../../static/img/tool/fxmx/back@2x.png" alt=""> -->
+            <div class="icon"><i @click="back" class="iconfont iconarrowRight"></i></div>
             事件分析
         </div>
         <div class="event-content">
@@ -242,7 +243,7 @@
         width: 100%;
         height: 100%;
         padding: 0 24px 24px;
-        background: #F5F5F5;
+        background: #F4F7FC;
 
         .mt8 {
             margin-top: 8px;
@@ -277,16 +278,24 @@
         // }
 
         .title {
-            width: 100%;
-            height: 72px;
+            display: flex;
+            align-items: center;
+            height: 64px;
+            padding-left:24px;
             font-size: 20px;
             color: #212121;
-            line-height: 72px;
-
-            img {
-                width: 26px;
-                height: 26px;
-                vertical-align: middle;
+            .icon{
+                width: 56px;
+                height: 24px;
+                margin-right: 16px;
+                transform: rotate(180deg);
+                line-height: 24px;
+                text-align: center;
+                border-left: 1px solid #EAEDF7;
+            }
+            .iconfont{
+                font-size: 24px;
+                color: #7C88B1;
                 cursor: pointer;
             }
         }
@@ -295,10 +304,12 @@
             min-height: calc(100% - 72px);
 
             .filter-container {
-                background: #FFFFFF;
+                width: 1152px;
                 padding: 24px;
                 margin-bottom: 20px;
-                width: 1152px;
+                background: #FFFFFF;
+                box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+                border-radius: 8px;
 
                 .c-title {
                     margin-bottom: 16px;
@@ -341,7 +352,8 @@
             .show-container {
                 padding: 24px;
                 background: #FFFFFF;
-
+                box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+                border-radius: 8px;
                 .top {
                     .date-select {
                         width: 80px;

@@ -1,5 +1,5 @@
 const tool=()=>import('./index');
-const fxmx=()=>import('./components/fxmx.vue')
+const fxmx=()=>import('./components/AnalysisModel.vue')
 const event=()=>import("./components/fxmx/Event.vue")
 const funnel=()=>import("./components/fxmx/Funnel.vue")
 const keep=()=>import("./components/fxmx/Keep.vue")
