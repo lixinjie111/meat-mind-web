@@ -60,8 +60,8 @@
         </div>
         <Modal class-name="data-market-modal" v-model="detailModal" footer-hide :closable="false">
             <div class="download">
-                <img v-if="detail1" src="../../../static/img/home/detail1@2x.png" alt="">
-                <img v-if="detail2" src="../../../static/img/home/detail2@2x.png" alt="">
+                <img v-if="detail1" src="../../../assets/img/datacenter/market/detail1@2x.png" alt="">
+                <img v-if="detail2" src="../../../assets/img/datacenter/market/detail2@2x.png" alt="">
                 <div class="close-btn" @click="closeDetail"></div>
             </div>
         </Modal>
