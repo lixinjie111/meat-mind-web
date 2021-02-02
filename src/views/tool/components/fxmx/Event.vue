@@ -60,6 +60,7 @@
                 <div class="bottom">
                     <!-- <p>任意事件的总次数</p> -->
                     <div class="chart-box">
+                        <!-- <barEcharts v-if="iframeShow == 3" id="box11" :colorList="$lxjData.colorList" :myData="data3"></barEcharts> -->
                         <iframe v-if="iframeShow == 3" class="iframe" src="/static/html/fxgj/bar3.html" frameborder="0"
                                 scrolling="no"></iframe>
                         <iframe v-if="iframeShow == 2" class="iframe" src="/static/html/fxgj/bar2.html" frameborder="0"
@@ -78,8 +79,10 @@
 </template>
 
 <script>
+import barEcharts from "../../../../components/echarts/common/barEcharts"
     export default {
         name: "Event",
+        components:{barEcharts},
         watch:{
             propertyList:{
                 handler:function(){
@@ -117,6 +120,16 @@
         },
         data() {
             return {
+                data3:[
+                    new Date((new Date).getTime()- 3600 * 1000 * 24 * 7).getMonth() + 1 + '-' + new Date((new Date).getTime()- 3600 * 1000 * 24 * 7).getDate(),
+                    new Date((new Date).getTime()- 3600 * 1000 * 24 * 6).getMonth() + 1 + '-' + new Date((new Date).getTime()- 3600 * 1000 * 24 * 6).getDate(),
+                    new Date((new Date).getTime()- 3600 * 1000 * 24 * 5).getMonth() + 1 + '-' + new Date((new Date).getTime()- 3600 * 1000 * 24 * 5).getDate(),
+                    new Date((new Date).getTime()- 3600 * 1000 * 24 * 4).getMonth() + 1 + '-' + new Date((new Date).getTime()- 3600 * 1000 * 24 * 4).getDate(),
+                    new Date((new Date).getTime()- 3600 * 1000 * 24 * 3).getMonth() + 1 + '-' + new Date((new Date).getTime()- 3600 * 1000 * 24 * 3).getDate(),
+                    new Date((new Date).getTime()- 3600 * 1000 * 24 * 2).getMonth() + 1 + '-' + new Date((new Date).getTime()- 3600 * 1000 * 24 * 2).getDate(),
+                    new Date((new Date).getTime()- 3600 * 1000 * 24 * 1).getMonth() + 1 + '-' + new Date((new Date).getTime()- 3600 * 1000 * 24 * 1).getDate(),
+                    new Date().getMonth() + 1 + '-' +new Date().getDate()
+                ],
                 panelValue: [1, 2],
                 propertyList: [{event:"任意事件",place:"总次数"}],
                 attributeList1: [
@@ -281,7 +294,7 @@
             display: flex;
             align-items: center;
             height: 64px;
-            padding-left:24px;
+            padding-left:8px;
             font-size: 20px;
             color: #212121;
             .icon{
@@ -361,7 +374,7 @@
 
                     .date-range-select {
                         margin-left: 20px;
-                        width: 200px;
+                        width: 220px;
                     }
                 }
 

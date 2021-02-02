@@ -29,39 +29,53 @@
 <script lang="javascript">
     setTimeout(() => {
         var option = {
-            color: '#739cea',
+            color: '#4D94FF',
             tooltip: {
                 trigger: 'axis'
             },
             grid: {
-                left: '0',
-                right: '0',
-                bottom: '0',
-                top: '8%',
+                left: 14,
+                right: '6%',
+                bottom: '6%',
+                top: '10%',
                 containLabel: true,
-            },
-            tooltip: {
-                trigger: 'item',
-                formatter: '{b}<br/>'+'数量: '+'{c}',
-                textStyle: {
-                    fontSize: 12,
-                }
             },
             xAxis: {
                 type: 'category',
-                data: [new Date((new Date).getTime()- 3600 * 1000 * 24 * 1).getMonth() + 1 + '-' + new Date((new Date).getTime()- 3600 * 1000 * 24 * 1).getDate()]
+                data: [new Date((new Date).getTime()- 3600 * 1000 * 24 * 1).getMonth() + 1 + '-' + new Date((new Date).getTime()- 3600 * 1000 * 24 * 1).getDate()],
+                //设置轴线的属性
+				axisLine:{
+					lineStyle:{
+						color:'#E9EBF1',
+					}
+				} ,
+				axisLabel: {
+					show: true,
+					textStyle: {
+						color: "#97A0C3",   //这里用参数代替了
+						fontSize:'12'
+					}
+				},
             },
             yAxis: {
                 type: 'value',
                 axisLabel: {
-                    formatter: '{value} '
+					formatter: '{value} ',
+					textStyle: {
+						color: "#97A0C3",   //这里用参数代替了
+						fontSize:'12'
+					}
                 },
-                axisLine: {
-                    show: false,
-                },
+				axisLine:{
+					lineStyle:{
+						color:'#E9EBF1',
+						//width:8,//这里是为了突出显示加上的
+					}
+				},
                 splitLine: {
                     lineStyle: {
-                        type: 'dashed',
+						color:'#E9EBF1',
+                        //type: 'dashed',
                     }
                 },
             },
@@ -69,7 +83,18 @@
                 {
                     data: [64737],
                     type: 'bar',
-                    barWidth: '30'
+					barWidth: '10',
+					label:{
+						position: 'right',
+					},
+					itemStyle: {
+                         normal: {
+                               barBorderRadius:[30,30,0,0]
+						 },
+						 emphasis:{
+							 color:'#FF9F7F'
+						 }
+                    }
                 }
             ]
         };
