@@ -93,8 +93,8 @@
         <div class="pin_echarts_container">
           <div class="pin_title">品牌测评得分</div>
           <div class="pin_echarts_cont_container">
-            <div class="pin_content">
-                <iframe src="../../../public/static/html/dashboard/yibiao.html" frameborder="0" scrolling="no" style="width:100%;height:100%;"></iframe>
+            <div class="pin_content" id="pinId">
+              
             </div>
             <div class="num_text">78</div>
             <div class="fen">分</div>
@@ -224,7 +224,6 @@
 
   </div>
 </template>
-
 <script>
 import vCard0 from "../common/card0";
 import vCard1 from "../common/card1";
@@ -781,6 +780,161 @@ export default {
       timeRange: "go3"
     };
   },
+  methods:{
+      initEcharts(){
+        var that = this;
+        setTimeout(() => {
+            var value = 12;
+            var color = new that.$echarts.graphic.LinearGradient(
+                0, 0, 1, 0,
+                [{
+                    offset: 0,
+                    color: "rgba(3, 110, 255, .5)",
+                },
+                    {
+                        offset: 1,
+                        color: "rgba(3, 110, 255, 1)",
+                    }
+                ]
+            );
+            var option = {
+                grid:{
+                    width:500,
+                    height:300,
+                    left:0,
+                    bottom:0
+                },
+                series: [
+                    {
+                        type: 'gauge',
+                        startAngle: 180,
+                        endAngle: 0,
+                        min: 0,
+                        max: 100,
+                        radius: '70%',
+                        title: {
+                            show: false
+                        },
+                        detail: {
+                            width: '100%',
+                            offsetCenter: ['170%', '-10%'],
+                            formatter: function (value) {
+                                return '';
+                            },
+                            rich: {
+                                value: {
+                                    fontSize: 50,
+                                    fontWeight: 'bolder',
+                                    color: '#4992FF'
+                                },
+                                unit: {
+                                    fontSize: 20,
+                                    color: '#999',
+                                    padding: [0, 0, 15, 6]
+                                },
+                            }
+                        },
+                        axisLine: {
+                            show: false
+                        },
+                        axisTick: {
+                            length: 0,
+                            lineStyle: {
+                                color: '#999'
+                            }
+                        },
+                        splitNumber: 5,
+                        splitLine: {
+                            length: 0,
+                            lineStyle: {
+                                color: '#999',
+                                width: 3
+                            }
+                        },
+                        axisLabel: {
+                            color: '#999'
+                        },
+                        itemStyle: {
+                            color: color,
+                            shadowColor: 'rgba(0,138,255,0.45)',
+                            shadowBlur: 10,
+                            shadowOffsetX: 2,
+                            shadowOffsetY: 2
+                        },
+                        markPoint: {
+                            data: [{
+                                x: "50%",
+                                y: "50%",
+                                symbol: 'circle',
+                                symbolSize: 8,
+                                itemStyle: {
+                                    color: "#fff"
+                                },
+                            }]
+                        },
+                        data: [{
+                            value: value,
+                        },]
+                    },
+                    {
+                        type: 'gauge',
+                        radius: '80%',
+                        startAngle: 180,
+                        endAngle: 0,
+                        min: 0,
+                        max: 100,
+                        title: {
+                            show: false
+                        },
+                        detail: {
+                            show: false
+                        },
+                        axisLine: {
+                            show: true,
+                            lineStyle: {
+                                width: 10,
+                                color: [
+                                    [
+                                        value / value, color
+                                    ],
+                                    [
+                                        1, 'rgba(225,225,225,0.4)'
+                                    ]
+                                ],
+                            }
+                        },
+                        axisTick: {
+                            show: false,
+                        },
+                        splitLine: {
+                            show: false,
+                        },
+                        axisLabel: {
+                            show: false
+                        },
+                        pointer: {
+                            show: false,
+                        },
+                        itemStyle: {
+                            normal: {
+                                color: '#54F200',
+                            }
+                        },
+                    }
+                ]
+
+            }
+            let myBarChart = that.$echarts.init(document.getElementById("pinId"));
+            myBarChart.setOption(option);
+            window.onresize = ()=>{
+                myBarChart.resize();
+            }
+        }, 500)
+      }
+  },
+  mounted(){
+    this.initEcharts()
+  }
 };
 </script>
 
