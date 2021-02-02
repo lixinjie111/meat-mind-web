@@ -69,8 +69,6 @@ export default {
     .guidIcon {
       width: 38px;
       height: 38px;
-      box-shadow: 2px 3px 8px 0px rgba(164, 157, 250, 0.5),
-        -2px -2px 8px 0px #ffffff;
       border-radius: 50%;
       border: 1px solid #ffffff;
       margin-right: 8px;

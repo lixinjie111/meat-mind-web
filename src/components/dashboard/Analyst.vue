@@ -84,7 +84,7 @@
             <Date-picker type="daterange" placement="bottom-end" placeholder="选择日期" style="width: 100%;"></Date-picker>
           </div>
         </div>
-        <div class="right_area">
+        <div class="right_area" @click="goPinpai">
           <span>前往品牌画像</span>
           <img :src="trImg" class="trImg" />
         </div>
@@ -130,7 +130,7 @@
             </Select>
           </div>
         </div>
-        <div class="right_area">
+        <div class="right_area" @click="goUser">
           <span>前往用户画像</span>
           <img :src="trImg" class="trImg" />
         </div>
@@ -152,7 +152,7 @@
           <div class="time_range_container">
           </div>
         </div>
-        <div class="right_area">
+        <div class="right_area" @click="goMedia">
           <span>前往媒介画像</span>
           <img :src="trImg" class="trImg" />
         </div>
@@ -781,6 +781,21 @@ export default {
     };
   },
   methods:{
+      goPinpai(){
+        this.$router.push({
+            path:'/mark'
+        });
+      },
+      goUser(){
+        this.$router.push({
+            path:'/user'
+        });
+      },
+      goMedia(){
+        this.$router.push({
+            path:'/media'
+        });
+      },
       initEcharts(){
         var that = this;
         setTimeout(() => {
@@ -799,8 +814,8 @@ export default {
             );
             var option = {
                 grid:{
-                    width:500,
-                    height:300,
+                    width:'100%',
+                    height:'100%',
                     left:0,
                     bottom:0
                 },
@@ -866,7 +881,7 @@ export default {
                                 x: "50%",
                                 y: "50%",
                                 symbol: 'circle',
-                                symbolSize: 8,
+                                symbolSize: 4,
                                 itemStyle: {
                                     color: "#fff"
                                 },
@@ -892,7 +907,7 @@ export default {
                         axisLine: {
                             show: true,
                             lineStyle: {
-                                width: 10,
+                                width: 2,
                                 color: [
                                     [
                                         value / value, color
@@ -1208,6 +1223,9 @@ export default {
       .right_area {
         display: flex;
         align-items: center;
+        &:hover{
+            cursor: pointer;
+        }
         span {
           font-size: 14px;
           font-family: PingFangSC-Medium, PingFang SC;
@@ -1328,6 +1346,7 @@ export default {
         border: 1px solid #eaedf7;
         padding: 12px;
         box-sizing: border-box;
+         position: relative;
         .pin_title {
           width: 100%;
           font-size: 14px;
@@ -1341,10 +1360,12 @@ export default {
           display: flex;
           align-items: flex-end;
           .pin_content {
-            width: 109px;
-            height: 59px;
+            position: absolute;
+            width: 100%;
+            height: 100%;
             opacity: 0.8;
-            margin-right: 19px;
+            left: -73px;
+            top: 27px;
             // border: 2px solid #4d94ff;
           }
           .num_text {
@@ -1353,15 +1374,24 @@ export default {
             font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;
             color: #34c724;
+            position: absolute;
+            right: 40px;
+            bottom: 1px;
           }
           .fen {
             font-size: 14px;
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
             color: #7c88b1;
+            position: absolute;
+            right: 30px;
+            bottom: 10px;
           }
         }
         .intro_container {
+          position: absolute;
+          top: 111px;
+          left: 18px;
           width: 100%;
           display: flex;
           align-items: center;
