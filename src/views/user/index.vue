@@ -20,7 +20,7 @@
           </div>
           <div class="right_qipao_container">
             <div class="echarts_item">
-              <div class="top_panel" @mouseenter="showPop1" @mouseleave="hidePop1">
+              <div class="top_panel" @mouseenter="showPop1" @mouseleave="hidePop1" @click="clickTab(1)">
                 <div class="top_t">
                   <div class="top_l">
                     <div class="cer_icon"></div>
@@ -63,7 +63,7 @@
               </div>
             </div>
             <div class="echarts_item">
-              <div class="top_panel" @mouseenter="showPop2" @mouseleave="hidePop2">
+              <div class="top_panel" @mouseenter="showPop2" @mouseleave="hidePop2" @click="clickTab(2)">
                 <div class="top_t">
                   <div class="top_l">
                     <div class="cer_icon"></div>
@@ -104,7 +104,7 @@
               </div>
             </div>
             <div class="echarts_item">
-              <div class="top_panel" @mouseenter="showPop3" @mouseleave="hidePop3">
+              <div class="top_panel" @mouseenter="showPop3" @mouseleave="hidePop3" @click="clickTab(3)">
                 <div class="top_t">
                   <div class="top_l">
                     <div class="cer_icon"></div>
@@ -145,7 +145,7 @@
               </div>
             </div>
             <div class="echarts_item">
-              <div class="top_panel" @mouseenter="showPop4" @mouseleave="hidePop4">
+              <div class="top_panel" @mouseenter="showPop4" @mouseleave="hidePop4" @click="clickTab(4)">
                 <div class="top_t">
                   <div class="top_l">
                     <div class="cer_icon"></div>
@@ -188,7 +188,7 @@
               </div>
             </div>
             <div class="echarts_item">
-              <div class="top_panel" @mouseenter="showPop5" @mouseleave="hidePop5">
+              <div class="top_panel" @mouseenter="showPop5" @mouseleave="hidePop5" @click="clickTab(5)">
                 <div class="top_t">
                   <div class="top_l">
                     <div class="cer_icon" style="background: #FF8800;"></div>
