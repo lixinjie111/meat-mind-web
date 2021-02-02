@@ -191,9 +191,10 @@
 <style scoped lang="scss">
     .home {
         .data-admin {
+            margin-left: -24px;
             display: flex;
             flex-direction: column;
-            width: 100%;
+            width: calc(100% + 48px);
             height: calc(100vh - 80px);
             overflow-y: scroll;
 
@@ -225,27 +226,27 @@
                     width: 100px;
                     height: 36px;
                     cursor: pointer;
-                    // border: 1px solid red;
+                    /*border: 1px solid red;*/
                 }
 
                 .detail {
                     position: absolute;
-                    left: 390px;
-                    top: 112px;
+                    left: 350px;
+                    top: 98px;
                     width: 50px;
                     height: 24px;
                     cursor: pointer;
-                    // border: 1px solid red;
+                    /*border: 1px solid red;*/
                 }
 
                 .detail2 {
                     position: absolute;
-                    top: 112px;
-                    right: 476px;
+                    left: 725px;
+                    top: 98px;
                     width: 50px;
                     height: 24px;
                     cursor: pointer;
-                    // border: 1px solid green;
+                    /*border: 1px solid green;*/
                 }
             }
         }
