@@ -1,5 +1,6 @@
 <template>
   <div class="fxmx-session">
+      <!-- session管理 -->
       <img src="../../../../static/img/datacenter/ysjgl/session@2x.png" alt="">
       <div class="back" @click="back"></div>
   </div>
