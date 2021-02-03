@@ -25,10 +25,10 @@
 
 <style scoped lang="scss">
     .card-container {
-        margin-bottom: 24px;
+        margin: 0 10px 24px 10px;
         padding: 0 24px;
         background: #FFFFFF;
-        box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+        box-shadow: 0px 0px 10px 0px rgba(121, 131, 168, 0.15);
         border-radius: 12px;
         border: 1px solid #EAEDF7;
 

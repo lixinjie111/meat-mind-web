@@ -283,6 +283,8 @@ export default {
 
 <style scoped lang="scss">
 .media-protrait {
+  padding: 0 24px 24px 24px;
+
   .m-p-rank {
     width: 100%;
     height: 339px;

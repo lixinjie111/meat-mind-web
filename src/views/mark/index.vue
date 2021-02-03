@@ -125,6 +125,8 @@ export default {
 
 <style scoped lang="scss">
  .mark-content{
+     padding: 0 24px 24px 24px;
+
      .first-line{
          display: flex;
          justify-content: space-between;

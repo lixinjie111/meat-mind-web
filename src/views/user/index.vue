@@ -1591,6 +1591,8 @@ export default {
 
 <style scoped lang="scss">
 .user-protrait {
+  padding: 0 24px 24px 24px;
+
   .yhdx_container {
     width: 100%;
     background: #ffffff;

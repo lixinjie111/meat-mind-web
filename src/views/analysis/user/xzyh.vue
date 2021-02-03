@@ -111,6 +111,8 @@ export default {
         height:100%;
         overflow-y: scroll;
         position: relative;
+        background: #f5f5f5;
+
         img{
             width: 100%;
         }
