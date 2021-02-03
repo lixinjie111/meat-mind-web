@@ -1,149 +1,146 @@
 // 复选框
 .ivu-checkbox {
-  .ivu-checkbox-inner {
-    background-color: #FBFCFF;
-    box-shadow: 1px 1px 1px 0px #A6ABBD inset;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-  }
+    .ivu-checkbox-inner {
+        background-color: #FBFCFF;
+        box-shadow: 1px 1px 1px 0px #A6ABBD inset;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+    }
 }
 
 .ivu-checkbox-checked {
-  .ivu-checkbox-inner {
-    background-color: #2373FF;
-    box-shadow: 1px 1px 3px 0px rgba(166, 171, 190, 0.4) inset;
-    border: 1px solid rgba(35, 115, 255, 0.4);
-  }
+    .ivu-checkbox-inner {
+        background-color: #2373FF;
+        box-shadow: 1px 1px 3px 0px rgba(166, 171, 190, 0.4) inset;
+        border: 1px solid rgba(35, 115, 255, 0.4);
+    }
 }
 
 // 单选框
 .ivu-radio {
-  .ivu-radio-inner {
-    border-radius: 50%;
-    background-color: #FBFCFF;
-    box-shadow: 1px 1px 1px 0px #A6ABBD inset;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-  }
+    .ivu-radio-inner {
+        border-radius: 50%;
+        background-color: #FBFCFF;
+        box-shadow: 1px 1px 1px 0px #A6ABBD inset;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+    }
 }
 
 .ivu-radio-checked {
-  .ivu-radio-inner {
-    box-shadow: none;
-    border: 1px solid #2373FF;
-  }
+    .ivu-radio-inner {
+        box-shadow: none;
+        border: 1px solid #2373FF;
+    }
 }
 
 // 开关
 .ivu-switch {
-  background-color: #ECEFF8;
-  box-shadow: 1px 1px 2px 0px #A6ABBD inset;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: #ECEFF8;
+    box-shadow: 1px 1px 2px 0px #A6ABBD inset;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .ivu-switch-checked {
-  border-color: #2373FF;
-  background-color: #2373FF;
+    border-color: #2373FF;
+    background-color: #2373FF;
 }
 
 // 输入框
 .ivu-input {
-  padding: 9px 12px;
-  //background: #F4F7FC;
-  box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
-  border-radius: 8px;
-  border: 1px solid #EAEDF7;
-  font-size: 14px;
-  font-family: PingFangSC-Regular, PingFang SC;
-  font-weight: 400;
-  color: #242F57;
-  resize: none;
+    padding: 9px 12px;
+    //background: #F4F7FC;
+    box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
+    border-radius: 8px;
+    border: 1px solid #EAEDF7;
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #242F57;
+    resize: none;
+}
+
+.ivu-input-with-prefix.ivu-input {
+    padding-left: 32px;
 }
 
 // 下拉框
 .ivu-select-selection {
-  background: transparent;
-  box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
-  border-radius: 8px;
-  border: 1px solid #EAEDF7;
+    background: transparent;
+    box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
+    border-radius: 8px;
+    border: 1px solid #EAEDF7;
 }
 
 .ivu-select-dropdown {
-  background: #FFFFFF;
-  box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16);
-  border-radius: 8px;
+    background: #FFFFFF;
+    box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16);
+    border-radius: 8px;
 }
 
 // 分页
 .ivu-page {
-  .ivu-page-prev, .ivu-page-next, .ivu-page-item-jump-prev, .ivu-page-item-jump-next {
-    min-width: 28px;
-    height: 28px;
-    line-height: 26px;
-    font-family: PingFangSC-Regular, PingFang SC;
-    background: transparent;
-    //border-radius: 7px;
-    border: 1px solid transparent;
-    color: #7C88B1;
-
-    &:after {
-      color: #636E95;
+    .ivu-page-prev,
+    .ivu-page-next,
+    .ivu-page-item-jump-prev,
+    .ivu-page-item-jump-next {
+        min-width: 28px;
+        height: 28px;
+        line-height: 26px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        background: transparent;
+        //border-radius: 7px;
+        border: 1px solid transparent;
+        color: #7C88B1;
+        &:after {
+            color: #636E95;
+        }
+        &:hover {
+            color: #2373FF;
+        }
     }
-
-    &:hover {
-      color: #2373FF;
+    .ivu-page-item {
+        min-width: 28px;
+        height: 28px;
+        line-height: 28px;
+        margin-right: 8px;
+        background: transparent;
+        font-size: 12px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        border-radius: 6px;
+        border: 1px solid transparent;
+        a {
+            color: #636E95;
+        }
     }
-  }
-
-  .ivu-page-item {
-    min-width: 28px;
-    height: 28px;
-    line-height: 28px;
-    margin-right: 8px;
-    background: transparent;
-    font-size: 12px;
-    font-family: PingFangSC-Regular, PingFang SC;
-    border-radius: 6px;
-    border: 1px solid transparent;
-
-    a {
-      color: #636E95;
+    .ivu-page-item-active {
+        background: #F4F7FC;
+        box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
+        border: 1px solid #2373FF;
+        a {
+            color: #2373FF;
+        }
     }
-  }
-
-  .ivu-page-item-active {
-    background: #F4F7FC;
-    box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
-    border: 1px solid #2373FF;
-
-    a {
-      color: #2373FF;
-    }
-  }
 }
 
 // tabs
-
 .ivu-tabs-bar {
-  border-bottom: 1px solid #DEE2EE;
+    border-bottom: 1px solid #DEE2EE;
 }
 
 .ivu-tabs-nav {
-  .ivu-tabs-tab {
-    font-size: 16px;
-    font-family: PingFangSC-Medium, PingFang SC;
-    font-weight: 500;
-    color: #636E95;
-
-    &:hover {
-      color: #242F57;
+    .ivu-tabs-tab {
+        font-size: 16px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #636E95;
+        &:hover {
+            color: #242F57;
+        }
     }
-  }
-
-  .ivu-tabs-tab-active {
-    color: #242F57;
-  }
-
-  .ivu-tabs-ink-bar {
-    height: 3px;
-  }
+    .ivu-tabs-tab-active {
+        color: #242F57;
+    }
+    .ivu-tabs-ink-bar {
+        height: 3px;
+    }
 }

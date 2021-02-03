@@ -269,7 +269,6 @@
                     height: 40px;
                     border-radius: 8px;
                     padding-left: 24px;
-
                     i {
                         font-size: 24px;
                         margin-right: 12px;

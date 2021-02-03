@@ -1,5 +1,6 @@
 <template>
   <div class="fxmx-virtual-event">
+      <!-- 虚拟事件 -->
       <img src="../../../../static/img/datacenter/ysjgl/virtualEvent@2x.png" alt="">
       <div class="back" @click="back"></div>
   </div>

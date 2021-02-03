@@ -1,5 +1,6 @@
 <template>
   <div class="fxmx-virtual">
+      <!-- 虚拟属性 -->
       <img src="../../../../static/img/datacenter/ysjgl/virtual@2x.png" alt="">
       <div class="back" @click="back"></div>
   </div>

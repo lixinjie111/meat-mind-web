@@ -1,5 +1,6 @@
 <template>
   <div class="fxmx-user">
+      <!-- 用户属性 -->
       <img src="../../../../static/img/datacenter/ysjgl/user@2x.png" alt="">
       <div class="back" @click="back"></div>
   </div>

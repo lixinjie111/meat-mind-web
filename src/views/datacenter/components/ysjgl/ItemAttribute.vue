@@ -1,5 +1,6 @@
 <template>
   <div class="fxmx-item">
+      <!-- 物品属性 -->
       <img src="../../../../static/img/datacenter/ysjgl/item@2x.png" alt="">
       <div class="back" @click="back"></div>
   </div>

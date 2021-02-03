@@ -1,5 +1,6 @@
 <template>
   <div class="fxmx-visualization">
+      <!-- 可视化全埋点 -->
       <img src="../../../../static/img/datacenter/ysjgl/visualization@2x.png" alt="">
       <div class="back" @click="back"></div>
   </div>
