@@ -429,7 +429,8 @@
               <div class="cdyhmj_content_bom_lef_top">触达用户投放策略建议</div>
               <div class="cdyhmj_content_bom_lef_bom">
                 <div class="echarts1">
-                  <lineM id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM>
+                  <PieEcharts1 :colorList="$fjData.colorList" :myData="$fjData.box0Data"></PieEcharts1>
+                  <!-- <lineM id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM> -->
                 </div>
                 <div class="echarts1">
                   <div class="echarts11">
@@ -514,6 +515,35 @@
               <div class="jichuhuax_echarts_item_title_lef">
                 <div class="nljg">年龄结构</div>
                 <div class="range_titme">1-4当周</div>
+                <div class="range_data">
+                  <div class="range_data_left">
+                     <span>682</span>人
+                   </div>
+                  <div class="range_data_right">
+                    合计<span>7557</span>人
+                  </div>
+                </div>
+                <div class="range_data1">
+                  <div class="range_data_left">
+                    <div class="range_data_box1">
+                      环比
+                    <div class="pic"> 
+                      <img src="../../assets/img/yhhx/jiantou.png" alt="">
+                    </div> 
+                    <span>1.47%</span>
+                    </div> 
+                    <div class="range_data_box1"> 
+                      同比
+                      <div class="pic"> 
+                        <img src="../../assets/img/yhhx/jiantou.png" alt="">
+                      </div> 
+                      <span>4.47%</span>
+                    </div> 
+                   </div>
+                  <div class="range_data_right">
+                    均值<span>839.67</span>人
+                  </div>
+                </div>
               </div>
               <div class="jichuhuax_echarts_item_title_rig">
                 <img :src="threeP" class="threeP" />
@@ -529,6 +559,35 @@
               <div class="jichuhuax_echarts_item_title_lef">
                 <div class="nljg">收入结构</div>
                 <div class="range_titme">1-4当周</div>
+                 <div class="range_data">
+                  <div class="range_data_left">
+                     <span>782</span>人
+                   </div>
+                  <div class="range_data_right">
+                    合计<span>3557</span>人
+                  </div>
+                </div>
+                <div class="range_data1">
+                  <div class="range_data_left">
+                    <div class="range_data_box1">
+                      环比
+                    <div class="pic"> 
+                      <img src="../../assets/img/yhhx/jiantou.png" alt="">
+                    </div> 
+                    <span>3.47%</span>
+                    </div> 
+                    <div class="range_data_box1"> 
+                      同比
+                      <div class="pic"> 
+                        <img src="../../assets/img/yhhx/jiantou.png" alt="">
+                      </div> 
+                      <span>8.47%</span>
+                    </div> 
+                   </div>
+                  <div class="range_data_right">
+                    均值<span>139.67</span>人
+                  </div>
+                </div>
               </div>
               <div class="jichuhuax_echarts_item_title_rig">
                 <img :src="threeP" class="threeP">
@@ -875,6 +934,7 @@ import lineSp from '../../components/echarts/common/lineSp';
 import pieP from '../../components/echarts/common/pieP';
 
 import PieEcharts from '../../components/echarts/common/PieEcharts';
+import PieEcharts1 from '../../components/echarts/common/PieEcharts1';
 import RotateChart from '../../components/echarts/common/RotateChart';
 import LeidaEcharts from '../../components/echarts/common/LeidaEcharts';
 import MatchEcharts from '../../components/echarts/common/MatchEcharts';
@@ -884,7 +944,7 @@ import Yuanhuan1 from '../../components/echarts/common/Yuanhuan1';
 import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
 export default {
   components: {
-   barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,DefaultPage, PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
+   PieEcharts1,barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,DefaultPage, PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
   },
   name: "index",
   data() {
@@ -2492,6 +2552,7 @@ export default {
       flex-wrap: wrap;
       justify-content: space-between;
       .jichuhuax_echarts_item {
+        position: relative;
         width: 49%;
         height: 446px;
         background: #ffffff;
@@ -2520,10 +2581,74 @@ export default {
               font-weight: 400;
               color: #7c88b1;
             }
+            .range_data{
+              width: 340px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              .range_data_left{
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #7C88B1;
+                span{
+                  font-size: 30px;
+                  font-family: HelveticaNeue-Medium, HelveticaNeue;
+                  font-weight: 500;
+                  color: #242F57;
+                }
+              }
+              .range_data_right{
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #242F57;
+              }
+            }
+            .range_data1{
+              width: 340px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              .range_data_left{
+                  font-size: 12px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #7C88B1;
+                  display: flex;
+                  align-items: center;
+                  .range_data_box1{
+                    display: flex;
+                    align-items: center;
+                    margin-right: 13px;
+                    .pic{
+                      width: 14px;
+                    }
+                    span{
+                      color:#FB343E
+                    }
+                  }
+                // span{
+                //   font-size: 30px;
+                //   font-family: HelveticaNeue-Medium, HelveticaNeue;
+                //   font-weight: 500;
+                //   color: #242F57;
+                // }
+              }
+              .range_data_right{
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #242F57;
+              }
+            }
           }
           .jichuhuax_echarts_item_title_rig {
+            position: absolute;
             width: 16px;
             height: 16px;
+            right:16px;
+            top:16px;
             .threeP {
               display: block;
               width: 100%;
@@ -2803,6 +2928,7 @@ export default {
               font-weight: 400;
               color: #7c88b1;
             }
+            
           }
           .jichuhuax_echarts_item_title_rig {
             width: 16px;
@@ -2844,5 +2970,9 @@ export default {
       }
     }
   }
+}
+img{
+  width: 100%;
+  display: block;
 }
 </style>

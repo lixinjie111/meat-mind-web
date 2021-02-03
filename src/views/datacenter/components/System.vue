@@ -36,7 +36,7 @@
         name:"System",
         data(){
             return{
-                currentIndex:'',
+                currentIndex:-1,
                 imgList:[
                     {
                         img:require('../../../assets/img/xtjc/1.png'),

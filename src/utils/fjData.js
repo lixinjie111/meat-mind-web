@@ -1,6 +1,10 @@
 const fjEData = {
     colorList: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'],
     colorList1: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F',],
+    box0Data: {
+        name: ['快手', '小红书'],
+        value: [55, 45],
+    },
     box1Data: {
         name: ['26-30岁', '31-35岁', '41-45岁', '21-25岁', '18-20岁', '36-40岁'],
         value: [528, 464, 958, 423, 123, 400],
