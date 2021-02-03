@@ -35,6 +35,7 @@
             display: flex;
             flex-direction: column;
             width: calc(100% - 240px);
+            background-color: #fff;
 
             .content {
                 width: 100%;

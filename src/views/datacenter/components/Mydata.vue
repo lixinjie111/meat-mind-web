@@ -2,9 +2,16 @@
   <div class="wdsj">
     <div v-if="resultShow">
       <div class="result-box">
-        <div class="title">查看数据</div>
+        <div class="title">
+          <span class="rotate180">
+            <i class="iconfont iconarrowRight" @click="resultShow = false"></i>
+          </span>
+          <span class="separate-line"></span>
+          2020年上半年奢侈品销售数据</div>
         <div class="list">
-          <div class="back-btn" @click="resultShow = false">返回数据列表</div>
+          <div class="operation-section">
+            <Input prefix="ios-search" class="operation-section-input" placeholder="请输入商品名称/商品编码" style="width: 217px" />
+          </div>
           <Table border :columns="columns" :data="data"></Table>
           <div class="page-box">
             <Page :current="currentPage" :total="totalPage" :page-size="pageSize" simple
@@ -67,7 +74,7 @@
             <div>已上传文件列表</div>
             <div class="module-btns btn-box">
               <Button class="a">更新数据</Button>
-              <Button class="a" type="primary">上传数据</Button>
+              <Button class="a" type="primary" @click="uploadModal1 = true">上传数据</Button>
             </div>
           </div>
           <div class="table-warp">
@@ -308,41 +315,33 @@
         pageSize: 15,
         columns: [
           {
-            title: '产品ID',
+            title: '销售日期',
             key: 'pid'
           },
           {
-            title: '产品名称',
+            title: '店号',
             key: 'name'
           },
           {
-            title: '供应商ID',
+            title: '类别',
             key: 'vid'
           },
           {
-            title: '类别ID',
+            title: '品牌编号',
             key: 'cid'
           },
           {
-            title: '单位数量',
+            title: '楼层',
             key: 'num'
           },
           {
-            title: '单价',
+            title: '销售额',
             key: 'price'
           },
           {
-            title: '库存量',
+            title: '毛利',
             key: 'inventory'
           },
-          {
-            title: '订购量',
-            key: 'order'
-          },
-          {
-            title: '再订购量',
-            key: 'orderA'
-          }
         ],
         data: [
           {
@@ -1064,22 +1063,33 @@
         font-weight: 500;
         color: #212121;
       }
-
+      .rotate180{
+        transform:rotate(180deg);
+        display: inline-block;
+        .iconfont{
+          font-size: 24px;
+        }
+      }
+      .separate-line{
+        width: 1px;
+        height: 20px;
+        background: #EAEDF7;
+        display: inline-block;
+        margin: 0 10px;
+      }
+      .operation-section{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 12px 0;
+      }
       .list {
         margin-top: 24px;
-        padding: 24px;
+        padding: 12px 24px;
         background: #FFFFFF;
-        border-radius: 4px;
-
-        .back-btn {
-          margin-bottom: 30px;
-          font-size: 18px;
-          font-family: PingFangSC-Medium, PingFang SC;
-          font-weight: 400;
-          color: #497CFF;
-          cursor: pointer;
-        }
-
+        box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+        border-radius: 12px;
+        border: 1px solid #EAEDF7;
         .page-box {
           margin-top: 10px;
           text-align: right;

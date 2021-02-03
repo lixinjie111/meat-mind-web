@@ -52,7 +52,7 @@ export default {
   width: 100%;
   height: 64px;
   padding: 0 24px;
-  background: #F4F7FC;
+  background: #fff;
   &:after{
     position: absolute;
     left: 0;
