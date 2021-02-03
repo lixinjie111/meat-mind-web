@@ -47,7 +47,7 @@
                     <span class="tilTxt">用户动线分析结果</span>
                     </div>
                     <div class="yhdx_title_rig">
-                    <img :src="closeIcon" alt="" class="closeIcon">
+                    <!-- <img :src="closeIcon" alt="" class="closeIcon"> -->
                     </div>
                 </div>
                 <div class="switch_container">
@@ -703,11 +703,11 @@
         }
         .yhxw_container{
             position: absolute;
-            width: 875px;
+            width: 820px;
             height: 120px;
             background-image: url(/img/bgImg.a22ae601.png);
             bottom: 10px;
-            left: 6px;
+            left: 35px;
             background-size: cover;
             z-index: 999;
             .yhxw_title{
@@ -728,7 +728,7 @@
                 display: flex;
                 align-items: center;
                 .bqitm{
-                    width: 240px;
+                    width: 165px;
                     height: 100%;
                     background: #FFFFFF;
                     border-radius: 8px;
