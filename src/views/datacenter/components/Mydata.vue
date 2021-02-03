@@ -1055,7 +1055,7 @@
     }
 
     .result-box {
-      padding: 20px 24px;
+      padding: 20px 0;
 
       .title {
         font-size: 24px;
