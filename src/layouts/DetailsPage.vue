@@ -34,7 +34,7 @@
         width: 100%;
         height: 100%;
         padding: 0 24px 24px;
-        background: #F4F7FC;
+        // background: #F4F7FC;
 
         .title {
             display: flex;
@@ -60,7 +60,7 @@
         }
 
         .details-page-content {
-            min-height: calc(100% - 72px);
+            min-height: calc(100% - 64px);
         }
     }
 </style>

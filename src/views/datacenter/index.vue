@@ -1,18 +1,25 @@
 <template>
     <!-- 数据管理 -->
-    <DefaultPage>
-        <div class="data-content">
-            <router-view></router-view>
-        </div>
-    </DefaultPage>
+<div class="data-center">
+  <!-- 分析工具 -->
+  <Side></Side>
+  <div class="container">
+    <Header></Header>
+    <div class="data-content">
+      <router-view></router-view>
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
-    import DefaultPage from "../../layouts/DefaultSubPage";
-
+import Side from "../../components/Side"
+import Header from "../../components/DefaultHeader"
     export default {
         name: "index",
-        components: {DefaultPage},
+        components:{
+           Side, Header
+        },
         data() {
             return {}
         }
@@ -20,7 +27,18 @@
 </script>
 
 <style scoped lang="scss">
-    .data-content {
-
-    }
+.data-center{
+ display: flex;
+ .container{
+   display: flex;
+   flex-direction: column;
+   width: calc(100% - 240px);
+   .data-content{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: calc(100vh - 64px);
+   }
+ }
+}
 </style>

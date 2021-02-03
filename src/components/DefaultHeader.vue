@@ -55,18 +55,6 @@ export default {
   height: 64px;
   padding: 0 24px;
   background: #fff;
-  &:after{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    content:"";
-    width: 100%;
-    height: 4px;
-    background: #fff;
-    box-shadow:inset 0px 1px 1px 0px rgba(211,213,217,0.63);
-  }
-
-
 
   .target{
     height: 32px;
