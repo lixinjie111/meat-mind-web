@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "19821819",
+      "name": "帮助line",
+      "font_class": "bangzhuline",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "19821820",
+      "name": "提醒",
+      "font_class": "tixing",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
       "icon_id": "19759658",
       "name": "领取新人礼包",
       "font_class": "lingquxinrenlibao",
