@@ -21,8 +21,8 @@
                 <img :src="avatImg" alt="" srcset="" class="avatImg">
               </div>
               <div class="perinfo">
-                <div class="perinfo_t">研学青年</div>
-                <div class="perinfo_b">分群用户数 7930人</div>
+                <div class="perinfo_t">北京上班族</div>
+                <div class="perinfo_b">分群用户数 28790人</div>
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(1)">展开动线地图</div>
@@ -107,8 +107,8 @@
                 <img :src="avatImg" alt="" srcset="" class="avatImg">
               </div>
               <div class="perinfo">
-                <div class="perinfo_t">研学青年</div>
-                <div class="perinfo_b">分群用户数 7930人</div>
+                <div class="perinfo_t">企业高管</div>
+                <div class="perinfo_b">分群用户数 3204人</div>
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(3)">展开动线地图</div>
@@ -150,8 +150,8 @@
                 <img :src="avatImg" alt="" srcset="" class="avatImg">
               </div>
               <div class="perinfo">
-                <div class="perinfo_t">研学青年</div>
-                <div class="perinfo_b">分群用户数 7930人</div>
+                <div class="perinfo_t">北漂一族</div>
+                <div class="perinfo_b">分群用户数 18197人</div>
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(4)">展开动线地图</div>
@@ -193,8 +193,8 @@
                 <img :src="avatImg" alt="" srcset="" class="avatImg">
               </div>
               <div class="perinfo">
-                <div class="perinfo_t">研学青年</div>
-                <div class="perinfo_b">分群用户数 7930人</div>
+                <div class="perinfo_t">自由职业</div>
+                <div class="perinfo_b">分群用户数 28790人</div>
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(5)">展开动线地图</div>
