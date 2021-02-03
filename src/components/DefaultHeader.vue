@@ -70,14 +70,13 @@ export default {
       width: 360px;
       height: 32px;
       padding-left:44px;
-      box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8), -2px -2px 7px 0px #FFFEFA;
+      box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset, -2px -2px 7px 0px #FFFEFA inset;
       border-radius: 8px;
-      // border: 1px solid #C6CBDE;
-      border: none;
+      border: 0.88px solid #C6CBDE;
       outline-style: none;
-      &:hover{
-        border: 1px solid #C6CBDE;
-      }
+      /*&:hover{*/
+      /*  border: 1px solid #C6CBDE;*/
+      /*}*/
     }
     input::-webkit-input-placeholder{
       color: #97A0C3;
@@ -155,6 +154,8 @@ export default {
         display: inline-block;
         height: 26px;
         font-size: 18px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
         color: #242F57;
         line-height: 26px;
       }
