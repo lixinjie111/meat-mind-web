@@ -1,6 +1,5 @@
 const dataCenter=()=>import('./index');
 const Mydata=()=>import('./components/Mydata.vue')
-const Mydata1=()=>import('./components/Mydata1.vue')
 const Market=()=>import('./components/Market.vue')
 const System=()=>import('./components/System.vue')
 const Metax=()=>import('./components/Metax.vue')
@@ -31,13 +30,6 @@ export default [
         meta:{title:"我的数据",moduleName},
         component:Mydata,
         name:`${moduleName}-my`
-      },
-      {
-        path:`/${moduleName}/my1`,
-        label:"我的数据1",
-        meta:{title:"我的数据1",moduleName},
-        component:Mydata1,
-        name:`${moduleName}-my1`
       },
       {
         path:`/${moduleName}/market`,
