@@ -6,12 +6,14 @@
       <input class="input-search" type="text" placeholder="输入关键词进行搜索...">
     </div>
     <div class="control">
-      <Tooltip content="消息通知" theme="light">
-        <div class="alarm">
-          <i class="iconfont iconzhong"></i>
+        <div class="service">
+          <i class="iconfont iconbangzhuline"></i>
           <div class="group"></div>
         </div>
-      </Tooltip>
+        <div class="alarm">
+          <i class="iconfont icontixing"></i>
+          <div class="group"></div>
+        </div>
 
       <div class="column"></div>
       <div class="avatar">
@@ -45,7 +47,7 @@ export default {
 
 <style lang="scss" scoped>
 .sass-header {
-  position: relative;
+  // position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,9 +62,12 @@ export default {
     content:"";
     width: 100%;
     height: 4px;
-    background: #FAFCFF;
+    background: #fff;
     box-shadow:inset 0px 1px 1px 0px rgba(211,213,217,0.63);
   }
+
+
+
   .target{
     height: 32px;
     font-size: 24px;
@@ -78,19 +83,19 @@ export default {
       width: 360px;
       height: 32px;
       padding-left:44px;
-      background: #F4F7FC ;
-      box-shadow: inset 2px 2px 8px 0px rgba(210, 213, 225, 0.8), inset -2px -2px 8px 0px #FFFEFA;
-      border-radius: 20px;
-      // border: 1px solid #D2D5E1;
-      border: none;
+      box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset, -2px -2px 7px 0px #FFFEFA inset;
+      border-radius: 8px;
+      border: 0.88px solid #C6CBDE;
       outline-style: none;
-      &:hover{
-        border: 1px solid #D2D5E1;
-      }
+      /*&:hover{*/
+      /*  border: 1px solid #C6CBDE;*/
+      /*}*/
     }
     input::-webkit-input-placeholder{
       color: #97A0C3;
       font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
     }
     img{
       position: absolute;
@@ -107,22 +112,28 @@ export default {
     display: flex;
     // justify-content: flex-end;
     align-items: center;
-    .alarm{
-      position: relative;
+    .service,.alarm{
       display: flex;
       align-items: center;
       justify-content: center;
       width: 40px;
       height: 40px;
+      margin-left: 16px;
+      background: rgba(255, 255, 255, 0.5);
+      box-shadow: 4px 4px 8px 0px rgba(36, 47, 87, 0.06), -4px -4px 9px 0px rgba(255, 255, 255, 0.59);
+      border: 1px solid #FFFFFF;
       border-radius: 50%;
-      background: #FFFFFF;
       cursor: pointer;
+      >i{ 
+        color: #7C88B1;
+        font-size: 24px;    
+      }
       &:hover{
         color: #2373FF;
       }
-      i{ 
-        font-size: 24px;    
-      }
+    }
+    .alarm{
+      position: relative;
       .group{
         position: absolute;
         width: 5px;
@@ -148,12 +159,16 @@ export default {
         width: 40px;
         height: 40px;
         margin-right: 10px;
-        border-radius: 50%;
+        box-shadow: 8px 8px 15px 0px rgba(36, 47, 87, 0.06), -8px -8px 17px 0px rgba(255, 255, 255, 0.6);
+        border-radius: 28px;
+        border: 1px solid #FFFFFF;
       }
       span{
         display: inline-block;
         height: 26px;
         font-size: 18px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
         color: #242F57;
         line-height: 26px;
       }
