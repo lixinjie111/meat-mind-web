@@ -191,12 +191,12 @@
 <style scoped lang="scss">
     .home {
         .data-admin {
-            margin-left: -24px;
             display: flex;
             flex-direction: column;
-            width: calc(100% + 48px);
-            height: calc(100vh - 80px);
+            width: 100%;
+            height: calc(100vh - 64px);
             overflow-y: scroll;
+            background: #f5f5f5;
 
             img {
                 width: 100%;

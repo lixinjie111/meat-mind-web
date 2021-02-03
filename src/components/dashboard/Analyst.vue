@@ -956,6 +956,8 @@ export default {
 <style scoped lang="scss">
 .analyst-box {
   width: 100%;
+  padding: 0 24px;
+
   .nav {
     width: 100%;
     padding: 16px 24px;
