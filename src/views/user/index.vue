@@ -14,7 +14,222 @@
           </div>
         </div>
 
-        <div class="echarts_container1">
+        <div class="bjsbz_container">
+          <div class="lef_area">
+            <div class="lef_area_top">
+              <div class="actImg_container">
+                <img :src="avatImg" alt="" srcset="" class="avatImg">
+              </div>
+              <div class="perinfo">
+                <div class="perinfo_t">研学青年</div>
+                <div class="perinfo_b">分群用户数 7930人</div>
+              </div>
+            </div>
+            <div class="lef_area_bom" @click="expandfn(1)">展开动线地图</div>
+          </div>
+          <div class="cen_area"></div>
+          <div class="rig_area">
+            <div class="yl_container">
+              <div class="yl_lef" style="background: #FF9502;"></div>
+              <div class="yl_rig">娱乐</div>
+            </div>
+            <div class="gt_container">
+              <div class="yl_lef" style="background: #36D67B;"></div>
+              <div class="yl_rig">沟通</div>
+            </div>
+            <div class="gz_container">
+              <div class="yl_lef" style="background: #A49DFA;"></div>
+              <div class="yl_rig">工作</div>
+            </div>
+            <div class="xw_container">
+              <div class="yl_lef" style="background: #017AFF;"></div>
+              <div class="yl_rig">新闻</div>
+            </div>
+            <div class="sp_container">
+              <div class="yl_lef" style="background: #2EB1FF;"></div>
+              <div class="yl_rig">视频</div>
+            </div>
+            <div class="xs_container">
+              <div class="yl_lef" style="background: #F383FF;"></div>
+              <div class="yl_rig">学术</div>
+            </div>
+          </div>
+        </div>
+        <vDxitem v-if="cux == 1"></vDxitem>
+
+        <div class="bjsbz_container">
+          <div class="lef_area">
+            <div class="lef_area_top">
+              <div class="actImg_container">
+                <img :src="avatImg" alt="" srcset="" class="avatImg">
+              </div>
+              <div class="perinfo">
+                <div class="perinfo_t">研学青年</div>
+                <div class="perinfo_b">分群用户数 7930人</div>
+              </div>
+            </div>
+            <div class="lef_area_bom" @click="expandfn(2)">展开动线地图</div>
+          </div>
+          <div class="cen_area"></div>
+          <div class="rig_area">
+            <div class="yl_container">
+              <div class="yl_lef" style="background: #FF9502;"></div>
+              <div class="yl_rig">娱乐</div>
+            </div>
+            <div class="gt_container">
+              <div class="yl_lef" style="background: #36D67B;"></div>
+              <div class="yl_rig">沟通</div>
+            </div>
+            <div class="gz_container">
+              <div class="yl_lef" style="background: #A49DFA;"></div>
+              <div class="yl_rig">工作</div>
+            </div>
+            <div class="xw_container">
+              <div class="yl_lef" style="background: #017AFF;"></div>
+              <div class="yl_rig">新闻</div>
+            </div>
+            <div class="sp_container">
+              <div class="yl_lef" style="background: #2EB1FF;"></div>
+              <div class="yl_rig">视频</div>
+            </div>
+            <div class="xs_container">
+              <div class="yl_lef" style="background: #F383FF;"></div>
+              <div class="yl_rig">学术</div>
+            </div>
+          </div>
+        </div>
+        <vDxitem v-if="cux == 2"></vDxitem>
+
+        <div class="bjsbz_container">
+          <div class="lef_area">
+            <div class="lef_area_top">
+              <div class="actImg_container">
+                <img :src="avatImg" alt="" srcset="" class="avatImg">
+              </div>
+              <div class="perinfo">
+                <div class="perinfo_t">研学青年</div>
+                <div class="perinfo_b">分群用户数 7930人</div>
+              </div>
+            </div>
+            <div class="lef_area_bom" @click="expandfn(3)">展开动线地图</div>
+          </div>
+          <div class="cen_area"></div>
+          <div class="rig_area">
+            <div class="yl_container">
+              <div class="yl_lef" style="background: #FF9502;"></div>
+              <div class="yl_rig">娱乐</div>
+            </div>
+            <div class="gt_container">
+              <div class="yl_lef" style="background: #36D67B;"></div>
+              <div class="yl_rig">沟通</div>
+            </div>
+            <div class="gz_container">
+              <div class="yl_lef" style="background: #A49DFA;"></div>
+              <div class="yl_rig">工作</div>
+            </div>
+            <div class="xw_container">
+              <div class="yl_lef" style="background: #017AFF;"></div>
+              <div class="yl_rig">新闻</div>
+            </div>
+            <div class="sp_container">
+              <div class="yl_lef" style="background: #2EB1FF;"></div>
+              <div class="yl_rig">视频</div>
+            </div>
+            <div class="xs_container">
+              <div class="yl_lef" style="background: #F383FF;"></div>
+              <div class="yl_rig">学术</div>
+            </div>
+          </div>
+        </div>
+        <vDxitem v-if="cux == 3"></vDxitem>
+
+        <div class="bjsbz_container">
+          <div class="lef_area">
+            <div class="lef_area_top">
+              <div class="actImg_container">
+                <img :src="avatImg" alt="" srcset="" class="avatImg">
+              </div>
+              <div class="perinfo">
+                <div class="perinfo_t">研学青年</div>
+                <div class="perinfo_b">分群用户数 7930人</div>
+              </div>
+            </div>
+            <div class="lef_area_bom" @click="expandfn(4)">展开动线地图</div>
+          </div>
+          <div class="cen_area"></div>
+          <div class="rig_area">
+            <div class="yl_container">
+              <div class="yl_lef" style="background: #FF9502;"></div>
+              <div class="yl_rig">娱乐</div>
+            </div>
+            <div class="gt_container">
+              <div class="yl_lef" style="background: #36D67B;"></div>
+              <div class="yl_rig">沟通</div>
+            </div>
+            <div class="gz_container">
+              <div class="yl_lef" style="background: #A49DFA;"></div>
+              <div class="yl_rig">工作</div>
+            </div>
+            <div class="xw_container">
+              <div class="yl_lef" style="background: #017AFF;"></div>
+              <div class="yl_rig">新闻</div>
+            </div>
+            <div class="sp_container">
+              <div class="yl_lef" style="background: #2EB1FF;"></div>
+              <div class="yl_rig">视频</div>
+            </div>
+            <div class="xs_container">
+              <div class="yl_lef" style="background: #F383FF;"></div>
+              <div class="yl_rig">学术</div>
+            </div>
+          </div>
+        </div>
+        <vDxitem v-if="cux == 4"></vDxitem>
+
+        <div class="bjsbz_container">
+          <div class="lef_area">
+            <div class="lef_area_top">
+              <div class="actImg_container">
+                <img :src="avatImg" alt="" srcset="" class="avatImg">
+              </div>
+              <div class="perinfo">
+                <div class="perinfo_t">研学青年</div>
+                <div class="perinfo_b">分群用户数 7930人</div>
+              </div>
+            </div>
+            <div class="lef_area_bom" @click="expandfn(5)">展开动线地图</div>
+          </div>
+          <div class="cen_area"></div>
+          <div class="rig_area">
+            <div class="yl_container">
+              <div class="yl_lef" style="background: #FF9502;"></div>
+              <div class="yl_rig">娱乐</div>
+            </div>
+            <div class="gt_container">
+              <div class="yl_lef" style="background: #36D67B;"></div>
+              <div class="yl_rig">沟通</div>
+            </div>
+            <div class="gz_container">
+              <div class="yl_lef" style="background: #A49DFA;"></div>
+              <div class="yl_rig">工作</div>
+            </div>
+            <div class="xw_container">
+              <div class="yl_lef" style="background: #017AFF;"></div>
+              <div class="yl_rig">新闻</div>
+            </div>
+            <div class="sp_container">
+              <div class="yl_lef" style="background: #2EB1FF;"></div>
+              <div class="yl_rig">视频</div>
+            </div>
+            <div class="xs_container">
+              <div class="yl_lef" style="background: #F383FF;"></div>
+              <div class="yl_rig">学术</div>
+            </div>
+          </div>
+        </div>
+        <vDxitem v-if="cux == 5"></vDxitem>
+
+        <!-- <div class="echarts_container1">
           <div class="left_timer_container">
             <img :src="leftTimerImg" class="leftTimerImg" />
           </div>
@@ -230,9 +445,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="map_container">
+        <!-- <div class="map_container">
           <div class="map_content">
             <video
                     class="player"
@@ -266,9 +481,9 @@
               <span class="item_txt">交通、餐饮、娱乐</span>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="radio_container">
+        <!-- <div class="radio_container">
           <div class="radiocontent">
             <div class="radiocontent_item">
               <div class="radiocontent_item_label1"></div>
@@ -295,7 +510,8 @@
               <div class="radiocontent_item_txt">学术APP</div>
             </div>
           </div>
-        </div>
+        </div> -->
+
       </div>
 
       <!--触达用户媒介-->
@@ -853,7 +1069,6 @@
     </div>
   </DefaultPage>
 </template>
-
 <script>
 import DefaultPage from "../../layouts/DefaultPage";
 import barEcharts from '../../components/echarts/common/barEcharts';
@@ -882,9 +1097,11 @@ import Yibiao1Echarts from '../../components/echarts/common/Yibiao1Echarts';
 import YibiaoCharts2 from '../../components/echarts/common/YibiaoCharts2';
 import Yuanhuan1 from '../../components/echarts/common/Yuanhuan1';
 import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
+import vDxitem from "./dxItem"
 export default {
   components: {
    barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,DefaultPage, PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
+   vDxitem
   },
   name: "index",
   data() {
@@ -916,13 +1133,18 @@ export default {
       dyI:require("../../assets/img/yhhx/dyI.png"),
       tu20:require("../../assets/img/yhhx/tu20.png"),
       tu75:require("../../assets/img/yhhx/tu75.png"),
-      descTitle:'北京上班族出行场景'
+      descTitle:'北京上班族出行场景',
+      avatImg:require("../../assets/img/yhhx/avat.png"),
+      cux:1
     };
   },
   mounted() {
     this.initPopEcharts();
   },
   methods: {
+    expandfn(arg){
+      this.cux = arg;
+    },
     clickTab(arg){
       if(arg == 1){
         this.descTitle = '北京上班族出行场景';
@@ -1588,7 +1810,6 @@ export default {
   },
 };
 </script>
-
 <style scoped lang="scss">
 .user-protrait {
   .yhdx_container {
@@ -1638,6 +1859,99 @@ export default {
           display: block;
           width: 24px;
           height: 24px;
+        }
+      }
+    }
+    .bjsbz_container{
+      width: 100%;
+      height: 105px;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      border: 1px solid #EAEDF7;
+      margin-bottom: 16px;
+      .lef_area{
+        width: 193px;
+        height: 100%;
+        .lef_area_top{
+          width: 100%;
+          height: 64px;
+          display: flex;
+          align-items: center;
+          .actImg_container{
+            width: 64px;
+            height: 64px;
+            .avatImg{
+              width: 100%;
+            }
+          }
+          .perinfo{
+            flex: 1;
+            height: 100%;
+            padding: 8px 4px;
+            box-sizing: border-box;
+            .perinfo_t{
+              width: 100%;
+              font-size: 16px;
+              font-family: PingFangSC-Regular, PingFang SC;
+              font-weight: 400;
+              color: #242F57;
+              margin-bottom: 4px;
+            }
+            .perinfo_b{
+              width: 100%;
+              font-size: 12px;
+              font-family: PingFangSC-Regular, PingFang SC;
+              font-weight: 400;
+              color: #636E95;
+            }
+          }
+        }
+        .lef_area_bom{
+          width: 100%;
+          height: 40px;
+          background: #F4F7FC;
+          border: 1px solid #EAEDF7;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 14px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #636E95;
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+      .cen_area{
+        flex-grow: 1;
+        height: 100%;
+        background-color: darkorchid;
+      }
+      .rig_area{
+        width: 270px;
+        height: 100%;
+        padding: 28px 31px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        font-size: 12px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #636E95;
+        .yl_container,.gt_container,.gz_container,.xw_container,.sp_container,.xs_container{
+          display: flex;
+          align-items: center;
+          margin-bottom: 16px;
+          margin-right: 20px;
+          .yl_lef{
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            margin-right: 4px;
+          }
         }
       }
     }

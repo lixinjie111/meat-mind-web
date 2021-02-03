@@ -129,6 +129,7 @@ export default {
     .per_left,
     .per_right {
       display: flex;
+      align-items: center;
       .per_status {
         display: block;
         width: 12px;
