@@ -3,22 +3,32 @@
       <img src="../../../../static/img/datacenter/ysjgl/item@2x.png" alt="">
       <div class="back" @click="back"></div>
   </div> -->
-    <DetailsPage title="物品属性" backname="data-center-metax">
-    <HeaderNav></HeaderNav>
-    <TableModel :columns="columns" :tableData="tableData"></TableModel>
+  <DetailsPage title="物品属性" backname="data-center-metax">
+    <HeaderSearch></HeaderSearch>
+    <TableModel :columns="columns" :tableData="tableData">
+      <div class="more-opterate">
+        <div>批量操作：</div>
+        <div class="reset-btn">批量重命名</div>
+      </div>
+    </TableModel>
   </DetailsPage>
 </template>
 
 <script>
 import DetailsPage from "../../../../layouts/DetailsPage";
-import HeaderNav from "../base/HeaderNav";
+import HeaderSearch from "../base/HeaderSearch";
 import TableModel from "../base/TableModel";
 export default {
-    name:"ItemAttribute",
-    components: { DetailsPage, HeaderNav, TableModel },
+  name: "ItemAttribute",
+  components: { DetailsPage, HeaderSearch, TableModel },
   data() {
     return {
       columns: [
+          {
+              type:"selection",
+              width:60,
+              align:"center"
+          },
         {
           title: "属性名",
           slot: "name",
@@ -30,33 +40,33 @@ export default {
         {
           title: "物品类型",
           key: "type",
-          width: 100,
+          width: 140,
         },
         {
           title: "数据类型",
           key: "data",
-          width: 100,
+          width: 140,
         },
         {
           title: "单位/格式",
           key: "format",
-          width: 100,
+          width: 140,
         },
         {
           title: "显示状态",
           key: "status",
-          width: 100,
+          width: 140,
         },
         {
           title: "预置",
           key: "target",
-          width: 80,
-        },
-        {
-          title: "操作",
-          slot: "operate",
           width: 120,
         },
+        // {
+        //   title: "操作",
+        //   slot: "operate",
+        //   width: 120,
+        // },
       ],
       tableData: [
         {
@@ -64,7 +74,7 @@ export default {
           show: "是否封禁",
           data: "逻辑",
           status: "可见",
-          stype: "",
+          type: "-",
           target: "否",
           format: "无",
           operate: "",
@@ -74,7 +84,7 @@ export default {
           show: "到达时间",
           data: "逻辑",
           status: "隐藏",
-          stype: "",
+          type: "-",
           target: "是",
           format: "无",
           operate: "",
@@ -84,7 +94,7 @@ export default {
           show: "更新时间",
           data: "逻辑",
           status: "隐藏 ",
-          stype: "",
+          type: "-",
           target: "是",
           format: "无",
           operate: "",
@@ -104,7 +114,7 @@ export default {
           show: "站点",
           data: "数值",
           status: "隐藏 ",
-          stype: "",
+          type: "-",
           target: "无",
           format: "无",
           operate: "",
@@ -114,7 +124,7 @@ export default {
           show: "类目ID",
           data: "数值",
           status: "隐藏",
-          stype: "",
+          type: "-",
           target: "是",
           format: "无",
           operate: "",
@@ -124,7 +134,7 @@ export default {
           show: "商品SPU",
           data: "数值",
           status: "可见",
-          stype: "",
+          type: "-",
           target: "是",
           format: "无",
           operate: "",
@@ -134,7 +144,7 @@ export default {
           show: "是否新品",
           data: "数值",
           status: "可见",
-          stype: "",
+          type: "-",
           target: "无",
           format: "无",
           operate: "",
@@ -144,7 +154,7 @@ export default {
           show: "分享商品",
           data: "数值",
           status: "隐藏 ",
-          stype: "",
+          type: "-",
           target: "是",
           format: "无",
           operate: "",
@@ -154,15 +164,15 @@ export default {
           show: "直播间ID",
           data: "数值",
           status: "隐藏",
-          stype: "",
+          type: "-",
           target: "无",
           format: "无",
           operate: "",
         },
       ],
     };
-  },    
-}
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -183,4 +193,34 @@ export default {
 //         cursor: pointer;
 //     }
 // }
+.more-opterate {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  border-bottom: 1px solid #eaedf7;
+  .more-opterate {
+    width: 70px;
+    height: 20px;
+    margin-right: 8px;
+    font-size: 14px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #333333;
+    line-height: 20px;
+  }
+  .reset-btn {
+    width: 84px;
+    height: 28px;
+    box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8),
+      -2px -2px 7px 0px #fffefa;
+    border-radius: 8px;
+    border: 1px solid #c6cbde;
+    line-height: 26px;
+    text-align: center;
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #636e95;
+  }
+}
 </style>
