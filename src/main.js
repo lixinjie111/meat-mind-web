@@ -6,6 +6,7 @@ import ViewUI from 'view-design'
 import '../src/assets/viewui-theme/index.less'
 import echarts from 'echarts'
 import "../src/static/icon/iconfont.css"
+import "../src/static/icon2/iconfont.css"
 import "../src/assets/scss/main.scss"
 import lxjData from "./utils/lxjData.js"
 import fjData from "./utils/fjData.js"
