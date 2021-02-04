@@ -3,7 +3,7 @@
         <p class="title">数据市场</p>
         <div class="data-card">
             <div class="data-card-title"><p>为您推荐</p></div>
-            <div class="data-card-content pb-24">
+            <div class="data-card-content">
                 <div class="item" v-for="(item,index) in recommendList" :key="index">
                     <img :src="item.img"/>
                     <div>
@@ -53,10 +53,10 @@
                     </div>
                 </div>
             </div>
-            <div class="data-card-page pb-24">
+            <!-- <div class="data-card-page pb-24">
                 <Page :current="currentPage" :total="totalPage" :page-size="pageSize" simple
                       @on-change="changePage"/>
-            </div>
+            </div> -->
         </div>
         <Modal class-name="data-market-modal" v-model="detailModal" footer-hide :closable="false">
             <div class="download">
@@ -208,7 +208,7 @@
 <style scoped lang="scss">
     .data-market-container {
         padding: 0 24px 24px;
-
+        height: 100%;
         .mt-24 {
             margin-top: 24px;
         }
@@ -252,7 +252,7 @@
             }
 
             .data-card-content {
-                padding: 24px 0 0 24px;
+                padding: 24px 0 8px 24px;
 
                 .item {
                     margin: 0 16px 16px 0;
