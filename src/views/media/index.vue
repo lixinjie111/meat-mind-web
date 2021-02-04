@@ -1,6 +1,8 @@
 <template>
   <DefaultPage title="媒介画像">
     <div class="media-protrait">
+      <div class="m-p-panel">
+      </div>
       <div class="m-p-rank">
         <div class="m-p-rank-header">
           <ul class="h-name-list">
@@ -977,7 +979,13 @@ export default {
 <style scoped lang="scss">
 .media-protrait {
   padding: 0 24px 24px 24px;
-
+  .m-p-panel{
+    width: 100%;
+    height: 263px;
+    // background: rgba(255, 255, 255, 0.65);
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 12px;
+  }
   .m-p-rank {
     width: 100%;
     height: 339px;
