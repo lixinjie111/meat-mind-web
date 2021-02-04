@@ -994,7 +994,6 @@
                             padding: 16px;
                             width: calc(50% - 6px);
                             height: 102px;
-                            background: #F7F9FD;
                             border-radius: 8px;
 
                             > p {
@@ -1020,6 +1019,26 @@
                                     }
                                 }
                             }
+
+                            &:nth-child(1) {
+                                background: rgba(219, 234, 255, 0.8);
+                                border: 1px solid #4D94FF;
+                            }
+
+                            &:nth-child(2) {
+                                background: rgba(237, 235, 254, 0.8);
+                                border: 1px solid #A49DFA;
+                            }
+
+                            &:nth-child(3) {
+                                background: rgba(255, 241, 244, 0.8);
+                                border: 1px solid #FC809F;
+                            }
+
+                            &:nth-child(4) {
+                                background: rgba(255, 250, 241, 0.8);
+                                border: 1px solid #FFD98C;
+                            }
                         }
                     }
                 }
@@ -1042,14 +1061,16 @@
                         width: 100%;
                         height: 49px;
                         line-height: 49px;
-                        background: #FFE6E5;
+                        background: linear-gradient(135deg, #FB5961 0%, #FF8054 100%);
+                        box-shadow: 3px 4px 8px 0px rgba(148, 63, 66, 0.3);
                         border-radius: 8px;
+                        border: 1px solid #FE9393;
 
                         > p {
-                            font-size: 21px;
+                            font-size: 20px;
                             font-family: PingFangSC-Medium, PingFang SC;
                             font-weight: 500;
-                            color: #FB343E;
+                            color: #FFFFFF;
                         }
                     }
 
