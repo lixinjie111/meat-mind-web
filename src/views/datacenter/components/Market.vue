@@ -358,6 +358,8 @@
 
             .data-card-content {
                 padding: 24px 0 8px 24px;
+                //解决滚动条影响页面宽度
+                margin-right: -10px;
 
                 .item {
                     margin: 0 16px 16px 0;

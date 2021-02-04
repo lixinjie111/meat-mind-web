@@ -37,7 +37,6 @@
             width: calc(100% - 240px);
 
             .content {
-                /*padding: 0 24px 24px 24px;*/
                 width: 100%;
                 height: calc(100vh - 64px);
                 overflow-y: scroll;

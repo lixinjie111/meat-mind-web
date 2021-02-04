@@ -134,6 +134,12 @@ export default {
             color: #242F57;
             line-height: 24px;
         }
+
+        >ul {
+            //解决滚动条影响页面宽度
+            margin-right: -10px;
+        }
+
         .model-item{
             display: inline-flex;
             width: 352px;
