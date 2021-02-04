@@ -566,6 +566,7 @@
                 border-radius: 4px;
                 z-index: 9999;
                 padding: 10px;
+                padding-bottom: 0;
                 box-sizing: border-box;
                 .timer12_top{
                 width: 100%;
