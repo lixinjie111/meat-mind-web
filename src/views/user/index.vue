@@ -556,7 +556,7 @@
                     <img :src="toLIcon" class="toLIcon" />
                   </div>
                 </div>
-                <div class="cal_item2">
+                <div class="cal_item2 cal_item21">
                   <div class="rt_choice"></div>
                   <div class="logo_container">
                     <img :src="ttIcon" class="logoImg" />
@@ -724,6 +724,7 @@
 
       <div class="jichuhuax_area_container">
         <div class="jichuhuax_area_til">基础画像</div>
+        <vTabCard :tabData="jchxData"></vTabCard>
         <div class="jichuhuax_echarts_container">
 
           <div class="jichuhuax_echarts_item">
@@ -969,6 +970,7 @@
 
       <div class="xwfx_area_container">
         <div class="xwfx_area_til">行为分析</div>
+        <vTabCard :tabData="xwfxData"></vTabCard>
         <!--          <div class="ditu_area">-->
         <!--            <video-->
         <!--              class="player"-->
@@ -1026,6 +1028,7 @@
 
       <div class="xzfx_area_container">
         <div class="xzfx_area_title">心智分析</div>
+        <vTabCard :tabData="xzfxData"></vTabCard>
         <div class="yhsj_echarts">
           <div class="yhsj_echarts_item_title">
             用户视觉心智动态捕捉
@@ -1074,6 +1077,7 @@
 
       <div class="smzqfx_area_container">
         <div class="smzqfx_title">生命周期分析</div>
+        <vTabCard :tabData="smzqfxData"></vTabCard>
         <div class="xfsmlcpg_container">
           <div class="xfsmlcpg_title">消费生命旅程评估</div>
           <div class="xinzfb_container_lef_content1">
@@ -1157,12 +1161,13 @@ import Yibiao1Echarts from '../../components/echarts/common/Yibiao1Echarts';
 import YibiaoCharts2 from '../../components/echarts/common/YibiaoCharts2';
 import Yuanhuan1 from '../../components/echarts/common/Yuanhuan1';
 import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
-import vDxitem from "./dxItem"
-import vDxitem1 from "./dxItem1"
+import vDxitem from "./dxItem";
+import vDxitem1 from "./dxItem1";
+import vTabCard from "./tabCard";
 export default {
   components: {
    PieEcharts1,barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,DefaultPage, PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
-   vDxitem,vDxitem1
+   vDxitem,vDxitem1,vTabCard
   },
   name: "index",
   data() {
@@ -1205,7 +1210,48 @@ export default {
       ifShowDx4:false,
       vDxtxt4:'展开用户动线',
       ifShowDx5:false,
-      vDxtxt5:'展开用户动线'
+      vDxtxt5:'展开用户动线',
+      jchxData:{
+        lefData:{
+          til:'当前状况',
+          subTil:'受众群体年龄覆盖范围窄，核心受众20 -25 岁行业覆盖不够深入，只覆盖高收入人群'
+        },
+        rigData:{
+          til:'策略建议',
+          subTil:'扩大受众群体的年龄范围，从15岁 - 40岁。行业覆盖宜深入打通渠道'
+        }
+      },
+      xwfxData:{
+        lefData:{
+          til:'当前状况',
+          subTil:'用户行为特征与年龄、职业等基本属性高度相关。重要的线上触点是生活服务、视频娱乐、社交通讯类应用'
+        },
+        rigData:{
+          til:'策略建议',
+          subTil:'结合用户使用习惯及使用场景差异，在19:00 - 22:30时间段使用娱乐场景APP（如抖音）进行品牌推广为佳'
+        }
+      },
+      xzfxData:{
+        lefData:{
+          til:'当前状况',
+          subTil:'用户对营销信息呈现波动性情绪反馈，注意力集中时间有限；日间情绪随时间波动大，对短视频APP偏好明显。'
+        },
+        rigData:{
+          til:'策略建议',
+          subTil:'选取用户心情愉悦的时间段进行品牌推广，结合场景优化用户触达方案。'
+        }
+      },
+      smzqfxData:{
+        lefData:{
+          til:'当前状况',
+          subTil:'早期客户留存转化率较低，成熟期及休眠期的用户消费潜力巨大，用户在餐饮百货品类价值贡献度高。'
+        },
+        rigData:{
+          til:'策略建议',
+          subTil:'对于早期顾客加大投放力度，对于成熟期及休眠期顾客挖掘其用户价值，迎合用户偏好制定策略。'
+        }
+      }
+
     };
   },
   mounted() {
@@ -2039,12 +2085,12 @@ export default {
         }
       }
       .right_btn {
-        width: 128px;
-        height: 48px;
-        background: #f4f7fc;
-        box-shadow: 4px 4px 8px 0px rgba(55, 84, 170, 0.16),
-        -4px -4px 8px 0px #ffffff;
-        border-radius: 24px;
+        width: 126px;
+        height: 40px;
+        background: #FFFFFF linear-gradient(148deg, rgba(220, 225, 236, 0.2) 0%, rgba(255, 255, 255, 0.76) 100%);
+        box-shadow: 3px 4px 8px 0px rgba(36, 47, 87, 0.1);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -2619,7 +2665,7 @@ export default {
               height: 120px;
               background: #ffffff;
               border-radius: 8px;
-              border: 1px solid #eaedf7;
+              border: 1px solid #2373FF;
               padding: 12px;
               box-sizing: border-box;
               position: relative;
@@ -2696,6 +2742,9 @@ export default {
                   margin-right: 10px;
                 }
               }
+            }
+            .cal_item21{
+              border: 1px solid #EAEDF7;
             }
           }
           .cdyhmj_bom {
@@ -2878,7 +2927,6 @@ export default {
           }
           .cdyhmj_content_bom_rig_bom {
             width: 100%;
-            height: 136px;
             .yhtIcon {
               width: 100%;
               height: 100%;
