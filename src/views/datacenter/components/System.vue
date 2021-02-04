@@ -178,7 +178,7 @@
                         cursor: pointer;
                         padding: 10px;
                         color:#FFFFFF;
-                        background: #6D6E6D;
+                        background: rgba(0, 0, 0, 0.6);
                         border-radius: 4px;
                         .detailct{
                             text-align: justify;

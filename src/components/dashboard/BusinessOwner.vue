@@ -35,7 +35,7 @@
 
         .report-btn {
             position: absolute;
-            right: 0;
+            right: 24px;
             top: 8px;
             display: flex;
             align-items: center;

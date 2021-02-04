@@ -25,7 +25,7 @@
 
 <style scoped lang="scss">
     .card-container {
-        margin: 0 10px 24px 10px;
+        margin-bottom: 24px;
         padding: 0 24px;
         background: #FFFFFF;
         box-shadow: 0px 0px 10px 0px rgba(121, 131, 168, 0.15);

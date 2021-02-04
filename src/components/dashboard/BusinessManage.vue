@@ -939,10 +939,9 @@
 </style>
 <style scoped lang="scss">
     .manage-box {
-        padding: 0 14px 24px 14px;
+        padding: 0 24px 24px 24px;
 
         .tips {
-            margin: 0 10px;
             font-size: 16px;
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
@@ -950,7 +949,7 @@
         }
 
         .manage-overview {
-            margin: 24px 10px;
+            margin: 24px 0;
 
             .manage-overview-left {
                 width: calc(100% - 388px);
