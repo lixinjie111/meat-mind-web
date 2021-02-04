@@ -1,16 +1,24 @@
 <template>
     <!-- 数据管理 -->
-<DefaultPage title="数据管理">
+<div class="data-center">
+  <!-- 分析工具 -->
+  <Side></Side>
+  <div class="container">
+    <Header></Header>
+    <div class="data-content">
       <router-view></router-view>
-</DefaultPage>
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
-import DefaultPage from "../../layouts/DefaultPage"
+import Side from "../../components/Side"
+import Header from "../../components/DefaultHeader"
     export default {
-        name: "index",
+        name: "indexOld",
         components:{
-           DefaultPage
+           Side, Header
         },
         data() {
             return {}
