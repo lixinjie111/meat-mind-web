@@ -1,6 +1,11 @@
 <template>
   <DetailsPage title="维度表" backname="data-center-metax">
-    <HeaderNav></HeaderNav>
+    <HeaderSearch>
+      <div class="my-set">
+        <i class="iconfont2 iconicon_setup"></i>
+        <div>自定义维度表</div>
+      </div>
+    </HeaderSearch>
     <TableModel :columns="columns" :tableData="tableData"></TableModel>
   </DetailsPage>
   <!-- <div class="fxmx-dimension">
@@ -11,11 +16,11 @@
 
 <script>
 import DetailsPage from "../../../../layouts/DetailsPage";
-import HeaderNav from "../base/HeaderNav";
+import HeaderSearch from "../base/HeaderSearch";
 import TableModel from "../base/TableModel";
 export default {
-    name:"Dimension",
-    components: { DetailsPage, HeaderNav, TableModel },
+  name: "Dimension",
+  components: { DetailsPage, HeaderSearch, TableModel },
   data() {
     return {
       columns: [
@@ -28,8 +33,8 @@ export default {
           key: "type",
         },
         {
-            title:"备注",
-            key:"remark"
+          title: "备注",
+          key: "remark",
         },
         // {
         //   title: "操作",
@@ -39,69 +44,69 @@ export default {
       ],
       tableData: [
         {
-          name:"items",
-          type:"系统默认",
+          name: "items",
+          type: "系统默认",
           remark: "通过SDK提供的itemSet接口进行Item信息的上报",
           operate: "",
         },
         {
           name: "vip_type",
-          type:"系统默认",
-           remark: "通过SDK提供的itemSet接口进行Item信息的上报",
+          type: "系统默认",
+          remark: "通过SDK提供的itemSet接口进行Item信息的上报",
           operate: "",
         },
         {
           name: "user_type",
-          type:"系统默认",
-           remark: "通过SDK提供的itemSet接口进行Item信息的上报",
+          type: "系统默认",
+          remark: "通过SDK提供的itemSet接口进行Item信息的上报",
           operate: "",
         },
         {
           name: "oa_level",
-          type:"系统默认",
-           remark: "通过SDK提供的itemSet接口进行Item信息的上报",
+          type: "系统默认",
+          remark: "通过SDK提供的itemSet接口进行Item信息的上报",
           operate: "",
         },
         {
           name: "member_level",
-          type:"系统默认",
-           remark: "通过SDK提供的itemSet接口进行Item信息的上报",
+          type: "系统默认",
+          remark: "通过SDK提供的itemSet接口进行Item信息的上报",
           operate: "",
         },
         {
           name: "inviter_phone",
-          type:"系统默认",
-           remark: "通过SDK提供的itemSet接口进行Item信息的上报",
+          type: "系统默认",
+          remark: "通过SDK提供的itemSet接口进行Item信息的上报",
           operate: "",
         },
         {
           name: "inviter_nickname",
-          type:"系统默认",
-           remark: "通过SDK提供的itemSet接口进行Item信息的上报",
+          type: "系统默认",
+          remark: "通过SDK提供的itemSet接口进行Item信息的上报",
           operate: "",
         },
         {
           name: "inviter_id",
-          type:"系统默认",
-           remark: "通过SDK提供的itemSet接口进行Item信息的上报",
+          type: "系统默认",
+          remark: "通过SDK提供的itemSet接口进行Item信息的上报",
           operate: "",
         },
         {
           name: "inviter",
-          type:"系统默认",
-           remark: "通过SDK提供的itemSet接口进行Item信息的上报",
+          type: "系统默认",
+          remark: "通过SDK提供的itemSet接口进行Item信息的上报",
           operate: "",
         },
         {
           name: "invite_vipreturn",
-          type:"系统默认",
-           remark: "通过SDK提供的itemSet接口进行Item信息的上报",
+          type: "系统默认",
+          remark: "通过SDK提供的itemSet接口进行Item信息的上报",
           operate: "",
         },
       ],
     };
-  },       
-}
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -122,4 +127,25 @@ export default {
 //         cursor: pointer;
 //     }
 // }
+.my-set{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 56px;
+  padding: 0 16px;
+  color: #2373FF;
+  cursor: pointer;
+  >i{
+    font-size: 20px;
+    margin-right: 4px;
+  }
+  >div{
+    height: 20px;
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #2373FF;
+    line-height: 20px;
+  }
+}
 </style>
