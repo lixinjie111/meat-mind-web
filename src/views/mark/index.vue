@@ -27,7 +27,8 @@
                 <div class="tea-trend">
                     <div class="title">2016-2021年中国凉茶产量规模增长</div>
                     <div class="tea-echart">
-                        <barEcharts id="box14" :colorList="$lxjData.colorList" :myData="$lxjData.box14Data"></barEcharts>
+                        <!-- <barEcharts id="box14" :colorList="$lxjData.colorList" :myData="$lxjData.box14Data"></barEcharts> -->
+                        <barM id="box32" :colorList="$lxjData.colorList" :myData="$lxjData.box32Data"></barM>
                     </div>
                 </div>
             </div>
@@ -62,7 +63,7 @@
                     <div class="box3">
                         <div class="name">负面舆情应对说明</div>
                         <div class="box3-echart">
-                            <lineM id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM>
+                            <lineM1 id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM1>
                         </div>
                     </div>
                     <div class="box4">
@@ -80,7 +81,9 @@
             <div class="fourth-line">
                 <div class="fourth-left">
                     <div class="fourth-title">品牌需求图谱</div>
-                    <div class="fourth-left-echarts"></div>
+                    <div class="fourth-left-echarts">
+                        <iframe src="/static/html/pphx/rdyc1.html" frameborder="0" scrolling="no" style="width:100%;height:100%"></iframe>
+                    </div>
                 </div>
                 <div class="fourth-right">
                     <div class="fourth-title">市场品类份额及品牌心智效能分析</div>
@@ -115,11 +118,13 @@ import LeidaEcharts from '../../components/echarts/common/LeidaEcharts';
 import barEcharts from '../../components/echarts/common/barEcharts';
 import YibiaoCharts2 from '../../components/echarts/common/YibiaoCharts2';
 import lineM from '../../components/echarts/common/lineM';
+import lineM1 from '../../components/echarts/common/lineM1';
 import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
+import barM from '../../components/echarts/common/barM';
 
 export default {
     name:"index",
-    components:{DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts}
+    components:{barM,lineM1,DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts}
 }
 </script>
 
@@ -342,7 +347,6 @@ export default {
              .fourth-left-echarts{
                  width: 100%;
                  height: calc(100% - 40px);
-                 background: url("../../assets/img/mark/baiduzhishu.png") no-repeat center center / 100% 100%;
              }
          }
          .fourth-right{

@@ -154,6 +154,34 @@ const lxjEData = {
         ]
     },
     box32Data:{
+        legName:['产量', '市场需求量',],
+        name:[2016,	2017,	2018,	2019,	2020,	2021],
+        value:[
+            {
+                name: '产量',
+                type: 'bar',
+                barWidth: '10',
+                itemStyle: {
+                    normal: {
+                        barBorderRadius:[30,30,0,0]
+                    },
+                },
+                data: [763,	785,	826,	879,	932,	1011                ],
+            },
+            {
+                name: '市场需求量',
+                type: 'bar',
+                barWidth: '10',
+                itemStyle: {
+                    normal: {
+                        barBorderRadius:[30,30,0,0]
+                    },
+                },
+                 data: [402,	548,	708,	808,	880,	972 ],
+            },
+        ]
+    },
+    box33Data:{
         legName:['饮料整体市场规模及预测', '茶饮料整体市场规模及预测',],
         name:['2015', '2020', '2025'],
         value:[
