@@ -1,6 +1,6 @@
 <template>
     <!-- 数据管理 -->
-<DefaultPage title="数据管理">
+<DefaultPage>
       <router-view></router-view>
 </DefaultPage>
 </template>
