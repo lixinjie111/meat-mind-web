@@ -49,15 +49,15 @@
                     <div class="sub-title">请选择您的身份</div>
                     <div class="select">
                         <div @click="role = 0" :class="role == 0 ? 'active' : ''">
-                            <img src="../static/img/header/oval@2x.png" alt="">
+                            <img src="../assets/img/login/head1.png" alt="">
                             <p>分析师</p>
                         </div>
                         <div @click="role = 1" :class="role == 1 ? 'active' : ''">
-                            <img src="../static/img/header/oval@2x.png" alt="">
+                            <img src="../assets/img/login/head2.png" alt="">
                             <p>企业主</p>
                         </div>
                         <div @click="role = 2" :class="role == 2 ? 'active' : ''">
-                            <img src="../static/img/header/oval@2x.png" alt="">
+                            <img src="../assets/img/login/head3.png" alt="">
                             <p>数据管理员</p>
                         </div>
                     </div>
@@ -240,7 +240,7 @@
                             cursor: pointer;
 
                             &.active {
-                                background: #1B74FF;
+                                background: url("../assets/img/login/btn.png") no-repeat center center / 100% 100%;
                                 border-radius: 24px;
                                 font-family: PingFangSC-Medium, PingFang SC;
                                 font-weight: 500;

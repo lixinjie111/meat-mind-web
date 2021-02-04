@@ -49,15 +49,19 @@
             }
 
             .icon-red {
+                display: inline-block;
                 margin: 0 2px;
                 color: #FB343E;
                 font-size: 12px;
+                transform: scale(0.7);
             }
 
             .icon-green {
+                display: inline-block;
                 margin: 0 2px;
                 color: #34C724;
                 font-size: 12px;
+                transform: scale(0.7);
             }
         }
     }

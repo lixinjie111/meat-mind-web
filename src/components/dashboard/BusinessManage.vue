@@ -67,9 +67,82 @@
                 </div>
             </div>
             <div class="manage-overview-right">
-                <img class="top-img" src="../../assets/img/dashboard/manage/neurometrics-result@2x.png"/>
-                <div class="bottom-img">
-                    <img src="../../assets/img/dashboard/manage/neurometrics-result2@2x.png"/>
+                <p>心智模型智能指标评测<Icon type="ios-alert-outline" color="#7C88B1"/></p>
+                <div class="overview-right-top">
+                   <div class="info-top flex">
+                      <div>
+
+                      </div>
+                      <div>
+                        <p>综合评价指数</p>
+                        <p>截至2020/12/14</p>
+                      </div>
+                      <div>
+                         72
+                      </div>
+                   </div>
+                   <div class="info-bottom flex">
+                        <div>
+                            <div>
+                                <p>77</p>
+                                <p>近6月最高分</p>
+                            </div>
+                            <img src="../../assets/img/dashboard/manage/line1@2x.png"/>
+                        </div>
+                        <div>
+                            <div>
+                                <p>69</p>
+                                <p>近6月最低分</p>
+                            </div>
+                            <img src="../../assets/img/dashboard/manage/line2@2x.png"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="overview-right-middle">
+                   <div class="detail-chart flex">
+                       <div>
+                          <i-circle :percent="80" trail-color="#fff" size="54" :stroke-color="['#F80069','#FF7F50']">
+                             <span class="circle-inner circle-inner1">良好</span>
+                          </i-circle>
+                          <p>客群定位</p>
+                       </div>
+                       <div>
+                           <i-circle :percent="80" trail-color="#fff" size="54" :stroke-color="['#F59808','#F9C544','#FDE772','#FFD28E']">
+                               <span class="circle-inner circle-inner2">异常</span>
+                           </i-circle>
+                           <p>媒介评测</p>
+                       </div>
+                       <div>
+                           <i-circle :percent="80" trail-color="#fff" size="54" :stroke-color="['#46C2F4','#BBEB63']">
+                               <span class="circle-inner circle-inner3">普通</span>
+                           </i-circle>
+                           <p>品牌评价</p>
+                       </div>
+                   </div>
+                   <div class="detail-info">
+                      <div class="detail-info-item">
+                          <p>营销覆盖度<Icon type="md-checkmark-circle" color="#34C724"></Icon></p>
+                      </div>
+                       <div class="detail-info-item">
+                           <p>用户增长趋势<Icon type="md-checkmark-circle" color="#34C724"/></p>
+                       </div>
+                       <div class="detail-info-item">
+                           <p>目标客群心智拟合<Icon type="md-checkmark-circle" color="#34C724"/></p>
+                       </div>
+                       <div class="detail-info-item">
+                           <p>品牌联想度<Icon type="md-checkmark-circle" color="#34C724"/></p>
+                       </div>
+                       <div class="detail-info-item">
+                           <p>媒介传播能力<Icon type="md-checkmark-circle" color="#34C724"/></p>
+                       </div>
+                       <div class="detail-info-item">
+                           <p>网站成交金额<Icon type="md-checkmark-circle" color="#34C724"/></p>
+                       </div>
+                   </div>
+                </div>
+                <div class="overview-right-bottom">
+                    <p>客群心智模型评测结果</p>
+                    <div class="result-btn">客群定位较为准确</div>
                 </div>
             </div>
         </div>
@@ -407,7 +480,7 @@
                     }
                 ]; //6月份点
                 let option = {
-                    backgroundColor: "#fff",
+                    // backgroundColor: "#fff",
                     tooltip: {
                         trigger: 'axis',
                         axisPointer: {
@@ -953,10 +1026,10 @@
 
             .manage-overview-left {
                 width: calc(100% - 388px);
-                height: 607px;
-                background: #FFFFFF;
-                box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-                border-radius: 8px;
+                height: 618px;
+                border-radius: 12px;
+                background: url("../../assets/img/dashboard/manage/overview-bg1.png") no-repeat center center / 100% 100%;
+                box-shadow: 0px 0px 8px 0px rgba(166, 171, 189, 0.3);
 
                 .manage-overview-chart {
                     width: calc(100% - 236px);
@@ -982,12 +1055,14 @@
                         .w120 {
                             margin-right: 16px;
                             width: 120px;
+                            background: rgba(255, 255, 255, .6);
+                            border-radius: 8px;
                         }
                     }
 
                     .manage-overview-list {
                         padding: 12px;
-                        border-top: 1px solid #F4F7FC;
+                        /*border-top: 1px solid #F4F7FC;*/
 
                         .manage-overview-item {
                             margin-bottom: 12px;
@@ -1046,7 +1121,7 @@
                 .manage-overview-info {
                     padding: 4px 16px 16px;
                     width: 236px;
-                    background: #F3F7FF;
+                    /*background: #F3F7FF;*/
 
                     > p {
                         padding: 12px 8px 4px;
@@ -1054,6 +1129,13 @@
                         font-family: PingFangSC-Medium, PingFang SC;
                         font-weight: 500;
                         color: #212121;
+
+                        &:first-child {
+                            font-size: 18px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 500;
+                            color: #242F57;
+                        }
                     }
 
                     .manage-overview-result {
@@ -1079,38 +1161,230 @@
                         width: 100%;
                         height: 40px;
                         line-height: 40px;
-                        background: #FFFFFF;
-                        border-radius: 20px;
+                        background: #FFFFFF linear-gradient(148deg, rgba(220, 225, 236, 0.2) 0%, rgba(255, 255, 255, 0.76) 100%);
+                        box-shadow: 3px 4px 8px 0px rgba(36, 47, 87, 0.1);
+                        border-radius: 8px;
+                        border: 1px solid rgba(255, 255, 255, 0.4);
                         font-size: 14px;
                         font-family: PingFangSC-Medium, PingFang SC;
                         font-weight: 500;
-                        color: #2373FF;
+                        color: #242F57;
                         text-align: center;
                     }
                 }
             }
 
             .manage-overview-right {
-                padding: 24px 0;
-                width: 372px;
-                height: 607px;
-                box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-                background: url("../../assets/img/dashboard/manage/neurotesting-bg@2x.png") no-repeat center / 100% 100%;
-                border-radius: 8px;
+                padding: 24px;
+                width: 368px;
+                height: 618px;
+                background: url("../../assets/img/dashboard/manage/overview-bg2.png") no-repeat center center / 100% 100%;
+                border-radius: 12px;
+                box-shadow: 0px 0px 8px 0px rgba(166, 171, 189, 0.3);
 
-                .top-img {
-                    width: 372px;
-                    height: 224px;
+                >p {
+                    height: 22px;
+                    font-size: 18px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #242F57;
+
+                    >i {
+                        margin-left: 4px;
+                    }
                 }
 
-                .bottom-img {
-                    width: 372px;
-                    height: 330px;
-                    overflow-y: auto;
+                .overview-right-top {
+                    margin: 24px 0 20px;
+                    width: 320px;
+                    height: 144px;
+                    background: linear-gradient(270deg, #2068E6 0%, #448DFF 100%);
+                    box-shadow: 0px 0px 24px 0px rgba(31, 58, 109, 0.6);
+                    border-radius: 8px;
 
-                    > img {
-                        width: 372px;
-                        height: auto;
+                    .info-top {
+                        padding: 0 26px 0 21px;
+                        width: 100%;
+                        height: 96px;
+
+                        >div {
+                            &:nth-child(1) {
+
+                            }
+
+                            &:nth-child(2) {
+                              >p {
+                                  font-size: 12px;
+                                  font-family: PingFangSC-Regular, PingFang SC;
+                                  font-weight: 400;
+                                  color: #FFFFFF;
+
+                                  &:first-child {
+                                      font-size: 16px;
+                                      font-family: PingFangSC-Medium, PingFang SC;
+                                      font-weight: 500;
+                                  }
+                              }
+                            }
+
+                            &:nth-child(3) {
+                                font-size: 48px;
+                                font-family: Archivo-Bold, Archivo;
+                                font-weight: bold;
+                                color: #FFFFFF;
+                                line-height: 56px;
+                                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+                            }
+                        }
+                    }
+
+                    .info-bottom {
+                        width: 100%;
+                        height: 48px;
+                        background: rgba(20, 85, 217, 0.6);
+                        border-radius: 0 0 8px 8px;
+
+                        > div {
+                            padding: 0 8px 0 16px;
+                            width: 50%;
+                            height: 32px;
+
+                           > div {
+                               margin-right: 16px;
+                               display: inline-block;
+
+                               >p {
+                                    font-size: 12px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #FFFFFF;
+                                    line-height: 16px;
+
+                                    &:first-child {
+                                        font-size: 18px;
+                                        font-family: Helvetica;
+                                        color: #4FEE3E;
+                                    }
+                               }
+                           }
+
+                           &:nth-child(1) {
+                               border-right: 1px solid rgba(255, 255, 255, 0.3);
+                           }
+
+                           &:nth-child(2) {
+                               >div {
+                                   >p {
+                                       &:first-child {
+                                           color: #FF9200;
+                                       }
+                                   }
+                               }
+                           }
+
+                           > img {
+                               width: 50px;
+                               height: 32px;
+                           }
+                        }
+                    }
+                }
+
+                .overview-right-middle {
+                    padding: 0 19px;
+                    width: 320px;
+                    height: 262px;
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 8px;
+                    border: 1px solid #FFFFFF;
+
+                    .detail-chart {
+                       padding: 19px 0 16px 0;
+                       width: 100%;
+                       border-bottom: 1px solid #FFFFFF;
+
+                       >div {
+                         height: 78px;
+
+                         > p {
+                             font-size: 14px;
+                             font-family: PingFangSC-Medium, PingFang SC;
+                             font-weight: 500;
+                             color: #242F57;
+                             line-height: 22px;
+                         }
+
+                        .circle-inner {
+                            font-size: 14px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                        }
+
+                        .circle-inner1 {
+                            color: #FB343E;
+                        }
+
+                        .circle-inner2 {
+                            color: #FF9200;
+                        }
+
+                        .circle-inner3 {
+                            color: #4BC905;
+                        }
+                       }
+                    }
+
+                    .detail-info {
+                        .detail-info-item {
+                            margin: 21px 16px 0 0;
+                            display: inline-block;
+                            width: calc(50% - 8px);
+
+                            >p {
+                                position: relative;
+                                font-size: 14px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #242F57;
+
+                                >i {
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    box-shadow: 0px 0px 6px 0px rgba(52, 199, 36, 0.5);
+                                    border-radius: 50%;
+                                }
+                            }
+
+                            &:nth-child(2n+2) {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+
+                .overview-right-bottom {
+                    > p {
+                        margin: 20px 0 8px 0;
+                        font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #242F57;
+                    }
+
+                    .result-btn {
+                        padding: 0 12px;
+                        width: 320px;
+                        height: 48px;
+                        line-height: 48px;
+                        background: linear-gradient(144deg, #0CC273 0%, #99F2D1 100%);
+                        box-shadow: 3px 4px 8px 0px rgba(68, 135, 121, 0.2);
+                        border-radius: 8px;
+                        border: 1px solid #9DE5CB;
+                        font-size: 20px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #FFFFFF;
                     }
                 }
             }

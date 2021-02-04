@@ -17,10 +17,18 @@
 
       <div class="column"></div>
       <div class="avatar">
-        <img class="user" src="../static/img/header/oval@2x.png" alt="">
-        <span v-if="flag==1">企业主</span>
-        <span v-else-if="flag==2">数据管理员</span>
-        <span v-else>分析师</span>
+        <template v-if="flag==1">
+          <img class="user" src="../assets/img/login/head2.png" alt="">
+          <span>企业主</span>
+        </template>
+        <template v-else-if="flag==2">
+          <img class="user" src="../assets/img/login/head3.png" alt="">
+          <span>数据管理员</span>
+        </template>
+        <template v-else>
+          <img class="user" src="../assets/img/login/head1.png" alt="">
+          <span>分析师</span>
+        </template>
         <img class="triangle" src="../assets/img/header/triangle@2x.png" alt="">
       </div>
     </div>
