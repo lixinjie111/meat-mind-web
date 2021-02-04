@@ -1,6 +1,7 @@
 <template>
   <div class="datacenter-model-filter">
     <div class="f-header">
+      <div class="empty"></div>
       <div class="search">
         <i class="iconfont iconsearch"></i>
         <span>请输入事件名或事件显示名</span>
@@ -37,6 +38,10 @@ export default {
     justify-content: flex-end;
     align-items: center;
     height: 55px;
+    .empty{
+      height: 54px;
+      border: 1px solid #EAEDF7;
+    }
     .search {
       display: flex;
       align-items: center;
