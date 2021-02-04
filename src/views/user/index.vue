@@ -1137,15 +1137,15 @@ export default {
       descTitle:'北京上班族出行场景',
       avatImg:require("../../assets/img/yhhx/avat.png"),
       ifShowDx1:true,
-      vDxtxt1:'收起',
+      vDxtxt1:'收起用户动线',
       ifShowDx2:false,
-      vDxtxt2:'展开',
+      vDxtxt2:'展开用户动线',
       ifShowDx3:false,
-      vDxtxt3:'展开',
+      vDxtxt3:'展开用户动线',
       ifShowDx4:false,
-      vDxtxt4:'展开',
+      vDxtxt4:'展开用户动线',
       ifShowDx5:false,
-      vDxtxt5:'展开'
+      vDxtxt5:'展开用户动线'
     };
   },
   mounted() {
@@ -1157,126 +1157,126 @@ export default {
       if(arg == 1){
         if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
-          this.vDxtxt2 = '展开';
+          this.vDxtxt2 = '展开用户动线';
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
-          this.vDxtxt3 = '展开';
+          this.vDxtxt3 = '展开用户动线';
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
-          this.vDxtxt4 = '展开';
+          this.vDxtxt4 = '展开用户动线';
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
-          this.vDxtxt5 = '展开';
+          this.vDxtxt5 = '展开用户动线';
         }
         this.ifShowDx1 = !this.ifShowDx1;
         if(this.ifShowDx1){
-          this.vDxtxt1 = '收起';
+          this.vDxtxt1 = '收起用户动线';
         }
         else{
-          this.vDxtxt1 = '展开';
+          this.vDxtxt1 = '展开用户动线';
         }
       }
       else if(arg == 2){
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
-          this.vDxtxt1 = '展开';
+          this.vDxtxt1 = '展开用户动线';
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
-          this.vDxtxt3 = '展开';
+          this.vDxtxt3 = '展开用户动线';
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
-          this.vDxtxt4 = '展开';
+          this.vDxtxt4 = '展开用户动线';
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
-          this.vDxtxt5 = '展开';
+          this.vDxtxt5 = '展开用户动线';
         }
         this.ifShowDx2 = !this.ifShowDx2;
         if(this.ifShowDx2){
-          this.vDxtxt2 = '收起';
+          this.vDxtxt2 = '收起用户动线';
         }
         else{
-          this.vDxtxt2 = '展开';
+          this.vDxtxt2 = '展开用户动线';
         }
       }
       else if(arg == 3){
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
-          this.vDxtxt1 = '展开';
+          this.vDxtxt1 = '展开用户动线';
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
-          this.vDxtxt2 = '展开';
+          this.vDxtxt2 = '展开用户动线';
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
-          this.vDxtxt4 = '展开';
+          this.vDxtxt4 = '展开用户动线';
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
-          this.vDxtxt5 = '展开';
+          this.vDxtxt5 = '展开用户动线';
         }
         this.ifShowDx3 = !this.ifShowDx3;
         if(this.ifShowDx3){
-          this.vDxtxt3 = '收起';
+          this.vDxtxt3 = '收起用户动线';
         }
         else{
-          this.vDxtxt3 = '展开';
+          this.vDxtxt3 = '展开用户动线';
         }
       }
       else if(arg == 4){
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
-          this.vDxtxt1 = '展开';
+          this.vDxtxt1 = '展开用户动线';
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
-          this.vDxtxt2 = '展开';
+          this.vDxtxt2 = '展开用户动线';
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
-          this.vDxtxt3 = '展开';
+          this.vDxtxt3 = '展开用户动线';
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
-          this.vDxtxt5 = '展开';
+          this.vDxtxt5 = '展开用户动线';
         }
         this.ifShowDx4 = !this.ifShowDx4;
         if(this.ifShowDx4){
-          this.vDxtxt4 = '收起';
+          this.vDxtxt4 = '收起用户动线';
         }
         else{
-          this.vDxtxt4 = '展开';
+          this.vDxtxt4 = '展开用户动线';
         }
       }
       else if(arg == 5){
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
-          this.vDxtxt1 = '展开';
+          this.vDxtxt1 = '展开用户动线';
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
-          this.vDxtxt2 = '展开';
+          this.vDxtxt2 = '展开用户动线';
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
-          this.vDxtxt3 = '展开';
+          this.vDxtxt3 = '展开用户动线';
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
-          this.vDxtxt4 = '展开';
+          this.vDxtxt4 = '展开用户动线';
         }
         this.ifShowDx5 = !this.ifShowDx5;
         if(this.ifShowDx5){
-          this.vDxtxt5 = '收起';
+          this.vDxtxt5 = '收起用户动线';
         }
         else{
-          this.vDxtxt5 = '展开';
+          this.vDxtxt5 = '展开用户动线';
         }
       }
     },
@@ -2005,6 +2005,7 @@ export default {
       border-radius: 8px;
       border: 1px solid #EAEDF7;
       margin-bottom: 16px;
+      box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
       .lef_area{
         width: 193px;
         height: 100%;
@@ -2065,7 +2066,7 @@ export default {
         background-color: darkorchid;
       }
       .rig_area{
-        width: 300px;
+        width: 270px;
         height: 100%;
         padding: 28px 31px;
         box-sizing: border-box;
