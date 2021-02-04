@@ -1,5 +1,6 @@
 <template>
   <div class="table-model">
+      <slot></slot>
     <Table :columns="columns" :data="tableData">
         <template slot-scope="{row}" slot="name">
             <span style="color:#2373FF">{{row.name}}</span>

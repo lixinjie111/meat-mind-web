@@ -1,19 +1,20 @@
 <template>
   <div class="datacenter-model-filter">
     <div class="f-header">
-      <div class="empty"></div>
+      <div class="empty">
+          <div class="blue-btn">
+              <i class="iconfont2 iconicon_addto1"></i>
+              <div>新建虚拟事件</div>
+          </div>
+          <div class="total">当前条件共 16 个虚拟事件</div>
+      </div>
       <div class="search">
         <i class="iconfont iconsearch"></i>
         <span>请输入事件名或事件显示名</span>
       </div>
-      <!-- <div class="download">
-        <i class="iconfont iconxiazai"></i>
-        <span>下载数据采集需求文档</span>
-      </div> -->
       <slot>
         <div class="download">
-          <i class="iconfont iconxiazai"></i>
-          <span>下载数据采集需求文档</span>
+          <Checkbox v-model="single">我创建的</Checkbox>
         </div>
       </slot>
       <div class="filter">
@@ -24,21 +25,9 @@
     </div>
     <div class="filter-container">
       <div class="show-status">
-        <p>显示状态</p>
+        <p>标签筛选</p>
         <Select v-model="model1" style="width:258px">
             <Option v-for="(item,index) in list1" :value="item" :key="index">{{ item }}</Option>
-        </Select>
-      </div>
-      <div class="mid">
-        <p>应埋点平台</p>
-        <Select v-model="model2" style="width:258px">
-            <Option v-for="(item,index) in list2" :value="item" :key="index">{{ item }}</Option>
-        </Select>
-      </div>
-      <div class="target-filter">
-        <p>标签筛选</p>
-        <Select v-model="model3" style="width:258px">
-            <Option v-for="(item,index) in list3" :value="item" :key="index">{{ item }}</Option>
         </Select>
       </div>
       <div class="operate-box">
@@ -54,12 +43,9 @@ export default {
   name: "HeaderNav",
   data(){
     return{
+        single:false,
       model1:'全部',
-      list1:["全部","显示","隐藏"],
-      model2:'全部',
-      list2:['全部',"IOS","Android","小程序"],
-      model3:'全部',
-      list3:['全部',"预置事件","1","2"],
+      list1:['全部',"预置事件","1","2"],
     }
   }
 };
@@ -79,9 +65,48 @@ export default {
     align-items: center;
     height: 55px;
     .empty{
+        display: flex;
+        align-items: center;
       height: 55px;
+      padding-left: 24px;
       flex: auto;
       border-bottom: 1px solid #EAEDF7;
+      line-height: 54px;
+      .blue-btn{
+          display: flex;
+          align-items: center;
+          width: 140px;
+            height: 32px;
+            padding: 0 16px;
+            margin-right: 8px;;
+            background: #2373FF;
+            border-radius: 8px;
+            >i{
+                width: 14px;
+                height: 14px;
+                font-size: 12px;
+                font-weight: 600;
+                color: #FFFFFF;
+                margin-right: 4px;
+                line-height: 14px;
+            }
+            >div{
+                height: 14px;
+                font-size: 14px;
+                font-family: PingFangSC-Semibold, PingFang SC;
+                font-weight: 600;
+                color: #FFFFFF;
+                line-height: 14px;
+            }
+      }
+      .total{
+        height: 20px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #97A0C3;
+        line-height: 20px;
+      }
     }
     .search,.download,.filter{
       display: flex;
@@ -109,7 +134,7 @@ export default {
       border-bottom: 1px solid #EAEDF7;
     }
     .download {
-      width: 201px;
+      width: 111px;
       height: 55px;
       border-right: 2px solid #eaedf7;
       border-bottom: 1px solid #EAEDF7;
@@ -126,7 +151,7 @@ export default {
     align-items: center;
     height: 100px;
     padding: 0 24px;
-    .show-status,.mid,.target-filter{
+    .show-status{
       margin-right: 24px;
       >p{
         height: 16px;
