@@ -104,19 +104,19 @@
                 <div class="overview-right-middle">
                    <div class="detail-chart flex">
                        <div>
-                          <i-circle :percent="80" trail-color="#fff" size="54" :stroke-color="['#F80069','#FF7F50']">
+                          <i-circle :percent="80" trail-color="#fff" :size="54" :stroke-color="['#F80069','#FF7F50']">
                              <span class="circle-inner circle-inner1">良好</span>
                           </i-circle>
                           <p>客群定位</p>
                        </div>
                        <div>
-                           <i-circle :percent="80" trail-color="#fff" size="54" :stroke-color="['#F59808','#F9C544','#FDE772','#FFD28E']">
+                           <i-circle :percent="80" trail-color="#fff" :size="54" :stroke-color="['#F59808','#F9C544','#FDE772','#FFD28E']">
                                <span class="circle-inner circle-inner2">异常</span>
                            </i-circle>
                            <p>媒介评测</p>
                        </div>
                        <div>
-                           <i-circle :percent="80" trail-color="#fff" size="54" :stroke-color="['#46C2F4','#BBEB63']">
+                           <i-circle :percent="80" trail-color="#fff" :size="54" :stroke-color="['#46C2F4','#BBEB63']">
                                <span class="circle-inner circle-inner3">普通</span>
                            </i-circle>
                            <p>品牌评价</p>
@@ -525,34 +525,34 @@
                         axisLabel: {
                             show: true,
                             textStyle: {
-                                color: 'rgba(0, 0, 0, 0.65)',
-                                fontSize: 12,
+                                color: "#97A0C3",
+                                fontSize:'12'
                             }
                         },
                         axisLine: {
                             lineStyle: {
                                 type: 'solid',
-                                color: '#E9E9E9',
+                                color: '#E9EBF1',
                                 width: 1,
                             }
-                        },
+                        }
                     }],
                     yAxis: [{
                         type: 'value',
                         name: '百万',
                         nameTextStyle: {
-                            color: 'rgba(0, 0, 0, 0.65)'
+                            color: "#97A0C3",
                         },
                         axisLabel: {
                             show: true,
                             textStyle: {
-                                color: 'rgba(0, 0, 0, 0.65)',
-                                fontSize: 12
+                                color: "#97A0C3",
+                                fontSize:'12'
                             }
                         },
                         axisLine: {
                             lineStyle: {
-                                color: '#fff',
+                                color: '#E9EBF1',
                                 width: 1,
                             },
                         },
@@ -560,7 +560,7 @@
                             show: true,
                             lineStyle: {
                                 type: 'dashed',
-                                color: '#E9E9E9'
+                                color: '#E9EBF1'
                             }
                         },
                         min: min,
