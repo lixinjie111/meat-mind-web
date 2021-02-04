@@ -428,11 +428,11 @@
             <div class="cdyhmj_content_bom_lef">
               <div class="cdyhmj_content_bom_lef_top">触达用户投放策略建议</div>
               <div class="cdyhmj_content_bom_lef_bom">
-                <div class="echarts1">
+                <div class="echarts1 echarts1box">
                   <PieEcharts1 :colorList="$fjData.colorList" :myData="$fjData.box0Data"></PieEcharts1>
                   <!-- <lineM id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM> -->
                 </div>
-                <div class="echarts1">
+                <div class="echarts1 echarts2box">
                   <div class="echarts11">
                     <div class="echarts111">建议投放金额</div>
                     <div class="echarts112">￥19,000</div>
@@ -2285,7 +2285,7 @@ export default {
         align-items: center;
         justify-content: space-between;
         .cdyhmj_content_bom_lef {
-          flex: 1;
+          width:auto;
           height: 100%;
           .cdyhmj_content_bom_lef_top {
             width: 100%;
@@ -2301,10 +2301,16 @@ export default {
             align-items: center;
             padding-right: 24px;
             justify-content: space-between;
+            
             .echarts1 {
-              width: 30%;
+              &.echarts1box{
+                width: 270px;
+              }
+              &.echarts2box{
+                width: 160px;
+                margin-right: 8px;
+              }
               height: 136px;
-              padding: 6px 12px;
               box-sizing: border-box;
               border-radius: 8px;
               .echarts11 {
@@ -2388,20 +2394,24 @@ export default {
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
                     color: #242f57;
+                   
                   }
                   .ech_txt {
-                    margin-right: 40px;
+                     width:70px;
+                    // margin-right: 40px;
                   }
                 }
               }
             }
             .ec1 {
+              width:201px;
               background: #ffffff;
+              padding:6px 12px;
             }
           }
         }
         .cdyhmj_content_bom_rig {
-          width: 421px;
+          flex:1;
           height: 100%;
           padding-left: 24px;
           box-sizing: border-box;

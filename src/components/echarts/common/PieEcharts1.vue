@@ -47,20 +47,21 @@
         const option = {
           color: this.colorList || COLORS,
           grid: {
-            left: 'center',
-            // right: '4%',
+            left: 0,
+            right: '0',
             top:"0",
-            bottom: '60',
+            bottom: '0',
             containLabel: true
           },
           legend: {
             icon: 'circle',
-            type: 'scroll',
-           // orient: 'horizontal',
+            //type: 'scroll',
+            //orient: 'horizontal',
             orient: 'vertical',
-            right: '10%',
+            right:0,
             top: 'center',
-           // bottom: -10,
+            //left:0,
+            //bottom: -20,
             data: name,
             padding: [20, 40],
           },
@@ -69,7 +70,7 @@
           },
           series: [{
             type: 'pie',
-            center: ['20%', '50%'],
+            center: ['25%', '50%'],
             radius: ['57%', '77%'],
             roseType: this.roseType,
             clockwise: true,
