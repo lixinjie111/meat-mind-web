@@ -3378,7 +3378,7 @@ export default {
     }
     .xfsmlcpg_container{
       width: 100%;
-      height: 336px;
+      height: 500px;
       background: #FFFFFF;
       border-radius: 8px;
       border: 1px solid #EAEDF7;
