@@ -53,10 +53,10 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="data-card-page pb-24">
+            <div class="data-card-page pb-24">
                 <Page :current="currentPage" :total="totalPage" :page-size="pageSize" simple
                       @on-change="changePage"/>
-            </div> -->
+            </div>
         </div>
         <Modal class-name="data-market-modal" v-model="detailModal" footer-hide :closable="false">
             <div class="download">
@@ -80,13 +80,28 @@
     import Img10 from "../../../assets/img/datacenter/market/10.png"
     import Img14 from "../../../assets/img/datacenter/market/14.png"
     import Img15 from "../../../assets/img/datacenter/market/15.png"
+    import Img21 from "../../../assets/img/datacenter/market/21.jpeg"
+    import Img22 from "../../../assets/img/datacenter/market/22.jpeg"
+    import Img23 from "../../../assets/img/datacenter/market/23.jpeg"
+    import Img24 from "../../../assets/img/datacenter/market/24.jpeg"
+    import Img25 from "../../../assets/img/datacenter/market/25.jpeg"
+    import Img26 from "../../../assets/img/datacenter/market/26.jpeg"
+    import Img27 from "../../../assets/img/datacenter/market/27.jpeg"
+    import Img28 from "../../../assets/img/datacenter/market/28.jpg"
+    import Img29 from "../../../assets/img/datacenter/market/29.jpeg"
+    import Img30 from "../../../assets/img/datacenter/market/30.jpeg"
+    import Img31 from "../../../assets/img/datacenter/market/31.jpeg"
+    import Img32 from "../../../assets/img/datacenter/market/32.jpeg"
+    import Img33 from "../../../assets/img/datacenter/market/33.jpeg"
+    import Img34 from "../../../assets/img/datacenter/market/34.jpeg"
+    import Img35 from "../../../assets/img/datacenter/market/35.jpeg"
 
     export default {
         name: "Market",
         data() {
             return {
                 currentPage: 1,
-                totalPage: 9,
+                totalPage: 24,
                 pageSize: 9,
                 detailModal: false,
                 detail1: false,
@@ -124,7 +139,7 @@
                         price: '¥3,999/月'
                     }
                 ],
-                hotList: [
+                hotList1: [
                     {
                         img: Img7,
                         title: '中关村人群数据包',
@@ -176,12 +191,101 @@
                         title: '产品金融行业数据包',
                         price: '¥2,099/月'
                     }
-                ]
+                ],
+                hotList2: [
+                    {
+                        img: Img21,
+                        title: '快销行业数据包',
+                        price: '¥2,599/月'
+                    },
+                    {
+                        img: Img22,
+                        title: '文化旅游行业数据包',
+                        price: '¥1,099/月'
+                    },
+                    {
+                        img: Img23,
+                        title: '电商零售行业数据包',
+                        price: '¥1，099/月'
+                    },
+                    {
+                        img: Img24,
+                        title: '房地产行业数据包',
+                        price: '¥3,099/月'
+                    },
+                    {
+                        img: Img25,
+                        title: '汽车行业数据包',
+                        price: '¥2,599/月'
+                    },
+                    {
+                        img: Img26,
+                        title: '互联网金融行业数据包',
+                        price: '¥1,099/月'
+                    },
+                    {
+                        img: Img27,
+                        title: '金融征信风控数据包',
+                        price: '¥2,099/月'
+                    },
+                    {
+                        img: Img28,
+                        title: 'OTT供应商数据包',
+                        price: '¥1,599/月'
+                    },
+                    {
+                        img: Img29,
+                        title: '电信运营商数据包',
+                        price: '¥1,099/月'
+                    }
+                ],
+                hotList3: [
+                    {
+                        img: Img30,
+                        title: '酒店航空数据包',
+                        price: '¥1,599/月'
+                    },
+                    {
+                        img: Img31,
+                        title: '保险行业数据包',
+                        price: '¥1,599/月'
+                    },
+                    {
+                        img: Img32,
+                        title: '连锁品牌零售行业数据包',
+                        price: '¥1,599/月'
+                    },
+                    {
+                        img: Img33,
+                        title: '融合媒体行业数据包',
+                        price: '¥1,099/月'
+                    },
+                    {
+                        img: Img34,
+                        title: '游戏行业数据包',
+                        price: '¥2,099/月'
+                    },
+                    {
+                        img: Img35,
+                        title: '通用数字化媒体数据包',
+                        price: '¥2,099/月'
+                    }
+                ],
+                hotList: []
             }
         },
+        created() {
+           this.hotList = this.hotList1;
+        },
         methods: {
-            changePage() {
-
+            changePage(page) {
+                if(page == 2){
+                    this.hotList = this.hotList2;
+                }else if(page == 3){
+                    this.hotList = this.hotList3;
+                }else {
+                    this.hotList = this.hotList1;
+                }
             },
             toDetail(index) {
                 console.log(index);
@@ -209,6 +313,7 @@
     .data-market-container {
         padding: 0 24px 24px;
         height: 100%;
+
         .mt-24 {
             margin-top: 24px;
         }
