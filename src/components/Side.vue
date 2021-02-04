@@ -257,9 +257,11 @@
                 line-height: 40px;
                 font-size: 14px;
                 color: #636E95;
-                &:first-child{
+
+                &:first-child {
                     font-family: HelveticaNeue;
                 }
+
                 > a {
                     display: flex;
                     align-items: center;
@@ -311,6 +313,8 @@
             color: #FFFFFF;
             background: url("../assets/img/side/rectangle@2x.png") no-repeat center center / 192px 40px;
             box-shadow: 2px 2px 8px 0px rgba(31, 108, 219, 0.5);
+            border-radius: 8px;
+
             .sub-name {
                 color: #FFFFFF;
                 font-size: 14px;
@@ -332,7 +336,7 @@
             background: rgba(255, 255, 255, 0.5);
             box-shadow: 4px 4px 8px 0px rgba(107, 131, 171, 0.05), -6px -6px 10px 0px rgba(255, 255, 255, 0.29);
             border-radius: 8px;
-            border: 1px solid #FFFFFF;
+            /*border: 1px solid #FFFFFF;*/
         }
     }
 </style>

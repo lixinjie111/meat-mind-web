@@ -67,9 +67,9 @@
                 </div>
             </div>
             <div class="manage-overview-right">
-                <img class="top-img" src="../../assets/img/dashboard/business/neurometrics-result@2x.png"/>
+                <img class="top-img" src="../../assets/img/dashboard/manage/neurometrics-result@2x.png"/>
                 <div class="bottom-img">
-                    <img src="../../assets/img/dashboard/business/neurometrics-result2@2x.png"/>
+                    <img src="../../assets/img/dashboard/manage/neurometrics-result2@2x.png"/>
                 </div>
             </div>
         </div>
@@ -172,19 +172,19 @@
                     <div class="manage-card2-top-info">
                         <div class="manage-card2-top-item">
                             <p>传播理念</p>
-                            <p>消费者心智洞察120,111条数据，10,873人</p>
+                            <p>消费者心智洞察<span>120,111</span>条数据，<span>10,873</span>人</p>
                         </div>
                         <div class="manage-card2-top-item">
                             <p>传播目的</p>
-                            <p>消费者需求分析210,111条数据，30,123人</p>
+                            <p>消费者需求分析<span>210,111</span>条数据，<span>30,123</span>人</p>
                         </div>
                         <div class="manage-card2-top-item">
                             <p>传播支撑点</p>
-                            <p>品牌核心资产挖掘210,550条数据，20,233人</p>
+                            <p>品牌核心资产挖掘<span>210,550</span>条数据，<span>20,233</span>人</p>
                         </div>
                         <div class="manage-card2-top-item">
                             <p>传播策略</p>
-                            <p>传播策略分析570,283条数据，35,866人</p>
+                            <p>传播策略分析<span>570,283</span>条数据，<span>35,866</span>人</p>
                         </div>
                     </div>
                 </div>
@@ -757,15 +757,17 @@
                     xAxis: [{
                         type: "category",
                         boundaryGap: false,
+                        //设置轴线的属性
+                        axisLine:{
+                            lineStyle:{
+                                color:'#E9EBF1',
+                            }
+                        } ,
                         axisLabel: {
                             formatter: 'Q{value}',
                             textStyle: {
-                                color: "#333"
-                            }
-                        },
-                        axisLine: {
-                            lineStyle: {
-                                color: "#D9D9D9"
+                                color: "#97A0C3",   //这里用参数代替了
+                                fontSize:'12'
                             }
                         },
                         data: xAxisData
@@ -776,17 +778,18 @@
                         axisLabel: {
                             formatter: '{value}%',
                             textStyle: {
-                                color: "#666",
+                                color: "#97A0C3",
+                                fontSize:'12'
                             }
                         },
                         nameTextStyle: {
-                            color: "#666",
+                            color: "#E9EBF1",
                             fontSize: 12,
                             lineHeight: 40
                         },
                         splitLine: {
                             lineStyle: {
-                                color: "#E9E9E9"
+                                color: "#E9EBF1"
                             }
                         },
                         axisLine: {
@@ -801,49 +804,50 @@
                         type: "line",
                         smooth: true,
                         showSymbol: false,
-                        symbolSize: 8,
+                        symbolSize: 5,
                         zlevel: 30,
+                        itemStyle: {
+                            normal: {
+                                color: '#FF9F7F',
+                                shadowBlur: 5,
+                                shadowColor: '#FF9F7F'
+                            }
+                        },
                         lineStyle: {
                             normal: {
                                 width: 4,
-                                shadowBlur: 3,
-                                shadowColor: 'rgba(3, 13, 41, .2)',
-                                shadowOffsetY: 8,
+                                // shadowBlur: 3,
+                                // shadowColor: 'rgba(3, 13, 41, .2)',
+                                // shadowOffsetY: 8,
                                 type: 'solid',
-                                color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [{
-                                        offset: 0,
-                                        color: 'rgba(187, 134, 252, 1)'
-                                    }, {
-                                        offset: 1,
-                                        color: 'rgba(94, 139, 255, 1)'
-                                    }]
-                                )
+                                color: '#4488FF',
+                                // color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [{
+                                //         offset: 0,
+                                //         color: 'rgba(187, 134, 252, 1)'
+                                //     }, {
+                                //         offset: 1,
+                                //         color: 'rgba(94, 139, 255, 1)'
+                                //     }]
+                                // )
                             }
                         },
                         areaStyle: {
                             normal: {
-                                color: new this.$echarts.graphic.LinearGradient(
-                                    0,
-                                    0,
-                                    0,
-                                    1,
-                                    [{
+                                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                         offset: 0,
-                                        color: hexToRgba('#2965FF', 0.8)
-                                    },
+                                        color: hexToRgba('#4488FF', 0.8)
+                                        },
                                         {
                                             offset: .5,
-                                            color: hexToRgba('#2965FF', 0.3)
+                                            color: hexToRgba('#4488FF', 0.5)
                                         },
                                         {
                                             offset: 1,
-                                            color: hexToRgba('#2965FF', 0)
+                                            color: hexToRgba('#4488FF', 0)
                                         }
-                                    ],
-                                    false
-                                ),
-                                shadowColor: hexToRgba('#0090FF', 0.1),
-                                shadowBlur: 10
+                                    ], false),
+                                // shadowColor: hexToRgba('#0090FF', 0.1),
+                                // shadowBlur: 10
                             }
                         },
                         data: yAxisData
@@ -935,6 +939,8 @@
 </style>
 <style scoped lang="scss">
     .manage-box {
+        padding: 0 24px 24px 24px;
+
         .tips {
             font-size: 16px;
             font-family: PingFangSC-Regular, PingFang SC;
@@ -988,7 +994,6 @@
                             padding: 16px;
                             width: calc(50% - 6px);
                             height: 102px;
-                            background: #F7F9FD;
                             border-radius: 8px;
 
                             > p {
@@ -1014,6 +1019,26 @@
                                     }
                                 }
                             }
+
+                            &:nth-child(1) {
+                                background: rgba(219, 234, 255, 0.8);
+                                border: 1px solid #4D94FF;
+                            }
+
+                            &:nth-child(2) {
+                                background: rgba(237, 235, 254, 0.8);
+                                border: 1px solid #A49DFA;
+                            }
+
+                            &:nth-child(3) {
+                                background: rgba(255, 241, 244, 0.8);
+                                border: 1px solid #FC809F;
+                            }
+
+                            &:nth-child(4) {
+                                background: rgba(255, 250, 241, 0.8);
+                                border: 1px solid #FFD98C;
+                            }
                         }
                     }
                 }
@@ -1036,14 +1061,16 @@
                         width: 100%;
                         height: 49px;
                         line-height: 49px;
-                        background: #FFE6E5;
+                        background: linear-gradient(135deg, #FB5961 0%, #FF8054 100%);
+                        box-shadow: 3px 4px 8px 0px rgba(148, 63, 66, 0.3);
                         border-radius: 8px;
+                        border: 1px solid #FE9393;
 
                         > p {
-                            font-size: 21px;
+                            font-size: 20px;
                             font-family: PingFangSC-Medium, PingFang SC;
                             font-weight: 500;
-                            color: #FB343E;
+                            color: #FFFFFF;
                         }
                     }
 
@@ -1068,7 +1095,7 @@
                 width: 372px;
                 height: 607px;
                 box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-                background: url("../../assets/img/dashboard/business/neurotesting-bg@2x.png") no-repeat center / 100% 100%;
+                background: url("../../assets/img/dashboard/manage/neurotesting-bg@2x.png") no-repeat center / 100% 100%;
                 border-radius: 8px;
 
                 .top-img {
@@ -1179,23 +1206,29 @@
                                 font-weight: 400;
                                 color: #636E95;
                             }
+
+                            >span {
+                                margin: 0 2px;
+                                font-family: Helvetica Neue;
+                                font-weight: Bold;
+                            }
                         }
 
                         &:nth-child(1) {
-                            background: url("../../assets/img/dashboard/business/gradient-bg1@2x.png") no-repeat center / 100% 100%;
+                            background: url("../../assets/img/dashboard/manage/gradient-bg1@2x.png") no-repeat center / 100% 100%;
                         }
 
                         &:nth-child(2) {
-                            background: url("../../assets/img/dashboard/business/gradient-bg2@2x.png") no-repeat center / 100% 100%;
+                            background: url("../../assets/img/dashboard/manage/gradient-bg2@2x.png") no-repeat center / 100% 100%;
                         }
 
                         &:nth-child(3) {
-                            background: url("../../assets/img/dashboard/business/gradient-bg3@2x.png") no-repeat center / 100% 100%;
+                            background: url("../../assets/img/dashboard/manage/gradient-bg3@2x.png") no-repeat center / 100% 100%;
                         }
 
                         &:nth-child(4) {
                             margin-bottom: 0;
-                            background: url("../../assets/img/dashboard/business/gradient-bg4@2x.png") no-repeat center / 100% 100%;
+                            background: url("../../assets/img/dashboard/manage/gradient-bg4@2x.png") no-repeat center / 100% 100%;
                         }
 
                         &:hover {

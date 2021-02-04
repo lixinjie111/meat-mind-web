@@ -654,6 +654,8 @@
 </style>
 <style scoped lang="scss">
     .market-box {
+        padding: 0 24px 24px 24px;
+
         .tips {
             font-size: 16px;
             font-family: PingFangSC-Regular, PingFang SC;
@@ -662,7 +664,7 @@
         }
 
         .market-target {
-            margin-top: 24px;
+            margin: 24px 0;
 
             .target-left {
                 margin-right: 16px;
@@ -770,8 +772,6 @@
         }
 
         .card-one {
-            margin-top: 24px;
-            width: 100%;
             height: 480px;
 
             .card-one-left {
@@ -944,7 +944,6 @@
         }
 
         .card-two {
-            margin-top: 24px;
             padding-bottom: 24px;
 
             .cdyhmj_content_container {
@@ -1431,8 +1430,6 @@
         }
 
         .card-three {
-            margin-top: 24px;
-
             .card-three-select {
                 display: flex;
 
@@ -1789,8 +1786,6 @@
         }
 
         .card-five {
-            margin-top: 24px;
-
             .card-five-box {
                 display: flex;
                 flex-wrap: wrap;
@@ -1892,7 +1887,6 @@
         }
 
         .card-six {
-            margin-top: 24px;
             height: 560px;
             background: url("../../assets/img/dashboard/market/card-six-bg@2x.png") #ffffff no-repeat left center / 560px 100%;
 
