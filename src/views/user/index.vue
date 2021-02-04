@@ -33,10 +33,6 @@
               <div class="yl_lef" style="background: #FF9502;"></div>
               <div class="yl_rig">娱乐</div>
             </div>
-            <div class="gt_container">
-              <div class="yl_lef" style="background: #36D67B;"></div>
-              <div class="yl_rig">沟通</div>
-            </div>
             <div class="gz_container">
               <div class="yl_lef" style="background: #A49DFA;"></div>
               <div class="yl_rig">工作</div>
@@ -72,10 +68,6 @@
           </div>
           <div class="cen_area"></div>
           <div class="rig_area">
-            <div class="yl_container">
-              <div class="yl_lef" style="background: #FF9502;"></div>
-              <div class="yl_rig">娱乐</div>
-            </div>
             <div class="gt_container">
               <div class="yl_lef" style="background: #36D67B;"></div>
               <div class="yl_rig">沟通</div>
@@ -87,10 +79,6 @@
             <div class="xw_container">
               <div class="yl_lef" style="background: #017AFF;"></div>
               <div class="yl_rig">新闻</div>
-            </div>
-            <div class="sp_container">
-              <div class="yl_lef" style="background: #2EB1FF;"></div>
-              <div class="yl_rig">视频</div>
             </div>
             <div class="xs_container">
               <div class="yl_lef" style="background: #F383FF;"></div>
@@ -115,25 +103,9 @@
           </div>
           <div class="cen_area"></div>
           <div class="rig_area">
-            <div class="yl_container">
-              <div class="yl_lef" style="background: #FF9502;"></div>
-              <div class="yl_rig">娱乐</div>
-            </div>
-            <div class="gt_container">
-              <div class="yl_lef" style="background: #36D67B;"></div>
-              <div class="yl_rig">沟通</div>
-            </div>
             <div class="gz_container">
               <div class="yl_lef" style="background: #A49DFA;"></div>
               <div class="yl_rig">工作</div>
-            </div>
-            <div class="xw_container">
-              <div class="yl_lef" style="background: #017AFF;"></div>
-              <div class="yl_rig">新闻</div>
-            </div>
-            <div class="sp_container">
-              <div class="yl_lef" style="background: #2EB1FF;"></div>
-              <div class="yl_rig">视频</div>
             </div>
             <div class="xs_container">
               <div class="yl_lef" style="background: #F383FF;"></div>
@@ -174,10 +146,6 @@
               <div class="yl_lef" style="background: #017AFF;"></div>
               <div class="yl_rig">新闻</div>
             </div>
-            <div class="sp_container">
-              <div class="yl_lef" style="background: #2EB1FF;"></div>
-              <div class="yl_rig">视频</div>
-            </div>
             <div class="xs_container">
               <div class="yl_lef" style="background: #F383FF;"></div>
               <div class="yl_rig">学术</div>
@@ -208,14 +176,6 @@
             <div class="gt_container">
               <div class="yl_lef" style="background: #36D67B;"></div>
               <div class="yl_rig">沟通</div>
-            </div>
-            <div class="gz_container">
-              <div class="yl_lef" style="background: #A49DFA;"></div>
-              <div class="yl_rig">工作</div>
-            </div>
-            <div class="xw_container">
-              <div class="yl_lef" style="background: #017AFF;"></div>
-              <div class="yl_rig">新闻</div>
             </div>
             <div class="sp_container">
               <div class="yl_lef" style="background: #2EB1FF;"></div>
@@ -2177,9 +2137,9 @@ export default {
         width: 270px;
         height: 100%;
         padding: 28px 31px;
+        padding-right: 5px;
         box-sizing: border-box;
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
         font-size: 12px;
         font-family: PingFangSC-Regular, PingFang SC;
@@ -2189,7 +2149,7 @@ export default {
           display: flex;
           align-items: center;
           margin-bottom: 16px;
-          margin-right: 30px;
+          margin-right: 32px;
           .yl_lef{
             width: 8px;
             height: 8px;
