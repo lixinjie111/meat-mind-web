@@ -28,7 +28,7 @@ export default {
 .datacenter-model-filter {
   width: 1152px;
   height: 155px;
-  background: #ffffff #d8d8d8;
+  background: #ffffff;
   box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
   border-radius: 12px;
   border: 1px solid #eaedf7;
