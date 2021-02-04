@@ -333,10 +333,9 @@
             color: #2373FF;
             width: 192px;
             height: 40px;
-            background: rgba(255, 255, 255, 0.5);
+            background: url("../assets/img/side/rectangle-hover@2x.png") no-repeat center center / 192px 40px;
             box-shadow: 4px 4px 8px 0px rgba(107, 131, 171, 0.05), -6px -6px 10px 0px rgba(255, 255, 255, 0.29);
             border-radius: 8px;
-            /*border: 1px solid #FFFFFF;*/
         }
     }
 </style>
