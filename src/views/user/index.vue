@@ -25,7 +25,7 @@
                 <div class="perinfo_b">分群用户数 28790人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(1)">展开动线地图</div>
+            <div class="lef_area_bom" @click="expandfn(1)">{{vDxtxt1}}</div>
           </div>
           <div class="cen_area"></div>
           <div class="rig_area">
@@ -55,7 +55,7 @@
             </div>
           </div>
         </div>
-        <vDxitem v-if="cux == 1"></vDxitem>
+        <vDxitem v-if="ifShowDx1"></vDxitem>
 
         <div class="bjsbz_container">
           <div class="lef_area">
@@ -68,7 +68,7 @@
                 <div class="perinfo_b">分群用户数 7930人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(2)">展开动线地图</div>
+            <div class="lef_area_bom" @click="expandfn(2)">{{vDxtxt2}}</div>
           </div>
           <div class="cen_area"></div>
           <div class="rig_area">
@@ -98,7 +98,7 @@
             </div>
           </div>
         </div>
-        <vDxitem v-if="cux == 2"></vDxitem>
+        <vDxitem1 v-if="ifShowDx2"></vDxitem1>
 
         <div class="bjsbz_container">
           <div class="lef_area">
@@ -111,7 +111,7 @@
                 <div class="perinfo_b">分群用户数 3204人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(3)">展开动线地图</div>
+            <div class="lef_area_bom" @click="expandfn(3)">{{vDxtxt3}}</div>
           </div>
           <div class="cen_area"></div>
           <div class="rig_area">
@@ -141,7 +141,7 @@
             </div>
           </div>
         </div>
-        <vDxitem v-if="cux == 3"></vDxitem>
+        <vDxitem v-if="ifShowDx3"></vDxitem>
 
         <div class="bjsbz_container">
           <div class="lef_area">
@@ -154,7 +154,7 @@
                 <div class="perinfo_b">分群用户数 18197人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(4)">展开动线地图</div>
+            <div class="lef_area_bom" @click="expandfn(4)">{{vDxtxt4}}</div>
           </div>
           <div class="cen_area"></div>
           <div class="rig_area">
@@ -184,7 +184,7 @@
             </div>
           </div>
         </div>
-        <vDxitem v-if="cux == 4"></vDxitem>
+        <vDxitem v-if="ifShowDx4"></vDxitem>
 
         <div class="bjsbz_container">
           <div class="lef_area">
@@ -197,7 +197,7 @@
                 <div class="perinfo_b">分群用户数 28790人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(5)">展开动线地图</div>
+            <div class="lef_area_bom" @click="expandfn(5)">{{vDxtxt5}}</div>
           </div>
           <div class="cen_area"></div>
           <div class="rig_area">
@@ -227,7 +227,7 @@
             </div>
           </div>
         </div>
-        <vDxitem v-if="cux == 5"></vDxitem>
+        <vDxitem v-if="ifShowDx5"></vDxitem>
 
         <!-- <div class="echarts_container1">
           <div class="left_timer_container">
@@ -1098,10 +1098,11 @@ import YibiaoCharts2 from '../../components/echarts/common/YibiaoCharts2';
 import Yuanhuan1 from '../../components/echarts/common/Yuanhuan1';
 import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
 import vDxitem from "./dxItem"
+import vDxitem1 from "./dxItem1"
 export default {
   components: {
    barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,DefaultPage, PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
-   vDxitem
+   vDxitem,vDxitem1
   },
   name: "index",
   data() {
@@ -1135,7 +1136,16 @@ export default {
       tu75:require("../../assets/img/yhhx/tu75.png"),
       descTitle:'北京上班族出行场景',
       avatImg:require("../../assets/img/yhhx/avat.png"),
-      cux:1
+      ifShowDx1:true,
+      vDxtxt1:'收起',
+      ifShowDx2:false,
+      vDxtxt2:'展开',
+      ifShowDx3:false,
+      vDxtxt3:'展开',
+      ifShowDx4:false,
+      vDxtxt4:'展开',
+      ifShowDx5:false,
+      vDxtxt5:'展开'
     };
   },
   mounted() {
@@ -1143,7 +1153,132 @@ export default {
   },
   methods: {
     expandfn(arg){
-      this.cux = arg;
+      console.log('aaaaaaaaa')
+      if(arg == 1){
+        if(this.ifShowDx2){
+          this.ifShowDx2 = !this.ifShowDx2;
+          this.vDxtxt2 = '展开';
+        }
+        else if(this.ifShowDx3){
+          this.ifShowDx3 = !this.ifShowDx3;
+          this.vDxtxt3 = '展开';
+        }
+        else if(this.ifShowDx4){
+          this.ifShowDx4 = !this.ifShowDx4;
+          this.vDxtxt4 = '展开';
+        }
+        else if(this.ifShowDx5){
+          this.ifShowDx5 = !this.ifShowDx5;
+          this.vDxtxt5 = '展开';
+        }
+        this.ifShowDx1 = !this.ifShowDx1;
+        if(this.ifShowDx1){
+          this.vDxtxt1 = '收起';
+        }
+        else{
+          this.vDxtxt1 = '展开';
+        }
+      }
+      else if(arg == 2){
+        if(this.ifShowDx1){
+          this.ifShowDx1 = !this.ifShowDx1;
+          this.vDxtxt1 = '展开';
+        }
+        else if(this.ifShowDx3){
+          this.ifShowDx3 = !this.ifShowDx3;
+          this.vDxtxt3 = '展开';
+        }
+        else if(this.ifShowDx4){
+          this.ifShowDx4 = !this.ifShowDx4;
+          this.vDxtxt4 = '展开';
+        }
+        else if(this.ifShowDx5){
+          this.ifShowDx5 = !this.ifShowDx5;
+          this.vDxtxt5 = '展开';
+        }
+        this.ifShowDx2 = !this.ifShowDx2;
+        if(this.ifShowDx2){
+          this.vDxtxt2 = '收起';
+        }
+        else{
+          this.vDxtxt2 = '展开';
+        }
+      }
+      else if(arg == 3){
+        if(this.ifShowDx1){
+          this.ifShowDx1 = !this.ifShowDx1;
+          this.vDxtxt1 = '展开';
+        }
+        else if(this.ifShowDx2){
+          this.ifShowDx2 = !this.ifShowDx2;
+          this.vDxtxt2 = '展开';
+        }
+        else if(this.ifShowDx4){
+          this.ifShowDx4 = !this.ifShowDx4;
+          this.vDxtxt4 = '展开';
+        }
+        else if(this.ifShowDx5){
+          this.ifShowDx5 = !this.ifShowDx5;
+          this.vDxtxt5 = '展开';
+        }
+        this.ifShowDx3 = !this.ifShowDx3;
+        if(this.ifShowDx3){
+          this.vDxtxt3 = '收起';
+        }
+        else{
+          this.vDxtxt3 = '展开';
+        }
+      }
+      else if(arg == 4){
+        if(this.ifShowDx1){
+          this.ifShowDx1 = !this.ifShowDx1;
+          this.vDxtxt1 = '展开';
+        }
+        else if(this.ifShowDx2){
+          this.ifShowDx2 = !this.ifShowDx2;
+          this.vDxtxt2 = '展开';
+        }
+        else if(this.ifShowDx3){
+          this.ifShowDx3 = !this.ifShowDx3;
+          this.vDxtxt3 = '展开';
+        }
+        else if(this.ifShowDx5){
+          this.ifShowDx5 = !this.ifShowDx5;
+          this.vDxtxt5 = '展开';
+        }
+        this.ifShowDx4 = !this.ifShowDx4;
+        if(this.ifShowDx4){
+          this.vDxtxt4 = '收起';
+        }
+        else{
+          this.vDxtxt4 = '展开';
+        }
+      }
+      else if(arg == 5){
+        if(this.ifShowDx1){
+          this.ifShowDx1 = !this.ifShowDx1;
+          this.vDxtxt1 = '展开';
+        }
+        else if(this.ifShowDx2){
+          this.ifShowDx2 = !this.ifShowDx2;
+          this.vDxtxt2 = '展开';
+        }
+        else if(this.ifShowDx3){
+          this.ifShowDx3 = !this.ifShowDx3;
+          this.vDxtxt3 = '展开';
+        }
+        else if(this.ifShowDx4){
+          this.ifShowDx4 = !this.ifShowDx4;
+          this.vDxtxt4 = '展开';
+        }
+        this.ifShowDx5 = !this.ifShowDx5;
+        if(this.ifShowDx5){
+          this.vDxtxt5 = '收起';
+        }
+        else{
+          this.vDxtxt5 = '展开';
+        }
+      }
     },
     clickTab(arg){
       if(arg == 1){
@@ -1911,7 +2046,7 @@ export default {
           width: 100%;
           height: 40px;
           background: #F4F7FC;
-          border: 1px solid #EAEDF7;
+          border-radius: 8px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -1930,7 +2065,7 @@ export default {
         background-color: darkorchid;
       }
       .rig_area{
-        width: 270px;
+        width: 300px;
         height: 100%;
         padding: 28px 31px;
         box-sizing: border-box;
@@ -1945,7 +2080,7 @@ export default {
           display: flex;
           align-items: center;
           margin-bottom: 16px;
-          margin-right: 20px;
+          margin-right: 30px;
           .yl_lef{
             width: 8px;
             height: 8px;
