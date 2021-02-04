@@ -133,9 +133,7 @@ li {
 .card-li {
   display: flex;
   align-items: baseline;
-  margin-bottom: 4px;
-  padding: 8px;
-  background: $white;
+  padding: 0 8px;
   border-radius: 8px;
   font-size: 12px;
   font-weight: 400;
@@ -148,9 +146,9 @@ li {
     font-weight: 400;
   }
 
-  &:hover {
-    box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16), 1px 1px 0px 0px #FFFFFF;
-  }
+  //&:hover {
+  //  box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16), 1px 1px 0px 0px #FFFFFF;
+  //}
 }
 
 .red-card-ul {

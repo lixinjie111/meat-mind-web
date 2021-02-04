@@ -657,6 +657,7 @@
         padding: 0 24px 24px 24px;
 
         .tips {
+            margin-top: 24px;
             font-size: 16px;
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
