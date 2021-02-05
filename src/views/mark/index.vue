@@ -1,6 +1,12 @@
 <template>
     <DefaultPage title="品牌画像">
         <div class="mark-content">
+            <ul class="new-target">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
             <div class="first-line">
                 <div class="mark-overview">
                     <div class="title">品牌总体概览</div>
@@ -131,6 +137,20 @@ export default {
 <style scoped lang="scss">
  .mark-content{
      padding: 0 24px 24px 24px;
+     
+     .new-target{
+         display: flex;
+         justify-content: space-between;
+         height: 148px;
+         margin-bottom: 24px;
+         >li{
+            width: 270px;
+            height: 148px;
+            background: linear-gradient(225deg, #1C66DE 0%, #98A0F9 100%);
+            box-shadow: 2px 4px 10px 0px rgba(41, 59, 149, 0.3);
+            border-radius: 8px;
+         }
+     } 
 
      .first-line{
          display: flex;

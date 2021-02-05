@@ -335,7 +335,7 @@
                     </Select>
                 </div>
                 <div class="card-three-chart">
-                    <barEcharts id="box14" :colorList="$lxjData.colorList" :myData="$lxjData.box14Data"></barEcharts>
+                    <barM id="box32" :colorList="$lxjData.colorList" :myData="$lxjData.box32Data"></barM>
                 </div>
             </Card>
             <Card title="对标商品行情" class="card-three-right">
@@ -612,13 +612,14 @@
 <script>
     import Card from "../../components/Card"
     import barEcharts from '../../components/echarts/common/barEcharts';
+    import barM from '../../components/echarts/common/barM';
     import YibiaoCharts2 from '../../components/echarts/common/YibiaoCharts2';
     import lineM from '../../components/echarts/common/lineM';
     import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
 
     export default {
         name: "BusinessMarket",
-        components: {Card, barEcharts, YibiaoCharts2, lineM, Leida2Echarts},
+        components: {Card, barEcharts, barM, YibiaoCharts2, lineM, Leida2Echarts},
         data() {
             return {
                 threeActive: 1,
