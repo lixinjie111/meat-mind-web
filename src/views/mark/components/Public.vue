@@ -9,7 +9,7 @@
                 <barM id="box32" :colorList="$lxjData.colorList" :myData="$lxjData.box32Data"></barM>
             </Full>
             <Half :lTitle="'2020年饮料市场细分比例'" :rTitle="'茶饮料行业负面舆情关键词排名'">
-                <PieEcharts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box10Data"></PieEcharts>
+                <PieEcharts4 slot="left" :colorList="$fjData.colorList" :myData="$fjData.box10Data"></PieEcharts4>
                 <barL slot="right" id="box26" :colorList="$lxjData.colorList" :myData="$lxjData.box26Data"></barL>
             </Half>
             <Full :title="'茶饮料行业网络口碑及热度指数'">
@@ -23,12 +23,12 @@
 import Half from "../base/Half"
 import Full from "../base/Full"
 import barM from '../../../components/echarts/common/barM';
-import PieEcharts from '../../../components/echarts/common/PieEcharts';
+import PieEcharts4 from '../../../components/echarts/common/PieEcharts4';
 import barL from '../../../components/echarts/common/barL';
 import lineO from '../../../components/echarts/common/lineO';
 export default {
     name:"Public",
-    components:{Half,Full,barM,PieEcharts,barL,lineO},
+    components:{Half,Full,barM,PieEcharts4,barL,lineO},
     props:{
         title:{
             type:String

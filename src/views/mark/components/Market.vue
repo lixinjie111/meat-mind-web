@@ -19,7 +19,7 @@
                 <barHM id="box114" :colorList="$lxjData.colorList" :myData="$lxjData.box114Data"></barHM>
             </Full>
             <Half :lTitle="'负面声量渠道分布'" :rTitle="'负面内容排名'">
-                <PieEcharts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box9Data"></PieEcharts>
+                <PieEcharts5 slot="left" :colorList="$fjData.colorList" :myData="$fjData.box9Data"></PieEcharts5>
                 <barL slot="right" id="box24" :colorList="$lxjData.colorList" :myData="$lxjData.box24Data"></barL>
             </Half>
             <Half :lTitle="'情感分布'" :rTitle="'品牌价值潜力分析'">
@@ -34,7 +34,7 @@
 import Half from "../base/Half"
 import Full from "../base/Full"
 import Yibiao1Echarts from '../../../components/echarts/common/Yibiao1Echarts';
-import PieEcharts from '../../../components/echarts/common/PieEcharts';
+import PieEcharts5 from '../../../components/echarts/common/PieEcharts5';
 import lineM from '../../../components/echarts/common/lineM';
 import barHM from '../../../components/echarts/common/barHM';
 import barL from '../../../components/echarts/common/barL';
@@ -42,7 +42,7 @@ import barM from '../../../components/echarts/common/barM';
 import barEcharts from '../../../components/echarts/common/barEcharts';
 export default {
     name:"Market",
-    components:{Half,Full,Yibiao1Echarts,PieEcharts,lineM,barHM,barL,barM,barEcharts},
+    components:{Half,Full,Yibiao1Echarts,PieEcharts5,lineM,barHM,barL,barM,barEcharts},
     props:{
         title:{
             type:String

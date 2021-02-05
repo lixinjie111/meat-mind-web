@@ -28,7 +28,7 @@
                     <div class="title">2016-2021年中国凉茶产量规模增长</div>
                     <div class="tea-echart">
                         <!-- <barEcharts id="box14" :colorList="$lxjData.colorList" :myData="$lxjData.box14Data"></barEcharts> -->
-                        <barM id="box32" :colorList="$lxjData.colorList" :myData="$lxjData.box32Data"></barM>
+                        <barM id="box9999" :colorList="$lxjData.colorList" :myData="$lxjData.box32Data"></barM>
                     </div>
                 </div>
             </div>
