@@ -2115,6 +2115,7 @@ export default {
       .lef_area{
         width: 334px;
         height: 100%;
+        border-right:1px solid #EAEDF7;
         .lef_area_top{
           width: 100%;
           height: 64px;
@@ -2153,7 +2154,7 @@ export default {
           width: 100%;
           height: 44px;
           background: #F4F7FC;
-          border-radius: 8px;
+          border-radius: 8px 0 0 8px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -2178,6 +2179,7 @@ export default {
       .rig_area{
         width: 440px;
         height: 100%;
+        border-left:1px solid #EAEDF7;
         padding: 28px 31px;
         padding-right: 5px;
         box-sizing: border-box;
@@ -2635,7 +2637,7 @@ export default {
             justify-content: space-between;
             .cal_item,
             .cal_item1 {
-              width: 80px;
+              width: 52px;
               height: 120px;
               background: #ffffff;
               border-radius: 0 8px 8px 0;
@@ -2661,12 +2663,13 @@ export default {
               display: flex;
               align-items: center;
               justify-content: flex-end;
+              border-radius: 8px 0 0 8px;
               .cal_item_cal_item {
                 border-radius: 8px 0 0 8px;
               }
             }
             .cal_item2 {
-              width: 22%;
+              width: 24%;
               height: 120px;
               background: #ffffff;
               border-radius: 8px;
@@ -2717,7 +2720,7 @@ export default {
                 display: flex;
                 align-items: center;
                 .txt_area11 {
-                  margin-right: 11px;
+                  margin-right: 20px;
                 }
               }
               .per_area {
@@ -2728,7 +2731,7 @@ export default {
                 font-weight: 400;
                 color: #242f57;
                 .per_area1 {
-                  margin-right: 10px;
+                  margin-right: 32px;
                 }
               }
             }
