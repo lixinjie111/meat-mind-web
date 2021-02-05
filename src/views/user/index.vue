@@ -499,18 +499,23 @@
               <div class="cdyhmj_content_item item1">自定义媒介投放预算 (元)</div>
               <div class="cdyhmj_content_item item2">
                 <div class="input_container">
-                  <span class="input1">￥</span>
-                  <span class="inpu2">15,000</span>
+                  <!-- <span class="input1">￥</span>
+                  <span class="inpu2">15,000</span> -->
+                  <Input placeholder="￥ 15,000" style="width:100%;">15,000</Input>
                 </div>
                 <div class="hg_txt"></div>
                 <div class="input_container">
-                  <span class="input1">￥</span>
-                  <span class="inpu23"></span>
+                  <!-- <span class="input1">￥</span>
+                  <span class="inpu23"></span> -->
+                  <Input placeholder="￥" style="width:100%;"></Input>
                 </div>
               </div>
               <div class="cdyhmj_content_item item3">目标客群</div>
               <div class="cdyhmj_content_item item4">
-                <img :src="inputIcon" class="inputIcon" />
+                <!-- <img :src="inputIcon" class="inputIcon" /> -->
+                <Select v-model="mbValue" style="width:100%;">
+                    <Option v-for="item in mubiaoList" :value="item.value" :key="item">{{ item.label }}</Option>
+                </Select>
               </div>
               <div class="cdyhmj_content_item item1">营销关键词</div>
               <div class="cdyhmj_content_item item5">
@@ -527,7 +532,9 @@
                   </div>
                 </div>
                 <div class="cal_item2 cal_item21">
-                  <div class="rt_choice"></div>
+                  <div class="rt_choice">
+                    <Checkbox></Checkbox>
+                  </div>
                   <div class="logo_container">
                     <img :src="ttIcon" class="logoImg" />
                     <span class="cal_txt">头条</span>
@@ -543,7 +550,7 @@
                 </div>
                 <div class="cal_item2">
                   <div class="rt_choice2">
-                    <img :src="dhIcon" class="dhIcon" />
+                    <Checkbox v-model="choice2"></Checkbox>
                   </div>
                   <div class="logo_container">
                     <img :src="xhsIcon" class="logoImg" />
@@ -560,7 +567,7 @@
                 </div>
                 <div class="cal_item2">
                   <div class="rt_choice2">
-                    <img :src="dhIcon" alt srcset class="dhIcon" />
+                    <Checkbox v-model="choice12"></Checkbox>
                   </div>
                   <div class="logo_container">
                     <img :src="ksIcon" class="logoImg" />
@@ -1212,8 +1219,32 @@ export default {
           til:'策略建议',
           subTil:'对于早期顾客加大投放力度，对于成熟期及休眠期顾客挖掘其用户价值，迎合用户偏好制定策略。'
         }
-      }
-
+      },
+      choice2:true,
+      choice12:true,
+      mbValue:'bjsbz',
+      mubiaoList:[
+        {
+          label:'北京上班族',
+          value:'bjsbz'
+        },
+        {
+          label:'研学青年',
+          value:'yxqn'
+        },
+        {
+          label:'企业高管',
+          value:'qygg'
+        },
+        {
+          label:'北漂一族',
+          value:'bpyz'
+        },
+        {
+          label:'自由职业',
+          value:'zyzz'
+        }
+      ]
     };
   },
   mounted() {
@@ -2025,8 +2056,8 @@ export default {
   .yhdx_container {
     width: 100%;
     background: #ffffff;
-    box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-    border-radius: 4px;
+    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    border-radius: 12px;
     padding: 24px;
     box-sizing: border-box;
     .top_title_container {
@@ -2439,8 +2470,8 @@ export default {
     width: 100%;
     min-height: 592px;
     background: #ffffff;
-    box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-    border-radius: 8px;
+    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    border-radius: 12px;
     margin-top: 24px;
     padding: 20px 24px 24px 24px;
     box-sizing: border-box;
@@ -2517,26 +2548,26 @@ export default {
             .input_container {
               width: 144px;
               height: 40px;
-              box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8),
-              -2px -2px 7px 0px #fffefa;
-              border-radius: 8px;
-              border: 1px solid #c6cbde;
-              padding: 4px;
-              box-sizing: border-box;
-              display: flex;
-              align-items: center;
-              .input1 {
-                font-size: 24px;
-                font-family: PingFangSC-Semibold, PingFang SC;
-                font-weight: 600;
-                color: #c5cadf;
-              }
-              .inpu2 {
-                font-size: 24px;
-                font-family: HelveticaNeue-Bold, HelveticaNeue;
-                font-weight: bold;
-                color: #242f57;
-              }
+              // box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8),
+              // -2px -2px 7px 0px #fffefa;
+              // border-radius: 8px;
+              // border: 1px solid #c6cbde;
+              // padding: 4px;
+              // box-sizing: border-box;
+              // display: flex;
+              // align-items: center;
+              // .input1 {
+              //   font-size: 24px;
+              //   font-family: PingFangSC-Semibold, PingFang SC;
+              //   font-weight: 600;
+              //   color: #c5cadf;
+              // }
+              // .inpu2 {
+              //   font-size: 24px;
+              //   font-family: HelveticaNeue-Bold, HelveticaNeue;
+              //   font-weight: bold;
+              //   color: #242f57;
+              // }
               .inpu23 {
                 display: block;
                 width: 6px;
@@ -2645,33 +2676,17 @@ export default {
               position: relative;
               .rt_choice {
                 position: absolute;
-                top: 10px;
+                top: 6px;
                 right: 10px;
                 width: 16px;
                 height: 16px;
-                box-shadow: 1px 1px 1px 0px #a6abbd,
-                -1px -1px 1px 0px #fafbff;
-                border-radius: 2px;
-                border: 1px solid rgba(255, 255, 255, 0.4);
               }
               .rt_choice2 {
                 position: absolute;
-                top: 10px;
+                top: 6px;
                 right: 10px;
                 width: 16px;
                 height: 16px;
-                background: #2373ff;
-                box-shadow: 1px 1px 3px 0px rgba(166, 171, 190, 0.4),
-                -1px -1px 3px 0px rgba(250, 251, 255, 0.4);
-                border-radius: 2px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                .dhIcon {
-                  display: block;
-                  width: 9px;
-                  height: 7px;
-                }
               }
               .logo_container {
                 width: 100%;
@@ -2915,8 +2930,8 @@ export default {
     width: 100%;
     min-height: 244px;
     background: #ffffff;
-    box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-    border-radius: 8px;
+    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    border-radius: 12px;
     margin-top: 24px;
     padding: 24px;
     box-sizing: border-box;
@@ -3013,8 +3028,8 @@ export default {
   .jichuhuax_area_container {
     width: 100%;
     background: #ffffff;
-    box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-    border-radius: 8px;
+    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    border-radius: 12px;
     padding: 24px;
     box-sizing: border-box;
     display: flex;
@@ -3146,8 +3161,8 @@ export default {
   .xwfx_area_container {
     width: 100%;
     background: #ffffff;
-    box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-    border-radius: 8px;
+    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    border-radius: 12px;
     padding: 24px;
     box-sizing: border-box;
     display: flex;
@@ -3212,8 +3227,8 @@ export default {
   .xzfx_area_container {
     width: 100%;
     background: #ffffff;
-    box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-    border-radius: 8px;
+    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    border-radius: 12px;
     padding: 24px;
     box-sizing: border-box;
     display: flex;
@@ -3335,8 +3350,8 @@ export default {
   .smzqfx_area_container{
     width: 100%;
     background: #FFFFFF;
-    box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-    border-radius: 8px;
+    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    border-radius: 12px;
     margin-top: 24px;
     padding: 24px;
     box-sizing: border-box;
