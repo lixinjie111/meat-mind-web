@@ -1,19 +1,14 @@
 <template>
     <DefaultPage title="品牌画像">
+        <Target></Target>
         <div class="mark-content">
-            <ul class="new-target">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
             <div class="first-line">
                 <div class="mark-overview">
                     <div class="title">品牌总体概览</div>
                     <div class="box-content">
                         <div class="overview-echart">
                             <div class="total">
-                                品牌综合评估
+                                品牌综合评估 
                                 <p class="t-number">92</p>
                             </div>
                             <div class="show-echart">
@@ -127,30 +122,16 @@ import lineM from '../../components/echarts/common/lineM';
 import lineM1 from '../../components/echarts/common/lineM1';
 import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
 import barM from '../../components/echarts/common/barM';
-
+import Target from "./base/Target"
 export default {
     name:"index",
-    components:{barM,lineM1,DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts}
+    components:{Target,barM,lineM1,DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts},
 }
 </script>
 
 <style scoped lang="scss">
  .mark-content{
      padding: 0 24px 24px 24px;
-     
-     .new-target{
-         display: flex;
-         justify-content: space-between;
-         height: 148px;
-         margin-bottom: 24px;
-         >li{
-            width: 270px;
-            height: 148px;
-            background: linear-gradient(225deg, #1C66DE 0%, #98A0F9 100%);
-            box-shadow: 2px 4px 10px 0px rgba(41, 59, 149, 0.3);
-            border-radius: 8px;
-         }
-     } 
 
      .first-line{
          display: flex;
@@ -158,12 +139,11 @@ export default {
          margin-bottom: 24px;
         .mark-overview,.tea-trend{
             width: calc( 50% - 12px);
-            height: 460px;
+            height: 482px;
             padding: 24px;
             box-shadow: 0px 0px 48px 0px rgba(255, 255, 255, 0.8);
             border-radius: 8px;
             border: 1px solid #FFFFFF;
-            background: url("../../assets/img/mark/colourfol.png") no-repeat center center / 100% 460px;
             .title{
                 height: 24px;
                 margin-bottom: 24px;
@@ -177,6 +157,7 @@ export default {
         .mark-overview{
             display: flex;
             flex-direction: column;
+            background: url("../../assets/img/mark/left-bg@2x.png") no-repeat center center / 100% 482px;
             .box-content{
                 width: 100%;
                 display: flex;
@@ -220,6 +201,7 @@ export default {
         .tea-trend{
             display: flex;
             flex-direction: column;
+            background: url("../../assets/img/mark/right-bg@2x.png") no-repeat center center / 100% 482px;
             .tea-echart{
                 width: 100%;
                 height: calc(100% - 48px);
