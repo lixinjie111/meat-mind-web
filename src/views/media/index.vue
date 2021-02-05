@@ -1122,6 +1122,7 @@ export default {
     padding:24px;
     display: flex;
     .panel1{
+      overflow: hidden;
       width:17vw;
       height: 14.9vw;
       background: url("../../assets/img/media/bg2.png") no-repeat center center / 100% 100%;
