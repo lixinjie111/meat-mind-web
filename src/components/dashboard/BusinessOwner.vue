@@ -1,13 +1,15 @@
 <template>
     <div class="business-owner">
-        <Tabs :animated="false">
-            <TabPane label="营销洞察">
-                <BusinessMarket></BusinessMarket>
-            </TabPane>
-            <TabPane label="经营诊断">
-                <BusinessManage></BusinessManage>
-            </TabPane>
-        </Tabs>
+        <div class="business-owner-tab">
+            <div :class="['tab-item', tabActive == 1 ? 'active' : '']" @click="tabActive = 1">
+                营销洞察
+            </div>
+            <div :class="['tab-item', tabActive == 2 ? 'active' : '']" @click="tabActive = 2">
+                经营诊断
+            </div>
+        </div>
+        <BusinessMarket v-if="tabActive == 1"></BusinessMarket>
+        <BusinessManage v-else></BusinessManage>
         <div class="report-btn">
             <img src="../../assets/img/dashboard/downLoad.png" class="btn-download"/>
             <span class="btn-txt">一键生成诊断报告</span>
@@ -23,7 +25,9 @@
         name: "BusinessOwner",
         components: {BusinessMarket, BusinessManage},
         data() {
-            return {}
+            return {
+                tabActive: 1
+            }
         },
     }
 </script>
@@ -31,7 +35,33 @@
 <style scoped lang="scss">
     .business-owner {
         position: relative;
-        padding-top: 20px;
+
+        .business-owner-tab {
+            width: 100%;
+            height: 71px;
+            background: url("../../assets/img/dashboard/manage/tab2.png") repeat-x left bottom / 100% 16px;
+
+            .tab-item {
+                display: inline-block;
+                vertical-align: top;
+                width: 220px;
+                height: 71px;
+                line-height: 78px;
+                text-align: center;
+                font-size: 20px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636E95;
+                cursor: pointer;
+
+                &.active {
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #2373FF;
+                    background: url("../../assets/img/dashboard/manage/tab1.png") no-repeat -1px center / 100% 100%;
+                }
+            }
+        }
 
         .report-btn {
             position: absolute;
@@ -44,7 +74,7 @@
             height: 40px;
             background: linear-gradient(139deg, #F0F3F6 0%, #FFFFFF 100%);
             box-shadow: 4px 4px 16px 0px rgba(55, 84, 170, 0.16), -4px -4px 16px 0px #FFFFFF, 1px 1px 0px 0px #FFFFFF;
-            border-radius: 24px;
+            border-radius: 8px;
             font-size: 14px;
             font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;

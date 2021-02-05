@@ -548,7 +548,7 @@
     width: 100%;
     .test_container1{
         width: 100%;
-        height: 82px;
+        height: 86px;
         display: flex;
         align-items: center;
         margin-bottom: -119px;
@@ -560,7 +560,7 @@
             justify-content: center;
             .timer12{
                 width: 95%;
-                height: 80px;           
+                height: 74px;        
                 background: #FFFFFF;
                 box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04);
                 border-radius: 4px;
@@ -580,7 +580,7 @@
                 align-items: center;
                 justify-content: space-between;
                 background-color: #F4F7FC;
-                margin-top: 8px;
+                margin-top: 4px;
                 border-radius: 10px;
                 .cirle_dian{
                     width: 20px;

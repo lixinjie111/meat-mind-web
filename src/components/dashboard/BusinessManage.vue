@@ -17,11 +17,13 @@
                     </div>
                     <div id="myChart" style="width:100%;height: 100%;"></div>
                     <div class="chart-tooltip red">
-                        <div class="value"><span>￥</span>6000万</div>
+                        <!--                        <span>￥</span>-->
+                        <div class="value">6000万</div>
                         <div class="month">2020年8月</div>
                     </div>
                     <div class="chart-tooltip blue">
-                        <div class="value"><span>￥</span>7200万</div>
+<!--                        <span>￥</span>-->
+                        <div class="value">7200万</div>
                         <div class="month">目标</div>
                     </div>
                     <div class="manage-overview-list clearfix">
@@ -50,6 +52,7 @@
                 <div class="manage-overview-info">
                     <p>当前经营状况</p>
                     <div class="manage-overview-result">
+                        <img src="../../assets/img/dashboard/manage/icon1@2x.png"/>
                         <p>低于预期</p>
                     </div>
                     <p>呈现问题</p>
@@ -63,7 +66,7 @@
                         <li>扩充抖音、快手短视频平台的推广力度；优化KOL投放结构，以主播类、时尚类为主</li>
                         <li>打造“年轻时尚”营销卖点，及时在微博平台进行公关，并监控效果</li>
                     </ul>
-                    <div class="manage-overview-btn">查看全部经营分析</div>
+                    <div class="manage-overview-btn"><img src="../../assets/img/dashboard/manage/icon3@2x.png"/>查看全部经营分析</div>
                 </div>
             </div>
             <div class="manage-overview-right">
@@ -101,19 +104,19 @@
                 <div class="overview-right-middle">
                    <div class="detail-chart flex">
                        <div>
-                          <i-circle :percent="80" trail-color="#fff" size="54" :stroke-color="['#F80069','#FF7F50']">
+                          <i-circle :percent="80" trail-color="#fff" :size="54" :stroke-color="['#F80069','#FF7F50']">
                              <span class="circle-inner circle-inner1">良好</span>
                           </i-circle>
                           <p>客群定位</p>
                        </div>
                        <div>
-                           <i-circle :percent="80" trail-color="#fff" size="54" :stroke-color="['#F59808','#F9C544','#FDE772','#FFD28E']">
+                           <i-circle :percent="80" trail-color="#fff" :size="54" :stroke-color="['#F59808','#F9C544','#FDE772','#FFD28E']">
                                <span class="circle-inner circle-inner2">异常</span>
                            </i-circle>
                            <p>媒介评测</p>
                        </div>
                        <div>
-                           <i-circle :percent="80" trail-color="#fff" size="54" :stroke-color="['#46C2F4','#BBEB63']">
+                           <i-circle :percent="80" trail-color="#fff" :size="54" :stroke-color="['#46C2F4','#BBEB63']">
                                <span class="circle-inner circle-inner3">普通</span>
                            </i-circle>
                            <p>品牌评价</p>
@@ -121,28 +124,28 @@
                    </div>
                    <div class="detail-info">
                       <div class="detail-info-item">
-                          <p>营销覆盖度<Icon type="md-checkmark-circle" color="#34C724"></Icon></p>
+                          <p>营销覆盖度<i class="iconfont2 iconjieshou"></i></p>
                       </div>
                        <div class="detail-info-item">
-                           <p>用户增长趋势<Icon type="md-checkmark-circle" color="#34C724"/></p>
+                           <p>用户增长趋势<i class="iconfont2 iconguanyu1"></i></p>
                        </div>
                        <div class="detail-info-item">
-                           <p>目标客群心智拟合<Icon type="md-checkmark-circle" color="#34C724"/></p>
+                           <p>目标客群心智拟合<i class="iconfont2 iconguanyu1"></i></p>
                        </div>
                        <div class="detail-info-item">
-                           <p>品牌联想度<Icon type="md-checkmark-circle" color="#34C724"/></p>
+                           <p>品牌联想度<i class="iconfont2 iconjieshou"></i></p>
                        </div>
                        <div class="detail-info-item">
-                           <p>媒介传播能力<Icon type="md-checkmark-circle" color="#34C724"/></p>
+                           <p>媒介传播能力<i class="iconfont2 iconguanyu1"></i></p>
                        </div>
                        <div class="detail-info-item">
-                           <p>网站成交金额<Icon type="md-checkmark-circle" color="#34C724"/></p>
+                           <p>网站成交金额<i class="iconfont2 iconjieshou"></i></p>
                        </div>
                    </div>
                 </div>
                 <div class="overview-right-bottom">
                     <p>客群心智模型评测结果</p>
-                    <div class="result-btn">客群定位较为准确</div>
+                    <div class="result-btn"><img src="../../assets/img/dashboard/manage/icon2@2x.png"/>客群定位较为准确</div>
                 </div>
             </div>
         </div>
@@ -238,7 +241,7 @@
             </div>
         </Card>
         <Card title="经营过程风险预警">
-            <div slot="right" class="card-right" @click="toDetail4">更多<i class="iconfont iconarrowRight"></i></div>
+            <div slot="right" class="card-right" @click="toDetail4">更多<i class="iconfont2 iconicon_more"></i></div>
             <div class="manage-card2">
                 <div class="manage-card2-top flex">
                     <div id="myChart2"></div>
@@ -384,7 +387,7 @@
                     },
                     {
                         value: 60,
-                        symbolSize: 7
+                        symbolSize: 5
                     }
                 ]; //实际数据预警点
                 let effectValues1 = [
@@ -438,7 +441,7 @@
                     },
                     {
                         value: 72,
-                        symbolSize: 7
+                        symbolSize: 5
                     }
                 ]; //目标最后点
                 let effectValues2 = [
@@ -468,7 +471,7 @@
                     },
                     {
                         value: 64,
-                        symbolSize: 15
+                        symbolSize: 10
                     },
                     {
                         value: 0,
@@ -500,8 +503,9 @@
                             } else {
                                 style = "display:block"
                             }
+                            // + '<span>￥</span>'
                             let str = '<div class="chart-tooltip" style="' + style + '">' +
-                                '<div class="value">' + '<span>￥</span>' + params[0].data * 100 + '万</div>' +
+                                '<div class="value">' + params[0].data * 100 + '万</div>' +
                                 '<div class="month"> ' + '2020年' + params[0].name + ' </div>' +
                                 '</div>';
                             return str;
@@ -521,34 +525,34 @@
                         axisLabel: {
                             show: true,
                             textStyle: {
-                                color: 'rgba(0, 0, 0, 0.65)',
-                                fontSize: 12,
+                                color: "#97A0C3",
+                                fontSize:'12'
                             }
                         },
                         axisLine: {
                             lineStyle: {
                                 type: 'solid',
-                                color: '#E9E9E9',
+                                color: '#E9EBF1',
                                 width: 1,
                             }
-                        },
+                        }
                     }],
                     yAxis: [{
                         type: 'value',
                         name: '百万',
                         nameTextStyle: {
-                            color: 'rgba(0, 0, 0, 0.65)'
+                            color: "#97A0C3",
                         },
                         axisLabel: {
                             show: true,
                             textStyle: {
-                                color: 'rgba(0, 0, 0, 0.65)',
-                                fontSize: 12
+                                color: "#97A0C3",
+                                fontSize:'12'
                             }
                         },
                         axisLine: {
                             lineStyle: {
-                                color: '#fff',
+                                color: '#E9EBF1',
                                 width: 1,
                             },
                         },
@@ -556,7 +560,7 @@
                             show: true,
                             lineStyle: {
                                 type: 'dashed',
-                                color: '#E9E9E9'
+                                color: '#E9EBF1'
                             }
                         },
                         min: min,
@@ -571,7 +575,7 @@
                             itemStyle: {
                                 normal: {
                                     lineStyle: {
-                                        width: 6,
+                                        width: 4,
                                         type: 'solid',
                                         color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                             offset: 0,
@@ -581,8 +585,8 @@
                                             color: 'rgba(94, 139, 255, 1)'
                                         }]),
                                         shadowColor: 'rgba(3, 13, 41, .3)',
-                                        shadowBlur: 10,
-                                        shadowOffsetY: 15,
+                                        shadowBlur: 6,
+                                        shadowOffsetY: 8,
                                     }
                                 },
                             },
@@ -810,7 +814,7 @@
                                     </div>`;
                             return html
                         },
-                        extraCssText: 'background: rgba(255, 255, 255, .8); border-radius: 0;box-shadow: 0 0 3px rgba(0, 0, 0, .2);color: red;',
+                        extraCssText: 'background: rgba(255, 255, 255, .9); border-radius: 8px;box-shadow: 0 0 10px rgba(0, 0, 0, .2);color: red;padding: 12px;',
                         axisPointer: {
                             type: 'line',
                             lineStyle: {
@@ -951,63 +955,59 @@
 </script>
 
 <style lang="scss">
-    .chart-tooltip {
-        padding: 5px 8px;
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        background: rgba(255, 255, 255, 0.8);
-        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04);
+    .manage-box {
+      .chart-tooltip {
+        padding: 4px 8px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 5px 4px 14px 0px rgba(55, 84, 170, 0.16), 1px 1px 0px 0px #FFFFFF;
         border-radius: 8px;
 
         .value {
-            margin-left: -5px;
-            font-size: 24px;
-            font-family: HelveticaNeue-Medium, HelveticaNeue;
+            font-size: 14px;
+            font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;
-            color: #212121;
-            line-height: 32px;
-
-            > span {
-                font-size: 18px;
-                font-family: HelveticaNeue-Medium, HelveticaNeue;
-                font-weight: 500;
-                color: #212121;
-            }
+            color: #636E95;
+            line-height: 18px;
         }
 
         .month {
-            font-size: 14px;
-            font-family: HelveticaNeue;
-            color: #666666;
-            line-height: 22px;
+            margin-top: 4px;
+            font-size: 12px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #97A0C3;
+            line-height: 16px;
+            text-align: left;
         }
 
-        &.red {
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04);
-            border-radius: 8px;
-        }
+        /*&.red {*/
+        /*    background: rgba(255, 255, 255, 0.8);*/
+        /*    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04);*/
+        /*    border-radius: 8px;*/
+        /*}*/
 
-        &.blue {
-            padding: 3px 4px;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04);
-            border-radius: 8px;
+        /*&.blue {*/
+        /*    padding: 3px 4px;*/
+        /*    background: rgba(255, 255, 255, 0.8);*/
+        /*    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04);*/
+        /*    border-radius: 8px;*/
 
-            .value {
-                font-size: 14px;
-                line-height: 18px;
+        /*    .value {*/
+        /*        font-size: 14px;*/
+        /*        line-height: 18px;*/
 
-                > span {
-                    font-size: 16px;
-                }
-            }
+        /*        > span {*/
+        /*            font-size: 16px;*/
+        /*        }*/
+        /*    }*/
 
-            .month {
-                margin-top: 1px;
-                font-size: 12px;
-                line-height: 18px;
-            }
-        }
+        /*    .month {*/
+        /*        margin-top: 1px;*/
+        /*        font-size: 12px;*/
+        /*        line-height: 18px;*/
+        /*    }*/
+        /*}*/
+    }
     }
 </style>
 <style scoped lang="scss">
@@ -1015,6 +1015,7 @@
         padding: 0 24px 24px 24px;
 
         .tips {
+            margin-top: 24px;
             font-size: 16px;
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
@@ -1038,18 +1039,18 @@
 
                     .red {
                         position: absolute;
-                        right: 55px;
+                        right: 85px;
                         top: 200px;
                     }
 
                     .blue {
                         position: absolute;
-                        right: 10px;
-                        top: 150px;
+                        right: 20px;
+                        top: 160px;
                     }
 
                     .manage-overview-select {
-                        padding: 12px;
+                        padding: 24px 24px 12px 24px;
                         display: flex;
 
                         .w120 {
@@ -1058,10 +1059,18 @@
                             background: rgba(255, 255, 255, .6);
                             border-radius: 8px;
                         }
+
+
+                        ::v-deep .ivu-select-selection {
+                            background: rgba(255, 255, 255, .6);
+                            box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.5) inset, -2px -2px 7px 0px #FFFEFA inset;
+                            border-radius: 8px;
+                            border: 1px solid #C6CBDE;
+                        }
                     }
 
                     .manage-overview-list {
-                        padding: 12px;
+                        padding: 0 24px 24px 24px;
                         /*border-top: 1px solid #F4F7FC;*/
 
                         .manage-overview-item {
@@ -1119,23 +1128,31 @@
                 }
 
                 .manage-overview-info {
-                    padding: 4px 16px 16px;
+                    margin: 24px 0;
+                    padding: 0 22px;
                     width: 236px;
-                    /*background: #F3F7FF;*/
+                    border-left: 1px solid #FFFFFF;
 
                     > p {
-                        padding: 12px 8px 4px;
+                        padding: 24px 0 8px;
                         font-size: 14px;
                         font-family: PingFangSC-Medium, PingFang SC;
                         font-weight: 500;
                         color: #212121;
 
                         &:first-child {
+                            padding-top: 0;
                             font-size: 18px;
                             font-family: PingFangSC-Medium, PingFang SC;
                             font-weight: 500;
                             color: #242F57;
                         }
+                    }
+
+                    > ul {
+                        padding: 8px 0;
+                        border-radius: 8px;
+                        border: 1px dashed rgba(67, 99, 146, 0.5);
                     }
 
                     .manage-overview-result {
@@ -1149,15 +1166,23 @@
                         border: 1px solid #FE9393;
 
                         > p {
+                            display: inline-block;
                             font-size: 20px;
                             font-family: PingFangSC-Medium, PingFang SC;
                             font-weight: 500;
                             color: #FFFFFF;
                         }
+
+                        > img {
+                           vertical-align: -3px;
+                           margin-right: 5px;
+                           width: 20px;
+                           height: 22px;
+                        }
                     }
 
                     .manage-overview-btn {
-                        margin-top: 28px;
+                        margin-top: 39px;
                         width: 100%;
                         height: 40px;
                         line-height: 40px;
@@ -1170,6 +1195,13 @@
                         font-weight: 500;
                         color: #242F57;
                         text-align: center;
+
+                        > img {
+                            vertical-align: -5px;
+                            margin-right: 12px;
+                            width: 20px;
+                            height: 20px;
+                        }
                     }
                 }
             }
@@ -1217,12 +1249,13 @@
                                   font-size: 12px;
                                   font-family: PingFangSC-Regular, PingFang SC;
                                   font-weight: 400;
-                                  color: #FFFFFF;
+                                  color: rgba(255, 255, 255, 0.65);
 
                                   &:first-child {
                                       font-size: 16px;
                                       font-family: PingFangSC-Medium, PingFang SC;
                                       font-weight: 500;
+                                      color: rgba(255, 255, 255, 1);
                                   }
                               }
                             }
@@ -1257,7 +1290,7 @@
                                     font-size: 12px;
                                     font-family: PingFangSC-Regular, PingFang SC;
                                     font-weight: 400;
-                                    color: #FFFFFF;
+                                    color: rgba(255, 255, 255, 0.65);
                                     line-height: 16px;
 
                                     &:first-child {
@@ -1351,8 +1384,16 @@
                                     position: absolute;
                                     top: 0;
                                     right: 0;
-                                    box-shadow: 0px 0px 6px 0px rgba(52, 199, 36, 0.5);
+                                    font-size: 16px;
                                     border-radius: 50%;
+
+                                    &.iconjieshou{
+                                       color: rgba(52, 199, 36, 1);
+                                    }
+
+                                    &.iconguanyu1{
+                                        color: rgba(255, 146, 0, 1);
+                                    }
                                 }
                             }
 
@@ -1377,14 +1418,21 @@
                         width: 320px;
                         height: 48px;
                         line-height: 48px;
-                        background: linear-gradient(144deg, #0CC273 0%, #99F2D1 100%);
-                        box-shadow: 3px 4px 8px 0px rgba(68, 135, 121, 0.2);
+                        background: linear-gradient(144deg, rgba(12, 194, 115, .6) 0%, rgba(153, 242, 209, .6) 100%);
+                        box-shadow: 0px 0px 8px 0px rgba(68, 135, 121, 0.2);
                         border-radius: 8px;
                         border: 1px solid #9DE5CB;
                         font-size: 20px;
                         font-family: PingFangSC-Medium, PingFang SC;
                         font-weight: 500;
                         color: #FFFFFF;
+
+                        >img {
+                            vertical-align: -4px;
+                            margin-right: 5px;
+                            width: 20px;
+                            height: 22px;
+                        }
                     }
                 }
             }

@@ -1,6 +1,6 @@
 <template>
   <div class="ysjgl">
-    <div class="page-title">原数据管理</div>
+    <div class="page-title">元数据管理</div>
     <div class="ysjgl-content">
       <div v-for="(it, i) in list" :key="it.name" class="item-box">
         <Card class="item">

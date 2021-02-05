@@ -42,7 +42,7 @@
       align-items: center;
       justify-content: space-between;
       .tabpan_lef{
-        width: 48%;
+        width: 49%;
         min-height: 106px;
         background: rgba(255,136,0, 0.7);
         border-radius: 8px;
@@ -79,7 +79,7 @@
         }
       }
       .tabpan_rig{
-        width: 48%;
+        width: 49%;
         min-height: 106px;
         background: rgba(77,148,255, 0.7);
         border-radius: 8px;

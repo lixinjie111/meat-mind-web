@@ -33,10 +33,6 @@
               <div class="yl_lef" style="background: #FF9502;"></div>
               <div class="yl_rig">娱乐</div>
             </div>
-            <div class="gt_container">
-              <div class="yl_lef" style="background: #36D67B;"></div>
-              <div class="yl_rig">沟通</div>
-            </div>
             <div class="gz_container">
               <div class="yl_lef" style="background: #A49DFA;"></div>
               <div class="yl_rig">工作</div>
@@ -72,10 +68,6 @@
           </div>
           <div class="cen_area"></div>
           <div class="rig_area">
-            <div class="yl_container">
-              <div class="yl_lef" style="background: #FF9502;"></div>
-              <div class="yl_rig">娱乐</div>
-            </div>
             <div class="gt_container">
               <div class="yl_lef" style="background: #36D67B;"></div>
               <div class="yl_rig">沟通</div>
@@ -87,10 +79,6 @@
             <div class="xw_container">
               <div class="yl_lef" style="background: #017AFF;"></div>
               <div class="yl_rig">新闻</div>
-            </div>
-            <div class="sp_container">
-              <div class="yl_lef" style="background: #2EB1FF;"></div>
-              <div class="yl_rig">视频</div>
             </div>
             <div class="xs_container">
               <div class="yl_lef" style="background: #F383FF;"></div>
@@ -115,25 +103,9 @@
           </div>
           <div class="cen_area"></div>
           <div class="rig_area">
-            <div class="yl_container">
-              <div class="yl_lef" style="background: #FF9502;"></div>
-              <div class="yl_rig">娱乐</div>
-            </div>
-            <div class="gt_container">
-              <div class="yl_lef" style="background: #36D67B;"></div>
-              <div class="yl_rig">沟通</div>
-            </div>
             <div class="gz_container">
               <div class="yl_lef" style="background: #A49DFA;"></div>
               <div class="yl_rig">工作</div>
-            </div>
-            <div class="xw_container">
-              <div class="yl_lef" style="background: #017AFF;"></div>
-              <div class="yl_rig">新闻</div>
-            </div>
-            <div class="sp_container">
-              <div class="yl_lef" style="background: #2EB1FF;"></div>
-              <div class="yl_rig">视频</div>
             </div>
             <div class="xs_container">
               <div class="yl_lef" style="background: #F383FF;"></div>
@@ -174,10 +146,6 @@
               <div class="yl_lef" style="background: #017AFF;"></div>
               <div class="yl_rig">新闻</div>
             </div>
-            <div class="sp_container">
-              <div class="yl_lef" style="background: #2EB1FF;"></div>
-              <div class="yl_rig">视频</div>
-            </div>
             <div class="xs_container">
               <div class="yl_lef" style="background: #F383FF;"></div>
               <div class="yl_rig">学术</div>
@@ -208,14 +176,6 @@
             <div class="gt_container">
               <div class="yl_lef" style="background: #36D67B;"></div>
               <div class="yl_rig">沟通</div>
-            </div>
-            <div class="gz_container">
-              <div class="yl_lef" style="background: #A49DFA;"></div>
-              <div class="yl_rig">工作</div>
-            </div>
-            <div class="xw_container">
-              <div class="yl_lef" style="background: #017AFF;"></div>
-              <div class="yl_rig">新闻</div>
             </div>
             <div class="sp_container">
               <div class="yl_lef" style="background: #2EB1FF;"></div>
@@ -603,23 +563,6 @@
                   <div class="per_area">
                     <div class="per_area1">43%</div>
                     <div>¥2300/千人</div>
-                  </div>
-                </div>
-                <div class="cal_item2">
-                  <div class="rt_choice2">
-                    <img :src="dhIcon" alt srcset class="dhIcon" />
-                  </div>
-                  <div class="logo_container">
-                    <img :src="dyI" class="logoImg" />
-                    <span class="cal_txt">抖音</span>
-                  </div>
-                  <div class="txt_area">
-                    <div class="txt_area11">触达率</div>
-                    <div>投放成本</div>
-                  </div>
-                  <div class="per_area">
-                    <div class="per_area1">69%</div>
-                    <div>¥25000/千人</div>
                   </div>
                 </div>
                 <div class="cal_item cal_item1">
@@ -2177,9 +2120,9 @@ export default {
         width: 270px;
         height: 100%;
         padding: 28px 31px;
+        padding-right: 5px;
         box-sizing: border-box;
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
         font-size: 12px;
         font-family: PingFangSC-Regular, PingFang SC;
@@ -2189,7 +2132,7 @@ export default {
           display: flex;
           align-items: center;
           margin-bottom: 16px;
-          margin-right: 30px;
+          margin-right: 32px;
           .yl_lef{
             width: 8px;
             height: 8px;
@@ -2661,7 +2604,7 @@ export default {
               }
             }
             .cal_item2 {
-              width: 18%;
+              width: 22%;
               height: 120px;
               background: #ffffff;
               border-radius: 8px;
@@ -2952,7 +2895,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
       .mub_titl_container1 {
         font-size: 16px;
         font-family: PingFangSC-Medium, PingFang SC;
@@ -3051,7 +2994,6 @@ export default {
       font-family: PingFangSC-Medium, PingFang SC;
       font-weight: 500;
       color: #242f57;
-      margin-bottom: 24px;
     }
     .jichuhuax_echarts_container {
       width: 100%;
@@ -3182,7 +3124,6 @@ export default {
     margin-top: 24px;
     .xwfx_area_til {
       width: 100%;
-      margin-bottom: 24px;
       font-size: 16px;
       font-family: PingFangSC-Medium, PingFang SC;
       font-weight: 500;
