@@ -607,15 +607,15 @@
                     <div class="echarts141">
                       <div class="ech_Icon"></div>
                       <div class="ech_txt">快手</div>
-                      <div class="ech_time">22:00 - 22:30</div>
                     </div>
+                    <div class="ech_time">22:00 - 22:30</div>
                   </div>
                   <div class="echarts15">
                     <div class="echarts142">
                       <div class="ech_Icon1"></div>
                       <div class="ech_txt">小红书</div>
-                      <div class="ech_time">19:00 - 20:30</div>
                     </div>
+                     <div class="ech_time">19:00 - 20:30</div>
                   </div>
                 </div>
               </div>
@@ -2734,7 +2734,6 @@ export default {
         padding: 16px 24px;
         box-sizing: border-box;
         display: flex;
-        align-items: center;
         justify-content: space-between;
         .cdyhmj_content_bom_lef {
           width:auto;
@@ -2756,18 +2755,18 @@ export default {
             
             .echarts1 {
               &.echarts1box{
-                width: 270px;
+                width: 20.83vw;
               }
               &.echarts2box{
-                width: 160px;
+                width: 12.11vw;
                 margin-right: 8px;
               }
-              height: 136px;
+              height: 9.4vw;
               box-sizing: border-box;
               border-radius: 8px;
               .echarts11 {
                 width: 100%;
-                min-height: 64px;
+                height: 4.4vw;
                 background: #ffffff;
                 border-radius: 8px;
                 margin-bottom: 8px;
@@ -2777,11 +2776,13 @@ export default {
                 .echarts112 {
                   width: 100%;
                   font-size: 12px;
+                 
                   font-family: PingFangSC-Regular, PingFang SC;
                   font-weight: 400;
                   color: #97a0c3;
                 }
                 .echarts112 {
+                   
                   font-size: 24px;
                   font-family: PingFangSC-Semibold, PingFang SC;
                   font-weight: 600;
@@ -2790,7 +2791,7 @@ export default {
               }
               .echarts12 {
                 widows: 100%;
-                min-height: 64px;
+                height: 4.4vw;
                 background: #ffffff;
                 border-radius: 2px;
                 padding: 6px 12px;
@@ -2856,7 +2857,7 @@ export default {
               }
             }
             .ec1 {
-              width:201px;
+              width:18vw;
               background: #ffffff;
               padding:6px 12px;
             }
