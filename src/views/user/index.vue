@@ -514,7 +514,7 @@
               <div class="cdyhmj_content_item item4">
                 <!-- <img :src="inputIcon" class="inputIcon" /> -->
                 <Select v-model="mbValue" style="width:100%;">
-                    <Option v-for="item in mubiaoList" :value="item.value" :key="item">{{ item.label }}</Option>
+                    <Option v-for="item in mubiaoList" :value="item.value" :key="item.value">{{ item.label }}</Option>
                 </Select>
               </div>
               <div class="cdyhmj_content_item item1">营销关键词</div>
@@ -2826,7 +2826,7 @@ export default {
                   font-size: 24px;
                   font-family: PingFangSC-Semibold, PingFang SC;
                   font-weight: 600;
-                  color: #242f57;
+                  color: #2373FF;
                 }
               }
               .echarts12 {
@@ -2849,7 +2849,7 @@ export default {
                   font-size: 24px;
                   font-family: HelveticaNeue-Bold, HelveticaNeue;
                   font-weight: bold;
-                  color: #242f57;
+                  color: #2373FF;
                 }
               }
               .echarts13 {
@@ -2969,7 +2969,7 @@ export default {
       justify-content: space-between;
       .mb_echarts1,
       .mb_echarts2 {
-        width: 48%;
+        width: 42%;
         height: 148px;
         border-radius: 8px;
         border: 1px solid #2373ff;
@@ -3006,10 +3006,21 @@ export default {
         }
       }
       .vscls {
+        width: 80px;
+        height: 80px;
+        background: #F1F6FF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #FFFFFF;
+        border-radius: 50%;
         font-size: 24px;
-        font-family: PingFangSC-Medium, PingFang SC;
-        font-weight: 500;
-        color: #242f57;
+        font-family: Archivo-Bold, Archivo;
+        font-weight: bold;
+        color: #636E95;
+        line-height: 32px;
+        text-shadow: 1px 1px 1px #242F57;
+        -webkit-text-fill-color: transparent;
       }
       .mb_echarts2 {
         border: 1px solid #ff8800;
