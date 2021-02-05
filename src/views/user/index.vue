@@ -22,7 +22,7 @@
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">北京上班族</div>
-                <div class="perinfo_b">分群用户数 28790人</div>
+                <div class="perinfo_b">用户数 28790人</div>
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(1)">{{vDxtxt1}}</div>
@@ -63,7 +63,7 @@
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">研学青年</div>
-                <div class="perinfo_b">分群用户数 7930人</div>
+                <div class="perinfo_b">用户数 7930人</div>
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(2)">{{vDxtxt2}}</div>
@@ -100,7 +100,7 @@
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">企业高管</div>
-                <div class="perinfo_b">分群用户数 3204人</div>
+                <div class="perinfo_b">用户数 3204人</div>
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(3)">{{vDxtxt3}}</div>
@@ -129,13 +129,13 @@
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">北漂一族</div>
-                <div class="perinfo_b">分群用户数 18197人</div>
+                <div class="perinfo_b">用户数 18197人</div>
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(4)">{{vDxtxt4}}</div>
           </div>
           <div class="cen_area">
-            <img :src="bpyzImgTime" alt="" srcset="" class="cen_areaImg">
+            <img :src="bjsbzImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
           <div class="rig_area">
             <div class="yl_container">
@@ -170,7 +170,7 @@
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">自由职业</div>
-                <div class="perinfo_b">分群用户数 28790人</div>
+                <div class="perinfo_b">用户数 28790人</div>
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(5)">{{vDxtxt5}}</div>
@@ -617,15 +617,15 @@
                     <div class="echarts141">
                       <div class="ech_Icon"></div>
                       <div class="ech_txt">快手</div>
+                      <div class="ech_time">22:00 - 22:30</div>
                     </div>
-                    <div class="ech_time">22:00 - 22:30</div>
                   </div>
                   <div class="echarts15">
                     <div class="echarts142">
                       <div class="ech_Icon1"></div>
                       <div class="ech_txt">小红书</div>
+                      <div class="ech_time">19:00 - 20:30</div>
                     </div>
-                     <div class="ech_time">19:00 - 20:30</div>
                   </div>
                 </div>
               </div>
@@ -2082,7 +2082,7 @@ export default {
       margin-bottom: 16px;
       box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
       .lef_area{
-        width: 193px;
+        width: 334px;
         height: 100%;
         .lef_area_top{
           width: 100%;
@@ -2120,7 +2120,7 @@ export default {
         }
         .lef_area_bom{
           width: 100%;
-          height: 40px;
+          height: 44px;
           background: #F4F7FC;
           border-radius: 8px;
           display: flex;
@@ -2145,7 +2145,7 @@ export default {
         }
       }
       .rig_area{
-        width: 270px;
+        width: 440px;
         height: 100%;
         padding: 28px 31px;
         padding-right: 5px;
@@ -2160,7 +2160,7 @@ export default {
           display: flex;
           align-items: center;
           margin-bottom: 16px;
-          margin-right: 32px;
+          margin-right: 20px;
           .yl_lef{
             width: 8px;
             height: 8px;
@@ -2757,6 +2757,7 @@ export default {
         padding: 16px 24px;
         box-sizing: border-box;
         display: flex;
+        align-items: center;
         justify-content: space-between;
         .cdyhmj_content_bom_lef {
           width:auto;
@@ -2778,18 +2779,18 @@ export default {
             
             .echarts1 {
               &.echarts1box{
-                width: 20.83vw;
+                width: 270px;
               }
               &.echarts2box{
-                width: 12.11vw;
+                width: 160px;
                 margin-right: 8px;
               }
-              height: 9.4vw;
+              height: 136px;
               box-sizing: border-box;
               border-radius: 8px;
               .echarts11 {
                 width: 100%;
-                height: 4.4vw;
+                min-height: 64px;
                 background: #ffffff;
                 border-radius: 8px;
                 margin-bottom: 8px;
@@ -2799,13 +2800,11 @@ export default {
                 .echarts112 {
                   width: 100%;
                   font-size: 12px;
-                 
                   font-family: PingFangSC-Regular, PingFang SC;
                   font-weight: 400;
                   color: #97a0c3;
                 }
                 .echarts112 {
-                   
                   font-size: 24px;
                   font-family: PingFangSC-Semibold, PingFang SC;
                   font-weight: 600;
@@ -2814,7 +2813,7 @@ export default {
               }
               .echarts12 {
                 widows: 100%;
-                height: 4.4vw;
+                min-height: 64px;
                 background: #ffffff;
                 border-radius: 2px;
                 padding: 6px 12px;
@@ -2880,7 +2879,7 @@ export default {
               }
             }
             .ec1 {
-              width:18vw;
+              width:201px;
               background: #ffffff;
               padding:6px 12px;
             }
