@@ -1,38 +1,26 @@
 <template>
-  <div class="datacenter-model-filter">
-    <div class="f-header">
-      <div class="empty"></div>
+  <div class="datacenter-model-search">
+    <div class="s-header">
       <div class="search">
         <i class="iconfont iconsearch"></i>
-        <span>请输入事件名或事件显示名</span>
-      </div>
-      <slot>
-        <div class="download">
-          <i class="iconfont iconxiazai"></i>
-          <span>下载数据采集需求文档</span>
-        </div>
-      </slot>
-      <div class="filter">
-        <i class="iconfont iconicon_filter_line"></i>
-        <span>筛选</span>
-        <i class="iconfont iconshangjiantou"></i>
+        <span>请输入显示名进行搜索</span>
       </div>
     </div>
     <div class="filter-container">
       <div class="show-status">
-        <p>显示状态</p>
+        <p>平台</p>
         <Select v-model="model1" style="width:258px">
             <Option v-for="(item,index) in list1" :value="item" :key="index">{{ item }}</Option>
         </Select>
       </div>
       <div class="mid">
-        <p>应埋点平台</p>
+        <p>事件类型</p>
         <Select v-model="model2" style="width:258px">
             <Option v-for="(item,index) in list2" :value="item" :key="index">{{ item }}</Option>
         </Select>
       </div>
       <div class="target-filter">
-        <p>标签筛选</p>
+        <p>显示状态</p>
         <Select v-model="model3" style="width:258px">
             <Option v-for="(item,index) in list3" :value="item" :key="index">{{ item }}</Option>
         </Select>
@@ -51,35 +39,31 @@ export default {
   data(){
     return{
       model1:'全部',
-      list1:["全部","显示","隐藏"],
+      list1:['全部',"IOS","Android","小程序"],
       model2:'全部',
-      list2:['全部',"IOS","Android","小程序"],
+      list2:['全部',"预置事件","1","2"],
       model3:'全部',
-      list3:['全部',"预置事件","1","2"],
+      list3:['全部',"可见","隐藏"],
     }
   }
 };
 </script>
 
 <style scoped lang="scss">
-.datacenter-model-filter {
+.datacenter-model-search {
   height: 155px;
   margin-bottom: 8px;
   background: #ffffff;
   box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
   border-radius: 12px;
   border: 1px solid #eaedf7;
-  .f-header {
+  .s-header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     height: 55px;
-    .empty{
-      height: 55px;
-      flex: auto;
-      border-bottom: 1px solid #EAEDF7;
-    }
-    .search,.download,.filter{
+    border-bottom: 1px solid #EAEDF7;
+    .search{
       display: flex;
       align-items: center;
       justify-content: center;
@@ -99,19 +83,7 @@ export default {
       }
     }
     .search {
-      width: 246px;
-      height: 55px;
-      border-right: 2px solid #eaedf7;
-      border-bottom: 1px solid #EAEDF7;
-    }
-    .download {
-      width: 201px;
-      height: 55px;
-      border-right: 2px solid #eaedf7;
-      border-bottom: 1px solid #EAEDF7;
-    }
-    .filter{
-      width: 117px;
+      width: 230px;
       height: 55px;
     }
   }

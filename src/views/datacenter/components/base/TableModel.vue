@@ -71,9 +71,6 @@ export default {
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
         color: #242F57;
-        ::v-deep .name{
-        color:#2373FF
-    }
     }
     ::v-deep .ivu-table-header thead tr th{
         height: 48px;
