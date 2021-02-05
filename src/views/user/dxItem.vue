@@ -978,7 +978,7 @@
             }
             .bqitm_container{
                 position: absolute;
-                top: 50px;
+                top: 55px;
                 left: 25px;
                 min-width: 400px;
                 height: 60px;

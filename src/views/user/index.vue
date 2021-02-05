@@ -22,12 +22,14 @@
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">北京上班族</div>
-                <div class="perinfo_b">分群用户数 28790人</div>
+                <div class="perinfo_b">用户数 28790人</div>
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(1)">{{vDxtxt1}}</div>
           </div>
-          <div class="cen_area"></div>
+          <div class="cen_area">
+            <img :src="bjsbzImgTime" alt="" srcset="" class="cen_areaImg">
+          </div>
           <div class="rig_area">
             <div class="yl_container">
               <div class="yl_lef" style="background: #FF9502;"></div>
@@ -61,12 +63,14 @@
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">研学青年</div>
-                <div class="perinfo_b">分群用户数 7930人</div>
+                <div class="perinfo_b">用户数 7930人</div>
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(2)">{{vDxtxt2}}</div>
           </div>
-          <div class="cen_area"></div>
+          <div class="cen_area">
+            <img :src="yxqnImgTime" alt="" srcset="" class="cen_areaImg">
+          </div>
           <div class="rig_area">
             <div class="gt_container">
               <div class="yl_lef" style="background: #36D67B;"></div>
@@ -96,12 +100,14 @@
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">企业高管</div>
-                <div class="perinfo_b">分群用户数 3204人</div>
+                <div class="perinfo_b">用户数 3204人</div>
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(3)">{{vDxtxt3}}</div>
           </div>
-          <div class="cen_area"></div>
+          <div class="cen_area">
+            <img :src="qyggImgTime" alt="" srcset="" class="cen_areaImg">
+          </div>
           <div class="rig_area">
             <div class="gz_container">
               <div class="yl_lef" style="background: #A49DFA;"></div>
@@ -123,12 +129,14 @@
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">北漂一族</div>
-                <div class="perinfo_b">分群用户数 18197人</div>
+                <div class="perinfo_b">用户数 18197人</div>
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(4)">{{vDxtxt4}}</div>
           </div>
-          <div class="cen_area"></div>
+          <div class="cen_area">
+            <img :src="bjsbzImgTime" alt="" srcset="" class="cen_areaImg">
+          </div>
           <div class="rig_area">
             <div class="yl_container">
               <div class="yl_lef" style="background: #FF9502;"></div>
@@ -162,12 +170,14 @@
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">自由职业</div>
-                <div class="perinfo_b">分群用户数 28790人</div>
+                <div class="perinfo_b">用户数 28790人</div>
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(5)">{{vDxtxt5}}</div>
           </div>
-          <div class="cen_area"></div>
+          <div class="cen_area">
+            <img :src="zyzyImgTime" alt="" srcset="" class="cen_areaImg">
+          </div>
           <div class="rig_area">
             <div class="yl_container">
               <div class="yl_lef" style="background: #FF9502;"></div>
@@ -1148,6 +1158,11 @@ export default {
       qyggImg:require("../../assets/img/yhhx/sbAvat.png"),
       bpyzImg:require("../../assets/img/yhhx/bpAvat.png"),
       zyzyImg:require("../../assets/img/yhhx/zyAvat.png"),
+      bjsbzImgTime:require("../../assets/img/yhhx/bjsbzImg.png"),
+      yxqnImgTime:require("../../assets/img/yhhx/yxqnImg.png"),
+      qyggImgTime:require("../../assets/img/yhhx/qyggImg.png"),
+      bpyzImgTime:require("../../assets/img/yhhx/bpyzImg.png"),
+      zyzyImgTime:require("../../assets/img/yhhx/zyzyImg.png"),
       ifShowDx1:true,
       vDxtxt1:'收起用户动线',
       ifShowDx2:false,
@@ -2059,7 +2074,7 @@ export default {
     }
     .bjsbz_container{
       width: 100%;
-      height: 105px;
+      height: 110px;
       display: flex;
       align-items: center;
       border-radius: 8px;
@@ -2067,7 +2082,7 @@ export default {
       margin-bottom: 16px;
       box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
       .lef_area{
-        width: 193px;
+        width: 334px;
         height: 100%;
         .lef_area_top{
           width: 100%;
@@ -2105,7 +2120,7 @@ export default {
         }
         .lef_area_bom{
           width: 100%;
-          height: 40px;
+          height: 44px;
           background: #F4F7FC;
           border-radius: 8px;
           display: flex;
@@ -2123,10 +2138,14 @@ export default {
       .cen_area{
         flex-grow: 1;
         height: 100%;
-        background-color: darkorchid;
+        .cen_areaImg{
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
       }
       .rig_area{
-        width: 270px;
+        width: 440px;
         height: 100%;
         padding: 28px 31px;
         padding-right: 5px;
@@ -2141,7 +2160,7 @@ export default {
           display: flex;
           align-items: center;
           margin-bottom: 16px;
-          margin-right: 32px;
+          margin-right: 20px;
           .yl_lef{
             width: 8px;
             height: 8px;

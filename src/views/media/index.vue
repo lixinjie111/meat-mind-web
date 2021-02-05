@@ -2,6 +2,12 @@
   <DefaultPage title="媒介画像">
     <div class="media-protrait">
       <div class="m-p-panel">
+        <div class="panel1"></div>
+        <div class="panel2"></div>
+        <div class="panel3"></div>
+      </div>
+      <div class="m-p-panel1">
+
       </div>
       <div class="m-p-rank">
         <div class="m-p-rank-header">
@@ -981,9 +987,39 @@ export default {
   padding: 0 24px 24px 24px;
   .m-p-panel{
     width: 100%;
-    height: 263px;
-    // background: rgba(255, 255, 255, 0.65);
-    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    background: url("../../assets/img/media/bg.png") no-repeat center center / 100% 100%;
+    border-radius: 12px;
+    padding:24px;
+    display: flex;
+    .panel1{
+      width:17vw;
+      height: 14.9vw;
+      background: url("../../assets/img/media/bg2.png") no-repeat center center / 100% 100%;
+      box-shadow: 4px -4px 24px 0px rgba(31, 58, 109, 0.55);
+      border-radius: 8px;
+    }
+    .panel2{
+      width:20.5vw;
+      height: 14.9vw;
+    }
+    .hr{
+      width: 1px;
+      height: 100%;
+      background: #fff;
+      margin: 0 22px;
+
+    }
+    .panel3{
+      flex:1;
+      height: 100%;
+    }
+  }
+  .m-p-panel1{
+    width: 100%;
+    height: 208px;
+    margin-top: 24px;
+    padding:24px;
+    background: url("../../assets/img/media/bg1.png") no-repeat center center / 100% 100%;
     border-radius: 12px;
   }
   .m-p-rank {
