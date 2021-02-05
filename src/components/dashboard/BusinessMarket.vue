@@ -72,8 +72,11 @@
                         <li><span>公司</span></li>
                     </ul>
                 </div>
-                <div class="card-one-left-img">
-                    <img src="../../assets/img/dashboard/market/timeline@2x.png"/>
+                <div class="card-one-left-img-top">
+                    <img src="../../assets/img/dashboard/market/timeline1@2x.png"/>
+                </div>
+                <div class="card-one-left-img-bottom">
+                    <img src="../../assets/img/dashboard/market/timeline2@2x.png"/>
                 </div>
             </div>
             <div class="card-one-right">
@@ -811,14 +814,14 @@
             .card-one-left {
                 display: inline-block;
                 vertical-align: top;
-                padding: 16px;
                 width: 320px;
                 height: 480px;
-                background: #DFF1FF;
+                background: url("../../assets/img/dashboard/market/card-one-bg2@2x.png") no-repeat center center / 100% 100%;
                 border-right: 1px solid #EAEDF7;
                 border-radius: 12px 0 0 12px;
 
                 .card-one-left-info {
+                    margin: 16px;
                     padding: 10px 12px;
                     width: 287px;
                     height: 72px;
@@ -869,8 +872,18 @@
                     }
                 }
 
-                .card-one-left-img {
-                    height: 380px;
+                .card-one-left-img-top {
+                    width: 320px;
+                    height: 55px;
+
+                    > img {
+                        width: 100%;
+                    }
+                }
+
+                .card-one-left-img-bottom {
+                    width: 320px;
+                    height: 320px;
                     overflow-y: auto;
 
                     > img {

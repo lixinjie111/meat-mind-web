@@ -131,6 +131,9 @@
                 downLoad: require("../assets/img/dashboard/downLoad.png"),
             }
         },
+        created() {
+            localStorage.setItem("dashboard", 0);
+        },
         methods: {
             confirm() {
                 if (this.role < 0) {
@@ -207,6 +210,7 @@
                                 }
 
                                 > p {
+                                    padding-top: 16px;
                                     font-size: 16px;
                                     font-family: PingFangSC-Medium, PingFang SC;
                                     font-weight: 500;
@@ -214,7 +218,7 @@
                                 }
 
                                 &.active {
-                                    box-shadow: 8px 8px 20px 0px rgba(99, 110, 149, 0.15), -6px -6px 12px 0px rgba(255, 255, 255, 0.5);
+                                    box-shadow: 8px 8px 20px 0px rgba(99, 110, 149, 0.15) inset, -6px -6px 12px 0px rgba(255, 255, 255, 0.5) inset;
                                     border: 2px solid #2373FF;
 
                                     > p {
@@ -225,13 +229,13 @@
                         }
 
                         .confirm {
-                            margin: 62px auto 4px;
+                            margin: 78px auto 4px;
                             width: 120px;
                             height: 48px;
                             line-height: 48px;
                             background: linear-gradient(139deg, #F0F3F6 0%, #FFFFFF 100%);
                             box-shadow: 4px 4px 16px 0px rgba(55, 84, 170, 0.16), -4px -4px 16px 0px #FFFFFF, 1px 1px 2px 0px #FFFFFF;
-                            border-radius: 32px;
+                            border-radius: 8px;
                             font-size: 22px;
                             font-family: PingFangSC-Regular, PingFang SC;
                             font-weight: 400;
@@ -241,7 +245,6 @@
 
                             &.active {
                                 background: url("../assets/img/login/btn.png") no-repeat center center / 100% 100%;
-                                border-radius: 24px;
                                 font-family: PingFangSC-Medium, PingFang SC;
                                 font-weight: 500;
                                 color: #FFFFFF;

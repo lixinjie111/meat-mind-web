@@ -31,21 +31,33 @@
                             <p>访问店铺</p>
                             <p>8,639<span>人</span></p>
                             <Compare :data="[-12.73,3.16]"></Compare>
+                            <div class="icon">
+                               <i class="iconfont2 iconxianshangshangdian"></i>
+                            </div>
                         </div>
                         <div class="manage-overview-item fr">
                             <p>商品访客数</p>
                             <p>126,470<span>次</span></p>
                             <Compare :data="[-13.14,11.45]"></Compare>
+                            <div class="icon">
+                                <i class="iconfont2 iconchengyuan"></i>
+                            </div>
                         </div>
                         <div class="manage-overview-item fl">
                             <p>支付买家数</p>
                             <p>1,509<span>人</span></p>
                             <Compare :data="[-8.62,3.16]"></Compare>
+                            <div class="icon">
+                                <i class="iconfont2 icongongxiang1"></i>
+                            </div>
                         </div>
                         <div class="manage-overview-item fr">
                             <p>平均停留时长</p>
                             <p>16.17<span>分</span></p>
                             <Compare :data="[-11.45,1.15]"></Compare>
+                            <div class="icon">
+                                <i class="iconfont2 iconshijian"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -72,35 +84,35 @@
             <div class="manage-overview-right">
                 <p>心智模型智能指标评测<Icon type="ios-alert-outline" color="#7C88B1"/></p>
                 <div class="overview-right-top">
-                   <div class="info-top flex">
-                      <div>
-<!--                          <video class="player" width="100%" height="100%" autoplay loop muted-->
-<!--                                 src="../../assets/video/model.mov"></video>-->
-                      </div>
-                      <div>
-                        <p>综合评价指数</p>
-                        <p>截至2020/12/14</p>
-                      </div>
-                      <div>
-                         72
-                      </div>
+                   <video class="info-player" width="100%" height="100%" autoplay loop muted
+                           src="../../assets/video/model.mp4"></video>
+                   <div class="info-content">
+                       <div class="info-top flex">
+                           <div>
+                               <p>综合评价指数</p>
+                               <p>截至2020/12/14</p>
+                           </div>
+                           <div>
+                               72
+                           </div>
+                       </div>
+                       <div class="info-bottom flex">
+                           <div>
+                               <div>
+                                   <p>77</p>
+                                   <p>近6月最高分</p>
+                               </div>
+                               <img src="../../assets/img/dashboard/manage/line1@2x.png"/>
+                           </div>
+                           <div>
+                               <div>
+                                   <p>69</p>
+                                   <p>近6月最低分</p>
+                               </div>
+                               <img src="../../assets/img/dashboard/manage/line2@2x.png"/>
+                           </div>
+                       </div>
                    </div>
-                   <div class="info-bottom flex">
-                        <div>
-                            <div>
-                                <p>77</p>
-                                <p>近6月最高分</p>
-                            </div>
-                            <img src="../../assets/img/dashboard/manage/line1@2x.png"/>
-                        </div>
-                        <div>
-                            <div>
-                                <p>69</p>
-                                <p>近6月最低分</p>
-                            </div>
-                            <img src="../../assets/img/dashboard/manage/line2@2x.png"/>
-                        </div>
-                    </div>
                 </div>
                 <div class="overview-right-middle">
                    <div class="detail-chart flex">
@@ -171,12 +183,12 @@
                     <div class="manage-card-right-chart">
                         <p>每日新增用户 | 过去30天</p>
                         <cLine id="box5" :colorList="$lxjData.colorList"
-                               :myData="$lxjData.box5Data"></cLine>
+                               :myData="$lxjData.box5Data" style="height: 185px"></cLine>
                     </div>
                     <div class="manage-card-right-chart">
                         <p>月活跃用户 | 上线至今</p>
                         <cLine id="box51" :colorList="$lxjData.colorList"
-                               :myData="$lxjData.box51Data"></cLine>
+                               :myData="$lxjData.box51Data" style="height: 185px"></cLine>
                     </div>
                 </div>
             </div>
@@ -199,13 +211,13 @@
                 <div class="manage-card-right">
                     <div class="manage-card-right-chart">
                         <p>渠道 | 新增用户</p>
-                        <barM id="box4" :colorList="$lxjData.colorList"
-                              :myData="$lxjData.box4Data"></barM>
+                        <barM1 id="box4" :colorList="$lxjData.colorList"
+                              :myData="$lxjData.box4Data" style="height: 185px"></barM1>
                     </div>
                     <div class="manage-card-right-chart">
                         <p>渠道 | 新增用户</p>
-                        <lineM id="box6" :colorList="$lxjData.colorList"
-                               :myData="$lxjData.box6Data"></lineM>
+                        <lineM2 id="box6" :colorList="$lxjData.colorList"
+                               :myData="$lxjData.box6Data" style="height: 185px"></lineM2>
                     </div>
                 </div>
             </div>
@@ -231,12 +243,12 @@
                     <div class="manage-card-right-chart">
                         <p>B站热度下降</p>
                         <barL id="box2" :colorList="$lxjData.colorList"
-                              :myData="$lxjData.box2Data"></barL>
+                              :myData="$lxjData.box2Data" style="height: 220px"></barL>
                     </div>
                     <div class="manage-card-right-chart">
                         <p>品牌负面舆情监控</p>
-                        <lineM id="box61" :colorList="$lxjData.colorList"
-                               :myData="$lxjData.box61Data"></lineM>
+                        <lineM2 id="box61" :colorList="$lxjData.colorList"
+                               :myData="$lxjData.box61Data" style="height: 220px"></lineM2>
                     </div>
                 </div>
             </div>
@@ -321,14 +333,14 @@
 <script>
     import Card from "../../components/Card";
     import Compare from "../../components/Compare";
-    import barM from '../../components/echarts/common/barM';
-    import lineM from '../../components/echarts/common/lineM';
+    import barM1 from '../../components/echarts/common/barM1';
+    import lineM2 from '../../components/echarts/common/lineM2';
     import barL from '../../components/echarts/common/barL';
     import cLine from '../../components/echarts/common/line';
 
     export default {
         name: "BusinessManage",
-        components: {Compare, Card, barL, barM, cLine, lineM},
+        components: {Compare, Card, barL, barM1, cLine, lineM2},
         data() {
             return {}
         },
@@ -1075,6 +1087,7 @@
                         /*border-top: 1px solid #F4F7FC;*/
 
                         .manage-overview-item {
+                            position: relative;
                             margin-bottom: 12px;
                             padding: 16px;
                             width: calc(50% - 6px);
@@ -1105,24 +1118,62 @@
                                 }
                             }
 
+                            .icon {
+                                position: absolute;
+                                right: 24px;
+                                top: 16px;
+                                width: 24px;
+                                height: 24px;
+                                line-height: 24px;
+                                background: rgba(255, 255, 255, 0.6);
+                                box-shadow: 2px 2px 5px 0px rgba(36, 47, 87, 0.06), -1px -1px 2px 0px rgba(255, 255, 255, 0.59);
+                                border-radius: 4px;
+                                border: 1px solid #FFFFFF;
+                                text-align: center;
+                            }
+
                             &:nth-child(1) {
                                 background: rgba(219, 234, 255, 0.8);
                                 border: 1px solid #4D94FF;
+
+                                .icon {
+                                    >i {
+                                        color: #4D94FF;
+                                    }
+                                }
                             }
 
                             &:nth-child(2) {
                                 background: rgba(237, 235, 254, 0.8);
                                 border: 1px solid #A49DFA;
+
+                                .icon {
+                                    >i {
+                                        color: #A49DFA;
+                                    }
+                                }
                             }
 
                             &:nth-child(3) {
                                 background: rgba(255, 241, 244, 0.8);
                                 border: 1px solid #FC809F;
+
+                                .icon {
+                                    >i {
+                                        color: #FC809F;
+                                    }
+                                }
                             }
 
                             &:nth-child(4) {
                                 background: rgba(255, 250, 241, 0.8);
                                 border: 1px solid #FFD98C;
+
+                                .icon {
+                                    >i {
+                                        color: #FFD98C;
+                                    }
+                                }
                             }
                         }
                     }
@@ -1228,105 +1279,109 @@
                 }
 
                 .overview-right-top {
+                    position: relative;
                     margin: 24px 0 20px;
                     width: 320px;
                     height: 144px;
-                    background: linear-gradient(270deg, #2068E6 0%, #448DFF 100%);
-                    box-shadow: 0px 0px 24px 0px rgba(31, 58, 109, 0.6);
-                    border-radius: 8px;
 
-                    .info-top {
-                        padding: 0 26px 0 21px;
-                        width: 100%;
-                        height: 96px;
-
-                        >div {
-                            &:nth-child(1) {
-                               margin: -50px 0 0 -20px;
-
-                               > video {
-                                   width: 100px;
-                                   height: 100px;
-                               }
-                            }
-
-                            &:nth-child(2) {
-                              width: 130px;
-
-                              >p {
-                                  font-size: 12px;
-                                  font-family: PingFangSC-Regular, PingFang SC;
-                                  font-weight: 400;
-                                  color: rgba(255, 255, 255, 0.65);
-
-                                  &:first-child {
-                                      font-size: 16px;
-                                      font-family: PingFangSC-Medium, PingFang SC;
-                                      font-weight: 500;
-                                      color: rgba(255, 255, 255, 1);
-                                  }
-                              }
-                            }
-
-                            &:nth-child(3) {
-                                font-size: 48px;
-                                font-family: Archivo-Bold, Archivo;
-                                font-weight: bold;
-                                color: #FFFFFF;
-                                line-height: 56px;
-                                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-                            }
-                        }
+                    .info-player {
+                       position: absolute;
+                       left: 0;
+                       top: 0;
+                       border-radius: 8px;
+                       z-index: 1;
                     }
 
-                    .info-bottom {
-                        width: 100%;
-                        height: 48px;
-                        background: rgba(20, 85, 217, 0.6);
-                        border-radius: 0 0 8px 8px;
+                    .info-content {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        z-index: 2;
 
-                        > div {
-                            padding: 0 8px 0 16px;
-                            width: 50%;
-                            height: 32px;
+                        .info-top {
+                            padding: 0 26px 0 21px;
+                            width: 100%;
+                            height: 96px;
 
-                           > div {
-                               margin-right: 16px;
-                               display: inline-block;
+                            >div {
+                                &:nth-child(1) {
+                                    margin-left: 90px;
+                                    width: 120px;
 
-                               >p {
-                                    font-size: 12px;
-                                    font-family: PingFangSC-Regular, PingFang SC;
-                                    font-weight: 400;
-                                    color: rgba(255, 255, 255, 0.65);
-                                    line-height: 16px;
+                                    >p {
+                                        font-size: 12px;
+                                        font-family: PingFangSC-Regular, PingFang SC;
+                                        font-weight: 400;
+                                        color: rgba(255, 255, 255, 0.65);
 
-                                    &:first-child {
-                                        font-size: 18px;
-                                        font-family: Helvetica;
-                                        color: #4FEE3E;
+                                        &:first-child {
+                                            font-size: 16px;
+                                            font-family: PingFangSC-Medium, PingFang SC;
+                                            font-weight: 500;
+                                            color: rgba(255, 255, 255, 1);
+                                        }
                                     }
-                               }
-                           }
+                                }
 
-                           &:nth-child(1) {
-                               border-right: 1px solid rgba(255, 255, 255, 0.3);
-                           }
+                                &:nth-child(2) {
+                                    font-size: 48px;
+                                    font-family: Archivo-Bold, Archivo;
+                                    font-weight: bold;
+                                    color: #FFFFFF;
+                                    line-height: 56px;
+                                    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+                                }
+                            }
+                        }
 
-                           &:nth-child(2) {
-                               >div {
-                                   >p {
-                                       &:first-child {
-                                           color: #FF9200;
-                                       }
-                                   }
-                               }
-                           }
+                        .info-bottom {
+                            width: 100%;
+                            height: 48px;
+                            background: rgba(33, 101, 227);
+                            border-radius: 0 0 8px 8px;
 
-                           > img {
-                               width: 50px;
-                               height: 32px;
-                           }
+                            > div {
+                                padding: 0 10px 0 16px;
+                                height: 32px;
+
+                                > div {
+                                    margin-right: 16px;
+                                    display: inline-block;
+
+                                    >p {
+                                        font-size: 12px;
+                                        font-family: PingFangSC-Regular, PingFang SC;
+                                        font-weight: 400;
+                                        color: rgba(255, 255, 255, 0.65);
+                                        line-height: 16px;
+
+                                        &:first-child {
+                                            font-size: 18px;
+                                            font-family: Helvetica;
+                                            color: #4FEE3E;
+                                        }
+                                    }
+                                }
+
+                                &:nth-child(1) {
+                                    border-right: 1px solid rgba(255, 255, 255, 0.3);
+                                }
+
+                                &:nth-child(2) {
+                                    >div {
+                                        >p {
+                                            &:first-child {
+                                                color: #FF9200;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                > img {
+                                    width: 50px;
+                                    height: 32px;
+                                }
+                            }
                         }
                     }
                 }
@@ -1472,7 +1527,6 @@
             .manage-card-left {
                 padding-right: 15px;
                 width: 40%;
-                border-right: 1px solid #F0F0F0;
             }
 
             .manage-card-right {
@@ -1482,8 +1536,8 @@
                     display: inline-block;
                     vertical-align: top;
                     width: 50%;
-                    height: 185px;
-                    border-right: 1px solid #F0F0F0;
+                    height: 95%;
+                    border-left: 1px solid #F0F0F0;
 
                     > p {
                         padding: 0 15px;
@@ -1491,10 +1545,6 @@
                         font-family: PingFangSC-Medium, PingFang SC;
                         font-weight: 500;
                         color: #242F57;
-                    }
-
-                    &:last-child {
-                        border-right: none;
                     }
                 }
             }

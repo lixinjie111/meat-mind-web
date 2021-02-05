@@ -155,7 +155,7 @@ export default {
         width: 40px;
         height: 40px;
         margin-right: 10px;
-        box-shadow: 8px 8px 15px 0px rgba(36, 47, 87, 0.06), -8px -8px 17px 0px rgba(255, 255, 255, 0.6);
+        box-shadow: 4px 4px 8px 0px rgba(36, 47, 87, 0.2);
         border-radius: 28px;
         border: 1px solid #FFFFFF;
       }
