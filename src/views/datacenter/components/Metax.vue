@@ -106,7 +106,7 @@
       border-radius: 12px;
       border: 1px solid #EAEDF7;
       width: 100%;
-      height: 100%;
+      // height: 100%;
       display: flex;
       flex-wrap: wrap;
       padding: 12px 0;
