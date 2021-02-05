@@ -18,7 +18,7 @@
           <div class="lef_area">
             <div class="lef_area_top">
               <div class="actImg_container">
-                <img :src="avatImg" alt="" srcset="" class="avatImg">
+                <img :src="sbAvatImg" alt="" srcset="" class="avatImg">
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">北京上班族</div>
@@ -91,8 +91,8 @@
         <div class="bjsbz_container">
           <div class="lef_area">
             <div class="lef_area_top">
-              <div class="actImg_container">
-                <img :src="avatImg" alt="" srcset="" class="avatImg">
+              <div class="actImg_container"> 
+                <img :src="qyggImg" alt="" srcset="" class="avatImg">
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">企业高管</div>
@@ -119,7 +119,7 @@
           <div class="lef_area">
             <div class="lef_area_top">
               <div class="actImg_container">
-                <img :src="avatImg" alt="" srcset="" class="avatImg">
+                <img :src="bpyzImg" alt="" srcset="" class="avatImg">
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">北漂一族</div>
@@ -158,7 +158,7 @@
           <div class="lef_area">
             <div class="lef_area_top">
               <div class="actImg_container">
-                <img :src="avatImg" alt="" srcset="" class="avatImg">
+                <img :src="zyzyImg" alt="" srcset="" class="avatImg">
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">自由职业</div>
@@ -1144,6 +1144,10 @@ export default {
       tu75:require("../../assets/img/yhhx/tu75.png"),
       descTitle:'北京上班族出行场景',
       avatImg:require("../../assets/img/yhhx/avat.png"),
+      sbAvatImg:require("../../assets/img/yhhx/sbAvat.png"),
+      qyggImg:require("../../assets/img/yhhx/sbAvat.png"),
+      bpyzImg:require("../../assets/img/yhhx/bpAvat.png"),
+      zyzyImg:require("../../assets/img/yhhx/zyAvat.png"),
       ifShowDx1:true,
       vDxtxt1:'收起用户动线',
       ifShowDx2:false,
