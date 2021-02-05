@@ -3,7 +3,7 @@
       <img src="../../../../static/img/datacenter/ysjgl/session@2x.png" alt="">
       <div class="back" @click="back"></div>
   </div> -->
-  <DetailsPage title="session管理" backname="data-center-metax">
+  <DetailsPage title="Session管理" backname="data-center-metax">
     <HeaderSearch>
       <div class="session-header-left">
         <div class="blue-btn">
@@ -11,7 +11,7 @@
           <div>新建Session</div>
         </div>
 
-        <div class="total">当前条件共 7 个Session</div>
+        <div class="total">当前条件共 10 个Session</div>
       </div>
       <div class="session-search" slot="text">
         <i class="iconfont iconsearch"></i>
@@ -36,142 +36,98 @@ export default {
         {
           title: "Session名",
           slot: "name",
+          width: 180,
         },
         {
           title: "Session显示名",
           key: "show",
+        //   width: 140,
         },
         {
-          title: "物品类型",
-          key: "type",
-          width: 140,
+          title: "包含事件",
+          key: "include",
         },
         {
-          title: "数据类型",
-          key: "data",
-          width: 140,
+          title: "切割规则",
+          key: "cut",
+          width: 160,
         },
         {
-          title: "单位/格式",
+          title: "备注",
           key: "format",
-          width: 140,
+          width: 160,
         },
-        {
-          title: "显示状态",
-          key: "status",
-          width: 140,
-        },
-        {
-          title: "预置",
-          key: "target",
-          width: 120,
-        },
-        // {
-        //   title: "操作",
-        //   slot: "operate",
-        //   width: 120,
-        // },
       ],
       tableData: [
         {
-          name: "$is_valid",
-          show: "是否封禁",
-          data: "逻辑",
-          status: "可见",
-          type: "-",
-          target: "否",
-          format: "无",
-          operate: "",
+          name: "WEBsession",
+          show: "网站基础指标-默认Session",
+          include:"Web 元素点击,Web 浏览页面,Web 视区停留",
+          cut:"5分钟",
+          format:""
         },
         {
-          name: "$receive_time",
-          show: "到达时间",
-          data: "逻辑",
-          status: "隐藏",
-          type: "-",
-          target: "是",
-          format: "无",
-          operate: "",
+          name: "app_length",
+          show: "APP浏览时长",
+          include:"$退出APP",
+          cut:"30分钟",
+          format:""
         },
         {
-          name: "$update_time",
-          show: "更新时间",
-          data: "逻辑",
-          status: "隐藏 ",
-          type: "-",
-          target: "是",
-          format: "无",
-          operate: "",
+          name: "app_page_view",
+          show: "app页面浏览",
+          include:"App 浏览页面,浏览商品详情页",
+          cut:"1分钟",
+          format:""          
         },
         {
-          name: "site_language",
-          show: "站点语言",
-          data: "数值",
-          status: "隐藏 ",
-          type: "",
-          target: "无",
-          format: "无",
-          operate: "",
+          name: "app_details",
+          show: "app浏览商品详情页",
+          include:"浏览商品详情页",
+          cut:"60分钟",
+          format:""  
         },
         {
-          name: "site_id",
-          show: "站点",
-          data: "数值",
-          status: "隐藏 ",
-          type: "-",
-          target: "无",
-          format: "无",
-          operate: "",
+          name: "appall",
+          show: "app 端行为",
+          include:"$启动APP,$退出APP,App 元素点击,App 浏览页面",
+          cut:"20分钟",
+          format:""  
         },
         {
-          name: "category_id",
-          show: "类目ID",
-          data: "数值",
-          status: "隐藏",
-          type: "-",
-          target: "是",
-          format: "无",
-          operate: "",
+          name: "session-web",
+          show: "session-web",
+          include:"Web 浏览页面",
+          cut:"10分钟",
+          format:""  
         },
         {
-          name: "commodity_spu",
-          show: "商品SPU",
-          data: "数值",
-          status: "可见",
-          type: "-",
-          target: "是",
-          format: "无",
-          operate: "",
+          name: "commodity",
+          show: "首页跳出",
+          include:"Web 元素点击,Web 浏览页面,Web 视区停留",
+          cut:"10分钟",
+          format:""  
         },
         {
           name: "is_new",
           show: "是否新品",
-          data: "数值",
-          status: "可见",
-          type: "-",
-          target: "无",
-          format: "无",
-          operate: "",
+          include:"Web 浏览页面",
+          cut:"10分钟",
+          format:""  
         },
         {
           name: "share_content",
           show: "分享商品",
-          data: "数值",
-          status: "隐藏 ",
-          type: "-",
-          target: "是",
-          format: "无",
-          operate: "",
+          include:"Web 浏览页面",
+          cut:"10分钟",
+          format:""  
         },
         {
           name: "room_id",
           show: "直播间ID",
-          data: "数值",
-          status: "隐藏",
-          type: "-",
-          target: "无",
-          format: "无",
-          operate: "",
+          include:"Web 浏览页面",
+          cut:"10分钟",
+          format:""  
         },
       ],
     };
