@@ -486,7 +486,7 @@
     width: 100%;
     .test_container1{
         width: 100%;
-        height: 86px;
+        height: 80px;
         display: flex;
         align-items: center;
         margin-bottom: -119px;
