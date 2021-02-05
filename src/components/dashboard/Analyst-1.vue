@@ -58,21 +58,19 @@
         <div class="kanban_item_container">
             <div class="kanbanitem1">
                 <div class="kan_title">分析看板总数</div>
-                <div class="kanNum">15</div>
+                <div class="kanNum" style="color:#A49DFA;">15</div>
             </div>
             <div class="kanbanitem2">
                 <div class="kan_title">自定义看板</div>
-                <div class="kanNum">3</div>
+                <div class="kanNum" style="color:#8AE6C7;">3</div>
             </div>
             <div class="kanbanitem3">
                 <div class="kan_title">模板素材库</div>
-                <div class="kanNum">234</div>
-                <div class="shangsheng"><i class="iconfont iconshangsheng"></i>35</div>
+                <div class="kanNum" style="color:#FFD98C;">234</div>
             </div>
             <div class="kanbanitem4">
                 <div class="kan_title">行业报告市场</div>
-                <div class="kanNum">125</div>
-               <div class="shangsheng"><i class="iconfont iconshangsheng"></i>12</div>
+                <div class="kanNum" style="color:#BF6E9B;">125</div>
             </div>
         </div>
     </div>
@@ -96,7 +94,7 @@
           <div class="pin_title">品牌测评得分</div>
           <div class="pin_echarts_cont_container">
             <div class="pin_content" id="pinId">
-
+              
             </div>
             <div class="num_text">78</div>
             <div class="fen">分</div>
@@ -238,7 +236,6 @@ export default {
         {
           tilIcon: require("../../assets/img/dashboard/newGif.png"),
           title: "领取新人礼包",
-          iconfont: 'iconlingquxinrenlibao',
           desc:
             "根据您行业属性，我们为您精选出一些通用数据包及行业数据包，希望您会喜欢。",
           statusTxt: "已完成",
@@ -247,7 +244,6 @@ export default {
         {
           tilIcon: require("../../assets/img/dashboard/upData.png"),
           title: "上传数据",
-          iconfont: 'iconshangchuanshuju',
           desc: "开启第一步，去上传你的第一个数据文件，列入EXCEL报表文件。",
           statusTxt: "已完成",
           statusIcon: require("../../assets/img/dashboard/checked.png"),
@@ -255,7 +251,6 @@ export default {
         {
           tilIcon: require("../../assets/img/dashboard/SDK.png"),
           title: "SDK埋点",
-          iconfont: 'iconSDKmaidian',
           desc:
             "使用 SDK 实现数据采集功能，添加跟踪代码即可完成 SDK 的集成，为数据采集和分析做好准备。",
           statusTxt: "已完成",
@@ -264,7 +259,6 @@ export default {
         {
           tilIcon: require("../../assets/img/dashboard/API.png"),
           title: "API采集",
-          iconfont: 'iconAPIcaiji',
           desc:
             "为满足广大客户更灵活管理需求，我们提供了一套可以直接调用的 API 接口。",
           statusTxt: "去查看",
@@ -273,7 +267,6 @@ export default {
         {
           tilIcon: require("../../assets/img/dashboard/sjkzl.png"),
           title: "数据库直连",
-          iconfont: 'iconshujukuzhilian',
           desc:
             "采用端口通信的方式进行客户端的数据库连接，安全有保障。连接数据库进行分析，实时性更高。",
           statusTxt: "去查看",
@@ -282,7 +275,6 @@ export default {
         {
           tilIcon: require("../../assets/img/dashboard/help.png"),
           title: "帮助中心",
-          iconfont: 'iconbianzu2',
           desc: "查看功能说明，了解智慧营销平台。",
           statusTxt: "去查看",
           statusIcon: require("../../assets/img/dashboard/tor1.png"),
@@ -721,9 +713,9 @@ export default {
           numText: 1847,
           unitText: "人",
           leftText: "环比",
-          leftIcon:require("../../assets/img/dashboard/upIcon.png"),
+          leftIcon:require("../../assets/img/dashboard/upIcon.png"), 
           leftPer: "9.07%",
-          leftPerColor:"#34C724",
+          leftPerColor:"#34C724", 
           rightText: "同比",
           rightIcon: require("../../assets/img/dashboard/downIcon.png"),
           rightPer: "9.07%",
@@ -775,9 +767,9 @@ export default {
           numText: 26.45,
           unitText: "%",
           leftText: "环比",
-          leftIcon:require("../../assets/img/dashboard/upIcon.png"),
+          leftIcon:require("../../assets/img/dashboard/upIcon.png"), 
           leftPer: "9.07%",
-          leftPerColor:"#34C724",
+          leftPerColor:"#34C724", 
           rightText: "同比",
           rightIcon: require("../../assets/img/dashboard/downIcon.png"),
           rightPer: "9.07%",
@@ -1114,9 +1106,6 @@ export default {
     border: 1px solid;
     border-image: linear-gradient(141deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)) 1 1;
     background: linear-gradient(180deg, rgba(248, 249, 250, 0.62) 0%, rgba(232, 241, 255, 0.72) 100%);
-    background: rgba(255, 255, 255, 0.75);
-    background: url("../../assets/img/dashboard/kanban-bg.png");
-    border-radius: 12px;
     .title_1container{
         display: flex;
         align-items: center;
@@ -1155,9 +1144,9 @@ export default {
                 font-size: 16px;
                 font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
-                color: #FFFFFF;
+                color: #FFFFFF;             
                 background: linear-gradient(135deg, #FF8D0A 0%, #FFA733 100%);
-                box-shadow: 4px 4px 16px 0px rgba(148, 76, 46, 0.2), -4px -4px 16px 0px #FFFFFF, 1px 1px 2px 0px rgba(255, 247, 230, 0.6);
+                box-shadow: 4px 4px 16px 0px rgba(148, 76, 46, 0.2), -4px -4px 16px 0px #FFFFFF, 1px 1px 2px 0px rgba(255, 247, 230, 0.6); 
             }
         }
     }
@@ -1170,60 +1159,26 @@ export default {
             width: 24%;
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
+            align-items: center;
             padding: 24px 0;
             box-sizing: border-box;
             background: rgba(255, 255, 255, 0.5);
             border-radius: 8px;
-            height: 144px;
+            border: 1px solid #FFFFFF;
             .kan_title{
-                margin-bottom: 12px;
+                margin-bottom: 12px;    
+                font-size: 20px;
                 font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
-                margin-right: 24px;
-                font-size: 18px;
-                color: #fff;
+                color: #242F57;
             }
             .kanNum{
-                font-size: 48px;
-                margin-right: 24px;
-                color: #fff;
+                font-size: 40px;
                 font-family: HelveticaNeue-CondensedBold, HelveticaNeue;
                 font-weight: normal;
                 line-height: 48px;
             }
-            .shangsheng{
-              font-size: 16px;
-              font-family: PingFangSC-Medium, PingFang SC;
-              font-weight: 500;
-              color: rgba(255, 255, 255, 0.5);
-              margin-right: 24px;
-              display: flex;
-              align-items: center;
-              margin-top: 12px;
-              .iconfont{
-                margin-right: 6px;
-                font-size: 12px;
-              }
-            }
         }
-      .kanbanitem1{
-        box-shadow: 4px -4px 24px 0px rgba(56, 88, 148, 0.55);
-        border-radius: 8px;
-        background: url("../../assets/img/dashboard/kanban1.png");
-      }
-      .kanbanitem2{
-        background: url("../../assets/img/dashboard/kanban2.png");
-        box-shadow: 4px -4px 24px 0px rgba(45, 120, 134, 0.55);
-      }
-      .kanbanitem3{
-        background: url("../../assets/img/dashboard/kanban3.png");
-        box-shadow: 4px -4px 24px 0px rgba(109, 57, 143, 0.55);
-      }
-      .kanbanitem4{
-        background: url("../../assets/img/dashboard/kanban4.png");
-        box-shadow: 4px -4px 24px 0px rgba(41, 59, 149, 0.55);
-      }
     }
   }
 
@@ -1299,7 +1254,7 @@ export default {
         font-weight: 500;
         color: #242F57;
         .til_label{
-           margin-right: 48px;
+           margin-right: 48px; 
         }
         .date_container{
             width: 200px;
@@ -1334,7 +1289,7 @@ export default {
                     color: #242F57;
                     margin-right: 3px;
                 }
-                .goper{
+                .goper{ 
                     color: #34C724;
                 }
             }
