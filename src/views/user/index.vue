@@ -478,7 +478,7 @@
       <div class="cdyhmj_container">
         <div class="cdyhmj_title_container">
           <div class="cdyhmj_title">触达用户媒介</div>
-          <div class="cdyhmj_title_desc">
+          <div class="cdyhmj_title_desc" @click="goMidea">
             <span class="title_desc_txt">查看媒介画像详情</span>
             <img :src="toRIcon" class="toRIcon" />
           </div>
@@ -1201,6 +1201,11 @@ export default {
     this.initPopEcharts();
   },
   methods: {
+    goMidea(){
+      this.$router.push({
+        path:"/media"
+      });
+    },
     expandfn(arg){
       console.log('aaaaaaaaa')
       if(arg == 1){
@@ -2431,6 +2436,9 @@ export default {
       .cdyhmj_title_desc {
         display: flex;
         align-items: center;
+        &:hover{
+          cursor: pointer;
+        }
         .title_desc_txt {
           font-size: 14px;
           font-family: PingFangSC-Medium, PingFang SC;
