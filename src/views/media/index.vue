@@ -172,8 +172,10 @@
                 </div>
               </div>
           </div>
+          
             <div class="m-p-pie">
                 <div class="m-pie-title">媒介用户画像</div>
+                <div class="subTitle">抖音用户，以26-45岁的女性自由职业者居多，整体收入水平偏中上等，约有1/3来自于三口之家，使用时间多分布于中午和晚间。</div>
                 <div class="m-pie-echarts">
                     <Triple :title1="'性别分布'" :title2="'年龄分布'" :title3="'职业分布'">
                           <PieCaseEcharts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieCaseEcharts>
@@ -187,59 +189,64 @@
                     </Triple>
                 </div>
             </div>
-            <div class="m-p-third-module">
-                <div class="m-p-t-left">
-                    <Full :title="'媒介领域热度排名'">
-                      <barL id="box28" :colorList="$lxjData.colorList" :myData="$lxjData.box28Data"></barL>
-                    </Full>
-                </div>
-                <div class="m-p-t-right">
-                    <div class="m-p-right-top">
-                        <div class="m-p-right-push">
-                            <div class="m-p-r-title">触达方案推荐</div>
-                            <div>
-                                <p>方案一</p>
-                                <img src="../../assets/img/mark/douyin.png" alt="">+
-                                <img src="../../assets/img/mark/xiaohongshu.png" alt="">+
-                                <img src="../../assets/img/mark/kuaishou.png" alt="">
-                            </div>
-                            <div>
-                                <p>方案二</p>
-                                <img src="../../assets/img/mark/douyin.png" alt="">+
-                                <img src="../../assets/img/mark/weibo.png" alt="">
-                            </div>
-                        </div>
-                        <div class="m-p-right-media">
-                            <div class="m-p-r-title">组合媒介曝光量预期 </div>
-                            <div class="m-p-r-num">324,343</div>
-                            <div class="m-p-r-echarts">
-                              <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box111Data"></funnel>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="m-p-right-bottom">
-                        <p>相关指标预期</p>
-                        <div>
-                            <div style="margin-right:16px"><Card :title="'综合预期CPE'" :colourfol="'blue'" :number="'0.35'"></Card></div>
-                            <div><Card :title="'组合互动总数'" :colourfol="'purple'" :number="'427,260'"></Card></div>  
-                        </div>
-                        <div>
-                           <div style="margin-right:16px"><Card :title="'组合粉丝数'" :colourfol="'pink'" :number="'6,968,580'"></Card></div>    
-                            <div><Card :title="'组合预算（元）'" :colourfol="'orange'" :number="'29,986'"></Card></div> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="m-p-last">
-                <Half :lTitle="'媒介曝光触达'" :rTitle="'媒介传播效率'">
-                  <div class="m-p-last-touch" slot="left">
-                    <PieEcharts2 :colorList="$fjData.colorList" :myData="$fjData.box0Data"></PieEcharts2>
+             <div class="m-p-pie">
+                <div class="m-pie-title">媒介用户画像</div>
+                <div class="subTitle">抖音用户，以26-45岁的女性自由职业者居多，整体收入水平偏中上等，约有1/3来自于三口之家，使用时间多分布于中午和晚间。</div>
+              <div class="m-p-third-module">
+                  <!-- <div class="m-pie-title">媒介组合方案</div>
+                  <div class="subTitle">基于品牌画像和用户画像，建议以短视频作为主要信息传播媒介（其中抖音整体传播效果最优，快手成本投入相对较低），垂直媒介为辅（小红书在15-25岁女性人群中的传播效果优于短视频）的媒介组合，并辅以多KOL多内容类型的投放策略，预算建议5-10万之间，预计能获得150万的曝光量（是上一次投放效果的3倍）。</div> -->
+                  <div class="m-p-t-left">
+                      <Full :title="'媒介领域热度排名'">
+                        <barL id="box28" :colorList="$lxjData.colorList" :myData="$lxjData.box28Data"></barL>
+                      </Full>
                   </div>
-                  <barL slot="right" id="box29" :colorList="$lxjData.colorList" :myData="$lxjData.box29Data"></barL>
-                </Half>
+                  <div class="m-p-t-right">
+                      <div class="m-p-right-top">
+                          <div class="m-p-right-push">
+                              <div class="m-p-r-title">触达方案推荐</div>
+                              <div>
+                                  <p>方案一</p>
+                                  <img src="../../assets/img/mark/douyin.png" alt="">+
+                                  <img src="../../assets/img/mark/xiaohongshu.png" alt="">+
+                                  <img src="../../assets/img/mark/kuaishou.png" alt="">
+                              </div>
+                              <div>
+                                  <p>方案二</p>
+                                  <img src="../../assets/img/mark/douyin.png" alt="">+
+                                  <img src="../../assets/img/mark/weibo.png" alt="">
+                              </div>
+                          </div>
+                          <div class="m-p-right-media">
+                              <div class="m-p-r-title">组合媒介曝光量预期 </div>
+                              <div class="m-p-r-num">324,343</div>
+                              <div class="m-p-r-echarts">
+                                <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box111Data"></funnel>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="m-p-right-bottom">
+                          <p>相关指标预期</p>
+                          <div>
+                              <div style="margin-right:16px"><Card :title="'综合预期CPE'" :colourfol="'blue'" :number="'0.35'"></Card></div>
+                              <div><Card :title="'组合互动总数'" :colourfol="'purple'" :number="'427,260'"></Card></div>  
+                          </div>
+                          <div>
+                            <div style="margin-right:16px"><Card :title="'组合粉丝数'" :colourfol="'pink'" :number="'6,968,580'"></Card></div>    
+                              <div><Card :title="'组合预算（元）'" :colourfol="'orange'" :number="'29,986'"></Card></div> 
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="m-p-last">
+                  <Half :lTitle="'媒介曝光触达'" :rTitle="'媒介传播效率'">
+                    <div class="m-p-last-touch" slot="left">
+                      <PieEcharts2 :colorList="$fjData.colorList" :myData="$fjData.box0Data"></PieEcharts2>
+                    </div>
+                    <barL slot="right" id="box29" :colorList="$lxjData.colorList" :myData="$lxjData.box29Data"></barL>
+                  </Half>
+              </div>
             </div>
       </div>
-
       <div class="m-p-target">
           <!-- 优化指标 -->
           <div class="m-p-target-title">优化指标</div>
@@ -312,6 +319,7 @@
       </div>
       <div class="m-p-kol">
           <div class="m-p-target-title">KOL资源</div>
+          <div class="subTitle">基于品牌画像和用户画像，建议以短视频作为主要信息传播媒介（其中抖音整体传播效果最优，快手成本投入相对较低），垂直媒介为辅（小红书在15-25岁女性人群中的传播效果优于短视频）的媒介组合，并辅以多KOL多内容类型的投放策略，预算建议5-10万之间，预计能获得150万的曝光量（是上一次投放效果的3倍）</div>
           <Tabs value="name1" @on-click="getTab">
               <TabPane label="短视频" name="name1">
                 <div class="f-list">
@@ -1096,6 +1104,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.subTitle{
+  margin-top: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #636E95;
+  line-height: 20px;
+}
 .media-protrait {
   padding: 0 24px 24px 24px;
   .m-p-panel{
@@ -1603,18 +1620,19 @@ export default {
     }
     .m-p-pie{
         width: 100%;
-        height: 654px;
         padding: 16px;
         margin-bottom: 24px;
         background: #FFFFFF;
         border-radius: 8px;
         border: 1px solid #EAEDF7;
+        box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+        border-radius: 12px;
         .m-pie-title{
             height: 24px;
             margin-bottom: 16px;
-            font-size: 14px;
-            font-family: PingFangSC-Regular, PingFang SC;
-            font-weight: 400;
+            font-size: 16px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
             color: #242F57;
             line-height: 24px;
         }
@@ -1814,6 +1832,7 @@ export default {
       border-radius: 8px;
       border: 1px solid #EAEDF7;
       display: flex;
+      padding-bottom: 2px;
       .listBox-left{
         ::v-deep .ivu-menu{
           height: 100%;
