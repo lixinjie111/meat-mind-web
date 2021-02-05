@@ -56,7 +56,7 @@
             </div>
             <div class="target-right">
                 <video class="player" width="100%" height="100%" autoplay loop muted
-                       src="../../assets/video/video1.mp4"></video>
+                       src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"></video>
             </div>
         </div>
         <div class="card card-one">
