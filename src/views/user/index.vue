@@ -565,23 +565,6 @@
                     <div>¥2300/千人</div>
                   </div>
                 </div>
-                <div class="cal_item2">
-                  <div class="rt_choice2">
-                    <img :src="dhIcon" alt srcset class="dhIcon" />
-                  </div>
-                  <div class="logo_container">
-                    <img :src="dyI" class="logoImg" />
-                    <span class="cal_txt">抖音</span>
-                  </div>
-                  <div class="txt_area">
-                    <div class="txt_area11">触达率</div>
-                    <div>投放成本</div>
-                  </div>
-                  <div class="per_area">
-                    <div class="per_area1">69%</div>
-                    <div>¥25000/千人</div>
-                  </div>
-                </div>
                 <div class="cal_item cal_item1">
                   <div class="cal_item_cal_item">
                     <img :src="toRIcon1" class="toLIcon" />
@@ -2621,7 +2604,7 @@ export default {
               }
             }
             .cal_item2 {
-              width: 18%;
+              width: 22%;
               height: 120px;
               background: #ffffff;
               border-radius: 8px;
