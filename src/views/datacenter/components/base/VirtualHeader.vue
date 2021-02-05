@@ -6,7 +6,7 @@
               <i class="iconfont2 iconicon_addto1"></i>
               <div>新建虚拟事件</div>
           </div>
-          <div class="total">当前条件共 16 个虚拟事件</div>
+          <div class="total">当前条件共 10 个虚拟事件</div>
       </div>
       <div class="search">
         <i class="iconfont iconsearch"></i>
