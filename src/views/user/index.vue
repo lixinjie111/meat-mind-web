@@ -27,7 +27,9 @@
             </div>
             <div class="lef_area_bom" @click="expandfn(1)">{{vDxtxt1}}</div>
           </div>
-          <div class="cen_area"></div>
+          <div class="cen_area">
+            <img :src="bjsbzImgTime" alt="" srcset="" class="cen_areaImg">
+          </div>
           <div class="rig_area">
             <div class="yl_container">
               <div class="yl_lef" style="background: #FF9502;"></div>
@@ -66,7 +68,9 @@
             </div>
             <div class="lef_area_bom" @click="expandfn(2)">{{vDxtxt2}}</div>
           </div>
-          <div class="cen_area"></div>
+          <div class="cen_area">
+            <img :src="yxqnImgTime" alt="" srcset="" class="cen_areaImg">
+          </div>
           <div class="rig_area">
             <div class="gt_container">
               <div class="yl_lef" style="background: #36D67B;"></div>
@@ -101,7 +105,9 @@
             </div>
             <div class="lef_area_bom" @click="expandfn(3)">{{vDxtxt3}}</div>
           </div>
-          <div class="cen_area"></div>
+          <div class="cen_area">
+            <img :src="qyggImgTime" alt="" srcset="" class="cen_areaImg">
+          </div>
           <div class="rig_area">
             <div class="gz_container">
               <div class="yl_lef" style="background: #A49DFA;"></div>
@@ -128,7 +134,9 @@
             </div>
             <div class="lef_area_bom" @click="expandfn(4)">{{vDxtxt4}}</div>
           </div>
-          <div class="cen_area"></div>
+          <div class="cen_area">
+            <img :src="bpyzImgTime" alt="" srcset="" class="cen_areaImg">
+          </div>
           <div class="rig_area">
             <div class="yl_container">
               <div class="yl_lef" style="background: #FF9502;"></div>
@@ -167,7 +175,9 @@
             </div>
             <div class="lef_area_bom" @click="expandfn(5)">{{vDxtxt5}}</div>
           </div>
-          <div class="cen_area"></div>
+          <div class="cen_area">
+            <img :src="zyzyImgTime" alt="" srcset="" class="cen_areaImg">
+          </div>
           <div class="rig_area">
             <div class="yl_container">
               <div class="yl_lef" style="background: #FF9502;"></div>
@@ -1148,6 +1158,11 @@ export default {
       qyggImg:require("../../assets/img/yhhx/sbAvat.png"),
       bpyzImg:require("../../assets/img/yhhx/bpAvat.png"),
       zyzyImg:require("../../assets/img/yhhx/zyAvat.png"),
+      bjsbzImgTime:require("../../assets/img/yhhx/bjsbzImg.png"),
+      yxqnImgTime:require("../../assets/img/yhhx/yxqnImg.png"),
+      qyggImgTime:require("../../assets/img/yhhx/qyggImg.png"),
+      bpyzImgTime:require("../../assets/img/yhhx/bpyzImg.png"),
+      zyzyImgTime:require("../../assets/img/yhhx/zyzyImg.png"),
       ifShowDx1:true,
       vDxtxt1:'收起用户动线',
       ifShowDx2:false,
@@ -2059,7 +2074,7 @@ export default {
     }
     .bjsbz_container{
       width: 100%;
-      height: 105px;
+      height: 110px;
       display: flex;
       align-items: center;
       border-radius: 8px;
@@ -2123,7 +2138,11 @@ export default {
       .cen_area{
         flex-grow: 1;
         height: 100%;
-        background-color: darkorchid;
+        .cen_areaImg{
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
       }
       .rig_area{
         width: 270px;
