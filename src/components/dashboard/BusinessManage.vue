@@ -74,7 +74,8 @@
                 <div class="overview-right-top">
                    <div class="info-top flex">
                       <div>
-
+<!--                          <video class="player" width="100%" height="100%" autoplay loop muted-->
+<!--                                 src="../../assets/video/model.mov"></video>-->
                       </div>
                       <div>
                         <p>综合评价指数</p>
@@ -1241,10 +1242,17 @@
 
                         >div {
                             &:nth-child(1) {
+                               margin: -50px 0 0 -20px;
 
+                               > video {
+                                   width: 100px;
+                                   height: 100px;
+                               }
                             }
 
                             &:nth-child(2) {
+                              width: 130px;
+
                               >p {
                                   font-size: 12px;
                                   font-family: PingFangSC-Regular, PingFang SC;

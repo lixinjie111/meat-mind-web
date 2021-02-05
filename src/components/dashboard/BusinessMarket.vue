@@ -5,11 +5,11 @@
             <div class="target-left">
                 <div class="target-left-title flex">
                     <p>推荐目标客群</p>
-                    <p>查看全部<i class="iconfont iconarrowRight"></i></p>
+                    <p @click="toUser" class="check-btn">查看全部<i class="iconfont iconarrowRight"></i></p>
                 </div>
                 <div class="target-left-content">
-                    <Select class="target-left-select" value="北漂一族">
-                        <Option value="北漂一族">北漂一族</Option>
+                    <Select class="target-left-select" value="北京上班族">
+                        <Option value="北京上班族">北京上班族</Option>
                     </Select>
                     <p class="target-left-sub-title">基本特点</p>
                     <ul class="target-left-sub-ul">
@@ -21,7 +21,7 @@
                         <li>一线城市</li>
                     </ul>
                     <p class="target-left-sub-title">关注话题</p>
-                    <ul class="target-left-sub-ul">
+                    <ul class="target-left-sub-ul follow-ul">
                         <li>秋天的第一杯奶茶</li>
                         <li>燃烧我的卡路里</li>
                     </ul>
@@ -56,20 +56,20 @@
             </div>
             <div class="target-right">
                 <video class="player" width="100%" height="100%" autoplay loop muted
-                       src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"></video>
+                       src="../../assets/video/video1.mp4"></video>
             </div>
         </div>
         <div class="card card-one">
             <div class="card-one-left">
                 <div class="card-one-left-info">
                     <div class="flex">
-                        <p><span></span>北漂一族</p>
-                        <p>分群用户数：<span>18197人</span></p>
+                        <p>北漂一族</p>
+                        <p>分群用户数：28790人</p>
                     </div>
                     <ul>
-                        <li>公共交通</li>
-                        <li>家</li>
-                        <li>公司</li>
+                        <li><span>公共交通</span></li>
+                        <li><span>家</span></li>
+                        <li><span>公司</span></li>
                     </ul>
                 </div>
                 <div class="card-one-left-img">
@@ -80,23 +80,23 @@
                 <div class="card-one-right-item">
                     <div class="item-line"></div>
                     <div class="item-box">
-                        <p><img src="../../assets/img/dashboard/market/icon-commute@2x.png"/>休息/通勤</p>
+                        <p class="first-p"><img src="../../assets/img/dashboard/market/icon-commute@2x.png"/>休息/通勤</p>
                     </div>
                     <div class="item-box">
                         <p>
-                            <Icon type="md-time" size="16" color="#636E95"/>
+                            <Icon type="md-time" size="18" color="#636E95"/>
                             7:00 - 9:00
                         </p>
                     </div>
                     <div class="item-box">
                         <p>
-                            <Icon type="ios-phone-portrait" size="16" color="#636E95"/>
+                            <Icon type="ios-phone-portrait" size="18" color="#636E95"/>
                             头条/微博/小红书
                         </p>
                     </div>
                     <div class="item-box">
                         <p>
-                            <Icon type="md-happy" size="16" color="#636E95"/>
+                            <Icon type="md-happy" size="18" color="#636E95"/>
                             一般: 35% 紧张: 29%
                         </p>
                     </div>
@@ -106,24 +106,24 @@
                 </div>
                 <div class="card-one-right-item active">
                     <div class="item-line"></div>
-                    <div class="item-box">
-                        <p><img src="../../assets/img/dashboard/market/icons-working@2x.png"/>工作/休息</p>
+                    <div class="item-box item-box-active">
+                        <p class="first-p"><img src="../../assets/img/dashboard/market/icons-working@2x.png"/>工作/休息</p>
                     </div>
                     <div class="item-box">
                         <p>
-                            <Icon type="md-time" size="16" color="#2373FF"/>
+                            <Icon type="md-time" size="18" color="#2373FF"/>
                             12:00 - 13:00
                         </p>
                     </div>
                     <div class="item-box">
                         <p>
-                            <Icon type="ios-phone-portrait" size="16" color="#2373FF"/>
+                            <Icon type="ios-phone-portrait" size="18" color="#2373FF"/>
                             大众点评/新浪微博/抖音
                         </p>
                     </div>
                     <div class="item-box">
                         <p>
-                            <Icon type="md-happy" size="16" color="#2373FF"/>
+                            <Icon type="md-happy" size="18" color="#2373FF"/>
                             放松: 37% 一般: 36%
                         </p>
                     </div>
@@ -134,23 +134,23 @@
                 <div class="card-one-right-item">
                     <div class="item-line"></div>
                     <div class="item-box">
-                        <p><img src="../../assets/img/dashboard/market/icon-relax@2x.png"/>休息/放松</p>
+                        <p class="first-p"><img src="../../assets/img/dashboard/market/icon-relax@2x.png"/>休息/放松</p>
                     </div>
                     <div class="item-box">
                         <p>
-                            <Icon type="md-time" size="16" color="#636E95"/>
+                            <Icon type="md-time" size="18" color="#636E95"/>
                             20:00 - 22:00
                         </p>
                     </div>
                     <div class="item-box">
                         <p>
-                            <Icon type="ios-phone-portrait" size="16" color="#636E95"/>
+                            <Icon type="ios-phone-portrait" size="18" color="#636E95"/>
                             抖音/小红书/快手
                         </p>
                     </div>
                     <div class="item-box">
                         <p>
-                            <Icon type="md-happy" size="16" color="#636E95"/>
+                            <Icon type="md-happy" size="18" color="#636E95"/>
                             放松: 48% 一般: 26%
                         </p>
                     </div>
@@ -597,11 +597,13 @@
                         <p>合生汇商场报告</p>
                         <p>专业商场案例<br>启迪营销灵感</p>
                         <p>元知智能研究院</p>
+                        <p>付费</p>
                     </div>
                     <div class="card-six-right-item fl">
                         <p>合生通商业报告</p>
                         <p>专业商场案例<br>启迪营销灵感</p>
                         <p>元知智能研究院</p>
+                        <p>付费</p>
                     </div>
                 </div>
             </div>
@@ -638,6 +640,11 @@
                 dyIcon:require("../../assets/img/yhhx/ks.png"),
                 dyI:require("../../assets/img/yhhx/dyI.png")
             }
+        },
+        methods: {
+            toUser() {
+                this.$router.push({name:"user"})
+            }
         }
     }
 </script>
@@ -670,12 +677,12 @@
 
             .target-left {
                 margin-right: 16px;
-                padding: 20px 24px;
+                padding: 20px 16px;
                 width: 320px;
                 height: 442px;
                 box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
                 background: url("../../assets/img/dashboard/market/target-bg@2x.png") no-repeat center / 100% 100%;
-                border-radius: 8px;
+                border-radius: 12px;
 
                 .target-left-title {
                     > p {
@@ -688,6 +695,14 @@
                             font-size: 16px;
                             color: #242F57;
                         }
+
+                        &.check-btn {
+                            cursor: pointer;
+
+                            > i {
+                                margin-left: 2px;
+                            }
+                        }
                     }
                 }
 
@@ -697,12 +712,17 @@
 
                         ::v-deep .ivu-select-selection {
                             height: 48px;
-                            border-radius: 2px;
+                            background: rgba(255, 255, 255, .6);
+                            box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8), -2px -2px 7px 0px #FFFEFA;
+                            border-radius: 8px;
+                            border: 1px solid #C6CBDE;
 
                             .ivu-select-selected-value {
                                 height: 48px;
                                 line-height: 48px;
                                 font-size: 18px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
                                 color: #242F57;
                             }
                         }
@@ -728,11 +748,23 @@
 
                         li {
                             margin: 0 4px 8px 0;
-                            padding: 0 10px;
+                            min-width: 68px;
                             height: 24px;
                             line-height: 24px;
+                            background: rgba(255, 255, 255, 0.3);
                             border-radius: 8px;
-                            border: 1px solid #97A0C3;
+                            border: 1px solid #FFFFFF;
+                            font-size: 12px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #242F57;
+                            text-align: center;
+                        }
+
+                        &.follow-ul {
+                            li {
+                                padding: 0 16px;
+                            }
                         }
                     }
 
@@ -764,7 +796,7 @@
                 height: 442px;
                 background: #FFFFFF;
                 box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-                border-radius: 8px;
+                border-radius: 12px;
 
                 video {
                     object-fit: fill;
@@ -780,17 +812,17 @@
                 display: inline-block;
                 vertical-align: top;
                 padding: 16px;
-                width: 336px;
+                width: 320px;
                 height: 480px;
+                background: #DFF1FF;
                 border-right: 1px solid #EAEDF7;
+                border-radius: 12px 0 0 12px;
 
                 .card-one-left-info {
                     padding: 10px 12px;
-                    width: 303px;
+                    width: 287px;
                     height: 72px;
-                    background: #FFFFFF;
-                    border-radius: 8px;
-                    border: 1px solid #EAEDF7;
+                    background: url("../../assets/img/dashboard/market/card-one-bg@2x.png") no-repeat center center / 100% 100%;
 
                     > div {
                         > p {
@@ -798,56 +830,40 @@
                                 font-size: 16px;
                                 font-family: PingFangSC-Regular, PingFang SC;
                                 font-weight: 400;
-                                color: #242F57;
-
-                                > span {
-                                    display: inline-block;
-                                    vertical-align: middle;
-                                    margin-right: 5px;
-                                    width: 12px;
-                                    height: 12px;
-                                    border-radius: 50%;
-                                    background: #2373FF;
-                                }
+                                color: #FFFFFF;
                             }
 
                             &:nth-child(2) {
                                 font-size: 12px;
                                 font-family: PingFangSC-Regular, PingFang SC;
                                 font-weight: 400;
-                                color: #636E95;
-
-                                > span {
-                                    color: #2373FF;
-                                }
+                                color: #FFFFFF;
                             }
                         }
                     }
 
                     > ul {
-                        margin-top: 6px;
+                        margin-top: 12px;
 
                         li {
                             display: inline-block;
                             vertical-align: top;
                             margin-right: 8px;
                             width: 55px;
-                            height: 20px;
-                            line-height: 20px;
-                            background: rgba(164, 157, 250, .2);
-                            border-radius: 8px;
-                            font-size: 10px;
-                            font-family: PingFangSC-Regular, PingFang SC;
-                            font-weight: 400;
-                            color: #242F57;
+                            height: 16px;
+                            line-height: 14px;
                             text-align: center;
+                            background: rgba(255, 255, 255, 0.3);
+                            border-radius: 8px;
+                            border: 1px solid #FFFFFF;
 
-                            &:nth-child(2) {
-                                background: rgba(138, 230, 199, .2);
-                            }
-
-                            &:nth-child(3) {
-                                background: rgba(255, 159, 127, .2);
+                            > span {
+                                display: inline-block;
+                                font-size: 12px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #FFFFFF;
+                                transform: scale(0.8);
                             }
                         }
                     }
@@ -905,13 +921,15 @@
                         background: #F7F9FD;
                         border-radius: 8px;
                         font-size: 14px;
-                        font-family: PingFangSC-Medium, PingFang SC;
-                        font-weight: 500;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
                         color: #636E95;
                         z-index: 2;
 
-                        &:first-child {
+                        .first-p {
                             font-size: 16px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 500;
                         }
 
                         &:last-child {
@@ -937,8 +955,14 @@
 
                         .item-box {
                             color: #242F57;
-                            background: #FFFFFF;
+                            background: #DBEAFF;
                             box-shadow: 0px 4px 16px 0px rgba(55, 84, 170, 0.12);
+                            color: #242F57;
+
+                            &.item-box-active {
+                                color: #FFFFFF;
+                                background: linear-gradient(225deg, #1C66DE 0%, #98A0F9 100%);
+                            }
                         }
                     }
                 }
@@ -1941,7 +1965,6 @@
                     margin: 0 0 16px 16px;
                     width: 176px;
                     height: 213px;
-                    background: url("../../assets/img/dashboard/market/card-six-bg2@2x.png") no-repeat center center / 100% 100%;
 
                     > p {
                         font-size: 12px;
@@ -1965,6 +1988,54 @@
                             position: absolute;
                             bottom: 16px;
                         }
+
+                        &:nth-child(4) {
+                            position: absolute;
+                            right: 16px;
+                            bottom: 16px;
+                            width: 32px;
+                            height: 18px;
+                            line-height: 18px;
+                            background: #FFFFFF;
+                            border-radius: 4px;
+                            text-align: center;
+                            font-size: 12px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #2373FF;
+                        }
+                    }
+
+                    &:nth-child(1) {
+                        background: url("../../assets/img/dashboard/market/report-bg1@2x.png") no-repeat center center / 100% 100%;
+                    }
+
+                    &:nth-child(2) {
+                        background: url("../../assets/img/dashboard/market/report-bg2@2x.png") no-repeat center center / 100% 100%;
+                    }
+
+                    &:nth-child(3) {
+                        background: url("../../assets/img/dashboard/market/report-bg3@2x.png") no-repeat center center / 100% 100%;
+                    }
+
+                    &:nth-child(4) {
+                        background: url("../../assets/img/dashboard/market/report-bg4@2x.png") no-repeat center center / 100% 100%;
+                    }
+
+                    &:nth-child(5) {
+                        background: url("../../assets/img/dashboard/market/report-bg5@2x.png") no-repeat center center / 100% 100%;
+                    }
+
+                    &:nth-child(6) {
+                        background: url("../../assets/img/dashboard/market/report-bg6@2x.png") no-repeat center center / 100% 100%;
+                    }
+
+                    &:nth-child(7) {
+                        background: url("../../assets/img/dashboard/market/report-bg7@2x.png") no-repeat center center / 100% 100%;
+                    }
+
+                    &:nth-child(8) {
+                        background: url("../../assets/img/dashboard/market/report-bg8@2x.png") no-repeat center center / 100% 100%;
                     }
                 }
             }

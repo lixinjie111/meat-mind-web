@@ -31,7 +31,7 @@
                 <p>热门推荐</p>
                 <Input prefix="ios-search" class="data-card-title-right" placeholder="输入关键词搜索"/>
             </div>
-            <div class="data-card-content">
+            <div class="data-card-content hot-data">
                 <div class="item" v-for="(item,index) in hotList" :key="index">
                     <img :src="item.img"/>
                     <div>
@@ -360,6 +360,10 @@
                 padding: 24px 0 8px 24px;
                 //解决滚动条影响页面宽度
                 margin-right: -10px;
+
+                &.hot-data {
+                   height: 422px;
+                }
 
                 .item {
                     margin: 0 16px 16px 0;

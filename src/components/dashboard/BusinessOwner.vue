@@ -10,7 +10,11 @@
         </div>
         <BusinessMarket v-if="tabActive == 1"></BusinessMarket>
         <BusinessManage v-else></BusinessManage>
-        <div class="report-btn">
+        <div class="report-btn" v-if="tabActive == 1">
+            <img src="../../assets/img/dashboard/downLoad.png" class="btn-download"/>
+            <span class="btn-txt">一键生成洞察报告</span>
+        </div>
+        <div class="report-btn" v-else>
             <img src="../../assets/img/dashboard/downLoad.png" class="btn-download"/>
             <span class="btn-txt">一键生成诊断报告</span>
         </div>
@@ -66,7 +70,7 @@
         .report-btn {
             position: absolute;
             right: 24px;
-            top: 8px;
+            top: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
