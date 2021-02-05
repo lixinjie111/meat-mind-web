@@ -2895,7 +2895,7 @@ export default {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
       .mub_titl_container1 {
         font-size: 16px;
         font-family: PingFangSC-Medium, PingFang SC;
@@ -2994,7 +2994,6 @@ export default {
       font-family: PingFangSC-Medium, PingFang SC;
       font-weight: 500;
       color: #242f57;
-      margin-bottom: 24px;
     }
     .jichuhuax_echarts_container {
       width: 100%;
@@ -3125,7 +3124,6 @@ export default {
     margin-top: 24px;
     .xwfx_area_til {
       width: 100%;
-      margin-bottom: 24px;
       font-size: 16px;
       font-family: PingFangSC-Medium, PingFang SC;
       font-weight: 500;
