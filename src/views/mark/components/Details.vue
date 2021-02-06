@@ -41,7 +41,7 @@
                 <div class="d-c-l-content">
                     <img :src="pic1" alt="">
                 </div>
-                 <div class="d-c-l-empty">{{pinpai}}</div>
+                 <div class="d-c-l-empty" :class="{'ck':pinpai=='暂无品牌'}">{{pinpai}}</div>
             </div>
         </div>
         <Accept :title="'品牌受众分析'"></Accept>
@@ -65,7 +65,6 @@ export default {
         },
         methods: {
             selectEl() {
-                console.log(this.pinpai)
                 if(this.pinpai=='红牛'){
                     this.pic1=require('../../../assets/img/mark/hniu.png');
                 }else{
@@ -83,8 +82,9 @@ export default {
         padding: 0 24px 24px;
         margin-top: 24px;
         background: #FFFFFF;
-        box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-        border-radius: 8px;
+    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    border-radius: 12px;
+    border: 1px solid #EAEDF7;
         .mark-detail-header{
             display: flex;
             align-items: center;
@@ -186,7 +186,10 @@ export default {
                     font-size: 24px;
                     font-family: PingFangSC-Medium, PingFang SC;
                     font-weight: 500;
-                    color: #C6CBDE;
+                    color:#242F57;
+                    &.ck{
+                        color: #C6CBDE;
+                    }
                 }
             }
             .d-c-mid{
