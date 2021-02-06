@@ -1807,8 +1807,8 @@
                     .name {
                         height: 24px;
                         font-size: 14px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
                         color: #242F57;
                     }
 
