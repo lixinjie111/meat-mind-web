@@ -236,6 +236,7 @@ export default {
      }
 
         .card-five {
+            margin-top: 24px;
 
             .card-five-desc {
                 margin: -15px 0 24px;
