@@ -10,7 +10,7 @@ import "../src/static/icon2/iconfont.css"
 import "../src/assets/scss/main.scss"
 import lxjData from "./utils/lxjData.js"
 import fjData from "./utils/fjData.js"
-import 'lib-flexible/flexible'
+import './utils/flexible'
 
 Vue.config.productionTip = false;
 Vue.prototype.$echarts = echarts;
