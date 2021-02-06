@@ -78,7 +78,7 @@
                   </div>
               </div>
           </div>
-          <div class="rt"><LeidaEcharts :colorList="$fjData.colorList" :myData="$fjData.box14Data" titleText="92"></LeidaEcharts></div>
+          <div class="rt"><LeidaEcharts :colorList="$fjData.colorList" :myData="$fjData.box30Data" titleText="92"></LeidaEcharts></div>
         </div>
       </div>
       <div class="m-p-panel1">
@@ -179,7 +179,7 @@
               </div>
           </div>
           <div class="m-p-pie">
-              <div class="m-pie-title">媒介用户画像 <span @mouseenter="showTip"  @mouseleave="NshowTip"><Icon type="ios-alert-outline" color="#7C88B1"/>
+              <div class="m-pie-title">媒介用户画像 <span @mouseenter="showTip"  @mouseleave="NshowTip" class="m-p-toolTip"><Icon type="ios-alert-outline" color="#7C88B1"/>
                 <div class="m-pie-tip" v-show="isShowTip">
                   展示各个媒介的用户属性特征，深度洞察媒介使用者的人群画像，以及比较不同媒介的偏好人群的差异
                 </div>
@@ -211,7 +211,14 @@
                   <div class="m-p-t-right">
                       <div class="m-p-right-top">
                           <div class="m-p-right-push">
-                              <div class="m-p-r-title">触达方案推荐</div>
+                              <div class="m-p-r-title">
+                                触达方案推荐
+                                <span @mouseenter="showTip2" class="m-p-toolTip" @mouseleave="NshowTip2"><Icon type="ios-alert-outline" color="#7C88B1"/>
+                                  <div class="m-pie-tip" v-show="isShowTip2">
+                                    展示各个媒介传播效果的评估和预测，结合品牌投放目标，对投放效果做预测，给出媒介综合使用方案建议
+                                  </div>
+                                </span> 
+                              </div>
                               <div>
                                   <p>方案一</p>
                                   <img src="../../assets/img/mark/douyin.png" alt="">+
@@ -325,7 +332,14 @@
           </div>
       </div>
       <div class="m-p-kol">
-          <div class="m-p-target-title">KOL资源</div>
+          <div class="m-p-target-title">
+              KOL资源 
+              <span @mouseenter="showTip1"  @mouseleave="NshowTip1" class="m-p-toolTip"><Icon type="ios-alert-outline" color="#7C88B1"/>
+                <div class="m-pie-tip" v-show="isShowTip1">
+                  媒介资源库，提供具体媒介资源的详细信息，包括基础数据、历史投放效果和合作方案等，以供品牌方比较分析并联系合作
+                </div>
+              </span> 
+          </div>
           <div class="subTitle">基于品牌画像和用户画像，建议以短视频作为主要信息传播媒介（其中抖音整体传播效果最优，快手成本投入相对较低），垂直媒介为辅（小红书在15-25岁女性人群中的传播效果优于短视频）的媒介组合，并辅以多KOL多内容类型的投放策略，预算建议5-10万之间，预计能获得150万的曝光量（是上一次投放效果的3倍）</div>
           <Tabs value="name1" @on-click="getTab">
               <TabPane label="短视频" name="name1">
@@ -863,7 +877,9 @@ export default {
   components: { DefaultPage, Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts2,LeidaEcharts},
   data(){
       return{
+          isShowTip1:false,
           isShowTip:false,
+          isShowTip2:false,
           formTop: {
               budget: '',
               quota: '',
@@ -1104,6 +1120,18 @@ export default {
     NshowTip(name){
       this.isShowTip=false;
     },
+    showTip1(name){
+      this.isShowTip1=true;
+    },
+    NshowTip1(name){
+      this.isShowTip1=false;
+    },
+    showTip2(name){
+      this.isShowTip2=true;
+    },
+    NshowTip2(name){
+      this.isShowTip2=false;
+    },
     targetClick(index){
       this.act = index;
       if(index==0){
@@ -1118,6 +1146,27 @@ export default {
 </script>
 
 <style scoped lang="scss">
+ .m-p-toolTip{
+    cursor: pointer;
+    position: relative;
+    margin-left: 3px;
+    .m-pie-tip{
+      position: absolute;
+      left:22px;
+      top:0;
+      width: 200px;
+      background: rgba(219, 234, 255, 0.94);
+      border-radius: 8px;
+      border: 1px solid #4D94FF;
+      font-size: 12px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #636E95;
+      line-height: 17px;
+      padding:16px;
+      text-align: justify;
+    }
+  }
 .subTitle{
   margin-top: 8px;
   margin-bottom: 24px;
@@ -1641,27 +1690,7 @@ export default {
             font-weight: 500;
             color: #242F57;
             line-height: 24px;
-            span{
-              cursor: pointer;
-              position: relative;
-              .m-pie-tip{
-                position: absolute;
-                left:22px;
-                top:0;
-                width: 200px;
-                height: 99px;
-                background: rgba(219, 234, 255, 0.94);
-                border-radius: 8px;
-                border: 1px solid #4D94FF;
-                font-size: 12px;
-                font-family: PingFangSC-Regular, PingFang SC;
-                font-weight: 400;
-                color: #636E95;
-                line-height: 17px;
-                padding:16px;
-                text-align: justify;
-              }
-            }
+           
         }
         .m-pie-echarts{
             height: 596px;
@@ -2047,6 +2076,26 @@ export default {
       font-weight: 500;
       color: #242F57;
       margin-bottom: 16px;
+      span{
+              cursor: pointer;
+              position: relative;
+              .m-pie-tip{
+                position: absolute;
+                left:22px;
+                top:0;
+                width: 200px;
+                background: rgba(219, 234, 255, 0.94);
+                border-radius: 8px;
+                border: 1px solid #4D94FF;
+                font-size: 12px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636E95;
+                line-height: 17px;
+                padding:16px;
+                text-align: justify;
+              }
+            }
     }
     
     .f-list{
