@@ -171,18 +171,23 @@
                         <div class="cdyhmj_content_item item1">自定义媒介投放预算 (元)</div>
                         <div class="cdyhmj_content_item item2">
                             <div class="input_container">
-                                <span class="input1">￥</span>
-                                <span class="inpu2">15,000</span>
+                                <!-- <span class="input1">￥</span>
+                                <span class="inpu2">15,000</span> -->
+                                <Input placeholder="￥ 15,000" style="width:100%;">15,000</Input>
                             </div>
                             <div class="hg_txt"></div>
                             <div class="input_container">
-                                <span class="input1">￥</span>
-                                <span class="inpu23"></span>
+                                <!-- <span class="input1">￥</span>
+                                <span class="inpu23"></span> -->
+                                <Input placeholder="￥" style="width:100%;"></Input>
                             </div>
                         </div>
                         <div class="cdyhmj_content_item item3">目标客群</div>
                         <div class="cdyhmj_content_item item4">
-                            <img :src="inputIcon" class="inputIcon"/>
+                            <!-- <img :src="inputIcon" class="inputIcon" /> -->
+                            <Select v-model="mbValue" style="width:100%;">
+                                <Option v-for="item in mubiaoList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                            </Select>
                         </div>
                         <div class="cdyhmj_content_item item1">营销关键词</div>
                         <div class="cdyhmj_content_item item5">
@@ -195,13 +200,15 @@
                         <div class="cal_item_container">
                             <div class="cal_item">
                                 <div class="cal_item_cal_item">
-                                    <img :src="toLIcon" class="toLIcon"/>
+                                    <img :src="toLIcon" class="toLIcon" />
                                 </div>
                             </div>
-                            <div class="cal_item2">
-                                <div class="rt_choice"></div>
+                            <div class="cal_item2 cal_item21">
+                                <div class="rt_choice">
+                                    <Checkbox></Checkbox>
+                                </div>
                                 <div class="logo_container">
-                                    <img :src="ttIcon" class="logoImg"/>
+                                    <img :src="ttIcon" class="logoImg" />
                                     <span class="cal_txt">头条</span>
                                 </div>
                                 <div class="txt_area">
@@ -215,10 +222,10 @@
                             </div>
                             <div class="cal_item2">
                                 <div class="rt_choice2">
-                                    <img :src="dhIcon" class="dhIcon"/>
+                                    <Checkbox v-model="choice2"></Checkbox>
                                 </div>
                                 <div class="logo_container">
-                                    <img :src="xhsIcon" class="logoImg"/>
+                                    <img :src="xhsIcon" class="logoImg" />
                                     <span class="cal_txt">小红书</span>
                                 </div>
                                 <div class="txt_area">
@@ -232,10 +239,10 @@
                             </div>
                             <div class="cal_item2">
                                 <div class="rt_choice2">
-                                    <img :src="dhIcon" alt srcset class="dhIcon"/>
+                                    <Checkbox v-model="choice12"></Checkbox>
                                 </div>
                                 <div class="logo_container">
-                                    <img :src="ksIcon" class="logoImg"/>
+                                    <img :src="ksIcon" class="logoImg" />
                                     <span class="cal_txt">快手</span>
                                 </div>
                                 <div class="txt_area">
@@ -247,26 +254,9 @@
                                     <div>¥2300/千人</div>
                                 </div>
                             </div>
-                            <div class="cal_item2">
-                                <div class="rt_choice2">
-                                    <img :src="dhIcon" alt srcset class="dhIcon"/>
-                                </div>
-                                <div class="logo_container">
-                                    <img :src="dyI" class="logoImg"/>
-                                    <span class="cal_txt">抖音</span>
-                                </div>
-                                <div class="txt_area">
-                                    <div class="txt_area11">触达率</div>
-                                    <div>投放成本</div>
-                                </div>
-                                <div class="per_area">
-                                    <div class="per_area1">69%</div>
-                                    <div>¥25000/千人</div>
-                                </div>
-                            </div>
                             <div class="cal_item cal_item1">
                                 <div class="cal_item_cal_item">
-                                    <img :src="toRIcon1" class="toLIcon"/>
+                                    <img :src="toRIcon1" class="toLIcon" />
                                 </div>
                             </div>
                         </div>
@@ -276,8 +266,8 @@
                                 <span style="color:#242F57">2</span>个
                             </div>
                             <div class="cdyhmj_bom_rig">
-                                <img :src="ksIcon" class="cdyhmj_bom_rig1"/>
-                                <img :src="xhsIcon" class="cdyhmj_bom_rig1"/>
+                                <img :src="ksIcon" class="cdyhmj_bom_rig1" />
+                                <img :src="xhsIcon" class="cdyhmj_bom_rig1" />
                             </div>
                         </div>
                     </div>
@@ -286,10 +276,7 @@
                     <div class="cdyhmj_content_bom_lef">
                         <div class="cdyhmj_content_bom_lef_top">触达用户投放策略建议</div>
                         <div class="cdyhmj_content_bom_lef_bom">
-                            <div class="echarts1">
-                                <lineM id="box11111" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM>
-                            </div>
-                            <div class="echarts1">
+                            <div class="echarts1 echarts2box">
                                 <div class="echarts11">
                                     <div class="echarts111">建议投放金额</div>
                                     <div class="echarts112">￥19,000</div>
@@ -316,12 +303,16 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="echarts1 echarts1box">
+                                <PieEcharts1 :colorList="$fjData.colorList" :myData="$fjData.box0Data"></PieEcharts1>
+                                <!-- <lineM id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM> -->
+                            </div>
                         </div>
                     </div>
                     <div class="cdyhmj_content_bom_rig">
                         <div class="cdyhmj_content_bom_rig_top">优化投放方案推荐</div>
                         <div class="cdyhmj_content_bom_rig_bom">
-                            <img :src="yhtIcon" class="yhtIcon" alt srcset/>
+                            <img :src="yhtIcon" class="yhtIcon" alt srcset />
                         </div>
                     </div>
                 </div>
@@ -513,12 +504,12 @@
             </div>
         </Card>
         <Card title="负面舆情的处理意见" class="card-five">
+            <p class="card-five-desc">当前<span>存在</span>负面舆情。该舆情起于<span>新闻</span>；传播媒介最多的是<span>微博  论坛</span>；事件负面级别为 <span>6</span> (影响一般)；根据负面舆情应对模型，推荐的应对方式是<span>逐步降低反击力度</span></p>
             <div class="card-five-box">
                 <div class="box1">
                     <div class="name">信息来源占比（%）</div>
                     <div class="box1-echart">
-                        <barEcharts id="box15" :colorList="$lxjData.colorList"
-                                    :myData="$lxjData.box15Data"></barEcharts>
+                        <barEcharts id="box15" :colorList="$lxjData.colorList" :myData="$lxjData.box15Data"></barEcharts>
                     </div>
                 </div>
                 <div class="box2">
@@ -528,32 +519,32 @@
                             <YibiaoCharts2 :colorList="$fjData.colorList" :myData="$fjData.box17Data"></YibiaoCharts2>
                         </div>
                     </div>
-                    <ul class="second-list red-card-ul">
-                        <li class="warning">
+                    <div class="second-list">
+                        <div class="warning">
                             <img src="../../assets/img/mark/warning@2x.png" alt="">
-                            敏感信息
-                            <p class="strong">443</p>
-                        </li>
-                        <li>邓老凉茶在凉茶巨头夹缝中迷失 同仁堂等遭</li>
-                        <li>凉茶风光不再:负面新闻频发 高糖饮品销售</li>
-                        <li>凉茶怎么“凉”的:潜规则、边缘化、互撕……_西药</li>
-                        <li>申请挂牌新三板 邓老凉茶年销售收入不及行业龙头2%</li>
-                    </ul>
+                            <span>敏感信息</span>
+                            <span class="strong">443</span>
+                        </div>
+                        <ul>
+                            <li>邓老凉茶在凉茶巨头夹缝中迷失 同仁堂等遭</li>
+                            <li>凉茶风光不再:负面新闻频发 高糖饮品销售</li>
+                            <li>凉茶怎么“凉”的:潜规则、边缘化、互撕……_西药</li>
+                            <li>申请挂牌新三板 邓老凉茶年销售收入不及行业龙头2%</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="box3">
                     <div class="name">负面舆情应对说明</div>
+                    <div class="desc">已错过了最佳反击时间。<br>当前负面舆情已呈现随时间下降趋势，不宜过度反击，否则将造成二次传播扩散</div>
                     <div class="box3-echart">
-                        <lineM id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM>
+                        <lineM1 id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM1>
                     </div>
                 </div>
                 <div class="box4">
                     <div class="name">舆情处理建议</div>
+                    <div class="desc">负面舆情没有新的爆点和舆论热点，当前反击力度已足够。<br>应当随负面舆情热度走势逐步降低反击力度，预计3-4周后可回归平静。</div>
                     <div class="box4-echart">
                         <Leida2Echarts :colorList="$fjData.colorList" :myData="$fjData.box19Data"></Leida2Echarts>
-                    </div>
-                    <div class="box4-desc">鉴于数据搜集显示负面新闻曝光量不足，
-                        没有形成爆点和舆论热点，不需要过度采取媒体公关和舆论反击，否则容易造成二次传播，
-                        增加负面传播强度及扩散时间，预计6-7周后可回归平静
                     </div>
                 </div>
             </div>
@@ -620,11 +611,13 @@
     import barM from '../../components/echarts/common/barM';
     import YibiaoCharts2 from '../../components/echarts/common/YibiaoCharts2';
     import lineM from '../../components/echarts/common/lineM';
+    import lineM1 from '../../components/echarts/common/lineM1';
     import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
+    import PieEcharts1 from '../../components/echarts/common/PieEcharts1';
 
     export default {
         name: "BusinessMarket",
-        components: {Card, barEcharts, barM, YibiaoCharts2, lineM, Leida2Echarts},
+        components: {Card, barEcharts, barM, YibiaoCharts2, lineM, lineM1, Leida2Echarts, PieEcharts1},
         data() {
             return {
                 threeActive: 1,
@@ -997,18 +990,15 @@
                     border-bottom: 1px solid #eaedf7;
                     display: flex;
                     align-items: center;
-
                     .cdyhmj_content_top_lef {
                         width: 376px;
                         height: 100%;
                         padding: 24px;
                         box-sizing: border-box;
                         border-right: 1px solid #eaedf7;
-
                         .cdyhmj_content_item {
                             width: 100%;
                         }
-
                         .item1 {
                             margin-bottom: 8px;
                             font-size: 14px;
@@ -1016,45 +1006,39 @@
                             font-weight: 400;
                             color: #97a0c3;
                         }
-
                         .item2 {
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
-
                             .hg_txt {
                                 width: 12px;
                                 height: 1px;
                                 background: #c6cbde;
                                 border-radius: 2px;
                             }
-
                             .input_container {
                                 width: 144px;
                                 height: 40px;
-                                box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8),
-                                -2px -2px 7px 0px #fffefa;
-                                border-radius: 8px;
-                                border: 1px solid #c6cbde;
-                                padding: 4px;
-                                box-sizing: border-box;
-                                display: flex;
-                                align-items: center;
-
-                                .input1 {
-                                    font-size: 24px;
-                                    font-family: PingFangSC-Semibold, PingFang SC;
-                                    font-weight: 600;
-                                    color: #c5cadf;
-                                }
-
-                                .inpu2 {
-                                    font-size: 24px;
-                                    font-family: HelveticaNeue-Bold, HelveticaNeue;
-                                    font-weight: bold;
-                                    color: #242f57;
-                                }
-
+                                // box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8),
+                                // -2px -2px 7px 0px #fffefa;
+                                // border-radius: 8px;
+                                // border: 1px solid #c6cbde;
+                                // padding: 4px;
+                                // box-sizing: border-box;
+                                // display: flex;
+                                // align-items: center;
+                                // .input1 {
+                                //   font-size: 24px;
+                                //   font-family: PingFangSC-Semibold, PingFang SC;
+                                //   font-weight: 600;
+                                //   color: #c5cadf;
+                                // }
+                                // .inpu2 {
+                                //   font-size: 24px;
+                                //   font-family: HelveticaNeue-Bold, HelveticaNeue;
+                                //   font-weight: bold;
+                                //   color: #242f57;
+                                // }
                                 .inpu23 {
                                     display: block;
                                     width: 6px;
@@ -1066,7 +1050,6 @@
                                 }
                             }
                         }
-
                         .item3 {
                             margin-top: 16px;
                             margin-bottom: 8px;
@@ -1075,22 +1058,18 @@
                             font-weight: 400;
                             color: #97a0c3;
                         }
-
                         .item4 {
                             height: 40px;
                             margin-bottom: 16px;
-
                             .inputIcon {
                                 width: 100%;
                                 height: 100%;
                             }
                         }
-
                         .item5 {
                             display: flex;
                             align-items: center;
                             justify-content: flex-start;
-
                             .item_xtt {
                                 padding: 9px 16px;
                                 background: #ecf3ff;
@@ -1104,13 +1083,11 @@
                             }
                         }
                     }
-
                     .cdyhmj_content_top_ri {
                         flex: 1;
                         height: 100%;
                         padding: 24px 25px;
                         box-sizing: border-box;
-
                         .cdyhmj_content_top_ri_tel {
                             width: 100%;
                             font-size: 14px;
@@ -1119,7 +1096,6 @@
                             color: #97a0c3;
                             margin-bottom: 8px;
                         }
-
                         .cal_item_container {
                             width: 100%;
                             height: 168px;
@@ -1128,10 +1104,9 @@
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
-
                             .cal_item,
                             .cal_item1 {
-                                width: 80px;
+                                width: 52px;
                                 height: 120px;
                                 background: #ffffff;
                                 border-radius: 0 8px 8px 0;
@@ -1139,7 +1114,6 @@
                                 display: flex;
                                 align-items: center;
                                 justify-content: flex-start;
-
                                 .cal_item_cal_item {
                                     width: 30px;
                                     height: 50px;
@@ -1148,74 +1122,50 @@
                                     display: flex;
                                     align-items: center;
                                     justify-content: center;
-
                                     .toLIcon {
                                         width: 19px;
                                         height: 19px;
                                     }
                                 }
                             }
-
                             .cal_item1 {
                                 display: flex;
                                 align-items: center;
                                 justify-content: flex-end;
-
+                                border-radius: 8px 0 0 8px;
                                 .cal_item_cal_item {
                                     border-radius: 8px 0 0 8px;
                                 }
                             }
-
                             .cal_item2 {
-                                width: 18%;
+                                width: 24%;
                                 height: 120px;
                                 background: #ffffff;
                                 border-radius: 8px;
-                                border: 1px solid #eaedf7;
+                                border: 1px solid #2373FF;
                                 padding: 12px;
                                 box-sizing: border-box;
                                 position: relative;
-
                                 .rt_choice {
                                     position: absolute;
-                                    top: 10px;
+                                    top: 6px;
                                     right: 10px;
                                     width: 16px;
                                     height: 16px;
-                                    box-shadow: 1px 1px 1px 0px #a6abbd,
-                                    -1px -1px 1px 0px #fafbff;
-                                    border-radius: 2px;
-                                    border: 1px solid rgba(255, 255, 255, 0.4);
                                 }
-
                                 .rt_choice2 {
                                     position: absolute;
-                                    top: 10px;
+                                    top: 6px;
                                     right: 10px;
                                     width: 16px;
                                     height: 16px;
-                                    background: #2373ff;
-                                    box-shadow: 1px 1px 3px 0px rgba(166, 171, 190, 0.4),
-                                    -1px -1px 3px 0px rgba(250, 251, 255, 0.4);
-                                    border-radius: 2px;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-
-                                    .dhIcon {
-                                        display: block;
-                                        width: 9px;
-                                        height: 7px;
-                                    }
                                 }
-
                                 .logo_container {
                                     width: 100%;
                                     height: 40px;
                                     margin-bottom: 12px;
                                     display: flex;
                                     align-items: center;
-
                                     .logoImg {
                                         width: 40px;
                                         height: 40px;
@@ -1224,7 +1174,6 @@
                                         border-radius: 51%;
                                         margin-right: 8px;
                                     }
-
                                     .cal_txt {
                                         font-size: 14px;
                                         font-family: PingFangSC-Medium, PingFang SC;
@@ -1232,7 +1181,6 @@
                                         color: #242f57;
                                     }
                                 }
-
                                 .txt_area {
                                     font-size: 12px;
                                     font-family: PingFangSC-Regular, PingFang SC;
@@ -1240,12 +1188,10 @@
                                     color: #97a0c3;
                                     display: flex;
                                     align-items: center;
-
                                     .txt_area11 {
-                                        margin-right: 11px;
+                                        margin-right: 20px;
                                     }
                                 }
-
                                 .per_area {
                                     display: flex;
                                     align-items: center;
@@ -1253,21 +1199,21 @@
                                     font-family: PingFangSC-Regular, PingFang SC;
                                     font-weight: 400;
                                     color: #242f57;
-
                                     .per_area1 {
-                                        margin-right: 10px;
+                                        margin-right: 32px;
                                     }
                                 }
                             }
+                            .cal_item21{
+                                border: 1px solid #EAEDF7;
+                            }
                         }
-
                         .cdyhmj_bom {
                             margin-top: 22px;
                             width: 100%;
                             height: 24px;
                             display: flex;
                             align-items: center;
-
                             .cdyhmj_bom_lef {
                                 width: 88px;
                                 height: 22px;
@@ -1277,11 +1223,9 @@
                                 color: #636e95;
                                 line-height: 22px;
                             }
-
                             .cdyhmj_bom_rig {
                                 flex: 1;
                                 display: flex;
-
                                 .cdyhmj_bom_rig1 {
                                     display: block;
                                     width: 24px;
@@ -1293,7 +1237,6 @@
                         }
                     }
                 }
-
                 .cdyhmj_content_bom {
                     width: 100%;
                     min-height: 217px;
@@ -1303,11 +1246,9 @@
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-
                     .cdyhmj_content_bom_lef {
-                        flex: 1;
+                        width:auto;
                         height: 100%;
-
                         .cdyhmj_content_bom_lef_top {
                             width: 100%;
                             font-size: 14px;
@@ -1316,7 +1257,6 @@
                             color: #242f57;
                             margin-bottom: 16px;
                         }
-
                         .cdyhmj_content_bom_lef_bom {
                             width: 100%;
                             display: flex;
@@ -1325,12 +1265,17 @@
                             justify-content: space-between;
 
                             .echarts1 {
-                                width: 30%;
-                                height: 156px;
-                                padding: 6px 12px;
+                                &.echarts1box{
+                                    width: 197px;
+                                    margin-left: 24px;
+                                }
+                                &.echarts2box{
+                                    width: 160px;
+                                    margin-right: 8px;
+                                }
+                                height: 136px;
                                 box-sizing: border-box;
                                 border-radius: 8px;
-
                                 .echarts11 {
                                     width: 100%;
                                     min-height: 64px;
@@ -1339,7 +1284,6 @@
                                     margin-bottom: 8px;
                                     padding: 6px 12px;
                                     box-sizing: border-box;
-
                                     .echarts111,
                                     .echarts112 {
                                         width: 100%;
@@ -1348,15 +1292,13 @@
                                         font-weight: 400;
                                         color: #97a0c3;
                                     }
-
                                     .echarts112 {
                                         font-size: 24px;
                                         font-family: PingFangSC-Semibold, PingFang SC;
                                         font-weight: 600;
-                                        color: #242f57;
+                                        color: #2373FF;
                                     }
                                 }
-
                                 .echarts12 {
                                     widows: 100%;
                                     min-height: 64px;
@@ -1364,7 +1306,6 @@
                                     border-radius: 2px;
                                     padding: 6px 12px;
                                     box-sizing: border-box;
-
                                     .echarts121,
                                     .echarts122 {
                                         width: 100%;
@@ -1373,16 +1314,14 @@
                                         font-weight: 400;
                                         color: #97a0c3;
                                     }
-
                                     .echarts122 {
                                         height: 32px;
                                         font-size: 24px;
                                         font-family: HelveticaNeue-Bold, HelveticaNeue;
                                         font-weight: bold;
-                                        color: #242f57;
+                                        color: #2373FF;
                                     }
                                 }
-
                                 .echarts13 {
                                     width: 100%;
                                     margin-bottom: 8px;
@@ -1391,19 +1330,16 @@
                                     font-weight: 400;
                                     color: #97a0c3;
                                 }
-
                                 .echarts14,
                                 .echarts15 {
                                     display: flex;
                                     align-items: center;
                                     justify-content: space-between;
                                     margin-bottom: 8px;
-
                                     .echarts141,
                                     .echarts142 {
                                         display: flex;
                                         align-items: center;
-
                                         .ech_Icon,
                                         .ech_Icon1 {
                                             width: 8px;
@@ -1412,39 +1348,37 @@
                                             border-radius: 50%;
                                             margin-right: 5px;
                                         }
-
                                         .ech_Icon1 {
                                             background: rgba(164, 157, 250, 0.85);
                                         }
-
                                         .ech_time,
                                         .ech_txt {
                                             font-size: 14px;
                                             font-family: PingFangSC-Regular, PingFang SC;
                                             font-weight: 400;
                                             color: #242f57;
-                                        }
 
+                                        }
                                         .ech_txt {
-                                            margin-right: 12px;
+                                            width:70px;
+                                            // margin-right: 40px;
                                         }
                                     }
                                 }
                             }
-
                             .ec1 {
+                                width:201px;
                                 background: #ffffff;
+                                padding:6px 12px;
                             }
                         }
                     }
-
                     .cdyhmj_content_bom_rig {
-                        width: 421px;
+                        flex:1;
                         height: 100%;
                         padding-left: 24px;
                         box-sizing: border-box;
                         border-left: 1px solid #eaedf7;
-
                         .cdyhmj_content_bom_rig_top {
                             width: 100%;
                             margin-bottom: 16px;
@@ -1453,14 +1387,15 @@
                             font-weight: 500;
                             color: #242f57;
                         }
-
                         .cdyhmj_content_bom_rig_bom {
                             width: 100%;
                             height: 136px;
-
+                            overflow: hidden;
+                            border-radius: 8px;
                             .yhtIcon {
                                 width: 100%;
                                 height: 100%;
+                                object-fit: cover;
                             }
                         }
                     }
@@ -1825,6 +1760,18 @@
         }
 
         .card-five {
+
+            .card-five-desc {
+                margin: -15px 0 24px;
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636E95;
+
+                > span {
+                    color: #FB343E;
+                }
+            }
             .card-five-box {
                 display: flex;
                 flex-wrap: wrap;
@@ -1844,6 +1791,13 @@
                         font-weight: 400;
                         color: #242F57;
                     }
+
+                    .desc {
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+                    }
                 }
 
                 .box1, .box2 {
@@ -1855,9 +1809,14 @@
                 }
 
                 .box1, .box3 {
-                    .box1-echart, .box3-echart {
+                    .box1-echart {
                         width: 100%;
                         height: calc(100% - 24px);
+                    }
+
+                    .box3-echart {
+                        width: 100%;
+                        height: calc(100% - 64px);
                     }
                 }
 
@@ -1878,31 +1837,59 @@
                     .second-list {
                         width: 260px;
 
-                        > li {
+                        .warning {
+                            padding: 0 16px;
+                            width: 260px;
                             height: 56px;
-                            margin-bottom: 4px;
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
+                            line-height: 56px;
+                            border-radius: 8px;
+                            background: rgba(252, 128, 159, .2);
+                            font-size: 14px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 500;
+                            color: #FB343E;
 
-                            &:first-child {
-                                background: rgba(252, 128, 159, .2);
-                                color: #FB343E;
+                            img {
+                                margin-right: 8px;
+                                vertical-align: -8px;
+                                width: 24px;
+                                height: 24px;
+                            }
 
-                                &:before {
-                                    display: none;
-                                }
+                            > span {
+                                vertical-align: middle;
 
-                                img {
-                                    width: 24px;
-                                    height: 24px;
-                                }
-
-                                .strong {
+                                &.strong {
                                     margin-left: 8px;
                                     font-size: 32px;
-                                    font-family: PingFangSC-Medium, PingFang SC;
-                                    font-weight: 500;
+                                    font-family: Archivo-Bold, Archivo;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+
+                        >ul {
+                            > li {
+                                display: flex;
+                                align-items: baseline;
+                                padding: 8px 16px;
+                                margin-bottom: 4px;
+                                border-radius: 8px;
+                                font-size: 14px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #636E95;
+
+                                &:before {
+                                    content: '•';
+                                    margin-right: 8px;
+                                    font-size: 14px;
+                                    font-weight: 400;
+                                    color: #FC809F;
+                                }
+
+                                &:hover {
+                                    box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16), 1px 1px 0px 0px #FFFFFF;
                                 }
                             }
                         }
@@ -1913,13 +1900,6 @@
                     .box4-echart {
                         width: 100%;
                         height: calc(100% - 88px);
-                    }
-
-                    .box4-desc {
-                        height: 64px;
-                        font-size: 14px;
-                        color: #636E95;
-                        line-height: 22px;
                     }
                 }
             }
