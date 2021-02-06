@@ -2,38 +2,43 @@
     <div class="dx_Item_container">
         <div class="test_container1">
             <div class="mapContainer">
-            <div class="timer12">
-                <div class="timer12_top">
-                <div class="timeitem">00:00</div>
-                <div class="timeitem">02:00</div>
-                <div class="timeitem">04:00</div>
-                <div class="timeitem">06:00</div>
-                <div class="timeitem">08:00</div>
-                <div class="timeitem">10:00</div>
-                <div class="timeitem">12:00</div>
-                <div class="timeitem">14:00</div>
-                <div class="timeitem">16:00</div>
-                <div class="timeitem">18:00</div>
-                <div class="timeitem">20:00</div>
-                <div class="timeitem">22:00</div>
-                <div class="timeitem">24:00</div>
+                <div class="area_timer_choice_container">
+                    <div class="choice_btn_area">
+                        <div class="choice_btn_top" :class="{'activeBtn' : currentBtn == 1}" @click="choiceat(1)">位置区域</div>
+                        <div class="choice_btn_bom" :class="{'activeBtn' : currentBtn == 2}" @click="choiceat(2)">研究时段</div>
+                    </div>
+                    <div class="choice_content_container">
+                        <div class="timer12" v-if="ifShowTime">
+                            <div class="timer12_top">
+                                <div class="timeitem">06:00</div>
+                                <div class="timeitem">08:00</div>
+                                <div class="timeitem">10:00</div>
+                                <div class="timeitem">12:00</div>
+                                <div class="timeitem">14:00</div>
+                                <div class="timeitem">16:00</div>
+                                <div class="timeitem">18:00</div>
+                                <div class="timeitem">20:00</div>
+                                <div class="timeitem">22:00</div>
+                                <div class="timeitem">24:00</div>
+                            </div>
+                            <div class="timer12_bom">
+                                <div class="cirle_dian" :class="{'activeDian' : current == 6}" @click="clickTime(6)"></div>
+                                <div class="cirle_dian" :class="{'activeDian' : current == 8}" @click="clickTime(8)"></div>
+                                <div class="cirle_dian" :class="{'activeDian' : current == 10}" @click="clickTime(10)"></div>
+                                <div class="cirle_dian" :class="{'activeDian' : current == 12}" @click="clickTime(12)"></div>
+                                <div class="cirle_dian" :class="{'activeDian' : current == 14}" @click="clickTime(14)"></div>
+                                <div class="cirle_dian" :class="{'activeDian' : current == 16}" @click="clickTime(16)"></div>
+                                <div class="cirle_dian" :class="{'activeDian' : current == 18}" @click="clickTime(18)"></div>
+                                <div class="cirle_dian" :class="{'activeDian' : current == 20}" @click="clickTime(20)"></div>
+                                <div class="cirle_dian" :class="{'activeDian' : current == 22}" @click="clickTime(22)"></div>
+                                <div class="cirle_dian" :class="{'activeDian' : current == 24}" @click="clickTime(24)"></div>
+                            </div>
+                        </div>
+                        <div class="timer121" v-else>
+                            <div class="timer121_item" :class="{'activetimer' : timerIdx == index}" v-for="(item,index) in districtList" :key="index" @click="clickTimeItem(index,item)">{{item}}</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="timer12_bom">
-                <div class="cirle_dian" :class="{'activeDian' : current == 1}" @click="clickTime(1)"></div>
-                <div class="cirle_dian" :class="{'activeDian' : current == 2}" @click="clickTime(2)"></div>
-                <div class="cirle_dian" :class="{'activeDian' : current == 4}" @click="clickTime(4)"></div>
-                <div class="cirle_dian" :class="{'activeDian' : current == 6}" @click="clickTime(6)"></div>
-                <div class="cirle_dian" :class="{'activeDian' : current == 8}" @click="clickTime(8)"></div>
-                <div class="cirle_dian" :class="{'activeDian' : current == 10}" @click="clickTime(10)"></div>
-                <div class="cirle_dian" :class="{'activeDian' : current == 12}" @click="clickTime(12)"></div>
-                <div class="cirle_dian" :class="{'activeDian' : current == 14}" @click="clickTime(14)"></div>
-                <div class="cirle_dian" :class="{'activeDian' : current == 16}" @click="clickTime(16)"></div>
-                <div class="cirle_dian" :class="{'activeDian' : current == 18}" @click="clickTime(18)"></div>
-                <div class="cirle_dian" :class="{'activeDian' : current == 20}" @click="clickTime(20)"></div>
-                <div class="cirle_dian" :class="{'activeDian' : current == 22}" @click="clickTime(22)"></div>
-                <div class="cirle_dian" :class="{'activeDian' : current == 24}" @click="clickTime(24)"></div>
-                </div>
-            </div>
             </div>
             <div class="per_info_container"></div>
         </div>
@@ -182,6 +187,7 @@
         data(){
             return{
                 current:8,
+                currentBtn:2,
                 AMap: null,
                 switch1:true,
                 yhdxImg:require("../../assets/img/yhhx/yhdxImg.png"),
@@ -226,7 +232,13 @@
                             icon:require("../../assets/img/yhhx/ks.png")
                         }
                     ]
-                }
+                },
+                districtList:[
+                    '朝阳区','海淀区','丰台区','西城区','东城区','石景山区','昌平区','通州区','顺义区','房山区','门头沟区','大兴区','怀柔区','延庆区','平谷区','密云区'
+                ],
+                ifShowTime:true,
+                timerIdx:0,
+                timeType:8
             }
         },
         mounted(){
@@ -260,12 +272,11 @@
             ];
             var cir1 = [116.310356,39.932426];
             var cir2 = [116.433529,39.941237];
-            this.initMap(path,path1,path2,cir1,cir2);
+            this.initMap(path,path1,path2,cir1,cir2,'朝阳区');
         },
         methods:{
-            clickTime(arg){
-            this.current = arg;
-            if(arg == 8){
+            clickTimeItem(arg,val){
+                this.timerIdx = arg;
                 var path = [
                     [116.294134,39.958747],
                     [116.295593,39.947957],
@@ -296,9 +307,86 @@
                 ];
                 var cir1 = [116.310356,39.932426];
                 var cir2 = [116.433529,39.941237];
-                this.initMap(path,path1,path2,cir1,cir2);
+                this.initMap(path,path1,path2,cir1,cir2,val);
+            },
+            choiceat(arg){
+                this.currentBtn = arg;
+                if(arg == 2){
+                    this.ifShowTime = true;
+                }
+                else{
+                    this.ifShowTime = false;
+                    var path = [
+                        [116.294134,39.958747],
+                        [116.295593,39.947957],
+                        [116.296881,39.93236],
+                        [116.310356,39.932426],
+                        [116.310013,39.924265],
+                        [116.355932,39.923606],
+                        [116.355847,39.932295],
+                        [116.433952,39.933874],
+                        [116.433952,39.933874],
+                        [116.489751,39.93361]
+                    ];
+                    var path1 = [
+                    [116.354029,39.967758],
+                    [116.357291,39.944046],
+                    [116.355402,39.940888],
+                    [116.356776,39.907845],
+                    [116.349222,39.896783],
+                    [116.348879,39.873073]
+                    ];
+                    var path2 = [
+                    [116.416903,39.969085],
+                    [116.418791,39.952349],
+                    [116.416388,39.950801],
+                    [116.416388,39.950801],
+                    [116.418019,39.91164],
+                    [116.418362,39.900843]
+                    ];
+                    var cir1 = [116.310356,39.932426];
+                    var cir2 = [116.433529,39.941237];
+                    this.initMap(path,path1,path2,cir1,cir2,'朝阳区');
+                }
+            },
+            clickTime(arg){
+            this.current = arg;
+            if(arg == 8){
+                this.timeType = arg;
+                var path = [
+                    [116.294134,39.958747],
+                    [116.295593,39.947957],
+                    [116.296881,39.93236],
+                    [116.310356,39.932426],
+                    [116.310013,39.924265],
+                    [116.355932,39.923606],
+                    [116.355847,39.932295],
+                    [116.433952,39.933874],
+                    [116.433952,39.933874],
+                    [116.489751,39.93361]
+                ];
+                var path1 = [
+                [116.354029,39.967758],
+                [116.357291,39.944046],
+                [116.355402,39.940888],
+                [116.356776,39.907845],
+                [116.349222,39.896783],
+                [116.348879,39.873073]
+                ];
+                var path2 = [
+                [116.416903,39.969085],
+                [116.418791,39.952349],
+                [116.416388,39.950801],
+                [116.416388,39.950801],
+                [116.418019,39.91164],
+                [116.418362,39.900843]
+                ];
+                var cir1 = [116.310356,39.932426];
+                var cir2 = [116.433529,39.941237];
+                this.initMap(path,path1,path2,cir1,cir2,'朝阳区');
             }
             else if(arg == 18){
+                this.timeType = arg;
                 var path = [
                     [116.355294,39.940546],
                     [116.356839,39.907306],
@@ -323,16 +411,49 @@
                 ];
                 var cir1 = [116.373332,39.924206];
                 var cir2 = [116.427341,39.902842];
-                this.initMap(path,path1,path2,cir1,cir2);
+                this.initMap(path,path1,path2,cir1,cir2,'朝阳区');
             }
             },
-            initMap(p,p1,p2,c1,c2){
+            initMap(p,p1,p2,c1,c2,area){
                 var that = this;
+                var district = null;
+                var polygons=[];
                 var map = new AMap.Map('mapContainer', {
-                    resizeEnable: true, //是否监控地图容器尺寸变化
-                    zoom:12, //初始化地图层级
-                    center:[116.372883,39.933949],
+                    resizeEnable: true,
+                    center: [116.397428, 39.90923],//地图中心点
+                    zoom: 11, //地图显示的缩放级别
                     mapStyle: "amap://styles/whitesmoke"
+                });
+
+                //加载行政区划插件
+                if(!district){
+                    //实例化DistrictSearch
+                    var opts = {
+                        subdistrict: 0,   //获取边界不需要返回下级行政区
+                        extensions: 'all',  //返回行政区边界坐标组等具体信息
+                        level: 'district'  //查询行政级别为 市
+                    };
+                    district = new AMap.DistrictSearch(opts);
+                }
+                district.search(area, function(status, result) {
+                    map.remove(polygons)//清除上次结果
+                    polygons = [];
+                    var bounds = result.districtList[0].boundaries;
+                    if (bounds) {
+                        for (var i = 0, l = bounds.length; i < l; i++) {
+                            //生成行政区划polygon
+                            var polygon = new AMap.Polygon({
+                                strokeWeight: 1,
+                                path: bounds[i],
+                                fillOpacity: 0.4,
+                                fillColor: '#80d8ff',
+                                strokeColor: '#0091ea'
+                            });
+                            polygons.push(polygon);
+                        }
+                    }
+                    map.add(polygons);
+                    map.setFitView(polygons);//视口自适应
                 });
 
                 var circle = new AMap.Circle({
@@ -538,7 +659,7 @@
                         ]
                     }
                 })
-            },
+            }
         }
     }
 </script>
@@ -558,44 +679,104 @@
             height: 100%;
             display: flex;
             justify-content: center;
-            .timer12{
+            .area_timer_choice_container{
                 width: 95%;
-                height: 74px;        
+                height: 96px;
+                display: flex;
+                align-items: center;
                 background: #FFFFFF;
-                box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04);
+                box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
                 border-radius: 4px;
+                border: 1px solid #EAEDF7;
                 z-index: 9999;
-                padding: 10px;
-                padding-bottom: 0;
-                box-sizing: border-box;
-                .timer12_top{
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                }
-                .timer12_bom{
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                background-color: #F4F7FC;
-                margin-top: 4px;
-                border-radius: 10px;
-                .cirle_dian{
-                    width: 20px;
-                    height: 20px;
-                    border-radius: 50%;
-                    background: #C6CBDE;
-                    &:hover{
-                    cursor: pointer;
+                .choice_btn_area{
+                    width: 88px;
+                    height: 100%;
+                    border-right: 1px solid #EAEDF7;
+                    .choice_btn_top,.choice_btn_bom{
+                        width: 100%;
+                        height: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242F57;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                    .activeBtn{
+                        color: #2373FF;
                     }
                 }
-                .activeDian{
-                    background-color: #2373FF;
-                    box-shadow: 0px 2px 4px 0px #C6CBDE;
-                    border: 2px solid #FFFFFF;
-                }
+                .choice_content_container{
+                    flex: 1;
+                    height: 100%;
+                    .timer12{
+                        width: 100%;
+                        height: 100%; 
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0 16px;
+                        box-sizing: border-box;       
+                        .timer12_top{
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                        }
+                        .timer12_bom{
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            background-color: #F4F7FC;
+                            margin-top: 4px;
+                            border-radius: 10px;
+                            .cirle_dian{
+                                width: 20px;
+                                height: 20px;
+                                border-radius: 50%;
+                                background: #C6CBDE;
+                                &:hover{
+                                 cursor: pointer;
+                                }
+                            }
+                            .activeDian{
+                                background-color: #2373FF;
+                                box-shadow: 0px 2px 4px 0px #C6CBDE;
+                                border: 2px solid #FFFFFF;
+                            }
+                        }
+                    }
+                    .timer121{
+                        width: 100%;
+                        height: 100%; 
+                        display: flex;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        padding: 6px 16px;
+                        box-sizing: border-box;
+                        .timer121_item{
+                            width: 62px;
+                            height: 24px;
+                            background: #FFFFFF;
+                            border-radius: 4px;
+                            border: 1px solid #EAEDF7;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-right: 12px;
+                        }
+                        .activetimer{
+                            border: 1px solid #2373FF;
+                            color: #2373FF;
+                        }   
+                    }
                 }
             }
         }
