@@ -25,51 +25,61 @@
                     </div>
                 </div>
             </div>
-            <div class="second-line">
-                <div class="title">负面舆情的处理意见</div>
-                <div class="second-content">
-                    <div class="box1">
-                        <div class="name">信息来源占比（%）</div>
-                        <div class="box1-echart">
-                            <barEcharts id="box15" :colorList="$lxjData.colorList" :myData="$lxjData.box15Data"></barEcharts>
+            <Brand></Brand>
+        <Card title="负面舆情的处理意见" class="card-five">
+            <p class="card-five-desc">当前
+                <span>存在</span>
+            负面舆情。该舆情起于
+            <span>新闻</span>
+            ；传播媒介最多的是
+            <span>微博  论坛</span>
+            ；事件负面级别为 <span>6</span> (影响一般)；根据负面舆情应对模型，推荐的应对方式是
+            <span>逐步降低反击力度</span></p>
+            <div class="card-five-box">
+                <div class="box1">
+                    <div class="name">信息来源占比（%）</div>
+                    <div class="box1-echart">
+                        <barEcharts id="box15" :colorList="$lxjData.colorList" :myData="$lxjData.box15Data"></barEcharts>
+                    </div>
+                </div>
+                <div class="box2">
+                    <div class="box2-left">
+                        <div class="name">敏感占比图</div>
+                        <div class="box2-echart">
+                            <YibiaoCharts2 :colorList="$fjData.colorList" :myData="$fjData.box17Data"></YibiaoCharts2>
                         </div>
                     </div>
-                    <div class="box2">
-                        <div class="box2-left">
-                            <div class="name">敏感占比图 </div>
-                            <div class="box2-echart">
-                                <YibiaoCharts2 :colorList="$fjData.colorList" :myData="$fjData.box17Data" ></YibiaoCharts2>
-                            </div>
+                    <div class="second-list">
+                        <div class="warning">
+                            <img src="../../assets/img/mark/warning@2x.png" alt="">
+                            <span>敏感信息</span>
+                            <span class="strong">443</span>
                         </div>
-                        <ul class="second-list red-card-ul">
-                            <li class="warning">
-                                <img src="../../assets/img/mark/warning@2x.png" alt="">
-                                敏感信息
-                                <p class="strong">443</p>
-                            </li>
+                        <ul>
                             <li>邓老凉茶在凉茶巨头夹缝中迷失 同仁堂等遭</li>
                             <li>凉茶风光不再:负面新闻频发 高糖饮品销售</li>
                             <li>凉茶怎么“凉”的:潜规则、边缘化、互撕……_西药</li>
                             <li>申请挂牌新三板 邓老凉茶年销售收入不及行业龙头2%</li>
                         </ul>
                     </div>
-                    <div class="box3">
-                        <div class="name">负面舆情应对说明</div>
-                        <div class="box3-echart">
-                            <lineM1 id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM1>
-                        </div>
+                </div>
+                <div class="box3">
+                    <div class="name">负面舆情应对说明</div>
+                    <div class="desc">已错过了最佳反击时间。<br>当前负面舆情已呈现随时间下降趋势，不宜过度反击，否则将造成二次传播扩散</div>
+                    <div class="box3-echart">
+                        <lineM1 id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM1>
                     </div>
-                    <div class="box4">
-                        <div class="name">舆情处理建议</div>
-                        <div class="box4-echart">
-                            <Leida2Echarts :colorList="$fjData.colorList" :myData="$fjData.box19Data" ></Leida2Echarts>
-                        </div>
-                        <div class="box4-desc">鉴于数据搜集显示负面新闻曝光量不足，
-                            没有形成爆点和舆论热点，不需要过度采取媒体公关和舆论反击，否则容易造成二次传播，
-                            增加负面传播强度及扩散时间，预计6-7周后可回归平静</div>
+                </div>
+                <div class="box4">
+                    <div class="name">舆情处理建议</div>
+                    <div class="desc">负面舆情没有新的爆点和舆论热点，当前反击力度已足够。<br>应当随负面舆情热度走势逐步降低反击力度，预计3-4周后可回归平静。</div>
+                    <div class="box4-echart">
+                        <Leida2Echarts :colorList="$fjData.colorList" :myData="$fjData.box19Data"></Leida2Echarts>
                     </div>
                 </div>
             </div>
+        </Card>
+
             <ThirdLine></ThirdLine>
             <div class="fourth-line">
                 <div class="fourth-left">
@@ -98,7 +108,7 @@
             </div>
             <div class="five-line">
                 <div class="fourth-left">
-                    <div class="fourth-title">品牌需求图谱</div>
+                    <div class="fourth-title">全竞品爆款特质分析</div>
                     <div class="fourth-content">
                         <div class="fourth-content-left fourth-content-cm">
                             <div class="fourth-content-title">
@@ -146,6 +156,8 @@
 </template>
 
 <script>
+import Brand from "./components/Brand"
+import Card from "../../components/Card"
 import DefaultPage from "../../layouts/DefaultPage";
 import ThirdLine from "./components/Benchmark"
 import Colourfol from "./base/Colourfol"
@@ -162,7 +174,7 @@ import Target from "./base/Target"
 import ShowTotal from "./components/ShowTotal"
 export default {
     name:"index",
-    components:{Target,ShowTotal,barM,lineM1,DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts},
+    components:{Brand,Card,Target,ShowTotal,barM,lineM1,DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts},
 }
 </script>
 
@@ -223,115 +235,153 @@ export default {
         }
      }
 
-     .second-line{
-         display: flex;
-         flex-direction: column;
-         width: 100%;
-         height: 838px;
-         padding: 24px;
-         box-shadow: 0px 0px 48px 0px rgba(255, 255, 255, 0.8);
-         border-radius: 8px;
-         opacity: 0.8;
-         border: 1px solid #FFFFFF;
-         background: url("../../assets/img/mark/colourfol.png") no-repeat center center / 1100% 838px;
-        .title{
-            height: 24px;
-            margin-bottom: 24px;
-            font-size: 16px;
-            font-family: PingFangSC-Medium, PingFang SC;
-            font-weight: 500;
-            color: #242F57;
-            line-height: 24px;
-        }
-        .second-content{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            .box1,.box2,.box3,.box4{
-                width: calc(50% - 12px);
-                padding: 16px;
-                margin-bottom: 24px;
-                background: rgba(255, 255, 255, 0.6);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                .name{
-                    height: 24px;
-                    font-size: 14px;
-                    font-weight: 400;
-                    color: #242F57;
-                    line-height: 24px;
+        .card-five {
+            margin-top: 24px;
+
+            .card-five-desc {
+                margin: -15px 0 24px;
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636E95;
+
+                > span {
+                    color: #FB343E;
                 }
             }
-            .box1,.box2{
-                height: 328px;
-            }  
-            .box3,.box4{
-                height: 390px;
-            }
-            .box1,.box3{
-                .box1-echart,.box3-echart{
-                    width: 100%;
-                    height: calc(100% - 24px);
-                }
-            }
-            .box2{
+            .card-five-box {
                 display: flex;
+                flex-wrap: wrap;
                 justify-content: space-between;
-                .box2-left{
-                    width: calc(100% - 260px);
-                    height: 100%;
-                    .box2-echart{
+
+                .box1, .box2, .box3, .box4 {
+                    width: calc(50% - 12px);
+                    padding: 16px;
+                    margin-bottom: 24px;
+                    border-radius: 8px;
+                    border: 1px solid #EAEDF7;
+
+                    .name {
+                        height: 24px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #242F57;
+                    }
+
+                    .desc {
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+                    }
+                }
+
+                .box1, .box2 {
+                    height: 328px;
+                }
+
+                .box3, .box4 {
+                    height: 390px;
+                }
+
+                .box1, .box3 {
+                    .box1-echart {
                         width: 100%;
                         height: calc(100% - 24px);
                     }
+
+                    .box3-echart {
+                        width: 100%;
+                        height: calc(100% - 64px);
+                    }
                 }
-                .second-list{
-                    width: 260px;
-                    >li{
-                        height: 56px;
-                        margin-bottom: 4px;
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        &:first-child{
-                            // position: relative;
-                            background: rgba(252,128,159,.2);
+
+                .box2 {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .box2-left {
+                        width: calc(100% - 260px);
+                        height: 100%;
+
+                        .box2-echart {
+                            width: 100%;
+                            height: calc(100% - 24px);
+                        }
+                    }
+
+                    .second-list {
+                        width: 260px;
+
+                        .warning {
+                            padding: 0 16px;
+                            width: 260px;
+                            height: 56px;
+                            line-height: 56px;
+                            border-radius: 8px;
+                            background: rgba(252, 128, 159, .2);
+                            font-size: 14px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 500;
                             color: #FB343E;
-                            &:before{
-                                display: none;
-                            }
-                            img{
-                                // position: absolute;
-                                // top: 16px;
-                                // left: 16px;
+
+                            img {
+                                margin-right: 8px;
+                                vertical-align: -8px;
                                 width: 24px;
                                 height: 24px;
                             }
-                            .strong{
-                                margin-left: 8px;
-                                font-size: 32px;
-                                font-family: PingFangSC-Medium, PingFang SC;
-                                font-weight: 500;
+
+                            > span {
+                                vertical-align: middle;
+
+                                &.strong {
+                                    margin-left: 8px;
+                                    font-size: 32px;
+                                    font-family: Archivo-Bold, Archivo;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+
+                        >ul {
+                            > li {
+                                display: flex;
+                                align-items: baseline;
+                                padding: 8px 16px;
+                                margin-bottom: 4px;
+                                border-radius: 8px;
+                                font-size: 14px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #636E95;
+
+                                &:before {
+                                    content: '•';
+                                    margin-right: 8px;
+                                    font-size: 14px;
+                                    font-weight: 400;
+                                    color: #FC809F;
+                                }
+
+                                &:hover {
+                                    box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16), 1px 1px 0px 0px #FFFFFF;
+                                }
                             }
                         }
                     }
                 }
-            }
-            .box4{
-                .box4-echart{
-                    width: 100%;
-                    height: calc(100% - 88px);
-                }
-                .box4-desc{
-                    height: 64px;
-                    font-size: 14px;
-                    color: #636E95;
-                    line-height: 22px;
+
+                .box4 {
+                    .box4-echart {
+                        width: 100%;
+                        height: calc(100% - 88px);
+                    }
                 }
             }
         }
-  
-     }
+
 
      .fourth-line{
          display: flex;
@@ -347,8 +397,9 @@ export default {
              height: 392px;
              padding: 24px;
              background: #FFFFFF;
-             box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-             border-radius: 8px;
+            box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+            border-radius: 12px;
+            border: 1px solid #EAEDF7;
              .fourth-title{
                 height: 24px;
                 margin-bottom: 16px;

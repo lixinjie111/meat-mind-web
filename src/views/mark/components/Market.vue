@@ -4,6 +4,7 @@
             <div class="a-h-title">{{title}}</div>
             <div class="a-h-arrow"></div>
         </div>
+        <Analyse :descL="descL" :descR="descR"></Analyse>
         <div class="m-d-show-echarts">
             <Full :title="'品牌舆情总声量基础特征'">
                 <barEcharts id="box2" :colorList="$lxjData.colorList" :myData="$lxjData.box2Data"></barEcharts>
@@ -31,6 +32,7 @@
 </template>
 
 <script>
+import Analyse from "../base/Analyse"
 import Half from "../base/Half"
 import Full from "../base/Full"
 import Yibiao1Echarts from '../../../components/echarts/common/Yibiao1Echarts';
@@ -42,10 +44,16 @@ import barM from '../../../components/echarts/common/barM';
 import barEcharts from '../../../components/echarts/common/barEcharts';
 export default {
     name:"Market",
-    components:{Half,Full,Yibiao1Echarts,PieEcharts5,lineM,barHM,barL,barM,barEcharts},
+    components:{Analyse,Half,Full,Yibiao1Echarts,PieEcharts5,lineM,barHM,barL,barM,barEcharts},
     props:{
         title:{
             type:String
+        }
+    },
+    data(){
+        return {
+            descL:"负面舆情主要分布在微博和大众点评，曝光量不高，处于散播初期，未形成热议爆点，内容多为恶意竞争（34.6%）",
+            descR:"建议与舆情发布者沟通，以证据要求更正或赔偿。不建议采取媒体公关反击，避免二次发酵"
         }
     }
 };
@@ -60,15 +68,15 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 56px;
+        height: 73px;
         border-top: 1px solid #EAEDF7;
         .a-h-title{
-            height: 24px;
-            font-size: 14px;
+            height: 26px;
+            font-size: 18px;
             font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;
             color: #242F57;
-            line-height: 24px;
+            line-height: 26px;
         }
         .a-h-arrow{
             width: 16px;

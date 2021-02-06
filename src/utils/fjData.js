@@ -115,5 +115,9 @@ const fjEData = {
         name: ['朝阳区', '海淀区', '东城区', '西城区', '通州区', '其他'],
         value: [23, 29, 40, 31, 23, 18],
     },
+    box22Data: {
+        name: ['亲友聚会', '运动', '过节送礼'],
+        value: [55, 30, 5],
+    },
 }
 export default fjEData;

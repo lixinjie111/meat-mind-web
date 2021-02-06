@@ -4,6 +4,7 @@
             <div class="a-h-title">{{title}}</div>
             <div class="a-h-arrow"></div>
         </div>
+        <Analyse :descL="descL" :descR="descR"></Analyse>
         <div class="m-d-show-echarts">
             <Full :title="'品牌市场情况'">
                 <barM id="box32" :colorList="$lxjData.colorList" :myData="$lxjData.box32Data"></barM>
@@ -20,6 +21,7 @@
 </template>
 
 <script>
+import Analyse from "../base/Analyse"
 import Half from "../base/Half"
 import Full from "../base/Full"
 import barM from '../../../components/echarts/common/barM';
@@ -28,10 +30,16 @@ import barL from '../../../components/echarts/common/barL';
 import lineO from '../../../components/echarts/common/lineO';
 export default {
     name:"Public",
-    components:{Half,Full,barM,PieEcharts4,barL,lineO},
+    components:{Analyse,Half,Full,barM,PieEcharts4,barL,lineO},
     props:{
         title:{
             type:String
+        }
+    },
+    data(){
+        return {
+            descL:"增长态势出现周期性动荡，2021上半年市场规模预期增长283%。行业网络口碑及热度指数呈逐步回调趋势。",
+            descR:"结合行业态势调整产品品类及营销方向"
         }
     }
 };
@@ -46,15 +54,15 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 56px;
+        height: 73px;
         border-top: 1px solid #EAEDF7;
         .a-h-title{
-            height: 24px;
-            font-size: 14px;
+            height: 26px;
+            font-size: 18px;
             font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;
             color: #242F57;
-            line-height: 24px;
+            line-height: 26px;
         }
         .a-h-arrow{
             width: 16px;

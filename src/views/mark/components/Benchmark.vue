@@ -2,6 +2,10 @@
   <div class="third-line">
       <div class="top">
           <div class="title">对标商品分析</div>
+          <div class="desc">
+              <p>行业更新迭代速度<span>快</span>，新品机遇较大。年轻人群对新鲜事物的接受度<span>高</span>，乐于尝试新品、追赶潮流。</p>
+              <p>近年来饮料行业新企业打造爆款产品现象层出不穷，以元气森林为例，2016年创立的元气森林，捕捉到消费者对糖分的敏感，切入无糖气泡水领域，通过大面积广告、社交营销，以及互联网思维加持，成功在饮料行业突围。2019 “双十一”期间，元气森林销售额位居饮料品类第一，2020年1-5月，公司销售额达到6.6亿。</p>
+          </div>
           <ul class="name-list">
               <li>红牛/250ml</li>
               <li>加多宝/250ml</li>
@@ -75,26 +79,37 @@ export default {
 <style scoped lang="scss">
     .third-line{
         width: 100%;
-        height: 474px;
+        /*height: 474px;*/
         padding:0 24px 24px;
         margin-top: 24px;
         background: #FFFFFF;
-        box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-        border-radius: 8px;
+        box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+        border-radius: 12px;
+        border: 1px solid #EAEDF7;
         .top{
-            display: flex;
-            align-items: center;
-            height: 72px;
             .title{
-                height: 24px;
-                margin-right: 40px;
-                font-size: 16px;
+                padding: 24px 0 8px 0;
+                font-size: 18px;
                 font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
                 color: #242F57;
-                line-height: 24px;
             }
+
+            .desc {
+                > p {
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #636E95;
+
+                    > span {
+                        color: #FB343E;
+                    }
+                }
+            }
+
             .name-list{
+                height: 60px;
                 list-style:none;
                 display: flex;
                 align-items: center;
