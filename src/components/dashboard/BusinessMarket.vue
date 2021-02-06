@@ -1715,7 +1715,7 @@
 
                                 &.desc1 {
                                     /*width: 180px;*/
-                                    width: calc(100% - 160px);
+                                    width: calc(100% - 180px);
                                     font-size: 14px;
                                     font-family: PingFangSC-Regular, PingFang SC;
                                     font-weight: 400;
