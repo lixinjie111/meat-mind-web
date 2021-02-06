@@ -79,7 +79,7 @@
         <div class="kanban_item_container">
             <div class="kanbanitem1">
                 <div class="kan_title">分析看板总数</div>
-                <div class="kanNum">15 <span class="unit">个</span></div>
+                <div class="kanNum">15<span class="unit">个</span></div>
             </div>
             <div class="kanbanitem2">
                 <div class="kan_title">自定义看板</div>
@@ -992,7 +992,7 @@ export default {
 
   .nav {
     width: 100%;
-    padding: 16px 24px;
+    padding: 16px 0 16px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1002,6 +1002,10 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
+        font-size: 14px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #242F57;
         width: 164px;
         height: 40px;
         background: #FFFFFF linear-gradient(148deg, rgba(220, 225, 236, 0.2) 0%, rgba(255, 255, 255, 0.76) 100%);
@@ -1022,8 +1026,9 @@ export default {
     width: 100%;
     height: 122px;
     background: #ffffff;
-    box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-    border-radius: 8px;
+    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    border-radius: 12px;
+    border: 1px solid #EAEDF7;
     position: relative;
     .infoIcon {
       display: block;
@@ -1100,8 +1105,9 @@ export default {
     width: 100%;
     min-height: 404px;
     background: #ffffff;
-    box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-    border-radius: 8px;
+    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    border-radius: 12px;
+    border: 1px solid #EAEDF7;
     padding: 24px;
     padding-bottom: 8px;
     box-sizing: border-box;
@@ -1262,6 +1268,7 @@ export default {
                 font-weight: normal;
                 line-height: 48px;
                 .unit {
+                    margin-left: 4px;
                     font-size: 18px;
                     font-weight: 500;
                     color: #FFFFFF;
@@ -1310,8 +1317,9 @@ export default {
     width: 100%;
     min-height: 252px;
     background: #ffffff;
-    box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-    border-radius: 8px;
+    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    border-radius: 12px;
+    border: 1px solid #EAEDF7;
     margin-bottom: 24px;
     padding: 24px;
     box-sizing: border-box;
@@ -1488,18 +1496,19 @@ export default {
             height: calc(100% - 24px);
             opacity: 0.8;
             // left: -10px;
-            top: 27px;
+            left: 20px;
+             top: 18px;
             // border: 2px solid #4d94ff;
           }
           .num_text {
-            margin-right: 8px;
             font-size: 30px;
             font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;
             color: #34c724;
             position: absolute;
-            right: 40px;
-            bottom: 1px;
+            right: 32px;
+            bottom: 31px;
+            line-height: 38px;
           }
           .fen {
             font-size: 14px;
@@ -1507,8 +1516,8 @@ export default {
             font-weight: 400;
             color: #7c88b1;
             position: absolute;
-            right: 30px;
-            bottom: 10px;
+            right: 13px;
+            bottom: 31px;
           }
         }
         .intro_container {

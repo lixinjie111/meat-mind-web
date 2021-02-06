@@ -695,6 +695,7 @@
                             align-items: center;
                             justify-content: center;
                             margin-right: 12px;
+                            cursor: pointer;
                         }
                         .activetimer{
                             border: 1px solid #2373FF;

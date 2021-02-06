@@ -2058,6 +2058,7 @@ export default {
     background: #ffffff;
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 12px;
+    border: 1px solid #EAEDF7;
     padding: 24px;
     box-sizing: border-box;
     .top_title_container {
@@ -2474,6 +2475,7 @@ export default {
     background: #ffffff;
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 12px;
+    border: 1px solid #EAEDF7;
     margin-top: 24px;
     padding: 20px 24px 24px 24px;
     box-sizing: border-box;
@@ -2940,6 +2942,7 @@ export default {
     background: #ffffff;
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 12px;
+    border: 1px solid #EAEDF7;
     margin-top: 24px;
     padding: 24px;
     box-sizing: border-box;
@@ -3049,6 +3052,7 @@ export default {
     background: #ffffff;
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 12px;
+    border: 1px solid #EAEDF7;
     padding: 24px;
     box-sizing: border-box;
     display: flex;
@@ -3182,6 +3186,7 @@ export default {
     background: #ffffff;
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 12px;
+    border: 1px solid #EAEDF7;
     padding: 24px;
     box-sizing: border-box;
     display: flex;
@@ -3248,6 +3253,7 @@ export default {
     background: #ffffff;
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 12px;
+    border: 1px solid #EAEDF7;
     padding: 24px;
     box-sizing: border-box;
     display: flex;
@@ -3371,6 +3377,7 @@ export default {
     background: #FFFFFF;
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 12px;
+    border: 1px solid #EAEDF7;
     margin-top: 24px;
     padding: 24px;
     box-sizing: border-box;

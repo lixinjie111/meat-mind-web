@@ -47,12 +47,12 @@
           </div>
           <div class="text">核心竞对品牌黄振龙和潘高寿增长态势显著，需要密切关注</div>
         </div>
-        <!-- <div class="text1">
+        <div class="text1">
           <div class="circle1">
             <div class="circle"></div>
           </div>
           <div class="text">近期负面舆情影响力较小，无需反击</div>
-        </div>-->
+        </div>
       </div>
     </div>
     <div class="panel3">

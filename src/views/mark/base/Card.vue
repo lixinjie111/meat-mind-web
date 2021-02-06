@@ -42,6 +42,10 @@ export default {
   background: #ffffff;
   border-radius: 8px;
   border: 1px solid #eaedf7;
+  box-shadow: none;
+  &:hover{
+    box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16);
+  }
   .title {
     height: 22px;
     font-size: 16px;

@@ -4,6 +4,7 @@
             <div class="a-h-title">{{title}}</div>
             <div class="a-h-arrow"></div>
         </div>
+        <Analyse :descL="descL" :descR="descR"></Analyse>
         <div class="m-d-show-echarts">
             <Half :lTitle="'品牌真实受众覆盖度'" :rTitle="'品牌真实受众匹配度'" :subDate="'2021.1.1-2021.1.31'">
                 <RotateChart slot="left" :colorList="$fjData.colorList" :myData="$fjData.box13Data"></RotateChart>
@@ -33,6 +34,7 @@
 </template>
 
 <script>
+import Analyse from "../base/Analyse"
 import Half from "../base/Half"
 import Full from "../base/Full"
 import RotateChart from '../../../components/echarts/common/RotateChart';
@@ -42,13 +44,18 @@ import barEcharts from '../../../components/echarts/common/barEcharts';
 import lineM from '../../../components/echarts/common/lineM';
 import barCH from '../../../components/echarts/common/barCH';
 
-
 export default {
     name:"Accept",
-    components:{Half,Full,RotateChart,MatchEcharts,PieEcharts3,barEcharts,lineM,barCH},
+    components:{Analyse,Half,Full,RotateChart,MatchEcharts,PieEcharts3,barEcharts,lineM,barCH},
     props:{
         title:{
             type:String
+        }
+    },
+    data(){
+        return {
+            descL:"品牌真实受众覆盖度一般，品牌忠诚度过低。",
+            descR:"按受众特征（中高学历、中年管理层、便捷养生）与购买场景（带货、节日伴手礼）制定营销方案，增加客群覆盖度"
         }
     }
 };
@@ -63,15 +70,15 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 56px;
+        height: 73px;
         border-top: 1px solid #EAEDF7;
         .a-h-title{
-            height: 24px;
-            font-size: 14px;
+            height: 26px;
+            font-size: 18px;
             font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;
             color: #242F57;
-            line-height: 24px;
+            line-height: 26px;
         }
         .a-h-arrow{
             width: 16px;

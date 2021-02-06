@@ -1497,6 +1497,7 @@ export default {
     //   center / 100% 339px;
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 12px;
+    border: 1px solid #EAEDF7;
     .m-p-rank-header {
       display: flex;
       justify-content: space-between;
@@ -1806,6 +1807,7 @@ export default {
     background: #FFFFFF;
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 12px;
+    border: 1px solid #EAEDF7;
     .m-p-target-title{
       font-size: 16px;
       font-family: PingFangSC-Medium, PingFang SC;
@@ -1869,12 +1871,15 @@ export default {
     background: #FFFFFF;
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 12px;
+    border: 1px solid #EAEDF7;
     padding:24px;
     .listBox{
       border-radius: 8px;
       border: 1px solid #EAEDF7;
       display: flex;
+      margin-bottom: 1px;
       padding-bottom: 2px;
+
       .listBox-left{
         ::v-deep .ivu-menu{
           width:120px !important;

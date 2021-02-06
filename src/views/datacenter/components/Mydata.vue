@@ -1099,7 +1099,7 @@
   }
 </style>
 <style lang="scss">
-  $radius: 8px;
+  $radius: 12px;
 
   .upload-modal1 {
     .ivu-modal {
@@ -1262,12 +1262,12 @@
     padding: 0 !important;
   }
   .module{
-    border-top-right-radius: $radius;
-    border-top-left-radius: $radius;
+    border-radius: $radius;
     background-color: #fff;
     margin: 16px 0;
     padding: 0 24px;
-    box-shadow: 3px 3px 8px 0 rgba(166, 171, 189, 0.3);
+    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    border: 1px solid #EAEDF7;
     .module-title{
       font-size: 16px;
       font-weight: 500;
@@ -1289,6 +1289,8 @@
   .statistics {
     display: flex;
     align-items: center;
+    border-radius: $radius $radius 0 0;
+
     .statistics-item-box {
       padding: 15px 0;
       height: 100px;
