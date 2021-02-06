@@ -2797,7 +2797,8 @@ export default {
             
             .echarts1 {
               &.echarts1box{
-                width: 270px;
+                width: 197px;
+                margin-right: 24px;
               }
               &.echarts2box{
                 width: 160px;
@@ -2919,9 +2920,13 @@ export default {
           }
           .cdyhmj_content_bom_rig_bom {
             width: 100%;
+            height: 136px;
+            overflow: hidden;
+            border-radius: 8px;
             .yhtIcon {
               width: 100%;
               height: 100%;
+              object-fit: cover;
             }
           }
         }

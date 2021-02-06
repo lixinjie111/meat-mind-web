@@ -336,7 +336,7 @@
                 </div>
                 <div class="listBox">
                    <div class="listBox-left">
-                     <Menu active-name="1" width="120px" mode="vertical">
+                     <Menu active-name="1"  mode="vertical">
                           <MenuItem name="1"> 粉丝总量排行</MenuItem>
                           <MenuItem name="2"> 粉丝增长排行</MenuItem>
                           <MenuItem name="3"> 粉丝互动排行</MenuItem>
@@ -1137,16 +1137,16 @@ export default {
     display: flex;
     .panel1{
       overflow: hidden;
-      width:17vw;
-      height: 14.9vw;
+      width:245px;
+      height: 215px;
       background: url("../../assets/img/media/bg2.png") no-repeat center center / 100% 100%;
       box-shadow: 4px -4px 24px 0px rgba(31, 58, 109, 0.55);
       border-radius: 8px;
       position: relative;
       .title{
         margin-left:16px;
-        margin-top: 2.36vw;
-        margin-right: 3vw;
+        margin-top: 34px;
+        margin-right: 51px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -1176,18 +1176,15 @@ export default {
         }
       }
       .nav1{
-        // margin-left:16px;
-        // margin-top: 34px;
-        // margin-right: 3vw;
         position: absolute;
-        bottom:3.6vw;
+        bottom:49px;
         left:0;
         width:100%;
         padding-left: 17px;
         padding-right: 43px;
         padding-top: 4px;
         padding-bottom: 4px;
-        height: 3.5vw;
+        height: 48px;
         background: rgba(20, 85, 217, 0.6);
         display: flex;
         align-items: center;
@@ -1207,7 +1204,7 @@ export default {
           }
         }
         .rt{
-          width:4.5vw;
+          width:66px;
           img{
             width:100%;
             display:block;
@@ -1215,14 +1212,11 @@ export default {
         }
       }
       .nav2{
-        // margin-left:16px;
-        // margin-top: 34px;
-        // margin-right: 3vw;
         position: absolute;
         bottom:0;
         left:0;
         width:100%;
-        height: 3.5vw;
+        height: 48px;
         padding-left: 17px;
         padding-right: 43px;
         padding-top: 4px;
@@ -1246,7 +1240,7 @@ export default {
           }
         }
         .rt{
-          width:4.5vw;
+          width:66px;
           img{
             width:100%;
             display:block;
@@ -1256,8 +1250,8 @@ export default {
     }
     .panel2{
       margin-left: 17px;
-      width:20.6vw;
-      height: 14.9vw;
+      width:296px;
+      height: 215px;
       padding:16px;
       display: flex;
       flex-direction: column;
@@ -1291,14 +1285,14 @@ export default {
     }
     .hr{
       width: 1px;
-      height: 14.9vw;
+      height: 215px;
       background: #fff;
       margin: 0 22px;
 
     }
     .panel3{
       flex:1;
-      height: 14.9vw;
+      height: 215px;
       background: rgba(237, 235, 254, 0.8);
       border-radius: 8px;
       border: 1px solid #A49DFA;
@@ -1313,9 +1307,8 @@ export default {
          border-radius: 50%;
       }
       .left{
-        width: 53%;
+        width: 200px;
         height: 100%;
-        padding-left: 41px;
         .title{
           font-size: 18px;
           font-family: PingFangSC-Medium, PingFang SC;
@@ -1326,16 +1319,16 @@ export default {
           width: 100%;
           height: 1px;
           background: #fff;
-          margin-top: 1.3vw;
-          margin-bottom: .5vw;
+          margin-top: 19px;
+          margin-bottom: 29px;
         }
          .detail-info {
               .detail-info-item {
                   display: flex;
                   justify-content: space-between;
                   align-items: center;
-                  margin-bottom: 0.8vw;
-                  margin-top: 1.1vw;
+                  height: 32px;
+                  margin-bottom: 8px;
                   p {
                       position: relative;
                       font-size: 14px;
@@ -1360,46 +1353,18 @@ export default {
                   .rt{
 
                   }
-                  // margin: 1.4vw 0.7vw 0 0;
-                  // display: inline-block;
-                  // width: calc(50% - 8px);
-                  // >p {
-                  //     position: relative;
-                  //     font-size: 14px;
-                  //     font-family: PingFangSC-Regular, PingFang SC;
-                  //     font-weight: 400;
-                  //     color: #242F57;
-                  //     >i {
-                  //         position: absolute;
-                  //         top: 0;
-                  //         right: 0;
-                  //         font-size: 16px;
-                  //         border-radius: 50%;
-
-                  //         &.iconjieshou{
-                  //             color: rgba(52, 199, 36, 1);
-                  //         }
-
-                  //         &.iconguanyu1{
-                  //             color: rgba(255, 146, 0, 1);
-                  //         }
-                  //     }
-                  // }
-
-                  // &:nth-child(2n+2) {
-                  //     margin-right: 0;
-                  // }
               }
           }
       }
       .rt{
+        margin-left: 51px;
         flex:1;
         height: 100%;
       }
     }
   }
   .m-p-panel1{
-    height: 16.44vw;
+    height: 208px;
     margin-top: 24px;
     padding:24px;
     background: url("../../assets/img/media/bg1.png") no-repeat center center / 100% 100%;
@@ -1903,8 +1868,13 @@ export default {
       padding-bottom: 2px;
       .listBox-left{
         ::v-deep .ivu-menu{
+          width:120px !important;
           height: 100%;
           padding-top: 10px;
+          font-size: 14px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #636E95;
           .ivu-menu-item{
             text-align: right;
             padding-right: 16px;
