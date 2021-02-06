@@ -42,8 +42,12 @@
             </div>
             <div class="per_info_container"></div>
         </div>
+        <div class="mianban_container" v-if="ifShowMb" @mouseout="hideMe">
+            <img :src="quyResult" alt="" srcset="" class="quyResult">
+        </div>
         <div class="test_container">
             <div class="mapContainer" id="mapContainer">
+                
             </div>
             <div class="per_info_container">
                 <div class="yhdx_title">
@@ -198,6 +202,7 @@
                 tbIcon:require("../../assets/img/yhhx/tbIcon.png"),
                 // tbIcon:require("../../assets/img/yhhx/bgImg.png"),
                 xhsIcon:require("../../assets/img/yhhx/xhs.png"),
+                quyResult:require("../../assets/img/yhhx/quyResult.png"),
                 bqitmList:{
                     yl:[
                         {
@@ -238,7 +243,8 @@
                 ],
                 ifShowTime:true,
                 timerIdx:0,
-                timeType:8
+                timeType:8,
+                ifShowMb:false
             }
         },
         mounted(){
@@ -275,6 +281,9 @@
             this.initMap(path,path1,path2,cir1,cir2,'朝阳区');
         },
         methods:{
+            hideMe(){
+                this.ifShowMb = false;
+            },
             clickTimeItem(arg,val){
                 this.timerIdx = arg;
                 var path = [
@@ -351,6 +360,7 @@
             },
             clickTime(arg){
             this.current = arg;
+            this.ifShowMb = false;
             if(arg == 8){
                 this.timeType = arg;
                 var path = [
@@ -424,6 +434,7 @@
                     zoom: 11, //地图显示的缩放级别
                     mapStyle: "amap://styles/whitesmoke"
                 });
+                map.setDefaultCursor("pointer");
 
                 //加载行政区划插件
                 if(!district){
@@ -658,7 +669,20 @@
                             }
                         ]
                     }
+                });
+                var marker = new AMap.Marker({
+                    icon:new AMap.Icon({            
+                        image:  "//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png",
+                        size: new AMap.Size(52, 52),  
+                        imageSize: new AMap.Size(26,36)
+                    }),   
+                    position:c2
+                });
+                marker.on('click',function(){
+                    console.log('22222')
+                    that.ifShowMb = true;
                 })
+                marker.setMap(map);
             }
         }
     }
@@ -667,6 +691,7 @@
 <style lang="scss" scoped>
 .dx_Item_container{
     width: 100%;
+    position: relative;
     .test_container1{
         width: 100%;
         height: 80px;
@@ -785,6 +810,19 @@
             height: 100%;
         }
     }
+    .mianban_container{
+        position: absolute;
+        left: 50%;
+        top: 55%;
+        transform: translate(-63%,-50%);
+        width: 200px;
+        height: 300px;
+        z-index: 9999;
+        .quyResult{
+            display: block;
+            width: 100%;
+        }
+    }
     .test_container{
         margin-top: 20px;
         width: 100%;
@@ -798,42 +836,7 @@
             height: 100%;
             display: flex;
             justify-content: center;
-            .timer12{
-            width: 95%;
-            height: 80px;
-            margin-top: 15px;
-            background-color: yellowgreen;
-            z-index: 9999;
-            padding: 10px;
-            box-sizing: border-box;
-            .timer12_top{
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                .timeitem{
-
-                }
-            }
-            .timer12_bom{
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                background-color: #c6cbde;
-                margin-top: 8px;
-                border-radius: 10px;
-                .cirle_dian{
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                background-color: #a49dfa;
-                }
-                .activeDian{
-                background-color: brown;
-                }
-            }
-            }
+            align-items: center;
         }
         .per_info_container{
             width: 270px;
