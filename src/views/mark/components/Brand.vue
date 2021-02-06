@@ -66,6 +66,7 @@ export default {
 .brand-position-impress {
   height: 430px;
   padding: 24px;
+  margin-bottom: 24px;
   background: #ffffff;
   box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
   border-radius: 12px;
