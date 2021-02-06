@@ -15,7 +15,28 @@
           轻松上手分析模型，探索不同业务中的关键行为，洞察指标背后的增长点。
         </p>
       </div>
-      <img :src="infoIcon" alt="" srcset="" class="infoIcon" />
+
+        <span class="infoIcon">
+            <img :src="infoIcon" alt="" srcset="" class="infoIcon-img"/>
+            <div class="infoIcon-desc">
+                <div class="infoIcon-desc-item">
+                    <i class="iconshujuguanli iconfont"></i>
+                    <span>迅速掌握各项数据情报</span>
+                </div>
+                <div class="infoIcon-desc-item">
+                    <i class="iconzhinengjuece iconfont"></i>
+                    <span>定制化的展示看板</span>
+                </div>
+                <div class="infoIcon-desc-item">
+                    <i class="iconbiaoqiantixi iconfont"></i>
+                    <span>灵活可配置的分析纬度及标签</span>
+                </div>
+                <div class="infoIcon-desc-item">
+                    <i class="iconzhengtigailan iconfont"></i>
+                    <span>海量新潮分析模板素材</span>
+                </div>
+            </div>
+        </span>
     </div>
     <div class="guide_container">
       <div class="guide_title_container">
@@ -50,7 +71,7 @@
                     <span class="btntxt">看板管理</span>
                 </div>
                 <div class="btn_container btn2">
-                    <img :src="whitedownload" class="btn_download" />
+                    <i class="iconxiazai iconfont"></i>
                     <span class="btntxt">下载报表</span>
                 </div>
             </div>
@@ -58,20 +79,20 @@
         <div class="kanban_item_container">
             <div class="kanbanitem1">
                 <div class="kan_title">分析看板总数</div>
-                <div class="kanNum">15</div>
+                <div class="kanNum">15 <span class="unit">个</span></div>
             </div>
             <div class="kanbanitem2">
                 <div class="kan_title">自定义看板</div>
-                <div class="kanNum">3</div>
+                <div class="kanNum">3<span class="unit">个</span></div>
             </div>
             <div class="kanbanitem3">
                 <div class="kan_title">模板素材库</div>
-                <div class="kanNum">234</div>
+                <div class="kanNum">234<span class="unit">个</span></div>
                 <div class="shangsheng"><i class="iconfont iconshangsheng"></i>35</div>
             </div>
             <div class="kanbanitem4">
                 <div class="kan_title">行业报告市场</div>
-                <div class="kanNum">125</div>
+                <div class="kanNum">125<span class="unit">个</span></div>
                <div class="shangsheng"><i class="iconfont iconshangsheng"></i>12</div>
             </div>
         </div>
@@ -820,6 +841,7 @@ export default {
                     }
                 ]
             );
+            const center = ['28%', '65%']
             var option = {
                 grid:{
                     width:'100%',
@@ -835,6 +857,7 @@ export default {
                         min: 0,
                         max: 100,
                         radius: '70%',
+                        center,
                         title: {
                             show: false
                         },
@@ -886,8 +909,8 @@ export default {
                         },
                         markPoint: {
                             data: [{
-                                x: "50%",
-                                y: "50%",
+                                x: center[0],
+                                y: center[1],
                                 symbol: 'circle',
                                 symbolSize: 4,
                                 itemStyle: {
@@ -904,6 +927,7 @@ export default {
                         radius: '80%',
                         startAngle: 180,
                         endAngle: 0,
+                        center,
                         min: 0,
                         max: 100,
                         title: {
@@ -978,14 +1002,13 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(139deg, #f0f3f6 0%, #ffffff 100%);
-      box-shadow: 4px 4px 16px 0px rgba(55, 84, 170, 0.16),
-        -4px -4px 16px 0px #ffffff, 1px 1px 2px 0px #ffffff;
-      border-radius: 32px;
-      font-size: 14px;
-      font-family: PingFangSC-Medium, PingFang SC;
-      font-weight: 500;
-      color: #242f57;
+        width: 164px;
+        height: 40px;
+        background: #FFFFFF linear-gradient(148deg, rgba(220, 225, 236, 0.2) 0%, rgba(255, 255, 255, 0.76) 100%);
+        box-shadow: 3px 4px 8px 0px rgba(36, 47, 87, 0.1);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        cursor: pointer;
       .btn_download {
         display: block;
         width: 18px;
@@ -1009,7 +1032,40 @@ export default {
       position: absolute;
       top: 10px;
       right: 10px;
+        cursor: pointer;
+        .infoIcon-img {
+            width: 16px;
+            height: 16px;
+            position: absolute;
+        }
     }
+      .infoIcon:hover .infoIcon-desc {
+          display: block;
+      }
+      .infoIcon-desc {
+          display: none;
+          position: absolute;
+          top: 0;
+          right: 20px;
+          width: 198px;
+          height: 96px;
+          padding: 8px;
+          background: rgba(219, 234, 255, 0.94);
+
+          box-shadow: 0 0 3px 0 rgba(219, 234, 255, 0.94);
+          border-radius: 5px;
+          border: 1px solid #4D94FF;
+          .infoIcon-desc-item {
+              font-size: 12px;
+              font-weight: 400;
+              color: #636E95;
+              line-height: 20px;
+              display: flex;
+              .iconfont {
+                  margin-right: 8px;
+              }
+          }
+      }
 
     .user {
       margin-right: 24px;
@@ -1132,32 +1188,45 @@ export default {
             display: flex;
             align-items: center;
             .btn_container {
-            padding: 14px;
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(139deg, #f0f3f6 0%, #ffffff 100%);
-            box-shadow: 4px 4px 16px 0px rgba(55, 84, 170, 0.16),-4px -4px 16px 0px #ffffff, 1px 1px 2px 0px #ffffff;
-            border-radius: 32px;
-            font-size: 14px;
-            font-family: PingFangSC-Medium, PingFang SC;
-            font-weight: 500;
-            color: #242f57;
-            .btn_download {
-                display: block;
-                width: 18px;
-                height: 18px;
-                margin-right: 11px;
-            }
-            }
-            .btn2{
-                font-size: 16px;
+                padding: 14px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
                 font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
-                color: #FFFFFF;
-                background: linear-gradient(135deg, #FF8D0A 0%, #FFA733 100%);
-                box-shadow: 4px 4px 16px 0px rgba(148, 76, 46, 0.2), -4px -4px 16px 0px #FFFFFF, 1px 1px 2px 0px rgba(255, 247, 230, 0.6);
+                color: #242f57;
+
+                width: 120px;
+                height: 40px;
+                background: #FFFFFF linear-gradient(148deg, rgba(220, 225, 236, 0.2) 0%, rgba(255, 255, 255, 0.76) 100%);
+                box-shadow: 3px 4px 8px 0 rgba(36, 47, 87, 0.1);
+                border-radius: 8px;
+                border: 1px solid rgba(255, 255, 255, 0.4);
+                cursor: pointer;
+                .btn_download {
+                    display: block;
+                    width: 18px;
+                    height: 18px;
+                    margin-right: 11px;
+                }
+                .iconfont {
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #357ffe;
+                    line-height: 20px;
+                }
+            }
+            .btn2{
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                width: 116px;
+                height: 40px;
+                background: #FFFFFF linear-gradient(148deg, rgba(220, 225, 236, 0.2) 0%, rgba(255, 255, 255, 0.76) 100%);
+                box-shadow: 3px 4px 8px 0px rgba(36, 47, 87, 0.1);
+                border-radius: 8px;
+                border: 1px solid rgba(255, 255, 255, 0.4);
             }
         }
     }
@@ -1174,6 +1243,7 @@ export default {
             padding: 24px 0;
             box-sizing: border-box;
             background: rgba(255, 255, 255, 0.5);
+            background-size: 100% 100%;
             border-radius: 8px;
             height: 144px;
             .kan_title{
@@ -1191,6 +1261,12 @@ export default {
                 font-family: HelveticaNeue-CondensedBold, HelveticaNeue;
                 font-weight: normal;
                 line-height: 48px;
+                .unit {
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: #FFFFFF;
+                    line-height: 24px;
+                }
             }
             .shangsheng{
               font-size: 16px;
@@ -1200,7 +1276,7 @@ export default {
               margin-right: 24px;
               display: flex;
               align-items: center;
-              margin-top: 12px;
+                margin-top: 6px;
               .iconfont{
                 margin-right: 6px;
                 font-size: 12px;
@@ -1210,18 +1286,18 @@ export default {
       .kanbanitem1{
         box-shadow: 4px -4px 24px 0px rgba(56, 88, 148, 0.55);
         border-radius: 8px;
-        background: url("../../assets/img/dashboard/kanban1.png");
+          background-image: url("../../assets/img/dashboard/kanban1.png");
       }
       .kanbanitem2{
-        background: url("../../assets/img/dashboard/kanban2.png");
+          background-image: url("../../assets/img/dashboard/kanban2.png");
         box-shadow: 4px -4px 24px 0px rgba(45, 120, 134, 0.55);
       }
       .kanbanitem3{
-        background: url("../../assets/img/dashboard/kanban3.png");
+          background-image: url("../../assets/img/dashboard/kanban3.png");
         box-shadow: 4px -4px 24px 0px rgba(109, 57, 143, 0.55);
       }
       .kanbanitem4{
-        background: url("../../assets/img/dashboard/kanban4.png");
+          background-image: url("../../assets/img/dashboard/kanban4.png");
         box-shadow: 4px -4px 24px 0px rgba(41, 59, 149, 0.55);
       }
     }
@@ -1408,10 +1484,10 @@ export default {
           align-items: flex-end;
           .pin_content {
             position: absolute;
-            width: 100%;
-            height: 100%;
+            width: calc(100% - 24px);
+            height: calc(100% - 24px);
             opacity: 0.8;
-            left: -73px;
+            // left: -10px;
             top: 27px;
             // border: 2px solid #4d94ff;
           }
