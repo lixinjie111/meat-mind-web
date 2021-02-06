@@ -63,14 +63,13 @@
             //left:0,
             //bottom: -20,
             data: name,
-            padding: [20, 40],
           },
           tooltip: {
             trigger: 'item'
           },
           series: [{
             type: 'pie',
-            center: ['25%', '50%'],
+            center: ['30%', '50%'],
             radius: ['57%', '77%'],
             roseType: this.roseType,
             clockwise: true,

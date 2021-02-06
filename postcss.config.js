@@ -1,6 +1,9 @@
 module.exports = {
     plugins: {
         autoprefixer: {},
+        "postcss-px2rem": {
+            remUnit: 144 //转换为rem的基准px
+          }
     //     'postcss-px-to-viewport': {
     //         viewportWidth: 1440,   // 视窗的宽度，对应的是我们设计稿的宽度，一般是750
     //         // viewportHeight: 1980, // 视窗的高度，根据750设备的宽度来指定，一般指定1334，也可以不配置

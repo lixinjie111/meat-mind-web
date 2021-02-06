@@ -40,7 +40,6 @@
                 width: 100%;
                 height: calc(100vh - 64px);
                 overflow-y: scroll;
-
                 .nav {
                     padding: 16px 24px;
                 }

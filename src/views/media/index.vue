@@ -52,23 +52,29 @@
             <div class="title">当前媒介：快手</div>
             <div class="hr1"></div>
             <div class="detail-info">
-                <div class="detail-info-item">
-                    <p>信息量<i class="iconfont2 iconjieshou"></i></p>
-                </div>
                   <div class="detail-info-item">
-                      <p>专业度<i class="iconfont2 iconguanyu1"></i></p>
+                      <div class="detail-info-left">
+                         <p>信息量<i class="iconfont2 iconjieshou"></i></p>
+                      </div>
+                      <div class="detail-info-rt">
+                         <p>专业度<i class="iconfont2 iconguanyu1"></i></p>
+                      </div>
                   </div>
                   <div class="detail-info-item">
-                      <p>友好度<i class="iconfont2 iconguanyu1"></i></p>
+                      <div class="detail-info-left">
+                         <p>友好度<i class="iconfont2 iconguanyu1"></i></p>
+                      </div>
+                      <div class="detail-info-rt">
+                         <p>公信力<i class="iconfont2 iconjieshou"></i></p>
+                      </div>
                   </div>
                   <div class="detail-info-item">
-                      <p>公信力<i class="iconfont2 iconjieshou"></i></p>
-                  </div>
-                  <div class="detail-info-item">
-                      <p>转化度<i class="iconfont2 iconguanyu1"></i></p>
-                  </div>
-                  <div class="detail-info-item">
-                      <p>ROI<i class="iconfont2 iconjieshou"></i></p>
+                      <div class="detail-info-left">
+                        <p>转化度<i class="iconfont2 iconguanyu1"></i></p>
+                      </div>
+                      <div class="detail-info-rt">
+                        <p>ROI<i class="iconfont2 iconjieshou"></i></p>
+                      </div>
                   </div>
               </div>
           </div>
@@ -172,29 +178,31 @@
                 </div>
               </div>
           </div>
-          
-            <div class="m-p-pie">
-                <div class="m-pie-title">媒介用户画像</div>
-                <div class="subTitle">抖音用户，以26-45岁的女性自由职业者居多，整体收入水平偏中上等，约有1/3来自于三口之家，使用时间多分布于中午和晚间。</div>
-                <div class="m-pie-echarts">
-                    <Triple :title1="'性别分布'" :title2="'年龄分布'" :title3="'职业分布'">
-                          <PieCaseEcharts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieCaseEcharts>
-                          <PieCaseEcharts slot="mid" :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieCaseEcharts>
-                          <PieCaseEcharts slot="right" :colorList="$fjData.colorList" :myData="$fjData.box3Data" roseType="radius"></PieCaseEcharts>
-                    </Triple>
-                    <Triple :title1="'收入分布'" :title2="'家庭情况'" :title3="'网龄结构'">
-                          <PieCaseEcharts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box2Data"></PieCaseEcharts>
-                          <PieCaseEcharts slot="mid" :colorList="$fjData.colorList" :myData="$fjData.box11Data"></PieCaseEcharts>
-                          <PieCaseEcharts slot="right" :colorList="$fjData.colorList" :myData="$fjData.box12Data"></PieCaseEcharts>
-                    </Triple>
+          <div class="m-p-pie">
+              <div class="m-pie-title">媒介用户画像 <span @mouseenter="showTip"  @mouseleave="NshowTip"><Icon type="ios-alert-outline" color="#7C88B1"/>
+                <div class="m-pie-tip" v-show="isShowTip">
+                  展示各个媒介的用户属性特征，深度洞察媒介使用者的人群画像，以及比较不同媒介的偏好人群的差异
                 </div>
-            </div>
-             <div class="m-p-pie">
-                <div class="m-pie-title">媒介组合方案</div>
-                <div class="subTitle">基于品牌画像和用户画像，建议以短视频作为主要信息传播媒介（其中抖音整体传播效果最优，快手成本投入相对较低），垂直媒介为辅（小红书在15-25岁女性人群中的传播效果优于短视频）的媒介组合，并辅以多KOL多内容类型的投放策略，预算建议5-10万之间，预计能获得150万的曝光量（是上一次投放效果的3倍）。</div>
+              </span> </div>
+              <div class="subTitle">抖音用户，以26-45岁的女性自由职业者居多，整体收入水平偏中上等，约有1/3来自于三口之家，使用时间多分布于中午和晚间。</div>
+              <div class="m-pie-echarts">
+                  <Triple :title1="'性别分布'" :title2="'年龄分布'" :title3="'职业分布'">
+                        <PieCaseEcharts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieCaseEcharts>
+                        <PieCaseEcharts slot="mid" :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieCaseEcharts>
+                        <PieCaseEcharts slot="right" :colorList="$fjData.colorList" :myData="$fjData.box3Data" roseType="radius"></PieCaseEcharts>
+                  </Triple>
+                  <Triple :title1="'收入分布'" :title2="'家庭情况'" :title3="'网龄结构'">
+                        <PieCaseEcharts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box2Data"></PieCaseEcharts>
+                        <PieCaseEcharts slot="mid" :colorList="$fjData.colorList" :myData="$fjData.box11Data"></PieCaseEcharts>
+                        <PieCaseEcharts slot="right" :colorList="$fjData.colorList" :myData="$fjData.box12Data"></PieCaseEcharts>
+                  </Triple>
+              </div>
+          </div>
+      </div>
+      <div class="m-p-zuhe">
+              <div class="m-pie-title">媒介组合方案</div>
+              <div class="subTitle">基于品牌画像和用户画像，建议以短视频作为主要信息传播媒介（其中抖音整体传播效果最优，快手成本投入相对较低），垂直媒介为辅（小红书在15-25岁女性人群中的传播效果优于短视频）的媒介组合，并辅以多KOL多内容类型的投放策略，预算建议5-10万之间，预计能获得150万的曝光量（是上一次投放效果的3倍）。</div>
               <div class="m-p-third-module">
-                  <!-- <div class="m-pie-title">媒介组合方案</div>
-                  <div class="subTitle">基于品牌画像和用户画像，建议以短视频作为主要信息传播媒介（其中抖音整体传播效果最优，快手成本投入相对较低），垂直媒介为辅（小红书在15-25岁女性人群中的传播效果优于短视频）的媒介组合，并辅以多KOL多内容类型的投放策略，预算建议5-10万之间，预计能获得150万的曝光量（是上一次投放效果的3倍）。</div> -->
                   <div class="m-p-t-left">
                       <Full :title="'媒介领域热度排名'">
                         <barL id="box28" :colorList="$lxjData.colorList" :myData="$lxjData.box28Data"></barL>
@@ -245,7 +253,6 @@
                     <barL slot="right" id="box29" :colorList="$lxjData.colorList" :myData="$lxjData.box29Data"></barL>
                   </Half>
               </div>
-            </div>
       </div>
       <div class="m-p-target">
           <!-- 优化指标 -->
@@ -329,7 +336,7 @@
                 </div>
                 <div class="listBox">
                    <div class="listBox-left">
-                     <Menu active-name="1" width="120px" mode="vertical">
+                     <Menu active-name="1"  mode="vertical">
                           <MenuItem name="1"> 粉丝总量排行</MenuItem>
                           <MenuItem name="2"> 粉丝增长排行</MenuItem>
                           <MenuItem name="3"> 粉丝互动排行</MenuItem>
@@ -856,6 +863,7 @@ export default {
   components: { DefaultPage, Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts2,LeidaEcharts},
   data(){
       return{
+          isShowTip:false,
           formTop: {
               budget: '',
               quota: '',
@@ -1090,6 +1098,12 @@ export default {
     getTab(name){
       console.log(name)
     },
+    showTip(name){
+      this.isShowTip=true;
+    },
+    NshowTip(name){
+      this.isShowTip=false;
+    },
     targetClick(index){
       this.act = index;
       if(index==0){
@@ -1123,16 +1137,16 @@ export default {
     display: flex;
     .panel1{
       overflow: hidden;
-      width:17vw;
-      height: 14.9vw;
+      width:245px;
+      height: 215px;
       background: url("../../assets/img/media/bg2.png") no-repeat center center / 100% 100%;
       box-shadow: 4px -4px 24px 0px rgba(31, 58, 109, 0.55);
       border-radius: 8px;
       position: relative;
       .title{
         margin-left:16px;
-        margin-top: 2.36vw;
-        margin-right: 3vw;
+        margin-top: 34px;
+        margin-right: 51px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -1162,18 +1176,15 @@ export default {
         }
       }
       .nav1{
-        // margin-left:16px;
-        // margin-top: 34px;
-        // margin-right: 3vw;
         position: absolute;
-        bottom:3.6vw;
+        bottom:49px;
         left:0;
         width:100%;
         padding-left: 17px;
         padding-right: 43px;
         padding-top: 4px;
         padding-bottom: 4px;
-        height: 3.5vw;
+        height: 48px;
         background: rgba(20, 85, 217, 0.6);
         display: flex;
         align-items: center;
@@ -1193,7 +1204,7 @@ export default {
           }
         }
         .rt{
-          width:4.5vw;
+          width:66px;
           img{
             width:100%;
             display:block;
@@ -1201,14 +1212,11 @@ export default {
         }
       }
       .nav2{
-        // margin-left:16px;
-        // margin-top: 34px;
-        // margin-right: 3vw;
         position: absolute;
         bottom:0;
         left:0;
         width:100%;
-        height: 3.5vw;
+        height: 48px;
         padding-left: 17px;
         padding-right: 43px;
         padding-top: 4px;
@@ -1232,7 +1240,7 @@ export default {
           }
         }
         .rt{
-          width:4.5vw;
+          width:66px;
           img{
             width:100%;
             display:block;
@@ -1242,8 +1250,8 @@ export default {
     }
     .panel2{
       margin-left: 17px;
-      width:20.6vw;
-      height: 14.9vw;
+      width:296px;
+      height: 215px;
       padding:16px;
       display: flex;
       flex-direction: column;
@@ -1277,14 +1285,14 @@ export default {
     }
     .hr{
       width: 1px;
-      height: 14.9vw;
+      height: 215px;
       background: #fff;
       margin: 0 22px;
 
     }
     .panel3{
       flex:1;
-      height: 14.9vw;
+      height: 215px;
       background: rgba(237, 235, 254, 0.8);
       border-radius: 8px;
       border: 1px solid #A49DFA;
@@ -1299,9 +1307,8 @@ export default {
          border-radius: 50%;
       }
       .left{
-        width: 53%;
+        width: 200px;
         height: 100%;
-        padding-left: 41px;
         .title{
           font-size: 18px;
           font-family: PingFangSC-Medium, PingFang SC;
@@ -1312,51 +1319,52 @@ export default {
           width: 100%;
           height: 1px;
           background: #fff;
-          margin-top: 1.3vw;
-          margin-bottom: .5vw;
+          margin-top: 19px;
+          margin-bottom: 29px;
         }
          .detail-info {
               .detail-info-item {
-                  margin: 1.4vw 0.7vw 0 0;
-                  display: inline-block;
-                  width: calc(50% - 8px);
-                  >p {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  height: 32px;
+                  margin-bottom: 8px;
+                  p {
                       position: relative;
                       font-size: 14px;
                       font-family: PingFangSC-Regular, PingFang SC;
                       font-weight: 400;
                       color: #242F57;
                       >i {
-                          position: absolute;
-                          top: 0;
-                          right: 0;
+                           margin-left: 20px;
                           font-size: 16px;
                           border-radius: 50%;
-
                           &.iconjieshou{
                               color: rgba(52, 199, 36, 1);
                           }
-
                           &.iconguanyu1{
                               color: rgba(255, 146, 0, 1);
                           }
-                      }
+                    }
                   }
+                  .left{
 
-                  &:nth-child(2n+2) {
-                      margin-right: 0;
+                  }
+                  .rt{
+
                   }
               }
           }
       }
       .rt{
+        margin-left: 51px;
         flex:1;
         height: 100%;
       }
     }
   }
   .m-p-panel1{
-    height: 16.44vw;
+    height: 208px;
     margin-top: 24px;
     padding:24px;
     background: url("../../assets/img/media/bg1.png") no-repeat center center / 100% 100%;
@@ -1484,8 +1492,9 @@ export default {
     width: 100%;
     height: 339px;
     margin-bottom: 24px;
-    background: url("../../assets/img/media/colourfol.png") no-repeat center
-      center / 100% 339px;
+    background:  #fff;
+    // background: url("../../assets/img/media/colourfol.png") no-repeat center
+    //   center / 100% 339px;
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 12px;
     .m-p-rank-header {
@@ -1569,15 +1578,11 @@ export default {
   }
   .m-p-filter{
     width: 100%;
-    // height: 1878px;
     padding: 24px;
     margin-bottom: 24px;
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 12px;
-    opacity: 0.8;
-    border: 1px solid;
-    border-image: linear-gradient(141deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)) 1 1;
-    background: url("../../assets/img/media/colourfol.png") no-repeat center center / 100% 100%;
+    border: 1px solid #EAEDF7;
     .m-f-line{
         display: flex;
         width: 100%;
@@ -1626,8 +1631,7 @@ export default {
         background: #FFFFFF;
         border-radius: 8px;
         border: 1px solid #EAEDF7;
-        box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-        border-radius: 12px;
+        border-radius: 8px;
         .m-pie-title{
             height: 24px;
             margin-bottom: 16px;
@@ -1636,11 +1640,41 @@ export default {
             font-weight: 500;
             color: #242F57;
             line-height: 24px;
+            span{
+              cursor: pointer;
+              position: relative;
+              .m-pie-tip{
+                position: absolute;
+                left:22px;
+                top:0;
+                width: 200px;
+                height: 99px;
+                background: rgba(219, 234, 255, 0.94);
+                border-radius: 8px;
+                border: 1px solid #4D94FF;
+                font-size: 12px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636E95;
+                line-height: 17px;
+                padding:16px;
+                text-align: justify;
+              }
+            }
         }
         .m-pie-echarts{
             height: 596px;
         }
     }
+    
+  }
+  .m-p-zuhe{
+    width: 100%;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    border-radius: 12px;
+    border: 1px solid #EAEDF7;
     .m-p-third-module{
         display: flex;
         justify-content: space-between;
@@ -1747,7 +1781,6 @@ export default {
             }
         }
     }
-
     .m-p-last{
         display: flex;
         justify-content: space-between;
@@ -1757,7 +1790,6 @@ export default {
         }
     }
   }
-
   .m-p-target{
     width: 100%;
     padding:24px;
@@ -1836,8 +1868,13 @@ export default {
       padding-bottom: 2px;
       .listBox-left{
         ::v-deep .ivu-menu{
+          width:120px !important;
           height: 100%;
           padding-top: 10px;
+          font-size: 14px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #636E95;
           .ivu-menu-item{
             text-align: right;
             padding-right: 16px;
