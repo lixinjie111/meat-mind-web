@@ -16,27 +16,32 @@
                     <p>一键下载报告</p>
                 </div>
             </div>
+            <div class="d-c-r-select">
+                <Select style="width:160px" placeholder="请选择对标品牌" @on-change="selectEl" v-model="pinpai">
+                    <Option value="红牛" :key="1">红牛</Option>
+                    <Option value="加多宝" :key="2">加多宝</Option>
+                    <Option value="王老吉" :key="3">王老吉</Option>
+                    <Option value="脉动" :key="4">脉动</Option>
+                </Select>
+            </div>
         </div>
         <div class="details-compare">
             <div class="d-c-left">
                 <div class="d-c-l-title">当前品牌</div>
+                 <div class="d-c-l-hr"></div>
                 <div class="d-c-l-content">
                     <img src="../../../assets/img/mark/tea.png" alt="">
-                    <div class="d-c-l-name">邓老凉茶</div>
                 </div>
+                <div class="d-c-l-name">邓老凉茶</div>
             </div>
             <div class="d-c-mid">vs</div>
             <div class="d-c-right">
                 <div class="d-c-l-title">对标品牌</div>
-                <div class="d-c-r-select">
-                   <Select style="width:160px" placeholder="请选择对标品牌">
-                        <!-- <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option> -->
-                    </Select>
-                </div>
+                <div class="d-c-l-hr"></div>
                 <div class="d-c-l-content">
-                    <img src="../../../assets/img/mark/question.png" alt="">
-                    <div class="d-c-l-empty">暂无品牌</div>
+                    <img :src="pic1" alt="">
                 </div>
+                 <div class="d-c-l-empty">{{pinpai}}</div>
             </div>
         </div>
         <Accept :title="'品牌受众分析'"></Accept>
@@ -51,7 +56,24 @@ import Market from "./Market"
 import Public from "./Public"
 export default {
     name:"Details",
-    components:{Accept,Market,Public}
+    components:{Accept,Market,Public},
+     data() {
+            return {
+                pinpai: '暂无品牌',
+                pic1:require('../../../assets/img/mark/question.png'),
+            }
+        },
+        methods: {
+            selectEl() {
+                console.log(this.pinpai)
+                if(this.pinpai=='红牛'){
+                    this.pic1=require('../../../assets/img/mark/hniu.png');
+                }else{
+                    this.pic1=require('../../../assets/img/mark/question.png');
+                }
+            }
+        }
+
 }
 </script>  
 
@@ -68,24 +90,29 @@ export default {
             align-items: center;
             width: 100%;
             height: 72px;
+            position: relative;
             .title{
-                height: 24px;
-                font-size: 16px;
+                height: 26px;
+                font-size: 18px;
                 font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
                 color: #242F57;
-                line-height: 24px;
+                line-height: 26px;
             }
             .operate{
                 display: flex;
                 align-items: center;
-                margin-left: auto;
-                margin-right: 8px;
+                margin-left: 24px;
                 >div{
                     display: flex;
                     align-items: center;
-                    height: 22px;
-                    margin-left: 28px;
+                    margin-right: 12px;
+                    background: #FFFFFF;
+                    box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
+                    border-radius: 8px;
+                    opacity: 0.6;
+                    border: 1px solid #C6CBDE;
+                    padding:5px 8px;
                     cursor: pointer;
                     img{
                         width: 16px;
@@ -94,74 +121,93 @@ export default {
                     }
                     >p{
                         font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
                         color: #636E95;
                     }
                 }
+            }
+            .d-c-r-select{
+                position: absolute;
+                top: 20px;
+                right: 0;
             }
         }
 
         .details-compare{
             display: flex;
             width: 100%;
-            height: 176px;
-            margin-bottom: 24px;
+            height: 112px;
+            margin-bottom: 32px;
+            justify-content: space-between;
+            align-items: center;
             .d-c-left,.d-c-right{
-                width: 47%;
-                height: 176px;
-                padding: 24px;
-                background: #FFFFFF;
+                width: 432px;
+                height: 100%;
+                padding: 9px 24px;
+                background: url("../../../assets/img/mark/jubg.png") no-repeat center center / 100% 100%;
                 border-radius: 8px;
                 border: 1px solid #EAEDF7;
+                display: flex;
+                align-items: center;
                 .d-c-l-title{
-                    height: 24px;
-                    margin-bottom: 24px;
-                    font-size: 14px;
+                    background: rgba(77,148,255,0.2);
+                    border-radius: 4px;
+                    padding:4px 8px;
+                    font-size: 16px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #2A68C5;
+                    line-height: 24px;
+                }
+                .d-c-l-hr{
+                    width: 1px;
+                    height: 100%;
+                    margin: 0 24px;
+                    background: #C1DAFE;
+                }
+                .d-c-l-content{
+                    width:82px;
+                    margin-right: 15px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    img{
+                       width: 100%;
+                       display: block;
+                    }
+                }
+                .d-c-l-name{
+                    font-size: 24px;
                     font-family: PingFangSC-Medium, PingFang SC;
                     font-weight: 500;
                     color: #242F57;
-                    line-height: 24px;
                 }
-                .d-c-l-content{
-                    display: flex;
-                    align-items: center;
-                    height: 80px;
-                    img{
-                        width: 80px;
-                        height: 80px;
-                        margin-right: 16px;
-                    }
-                    .d-c-l-name{
-                        height: 32px;
-                        font-size: 24px;
-                        color: #242F57;
-                        line-height: 32px;
-                    }
-                    .d-c-l-empty{
-                        height: 32px;
-                        font-size: 24px;
-                        color: #C6CBDE;
-                        line-height: 32px;
-                    }
+                .d-c-l-empty{
+                    font-size: 24px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #C6CBDE;
                 }
             }
             .d-c-mid{
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 6%;
-                height: 100%;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                border: 1px solid #FFFFFF;
+                background: #F1F6FF;
+                box-shadow: 9px 9px 14px 0px rgba(36, 47, 87, 0.06) inset;
+                box-sizing: border-box;
+                //box-shadow:-11px -11px 24px 0px rgba(255, 255, 255, 0.6) inset;
                 font-size: 24px;
-                font-family: PingFangSC-Medium, PingFang SC;
-                font-weight: 500;
-                color: #242F57;
-            }
-            .d-c-right{
-                position: relative;
-                .d-c-r-select{
-                    position: absolute;
-                    top: 20px;
-                    right: 24px;
-                }
+                font-family: Helvetica;
+                color: #636E95;
+                line-height: 32px;
+                text-shadow: 1px 1px 1px #242F57;
+                // -webkit-background-clip: text;
+                // -webkit-text-fill-color: transparent;
             }
         }
     }
