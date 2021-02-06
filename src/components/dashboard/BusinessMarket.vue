@@ -625,16 +625,36 @@
                 toRIcon1: require("../../assets/img/yhhx/toR1.png"),
                 inputIcon: require("../../assets/img/yhhx/input.png"),
                 toLIcon: require("../../assets/img/yhhx/toL.png"),
-                dhIcon: require("../../assets/img/yhhx/dhIcon.png"),
                 yhtIcon: require("../../assets/img/yhhx/yht.png"),
                 input1: require("../../assets/img/yhhx/input1.png"),
-                useApp: require("../../assets/img/yhhx/useApp.png"),
-                threeP: require("../../assets/img/yhhx/threeP.png"),
                 ttIcon:require("../../assets/img/yhhx/tt.png"),
                 xhsIcon:require("../../assets/img/yhhx/xhs.png"),
                 ksIcon:require("../../assets/img/yhhx/ks.png"),
-                dyIcon:require("../../assets/img/yhhx/ks.png"),
-                dyI:require("../../assets/img/yhhx/dyI.png")
+                choice2:true,
+                choice12:true,
+                mbValue:'bjsbz',
+                mubiaoList:[
+                    {
+                        label:'北京上班族',
+                        value:'bjsbz'
+                    },
+                    {
+                        label:'研学青年',
+                        value:'yxqn'
+                    },
+                    {
+                        label:'企业高管',
+                        value:'qygg'
+                    },
+                    {
+                        label:'北漂一族',
+                        value:'bpyz'
+                    },
+                    {
+                        label:'自由职业',
+                        value:'zyzz'
+                    }
+                ]
             }
         },
         methods: {
