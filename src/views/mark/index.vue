@@ -6,34 +6,19 @@
                 <div class="mark-overview">
                     <div class="title">品牌总体概览</div>
                     <div class="box-content">
-                        <div class="b-c-top">
-                            <div class="total-box">
-                                <div class="t-title">品牌综合评估</div>
-                                <div class="deadline">截至 2020/12/16</div>
-                                <div class="total-num">92</div>
-                                <div class="max-six">
-                                    <div class="max-left"></div>
-                                    <div class="max-right"></div>
-                                </div>
-                                <div class="min-six">
-                                    <div class="min-left"></div>
-                                    <div class="min-right"></div>
-                                </div>
-                            </div>
-                            <ul class="card-list orange-card-ul">
-                                <li><div><b>覆盖度：</b>品牌行业市场占有率</div></li>
-                                <li><div><b>认可度：</b>品牌对当前目标定位的适配程度</div></li>
-                                <li><div><b>匹配度：</b>品牌与目标受众（标签集）的契合度</div></li>
-                                <li><div><b>占据力：</b>品牌在消费者心智空间中的行业阶梯</div></li>
-                                <li><div><b>忠诚度：</b>品牌的市场口碑好坏及认可度</div></li>
-                                <li><div><b>传播度：</b>品牌在全渠道传播中的辐射力（渠道类型）</div></li>
-                            </ul>
-                        </div>
-                    <!-- <LeidaEcharts :colorList="$fjData.colorList" :myData="$fjData.box14Data" titleText="92"></LeidaEcharts> -->
+                       <ShowTotal></ShowTotal>
                     </div>
                 </div>
                 <div class="tea-trend">
                     <div class="title">2016-2021年中国凉茶产量规模增长</div>
+                    <div class="sub-title">
+                        需求量
+                        <span style="color:#34C724">稳步上升</span>,
+                        市场供需
+                        <span style="color:#FF8800">基本平衡</span>,
+                        市场前景
+                        <span style="color:#FF8800">良好</span>
+                    </div>
                     <div class="tea-echart">
                         <!-- <barEcharts id="box14" :colorList="$lxjData.colorList" :myData="$lxjData.box14Data"></barEcharts> -->
                         <barM id="box9999" :colorList="$lxjData.colorList" :myData="$lxjData.box32Data"></barM>
@@ -130,9 +115,10 @@ import lineM1 from '../../components/echarts/common/lineM1';
 import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
 import barM from '../../components/echarts/common/barM';
 import Target from "./base/Target"
+import ShowTotal from "./components/ShowTotal"
 export default {
     name:"index",
-    components:{Target,barM,lineM1,DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts},
+    components:{Target,ShowTotal,barM,lineM1,DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts},
 }
 </script>
 
@@ -152,67 +138,40 @@ export default {
             border-radius: 8px;
             border: 1px solid #FFFFFF;
             .title{
-                height: 24px;
-                margin-bottom: 24px;
-                font-size: 16px;
+                height: 22px;
+                font-size: 18px;
                 font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
                 color: #242F57;
-                line-height: 24px;
+                line-height: 22px;
             }
         }
         .mark-overview{
             display: flex;
             flex-direction: column;
             background: url("../../assets/img/mark/left-bg@2x.png") no-repeat center center / 100% 482px;
+            .title{
+                margin-bottom: 24px;
+            }
             .box-content{
                 width: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                .b-c-top{
-                    display: flex;
-                    justify-content: space-between;
-                    height: 166px;
-                    .total-box{
-                        width: 50%;
-                        height: 166px;
-                        margin-right: 16px;
-                        padding-top: 16px;
-                        border-radius: 8px;
-                        background: url("../../assets/img/mark/total-bg@2x.png") no-repeat center center / 100% 166px;
-                        .t-title{
-                            height: 24px;
-                            margin-left: 16px;
-                            font-size: 16px;
-                            font-family: PingFangSC-Medium, PingFang SC;
-                            font-weight: 500;
-                            color: #FFFFFF;
-                            line-height: 24px;
-                        }
-                        .deadline{
-                            height: 18px;
-                            font-size: 12px;
-                            font-family: PingFangSC-Regular, PingFang SC;
-                            font-weight: 400;
-                            color: rgba(255, 255, 255, 0.5);
-                            line-height: 18px;
-                        }
-                    }
-                    .card-list{
-                        width: 50%;
-                        height: 166px;
-                        background: rgba(219, 234, 255, 0.8);
-                        border-radius: 8px;
-                        border: 1px solid #4D94FF;
-                    }
-                }
             }
         }
         .tea-trend{
             display: flex;
             flex-direction: column;
             background: url("../../assets/img/mark/right-bg@2x.png") no-repeat center center / 100% 482px;
+            .title{
+                margin-bottom: 8px;
+            }
+            .sub-title{
+                height: 22px;
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636E95;
+                line-height: 22px;
+            }
             .tea-echart{
                 width: 100%;
                 height: calc(100% - 48px);
