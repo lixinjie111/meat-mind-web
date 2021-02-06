@@ -6,6 +6,76 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "19860856",
+      "name": "虚拟属性",
+      "font_class": "xunishuxing",
+      "unicode": "e6ae",
+      "unicode_decimal": 59054
+    },
+    {
+      "icon_id": "19860857",
+      "name": "可视化全埋点事件",
+      "font_class": "keshihuaquanmaidianshijian",
+      "unicode": "e6af",
+      "unicode_decimal": 59055
+    },
+    {
+      "icon_id": "19860858",
+      "name": "纬度表",
+      "font_class": "weidubiao",
+      "unicode": "e6b0",
+      "unicode_decimal": 59056
+    },
+    {
+      "icon_id": "19860859",
+      "name": "事件属性",
+      "font_class": "shijianshuxing",
+      "unicode": "e6b1",
+      "unicode_decimal": 59057
+    },
+    {
+      "icon_id": "19860860",
+      "name": "物品属性",
+      "font_class": "wupinshuxing",
+      "unicode": "e6b2",
+      "unicode_decimal": 59058
+    },
+    {
+      "icon_id": "19860861",
+      "name": "元事件",
+      "font_class": "yuanshijian",
+      "unicode": "e6b3",
+      "unicode_decimal": 59059
+    },
+    {
+      "icon_id": "19860862",
+      "name": "入库检验规则设置",
+      "font_class": "rukujianyanguizeshezhi",
+      "unicode": "e6b4",
+      "unicode_decimal": 59060
+    },
+    {
+      "icon_id": "19860863",
+      "name": "用户属性",
+      "font_class": "yonghushuxing",
+      "unicode": "e6b5",
+      "unicode_decimal": 59061
+    },
+    {
+      "icon_id": "19860864",
+      "name": "session管理",
+      "font_class": "sessionguanli",
+      "unicode": "e6b6",
+      "unicode_decimal": 59062
+    },
+    {
+      "icon_id": "19860865",
+      "name": "虚拟事件",
+      "font_class": "xunishijian",
+      "unicode": "e6b7",
+      "unicode_decimal": 59063
+    },
+    {
       "icon_id": "19842986",
       "name": "分析line",
       "font_class": "fenxi",

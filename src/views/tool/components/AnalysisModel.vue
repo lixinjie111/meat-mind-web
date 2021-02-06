@@ -5,7 +5,7 @@
           <div class="choose-model-title">选择模型</div>
           <ul>
               <li class="model-item" v-for="(item,index) in modelList" :key="index" @click="modelClick(item.type)">
-                  <div class="icon" :class="item.type"></div>
+                  <div class="icon" :class="item.type"><i class="iconfont iconsearch"></i></div>
                   <div class="right">
                       <p>{{item.title}}</p>
                       <div class="desc">{{item.desc}}</div>
@@ -157,8 +157,16 @@ export default {
             .icon{
                 width: 50px;
                 height: 50px;
+                line-height: 50px;
                 border-radius: 25px;
                 border: 1px solid #FFFFFF;
+                text-align: center;
+
+                > i {
+                    font-size: 24px;
+                    color: #ffffff;
+                }
+
                 &.event{
                     background: #4D94FF;
                     box-shadow: 2px 3px 8px 0px rgba(77, 148, 255, 0.5), -2px -2px 8px 0px #FFFFFF;

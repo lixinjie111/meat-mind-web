@@ -26,8 +26,6 @@
             </Form>
             </div>
         </div>
-        
-        
     </div>
 </template>
 
@@ -121,8 +119,9 @@
         }
         .content{
             background: #FFFFFF;
-            box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-            border-radius: 8px;
+            box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+            border-radius: 12px;
+            border: 1px solid #EAEDF7;
             padding: 0 24px;
             font-size: 14px;
             font-family: PingFangSC-Regular, PingFang SC;
