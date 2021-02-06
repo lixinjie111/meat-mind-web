@@ -42,6 +42,14 @@
                 overflow-y: scroll;
                 .nav {
                     padding: 16px 24px;
+
+                    > p {
+                        padding-left: 24px;
+                        font-size: 20px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #242F57;
+                    }
                 }
             }
         }
