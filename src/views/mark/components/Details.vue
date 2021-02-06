@@ -46,7 +46,7 @@
         </div>
         <Accept :title="'品牌受众分析'"></Accept>
         <Market :title="'品牌舆情洞察'"></Market>
-        <Public :title="'品牌市场情况'"></Public>
+        <Public :title="'行业态势分析'"></Public>
     </div>
 </template>
 

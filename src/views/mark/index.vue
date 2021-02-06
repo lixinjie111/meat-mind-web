@@ -229,8 +229,9 @@ export default {
          width: 100%;
          height: 838px;
          padding: 24px;
-         box-shadow: 0px 0px 48px 0px rgba(255, 255, 255, 0.8);
-         border-radius: 8px;
+        box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+        border-radius: 12px;
+        border: 1px solid #EAEDF7;
          opacity: 0.8;
          border: 1px solid #FFFFFF;
          background: url("../../assets/img/mark/colourfol.png") no-repeat center center / 1100% 838px;
@@ -347,8 +348,9 @@ export default {
              height: 392px;
              padding: 24px;
              background: #FFFFFF;
-             box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-             border-radius: 8px;
+            box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+            border-radius: 12px;
+            border: 1px solid #EAEDF7;
              .fourth-title{
                 height: 24px;
                 margin-bottom: 16px;
