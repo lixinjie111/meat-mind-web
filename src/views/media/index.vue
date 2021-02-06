@@ -85,7 +85,7 @@
         <Row :gutter="24">
                 <Col span="8">
                   <div class="box1">
-                    <div class="title">
+                    <div class="m-p-panel1-title">
                       <div class="left">
                         <div class="title-icon"><img src="../../assets/img/yhhx/serIcon2.png"/></div>
                         <span>媒介类型契合</span>
@@ -99,7 +99,7 @@
                 </Col>
                 <Col span="8">
                   <div class="box2">
-                    <div class="title">
+                    <div class="m-p-panel1-title">
                       <div class="left">
                         <div class="title-icon"><img src="../../assets/img/yhhx/serIcon2.png"/></div>
                         <span>最优推广时间</span>
@@ -113,7 +113,7 @@
                 </Col>
                 <Col span="8">
                   <div class="box3">
-                    <div class="title">
+                    <div class="m-p-panel1-title">
                       <div class="left">
                         <div class="title-icon"><img src="../../assets/img/yhhx/serIcon2.png"/></div>
                         <span>媒介KOL资源</span>
@@ -1382,7 +1382,7 @@ export default {
       box-shadow: 4px -4px 24px 0px rgba(41, 59, 149, 0.55);
       border-radius: 8px;
       padding:16px;
-      .title{
+      .m-p-panel1-title{
         margin-bottom: 16px;
         display: flex;
         justify-content: space-between;
@@ -1395,7 +1395,7 @@ export default {
           display: flex;
           align-items: center;
           .title-icon{
-            width: 24px;
+            width: 30px;
             margin-top: 3px;
             img{
               width: 100%;
@@ -1419,7 +1419,7 @@ export default {
       box-shadow: 4px -4px 24px 0px rgba(45, 120, 134, 0.55);
       border-radius: 8px;
        padding:16px;
-      .title{
+      .m-p-panel1-title{
         margin-bottom: 16px;
         display: flex;
         justify-content: space-between;
@@ -1432,7 +1432,7 @@ export default {
           display: flex;
           align-items: center;
           .title-icon{
-            width: 24px;
+            width: 30px;
             margin-top: 3px;
             img{
               width: 100%;
@@ -1456,7 +1456,7 @@ export default {
       box-shadow: 4px -4px 24px 0px rgba(109, 57, 143, 0.55);
       border-radius: 8px;
        padding:16px;
-      .title{
+      .m-p-panel1-title{
         margin-bottom: 16px;
         display: flex;
         justify-content: space-between;
@@ -1469,7 +1469,7 @@ export default {
           display: flex;
           align-items: center;
           .title-icon{
-            width: 24px;
+            width: 30px;
             margin-top: 3px;
             img{
               width: 100%;
@@ -1675,6 +1675,15 @@ export default {
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 12px;
     border: 1px solid #EAEDF7;
+     .m-pie-title{
+            height: 24px;
+            margin-bottom: 16px;
+            font-size: 16px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242F57;
+            line-height: 24px;
+    }
     .m-p-third-module{
         display: flex;
         justify-content: space-between;

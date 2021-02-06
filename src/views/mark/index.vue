@@ -111,6 +111,50 @@
                     </div>
                 </div>
             </div>
+            <div class="five-line">
+                <div class="fourth-left">
+                    <div class="fourth-title">品牌需求图谱</div>
+                    <div class="fourth-content">
+                        <div class="fourth-content-left fourth-content-cm">
+                            <div class="fourth-content-title">
+                                <div class="pic"><img src="../../assets/img/mark/wang.png" alt=""></div>
+                                王老吉
+                            </div>
+                            <div class="tagList">
+                                <div class="tag">凉茶饮料</div>
+                                <div class="tag">防上火</div>
+                                <div class="tag">健康功效</div>
+                            </div>
+                            <div class="fourth-content-subTitle">洞悉消费趋势，满足新的需求点</div>
+                            <div class="fourth-content-text">开创凉茶饮料，主打“防上火”的健康功效，深度捆绑吃火锅、熬夜等容易上火的场景。</div>
+                            <div class="fourth-content-subTitle">大面积推广，营销手段需要创意</div>
+                            <div class="fourth-content-text">宣传自身为“凉茶始祖”，始于清道光年间，增强消费者信赖感；在电视上密集投放广告，抢占央视黄金时段。</div>
+                        </div>
+                        <div class="fourth-content-right fourth-content-cm">
+                             <div class="fourth-content-title">
+                                <div class="pic"><img src="../../assets/img/mark/qin.png" alt=""></div>
+                                元气森林
+                            </div>
+                            <div class="tagList">
+                                <div class="tag">无糖</div>
+                                <div class="tag">新风味</div>
+                                <div class="tag">佛系养生</div>
+                            </div>
+                            <div class="fourth-content-subTitle">洞悉消费趋势，满足新的需求点</div>
+                            <div class="fourth-content-text">抓住无糖新风口，将目标锁定在“佛系养生”的年轻消费者身上，打造了无糖气泡水单品。</div>
+                            <div class="fourth-content-subTitle">大面积推广，营销手段需要创意</div>
+                            <div class="fourth-content-text">线下通过高频率、强触达的电梯媒体精准触达目标消费群体。线上通过植入综艺、与年轻群体喜欢的B站合作不断扩大品牌人气。</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fourth-right">
+                    <div class="fourth-title fourth-rtTitle">细分市场占有率态势</div>
+                    <div class="fourth-subTitle">细分市场占有率态势</div>
+                    <div class="fourth-content">
+                        <lineM id="box66" :colorList="$lxjData.colorList" :myData="$lxjData.box66Data"></lineM>
+                    </div>
+                </div>
+            </div>
             <Details></Details>
         </div>
     </DefaultPage>
@@ -354,6 +398,138 @@ export default {
                 font-weight: 500;
                 color: #242F57;
                 line-height: 24px;
+             }
+         }
+         .fourth-left{
+             .fourth-left-echarts{
+                 width: 100%;
+                 height: calc(100% - 40px);
+             }
+         }
+         .fourth-right{
+             .fourth-right-show{
+                 display: flex;
+                 width: 100%;
+                 height: calc(100% - 48px);
+                 .fourth-right-echarts,.fourth-right-desc{
+                     width: 50%;
+                     height: 100%;
+                 }
+                 .fourth-right-desc{
+                     .desc{
+                        height: 22px;
+                        margin-bottom: 8px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+                        line-height: 22px;
+                        &.desc2{
+                            height: 44px;
+                        }
+                     }
+                 }
+             }
+         }
+     }
+     .five-line{
+         display: flex;
+         justify-content: space-between;
+         width: 100%;
+         height: 422px;
+         margin-top: 24px;
+         .fourth-left,.fourth-right{
+             display: flex;
+             flex-direction: column;
+             justify-content: space-between;
+             width: calc(50% - 12px);
+             height: 100%;
+             padding: 24px;
+             background: #FFFFFF;
+            box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+            border-radius: 12px;
+            border: 1px solid #EAEDF7;
+             .fourth-title{
+                height: 24px;
+                margin-bottom: 24px;
+                font-size: 18px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #242F57;
+                line-height: 24px;
+                &.fourth-rtTitle{
+                    margin-bottom: 8px;
+                }
+             }
+             .fourth-subTitle{
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636E95;
+             }
+             .fourth-content{
+                flex:1;
+                display: flex;
+                justify-content: space-between;
+                .fourth-content-cm{
+                     width: calc(50% - 8px);
+                     height: 100%;
+                    border-radius: 8px;
+                    padding:16px;
+                    .fourth-content-title{
+                        display: flex;
+                        align-items: center;
+                        font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #242F57;
+                        margin-bottom: 8px;
+                        .pic{
+                            width: 32px;
+                            margin-right: 8px;
+                            img{
+                                width: 100%;
+                                display: block;
+                            }
+                        }
+                    }
+                    .tagList{
+                        display: flex;
+                        margin-bottom: 17px;
+                        .tag{
+                            font-size: 12px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #2373FF;
+                            background: rgba(221, 233, 255, 0.5);
+                            border-radius: 4px;
+                            padding:4px 8px;
+                            margin-right: 8px;
+                        }
+                    }
+                    .fourth-content-subTitle{
+                        font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #97A0C3;
+                        line-height: 18px;
+                        margin-top: 16px;
+                        margin-bottom: 4px;
+                    }
+                    .fourth-content-text{
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+                        line-height: 22px;
+                    }
+                }
+                .fourth-content-left{
+                    background: rgba(255, 241, 244, 0.3);
+                }
+                .fourth-content-right{
+                    background: rgba(219, 234, 255, 0.3);
+                }
              }
          }
          .fourth-left{
