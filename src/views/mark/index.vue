@@ -10,7 +10,7 @@
                     </div>
                 </div>
                 <div class="tea-trend">
-                    <div class="title">2016-2021年中国凉茶产量规模增长</div>
+                    <div class="title">产量趋势 & 市场需求量  </div>
                     <div class="sub-title">
                         需求量
                         <span style="color:#34C724">稳步上升</span>,
@@ -237,7 +237,8 @@ export default {
 
         .card-five {
             margin-top: 24px;
-
+            ::v-deep .title .left > p{font-size: 18px;}
+            
             .card-five-desc {
                 margin: -15px 0 24px;
                 font-size: 14px;
@@ -403,7 +404,7 @@ export default {
              .fourth-title{
                 height: 24px;
                 margin-bottom: 16px;
-                font-size: 16px;
+                font-size: 18px;
                 font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
                 color: #242F57;
