@@ -1,5 +1,5 @@
 <template>
-    <div class="mark-details-market">
+    <div class="mark-details-market" id="mark-details-market">
         <div class="m-d-market-header">
             <div class="a-h-title">{{title}}</div>
             <div class="a-h-arrow"></div>

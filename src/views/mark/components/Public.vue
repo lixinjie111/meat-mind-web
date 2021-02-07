@@ -1,5 +1,5 @@
 <template>
-    <div class="mark-details-public">
+    <div class="mark-details-public" id="mark-details-public">
         <div class="m-d-public-header">
             <div class="a-h-title">{{title}}</div>
             <div class="a-h-arrow"></div>

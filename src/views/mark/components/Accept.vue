@@ -1,5 +1,5 @@
 <template>
-    <div class="mark-details-accept">
+    <div class="mark-details-accept" id="m-d-accept-header">
         <div class="m-d-accept-header">
             <div class="a-h-title">{{title}}</div>
             <div class="a-h-arrow"></div>
