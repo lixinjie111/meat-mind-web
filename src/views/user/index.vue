@@ -648,6 +648,7 @@
       </div>
 
       <!--目标用户群-->
+      <div class="da_container">
       <div class="mubiao_container">
         <div class="mub_titl_container">
           <div class="mub_titl_container1">目标用户群</div>
@@ -681,8 +682,13 @@
           </div>
         </div>
       </div>
-
-      <div class="jichuhuax_area_container">
+      <Anchor show-ink >
+            <AnchorLink href="#jichuhuax_area_container" title="基础画像" />
+            <AnchorLink href="#xwfx_area_container" title="行为分析" />
+            <AnchorLink href="#xzfx_area_container" title="心智分析" />
+            <AnchorLink href="#smzqfx_area_container" title="生命周期分析" />
+        </Anchor>
+      <div class="jichuhuax_area_container" id="jichuhuax_area_container">
         <div class="jichuhuax_area_til">基础画像</div>
         <vTabCard :tabData="jchxData"></vTabCard>
         <div class="jichuhuax_echarts_container">
@@ -928,7 +934,7 @@
         </div>
       </div>
 
-      <div class="xwfx_area_container">
+      <div class="xwfx_area_container" id="xwfx_area_container">
         <div class="xwfx_area_til">行为分析</div>
         <vTabCard :tabData="xwfxData"></vTabCard>
         <!--          <div class="ditu_area">-->
@@ -986,7 +992,7 @@
         </div>
       </div>
 
-      <div class="xzfx_area_container">
+      <div class="xzfx_area_container" id="xzfx_area_container">
         <div class="xzfx_area_title">心智分析</div>
         <vTabCard :tabData="xzfxData"></vTabCard>
         <div class="yhsj_echarts">
@@ -1035,8 +1041,8 @@
         </div>
       </div>
 
-      <div class="smzqfx_area_container">
-        <div class="smzqfx_title">生命周期分析</div>
+      <div class="smzqfx_area_container" >
+        <div class="smzqfx_title" id="smzqfx_area_container">生命周期分析</div>
         <vTabCard :tabData="smzqfxData"></vTabCard>
         <div class="xfsmlcpg_container">
           <div class="xfsmlcpg_title">消费生命旅程评估</div>
@@ -1087,6 +1093,8 @@
           </div>
         </div>
       </div>
+      </div>
+      
 
 
     </div>
@@ -2049,6 +2057,61 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.ivu-affix{
+    left:288px !important;
+}
+.ivu-anchor-wrapper{
+    overflow: visible;
+    padding-left: 0;
+    margin-left: 0;
+    max-height: 36px !important;
+    height: 36px;
+    background: #fff;
+    border-bottom:1px solid #DEE2EE;
+    .ivu-anchor{
+        height: 100%;
+        display: flex;
+        padding-left: 0;
+        .ivu-anchor-ink{
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            top:auto;
+            &::before{
+                display: none;
+                background-color: #DEE2EE;
+            }
+        }
+        .ivu-anchor-link{
+            padding: 0;
+            margin-right: 32px;
+            height: 36px;
+            line-height: 36px;
+        }
+        .ivu-anchor-ink-ball{
+            display: none;
+            width: 84px;
+            height: 2px;
+            background-color:#2373FF;
+            border: none;
+            border-radius: unset;
+        }
+        .ivu-anchor-link-active{
+            border-bottom: 2px solid #2373FF;
+            >.ivu-anchor-link-title{
+                color:#2373FF;
+            }
+        }
+        .ivu-anchor-link-title{
+          font-size: 14px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #636E95;
+        }
+    }
+}
+</style>
 <style scoped lang="scss">
 .user-protrait {
   padding: 0 24px 24px 24px;
@@ -2935,18 +2998,23 @@ export default {
       }
     }
   }
-
+    .da_container {
+      width: 100%;
+      min-height: 244px;
+      background: #ffffff;
+      box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+      border-radius: 12px;
+      border: 1px solid #EAEDF7;
+      margin-top: 24px;
+      padding: 24px;
+      box-sizing: border-box;
+      margin-bottom: 24px;
+  }
   .mubiao_container {
     width: 100%;
-    min-height: 244px;
     background: #ffffff;
-    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-    border-radius: 12px;
-    border: 1px solid #EAEDF7;
-    margin-top: 24px;
-    padding: 24px;
     box-sizing: border-box;
-    margin-bottom: 24px;
+     margin-bottom: 24px;
     .mub_titl_container {
       width: 100%;
       display: flex;
@@ -2954,10 +3022,10 @@ export default {
       justify-content: space-between;
       margin-bottom: 16px;
       .mub_titl_container1 {
-        font-size: 16px;
-        font-family: PingFangSC-Medium, PingFang SC;
-        font-weight: 500;
-        color: #242f57;
+      font-size: 16px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #242F57;
         display: flex;
         align-items: center;
         font-size: 16px;
@@ -3050,10 +3118,11 @@ export default {
   .jichuhuax_area_container {
     width: 100%;
     background: #ffffff;
-    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-    border-radius: 12px;
-    border: 1px solid #EAEDF7;
-    padding: 24px;
+    margin-top: 24px;
+    // box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    // border-radius: 12px;
+    border-bottom: 1px solid #EAEDF7;
+    //padding: 24px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -3184,10 +3253,10 @@ export default {
   .xwfx_area_container {
     width: 100%;
     background: #ffffff;
-    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-    border-radius: 12px;
-    border: 1px solid #EAEDF7;
-    padding: 24px;
+    // box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    // border-radius: 12px;
+    border-bottom: 1px solid #EAEDF7;
+    // padding: 24px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -3251,10 +3320,10 @@ export default {
   .xzfx_area_container {
     width: 100%;
     background: #ffffff;
-    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-    border-radius: 12px;
-    border: 1px solid #EAEDF7;
-    padding: 24px;
+      // box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    // border-radius: 12px;
+    border-bottom: 1px solid #EAEDF7;
+    // padding: 24px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -3375,9 +3444,9 @@ export default {
   .smzqfx_area_container{
     width: 100%;
     background: #FFFFFF;
-    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-    border-radius: 12px;
-    border: 1px solid #EAEDF7;
+    // box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    // border-radius: 12px;
+    //border: 1px solid #EAEDF7;
     margin-top: 24px;
     padding: 24px;
     box-sizing: border-box;

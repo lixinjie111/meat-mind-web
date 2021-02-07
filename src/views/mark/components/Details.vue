@@ -44,17 +44,17 @@
                  <div class="d-c-l-empty" :class="{'ck':pinpai=='暂无品牌'}">{{pinpai}}</div>
             </div>
         </div>
-         <Anchor show-ink @on-select="anchorP">
-            <AnchorLink href="#m-d-accept-header" title="品牌受众分析" />
-            <AnchorLink href="#mark-details-market" title="品牌舆情洞察" />
-            <AnchorLink href="#mark-details-public" title="行业态势分析" />
-        </Anchor>
-        <div id="m-d-accept-header" style="height:300px" class="anchor">品牌受众分析 </div>
-        <div id="mark-details-market" style="height:300px">品牌受众分析 1</div>
-        <div id="mark-details-public" style="height:300px">品牌受众分析2 </div>
-        <!-- <Accept :title="'品牌受众分析'" ></Accept>
+        <!-- -->
+        <div class="mark-detail-anchor" :container="id" >
+            <Anchor show-ink  >
+                <AnchorLink href="#m-d-accept-header" title="品牌受众分析" />
+                <AnchorLink href="#mark-details-market" title="品牌舆情洞察" />
+                <AnchorLink href="#mark-details-public" title="行业态势分析" />
+            </Anchor>
+        </div>
+        <Accept :title="'品牌受众分析'" ></Accept>
         <Market :title="'品牌舆情洞察'" ></Market>
-        <Public :title="'行业态势分析'" ></Public> -->
+        <Public :title="'行业态势分析'" ></Public>
     </div>
 </template>
 
@@ -69,11 +69,15 @@ export default {
             return {
                 pinpai: '暂无品牌',
                 pic1:require('../../../assets/img/mark/question.png'),
+                id:'',
             }
         },
+        mounted(){
+            this.id=document.getElementById('contentD')
+        },
         methods: {
-            anchorP(item){
-                console.log(item)
+            anchorP(item,aa){
+                console.log(item,aa)
                 //document.getElementById('mark-details-public').scrollIntoView();
             },
             selectEl() {
@@ -87,7 +91,66 @@ export default {
 
 }
 </script>  
-
+<style lang="scss">
+.mark-detail-anchor{
+    position: relative;
+    width:100%;
+    .ivu-affix{
+        left:288px !important;
+        top:100px;
+    }
+}
+.ivu-anchor-wrapper{
+    overflow: visible;
+    padding-left: 0;
+    margin-left: 0;
+    max-height: 36px !important;
+    height: 36px;
+    background: #fff;
+    border-bottom:1px solid #DEE2EE;
+    .ivu-anchor{
+        height: 100%;
+        display: flex;
+        padding-left: 0;
+        .ivu-anchor-ink{
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            top:auto;
+            &::before{
+                display: none;
+                background-color: #DEE2EE;
+            }
+        }
+        .ivu-anchor-link{
+            padding: 0;
+            margin-right: 32px;
+            height: 36px;
+            line-height: 36px;
+        }
+        .ivu-anchor-ink-ball{
+            display: none;
+            width: 84px;
+            height: 2px;
+            background-color:#2373FF;
+            border: none;
+            border-radius: unset;
+        }
+        .ivu-anchor-link-active{
+            border-bottom: 2px solid #2373FF;
+            >.ivu-anchor-link-title{
+                color:#2373FF;
+            }
+        }
+        .ivu-anchor-link-title{
+          font-size: 14px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #636E95;
+        }
+    }
+}
+</style>
 <style lang="scss" scoped>
     .mark-detail{
         width: 100%;
