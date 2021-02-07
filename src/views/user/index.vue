@@ -703,7 +703,7 @@
           </div>
         </div>
       </div>
-      <Anchor show-ink >
+      <Anchor show-ink offset-top="64">
             <AnchorLink href="#jichuhuax_area_container" title="基础画像" />
             <AnchorLink href="#xwfx_area_container" title="行为分析" />
             <AnchorLink href="#xzfx_area_container" title="心智分析" />
