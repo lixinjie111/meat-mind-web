@@ -3519,7 +3519,6 @@ export default {
     // border-radius: 12px;
     //border: 1px solid #EAEDF7;
     padding-top: 24px;
-    padding: 24px;
     box-sizing: border-box;
     .smzqfx_title{
       width: 100%;
