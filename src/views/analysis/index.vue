@@ -9,7 +9,6 @@
 
 <script>
     import DefaultPage from "../../layouts/DefaultSubPage";
-
     export default {
         name: "index",
         components: {DefaultPage},
