@@ -967,7 +967,7 @@
         top: 24.5%;
         width: 787.06px;
         z-index: 1000;
-        height: 625px;
+        height: 557px;
         background: #FFF;
         box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
         border-radius: 12px;
@@ -990,7 +990,7 @@
                 width: 100%;
                 display: flex;
                 align-items: flex-start;
-                margin-bottom: 22px;
+                margin-bottom: 8px;
                 .con_item_label{
                     width: 106px;
                     font-size: 14px;
@@ -1021,6 +1021,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                margin-top: 30px;
                 .quedingbtn{
                     padding: 4px 20px;
                     border-radius: 8px;
