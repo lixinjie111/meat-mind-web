@@ -13,11 +13,13 @@ const property=()=>import("./components/fxmx/Property.vue")
 const app=()=>import("./components/fxmx/App.vue")
 const cjk=()=>import('./components/cjk.vue')
 const zbgl=()=>import('./components/zbgl.vue')
-const yhfq=()=>import('./components/yhfq.vue')
+const yhfq=()=>import('./components/UserGroup.vue')
+// const yhfq=()=>import('./components/yhfq.vue')
 const qdzz=()=>import('./components/qdzz.vue')
 const qdlj=()=>import('./components/qdlj.vue')
 const qdgl=()=>import('./components/qdgl.vue')
-const bqgl=()=>import('./components/bqgl.vue')
+// const bqgl=()=>import('./components/bqgl.vue')
+const bqgl=()=>import('./components/LabelAdmin.vue')
 const moduleName='analysis-tool';
 
 export default [
