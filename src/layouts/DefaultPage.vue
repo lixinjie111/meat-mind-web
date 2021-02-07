@@ -3,7 +3,7 @@
         <Side class="main-left"></Side>
         <div class="container">
             <Header target="Dashboard" class="main-top"></Header>
-            <div class="content">
+            <div class="content" id="contentD">
                 <div class="nav" v-if="title">
                     <p class="nav-title">{{title}}</p>
                 </div>

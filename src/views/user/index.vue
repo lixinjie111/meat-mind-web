@@ -703,12 +703,14 @@
           </div>
         </div>
       </div>
+      <div class="mark-detail-anchor">
       <Anchor show-ink offset-top="64">
             <AnchorLink href="#jichuhuax_area_container" title="基础画像" />
             <AnchorLink href="#xwfx_area_container" title="行为分析" />
             <AnchorLink href="#xzfx_area_container" title="心智分析" />
             <AnchorLink href="#smzqfx_area_container" title="生命周期分析" />
         </Anchor>
+      </div>
       <div class="jichuhuax_area_container" id="jichuhuax_area_container">
         <div class="jichuhuax_area_til">基础画像</div>
         <vTabCard :tabData="jchxData"></vTabCard>
@@ -1101,8 +1103,8 @@
         </div>
       </div>
 
-      <div class="smzqfx_area_container" >
-        <div class="smzqfx_title" id="smzqfx_area_container">生命周期分析</div>
+      <div class="smzqfx_area_container" id="smzqfx_area_container">
+        <div class="smzqfx_title" >生命周期分析</div>
         <vTabCard :tabData="smzqfxData"></vTabCard>
         <div class="xfsmlcpg_container">
           <div class="xfsmlcpg_title">消费生命旅程评估</div>
@@ -2120,8 +2122,14 @@ export default {
 };
 </script>
 <style lang="scss">
-.ivu-affix{
-    left:288px !important;
+.mark-detail-anchor{
+    position: relative;
+    width:100%;
+    .ivu-affix{
+        left:288px !important;
+        top:48px  !important;
+        z-index: 1001;
+    }
 }
 .ivu-anchor-wrapper{
     overflow: visible;
@@ -3181,7 +3189,7 @@ export default {
   .jichuhuax_area_container {
     width: 100%;
     background: #ffffff;
-    margin-top: 24px;
+    padding-top: 24px;
     // box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     // border-radius: 12px;
     border-bottom: 1px solid #EAEDF7;
@@ -3323,7 +3331,7 @@ export default {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    margin-top: 24px;
+    padding-top: 24px;
     .xwfx_area_til {
       width: 100%;
       font-size: 16px;
@@ -3390,7 +3398,7 @@ export default {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    margin-top: 24px;
+    padding-top: 24px;
     .xzfx_area_title {
       font-size: 16px;
       font-family: PingFangSC-Medium, PingFang SC;
@@ -3510,7 +3518,7 @@ export default {
     // box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     // border-radius: 12px;
     //border: 1px solid #EAEDF7;
-    margin-top: 24px;
+    padding-top: 24px;
     padding: 24px;
     box-sizing: border-box;
     .smzqfx_title{

@@ -93,7 +93,8 @@ export default {
     width:100%;
     .ivu-affix{
         left:288px !important;
-        top:100px;
+        top:48px  !important;
+        z-index: 1001;
     }
 }
 .ivu-anchor-wrapper{
