@@ -2,7 +2,7 @@
     <div class="main">
         <Side></Side>
         <div class="container">
-            <Header :target="'Dashboard'"></Header>
+            <Header></Header>
             <div class="content">
                 <div class="nav" v-if="title">
                     <p class="nav-title">{{title}}</p>

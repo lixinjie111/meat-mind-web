@@ -8,7 +8,7 @@
             <div class="left_title_text">用户动线</div>
             <div class="left_desc_text">分析品牌对应的不同用户群对应的在不同时间，不同场景，使用了哪些App/Web，以及详细的数据跟踪。</div>
           </div>
-          <div class="right_btn">
+          <div class="right_btn" @click="formatUser">
             <img :src="manIcon" class="manIcon" />
             <span>自定义客群</span>
           </div>
@@ -1251,13 +1251,15 @@ export default {
     this.initPopEcharts();
   },
   methods: {
+    formatUser(){
+      this.$router.push({name:"user-defined"})
+    },
     goMidea(){
       this.$router.push({
         path:"/media"
       });
     },
     expandfn(arg){
-      console.log('aaaaaaaaa')
       if(arg == 1){
         if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
@@ -2097,6 +2099,7 @@ export default {
         font-family: PingFangSC-Medium, PingFang SC;
         font-weight: 500;
         color: #242f57;
+        cursor:pointer;
         .manIcon {
           display: block;
           width: 24px;
