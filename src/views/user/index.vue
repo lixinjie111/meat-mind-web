@@ -681,7 +681,7 @@
           <div class="mb_echarts1">
             <div class="mb_echarts1_lef">
               <div class="mb_echarts1_lef_top">
-                <span class="span1">297,786</span>人
+                <span class="span1">28790</span>人
               </div>
               <div class="mb_echarts1_lef_bom">养生金融小白</div>
             </div>
