@@ -32,6 +32,7 @@
         <img class="triangle" src="../assets/img/header/triangle@2x.png" alt="">
       </div>
     </div>
+    <BackTop></BackTop>
   </div>
 </template>
 
