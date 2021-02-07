@@ -1,8 +1,8 @@
-]<template>
+<template>
     <div class="main">
-        <Side class="main-left"></Side>
+        <Side></Side>
         <div class="container">
-            <Header target="Dashboard" class="main-top"></Header>
+            <Header target="Dashboard"></Header>
             <div class="content">
                 <div class="nav" v-if="title">
                     <p class="nav-title">{{title}}</p>
@@ -29,29 +29,18 @@
 </script>
 <style scoped lang="scss">
     .main {
-        .main-left {
-            position: fixed;
-            left: 0;
-            top: 0;
-        }
+        display: flex;
 
         .container {
-            .main-top {
-                position: fixed;
-                left: 240px;
-                top: 0;
-                z-index: 1000;
-                width: calc(100% - 240px);
-            }
+            display: flex;
+            flex-direction: column;
+            width: calc(100% - 240px);
 
             .content {
-                position: absolute;
-                left: 240px;
-                top: 64px;
-                width: calc(100% - 240px);
+                width: 100%;
                 height: calc(100vh - 64px);
-                /*overflow-y: scroll;*/
-
+                overflow-y: scroll;
+				
                 .nav {
                     padding: 16px 24px;
 

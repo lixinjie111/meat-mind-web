@@ -1,7 +1,28 @@
 <template>
     <div class="mark-details-market" id="mark-details-market">
         <div class="m-d-market-header">
-            <div class="a-h-title">{{title}}</div>
+            <div class="a-h-title">
+                {{title}}
+                <Poptip popper-class="saas-poptip" placement="right-start">
+                    <i class="iconfont2 iconguanyu tip-icon"></i>
+                    <div slot="content">
+                        <p><span>品牌舆情</span></p>
+                        <p>品牌舆情分析是如何产生的</p>
+                        <img class="big" src="../../../assets/img/mark/tip1.png"/>
+                        <p><span>语言处理</span></p>
+                        <p>品牌拥有来自多元文化背景的追随者，通常情况下，评论区是丰富多彩的各种语言，特别是当页面覆盖特定地区。对于数字营销人员来说，捕捉和处理这些多语言的评论，以真正理解他们的受众在说什么和感受是很重要的。</p>
+                        <p><span>文本和主题分析</span></p>
+                        <p>他们在说什么他们对什么运动感兴趣？哪些产品或内容在我的受众中产生了兴奋？这些信息将有助于制定未来运动的战略。算法还决定了每个评论有多少字，然后再决定将它们归类为合适的类别。</p>
+                        <p><span>无关数据的过滤</span></p>
+                        <p>有时评论区会被不必要的评论、垃圾邮件和不相关的输入挤得水泄不通，这就是为什么自动化的品牌情感分析会有帮助。想象一下，当你可以专注于更有成效的工作时，你每个月都要分析数以千计的评论，并花费无数的时间来阅读它们。通过社交媒体上的自动品牌情感分析，你只会挑选与帖子相关的最相关的评论。</p>
+                        <p><span>用户情感提取</span></p>
+                        <p>每一条评论都能告诉你听众的感受，例如，如果你看到这样的评论：</p>
+                        <p>“哇，这是一个很棒的视频，伙计们！它让我想马上试试你们的产品。”</p>
+                        <p>我们可以马上知道，评论的人是兴奋和高兴的。但是我们的算法是如何检测用户情绪的呢？首先他们浏览每一个词，并确定听众传达的情感是积极的、消极的还是中性的。</p>
+                    </div>
+                </Poptip>
+
+            </div>
             <div class="a-h-arrow"></div>
         </div>
         <Analyse :descL="descL" :descR="descR"></Analyse>

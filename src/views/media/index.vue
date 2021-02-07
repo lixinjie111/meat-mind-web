@@ -179,11 +179,20 @@
               </div>
           </div>
           <div class="m-p-pie">
-              <div class="m-pie-title">媒介用户画像 <span @mouseenter="showTip"  @mouseleave="NshowTip" class="m-p-toolTip"><Icon type="ios-alert-outline" color="#7C88B1"/>
+              <div class="m-pie-title">
+				  媒介用户画像 
+			  <Poptip popper-class="saas-poptip small" placement="right-start">
+			    <i class="iconfont2 iconguanyu tip-icon"></i>
+			    <div slot="content">
+			      <p>展示各个媒介的用户属性特征，深度洞察媒介使用者的人群画像，以及比较不同媒介的偏好人群的差异</p>
+			    </div>
+			  </Poptip>  
+<!-- 			  <span @mouseenter="showTip"  @mouseleave="NshowTip" class="m-p-toolTip"><Icon type="ios-alert-outline" color="#7C88B1"/>
                 <div class="m-pie-tip" v-show="isShowTip">
                   展示各个媒介的用户属性特征，深度洞察媒介使用者的人群画像，以及比较不同媒介的偏好人群的差异
                 </div>
-              </span> </div>
+              </span> -->
+			  </div>
               <div class="subTitle">抖音用户，以26-45岁的女性自由职业者居多，整体收入水平偏中上等，约有1/3来自于三口之家，使用时间多分布于中午和晚间。</div>
               <div class="m-pie-echarts">
                   <Triple :title1="'性别分布'" :title2="'年龄分布'" :title3="'职业分布'">
@@ -213,11 +222,17 @@
                           <div class="m-p-right-push">
                               <div class="m-p-r-title">
                                 触达方案推荐
-                                <span @mouseenter="showTip2" class="m-p-toolTip" @mouseleave="NshowTip2"><Icon type="ios-alert-outline" color="#7C88B1"/>
+								<Poptip popper-class="saas-poptip small" placement="right-start">
+								  <i class="iconfont2 iconguanyu tip-icon"></i>
+								  <div slot="content">
+								    <p>展示各个媒介传播效果的评估和预测，结合品牌投放目标，对投放效果做预测，给出媒介综合使用方案建议</p>
+								  </div>
+								</Poptip>
+<!--                                <span @mouseenter="showTip2" class="m-p-toolTip" @mouseleave="NshowTip2"><Icon type="ios-alert-outline" color="#7C88B1"/>
                                   <div class="m-pie-tip" v-show="isShowTip2">
                                     展示各个媒介传播效果的评估和预测，结合品牌投放目标，对投放效果做预测，给出媒介综合使用方案建议
                                   </div>
-                                </span> 
+                                </span> -->
                               </div>
                               <div>
                                   <p>方案一</p>
@@ -334,11 +349,17 @@
       <div class="m-p-kol">
           <div class="m-p-target-title">
               KOL资源 
-              <span @mouseenter="showTip1"  @mouseleave="NshowTip1" class="m-p-toolTip"><Icon type="ios-alert-outline" color="#7C88B1"/>
+			  <Poptip popper-class="saas-poptip small" placement="right-start">
+			    <i class="iconfont2 iconguanyu tip-icon"></i>
+			    <div slot="content">
+			      <p>媒介资源库，提供具体媒介资源的详细信息，包括基础数据、历史投放效果和合作方案等，以供品牌方比较分析并联系合作</p>
+			    </div>
+			  </Poptip>
+<!--              <span @mouseenter="showTip1"  @mouseleave="NshowTip1" class="m-p-toolTip"><Icon type="ios-alert-outline" color="#7C88B1"/>
                 <div class="m-pie-tip" v-show="isShowTip1">
                   媒介资源库，提供具体媒介资源的详细信息，包括基础数据、历史投放效果和合作方案等，以供品牌方比较分析并联系合作
                 </div>
-              </span> 
+              </span> -->
           </div>
           <div class="subTitle">抖音媒介资源是品牌本次投放方案的最优选择，“邓荣”的投放效果表现最优。基于分析，“李刚”性价比最高，可作为比较和备选方案。</div>
           <Tabs value="name1" @on-click="getTab">

@@ -5,7 +5,17 @@
       <div class="yhdx_container">
         <div class="top_title_container">
           <div class="left_text">
-            <div class="left_title_text">用户动线</div>
+            <div class="left_title_text">
+              用户动线
+              <Poptip popper-class="saas-poptip" placement="right-start">
+                <i class="iconfont2 iconguanyu tip-icon"></i>
+                <div slot="content">
+                  <p><span>出行计算公式：</span>出行总人次/出行总人次*100%</p>
+                  <p><span>空间数据化：</span>对空间进行量化，通过数字化语言，将空间进行尺度划分和重新定义，再利用技术手段来评价空间质量。在商业空间中，意味着可以分析其周边环境对消费者的使用感受影响，以及对商业运营的影响</p>
+                  <p><span>用户动线：</span>依靠计算机快速模拟人流出行行为轨迹，依靠轨迹判断动线布置当中出现可达性、可见性与店铺通行概率问题，通过验证的方法再次修正动线设计</p>
+                </div>
+              </Poptip>
+            </div>
             <div class="left_desc_text">分析品牌对应的不同用户群对应的在不同时间，不同场景，使用了哪些App/Web，以及详细的数据跟踪。</div>
           </div>
           <div class="right_btn">
@@ -487,7 +497,18 @@
       <!--触达用户媒介-->
       <div class="cdyhmj_container">
         <div class="cdyhmj_title_container">
-          <div class="cdyhmj_title">触达用户媒介</div>
+          <div class="cdyhmj_title">
+            触达用户媒介
+            <Poptip popper-class="saas-poptip" placement="right-start">
+              <i class="iconfont2 iconguanyu tip-icon"></i>
+              <div slot="content">
+                <p><span>触达能力= 触达率 * 平均接触频率：</span></p>
+                <p><span>效果评估原则：</span>目的性原则；方向性原则；针对性原则；可测性原则；科学性原则；引导性原则</p>
+                <p><span>效果评估内容：</span>评估对象接触媒介的效果；评估媒介影响传播对象的效果；评估目标实现的效果；评估受众需求满足的效果</p>
+                <p><span>效果评估指标：</span>注意、兴趣、情趣、理解、记忆等心理活动的反应程度；接触媒介及信息人数的多寡；对传播媒介的接触频率和信赖程度</p>
+              </div>
+            </Poptip>
+          </div>
           <div class="cdyhmj_title_desc" @click="goMidea">
             <span class="title_desc_txt">查看媒介画像详情</span>
             <img :src="toRIcon" class="toRIcon" />
@@ -929,7 +950,28 @@
       </div>
 
       <div class="xwfx_area_container">
-        <div class="xwfx_area_til">行为分析</div>
+        <div class="xwfx_area_til">
+          行为分析
+          <Poptip popper-class="saas-poptip" placement="right-start">
+            <i class="iconfont2 iconguanyu tip-icon"></i>
+            <div slot="content">
+              <p><span>基于群体智能的客户行为分析算法：</span>算法主要思路是首先将客户的消费模式作为平面上的一个点随机分布于一个平面区域内 ; 然后测量当前个体对象在局部环境的群体相似度 ,并通过概率转换函数得到拾起或放下对象的概率 ,以这个概率行动 ,经过群体大量的相互作用 ,最终得到若干聚类中心 ;最后 ,在平面区域内采用递归算法收集聚类结果 ,获得不同消费特征的客户群体</p>
+              <p>
+                <span>群体相似度的基本测量公式为:</span>
+                <img class="small" src="../../assets/img/yhhx/tip1.png"/>
+              </p>
+              <p>其中 Neigh ( r) 表示局部环境 ,在两维网格环境中通常表示以 r 为半径的圆形区域. d ( oi , oj ) 表示对象属性空间里的对象 o i与 o j之间的距离 , 常用方法是 ij 欧氏距离和街市距离等.α定义为群体相似系数. 它是群体相似度测量的关键系数 , 它直接影响聚类中心的个数 ,同时也影响聚类算法的收敛速度. </p>
+              <p><span>算法的基本过程描述如下:</span></p>
+              <p>1.程序初始化,初始化α, number,k,R,size,最大循环次数n等参数,随机赋给每一个模式一对(x,y)坐标 , 赋初始模式值 , 初始状态为无负载 ;</p>
+              <p>2.for i=1,2,⋯,n;</p>
+              <p>（1）对于一组中的每一只个体 ,以R为观察半径 ,利用式(1)计算群体相似度；</p>
+              <p>（2）以一定的步长调整α;</p>
+              <p>3.聚类编号serial- no初始为0;</p>
+              <p>4.在聚类结果平面上,选定一个未标记聚类编号的模式 p为种子;</p>
+              <p>5.用同一编号递归标记所有与模式 p 相距小于 dist的模式 , 即收集所有属于该聚类中心的模式。</p>
+            </div>
+          </Poptip>
+        </div>
         <vTabCard :tabData="xwfxData"></vTabCard>
         <!--          <div class="ditu_area">-->
         <!--            <video-->
@@ -987,7 +1029,25 @@
       </div>
 
       <div class="xzfx_area_container">
-        <div class="xzfx_area_title">心智分析</div>
+        <div class="xzfx_area_title">
+          心智分析
+          <Poptip popper-class="saas-poptip" placement="right-start">
+            <i class="iconfont2 iconguanyu tip-icon"></i>
+            <div slot="content">
+              <p><span>心理模型</span>在人机交互和交互设计中起着重要的作用。它们与用户感知周围世界的方式有关，并且基于信念，而不是一个事实概念。但是，如果你能理解用户的心理模型，你就可以在设计中模拟这些模型，使它们更加实用和直观。 心理模型是信念的人工制品。它们是用户对任何给定系统或交互所持有的信念。在大多数情况下，信念在一定程度上会与现实生活模式相似。这一点很重要，因为用户会根据他们的心理模型来计划和预测系统内未来的行为。</p>
+              <p><span>客户需求智能化处理</span></p>
+              <p>设不完备客户需求信息系统是需求决策系统，其中 是非空的客户需求信息集，表示客户需求属性的非空有限集，表示客户需求映射决策的非空有限集，为特征属性值域，f是U和V关系集，也称为需求决策规则集。其中，f(ui,pj)=vij表示某个用户需求ui在需求特征属性pj下的属性量值是vij。令Vi(xj)是对象xj在条件属性Ci上的取值。当∀Ci( X j) = * 时，表明I中含有缺失值。根据粗糙集理论，当不同客户对相同需求的选择一致时，则具有一定的概率选择其他不同的属性值。即当c(x,b)= * 时，使用需求映射系统中在属性集b下出现概率最高的属性值代替。若存在属性值出现概率最高的次数不唯一时，则选用其他属性中相同属性值最高的替代。</p>
+              <p>定义经扩充的可辨识矩阵M为:<img class="small" src="../../assets/img/yhhx/tip2.png"/></p>
+              <p>其中:M(i,j)是可辨识矩阵中第i行第j列元素，i,j=1,2,...,n ; *表示缺失值。</p>
+              <p>设MASi为对象xi的缺失属性集，即:<img class="small" src="../../assets/img/yhhx/tip3.png"/></p>
+              <p>设NSi为 xi的对象集:<img class="small" src="../../assets/img/yhhx/tip4.png"/></p>
+              <p>设MOS 为需求决策表S的缺失对象集，即:<img class="small" src="../../assets/img/yhhx/tip5.png"/></p>
+              <p>输入：不完备信息决策表 I *= (U* , C* UD) ;</p>
+              <p>输出：完备的信息决策表 Ir =(Ur,CrUD) 。</p>
+              <img src="../../assets/img/yhhx/tip6.png"/>
+            </div>
+          </Poptip>
+        </div>
         <vTabCard :tabData="xzfxData"></vTabCard>
         <div class="yhsj_echarts">
           <div class="yhsj_echarts_item_title">
