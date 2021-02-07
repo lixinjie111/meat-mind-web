@@ -6,6 +6,76 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "19878401",
+      "name": "间隔分析",
+      "font_class": "jiangefenxi",
+      "unicode": "e6b8",
+      "unicode_decimal": 59064
+    },
+    {
+      "icon_id": "19878402",
+      "name": "归因分析",
+      "font_class": "guiyinfenxi",
+      "unicode": "e6b9",
+      "unicode_decimal": 59065
+    },
+    {
+      "icon_id": "19878403",
+      "name": "留存分析",
+      "font_class": "liucunfenxi",
+      "unicode": "e6ba",
+      "unicode_decimal": 59066
+    },
+    {
+      "icon_id": "19878404",
+      "name": "分布分析",
+      "font_class": "fenbufenxi",
+      "unicode": "e6bb",
+      "unicode_decimal": 59067
+    },
+    {
+      "icon_id": "19878405",
+      "name": "属性分析",
+      "font_class": "shuxingfenxi",
+      "unicode": "e6bc",
+      "unicode_decimal": 59068
+    },
+    {
+      "icon_id": "19878406",
+      "name": "漏斗分析",
+      "font_class": "loudoufenxi",
+      "unicode": "e6bd",
+      "unicode_decimal": 59069
+    },
+    {
+      "icon_id": "19878407",
+      "name": "用户途径",
+      "font_class": "yonghutujing",
+      "unicode": "e6be",
+      "unicode_decimal": 59070
+    },
+    {
+      "icon_id": "19878408",
+      "name": "自定义查询",
+      "font_class": "zidingyichaxun",
+      "unicode": "e6bf",
+      "unicode_decimal": 59071
+    },
+    {
+      "icon_id": "19878409",
+      "name": "事件分析",
+      "font_class": "shijianfenxi",
+      "unicode": "e6c0",
+      "unicode_decimal": 59072
+    },
+    {
+      "icon_id": "19878410",
+      "name": "网页热力分析",
+      "font_class": "wangyerelifenxi",
+      "unicode": "e6c1",
+      "unicode_decimal": 59073
+    },
+    {
       "icon_id": "19860856",
       "name": "虚拟属性",
       "font_class": "xunishuxing",

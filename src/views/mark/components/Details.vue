@@ -45,8 +45,8 @@
             </div>
         </div>
         <!-- -->
-        <div class="mark-detail-anchor" :container="id" >
-            <Anchor show-ink  >
+        <div class="mark-detail-anchor">
+            <Anchor show-ink offset-top="64">
                 <AnchorLink href="#m-d-accept-header" title="品牌受众分析" />
                 <AnchorLink href="#mark-details-market" title="品牌舆情洞察" />
                 <AnchorLink href="#mark-details-public" title="行业态势分析" />
@@ -69,11 +69,7 @@ export default {
             return {
                 pinpai: '暂无品牌',
                 pic1:require('../../../assets/img/mark/question.png'),
-                id:'',
             }
-        },
-        mounted(){
-            this.id=document.getElementById('contentD')
         },
         methods: {
             anchorP(item,aa){

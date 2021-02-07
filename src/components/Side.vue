@@ -214,7 +214,7 @@
 
 <style scoped lang="scss">
     .side {
-        min-height: 100vh;
+        height: 100vh;
         display: flex;
 
         .menu {
