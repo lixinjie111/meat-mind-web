@@ -44,9 +44,17 @@
                  <div class="d-c-l-empty" :class="{'ck':pinpai=='暂无品牌'}">{{pinpai}}</div>
             </div>
         </div>
-        <Accept :title="'品牌受众分析'"></Accept>
-        <Market :title="'品牌舆情洞察'"></Market>
-        <Public :title="'行业态势分析'"></Public>
+         <Anchor show-ink @on-select="anchorP">
+            <AnchorLink href="#m-d-accept-header" title="品牌受众分析" />
+            <AnchorLink href="#mark-details-market" title="品牌舆情洞察" />
+            <AnchorLink href="#mark-details-public" title="行业态势分析" />
+        </Anchor>
+        <div id="m-d-accept-header" style="height:300px" class="anchor">品牌受众分析 </div>
+        <div id="mark-details-market" style="height:300px">品牌受众分析 1</div>
+        <div id="mark-details-public" style="height:300px">品牌受众分析2 </div>
+        <!-- <Accept :title="'品牌受众分析'" ></Accept>
+        <Market :title="'品牌舆情洞察'" ></Market>
+        <Public :title="'行业态势分析'" ></Public> -->
     </div>
 </template>
 
@@ -64,6 +72,10 @@ export default {
             }
         },
         methods: {
+            anchorP(item){
+                console.log(item)
+                //document.getElementById('mark-details-public').scrollIntoView();
+            },
             selectEl() {
                 if(this.pinpai=='红牛'){
                     this.pic1=require('../../../assets/img/mark/hniu.png');
