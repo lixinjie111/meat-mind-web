@@ -5,7 +5,7 @@
           <div class="choose-model-title">选择模型</div>
           <ul>
               <li class="model-item" v-for="(item,index) in modelList" :key="index" @click="modelClick(item.type)">
-                  <div class="icon" :class="item.type"><i class="iconfont iconsearch"></i></div>
+                  <div class="icon" :class="item.type"><i class="iconfont" :class="item.icon"></i></div>
                   <div class="right">
                       <p>{{item.title}}</p>
                       <div class="desc">{{item.desc}}</div>
@@ -23,42 +23,52 @@ export default {
     return {
         modelList:[
             {   
+                icon:"iconshijianfenxi",
                 type:"event",
                 title:"事件分析",
                 desc:"可进行筛选、分组、聚合的灵活多维度数据分析"
             },{
+                icon:"iconloudoufenxi",
                 type:"funnel",
                 title:"漏斗分析",
                 desc:"分析多步骤行为之间的转化与流失情况"
             },{
+                icon:"iconliucunfenxi",
                 type:"keep",
                 title:"留存分析",
                 desc:"分析用户参与情况和活跃程度"
             },{
+                icon:"iconfenbufenxi",
                 type:"distribute",
                 title:"分布分析",
                 desc:"分析用户行为在一段时间内的频次和指标分析"
             },{
+                icon:"iconyonghutujing",
                 type:"way",
                 title:"用户途径分析",
                 desc:"分析用户实际行为的流向变化"
             },{
+                icon:"iconwangyerelifenxi",
                 type:"hot",
                 title:"网页热力分析",
                 desc:"分析元素点击的分布占比逾用户浏览深度"
             },{
+                icon:"iconjiangefenxi",
                 type:"interval",
                 title:"间隔分析",
                 desc:"分析用户在两个事件之间的间隔时长"
             },{
+                icon:"iconzidingyichaxun",
                 type:"defined",
                 title:"自定义查询",
                 desc:"支持对全量数进行 SQL 查询，结果可视化"
             },{
+                icon:"iconguiyinfenxi",
                 type:"cause",
                 title:"归因分析",
                 desc:"分析产品运营与目标转化的贡献关系"
             },{
+                icon:"iconshuxingfenxi",
                 type:"property",
                 title:"属性分析",
                 desc:"基于用户的属性快捷分析用户特征"
