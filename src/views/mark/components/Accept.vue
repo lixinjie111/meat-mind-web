@@ -6,7 +6,7 @@
                 <Poptip popper-class="saas-poptip" placement="right-start">
                     <i class="iconfont2 iconguanyu tip-icon"></i>
                     <div slot="content">
-                        <p>用户从接受到产品的宣传营销信息（硬广or软文），到引起兴趣，然后开始搜索进行了解（百度、知乎、微博、淘宝），到在线下载or支付，以及后续的评价分享环节（产品内、微信微博</p>
+                        <p>用户从接受到产品的宣传营销信息（硬广or软文），到引起兴趣，然后开始搜索进行了解（百度、知乎、微博、淘宝），到在线下载or支付，以及后续的评价分享环节（产品内、微信、微博）</p>
                         <img class="big" src="../../../assets/img/mark/tip2.png"/>
                         <p>AISAS模型更符合互联网的特点，时效性强，但它和IDMA模型一样，依旧缺乏量化标准，每一环节的效应不能通过数据进行反馈。</p>
                     </div>
