@@ -63,7 +63,7 @@
             <div class="card-one-left">
                 <div class="card-one-left-info">
                     <div class="flex">
-                        <p>北漂一族</p>
+                        <p>北京上班族</p>
                         <p>分群用户数：28790人</p>
                     </div>
                     <ul>
