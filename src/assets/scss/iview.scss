@@ -219,6 +219,11 @@
 
 .ivu-back-top{
   .ivu-back-top-inner {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+
+    .ivu-icon {
+      padding: 5px;
+    }
   }
 }
