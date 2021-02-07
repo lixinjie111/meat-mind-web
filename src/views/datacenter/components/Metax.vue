@@ -119,6 +119,7 @@
       }
     }
     .item {
+      height: 100%;
       background: #FFFFFF;
       border-radius: 8px;
       cursor: pointer;

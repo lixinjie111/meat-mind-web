@@ -60,7 +60,7 @@ export default {
       columns: [
         {
           title: "分群",
-          slot: "name",
+          key: "name",
           tooltip: true
         },
         {

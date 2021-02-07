@@ -42,7 +42,7 @@ export default {
       columns: [
         {
           title: "标签名",
-          slot: "name"
+          key: "name"
         },
         {
           title: "标签用户数",
