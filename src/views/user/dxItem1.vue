@@ -42,6 +42,62 @@
             </div>
             <div class="per_info_container"></div>
         </div>
+        <div class="conditions_container">
+            <div class="conditions_lef">
+                <div class="condition_label">条件筛选</div>
+                <div class="condition_item"><span style="margin-right:10px;">{{condiObj.label1}}</span><i class="iconicon_close iconfont2" style="font-size: 12px;"></i></div>
+                <div class="condition_item"><span style="margin-right:10px;">{{condiObj.label2}}</span><i class="iconicon_close iconfont2" style="font-size: 12px;"></i></div>
+                <div class="condition_item"><span style="margin-right:10px;">{{condiObj.label3}}</span><i class="iconicon_close iconfont2" style="font-size: 12px;"></i></div>
+                <div class="condition_item"><span style="margin-right:10px;">{{condiObj.label4}}</span><i class="iconicon_close iconfont2" style="font-size: 12px;"></i></div>
+            </div>
+            <div class="conditions_rig" @click="expandCond">更多筛选条件</div>
+        </div>
+        <div class="condition_content" v-if="ifShowCon">
+            <div class="condition_lef">
+                <img :src="conditImg" alt="" srcset="" class="conditImg">
+            </div>
+            <div class="condition_rig">
+                <div class="con_item_container">
+                    <div class="con_item_label">年龄</div>
+                    <div class="con_item_con">
+                        <div class="con_item" ref="ninlinItem" v-for="(item,index) in nilinList" :key="index" @click="nianlinClick(index,'ninlinItem')">{{item}}</div>
+                    </div>
+                </div>
+                <div class="con_item_container">
+                    <div class="con_item_label">性别</div>
+                    <div class="con_item_con">
+                        <div class="con_item" ref="xingbieItem" v-for="(item,index) in sexList" :key="index" @click="nianlinClick(index,'xingbieItem')">{{item}}</div>
+                    </div>
+                </div>
+                <div class="con_item_container">
+                    <div class="con_item_label">有小孩</div>
+                    <div class="con_item_con">
+                        <div class="con_item" ref="hasChild" v-for="(item,index) in hasChildList" :key="index" @click="nianlinClick(index,'hasChild')">{{item}}</div>
+                    </div>
+                </div>
+                <div class="con_item_container">
+                    <div class="con_item_label">消费水平</div>
+                    <div class="con_item_con">
+                        <div class="con_item" ref="xflevel" v-for="(item,index) in xiaofeiList" :key="index" @click="nianlinClick(index,'xflevel')">{{item}}</div>
+                    </div>
+                </div>
+                <div class="con_item_container">
+                    <div class="con_item_label">婚姻</div>
+                    <div class="con_item_con">
+                        <div class="con_item" ref="huny" v-for="(item,index) in huyList" :key="index" @click="nianlinClick(index,'huny')">{{item}}</div>
+                    </div>
+                </div>
+                <div class="con_item_container">
+                    <div class="con_item_label">职业</div>
+                    <div class="con_item_con">
+                        <div class="con_item" ref="jobdom" v-for="(item,index) in jobList" :key="index" @click="nianlinClick(index,'jobdom')">{{item}}</div>
+                    </div>
+                </div>
+                <div class="con_item_container queding_container">
+                    <div class="quedingbtn" @click="submit">确定</div>
+                </div>
+            </div>
+        </div>
         <div class="test_container">
             <div class="mapContainer" id="mapContainer">
             </div>
@@ -244,7 +300,21 @@
                 ifShowTime:true,
                 timerIdx:0,
                 timeType:8,
-                currentBtn:2
+                currentBtn:2,
+                ifShowCon:false,
+                conditImg:require("../../assets/img/yhhx/conditImg.png"),
+                nilinList:['18-24','35-44','45+'],
+                sexList:['男','女'],
+                hasChildList:['妈妈','母婴','二胎','中学生家长','0-3岁小孩父母','3-6岁小孩父母','孕期','备孕','小学生家长'],
+                xiaofeiList:['高','中','低'],
+                huyList:['约会','相亲','已婚','未婚'],
+                jobList:['网约车司机','广告','大学生','医生','金融','IT','程序员','教师货车司机'],
+                condiObj:{
+                    label1:'开车',
+                    label2:'25-35岁',
+                    label3:'消费高',
+                    label4:'已婚',
+                }
             }
         },
         mounted(){
@@ -275,6 +345,31 @@
             this.initMap(path,path1,path2,cir1,'朝阳区');
         },
         methods:{
+            submit(){
+                this.ifShowCon = false;
+                this.condiObj = {
+                    label1:'中学生家长',
+                    label2:'低',
+                    label3:'已婚',
+                    label4:'广告',
+                };
+            },
+            nianlinClick(arg,art){
+                console.log(art)
+                var itemDom = this.$refs[art] || [];
+                for(var i=0;i<itemDom.length;i++){
+                    if(i==arg){
+                        itemDom[i].style="background: #2373FF;color: #FFFFFF;";
+                    }
+                    else{  //如果需要多选去掉else
+                        itemDom[i].style="color: #636E95;background: none;";
+                    }
+                }
+                console.log(itemDom,'itemDom')
+            },
+            expandCond(){
+                this.ifShowCon = true;
+            },
             clickTimeItem(arg,val){
                 this.timerIdx = arg;
                 var path = [
@@ -591,6 +686,7 @@
 <style lang="scss" scoped>
 .dx_Item_container{
     width: 100%;
+    position: relative;
     .test_container1{
         width: 100%;
         height: 80px;
@@ -612,7 +708,7 @@
                 box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
                 border-radius: 4px;
                 border: 1px solid #EAEDF7;
-                z-index: 9999;
+                z-index: 999;
                 .choice_btn_area{
                     width: 88px;
                     height: 100%;
@@ -710,6 +806,147 @@
             height: 100%;
         }
     }
+    .conditions_container{
+        position: absolute;
+        left: 1.9%;
+        top: 16.5%;
+        width: 787.06px;
+        z-index: 999;
+        height: 48px;
+        background: #F4F7FC;
+        border-radius: 0px 0px 4px 4px;
+        padding: 15px 16px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .conditions_lef{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            .condition_label,.condition_item{
+                width: 90px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 12px;
+            }
+            .condition_label{
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #242F57;
+            }
+            .condition_item{
+                width: 91px;
+                height: 24px;
+                background: #FFFFFF;
+                border-radius: 4px;
+                border: 1px solid #EAEDF7;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .conditions_rig{
+            font-size: 14px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #2373FF;
+        }
+        .conditions_rig:hover{
+            cursor: pointer;
+        }
+    }
+    .condition_content{
+        position: absolute;
+        left: 1.9%;
+        top: 24.5%;
+        width: 787.06px;
+        z-index: 1000;
+        height: 625px;
+        background: #FFF;
+        box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+        border-radius: 12px;
+        border: 1px solid #EAEDF7;
+        display: flex;
+        align-items: center;
+        .condition_lef{
+            width: 186px;
+            .conditImg{
+                display: block;
+                width: 100%;
+            }
+        }
+        .condition_rig{
+            flex: 1;
+            height: 100%;
+            padding: 55px 22px;
+            box-sizing: border-box;
+            .con_item_container{
+                width: 100%;
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: 22px;
+                .con_item_label{
+                    width: 106px;
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #242F57;
+                }
+                .con_item_con{
+                    flex: 1;
+                    display: flex;
+                    flex-wrap: wrap;
+                    .con_item{
+                        padding: 2px 9px;
+                        margin-bottom: 16px;
+                        border-radius: 8px;
+                        margin-right: 43px;  
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+                        background-color: none;
+                    }
+                    .con_item:hover{cursor: pointer;}
+                }
+            }
+            .queding_container{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .quedingbtn{
+                    padding: 4px 20px;
+                    border-radius: 8px;
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    background: rgb(35, 115, 255);
+                    color: rgb(255, 255, 255);
+                }
+                .quedingbtn:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+    .mianban_container{
+        position: absolute;
+        left: 50%;
+        top: 55%;
+        transform: translate(-63%,-50%);
+        width: 200px;
+        height: 300px;
+        z-index: 999;
+        .quyResult{
+            display: block;
+            width: 100%;
+        }
+    }
     .test_container{
         margin-top: 20px;
         width: 100%;
@@ -728,7 +965,7 @@
             height: 80px;
             margin-top: 15px;
             background-color: yellowgreen;
-            z-index: 9999;
+            z-index: 999;
             padding: 10px;
             box-sizing: border-box;
             .timer12_top{
