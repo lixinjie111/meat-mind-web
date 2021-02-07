@@ -775,8 +775,10 @@
                     position:c2
                 });
                 marker.on('click',function(){
-                    console.log('22222')
                     that.ifShowMb = true;
+                    setTimeout(()=>{
+                        that.ifShowMb = false;
+                    },4000);
                 })
                 marker.setMap(map);
             }
@@ -809,7 +811,7 @@
                 box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
                 border-radius: 4px;
                 border: 1px solid #EAEDF7;
-                z-index: 9999;
+                z-index: 999;
                 .choice_btn_area{
                     width: 88px;
                     height: 100%;
@@ -912,7 +914,7 @@
         left: 1.9%;
         top: 16.5%;
         width: 787.06px;
-        z-index: 9999;
+        z-index: 999;
         height: 48px;
         background: #F4F7FC;
         border-radius: 0px 0px 4px 4px;
@@ -964,7 +966,7 @@
         left: 1.9%;
         top: 24.5%;
         width: 787.06px;
-        z-index: 9999;
+        z-index: 1000;
         height: 625px;
         background: #FFF;
         box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
@@ -1042,7 +1044,7 @@
         transform: translate(-63%,-50%);
         width: 200px;
         height: 300px;
-        z-index: 9999;
+        z-index: 999;
         .quyResult{
             display: block;
             width: 100%;
