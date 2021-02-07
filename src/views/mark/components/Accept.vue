@@ -81,7 +81,7 @@ export default {
         align-items: center;
         justify-content: space-between;
         height: 73px;
-        border-top: 1px solid #EAEDF7;
+        // border-top: 1px solid #EAEDF7;
         .a-h-title{
             height: 26px;
             font-size: 18px;
