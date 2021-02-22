@@ -164,160 +164,7 @@
                 <div class="card-one-right-line"></div>
             </div>
         </div>
-        <Card title="触达用户媒介" class="card-two">
-            <div class="cdyhmj_content_container">
-                <div class="cdyhmj_content_top">
-                    <div class="cdyhmj_content_top_lef">
-                        <div class="cdyhmj_content_item item1">自定义媒介投放预算 (元)</div>
-                        <div class="cdyhmj_content_item item2">
-                            <div class="input_container">
-                                <!-- <span class="input1">￥</span>
-                                <span class="inpu2">15,000</span> -->
-                                <Input placeholder="￥ 15,000" style="width:100%;">15,000</Input>
-                            </div>
-                            <div class="hg_txt"></div>
-                            <div class="input_container">
-                                <!-- <span class="input1">￥</span>
-                                <span class="inpu23"></span> -->
-                                <Input placeholder="￥" style="width:100%;"></Input>
-                            </div>
-                        </div>
-                        <div class="cdyhmj_content_item item3">目标客群</div>
-                        <div class="cdyhmj_content_item item4">
-                            <!-- <img :src="inputIcon" class="inputIcon" /> -->
-                            <Select v-model="mbValue" style="width:100%;">
-                                <Option v-for="item in mubiaoList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-                            </Select>
-                        </div>
-                        <div class="cdyhmj_content_item item1">营销关键词</div>
-                        <div class="cdyhmj_content_item item5">
-                            <div class="item_xtt">青春</div>
-                            <div class="item_xtt">活力</div>
-                        </div>
-                    </div>
-                    <div class="cdyhmj_content_top_ri">
-                        <div class="cdyhmj_content_top_ri_tel">选择投放媒介</div>
-                        <div class="cal_item_container">
-                            <div class="cal_item">
-                                <div class="cal_item_cal_item">
-                                    <img :src="toLIcon" class="toLIcon" />
-                                </div>
-                            </div>
-                            <div class="cal_item2 cal_item21">
-                                <div class="rt_choice">
-                                    <Checkbox></Checkbox>
-                                </div>
-                                <div class="logo_container">
-                                    <img :src="ttIcon" class="logoImg" />
-                                    <span class="cal_txt">头条</span>
-                                </div>
-                                <div class="txt_area">
-                                    <div class="txt_area11">触达率</div>
-                                    <div>投放成本</div>
-                                </div>
-                                <div class="per_area">
-                                    <div class="per_area1">51%</div>
-                                    <div>¥2500/千人</div>
-                                </div>
-                            </div>
-                            <div class="cal_item2">
-                                <div class="rt_choice2">
-                                    <Checkbox v-model="choice2"></Checkbox>
-                                </div>
-                                <div class="logo_container">
-                                    <img :src="xhsIcon" class="logoImg" />
-                                    <span class="cal_txt">小红书</span>
-                                </div>
-                                <div class="txt_area">
-                                    <div class="txt_area11">触达率</div>
-                                    <div>投放成本</div>
-                                </div>
-                                <div class="per_area">
-                                    <div class="per_area1">46%</div>
-                                    <div>¥2300/千人</div>
-                                </div>
-                            </div>
-                            <div class="cal_item2">
-                                <div class="rt_choice2">
-                                    <Checkbox v-model="choice12"></Checkbox>
-                                </div>
-                                <div class="logo_container">
-                                    <img :src="ksIcon" class="logoImg" />
-                                    <span class="cal_txt">快手</span>
-                                </div>
-                                <div class="txt_area">
-                                    <div class="txt_area11">触达率</div>
-                                    <div>投放成本</div>
-                                </div>
-                                <div class="per_area">
-                                    <div class="per_area1">43%</div>
-                                    <div>¥2300/千人</div>
-                                </div>
-                            </div>
-                            <div class="cal_item cal_item1">
-                                <div class="cal_item_cal_item">
-                                    <img :src="toRIcon1" class="toLIcon" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cdyhmj_bom">
-                            <div class="cdyhmj_bom_lef">
-                                已选中
-                                <span style="color:#242F57">2</span>个
-                            </div>
-                            <div class="cdyhmj_bom_rig">
-                                <img :src="ksIcon" class="cdyhmj_bom_rig1" />
-                                <img :src="xhsIcon" class="cdyhmj_bom_rig1" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="cdyhmj_content_bom">
-                    <div class="cdyhmj_content_bom_lef">
-                        <div class="cdyhmj_content_bom_lef_top">触达用户投放策略建议</div>
-                        <div class="cdyhmj_content_bom_lef_bom">
-                            <div class="echarts1 echarts2box">
-                                <div class="echarts11">
-                                    <div class="echarts111">建议投放金额</div>
-                                    <div class="echarts112">￥19,000</div>
-                                </div>
-                                <div class="echarts12">
-                                    <div class="echarts121">目标客群触达率</div>
-                                    <div class="echarts122">89%</div>
-                                </div>
-                            </div>
-                            <div class="echarts1 ec1">
-                                <div class="echarts13">建议投放时间段</div>
-                                <div class="echarts14">
-                                    <div class="echarts141">
-                                        <div class="ech_Icon"></div>
-                                        <div class="ech_txt">快手</div>
-                                        <div class="ech_time">22:00 - 22:30</div>
-                                    </div>
-                                </div>
-                                <div class="echarts15">
-                                    <div class="echarts142">
-                                        <div class="ech_Icon1"></div>
-                                        <div class="ech_txt">小红书</div>
-                                        <div class="ech_time">19:00 - 20:30</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="echarts1 echarts1box">
-                                <PieEcharts1 :colorList="$fjData.colorList" :myData="$fjData.box0Data"></PieEcharts1>
-                                <!-- <lineM id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cdyhmj_content_bom_rig">
-                        <div class="cdyhmj_content_bom_rig_top">优化投放方案推荐</div>
-                        <div class="cdyhmj_content_bom_rig_bom">
-                            <img :src="yhtIcon" class="yhtIcon" alt srcset />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </Card>
+        <chuDa></chuDa>
         <div class="card-three flex">
             <Card title="市场趋势" class="card-three-left">
                 <div slot="right" class="card-three-select">
@@ -614,10 +461,11 @@
     import lineM1 from '../../components/echarts/common/lineM1';
     import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
     import PieEcharts1 from '../../components/echarts/common/PieEcharts1';
+    import chuDa from '../../views/user/chuDa';
 
     export default {
         name: "BusinessMarket",
-        components: {Card, barEcharts, barM, YibiaoCharts2, lineM, lineM1, Leida2Echarts, PieEcharts1},
+        components: {chuDa,Card, barEcharts, barM, YibiaoCharts2, lineM, lineM1, Leida2Echarts, PieEcharts1},
         data() {
             return {
                 threeActive: 1,
