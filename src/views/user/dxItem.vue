@@ -123,6 +123,94 @@
                 </div>
 
                 <div class="nl_card_container">
+                    <div class="til_label">
+                        用户状态
+                        <Poptip popper-class="saas-poptip" placement="right-start">
+                            <i class="iconfont2 iconguanyu tip-icon"></i>
+                            <div slot="content">
+                                <p>用户群体主要处于通勤及工作状态，偏好社交娱乐类型的APP，时间段内对出行、外卖餐</p>
+                                <p>饮类的生活服务APP需求显著，成为重要触点，情绪偏向紧张和烦躁</p>
+                            </div>
+                        </Poptip>
+                    </div>
+                    <div class="pro_container">
+                        <div class="pro_label">放松</div>
+                        <div class="pro"><Progress :percent="rightPanelData.userStatObj.stat1" status="active"></Progress></div>
+                    </div>
+                    <div class="pro_container">
+                        <div class="pro_label">紧张</div>
+                        <div class="pro"><Progress :percent="rightPanelData.userStatObj.stat2" status="active"></Progress></div>
+                    </div>
+                    <div class="pro_container">
+                        <div class="pro_label">一般</div>
+                        <div class="pro"><Progress :percent="rightPanelData.userStatObj.stat3" status="active"></Progress></div>
+                    </div>
+                    <div class="pro_container">
+                        <div class="pro_label">烦躁</div>
+                        <div class="pro"><Progress :percent="rightPanelData.userStatObj.stat4" status="active"></Progress></div>
+                    </div>
+                </div>
+
+                <div class="chufa_card_container">
+                    <div class="til_label">出发地</div>
+                    <div class="chufadi_container">
+                        <div class="diItem" v-if="rightPanelData.chufaObj.chufa1">
+                            <img :src="locaIcon" alt="" srcset="" class="addressIcon">
+                            <span class="addresstxt">{{rightPanelData.chufaObj.chufa1}}</span>
+                        </div>
+                        <div class="diItem" v-if="rightPanelData.chufaObj.chufa2">
+                            <img :src="locaIcon" alt="" srcset="" class="addressIcon">
+                            <span class="addresstxt">{{rightPanelData.chufaObj.chufa2}}</span>
+                        </div>
+                        <div class="diItem" v-if="rightPanelData.chufaObj.chufa3">
+                            <img :src="locaIcon" alt="" srcset="" class="addressIcon">
+                            <span class="addresstxt">{{rightPanelData.chufaObj.chufa3}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mudd_container">
+                    <div class="til_label">目的地</div>
+                    <div class="chufadi_container">
+                        <div class="diItem" v-if="rightPanelData.mudiObj.mudi1">
+                            <img :src="locaIcon" srcset="" class="addressIcon">
+                            <span class="addresstxt">{{rightPanelData.mudiObj.mudi1}}</span>
+                        </div>
+                        <div class="diItem" v-if="rightPanelData.mudiObj.mudi2">
+                            <img :src="locaIcon" alt="" srcset="" class="addressIcon">
+                            <span class="addresstxt">{{rightPanelData.mudiObj.mudi2}}</span>
+                        </div>
+                        <div class="diItem" v-if="rightPanelData.mudiObj.mudi3">
+                            <img :src="locaIcon" alt="" srcset="" class="addressIcon">
+                            <span class="addresstxt">{{rightPanelData.mudiObj.mudi3}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tqfs_container">
+                    <div class="til_label">通勤方式</div>
+                    <div class="cx_type_container">
+                        <div class="cx_item" v-if="rightPanelData.tonqinTypeObj.tqType1">
+                            <img :src="rightPanelData.tonqinTypeObj.tqType1Icon" alt="" srcset="" class="cxlogo">
+                            <span class="cxtxt">{{rightPanelData.tonqinTypeObj.tqType1}}</span>
+                        </div>
+                        <div class="cx_item" v-if="rightPanelData.tonqinTypeObj.tqType2">
+                            <img :src="drIcon" alt="" srcset="" class="cxlogo">
+                            <span class="cxtxt">{{rightPanelData.tonqinTypeObj.tqType2}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tqsjylx_container">
+                    <div class="til_label">通勤时间与路程</div>
+                    <div class="haoshi_container">
+                        <img :src="tbIcon" alt="" srcset="" class="timeBiao">
+                        <span style="margin-right:16px;">平均耗时</span>
+                        <span>{{rightPanelData.tongqinTimeObj.timeN}}分钟</span>
+                    </div>
+                </div>
+
+                <div class="nl_card_container">
                     <div class="til_label">年龄占比</div>
                     <div class="pro_container">
                         <div class="pro_label">15-25岁</div>
@@ -151,65 +239,6 @@
                     <div class="sex_per_container">
                         <div class="mansex">男性</div>
                         <div class="womensex">女性</div>
-                    </div>
-                </div>
-
-                <div class="chufa_card_container">
-                    <div class="til_label">出发地</div>
-                    <div class="chufadi_container">
-                        <div class="diItem">
-                        <img :src="locaIcon" alt="" srcset="" class="addressIcon">
-                        <span class="addresstxt">五道口</span>
-                        </div>
-                        <div class="diItem">
-                        <img :src="locaIcon" alt="" srcset="" class="addressIcon">
-                        <span class="addresstxt">西二旗</span>
-                        </div>
-                        <div class="diItem">
-                        <img :src="locaIcon" alt="" srcset="" class="addressIcon">
-                        <span class="addresstxt">上地</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mudd_container">
-                    <div class="til_label">目的地</div>
-                    <div class="chufadi_container">
-                        <div class="diItem">
-                            <img :src="locaIcon" srcset="" class="addressIcon">
-                            <span class="addresstxt">中关村</span>
-                        </div>
-                        <div class="diItem">
-                            <img :src="locaIcon" alt="" srcset="" class="addressIcon">
-                            <span class="addresstxt">软件园</span>
-                        </div>
-                        <div class="diItem">
-                            <img :src="locaIcon" alt="" srcset="" class="addressIcon">
-                            <span class="addresstxt">龙泽</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tqfs_container">
-                    <div class="til_label">通勤方式</div>
-                    <div class="cx_type_container">
-                        <div class="cx_item">
-                            <img :src="dtIcon" alt="" srcset="" class="cxlogo">
-                            <span class="cxtxt">地铁</span>
-                        </div>
-                        <div class="cx_item">
-                            <img :src="drIcon" alt="" srcset="" class="cxlogo">
-                            <span class="cxtxt">开车</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tqsjylx_container">
-                    <div class="til_label">通勤时间与路程</div>
-                    <div class="haoshi_container">
-                        <img :src="tbIcon" alt="" srcset="" class="timeBiao">
-                        <span style="margin-right:16px;">平均耗时</span>
-                        <span>30分钟</span>
                     </div>
                 </div>
 
@@ -253,7 +282,7 @@
                 yhdxImg:require("../../assets/img/yhhx/yhdxImg.png"),
                 closeIcon:require("../../assets/img/yhhx/icon_close.png"),
                 locaIcon:require("../../assets/img/yhhx/dwIcon.png"),
-                dtIcon:require("../../assets/img/yhhx/dtIcon.png"),
+                // dtIcon:require("../../assets/img/yhhx/dtIcon.png"),
                 drIcon:require("../../assets/img/yhhx/drIcon.png"),
                 tbIcon:require("../../assets/img/yhhx/tbIcon.png"),
                 // tbIcon:require("../../assets/img/yhhx/bgImg.png"),
@@ -299,7 +328,7 @@
                 ],
                 ifShowTime:true,
                 timerIdx:0,
-                timeType:8,
+                // timeType:8,
                 ifShowMb:false,
                 ifShowCon:false,
                 conditImg:require("../../assets/img/yhhx/conditImg.png"),
@@ -314,6 +343,32 @@
                     label2:'25-35岁',
                     label3:'消费高',
                     label4:'已婚',
+                },
+                rightPanelData:{
+                    userStatObj:{
+                        stat1:16,
+                        stat2:26,
+                        stat3:39,
+                        stat4:19
+                    },
+                    chufaObj:{
+                        chufa1:'五道口',
+                        chufa2:'西二旗',
+                        chufa3:'上地'
+                    },
+                    mudiObj:{
+                        mudi1:'中关村',
+                        mudi2:'软件园',
+                        mudi3:'龙泽'
+                    },
+                    tonqinTypeObj:{
+                        tqType1:'地铁',
+                        tqType1Icon:require("../../assets/img/yhhx/dtIcon.png"),
+                        tqType2:'开车',
+                    },
+                    tongqinTimeObj:{
+                        timeN:30
+                    }
                 }
             }
         },
@@ -348,7 +403,7 @@
             ];
             var cir1 = [116.310356,39.932426];
             var cir2 = [116.433529,39.941237];
-            this.initMap(path,path1,path2,cir1,cir2,'朝阳区');
+            this.initMap(path,path1,path2,cir1,cir2,'西城区');
         },
         methods:{
             submit(){
@@ -457,8 +512,8 @@
             clickTime(arg){
             this.current = arg;
             this.ifShowMb = false;
-            if(arg == 8){
-                this.timeType = arg;
+            if(arg == 6 || arg == 8 || arg == 10 || arg == 22 || arg == 24){
+                // this.timeType = arg;
                 var path = [
                     [116.294134,39.958747],
                     [116.295593,39.947957],
@@ -489,10 +544,88 @@
                 ];
                 var cir1 = [116.310356,39.932426];
                 var cir2 = [116.433529,39.941237];
-                this.initMap(path,path1,path2,cir1,cir2,'朝阳区');
+                this.initMap(path,path1,path2,cir1,cir2,'西城区');
+                this.rightPanelData = {
+                    userStatObj:{
+                        stat1:16,
+                        stat2:26,
+                        stat3:39,
+                        stat4:19
+                    },
+                    chufaObj:{
+                        chufa1:'五道口',
+                        chufa2:'西二旗',
+                        chufa3:'上地'
+                    },
+                    mudiObj:{
+                        mudi1:'中关村',
+                        mudi2:'软件园',
+                        mudi3:'龙泽'
+                    },
+                    tonqinTypeObj:{
+                        tqType1:'地铁',
+                        tqType1Icon:require("../../assets/img/yhhx/dtIcon.png"),
+                        tqType2:'开车',
+                    },
+                    tongqinTimeObj:{
+                        timeN:30
+                    }
+                };
             }
-            else if(arg == 18){
-                this.timeType = arg;
+            else if(arg == 12 || arg == 14 || arg == 16){
+                // this.timeType = arg;
+                var path = [
+                    [116.288917,39.965932],
+                    [116.294281,39.958531],
+                    [116.294925,39.957117],
+                    [116.294538,39.952445],
+                    [116.293809,39.948037],
+                    [116.295311,39.933329]
+                ];
+                var path1 = [
+                [116.275742,39.954518],
+                [116.274883,39.924312],
+                [116.355993,39.923719],
+                // [116.384391,39.889724],
+                // [116.41898,39.892688]
+                ];
+                var path2 = [
+                [116.247761,39.947543],
+                [116.27454,39.946754],
+                [116.285612,39.946293],
+                [116.309902,39.94274],
+                [116.317799,39.939252],
+                [116.339085,39.938331]
+                ];
+                var cir1 = [116.274969,39.92418];
+                var cir2 = [116.288616,39.965768];
+                this.initMap(path,path1,path2,cir1,cir2,'海淀区');
+                this.rightPanelData = {
+                    userStatObj:{
+                        stat1:37,
+                        stat2:36,
+                        stat3:22,
+                        stat4:5
+                    },
+                    chufaObj:{
+                        chufa1:'中关村',
+                        chufa2:'软件园',
+                        chufa3:'龙泽'
+                    },
+                    mudiObj:{
+                        mudi1:'周边'
+                    },
+                    tonqinTypeObj:{
+                        tqType1:'步行',
+                        tqType1Icon:require("../../assets/img/yhhx/buxIcon.png"),
+                    },
+                    tongqinTimeObj:{
+                        timeN:10
+                    }
+                };
+            }
+            else if(arg == 18 || arg == 20){
+                // this.timeType = arg;
                 var path = [
                     [116.355294,39.940546],
                     [116.356839,39.907306],
@@ -517,7 +650,33 @@
                 ];
                 var cir1 = [116.373332,39.924206];
                 var cir2 = [116.427341,39.902842];
-                this.initMap(path,path1,path2,cir1,cir2,'朝阳区');
+                this.initMap(path,path1,path2,cir1,cir2,'西城区');
+                this.rightPanelData = {
+                    userStatObj:{
+                        stat1:25,
+                        stat2:28,
+                        stat3:27,
+                        stat4:20
+                    },
+                    chufaObj:{
+                        chufa1:'中关村',
+                        chufa2:'软件园',
+                        chufa3:'龙泽'
+                    },
+                    mudiObj:{
+                        mudi1:'五道口',
+                        mudi2:'西二旗',
+                        mudi3:'上地'
+                    },
+                    tonqinTypeObj:{
+                        tqType1:'地铁',
+                        tqType1Icon:require("../../assets/img/yhhx/dtIcon.png"),
+                        tqType2:'开车',
+                    },
+                    tongqinTimeObj:{
+                        timeN:30
+                    }
+                };
             }
             },
             initMap(p,p1,p2,c1,c2,area){
@@ -1128,6 +1287,12 @@
                     font-weight: 500;
                     color: #242F57;
                     margin-bottom: 10px;
+                    // ::v-deep .saas-poptip{
+                    //     left: 628px !important;
+                    //     .ivu-poptip-content{
+                    //         width: 270px !important;
+                    //     }
+                    // }
                 }
                 .pro_container{
                     width: 100%;
