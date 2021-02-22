@@ -64,27 +64,27 @@
             <!-- <img :src="conditImg" alt="" srcset="" class="conditImg" /> -->
             <div class="l-item">
               <div class="l-item-label">常用标签</div>
-              <div class="item-list" v-for="(item, index) in target" :key="index">
+              <div class="item-list" ref="target" v-for="(item, index) in target" :key="index">
                 <div class="item-con">
-                  <div class="name">{{ item }}</div>
+                  <div class="name" @click="clickTarget(index, 'target')">{{ item }}</div>
                   <i class="iconfont2 iconxiangqian"></i>
                 </div>
               </div>
             </div>
             <div class="l-item">
               <div class="l-item-label">属性维度</div>
-              <div class="item-list" v-for="(item, index) in property" :key="index" >
+              <div class="item-list" ref="proterty" v-for="(item, index) in property" :key="index" >
                 <div class="item-con">
-                  <div class="name">{{ item }}</div>
+                  <div class="name" @click="clickTarget(index, 'target')">{{ item }}</div>
                   <i class="iconfont2 iconxiangqian"></i>
                 </div>
               </div>
             </div>
             <div class="l-item">
               <div class="l-item-label">用户行为</div>
-              <div class="item-list" v-for="(item, index) in behavior" :key="index" >
+              <div class="item-list" ref="behavior" v-for="(item, index) in behavior" :key="index" >
                 <div class="item-con">
-                  <div class="name">{{ item }}</div>
+                  <div class="name" @click="clickTarget(index, 'target')">{{ item }}</div>
                   <i class="iconfont2 iconxiangqian"></i>
                 </div>
               </div>
