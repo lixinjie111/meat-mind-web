@@ -495,178 +495,7 @@
       </div>
 
       <!--触达用户媒介-->
-      <div class="cdyhmj_container">
-        <div class="cdyhmj_title_container">
-          <div class="cdyhmj_title">
-            触达用户媒介
-            <Poptip popper-class="saas-poptip" placement="right-start">
-              <i class="iconfont2 iconguanyu tip-icon"></i>
-              <div slot="content">
-                <p><span>触达能力= 触达率 * 平均接触频率：</span></p>
-                <p><span>效果评估原则：</span>目的性原则；方向性原则；针对性原则；可测性原则；科学性原则；引导性原则</p>
-                <p><span>效果评估内容：</span>评估对象接触媒介的效果；评估媒介影响传播对象的效果；评估目标实现的效果；评估受众需求满足的效果</p>
-                <p><span>效果评估指标：</span>注意、兴趣、情趣、理解、记忆等心理活动的反应程度；接触媒介及信息人数的多寡；对传播媒介的接触频率和信赖程度</p>
-              </div>
-            </Poptip>
-          </div>
-          <div class="cdyhmj_title_desc" @click="goMidea">
-            <span class="title_desc_txt">查看媒介画像详情</span>
-            <img :src="toRIcon" class="toRIcon" />
-          </div>
-        </div>
-        <div class="cdyhmj_content_container">
-          <div class="cdyhmj_content_top">
-            <div class="cdyhmj_content_top_lef">
-              <div class="cdyhmj_content_item item1">自定义媒介投放预算 (元)</div>
-              <div class="cdyhmj_content_item item2">
-                <div class="input_container">
-                  <!-- <span class="input1">￥</span>
-                  <span class="inpu2">15,000</span> -->
-                  <Input placeholder="￥ 15,000" style="width:100%;">15,000</Input>
-                </div>
-                <div class="hg_txt"></div>
-                <div class="input_container">
-                  <!-- <span class="input1">￥</span>
-                  <span class="inpu23"></span> -->
-                  <Input placeholder="￥" style="width:100%;"></Input>
-                </div>
-              </div>
-              <div class="cdyhmj_content_item item3">目标客群</div>
-              <div class="cdyhmj_content_item item4">
-                <!-- <img :src="inputIcon" class="inputIcon" /> -->
-                <Select v-model="mbValue" style="width:100%;">
-                    <Option v-for="item in mubiaoList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-                </Select>
-              </div>
-              <div class="cdyhmj_content_item item1">营销关键词</div>
-              <div class="cdyhmj_content_item item5">
-                <div class="item_xtt">青春</div>
-                <div class="item_xtt">活力</div>
-              </div>
-            </div>
-            <div class="cdyhmj_content_top_ri">
-              <div class="cdyhmj_content_top_ri_tel">选择投放媒介</div>
-              <div class="cal_item_container">
-                <div class="cal_item">
-                  <div class="cal_item_cal_item">
-                    <img :src="toLIcon" class="toLIcon" />
-                  </div>
-                </div>
-                <div class="cal_item2 cal_item21">
-                  <div class="rt_choice">
-                    <Checkbox></Checkbox>
-                  </div>
-                  <div class="logo_container">
-                    <img :src="ttIcon" class="logoImg" />
-                    <span class="cal_txt">头条</span>
-                  </div>
-                  <div class="txt_area">
-                    <div class="txt_area11">触达率</div>
-                    <div>投放成本</div>
-                  </div>
-                  <div class="per_area">
-                    <div class="per_area1">51%</div>
-                    <div>¥2500/千人</div>
-                  </div>
-                </div>
-                <div class="cal_item2">
-                  <div class="rt_choice2">
-                    <Checkbox v-model="choice2"></Checkbox>
-                  </div>
-                  <div class="logo_container">
-                    <img :src="xhsIcon" class="logoImg" />
-                    <span class="cal_txt">小红书</span>
-                  </div>
-                  <div class="txt_area">
-                    <div class="txt_area11">触达率</div>
-                    <div>投放成本</div>
-                  </div>
-                  <div class="per_area">
-                    <div class="per_area1">46%</div>
-                    <div>¥2300/千人</div>
-                  </div>
-                </div>
-                <div class="cal_item2">
-                  <div class="rt_choice2">
-                    <Checkbox v-model="choice12"></Checkbox>
-                  </div>
-                  <div class="logo_container">
-                    <img :src="ksIcon" class="logoImg" />
-                    <span class="cal_txt">快手</span>
-                  </div>
-                  <div class="txt_area">
-                    <div class="txt_area11">触达率</div>
-                    <div>投放成本</div>
-                  </div>
-                  <div class="per_area">
-                    <div class="per_area1">43%</div>
-                    <div>¥2300/千人</div>
-                  </div>
-                </div>
-                <div class="cal_item cal_item1">
-                  <div class="cal_item_cal_item">
-                    <img :src="toRIcon1" class="toLIcon" />
-                  </div>
-                </div>
-              </div>
-              <div class="cdyhmj_bom">
-                <div class="cdyhmj_bom_lef">
-                  已选中
-                  <span style="color:#242F57">2</span>个
-                </div>
-                <div class="cdyhmj_bom_rig">
-                  <img :src="ksIcon" class="cdyhmj_bom_rig1" />
-                  <img :src="xhsIcon" class="cdyhmj_bom_rig1" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="cdyhmj_content_bom">
-            <div class="cdyhmj_content_bom_lef">
-              <div class="cdyhmj_content_bom_lef_top">触达用户投放策略建议</div>
-              <div class="cdyhmj_content_bom_lef_bom">
-                <div class="echarts1 echarts1box">
-                  <PieEcharts1 :colorList="$fjData.colorList" :myData="$fjData.box0Data"></PieEcharts1>
-                  <!-- <lineM id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM> -->
-                </div>
-                <div class="echarts1 echarts2box">
-                  <div class="echarts11">
-                    <div class="echarts111">建议投放金额</div>
-                    <div class="echarts112">￥19,000</div>
-                  </div>
-                  <div class="echarts12">
-                    <div class="echarts121">目标客群触达率</div>
-                    <div class="echarts122">89%</div>
-                  </div>
-                </div>
-                <div class="echarts1 ec1">
-                  <div class="echarts13">建议投放时间段</div>
-                  <div class="echarts14">
-                    <div class="echarts141">
-                      <div class="ech_Icon"></div>
-                      <div class="ech_txt">快手</div>
-                      <div class="ech_time">22:00 - 22:30</div>
-                    </div>
-                  </div>
-                  <div class="echarts15">
-                    <div class="echarts142">
-                      <div class="ech_Icon1"></div>
-                      <div class="ech_txt">小红书</div>
-                      <div class="ech_time">19:00 - 20:30</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="cdyhmj_content_bom_rig">
-              <div class="cdyhmj_content_bom_rig_top">优化投放方案推荐</div>
-              <div class="cdyhmj_content_bom_rig_bom">
-                <img :src="yhtIcon" class="yhtIcon" alt srcset />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+     <chuDa></chuDa>
 
       <!--目标用户群-->
       <div class="da_container">
@@ -1194,10 +1023,11 @@ import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
 import vDxitem from "./dxItem";
 import vDxitem1 from "./dxItem1";
 import vTabCard from "./tabCard";
+import chuDa from "./chuDa";
 export default {
   components: {
    PieEcharts1,barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,DefaultPage, PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
-   vDxitem,vDxitem1,vTabCard
+   vDxitem,vDxitem1,vTabCard,chuDa
   },
   name: "index",
   data() {
@@ -1290,9 +1120,11 @@ export default {
           subTil:'对于早期顾客加大投放力度，对于成熟期及休眠期顾客挖掘其用户价值，迎合用户偏好制定策略。'
         }
       },
+      choice1:false,
       choice2:true,
       choice12:true,
       mbValue:'bjsbz',
+      chuData:this.$fjData.box0Data,
       mubiaoList:[
         {
           label:'北京上班族',
@@ -1321,6 +1153,14 @@ export default {
     this.initPopEcharts();
   },
   methods: {
+    changeNews(val){
+      console.log(val)
+      if(val){
+        this.chuData=this.$fjData.box01Data;
+      }else{
+        this.chuData=this.$fjData.box0Data;
+      }
+    },
     formatUser(){
       this.$router.push({name:"user-defined"})
     },
@@ -2662,7 +2502,7 @@ export default {
           height: 100%;
           padding: 24px;
           box-sizing: border-box;
-          border-right: 1px solid #eaedf7;
+          border-left: 1px solid #eaedf7;
           .cdyhmj_content_item {
             width: 100%;
           }
@@ -3008,7 +2848,7 @@ export default {
                   display: flex;
                   align-items: center;
                   .ech_Icon,
-                  .ech_Icon1 {
+                  .ech_Icon1,.ech_Icon2 {
                     width: 8px;
                     height: 8px;
                     background: rgba(68, 136, 255, 0.85);
@@ -3017,6 +2857,9 @@ export default {
                   }
                   .ech_Icon1 {
                     background: rgba(164, 157, 250, 0.85);
+                  }
+                  .ech_Icon2 {
+                    background: #FC809F;
                   }
                   .ech_time,
                   .ech_txt {
