@@ -1072,12 +1072,13 @@
         position: absolute;
         left: 1.9%;
         top: 16.5%;
-        width: 787.06px;
+        width: 71.7%;
         z-index: 999;
         height: 48px;
         background: #F4F7FC;
         border-radius: 0px 0px 4px 4px;
-        padding: 15px 16px;
+        padding: 15px 6px;
+        padding-right: 10px;
         box-sizing: border-box;
         display: flex;
         align-items: center;
@@ -1087,7 +1088,7 @@
             display: flex;
             align-items: center;
             .condition_label,.condition_item{
-                width: 90px;
+                width: 75px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
