@@ -61,7 +61,7 @@
               <div class="l-item-label">常用标签</div>
               <div class="item-list" v-for="(item, index) in target" :key="index">
                 <div class="item-con">
-                  <div class="name">{{ item }}</div>
+                  <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
                   <i class="iconfont2 iconxiangqian"></i>
                 </div>
               </div>
@@ -70,7 +70,7 @@
               <div class="l-item-label">属性维度</div>
               <div class="item-list" v-for="(item, index) in property" :key="index" >
                 <div class="item-con">
-                  <div class="name">{{ item }}</div>
+                  <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
                   <i class="iconfont2 iconxiangqian"></i>
                 </div>
               </div>
@@ -79,7 +79,7 @@
               <div class="l-item-label">用户行为</div>
               <div class="item-list" v-for="(item, index) in behavior" :key="index" >
                 <div class="item-con">
-                  <div class="name">{{ item }}</div>
+                  <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
                   <i class="iconfont2 iconxiangqian"></i>
                 </div>
               </div>
@@ -361,6 +361,7 @@
                 ifShowMb:false,
                 ifShowCon:false,
                 // conditImg:require("../../assets/img/yhhx/conditImg.png"),
+                cur:"基本信息",
                 target: ["自定义标签", "基本信息", "兴趣爱好", "设备属性"],
                 property: ["用户维度", "媒介维度", "品牌维度"],
                 behavior: ["线上行为", "线下行为"],
@@ -1207,6 +1208,10 @@
               font-weight: 400;
               color: #333333;
               line-height: 14px;
+              cursor: pointer;
+              &.act{
+                color: #2373FF;
+              }
             }
             > i {
               font-size: 12px;
