@@ -53,9 +53,38 @@
             <div class="conditions_rig" @click="expandCond">更多筛选条件</div>
         </div>
         <div class="condition_content" v-if="ifShowCon">
-            <div class="condition_lef">
+            <!-- <div class="condition_lef">
                 <img :src="conditImg" alt="" srcset="" class="conditImg">
+            </div> -->
+          <div class="target-left">
+            <div class="l-item">
+              <div class="l-item-label">常用标签</div>
+              <div class="item-list" v-for="(item, index) in target" :key="index">
+                <div class="item-con">
+                  <div class="name">{{ item }}</div>
+                  <i class="iconfont2 iconxiangqian"></i>
+                </div>
+              </div>
             </div>
+            <div class="l-item">
+              <div class="l-item-label">属性维度</div>
+              <div class="item-list" v-for="(item, index) in property" :key="index" >
+                <div class="item-con">
+                  <div class="name">{{ item }}</div>
+                  <i class="iconfont2 iconxiangqian"></i>
+                </div>
+              </div>
+            </div>
+            <div class="l-item">
+              <div class="l-item-label">用户行为</div>
+              <div class="item-list" v-for="(item, index) in behavior" :key="index" >
+                <div class="item-con">
+                  <div class="name">{{ item }}</div>
+                  <i class="iconfont2 iconxiangqian"></i>
+                </div>
+              </div>
+            </div>
+          </div>            
             <div class="condition_rig">
                 <div class="con_item_container">
                     <div class="con_item_label">年龄</div>
@@ -331,7 +360,10 @@
                 // timeType:8,
                 ifShowMb:false,
                 ifShowCon:false,
-                conditImg:require("../../assets/img/yhhx/conditImg.png"),
+                // conditImg:require("../../assets/img/yhhx/conditImg.png"),
+                target: ["自定义标签", "基本信息", "兴趣爱好", "设备属性"],
+                property: ["用户维度", "媒介维度", "品牌维度"],
+                behavior: ["线上行为", "线下行为"],
                 nilinList:['18-24','35-44','45+'],
                 sexList:['男','女'],
                 hasChildList:['妈妈','母婴','二胎','中学生家长','0-3岁小孩父母','3-6岁小孩父母','孕期','备孕','小学生家长'],
@@ -416,7 +448,7 @@
                 };
             },
             nianlinClick(arg,art){
-                console.log(art)
+                // console.log(art)
                 var itemDom = this.$refs[art] || [];
                 for(var i=0;i<itemDom.length;i++){
                     if(i==arg){
@@ -426,7 +458,7 @@
                         itemDom[i].style="color: #636E95;background: none;";
                     }
                 }
-                console.log(itemDom,'itemDom')
+                // console.log(itemDom,'itemDom')
             },
             expandCond(){
                 this.ifShowCon = true;
@@ -1134,44 +1166,93 @@
         border: 1px solid #EAEDF7;
         display: flex;
         align-items: center;
-        .condition_lef{
-            width: 186px;
-            .conditImg{
-                display: block;
-                width: 100%;
-            }
+        // .condition_lef{
+        //     width: 186px;
+        //     .conditImg{
+        //         display: block;
+        //         width: 100%;
+        //     }
+        // }
+    .target-left {
+      width: 186px;
+      height: 100%;
+      padding: 24px 0 0 24px;
+      border-right: 1px solid #eaedf7;
+      .l-item {
+        margin-bottom: 24px;
+        .l-item-label {
+          width: 58px;
+          height: 16px;
+          margin-bottom: 15px;
+          font-size: 14px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #242f57;
+          line-height: 16px;
         }
+        .item-list {
+          .item-con {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 160px;
+            height: 32px;
+            padding: 0 16px;
+            margin-right: 1px;
+            margin-bottom: 8px;
+            .name{
+              height: 14px;
+              font-size: 14px;
+              font-family: PingFangSC-Regular, PingFang SC;
+              font-weight: 400;
+              color: #333333;
+              line-height: 14px;
+            }
+            > i {
+              font-size: 12px;
+              color: #7c88b1;
+            }
+          }
+        }
+      }
+    }
         .condition_rig{
-            flex: 1;
+            // flex: 1;
             height: 100%;
-            padding: 55px 22px;
+            padding: 55px 0 0 22px;
             box-sizing: border-box;
             .con_item_container{
-                width: 100%;
+                // width: 100%;
                 display: flex;
-                align-items: flex-start;
+                // align-items: flex-start;
                 margin-bottom: 8px;
                 .con_item_label{
                     width: 106px;
+                    height: 24px;
                     font-size: 14px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
                     color: #242F57;
+                    line-height: 24px;
                 }
                 .con_item_con{
-                    flex: 1;
+                    // flex: 1;
+                    width: calc(100% - 106px);
                     display: flex;
                     flex-wrap: wrap;
                     .con_item{
-                        padding: 2px 9px;
+                        height: 24px;
+                        padding: 0 9px;
+                        line-height: 24px;
                         margin-bottom: 16px;
                         border-radius: 8px;
-                        margin-right: 43px;  
+                        margin-right: 24px;  
                         font-size: 14px;
                         font-family: PingFangSC-Regular, PingFang SC;
                         font-weight: 400;
                         color: #636E95;
                         background-color: none;
+                        cursor: pointer;
                     }
                     .con_item:hover{cursor: pointer;}
                 }
