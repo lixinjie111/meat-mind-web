@@ -7,7 +7,7 @@
           <div class="feature">
             <div class="line-desc">
               <div class="name">包含特征</div>
-              <div class="desc">已选择<span style="color:#4488FF">0</span>个特征</div>
+              <div class="desc">已选择<span style="color:#4488FF">{{num}}</span>个特征</div>
             </div>
             <Input v-model="value1" size="large" placeholder="暂无规则 请从右侧选择添加" />
             <div class="add">
@@ -55,8 +55,8 @@
             <Input v-model="value4" size="large" placeholder="暂无基础行为 请从右侧选择添加" />
           </div>
           <div class="btn-box">
-            <div class="clear">清空</div>
-            <div class="confirm">确定</div>
+            <div class="clear" @click="clear">清空</div>
+            <div class="confirm" @click="confirm">确定</div>
           </div>
         </div>
         <div class="user-target">
@@ -98,7 +98,7 @@
                   ref="ninlinItem"
                   v-for="(item, index) in ageList"
                   :key="index"
-                  @click="clickItem(index, 'ninlinItem')">
+                  @click="clickItem(item,index, 'ninlinItem')">
                   {{ item }}
                 </div>
               </div>
@@ -111,7 +111,7 @@
                   ref="xingbieItem"
                   v-for="(item, index) in sexList"
                   :key="index"
-                  @click="clickItem(index, 'xingbieItem')"
+                  @click="clickItem(item,index, 'xingbieItem')"
                 >
                   {{ item }}
                 </div>
@@ -125,7 +125,7 @@
                   ref="hasChild"
                   v-for="(item, index) in hasChildList"
                   :key="index"
-                  @click="clickItem(index, 'hasChild')"
+                  @click="clickItem(item,index, 'hasChild')"
                 >
                   {{ item }}
                 </div>
@@ -139,7 +139,7 @@
                   ref="xflevel"
                   v-for="(item, index) in xiaofeiList"
                   :key="index"
-                  @click="clickItem(index, 'xflevel')"
+                  @click="clickItem(item,index, 'xflevel')"
                 >
                   {{ item }}
                 </div>
@@ -153,7 +153,7 @@
                   ref="huny"
                   v-for="(item, index) in huyList"
                   :key="index"
-                  @click="clickItem(index, 'huny')"
+                  @click="clickItem(item,index, 'huny')"
                 >
                   {{ item }}
                 </div>
@@ -167,7 +167,7 @@
                   ref="jobdom"
                   v-for="(item, index) in jobList"
                   :key="index"
-                  @click="clickItem(index, 'jobdom')"
+                  @click="clickItem(item,index, 'jobdom')"
                 >
                   {{ item }}
                 </div>
@@ -192,6 +192,7 @@ export default {
       value2:"",
       value3:"",
       value4:"",
+      num:0,
       chooseType:"且",
       chooseType2:"且",
       cur:"基本信息",
@@ -226,7 +227,9 @@ export default {
     };
   },
   methods: {
-    clickItem(arg, art) {
+    clickItem(act,arg, art) {
+      this.value1 = act
+      this.num = 1
       var itemDom = this.$refs[art] || [];
       for (var i = 0; i < itemDom.length; i++) {
         if (i == arg) {
@@ -236,6 +239,18 @@ export default {
           itemDom[i].style = "color: #636E95;background: none;";
         }
       }
+    },
+    clear(){
+      this.value1 = ""
+      this.value2 = ""
+      this.value3 = ""
+      this.value4 = ""
+      this.chooseType = "且"
+      this.chooseType2 = "且"
+      this.num = 0
+    },
+    confirm(){
+      this.$router.push({name:"user-defined"})
     }
   },
 };
@@ -270,10 +285,19 @@ export default {
       border-radius: 8px;
       // opacity: 0.5;
       border: 1px solid rgba(198,203,222,.5);
+      input::-webkit-input-placeholder {
+        color: #97A0C3;
+      }
+      input::-moz-input-placeholder {
+        color: #97A0C3;
+      }
+      input::-ms-input-placeholder {
+        color: #97A0C3;
+      }
       ::v-deep .ivu-input{
         text-align: center;
         font-size: 10px;
-        color: #97A0C3;
+        // color: #97A0C3;
         height: 50px;
         border: 1px solid #C6CBDE;
         opacity: 0.5;
