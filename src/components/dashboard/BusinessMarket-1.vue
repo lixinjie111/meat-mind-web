@@ -8,8 +8,8 @@
                     <p @click="toUser" class="check-btn">查看全部<i class="iconfont iconarrowRight"></i></p>
                 </div>
                 <div class="target-left-content">
-                    <Select class="target-left-select" v-model="mbValue">
-                        <Option v-for="it in mubiaoList" :key="it.value" :value="it.value">{{it.label}}</Option>
+                    <Select class="target-left-select" value="北京上班族">
+                        <Option value="北京上班族">北京上班族</Option>
                     </Select>
                     <p class="target-left-sub-title">基本特点</p>
                     <ul class="target-left-sub-ul">
@@ -55,11 +55,10 @@
                 </div>
             </div>
             <div class="target-right">
-              <vDxitem v-if="showComponent" :key="mbValue" :onlyMap="true"/>
-              <vDxitem1 v-if="showComponent1" :key="mbValue" :onlyMap="true"/>
+                <video class="player" width="100%" height="100%" autoplay loop muted
+                       src="../../assets/video/video1.mp4"></video>
             </div>
         </div>
-        <chuDa></chuDa>
         <div class="card card-one">
             <div class="card-one-left">
                 <div class="card-one-left-info">
@@ -165,6 +164,7 @@
                 <div class="card-one-right-line"></div>
             </div>
         </div>
+        <chuDa></chuDa>
         <div class="card-three flex">
             <Card title="市场趋势" class="card-three-left">
                 <div slot="right" class="card-three-select">
@@ -462,12 +462,10 @@
     import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
     import PieEcharts1 from '../../components/echarts/common/PieEcharts1';
     import chuDa from '../../views/user/chuDa';
-    import vDxitem from "../../views/user/dxItem";
-    import vDxitem1 from "../../views/user/dxItem1";
 
     export default {
         name: "BusinessMarket",
-        components: {chuDa,Card, barEcharts, barM, YibiaoCharts2, lineM, lineM1, Leida2Echarts, PieEcharts1, vDxitem, vDxitem1},
+        components: {chuDa,Card, barEcharts, barM, YibiaoCharts2, lineM, lineM1, Leida2Echarts, PieEcharts1},
         data() {
             return {
                 threeActive: 1,
@@ -486,28 +484,23 @@
                 mubiaoList:[
                     {
                         label:'北京上班族',
-                        value:'bjsbz',
-                        component: 'vDxitem',
+                        value:'bjsbz'
                     },
                     {
                         label:'研学青年',
-                        value:'yxqn',
-                        component: 'vDxitem1',
+                        value:'yxqn'
                     },
                     {
                         label:'企业高管',
-                        value:'qygg',
-                        component: 'vDxitem',
+                        value:'qygg'
                     },
                     {
                         label:'北漂一族',
-                        value:'bpyz',
-                        component: 'vDxitem',
+                        value:'bpyz'
                     },
                     {
                         label:'自由职业',
-                        value:'zyzz',
-                        component: 'vDxitem',
+                        value:'zyzz'
                     }
                 ]
             }
@@ -516,15 +509,7 @@
             toUser() {
                 this.$router.push({name:"user"})
             }
-        },
-        computed: {
-          showComponent(){
-            return ['bjsbz', 'qygg', 'bpyz', 'zyzz'].includes(this.mbValue)
-          },
-          showComponent1(){
-            return ['yxqn'].includes(this.mbValue)
-          },
-        },
+        }
     }
 </script>
 

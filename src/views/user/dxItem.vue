@@ -40,9 +40,9 @@
                     </div>
                 </div>
             </div>
-            <div class="per_info_container"></div>
+            <div v-if="!onlyMap" class="per_info_container"></div>
         </div>
-        <div class="conditions_container">
+        <div :class="['conditions_container', { 'conditions_container_row': onlyMap }]">
             <div class="conditions_lef">
                 <div class="condition_label">条件筛选</div>
                 <div class="condition_item"><span style="margin-right:10px;">{{condiObj.label1}}</span><i class="iconicon_close iconfont2" style="font-size: 12px;"></i></div>
@@ -84,7 +84,7 @@
                 </div>
               </div>
             </div>
-          </div>            
+          </div>
             <div class="condition_rig">
                 <div class="con_item_container">
                     <div class="con_item_label">年龄</div>
@@ -130,11 +130,11 @@
         <div class="mianban_container" v-if="ifShowMb" @mouseout="hideMe">
             <img :src="quyResult" alt="" srcset="" class="quyResult">
         </div>
-        <div class="test_container">
+        <div :class="['test_container', { row: onlyMap }]">
             <div class="mapContainer" id="mapContainer">
-                
+
             </div>
-            <div class="per_info_container">
+            <div v-if="!onlyMap" class="per_info_container">
                 <div class="yhdx_title">
                     <div class="yhdx_title_top">
                         用户动线分析结果
@@ -302,6 +302,7 @@
 <script>
     export default {
         name: "dxItem",
+        props: ['onlyMap'],
         data(){
             return{
                 current:8,
@@ -759,13 +760,13 @@
                     center: c1,
                     radius: 1200, //半径
                     borderWeight: 3,
-                    strokeColor: "#FF33FF", 
+                    strokeColor: "#FF33FF",
                     strokeOpacity: 1,
                     strokeWeight: 6,
                     strokeOpacity: 0.2,
                     fillOpacity: 0.4,
                     strokeStyle: 'dashed',
-                    strokeDasharray: [10, 10], 
+                    strokeDasharray: [10, 10],
                     // 线样式还支持 'dashed'
                     fillColor: '#1791fc',
                     zIndex: 50,
@@ -775,13 +776,13 @@
                     center: c2,   //    116.427341,39.902842
                     radius: 1200, //半径
                     borderWeight: 3,
-                    strokeColor: "#FF33FF", 
+                    strokeColor: "#FF33FF",
                     strokeOpacity: 1,
                     strokeWeight: 6,
                     strokeOpacity: 0.2,
                     fillOpacity: 0.4,
                     strokeStyle: 'dashed',
-                    strokeDasharray: [10, 10], 
+                    strokeDasharray: [10, 10],
                     // 线样式还支持 'dashed'
                     fillColor: '#1791fc',
                     zIndex: 50,
@@ -792,13 +793,13 @@
                 // 缩放地图到合适的视野级别
                 // map.setFitView([ circle ])
                 // map.setFitView([ circle1 ])
-                
+
                 var polyline = new AMap.Polyline({
                     path: p,
                     isOutline: true,
                     outlineColor: '#ffeeff',
                     borderWeight: 3,
-                    strokeColor: "#3366FF", 
+                    strokeColor: "#3366FF",
                     strokeOpacity: 1,
                     strokeWeight: 6,
                     // 折线样式还支持 'dashed'
@@ -814,7 +815,7 @@
                     isOutline: true,
                     outlineColor: '#FF8800',
                     borderWeight: 1,
-                    strokeColor: "#FF8800", 
+                    strokeColor: "#FF8800",
                     strokeOpacity: 1,
                     strokeWeight: 4,
                     // 折线样式还支持 'dashed'
@@ -830,7 +831,7 @@
                     isOutline: true,
                     outlineColor: '#F383FF',
                     borderWeight: 1,
-                    strokeColor: "#F383FF", 
+                    strokeColor: "#F383FF",
                     strokeOpacity: 1,
                     strokeWeight: 4,
                     // 折线样式还支持 'dashed'
@@ -959,11 +960,11 @@
                     }
                 });
                 var marker = new AMap.Marker({
-                    icon:new AMap.Icon({            
+                    icon:new AMap.Icon({
                         image:  "//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png",
-                        size: new AMap.Size(52, 52),  
+                        size: new AMap.Size(52, 52),
                         imageSize: new AMap.Size(26,36)
-                    }),   
+                    }),
                     position:c2
                 });
                 marker.on('click',function(){
@@ -1031,13 +1032,13 @@
                     height: 100%;
                     .timer12{
                         width: 100%;
-                        height: 100%; 
+                        height: 100%;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
                         padding: 0 16px;
-                        box-sizing: border-box;       
+                        box-sizing: border-box;
                         .timer12_top{
                             width: 100%;
                             display: flex;
@@ -1070,7 +1071,7 @@
                     }
                     .timer121{
                         width: 100%;
-                        height: 100%; 
+                        height: 100%;
                         display: flex;
                         align-items: center;
                         flex-wrap: wrap;
@@ -1091,7 +1092,7 @@
                         .activetimer{
                             border: 1px solid #2373FF;
                             color: #2373FF;
-                        }   
+                        }
                     }
                 }
             }
@@ -1153,6 +1154,10 @@
         .conditions_rig:hover{
             cursor: pointer;
         }
+    }
+    .conditions_container.conditions_container_row{
+      width: 95%;
+      top: 24.5%;
     }
     .condition_content{
         position: absolute;
@@ -1251,7 +1256,7 @@
                         line-height: 24px;
                         margin-bottom: 16px;
                         border-radius: 8px;
-                        margin-right: 24px;  
+                        margin-right: 24px;
                         font-size: 14px;
                         font-family: PingFangSC-Regular, PingFang SC;
                         font-weight: 400;
@@ -1675,6 +1680,9 @@
                 }
             }
         }
+    }
+    .test_container.row{
+      height: 442px;
     }
 }
 </style>
