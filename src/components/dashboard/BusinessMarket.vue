@@ -59,7 +59,6 @@
               <vDxitem1 v-if="showComponent1" :key="mbValue" :onlyMap="true"/>
             </div>
         </div>
-        <chuDa></chuDa>
         <div class="card card-one">
             <div class="card-one-left">
                 <div class="card-one-left-info">
@@ -165,6 +164,7 @@
                 <div class="card-one-right-line"></div>
             </div>
         </div>
+        <chuDa />
         <div class="card-three flex">
             <Card title="市场趋势" class="card-three-left">
                 <div slot="right" class="card-three-select">
