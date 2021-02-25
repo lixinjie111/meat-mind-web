@@ -1,4 +1,5 @@
 const zjjEData = {
+    colorList : ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564','#BF6E9B','#CECE7E','#91C2F2','#B7C8EA','#FF9F7F','#91C2F2','#B380B6','#EDA8AD','#738AD4','#FF9F7F'],
     graphData: [{
         name: "三根葱\n11",
         value: 11,
@@ -164,6 +165,9 @@ const zjjEData = {
     TreeMapData: [{
             name: "douyin ",
             value: 40,
+            itemStyle: {
+                color:['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564','#BF6E9B','#CECE7E','#91C2F2','#B7C8EA','#FF9F7F','#91C2F2','#B380B6','#EDA8AD','#738AD4','#FF9F7F'][Math.floor(Math.random()*16)]
+            },
             children: [{
                 name: "抖音",
                 value: 40,
@@ -172,6 +176,9 @@ const zjjEData = {
         {
             name: "weibo",
             value: 20,
+            itemStyle: {
+                color:['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564','#BF6E9B','#CECE7E','#91C2F2','#B7C8EA','#FF9F7F','#91C2F2','#B380B6','#EDA8AD','#738AD4','#FF9F7F'][Math.floor(Math.random()*16)]
+            },
             children: [{
                 name: "微博",
                 value: 20,
@@ -180,6 +187,9 @@ const zjjEData = {
         {
             name: "kuaishou",
             value: 15,
+            itemStyle: {
+                color:['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564','#BF6E9B','#CECE7E','#91C2F2','#B7C8EA','#FF9F7F','#91C2F2','#B380B6','#EDA8AD','#738AD4','#FF9F7F'][Math.floor(Math.random()*16)]
+            },
             children: [{
                 name: "快手",
                 value: 15,
@@ -188,6 +198,9 @@ const zjjEData = {
         {
             name: "xiaohongshu",
             value: 18,
+            itemStyle: {
+                color:['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564','#BF6E9B','#CECE7E','#91C2F2','#B7C8EA','#FF9F7F','#91C2F2','#B380B6','#EDA8AD','#738AD4','#FF9F7F'][Math.floor(Math.random()*16)]
+            },
             children: [{
                 name: "小红书",
                 value: 18,
