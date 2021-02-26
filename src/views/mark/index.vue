@@ -203,7 +203,7 @@
                         </div>
                     </Col>
                 </Row>
-                <!-- <div class="mark-panel1">
+                <div class="mark-panel1">
                     <div class="title">
                         新增客户变化趋势
                     </div>
@@ -211,11 +211,91 @@
                        近期 北京 用户新增量最大，女性占比 环比增加 2.3%，年龄偏向年轻态
                     </div>
                     <div class="selectOiv">
-                        <Select v-model="formItem.date" size="small" style="width:120px">
+                        <Select v-model="formItem.date" size="small" style="width:140px">
                             <Option value="0">近一个月</Option>
                         </Select>
                     </div>
-                </div> -->
+                    <Row :gutter="8">
+                        <Col span="4">
+                            <div class="boxContent">
+                                <div class="boxTitle">
+                                    按地区
+                                </div>
+                                <div class="boxsubTitle">
+                                    北京地区新增势头正旺
+                                </div>
+                                <div class="boxEcharts">
+                                    <barM id="box40" :colorList="$lxjData.colorList" :myData="$lxjData.box40Data"></barM>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col span="4">
+                            <div class="boxContent">
+                                <div class="boxTitle">
+                                    按性别
+                                </div>
+                                <div class="boxsubTitle">
+                                    女性比例增加
+                                </div>
+                                <div class="boxEcharts">
+                                    <barM id="box41" :colorList="$lxjData.colorList" :myData="$lxjData.box41Data"></barM>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col span="4">
+                            <div class="boxContent">
+                                <div class="boxTitle">
+                                    按年龄
+                                </div>
+                                <div class="boxsubTitle">
+                                    新客趋于年轻化
+                                </div>
+                                <div class="boxEcharts">
+                                    <barM id="box42" :colorList="$lxjData.colorList" :myData="$lxjData.box42Data"></barM>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col span="4">
+                            <div class="boxContent">
+                                <div class="boxTitle">
+                                    按职业
+                                </div>
+                                <div class="boxsubTitle">
+                                    职场达人比例有所提升
+                                </div>
+                                <div class="boxEcharts">
+                                    <barM id="box43" :colorList="$lxjData.colorList" :myData="$lxjData.box43Data"></barM>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col span="4">
+                            <div class="boxContent">
+                                <div class="boxTitle">
+                                    按收入
+                                </div>
+                                <div class="boxsubTitle">
+                                    中收入人群正成为购买主力
+                                </div>
+                                <div class="boxEcharts">
+                                    <barM id="box44" :colorList="$lxjData.colorList" :myData="$lxjData.box44Data"></barM>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col span="4">
+                            <div class="boxContent">
+                                <div class="boxTitle">
+                                    按标签
+                                </div>
+                                <div class="boxsubTitle">
+                                    运动,养生型人群占大多数
+                                </div>
+                                <div class="boxEcharts">
+                                    <barM id="box45" :colorList="$lxjData.colorList" :myData="$lxjData.box45Data"></barM>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
             </div>
             <Card title="负面舆情的处理意见" class="card-five">
                 <p class="card-five-desc">当前
@@ -515,6 +595,27 @@ export default {
                 width: 120px;
                 right: 16px;
                 top:16px
+            }
+            .boxContent{
+                display: flex;
+                flex-direction: column;
+                .boxTitle{
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #242F57;
+                    line-height: 22px;
+                }
+                .boxsubTitle{
+                    font-size: 12px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #636E95;
+                    line-height: 18px;
+                }
+                .boxEcharts{
+                   height: 180px;
+                }
             }
         }
          .title{
