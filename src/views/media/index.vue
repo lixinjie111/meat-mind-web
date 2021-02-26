@@ -355,6 +355,9 @@
           <div class="m-f-line">
               <div class="label">主投平台</div>
               <div class="f-list">
+                <div class="f-item">
+                     <p>综合</p>
+                  </div>
                 <div class="f-item" @click="list1Act=index" :class="{'active':index==list1Act}" v-for="(item,index) in list1" :key="index">
                     <p>{{item}}</p>
                 </div>
@@ -363,6 +366,9 @@
           <div class="m-f-line">
               <div class="label">领域</div>
               <div class="f-list">
+                <div class="f-item">
+                     <p>综合</p>
+                  </div>
                 <div class="f-item" @click="list2Act=index" :class="{'active':index==list2Act}" v-for="(item,index) in list2" :key="index">
                     <p>{{item}}</p>
                 </div>
@@ -372,6 +378,9 @@
               <div class="label"><span style="color:#FB343E">*</span>
               价格类型</div>
               <div class="f-list">
+                <div class="f-item">
+                     <p>综合</p>
+                  </div>
                 <div class="f-item" @click="list3Act=index" :class="{'active':index==list3Act}" v-for="(item,index) in list3" :key="index">
                     <p>{{item}}</p>
                 </div>
@@ -564,6 +573,9 @@
           <Tabs value="name1" @on-click="getTab">
               <TabPane label="短视频" name="name1">
                 <div class="f-list">
+                  <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -580,8 +592,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -621,6 +636,9 @@
               </TabPane>
               <TabPane label="社交传媒" name="name2">
                  <div class="f-list">
+                   <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -637,8 +655,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -678,6 +699,9 @@
               </TabPane>
               <TabPane label="大众传媒" name="name3">
                  <div class="f-list">
+                   <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -694,8 +718,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -735,6 +762,9 @@
               </TabPane>
               <TabPane label="体验事件" name="name4">
                  <div class="f-list">
+                   <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -751,8 +781,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -792,6 +825,9 @@
               </TabPane>
               <TabPane label="促销" name="name5">
                  <div class="f-list">
+                   <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -808,8 +844,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -849,6 +888,9 @@
               </TabPane>
               <TabPane label="在线社交媒体" name="name6">
                  <div class="f-list">
+                   <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -865,8 +907,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -906,6 +951,9 @@
               </TabPane>
               <TabPane label="公共关系和宣传" name="name7">
                  <div class="f-list">
+                   <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -922,8 +970,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -963,6 +1014,9 @@
               </TabPane>
               <TabPane label="网站" name="name8">
                  <div class="f-list">
+                   <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -979,8 +1033,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -1020,6 +1077,9 @@
               </TabPane>
               <TabPane label="其他" name="name9">
                  <div class="f-list">
+                   <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -1036,8 +1096,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -1189,19 +1252,19 @@ export default {
                         key: 'bao'
                     },
                     {
-                        title: '粉丝数',
+                        title: '粉丝数/真粉量',
                          tooltip:true,
                         ellipsis:true,
                         key: 'fensi'
                     },
                     {
-                        title: '获赞数',
+                        title: 'KOL品牌匹配度',
                          tooltip:true,
                         ellipsis:true,
                         key: 'zan'
                     },
                     {
-                        title: '作品数',
+                        title: 'KOL用户匹配度',
                          tooltip:true,
                         ellipsis:true,
                         key: 'zuopin'
