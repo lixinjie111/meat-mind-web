@@ -203,7 +203,7 @@
                         </div>
                     </Col>
                 </Row>
-                <div class="mark-panel1">
+                <!-- <div class="mark-panel1">
                     <div class="title">
                         新增客户变化趋势
                     </div>
@@ -215,7 +215,7 @@
                             <Option value="0">近一个月</Option>
                         </Select>
                     </div>
-                </div>
+                </div> -->
             </div>
             <Card title="负面舆情的处理意见" class="card-five">
                 <p class="card-five-desc">当前
@@ -374,7 +374,7 @@ export default {
             formItem: {
                 select: '2',
                 pinpai:0,
-                date:''
+                date:'0'
             }
 		}
 	},
