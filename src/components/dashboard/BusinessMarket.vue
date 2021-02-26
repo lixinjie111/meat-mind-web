@@ -905,7 +905,7 @@
                     height: 4px;
                     background: #4D94FF;
                     border-radius: 5px;
-                    margin: 24px auto;
+                    margin: 2px auto;
                 }
 
                 .card-one-right-item {
@@ -947,7 +947,7 @@
                         }
 
                         &:last-child {
-                            min-height: 120px;
+                            min-height: 136px;
                             display: flex;
                             align-items: center;
 
