@@ -577,20 +577,20 @@
                     noema: { brand: '无强烈要求', content: '积极阳光', attitude: '性价比/健康…', visualize: '凡尔赛', hate: '被鄙视', wound: '糖高增肥' },
                     medium: ['dy', 'txxw', 'pyq' ],
                     commute: {
-                        time: '7:00 - 9:00',
+                        time: '7:00 - 8:00',
                         media: '朋友圈/腾讯新闻',
                         mood: [{ name: '放松', value: '26'}, { name: '一般', value: '21'}],
                         desc: '用户群体处于休息及去往学校途中，偏好浏览朋友圈及新闻类、天气类应用，情绪分布较为平均',
                     },
                     rest: {
                         title: '学业/休息',
-                        time: '12:00 - 13:00',
+                        time: '11:00 - 12:00',
                         media: '饿了么/大众点评/抖音',
                         mood: [{ name: '放松', value: '28'}, { name: '一般', value: '26'}],
                         desc: '用户群体主要处于午间休息状态，偏好浏览新闻资讯及社交娱乐类型的APP，情绪分布较为放松 ',
                     },
                     relax: {
-                        time: '20:00 - 22:00',
+                        time: '18:00 - 22:00',
                         media: '朋友圈/抖音',
                         mood: [{ name: '放松', value: '61'}, { name: '一般', value: '32'}],
                         desc: '用户群体处于休息及休闲状态，偏好社交娱乐、电商购物类型的APP，情绪分布较为放松',
@@ -640,7 +640,7 @@
         },
         computed: {
           groupData(){
-            const temp = { bjsbz: { ...this.data1, name: '北京上班族' }, qygg: { ...this.data1, name: '企业高管', total: '5,158'}, bpyz: { ...this.data3, name: '北漂一族', total: '9,000' }, zyzz: { ...this.data1, name: '自由职业', total: '1,000'}, yxqn: { ...this.data2, name: '研学青年' }}
+            const temp = { bjsbz: { ...this.data1, name: '北京上班族' }, qygg: { ...this.data1, name: '企业高管', total: '5,158'}, bpyz: { ...this.data3, name: '北漂一族', total: '1,8197' }, zyzz: { ...this.data1, name: '自由职业', total: '1,000'}, yxqn: { ...this.data2, name: '研学青年' }}
             return temp[this.mbValue]
           },
           showComponent(){
