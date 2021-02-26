@@ -126,50 +126,62 @@ const fjEData = {
     box31Data: {
         name: ['粉丝数',  '分享数',  '评论数',  '点赞数',  '播放量'],
         value: [23, 29, 40, 31, 23],
+        title: '70%'
     },
     box32Data: {
         name: ['粉丝数',  '分享数',  '评论数',  '点赞数',  '播放量'],
         value: [17, 10, 18, 30, 35],
+        title: '80%'
     },
     box33Data: {
         name: ['粉丝数',  '分享数',  '评论数',  '点赞数',  '播放量'],
         value: [57, 20, 10, 8, 5],
+        title: '90%'
     },
     box34Data: {
         name: ['真粉丝',  '僵尸粉'],
         value: [71, 29],
+        title: '6690w'
     },
     box35Data: {
         name: ['真粉丝',  '僵尸粉'],
         value: [22, 78],
+        title: '6800w'
     },
     box36Data: {
         name: ['真粉丝',  '僵尸粉'],
         value: [44, 56],
+        title: '7000w'
     },
     box37Data: {
         name: ['开屏广告',  '内容曝光'],
         value: [26, 74],
+        title: '78%'
     },
     box38Data: {
         name: ['开屏广告',  '内容曝光'],
         value: [51, 49],
+        title: '89%'
     },
     box39Data: {
         name: ['开屏广告',  '内容曝光'],
         value: [39, 61],
+        title: '91%'
     },
     box40Data: {
         name: ['观看用户数',  '购买用户数'],
         value: [11, 89],
+        title: '86%'
     },
     box41Data: {
         name: ['观看用户数',  '购买用户数'],
         value: [78, 22],
+        title: '85%'
     },
     box42Data: {
         name: ['观看用户数',  '购买用户数'],
         value: [67, 33],
+        title: '92%'
     },
 }
 export default fjEData;

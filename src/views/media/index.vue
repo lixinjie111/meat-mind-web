@@ -346,6 +346,99 @@
             暂无相关数据
           </div>
       </div>
+      <div class="m-p-kol-strategy">
+          <div class="strategy-title">
+              推荐KOL组合策略
+          </div>
+          <div class="strategy-top">
+              <div class="top-left">
+                <p><span class="top-title">推荐的KOL组合</span><span class="top-blue">大网红 + nini + titi</span></p>
+                <p class="mt12"><span class="top-title">方案效果</span><span>方案效果 预期以12600元的成本吸引潜客432341人</span></p>
+              </div>
+              <div class="top-right">
+                <p class="top-title">推荐缘由</p>
+                <p><span>XX为头部KOL，在曝光率及用户影响率上对于品牌推广能起到快速起效。但鉴于XX非垂直领域KOL，专业引流不足，故补充垂直类KOL nini 和泛娱乐类KOLtiti，三者配合投放可使收益达到最高</span></p>
+              </div>
+          </div>
+          <div class="strategy-bottom">
+              <div></div>
+              <div>
+                <div class="bottom-title">用户总量</div>
+              </div>
+              <div>
+                  <div class="bottom-title light">曝光率</div>
+              </div>
+              <div>
+                  <div class="bottom-title">转化率</div>
+              </div>
+              <div>
+                  <div class="bottom-title light">影响力</div>
+              </div>
+              <div>
+                  <div class="bottom-card">
+                     <img src="../../assets/img/mark/head1.jpg" />
+                      <div>
+                          <p>头部KOL</p>
+                          <p>大网红</p>
+                      </div>
+                  </div>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box34Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box37Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box40Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box31Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <div class="bottom-card">
+                      <img src="../../assets/img/mark/head2.jpeg" />
+                      <div>
+                          <p>垂直类KOL</p>
+                          <p>nini</p>
+                      </div>
+                  </div>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box35Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box38Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box41Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box32Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <div class="bottom-card">
+                      <img src="../../assets/img/mark/head3.jpeg" />
+                      <div>
+                          <p>泛娱乐类KOL</p>
+                          <p>titi</p>
+                      </div>
+                  </div>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box36Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box39Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box42Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box33Data" ></PieEcharts6>
+              </div>
+          </div>
+      </div>
       <div class="m-p-kol">
           <div class="m-p-target-title">
               KOL资源 
@@ -891,11 +984,12 @@ import Card from "./base/Card"
 import PieCaseEcharts from '../../components/echarts/common/PieCaseEcharts';
 import barL from '../../components/echarts/common/barL';
 import funnel from '../../components/echarts/common/funnel';
+import PieEcharts6 from '../../components/echarts/common/PieEcharts6';
 import PieEcharts2 from '../../components/echarts/common/PieEcharts2';
 import LeidaEcharts from '../../components/echarts/common/LeidaEcharts';
 export default {
   name: "index",
-  components: { DefaultPage, Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts2,LeidaEcharts},
+  components: { DefaultPage, Triple, Full, Card, Half, PieCaseEcharts, barL, funnel, PieEcharts6, PieEcharts2,LeidaEcharts},
   data(){
       return{
           isShowTip1:false,
@@ -1910,6 +2004,136 @@ export default {
       padding-bottom: 16px;
       text-align: center;
     }
+  }
+  .m-p-kol-strategy {
+      margin-bottom: 24px;
+      width: 100%;
+      background: #FFFFFF;
+      box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+      border-radius: 12px;
+      border: 1px solid #EAEDF7;
+      padding:24px;
+      .strategy-title {
+          font-size: 16px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #242F57;
+      }
+      .strategy-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 16px;
+          margin-top: 24px;
+          width: 100%;
+          height: 95px;
+          background: #F7F9FD;
+          border-radius: 8px;
+          border: 1px solid #EAEDF7;
+
+          >div {
+              width: 50%;
+
+              &.top-right {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: flex-start;
+
+                  >p {
+                     &:nth-child(1) {
+                         width: 152px;
+                         margin-right: 24px;
+                     }
+                  }
+              }
+
+              .mt12 {
+                 margin-top: 12px;
+              }
+
+              .top-title {
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #242F57;
+              }
+
+              span {
+                  margin-right: 24px;
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #636E95;
+
+                  &.top-blue {
+                      color: #2373FF;
+                  }
+              }
+          }
+      }
+
+      .strategy-bottom {
+          margin-top: 24px;
+          display: grid;
+          grid-template-columns: 15% 19% 19% 19% 19%;
+          grid-template-rows: 48px 150px 150px 150px;
+          grid-row-gap: 24px;
+          grid-column-gap: 24px;
+
+          .bottom-title {
+              width: 100%;
+              height: 48px;
+              line-height: 48px;
+              background: #73A0FA;
+              border-radius: 8px;
+              text-align: center;
+              font-size: 14px;
+              font-family: PingFangSC-Medium, PingFang SC;
+              font-weight: 500;
+              color: #FFFFFF;
+
+              &.light {
+                  color: #242F57;
+                  background: #DBE7FF;
+              }
+          }
+
+          .bottom-card {
+              position: relative;
+              text-align: center;
+
+              > img {
+                 width: 56px;
+                 height: 56px;
+                 border-radius: 50%;
+              }
+
+              >div {
+               margin-top: -30px;
+               width: 100%;
+               min-width: 140px;
+               height: 116px;
+               background: #FFFFFF;
+               box-shadow: 5px 8px 16px 0px rgba(121, 131, 168, 0.15);
+               border-radius: 8px;
+               border: 2px solid #EAEDF7;
+
+                >p {
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #636E95;
+
+                    &:nth-child(1) {
+                        margin-top: 48px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #242F57;
+                    }
+                }
+              }
+          }
+      }
   }
   .m-p-kol{
     width: 100%;
