@@ -3,7 +3,7 @@ const zjjEData = {
     graphData: [{
         name: "三根葱\n11",
         value: 11,
-        symbolSize: 80,
+        symbolSize: 70,
         til1: 'tscb',
         tilVal1: '675元',
         til2: 'tsb',
@@ -23,7 +23,7 @@ const zjjEData = {
     }, {
         name: "潘雨润PanYR\n103",
         value: 103,
-        symbolSize: 80,
+        symbolSize: 70,
         til1: 'tscb',
         tilVal1: '90002元',
         til2: 'tsb',
@@ -43,7 +43,7 @@ const zjjEData = {
     }, {
         name: "学好姐姐\n113",
         value: 113,
-        symbolSize: 80,
+        symbolSize: 70,
         til1: 'tscb',
         tilVal1: '560元',
         til2: 'tsb',
@@ -63,7 +63,7 @@ const zjjEData = {
     }, {
         name: `黑马哥\n663`,
         value: 663,
-        symbolSize: 80,
+        symbolSize: 70,
         til1: 'tscb',
         tilVal1: '16006元',
         til2: 'tsb',
@@ -104,7 +104,7 @@ const zjjEData = {
     }, {
         name: "抖音\n120",
         value: 120,
-        symbolSize: 80,
+        symbolSize: 70,
         til1: 'tscb',
         tilVal1: '9987元',
         til2: 'tsb',
@@ -144,7 +144,7 @@ const zjjEData = {
     }, {
         name: "小红书\n91",
         value: 91,
-        symbolSize: 80,
+        symbolSize: 70,
         til1: 'tscb',
         tilVal1: '1040元',
         til2: 'tsb',
