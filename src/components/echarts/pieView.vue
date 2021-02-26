@@ -85,6 +85,42 @@
      <div class="box box20">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box20Data" ></PieEcharts>
     </div>
+    <div class="box box31">
+      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box31Data" ></PieEcharts>
+    </div>
+    <div class="box box32">
+      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box32Data" ></PieEcharts>
+    </div>2
+    <div class="box box33">
+      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box33Data" ></PieEcharts>
+    </div>
+    <div class="box box34">
+      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box34Data" ></PieEcharts>
+    </div>
+    <div class="box box35">
+      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box35Data" ></PieEcharts>
+    </div>
+    <div class="box box36">
+      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box36Data" ></PieEcharts>
+    </div>
+    <div class="box box37">
+      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box37Data" ></PieEcharts>
+    </div>
+    <div class="box box38">
+      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box38Data" ></PieEcharts>
+    </div>
+    <div class="box box39">
+      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box39Data" ></PieEcharts>
+    </div>
+    <div class="box box40">
+      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box40Data" ></PieEcharts>
+    </div>
+    <div class="box box41">
+      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box41Data" ></PieEcharts>
+    </div>
+    <div class="box box42">
+      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box42Data" ></PieEcharts>
+    </div>
     <div class="box">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box21Data" roseType="radius"></PieEcharts>
     </div>

@@ -23,7 +23,7 @@
                             <div class="target-left-content-three-num"><span>{{groupData.Turnover}}</span></div>
                         </div>
                     </div>
-                    <div class="target-left-content-four">系统推荐获客方案</div>
+                    <div class="target-left-content-four"><span @click="controlModal" class="link">系统推荐获客方案</span></div>
 
 
                 </div>
@@ -466,6 +466,8 @@
                 </div>
             </div>
         </Card>
+
+        <BusinessMarketModal :show="showModal" :type="mbValue" @close="controlModal"/>
     </div>
 </template>
 
@@ -481,10 +483,11 @@
     import chuDa from '../../views/user/chuDa';
     import vDxitem from "../../views/user/dxItem";
     import vDxitem1 from "../../views/user/dxItem1";
+    import BusinessMarketModal from "./BusinessMarketModal";
 
     export default {
         name: "BusinessMarket",
-        components: {chuDa,Card, barEcharts, barM, YibiaoCharts2, lineM, lineM1, Leida2Echarts, PieEcharts1, vDxitem, vDxitem1},
+        components: {chuDa,Card, barEcharts, barM, YibiaoCharts2, lineM, lineM1, Leida2Echarts, PieEcharts1, vDxitem, vDxitem1, BusinessMarketModal },
         data() {
             return {
                 threeActive: 1,
@@ -593,11 +596,15 @@
                     desc: '用户群体处于休息及休闲状态，偏好社交娱乐、电商购物类型的APP，情绪分布较为放松',
                   },
                 },
+                visible: false,
             }
         },
         methods: {
             toUser() {
                 this.$router.push({name:"user"})
+            },
+            controlModal(){
+              this.visible = !this.visible
             }
         },
         computed: {
@@ -611,6 +618,9 @@
           showComponent1(){
             return ['yxqn'].includes(this.mbValue)
           },
+          showModal(){
+            return ['bjsbz', 'yxqn'].includes(this.mbValue) && this.visible
+          }
         },
     }
 </script>
@@ -629,6 +639,9 @@
 <style scoped lang="scss">
     .market-box {
         padding: 0 24px 24px 24px;
+        .link{
+          cursor: pointer;
+        }
 
         .tips {
             margin-top: 24px;
