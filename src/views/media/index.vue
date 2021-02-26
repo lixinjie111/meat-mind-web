@@ -280,10 +280,10 @@
 
       <div class="media_four_panel">
         <div class="media_four_panel_lef">
-
+          <barM id="box46" :colorList="$lxjData.colorList" :myData="$lxjData.box46Data"></barM>
         </div>
         <div class="media_four_panel_rig">
-          
+          <lineM id="box67" :colorList="$lxjData.colorList" :myData="$lxjData.box67Data"></lineM>
         </div>
       </div>
 
@@ -303,7 +303,7 @@
               <span style="color:#242F57;">预期投放效果： </span>目标覆盖800万用户，预期获得18%的曝光，12%的互动和3%销售转化；
           </div>
           <div class="media_five_tab_bom1" v-else-if="ifShowTabCon == 1">
-              <span style="color:#242F57;">策略2:</span>低成本高转化策略<br>
+              <span style="color:#242F57;">策略2: </span>低成本高转化策略<br>
               <span style="color:#242F57;">媒介选择：</span>短视频平台（抖音，快手），垂直兴趣APP（小红书，KEEP，大众点评）；<br>
               <span style="color:#242F57;">KOL组合：</span>腰部KOL组合（YYY-1， YYY-2， YYY-3）；<br>
               <span style="color:#242F57;">投放预算：</span>84万元（38万，28万，18万）；<br>
@@ -1094,9 +1094,12 @@ import PieEcharts2 from '../../components/echarts/common/PieEcharts2';
 import LeidaEcharts from '../../components/echarts/common/LeidaEcharts';
 import vGraph from '../../components/echarts/common/zjjGraph';
 import vTree from '../../components/echarts/common/zjjTreemap';
+import lineM from '../../components/echarts/common/lineM';
+import barM from '../../components/echarts/common/barM';
+
 export default {
   name: "index",
-  components: { DefaultPage, Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts2,LeidaEcharts,vGraph,vTree},
+  components: { DefaultPage, Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts2,LeidaEcharts,vGraph,vTree,lineM,barM},
   data(){
       return{
           isShowTip1:false,
@@ -2031,6 +2034,8 @@ export default {
     .media_four_panel_lef,.media_four_panel_rig{
       width: 49%;
       height: 507px;
+      padding: 24px;
+      box-sizing: border-box;
       background: #FFFFFF #6371c0;
       box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
       border-radius: 12px;

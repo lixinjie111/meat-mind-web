@@ -65,7 +65,6 @@ export default {
         tooltip: {
             show:true,
             formatter(params) {
-                console.log(params)
                 var result = "<div style='color:black;'>" + params.name + "</div>";
                 result += `<span style="display:block;margin-right:5px;margin-bottom:2px;border-radius:10px;color:black;'">${params.data.til1} ：${params.data.tilVal1}</span>`;
                 result += `<span style="display:block;margin-right:5px;margin-bottom:2px;border-radius:10px;color:black;'">${params.data.til2} ：${params.data.tilVal2}</span>`;
@@ -149,6 +148,9 @@ export default {
                 data: optionData,
               },
             ],
+          });
+          myChart.on('click',function(parm){
+              console.log(parm)
           });
         });
       }
