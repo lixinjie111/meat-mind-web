@@ -518,11 +518,6 @@
                         component: 'vDxitem1',
                     },
                     {
-                        label:'企业高管',
-                        value:'qygg',
-                        component: 'vDxitem',
-                    },
-                    {
                         label:'北漂一族',
                         value:'bpyz',
                         component: 'vDxitem',
@@ -531,7 +526,12 @@
                         label:'自由职业',
                         value:'zyzz',
                         component: 'vDxitem',
-                    }
+                    },
+                    {
+                        label:'企业高管',
+                        value:'qygg',
+                        component: 'vDxitem',
+                    },
                 ],
                 data1: {
                   own: '23',
@@ -565,36 +565,67 @@
                   },
                 },
                 data2: {
-                  own: '8',
-                  develop: '92',
-                  total: '7,930',
-                  shopping: '1700',
-                  successRate: '91',
-                  Turnover: '¥10,000,000-¥26,000,000',
-                  tag: ['骑行', '住所', '学校'],
-                  trait: ['未婚', '18-24岁', '本科以上', '学生', '5-8k', '出入社会', '价格明感'],
-                  attention: ['燃脂减肥', '火热促销'],
-                  noema: { brand: '无强烈要求', content: '积极阳光', attitude: '性价比/健康…', visualize: '凡尔赛', hate: '被鄙视', wound: '糖高增肥' },
-                  medium: ['dy', 'txxw', 'pyq' ],
-                  commute: {
-                    time: '7:00 - 9:00',
-                    media: '朋友圈/腾讯新闻',
-                    mood: [{ name: '放松', value: '26'}, { name: '一般', value: '21'}],
-                    desc: '用户群体处于休息及去往学校途中，偏好浏览朋友圈及新闻类、天气类应用，情绪分布较为平均',
-                  },
-                  rest: {
-                    title: '学业/休息',
-                    time: '12:00 - 13:00',
-                    media: '饿了么/大众点评/抖音',
-                    mood: [{ name: '放松', value: '28'}, { name: '一般', value: '26'}],
-                    desc: '用户群体主要处于午间休息状态，偏好浏览新闻资讯及社交娱乐类型的APP，情绪分布较为放松 ',
-                  },
-                  relax: {
-                    time: '20:00 - 22:00',
-                    media: '朋友圈/抖音',
-                    mood: [{ name: '放松', value: '61'}, { name: '一般', value: '32'}],
-                    desc: '用户群体处于休息及休闲状态，偏好社交娱乐、电商购物类型的APP，情绪分布较为放松',
-                  },
+                    own: '8',
+                    develop: '92',
+                    total: '7,930',
+                    shopping: '1700',
+                    successRate: '91',
+                    Turnover: '¥10,000,000-¥26,000,000',
+                    tag: ['骑行', '住所', '学校'],
+                    trait: ['未婚', '18-24岁', '本科以上', '学生', '5-8k', '出入社会', '价格明感'],
+                    attention: ['燃脂减肥', '火热促销'],
+                    noema: { brand: '无强烈要求', content: '积极阳光', attitude: '性价比/健康…', visualize: '凡尔赛', hate: '被鄙视', wound: '糖高增肥' },
+                    medium: ['dy', 'txxw', 'pyq' ],
+                    commute: {
+                        time: '7:00 - 9:00',
+                        media: '朋友圈/腾讯新闻',
+                        mood: [{ name: '放松', value: '26'}, { name: '一般', value: '21'}],
+                        desc: '用户群体处于休息及去往学校途中，偏好浏览朋友圈及新闻类、天气类应用，情绪分布较为平均',
+                    },
+                    rest: {
+                        title: '学业/休息',
+                        time: '12:00 - 13:00',
+                        media: '饿了么/大众点评/抖音',
+                        mood: [{ name: '放松', value: '28'}, { name: '一般', value: '26'}],
+                        desc: '用户群体主要处于午间休息状态，偏好浏览新闻资讯及社交娱乐类型的APP，情绪分布较为放松 ',
+                    },
+                    relax: {
+                        time: '20:00 - 22:00',
+                        media: '朋友圈/抖音',
+                        mood: [{ name: '放松', value: '61'}, { name: '一般', value: '32'}],
+                        desc: '用户群体处于休息及休闲状态，偏好社交娱乐、电商购物类型的APP，情绪分布较为放松',
+                    },
+                },
+                data3: {
+                    own: '21',
+                    develop: '79',
+                    total: '18,197',
+                    shopping: '2400',
+                    successRate: '83',
+                    Turnover: '¥3,600,000-¥5,800,000',
+                    tag: ['骑行', '住所', '公司'],
+                    trait: ['未婚', '22-28岁', '专科以上', '职场人士', '5-15k', '价格明感'],
+                    attention: ['一夜暴富', '科技前沿'],
+                    noema: { brand: '名气品牌', content: '新潮', attitude: '性价比/有范...', visualize: '上档次', hate: '被称作民工', wound: '月光族、还贷日' },
+                    medium: ['dy', 'ks', 'pyq' ],
+                    commute: {
+                        time: '7:00 - 9:00',
+                        media: '头条/微博/小红书',
+                        mood: [{ name: '一般', value: '26'}, { name: '紧张', value: '39'}],
+                        desc: '用户群体主要处于通勤及工作状态，偏好社交娱乐类型的APP，时间段内对出行、外卖餐饮类的生活服务APP需求显著，成为重要触点，情绪偏向紧张和烦躁',
+                    },
+                    rest: {
+                        time: '12:00 - 13:00',
+                        media: '大众点评/新浪微博/抖音',
+                        mood: [{ name: '紧张', value: '36'}, { name: '一般', value: '36'}],
+                        desc: '用户群体处于工作午间休整状态，偏好浏览美食餐饮、外卖服务类的APP，处理工作相关信息，情绪主要表现为紧张和一般',
+                    },
+                    relax: {
+                        time: '20:00 - 22:00',
+                        media: '抖音/小红书/快手',
+                        mood: [{ name: '放松', value: '48'}, { name: '一般', value: '26'}],
+                        desc: '用户群体处于通勤及加班工作状态，部分用户仍然在处理工作事务，其他用户处于通勤途中，浏览新闻及娱乐信息，情绪分布较为平均',
+                    },
                 },
                 visible: false,
             }
@@ -609,7 +640,7 @@
         },
         computed: {
           groupData(){
-            const temp = { bjsbz: { ...this.data1, name: '北京上班族' }, qygg: { ...this.data1, name: '企业高管', total: '5,158'}, bpyz: { ...this.data1, name: '北漂一族', total: '9,000' }, zyzz: { ...this.data1, name: '自由职业', total: '1,000'}, yxqn: { ...this.data2, name: '研学青年' }}
+            const temp = { bjsbz: { ...this.data1, name: '北京上班族' }, qygg: { ...this.data1, name: '企业高管', total: '5,158'}, bpyz: { ...this.data3, name: '北漂一族', total: '9,000' }, zyzz: { ...this.data1, name: '自由职业', total: '1,000'}, yxqn: { ...this.data2, name: '研学青年' }}
             return temp[this.mbValue]
           },
           showComponent(){
