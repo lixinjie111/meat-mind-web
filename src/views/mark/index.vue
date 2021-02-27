@@ -180,15 +180,15 @@
                                 <div class="selectNav">
                                     <div class="selectDiv selectLf">
                                        <div class="selectLabel"> 声量类型</div>
-                                        <Select v-model="formItem.select" size="small" style="width:120px">
+                                        <Select v-model="formItem.select" size="small" style="width:100px">
+                                            <Option value="2">全部</Option>
                                             <Option value="0">仅正面声量</Option>
                                             <Option value="1">仅负面声量</Option>
-                                            <Option value="2">全部</Option>
                                         </Select>
                                     </div>
                                     <div class="selectDiv selectRt">
                                         <div class="selectLabel">对标比较</div>
-                                        <Select v-model="formItem.pinpai" size="small" multiple  style="width:120px;height:60px">
+                                        <Select v-model="formItem.pinpai" size="small" multiple :max-tag-count="0" style="width:100px">
                                             <Option value="0">王老吉</Option>
                                             <Option value="1">加多宝</Option>
                                             <Option value="2">和其正</Option>
