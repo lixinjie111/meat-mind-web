@@ -18,14 +18,12 @@
                             <div>平均人月纯购物支出：<span>¥{{groupData.shopping}}</span></div>
                             <div>系统推荐获客方案成功获客概率均值为：<span>{{groupData.successRate}}%</span></div>
                         </div>
-                        <div class="target-left-content-three card-one-bg">
+                        <div class="target-left-content-three">
                             <div class="target-left-content-three-title">成功发展该客群，可使营业额增长</div>
                             <div class="target-left-content-three-num"><span>{{groupData.Turnover}}</span></div>
                         </div>
                     </div>
                     <div class="target-left-content-four"><span @click="controlModal" class="link">系统推荐获客方案</span></div>
-
-
                 </div>
             </div>
             <div class="target-right">
@@ -35,7 +33,7 @@
         </div>
         <div class="card card-one">
             <div class="card-one-left">
-                <div class="card-one-left-info card-one-bg">
+                <div class="card-one-left-info">
                     <div class="flex">
                         <p>{{groupData.name}}</p>
                         <p>分群用户数：{{groupData.total}}人</p>
@@ -681,9 +679,9 @@
             font-weight: 400;
             color: #97A0C3;
         }
-        .card-one-bg{
-            background: url("../../assets/img/dashboard/market/card-one-bg@2x.png") no-repeat center center / 100% 100%;
-        }
+        //.card-one-bg{
+            //background: url("../../assets/img/dashboard/market/card-one-bg@2x.png") no-repeat center center / 100% 100%;
+        //}
         .market-target {
             margin: 24px 0;
 
@@ -693,7 +691,8 @@
                 width: 320px;
                 height: 442px;
                 box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-                background: url("../../assets/img/dashboard/market/target-bg@2x.png") no-repeat center / 100% 100%;
+                background: #E5F5FF;
+                //background: url("../../assets/img/dashboard/market/target-bg@2x.png") no-repeat center / 120% 120%;
                 border-radius: 12px;
 
                 .target-left-title {
@@ -725,7 +724,7 @@
                         ::v-deep .ivu-select-selection {
                             height: 48px;
                             background: rgba(255, 255, 255, .6);
-                            box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8), -2px -2px 7px 0px #FFFEFA;
+                            box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.6) inset, -2px -2px 7px 0px #FFFEFA inset;
                             border-radius: 8px;
                             border: 1px solid #C6CBDE;
 
@@ -747,14 +746,23 @@
                     }
                     .target-left-content-info{
                         font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
                         font-weight: 400;
                         color: #242F57;
                         line-height: 22px;
+
                         .target-left-content-first{
                             margin-bottom: 30px;
                         }
                         .target-left-content-second{
                             margin-bottom: 36px;
+
+                            span {
+                                font-size: 16px;
+                                font-family: HelveticaNeue-Medium, HelveticaNeue;
+                                font-weight: 500;
+                                color: #242F57;
+                            }
                         }
                     }
 
@@ -764,6 +772,9 @@
                         height: 72px;
                         margin-bottom: 51px;
                         color: #FFFFFF;
+                        background: linear-gradient(225deg, #2068E6 0%, #448DFF 100%);
+                        box-shadow: 2px 3px 12px 0px rgba(56, 88, 148, 0.55);
+                        border-radius: 8px;
                         .target-left-content-three-title{
                             font-size: 16px;
                             font-family: PingFangSC-Regular, PingFang SC;
@@ -782,6 +793,7 @@
                         width: 112px;
                         height: 22px;
                         font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
                         font-weight: 500;
                         color: #2373FF;
                         line-height: 22px;
@@ -812,11 +824,15 @@
                 width: 320px;
                 height: 490px;
                 padding: 16px;
-                background: url("../../assets/img/dashboard/market/card-one-bg2@2x.png") no-repeat center center / 100% 100%;
+                background: #E5F5FF;
+                //background: url("../../assets/img/dashboard/market/card-one-bg2@2x.png") no-repeat center center / 100% 100%;
                 .card-one-left-info {
                     padding: 10px 12px;
                     width: 287px;
                     height: 72px;
+                    background: linear-gradient(221deg, #03A8C8 0%, #8BD5AE 100%);
+                    box-shadow: 2px 3px 12px 0px rgba(45, 120, 134, 0.55);
+                    border-radius: 8px;
                     > div {
                         > p {
                             &:nth-child(1) {
@@ -847,7 +863,7 @@
                             line-height: 14px;
                             text-align: center;
                             background: rgba(255, 255, 255, 0.3);
-                            border-radius: 8px;
+                            border-radius: 4px;
                             border: 1px solid #FFFFFF;
 
                             > span {
@@ -1002,13 +1018,12 @@
 
                         .item-box {
                             color: #242F57;
-                            background: #DBEAFF;
-                            box-shadow: 0px 4px 16px 0px rgba(55, 84, 170, 0.12);
-                            color: #242F57;
+                            background: #E5F5FF;
 
                             &.item-box-active {
                                 color: #FFFFFF;
-                                background: linear-gradient(225deg, #1C66DE 0%, #98A0F9 100%);
+                                background: linear-gradient(224deg, #8378F9 0%, #C392E4 100%);
+                                box-shadow: 2px 3px 12px 0px rgba(109, 57, 143, 0.55);
                             }
                         }
                     }
