@@ -29,9 +29,9 @@ export default {
 		}
 	},
 	watch:{
-		myData(){
-				this.initEcharts();	
-			}
+		myData(a,b){
+			this.initEcharts();
+		}
 	},
     mounted() {
         	this.initEcharts();

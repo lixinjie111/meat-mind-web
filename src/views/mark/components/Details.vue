@@ -46,7 +46,7 @@
         </div>
         <!-- -->
         <div class="mark-detail-anchor">
-            <Anchor show-ink offset-top="64">
+            <Anchor show-ink :offset-top="64">
                 <AnchorLink href="#m-d-accept-header" title="品牌受众分析" />
                 <AnchorLink href="#mark-details-market" title="品牌舆情洞察" />
                 <AnchorLink href="#mark-details-public" title="行业态势分析" />
@@ -76,8 +76,8 @@ export default {
                 console.log(item,aa)
                 //document.getElementById('mark-details-public').scrollIntoView();
             },
-            selectEl() {
-                if(this.pinpai=='红牛'){
+            selectEl(value) {
+                if(value=='红牛'){
                     this.pic1=require('../../../assets/img/mark/hniu.png');
                 }else{
                     this.pic1=require('../../../assets/img/mark/question.png');

@@ -1,14 +1,15 @@
 <template>
   <div class="target-analyse">
     <div class="cur-situation">
-      <img src="../../../assets/img/mark/situation@2x.png" alt />
+      <!-- <img src="../../../assets/img/mark/situation@2x.png" alt /> -->
+      <img src="../../../assets/img/yhhx/serIcon1.png" alt />
       <div class="content">
         <p>当前状况</p>
         <div class="desc">{{descL}}</div>
       </div>
     </div>
     <div class="suggestions">
-      <img src="../../../assets/img/mark/suggestion@2x.png" alt />
+      <img src="../../../assets/img/yhhx/serIcon2.png" alt />
       <div class="content">
         <p>策略建议</p>
         <div class="desc">{{descR}}</div>
@@ -47,13 +48,7 @@ export default {
     height: 100%;
     padding: 16px 24px;
     border-radius: 8px;
-    opacity: 0.7;
     overflow: hidden;
-    img {
-      width: 42px;
-      height: 42px;
-      margin-right: 12px;
-    }
     .content {
       display: flex;
       flex-direction: column;
@@ -76,13 +71,25 @@ export default {
   }
   .cur-situation {
     margin-right: 24px;
-    background: #ff8800;
+    background: rgba(255, 136, 0, .7);
+    img {
+      width: 73px;
+      height: 74px;
+      margin-right: -7px;
+      margin-top: -10px;
+    }
     .content > p {
       color: #ad5d00;
     }
   }
   .suggestions {
-    background: #4d94ff;
+    background: rgba(77, 148, 255, 0.7);
+    img {
+      width: 64px;
+      height: 66px;
+      // margin-right: 12px;
+      margin-top: -6px;
+    }
     .content > p {
       color: #0559d7;
     }
