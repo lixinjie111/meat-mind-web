@@ -208,7 +208,7 @@ const zjjEData = {
         },
     ],
     TreeMapData1: [{
-            name: "抖音 ",
+            name: "抖音",
             value: 40,
             itemStyle: {
                 color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][0]
@@ -217,7 +217,8 @@ const zjjEData = {
                     name: "陈翔六点半\n涨5%",
                     value: 15,
                     itemStyle: {
-                        color: 'rgba(77,148,255,1)'
+                        color: 'rgba(77,148,255,1)',
+                        borderRadius: [27, 0, 0, 0]
                     }
                 },
                 {
@@ -247,7 +248,8 @@ const zjjEData = {
             name: "微博",
             value: 20,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][1]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][1],
+                // borderWidth: 2
             },
             children: [{
                     name: "薇娅viyaaa",
@@ -269,7 +271,8 @@ const zjjEData = {
             name: "快手",
             value: 15,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][2]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][2],
+                // borderWidth: 2
             },
             children: [{
                     name: "张小斐",
@@ -298,7 +301,8 @@ const zjjEData = {
             name: "小红书",
             value: 18,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][3]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][3],
+                // borderWidth: 2
             },
             children: [{
                     name: "三代鹿人",
@@ -331,7 +335,7 @@ const zjjEData = {
                 color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][4]
             },
             children: [{
-                    name: "肥肥猫 ",
+                    name: "肥肥猫\n涨3%",
                     value: 15,
                     itemStyle: {
                         color: 'rgba(138,230,199,1)'
@@ -492,7 +496,7 @@ const zjjEData = {
                 color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][10]
             },
             children: [{
-                name: "邓老凉茶",
+                name: "西木西木\n涨10%",
                 value: 30,
                 itemStyle: {
                     color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][10]
@@ -537,7 +541,7 @@ const zjjEData = {
                 color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][13]
             },
             children: [{
-                name: "李嘉琦",
+                name: "李嘉琦\n涨15%",
                 value: 30,
                 itemStyle: {
                     color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][13]

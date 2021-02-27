@@ -138,7 +138,7 @@
           </div>
           <div class="labl_txt_container">
             <div class="labl_cir"></div>
-            <div class="labl_txt">上一季度合作媒介TOP3为抖音、微博、小红书；</div>
+            <div class="labl_txt">上一季度合作媒介TOP3为腾讯、头条、抖音；</div>
           </div>
           <div class="labl_txt_container">
             <div class="labl_cir"></div>

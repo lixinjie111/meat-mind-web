@@ -2,6 +2,7 @@
   <div class="echarts-box" :id="id"></div>
 </template>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 <script>
 export default {
   props: {
@@ -37,15 +38,11 @@ export default {
         tooltip: {
           show: true,
         },
-        geid:{
-            width:'100%',
-            height:'100%'
-        },
         series: [
           {
             breadcrumb: { show: false},
             type: "treemap",
-            data:this.myData,
+            data:this.myData
           },
         ],
       });
