@@ -796,9 +796,8 @@
                 box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
                 border-radius: 12px;
 
-                video {
-                    object-fit: fill;
-                    border-radius: 8px;
+                ::v-deep #mapContainer {
+                    border-radius: 12px;
                 }
             }
         }
@@ -1446,6 +1445,8 @@
         }
 
         .card-three {
+            margin-top: 24px;
+
             .card-three-select {
                 display: flex;
 
