@@ -51,9 +51,9 @@
         display: flex;
         align-items: flex-start;
         .tabpan_lef_lef{
-          width: 42px;
-          height: 42px;
-          margin-right: 12px;
+          width: 64px;
+          height: 66px;
+          margin-top: -6px;
           .serImg1{
             width: 100%;
           }
@@ -88,9 +88,9 @@
         display: flex;
         align-items: flex-start;
         .tabpan_lef_lef{
-          width: 42px;
-          height: 42px;
-          margin-right: 12px;
+          width: 64px;
+          height: 66px;
+          margin-top: -6px;
           .serImg1{
             width: 100%;
           }
