@@ -108,7 +108,7 @@ export default {
             contex.clearRect(0, 0, diameter, diameter);
             contex.save();
             contex.beginPath();
-            var radius = img.width / 2;
+            var radius = (img.width) / 2;
             contex.arc(radius, radius, radius, 0, 2 * Math.PI);
             contex.clip();
             contex.drawImage(
