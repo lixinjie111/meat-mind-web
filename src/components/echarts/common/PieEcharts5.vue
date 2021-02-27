@@ -9,7 +9,7 @@
     // roseType 默认为 false，代表圆环图， radius:圆环南丁格尔图， area: 区域南丁格尔图
     props: {
       myData: { default: ()=>{}},
-      colorList: { default: COLORS },
+      colorList: { default: ()=>{return COLORS} },
       roseType: { default: false },
     },
     data() {

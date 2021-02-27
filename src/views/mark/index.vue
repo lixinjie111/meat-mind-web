@@ -162,13 +162,15 @@
                             </div>
                             <div class="tags">
                                 <div class="tagList">
-                                    <div class="tag">华东地区 <i class="iconfont2 iconicon_close"></i></div>
+                                    <div class="tag" v-for="item in tagList" :key="item">{{item}} 
+                                        <i class="iconfont2 iconicon_close"></i>
+                                    </div>
                                     <!-- <Tag v-if="show" closable @on-close="handleClose">标签三</Tag> -->
                                 </div>
-                                <div class="operate">+ 数据筛选</div>
+                                <SerachPoptip slot="left-operation" @submit="search"></SerachPoptip>
                             </div>
                             <div class="echartBox">
-                                <barL id="box240" :colorList="$lxjData.colorList" :myData="$lxjData.box240Data"></barL>
+                                <barL id="box240" :colorList="$lxjData.colorList" :myData="box240Data"></barL>
                             </div>
                         </div>
                     </Col>
@@ -180,15 +182,15 @@
                                 <div class="selectNav">
                                     <div class="selectDiv selectLf">
                                        <div class="selectLabel"> 声量类型</div>
-                                        <Select v-model="formItem.select" size="small" style="width:120px">
+                                        <Select v-model="formItem.select" size="small" style="width:100px" @on-change="selectYin">
+                                            <Option value="2">全部</Option>
                                             <Option value="0">仅正面声量</Option>
                                             <Option value="1">仅负面声量</Option>
-                                            <Option value="2">全部</Option>
                                         </Select>
                                     </div>
                                     <div class="selectDiv selectRt">
                                         <div class="selectLabel">对标比较</div>
-                                        <Select v-model="formItem.pinpai" size="small" multiple  style="width:120px;height:60px" @on-change="selectPai2">
+                                        <Select v-model="formItem.pinpai" size="small" multiple  :max-tag-count="0" style="width:120px;" @on-change="selectPai2">
                                             <Option value="0">王老吉</Option>
                                             <Option value="1">加多宝</Option>
                                             <Option value="2">和其正</Option>
@@ -1054,19 +1056,22 @@ import barHM1 from '../../components/echarts/common/barHM1';
 import Target from "./base/Target"
 import ShowTotal from "./components/ShowTotal"
 import BrandValue from "./components/BrandValue"
+import SerachPoptip from '../../components/common/SerachPoptip1';
 export default {
     name:"index",
-    components:{barHM1,lineM3,barLine,barL,Brand,Card,Target,ShowTotal,barM,lineM1,DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts,BrandValue},
+    components:{SerachPoptip,barHM1,lineM3,barLine,barL,Brand,Card,Target,ShowTotal,barM,lineM1,DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts,BrandValue},
     data () {
 		return {
 			showFlag:true,
             formItem: {
                 select: '2',
-                pinpai:[0],
+                pinpai:['0'],
                 pinpai1:'0',
                 pinpai2:'5',
                 date:'0'
             },
+            box240Data:this.$lxjData.box240Data,
+            tagList:['华东地区'],
             my68Data:this.$lxjData.box68Data,
             myMonth0:this.$lxjData.box40Data,
             myMonth1:this.$lxjData.box41Data,
@@ -1080,23 +1085,7 @@ export default {
             myData4:this.$lxjData.box1141Data,
             myData5:this.$lxjData.box1142Data,
             myData6:this.$lxjData.box1143Data,
-		}
-	},
-    methods:{
-        selectPai2(val){
-            console.log(val);
-            let obj={
-                legName:['邓老凉茶', ],
-                name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
-                value:[
-                     {
-                        name: '邓老凉茶',
-                        type: 'line',
-                        data: [272, 290, 393, 391, 470, 451, 440, 402, 670, 531]
-                    },
-                ],
-            };
-            let box682Data={
+            box682Data:{
                 legName:['加多宝','王老吉','和其正','白云山',],
                 name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
                 value: [
@@ -1121,10 +1110,167 @@ export default {
                         data: [231, 307, 105, 481, 371, 545, 351, 790, 890, 380]
                     },
                 ]
+            },
+            num:0
+		}
+	},
+    methods:{
+        search(params){
+            this.num++;
+            console.log(params)
+            let arr=[...params.age,...params.area,...params.customer,...params.profession,...params.sex,]
+            console.log(arr);
+            this.tagList=[arr[0],arr[1]];
+            if(this.num%2!=0){
+                this.box240Data=this.$lxjData.box2401Data
+            }else{
+                this.box240Data=this.$lxjData.box240Data 
+            }
+            
+        },
+        selectYin(val){
+             let obj={
+                legName:['邓老凉茶', ],
+                name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
+                value:[
+                     {
+                        name: '邓老凉茶',
+                        type: 'line',
+                        data: [272, 290, 393, 391, 470, 451, 440, 402, 670, 531]
+                    },
+                ],
             };
+            if(val==2){
+                this.box682Data={
+                    legName:['加多宝','王老吉','和其正','白云山',],
+                    name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
+                    value: [
+                        {
+                            name: '加多宝',
+                            type: 'line',
+                            data: [631, 607, 605, 581, 671, 645, 351, 390, 490, 450]
+                        },
+                        {
+                            name: '王老吉',
+                            type: 'line',
+                            data: [831, 207, 405, 381, 271, 445, 151, 290, 390, 750]
+                        },
+                        {
+                            name: '和其正',
+                            type: 'line',
+                            data: [131, 207, 305, 481, 571, 645, 751, 890, 910, 980]
+                        },
+                        {
+                            name: '白云山',
+                            type: 'line',
+                            data: [231, 307, 105, 481, 371, 545, 351, 790, 890, 380]
+                        },
+                    ]
+                }
+            }
+            if(val==1){
+                this.box682Data={
+                    legName:['加多宝','王老吉','和其正','白云山',],
+                    name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
+                    value: [
+                        {
+                            name: '加多宝',
+                            type: 'line',
+                            data: [631, 607, 605, 181, 671, 645, 351, 390, 490, 450]
+                        },
+                        {
+                            name: '王老吉',
+                            type: 'line',
+                            data: [831, 107, 405, 381, 271, 445, 151, 290, 390, 750]
+                        },
+                        {
+                            name: '和其正',
+                            type: 'line',
+                            data: [131, 207, 305, 481, 571, 245, 751, 890, 910, 980]
+                        },
+                        {
+                            name: '白云山',
+                            type: 'line',
+                            data: [231, 307, 405, 481, 371, 545, 351, 790, 890, 380]
+                        },
+                    ]
+                }
+            }
+            if(val==0){
+                this.box682Data={
+                    legName:['加多宝','王老吉','和其正','白云山',],
+                    name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
+                    value: [
+                        {
+                            name: '加多宝',
+                            type: 'line',
+                            data: [331, 607, 605, 581, 671, 645, 351, 390, 490, 450]
+                        },
+                        {
+                            name: '王老吉',
+                            type: 'line',
+                            data: [831, 207, 305, 381, 271, 445, 151, 290, 390, 750]
+                        },
+                        {
+                            name: '和其正',
+                            type: 'line',
+                            data: [131, 207, 305, 381, 571, 645, 751, 890, 910, 980]
+                        },
+                        {
+                            name: '白云山',
+                            type: 'line',
+                            data: [231, 307, 105, 181, 371, 545, 351, 790, 890, 380]
+                        },
+                    ]
+                }
+            }
+             this.formItem.pinpai.forEach(item=>{
+                obj.legName.push(this.box682Data.legName[item])
+                obj.value.push(this.box682Data.value[item])
+            })
+            this.my68Data=obj;
+        },
+        selectPai2(val){
+            let obj={
+                legName:['邓老凉茶', ],
+                name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
+                value:[
+                     {
+                        name: '邓老凉茶',
+                        type: 'line',
+                        data: [272, 290, 393, 391, 470, 451, 440, 402, 670, 531]
+                    },
+                ],
+            };
+            // let box682Data={
+            //     legName:['加多宝','王老吉','和其正','白云山',],
+            //     name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
+            //     value: [
+            //         {
+            //             name: '加多宝',
+            //             type: 'line',
+            //             data: [631, 607, 605, 581, 671, 645, 351, 390, 490, 450]
+            //         },
+            //         {
+            //             name: '王老吉',
+            //             type: 'line',
+            //             data: [831, 207, 405, 381, 271, 445, 151, 290, 390, 750]
+            //         },
+            //         {
+            //             name: '和其正',
+            //             type: 'line',
+            //             data: [131, 207, 305, 481, 571, 645, 751, 890, 910, 980]
+            //         },
+            //         {
+            //             name: '白云山',
+            //             type: 'line',
+            //             data: [231, 307, 105, 481, 371, 545, 351, 790, 890, 380]
+            //         },
+            //     ]
+            // };
             val.forEach(item=>{
-                obj.legName.push(box682Data.legName[item])
-                obj.value.push(box682Data.value[item])
+                obj.legName.push(this.box682Data.legName[item])
+                obj.value.push(this.box682Data.value[item])
             })
             this.my68Data=obj;
             console.log(obj)
@@ -1493,6 +1639,7 @@ export default {
                     cursor: pointer;
                 }
                 .tagList{
+                    display: flex;
                     .tag{
                         margin-right: 8px;
                         display: flex;

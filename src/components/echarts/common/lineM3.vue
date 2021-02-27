@@ -26,12 +26,15 @@ export default {
 	},
 	data () {
 		return {
-			
+			myChart:null
 		}
 	},
 	watch:{
 		myData(val,val1){
 			this.initEcharts();	
+			if(this.myChart){
+				this.myChart.resize();
+			}
 		}
 	},
     mounted() {
@@ -40,14 +43,13 @@ export default {
 	methods: {
 		initEcharts() {
 			let _option = this.defaultOption();
-			let myChart = this.$echarts.init(document.getElementById(this.id));
-			myChart.setOption(_option);
+			this.myChart = this.$echarts.init(document.getElementById(this.id));
+			this.myChart.setOption(_option);
 			window.addEventListener('resize',()=>{
-				myChart.resize();
+				this.myChart.resize();
 			})
 		},
 		defaultOption() {
-			
 			var option = {
             color: this.colorList,
             tooltip: {

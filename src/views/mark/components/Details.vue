@@ -46,7 +46,7 @@
         </div>
         <!-- -->
         <div class="mark-detail-anchor">
-            <Anchor show-ink offset-top="64">
+            <Anchor show-ink :offset-top="64">
                 <AnchorLink href="#m-d-accept-header" title="品牌受众分析" />
                 <AnchorLink href="#mark-details-market" title="品牌舆情洞察" />
                 <AnchorLink href="#mark-details-public" title="行业态势分析" />
