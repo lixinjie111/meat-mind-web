@@ -145,12 +145,12 @@ const fjEData = {
     },
     box35Data: {
         name: ['真粉丝',  '僵尸粉'],
-        value: [22, 78],
+        value: [80, 20],
         title: '6800w'
     },
     box36Data: {
         name: ['真粉丝',  '僵尸粉'],
-        value: [44, 56],
+        value: [75, 25],
         title: '7000w'
     },
     box37Data: {
