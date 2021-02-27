@@ -1042,7 +1042,8 @@
                 width: calc(100% - 388px);
                 height: 618px;
                 border-radius: 12px;
-                background: url("../../assets/img/dashboard/manage/overview-bg1.png") no-repeat center center / 100% 100%;
+                background: #E5F5FF;
+                //background: url("../../assets/img/dashboard/manage/overview-bg1.png") no-repeat center center / 100% 100%;
                 box-shadow: 0px 0px 8px 0px rgba(166, 171, 189, 0.3);
 
                 .manage-overview-chart {
@@ -1262,7 +1263,8 @@
                 padding: 24px;
                 width: 368px;
                 height: 618px;
-                background: url("../../assets/img/dashboard/manage/overview-bg2.png") no-repeat center center / 100% 100%;
+                background:#E5F5FF;
+                //background: url("../../assets/img/dashboard/manage/overview-bg2.png") no-repeat center center / 100% 100%;
                 border-radius: 12px;
                 box-shadow: 0px 0px 8px 0px rgba(166, 171, 189, 0.3);
 
