@@ -18,14 +18,12 @@
                             <div>平均人月纯购物支出：<span>¥{{groupData.shopping}}</span></div>
                             <div>系统推荐获客方案成功获客概率均值为：<span>{{groupData.successRate}}%</span></div>
                         </div>
-                        <div class="target-left-content-three card-one-bg">
+                        <div class="target-left-content-three">
                             <div class="target-left-content-three-title">成功发展该客群，可使营业额增长</div>
                             <div class="target-left-content-three-num"><span>{{groupData.Turnover}}</span></div>
                         </div>
                     </div>
                     <div class="target-left-content-four"><span @click="controlModal" class="link">系统推荐获客方案</span></div>
-
-
                 </div>
             </div>
             <div class="target-right">
@@ -35,7 +33,7 @@
         </div>
         <div class="card card-one">
             <div class="card-one-left">
-                <div class="card-one-left-info card-one-bg">
+                <div class="card-one-left-info">
                     <div class="flex">
                         <p>{{groupData.name}}</p>
                         <p>分群用户数：{{groupData.total}}人</p>
@@ -518,11 +516,6 @@
                         component: 'vDxitem1',
                     },
                     {
-                        label:'企业高管',
-                        value:'qygg',
-                        component: 'vDxitem',
-                    },
-                    {
                         label:'北漂一族',
                         value:'bpyz',
                         component: 'vDxitem',
@@ -531,7 +524,12 @@
                         label:'自由职业',
                         value:'zyzz',
                         component: 'vDxitem',
-                    }
+                    },
+                    {
+                        label:'企业高管',
+                        value:'qygg',
+                        component: 'vDxitem',
+                    },
                 ],
                 data1: {
                   own: '23',
@@ -543,7 +541,7 @@
                   tag: ['公共交通', '家', '公司'],
                   trait: ['未婚', '20-29岁', '本科以上', '白领', '15-25k', '一线城市'],
                   attention: ['秋天的第一杯奶茶', '燃烧我的卡路里'],
-                  noema: { brand: '强势品牌', content: '强势品牌', attitude: '个性化/颜值…', visualize: '具象化/简洁', hate: '性别歧视', wound: '996/晚高峰' },
+                  noema: { brand: '强势品牌', content: '促进型', attitude: '个性化/颜值…', visualize: '具象化/简洁', hate: '性别歧视', wound: '996/晚高峰' },
                   medium: ['tt', 'xhs', 'dy', 'ks' ],
                   commute: {
                     time: '7:00 - 9:00',
@@ -565,36 +563,67 @@
                   },
                 },
                 data2: {
-                  own: '8',
-                  develop: '92',
-                  total: '7,930',
-                  shopping: '1700',
-                  successRate: '91',
-                  Turnover: '¥10,000,000-¥26,000,000',
-                  tag: ['骑行', '住所', '学校'],
-                  trait: ['未婚', '18-24岁', '本科以上', '学生', '5-8k', '出入社会', '价格明感'],
-                  attention: ['燃脂减肥', '火热促销'],
-                  noema: { brand: '无强烈要求', content: '积极阳光', attitude: '性价比/健康…', visualize: '凡尔赛', hate: '被鄙视', wound: '糖高增肥' },
-                  medium: ['dy', 'txxw', 'pyq' ],
-                  commute: {
-                    time: '7:00 - 9:00',
-                    media: '朋友圈/腾讯新闻',
-                    mood: [{ name: '放松', value: '26'}, { name: '一般', value: '21'}],
-                    desc: '用户群体处于休息及去往学校途中，偏好浏览朋友圈及新闻类、天气类应用，情绪分布较为平均',
-                  },
-                  rest: {
-                    title: '学业/休息',
-                    time: '12:00 - 13:00',
-                    media: '饿了么/大众点评/抖音',
-                    mood: [{ name: '放松', value: '28'}, { name: '一般', value: '26'}],
-                    desc: '用户群体主要处于午间休息状态，偏好浏览新闻资讯及社交娱乐类型的APP，情绪分布较为放松 ',
-                  },
-                  relax: {
-                    time: '20:00 - 22:00',
-                    media: '朋友圈/抖音',
-                    mood: [{ name: '放松', value: '61'}, { name: '一般', value: '32'}],
-                    desc: '用户群体处于休息及休闲状态，偏好社交娱乐、电商购物类型的APP，情绪分布较为放松',
-                  },
+                    own: '8',
+                    develop: '92',
+                    total: '7,930',
+                    shopping: '1700',
+                    successRate: '91',
+                    Turnover: '¥10,000,000-¥26,000,000',
+                    tag: ['骑行', '住所', '学校'],
+                    trait: ['未婚', '18-24岁', '本科以上', '学生', '5-8k', '初入社会', '价格敏感'],
+                    attention: ['燃脂减肥', '火热促销'],
+                    noema: { brand: '无强烈要求', content: '积极阳光', attitude: '性价比/健康…', visualize: '凡尔赛', hate: '被鄙视', wound: '糖高增肥' },
+                    medium: ['dy', 'txxw', 'pyq' ],
+                    commute: {
+                        time: '7:00 - 8:00',
+                        media: '朋友圈/腾讯新闻',
+                        mood: [{ name: '放松', value: '26'}, { name: '一般', value: '21'}],
+                        desc: '用户群体处于休息及去往学校途中，偏好浏览朋友圈及新闻类、天气类应用，情绪分布较为平均',
+                    },
+                    rest: {
+                        title: '学业/休息',
+                        time: '11:00 - 12:00',
+                        media: '饿了么/大众点评/抖音',
+                        mood: [{ name: '放松', value: '28'}, { name: '一般', value: '26'}],
+                        desc: '用户群体主要处于午间休息状态，偏好浏览新闻资讯及社交娱乐类型的APP，情绪分布较为放松 ',
+                    },
+                    relax: {
+                        time: '18:00 - 22:00',
+                        media: '朋友圈/抖音',
+                        mood: [{ name: '放松', value: '61'}, { name: '一般', value: '32'}],
+                        desc: '用户群体处于休息及休闲状态，偏好社交娱乐、电商购物类型的APP，情绪分布较为放松',
+                    },
+                },
+                data3: {
+                    own: '21',
+                    develop: '79',
+                    total: '18,197',
+                    shopping: '2400',
+                    successRate: '83',
+                    Turnover: '¥3,600,000-¥5,800,000',
+                    tag: ['骑行', '住所', '公司'],
+                    trait: ['未婚', '22-28岁', '专科以上', '职场人士', '5-15k', '价格敏感'],
+                    attention: ['一夜暴富', '科技前沿'],
+                    noema: { brand: '名气品牌', content: '新潮', attitude: '性价比/有范...', visualize: '上档次', hate: '被称作民工', wound: '月光族、还贷日' },
+                    medium: ['dy', 'ks', 'pyq' ],
+                    commute: {
+                        time: '7:00 - 9:00',
+                        media: '头条/微博/小红书',
+                        mood: [{ name: '一般', value: '26'}, { name: '紧张', value: '39'}],
+                        desc: '用户群体主要处于通勤及工作状态，偏好社交娱乐类型的APP，时间段内对出行、外卖餐饮类的生活服务APP需求显著，成为重要触点，情绪偏向紧张和烦躁',
+                    },
+                    rest: {
+                        time: '12:00 - 13:00',
+                        media: '大众点评/新浪微博/抖音',
+                        mood: [{ name: '紧张', value: '36'}, { name: '一般', value: '36'}],
+                        desc: '用户群体处于工作午间休整状态，偏好浏览美食餐饮、外卖服务类的APP，处理工作相关信息，情绪主要表现为紧张和一般',
+                    },
+                    relax: {
+                        time: '20:00 - 22:00',
+                        media: '抖音/小红书/快手',
+                        mood: [{ name: '放松', value: '48'}, { name: '一般', value: '26'}],
+                        desc: '用户群体处于通勤及加班工作状态，部分用户仍然在处理工作事务，其他用户处于通勤途中，浏览新闻及娱乐信息，情绪分布较为平均',
+                    },
                 },
                 visible: false,
             }
@@ -609,7 +638,7 @@
         },
         computed: {
           groupData(){
-            const temp = { bjsbz: { ...this.data1, name: '北京上班族' }, qygg: { ...this.data1, name: '企业高管', total: '5,158'}, bpyz: { ...this.data1, name: '北漂一族', total: '9,000' }, zyzz: { ...this.data1, name: '自由职业', total: '1,000'}, yxqn: { ...this.data2, name: '研学青年' }}
+            const temp = { bjsbz: { ...this.data1, name: '北京上班族' }, qygg: { ...this.data1, name: '企业高管', total: '5,158'}, bpyz: { ...this.data3, name: '北漂一族', total: '1,8197' }, zyzz: { ...this.data1, name: '自由职业', total: '1,000'}, yxqn: { ...this.data2, name: '研学青年' }}
             return temp[this.mbValue]
           },
           showComponent(){
@@ -650,9 +679,9 @@
             font-weight: 400;
             color: #97A0C3;
         }
-        .card-one-bg{
-            background: url("../../assets/img/dashboard/market/card-one-bg@2x.png") no-repeat center center / 100% 100%;
-        }
+        //.card-one-bg{
+            //background: url("../../assets/img/dashboard/market/card-one-bg@2x.png") no-repeat center center / 100% 100%;
+        //}
         .market-target {
             margin: 24px 0;
 
@@ -662,7 +691,8 @@
                 width: 320px;
                 height: 442px;
                 box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
-                background: url("../../assets/img/dashboard/market/target-bg@2x.png") no-repeat center / 100% 100%;
+                background: #E5F5FF;
+                //background: url("../../assets/img/dashboard/market/target-bg@2x.png") no-repeat center / 120% 120%;
                 border-radius: 12px;
 
                 .target-left-title {
@@ -694,7 +724,7 @@
                         ::v-deep .ivu-select-selection {
                             height: 48px;
                             background: rgba(255, 255, 255, .6);
-                            box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8), -2px -2px 7px 0px #FFFEFA;
+                            box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.6) inset, -2px -2px 7px 0px #FFFEFA inset;
                             border-radius: 8px;
                             border: 1px solid #C6CBDE;
 
@@ -716,14 +746,23 @@
                     }
                     .target-left-content-info{
                         font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
                         font-weight: 400;
                         color: #242F57;
                         line-height: 22px;
+
                         .target-left-content-first{
                             margin-bottom: 30px;
                         }
                         .target-left-content-second{
                             margin-bottom: 36px;
+
+                            span {
+                                font-size: 16px;
+                                font-family: HelveticaNeue-Medium, HelveticaNeue;
+                                font-weight: 500;
+                                color: #242F57;
+                            }
                         }
                     }
 
@@ -733,6 +772,9 @@
                         height: 72px;
                         margin-bottom: 51px;
                         color: #FFFFFF;
+                        background: linear-gradient(225deg, #2068E6 0%, #448DFF 100%);
+                        box-shadow: 2px 3px 12px 0px rgba(56, 88, 148, 0.55);
+                        border-radius: 8px;
                         .target-left-content-three-title{
                             font-size: 16px;
                             font-family: PingFangSC-Regular, PingFang SC;
@@ -751,6 +793,7 @@
                         width: 112px;
                         height: 22px;
                         font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
                         font-weight: 500;
                         color: #2373FF;
                         line-height: 22px;
@@ -765,9 +808,8 @@
                 box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
                 border-radius: 12px;
 
-                video {
-                    object-fit: fill;
-                    border-radius: 8px;
+                ::v-deep #mapContainer {
+                    border-radius: 12px;
                 }
             }
         }
@@ -782,11 +824,15 @@
                 width: 320px;
                 height: 490px;
                 padding: 16px;
-                background: url("../../assets/img/dashboard/market/card-one-bg2@2x.png") no-repeat center center / 100% 100%;
+                background: #E5F5FF;
+                //background: url("../../assets/img/dashboard/market/card-one-bg2@2x.png") no-repeat center center / 100% 100%;
                 .card-one-left-info {
                     padding: 10px 12px;
                     width: 287px;
                     height: 72px;
+                    background: linear-gradient(221deg, #03A8C8 0%, #8BD5AE 100%);
+                    box-shadow: 2px 3px 12px 0px rgba(45, 120, 134, 0.55);
+                    border-radius: 8px;
                     > div {
                         > p {
                             &:nth-child(1) {
@@ -817,7 +863,7 @@
                             line-height: 14px;
                             text-align: center;
                             background: rgba(255, 255, 255, 0.3);
-                            border-radius: 8px;
+                            border-radius: 4px;
                             border: 1px solid #FFFFFF;
 
                             > span {
@@ -972,13 +1018,12 @@
 
                         .item-box {
                             color: #242F57;
-                            background: #DBEAFF;
-                            box-shadow: 0px 4px 16px 0px rgba(55, 84, 170, 0.12);
-                            color: #242F57;
+                            background: #E5F5FF;
 
                             &.item-box-active {
                                 color: #FFFFFF;
-                                background: linear-gradient(225deg, #1C66DE 0%, #98A0F9 100%);
+                                background: linear-gradient(224deg, #8378F9 0%, #C392E4 100%);
+                                box-shadow: 2px 3px 12px 0px rgba(109, 57, 143, 0.55);
                             }
                         }
                     }
@@ -1415,6 +1460,8 @@
         }
 
         .card-three {
+            margin-top: 24px;
+
             .card-three-select {
                 display: flex;
 

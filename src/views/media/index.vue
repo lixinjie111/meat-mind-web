@@ -142,7 +142,7 @@
           </div>
           <div class="labl_txt_container">
             <div class="labl_cir"></div>
-            <div class="labl_txt">合作KOL的TOP3为李佳琦、薇娅、雪梨；</div>
+            <div class="labl_txt">合作KOL的TOP3为雪梨、王瑶、titi；</div>
           </div>
           <div class="labl_txt_container">
             <div class="labl_cir"></div>
@@ -553,9 +553,6 @@
           <div class="m-f-line">
               <div class="label">主投平台</div>
               <div class="f-list">
-                <div class="f-item">
-                     <p>综合</p>
-                  </div>
                 <div class="f-item" @click="list1Act=index" :class="{'active':index==list1Act}" v-for="(item,index) in list1" :key="index">
                     <p>{{item}}</p>
                 </div>
@@ -564,9 +561,6 @@
           <div class="m-f-line">
               <div class="label">领域</div>
               <div class="f-list">
-                <div class="f-item">
-                     <p>综合</p>
-                  </div>
                 <div class="f-item" @click="list2Act=index" :class="{'active':index==list2Act}" v-for="(item,index) in list2" :key="index">
                     <p>{{item}}</p>
                 </div>
@@ -576,9 +570,6 @@
               <div class="label"><span style="color:#FB343E">*</span>
               价格类型</div>
               <div class="f-list">
-                <div class="f-item">
-                     <p>综合</p>
-                  </div>
                 <div class="f-item" @click="list3Act=index" :class="{'active':index==list3Act}" v-for="(item,index) in list3" :key="index">
                     <p>{{item}}</p>
                 </div>
@@ -752,7 +743,110 @@
             暂无相关数据
           </div>
       </div>
-      <div class="m-p-kol">
+        <div class="m-p-kol-strategy">
+            <div class="strategy-title">
+                推荐KOL组合策略
+            </div>
+            <div class="strategy-top">
+                <div class="top-left">
+                    <p><span class="top-title">推荐的KOL组合</span><span class="top-blue">李子柒 + 西木西木 + 辣目洋子</span></p>
+                    <p class="mt12"><span class="top-title">方案效果</span><span>预期以12600元的成本吸引潜客432341人</span></p>
+                </div>
+                <div class="top-right">
+                    <p class="top-title">推荐缘由</p>
+                    <p><span>李子柒为头部KOL，在曝光率及用户影响率上对于品牌推广能起到快速起效。但鉴于李子柒非垂直领域KOL，专业引流不足，故补充垂直类KOL西木西木和泛娱乐类KOL辣目洋子，三者配合投放可使收益达到最高</span></p>
+                </div>
+            </div>
+            <div class="strategy-bottom">
+                <div></div>
+                <div>
+                    <div class="bottom-title">用户量</div>
+                </div>
+                <div>
+                    <div class="bottom-title light">曝光率</div>
+                </div>
+                <div>
+                    <div class="bottom-title">销售分布</div>
+                </div>
+                <div>
+                    <div class="bottom-title light">内容方向</div>
+                </div>
+                <div>
+                    <div class="bottom-card">
+                        <img src="../../assets/img/mark/head1.jpg" />
+                        <div class="card-box">
+                            <p>头部KOL</p>
+                            <p>李子柒</p>
+                        </div>
+                        <div class="card-tip">
+                            <Poptip popper-class="saas-poptip" placement="right-start">
+                                <i class="iconfont2 iconguanyu tip-icon"></i>
+                                <div slot="content">
+                                    <p>快速拉新策略KOL，占整体投放预算的55%，投放时间为未来7日投放（2日达到投放预期的80%），预期获得18%的曝光，12%的互动和3%销售转化；</p>
+                                    <p>头部KOL，粉丝基数大，影响力高，能够带来高互动和高转化，适合快速拉新需求的投放策略；</p>
+                                    <p>与品牌所属行业关联度为中等水平，但该KOL口碑极好，具有极高的影响力和覆盖范围，能够实现快速拉新的投放效果；</p>
+                                </div>
+                            </Poptip>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box34Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box37Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box40Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box31Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <div class="bottom-card">
+                        <img src="../../assets/img/mark/head2.jpeg" />
+                        <div class="card-box">
+                            <p>垂直类KOL</p>
+                            <p>西木西木</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box35Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box38Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box41Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box32Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <div class="bottom-card">
+                        <img src="../../assets/img/mark/head3.jpeg" />
+                        <div class="card-box">
+                            <p>泛娱乐类KOL</p>
+                            <p>辣目洋子</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box36Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box39Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box42Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box33Data" ></PieEcharts6>
+                </div>
+            </div>
+        </div>
+        <div class="m-p-kol">
           <div class="m-p-target-title">
               KOL资源 
 			  <Poptip popper-class="saas-poptip small" placement="right-start">
@@ -771,9 +865,6 @@
           <Tabs value="name1" @on-click="getTab">
               <TabPane label="短视频" name="name1">
                 <div class="f-list">
-                  <div class="f-item">
-                     <p>综合</p>
-                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -789,17 +880,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                       <div class="m-f-line">
+                           <div class="label">类别</div>
+                           <div class="f-list">
+                               <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                                   <p>{{item}}</p>
+                               </div>
+                           </div>
+                       </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -833,10 +921,7 @@
                 </div>
               </TabPane>
               <TabPane label="社交传媒" name="name2">
-                 <div class="f-list">
-                   <div class="f-item">
-                     <p>综合</p>
-                  </div>
+                <div class="f-list">
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -852,17 +937,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                   <div class="m-f-line">
+                       <div class="label">类别</div>
+                       <div class="f-list">
+                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                               <p>{{item}}</p>
+                           </div>
+                       </div>
+                   </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -896,14 +978,11 @@
                 </div>
               </TabPane>
               <TabPane label="大众传媒" name="name3">
-                 <div class="f-list">
-                   <div class="f-item">
-                     <p>综合</p>
-                  </div>
+               <div class="f-list">
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
-                </div>
+               </div>
                 <div class="listBox">
                    <div class="listBox-left">
                      <Menu active-name="1" width="133px" mode="vertical">
@@ -915,17 +994,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                   <div class="m-f-line">
+                       <div class="label">类别</div>
+                       <div class="f-list">
+                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                               <p>{{item}}</p>
+                           </div>
+                       </div>
+                   </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -959,10 +1035,7 @@
                 </div>
               </TabPane>
               <TabPane label="体验事件" name="name4">
-                 <div class="f-list">
-                   <div class="f-item">
-                     <p>综合</p>
-                  </div>
+                <div class="f-list">
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -978,17 +1051,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                   <div class="m-f-line">
+                       <div class="label">类别</div>
+                       <div class="f-list">
+                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                               <p>{{item}}</p>
+                           </div>
+                       </div>
+                   </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -1022,14 +1092,11 @@
                 </div>
               </TabPane>
               <TabPane label="促销" name="name5">
-                 <div class="f-list">
-                   <div class="f-item">
-                     <p>综合</p>
-                  </div>
+              <div class="f-list">
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
-                </div>
+              </div>
                 <div class="listBox">
                    <div class="listBox-left">
                      <Menu active-name="1" width="133px" mode="vertical">
@@ -1041,17 +1108,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                   <div class="m-f-line">
+                       <div class="label">类别</div>
+                       <div class="f-list">
+                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                               <p>{{item}}</p>
+                           </div>
+                       </div>
+                   </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -1085,14 +1149,11 @@
                 </div>
               </TabPane>
               <TabPane label="在线社交媒体" name="name6">
-                 <div class="f-list">
-                   <div class="f-item">
-                     <p>综合</p>
-                  </div>
+               <div class="f-list">
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
-                </div>
+               </div>
                 <div class="listBox">
                    <div class="listBox-left">
                      <Menu active-name="1" width="133px" mode="vertical">
@@ -1104,17 +1165,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                   <div class="m-f-line">
+                       <div class="label">类别</div>
+                       <div class="f-list">
+                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                               <p>{{item}}</p>
+                           </div>
+                       </div>
+                   </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -1148,10 +1206,7 @@
                 </div>
               </TabPane>
               <TabPane label="公共关系和宣传" name="name7">
-                 <div class="f-list">
-                   <div class="f-item">
-                     <p>综合</p>
-                  </div>
+                <div class="f-list">
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -1167,17 +1222,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                   <div class="m-f-line">
+                       <div class="label">类别</div>
+                       <div class="f-list">
+                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                               <p>{{item}}</p>
+                           </div>
+                       </div>
+                   </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -1211,10 +1263,7 @@
                 </div>
               </TabPane>
               <TabPane label="网站" name="name8">
-                 <div class="f-list">
-                   <div class="f-item">
-                     <p>综合</p>
-                  </div>
+                <div class="f-list">
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -1230,17 +1279,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                   <div class="m-f-line">
+                       <div class="label">类别</div>
+                       <div class="f-list">
+                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                               <p>{{item}}</p>
+                           </div>
+                       </div>
+                   </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -1274,14 +1320,11 @@
                 </div>
               </TabPane>
               <TabPane label="其他" name="name9">
-                 <div class="f-list">
-                   <div class="f-item">
-                     <p>综合</p>
-                  </div>
+               <div class="f-list">
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
-                </div>
+               </div>
                 <div class="listBox">
                    <div class="listBox-left">
                      <Menu active-name="1" width="133px" mode="vertical">
@@ -1293,17 +1336,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                   <div class="m-f-line">
+                       <div class="label">类别</div>
+                       <div class="f-list">
+                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                               <p>{{item}}</p>
+                           </div>
+                       </div>
+                   </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -1351,6 +1391,7 @@ import Card from "./base/Card"
 import PieCaseEcharts from '../../components/echarts/common/PieCaseEcharts';
 import barL from '../../components/echarts/common/barL';
 import funnel from '../../components/echarts/common/funnel';
+import PieEcharts6 from '../../components/echarts/common/PieEcharts6';
 import PieEcharts2 from '../../components/echarts/common/PieEcharts2';
 import LeidaEcharts from '../../components/echarts/common/LeidaEcharts';
 import vGraph from '../../components/echarts/common/zjjGraph';
@@ -1360,7 +1401,7 @@ import barM from '../../components/echarts/common/barM';
 
 export default {
   name: "index",
-  components: { DefaultPage, Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts2,LeidaEcharts,vGraph,vTree,lineM,barM},
+  components: { DefaultPage, Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vGraph,vTree,lineM,barM},
   data(){
       return{
           isShowTip1:false,
@@ -1410,7 +1451,7 @@ export default {
                     }
                 ],
                 model1: '过去3天',
-          list1:["哔哩哔哩","抖音","快手","小红书","新浪微博","头条","大众点评","360kr"],
+          list1:["不限","哔哩哔哩","抖音","快手","小红书","新浪微博","头条","大众点评","360kr"],
           list1Act:1,
           list2Act:0,
           list3Act:0,
@@ -1419,10 +1460,10 @@ export default {
           list2:["不限","才艺技能","财经投资","测评","动画动漫","鬼畜","国潮国创","技术流","家居家装","教育","剧情搞笑",
           "科技数码","旅行","美食","美妆","萌宠","明星","母婴","汽车","情感","三农","生活日常",
           "时尚","舞蹈","艺术文化","个护","园艺","运动健身","奢侈品","新闻资讯","品牌组织","颜值达人","知识科普","番剧","游戏","品牌组织"],
-          list3:["按照最低刊例价组合","按照最高刊例价组合"],
+          list3:["不限","按照最低刊例价组合","按照最高刊例价组合"],
 
-          list4:["抖音","快手","微视","梨视频","西瓜视频"],
-          list5:["娱乐","才艺","萌宠","搞笑","二次元","游戏","家具","美食","旅游","企业","体育",
+          list4:["综合","抖音","快手","微视","梨视频","西瓜视频"],
+          list5:["全部","娱乐","才艺","萌宠","搞笑","二次元","游戏","家具","美食","旅游","企业","体育",
           "教育","科技","汽车","情感","时尚","文化","社会","实事",],
           myEData:[],
           columns1: [
@@ -2901,7 +2942,145 @@ export default {
       text-align: center;
     }
   }
-  .m-p-kol{
+  .m-p-kol-strategy {
+        margin-bottom: 24px;
+        width: 100%;
+        background: #FFFFFF;
+        box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+        border-radius: 12px;
+        border: 1px solid #EAEDF7;
+        padding:24px;
+        .strategy-title {
+            font-size: 16px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242F57;
+        }
+        .strategy-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            margin-top: 24px;
+            width: 100%;
+            height: 95px;
+            background: #F7F9FD;
+            border-radius: 8px;
+            border: 1px solid #EAEDF7;
+
+            >div {
+                width: 45%;
+
+                &.top-right {
+                    width: 52%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+
+                    >p {
+                        &:nth-child(1) {
+                            width: 160px;
+                            margin-right: 24px;
+                        }
+                    }
+                }
+
+                .mt12 {
+                    margin-top: 12px;
+                }
+
+                .top-title {
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #242F57;
+                }
+
+                span {
+                    margin-right: 24px;
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #636E95;
+
+                    &.top-blue {
+                        color: #2373FF;
+                    }
+                }
+            }
+        }
+
+        .strategy-bottom {
+            margin-top: 24px;
+            display: grid;
+            grid-template-columns: 15% 19% 19% 19% 19%;
+            grid-template-rows: 48px 150px 150px 150px;
+            grid-row-gap: 24px;
+            grid-column-gap: 24px;
+
+            .bottom-title {
+                width: 100%;
+                height: 48px;
+                line-height: 48px;
+                background: #73A0FA;
+                border-radius: 8px;
+                text-align: center;
+                font-size: 14px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #FFFFFF;
+
+                &.light {
+                    color: #242F57;
+                    background: #DBE7FF;
+                }
+            }
+
+            .bottom-card {
+                position: relative;
+                text-align: center;
+
+                > img {
+                    width: 56px;
+                    height: 56px;
+                    border-radius: 50%;
+                }
+
+                .card-box {
+                    margin-top: -30px;
+                    width: 100%;
+                    min-width: 140px;
+                    height: 116px;
+                    background: #FFFFFF;
+                    box-shadow: 5px 8px 16px 0px rgba(121, 131, 168, 0.15);
+                    border-radius: 8px;
+                    border: 2px solid #EAEDF7;
+
+                    >p {
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+
+                        &:nth-child(1) {
+                            margin-top: 48px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 500;
+                            color: #242F57;
+                        }
+                    }
+                }
+
+                .card-tip {
+                    position: absolute;
+                    right: -15px;
+                    top: 30px;
+                    text-align: left;
+                }
+            }
+        }
+    }
+    .m-p-kol{
     width: 100%;
     img{
       width: 100%;

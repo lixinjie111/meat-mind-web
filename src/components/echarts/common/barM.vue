@@ -50,6 +50,7 @@ export default {
 					}
 				},
 				legend: {
+					type: 'scroll',
 					bottom:0,
 					data: this.myData.legName,
 					textStyle: {
