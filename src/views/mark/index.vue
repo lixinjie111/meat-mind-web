@@ -188,17 +188,17 @@
                                     </div>
                                     <div class="selectDiv selectRt">
                                         <div class="selectLabel">对标比较</div>
-                                        <Select v-model="formItem.pinpai" size="small" multiple  style="width:120px;height:60px">
+                                        <Select v-model="formItem.pinpai" size="small" multiple  style="width:120px;height:60px" @on-change="selectPai2">
                                             <Option value="0">王老吉</Option>
                                             <Option value="1">加多宝</Option>
                                             <Option value="2">和其正</Option>
                                             <Option value="3">白云山</Option>
-                                            <Option value="4">清心堂</Option>
+                                            <!-- <Option value="4">清心堂</Option> -->
                                         </Select>
                                     </div>
                                 </div>
                             <div class="echartBox">
-                                <lineM3 id="box68" :colorList="$lxjData.colorList" :myData="$lxjData.box68Data"></lineM3>
+                                <lineM3 id="box68" :colorList="$lxjData.colorList" :myData="my68Data"></lineM3>
                             </div>
                         </div>
                     </Col>
@@ -362,7 +362,7 @@
                                             <Option value="5">潘高寿</Option>
                                     </Select>
                                 </div>
-                                <templete v-if="formItem.pinpai1==0">    
+                                <template v-if="formItem.pinpai1==0">    
                                     <div class="boxTitle">
                                         对标品牌:<span>王老吉</span>
                                     </div>
@@ -405,8 +405,8 @@
                                             <span class="labelTag">假冒伪劣</span>
                                         </div>
                                     </div>
-                                </templete>    
-                                <templete v-if="formItem.pinpai1==1">    
+                                </template>    
+                                <template v-if="formItem.pinpai1==1">    
                                     <div class="boxTitle">
                                         对标品牌:<span>加多宝</span>
                                     </div>
@@ -448,8 +448,8 @@
                                             <span class="labelTag">博眼球</span>
                                         </div>
                                     </div>
-                                </templete>    
-                                <templete v-if="formItem.pinpai1==2">    
+                                </template>    
+                                <template v-if="formItem.pinpai1==2">    
                                     <div class="boxTitle">
                                         对标品牌:<span>加多宝</span>
                                     </div>
@@ -491,8 +491,8 @@
                                             <span class="labelTag">望风使舵</span>
                                         </div>
                                     </div>
-                                </templete>    
-                                <templete v-if="formItem.pinpai1==3">    
+                                </template>    
+                                <template v-if="formItem.pinpai1==3">    
                                     <div class="boxTitle">
                                         对标品牌:<span>加多宝</span>
                                     </div>
@@ -534,8 +534,8 @@
                                             <span class="labelTag">内部贪腐</span>
                                         </div>
                                     </div>
-                                </templete>    
-                                <templete v-if="formItem.pinpai1==4">    
+                                </template>    
+                                <template v-if="formItem.pinpai1==4">    
                                     <div class="boxTitle">
                                         对标品牌:<span>加多宝</span>
                                     </div>
@@ -578,8 +578,8 @@
                                             <span class="labelTag">假冒伪劣</span>
                                         </div>
                                     </div>
-                                </templete>    
-                                <templete v-if="formItem.pinpai1==5">    
+                                </template>    
+                                <template v-if="formItem.pinpai1==5">    
                                     <div class="boxTitle">
                                     对标品牌:<span>潘高寿</span>
                                     </div>
@@ -622,7 +622,7 @@
                                             <span class="labelTag">性价比</span>
                                         </div>
                                     </div>
-                                </templete>    
+                                </template>    
                             </div>
                         </Col>
                         <Col span="8">
@@ -637,7 +637,7 @@
                                             <Option value="5">潘高寿</Option>
                                     </Select>
                                 </div>
-                                <templete v-if="formItem.pinpai2==0">    
+                                <template v-if="formItem.pinpai2==0">    
                                     <div class="boxTitle">
                                         对标品牌:<span>王老吉</span>
                                     </div>
@@ -680,8 +680,8 @@
                                             <span class="labelTag">假冒伪劣</span>
                                         </div>
                                     </div>
-                                </templete>    
-                                <templete v-if="formItem.pinpai2==1">    
+                                </template>    
+                                <template v-if="formItem.pinpai2==1">    
                                     <div class="boxTitle">
                                         对标品牌:<span>加多宝</span>
                                     </div>
@@ -723,8 +723,8 @@
                                             <span class="labelTag">博眼球</span>
                                         </div>
                                     </div>
-                                </templete>    
-                                <templete v-if="formItem.pinpai2==2">    
+                                </template>    
+                                <template v-if="formItem.pinpai2==2">    
                                     <div class="boxTitle">
                                         对标品牌:<span>加多宝</span>
                                     </div>
@@ -766,8 +766,8 @@
                                             <span class="labelTag">望风使舵</span>
                                         </div>
                                     </div>
-                                </templete>    
-                                <templete v-if="formItem.pinpai2==3">    
+                                </template>    
+                                <template v-if="formItem.pinpai2==3">    
                                     <div class="boxTitle">
                                         对标品牌:<span>加多宝</span>
                                     </div>
@@ -809,8 +809,8 @@
                                             <span class="labelTag">内部贪腐</span>
                                         </div>
                                     </div>
-                                </templete>    
-                                <templete v-if="formItem.pinpai2==4">    
+                                </template>    
+                                <template v-if="formItem.pinpai2==4">    
                                     <div class="boxTitle">
                                         对标品牌:<span>加多宝</span>
                                     </div>
@@ -853,8 +853,8 @@
                                             <span class="labelTag">假冒伪劣</span>
                                         </div>
                                     </div>
-                                </templete>    
-                                <templete v-if="formItem.pinpai2==5">    
+                                </template>    
+                                <template v-if="formItem.pinpai2==5">    
                                     <div class="boxTitle">
                                     对标品牌:<span>潘高寿</span>
                                     </div>
@@ -897,7 +897,7 @@
                                             <span class="labelTag">性价比</span>
                                         </div>
                                     </div>
-                                </templete>    
+                                </template>    
                             </div>
                         </Col>
                     </Row>
@@ -1062,11 +1062,12 @@ export default {
 			showFlag:true,
             formItem: {
                 select: '2',
-                pinpai:['0','1'],
+                pinpai:[0],
                 pinpai1:'0',
                 pinpai2:'5',
                 date:'0'
             },
+            my68Data:this.$lxjData.box68Data,
             myMonth0:this.$lxjData.box40Data,
             myMonth1:this.$lxjData.box41Data,
             myMonth2:this.$lxjData.box42Data,
@@ -1082,6 +1083,52 @@ export default {
 		}
 	},
     methods:{
+        selectPai2(val){
+            console.log(val);
+            let obj={
+                legName:['邓老凉茶', ],
+                name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
+                value:[
+                     {
+                        name: '邓老凉茶',
+                        type: 'line',
+                        data: [272, 290, 393, 391, 470, 451, 440, 402, 670, 531]
+                    },
+                ],
+            };
+            let box682Data={
+                legName:['加多宝','王老吉','和其正','白云山',],
+                name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
+                value: [
+                    {
+                        name: '加多宝',
+                        type: 'line',
+                        data: [631, 607, 605, 581, 671, 645, 351, 390, 490, 450]
+                    },
+                    {
+                        name: '王老吉',
+                        type: 'line',
+                        data: [831, 207, 405, 381, 271, 445, 151, 290, 390, 750]
+                    },
+                    {
+                        name: '和其正',
+                        type: 'line',
+                        data: [131, 207, 305, 481, 571, 645, 751, 890, 910, 980]
+                    },
+                    {
+                        name: '白云山',
+                        type: 'line',
+                        data: [231, 307, 105, 481, 371, 545, 351, 790, 890, 380]
+                    },
+                ]
+            };
+            val.forEach(item=>{
+                obj.legName.push(box682Data.legName[item])
+                obj.value.push(box682Data.value[item])
+            })
+            this.my68Data=obj;
+            console.log(obj)
+        },
         selectDate(val){
             if(val==0){
                 this.myMonth0=this.$lxjData.box40Data;
