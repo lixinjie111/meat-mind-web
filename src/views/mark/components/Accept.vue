@@ -96,8 +96,5 @@ export default {
             background: url("../../../assets/img/mark/arrow@2x.png") no-repeat center center / 16px 16px;
         }
     }
-    .m-d-show-echarts{
-
-    }
 }
 </style>

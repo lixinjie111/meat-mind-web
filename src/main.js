@@ -11,6 +11,7 @@ import "../src/assets/scss/main.scss"
 import lxjData from "./utils/lxjData.js"
 import fjData from "./utils/fjData.js"
 import zjjData from "./utils/zjjData.js"
+import linData from "./utils/linData.js"
 import './utils/flexible'
 
 Vue.config.productionTip = false;
@@ -18,6 +19,7 @@ Vue.prototype.$echarts = echarts;
 Vue.prototype.$lxjData = lxjData;
 Vue.prototype.$fjData = fjData;
 Vue.prototype.$zjjData = zjjData;
+Vue.prototype.$linData = linData;
 Vue.use(ViewUI)
 
 new Vue({

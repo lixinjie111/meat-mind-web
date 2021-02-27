@@ -10,7 +10,7 @@
         </div>
         </div>
         <div class="tabpan_rig">
-            <div class="tabpan_lef_lef">
+            <div class="tabpan_rig_lef">
                 <img :src="serImg2" alt="" srcset="" class="serImg1">
             </div>
             <div class="tabpan_lef_rig">
@@ -51,9 +51,10 @@
         display: flex;
         align-items: flex-start;
         .tabpan_lef_lef{
-          width: 42px;
-          height: 42px;
-          margin-right: 12px;
+          width: 73px;
+          height: 74px;
+          margin-top: -10px;
+          margin-right: -7px;
           .serImg1{
             width: 100%;
           }
@@ -87,10 +88,10 @@
         box-sizing: border-box;
         display: flex;
         align-items: flex-start;
-        .tabpan_lef_lef{
-          width: 42px;
-          height: 42px;
-          margin-right: 12px;
+        .tabpan_rig_lef{
+          width: 64px;
+          height: 66px;
+          margin-top: -6px;
           .serImg1{
             width: 100%;
           }
