@@ -142,7 +142,7 @@
           </div>
           <div class="labl_txt_container">
             <div class="labl_cir"></div>
-            <div class="labl_txt">合作KOL的TOP3为李佳琦、薇娅、雪梨；</div>
+            <div class="labl_txt">合作KOL的TOP3为雪梨、王瑶、titi；</div>
           </div>
           <div class="labl_txt_container">
             <div class="labl_cir"></div>
@@ -565,7 +565,7 @@
                 </div>
                 <div class="top-right">
                     <p class="top-title">推荐缘由</p>
-                    <p><span>XX为头部KOL，在曝光率及用户影响率上对于品牌推广能起到快速起效。但鉴于XX非垂直领域KOL，专业引流不足，故补充垂直类KOL nini 和泛娱乐类KOLtiti，三者配合投放可使收益达到最高</span></p>
+                    <p><span>大网红为头部KOL，在曝光率及用户影响率上对于品牌推广能起到快速起效。但鉴于大网红非垂直领域KOL，专业引流不足，故补充垂直类KOL nini 和泛娱乐类KOL titi，三者配合投放可使收益达到最高</span></p>
                 </div>
             </div>
             <div class="strategy-bottom">
