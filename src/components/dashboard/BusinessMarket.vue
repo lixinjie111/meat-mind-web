@@ -11,47 +11,21 @@
                     <Select class="target-left-select" v-model="mbValue">
                         <Option v-for="it in mubiaoList" :key="it.value" :value="it.value">{{it.label}}</Option>
                     </Select>
-                    <p class="target-left-sub-title">基本特点</p>
-                    <ul class="target-left-sub-ul">
-                        <li>未婚</li>
-                        <li>20-29岁</li>
-                        <li>本科以上</li>
-                        <li>白领</li>
-                        <li>15-25k</li>
-                        <li>一线城市</li>
-                    </ul>
-                    <p class="target-left-sub-title">关注话题</p>
-                    <ul class="target-left-sub-ul follow-ul">
-                        <li>秋天的第一杯奶茶</li>
-                        <li>燃烧我的卡路里</li>
-                    </ul>
-                    <p class="target-left-sub-title">心智特点</p>
-                    <div class="target-left-group">
-                        <div>
-                            <p>品牌力偏好</p>
-                            <p>强势品牌</p>
+                    <div class="target-left-content-info">
+                        <div class="target-left-content-first">自有客户占比 {{groupData.own}}% ；可发展客户占比 {{groupData.develop}}%</div>
+                        <div class="target-left-content-second">
+                            <div>该客群共计：<span>{{groupData.total}}</span>人</div>
+                            <div>平均人月纯购物支出：<span>¥{{groupData.shopping}}</span></div>
+                            <div>系统推荐获客方案成功获客概率均值为：<span>{{groupData.successRate}}%</span></div>
                         </div>
-                        <div>
-                            <p>内容偏好</p>
-                            <p>促进型</p>
-                        </div>
-                        <div>
-                            <p>消费态度</p>
-                            <p>个性化/颜值…</p>
-                        </div>
-                        <div>
-                            <p>品牌形象偏好</p>
-                            <p>具象化/简洁</p>
-                        </div>
-                        <div>
-                            <p>厌恶</p>
-                            <p>性别歧视</p>
-                        </div>
-                        <div>
-                            <p>创伤</p>
-                            <p>996/晚高峰</p>
+                        <div class="target-left-content-three card-one-bg">
+                            <div class="target-left-content-three-title">成功发展该客群，可使营业额增长</div>
+                            <div class="target-left-content-three-num"><span>{{groupData.Turnover}}</span></div>
                         </div>
                     </div>
+                    <div class="target-left-content-four"><span @click="controlModal" class="link">系统推荐获客方案</span></div>
+
+
                 </div>
             </div>
             <div class="target-right">
@@ -61,22 +35,63 @@
         </div>
         <div class="card card-one">
             <div class="card-one-left">
-                <div class="card-one-left-info">
+                <div class="card-one-left-info card-one-bg">
                     <div class="flex">
-                        <p>北京上班族</p>
-                        <p>分群用户数：28790人</p>
+                        <p>{{groupData.name}}</p>
+                        <p>分群用户数：{{groupData.total}}人</p>
                     </div>
                     <ul>
-                        <li><span>公共交通</span></li>
-                        <li><span>家</span></li>
-                        <li><span>公司</span></li>
+                        <li v-for="it in groupData.tag" :key="it"><span>{{it}}</span></li>
                     </ul>
                 </div>
-                <div class="card-one-left-img-top">
-                    <img src="../../assets/img/dashboard/market/timeline1@2x.png"/>
+                <p class="card-one-left-title">基本特点</p>
+                <ul class="card-one-left-ul">
+                    <li v-for="it in groupData.trait" :key="it">{{it}}</li>
+                    <!--<li>20-29岁</li>-->
+                    <!--<li>本科以上</li>-->
+                    <!--<li>白领</li>-->
+                    <!--<li>15-25k</li>-->
+                    <!--<li>一线城市</li>-->
+                </ul>
+                <p class="card-one-left-title">关注话题</p>
+                <ul class="card-one-left-ul follow-ul">
+                    <li v-for="it in groupData.attention" :key="it">{{it}}</li>
+                    <!--<li>燃烧我的卡路里</li>-->
+                </ul>
+                <p class="card-one-left-title">心智特点</p>
+                <div class="target-left-group">
+                    <div>
+                        <p>品牌力偏好</p>
+                        <p>{{groupData.noema.brand}}</p>
+                    </div>
+                    <div>
+                        <p>内容偏好</p>
+                        <p>{{groupData.noema.content}}</p>
+                    </div>
+                    <div>
+                        <p>消费态度</p>
+                        <p>{{groupData.noema.attitude}}</p>
+                    </div>
+                    <div>
+                        <p>品牌形象偏好</p>
+                        <p>{{groupData.noema.visualize}}</p>
+                    </div>
+                    <div>
+                        <p>厌恶</p>
+                        <p>{{groupData.noema.hate}}</p>
+                    </div>
+                    <div>
+                        <p>创伤</p>
+                        <p>{{groupData.noema.wound}}</p>
+                    </div>
                 </div>
+                <p class="card-one-left-title">偏好媒介</p>
                 <div class="card-one-left-img-bottom">
-                    <img src="../../assets/img/dashboard/market/timeline2@2x.png"/>
+
+                    <img v-for="img in groupData.medium" :src="iconMap[img]" alt="">
+                    <!--<img :src="ttIcon" alt="">-->
+                    <!--<img :src="xhsIcon" alt="">-->
+                    <!--<img :src="ksIcon" alt="">-->
                 </div>
             </div>
             <div class="card-one-right">
@@ -88,50 +103,52 @@
                     <div class="item-box">
                         <p>
                             <Icon type="md-time" size="18" color="#636E95"/>
-                            7:00 - 9:00
+                            {{groupData.commute.time}}
                         </p>
                     </div>
                     <div class="item-box">
                         <p>
                             <Icon type="ios-phone-portrait" size="18" color="#636E95"/>
-                            头条/微博/小红书
+                            {{groupData.commute.media}}
                         </p>
                     </div>
                     <div class="item-box">
                         <p>
                             <Icon type="md-happy" size="18" color="#636E95"/>
-                            一般: 35% 紧张: 29%
+                            <span v-for="it in groupData.commute.mood" :key="it.name">{{it.name}}: {{it.value}}%</span>
+                            <!--一般: 35% 紧张: 29%-->
                         </p>
                     </div>
                     <div class="item-box">
-                        <p>用户群体处于休息及通勤状态，偏好浏览新闻资讯及社交娱乐类型的APP，处理工作相关信息，情绪分布较为平均</p>
+                        <p>{{groupData.commute.desc}}</p>
+                        <!--<p>用户群体处于休息及通勤状态，偏好浏览新闻资讯及社交娱乐类型的APP，处理工作相关信息，情绪分布较为平均</p>-->
                     </div>
                 </div>
                 <div class="card-one-right-item active">
                     <div class="item-line"></div>
                     <div class="item-box item-box-active">
-                        <p class="first-p"><img src="../../assets/img/dashboard/market/icons-working@2x.png"/>工作/休息</p>
+                        <p class="first-p"><img src="../../assets/img/dashboard/market/icons-working@2x.png"/>{{groupData.rest.title || '工作/休息'}}</p>
                     </div>
                     <div class="item-box">
                         <p>
                             <Icon type="md-time" size="18" color="#2373FF"/>
-                            12:00 - 13:00
+                            {{groupData.rest.time}}
                         </p>
                     </div>
                     <div class="item-box">
                         <p>
                             <Icon type="ios-phone-portrait" size="18" color="#2373FF"/>
-                            大众点评/新浪微博/抖音
+                            {{groupData.rest.media}}
                         </p>
                     </div>
                     <div class="item-box">
                         <p>
                             <Icon type="md-happy" size="18" color="#2373FF"/>
-                            放松: 37% 一般: 36%
+                            <span v-for="it in groupData.rest.mood" :key="it.name">{{it.name}}: {{it.value}}%</span>
                         </p>
                     </div>
                     <div class="item-box">
-                        <p>用户群体主要处于午间休息状态，偏好浏览新闻资讯及社交娱乐类型的APP，情绪分布较为放松</p>
+                        <p>{{groupData.rest.desc}}</p>
                     </div>
                 </div>
                 <div class="card-one-right-item">
@@ -142,23 +159,23 @@
                     <div class="item-box">
                         <p>
                             <Icon type="md-time" size="18" color="#636E95"/>
-                            20:00 - 22:00
+                            {{groupData.relax.time}}
                         </p>
                     </div>
                     <div class="item-box">
                         <p>
                             <Icon type="ios-phone-portrait" size="18" color="#636E95"/>
-                            抖音/小红书/快手
+                            {{groupData.relax.media}}
                         </p>
                     </div>
                     <div class="item-box">
                         <p>
                             <Icon type="md-happy" size="18" color="#636E95"/>
-                            放松: 48% 一般: 26%
+                            <span v-for="it in groupData.relax.mood" :key="it.name">{{it.name}}: {{it.value}}%</span>
                         </p>
                     </div>
-                    <div class="item-box">
-                        <p>用户群体处于休息及休闲状态，偏好社交娱乐、电商购物类型的APP，情绪分布较为放松</p>
+                    <div class="item-box desc">
+                        <p>{{groupData.relax.desc}}</p>
                     </div>
                 </div>
                 <div class="card-one-right-line"></div>
@@ -449,6 +466,8 @@
                 </div>
             </div>
         </Card>
+
+        <BusinessMarketModal :show="showModal" :type="mbValue" @close="controlModal"/>
     </div>
 </template>
 
@@ -464,10 +483,11 @@
     import chuDa from '../../views/user/chuDa';
     import vDxitem from "../../views/user/dxItem";
     import vDxitem1 from "../../views/user/dxItem1";
+    import BusinessMarketModal from "./BusinessMarketModal";
 
     export default {
         name: "BusinessMarket",
-        components: {chuDa,Card, barEcharts, barM, YibiaoCharts2, lineM, lineM1, Leida2Echarts, PieEcharts1, vDxitem, vDxitem1},
+        components: {chuDa,Card, barEcharts, barM, YibiaoCharts2, lineM, lineM1, Leida2Echarts, PieEcharts1, vDxitem, vDxitem1, BusinessMarketModal },
         data() {
             return {
                 threeActive: 1,
@@ -477,11 +497,14 @@
                 toLIcon: require("../../assets/img/yhhx/toL.png"),
                 yhtIcon: require("../../assets/img/yhhx/yht.png"),
                 input1: require("../../assets/img/yhhx/input1.png"),
-                ttIcon:require("../../assets/img/yhhx/tt.png"),
-                xhsIcon:require("../../assets/img/yhhx/xhs.png"),
-                ksIcon:require("../../assets/img/yhhx/ks.png"),
-                choice2:true,
-                choice12:true,
+                iconMap: {
+                  tt:require("../../assets/img/yhhx/tt.png"),
+                  xhs:require("../../assets/img/yhhx/xhs.png"),
+                  ks:require("../../assets/img/yhhx/ks.png"),
+                  dy:require("../../assets/img/yhhx/dyI.png"),
+                  txxw:require("../../assets/img/yhhx/txxw.png"),
+                  pyq:require("../../assets/img/yhhx/pyq.png"),
+                },
                 mbValue:'bjsbz',
                 mubiaoList:[
                     {
@@ -495,11 +518,6 @@
                         component: 'vDxitem1',
                     },
                     {
-                        label:'企业高管',
-                        value:'qygg',
-                        component: 'vDxitem',
-                    },
-                    {
                         label:'北漂一族',
                         value:'bpyz',
                         component: 'vDxitem',
@@ -508,22 +526,132 @@
                         label:'自由职业',
                         value:'zyzz',
                         component: 'vDxitem',
-                    }
-                ]
+                    },
+                    {
+                        label:'企业高管',
+                        value:'qygg',
+                        component: 'vDxitem',
+                    },
+                ],
+                data1: {
+                  own: '23',
+                  develop: '77',
+                  total: '28,790',
+                  shopping: '3300',
+                  successRate: '88',
+                  Turnover: '¥10,000,000-¥30,000,000',
+                  tag: ['公共交通', '家', '公司'],
+                  trait: ['未婚', '20-29岁', '本科以上', '白领', '15-25k', '一线城市'],
+                  attention: ['秋天的第一杯奶茶', '燃烧我的卡路里'],
+                  noema: { brand: '强势品牌', content: '促进型', attitude: '个性化/颜值…', visualize: '具象化/简洁', hate: '性别歧视', wound: '996/晚高峰' },
+                  medium: ['tt', 'xhs', 'dy', 'ks' ],
+                  commute: {
+                    time: '7:00 - 9:00',
+                    media: '头条/微博/小红书',
+                    mood: [{ name: '一般', value: '26'}, { name: '紧张', value: '39'}],
+                    desc: '用户群体主要处于通勤及工作状态，偏好社交娱乐类型的APP，时间段内对出行、外卖餐饮类的生活服务APP需求显著，成为重要触点，情绪偏向紧张和烦躁',
+                  },
+                  rest: {
+                    time: '12:00 - 13:00',
+                    media: '大众点评/新浪微博/抖音',
+                    mood: [{ name: '紧张', value: '36'}, { name: '一般', value: '36'}],
+                    desc: '用户群体处于工作午间休整状态，偏好浏览美食餐饮、外卖服务类的APP，处理工作相关信息，情绪主要表现为紧张和一般',
+                  },
+                  relax: {
+                    time: '20:00 - 22:00',
+                    media: '抖音/小红书/快手',
+                    mood: [{ name: '放松', value: '48'}, { name: '一般', value: '26'}],
+                    desc: '用户群体处于通勤及加班工作状态，部分用户仍然在处理工作事务，其他用户处于通勤途中，浏览新闻及娱乐信息，情绪分布较为平均',
+                  },
+                },
+                data2: {
+                    own: '8',
+                    develop: '92',
+                    total: '7,930',
+                    shopping: '1700',
+                    successRate: '91',
+                    Turnover: '¥10,000,000-¥26,000,000',
+                    tag: ['骑行', '住所', '学校'],
+                    trait: ['未婚', '18-24岁', '本科以上', '学生', '5-8k', '初入社会', '价格敏感'],
+                    attention: ['燃脂减肥', '火热促销'],
+                    noema: { brand: '无强烈要求', content: '积极阳光', attitude: '性价比/健康…', visualize: '凡尔赛', hate: '被鄙视', wound: '糖高增肥' },
+                    medium: ['dy', 'txxw', 'pyq' ],
+                    commute: {
+                        time: '7:00 - 8:00',
+                        media: '朋友圈/腾讯新闻',
+                        mood: [{ name: '放松', value: '26'}, { name: '一般', value: '21'}],
+                        desc: '用户群体处于休息及去往学校途中，偏好浏览朋友圈及新闻类、天气类应用，情绪分布较为平均',
+                    },
+                    rest: {
+                        title: '学业/休息',
+                        time: '11:00 - 12:00',
+                        media: '饿了么/大众点评/抖音',
+                        mood: [{ name: '放松', value: '28'}, { name: '一般', value: '26'}],
+                        desc: '用户群体主要处于午间休息状态，偏好浏览新闻资讯及社交娱乐类型的APP，情绪分布较为放松 ',
+                    },
+                    relax: {
+                        time: '18:00 - 22:00',
+                        media: '朋友圈/抖音',
+                        mood: [{ name: '放松', value: '61'}, { name: '一般', value: '32'}],
+                        desc: '用户群体处于休息及休闲状态，偏好社交娱乐、电商购物类型的APP，情绪分布较为放松',
+                    },
+                },
+                data3: {
+                    own: '21',
+                    develop: '79',
+                    total: '18,197',
+                    shopping: '2400',
+                    successRate: '83',
+                    Turnover: '¥3,600,000-¥5,800,000',
+                    tag: ['骑行', '住所', '公司'],
+                    trait: ['未婚', '22-28岁', '专科以上', '职场人士', '5-15k', '价格敏感'],
+                    attention: ['一夜暴富', '科技前沿'],
+                    noema: { brand: '名气品牌', content: '新潮', attitude: '性价比/有范...', visualize: '上档次', hate: '被称作民工', wound: '月光族、还贷日' },
+                    medium: ['dy', 'ks', 'pyq' ],
+                    commute: {
+                        time: '7:00 - 9:00',
+                        media: '头条/微博/小红书',
+                        mood: [{ name: '一般', value: '26'}, { name: '紧张', value: '39'}],
+                        desc: '用户群体主要处于通勤及工作状态，偏好社交娱乐类型的APP，时间段内对出行、外卖餐饮类的生活服务APP需求显著，成为重要触点，情绪偏向紧张和烦躁',
+                    },
+                    rest: {
+                        time: '12:00 - 13:00',
+                        media: '大众点评/新浪微博/抖音',
+                        mood: [{ name: '紧张', value: '36'}, { name: '一般', value: '36'}],
+                        desc: '用户群体处于工作午间休整状态，偏好浏览美食餐饮、外卖服务类的APP，处理工作相关信息，情绪主要表现为紧张和一般',
+                    },
+                    relax: {
+                        time: '20:00 - 22:00',
+                        media: '抖音/小红书/快手',
+                        mood: [{ name: '放松', value: '48'}, { name: '一般', value: '26'}],
+                        desc: '用户群体处于通勤及加班工作状态，部分用户仍然在处理工作事务，其他用户处于通勤途中，浏览新闻及娱乐信息，情绪分布较为平均',
+                    },
+                },
+                visible: false,
             }
         },
         methods: {
             toUser() {
                 this.$router.push({name:"user"})
+            },
+            controlModal(){
+              this.visible = !this.visible
             }
         },
         computed: {
+          groupData(){
+            const temp = { bjsbz: { ...this.data1, name: '北京上班族' }, qygg: { ...this.data1, name: '企业高管', total: '5,158'}, bpyz: { ...this.data3, name: '北漂一族', total: '1,8197' }, zyzz: { ...this.data1, name: '自由职业', total: '1,000'}, yxqn: { ...this.data2, name: '研学青年' }}
+            return temp[this.mbValue]
+          },
           showComponent(){
             return ['bjsbz', 'qygg', 'bpyz', 'zyzz'].includes(this.mbValue)
           },
           showComponent1(){
             return ['yxqn'].includes(this.mbValue)
           },
+          showModal(){
+            return ['bjsbz', 'yxqn'].includes(this.mbValue) && this.visible
+          }
         },
     }
 </script>
@@ -542,6 +670,9 @@
 <style scoped lang="scss">
     .market-box {
         padding: 0 24px 24px 24px;
+        .link{
+          cursor: pointer;
+        }
 
         .tips {
             margin-top: 24px;
@@ -550,7 +681,9 @@
             font-weight: 400;
             color: #97A0C3;
         }
-
+        .card-one-bg{
+            background: url("../../assets/img/dashboard/market/card-one-bg@2x.png") no-repeat center center / 100% 100%;
+        }
         .market-target {
             margin: 24px 0;
 
@@ -612,60 +745,46 @@
                             }
                         }
                     }
-
-                    .target-left-sub-title {
-                        margin: 16px 0 8px;
-                        font-size: 14px;
-                        font-family: PingFangSC-Medium, PingFang SC;
-                        font-weight: 500;
+                    .target-left-content-info{
+                        font-size: 12px;
+                        font-weight: 400;
                         color: #242F57;
+                        line-height: 22px;
+                        .target-left-content-first{
+                            margin-bottom: 30px;
+                        }
+                        .target-left-content-second{
+                            margin-bottom: 36px;
+                        }
                     }
 
-                    .target-left-sub-ul {
-                        display: flex;
-                        flex-wrap: wrap;
-
-                        li {
-                            margin: 0 4px 8px 0;
-                            min-width: 68px;
-                            height: 24px;
-                            line-height: 24px;
-                            background: rgba(255, 255, 255, 0.3);
-                            border-radius: 8px;
-                            border: 1px solid #FFFFFF;
-                            font-size: 12px;
+                    .target-left-content-three{
+                        padding: 10px 12px;
+                        width: 287px;
+                        height: 72px;
+                        margin-bottom: 51px;
+                        color: #FFFFFF;
+                        .target-left-content-three-title{
+                            font-size: 16px;
                             font-family: PingFangSC-Regular, PingFang SC;
                             font-weight: 400;
-                            color: #242F57;
-                            text-align: center;
+                            line-height: 22px;
+                            margin-bottom: 8px;
                         }
-
-                        &.follow-ul {
-                            li {
-                                padding: 0 16px;
-                            }
+                        .target-left-content-three-num{
+                            font-size: 18px;
+                            font-family: HelveticaNeue-Bold, HelveticaNeue;
+                            font-weight: bold;
+                            line-height: 23px;
                         }
                     }
-
-                    .target-left-group {
-                        display: flex;
-                        flex-wrap: wrap;
-
-                        > div {
-                            margin-bottom: 8px;
-                            width: 33.3%;
-
-                            > p {
-                                font-size: 12px;
-                                font-family: PingFangSC-Regular, PingFang SC;
-                                font-weight: 400;
-                                color: #97A0C3;
-
-                                &:last-child {
-                                    color: #242F57;
-                                }
-                            }
-                        }
+                    .target-left-content-four{
+                        width: 112px;
+                        height: 22px;
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #2373FF;
+                        line-height: 22px;
                     }
                 }
             }
@@ -684,24 +803,20 @@
         }
 
         .card-one {
-            height: 480px;
-
+            height: 490px;
+            border-radius: 8px;
+            border: 1px solid #EAEDF7;
             .card-one-left {
                 display: inline-block;
                 vertical-align: top;
                 width: 320px;
-                height: 480px;
+                height: 490px;
+                padding: 16px;
                 background: url("../../assets/img/dashboard/market/card-one-bg2@2x.png") no-repeat center center / 100% 100%;
-                border-right: 1px solid #EAEDF7;
-                border-radius: 12px 0 0 12px;
-
                 .card-one-left-info {
-                    margin: 16px;
                     padding: 10px 12px;
                     width: 287px;
                     height: 72px;
-                    background: url("../../assets/img/dashboard/market/card-one-bg@2x.png") no-repeat center center / 100% 100%;
-
                     > div {
                         > p {
                             &:nth-child(1) {
@@ -746,23 +861,65 @@
                         }
                     }
                 }
+                .card-one-left-title {
+                    margin: 16px 0 8px;
+                    font-size: 14px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #242F57;
+                }
 
-                .card-one-left-img-top {
-                    width: 320px;
-                    height: 55px;
+                .card-one-left-ul {
+                    display: flex;
+                    flex-wrap: wrap;
 
-                    > img {
-                        width: 100%;
+                    li {
+                        margin: 0 4px 8px 0;
+                        min-width: 68px;
+                        height: 24px;
+                        line-height: 24px;
+                        background: rgba(255, 255, 255, 0.3);
+                        border-radius: 8px;
+                        border: 1px solid #FFFFFF;
+                        font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242F57;
+                        text-align: center;
+                    }
+
+                    &.follow-ul {
+                        li {
+                            padding: 0 16px;
+                        }
                     }
                 }
 
-                .card-one-left-img-bottom {
-                    width: 320px;
-                    height: 320px;
-                    overflow-y: auto;
+                .target-left-group {
+                    display: flex;
+                    flex-wrap: wrap;
 
+                    > div {
+                        margin-bottom: 8px;
+                        width: 33.3%;
+
+                        > p {
+                            font-size: 12px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #97A0C3;
+
+                            &:last-child {
+                                color: #242F57;
+                            }
+                        }
+                    }
+                }
+                .card-one-left-img-bottom {
                     > img {
-                        width: 100%;
+                        width: 24px;
+                        height: 24px;
+                        margin-right: 8px;
                     }
                 }
             }
@@ -778,7 +935,7 @@
                     height: 4px;
                     background: #4D94FF;
                     border-radius: 5px;
-                    margin: 24px auto;
+                    margin: 2px auto;
                 }
 
                 .card-one-right-item {
@@ -801,10 +958,9 @@
                         background: #EAEDF7;
                         z-index: 1;
                     }
-
                     .item-box {
                         position: relative;
-                        margin-bottom: 16px;
+                        margin-bottom: 20px;
                         padding: 16px;
                         background: #F7F9FD;
                         border-radius: 8px;
@@ -821,7 +977,10 @@
                         }
 
                         &:last-child {
-                            height: 120px;
+                            min-height: 136px;
+                            display: flex;
+                            align-items: center;
+
                         }
 
                         i {

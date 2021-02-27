@@ -1,7 +1,7 @@
 <template>
   <DefaultPage title="媒介画像">
     <div class="media-protrait">
-      <div class="m-p-panel">
+      <!-- <div class="m-p-panel">
         <div class="panel1">
           <div class="title">
             <div class="left">
@@ -80,8 +80,8 @@
           </div>
           <div class="rt"><LeidaEcharts :colorList="$fjData.colorList" :myData="$fjData.box30Data" titleText="92"></LeidaEcharts></div>
         </div>
-      </div>
-      <div class="m-p-panel1">
+      </div> -->
+      <!-- <div class="m-p-panel1">
         <Row :gutter="24">
                 <Col span="8">
                   <div class="box1">
@@ -126,7 +126,206 @@
                   </div>
                 </Col>
             </Row>
+      </div> -->
+
+      <div class="media_first_panel">
+        <div class="media_first_panel_item1">
+          <div class="logo_til_container">
+            <div class="logo_container">
+              <img src="logoIcon" alt="" srcset="" class="logo_icon">
+            </div>
+            <div class="til_con">品牌媒介现状及趋势</div>
+          </div>
+          <div class="labl_txt_container">
+            <div class="labl_cir"></div>
+            <div class="labl_txt">上一季度合作媒介TOP3为抖音、微博、小红书；</div>
+          </div>
+          <div class="labl_txt_container">
+            <div class="labl_cir"></div>
+            <div class="labl_txt">合作KOL的TOP3为雪梨、王瑶、titi；</div>
+          </div>
+          <div class="labl_txt_container">
+            <div class="labl_cir"></div>
+            <div class="labl_txt" style="width:330px;">短视频类媒介呈现上升趋势，品牌合作意愿强；新闻门户类热度下降，投放回报率降低；头部KOL投放成本高居不下，销售转化与上一季度持平</div>
+          </div>
+        </div>
+        <div class="media_first_panel_item2">
+          <div class="logo_til_container">
+            <div class="logo_container">
+              <img src="logoIcon" alt="" srcset="" class="logo_icon">
+            </div>
+            <div class="til_con">优化建议</div>
+          </div>
+          <div class="labl_txt_container">
+            <div class="labl_cir"></div>
+            <div class="labl_txt">增加媒介类型选择，加入新渠道（如垂直兴趣社区APP）合作计划；</div>
+          </div>
+          <div class="labl_txt_container">
+            <div class="labl_cir"></div>
+            <div class="labl_txt" style="width:357px;">减少头部KOL投放预算15%，以增加腰部KOL的合作（品牌匹配度TOP3+用户匹配度TOP3），预期ROI增加8.5%；</div>
+          </div>
+          <div class="labl_txt_container">
+            <div class="labl_cir"></div>
+            <div class="labl_txt" style="width:357px;">增加“健康饮品”话题的知识分享内容投放，向职场白领细分客群重点曝光；</div>
+          </div>
+        </div>
       </div>
+
+      <div class="media_sec_panel">
+        <div class="media_sec_panel_lef">
+          <div class="media_sec_panel_lef1">
+            <div class="media_sec_panel_lef1_top">合作媒介</div>  
+            <div class="media_sec_panel_lef1_bom">
+              <vGraph id="vgraphId1" :myData="$zjjData.graphData1"></vGraph>
+            </div>
+          </div>
+          <div class="media_sec_panel_lef2">
+            <div class="media_sec_panel_lef1_top">合作KOL</div>  
+            <div class="media_sec_panel_lef1_bom">
+              <vGraph id="vTreeId" :myData="$zjjData.graphData"></vGraph>
+            </div>
+          </div>
+        </div>
+        <div class="media_sec_panel_rig">
+          <div class="media_til">媒介价值评估</div>
+          <div class="media_cont">
+            <div class="media_cont1">
+              <div class="media_cont_til">综合曝光度</div>
+              <div class="media_cont_num_container"><span class="spanNum">1500</span>w</div>
+              <div class="media_cont_three_container">环比<img :src="upIcon" alt="" class="upIcon"><span style="margin-right:15px;">9.07%</span>同比<img :src="upIcon" alt="" class="upIcon">9.07%</div>
+            </div>
+            <div class="media_cont2">
+              <div class="media_cont_til">综合互动量/互动率：</div>
+              <div class="media_cont_num_container"><span class="spanNum">150</span>w<span class="spanNum">/10</span>%</div>
+              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">9.07%</span>同比<img :src="upIcon" alt="" class="upIcon">9.07%</div>
+            </div>
+            <div class="media_cont3">
+              <div class="media_cont_til">综合互动量/互动率：</div>
+              <div class="media_cont_num_container"><span class="spanNum">150</span>w<span class="spanNum">/10</span>%</div>
+              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">9.07%</span>同比<img :src="upIcon" alt="" class="upIcon">9.07%</div>
+            </div>
+            <div class="media_cont4">
+              <div class="media_cont_til">综合互动量/互动率：</div>
+              <div class="media_cont_num_container"><span class="spanNum">150</span>w<span class="spanNum">/10</span>%</div>
+              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">9.07%</span>同比<img :src="upIcon" alt="" class="upIcon">9.07%</div>
+            </div>
+            <div class="media_cont5">
+              <div class="media_cont_til">综合互动量/互动率：</div>
+              <div class="media_cont_num_container"><span class="spanNum">150</span>w<span class="spanNum">/10</span>%</div>
+              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">9.07%</span>同比<img :src="upIcon" alt="" class="upIcon">9.07%</div>
+            </div>
+            <div class="media_cont6">
+              <div class="media_cont_til">综合互动量/互动率：</div>
+              <div class="media_cont_num_container"><span class="spanNum">150</span>w<span class="spanNum">/10</span>%</div>
+              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">9.07%</span>同比<img :src="upIcon" alt="" class="upIcon">9.07%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="media_three_panel">
+        <div class="media_three_item">
+          <div class="media_three_item_top">
+            <div class="media_three_item_til">竞品媒介洞察：王老吉</div>
+            <div class="media_three_item_echarts">
+              <vTree id="vTree1" :myData="$zjjData.TreeMapData1"></vTree>
+            </div>
+          </div>
+          <div class="media_three_item_bom">
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">策略: </span><span style="display: inline-block;width:209.2px;">主要使用电视渠道投放，投放内容 单一，重复性高；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">优势: </span><span style="display: inline-block;width:209.2px;">容易形成品牌记忆</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">威胁: </span><span style="display: inline-block;width:209.2px;">受众心智中凉茶行业的第一提及品 牌；</span></div>
+          </div>
+        </div>
+        <div class="media_three_item">
+          <div class="media_three_item_top">
+            <div class="media_three_item_til">竞品媒介洞察：和其正</div>
+            <div class="media_three_item_echarts">
+              <vTree id="vTree2" :myData="$zjjData.TreeMapData2"></vTree>
+            </div>
+          </div>
+          <div class="media_three_item_bom media_three_item_bom2">
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">策略: </span><span style="display: inline-block;width:209.2px;">侧重体育类媒介，布局各类媒介渠道的体育类KOL和内容；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">优势: </span><span style="display: inline-block;width:209.2px;">形成体育兴趣受众的强用户粘性（凉茶消费者类型TOP3之一)；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">威胁: </span><span style="display: inline-block;width:209.2px;">体育兴趣受众难以转化；</span></div>
+          </div>
+        </div>
+        <div class="media_three_item">
+          <div class="media_three_item_top">
+            <div class="media_three_item_til">竞品媒介洞察：白云山</div>
+            <div class="media_three_item_echarts">
+              <vTree id="vTree3" :myData="$zjjData.TreeMapData3"></vTree>
+            </div>
+          </div>
+          <div class="media_three_item_bom">
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">策略: </span><span style="display: inline-block;width:209.2px;">侧重与年轻消费人群关注的KOL，不计投放成本；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">优势: </span><span style="display: inline-block;width:209.2px;">打造品牌年轻化，消费者复购频率高；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">威胁: </span><span style="display: inline-block;width:209.2px;">媒介组合优势明显，难以形成差异化竞争；</span></div>
+          </div>
+        </div>
+        <div class="media_three_item media_three_item2">
+          <div class="media_three_item_top">
+            <div class="media_three_item_til">竞品媒介洞察：清心堂</div>
+            <div class="media_three_item_echarts">
+              <vTree id="vTree4" :myData="$zjjData.TreeMapData4"></vTree>
+            </div>
+          </div>
+          <div class="media_three_item_bom media_three_item_bom2">
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">策略: </span><span style="display: inline-block;width:209.2px;">主要与养生专家类KOL合作， 以健康讲堂形式的内容进行投放；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">优势: </span><span style="display: inline-block;width:209.2px;">医学健康专家的合作，提升品牌信服力；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">威胁: </span><span style="display: inline-block;width:209.2px;">在老年群体中形成护城河，品牌竞争优势巨大；</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="media_four_panel">
+        <div class="media_four_panel_lef">
+          <barM id="box46" :colorList="$lxjData.colorList" :myData="$lxjData.box46Data"></barM>
+        </div>
+        <div class="media_four_panel_rig">
+          <lineM id="box67" :colorList="$lxjData.colorList" :myData="$lxjData.box67Data"></lineM>
+        </div>
+      </div>
+
+      <div class="media_five_panel">
+        <div class="media_five_tab_top">
+          <div class="media_five_tab_item" ref="mediaFiveTabItem" v-for="(item,index) in tabListArr" :key="index" @click="changeTabCon(index)">{{item}}</div>
+        </div>
+        <div class="media_five_tab_bom">
+          <div class="media_five_tab_bom1" v-if="ifShowTabCon == 0">
+              <span style="color:#242F57;">策略1: </span>快速拉新获客策略<br>
+              <span style="color:#242F57;">媒介选择： </span>微博，电商APP直播；<br>
+              <span style="color:#242F57;">KOL组合：</span>头部KOL组合（XXX-1， XXX-2， XXX-3）；<br>
+              <span style="color:#242F57;">投放预算：</span>204万元（88万，58万，58万）；<br>
+              <span style="color:#242F57;">最优曝光时间： </span>未来7日，每日12-13点/18-23点；<br>
+              <span style="color:#242F57;">目标受众：</span>KOL自有粉丝，品牌核心目标消费人群（北京上班族/年轻白领），品牌忠诚消费者；<br>
+              <span style="color:#242F57;">投放内容和形式：</span>品牌官方产品发布，营销季活动详情，节日礼品上新；微博博文，直播；<br>
+              <span style="color:#242F57;">预期投放效果： </span>目标覆盖800万用户，预期获得18%的曝光，12%的互动和3%销售转化；
+          </div>
+          <div class="media_five_tab_bom1" v-else-if="ifShowTabCon == 1">
+              <span style="color:#242F57;">策略2: </span>低成本高转化策略<br>
+              <span style="color:#242F57;">媒介选择：</span>短视频平台（抖音，快手），垂直兴趣APP（小红书，KEEP，大众点评）；<br>
+              <span style="color:#242F57;">KOL组合：</span>腰部KOL组合（YYY-1， YYY-2， YYY-3）；<br>
+              <span style="color:#242F57;">投放预算：</span>84万元（38万，28万，18万）；<br>
+              <span style="color:#242F57;">最优曝光时间：</span>未来14日，每日7-9点/11-13点/19-23点；<br>
+              <span style="color:#242F57;">目标受众：</span>KOL自有粉丝，品牌核心目标消费人群（北京上班族/年轻白领），品牌忠诚消费者；<br>
+              <span style="color:#242F57;">投放内容和形式：</span>品牌产品种草视频，品牌产品介绍/体验笔记；<br>
+              <span style="color:#242F57;">预期投放效果：</span>目标覆盖300万用户，预期获得15%的曝光，9%的互动和6%销售转化；
+          </div>
+          <div class="media_five_tab_bom1" v-else>
+              <span style="color:#242F57;">策略3: </span>持续转化策略<br>
+              <span style="color:#242F57;">媒介选择：</span>娱乐频道，新闻门户，微博热点话题；<br>
+              <span style="color:#242F57;">KOL组合：</span>头部KOL组合（ZZZ-1， ZZZ-2， ZZZ-3）；<br>
+              <span style="color:#242F57;">投放预算：</span>134万元（58万，38万，38万）；<br>
+              <span style="color:#242F57;">最优曝光时间：</span>未来29日，每日6-8点/12-13点/17-20点；<br>
+              <span style="color:#242F57;">目标受众：</span>KOL自有粉丝，品牌核心目标消费人群（北京上班族/年轻白领），品牌忠诚消费者；<br>
+              <span style="color:#242F57;">投放内容和形式：</span>行业趋势（品牌/产品露出），生活指南，好物推荐；<br>
+              <span style="color:#242F57;">预期投放效果：</span>目标覆盖1000万用户，预期获得11%的曝光，8%的互动和2%销售转化；
+          </div>
+        </div>
+      </div>
+
+
       <div class="m-p-rank">
         <div class="m-p-rank-header">
           <ul class="h-name-list">
@@ -156,6 +355,9 @@
           <div class="m-f-line">
               <div class="label">主投平台</div>
               <div class="f-list">
+                <div class="f-item">
+                     <p>综合</p>
+                  </div>
                 <div class="f-item" @click="list1Act=index" :class="{'active':index==list1Act}" v-for="(item,index) in list1" :key="index">
                     <p>{{item}}</p>
                 </div>
@@ -164,6 +366,9 @@
           <div class="m-f-line">
               <div class="label">领域</div>
               <div class="f-list">
+                <div class="f-item">
+                     <p>综合</p>
+                  </div>
                 <div class="f-item" @click="list2Act=index" :class="{'active':index==list2Act}" v-for="(item,index) in list2" :key="index">
                     <p>{{item}}</p>
                 </div>
@@ -173,6 +378,9 @@
               <div class="label"><span style="color:#FB343E">*</span>
               价格类型</div>
               <div class="f-list">
+                <div class="f-item">
+                     <p>综合</p>
+                  </div>
                 <div class="f-item" @click="list3Act=index" :class="{'active':index==list3Act}" v-for="(item,index) in list3" :key="index">
                     <p>{{item}}</p>
                 </div>
@@ -346,7 +554,100 @@
             暂无相关数据
           </div>
       </div>
-      <div class="m-p-kol">
+        <div class="m-p-kol-strategy">
+            <div class="strategy-title">
+                推荐KOL组合策略
+            </div>
+            <div class="strategy-top">
+                <div class="top-left">
+                    <p><span class="top-title">推荐的KOL组合</span><span class="top-blue">大网红 + nini + titi</span></p>
+                    <p class="mt12"><span class="top-title">方案效果</span><span>方案效果 预期以12600元的成本吸引潜客432341人</span></p>
+                </div>
+                <div class="top-right">
+                    <p class="top-title">推荐缘由</p>
+                    <p><span>大网红为头部KOL，在曝光率及用户影响率上对于品牌推广能起到快速起效。但鉴于大网红非垂直领域KOL，专业引流不足，故补充垂直类KOL nini 和泛娱乐类KOL titi，三者配合投放可使收益达到最高</span></p>
+                </div>
+            </div>
+            <div class="strategy-bottom">
+                <div></div>
+                <div>
+                    <div class="bottom-title">用户总量</div>
+                </div>
+                <div>
+                    <div class="bottom-title light">曝光率</div>
+                </div>
+                <div>
+                    <div class="bottom-title">转化率</div>
+                </div>
+                <div>
+                    <div class="bottom-title light">影响力</div>
+                </div>
+                <div>
+                    <div class="bottom-card">
+                        <img src="../../assets/img/mark/head1.jpg" />
+                        <div>
+                            <p>头部KOL</p>
+                            <p>大网红</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box34Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box37Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box40Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box31Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <div class="bottom-card">
+                        <img src="../../assets/img/mark/head2.jpeg" />
+                        <div>
+                            <p>垂直类KOL</p>
+                            <p>nini</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box35Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box38Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box41Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box32Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <div class="bottom-card">
+                        <img src="../../assets/img/mark/head3.jpeg" />
+                        <div>
+                            <p>泛娱乐类KOL</p>
+                            <p>titi</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box36Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box39Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box42Data" ></PieEcharts6>
+                </div>
+                <div>
+                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box33Data" ></PieEcharts6>
+                </div>
+            </div>
+        </div>
+        <div class="m-p-kol">
           <div class="m-p-target-title">
               KOL资源 
 			  <Poptip popper-class="saas-poptip small" placement="right-start">
@@ -365,6 +666,9 @@
           <Tabs value="name1" @on-click="getTab">
               <TabPane label="短视频" name="name1">
                 <div class="f-list">
+                  <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -381,8 +685,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -422,6 +729,9 @@
               </TabPane>
               <TabPane label="社交传媒" name="name2">
                  <div class="f-list">
+                   <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -438,8 +748,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -479,6 +792,9 @@
               </TabPane>
               <TabPane label="大众传媒" name="name3">
                  <div class="f-list">
+                   <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -495,8 +811,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -536,6 +855,9 @@
               </TabPane>
               <TabPane label="体验事件" name="name4">
                  <div class="f-list">
+                   <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -552,8 +874,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -593,6 +918,9 @@
               </TabPane>
               <TabPane label="促销" name="name5">
                  <div class="f-list">
+                   <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -609,8 +937,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -650,6 +981,9 @@
               </TabPane>
               <TabPane label="在线社交媒体" name="name6">
                  <div class="f-list">
+                   <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -666,8 +1000,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -707,6 +1044,9 @@
               </TabPane>
               <TabPane label="公共关系和宣传" name="name7">
                  <div class="f-list">
+                   <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -723,8 +1063,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -764,6 +1107,9 @@
               </TabPane>
               <TabPane label="网站" name="name8">
                  <div class="f-list">
+                   <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -780,8 +1126,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -821,6 +1170,9 @@
               </TabPane>
               <TabPane label="其他" name="name9">
                  <div class="f-list">
+                   <div class="f-item">
+                     <p>综合</p>
+                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -837,8 +1189,11 @@
                    </div>
                    <div class="listBox-right">
                     <div class="m-f-line">
-                          <div class="label">类别</div>
+                          <div class="label">全部</div>
                           <div class="f-list">
+                            <div class="f-item">
+                     <p>综合</p>
+                  </div>
                             <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
                                 <p>{{item}}</p>
                             </div>
@@ -891,11 +1246,17 @@ import Card from "./base/Card"
 import PieCaseEcharts from '../../components/echarts/common/PieCaseEcharts';
 import barL from '../../components/echarts/common/barL';
 import funnel from '../../components/echarts/common/funnel';
+import PieEcharts6 from '../../components/echarts/common/PieEcharts6';
 import PieEcharts2 from '../../components/echarts/common/PieEcharts2';
 import LeidaEcharts from '../../components/echarts/common/LeidaEcharts';
+import vGraph from '../../components/echarts/common/zjjGraph';
+import vTree from '../../components/echarts/common/zjjTreemap';
+import lineM from '../../components/echarts/common/lineM';
+import barM from '../../components/echarts/common/barM';
+
 export default {
   name: "index",
-  components: { DefaultPage, Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts2,LeidaEcharts},
+  components: { DefaultPage, Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vGraph,vTree,lineM,barM},
   data(){
       return{
           isShowTip1:false,
@@ -985,19 +1346,19 @@ export default {
                         key: 'bao'
                     },
                     {
-                        title: '粉丝数',
+                        title: '粉丝数/真粉量',
                          tooltip:true,
                         ellipsis:true,
                         key: 'fensi'
                     },
                     {
-                        title: '获赞数',
+                        title: 'KOL品牌匹配度',
                          tooltip:true,
                         ellipsis:true,
                         key: 'zan'
                     },
                     {
-                        title: '作品数',
+                        title: 'KOL用户匹配度',
                          tooltip:true,
                         ellipsis:true,
                         key: 'zuopin'
@@ -1125,13 +1486,32 @@ export default {
                       header:require("../../assets/img/yhhx/header9.png"),
                       num:"14628678533"
                   },
-              ]
+              ],
+              upIcon:require("../../assets/img/yhhx/upIcon.png"),
+              downIcon:require("../../assets/img/yhhx/down_arro_Icon.png"),
+              tabListArr:['策略1: 快速拉新获客策略','策略2: 快速拉新获客策略','策略3: 快速拉新获客策略'],
+              ifShowTabCon:0
       }
   },
   created(){
     this.myEData=this.$lxjData.box27Data;
   },
+  mounted(){
+    this.changeTabCon(0);
+  },
   methods:{
+    changeTabCon(arg){
+      this.ifShowTabCon = arg;
+      var tabDom = this.$refs.mediaFiveTabItem || [];
+      for(var i=0;i<tabDom.length;i++){
+        if(i == arg){
+          tabDom[i].style="color: #2373FF;border-bottom:2px solid #2373FF;";
+        }
+        else{
+          tabDom[i].style="color: #636E95;border-bottom:none;";
+        }
+      }
+    },
     getTab(name){
       console.log(name)
     },
@@ -1558,6 +1938,303 @@ export default {
       }
     }
   }
+  .media_first_panel{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 12px;
+    margin-bottom: 24px;
+    padding: 22px 24px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: url('../../assets/img/yhhx/media1.png');
+    background-size: 100% 100%;
+    .media_first_panel_item1,.media_first_panel_item2{
+      width: 48.913%;
+      background: linear-gradient(225deg, #1C66DE 0%, #98A0F9 100%);
+      box-shadow: 4px -4px 24px 0px rgba(41, 59, 149, 0.55);
+      border-radius: 8px;
+      padding: 16px;
+      box-sizing: border-box;
+      .logo_til_container{
+        display: flex;
+        align-items: center;
+        margin-bottom: 18px;
+        .logo_container{
+          width: 24px;
+          height: 24px;
+          margin-right: 8px;
+          .logo_icon{
+            display: block;
+            width: 100%;
+          }
+        }
+        .til_con{
+          font-size: 20px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #FFFFFF;
+        }
+      }
+      .labl_txt_container{
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 9px;
+        .labl_cir{
+          width: 4px;
+          height: 4px;
+          background-color: #fff;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+        .labl_txt{
+          font-size: 12px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #fff;
+        }
+      }
+    }
+    .media_first_panel_item1{
+      background-image: url('../../assets/img/yhhx/media9.png');
+      background-size: 100% 100%;
+    }
+    .media_first_panel_item2{
+      background-image: url('../../assets/img/yhhx/media8.png');
+      background-size: 100% 100%;
+    }
+  }
+  .media_sec_panel{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    .media_sec_panel_lef{
+      width: 51.041666%;
+      border-radius: 12px;
+      padding: 24px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-image: url('../../assets/img/yhhx/media2.png');
+      background-size: 100% 100%;
+      .media_sec_panel_lef1,.media_sec_panel_lef2{
+        width: 48%;
+        .media_sec_panel_lef1_top{
+          width: 100%;
+          margin-bottom: 24px;
+          font-size: 18px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #242F57;
+        }
+        .media_sec_panel_lef1_bom{
+          width: 100%;
+          height: 372px;
+          background: rgba(255, 255, 255, 0.3);
+          border-radius: 8px;
+          border: 1px solid #FFFFFF;
+        }
+      }
+    }
+    .media_sec_panel_rig{
+      width: 46.875%;
+      border-radius: 12px;
+      padding: 24px;
+      box-sizing: border-box;
+      background-image: url('../../assets/img/yhhx/media3.png');
+      background-size: 100% 100%;
+      .media_til{
+        width: 100%;
+        font-size: 18px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #242F57;
+        margin-bottom: 24px;
+      }
+      .media_cont{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .media_cont1,.media_cont2,.media_cont3,.media_cont4,.media_cont5,.media_cont6{
+          width: 49%;
+          background: linear-gradient(225deg, #1C66DE 0%, #98A0F9 100%);
+          box-shadow: 2px 4px 10px 0px rgba(41, 59, 149, 0.3);
+          border-radius: 8px;
+          padding: 14px;
+          box-sizing: border-box;
+          margin-bottom: 16px;
+          .media_cont_til{
+            width: 100%;
+            font-size: 14px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-bottom: 4px;
+          }
+          .media_cont_num_container{
+            font-size: 16px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-bottom: 4px;
+            .spanNum{
+              font-size: 24px;
+              font-family: HelveticaNeue-Bold, HelveticaNeue;
+              font-weight: bold;
+              margin-right: 5px;
+            }
+          }
+          .media_cont_three_container{
+            font-size: 14px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #FFFFFF;
+            .upIcon{
+              display: inline-block;
+              width: 12px;
+              height: 12px;
+            }
+          }
+        }
+        .media_cont1,.media_cont6{
+          background-image: url('../../assets/img/yhhx/media4.png');
+          background-size: 100% 100%;
+        }
+        .media_cont2,.media_cont5{
+          background-image: url('../../assets/img/yhhx/media5.png');
+          background-size: 100% 100%;
+        }
+        .media_cont3{
+          background-image: url('../../assets/img/yhhx/media6.png');
+          background-size: 100% 100%;
+        }
+        .media_cont4{
+          background-image: url('../../assets/img/yhhx/media7.png');
+          background-size: 100% 100%;
+        }
+        .media_cont5,.media_cont6{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .media_three_panel{
+    width: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    background: #FFFFFF #D8D8D8;
+    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    border-radius: 12px;
+    border: 1px solid #EAEDF7;
+    .media_three_item{
+      width: 24%;
+      background: #FFFFFF;
+      border-radius: 8px;
+      border: 1px solid #EAEDF7;
+      .media_three_item_top{
+        width: 100%;
+        height: 264px;
+        padding: 16px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        .media_three_item_til{
+          width: 100%;
+          font-size: 14px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #242F57;
+        }
+        .media_three_item_echarts{
+          width: 100%;
+          flex: 1;
+        }
+      }
+      .media_three_item_bom{
+        width: 100%;
+        height: 164px;
+        padding: 16px;
+        box-sizing: border-box;
+        background: rgba(255, 241, 244, 0.3);
+        border-radius: 0px 0px 8px 8px;
+        .media_three_con{
+          font-size: 12px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #242F57;
+          margin-bottom: 12px;
+          display: flex;
+          align-items: baseline;
+        }
+      }
+      .media_three_item_bom2{
+        background: rgba(219, 234, 255, 0.3);
+      }
+    }
+  }
+
+  .media_four_panel{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    .media_four_panel_lef,.media_four_panel_rig{
+      width: 49%;
+      height: 507px;
+      padding: 24px;
+      box-sizing: border-box;
+      background: #FFFFFF #6371c0;
+      box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+      border-radius: 12px;
+      border: 1px solid #EAEDF7;
+    }
+  }
+
+  .media_five_panel{
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 24px;
+    box-sizing: border-box;
+    background: #FFFFFF #D8D8D8;
+    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    border-radius: 12px;
+    border: 1px solid #EAEDF7;
+    .media_five_tab_top{
+      width: 100%;
+      display: flex;
+      margin-bottom: 16px;
+      .media_five_tab_item{
+        margin-right: 32px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #636E95;
+        padding-bottom: 8px;
+        box-sizing: border-box;
+      }
+      .media_five_tab_item:hover{
+        cursor: pointer;
+      }
+    }
+    .media_five_tab_bom{
+      width: 100%;
+      font-size: 12px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #636E95;
+    }
+  }
+
   .m-p-rank {
     width: 100%;
     height: 339px;
@@ -1911,7 +2588,137 @@ export default {
       text-align: center;
     }
   }
-  .m-p-kol{
+  .m-p-kol-strategy {
+        margin-bottom: 24px;
+        width: 100%;
+        background: #FFFFFF;
+        box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+        border-radius: 12px;
+        border: 1px solid #EAEDF7;
+        padding:24px;
+        .strategy-title {
+            font-size: 16px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242F57;
+        }
+        .strategy-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            margin-top: 24px;
+            width: 100%;
+            height: 95px;
+            background: #F7F9FD;
+            border-radius: 8px;
+            border: 1px solid #EAEDF7;
+
+            >div {
+                width: 50%;
+
+                &.top-right {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+
+                    >p {
+                        &:nth-child(1) {
+                            width: 152px;
+                            margin-right: 24px;
+                        }
+                    }
+                }
+
+                .mt12 {
+                    margin-top: 12px;
+                }
+
+                .top-title {
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #242F57;
+                }
+
+                span {
+                    margin-right: 24px;
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #636E95;
+
+                    &.top-blue {
+                        color: #2373FF;
+                    }
+                }
+            }
+        }
+
+        .strategy-bottom {
+            margin-top: 24px;
+            display: grid;
+            grid-template-columns: 15% 19% 19% 19% 19%;
+            grid-template-rows: 48px 150px 150px 150px;
+            grid-row-gap: 24px;
+            grid-column-gap: 24px;
+
+            .bottom-title {
+                width: 100%;
+                height: 48px;
+                line-height: 48px;
+                background: #73A0FA;
+                border-radius: 8px;
+                text-align: center;
+                font-size: 14px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #FFFFFF;
+
+                &.light {
+                    color: #242F57;
+                    background: #DBE7FF;
+                }
+            }
+
+            .bottom-card {
+                position: relative;
+                text-align: center;
+
+                > img {
+                    width: 56px;
+                    height: 56px;
+                    border-radius: 50%;
+                }
+
+                >div {
+                    margin-top: -30px;
+                    width: 100%;
+                    min-width: 140px;
+                    height: 116px;
+                    background: #FFFFFF;
+                    box-shadow: 5px 8px 16px 0px rgba(121, 131, 168, 0.15);
+                    border-radius: 8px;
+                    border: 2px solid #EAEDF7;
+
+                    >p {
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+
+                        &:nth-child(1) {
+                            margin-top: 48px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 500;
+                            color: #242F57;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .m-p-kol{
     width: 100%;
     img{
       width: 100%;

@@ -214,13 +214,15 @@
 
 <style scoped lang="scss">
     .side {
-        height: 100vh;
+        /*height: 100vh;*/
+        height: 100%;
         display: flex;
 
         .menu {
             // position: relative;
             width: 240px;
-            height: 100%;
+            /*height: 100%;*/
+            min-height: 100vh;
             background: url("../assets/img/side/side-bg@2x.png") no-repeat left top / 240px 2048px;
 
             // &:after {
