@@ -464,7 +464,6 @@
                 </div>
             </div>
         </Card>
-
         <BusinessMarketModal :show="showModal" :type="mbValue" @close="controlModal"/>
     </div>
 </template>
@@ -648,7 +647,7 @@
             return ['yxqn'].includes(this.mbValue)
           },
           showModal(){
-            return ['bjsbz', 'yxqn'].includes(this.mbValue) && this.visible
+            return ['bjsbz', 'yxqn', 'bpyz'].includes(this.mbValue) && this.visible
           }
         },
     }
