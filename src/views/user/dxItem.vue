@@ -275,22 +275,10 @@
             <div class="yhxw_container">
                 <div class="yhxw_title">用户行为</div>
                 <div class="bqitm_container">
-                    <div class="bqitm">
-                        <div class="bqitm_lef">娱乐</div>
+                    <div class="bqitm" v-for="(it, i) in bqitmList" :key="i">
+                        <div class="bqitm_lef" :style="`color: ${colorConfig[it.name]}`">{{it.name}}</div>
                         <div class="bqitm_rig">
-                            <img v-for="(item,index) in bqitmList.yl" :src="item.icon" :key="index" alt="" class="bqimg">
-                        </div>
-                    </div>
-                    <div class="bqitm">
-                        <div class="bqitm_lef" style="color: #017AFF;">新闻</div>
-                        <div class="bqitm_rig">
-                            <img v-for="(item,index) in bqitmList.xw" :src="item.icon" :key="index" alt="" class="bqimg">
-                        </div>
-                    </div>
-                    <div class="bqitm">
-                        <div class="bqitm_lef" style="color: #5AC8FA;">视频</div>
-                        <div class="bqitm_rig">
-                            <img v-for="(item,index) in bqitmList.sp" :src="item.icon" :key="index" alt="" class="bqimg">
+                            <img v-for="(item,index) in it.icons" :src="item.icon" :key="index" alt="" class="bqimg">
                         </div>
                     </div>
                 </div>
@@ -300,6 +288,65 @@
 </template>
 
 <script>
+    const allBqitm = {
+    xhs: {
+      icon: require("../../assets/img/yhhx/xhs.png")
+    },
+    ks: {
+      icon: require("../../assets/img/yhhx/ks.png")
+    },
+    wb: {
+      icon: require("../../assets/img/yhhx/wb.png")
+    },
+    tt: {
+      icon: require("../../assets/img/yhhx/tt.png")
+    },
+    zhIcon: {
+      icon: require("../../assets/img/yhhx/zhIcon.png")
+    },
+    dyI: {
+      icon: require("../../assets/img/yhhx/dyI.png")
+    },
+    dd: {
+      icon: require("../../assets/img/yhhx/dd.jpg")
+    },
+    dc: {
+      icon: require("../../assets/img/yhhx/dc.jpg")
+    },
+    bx: {
+      icon: require("../../assets/img/yhhx/bx.jpeg")
+    },
+    wx: {
+      icon: require("../../assets/img/yhhx/wx.jpeg")
+    },
+    qq: {
+      icon: require("../../assets/img/yhhx/qq.jpg")
+    },
+    pyq: {
+      icon: require("../../assets/img/yhhx/pyq.jpeg")
+    },
+    mt: {
+      icon: require("../../assets/img/yhhx/mt.jpeg")
+    },
+    elm: {
+      icon: require("../../assets/img/yhhx/elm.jpeg")
+    },
+    dz: {
+      icon: require("../../assets/img/yhhx/dz.jpg")
+    },
+    wy: {
+      icon: require("../../assets/img/yhhx/wyIcon.png")
+    },
+    wzry: {
+      icon: require("../../assets/img/yhhx/wzry.jpeg")
+    },
+    jdqs: {
+      icon: require("../../assets/img/yhhx/jdqs.png")
+    },
+    xxl: {
+      icon: require("../../assets/img/yhhx/xxl.jpg")
+    },
+  }
     export default {
         name: "dxItem",
         props: ['onlyMap'],
@@ -318,41 +365,32 @@
                 // tbIcon:require("../../assets/img/yhhx/bgImg.png"),
                 xhsIcon:require("../../assets/img/yhhx/xhs.png"),
                 quyResult:require("../../assets/img/yhhx/quyResult.png"),
-                bqitmList:{
-                    yl:[
-                        {
-                            icon:require("../../assets/img/yhhx/xhs.png")
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/ks.png")
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/wb.png")
-                        }
-                    ],
-                    xw:[
-                        {
-                            icon:require("../../assets/img/yhhx/tt.png")
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/wyIcon.png")
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/zhIcon.png")
-                        }
-                    ],
-                    sp:[
-                        {
-                            icon:require("../../assets/img/yhhx/dyI.png"),
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/wb.png")
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/ks.png")
-                        }
-                    ]
+                bqitmList: [
+                {
+                  name: '出行',
+                  icons: [
+                    allBqitm.dd,
+                    allBqitm.dc,
+                    allBqitm.bx,
+                  ]
                 },
+                {
+                  name: '新闻',
+                  icons: [
+                    allBqitm.tt,
+                    allBqitm.wy,
+                    allBqitm.zhIcon,
+                  ],
+                },
+                {
+                  name: '娱乐',
+                  icons: [
+                    allBqitm.xhs,
+                    allBqitm.ks,
+                    allBqitm.wb,
+                  ]
+                }
+              ],
                 districtList:[
                     '朝阳区','海淀区','丰台区','西城区','东城区','石景山区','昌平区','通州区','顺义区','房山区','门头沟区','大兴区','怀柔区','延庆区','平谷区','密云区'
                 ],
@@ -403,7 +441,15 @@
                     tongqinTimeObj:{
                         timeN:30
                     }
-                }
+                },
+              colorConfig: {
+                新闻: '#017AFF',
+                视频: '#5AC8FA',
+                娱乐: '#FF9502',
+                交流: '#a49dfa',
+                出行: '#CECE7E',
+                餐饮: '#8AE6C7',
+              }
             }
         },
         mounted(){
@@ -544,174 +590,175 @@
                 }
             },
             clickTime(arg){
-            this.current = arg;
-            this.ifShowMb = false;
-            if(arg == 6 || arg == 8 || arg == 10 || arg == 22 || arg == 24){
+              this.current = arg;
+              this.ifShowMb = false;
+              if (arg == 6 || arg == 8 || arg == 10 || arg == 22 || arg == 24) {
                 // this.timeType = arg;
                 var path = [
-                    [116.294134,39.958747],
-                    [116.295593,39.947957],
-                    [116.296881,39.93236],
-                    [116.310356,39.932426],
-                    [116.310013,39.924265],
-                    [116.355932,39.923606],
-                    [116.355847,39.932295],
-                    [116.433952,39.933874],
-                    [116.433952,39.933874],
-                    [116.489751,39.93361]
+                  [116.294134, 39.958747],
+                  [116.295593, 39.947957],
+                  [116.296881, 39.93236],
+                  [116.310356, 39.932426],
+                  [116.310013, 39.924265],
+                  [116.355932, 39.923606],
+                  [116.355847, 39.932295],
+                  [116.433952, 39.933874],
+                  [116.433952, 39.933874],
+                  [116.489751, 39.93361]
                 ];
                 var path1 = [
-                [116.354029,39.967758],
-                [116.357291,39.944046],
-                [116.355402,39.940888],
-                [116.356776,39.907845],
-                [116.349222,39.896783],
-                [116.348879,39.873073]
+                  [116.354029, 39.967758],
+                  [116.357291, 39.944046],
+                  [116.355402, 39.940888],
+                  [116.356776, 39.907845],
+                  [116.349222, 39.896783],
+                  [116.348879, 39.873073]
                 ];
                 var path2 = [
-                [116.416903,39.969085],
-                [116.418791,39.952349],
-                [116.416388,39.950801],
-                [116.416388,39.950801],
-                [116.418019,39.91164],
-                [116.418362,39.900843]
+                  [116.416903, 39.969085],
+                  [116.418791, 39.952349],
+                  [116.416388, 39.950801],
+                  [116.416388, 39.950801],
+                  [116.418019, 39.91164],
+                  [116.418362, 39.900843]
                 ];
-                var cir1 = [116.310356,39.932426];
-                var cir2 = [116.433529,39.941237];
-                this.initMap(path,path1,path2,cir1,cir2,'西城区');
+                var cir1 = [116.310356, 39.932426];
+                var cir2 = [116.433529, 39.941237];
+                this.initMap(path, path1, path2, cir1, cir2, '西城区');
                 this.rightPanelData = {
-                    userStatObj:{
-                        stat1:16,
-                        stat2:26,
-                        stat3:39,
-                        stat4:19
-                    },
-                    chufaObj:{
-                        chufa1:'五道口',
-                        chufa2:'西二旗',
-                        chufa3:'上地'
-                    },
-                    mudiObj:{
-                        mudi1:'中关村',
-                        mudi2:'软件园',
-                        mudi3:'龙泽'
-                    },
-                    tonqinTypeObj:{
-                        tqType1:'地铁',
-                        tqType1Icon:require("../../assets/img/yhhx/dtIcon.png"),
-                        tqType2:'开车',
-                    },
-                    tongqinTimeObj:{
-                        timeN:30
-                    }
+                  userStatObj: {
+                    stat1: 16,
+                    stat2: 26,
+                    stat3: 39,
+                    stat4: 19
+                  },
+                  chufaObj: {
+                    chufa1: '五道口',
+                    chufa2: '西二旗',
+                    chufa3: '上地'
+                  },
+                  mudiObj: {
+                    mudi1: '中关村',
+                    mudi2: '软件园',
+                    mudi3: '龙泽'
+                  },
+                  tonqinTypeObj: {
+                    tqType1: '地铁',
+                    tqType1Icon: require("../../assets/img/yhhx/dtIcon.png"),
+                    tqType2: '开车',
+                  },
+                  tongqinTimeObj: {
+                    timeN: 30
+                  }
                 };
-            }
-            else if(arg == 12 || arg == 14 || arg == 16){
+              }
+              else if (arg == 12 || arg == 14 || arg == 16) {
                 // this.timeType = arg;
                 var path = [
-                    [116.288917,39.965932],
-                    [116.294281,39.958531],
-                    [116.294925,39.957117],
-                    [116.294538,39.952445],
-                    [116.293809,39.948037],
-                    [116.295311,39.933329]
+                  [116.288917, 39.965932],
+                  [116.294281, 39.958531],
+                  [116.294925, 39.957117],
+                  [116.294538, 39.952445],
+                  [116.293809, 39.948037],
+                  [116.295311, 39.933329]
                 ];
                 var path1 = [
-                [116.275742,39.954518],
-                [116.274883,39.924312],
-                [116.355993,39.923719],
-                // [116.384391,39.889724],
-                // [116.41898,39.892688]
+                  [116.275742, 39.954518],
+                  [116.274883, 39.924312],
+                  [116.355993, 39.923719],
+                  // [116.384391,39.889724],
+                  // [116.41898,39.892688]
                 ];
                 var path2 = [
-                [116.247761,39.947543],
-                [116.27454,39.946754],
-                [116.285612,39.946293],
-                [116.309902,39.94274],
-                [116.317799,39.939252],
-                [116.339085,39.938331]
+                  [116.247761, 39.947543],
+                  [116.27454, 39.946754],
+                  [116.285612, 39.946293],
+                  [116.309902, 39.94274],
+                  [116.317799, 39.939252],
+                  [116.339085, 39.938331]
                 ];
-                var cir1 = [116.274969,39.92418];
-                var cir2 = [116.288616,39.965768];
-                this.initMap(path,path1,path2,cir1,cir2,'海淀区');
+                var cir1 = [116.274969, 39.92418];
+                var cir2 = [116.288616, 39.965768];
+                this.initMap(path, path1, path2, cir1, cir2, '海淀区');
                 this.rightPanelData = {
-                    userStatObj:{
-                        stat1:37,
-                        stat2:36,
-                        stat3:22,
-                        stat4:5
-                    },
-                    chufaObj:{
-                        chufa1:'中关村',
-                        chufa2:'软件园',
-                        chufa3:'龙泽'
-                    },
-                    mudiObj:{
-                        mudi1:'周边'
-                    },
-                    tonqinTypeObj:{
-                        tqType1:'步行',
-                        tqType1Icon:require("../../assets/img/yhhx/buxIcon.png"),
-                    },
-                    tongqinTimeObj:{
-                        timeN:10
-                    }
+                  userStatObj: {
+                    stat1: 37,
+                    stat2: 36,
+                    stat3: 22,
+                    stat4: 5
+                  },
+                  chufaObj: {
+                    chufa1: '中关村',
+                    chufa2: '软件园',
+                    chufa3: '龙泽'
+                  },
+                  mudiObj: {
+                    mudi1: '周边'
+                  },
+                  tonqinTypeObj: {
+                    tqType1: '步行',
+                    tqType1Icon: require("../../assets/img/yhhx/buxIcon.png"),
+                  },
+                  tongqinTimeObj: {
+                    timeN: 10
+                  }
                 };
-            }
-            else if(arg == 18 || arg == 20){
+              }
+              else if (arg == 18 || arg == 20) {
                 // this.timeType = arg;
                 var path = [
-                    [116.355294,39.940546],
-                    [116.356839,39.907306],
-                    [116.434687,39.908425],
-                    [116.433829,39.934294],
-                    [116.461467,39.933636]
+                  [116.355294, 39.940546],
+                  [116.356839, 39.907306],
+                  [116.434687, 39.908425],
+                  [116.433829, 39.934294],
+                  [116.461467, 39.933636]
                 ];
                 var path1 = [
-                [116.372546,39.940415],
-                [116.374434,39.899602],
-                [116.384133,39.900129],
-                [116.384391,39.889724],
-                [116.41898,39.892688]
+                  [116.372546, 39.940415],
+                  [116.374434, 39.899602],
+                  [116.384133, 39.900129],
+                  [116.384391, 39.889724],
+                  [116.41898, 39.892688]
                 ];
                 var path2 = [
-                [116.416903,39.969085],
-                [116.418791,39.952349],
-                [116.416388,39.950801],
-                [116.416388,39.950801],
-                [116.418019,39.91164],
-                [116.418362,39.900843]
+                  [116.416903, 39.969085],
+                  [116.418791, 39.952349],
+                  [116.416388, 39.950801],
+                  [116.416388, 39.950801],
+                  [116.418019, 39.91164],
+                  [116.418362, 39.900843]
                 ];
-                var cir1 = [116.373332,39.924206];
-                var cir2 = [116.427341,39.902842];
-                this.initMap(path,path1,path2,cir1,cir2,'西城区');
+                var cir1 = [116.373332, 39.924206];
+                var cir2 = [116.427341, 39.902842];
+                this.initMap(path, path1, path2, cir1, cir2, '西城区');
                 this.rightPanelData = {
-                    userStatObj:{
-                        stat1:25,
-                        stat2:28,
-                        stat3:27,
-                        stat4:20
-                    },
-                    chufaObj:{
-                        chufa1:'中关村',
-                        chufa2:'软件园',
-                        chufa3:'龙泽'
-                    },
-                    mudiObj:{
-                        mudi1:'五道口',
-                        mudi2:'西二旗',
-                        mudi3:'上地'
-                    },
-                    tonqinTypeObj:{
-                        tqType1:'地铁',
-                        tqType1Icon:require("../../assets/img/yhhx/dtIcon.png"),
-                        tqType2:'开车',
-                    },
-                    tongqinTimeObj:{
-                        timeN:30
-                    }
+                  userStatObj: {
+                    stat1: 25,
+                    stat2: 28,
+                    stat3: 27,
+                    stat4: 20
+                  },
+                  chufaObj: {
+                    chufa1: '中关村',
+                    chufa2: '软件园',
+                    chufa3: '龙泽'
+                  },
+                  mudiObj: {
+                    mudi1: '五道口',
+                    mudi2: '西二旗',
+                    mudi3: '上地'
+                  },
+                  tonqinTypeObj: {
+                    tqType1: '地铁',
+                    tqType1Icon: require("../../assets/img/yhhx/dtIcon.png"),
+                    tqType2: '开车',
+                  },
+                  tongqinTimeObj: {
+                    timeN: 30
+                  }
                 };
-            }
+              }
+              this.changeBqitm(arg)
             },
             initMap(p,p1,p2,c1,c2,area){
                 var that = this;
@@ -813,9 +860,11 @@
                 var polyline1 = new AMap.Polyline({
                     path: p1,
                     isOutline: true,
-                    outlineColor: '#FF8800',
+                  // outlineColor: '#FF8800',
+                  outlineColor: '#ffeeff',
                     borderWeight: 1,
-                    strokeColor: "#FF8800",
+                  strokeColor: "#3366FF",
+                  // strokeColor: "#FF8800",
                     strokeOpacity: 1,
                     strokeWeight: 4,
                     // 折线样式还支持 'dashed'
@@ -829,9 +878,11 @@
                 var polyline2 = new AMap.Polyline({
                     path: p2,
                     isOutline: true,
-                    outlineColor: '#F383FF',
+                  // outlineColor: '#F383FF',
+                  outlineColor: '#ffeeff',
                     borderWeight: 1,
-                    strokeColor: "#F383FF",
+                  strokeColor: "#3366FF",
+                  // strokeColor: "#F383FF",
                     strokeOpacity: 1,
                     strokeWeight: 4,
                     // 折线样式还支持 'dashed'
@@ -848,116 +899,106 @@
                 // map.setFitView([ polyline ])
                 // map.setFitView([ polyline1 ])
                 // map.setFitView([ polyline2 ])
+              const selectedOptions = {
+                outlineColor: '#FF8800',
+                strokeColor: "#FF8800",
+              }
+              const normalOptions = {
+                outlineColor: '#ffeeff',
+                strokeColor: "#3366FF",
+              }
                 polyline.on('click', function(event) {
-                    that.bqitmList = {
-                        yl:[
-                            {
-                                icon:require("../../assets/img/yhhx/xhs.png")
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/wb.png")
-                            }
-                        ],
-                        xw:[
-                            {
-                                icon:require("../../assets/img/yhhx/ks.png")
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/tt.png")
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/wyIcon.png")
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/zhIcon.png")
-                            }
-                        ],
-                        sp:[
-                            {
-                                icon:require("../../assets/img/yhhx/dyI.png"),
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/wb.png")
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/ks.png")
-                            }
-                        ]
+                  polyline.setOptions(selectedOptions)
+                  polyline1.setOptions(normalOptions)
+                  polyline2.setOptions(normalOptions)
+                  that.bqitmList = [
+                    {
+                      name: '娱乐',
+                      icons: [
+                        allBqitm.xhs,
+                        allBqitm.wb,
+                      ]
+                    },
+                    {
+                      name: '新闻',
+                      icons: [
+                        allBqitm.ks,
+                        allBqitm.tt,
+                        allBqitm.wy,
+                        allBqitm.zhIcon,
+                      ],
+                    },
+                    {
+                      name: '视频',
+                      icons: [
+                        allBqitm.dyI,
+                        allBqitm.wb,
+                        allBqitm.ks,
+                      ]
                     }
+                  ]
                 })
                 polyline1.on('click', function(event) {
-                    that.bqitmList = {
-                        yl:[
-                            {
-                                icon:require("../../assets/img/yhhx/ks.png")
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/xhs.png")
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/wb.png")
-                            }
-                        ],
-                        xw:[
-                            {
-                                icon:require("../../assets/img/yhhx/ks.png")
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/tt.png")
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/wyIcon.png")
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/zhIcon.png")
-                            }
-                        ],
-                        sp:[
-                            {
-                                icon:require("../../assets/img/yhhx/dyI.png"),
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/wb.png")
-                            }
-                        ]
+                  polyline1.setOptions(selectedOptions)
+                  polyline.setOptions(normalOptions)
+                  polyline2.setOptions(normalOptions)
+                  that.bqitmList = [
+                    {
+                      name: '娱乐',
+                      icons: [
+                        allBqitm.ks,
+                        allBqitm.xhs,
+                        allBqitm.wb,
+                      ]
+                    },
+                    {
+                      name: '新闻',
+                      icons: [
+                        allBqitm.ks,
+                        allBqitm.tt,
+                        allBqitm.wy,
+                        allBqitm.zhIcon,
+                      ],
+                    },
+                    {
+                      name: '视频',
+                      icons: [
+                        allBqitm.dyI,
+                        allBqitm.wb,
+                      ]
                     }
+                  ]
                 })
                 polyline2.on('click', function(event) {
-                    that.bqitmList = {
-                        yl:[
-                            {
-                                icon:require("../../assets/img/yhhx/ks.png")
-                            }
-                        ],
-                        xw:[
-                            {
-                                icon:require("../../assets/img/yhhx/ks.png")
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/tt.png")
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/wyIcon.png")
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/zhIcon.png")
-                            }
-                        ],
-                        sp:[
-                            {
-                                icon:require("../../assets/img/yhhx/dyI.png"),
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/wb.png")
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/xhs.png")
-                            },
-                            {
-                                icon:require("../../assets/img/yhhx/wb.png")
-                            }
-                        ]
+                  polyline2.setOptions(selectedOptions)
+                  polyline.setOptions(normalOptions)
+                  polyline1.setOptions(normalOptions)
+                  that.bqitmList = [
+                    {
+                      name: '娱乐',
+                      icons: [
+                        allBqitm.ks,
+                      ]
+                    },
+                    {
+                      name: '新闻',
+                      icons: [
+                        allBqitm.ks,
+                        allBqitm.tt,
+                        allBqitm.wy,
+                        allBqitm.zhIcon,
+                      ],
+                    },
+                    {
+                      name: '视频',
+                      icons: [
+                        allBqitm.dyI,
+                        allBqitm.wb,
+                        allBqitm.xhs,
+                        allBqitm.wb,
+                      ]
                     }
+                  ]
                 });
                 var marker = new AMap.Marker({
                     icon:new AMap.Icon({
@@ -974,7 +1015,96 @@
                     },4000);
                 })
                 marker.setMap(map);
+            },
+          // 改变用户行为
+          changeBqitm(time) {
+            const morn = [6, 8, 10]
+            const noon = [12, 14, 16]
+            const night = [18, 20, 22, 24]
+            if (morn.includes(time)) {
+              this.bqitmList = [
+                {
+                  name: '出行',
+                  icons: [
+                    allBqitm.dd,
+                    allBqitm.dc,
+                    allBqitm.bx,
+                  ]
+                },
+                {
+                  name: '新闻',
+                  icons: [
+                    allBqitm.tt,
+                    allBqitm.wy,
+                    allBqitm.zhIcon,
+                  ],
+                },
+                {
+                  name: '娱乐',
+                  icons: [
+                    allBqitm.xhs,
+                    allBqitm.ks,
+                    allBqitm.wb,
+                  ]
+                }
+              ]
+            } else if (noon.includes(time)) {
+              this.bqitmList = [
+                {
+                  name: '交流',
+                  icons: [
+                    allBqitm.wx,
+                    allBqitm.qq,
+                    allBqitm.pyq,
+                  ]
+                },
+                {
+                  name: '餐饮',
+                  icons: [
+                    allBqitm.elm,
+                    allBqitm.mt,
+                    allBqitm.dz,
+                  ],
+                },
+                {
+                  name: '视频',
+                  icons: [
+                    allBqitm.dyI,
+                    allBqitm.wb,
+                    allBqitm.ks,
+                  ]
+                }
+              ]
+            } else if (night.includes(time)) {
+              this.bqitmList = [
+                {
+                  name: '娱乐',
+                  icons: [
+                    allBqitm.wzry,
+                    allBqitm.jdqs,
+                    allBqitm.xxl,
+                  ]
+                },
+                {
+                  name: '视频',
+                  icons: [
+                    allBqitm.dyI,
+                    allBqitm.wb,
+                    allBqitm.ks,
+                  ]
+                },
+                {
+                  name: '新闻',
+                  icons: [
+                    allBqitm.tt,
+                    allBqitm.wy,
+                    allBqitm.zhIcon,
+                  ],
+                },
+
+              ]
             }
+          }
         }
     }
 </script>
@@ -1675,6 +1805,7 @@
                         .bqimg{
                             width: 24px;
                             height: 24px;
+                            border-radius: 50%;
                         }
                     }
                 }
