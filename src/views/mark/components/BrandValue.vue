@@ -47,7 +47,7 @@
         </div>
         <div class="card-five-box">
             <Half lTitle="品牌热度关联场景" rTitle="品牌实际用户印象">
-                <SerachPoptip slot="left-operation"></SerachPoptip>
+                <SerachPoptip slot="left-operation" @submit="search"></SerachPoptip>
                 <div slot="right-operation"></div>
                 <PieEcharts5 slot="left" :myData="myData1"></PieEcharts5>
                 <iframe slot="right" src="/static/html/pphx/rdyc.html" frameborder="0" scrolling="no" style="width:100%;height:100%"></iframe>
@@ -57,11 +57,23 @@
         </div>
         <div class="table-warp">
             <Table :columns="columns" :data="data" >
-                <template slot-scope="{ row, index }" slot="communicationMeans">
-                    <div class="" v-for="(it, i) in row.communicationMeans" :key="`${index}-${i}`"><span>{{i + 1}}、{{it}}</span></div>
+                <template slot-scope="{ row, index }" slot="goods">
+                    <div class="" ><span>{{row.goods}}</span></div>
                 </template>
+                <template slot-scope="{ row, index }" slot="property">
+                    <div class="table-ceil" ><span>{{row.property}}</span></div>
+                </template>
+                <template slot-scope="{ row, index }" slot="memory">
+                    <div class="table-ceil" ><span>{{row.memory}}</span></div>
+                </template>
+                <template slot-scope="{ row, index }" slot="summary">
+                    <div class="table-ceil" ><span>{{row.summary}}</span></div>
+                </template>
+                <div class="table-ceil" slot-scope="{ row, index }" slot="communicationMeans">
+                    <div  v-for="(it, i) in row.communicationMeans" :key="`${index}-${i}`"><span>{{i + 1}}、{{it}}</span></div>
+                </div>
                 <template slot-scope="{ row, index }" slot="lightspot">
-                    <ul ><li class="point1">{{row.lightspot}}</li></ul>
+                    <div class="table-ceil"><span  class="dot"></span> {{row.lightspot}}</div>
                 </template>
             </Table>
         </div>
@@ -86,12 +98,13 @@
         columns: [
           {
             title: '竞品',
-            key: 'goods',
+            slot: 'goods',
             width: 0.75*window.rem,
           },
           {
             title: '属性',
-            key: 'property',
+            slot: 'property',
+            width: 0.75*window.rem,
           },
           {
             title: '传播手段',
@@ -103,11 +116,11 @@
           },
           {
             title: '传播记忆点',
-            key: 'memory',
+            slot: 'memory',
           },
           {
             title: '传播总结点',
-            key: 'summary',
+            slot: 'summary',
           },
         ],
         data: [
@@ -144,6 +157,26 @@
             summary: '品牌及产品风格设计正在往年轻化转型',
           },
         ],
+        params: {}
+      }
+    },
+    methods:{
+      search(params){
+
+        const key = JSON.stringify(params)
+        if(!this.params[key]){
+          const value1 = this.randomValue()
+          const value2 = this.randomValue()
+          const value3 = this.randomValue()
+          this.myData1.value = [value1, value2, value3]
+          this.params[key] = [value1, value2, value3]
+        }else {
+          this.myData1.value = this.params[key]
+        }
+        this.myData1 = JSON.parse(JSON.stringify(this.myData1))
+      },
+      randomValue(){
+        return Math.ceil(Math.random() * 100)
       }
     }
   }
@@ -233,9 +266,29 @@
         }
         .table-warp{
             padding-bottom: 24px;
-            .point1{
-                list-style: disc;
-                list-style-position: inside;
+            ::v-deep .ivu-table {
+                .ivu-table-header thead tr th{
+                    height: 54px;
+                }
+             }
+            .dot{
+                display: inline-block;
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background: #636E95;
+            }
+            .noPadding{
+                padding: 0 !important;
+            }
+            .table-ceil{
+                /*height: 66px;*/
+                padding: 20px 0;
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636E95;
+                line-height: 22px;
             }
         }
     }

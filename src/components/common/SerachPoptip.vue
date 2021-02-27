@@ -58,6 +58,7 @@
     },
     methods: {
       onSelect(item, type){
+        console.log('9999999999999999999', item)
         if(!this.selected[type] || !this.selected.length){
           this.selected[type] = [item.name]
         }else {
@@ -68,6 +69,7 @@
             return
           }
           current.push(item.name)
+          console.log('ooooooo',this.selected)
         }
 
       },
@@ -75,6 +77,7 @@
         this.show = true
       },
       submit(){
+        this.$emit('submit', this.selected)
         this.close()
       },
       close(){
