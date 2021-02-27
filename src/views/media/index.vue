@@ -590,10 +590,12 @@
                             <p>李子柒</p>
                         </div>
                         <div class="card-tip">
-                            <Poptip popper-class="saas-poptip small" placement="right-start">
+                            <Poptip popper-class="saas-poptip" placement="right-start">
                                 <i class="iconfont2 iconguanyu tip-icon"></i>
                                 <div slot="content">
-                                    <p>媒介资源库，提供具体媒介资源的详细信息，包括基础数据、历史投放效果和合作方案等，以供品牌方比较分析并联系合作</p>
+                                    <p>快速拉新策略KOL，占整体投放预算的55%，投放时间为未来7日投放（2日达到投放预期的80%），预期获得18%的曝光，12%的互动和3%销售转化；</p>
+                                    <p>头部KOL，粉丝基数大，影响力高，能够带来高互动和高转化，适合快速拉新需求的投放策略；</p>
+                                    <p>与品牌所属行业关联度为中等水平，但该KOL口碑极好，具有极高的影响力和覆盖范围，能够实现快速拉新的投放效果；</p>
                                 </div>
                             </Poptip>
                         </div>
@@ -2729,6 +2731,7 @@ export default {
                     position: absolute;
                     right: -15px;
                     top: 30px;
+                    text-align: left;
                 }
             }
         }
