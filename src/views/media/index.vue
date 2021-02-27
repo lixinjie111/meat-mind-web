@@ -560,34 +560,42 @@
             </div>
             <div class="strategy-top">
                 <div class="top-left">
-                    <p><span class="top-title">推荐的KOL组合</span><span class="top-blue">大网红 + nini + titi</span></p>
-                    <p class="mt12"><span class="top-title">方案效果</span><span>方案效果 预期以12600元的成本吸引潜客432341人</span></p>
+                    <p><span class="top-title">推荐的KOL组合</span><span class="top-blue">李子柒 + 西木西木 + 辣目洋子</span></p>
+                    <p class="mt12"><span class="top-title">方案效果</span><span>预期以12600元的成本吸引潜客432341人</span></p>
                 </div>
                 <div class="top-right">
                     <p class="top-title">推荐缘由</p>
-                    <p><span>大网红为头部KOL，在曝光率及用户影响率上对于品牌推广能起到快速起效。但鉴于大网红非垂直领域KOL，专业引流不足，故补充垂直类KOL nini 和泛娱乐类KOL titi，三者配合投放可使收益达到最高</span></p>
+                    <p><span>李子柒为头部KOL，在曝光率及用户影响率上对于品牌推广能起到快速起效。但鉴于李子柒非垂直领域KOL，专业引流不足，故补充垂直类KOL西木西木和泛娱乐类KOL辣目洋子，三者配合投放可使收益达到最高</span></p>
                 </div>
             </div>
             <div class="strategy-bottom">
                 <div></div>
                 <div>
-                    <div class="bottom-title">用户总量</div>
+                    <div class="bottom-title">用户量</div>
                 </div>
                 <div>
                     <div class="bottom-title light">曝光率</div>
                 </div>
                 <div>
-                    <div class="bottom-title">转化率</div>
+                    <div class="bottom-title">销售分布</div>
                 </div>
                 <div>
-                    <div class="bottom-title light">影响力</div>
+                    <div class="bottom-title light">内容方向</div>
                 </div>
                 <div>
                     <div class="bottom-card">
                         <img src="../../assets/img/mark/head1.jpg" />
-                        <div>
+                        <div class="card-box">
                             <p>头部KOL</p>
-                            <p>大网红</p>
+                            <p>李子柒</p>
+                        </div>
+                        <div class="card-tip">
+                            <Poptip popper-class="saas-poptip small" placement="right-start">
+                                <i class="iconfont2 iconguanyu tip-icon"></i>
+                                <div slot="content">
+                                    <p>媒介资源库，提供具体媒介资源的详细信息，包括基础数据、历史投放效果和合作方案等，以供品牌方比较分析并联系合作</p>
+                                </div>
+                            </Poptip>
                         </div>
                     </div>
                 </div>
@@ -606,9 +614,9 @@
                 <div>
                     <div class="bottom-card">
                         <img src="../../assets/img/mark/head2.jpeg" />
-                        <div>
+                        <div class="card-box">
                             <p>垂直类KOL</p>
-                            <p>nini</p>
+                            <p>西木西木</p>
                         </div>
                     </div>
                 </div>
@@ -627,9 +635,9 @@
                 <div>
                     <div class="bottom-card">
                         <img src="../../assets/img/mark/head3.jpeg" />
-                        <div>
+                        <div class="card-box">
                             <p>泛娱乐类KOL</p>
-                            <p>titi</p>
+                            <p>辣目洋子</p>
                         </div>
                     </div>
                 </div>
@@ -2615,16 +2623,17 @@ export default {
             border: 1px solid #EAEDF7;
 
             >div {
-                width: 50%;
+                width: 45%;
 
                 &.top-right {
+                    width: 52%;
                     display: flex;
                     justify-content: space-between;
                     align-items: flex-start;
 
                     >p {
                         &:nth-child(1) {
-                            width: 152px;
+                            width: 160px;
                             margin-right: 24px;
                         }
                     }
@@ -2691,7 +2700,7 @@ export default {
                     border-radius: 50%;
                 }
 
-                >div {
+                .card-box {
                     margin-top: -30px;
                     width: 100%;
                     min-width: 140px;
@@ -2714,6 +2723,12 @@ export default {
                             color: #242F57;
                         }
                     }
+                }
+
+                .card-tip {
+                    position: absolute;
+                    right: -15px;
+                    top: 30px;
                 }
             }
         }

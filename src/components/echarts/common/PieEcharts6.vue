@@ -50,7 +50,7 @@
             left: '0',
             right: '0',
             top:"0",
-            bottom: '40',
+            bottom: '0',
             containLabel: true
           },
           title: {
@@ -64,35 +64,38 @@
               fontWeight: 'normal'
             }
           },
-          legend: {
-            icon: 'circle',
-            type: 'scroll',
-            orient: 'horizontal',
-            //orient: 'vertical',
-            // left: '0',
-            //top: 'center',
-            bottom: 0,
-            data: name,
-            padding: [0, 5],
-          },
+          // legend: {
+          //   icon: 'circle',
+          //   type: 'scroll',
+          //   orient: 'horizontal',
+          //   bottom: 0,
+          //   data: name,
+          //   padding: [0, 5],
+          //   itemWidth: 8,
+          //   itemHeight: 8,
+          //   textStyle: {
+          //     color: "#97A0C3",
+          //     fontSize:'12'
+          //   }
+          // },
           tooltip: {
             trigger: 'item'
           },
           series: [{
             type: 'pie',
-            center: ['50%', '50%'],
-            radius: ['55%', '75%'],
+            center: ['50%', '58%'],
+            radius: ['30%', '50%'],
             roseType: this.roseType,
             clockwise: true,
             avoidLabelOverlap: true,
             hoverOffset: 10,
             label: {
-              show: false
+              show: true
             },
             labelLine: {
               normal: {
-                length: 10,
-                length2: 20,
+                length: 5,
+                length2: 8,
                 lineStyle: {
                   width: 1
                 }
