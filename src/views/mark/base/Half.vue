@@ -3,7 +3,11 @@
     <div class="col br half">
       <p class="title">{{lTitle}}</p>
       <p class="sub-title">{{ subDate }}</p>
-      <img src="../../../assets/img/mark/more.png" alt="" />
+        <div class="operation">
+            <slot  name="left-operation">
+                <img src="../../../assets/img/mark/more.png" alt="" />
+            </slot>
+        </div>
       <div class="r-half-echarts">
         <slot name="left"></slot>
       </div>
@@ -11,7 +15,11 @@
     <div class="col half">
       <p class="title">{{rTitle}}</p>
       <p class="sub-title">{{ subDate }}</p>
-      <img src="../../../assets/img/mark/more.png" alt="" />
+        <div class="operation">
+            <slot  name="right-operation">
+                <img src="../../../assets/img/mark/more.png" alt="" />
+            </slot>
+        </div>
       <div class="r-half-echarts">
         <slot name="right"></slot>
       </div>
@@ -20,7 +28,7 @@
 </template>
 
 <script>
-export default {
+  export default {
   name: "Half",
   props: {
     subDate: {
@@ -73,13 +81,16 @@ export default {
       color: #636e95;
       line-height: 18px;
     }
-    img {
+    img, .operation {
       position: absolute;
       top: 16px;
       right: 16px;
       width: 16px;
       height: 16px;
     }
+      .operation{
+          z-index: 2;
+      }
 
     &.br {
       margin-right: 24px;
