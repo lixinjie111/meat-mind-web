@@ -903,6 +903,7 @@
                     </Row>
                 </div>
             </div>
+            <BrandValue />
             <Card title="负面舆情的处理意见" class="card-five">
                 <p class="card-five-desc">当前
                     <span>存在</span>
@@ -1052,9 +1053,10 @@ import barM from '../../components/echarts/common/barM';
 import barHM1 from '../../components/echarts/common/barHM1';
 import Target from "./base/Target"
 import ShowTotal from "./components/ShowTotal"
+import BrandValue from "./components/BrandValue"
 export default {
     name:"index",
-    components:{barHM1,lineM3,barLine,barL,Brand,Card,Target,ShowTotal,barM,lineM1,DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts},
+    components:{barHM1,lineM3,barLine,barL,Brand,Card,Target,ShowTotal,barM,lineM1,DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts,BrandValue},
     data () {
 		return {
 			showFlag:true,
