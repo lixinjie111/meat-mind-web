@@ -176,24 +176,22 @@
           <div class="media_sec_panel_lef1">
             <div class="media_sec_panel_lef1_top">合作媒介</div>
             <div class="icon_container">
-              <div class="tenx">
+              <div class="tenx" @click="meijieFn(1)">
                 <img :src="tenxIcon" alt="" srcset="" class="tenxIcon">
               </div>
-              <div class="tout">
+              <div class="tout" @click="meijieFn(2)">
                 <img :src="ttIcon" alt="" srcset="" class="tenxIcon">
               </div>
-              <div class="douy">
+              <div class="douy" @click="meijieFn(3)">
                 <img :src="dyIcon" alt="" srcset="" class="tenxIcon">
               </div>
-              <div class="ke36">
+              <div class="ke36" @click="meijieFn(4)">
                 <img :src="ke36Icon" alt="" srcset="" class="tenxIcon">
               </div>
-              <div class="weib">
+              <div class="weib" @click="meijieFn(5)">
                 <img :src="wbIcon" alt="" srcset="" class="tenxIcon">
               </div>
-              <div class="xiangy">
-                <i class="iconfont2 iconxiangqian"></i>
-              </div>
+              <i class="iconfont2 iconxiangqian"></i>
             </div>  
             <div class="media_sec_panel_lef1_bom">
               <div class="sec_pan_con1">
@@ -281,103 +279,101 @@
           <div class="media_sec_panel_lef2">
             <div class="media_sec_panel_lef1_top">合作KOL</div>  
             <div class="icon_container">
-              <div class="tenx">
+              <div class="tenx" @click="kolFn(1)">
                 <img :src="touxIcon1" alt="" srcset="" class="tenxIcon">
               </div>
-              <div class="tout">
+              <div class="tout" @click="kolFn(2)">
                 <img :src="touxIcon2" alt="" srcset="" class="tenxIcon">
               </div>
-              <div class="douy">
+              <div class="douy" @click="kolFn(3)">
                 <img :src="touxIcon3" alt="" srcset="" class="tenxIcon">
               </div>
-              <div class="ke36">
+              <div class="ke36" @click="kolFn(4)">
                 <img :src="touxIcon4" alt="" srcset="" class="tenxIcon">
               </div>
-              <div class="weib">
+              <div class="weib" @click="kolFn(5)">
                 <img :src="touxIcon5" alt="" srcset="" class="tenxIcon">
               </div>
-              <div class="xiangy">
-                <i class="iconfont2 iconxiangqian"></i>
-              </div>
+              <i class="iconfont2 iconxiangqian"></i>
             </div>  
             <div class="media_sec_panel_lef1_bom">
               <div class="sec_pan_con1">
                 <div class="sec_pan_con1_lef">
                   <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>综合曝光度</span></div>
-                  <div class="sec_pan_con1_lef_numtxt">30w</div>
+                  <div class="sec_pan_con1_lef_numtxt">{{kolObj.meijie1.numTxt1}}</div>
                 </div>
                 <div class="sec_pan_con1_rig">
                   <div class="sec_pan_con1_rig_lef">
                     <div class="sec_pan_con1_rig_lef_top">环比</div>
-                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">3.0%</div>
+                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie1.numTxt2}}</div>
                   </div>
                   <div class="sec_pan_con1_rig_rig">
                     <div class="sec_pan_con1_rig_lef_top">同比</div>
-                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">1.02%</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie1.numTxt3}}</div>
                   </div>
                 </div>
               </div>
               <div class="sec_pan_con2">
                 <div class="sec_pan_con1_lef">
                   <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>综合互动量/互动率</span></div>
-                  <div class="sec_pan_con1_lef_numtxt">150w/10%</div>
+                  <div class="sec_pan_con1_lef_numtxt">{{kolObj.meijie2.numTxt1}}</div>
                 </div>
                 <div class="sec_pan_con1_rig">
                   <div class="sec_pan_con1_rig_lef">
                     <div class="sec_pan_con1_rig_lef_top">环比</div>
-                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">3.55%</div>
+                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie2.numTxt2}}</div>
                   </div>
                   <div class="sec_pan_con1_rig_rig">
                     <div class="sec_pan_con1_rig_lef_top">同比</div>
-                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">2.07%</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie2.numTxt3}}</div>
                   </div>
                 </div>
               </div>
               <div class="sec_pan_con3">
                 <div class="sec_pan_con1_lef">
                   <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>销售转化率/转化量</span></div>
-                  <div class="sec_pan_con1_lef_numtxt">3%/100w</div>
+                  <div class="sec_pan_con1_lef_numtxt">{{kolObj.meijie3.numTxt1}}</div>
                 </div>
                 <div class="sec_pan_con1_rig">
                   <div class="sec_pan_con1_rig_lef">
                     <div class="sec_pan_con1_rig_lef_top">环比</div>
-                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">1.02%</div>
+                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie3.numTxt2}}</div>
                   </div>
                   <div class="sec_pan_con1_rig_rig">
                     <div class="sec_pan_con1_rig_lef_top">同比</div>
-                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">1.03%</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie3.numTxt3}}</div>
                   </div>
                 </div>
               </div>
               <div class="sec_pan_con4">
                 <div class="sec_pan_con1_lef">
                   <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>新增留存用户数</span></div>
-                  <div class="sec_pan_con1_lef_numtxt">30w</div>
+                  <div class="sec_pan_con1_lef_numtxt">{{kolObj.meijie4.numTxt1}}</div>
                 </div>
                 <div class="sec_pan_con1_rig">
                   <div class="sec_pan_con1_rig_lef">
                     <div class="sec_pan_con1_rig_lef_top">环比</div>
-                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">4.03%</div>
+                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie4.numTxt2}}</div>
                   </div>
                   <div class="sec_pan_con1_rig_rig">
                     <div class="sec_pan_con1_rig_lef_top">同比</div>
-                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">1.15%</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie4.numTxt3}}</div>
                   </div>
                 </div>
               </div>
               <div class="sec_pan_con5">
                 <div class="sec_pan_con1_lef">
                   <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>媒介正负情感分布比</span></div>
-                  <div class="sec_pan_con1_lef_numtxt">66%/10%</div>
+                  <div class="sec_pan_con1_lef_numtxt">{{kolObj.meijie5.numTxt1}}</div>
                 </div>
                 <div class="sec_pan_con1_rig">
                   <div class="sec_pan_con1_rig_lef">
                     <div class="sec_pan_con1_rig_lef_top">环比</div>
-                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">4.0%</div>
+                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie5.numTxt2}}</div>
                   </div>
                   <div class="sec_pan_con1_rig_rig">
                     <div class="sec_pan_con1_rig_lef_top">同比</div>
-                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">3.31%</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie5.numTxt3}}</div>
                   </div>
                 </div>
               </div>
@@ -430,9 +426,9 @@
             </div>
           </div>
           <div class="media_three_item_bom">
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">策略: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">主要使用电视渠道投放，投放内容 单一，重复性高；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">优势: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">容易形成品牌记忆</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">威胁: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">受众心智中凉茶行业的第一提及品 牌；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">策略: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">主要使用电视渠道投放，投放内容 单一，重复性高；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">优势: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">容易形成品牌记忆</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">威胁: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">受众心智中凉茶行业的第一提及品 牌；</span></div>
           </div>
         </div>
         <div class="media_three_item">
@@ -443,9 +439,9 @@
             </div>
           </div>
           <div class="media_three_item_bom media_three_item_bom2">
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">策略: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">侧重体育类媒介，布局各类媒介渠道的体育类KOL和内容；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">优势: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">形成体育兴趣受众的强用户粘性（凉茶消费者类型TOP3之一)；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">威胁: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">体育兴趣受众难以转化；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">策略: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">侧重体育类媒介，布局各类媒介渠道的体育类KOL和内容；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">优势: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">形成体育兴趣受众的强用户粘性（凉茶消费者类型TOP3之一)；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">威胁: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">体育兴趣受众难以转化；</span></div>
           </div>
         </div>
         <div class="media_three_item">
@@ -456,9 +452,9 @@
             </div>
           </div>
           <div class="media_three_item_bom">
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">策略: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">侧重与年轻消费人群关注的KOL，不计投放成本；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">优势: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">打造品牌年轻化，消费者复购频率高；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">威胁: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">媒介组合优势明显，难以形成差异化竞争；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">策略: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">侧重与年轻消费人群关注的KOL，不计投放成本；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">优势: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">打造品牌年轻化，消费者复购频率高；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">威胁: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">媒介组合优势明显，难以形成差异化竞争；</span></div>
           </div>
         </div>
         <div class="media_three_item media_three_item2">
@@ -469,9 +465,9 @@
             </div>
           </div>
           <div class="media_three_item_bom media_three_item_bom2">
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">策略: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">主要与养生专家类KOL合作， 以健康讲堂形式的内容进行投放；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">优势: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">医学健康专家的合作，提升品牌信服力；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">威胁: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">在老年群体中形成护城河，品牌竞争优势巨大；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">策略: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">主要与养生专家类KOL合作， 以健康讲堂形式的内容进行投放；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">优势: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">医学健康专家的合作，提升品牌信服力；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">威胁: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">在老年群体中形成护城河，品牌竞争优势巨大；</span></div>
           </div>
         </div>
       </div>
@@ -1653,32 +1649,342 @@ export default {
               touxIcon5:require("../../assets/img/yhhx/toux5.png"),
 
               meijieObj:{
-                meijie1:{
-                  numTxt1:'30w',
-                  numTxt2:'3.0%',
-                  numTxt3:'1.02%',
-                },
-                meijie2:{
-                  numTxt1:'150w/10%',
-                  numTxt2:'3.55%',
-                  numTxt3:'2.07%',
-                },
-                meijie3:{
-                  numTxt1:'3%/100w',
-                  numTxt2:'1.02%',
-                  numTxt3:'1.03%',
-                },
-                meijie4:{
-                  numTxt1:'30w',
-                  numTxt2:'4.03%',
-                  numTxt3:'1.15%',
-                },
-                meijie5:{
-                  numTxt1:'66%/10%',
-                  numTxt2:'4.0%',
-                  numTxt3:'3.31%',
-                }
-              }
+                meijie1:{
+                  numTxt1:'8000w',
+                  numTxt2:'2.8%',
+                  numTxt3:'1.05%',
+                },
+                meijie2:{
+                  numTxt1:'724w/38%',
+                  numTxt2:'1.9%',
+                  numTxt3:'2.25%',
+                },
+                meijie3:{
+                  numTxt1:'17%/123w',
+                  numTxt2:'1.06%',
+                  numTxt3:'2.22%',
+                },
+                meijie4:{
+                  numTxt1:'18w',
+                  numTxt2:'3.38%',
+                  numTxt3:'1.15%',
+                },
+                meijie5:{
+                  numTxt1:'39%/ 17%',
+                  numTxt2:'7.2%',
+                  numTxt3:'3.09%',
+                }
+              },
+
+              meijieObj1:{
+                meijie1:{
+                  numTxt1:'8000w',
+                  numTxt2:'2.8%',
+                  numTxt3:'1.05%',
+                },
+                meijie2:{
+                  numTxt1:'724w/38%',
+                  numTxt2:'1.9%',
+                  numTxt3:'2.25%',
+                },
+                meijie3:{
+                  numTxt1:'17%/123w',
+                  numTxt2:'1.06%',
+                  numTxt3:'2.22%',
+                },
+                meijie4:{
+                  numTxt1:'18w',
+                  numTxt2:'3.38%',
+                  numTxt3:'1.15%',
+                },
+                meijie5:{
+                  numTxt1:'39%/ 17%',
+                  numTxt2:'7.2%',
+                  numTxt3:'3.09%',
+                }
+              },
+
+              meijieObj2:{
+                meijie1:{
+                  numTxt1:'5870w',
+                  numTxt2:'2.35%',
+                  numTxt3:'1.44%',
+                },
+                meijie2:{
+                  numTxt1:'823w/29%',
+                  numTxt2:'2.5%',
+                  numTxt3:'3.09%',
+                },
+                meijie3:{
+                  numTxt1:'15%/211w',
+                  numTxt2:'2.01%',
+                  numTxt3:'1.84%',
+                },
+                meijie4:{
+                  numTxt1:'22w',
+                  numTxt2:'1.99%',
+                  numTxt3:'2.39%',
+                },
+                meijie5:{
+                  numTxt1:'40%/ 33%',
+                  numTxt2:'6.5%',
+                  numTxt3:'5.87%',
+                }
+              },
+
+              meijieObj3:{
+                meijie1:{
+                  numTxt1:'3256w',
+                  numTxt2:'2.2%',
+                  numTxt3:'2.33%',
+                },
+                meijie2:{
+                  numTxt1:'724w/38%',
+                  numTxt2:'3.04%',
+                  numTxt3:'1.87%',
+                },
+                meijie3:{
+                  numTxt1:'21%/256w',
+                  numTxt2:'1.06%',
+                  numTxt3:'2.22%',
+                },
+                meijie4:{
+                  numTxt1:'40w',
+                  numTxt2:'3.38%',
+                  numTxt3:'1.15%',
+                },
+                meijie5:{
+                  numTxt1:'36%/ 21%',
+                  numTxt2:'7.2%',
+                  numTxt3:'3.09%',
+                }
+              },
+
+              meijieObj4:{
+                meijie1:{
+                  numTxt1:'1892w',
+                  numTxt2:'2.8%',
+                  numTxt3:'1.05%',
+                },
+                meijie2:{
+                  numTxt1:'648w/29%',
+                  numTxt2:'1.9%',
+                  numTxt3:'2.25%',
+                },
+                meijie3:{
+                  numTxt1:'36%/847w',
+                  numTxt2:'1.06%',
+                  numTxt3:'2.22%',
+                },
+                meijie4:{
+                  numTxt1:'33w',
+                  numTxt2:'3.38%',
+                  numTxt3:'1.15%',
+                },
+                meijie5:{
+                  numTxt1:'27%/ 29%',
+                  numTxt2:'7.2%',
+                  numTxt3:'3.09%',
+                }
+              },
+
+              meijieObj5:{
+                meijie1:{
+                  numTxt1:'744w',
+                  numTxt2:'2.8%',
+                  numTxt3:'1.05%',
+                },
+                meijie2:{
+                  numTxt1:'648w/50%',
+                  numTxt2:'1.9%',
+                  numTxt3:'2.25%',
+                },
+                meijie3:{
+                  numTxt1:'27%/443w',
+                  numTxt2:'1.06%',
+                  numTxt3:'2.22%',
+                },
+                meijie4:{
+                  numTxt1:'34w',
+                  numTxt2:'3.38%',
+                  numTxt3:'1.15%',
+                },
+                meijie5:{
+                  numTxt1:'54%/ 33%',
+                  numTxt2:'7.2%',
+                  numTxt3:'3.09%',
+                }
+              },
+
+              kolObj:{
+                meijie1:{
+                  numTxt1:'6834w',
+                  numTxt2:'1.87%',
+                  numTxt3:'2.33%',
+                },
+                meijie2:{
+                  numTxt1:'848w/29%',
+                  numTxt2:'2.23%',
+                  numTxt3:'4.64%',
+                },
+                meijie3:{
+                  numTxt1:'26%/435w',
+                  numTxt2:'2.1%',
+                  numTxt3:'1.45%',
+                },
+                meijie4:{
+                  numTxt1:'67w',
+                  numTxt2:'1.32%',
+                  numTxt3:'2.23%',
+                },
+                meijie5:{
+                  numTxt1:'47%/ 19%',
+                  numTxt2:'2.45%',
+                  numTxt3:'2.45%',
+                }
+              },
+
+              kolObj1:{
+                meijie1:{
+                  numTxt1:'6834w',
+                  numTxt2:'1.87%',
+                  numTxt3:'2.33%',
+                },
+                meijie2:{
+                  numTxt1:'848w/29%',
+                  numTxt2:'2.23%',
+                  numTxt3:'4.64%',
+                },
+                meijie3:{
+                  numTxt1:'26%/435w',
+                  numTxt2:'2.1%',
+                  numTxt3:'1.45%',
+                },
+                meijie4:{
+                  numTxt1:'67w',
+                  numTxt2:'1.32%',
+                  numTxt3:'2.23%',
+                },
+                meijie5:{
+                  numTxt1:'47%/ 19%',
+                  numTxt2:'2.45%',
+                  numTxt3:'2.45%',
+                }
+              },
+
+
+              kolObj2:{
+                meijie1:{
+                  numTxt1:'3238w',
+                  numTxt2:'3.84%',
+                  numTxt3:'2.44%',
+                },
+                meijie2:{
+                  numTxt1:'668w/22%',
+                  numTxt2:'2.45%',
+                  numTxt3:'3.65%',
+                },
+                meijie3:{
+                  numTxt1:'22%/232w',
+                  numTxt2:'2.34%',
+                  numTxt3:'3.54%',
+                },
+                meijie4:{
+                  numTxt1:'37w',
+                  numTxt2:'2.30%',
+                  numTxt3:'2.45%',
+                },
+                meijie5:{
+                  numTxt1:'29%/ 21%',
+                  numTxt2:'4.24%',
+                  numTxt3:'2.54%',
+                }
+              },
+
+              kolObj3:{
+                meijie1:{
+                  numTxt1:'2189w',
+                  numTxt2:'2.8%',
+                  numTxt3:'1.05%',
+                },
+                meijie2:{
+                  numTxt1:'983w/34%',
+                  numTxt2:'1.9%',
+                  numTxt3:'2.25%',
+                },
+                meijie3:{
+                  numTxt1:'31%/454w',
+                  numTxt2:'1.06%',
+                  numTxt3:'2.22%',
+                },
+                meijie4:{
+                  numTxt1:'38w',
+                  numTxt2:'3.38%',
+                  numTxt3:'1.15%',
+                },
+                meijie5:{
+                  numTxt1:'28%/ 22%',
+                  numTxt2:'7.2%',
+                  numTxt3:'3.09%',
+                }
+              },
+
+              kolObj4:{
+                meijie1:{
+                  numTxt1:'1082w',
+                  numTxt2:'2.8%',
+                  numTxt3:'1.05%',
+                },
+                meijie2:{
+                  numTxt1:'594w/10%',
+                  numTxt2:'1.9%',
+                  numTxt3:'2.25%',
+                },
+                meijie3:{
+                  numTxt1:'20%/558w',
+                  numTxt2:'1.06%',
+                  numTxt3:'2.22%',
+                },
+                meijie4:{
+                  numTxt1:'43w',
+                  numTxt2:'3.38%',
+                  numTxt3:'1.15%',
+                },
+                meijie5:{
+                  numTxt1:'28%/ 33%',
+                  numTxt2:'7.2%',
+                  numTxt3:'3.09%',
+                }
+              },
+
+              kolObj5:{
+                meijie1:{
+                  numTxt1:'789w',
+                  numTxt2:'2.8%',
+                  numTxt3:'1.05%',
+                },
+                meijie2:{
+                  numTxt1:'764w/23%',
+                  numTxt2:'1.9%',
+                  numTxt3:'2.25%',
+                },
+                meijie3:{
+                  numTxt1:'22%/58w',
+                  numTxt2:'1.06%',
+                  numTxt3:'2.22%',
+                },
+                meijie4:{
+                  numTxt1:'67w',
+                  numTxt2:'3.38%',
+                  numTxt3:'1.15%',
+                },
+                meijie5:{
+                  numTxt1:'34%/ 20%',
+                  numTxt2:'7.2%',
+                  numTxt3:'3.09%',
+                }
+              }
+
       }
   },
   created(){
@@ -1688,6 +1994,40 @@ export default {
     this.changeTabCon(0);
   },
   methods:{
+    meijieFn(arg){
+      if(arg == 1){
+        this.meijieObj = this.meijieObj1;
+      }
+      else if(arg == 2){
+        this.meijieObj = this.meijieObj2;
+      }
+      else if(arg == 3){
+        this.meijieObj = this.meijieObj3;
+      }
+      else if(arg == 4){
+        this.meijieObj = this.meijieObj4;
+      }
+      else if(arg == 5){
+        this.meijieObj = this.meijieObj5;
+      }
+    },
+    kolFn(arg){
+      if(arg == 1){
+        this.kolObj = this.kolObj1;
+      }
+      else if(arg == 2){
+        this.kolObj = this.kolObj2;
+      }
+      else if(arg == 3){
+        this.kolObj = this.kolObj3;
+      }
+      else if(arg == 4){
+        this.kolObj = this.kolObj4;
+      }
+      else if(arg == 5){
+        this.kolObj = this.kolObj5;
+      }
+    },
     changeTabCon(arg){
       this.ifShowTabCon = arg;
       var tabDom = this.$refs.mediaFiveTabItem || [];
@@ -2232,10 +2572,14 @@ export default {
           box-sizing: border-box;
           display: flex;
           align-items:baseline;
+          position: relative;
           .tenx,.tout,.douy,.ke36,.weib{
             .tenxIcon{
               display: block;
               width: 100%;
+            }
+            &:hover{
+              cursor: pointer;
             }
           }
           .tenx{
@@ -2272,7 +2616,14 @@ export default {
             border-radius: 50%;
             margin-right: 10px;
           }
-          .xiangy{
+          .iconxiangqian{
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            width: 7px;
+            height: 12px;
+          }
+          .iconxiangqian::before{
             width: 7px;
             height: 12px;
           }
