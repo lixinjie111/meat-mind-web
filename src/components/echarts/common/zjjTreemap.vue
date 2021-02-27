@@ -37,8 +37,13 @@ export default {
         tooltip: {
           show: true,
         },
+        geid:{
+            width:'100%',
+            height:'100%'
+        },
         series: [
           {
+            breadcrumb: { show: false},
             type: "treemap",
             data:this.myData,
           },
