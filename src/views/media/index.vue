@@ -964,13 +964,13 @@ export default {
                     {
                         title: '排名',
                         slot: 'paiming',
-                        width: 70,
+                        width: 70/144*window.rem,
                     },
                     {
                         title: '抖音号',
                         key: 'name',
                         slot: 'douhao',
-                        width: 200,
+                        width: 200/144*window.rem,
                     },
                     {
                         title: '带货量',
@@ -1011,7 +1011,7 @@ export default {
                     {
                         title: '操作',
                         slot: 'action',
-                        width: 150,
+                        width: 150/144*window.rem,
                     },
                 ],
               data1: [
