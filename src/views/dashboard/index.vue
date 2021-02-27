@@ -191,12 +191,13 @@
 <style scoped lang="scss">
     .home {
         .data-admin {
+            padding: 0 12px 0 18px;
             display: flex;
             flex-direction: column;
             width: 100%;
             height: calc(100vh - 64px);
             overflow-y: scroll;
-            background: #f5f5f5;
+            background: #ffffff;
 
             img {
                 width: 100%;
@@ -211,7 +212,7 @@
                     right: 40px;
                     width: 120px;
                     height: 32px;
-                    // border: 1px solid red;
+                    /*border: 1px solid red;*/
                     cursor: pointer;
                 }
             }
@@ -221,8 +222,8 @@
 
                 .more {
                     position: absolute;
-                    top: 10px;
-                    right: 40px;
+                    top: 25px;
+                    right: 35px;
                     width: 100px;
                     height: 36px;
                     cursor: pointer;
@@ -231,8 +232,8 @@
 
                 .detail {
                     position: absolute;
-                    left: 350px;
-                    top: 98px;
+                    left: 330px;
+                    top: 125px;
                     width: 50px;
                     height: 24px;
                     cursor: pointer;
@@ -241,8 +242,8 @@
 
                 .detail2 {
                     position: absolute;
-                    left: 725px;
-                    top: 98px;
+                    left: 700px;
+                    top: 125px;
                     width: 50px;
                     height: 24px;
                     cursor: pointer;
