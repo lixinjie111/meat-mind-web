@@ -49,12 +49,6 @@ export default {
     padding: 16px 24px;
     border-radius: 8px;
     overflow: hidden;
-    img {
-      width: 64px;
-      height: 66px;
-      // margin-right: 12px;
-      margin-top: -6px;
-    }
     .content {
       display: flex;
       flex-direction: column;
@@ -78,12 +72,24 @@ export default {
   .cur-situation {
     margin-right: 24px;
     background: rgba(255, 136, 0, .7);
+    img {
+      width: 73px;
+      height: 74px;
+      margin-right: -7px;
+      margin-top: -10px;
+    }
     .content > p {
       color: #ad5d00;
     }
   }
   .suggestions {
     background: rgba(77, 148, 255, 0.7);
+    img {
+      width: 64px;
+      height: 66px;
+      // margin-right: 12px;
+      margin-top: -6px;
+    }
     .content > p {
       color: #0559d7;
     }
