@@ -191,8 +191,8 @@
                                     <div class="selectDiv selectRt">
                                         <div class="selectLabel">对标比较</div>
                                         <Select v-model="formItem.pinpai" size="small" multiple  :max-tag-count="0" style="width:100px;" @on-change="selectPai2">
-                                            <Option value="0">王老吉</Option>
-                                            <Option value="1">加多宝</Option>
+                                            <Option value="0">加多宝</Option>
+                                            <Option value="1">王老吉</Option>
                                             <Option value="2">和其正</Option>
                                             <Option value="3">白云山</Option>
                                             <!-- <Option value="4">清心堂</Option> -->
@@ -1231,6 +1231,7 @@ export default {
             this.my68Data=obj;
         },
         selectPai2(val){
+            console.log(val)
             let obj={
                 legName:['邓老凉茶', ],
                 name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
