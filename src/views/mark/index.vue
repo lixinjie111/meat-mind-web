@@ -297,6 +297,7 @@
                     </Row>
                 </div>
             </div>
+            <BrandValue />
             <Card title="负面舆情的处理意见" class="card-five">
                 <p class="card-five-desc">当前
                     <span>存在</span>
@@ -445,9 +446,10 @@ import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
 import barM from '../../components/echarts/common/barM';
 import Target from "./base/Target"
 import ShowTotal from "./components/ShowTotal"
+import BrandValue from "./components/BrandValue"
 export default {
     name:"index",
-    components:{lineM3,barLine,barL,Brand,Card,Target,ShowTotal,barM,lineM1,DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts},
+    components:{lineM3,barLine,barL,Brand,Card,Target,ShowTotal,barM,lineM1,DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts, BrandValue},
     data () {
 		return {
 			showFlag:true,
@@ -517,7 +519,7 @@ export default {
                     background: url("../../assets/img/mark/mark2.png") no-repeat center center / 100% 100%;
                 }
             }
-           
+
         }
         .mark-line-bt{
             display: flex;
@@ -560,7 +562,7 @@ export default {
                     }
                 }
             }
-           
+
         }
      }
      .mark-panel{
@@ -582,7 +584,7 @@ export default {
                 font-weight: 500;
                 color: #242F57;
                 margin-bottom: 4px;
-           } 
+           }
             .subTitle{
                 font-size: 12px;
                 font-family: PingFangSC-Regular, PingFang SC;
@@ -708,7 +710,7 @@ export default {
                     }
                 }
             }
-            
+
             .subTitle{
                 font-size: 12px;
                 font-family: PingFangSC-Regular, PingFang SC;
@@ -777,7 +779,7 @@ export default {
         .card-five {
             margin-top: 24px;
             ::v-deep .title .left > p{font-size: 18px;}
-            
+
             .card-five-desc {
                 margin: -15px 0 24px;
                 font-size: 14px;
