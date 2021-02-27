@@ -132,7 +132,7 @@
         <div class="media_first_panel_item1">
           <div class="logo_til_container">
             <div class="logo_container">
-              <img src="logoIcon" alt="" srcset="" class="logo_icon">
+              <img :src="leflogoIcon" alt="" srcset="" class="logo_icon">
             </div>
             <div class="til_con">品牌媒介现状及趋势</div>
           </div>
@@ -152,7 +152,7 @@
         <div class="media_first_panel_item2">
           <div class="logo_til_container">
             <div class="logo_container">
-              <img src="logoIcon" alt="" srcset="" class="logo_icon">
+              <img :src="riglogoIcon" alt="" srcset="" class="logo_icon">
             </div>
             <div class="til_con">优化建议</div>
           </div>
@@ -174,15 +174,213 @@
       <div class="media_sec_panel">
         <div class="media_sec_panel_lef">
           <div class="media_sec_panel_lef1">
-            <div class="media_sec_panel_lef1_top">合作媒介</div>  
+            <div class="media_sec_panel_lef1_top">合作媒介</div>
+            <div class="icon_container">
+              <div class="tenx">
+                <img :src="tenxIcon" alt="" srcset="" class="tenxIcon">
+              </div>
+              <div class="tout">
+                <img :src="ttIcon" alt="" srcset="" class="tenxIcon">
+              </div>
+              <div class="douy">
+                <img :src="dyIcon" alt="" srcset="" class="tenxIcon">
+              </div>
+              <div class="ke36">
+                <img :src="ke36Icon" alt="" srcset="" class="tenxIcon">
+              </div>
+              <div class="weib">
+                <img :src="wbIcon" alt="" srcset="" class="tenxIcon">
+              </div>
+              <div class="xiangy">
+                <i class="iconfont2 iconxiangqian"></i>
+              </div>
+            </div>  
             <div class="media_sec_panel_lef1_bom">
-              <vGraph id="vgraphId1" :myData="$zjjData.graphData1"></vGraph>
+              <div class="sec_pan_con1">
+                <div class="sec_pan_con1_lef">
+                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>综合曝光度</span></div>
+                  <div class="sec_pan_con1_lef_numtxt">{{meijieObj.meijie1.numTxt1}}</div>
+                </div>
+                <div class="sec_pan_con1_rig">
+                  <div class="sec_pan_con1_rig_lef">
+                    <div class="sec_pan_con1_rig_lef_top">环比</div>
+                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie1.numTxt2}}</div>
+                  </div>
+                  <div class="sec_pan_con1_rig_rig">
+                    <div class="sec_pan_con1_rig_lef_top">同比</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie1.numTxt3}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="sec_pan_con2">
+                <div class="sec_pan_con1_lef">
+                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>综合互动量/互动率</span></div>
+                  <div class="sec_pan_con1_lef_numtxt">{{meijieObj.meijie2.numTxt1}}</div>
+                </div>
+                <div class="sec_pan_con1_rig">
+                  <div class="sec_pan_con1_rig_lef">
+                    <div class="sec_pan_con1_rig_lef_top">环比</div>
+                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie2.numTxt2}}</div>
+                  </div>
+                  <div class="sec_pan_con1_rig_rig">
+                    <div class="sec_pan_con1_rig_lef_top">同比</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie2.numTxt3}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="sec_pan_con3">
+                <div class="sec_pan_con1_lef">
+                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>销售转化率/转化量</span></div>
+                  <div class="sec_pan_con1_lef_numtxt">{{meijieObj.meijie3.numTxt1}}</div>
+                </div>
+                <div class="sec_pan_con1_rig">
+                  <div class="sec_pan_con1_rig_lef">
+                    <div class="sec_pan_con1_rig_lef_top">环比</div>
+                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie3.numTxt2}}</div>
+                  </div>
+                  <div class="sec_pan_con1_rig_rig">
+                    <div class="sec_pan_con1_rig_lef_top">同比</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie3.numTxt3}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="sec_pan_con4">
+                <div class="sec_pan_con1_lef">
+                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>新增留存用户数</span></div>
+                  <div class="sec_pan_con1_lef_numtxt">{{meijieObj.meijie4.numTxt1}}</div>
+                </div>
+                <div class="sec_pan_con1_rig">
+                  <div class="sec_pan_con1_rig_lef">
+                    <div class="sec_pan_con1_rig_lef_top">环比</div>
+                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie4.numTxt2}}</div>
+                  </div>
+                  <div class="sec_pan_con1_rig_rig">
+                    <div class="sec_pan_con1_rig_lef_top">同比</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie4.numTxt3}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="sec_pan_con5">
+                <div class="sec_pan_con1_lef">
+                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>媒介正负情感分布比</span></div>
+                  <div class="sec_pan_con1_lef_numtxt">{{meijieObj.meijie5.numTxt1}}</div>
+                </div>
+                <div class="sec_pan_con1_rig">
+                  <div class="sec_pan_con1_rig_lef">
+                    <div class="sec_pan_con1_rig_lef_top">环比</div>
+                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie5.numTxt2}}</div>
+                  </div>
+                  <div class="sec_pan_con1_rig_rig">
+                    <div class="sec_pan_con1_rig_lef_top">同比</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie5.numTxt3}}</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="media_sec_panel_lef2">
             <div class="media_sec_panel_lef1_top">合作KOL</div>  
+            <div class="icon_container">
+              <div class="tenx">
+                <img :src="touxIcon1" alt="" srcset="" class="tenxIcon">
+              </div>
+              <div class="tout">
+                <img :src="touxIcon2" alt="" srcset="" class="tenxIcon">
+              </div>
+              <div class="douy">
+                <img :src="touxIcon3" alt="" srcset="" class="tenxIcon">
+              </div>
+              <div class="ke36">
+                <img :src="touxIcon4" alt="" srcset="" class="tenxIcon">
+              </div>
+              <div class="weib">
+                <img :src="touxIcon5" alt="" srcset="" class="tenxIcon">
+              </div>
+              <div class="xiangy">
+                <i class="iconfont2 iconxiangqian"></i>
+              </div>
+            </div>  
             <div class="media_sec_panel_lef1_bom">
-              <vGraph id="vTreeId" :myData="$zjjData.graphData"></vGraph>
+              <div class="sec_pan_con1">
+                <div class="sec_pan_con1_lef">
+                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>综合曝光度</span></div>
+                  <div class="sec_pan_con1_lef_numtxt">30w</div>
+                </div>
+                <div class="sec_pan_con1_rig">
+                  <div class="sec_pan_con1_rig_lef">
+                    <div class="sec_pan_con1_rig_lef_top">环比</div>
+                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">3.0%</div>
+                  </div>
+                  <div class="sec_pan_con1_rig_rig">
+                    <div class="sec_pan_con1_rig_lef_top">同比</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">1.02%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="sec_pan_con2">
+                <div class="sec_pan_con1_lef">
+                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>综合互动量/互动率</span></div>
+                  <div class="sec_pan_con1_lef_numtxt">150w/10%</div>
+                </div>
+                <div class="sec_pan_con1_rig">
+                  <div class="sec_pan_con1_rig_lef">
+                    <div class="sec_pan_con1_rig_lef_top">环比</div>
+                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">3.55%</div>
+                  </div>
+                  <div class="sec_pan_con1_rig_rig">
+                    <div class="sec_pan_con1_rig_lef_top">同比</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">2.07%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="sec_pan_con3">
+                <div class="sec_pan_con1_lef">
+                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>销售转化率/转化量</span></div>
+                  <div class="sec_pan_con1_lef_numtxt">3%/100w</div>
+                </div>
+                <div class="sec_pan_con1_rig">
+                  <div class="sec_pan_con1_rig_lef">
+                    <div class="sec_pan_con1_rig_lef_top">环比</div>
+                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">1.02%</div>
+                  </div>
+                  <div class="sec_pan_con1_rig_rig">
+                    <div class="sec_pan_con1_rig_lef_top">同比</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">1.03%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="sec_pan_con4">
+                <div class="sec_pan_con1_lef">
+                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>新增留存用户数</span></div>
+                  <div class="sec_pan_con1_lef_numtxt">30w</div>
+                </div>
+                <div class="sec_pan_con1_rig">
+                  <div class="sec_pan_con1_rig_lef">
+                    <div class="sec_pan_con1_rig_lef_top">环比</div>
+                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">4.03%</div>
+                  </div>
+                  <div class="sec_pan_con1_rig_rig">
+                    <div class="sec_pan_con1_rig_lef_top">同比</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">1.15%</div>
+                  </div>
+                </div>
+              </div>
+              <div class="sec_pan_con5">
+                <div class="sec_pan_con1_lef">
+                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>媒介正负情感分布比</span></div>
+                  <div class="sec_pan_con1_lef_numtxt">66%/10%</div>
+                </div>
+                <div class="sec_pan_con1_rig">
+                  <div class="sec_pan_con1_rig_lef">
+                    <div class="sec_pan_con1_rig_lef_top">环比</div>
+                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">4.0%</div>
+                  </div>
+                  <div class="sec_pan_con1_rig_rig">
+                    <div class="sec_pan_con1_rig_lef_top">同比</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">3.31%</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -232,9 +430,9 @@
             </div>
           </div>
           <div class="media_three_item_bom">
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">策略: </span><span style="display: inline-block;width:209.2px;">主要使用电视渠道投放，投放内容 单一，重复性高；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">优势: </span><span style="display: inline-block;width:209.2px;">容易形成品牌记忆</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">威胁: </span><span style="display: inline-block;width:209.2px;">受众心智中凉茶行业的第一提及品 牌；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">策略: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">主要使用电视渠道投放，投放内容 单一，重复性高；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">优势: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">容易形成品牌记忆</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">威胁: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">受众心智中凉茶行业的第一提及品 牌；</span></div>
           </div>
         </div>
         <div class="media_three_item">
@@ -245,9 +443,9 @@
             </div>
           </div>
           <div class="media_three_item_bom media_three_item_bom2">
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">策略: </span><span style="display: inline-block;width:209.2px;">侧重体育类媒介，布局各类媒介渠道的体育类KOL和内容；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">优势: </span><span style="display: inline-block;width:209.2px;">形成体育兴趣受众的强用户粘性（凉茶消费者类型TOP3之一)；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">威胁: </span><span style="display: inline-block;width:209.2px;">体育兴趣受众难以转化；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">策略: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">侧重体育类媒介，布局各类媒介渠道的体育类KOL和内容；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">优势: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">形成体育兴趣受众的强用户粘性（凉茶消费者类型TOP3之一)；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">威胁: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">体育兴趣受众难以转化；</span></div>
           </div>
         </div>
         <div class="media_three_item">
@@ -258,22 +456,22 @@
             </div>
           </div>
           <div class="media_three_item_bom">
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">策略: </span><span style="display: inline-block;width:209.2px;">侧重与年轻消费人群关注的KOL，不计投放成本；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">优势: </span><span style="display: inline-block;width:209.2px;">打造品牌年轻化，消费者复购频率高；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">威胁: </span><span style="display: inline-block;width:209.2px;">媒介组合优势明显，难以形成差异化竞争；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">策略: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">侧重与年轻消费人群关注的KOL，不计投放成本；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">优势: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">打造品牌年轻化，消费者复购频率高；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">威胁: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">媒介组合优势明显，难以形成差异化竞争；</span></div>
           </div>
         </div>
         <div class="media_three_item media_three_item2">
           <div class="media_three_item_top">
-            <div class="media_three_item_til">竞品媒介洞察：清心堂</div>
+            <div class="media_three_item_til">竞品媒介洞察：同仁堂</div>
             <div class="media_three_item_echarts">
               <vTree id="vTree4" :myData="$zjjData.TreeMapData4"></vTree>
             </div>
           </div>
           <div class="media_three_item_bom media_three_item_bom2">
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">策略: </span><span style="display: inline-block;width:209.2px;">主要与养生专家类KOL合作， 以健康讲堂形式的内容进行投放；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">优势: </span><span style="display: inline-block;width:209.2px;">医学健康专家的合作，提升品牌信服力；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">威胁: </span><span style="display: inline-block;width:209.2px;">在老年群体中形成护城河，品牌竞争优势巨大；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">策略: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">主要与养生专家类KOL合作， 以健康讲堂形式的内容进行投放；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">优势: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">医学健康专家的合作，提升品牌信服力；</span></div>
+            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;">威胁: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">在老年群体中形成护城河，品牌竞争优势巨大；</span></div>
           </div>
         </div>
       </div>
@@ -1437,7 +1635,50 @@ export default {
               upIcon:require("../../assets/img/yhhx/upIcon.png"),
               downIcon:require("../../assets/img/yhhx/down_arro_Icon.png"),
               tabListArr:['策略1: 快速拉新获客策略','策略2: 快速拉新获客策略','策略3: 快速拉新获客策略'],
-              ifShowTabCon:0
+              ifShowTabCon:0,
+              leflogoIcon:require("../../assets/img/yhhx/dLefIcon.png"),
+              riglogoIcon:require("../../assets/img/yhhx/dRigIcon.png"),
+              domnIconArr:require("../../assets/img/yhhx/jiantou.png"),
+              upIconArr:require("../../assets/img/yhhx/upGreen.png"),
+
+              tenxIcon:require("../../assets/img/yhhx/txxw.png"),
+              ttIcon:require("../../assets/img/yhhx/tt.png"),
+              dyIcon:require("../../assets/img/yhhx/dyI.png"),
+              ke36Icon:require("../../assets/img/yhhx/ke36.png"),
+              wbIcon:require("../../assets/img/yhhx/weib1.png"),
+              touxIcon1:require("../../assets/img/yhhx/toux1.png"),
+              touxIcon2:require("../../assets/img/yhhx/toux2.png"),
+              touxIcon3:require("../../assets/img/yhhx/toux3.png"),
+              touxIcon4:require("../../assets/img/yhhx/toux4.png"),
+              touxIcon5:require("../../assets/img/yhhx/toux5.png"),
+
+              meijieObj:{
+                meijie1:{
+                  numTxt1:'30w',
+                  numTxt2:'3.0%',
+                  numTxt3:'1.02%',
+                },
+                meijie2:{
+                  numTxt1:'150w/10%',
+                  numTxt2:'3.55%',
+                  numTxt3:'2.07%',
+                },
+                meijie3:{
+                  numTxt1:'3%/100w',
+                  numTxt2:'1.02%',
+                  numTxt3:'1.03%',
+                },
+                meijie4:{
+                  numTxt1:'30w',
+                  numTxt2:'4.03%',
+                  numTxt3:'1.15%',
+                },
+                meijie5:{
+                  numTxt1:'66%/10%',
+                  numTxt2:'4.0%',
+                  numTxt3:'3.31%',
+                }
+              }
       }
   },
   created(){
@@ -1954,12 +2195,14 @@ export default {
   }
   .media_sec_panel{
     width: 100%;
+    height: 462px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 24px;
     .media_sec_panel_lef{
-      width: 51.041666%;
+      width: 57%;
+      height: 100%;
       border-radius: 12px;
       padding: 24px;
       box-sizing: border-box;
@@ -1970,25 +2213,190 @@ export default {
       background-size: 100% 100%;
       .media_sec_panel_lef1,.media_sec_panel_lef2{
         width: 48%;
+        border-radius: 8px;
+        border: 1px solid #FFFFFF;
         .media_sec_panel_lef1_top{
           width: 100%;
-          margin-bottom: 24px;
+          padding: 16px;
+          box-sizing: border-box;
+          margin-bottom: 11px;
           font-size: 18px;
           font-family: PingFangSC-Medium, PingFang SC;
           font-weight: 500;
           color: #242F57;
+          padding-bottom: 0;
+        }
+        .icon_container{
+          width: 100%;
+          padding: 0 24px 11px 24px;
+          box-sizing: border-box;
+          display: flex;
+          align-items:baseline;
+          .tenx,.tout,.douy,.ke36,.weib{
+            .tenxIcon{
+              display: block;
+              width: 100%;
+            }
+          }
+          .tenx{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 7px;
+            .tenxIcon{
+              display: block;
+              width: 100%;
+            }
+          }
+          .tout{
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-right: 7px;
+          }
+          .douy{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 7px;
+          }
+          .ke36{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 7px;
+          }
+          .weib{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+          }
+          .xiangy{
+            width: 7px;
+            height: 12px;
+          }
         }
         .media_sec_panel_lef1_bom{
           width: 100%;
-          height: 372px;
-          background: rgba(255, 255, 255, 0.3);
-          border-radius: 8px;
-          border: 1px solid #FFFFFF;
+          height: 274px;
+          background: #F7F9FD;
+          border-radius: 0px 0px 8px 8px;
+          padding: 14px 13px;
+          box-sizing: border-box;
+          .sec_pan_con1{
+            padding-bottom: 7px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #EAEDF7;
+            display: flex;
+            align-items: center;
+            .sec_pan_con1_lef,.sec_pan_con1_rig{
+              width: 50%;
+              height: 100%;
+              font-size: 12px;
+              font-family: PingFangSC-Regular, PingFang SC;
+              font-weight: 400;
+              color: #242F57;
+              .sec_pan_con1_lef_til{
+                display: flex;
+                align-items: center;
+                .circie{
+                  width: 4px;
+                  height: 4px;
+                  border-radius: 50%;
+                  background-color:  #242F57;
+                  margin-right: 4px;
+                }
+              }
+              .sec_pan_con1_lef_numtxt{
+                margin-left: 8px;
+              }
+            }
+            .sec_pan_con1_rig{
+              display: flex;
+              align-items: center;
+              .sec_pan_con1_rig_lef,.sec_pan_con1_rig_rig{
+                width: 50%;
+                .sec_pan_con1_rig_lef_top,.sec_pan_con1_rig_lef_bom{
+                  width: 100%;
+                  font-size: 12px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #7C88B1;
+                  .domnIconArr{
+                    width: 12px;
+                    height: 12px;
+                  }
+                }
+                .sec_pan_con1_rig_lef_bom{
+                  font-size: 14px;
+                  font-family: HelveticaNeue;
+                  color: #F54A45;
+                }
+              }
+            }
+          }
+          .sec_pan_con2,.sec_pan_con3,.sec_pan_con4,.sec_pan_con5{
+            padding: 7px 0;
+            box-sizing: border-box;
+            border-bottom: 1px solid #EAEDF7;
+            display: flex;
+            align-items: center;
+            .sec_pan_con1_lef,.sec_pan_con1_rig{
+              width: 50%;
+              height: 100%;
+              font-size: 12px;
+              font-family: PingFangSC-Regular, PingFang SC;
+              font-weight: 400;
+              color: #242F57;
+              .sec_pan_con1_lef_til{
+                display: flex;
+                align-items: center;
+                .circie{
+                  width: 4px;
+                  height: 4px;
+                  border-radius: 50%;
+                  background-color:  #242F57;
+                  margin-right: 4px;
+                }
+              }
+              .sec_pan_con1_lef_numtxt{
+                margin-left: 8px;
+              }
+            }
+            .sec_pan_con1_rig{
+              display: flex;
+              align-items: center;
+              .sec_pan_con1_rig_lef,.sec_pan_con1_rig_rig{
+                width: 50%;
+                .sec_pan_con1_rig_lef_top,.sec_pan_con1_rig_lef_bom{
+                  width: 100%;
+                  font-size: 12px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #7C88B1;
+                  .domnIconArr{
+                    width: 12px;
+                    height: 12px;
+                  }
+                }
+                .sec_pan_con1_rig_lef_bom{
+                  font-size: 14px;
+                  font-family: HelveticaNeue;
+                  color: #F54A45;
+                }
+              }
+            }
+          }
+          .sec_pan_con5{
+            border-bottom: none;
+          }
         }
       }
     }
     .media_sec_panel_rig{
-      width: 46.875%;
+      width: 42%;
+      height: 100%;
       border-radius: 12px;
       padding: 24px;
       box-sizing: border-box;
@@ -2114,7 +2522,6 @@ export default {
         background: rgba(255, 241, 244, 0.3);
         border-radius: 0px 0px 8px 8px;
         .media_three_con{
-          font-size: 12px;
           font-family: PingFangSC-Regular, PingFang SC;
           font-weight: 400;
           color: #242F57;

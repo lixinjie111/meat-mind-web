@@ -211,35 +211,35 @@ const zjjEData = {
             name: "抖音 ",
             value: 40,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][0]
             },
             children: [{
-                    name: "陈翔六点半",
+                    name: "陈翔六点半\n涨5%",
                     value: 15,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(77,148,255,1)'
                     }
                 },
                 {
                     name: "疯狂小杨哥",
                     value: 12,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
-                    },
+                        color: 'rgba(77,148,255,0.8)'
+                    }
                 },
                 {
                     name: "祝晓晗",
                     value: 8,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
-                    },
+                        color: 'rgba(77,148,255,.5)'
+                    }
                 },
                 {
                     name: "彭十六elf",
                     value: 5,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
-                    },
+                        color: 'rgba(77,148,255,.4)'
+                    }
                 },
             ],
         },
@@ -247,21 +247,21 @@ const zjjEData = {
             name: "微博",
             value: 20,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][1]
             },
             children: [{
                     name: "薇娅viyaaa",
                     value: 13,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
-                    },
+                        color: 'rgba(164,157,250,1)'
+                    }
                 },
                 {
                     name: "深夜徐老师 ",
                     value: 7,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
-                    },
+                        color: 'rgba(164,157,250,.7)'
+                    }
                 },
             ],
         },
@@ -269,27 +269,27 @@ const zjjEData = {
             name: "快手",
             value: 15,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][2]
             },
             children: [{
                     name: "张小斐",
                     value: 8,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color:'rgba(252,128,159,1)'
                     },
                 },
                 {
                     name: "贾玲",
                     value: 4,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color:'rgba(252,128,159,.5)'
                     },
                 },
                 {
                     name: "辰辰",
                     value: 3,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color:'rgba(252,128,159,.4)'
                     },
                 },
             ],
@@ -298,28 +298,28 @@ const zjjEData = {
             name: "小红书",
             value: 18,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][3]
             },
             children: [{
                     name: "三代鹿人",
                     value: 9,
-                    itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
-                    },
+                    itemStyle:{
+                        color:'rgba(255,217,140,.8)'
+                    }
                 },
                 {
                     name: "小红书",
                     value: 6,
-                    itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
-                    },
+                    itemStyle:{
+                        color:'rgba(255,217,140,.6)'
+                    }
                 },
                 {
                     name: "小红书",
                     value: 3,
-                    itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
-                    },
+                    itemStyle:{
+                        color:'rgba(255,217,140,.3)'
+                    }
                 },
             ],
         }
@@ -328,27 +328,27 @@ const zjjEData = {
             name: "知乎 ",
             value: 35,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][4]
             },
             children: [{
                     name: "肥肥猫 ",
                     value: 15,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(138,230,199,1)'
                     },
                 },
                 {
                     name: "朱炫  ",
                     value: 10,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(138,230,199,.7)'
                     },
                 },
                 {
                     name: "ze ran ",
                     value: 10,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(138,230,199,.7)'
                     },
                 },
             ],
@@ -357,20 +357,20 @@ const zjjEData = {
             name: "微博",
             value: 10,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][5]
             },
             children: [{
                     name: "薇娅viyaaa",
                     value: 3,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color:'rgba(225,149,100,.7)'
                     },
                 },
                 {
                     name: "深夜徐老师 ",
                     value: 7,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color:'rgba(225,149,100,1)'
                     },
                 },
             ],
@@ -379,20 +379,20 @@ const zjjEData = {
             name: "微信",
             value: 20,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][6]
             },
             children: [{
                     name: "洞见",
                     value: 12,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(191,110,155,1)'
                     },
                 },
                 {
                     name: "占豪",
                     value: 8,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(191,110,155,.7)'
                     },
                 },
             ],
@@ -401,27 +401,27 @@ const zjjEData = {
             name: "小红书",
             value: 15,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][7]
             },
             children: [{
                     name: "三代鹿人",
                     value: 6,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(206,206,126,1)'
                     },
                 },
                 {
                     name: "陆文1990",
                     value: 5,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(206,206,126,.8)'
                     },
                 },
                 {
                     name: "自来卷",
                     value: 4,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(206,206,126,.7)'
                     },
                 },
             ],
@@ -431,34 +431,34 @@ const zjjEData = {
             name: "抖音 ",
             value: 10,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][8]
             },
             children: [{
                     name: "陈翔六点半",
                     value: 5,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(145,194,242,1)'
                     },
                 },
                 {
                     name: "疯狂小杨哥",
                     value: 2,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(145,194,242,.8)'
                     },
                 },
                 {
                     name: "祝晓晗",
                     value: 2,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(145,194,242,.8)'
                     },
                 },
                 {
                     name: "彭十六elf",
                     value: 1,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(145,194,242,.6)'
                     },
                 },
             ],
@@ -467,20 +467,20 @@ const zjjEData = {
             name: "微博",
             value: 15,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][9]
             },
             children: [{
                     name: "周扬青",
                     value: 15,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color:'rgba(183,200,234,1)'
                     },
                 },
                 {
                     name: "雪梨",
                     value: 15,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color:'rgba(183,200,234,1)'
                     },
                 },
             ],
@@ -489,13 +489,13 @@ const zjjEData = {
             name: "微信",
             value: 30,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][10]
             },
             children: [{
                 name: "邓老凉茶",
                 value: 30,
                 itemStyle: {
-                    color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                    color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][10]
                 },
             }, ],
         },
@@ -503,27 +503,28 @@ const zjjEData = {
             name: "小红书",
             value: 18,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][12]
             },
-            children: [{
+            children: [
+                {
                     name: "Hack",
                     value: 6,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(179,128,182,1)'
                     },
                 },
                 {
                     name: "安德鲁",
                     value: 5,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(179,128,182,.8)'
                     },
                 },
                 {
                     name: "大庆的家伙",
                     value: 4,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(179,128,182,.6)'
                     },
                 },
             ],
@@ -533,13 +534,13 @@ const zjjEData = {
             name: "抖音 ",
             value: 30,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][13]
             },
             children: [{
                 name: "李嘉琦",
                 value: 30,
                 itemStyle: {
-                    color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                    color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][13]
                 },
             }, ],
         },
@@ -547,20 +548,20 @@ const zjjEData = {
             name: "微博",
             value: 5,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][14]
             },
             children: [{
                     name: "薇娅viyaaa",
                     value: 3,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(115,138,212,1)'
                     },
                 },
                 {
                     name: "深夜徐老师 ",
                     value: 2,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(115,138,212,.7)'
                     },
                 },
             ],
@@ -569,20 +570,20 @@ const zjjEData = {
             name: "快手",
             value: 20,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][15]
             },
             children: [{
                     name: "我是田姥姥",
                     value: 15,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(255,159,127,.9)'
                     },
                 },
                 {
                     name: "辰辰",
                     value: 5,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(255,159,127,.7)'
                     },
                 },
             ],
@@ -591,27 +592,27 @@ const zjjEData = {
             name: "小红书",
             value: 25,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][5]
             },
             children: [{
                     name: "老师好",
                     value: 18,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(225,149,100,.9)'
                     },
                 },
                 {
                     name: "新月",
                     value: 3,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(225,149,100,.5)'
                     },
                 },
                 {
                     name: "没有范儿",
                     value: 4,
                     itemStyle: {
-                        color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][Math.floor(Math.random() * 16)]
+                        color: 'rgba(225,149,100,.7)'
                     },
                 },
             ],
