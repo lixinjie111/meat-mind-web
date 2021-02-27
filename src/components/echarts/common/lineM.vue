@@ -24,6 +24,11 @@ export default {
 			},
 		},
 	},
+    watch:{
+		myData(){
+			this.initEcharts();
+    	}
+	},
 	data () {
 		return {
 			
