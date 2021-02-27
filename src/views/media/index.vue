@@ -355,9 +355,6 @@
           <div class="m-f-line">
               <div class="label">主投平台</div>
               <div class="f-list">
-                <div class="f-item">
-                     <p>综合</p>
-                  </div>
                 <div class="f-item" @click="list1Act=index" :class="{'active':index==list1Act}" v-for="(item,index) in list1" :key="index">
                     <p>{{item}}</p>
                 </div>
@@ -366,9 +363,6 @@
           <div class="m-f-line">
               <div class="label">领域</div>
               <div class="f-list">
-                <div class="f-item">
-                     <p>综合</p>
-                  </div>
                 <div class="f-item" @click="list2Act=index" :class="{'active':index==list2Act}" v-for="(item,index) in list2" :key="index">
                     <p>{{item}}</p>
                 </div>
@@ -378,9 +372,6 @@
               <div class="label"><span style="color:#FB343E">*</span>
               价格类型</div>
               <div class="f-list">
-                <div class="f-item">
-                     <p>综合</p>
-                  </div>
                 <div class="f-item" @click="list3Act=index" :class="{'active':index==list3Act}" v-for="(item,index) in list3" :key="index">
                     <p>{{item}}</p>
                 </div>
@@ -676,9 +667,6 @@
           <Tabs value="name1" @on-click="getTab">
               <TabPane label="短视频" name="name1">
                 <div class="f-list">
-                  <div class="f-item">
-                     <p>综合</p>
-                  </div>
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -694,17 +682,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                       <div class="m-f-line">
+                           <div class="label">类别</div>
+                           <div class="f-list">
+                               <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                                   <p>{{item}}</p>
+                               </div>
+                           </div>
+                       </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -738,10 +723,7 @@
                 </div>
               </TabPane>
               <TabPane label="社交传媒" name="name2">
-                 <div class="f-list">
-                   <div class="f-item">
-                     <p>综合</p>
-                  </div>
+                <div class="f-list">
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -757,17 +739,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                   <div class="m-f-line">
+                       <div class="label">类别</div>
+                       <div class="f-list">
+                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                               <p>{{item}}</p>
+                           </div>
+                       </div>
+                   </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -801,14 +780,11 @@
                 </div>
               </TabPane>
               <TabPane label="大众传媒" name="name3">
-                 <div class="f-list">
-                   <div class="f-item">
-                     <p>综合</p>
-                  </div>
+               <div class="f-list">
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
-                </div>
+               </div>
                 <div class="listBox">
                    <div class="listBox-left">
                      <Menu active-name="1" width="133px" mode="vertical">
@@ -820,17 +796,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                   <div class="m-f-line">
+                       <div class="label">类别</div>
+                       <div class="f-list">
+                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                               <p>{{item}}</p>
+                           </div>
+                       </div>
+                   </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -864,10 +837,7 @@
                 </div>
               </TabPane>
               <TabPane label="体验事件" name="name4">
-                 <div class="f-list">
-                   <div class="f-item">
-                     <p>综合</p>
-                  </div>
+                <div class="f-list">
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -883,17 +853,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                   <div class="m-f-line">
+                       <div class="label">类别</div>
+                       <div class="f-list">
+                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                               <p>{{item}}</p>
+                           </div>
+                       </div>
+                   </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -927,14 +894,11 @@
                 </div>
               </TabPane>
               <TabPane label="促销" name="name5">
-                 <div class="f-list">
-                   <div class="f-item">
-                     <p>综合</p>
-                  </div>
+              <div class="f-list">
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
-                </div>
+              </div>
                 <div class="listBox">
                    <div class="listBox-left">
                      <Menu active-name="1" width="133px" mode="vertical">
@@ -946,17 +910,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                   <div class="m-f-line">
+                       <div class="label">类别</div>
+                       <div class="f-list">
+                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                               <p>{{item}}</p>
+                           </div>
+                       </div>
+                   </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -990,14 +951,11 @@
                 </div>
               </TabPane>
               <TabPane label="在线社交媒体" name="name6">
-                 <div class="f-list">
-                   <div class="f-item">
-                     <p>综合</p>
-                  </div>
+               <div class="f-list">
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
-                </div>
+               </div>
                 <div class="listBox">
                    <div class="listBox-left">
                      <Menu active-name="1" width="133px" mode="vertical">
@@ -1009,17 +967,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                   <div class="m-f-line">
+                       <div class="label">类别</div>
+                       <div class="f-list">
+                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                               <p>{{item}}</p>
+                           </div>
+                       </div>
+                   </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -1053,10 +1008,7 @@
                 </div>
               </TabPane>
               <TabPane label="公共关系和宣传" name="name7">
-                 <div class="f-list">
-                   <div class="f-item">
-                     <p>综合</p>
-                  </div>
+                <div class="f-list">
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -1072,17 +1024,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                   <div class="m-f-line">
+                       <div class="label">类别</div>
+                       <div class="f-list">
+                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                               <p>{{item}}</p>
+                           </div>
+                       </div>
+                   </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -1116,10 +1065,7 @@
                 </div>
               </TabPane>
               <TabPane label="网站" name="name8">
-                 <div class="f-list">
-                   <div class="f-item">
-                     <p>综合</p>
-                  </div>
+                <div class="f-list">
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
@@ -1135,17 +1081,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                   <div class="m-f-line">
+                       <div class="label">类别</div>
+                       <div class="f-list">
+                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                               <p>{{item}}</p>
+                           </div>
+                       </div>
+                   </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -1179,14 +1122,11 @@
                 </div>
               </TabPane>
               <TabPane label="其他" name="name9">
-                 <div class="f-list">
-                   <div class="f-item">
-                     <p>综合</p>
-                  </div>
+               <div class="f-list">
                   <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
                       <p>{{item}}</p>
                   </div>
-                </div>
+               </div>
                 <div class="listBox">
                    <div class="listBox-left">
                      <Menu active-name="1" width="133px" mode="vertical">
@@ -1198,17 +1138,14 @@
                     </Menu>
                    </div>
                    <div class="listBox-right">
-                    <div class="m-f-line">
-                          <div class="label">全部</div>
-                          <div class="f-list">
-                            <div class="f-item">
-                     <p>综合</p>
-                  </div>
-                            <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                <p>{{item}}</p>
-                            </div>
-                          </div>
-                    </div>
+                   <div class="m-f-line">
+                       <div class="label">类别</div>
+                       <div class="f-list">
+                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
+                               <p>{{item}}</p>
+                           </div>
+                       </div>
+                   </div>
                     <Table :columns="columns1" :data="data1" size="large">
                       <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="index==0">{{index+1}}</div>
@@ -1316,7 +1253,7 @@ export default {
                     }
                 ],
                 model1: '过去3天',
-          list1:["哔哩哔哩","抖音","快手","小红书","新浪微博","头条","大众点评","360kr"],
+          list1:["不限","哔哩哔哩","抖音","快手","小红书","新浪微博","头条","大众点评","360kr"],
           list1Act:1,
           list2Act:0,
           list3Act:0,
@@ -1325,10 +1262,10 @@ export default {
           list2:["不限","才艺技能","财经投资","测评","动画动漫","鬼畜","国潮国创","技术流","家居家装","教育","剧情搞笑",
           "科技数码","旅行","美食","美妆","萌宠","明星","母婴","汽车","情感","三农","生活日常",
           "时尚","舞蹈","艺术文化","个护","园艺","运动健身","奢侈品","新闻资讯","品牌组织","颜值达人","知识科普","番剧","游戏","品牌组织"],
-          list3:["按照最低刊例价组合","按照最高刊例价组合"],
+          list3:["不限","按照最低刊例价组合","按照最高刊例价组合"],
 
-          list4:["抖音","快手","微视","梨视频","西瓜视频"],
-          list5:["娱乐","才艺","萌宠","搞笑","二次元","游戏","家具","美食","旅游","企业","体育",
+          list4:["综合","抖音","快手","微视","梨视频","西瓜视频"],
+          list5:["全部","娱乐","才艺","萌宠","搞笑","二次元","游戏","家具","美食","旅游","企业","体育",
           "教育","科技","汽车","情感","时尚","文化","社会","实事",],
           myEData:[],
           columns1: [
