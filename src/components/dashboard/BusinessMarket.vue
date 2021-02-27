@@ -464,7 +464,6 @@
                 </div>
             </div>
         </Card>
-
         <BusinessMarketModal :show="showModal" :type="mbValue" @close="controlModal"/>
     </div>
 </template>
@@ -648,7 +647,7 @@
             return ['yxqn'].includes(this.mbValue)
           },
           showModal(){
-            return ['bjsbz', 'yxqn'].includes(this.mbValue) && this.visible
+            return ['bjsbz', 'yxqn', 'bpyz'].includes(this.mbValue) && this.visible
           }
         },
     }
@@ -692,7 +691,7 @@
                 height: 442px;
                 box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
                 background: #E5F5FF;
-                //background: url("../../assets/img/dashboard/market/target-bg@2x.png") no-repeat center / 120% 120%;
+                //background: url("../../assets/img/dashboard/market/target-bg@2x.png") no-repeat center / 100% 100%;
                 border-radius: 12px;
 
                 .target-left-title {

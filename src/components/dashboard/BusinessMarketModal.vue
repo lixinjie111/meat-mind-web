@@ -3,6 +3,7 @@
     <div slot="header" class="modal-title">系统推荐获客方案</div>
     <img :src="modal1" alt="" v-if="showComponent" />
     <img :src="modal2" alt="" v-if="showComponent1">
+    <img :src="modal3" alt="" v-if="showComponent2">
   </Modal>
 
 </template>
@@ -12,8 +13,9 @@
     props: ['show', 'type'],
     data(){
       return{
-        modal1: require('../../assets/img/mark/target-modal1.png'),
-        modal2: require('../../assets/img/mark/target-modal2.png'),
+        modal1: require('../../assets/img/dashboard/market/target-modal1.png'),
+        modal2: require('../../assets/img/dashboard/market/target-modal2.png'),
+        modal3: require('../../assets/img/dashboard/market/target-modal3.png'),
       }
     },
     methods:{
@@ -23,10 +25,13 @@
     },
     computed: {
       showComponent(){
-        return ['bjsbz', 'qygg', 'bpyz', 'zyzz'].includes(this.type)
+        return ['bjsbz', 'qygg', 'zyzz'].includes(this.type)
       },
       showComponent1(){
         return ['yxqn'].includes(this.type)
+      },
+      showComponent2(){
+        return ['bpyz'].includes(this.type)
       },
     },
   }
