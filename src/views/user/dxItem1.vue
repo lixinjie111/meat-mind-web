@@ -242,22 +242,10 @@
             <div class="yhxw_container">
                 <div class="yhxw_title">用户行为</div>
                 <div class="bqitm_container">
-                    <div class="bqitm">
-                        <div class="bqitm_lef">娱乐</div>
+                    <div class="bqitm" v-for="(it, i) in bqitmList" :key="i">
+                        <div class="bqitm_lef" :style="`color: ${colorConfig[it.name]}`">{{it.name}}</div>
                         <div class="bqitm_rig">
-                            <img v-for="(item,index) in bqitmList.yl" :src="item.icon" :key="index" alt="" class="bqimg">
-                        </div>
-                    </div>
-                    <div class="bqitm">
-                        <div class="bqitm_lef" style="color: #017AFF;">新闻</div>
-                        <div class="bqitm_rig">
-                            <img v-for="(item,index) in bqitmList.xw" :src="item.icon" :key="index" alt="" class="bqimg">
-                        </div>
-                    </div>
-                    <div class="bqitm">
-                        <div class="bqitm_lef" style="color: #5AC8FA;">视频</div>
-                        <div class="bqitm_rig">
-                            <img v-for="(item,index) in bqitmList.sp" :src="item.icon" :key="index" alt="" class="bqimg">
+                            <img v-for="(item,index) in it.icons" :src="item.icon" :key="index" alt="" class="bqimg">
                         </div>
                     </div>
                 </div>
@@ -267,6 +255,65 @@
 </template>
 
 <script>
+    const allBqitm = {
+    xhs: {
+      icon: require("../../assets/img/yhhx/xhs.png")
+    },
+    ks: {
+      icon: require("../../assets/img/yhhx/ks.png")
+    },
+    wb: {
+      icon: require("../../assets/img/yhhx/wb.png")
+    },
+    tt: {
+      icon: require("../../assets/img/yhhx/tt.png")
+    },
+    zhIcon: {
+      icon: require("../../assets/img/yhhx/zhIcon.png")
+    },
+    dyI: {
+      icon: require("../../assets/img/yhhx/dyI.png")
+    },
+    dd: {
+      icon: require("../../assets/img/yhhx/dd.jpg")
+    },
+    dc: {
+      icon: require("../../assets/img/yhhx/dc.jpg")
+    },
+    bx: {
+      icon: require("../../assets/img/yhhx/bx.jpeg")
+    },
+    wx: {
+      icon: require("../../assets/img/yhhx/wx.jpeg")
+    },
+    qq: {
+      icon: require("../../assets/img/yhhx/qq.jpg")
+    },
+    pyq: {
+      icon: require("../../assets/img/yhhx/pyq.jpeg")
+    },
+    mt: {
+      icon: require("../../assets/img/yhhx/mt.jpeg")
+    },
+    elm: {
+      icon: require("../../assets/img/yhhx/elm.jpeg")
+    },
+    dz: {
+      icon: require("../../assets/img/yhhx/dz.jpg")
+    },
+    wy: {
+      icon: require("../../assets/img/yhhx/wyIcon.png")
+    },
+    wzry: {
+      icon: require("../../assets/img/yhhx/wzry.jpeg")
+    },
+    jdqs: {
+      icon: require("../../assets/img/yhhx/jdqs.png")
+    },
+    xxl: {
+      icon: require("../../assets/img/yhhx/xxl.jpg")
+    },
+  }
     export default {
         name: "dxItem",
         props: ['onlyMap'],
@@ -289,41 +336,32 @@
                 ttIcon:require("../../assets/img/yhhx/tt.png"),
                 wyIcon:require("../../assets/img/yhhx/wyIcon.png"),
                 zhIcon:require("../../assets/img/yhhx/zhIcon.png"),
-                bqitmList:{
-                    yl:[
-                        {
-                            icon:require("../../assets/img/yhhx/xhs.png")
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/ks.png")
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/wb.png")
-                        }
-                    ],
-                    xw:[
-                        {
-                            icon:require("../../assets/img/yhhx/tt.png")
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/wyIcon.png")
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/zhIcon.png")
-                        }
-                    ],
-                    sp:[
-                        {
-                            icon:require("../../assets/img/yhhx/dyI.png"),
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/wb.png")
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/ks.png")
-                        }
-                    ]
+                bqitmList: [
+                {
+                  name: '出行',
+                  icons: [
+                    allBqitm.dd,
+                    allBqitm.dc,
+                    allBqitm.bx,
+                  ]
                 },
+                {
+                  name: '新闻',
+                  icons: [
+                    allBqitm.tt,
+                    allBqitm.wy,
+                    allBqitm.zhIcon,
+                  ],
+                },
+                {
+                  name: '娱乐',
+                  icons: [
+                    allBqitm.xhs,
+                    allBqitm.ks,
+                    allBqitm.wb,
+                  ]
+                }
+              ],
                 districtList:[
                     '朝阳区','海淀区','丰台区','西城区','东城区','石景山区','昌平区','通州区','顺义区','房山区','门头沟区','大兴区','怀柔区','延庆区','平谷区','密云区'
                 ],
@@ -370,6 +408,14 @@
                     tongqinTimeObj:{
                         timeN:30
                     }
+                },
+                colorConfig: {
+                  新闻: '#017AFF',
+                  视频: '#5AC8FA',
+                  娱乐: '#FF9502',
+                  交流: '#a49dfa',
+                  出行: '#CECE7E',
+                  餐饮: '#8AE6C7',
                 }
             }
         },
@@ -645,6 +691,7 @@
                     }
                 };
             }
+              this.changeBqitm(arg)
             },
             initMap(p,p1,p2,c1,area){
             var that = this;
@@ -724,9 +771,11 @@
             var polyline1 = new AMap.Polyline({
                 path: p1,
                 isOutline: true,
-                outlineColor: '#FF8800',
+                // outlineColor: '#FF8800',
+                outlineColor: '#ffeeff',
                 borderWeight: 1,
-                strokeColor: "#FF8800",
+                strokeColor: "#3366FF",
+                // strokeColor: "#FF8800",
                 strokeOpacity: 1,
                 strokeWeight: 4,
                 // 折线样式还支持 'dashed'
@@ -740,9 +789,11 @@
             var polyline2 = new AMap.Polyline({
                 path: p2,
                 isOutline: true,
-                outlineColor: '#F383FF',
-                borderWeight: 1,
-                strokeColor: "#F383FF",
+                // outlineColor: '#F383FF',
+                outlineColor: '#ffeeff',
+                 borderWeight: 1,
+                strokeColor: "#3366FF",
+                // strokeColor: "#F383FF",
                 strokeOpacity: 1,
                 strokeWeight: 4,
                 // 折线样式还支持 'dashed'
@@ -756,88 +807,197 @@
             polyline.setMap(map)
             polyline1.setMap(map)
             polyline2.setMap(map)
+              const selectedOptions = {
+                outlineColor: '#FF8800',
+                strokeColor: "#FF8800",
+              }
+              const normalOptions = {
+                outlineColor: '#ffeeff',
+                strokeColor: "#3366FF",
+              }
             polyline.on('click', function(event) {
-                that.bqitmList = {
-                    yl:[
-                        {
-                            icon:require("../../assets/img/yhhx/xhs.png")
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/wb.png")
-                        }
-                    ],
-                    xw:[
-                        {
-                            icon:require("../../assets/img/yhhx/ks.png")
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/tt.png")
-                        }
-                    ],
-                    sp:[
-                        {
-                            icon:require("../../assets/img/yhhx/dyI.png"),
-                        }
-                    ]
+              polyline.setOptions(selectedOptions)
+              polyline1.setOptions(normalOptions)
+              polyline2.setOptions(normalOptions)
+              that.bqitmList = [
+                {
+                  name: '娱乐',
+                  icons: [
+                    allBqitm.xhs,
+                    allBqitm.wb,
+                  ]
+                },
+                {
+                  name: '新闻',
+                  icons: [
+                    allBqitm.ks,
+                    allBqitm.tt,
+                    allBqitm.wy,
+                    allBqitm.zhIcon,
+                  ],
+                },
+                {
+                  name: '视频',
+                  icons: [
+                    allBqitm.dyI,
+                    allBqitm.wb,
+                    allBqitm.ks,
+                  ]
                 }
+              ]
             })
             polyline1.on('click', function(event) {
-                that.bqitmList = {
-                    yl:[
-                        {
-                            icon:require("../../assets/img/yhhx/ks.png")
-                        }
-                    ],
-                    xw:[
-                        {
-                            icon:require("../../assets/img/yhhx/ks.png")
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/tt.png")
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/wyIcon.png")
-                        }
-                    ],
-                    sp:[
-                        {
-                            icon:require("../../assets/img/yhhx/dyI.png"),
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/wb.png")
-                        }
-                    ]
+              polyline1.setOptions(selectedOptions)
+              polyline.setOptions(normalOptions)
+              polyline2.setOptions(normalOptions)
+              that.bqitmList = [
+                {
+                  name: '娱乐',
+                  icons: [
+                    allBqitm.ks,
+                    allBqitm.xhs,
+                    allBqitm.wb,
+                  ]
+                },
+                {
+                  name: '新闻',
+                  icons: [
+                    allBqitm.ks,
+                    allBqitm.tt,
+                    allBqitm.wy,
+                    allBqitm.zhIcon,
+                  ],
+                },
+                {
+                  name: '视频',
+                  icons: [
+                    allBqitm.dyI,
+                    allBqitm.wb,
+                  ]
                 }
+              ]
             })
             polyline2.on('click', function(event) {
-                that.bqitmList = {
-                    yl:[
-                        {
-                            icon:require("../../assets/img/yhhx/ks.png")
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/wyIcon.png")
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/zhIcon.png")
-                        }
-                    ],
-                    xw:[
-                        {
-                            icon:require("../../assets/img/yhhx/ks.png")
-                        },
-                        {
-                            icon:require("../../assets/img/yhhx/tt.png")
-                        }
-                    ],
-                    sp:[
-                        {
-                            icon:require("../../assets/img/yhhx/dyI.png"),
-                        }
-                    ]
+              polyline2.setOptions(selectedOptions)
+              polyline.setOptions(normalOptions)
+              polyline1.setOptions(normalOptions)
+              that.bqitmList = [
+                {
+                  name: '娱乐',
+                  icons: [
+                    allBqitm.ks,
+                  ]
+                },
+                {
+                  name: '新闻',
+                  icons: [
+                    allBqitm.ks,
+                    allBqitm.tt,
+                    allBqitm.wy,
+                    allBqitm.zhIcon,
+                  ],
+                },
+                {
+                  name: '视频',
+                  icons: [
+                    allBqitm.dyI,
+                    allBqitm.wb,
+                    allBqitm.xhs,
+                    allBqitm.wb,
+                  ]
                 }
+              ]
             })
             },
+            // 改变用户行为
+            changeBqitm(time) {
+            const morn = [6, 8, 10]
+            const noon = [12, 14, 16]
+            const night = [18, 20, 22, 24]
+            if (morn.includes(time)) {
+              this.bqitmList = [
+                {
+                  name: '出行',
+                  icons: [
+                    allBqitm.dd,
+                    allBqitm.dc,
+                    allBqitm.bx,
+                  ]
+                },
+                {
+                  name: '新闻',
+                  icons: [
+                    allBqitm.tt,
+                    allBqitm.wy,
+                    allBqitm.zhIcon,
+                  ],
+                },
+                {
+                  name: '娱乐',
+                  icons: [
+                    allBqitm.xhs,
+                    allBqitm.ks,
+                    allBqitm.wb,
+                  ]
+                }
+              ]
+            } else if (noon.includes(time)) {
+              this.bqitmList = [
+                {
+                  name: '交流',
+                  icons: [
+                    allBqitm.wx,
+                    allBqitm.qq,
+                    allBqitm.pyq,
+                  ]
+                },
+                {
+                  name: '餐饮',
+                  icons: [
+                    allBqitm.elm,
+                    allBqitm.mt,
+                    allBqitm.dz,
+                  ],
+                },
+                {
+                  name: '视频',
+                  icons: [
+                    allBqitm.dyI,
+                    allBqitm.wb,
+                    allBqitm.ks,
+                  ]
+                }
+              ]
+            } else if (night.includes(time)) {
+              this.bqitmList = [
+                {
+                  name: '娱乐',
+                  icons: [
+                    allBqitm.wzry,
+                    allBqitm.jdqs,
+                    allBqitm.xxl,
+                  ]
+                },
+                {
+                  name: '视频',
+                  icons: [
+                    allBqitm.dyI,
+                    allBqitm.wb,
+                    allBqitm.ks,
+                  ]
+                },
+                {
+                  name: '新闻',
+                  icons: [
+                    allBqitm.tt,
+                    allBqitm.wy,
+                    allBqitm.zhIcon,
+                  ],
+                },
+
+              ]
+            }
+          }
         }
     }
 </script>
@@ -1514,6 +1674,7 @@
                         .bqimg{
                             width: 24px;
                             height: 24px;
+                            border-radius: 50%;
                         }
                     }
                 }
