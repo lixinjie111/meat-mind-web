@@ -76,8 +76,8 @@ export default {
                 console.log(item,aa)
                 //document.getElementById('mark-details-public').scrollIntoView();
             },
-            selectEl() {
-                if(this.pinpai=='红牛'){
+            selectEl(value) {
+                if(value=='红牛'){
                     this.pic1=require('../../../assets/img/mark/hniu.png');
                 }else{
                     this.pic1=require('../../../assets/img/mark/question.png');

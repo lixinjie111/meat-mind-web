@@ -5,7 +5,7 @@ const yhfx=()=>import('./components/User.vue')
 const qdfx=()=>import('./components/Channel.vue')
 // const ywgl=()=>import('./brand/ywgl.vue')
 const ywgl=()=>import('./components/Brand.vue')
-// const anchor=()=>import('./overview/anchor.vue')
+// const anchor=()=>import('./overview/overview.vue')
 const anchor=()=>import('./components/Overview.vue')
 const moduleName='business-analysis';
 

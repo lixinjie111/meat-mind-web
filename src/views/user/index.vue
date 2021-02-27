@@ -510,7 +510,7 @@
           <div class="mb_echarts1">
             <div class="mb_echarts1_lef">
               <div class="mb_echarts1_lef_top">
-                <span class="span1">28790</span>人
+                <span class="span1">28,790</span>人
               </div>
               <div class="mb_echarts1_lef_bom">养生金融小白</div>
             </div>
@@ -522,9 +522,9 @@
           <div class="mb_echarts2">
             <div class="mb_echarts1_lef">
               <div class="mb_echarts1_lef_top">
-                <span class="span1" style="color:#FF8800;">97,673</span>人
+                <div class="mb_echarts2_empty_box1"></div>
               </div>
-              <div class="mb_echarts1_lef_bom">养生金融小白</div>
+              <div class="mb_echarts2_empty_box2"></div>
             </div>
             <div class="mb_echarts1_rig">
               <img :src="tu20" alt="" srcset="" class="tu20">
@@ -2960,18 +2960,20 @@ export default {
       .mb_echarts1,
       .mb_echarts2 {
         width: 42%;
-        height: 148px;
+        height: 124px;
+        background: #DFEDFE;
         border-radius: 8px;
-        border: 1px solid #2373ff;
-        padding: 29px 35px;
+        border: 1px solid #FFFFFF;
+        padding: 0 29px;
         box-sizing: border-box;
         display: flex;
         align-items: center;
         justify-content: space-between;
         .mb_echarts1_lef{
           .mb_echarts1_lef_top{
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             .span1{
+              line-height: 30px;
               font-size: 32px;
               font-family: PingFangSC-Medium, PingFang SC;
               font-weight: 500;
@@ -2979,19 +2981,37 @@ export default {
             }
           }
           .mb_echarts1_lef_bom{
+            padding: 4px 8px;
             font-size: 16px;
-            font-family: PingFangSC-Regular, PingFang SC;
-            font-weight: 400;
-            color: #242F57;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #4D94FF;
+            background: rgba(77, 148, 255, .2);
+            border-radius: 4px;
           }
         }
+        .mb_echarts2_empty_box1 {
+          width: 147px;
+          height: 38px;
+          background: rgba(255, 136, 0, .2);
+          border-radius: 3px;
+        }
+        .mb_echarts2_empty_box2 {
+          width: 112px;
+          height: 32px;
+          background: rgba(255, 136, 0, .2);
+          border-radius: 3px;
+        }
         .mb_echarts1_rig{
-          width: 90px;
+          width: 160px;
           height: 90px;
+          border-left: 1px solid rgba(131, 181, 255, .2);
+
           .tu20{
+            margin-left: 71px;
             display: block;
-            width: 100%;
-            height: 100%;
+            width: 90px;
+            height: 90px;
           }
         }
       }
@@ -3013,7 +3033,9 @@ export default {
         -webkit-text-fill-color: transparent;
       }
       .mb_echarts2 {
-        border: 1px solid #ff8800;
+        background: rgba(255, 136, 0, 0.1);
+        border-radius: 8px;
+        border: 1px solid #FFFFFF;
       }
     }
   }

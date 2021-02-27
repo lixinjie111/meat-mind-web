@@ -138,7 +138,7 @@
           </div>
           <div class="labl_txt_container">
             <div class="labl_cir"></div>
-            <div class="labl_txt">上一季度合作媒介TOP3为抖音、微博、小红书；</div>
+            <div class="labl_txt">上一季度合作媒介TOP3为腾讯、头条、抖音；</div>
           </div>
           <div class="labl_txt_container">
             <div class="labl_cir"></div>
@@ -474,10 +474,207 @@
 
       <div class="media_four_panel">
         <div class="media_four_panel_lef">
-          <barM id="box46" :colorList="$lxjData.colorList" :myData="$lxjData.box46Data"></barM>
+          <div class="media_four_panel_title">新增用户</div>
+          <div class="media_four_panel_select">
+            <Select v-model="modelUserL" style="width: 120px" placeholder="过去一个月" @on-change="mediaFourChange">
+              <Option value="过去一个月" :key="1">过去一个月</Option>
+              <Option value="过去一个季度" :key="2">过去一个季度</Option>
+            </Select>
+          </div>
+          <div v-show="modelUserL=='过去一个月'">
+            <div class="media_four_panel_lef_day">
+              <div class="today">2020.02.26</div>
+              <ul>
+                <li>
+                  <div class="today-num">390<span class="text">人</span></div>
+                  <div class="target-name">
+                    <i class="legend1"></i>
+                    <span>微信</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="today-num">1,290<span class="text">人</span>
+                  </div>
+                  <div class="target-name">
+                    <i class="legend2"></i>
+                    <span>微博</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="today-num">190<span class="text">人</span></div>
+                  <div class="target-name">
+                    <i class="legend3"></i>
+                    <span>百度</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="today-num">290<span class="text">人</span></div>
+                  <div class="target-name">
+                    <i class="legend4"></i>
+                    <span>今日头条</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="today-num">390<span class="text">人</span></div>
+                  <div class="target-name">
+                    <i class="legend5"></i>
+                    <span>地摊</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div v-show="modelUserL=='过去一个季度'">
+            <div class="media_four_panel_lef_day">
+              <div class="today">2月下半月</div>
+              <ul>
+                <li>
+                  <div class="today-num">5,923<span class="text">人</span></div>
+                  <div class="target-name">
+                    <i class="legend1"></i>
+                    <span>微信</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="today-num">20,201<span class="text">人</span></div>
+                  <div class="target-name">
+                    <i class="legend2"></i>
+                    <span>微博</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="today-num">2,832<span class="text">人</span></div>
+                  <div class="target-name">
+                    <i class="legend3"></i>
+                    <span>百度</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="today-num">4,350<span class="text">人</span></div>
+                  <div class="target-name">
+                    <i class="legend4"></i>
+                    <span>今日头条</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="today-num">5,673<span class="text">人</span></div>
+                  <div class="target-name">
+                    <i class="legend5"></i>
+                    <span>地摊</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="media_four_panel_echarts">
+            <barM id="box46" :colorList="$lxjData.colorList" :myData="userData"></barM>
+          </div>
         </div>
         <div class="media_four_panel_rig">
-          <lineM id="box67" :colorList="$lxjData.colorList" :myData="$lxjData.box67Data"></lineM>
+          <div class="media_four_panel_title">平均使用时长</div>
+          <div class="media_four_panel_select">
+            <Select v-model="modelUserR" style="width: 120px" placeholder="过去一个月" @on-change="mediaFourChangeR">
+              <Option value="过去一个月" :key="1">过去一个月</Option>
+              <Option value="过去一个季度" :key="2">过去一个季度</Option>
+            </Select>
+          </div>
+          <div v-if="modelUserR=='过去一个月'" class="media_four_panel_lef_day">
+            <div class="today">2020.02.26</div>
+            <ul>
+              <li>
+                <div class="today-num">314</div>
+                <div class="target-name">
+                  <i class="legend1"></i>
+                  <span>线下门店</span>
+                </div>
+              </li>
+              <li>
+                <div class="today-num">570</div>
+                <div class="target-name">
+                  <i class="legend2"></i>
+                  <span>朋友广告圈</span>
+                </div>
+              </li>
+              <li>
+                <div class="today-num">232</div>
+                <div class="target-name">
+                  <i class="legend3"></i>
+                  <span>360搜索</span>
+                </div>
+              </li>
+              <li>
+                <div class="today-num">384</div>
+                <div class="target-name">
+                  <i class="legend4"></i>
+                  <span>百度</span>
+                </div>
+              </li>
+              <li>
+                <div class="today-num">478</div>
+                <div class="target-name">
+                  <i class="legend5"></i>
+                  <span>分享裂变</span>
+                </div>
+              </li>
+              <li>
+                <div class="today-num">579</div>
+                <div class="target-name">
+                  <i class="legend6"></i>
+                  <span>抖音</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div v-else class="media_four_panel_lef_day">
+            <div class="today">2月下半月</div>
+            <ul>
+              <li>
+                <div class="today-num">308</div>
+                <div class="target-name">
+                  <i class="legend1"></i>
+                  <span>线下门店</span>
+                </div>
+              </li>
+              <li>
+                <div class="today-num">571</div>
+                <div class="target-name">
+                  <i class="legend2"></i>
+                  <span>朋友广告圈</span>
+                </div>
+              </li>
+              <li>
+                <div class="today-num">212</div>
+                <div class="target-name">
+                  <i class="legend3"></i>
+                  <span>360搜索</span>
+                </div>
+              </li>
+              <li>
+                <div class="today-num">395</div>
+                <div class="target-name">
+                  <i class="legend4"></i>
+                  <span>百度</span>
+                </div>
+              </li>
+              <li>
+                <div class="today-num">475</div>
+                <div class="target-name">
+                  <i class="legend5"></i>
+                  <span>分享裂变</span>
+                </div>
+              </li>
+              <li>
+                <div class="today-num">555</div>
+                <div class="target-name">
+                  <i class="legend6"></i>
+                  <span>抖音</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="media_four_panel_echarts">
+            <lineM id="box67" :colorList="$lxjData.colorList" :myData="averageData"></lineM>
+          </div>
         </div>
       </div>
 
@@ -487,19 +684,17 @@
         </div>
         <div class="media_five_tab_bom">
           <div class="media_five_tab_bom1" v-if="ifShowTabCon == 0">
-              <span style="color:#242F57;">策略1: </span>快速拉新获客策略<br>
-              <span style="color:#242F57;">媒介选择： </span>微博，电商APP直播；<br>
-              <span style="color:#242F57;">KOL组合：</span>头部KOL组合（XXX-1， XXX-2， XXX-3）；<br>
+              <span style="color:#242F57;">媒介选择：</span>微博，电商APP直播；<br>
+              <span style="color:#242F57;">KOL组合：</span>头部KOL组合（钱迪-1，小麦-2，金粒仔-3）；<br>
               <span style="color:#242F57;">投放预算：</span>204万元（88万，58万，58万）；<br>
-              <span style="color:#242F57;">最优曝光时间： </span>未来7日，每日12-13点/18-23点；<br>
+              <span style="color:#242F57;">最优曝光时间：</span>未来7日，每日12-13点/18-23点；<br>
               <span style="color:#242F57;">目标受众：</span>KOL自有粉丝，品牌核心目标消费人群（北京上班族/年轻白领），品牌忠诚消费者；<br>
               <span style="color:#242F57;">投放内容和形式：</span>品牌官方产品发布，营销季活动详情，节日礼品上新；微博博文，直播；<br>
-              <span style="color:#242F57;">预期投放效果： </span>目标覆盖800万用户，预期获得18%的曝光，12%的互动和3%销售转化；
+              <span style="color:#242F57;">预期投放效果：</span>目标覆盖800万用户，预期获得18%的曝光，12%的互动和3%销售转化；
           </div>
           <div class="media_five_tab_bom1" v-else-if="ifShowTabCon == 1">
-              <span style="color:#242F57;">策略2: </span>低成本高转化策略<br>
               <span style="color:#242F57;">媒介选择：</span>短视频平台（抖音，快手），垂直兴趣APP（小红书，KEEP，大众点评）；<br>
-              <span style="color:#242F57;">KOL组合：</span>腰部KOL组合（YYY-1， YYY-2， YYY-3）；<br>
+              <span style="color:#242F57;">KOL组合：</span>腰部KOL组合（李芮-1，Angel真真-2，胖猫小森-3）；<br>
               <span style="color:#242F57;">投放预算：</span>84万元（38万，28万，18万）；<br>
               <span style="color:#242F57;">最优曝光时间：</span>未来14日，每日7-9点/11-13点/19-23点；<br>
               <span style="color:#242F57;">目标受众：</span>KOL自有粉丝，品牌核心目标消费人群（北京上班族/年轻白领），品牌忠诚消费者；<br>
@@ -507,9 +702,8 @@
               <span style="color:#242F57;">预期投放效果：</span>目标覆盖300万用户，预期获得15%的曝光，9%的互动和6%销售转化；
           </div>
           <div class="media_five_tab_bom1" v-else>
-              <span style="color:#242F57;">策略3: </span>持续转化策略<br>
               <span style="color:#242F57;">媒介选择：</span>娱乐频道，新闻门户，微博热点话题；<br>
-              <span style="color:#242F57;">KOL组合：</span>头部KOL组合（ZZZ-1， ZZZ-2， ZZZ-3）；<br>
+              <span style="color:#242F57;">KOL组合：</span>头部KOL组合（邓荣-1，王瑶-2，吴轩豪-3）；<br>
               <span style="color:#242F57;">投放预算：</span>134万元（58万，38万，38万）；<br>
               <span style="color:#242F57;">最优曝光时间：</span>未来29日，每日6-8点/12-13点/17-20点；<br>
               <span style="color:#242F57;">目标受众：</span>KOL自有粉丝，品牌核心目标消费人群（北京上班族/年轻白领），品牌忠诚消费者；<br>
@@ -534,11 +728,11 @@
               <div class="left" :class="{'act':cur==0}" @click="cur=0">类型</div>
               <div class="right" :class="{'act':cur==1}" @click="cur=1">渠道名称</div>
             </div>
-            <div class="h-select">
+            <!-- <div class="h-select"> -->
               <Select v-model="model1" style="width: 120px" placeholder="过去3天">
                 <Option v-for="item in dateList" :value="item.value" :key="item.value">{{ item.label }}</Option>
               </Select>
-            </div>
+            <!-- </div> -->
           </div>
         </div>
         <div class="m-p-rank-echarts">
@@ -1400,6 +1594,10 @@ export default {
   components: { DefaultPage, Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vGraph,vTree,lineM,barM},
   data(){
       return{
+        modelUserL:"过去一个月",
+        modelUserR:"过去一个月",
+        userData:[],
+        averageData:[],
           isShowTip1:false,
           isShowTip:false,
           isShowTip2:false,
@@ -1630,7 +1828,7 @@ export default {
               ],
               upIcon:require("../../assets/img/yhhx/upIcon.png"),
               downIcon:require("../../assets/img/yhhx/down_arro_Icon.png"),
-              tabListArr:['策略1: 快速拉新获客策略','策略2: 快速拉新获客策略','策略3: 快速拉新获客策略'],
+              tabListArr:['策略1: 快速拉新获客策略','策略2: 低成本高转化策略','策略3: 持续转化策略'],
               ifShowTabCon:0,
               leflogoIcon:require("../../assets/img/yhhx/dLefIcon.png"),
               riglogoIcon:require("../../assets/img/yhhx/dRigIcon.png"),
@@ -1984,11 +2182,12 @@ export default {
                   numTxt3:'3.09%',
                 }
               }
-
       }
   },
   created(){
     this.myEData=this.$lxjData.box27Data;
+    this.userData=this.$linData.box1Data;
+    this.averageData=this.$linData.box3Data;
   },
   mounted(){
     this.changeTabCon(0);
@@ -2028,12 +2227,28 @@ export default {
         this.kolObj = this.kolObj5;
       }
     },
+    mediaFourChange(value){
+      this.modelUserL = value
+      if(value == '过去一个月'){
+        this.userData = this.$linData.box1Data
+      }else{
+        this.userData = this.$linData.box2Data
+      }
+    },
+    mediaFourChangeR(value){
+      this.modelUserR = value
+      if(value == '过去一个月'){
+        this.averageData = this.$linData.box3Data
+      }else{
+        this.averageData = this.$linData.box4Data
+      }      
+    },
     changeTabCon(arg){
       this.ifShowTabCon = arg;
       var tabDom = this.$refs.mediaFiveTabItem || [];
       for(var i=0;i<tabDom.length;i++){
         if(i == arg){
-          tabDom[i].style="color: #2373FF;border-bottom:2px solid #2373FF;";
+          tabDom[i].style="color: #2373FF;font-weight:500;border-bottom:2px solid #2373FF;";
         }
         else{
           tabDom[i].style="color: #636E95;border-bottom:none;";
@@ -2068,7 +2283,6 @@ export default {
       }else{
         this.myEData=this.$lxjData[`box27${index-1}Data`];
       }
-      console.log(this.myEData)
     }
   }
 };
@@ -2894,23 +3108,114 @@ export default {
     justify-content: space-between;
     margin-bottom: 24px;
     .media_four_panel_lef,.media_four_panel_rig{
-      width: 49%;
+      position: relative;
+      width: 50%;
       height: 507px;
       padding: 24px;
-      box-sizing: border-box;
       background: #FFFFFF #6371c0;
       box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
       border-radius: 12px;
       border: 1px solid #EAEDF7;
+      .media_four_panel_title{
+        height: 24px;
+        margin-bottom: 3px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #242F57;
+        line-height: 24px;
+      }
+      .media_four_panel_select{
+        position: absolute;
+        top: 24px;
+        right: 24px;
+      }
+      .media_four_panel_lef_day{
+        .today{
+          height: 22px;
+          font-size: 14px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #7C88B1;
+          line-height: 22px;
+        }
+        ul{
+          display: flex;
+          // justify-content: space-between;
+          list-style: none;
+          >li{
+            margin-right: 20px;
+            .today-num{
+              height: 38px;
+              font-size: 24px;
+              font-family: HelveticaNeue-Medium, HelveticaNeue;
+              font-weight: 500;
+              color: #242F57;
+              line-height: 38px;
+              .text{
+                margin-left: 3px;
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #7C88B1;
+              }
+            }
+            .target-name{
+              display: flex;
+              align-items: center;
+              >i{
+                width: 6px;
+                height: 6px;
+                margin-right: 6px;
+                border-radius: 50%;
+                &.legend1{
+                  background: #4D94FF;
+                }
+                &.legend2{
+                  background: #A49DFA;
+                }
+                &.legend3{
+                  background: #FC809F;
+                }
+                &.legend4{
+                  background: #FFD98C;
+                }
+                &.legend5{
+                  background: #8AE6C7;
+                }                
+                &.legend6{
+                  background: #E19564;
+                }                
+              }
+              >span{
+                height: 20px;
+                font-size: 12px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #97A0C3;
+                line-height: 20px;
+              }
+            }
+          }
+        }
+      }
+
+      .media_four_panel_echarts{
+        height: calc(100% - 100px);
+      }
+    }
+    .media_four_panel_lef{
+      margin-right: 24px;
     }
   }
 
   .media_five_panel{
     width: 100%;
+    height: 250px;
     margin-bottom: 24px;
     padding: 24px;
     box-sizing: border-box;
-    background: #FFFFFF #D8D8D8;
+    background: #FFFFFF;
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 12px;
     border: 1px solid #EAEDF7;
@@ -2937,6 +3242,12 @@ export default {
       font-family: PingFangSC-Regular, PingFang SC;
       font-weight: 400;
       color: #636E95;
+      .media_five_tab_bom1{
+        >span{
+          height: 22px;
+          line-height: 22px;
+        }
+      }
     }
   }
 
@@ -3018,8 +3329,6 @@ export default {
             color: #2373ff;
           }
           }
-        }
-        .h-select {
         }
       }
     }
