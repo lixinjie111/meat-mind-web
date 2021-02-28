@@ -483,39 +483,38 @@
           </div>
           <div v-show="modelUserL=='过去一个月'">
             <div class="media_four_panel_lef_day">
-              <div class="today">2020.02.26</div>
+              <!-- <div class="today">2020.02.26</div> -->
               <ul>
                 <li>
-                  <div class="today-num">390<span class="text">人</span></div>
+                  <div class="today-num">11,700</div>
                   <div class="target-name">
                     <i class="legend1"></i>
                     <span>微信</span>
                   </div>
                 </li>
                 <li>
-                  <div class="today-num">1,290<span class="text">人</span>
-                  </div>
+                  <div class="today-num">38,700</div>
                   <div class="target-name">
                     <i class="legend2"></i>
                     <span>微博</span>
                   </div>
                 </li>
                 <li>
-                  <div class="today-num">190<span class="text">人</span></div>
+                  <div class="today-num">5,700</div>
                   <div class="target-name">
                     <i class="legend3"></i>
                     <span>百度</span>
                   </div>
                 </li>
                 <li>
-                  <div class="today-num">290<span class="text">人</span></div>
+                  <div class="today-num">8,700</div>
                   <div class="target-name">
                     <i class="legend4"></i>
                     <span>今日头条</span>
                   </div>
                 </li>
                 <li>
-                  <div class="today-num">390<span class="text">人</span></div>
+                  <div class="today-num">12,300</div>
                   <div class="target-name">
                     <i class="legend5"></i>
                     <span>地推</span>
@@ -526,38 +525,38 @@
           </div>
           <div v-show="modelUserL=='过去一个季度'">
             <div class="media_four_panel_lef_day">
-              <div class="today">2月下半月</div>
+              <!-- <div class="today">2月下半月</div> -->
               <ul>
                 <li>
-                  <div class="today-num">5,923<span class="text">人</span></div>
+                  <div class="today-num">35,100</div>
                   <div class="target-name">
                     <i class="legend1"></i>
                     <span>微信</span>
                   </div>
                 </li>
                 <li>
-                  <div class="today-num">20,201<span class="text">人</span></div>
+                  <div class="today-num">116,100</div>
                   <div class="target-name">
                     <i class="legend2"></i>
                     <span>微博</span>
                   </div>
                 </li>
                 <li>
-                  <div class="today-num">2,832<span class="text">人</span></div>
+                  <div class="today-num">17,100</div>
                   <div class="target-name">
                     <i class="legend3"></i>
                     <span>百度</span>
                   </div>
                 </li>
                 <li>
-                  <div class="today-num">4,350<span class="text">人</span></div>
+                  <div class="today-num">26,100</div>
                   <div class="target-name">
                     <i class="legend4"></i>
                     <span>今日头条</span>
                   </div>
                 </li>
                 <li>
-                  <div class="today-num">5,673<span class="text">人</span></div>
+                  <div class="today-num">36,900</div>
                   <div class="target-name">
                     <i class="legend5"></i>
                     <span>地推</span>
@@ -579,13 +578,13 @@
             </Select>
           </div>
           <div v-if="modelUserR=='过去一个月'" class="media_four_panel_lef_day">
-            <div class="today">2020.02.26</div>
+            <!-- <div class="today">2020.02.26</div> -->
             <ul>
               <li>
                 <div class="today-num">314</div>
                 <div class="target-name">
                   <i class="legend1"></i>
-                  <span>线下门店</span>
+                  <span>今日头条</span>
                 </div>
               </li>
               <li>
@@ -626,13 +625,13 @@
             </ul>
           </div>
           <div v-else class="media_four_panel_lef_day">
-            <div class="today">2月下半月</div>
+            <!-- <div class="today">2月下半月</div> -->
             <ul>
               <li>
                 <div class="today-num">308</div>
                 <div class="target-name">
                   <i class="legend1"></i>
-                  <span>线下门店</span>
+                  <span>今日头条</span>
                 </div>
               </li>
               <li>
@@ -1586,7 +1585,7 @@ import PieEcharts2 from '../../components/echarts/common/PieEcharts2';
 import LeidaEcharts from '../../components/echarts/common/LeidaEcharts';
 import vGraph from '../../components/echarts/common/zjjGraph';
 import vTree from '../../components/echarts/common/zjjTreemap';
-import lineM from '../../components/echarts/common/lineM';
+import lineM from '../../components/echarts/common/lineM3';
 import barM from '../../components/echarts/common/barM';
 
 export default {
@@ -3127,24 +3126,24 @@ export default {
       }
       .media_four_panel_select{
         position: absolute;
-        top: 24px;
+        top: 18px;
         right: 24px;
       }
       .media_four_panel_lef_day{
-        .today{
-          height: 22px;
-          font-size: 14px;
-          font-family: PingFangSC-Regular, PingFang SC;
-          font-weight: 400;
-          color: #7C88B1;
-          line-height: 22px;
-        }
+        // .today{
+        //   height: 22px;
+        //   font-size: 14px;
+        //   font-family: PingFangSC-Regular, PingFang SC;
+        //   font-weight: 400;
+        //   color: #7C88B1;
+        //   line-height: 22px;
+        // }
         ul{
           display: flex;
-          // justify-content: space-between;
+          justify-content: space-between;
           list-style: none;
           >li{
-            margin-right: 20px;
+            // margin-right: 20px;
             .today-num{
               height: 38px;
               font-size: 24px;
@@ -3201,7 +3200,7 @@ export default {
       }
 
       .media_four_panel_echarts{
-        height: calc(100% - 100px);
+        height: calc(100% - 80px);
       }
     }
     .media_four_panel_lef{
