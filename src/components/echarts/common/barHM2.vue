@@ -69,7 +69,7 @@ export default {
                 left: 40,
                 right: 16/144*window.rem,
                 bottom: 0,
-                top: '10%',
+                top: 0,
                 containLabel: false,
             },
             xAxis: {
