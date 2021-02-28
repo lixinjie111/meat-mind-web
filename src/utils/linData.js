@@ -2,7 +2,7 @@ const linData = {
     colorList: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'],
     box1Data:{
         name:['02-01', '02-06', '02-11', '02-16', '02-21','02-26'],
-        legName:['微信', '微博', '百度', '今日头条', '地摊',],
+        legName:['微信', '微博', '百度', '今日头条', '地推',],
         value:[
             {
                 name: '微信',
@@ -33,7 +33,7 @@ const linData = {
                 data: [220, 182, 191, 234, 190, 290]
             },
             {
-                name: '地摊',
+                name: '地推',
                 type: 'bar',
                 barWidth: '10',
                 stack: '总量',
@@ -48,7 +48,7 @@ const linData = {
     },
     box2Data:{
         name:['12月上半月', '12月下半月', '1月上半月', '1月下半月', '2月上半月','2月下半月'],
-        legName:['微信', '微博', '百度', '今日头条', '地摊',],
+        legName:['微信', '微博', '百度', '今日头条', '地推',],
         value:[
             {
                 name: '微信',
@@ -79,7 +79,7 @@ const linData = {
                 data: [4200, 4102, 3901, 4340, 3900, 4350]
             },
             {
-                name: '地摊',
+                name: '地推',
                 type: 'bar',
                 barWidth: '10',
                 stack: '总量',
