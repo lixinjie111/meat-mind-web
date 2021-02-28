@@ -1493,7 +1493,7 @@ export default {
             .selectOiv{
                 position: absolute;
                 width: 120px;
-                right: 16px;
+                right: 26px;
                 top:16px
             }
             .boxContent{
