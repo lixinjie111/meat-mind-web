@@ -190,7 +190,7 @@
                                     </div>
                                     <div class="selectDiv selectRt">
                                         <div class="selectLabel">对标比较</div>
-                                        <Select v-model="formItem.pinpai" size="small" multiple  :max-tag-count="0" style="width:110px;" @on-change="selectPai2">
+                                        <Select v-model="formItem.pinpai" size="small" multiple  :max-tag-count="0" style="width:100px;" @on-change="selectPai2">
                                             <Option value="0">加多宝</Option>
                                             <Option value="1">王老吉</Option>
                                             <Option value="2">和其正</Option>

@@ -97,7 +97,7 @@
         .serach-poptip-btn{
             background: #fff;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 12px;
         }
     }
     .serach-poptip-cntent{
