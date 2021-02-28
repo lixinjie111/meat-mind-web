@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,181 +10,181 @@
             margin: 0;
             padding: 0;
         }
-
-        html, body {
+        
+        html,
+        body {
             width: 100%;
             height: 100%;
             font-family: 'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', 'Arial', 'sans-serif', 'PingFangSC-Medium';
         }
-
+        
         #main {
             width: 100%;
             height: 100%;
         }
     </style>
 </head>
+
 <body>
-<div id="main"></div>
-<script src="../../js/jquery.v2.2.3.js"></script>
-<script src="../../js/echarts.min.js"></script>
-<script src="../../js/wordCloud.js"></script>
+    <div id="main"></div>
+    <script src="../../js/jquery.v2.2.3.js"></script>
+    <script src="../../js/echarts.min.js"></script>
+    <script src="../../js/wordCloud.js"></script>
 
-<script>
+    <script>
+        var myChart = echarts.init(document.getElementById('main'));
 
-    var myChart = echarts.init(document.getElementById('main'));
 
-    
 
-    const colorList = ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'];
+        const colorList = ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', ];
 
-    let presents = [
-        "不上火",
-        "加多宝",
-        "汉方",
-        "上火",
-        "清凉",
-        "正宗",
-        "和其正",
-        "降火",
-        "地道",
-        "草本",
-        "清爽",
-        "广州",
-        "火锅",
-        "聚会",
-    ]
-    let number = [
-        105,
-        84,
-        66,
-        37,
-        37,
-        37,
-        35,
-        30,
-        66,
-        37,
-        37,
-        37,
-        35,
-        30,
-        28,
-        37,
-        35,
-        30,
-        28,
-    ]
-
-    var data = [];
-    // cnt = number
-    // for (var i = 0; i < presents.length; ++i) {
-    //     data.push({
-    //         name: presents[i],
-    //         value: (presents.length - i) * 20
-    //     });
-    // }
-    // for (var i = 10; i < presents.length; ++i) {
-    //     var cnt = Math.floor(Math.random() * 10);
-    //     for (var j = 0; j < cnt; ++j) {
-    //         data.push({
-    //             name: presents[i],
-    //             value: Math.random() * 10
-    //         });
-    //     }
-    // }
-
-    for (var i = 0; i < presents.length; ++i) {
-        data.push({
-            name: presents[i],
-            value: number[i]
-        });
-    }
-    // for (var i = 10; i < presents.length; ++i) {
-    //     var cnt = Math.floor(Math.random() * 10);
-    //     for (var j = 0; j < cnt; ++j) {
-    //         data.push({
-    //             name: presents[i],
-    //             value: Math.random() * 10
-    //         });
-    //     }
-    // }
-
-    // var maskImage = new Image();
-    // maskImage.src = symbolUrl;
-    option = {
-        tooltip: {
-            show: true
-        },
-        grid: {
-            left: 0,
-            bottom: 0,
-            top: 0,
-            right: 0,
-        },
-        xAxis: {
-            type: "category",
-            show: false
-        },
-        yAxis: {
-            max: 100,
-            show: false
-        },
-        series: [{
-            zlevel: -1,
-            type: 'pictorialBar',
-            name: 'pictorial',
-            silent: true,
-            //symbol: 'image://' + symbolUrl, //按背景渲染云词
-            symbolSize: ['45%', '80%'],
-            symbolPosition: 'center',
-            barWidth: '100%',
-            barMaxWidth: '100%',
-            radius: "50%",
-            itemStyle: {
-                normal: {
-                    opacity: 0 //自己项目中这里可以设置0全透明，然后可以写一个div背景加载一个美化过的云图片，重合放在这个图表下面。
-                }
-            },
-            data: [{
-                value: 100
-            }]
-
-        },
-            {
-                type: 'wordCloud',
-                sizeRange: [10, 80],
-                rotationRange: [-30, 30],
-                //maskImage: maskImage,
-                textPadding: 0,
-                gridSize: 2, //用于标记画布可用性的网格大小（以像素为单位）//字距越大，字距越大。
-                width: '45%',
-                height: '80%',
-                left: 'center',
-                top: 'center',
-                rotate: true,
-                drawOutOfBound: false,
-                rotate: 40,
-                textStyle: {
-                    normal: {
-                        fontFamily: "sans-serif",
-                        rotate: 40,
-                        rotate: true,
-                        color: function () {
-                            let index = Math.floor(Math.random() * colorList.length);
-                            return colorList[index];
-                        }
-                    }
-                },
-                data: data
-            },
+        let presents = [
+            "清热解毒",
+            "解渴",
+            "去肝火",
+            "金银花",
+            "治感冒",
+            "利尿",
+            "清肺润燥",
+            "甘能生津",
+            "顾护脾胃",
+            "口感轻清 ",
+            "养生茶饮",
+            "老中医",
+            "红豆龟苓膏 ",
+            "草药味",
         ]
-    }
-    //imeout(function () {
+        let number = [
+            105,
+            84,
+            66,
+            37,
+            37,
+            37,
+            35,
+            30,
+            66,
+            37,
+            37,
+            37,
+            35,
+            30,
+            28,
+            37,
+            35,
+            30,
+            28,
+        ]
+
+        var data = [];
+        // cnt = number
+        // for (var i = 0; i < presents.length; ++i) {
+        //     data.push({
+        //         name: presents[i],
+        //         value: (presents.length - i) * 20
+        //     });
+        // }
+        // for (var i = 10; i < presents.length; ++i) {
+        //     var cnt = Math.floor(Math.random() * 10);
+        //     for (var j = 0; j < cnt; ++j) {
+        //         data.push({
+        //             name: presents[i],
+        //             value: Math.random() * 10
+        //         });
+        //     }
+        // }
+
+        for (var i = 0; i < presents.length; ++i) {
+            data.push({
+                name: presents[i],
+                value: number[i]
+            });
+        }
+        // for (var i = 10; i < presents.length; ++i) {
+        //     var cnt = Math.floor(Math.random() * 10);
+        //     for (var j = 0; j < cnt; ++j) {
+        //         data.push({
+        //             name: presents[i],
+        //             value: Math.random() * 10
+        //         });
+        //     }
+        // }
+
+        // var maskImage = new Image();
+        // maskImage.src = symbolUrl;
+        option = {
+                tooltip: {
+                    show: true
+                },
+                grid: {
+                    left: 0,
+                    bottom: 0,
+                    top: 0,
+                    right: 0,
+                },
+                xAxis: {
+                    type: "category",
+                    show: false
+                },
+                yAxis: {
+                    max: 100,
+                    show: false
+                },
+                series: [{
+                    zlevel: -1,
+                    type: 'pictorialBar',
+                    name: 'pictorial',
+                    silent: true,
+                    //symbol: 'image://' + symbolUrl, //按背景渲染云词
+                    symbolSize: ['45%', '80%'],
+                    symbolPosition: 'center',
+                    barWidth: '100%',
+                    barMaxWidth: '100%',
+                    radius: "50%",
+                    itemStyle: {
+                        normal: {
+                            opacity: 0 //自己项目中这里可以设置0全透明，然后可以写一个div背景加载一个美化过的云图片，重合放在这个图表下面。
+                        }
+                    },
+                    data: [{
+                        value: 100
+                    }]
+
+                }, {
+                    type: 'wordCloud',
+                    sizeRange: [10, 80],
+                    rotationRange: [-30, 30],
+                    //maskImage: maskImage,
+                    textPadding: 0,
+                    gridSize: 2, //用于标记画布可用性的网格大小（以像素为单位）//字距越大，字距越大。
+                    width: '45%',
+                    height: '80%',
+                    left: 'center',
+                    top: 'center',
+                    rotate: true,
+                    drawOutOfBound: false,
+                    rotate: 40,
+                    textStyle: {
+                        normal: {
+                            fontFamily: "sans-serif",
+                            rotate: 40,
+                            rotate: true,
+                            color: function() {
+                                let index = Math.floor(Math.random() * colorList.length);
+                                return colorList[index];
+                            }
+                        }
+                    },
+                    data: data
+                }, ]
+            }
+            //imeout(function () {
         myChart.setOption(option);
         window.onresize = () => {
-            myChart.resize();
-        }
-    //}, 1000)
-</script>
+                myChart.resize();
+            }
+            //}, 1000)
+    </script>
 </body>
+
 </html>
