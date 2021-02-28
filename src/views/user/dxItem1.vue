@@ -1,6 +1,6 @@
 <template>
     <div class="dx_Item_container">
-        <div class="test_container1">
+        <div :class="['test_container1', { width: !onlyMap }]">
             <div class="mapContainer">
                 <div class="area_timer_choice_container">
                     <div class="choice_btn_area">
@@ -40,18 +40,28 @@
                     </div>
                 </div>
             </div>
-            <div v-if="!onlyMap" class="per_info_container"></div>
         </div>
-        <div :class="['conditions_container', { 'conditions_container_row': onlyMap }]">
-            <div class="conditions_lef">
-                <div class="condition_label">条件筛选</div>
-                <div class="condition_item"><span style="margin-right:10px;">{{condiObj.label1}}</span><i class="iconicon_close iconfont2" style="font-size: 12px;"></i></div>
-                <div class="condition_item"><span style="margin-right:10px;">{{condiObj.label2}}</span><i class="iconicon_close iconfont2" style="font-size: 12px;"></i></div>
-                <div class="condition_item"><span style="margin-right:10px;">{{condiObj.label3}}</span><i class="iconicon_close iconfont2" style="font-size: 12px;"></i></div>
-                <div class="condition_item"><span style="margin-right:10px;">{{condiObj.label4}}</span><i class="iconicon_close iconfont2" style="font-size: 12px;"></i></div>
+        <div :class="['conditions_container-box', { width: !onlyMap }]">
+            <div :class="['conditions_container', { 'conditions_container_row': onlyMap }]">
+                <div class="conditions_lef">
+                    <div class="condition_label">条件筛选</div>
+                    <div class="condition_item"><span style="margin-right:10px;">{{condiObj.label1}}</span>
+                        <!--<i class="iconicon_close iconfont2" style="font-size: 12px;"></i>-->
+                    </div>
+                    <div class="condition_item"><span style="margin-right:10px;">{{condiObj.label2}}</span>
+                        <!--<i class="iconicon_close iconfont2" style="font-size: 12px;"></i>-->
+                    </div>
+                    <div class="condition_item"><span style="margin-right:10px;">{{condiObj.label3}}</span>
+                        <!--<i class="iconicon_close iconfont2" style="font-size: 12px;"></i>-->
+                    </div>
+                    <div class="condition_item"><span style="margin-right:10px;">{{condiObj.label4}}</span>
+                        <!--<i class="iconicon_close iconfont2" style="font-size: 12px;"></i>-->
+                    </div>
+                </div>
+                <div class="conditions_rig" @click="expandCond">更多筛选条件</div>
             </div>
-            <div class="conditions_rig" @click="expandCond">更多筛选条件</div>
         </div>
+
         <div class="condition_content" v-if="ifShowCon">
             <div class="condition_lef">
                 <img :src="conditImg" alt="" srcset="" class="conditImg">
@@ -290,7 +300,7 @@
       icon: require("../../assets/img/yhhx/qq.jpg")
     },
     pyq: {
-      icon: require("../../assets/img/yhhx/pyq.jpeg")
+      icon: require("../../assets/img/yhhx/pyq.png")
     },
     mt: {
       icon: require("../../assets/img/yhhx/mt.jpeg")
@@ -1006,20 +1016,26 @@
 .dx_Item_container{
     width: 100%;
     position: relative;
+    .test_container1.width{
+        width: 792px;
+    }
     .test_container1{
-        width: 100%;
         height: 80px;
         display: flex;
         align-items: center;
-        margin-bottom: -119px;
+        // margin-bottom: -119px;
         margin-top: 19px;
+        position: absolute;
+        /*margin-left: 20px;*/
+        right: 20px;
+        left: 20px;
         .mapContainer{
             flex: 1;
             height: 100%;
             display: flex;
             justify-content: center;
             .area_timer_choice_container{
-                width: 95%;
+                width: 100%;
                 height: 96px;
                 display: flex;
                 align-items: center;
@@ -1125,12 +1141,19 @@
             height: 100%;
         }
     }
-    .conditions_container{
+    .conditions_container-box.width{
+        width: 792px;
+    }
+    .conditions_container-box{
         position: absolute;
-        left: 1.9%;
-        top: 16.5%;
-        width: 71.7%;
         z-index: 999;
+        top: 115px;
+        display: flex;
+        left: 20px;
+        right: 20px
+    }
+    .conditions_container{
+        flex: 1;
         height: 48px;
         background: #F4F7FC;
         border-radius: 0px 0px 4px 4px;
@@ -1178,14 +1201,10 @@
             cursor: pointer;
         }
     }
-    .conditions_container.conditions_container_row{
-      width: 95%;
-      top: 24.5%;
-    }
     .condition_content{
         position: absolute;
         left: 1.9%;
-        top: 24.5%;
+        top: 168px;
         width: 787.06px;
         z-index: 1000;
         height: 557px;
