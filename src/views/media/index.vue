@@ -968,16 +968,16 @@
                             <p>头部KOL</p>
                             <p>李子柒</p>
                         </div>
-                        <div class="card-tip">
-                            <Poptip popper-class="saas-poptip" placement="right-start">
-                                <i class="iconfont2 iconguanyu tip-icon"></i>
-                                <div slot="content">
-                                    <p>快速拉新策略KOL，占整体投放预算的55%，投放时间为未来7日投放（2日达到投放预期的80%），预期获得18%的曝光，12%的互动和3%销售转化；</p>
-                                    <p>头部KOL，粉丝基数大，影响力高，能够带来高互动和高转化，适合快速拉新需求的投放策略；</p>
-                                    <p>与品牌所属行业关联度为中等水平，但该KOL口碑极好，具有极高的影响力和覆盖范围，能够实现快速拉新的投放效果；</p>
-                                </div>
-                            </Poptip>
-                        </div>
+<!--                        <div class="card-tip">-->
+<!--                            <Poptip popper-class="saas-poptip" placement="right-start">-->
+<!--                                <i class="iconfont2 iconguanyu tip-icon"></i>-->
+<!--                                <div slot="content">-->
+<!--                                    <p>快速拉新策略KOL，占整体投放预算的55%，投放时间为未来7日投放（2日达到投放预期的80%），预期获得18%的曝光，12%的互动和3%销售转化；</p>-->
+<!--                                    <p>头部KOL，粉丝基数大，影响力高，能够带来高互动和高转化，适合快速拉新需求的投放策略；</p>-->
+<!--                                    <p>与品牌所属行业关联度为中等水平，但该KOL口碑极好，具有极高的影响力和覆盖范围，能够实现快速拉新的投放效果；</p>-->
+<!--                                </div>-->
+<!--                            </Poptip>-->
+<!--                        </div>-->
                     </div>
                 </div>
                 <div>
@@ -1552,13 +1552,13 @@
                           </div>
                        </div>
                       </template>
-                      <template slot-scope="{ row, index }" slot="action">
-                       <div class="actionList">
-                          <div class="detail">详情</div>
-                          <div class="detail">收藏</div>
-                          <div class="detail">合作</div>
-                       </div>
-                      </template>
+<!--                      <template slot-scope="{ row, index }" slot="action">-->
+<!--                       <div class="actionList">-->
+<!--                          <div class="detail">详情</div>-->
+<!--                          <div class="detail">收藏</div>-->
+<!--                          <div class="detail">合作</div>-->
+<!--                       </div>-->
+<!--                      </template>-->
                     </Table>
                     <div class="page">
                       <Page :total="100" show-total show-sizer class-name="pageS"/>
@@ -1674,9 +1674,10 @@ export default {
                     },
                     {
                         title: '带货量',
-                         tooltip:true,
+                        tooltip:true,
                         ellipsis:true,
-                        key: 'huo'
+                        key: 'huo',
+                        width: 90/144*window.rem,
                     },
                     {
                         title: '品牌曝光数',
@@ -1685,146 +1686,146 @@ export default {
                         key: 'bao'
                     },
                     {
-                        title: '粉丝数/真粉量',
+                        title: '真粉量/粉丝数',
                          tooltip:true,
                         ellipsis:true,
                         key: 'fensi'
                     },
                     {
-                        title: 'KOL品牌匹配度',
+                        title: '品牌匹配度',
                          tooltip:true,
                         ellipsis:true,
                         key: 'zan'
                     },
                     {
-                        title: 'KOL用户匹配度',
+                        title: '用户匹配度',
                          tooltip:true,
                         ellipsis:true,
                         key: 'zuopin'
                     },
                     {
-                        title: 'KOL影响力指数',
+                        title: '影响力指数',
                         tooltip:true,
                         ellipsis:true,
                         key: 'yxiang',
                     },
-                    {
-                        title: '操作',
-                        slot: 'action',
-                        width: 150/144*window.rem,
-                    },
+                    // {
+                    //     title: '操作',
+                    //     slot: 'action',
+                    //     width: 150/144*window.rem,
+                    // },
                 ],
               data1: [
-                  {
-                      name: '邓荣',
-                      huo: '418.5w',
-                      bao: 15,
-                      fensi:'6418.5w',
-                      zan:'5.32亿',
-                      zuopin:1296,
-                      yxiang:1098,
-                      header:require("../../assets/img/yhhx/header.png"),
-                      num:"14440078798"
-                  },
-                  {
-                      name: '李芮',
-                      huo: '398.5w',
-                      bao: 17,
-                      fensi: '8418.5w',
-                      zan:'4.18亿',
-                      zuopin:1954,
-                      yxiang:128,
-                      header:require("../../assets/img/yhhx/header1.png"),
-                      num:"18540757560"
-                  },
-                  {
-                      name: '李刚',
-                      huo: '227.5w',
-                      bao: 12,
-                      fensi: '4418.5w',
-                      zan:'7.32亿',
-                      zuopin:6954,
-                      yxiang:1218,
-                      header:require("../../assets/img/yhhx/header2.png"),
-                      num:"18191959422"
-                  },
-                  {
-                      name: '钱迪',
-                      huo: '115.5w',
-                      bao: 19,
-                      fensi: '7418.5w',
-                      zan:'2.22亿',
-                      zuopin:1354,
-                      yxiang:1286,
-                      header:require("../../assets/img/yhhx/header3.png"),
-                      num:"13875139883"
-                  },
-                  {
-                      name: '李星',
-                      huo: '114.5w',
-                      bao: 29,
-                      fensi: '3418.5w',
-                      zan:'2.92亿',
-                      zuopin:1394,
-                      yxiang:1280,
-                      header:require("../../assets/img/yhhx/header4.png"),
-                      num:"15305619958"
-                  },
-                  {
-                      name: '叶春龙',
-                      huo: '110.5w',
-                      bao: 99,
-                      fensi: '7018.5w',
-                      zan:'1.22亿',
-                      zuopin:154,
-                      yxiang:126,
-                      header:require("../../assets/img/yhhx/header5.png"),
-                      num:"14881800609"
-                  },
-                  {
-                      name: '吕若盛',
-                      huo: '109.5w',
-                      bao: 299,
-                      fensi: '7418.5w',
-                      zan:'1.92亿',
-                      zuopin:1254,
-                      yxiang:1296,
-                      header:require("../../assets/img/yhhx/header6.png"),
-                      num:"18748796447"
-                  },
-                  {
-                      name: '王瑶',
-                      huo: '89.5w',
-                      bao: 2992,
-                      fensi: '7438.5w',
-                      zan:'1.99亿',
-                      zuopin:1252,
-                      yxiang:1294,
-                      header:require("../../assets/img/yhhx/header7.png"),
-                      num:"18748796487"
-                  },
-                  {
-                      name: '吴轩豪',
-                      huo: '87.5w',
-                      bao: 3992,
-                      fensi: '1438.5w',
-                      zan:'1.79亿',
-                      zuopin:1752,
-                      yxiang:1214,
-                      header:require("../../assets/img/yhhx/header8.png"),
-                      num:"15622585340"
-                  },
-                  {
-                      name: '雷晓云',
-                      huo: '57.5w',
-                      bao: 3692,
-                      fensi: '7428.5w',
-                      zan:'1.19亿',
-                      zuopin:1758,
-                      yxiang:1294,
-                      header:require("../../assets/img/yhhx/header9.png"),
-                      num:"14628678533"
-                  },
+                {
+                  name: '邓荣',
+                  huo: '418.5w',
+                  bao: 15,
+                  fensi:'6200.2w/6418.5w',
+                  zan:80,
+                  zuopin:75,
+                  yxiang:1098,
+                  header:require("../../assets/img/yhhx/header.png"),
+                  num:"14440078798"
+                },
+                {
+                  name: '李芮',
+                  huo: '398.5w',
+                  bao: 17,
+                  fensi: '8008.5w/8418.5w',
+                  zan:90,
+                  zuopin:86,
+                  yxiang:128,
+                  header:require("../../assets/img/yhhx/header1.png"),
+                  num:"18540757560"
+                },
+                {
+                  name: '李刚',
+                  huo: '227.5w',
+                  bao: 12,
+                  fensi: '4018.5w/4418.5w',
+                  zan:85,
+                  zuopin:90,
+                  yxiang:1218,
+                  header:require("../../assets/img/yhhx/header2.png"),
+                  num:"18191959422"
+                },
+                {
+                  name: '钱迪',
+                  huo: '115.5w',
+                  bao: 19,
+                  fensi: '7400.5w/7418.5w',
+                  zan:89,
+                  zuopin:92,
+                  yxiang:1286,
+                  header:require("../../assets/img/yhhx/header3.png"),
+                  num:"13875139883"
+                },
+                {
+                  name: '李星',
+                  huo: '114.5w',
+                  bao: 29,
+                  fensi: '3120.3w/3418.5w',
+                  zan:90,
+                  zuopin:88,
+                  yxiang:1280,
+                  header:require("../../assets/img/yhhx/header4.png"),
+                  num:"15305619958"
+                },
+                {
+                  name: '叶春龙',
+                  huo: '110.5w',
+                  bao: 99,
+                  fensi: '6900.5w/7018.5w',
+                  zan:95,
+                  zuopin:89,
+                  yxiang:126,
+                  header:require("../../assets/img/yhhx/header5.png"),
+                  num:"14881800609"
+                },
+                {
+                  name: '吕若盛',
+                  huo: '109.5w',
+                  bao: 299,
+                  fensi: '6809.5w/7418.5w',
+                  zan:79,
+                  zuopin:82,
+                  yxiang:1296,
+                  header:require("../../assets/img/yhhx/header6.png"),
+                  num:"18748796447"
+                },
+                {
+                  name: '王瑶',
+                  huo: '89.5w',
+                  bao: 2992,
+                  fensi: '7238.5w/7438.5w',
+                  zan:89,
+                  zuopin:86,
+                  yxiang:1294,
+                  header:require("../../assets/img/yhhx/header7.png"),
+                  num:"18748796487"
+                },
+                {
+                  name: '吴轩豪',
+                  huo: '87.5w',
+                  bao: 3992,
+                  fensi: '1408.5w/1438.5w',
+                  zan:90,
+                  zuopin:86,
+                  yxiang:1214,
+                  header:require("../../assets/img/yhhx/header8.png"),
+                  num:"15622585340"
+                },
+                {
+                  name: '雷晓云',
+                  huo: '57.5w',
+                  bao: 3692,
+                  fensi: '7239.4w/7428.5w',
+                  zan:87,
+                  zuopin:85,
+                  yxiang:1294,
+                  header:require("../../assets/img/yhhx/header9.png"),
+                  num:"14628678533"
+                },
               ],
               upIcon:require("../../assets/img/yhhx/upIcon.png"),
               downIcon:require("../../assets/img/yhhx/down_arro_Icon.png"),
@@ -1834,7 +1835,6 @@ export default {
               riglogoIcon:require("../../assets/img/yhhx/dRigIcon.png"),
               domnIconArr:require("../../assets/img/yhhx/jiantou.png"),
               upIconArr:require("../../assets/img/yhhx/upGreen.png"),
-
               tenxIcon:require("../../assets/img/yhhx/txxw.png"),
               ttIcon:require("../../assets/img/yhhx/tt.png"),
               dyIcon:require("../../assets/img/yhhx/dyI.png"),
@@ -3917,6 +3917,17 @@ export default {
                     }
                 }
             }
+        }
+
+        ::v-deep .ivu-table {
+           tr {
+             th {
+               .ivu-table-cell {
+                 font-size: 14px;
+                 padding-right: 5px;
+               }
+             }
+           }
         }
       }
     }
