@@ -182,7 +182,7 @@
                                 <div class="selectNav">
                                     <div class="selectDiv selectLf">
                                        <div class="selectLabel"> 声量类型</div>
-                                        <Select v-model="formItem.select" size="small" style="width:100px" @on-change="selectYin">
+                                        <Select v-model="formItem.select" size="small" style="width:80px" @on-change="selectYin">
                                             <Option value="2">全部</Option>
                                             <Option value="0">仅正面声量</Option>
                                             <Option value="1">仅负面声量</Option>
@@ -190,7 +190,7 @@
                                     </div>
                                     <div class="selectDiv selectRt">
                                         <div class="selectLabel">对标比较</div>
-                                        <Select v-model="formItem.pinpai" size="small" multiple  :max-tag-count="0" style="width:100px;" @on-change="selectPai2">
+                                        <Select v-model="formItem.pinpai" size="small" multiple  :max-tag-count="0" style="width:110px;" @on-change="selectPai2">
                                             <Option value="0">加多宝</Option>
                                             <Option value="1">王老吉</Option>
                                             <Option value="2">和其正</Option>
@@ -1138,7 +1138,7 @@ export default {
                      {
                         name: '邓老凉茶',
                         type: 'line',
-                        data: [272, 290, 393, 391, 470, 451, 440, 402, 670, 531]
+                        data: [272, 290, 393, 391, 470, 451, 440, 902, 670, 531]
                     },
                 ],
             };
@@ -1240,7 +1240,7 @@ export default {
                      {
                         name: '邓老凉茶',
                         type: 'line',
-                        data: [272, 290, 393, 391, 470, 451, 440, 402, 670, 531]
+                        data: [272, 290, 393, 391, 470, 451, 440, 902, 670, 531]
                     },
                 ],
             };
@@ -1545,8 +1545,9 @@ export default {
                     }
                 }
                 .boxEcharts1{
+                    margin-top: 5px;
                    .box1{
-                       height: 30px;
+                       height: 35px;
                    }
                 }
                 .label{
@@ -1617,7 +1618,7 @@ export default {
                         align-items: center;
                         flex:1;
                          &.selectLf{
-                             margin-right: 8px;
+                            //  margin-right: 8px;
                          }
                         .selectLabel{
                             font-size: 12px;

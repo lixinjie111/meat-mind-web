@@ -1457,7 +1457,7 @@ const lxjEData = {
                 name: '15-25',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '10',
+                barWidth: '15',
                 // itemStyle: {
                 // 	normal: {
                 // 		barBorderRadius:[0,30,30,0]
@@ -1466,9 +1466,11 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [30,]
+                data: [3.5,]
             },
             {
                 name: '26-40',
@@ -1477,9 +1479,11 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [19]
+                data: [3.5]
             },
             {
                 name: '36-45',
@@ -1488,20 +1492,29 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [15]
+                data: [1.6]
             },
             {
                 name: '46以上',
                 type: 'bar',
                 stack: '总量',
+                itemStyle: {
+                	normal: {
+                		barBorderRadius:[0,30,30,0]
+                	},
+                },
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [14]
+                data: [1.4]
             },
         ]
     },
@@ -1691,7 +1704,7 @@ const lxjEData = {
                 name: '男',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '10',
+                barWidth: '15',
                 // itemStyle: {
                 // 	normal: {
                 // 		barBorderRadius:[0,30,30,0]
@@ -1700,9 +1713,11 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [30]
+                data: [3]
             },
             {
                 name: '女',
@@ -1711,14 +1726,16 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                     formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
                 itemStyle: {
                 	normal: {
                 		barBorderRadius:[0,30,30,0]
                 	},
                 },
-                data: [23,]
+                data: [7,]
             },
            
         ]
@@ -2221,7 +2238,7 @@ const lxjEData = {
                         return val.value*10+"%"
                     },
                 },
-                data: [80]
+                data: [1]
             },
             {
                 name: '5001-10000',
@@ -2234,7 +2251,7 @@ const lxjEData = {
                         return val.value*10+"%"
                     },
                 },
-                data: [85]
+                data: [2]
             },
             {
                 name: '10001-20000',
@@ -2247,12 +2264,17 @@ const lxjEData = {
                         return val.value*10+"%"
                     },
                 },
-                data: [64]
+                data: [4]
             },
             {
                 name: '20000以上',
                 type: 'bar',
                 stack: '总量',
+                itemStyle: {
+                	normal: {
+                		barBorderRadius:[0,30,30,0]
+                	},
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -2260,7 +2282,7 @@ const lxjEData = {
                         return val.value*10+"%"
                     },
                 },
-                data: [39]
+                data: [3]
             },
         ]
     },
@@ -2272,18 +2294,15 @@ const lxjEData = {
                 name: '15-25',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '10',
-                // itemStyle: {
-                // 	normal: {
-                // 		barBorderRadius:[0,30,30,0]
-                // 	},
-                // },
+                barWidth: '15',
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [70,]
+                data: [2]
             },
             {
                 name: '26-40',
@@ -2292,9 +2311,11 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [19]
+                data: [1]
             },
             {
                 name: '36-45',
@@ -2303,20 +2324,29 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [25]
+                data: [2]
             },
             {
                 name: '46以上',
                 type: 'bar',
                 stack: '总量',
+                itemStyle: {
+                	normal: {
+                		barBorderRadius:[0,30,30,0]
+                	},
+                },
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [54]
+                data: [5]
             },
         ]
     },
@@ -2328,7 +2358,7 @@ const lxjEData = {
                 name: '男',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '10',
+                barWidth: '15',
                 // itemStyle: {
                 // 	normal: {
                 // 		barBorderRadius:[0,30,30,0]
@@ -2337,9 +2367,11 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [90]
+                data: [9]
             },
             {
                 name: '女',
@@ -2348,14 +2380,16 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
                 itemStyle: {
                 	normal: {
                 		barBorderRadius:[0,30,30,0]
                 	},
                 },
-                data: [75,]
+                data: [1]
             },
            
         ]
@@ -2368,7 +2402,7 @@ const lxjEData = {
                 name: '5000以下',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '10',
+                barWidth: '15',
                 // itemStyle: {
                 // 	normal: {
                 // 		barBorderRadius:[0,30,30,0]
@@ -2377,9 +2411,11 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [10]
+                data: [1]
             },
             {
                 name: '5001-10000',
@@ -2388,9 +2424,11 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [85]
+                data: [2]
             },
             {
                 name: '10001-20000',
@@ -2399,20 +2437,29 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [64]
+                data: [3]
             },
             {
                 name: '20000以上',
                 type: 'bar',
                 stack: '总量',
+                itemStyle: {
+                	normal: {
+                		barBorderRadius:[0,30,30,0]
+                	},
+                },
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [39]
+                data: [4]
             },
         ]
     },
@@ -2424,7 +2471,7 @@ const lxjEData = {
                 name: '15-25',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '10',
+                barWidth: '15',
                 // itemStyle: {
                 // 	normal: {
                 // 		barBorderRadius:[0,30,30,0]
@@ -2433,9 +2480,11 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [10,]
+                data: [1,]
             },
             {
                 name: '26-40',
@@ -2444,9 +2493,11 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [19]
+                data: [3]
             },
             {
                 name: '36-45',
@@ -2455,20 +2506,29 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [25]
+                data: [2]
             },
             {
                 name: '46以上',
                 type: 'bar',
                 stack: '总量',
+                itemStyle: {
+                	normal: {
+                		barBorderRadius:[0,30,30,0]
+                	},
+                },
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [54]
+                data: [4]
             },
         ]
     },
@@ -2480,7 +2540,7 @@ const lxjEData = {
                 name: '男',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '10',
+                barWidth: '15',
                 // itemStyle: {
                 // 	normal: {
                 // 		barBorderRadius:[0,30,30,0]
@@ -2489,9 +2549,11 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [10]
+                data: [4]
             },
             {
                 name: '女',
@@ -2500,14 +2562,16 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
                 itemStyle: {
                 	normal: {
                 		barBorderRadius:[0,30,30,0]
                 	},
                 },
-                data: [75,]
+                data: [6]
             },
            
         ]
@@ -2520,7 +2584,7 @@ const lxjEData = {
                 name: '5000以下',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '10',
+                barWidth: '15',
                 // itemStyle: {
                 // 	normal: {
                 // 		barBorderRadius:[0,30,30,0]
@@ -2529,9 +2593,11 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [10]
+                data: [4]
             },
             {
                 name: '5001-10000',
@@ -2540,9 +2606,11 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [15]
+                data: [2]
             },
             {
                 name: '10001-20000',
@@ -2551,20 +2619,29 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [64]
+                data: [1]
             },
             {
                 name: '20000以上',
                 type: 'bar',
                 stack: '总量',
+                itemStyle: {
+                	normal: {
+                		barBorderRadius:[0,30,30,0]
+                	},
+                },
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [39]
+                data: [3]
             },
         ]
     },
@@ -2576,7 +2653,7 @@ const lxjEData = {
                 name: '5000以下',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '10',
+                barWidth: '15',
                 // itemStyle: {
                 // 	normal: {
                 // 		barBorderRadius:[0,30,30,0]
@@ -2585,9 +2662,11 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [30]
+                data: [2]
             },
             {
                 name: '5001-10000',
@@ -2596,9 +2675,11 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [15]
+                data: [1.5]
             },
             {
                 name: '10001-20000',
@@ -2607,20 +2688,29 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [14]
+                data: [1.5]
             },
             {
                 name: '20000以上',
                 type: 'bar',
                 stack: '总量',
+                itemStyle: {
+                	normal: {
+                		barBorderRadius:[0,30,30,0]
+                	},
+                },
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter: '{c}%',
+                    formatter:(val)=>{
+                        return val.value*10+"%"
+                    },
                 },
-                data: [19]
+                data: [5]
             },
         ]
     },

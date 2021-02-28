@@ -67,7 +67,7 @@ export default {
             },
             grid: {
                 left: 40,
-                right: '2%',
+                right: 16/144*window.rem,
                 bottom: 0,
                 top: '10%',
                 containLabel: false,
@@ -96,14 +96,15 @@ export default {
 				axisLine:{
 					show:false,
 					lineStyle:{
-						color:'#E9EBF1',
+						color:'#636E95',
+						fontSize:14/144*window.rem,
 						//width:8,//这里是为了突出显示加上的
 					}
 				},
 				axisLabel: {
 					textStyle: {
-						color: "#97A0C3",   //这里用参数代替了
-						fontSize:'14'
+						color:'#636E95',
+						fontSize:14/144*window.rem,
 					}
 				},
                 // splitLine: {
