@@ -512,7 +512,7 @@
               <div class="mb_echarts1_lef_top">
                 <span class="span1">28,790</span>人
               </div>
-              <div class="mb_echarts1_lef_bom">养生金融小白</div>
+              <div class="mb_echarts1_lef_bom">北京上班族</div>
             </div>
             <div class="mb_echarts1_rig">
               <img :src="tu75" alt="" srcset="" class="tu20">
@@ -2981,13 +2981,14 @@ export default {
             }
           }
           .mb_echarts1_lef_bom{
-            padding: 4px 8px;
+            padding: 4px 0;
             font-size: 16px;
             font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;
             color: #4D94FF;
             background: rgba(77, 148, 255, .2);
             border-radius: 4px;
+            text-align: center;
           }
         }
         .mb_echarts2_empty_box1 {
