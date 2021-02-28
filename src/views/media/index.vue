@@ -518,7 +518,7 @@
                   <div class="today-num">390<span class="text">人</span></div>
                   <div class="target-name">
                     <i class="legend5"></i>
-                    <span>地摊</span>
+                    <span>地推</span>
                   </div>
                 </li>
               </ul>
@@ -560,7 +560,7 @@
                   <div class="today-num">5,673<span class="text">人</span></div>
                   <div class="target-name">
                     <i class="legend5"></i>
-                    <span>地摊</span>
+                    <span>地推</span>
                   </div>
                 </li>
               </ul>
@@ -685,7 +685,7 @@
         <div class="media_five_tab_bom">
           <div class="media_five_tab_bom1" v-if="ifShowTabCon == 0">
               <span style="color:#242F57;">媒介选择：</span>微博，电商APP直播；<br>
-              <span style="color:#242F57;">KOL组合：</span>头部KOL组合（钱迪，小麦，金粒仔）；<br>
+              <span style="color:#242F57;">KOL组合：</span>头部KOL组合（李子柒，西木西木，辣目洋子）；<br>
               <span style="color:#242F57;">投放预算：</span>204万元（88万，58万，58万）；<br>
               <span style="color:#242F57;">最优曝光时间：</span>未来7日，每日12-13点/18-23点；<br>
               <span style="color:#242F57;">目标受众：</span>KOL自有粉丝，品牌核心目标消费人群（北京上班族/年轻白领），品牌忠诚消费者；<br>
