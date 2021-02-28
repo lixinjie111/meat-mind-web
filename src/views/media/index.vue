@@ -592,7 +592,7 @@
                 <div class="today-num">570</div>
                 <div class="target-name">
                   <i class="legend2"></i>
-                  <span>朋友广告圈</span>
+                  <span>朋友圈广告</span>
                 </div>
               </li>
               <li>
@@ -639,7 +639,7 @@
                 <div class="today-num">571</div>
                 <div class="target-name">
                   <i class="legend2"></i>
-                  <span>朋友广告圈</span>
+                  <span>朋友圈广告</span>
                 </div>
               </li>
               <li>
