@@ -3003,6 +3003,7 @@ export default {
             background: rgba(77, 148, 255, .2);
             border-radius: 4px;
             text-align: center;
+            width: 100px;
           }
         }
         .mb_echarts2_empty_box1 {
