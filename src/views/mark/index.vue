@@ -1546,6 +1546,7 @@ export default {
                 }
                 .boxEcharts1{
                     margin-top: 5px;
+                    margin-bottom: 8px;
                    .box1{
                        height: 35px;
                    }
@@ -1554,6 +1555,7 @@ export default {
                     display: flex;
                     align-items: baseline;
                     margin-bottom: 8px;
+                    margin-left: 4px;
                     .labelName{
                         font-size: 14px;
                         font-family: PingFangSC-Regular, PingFang SC;
