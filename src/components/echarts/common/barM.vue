@@ -57,6 +57,8 @@ export default {
 				legend: {
 					type: 'scroll',
 					bottom:0,
+					pageFormatter: '',//隐藏翻页的数字
+					pageButtonItemGap: -6,//翻页按钮的两个之间的间距
 					data: this.myData.legName,
 					textStyle: {
 						color: "#97A0C3",   //这里用参数代替了
