@@ -1,9 +1,17 @@
 <template>
   <div class="sass-header">
-    <!-- <div class="target">{{target}}</div> -->
-    <div class="search">
-      <img src="../static/img/header/search@2x.png" alt="">
-      <input class="input-search" type="text" placeholder="输入关键词进行搜索...">
+    <div class="header-left">
+      <div class="mark-logo">
+        <span>品牌名称</span>
+        <div>
+          邓老凉茶
+          <i class="iconfont2 iconicon_down-triangle"></i>
+        </div>
+      </div>
+      <div class="search">
+        <img src="../static/img/header/search@2x.png" alt="">
+        <input class="input-search" type="text" placeholder="输入关键词进行搜索...">
+      </div>
     </div>
     <div class="control">
         <div class="service">
@@ -56,55 +64,73 @@ export default {
 
 <style lang="scss" scoped>
 .sass-header {
-  // position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /*width: 100%;*/
   height: 64px;
   padding: 0 24px;
   background: #fff;
-
-  .target{
-    height: 32px;
-    font-size: 24px;
-    font-family: PingFangSC-Medium, PingFang SC;
-    font-weight: 500;
-    color: #242F57;
-    line-height: 32px;
+  .header-left{
+    display: flex;
+    align-items: center;
+    .mark-logo{
+      display: flex;
+      flex-direction: column;
+      margin-right: 24px;
+      >span{
+        height: 17px;
+        font-size: 12px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #636E95;
+        line-height: 17px;
+      }
+      >div{
+        height: 22px;
+        font-size: 16px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #242F57;
+        line-height: 22px;
+        >i{
+          font-size: 8px;
+        }
+      }
+    }
+    .search{
+      position: relative;
+      cursor: pointer;
+      .input-search{
+        width: 360px;
+        height: 32px;
+        padding-left:44px;
+        box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset, -2px -2px 7px 0px #FFFEFA inset;
+        border-radius: 8px;
+        border: 0.88px solid #C6CBDE;
+        outline-style: none;
+        /*&:hover{*/
+        /*  border: 1px solid #C6CBDE;*/
+        /*}*/
+      }
+      input::-webkit-input-placeholder{
+        color: #97A0C3;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+      }
+      img{
+        position: absolute;
+        top: 4px;
+        left: 16px;
+        width: 24px;
+        height: 24px;
+        padding: 2px;
+        opacity: 0.4;
+        color:  #242F57;
+      }
+    }
   }
-  .search{
-    position: relative;
-    cursor: pointer;
-    .input-search{
-      width: 360px;
-      height: 32px;
-      padding-left:44px;
-      box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset, -2px -2px 7px 0px #FFFEFA inset;
-      border-radius: 8px;
-      border: 0.88px solid #C6CBDE;
-      outline-style: none;
-      /*&:hover{*/
-      /*  border: 1px solid #C6CBDE;*/
-      /*}*/
-    }
-    input::-webkit-input-placeholder{
-      color: #97A0C3;
-      font-size: 14px;
-      font-family: PingFangSC-Regular, PingFang SC;
-      font-weight: 400;
-    }
-    img{
-      position: absolute;
-      top: 4px;
-      left: 16px;
-      width: 24px;
-      height: 24px;
-      padding: 2px;
-      opacity: 0.4;
-      color:  #242F57;
-    }
-  }  
+   
   .control{
     display: flex;
     // justify-content: flex-end;
