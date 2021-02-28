@@ -834,7 +834,7 @@
                           </div>
                           <div class="m-p-right-media">
                               <div class="m-p-r-title">组合媒介曝光量预期 </div>
-                              <div class="m-p-r-num">324,343</div>
+<!--                              <div class="m-p-r-num">324,343</div>-->
                               <div class="m-p-r-echarts">
                                 <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box111Data"></funnel>
                               </div>
@@ -1061,7 +1061,7 @@
                 <div class="listBox">
                    <div class="listBox-left">
                      <Menu active-name="1"  mode="vertical">
-                          <MenuItem name="1"> 粉丝总量排行</MenuItem>
+                          <MenuItem name="1"> KOL综合排行</MenuItem>
                           <MenuItem name="2"> 粉丝增长排行</MenuItem>
                           <MenuItem name="3"> 粉丝互动排行</MenuItem>
                           <MenuItem name="4"> 销售转化排行</MenuItem>
@@ -1118,7 +1118,7 @@
                 <div class="listBox">
                    <div class="listBox-left">
                      <Menu active-name="1" width="133px" mode="vertical">
-                          <MenuItem name="1"> 粉丝总量排行</MenuItem>
+                          <MenuItem name="1"> KOL综合排行</MenuItem>
                           <MenuItem name="2"> 粉丝增长排行</MenuItem>
                           <MenuItem name="3"> 粉丝互动排行</MenuItem>
                           <MenuItem name="4"> 销售转化排行</MenuItem>
@@ -1175,7 +1175,7 @@
                 <div class="listBox">
                    <div class="listBox-left">
                      <Menu active-name="1" width="133px" mode="vertical">
-                          <MenuItem name="1"> 粉丝总量排行</MenuItem>
+                          <MenuItem name="1"> KOL综合排行</MenuItem>
                           <MenuItem name="2"> 粉丝增长排行</MenuItem>
                           <MenuItem name="3"> 粉丝互动排行</MenuItem>
                           <MenuItem name="4"> 销售转化排行</MenuItem>
@@ -1232,7 +1232,7 @@
                 <div class="listBox">
                    <div class="listBox-left">
                      <Menu active-name="1" width="133px" mode="vertical">
-                          <MenuItem name="1"> 粉丝总量排行</MenuItem>
+                          <MenuItem name="1"> KOL综合排行</MenuItem>
                           <MenuItem name="2"> 粉丝增长排行</MenuItem>
                           <MenuItem name="3"> 粉丝互动排行</MenuItem>
                           <MenuItem name="4"> 销售转化排行</MenuItem>
@@ -1289,7 +1289,7 @@
                 <div class="listBox">
                    <div class="listBox-left">
                      <Menu active-name="1" width="133px" mode="vertical">
-                          <MenuItem name="1"> 粉丝总量排行</MenuItem>
+                          <MenuItem name="1"> KOL综合排行</MenuItem>
                           <MenuItem name="2"> 粉丝增长排行</MenuItem>
                           <MenuItem name="3"> 粉丝互动排行</MenuItem>
                           <MenuItem name="4"> 销售转化排行</MenuItem>
@@ -1346,7 +1346,7 @@
                 <div class="listBox">
                    <div class="listBox-left">
                      <Menu active-name="1" width="133px" mode="vertical">
-                          <MenuItem name="1"> 粉丝总量排行</MenuItem>
+                          <MenuItem name="1"> KOL综合排行</MenuItem>
                           <MenuItem name="2"> 粉丝增长排行</MenuItem>
                           <MenuItem name="3"> 粉丝互动排行</MenuItem>
                           <MenuItem name="4"> 销售转化排行</MenuItem>
@@ -1403,7 +1403,7 @@
                 <div class="listBox">
                    <div class="listBox-left">
                      <Menu active-name="1" width="133px" mode="vertical">
-                          <MenuItem name="1"> 粉丝总量排行</MenuItem>
+                          <MenuItem name="1"> KOL综合排行</MenuItem>
                           <MenuItem name="2"> 粉丝增长排行</MenuItem>
                           <MenuItem name="3"> 粉丝互动排行</MenuItem>
                           <MenuItem name="4"> 销售转化排行</MenuItem>
@@ -1460,7 +1460,7 @@
                 <div class="listBox">
                    <div class="listBox-left">
                      <Menu active-name="1" width="133px" mode="vertical">
-                          <MenuItem name="1"> 粉丝总量排行</MenuItem>
+                          <MenuItem name="1"> KOL综合排行</MenuItem>
                           <MenuItem name="2"> 粉丝增长排行</MenuItem>
                           <MenuItem name="3"> 粉丝互动排行</MenuItem>
                           <MenuItem name="4"> 销售转化排行</MenuItem>
@@ -1517,7 +1517,7 @@
                 <div class="listBox">
                    <div class="listBox-left">
                      <Menu active-name="1" width="133px" mode="vertical">
-                          <MenuItem name="1"> 粉丝总量排行</MenuItem>
+                          <MenuItem name="1"> KOL综合排行</MenuItem>
                           <MenuItem name="2"> 粉丝增长排行</MenuItem>
                           <MenuItem name="3"> 粉丝互动排行</MenuItem>
                           <MenuItem name="4"> 销售转化排行</MenuItem>
@@ -3530,7 +3530,7 @@ export default {
                     }
                     .m-p-r-echarts{
                         width: 100%;
-                        height: 200px;
+                        height: 240px;
                         margin-top: -50px;
                     }
                 }

@@ -26,7 +26,7 @@ export default {
 	},
 	data () {
 		return {
-			
+
 		}
 	},
     mounted() {
@@ -50,7 +50,14 @@ export default {
 				},
 				legend: {
 					data:this.myData.name,
-					bottom:0
+					bottom:0,
+                    paddin: 10/100*window.rem,
+                    itemWidth: 0.1*window.rem,
+                    itemGap: 0.05*window.rem,
+                    // backgroundColor: 'red',
+                    textStyle: {
+                      fontSize: window.rem ? 0.08 * window.rem  : 12
+                    }
 				},
 
 				series: [

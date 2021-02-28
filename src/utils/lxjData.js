@@ -1332,13 +1332,13 @@ const lxjEData = {
         ]
     },
     box111Data:{
-        name: ['潜在用户','新增用户','留存用户','活跃用户','忠实用户','流失'],
+        name: ['潜在用户','新增用户','留存用户','活跃用户','忠实用户','铁粉'],
         value:  [
             {value: 60, name: '留存用户'},
             {value: 40, name: '活跃用户'},
             {value: 20, name: '忠实用户'},
             {value: 80, name: '新增用户'},
-            {value: 10, name: '流失'},
+            {value: 10, name: '铁粉'},
             {value: 100, name: '潜在用户'}
         ]
     },
