@@ -5,7 +5,7 @@
                 {{title}}
                 <Poptip popper-class="saas-poptip" placement="right-start">
                     <!-- <i class="iconfont2 iconguanyu tip-icon"></i> -->
-                    <img src="../../../assets/img/user/tip.gif" alt="">
+                    <img class="gif" src="../../../assets/img/user/tip.gif" alt="">
                     <div slot="content">
                         <p><span>品牌舆情</span></p>
                         <p>品牌舆情分析是如何产生的</p>
@@ -102,9 +102,10 @@ export default {
             color: #242F57;
             line-height: 26px;
                               ::v-deep .ivu-poptip{height:26px}
-      img{
+      .gif{
         width: 26px;
         height: 26px;
+        cursor: pointer;
       }
         }
         .a-h-arrow{

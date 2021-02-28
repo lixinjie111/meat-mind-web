@@ -7,7 +7,7 @@
             <span>触达用户媒介</span>
             <Poptip popper-class="saas-poptip" placement="right-start">
               <!-- <i class="iconfont2 iconguanyu tip-icon"></i> -->
-              <img src="../../assets/img/user/tip.gif" alt="">
+              <img class="gif" src="../../assets/img/user/tip.gif" alt="">
               <div slot="content">
                 <p><span>触达能力= 触达率 * 平均接触频率：</span></p>
                 <p><span>效果评估原则：</span>目的性原则；方向性原则；针对性原则；可测性原则；科学性原则；引导性原则</p>
@@ -340,9 +340,10 @@ export default {
       font-weight: 500;
       color: #242f57;
       ::v-deep .ivu-poptip{height:24px}
-      img{
+      .gif{
         width: 24px;
         height: 24px;
+        cursor:pointer
       }
     }
     .cdyhmj_title_desc {

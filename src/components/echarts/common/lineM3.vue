@@ -124,7 +124,20 @@ export default {
 				},
 			},
 			legend: {
+				type: 'scroll',
+				pageFormatter:" ",
+				pageButtonItemGap:1,
+				pageButtonGap:1,
+				pageIconSize:10,
+				pageTextStyle:{
+					width:0,
+					fontSize:2
+				},
 				bottom:0,
+				itemGap:5,
+				itemWidth:10,
+				itemHeight:10,
+				icon:"circle",
 				data:this.myData.legName,
 			},
             grid: {
