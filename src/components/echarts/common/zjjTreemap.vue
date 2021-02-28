@@ -47,6 +47,7 @@ export default {
           {
             breadcrumb: { show: false },
             type: "treemap",
+            nodeClick:false,
             roam:false,
             data: this.myData,
           },
