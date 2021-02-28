@@ -2,17 +2,17 @@ const linData = {
     colorList: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'],
     box1Data:{
         name:['02-01', '02-06', '02-11', '02-16', '02-21','02-26'],
-        legName:['微信', '微博', '百度', '今日头条', '地推',],
+        legName:['微博', '微信', '百度', '今日头条', '地推',],
         value:[
             {
-                name: '微信',
+                name: '微博',
                 type: 'bar',
                 stack: '总量',
                 barWidth: '10',
                 data: [320, 302, 301, 334, 330, 390]
             },
             {
-                name: '微博',
+                name: '微信',
                 type: 'bar',
                 stack: '总量',
                 barWidth: '10',
@@ -48,17 +48,17 @@ const linData = {
     },
     box2Data:{
         name:['12月上半月', '12月下半月', '1月上半月', '1月下半月', '2月上半月','2月下半月'],
-        legName:['微信', '微博', '百度', '今日头条', '地推',],
+        legName:['微博', '微信', '百度', '今日头条', '地推',],
         value:[
             {
-                name: '微信',
+                name: '微博',
                 type: 'bar',
                 stack: '总量',
                 barWidth: '10',
                 data: [5200, 5020, 5010, 5340, 5300, 5923]
             },
             {
-                name: '微博',
+                name: '微信',
                 type: 'bar',
                 stack: '总量',
                 barWidth: '10',

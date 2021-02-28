@@ -489,14 +489,14 @@
                   <div class="today-num">11,700</div>
                   <div class="target-name">
                     <i class="legend1"></i>
-                    <span>微信</span>
+                    <span>微博</span>
                   </div>
                 </li>
                 <li>
                   <div class="today-num">38,700</div>
                   <div class="target-name">
                     <i class="legend2"></i>
-                    <span>微博</span>
+                    <span>微信</span>
                   </div>
                 </li>
                 <li>
@@ -531,14 +531,14 @@
                   <div class="today-num">35,100</div>
                   <div class="target-name">
                     <i class="legend1"></i>
-                    <span>微信</span>
+                    <span>微博</span>
                   </div>
                 </li>
                 <li>
                   <div class="today-num">116,100</div>
                   <div class="target-name">
                     <i class="legend2"></i>
-                    <span>微博</span>
+                    <span>微信</span>
                   </div>
                 </li>
                 <li>
