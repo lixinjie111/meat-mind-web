@@ -1117,9 +1117,7 @@ export default {
     methods:{
         search(params){
             this.num++;
-            console.log(params)
             let arr=[...params.age,...params.area,...params.customer,...params.profession,...params.sex,]
-            console.log(arr);
             this.tagList=[arr[0],arr[1]];
             if(this.num%2!=0){
                 this.box240Data=this.$lxjData.box2401Data
@@ -1231,7 +1229,6 @@ export default {
             this.my68Data=obj;
         },
         selectPai2(val){
-            console.log(val)
             let obj={
                 legName:['邓老凉茶', ],
                 name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
@@ -1274,7 +1271,6 @@ export default {
                 obj.value.push(this.box682Data.value[item])
             })
             this.my68Data=obj;
-            console.log(obj)
         },
         selectDate(val){
             if(val==0){
