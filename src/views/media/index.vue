@@ -1829,7 +1829,7 @@ export default {
               ],
               upIcon:require("../../assets/img/yhhx/upIcon.png"),
               downIcon:require("../../assets/img/yhhx/down_arro_Icon.png"),
-              tabListArr:['策略1: 快速拉新获客策略','策略2: 低成本高转化策略','策略3: 持续转化策略'],
+              tabListArr:['推荐策略: 快速拉新获客策略','备选策略1: 低成本高转化策略','备选策略2: 持续转化策略'],
               ifShowTabCon:0,
               leflogoIcon:require("../../assets/img/yhhx/dLefIcon.png"),
               riglogoIcon:require("../../assets/img/yhhx/dRigIcon.png"),
