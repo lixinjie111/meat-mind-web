@@ -1676,13 +1676,15 @@ export default {
                         tooltip:true,
                         ellipsis:true,
                         key: 'huo',
-                        width: 90/144*window.rem,
+                        width: 100/144*window.rem,
                     },
                     {
                         title: '品牌曝光数',
                          tooltip:true,
                         ellipsis:true,
-                        key: 'bao'
+                        key: 'bao',
+                        width: 95/144*window.rem
+
                     },
                     {
                         title: '真粉量/粉丝数',
@@ -1694,19 +1696,22 @@ export default {
                         title: '品牌匹配度',
                          tooltip:true,
                         ellipsis:true,
-                        key: 'zan'
+                        key: 'zan',
+                        width: 95/144*window.rem
                     },
                     {
                         title: '用户匹配度',
                          tooltip:true,
                         ellipsis:true,
-                        key: 'zuopin'
+                        key: 'zuopin',
+                        width: 95/144*window.rem
                     },
                     {
                         title: '影响力指数',
                         tooltip:true,
                         ellipsis:true,
                         key: 'yxiang',
+                        width: 95/144*window.rem
                     },
                     // {
                     //     title: '操作',
@@ -3920,12 +3925,21 @@ export default {
 
         ::v-deep .ivu-table {
            tr {
-             th {
                .ivu-table-cell {
                  font-size: 14px;
-                 padding-right: 5px;
+                 padding-left: 0;
+                 padding-right: 0;
                }
-             }
+
+               td,th {
+                   &:first-child {
+                       .ivu-table-cell {
+                           font-size: 14px;
+                           padding-left: 10px;
+                           padding-right: 0;
+                       }
+                   }
+               }
            }
         }
       }
