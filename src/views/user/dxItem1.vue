@@ -45,16 +45,16 @@
             <div :class="['conditions_container', { 'conditions_container_row': onlyMap }]">
                 <div class="conditions_lef">
                     <div class="condition_label">条件筛选</div>
-                    <div class="condition_item"><span style="margin-right:10px;">{{condiObj.label1}}</span>
+                    <div class="condition_item"><span>{{condiObj.label1}}</span>
                         <!--<i class="iconicon_close iconfont2" style="font-size: 12px;"></i>-->
                     </div>
-                    <div class="condition_item"><span style="margin-right:10px;">{{condiObj.label2}}</span>
+                    <div class="condition_item"><span>{{condiObj.label2}}</span>
                         <!--<i class="iconicon_close iconfont2" style="font-size: 12px;"></i>-->
                     </div>
-                    <div class="condition_item"><span style="margin-right:10px;">{{condiObj.label3}}</span>
+                    <div class="condition_item"><span>{{condiObj.label3}}</span>
                         <!--<i class="iconicon_close iconfont2" style="font-size: 12px;"></i>-->
                     </div>
-                    <div class="condition_item"><span style="margin-right:10px;">{{condiObj.label4}}</span>
+                    <div class="condition_item"><span>{{condiObj.label4}}</span>
                         <!--<i class="iconicon_close iconfont2" style="font-size: 12px;"></i>-->
                     </div>
                 </div>
@@ -300,7 +300,7 @@
       icon: require("../../assets/img/yhhx/qq.jpg")
     },
     pyq: {
-      icon: require("../../assets/img/yhhx/pyq.png")
+      icon: require("../../assets/img/yhhx/pyq.jpeg")
     },
     mt: {
       icon: require("../../assets/img/yhhx/mt.jpeg")

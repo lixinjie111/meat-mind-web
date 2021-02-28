@@ -51,26 +51,8 @@ const lxjEData = {
         value:[14, 20, 40, 36,86, ],
     },
     box240Data:{
-        name:['福东海','半山农','维他', '邓老凉茶','白云山', '加多宝', '王老吉',  ],
-        value:[249,300,353,
-            {
-                value:400,
-                itemStyle: {
-                    color: '#FC809F'
-                },
-    
-            },493,557, 699,  ],
-    },
-    box2401Data:{
-        name:['福东海','半山农','维他', '白云山', '加多宝', '邓老凉茶','王老吉', ],
-        value:[149,200,453,
-            493,557, {
-                value:600,
-                itemStyle: {
-                    color: '#FC809F'
-                },
-    
-            },799,  ],
+        name:['王老吉', '加多宝', '白云山', '邓老凉茶', '维他', '半山农', '福东海'],
+        value:[699, 557, 493, 401,353,300,249 ],
     },
     box241Data:{
         name:['王老吉', '加多宝', '白云山', '邓老凉茶', '维他', '半山农', '福东海'],
@@ -86,23 +68,23 @@ const lxjEData = {
     },
     box27Data:{
         name:['短视频', '社交网络', '大众传媒', '体验事件', '促销'],
-        value:[7921,6436,5445,5279,4667].sort()
+        value:[7921,6436,5445,5279,4667]
     },
     box270Data:{
         name:['短视频', '社交网络', '大众传媒', '体验事件', '促销'],
-        value:[6921,5436,5045,5279,3667].sort()
+        value:[6921,5436,5045,5279,3667]
     },
     box271Data:{
         name:['短视频', '社交网络', '大众传媒', '体验事件', '促销'],
-        value:[7821,6036,5145,5079,1167].sort()
+        value:[7821,6036,5145,5079,1167]
     },
     box272Data:{
         name:['短视频', '社交网络', '大众传媒', '体验事件', '促销'],
-        value:[9921,7436,5445,4279,1667].sort()
+        value:[9921,7436,5445,4279,1667]
     },
     box28Data:{
-        name:['其他', '社交网络', '大众传媒', '体验事件', '促销','电视广告','在线社交媒体','公共关系和宣传','网站','短视频',],
-        value:[7921,6436,5445,5279,4667,4567,4467,4367,4267,4167,].sort()
+        name:['短视频', '社交网络', '大众传媒', '体验事件', '促销','电视广告','在线社交媒体','公共关系和宣传','网站','其他',],
+        value:[7921,6436,5445,5279,4667,4567,4467,4367,4267,4167,]
     },
     box29Data:{
         name:['快手','小红书','新浪微博','抖音',],
@@ -282,7 +264,7 @@ const lxjEData = {
         ]
     },
     box40Data:{
-        name:['1月', '2月',],
+        name:['10月', '11月',],
         legName:['北京', '上海', '南京', '天津', '广州','杭州'],
         value:[
             {
@@ -335,7 +317,7 @@ const lxjEData = {
         ]
     },
     box41Data:{
-        name:['1月', '2月',],
+        name:['10月', '11月',],
         legName:['男', '女', ],
         value:[
             {
@@ -360,7 +342,7 @@ const lxjEData = {
         ]
     },
     box42Data:{
-        name:['1月', '2月',],
+        name:['10月', '11月',],
         legName:['15-25', '26-29', '30-35', '36-39'],
         value:[
             {
@@ -399,7 +381,7 @@ const lxjEData = {
         ]
     },
     box43Data:{
-        name:['1月', '2月',],
+        name:['10月', '11月',],
         legName:['中层管理者', '公司白领', '自由职业者','高级管理', '全职太太'],
         value:[
             {
@@ -445,7 +427,7 @@ const lxjEData = {
         ]
     },
     box44Data:{
-        name:['1月', '2月',],
+        name:['10月', '11月',],
         legName:['11001-13000', '10001-11001', '13000-15000','7000-1000', '15000以上'],
         value:[
             {
@@ -491,7 +473,7 @@ const lxjEData = {
         ]
     },
     box45Data:{
-        name:['1月', '2月',],
+        name:['10月', '11月',],
         legName:['研究生及以上', '本科', '大专','高中', '初中及以下'],
         value:[
             {
@@ -536,264 +518,9 @@ const lxjEData = {
             },
         ]
     },
-    box401Data:{
-        name:['上季度', '本季度',],
-        legName:['北京', '上海', '南京', '天津', '广州','杭州'],
-        value:[
-            {
-                name: '北京',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '10',
-                data: [920, 302, ]
-            },
-            {
-                name: '上海',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '10',
-                data: [120, 132, ]
-            },
-            {
-                name: '南京',
-                type: 'bar',
-                barWidth: '10',
-                stack: '总量',
-                data: [520, 182,  ]
-            },
-            {
-                name: '天津',
-                type: 'bar',
-                barWidth: '10',
-                stack: '总量',
-                data: [150, 212,  ]
-            },
-            {
-                name: '广州',
-                type: 'bar',
-                barWidth: '10',
-                stack: '总量',
-                data: [820, 832,]
-            },
-            {
-                name: '杭州',
-                type: 'bar',
-                barWidth: '10',
-                stack: '总量',
-                itemStyle: {
-                    normal: {
-                        barBorderRadius:[30,30,0,0]
-                    },
-                },
-                data: [ 934, 1290, ]
-            },
-        ]
-    },
-    box411Data:{
-        name:['上季度', '本季度',],
-        legName:['男', '女', ],
-        value:[
-            {
-                name: '男',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '10',
-                data: [390, 302, ]
-            },
-            {
-                name: '女',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '10',
-                itemStyle: {
-                    normal: {
-                        barBorderRadius:[30,30,0,0]
-                    },
-                },
-                data: [120, 132, ]
-            },
-        ]
-    },
-    box421Data:{
-        name:['上季度', '本季度',],
-        legName:['15-25', '26-29', '30-35', '36-39'],
-        value:[
-            {
-                name: '15-25',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '10',
-                data: [320, 302, ]
-            },
-            {
-                name: '26-29',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '10',
-                data: [120, 132, ]
-            },
-            {
-                name: '30-35',
-                type: 'bar',
-                barWidth: '10',
-                stack: '总量',
-                data: [290, 182,  ]
-            },
-            {
-                name: '36-39',
-                type: 'bar',
-                barWidth: '10',
-                stack: '总量',
-                itemStyle: {
-                    normal: {
-                        barBorderRadius:[30,30,0,0]
-                    },
-                },
-                data: [150, 212,  ]
-            },
-        ]
-    },
-    box431Data:{
-        name:['上季度', '本季度',],
-        legName:['中层管理者', '公司白领', '自由职业者','高级管理', '全职太太'],
-        value:[
-            {
-                name: '中层管理者',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '10',
-                data: [720, 302, ]
-            },
-            {
-                name: '公司白领',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '10',
-                data: [320, 132, ]
-            },
-            {
-                name: '自由职业者',
-                type: 'bar',
-                barWidth: '10',
-                stack: '总量',
-                data: [820, 182,  ]
-            },
-            {
-                name: '高级管理',
-                type: 'bar',
-                barWidth: '10',
-                stack: '总量',
-                data: [ 934, 1290, ]
-            },
-            {
-                name: '全职太太',
-                type: 'bar',
-                barWidth: '10',
-                stack: '总量',
-                itemStyle: {
-                    normal: {
-                        barBorderRadius:[30,30,0,0]
-                    },
-                },
-                data: [150, 212,  ]
-            },
-        ]
-    },
-    box441Data:{
-        name:['上季度', '本季度',],
-        legName:['11001-13000', '10001-11001', '13000-15000','7000-1000', '15000以上'],
-        value:[
-            {
-                name: '11001-13000',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '10',
-                data: [920, 302, ]
-            },
-            {
-                name: '10001-11001',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '10',
-                data: [720, 132, ]
-            },
-            {
-                name: '13000-15000',
-                type: 'bar',
-                barWidth: '10',
-                stack: '总量',
-                data: [220, 182,  ]
-            },
-            {
-                name: '7000-1000',
-                type: 'bar',
-                barWidth: '10',
-                stack: '总量',
-                data: [ 934, 1290, ]
-            },
-            {
-                name: '15000以上',
-                type: 'bar',
-                barWidth: '10',
-                stack: '总量',
-                itemStyle: {
-                    normal: {
-                        barBorderRadius:[30,30,0,0]
-                    },
-                },
-                data: [1500, 2120,  ]
-            },
-        ]
-    },
-    box451Data:{
-        name:['上季度', '本季度',],
-        legName:['研究生及以上', '本科', '大专','高中', '初中及以下'],
-        value:[
-            {
-                name: '研究生及以上',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '10',
-                data: [420, 302, ]
-            },
-            {
-                name: '本科',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '10',
-                data: [620, 132, ]
-            },
-            {
-                name: '大专',
-                type: 'bar',
-                barWidth: '10',
-                stack: '总量',
-                data: [220, 182,  ]
-            },
-            {
-                name: '高中',
-                type: 'bar',
-                barWidth: '10',
-                stack: '总量',
-                data: [ 994, 1290, ]
-            },
-            {
-                name: '初中及以下',
-                type: 'bar',
-                barWidth: '10',
-                stack: '总量',
-                itemStyle: {
-                    normal: {
-                        barBorderRadius:[30,30,0,0]
-                    },
-                },
-                data: [1400, 1720,  ]
-            },
-        ]
-    },
     box46Data:{
         name:['10-26', '11-2', '11-9', '11-16', '11-23',],
-        legName:['微信', '微博', '百度', '今日头条', '地推',],
+        legName:['微信', '微博', '百度', '今日头条', '地摊',],
         value:[
             {
                 name: '微信',
@@ -824,7 +551,7 @@ const lxjEData = {
                 data: [220, 182, 191, 234, 290, ]
             },
             {
-                name: '地推',
+                name: '地摊',
                 type: 'bar',
                 barWidth: '10',
                 stack: '总量',
@@ -935,7 +662,7 @@ const lxjEData = {
         ]
     },
     box67Data:{
-        legName:['线下门店', '朋友圈广告', '360搜索', '百度','分享裂变','抖音',],
+        legName:['线下门店', '朋友广告圈', '360搜索', '百度','分享裂变','抖音',],
         name: ['10-01', '10-02', '10-03', '10-04', '10-05', '10-06', '10-07', '10-08', '10-09', '10-10', '10-11', '10-12','10-13','10-14','10-15','10-16','10-17','10-18','10-19','10-20','10-21','10-22','10-23','10-24','10-25','10-26','10-27','10-28','10-29','10-30','10-31'],
         value: [
             {
@@ -944,7 +671,7 @@ const lxjEData = {
                 data: [100, 182, 181, 234, 290, 130, 310, 301, 134, 90, 130, 210,220, 132, 101, 534, 90, 230, 210, 101,520, 132, 101, 534, 70, 230, 610, 101,50, 230, 434]
             },
             {
-                name: '朋友圈广告',
+                name: '朋友广告圈',
                 type: 'line',
                 data: [320, 132, 101, 234, 90, 230, 210, 101, 134, 90, 230, 410,320, 132, 101, 534, 90, 230, 210, 101,320, 132, 101, 534, 90, 230, 210, 101,90, 230, 534]
             },
@@ -1112,90 +839,12 @@ const lxjEData = {
             {
                 name: '邓老凉茶',
                 type: 'line',
-                data: [272, 290, 393, 391, 470, 451, 440, 402, 670, 531]
+                data: [572, 530, 393, 391, 470, 451, 440, 402, 670, 531]
             },
             {
                 name: '加多宝',
                 type: 'line',
                 data: [631, 607, 605, 581, 671, 645, 351, 390, 490, 450]
-            },
-        ]
-    },
-    box680Data:{
-        legName:['邓老凉茶', '加多宝','王老吉'],
-        name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
-        value: [
-            {
-                name: '邓老凉茶',
-                type: 'line',
-                data: [272, 290, 393, 391, 470, 451, 440, 402, 670, 531]
-            },
-            {
-                name: '加多宝',
-                type: 'line',
-                data: [631, 607, 605, 581, 671, 645, 351, 390, 490, 450]
-            },
-            {
-                name: '王老吉',
-                type: 'line',
-                data: [831, 207, 405, 381, 271, 445, 151, 290, 390, 750]
-            },
-        ]
-    },
-    box681Data:{
-        legName:['邓老凉茶', '加多宝','王老吉','和其正',],
-        name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
-        value: [
-            {
-                name: '邓老凉茶',
-                type: 'line',
-                data: [272, 290, 393, 391, 470, 451, 440, 402, 670, 531]
-            },
-            {
-                name: '加多宝',
-                type: 'line',
-                data: [631, 607, 605, 581, 671, 645, 351, 390, 490, 450]
-            },
-            {
-                name: '王老吉',
-                type: 'line',
-                data: [831, 207, 405, 381, 271, 445, 151, 290, 390, 750]
-            },
-            {
-                name: '和其正',
-                type: 'line',
-                data: [131, 207, 305, 481, 571, 645, 751, 890, 910, 980]
-            },
-        ]
-    },
-    box682Data:{
-        legName:['邓老凉茶', '加多宝','王老吉','和其正','白云山',],
-        name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
-        value: [
-            {
-                name: '邓老凉茶',
-                type: 'line',
-                data: [272, 290, 393, 391, 470, 451, 440, 402, 670, 531]
-            },
-            {
-                name: '加多宝',
-                type: 'line',
-                data: [631, 607, 605, 581, 681, 645, 351, 390, 490, 450]
-            },
-            {
-                name: '王老吉',
-                type: 'line',
-                data: [831, 207, 405, 381, 271, 445, 151, 290, 390, 750]
-            },
-            {
-                name: '和其正',
-                type: 'line',
-                data: [131, 207, 305, 481, 571, 645, 751, 890, 910, 980]
-            },
-            {
-                name: '白云山',
-                type: 'line',
-                data: [231, 307, 105, 481, 371, 545, 351, 790, 890, 810]
             },
         ]
     },
@@ -1272,7 +921,7 @@ const lxjEData = {
                 yAxisIndex: 1,
                 data: [0.15, 0.08, 0.19,0.31, 0.58, 0.27, 0.7, 0.86, 0.64, 0.34, 0.23, 0.08]
             },
-            
+
         ]
     },
     box101Data:{
@@ -1300,7 +949,7 @@ const lxjEData = {
                 yAxisIndex: 1,
                 data: [4.1, 4.5, 5.6, 5.4, 5.9, 8,]
             },
-            
+
         ]
     },
     box10Data:{
@@ -1328,17 +977,17 @@ const lxjEData = {
                 yAxisIndex: 1,
                 data: [9, 8, 4, 7, 8, 6,]
             },
-            
+
         ]
     },
     box111Data:{
-        name: ['潜在用户','新增用户','留存用户','活跃用户','忠实用户','流失'],
+        name: ['潜在用户','新增用户','留存用户','活跃用户','忠实用户','铁粉'],
         value:  [
             {value: 60, name: '留存用户'},
             {value: 40, name: '活跃用户'},
             {value: 20, name: '忠实用户'},
             {value: 80, name: '新增用户'},
-            {value: 10, name: '流失'},
+            {value: 10, name: '铁粉'},
             {value: 100, name: '潜在用户'}
         ]
     },
@@ -1348,11 +997,11 @@ const lxjEData = {
             {
                 value: 35548,
                 label: '20.13'
-            }, 
+            },
             {
                 value: 35484,
                 label: '20.09'
-            }, 
+            },
             {
                 value: 35251,
                 label: '19.96'
@@ -1402,6 +1051,7 @@ const lxjEData = {
             {
                 name: '大众传媒',
                 type: 'bar',
+                barWidth: 40,
                 stack: '总量',
                 label: {
                     show: true,
@@ -1459,7 +1109,7 @@ const lxjEData = {
                 name: '15-25',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '15',
+                barWidth: '10',
                 // itemStyle: {
                 // 	normal: {
                 // 		barBorderRadius:[0,30,30,0]
@@ -1468,11 +1118,9 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
-                data: [3.5,]
+                data: [30,]
             },
             {
                 name: '26-40',
@@ -1481,42 +1129,89 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
-                data: [3.5]
+                data: [19]
             },
             {
                 name: '36-45',
                 type: 'bar',
+                barWidth: 40,
                 stack: '总量',
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
-                data: [1.6]
+                data: [15]
             },
             {
                 name: '46以上',
                 type: 'bar',
                 stack: '总量',
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
-                data: [1.4]
+                data: [14]
+            },
+        ]
+    },
+    box11410Data:{
+        legName:['15-25', '26-35', '36-45', '46以上',],
+        name:  ['年龄'],
+        value:[
+            {
+                name: '15-25',
+                type: 'bar',
+                stack: '总量',
+                barWidth: '10',
+                // itemStyle: {
+                // 	normal: {
+                // 		barBorderRadius:[0,30,30,0]
+                // 	},
+                // },
+                label: {
+                    show: true,
+                    position: 'inside',
+                    formatter: '{c}%',
+                },
+                data: [20,]
+            },
+            {
+                name: '26-40',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'inside',
+                    formatter: '{c}%',
+                },
+                data: [49]
+            },
+            {
+                name: '36-45',
+                type: 'bar',
+                barWidth: 40,
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'inside',
+                    formatter: '{c}%',
+                },
+                data: [25]
+            },
+            {
+                name: '46以上',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'inside',
+                    formatter: '{c}%',
+                },
+                data: [54]
             },
         ]
     },
@@ -1528,15 +1223,18 @@ const lxjEData = {
                 name: '15-25',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '15',
+                barWidth: '10',
+                // itemStyle: {
+                // 	normal: {
+                // 		barBorderRadius:[0,30,30,0]
+                // 	},
+                // },
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
-                data: [3]
+                data: [30,]
             },
             {
                 name: '26-40',
@@ -1545,156 +1243,32 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
-                data: [2]
+                data: [29]
             },
             {
                 name: '36-45',
                 type: 'bar',
-                barWidth: 20,
+                barWidth: 40,
                 stack: '总量',
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
-                data: [4]
+                data: [75]
             },
             {
                 name: '46以上',
                 type: 'bar',
                 stack: '总量',
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
-                data: [1]
-            },
-        ]
-    },
-    box11421Data:{
-        legName:['男', '女', ],
-        name:  ['性别'],
-        value:[
-            {
-                name: '男',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '15',
-                // itemStyle: {
-                // 	normal: {
-                // 		barBorderRadius:[0,30,30,0]
-                // 	},
-                // },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [7]
-            },
-            {
-                name: '女',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
-                data: [3]
-            },
-           
-        ]
-    },
-    box11431Data:{
-        legName:['5000以下', '5001-10000', '10001-20000', '20000以上',],
-        name:  ['收入'],
-        value:[
-            {
-                name: '5000以下',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '15',
-                // itemStyle: {
-                // 	normal: {
-                // 		barBorderRadius:[0,30,30,0]
-                // 	},
-                // },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [2.5]
-            },
-            {
-                name: '5001-10000',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [1.5]
-            },
-            {
-                name: '10001-20000',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [4]
-            },
-            {
-                name: '20000以上',
-                type: 'bar',
-                stack: '总量',
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [2]
+                data: [14]
             },
         ]
     },
@@ -1706,7 +1280,7 @@ const lxjEData = {
                 name: '男',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '15',
+                barWidth: '10',
                 // itemStyle: {
                 // 	normal: {
                 // 		barBorderRadius:[0,30,30,0]
@@ -1715,11 +1289,9 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
-                data: [3]
+                data: [30]
             },
             {
                 name: '女',
@@ -1728,87 +1300,16 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                     formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
                 itemStyle: {
                 	normal: {
                 		barBorderRadius:[0,30,30,0]
                 	},
                 },
-                data: [7,]
+                data: [23,]
             },
-           
-        ]
-    },
-    box11410Data:{
-        legName:['15-25', '26-35', '36-45', '46以上',],
-        name:  ['年龄'],
-        value:[
-            {
-                name: '15-25',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '15',
-                // itemStyle: {
-                // 	normal: {
-                // 		barBorderRadius:[0,30,30,0]
-                // 	},
-                // },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [2,]
-            },
-            {
-                name: '26-40',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [2.5]
-            },
-            {
-                name: '36-45',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [1.5]
-            },
-            {
-                name: '46以上',
-                type: 'bar',
-                stack: '总量',
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [4]
-            },
+
         ]
     },
     box11420Data:{
@@ -1819,7 +1320,7 @@ const lxjEData = {
                 name: '男',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '15',
+                barWidth: '10',
                 // itemStyle: {
                 // 	normal: {
                 // 		barBorderRadius:[0,30,30,0]
@@ -1828,11 +1329,9 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
-                data: [6]
+                data: [60]
             },
             {
                 name: '女',
@@ -1841,159 +1340,19 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
                 itemStyle: {
                 	normal: {
                 		barBorderRadius:[0,30,30,0]
                 	},
                 },
-                data: [4,]
+                data: [45,]
             },
-           
+
         ]
     },
-    box11430Data:{
-        legName:['5000以下', '5001-10000', '10001-20000', '20000以上',],
-        name:  ['收入'],
-        value:[
-            {
-                name: '5000以下',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '15',
-                // itemStyle: {
-                // 	normal: {
-                // 		barBorderRadius:[0,30,30,0]
-                // 	},
-                // },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [3]
-            },
-            {
-                name: '5001-10000',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [1]
-            },
-            {
-                name: '10001-20000',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [3]
-            },
-            {
-                name: '20000以上',
-                type: 'bar',
-                stack: '总量',
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [3]
-            },
-        ]
-    },
-    box11412Data:{
-        legName:['15-25', '26-35', '36-45', '46以上',],
-        name:  ['年龄'],
-        value:[
-            {
-                name: '15-25',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '15',
-                // itemStyle: {
-                // 	normal: {
-                // 		barBorderRadius:[0,30,30,0]
-                // 	},
-                // },
-                label: {
-                    show: true,
-                    position: 'inside',
-                     formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [1.5]
-            },
-            {
-                name: '26-40',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                     formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [1.5]
-            },
-            {
-                name: '36-45',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                     formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [2]
-            },
-            {
-                name: '46以上',
-                type: 'bar',
-                stack: '总量',
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
-                label: {
-                    show: true,
-                    position: 'inside',
-                     formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [5]
-            },
-        ]
-    },
-    box11422Data:{
+    box11421Data:{
         legName:['男', '女', ],
         name:  ['性别'],
         value:[
@@ -2001,7 +1360,7 @@ const lxjEData = {
                 name: '男',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '15',
+                barWidth: '10',
                 // itemStyle: {
                 // 	normal: {
                 // 		barBorderRadius:[0,30,30,0]
@@ -2010,11 +1369,9 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
-                data: [3]
+                data: [70]
             },
             {
                 name: '女',
@@ -2023,628 +1380,16 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
                 itemStyle: {
                 	normal: {
                 		barBorderRadius:[0,30,30,0]
                 	},
                 },
-                data: [7,]
+                data: [35,]
             },
-           
-        ]
-    },
-    box11432Data:{
-        legName:['5000以下', '5001-10000', '10001-20000', '20000以上',],
-        name:  ['收入'],
-        value:[
-            {
-                name: '5000以下',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '15',
-                // itemStyle: {
-                // 	normal: {
-                // 		barBorderRadius:[0,30,30,0]
-                // 	},
-                // },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [3.5]
-            },
-            {
-                name: '5001-10000',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [1.5]
-            },
-            {
-                name: '10001-20000',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [2]
-            },
-            {
-                name: '20000以上',
-                type: 'bar',
-                stack: '总量',
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [3]
-            },
-        ]
-    },
-    box11413Data:{
-        legName:['15-25', '26-35', '36-45', '46以上',],
-        name:  ['年龄'],
-        value:[
-            {
-                name: '15-25',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '15',
-                // itemStyle: {
-                // 	normal: {
-                // 		barBorderRadius:[0,30,30,0]
-                // 	},
-                // },
-                label: {
-                    show: true,
-                    position: 'inside',
-                     formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [2]
-            },
-            {
-                name: '26-40',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                     formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [2]
-            },
-            {
-                name: '36-45',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                     formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [2]
-            },
-            {
-                name: '46以上',
-                type: 'bar',
-                stack: '总量',
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
-                label: {
-                    show: true,
-                    position: 'inside',
-                     formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [4]
-            },
-        ]
-    },
-    box11423Data:{
-        legName:['男', '女', ],
-        name:  ['性别'],
-        value:[
-            {
-                name: '男',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '15',
-                // itemStyle: {
-                // 	normal: {
-                // 		barBorderRadius:[0,30,30,0]
-                // 	},
-                // },
-                label: {
-                    show: true,
-                    position: 'inside',
-                     formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [2]
-            },
-            {
-                name: '女',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                     formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
-                data: [8,]
-            },
-           
-        ]
-    },
-    box11433Data:{
-        legName:['5000以下', '5001-10000', '10001-20000', '20000以上',],
-        name:  ['收入'],
-        value:[
-            {
-                name: '5000以下',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '15',
-                // itemStyle: {
-                // 	normal: {
-                // 		barBorderRadius:[0,30,30,0]
-                // 	},
-                // },
-                label: {
-                    show: true,
-                    position: 'inside',
-                     formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [1]
-            },
-            {
-                name: '5001-10000',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                     formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [2]
-            },
-            {
-                name: '10001-20000',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                     formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [4]
-            },
-            {
-                name: '20000以上',
-                type: 'bar',
-                stack: '总量',
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
-                label: {
-                    show: true,
-                    position: 'inside',
-                     formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [3]
-            },
-        ]
-    },
-    box11414Data:{
-        legName:['15-25', '26-35', '36-45', '46以上',],
-        name:  ['年龄'],
-        value:[
-            {
-                name: '15-25',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '15',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [2]
-            },
-            {
-                name: '26-40',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [1]
-            },
-            {
-                name: '36-45',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [2]
-            },
-            {
-                name: '46以上',
-                type: 'bar',
-                stack: '总量',
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [5]
-            },
-        ]
-    },
-    box11424Data:{
-        legName:['男', '女', ],
-        name:  ['性别'],
-        value:[
-            {
-                name: '男',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '15',
-                // itemStyle: {
-                // 	normal: {
-                // 		barBorderRadius:[0,30,30,0]
-                // 	},
-                // },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [9]
-            },
-            {
-                name: '女',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
-                data: [1]
-            },
-           
-        ]
-    },
-    box11434Data:{
-        legName:['5000以下', '5001-10000', '10001-20000', '20000以上',],
-        name:  ['收入'],
-        value:[
-            {
-                name: '5000以下',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '15',
-                // itemStyle: {
-                // 	normal: {
-                // 		barBorderRadius:[0,30,30,0]
-                // 	},
-                // },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [1]
-            },
-            {
-                name: '5001-10000',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [2]
-            },
-            {
-                name: '10001-20000',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [3]
-            },
-            {
-                name: '20000以上',
-                type: 'bar',
-                stack: '总量',
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [4]
-            },
-        ]
-    },
-    box11415Data:{
-        legName:['15-25', '26-35', '36-45', '46以上',],
-        name:  ['年龄'],
-        value:[
-            {
-                name: '15-25',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '15',
-                // itemStyle: {
-                // 	normal: {
-                // 		barBorderRadius:[0,30,30,0]
-                // 	},
-                // },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [1,]
-            },
-            {
-                name: '26-40',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [3]
-            },
-            {
-                name: '36-45',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [2]
-            },
-            {
-                name: '46以上',
-                type: 'bar',
-                stack: '总量',
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [4]
-            },
-        ]
-    },
-    box11425Data:{
-        legName:['男', '女', ],
-        name:  ['性别'],
-        value:[
-            {
-                name: '男',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '15',
-                // itemStyle: {
-                // 	normal: {
-                // 		barBorderRadius:[0,30,30,0]
-                // 	},
-                // },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [4]
-            },
-            {
-                name: '女',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
-                data: [6]
-            },
-           
-        ]
-    },
-    box11435Data:{
-        legName:['5000以下', '5001-10000', '10001-20000', '20000以上',],
-        name:  ['收入'],
-        value:[
-            {
-                name: '5000以下',
-                type: 'bar',
-                stack: '总量',
-                barWidth: '15',
-                // itemStyle: {
-                // 	normal: {
-                // 		barBorderRadius:[0,30,30,0]
-                // 	},
-                // },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [4]
-            },
-            {
-                name: '5001-10000',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [2]
-            },
-            {
-                name: '10001-20000',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [1]
-            },
-            {
-                name: '20000以上',
-                type: 'bar',
-                stack: '总量',
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
-                label: {
-                    show: true,
-                    position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
-                },
-                data: [3]
-            },
+
         ]
     },
     box1143Data:{
@@ -2655,7 +1400,7 @@ const lxjEData = {
                 name: '5000以下',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '15',
+                barWidth: '10',
                 // itemStyle: {
                 // 	normal: {
                 // 		barBorderRadius:[0,30,30,0]
@@ -2664,11 +1409,9 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
-                data: [2]
+                data: [30]
             },
             {
                 name: '5001-10000',
@@ -2677,46 +1420,148 @@ const lxjEData = {
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
-                data: [1.5]
+                data: [15]
             },
             {
                 name: '10001-20000',
                 type: 'bar',
+                barWidth: 40,
                 stack: '总量',
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
-                data: [1.5]
+                data: [14]
             },
             {
                 name: '20000以上',
                 type: 'bar',
                 stack: '总量',
-                itemStyle: {
-                	normal: {
-                		barBorderRadius:[0,30,30,0]
-                	},
-                },
                 label: {
                     show: true,
                     position: 'inside',
-                    formatter:(val)=>{
-                        return val.value*10+"%"
-                    },
+                    formatter: '{c}%',
                 },
-                data: [5]
+                data: [19]
             },
         ]
     },
-    
-    
+    box11430Data:{
+        legName:['5000以下', '5001-10000', '10001-20000', '20000以上',],
+        name:  ['收入'],
+        value:[
+            {
+                name: '5000以下',
+                type: 'bar',
+                stack: '总量',
+                barWidth: '10',
+                // itemStyle: {
+                // 	normal: {
+                // 		barBorderRadius:[0,30,30,0]
+                // 	},
+                // },
+                label: {
+                    show: true,
+                    position: 'inside',
+                    formatter: '{c}%',
+                },
+                data: [50]
+            },
+            {
+                name: '5001-10000',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'inside',
+                    formatter: '{c}%',
+                },
+                data: [25]
+            },
+            {
+                name: '10001-20000',
+                type: 'bar',
+                barWidth: 40,
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'inside',
+                    formatter: '{c}%',
+                },
+                data: [64]
+            },
+            {
+                name: '20000以上',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'inside',
+                    formatter: '{c}%',
+                },
+                data: [39]
+            },
+        ]
+    },
+    box11431Data:{
+        legName:['5000以下', '5001-10000', '10001-20000', '20000以上',],
+        name:  ['收入'],
+        value:[
+            {
+                name: '5000以下',
+                type: 'bar',
+                stack: '总量',
+                barWidth: '10',
+                // itemStyle: {
+                // 	normal: {
+                // 		barBorderRadius:[0,30,30,0]
+                // 	},
+                // },
+                label: {
+                    show: true,
+                    position: 'inside',
+                    formatter: '{c}%',
+                },
+                data: [80]
+            },
+            {
+                name: '5001-10000',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'inside',
+                    formatter: '{c}%',
+                },
+                data: [15]
+            },
+            {
+                name: '10001-20000',
+                type: 'bar',
+                barWidth: 40,
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'inside',
+                    formatter: '{c}%',
+                },
+                data: [74]
+            },
+            {
+                name: '20000以上',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'inside',
+                    formatter: '{c}%',
+                },
+                data: [59]
+            },
+        ]
+    },
 }
 export default lxjEData;
