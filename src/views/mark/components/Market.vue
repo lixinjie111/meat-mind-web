@@ -4,7 +4,8 @@
             <div class="a-h-title">
                 {{title}}
                 <Poptip popper-class="saas-poptip" placement="right-start">
-                    <i class="iconfont2 iconguanyu tip-icon"></i>
+                    <!-- <i class="iconfont2 iconguanyu tip-icon"></i> -->
+                    <img src="../../../assets/img/user/tip.gif" alt="">
                     <div slot="content">
                         <p><span>品牌舆情</span></p>
                         <p>品牌舆情分析是如何产生的</p>
@@ -92,12 +93,19 @@ export default {
         height: 73px;
         border-top: 1px solid #EAEDF7;
         .a-h-title{
+            display: flex;
+            align-items: center;
             height: 26px;
             font-size: 18px;
             font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;
             color: #242F57;
             line-height: 26px;
+                              ::v-deep .ivu-poptip{height:26px}
+      img{
+        width: 26px;
+        height: 26px;
+      }
         }
         .a-h-arrow{
             width: 16px;

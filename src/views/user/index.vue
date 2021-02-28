@@ -6,9 +6,10 @@
         <div class="top_title_container">
           <div class="left_text">
             <div class="left_title_text">
-              用户动线
+              <span>用户动线</span>
               <Poptip popper-class="saas-poptip" placement="right-start">
-                <i class="iconfont2 iconguanyu tip-icon"></i>
+                <!-- <i class="iconfont2 iconguanyu tip-icon"></i> -->
+                <img src="../../assets/img/user/tip.gif" alt="">
                 <div slot="content">
                   <p><span>出行计算公式：</span>出行总人次/出行总人次*100%</p>
                   <p><span>空间数据化：</span>对空间进行量化，通过数字化语言，将空间进行尺度划分和重新定义，再利用技术手段来评价空间质量。在商业空间中，意味着可以分析其周边环境对消费者的使用感受影响，以及对商业运营的影响</p>
@@ -788,9 +789,10 @@
 
       <div class="xwfx_area_container" id="xwfx_area_container">
         <div class="xwfx_area_til">
-          行为分析
+          <span>行为分析</span>
           <Poptip popper-class="saas-poptip" placement="right-start">
-            <i class="iconfont2 iconguanyu tip-icon"></i>
+            <!-- <i class="iconfont2 iconguanyu tip-icon"></i> -->
+            <img src="../../assets/img/user/tip.gif" alt="">
             <div slot="content">
               <p><span>基于群体智能的客户行为分析算法：</span>算法主要思路是首先将客户的消费模式作为平面上的一个点随机分布于一个平面区域内 ; 然后测量当前个体对象在局部环境的群体相似度 ,并通过概率转换函数得到拾起或放下对象的概率 ,以这个概率行动 ,经过群体大量的相互作用 ,最终得到若干聚类中心 ;最后 ,在平面区域内采用递归算法收集聚类结果 ,获得不同消费特征的客户群体</p>
               <p>
@@ -867,9 +869,10 @@
 
       <div class="xzfx_area_container" id="xzfx_area_container">
         <div class="xzfx_area_title">
-          心智分析
+          <span>心智分析</span>
           <Poptip popper-class="saas-poptip" placement="right-start">
-            <i class="iconfont2 iconguanyu tip-icon"></i>
+            <!-- <i class="iconfont2 iconguanyu tip-icon"></i> -->
+            <img src="../../assets/img/user/tip.gif" alt="">
             <div slot="content">
               <p><span>心理模型</span>在人机交互和交互设计中起着重要的作用。它们与用户感知周围世界的方式有关，并且基于信念，而不是一个事实概念。但是，如果你能理解用户的心理模型，你就可以在设计中模拟这些模型，使它们更加实用和直观。 心理模型是信念的人工制品。它们是用户对任何给定系统或交互所持有的信念。在大多数情况下，信念在一定程度上会与现实生活模式相似。这一点很重要，因为用户会根据他们的心理模型来计划和预测系统内未来的行为。</p>
               <p><span>客户需求智能化处理</span></p>
@@ -2043,11 +2046,21 @@ export default {
       margin-bottom: 24px;
       .left_text {
         .left_title_text {
+          height: 24px;
+          display: flex;
+          align-items: center;
           font-size: 16px;
           font-family: PingFangSC-Medium, PingFang SC;
           font-weight: 500;
           color: #242f57;
-          margin-bottom: 7px;
+          margin-bottom: 4px;
+          ::v-deep .ivu-poptip{
+            height: 24px;
+          }
+          img{
+            width: 24px;
+            height: 24px;
+          }
         }
         .left_desc_text {
           font-size: 14px;
@@ -3198,11 +3211,21 @@ export default {
     flex-direction: column;
     padding-top: 24px;
     .xwfx_area_til {
+      display: flex;
+      align-items: center;
       width: 100%;
+      height: 24px;
       font-size: 16px;
       font-family: PingFangSC-Medium, PingFang SC;
       font-weight: 500;
       color: #242f57;
+      ::v-deep .ivu-poptip{
+        height: 24px;
+      }
+      img{
+        width: 24px;
+        height: 24px;
+      }
     }
     .ditu_area {
       width: 100%;
@@ -3265,10 +3288,20 @@ export default {
     flex-direction: column;
     padding-top: 24px;
     .xzfx_area_title {
+      display: flex;
+      align-items: center;
+      height: 24px;
       font-size: 16px;
       font-family: PingFangSC-Medium, PingFang SC;
       font-weight: 500;
       color: #242f57;
+      ::v-deep .ivu-poptip{
+        height: 24px;
+      }
+      img{
+        width: 24px;
+        height: 24px;
+      }
     }
     .yhsj_echarts,
     .xzsk_echarts {
