@@ -250,11 +250,11 @@
                 <div class="sec_pan_con1_rig">
                   <div class="sec_pan_con1_rig_lef">
                     <div class="sec_pan_con1_rig_lef_top">环比</div>
-                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie4.numTxt2}}</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color: rgb(52, 199, 36);"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie4.numTxt2}}</div>
                   </div>
                   <div class="sec_pan_con1_rig_rig">
                     <div class="sec_pan_con1_rig_lef_top">同比</div>
-                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie4.numTxt3}}</div>
+                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie4.numTxt3}}</div>
                   </div>
                 </div>
               </div>
@@ -321,11 +321,11 @@
                 <div class="sec_pan_con1_rig">
                   <div class="sec_pan_con1_rig_lef">
                     <div class="sec_pan_con1_rig_lef_top">环比</div>
-                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie2.numTxt2}}</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color: rgb(52, 199, 36);"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie2.numTxt2}}</div>
                   </div>
                   <div class="sec_pan_con1_rig_rig">
                     <div class="sec_pan_con1_rig_lef_top">同比</div>
-                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie2.numTxt3}}</div>
+                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie2.numTxt3}}</div>
                   </div>
                 </div>
               </div>
@@ -385,33 +385,33 @@
           <div class="media_cont">
             <div class="media_cont1">
               <div class="media_cont_til">综合曝光度</div>
-              <div class="media_cont_num_container"><span class="spanNum">1500</span>w</div>
-              <div class="media_cont_three_container">环比<img :src="upIcon" alt="" class="upIcon"><span style="margin-right:15px;">9.07%</span>同比<img :src="upIcon" alt="" class="upIcon">9.07%</div>
+              <div class="media_cont_num_container"><span class="spanNum">2500</span>w</div>
+              <div class="media_cont_three_container">环比<img :src="upIcon" alt="" class="upIcon"><span style="margin-right:15px;">4.07%</span>同比<img :src="upIcon" alt="" class="upIcon">7.1%</div>
             </div>
             <div class="media_cont2">
               <div class="media_cont_til">综合互动量/互动率：</div>
-              <div class="media_cont_num_container"><span class="spanNum">150</span>w<span class="spanNum">/10</span>%</div>
-              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">9.07%</span>同比<img :src="upIcon" alt="" class="upIcon">9.07%</div>
+              <div class="media_cont_num_container"><span class="spanNum">548</span>w<span class="spanNum">/10</span>%</div>
+              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">5.6%</span>同比<img :src="upIcon" alt="" class="upIcon">1.11%</div>
             </div>
             <div class="media_cont3">
-              <div class="media_cont_til">综合互动量/互动率：</div>
-              <div class="media_cont_num_container"><span class="spanNum">150</span>w<span class="spanNum">/10</span>%</div>
-              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">9.07%</span>同比<img :src="upIcon" alt="" class="upIcon">9.07%</div>
+              <div class="media_cont_til">销售转化率/转化量：</div>
+              <div class="media_cont_num_container"><span class="spanNum">26</span>%<span class="spanNum">/443w</span></div>
+              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">3.53%</span>同比<img :src="upIcon" alt="" class="upIcon">12.4%</div>
             </div>
             <div class="media_cont4">
-              <div class="media_cont_til">综合互动量/互动率：</div>
-              <div class="media_cont_num_container"><span class="spanNum">150</span>w<span class="spanNum">/10</span>%</div>
-              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">9.07%</span>同比<img :src="upIcon" alt="" class="upIcon">9.07%</div>
+              <div class="media_cont_til">新增留存用户数：</div>
+              <div class="media_cont_num_container"><span class="spanNum">57</span>w<span class="spanNum"></span></div>
+              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">4.27%</span>同比<img :src="upIcon" alt="" class="upIcon">5.2%</div>
             </div>
             <div class="media_cont5">
-              <div class="media_cont_til">综合互动量/互动率：</div>
-              <div class="media_cont_num_container"><span class="spanNum">150</span>w<span class="spanNum">/10</span>%</div>
-              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">9.07%</span>同比<img :src="upIcon" alt="" class="upIcon">9.07%</div>
+              <div class="media_cont_til">媒介正负情感分布比：</div>
+              <div class="media_cont_num_container"><span class="spanNum">50</span>%<span class="spanNum">/27</span>%</div>
+              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">2.12%</span>同比<img :src="upIcon" alt="" class="upIcon">6.67%</div>
             </div>
             <div class="media_cont6">
-              <div class="media_cont_til">综合互动量/互动率：</div>
-              <div class="media_cont_num_container"><span class="spanNum">150</span>w<span class="spanNum">/10</span>%</div>
-              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">9.07%</span>同比<img :src="upIcon" alt="" class="upIcon">9.07%</div>
+              <div class="media_cont_til">真粉用户比/活跃用户比：</div>
+              <div class="media_cont_num_container"><span class="spanNum">33</span>%<span class="spanNum">/11</span>%</div>
+              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">7.17%</span>同比<img :src="upIcon" alt="" class="upIcon">4.44%</div>
             </div>
           </div>
         </div>
