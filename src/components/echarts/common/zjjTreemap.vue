@@ -1,9 +1,8 @@
 <template>
   <div class="echarts-box" :id="id"></div>
 </template>
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 <script>
+import echarts from "../../echarts.min.js";
 export default {
   props: {
     myData: {
@@ -27,7 +26,7 @@ export default {
   methods: {
     initEcharts() {
       let _option = this.defaultOption();
-      let myChart = this.$echarts.init(document.getElementById(this.id));
+      let myChart = echarts.init(document.getElementById(this.id));
       myChart.setOption(_option);
       window.addEventListener("resize", () => {
         myChart.resize();
@@ -37,12 +36,19 @@ export default {
       var option = (option = {
         tooltip: {
           show: true,
+          formatter(params) {
+            console.log(params)
+              var result = "<div style='color:black;'>" + params.treePathInfo[1].name + "</div>";
+              result += `<span style="display:block;margin-right:5px;margin-bottom:2px;border-radius:10px;color:black;'">${params.treePathInfo[2].name} ：${params.treePathInfo[2].value}</span>`;
+              return result;
+          }
         },
         series: [
           {
-            breadcrumb: { show: false},
+            breadcrumb: { show: false },
             type: "treemap",
-            data:this.myData
+            roam:false,
+            data: this.myData,
           },
         ],
       });

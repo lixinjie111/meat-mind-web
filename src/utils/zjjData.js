@@ -214,11 +214,11 @@ const zjjEData = {
                 color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][0]
             },
             children: [{
-                    name: "陈翔六点半\n涨5%",
+                    name: "陈翔六点半",
                     value: 15,
                     itemStyle: {
                         color: 'rgba(77,148,255,1)',
-                        borderRadius: [27, 0, 0, 0]
+                        borderRadius: [17, 0, 0, 0]
                     }
                 },
                 {
@@ -255,7 +255,8 @@ const zjjEData = {
                     name: "薇娅viyaaa",
                     value: 13,
                     itemStyle: {
-                        color: 'rgba(164,157,250,1)'
+                        color: 'rgba(164,157,250,1)',
+                        borderRadius:[0,0,0,17]
                     }
                 },
                 {
@@ -292,7 +293,8 @@ const zjjEData = {
                     name: "辰辰",
                     value: 3,
                     itemStyle: {
-                        color:'rgba(252,128,159,.4)'
+                        color:'rgba(252,128,159,.4)',
+                        borderRadius:[0,0,17,0]
                     },
                 },
             ],
@@ -312,17 +314,18 @@ const zjjEData = {
                     }
                 },
                 {
-                    name: "小红书",
+                    name: "李飞宇",
                     value: 6,
                     itemStyle:{
-                        color:'rgba(255,217,140,.6)'
+                        color:'rgba(255,217,140,.7)',
+                        borderRadius: [0,17, 0, 0]
                     }
                 },
                 {
-                    name: "小红书",
+                    name: "狂少杀",
                     value: 3,
                     itemStyle:{
-                        color:'rgba(255,217,140,.3)'
+                        color:'rgba(255,217,140,.6)'
                     }
                 },
             ],
@@ -335,10 +338,11 @@ const zjjEData = {
                 color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][4]
             },
             children: [{
-                    name: "肥肥猫\n涨3%",
+                    name: "肥肥猫",
                     value: 15,
                     itemStyle: {
-                        color: 'rgba(138,230,199,1)'
+                        color: 'rgba(138,230,199,1)',
+                        borderRadius:[17,0,0,0]
                     },
                 },
                 {
@@ -361,20 +365,21 @@ const zjjEData = {
             name: "微博",
             value: 10,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][5]
+                color: 'rgba(164,157,250,1)'
             },
             children: [{
                     name: "薇娅viyaaa",
                     value: 3,
                     itemStyle: {
-                        color:'rgba(225,149,100,.7)'
+                        color:'rgba(164,157,250,.7)',
+                        borderRadius:[0,0,17,0]
                     },
                 },
                 {
                     name: "深夜徐老师 ",
                     value: 7,
                     itemStyle: {
-                        color:'rgba(225,149,100,1)'
+                        color:'rgba(164,157,250,.9)'
                     },
                 },
             ],
@@ -389,7 +394,8 @@ const zjjEData = {
                     name: "洞见",
                     value: 12,
                     itemStyle: {
-                        color: 'rgba(191,110,155,1)'
+                        color: 'rgba(191,110,155,1)',
+                        borderRadius:[0,0,0,17]
                     },
                 },
                 {
@@ -405,27 +411,28 @@ const zjjEData = {
             name: "小红书",
             value: 15,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][7]
+                color: 'rgba(255,217,140,1)'
             },
             children: [{
                     name: "三代鹿人",
                     value: 6,
                     itemStyle: {
-                        color: 'rgba(206,206,126,1)'
+                        color: 'rgba(255,217,140,.8)'
                     },
                 },
                 {
                     name: "陆文1990",
                     value: 5,
                     itemStyle: {
-                        color: 'rgba(206,206,126,.8)'
+                        color: 'rgba(255,217,140,.7)',
+                        borderRadius:[0,17,0,0]
                     },
                 },
                 {
                     name: "自来卷",
                     value: 4,
                     itemStyle: {
-                        color: 'rgba(206,206,126,.7)'
+                        color: 'rgba(255,217,140,.6)'
                     },
                 },
             ],
@@ -435,34 +442,35 @@ const zjjEData = {
             name: "抖音 ",
             value: 10,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][8]
+                color: 'rgba(77,148,255,1)'
             },
             children: [{
                     name: "陈翔六点半",
                     value: 5,
                     itemStyle: {
-                        color: 'rgba(145,194,242,1)'
+                        color: 'rgba(77,148,255,1)'
                     },
                 },
                 {
                     name: "疯狂小杨哥",
                     value: 2,
                     itemStyle: {
-                        color: 'rgba(145,194,242,.8)'
+                        color: 'rgba(77,148,255,.7)'
                     },
                 },
                 {
                     name: "祝晓晗",
                     value: 2,
                     itemStyle: {
-                        color: 'rgba(145,194,242,.8)'
+                        color: 'rgba(77,148,255,.7)'
                     },
                 },
                 {
                     name: "彭十六elf",
                     value: 1,
                     itemStyle: {
-                        color: 'rgba(145,194,242,.6)'
+                        color: 'rgba(77,148,255,.5)',
+                        borderRadius:[0,0,17,0]
                     },
                 },
             ],
@@ -471,20 +479,21 @@ const zjjEData = {
             name: "微博",
             value: 15,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][9]
+                color: 'rgba(164,157,250,1)'
             },
             children: [{
                     name: "周扬青",
                     value: 15,
                     itemStyle: {
-                        color:'rgba(183,200,234,1)'
+                        color:'rgba(164,157,250,1)',
+                        borderRadius:[0,17,0,0]
                     },
                 },
                 {
                     name: "雪梨",
                     value: 15,
                     itemStyle: {
-                        color:'rgba(183,200,234,1)'
+                        color:'rgba(164,157,250,1)'
                     },
                 },
             ],
@@ -493,13 +502,14 @@ const zjjEData = {
             name: "微信",
             value: 30,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][10]
+                color: 'rgba(191,110,155,1)'
             },
             children: [{
-                name: "西木西木\n涨10%",
+                name: "西木西木",
                 value: 30,
                 itemStyle: {
-                    color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][10]
+                    color: 'rgba(191,110,155,1)',
+                    borderRadius:[17,0,0,0]
                 },
             }, ],
         },
@@ -507,28 +517,29 @@ const zjjEData = {
             name: "小红书",
             value: 18,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][12]
+                color: 'rgba(255,217,140,1)'
             },
             children: [
                 {
                     name: "Hack",
                     value: 6,
                     itemStyle: {
-                        color: 'rgba(179,128,182,1)'
+                        color: 'rgba(255,217,140,.8)'
                     },
                 },
                 {
                     name: "安德鲁",
                     value: 5,
                     itemStyle: {
-                        color: 'rgba(179,128,182,.8)'
+                        color: 'rgba(255,217,140,.7)',
+                        borderRadius:[0,0,0,17]
                     },
                 },
                 {
                     name: "大庆的家伙",
                     value: 4,
                     itemStyle: {
-                        color: 'rgba(179,128,182,.6)'
+                        color: 'rgba(255,217,140,.5)'
                     },
                 },
             ],
@@ -538,13 +549,14 @@ const zjjEData = {
             name: "抖音 ",
             value: 30,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][13]
+                color: 'rgba(77,148,255,1)'
             },
             children: [{
-                name: "李嘉琦\n涨15%",
+                name: "李嘉琦",
                 value: 30,
                 itemStyle: {
-                    color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][13]
+                    color:'rgba(77,148,255,1)',
+                    borderRadius:[17,0,0,0]
                 },
             }, ],
         },
@@ -552,20 +564,22 @@ const zjjEData = {
             name: "微博",
             value: 5,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][14]
+                color: 'rgba(164,157,250,1)'
             },
             children: [{
                     name: "薇娅viyaaa",
                     value: 3,
                     itemStyle: {
-                        color: 'rgba(115,138,212,1)'
+                        color: 'rgba(164,157,250,.7)',
+                        // borderRadius:[0,0,17,0]
                     },
                 },
                 {
                     name: "深夜徐老师 ",
                     value: 2,
                     itemStyle: {
-                        color: 'rgba(115,138,212,.7)'
+                        color: 'rgba(164,157,250,.6)',
+                        borderRadius:[0,0,17,0]
                     },
                 },
             ],
@@ -574,20 +588,21 @@ const zjjEData = {
             name: "快手",
             value: 20,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][15]
+                color: 'rgba(252,128,159,1)'
             },
             children: [{
                     name: "我是田姥姥",
                     value: 15,
                     itemStyle: {
-                        color: 'rgba(255,159,127,.9)'
+                        color: 'rgba(252,128,159,.9)',
+                        borderRadius:[0,17,0,0]
                     },
                 },
                 {
                     name: "辰辰",
                     value: 5,
                     itemStyle: {
-                        color: 'rgba(255,159,127,.7)'
+                        color: 'rgba(252,128,159,.7)'
                     },
                 },
             ],
@@ -596,27 +611,28 @@ const zjjEData = {
             name: "小红书",
             value: 25,
             itemStyle: {
-                color: ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#BF6E9B', '#CECE7E', '#91C2F2', '#B7C8EA', '#FF9F7F', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4', '#FF9F7F'][5]
+                color: 'rgba(255,217,140,1)'
             },
             children: [{
                     name: "老师好",
                     value: 18,
                     itemStyle: {
-                        color: 'rgba(225,149,100,.9)'
+                        color: 'rgba(255,217,140,.8)',
+                        borderRadius:[0,0,0,17]
                     },
                 },
                 {
                     name: "新月",
                     value: 3,
                     itemStyle: {
-                        color: 'rgba(225,149,100,.5)'
+                        color: 'rgba(255,217,140,.4)'
                     },
                 },
                 {
                     name: "没有范儿",
                     value: 4,
                     itemStyle: {
-                        color: 'rgba(225,149,100,.7)'
+                        color: 'rgba(255,217,140,.3)'
                     },
                 },
             ],

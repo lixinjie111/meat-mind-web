@@ -685,7 +685,7 @@
         <div class="media_five_tab_bom">
           <div class="media_five_tab_bom1" v-if="ifShowTabCon == 0">
               <span style="color:#242F57;">媒介选择：</span>微博，电商APP直播；<br>
-              <span style="color:#242F57;">KOL组合：</span>头部KOL组合（钱迪-1，小麦-2，金粒仔-3）；<br>
+              <span style="color:#242F57;">KOL组合：</span>头部KOL组合（钱迪，小麦，金粒仔）；<br>
               <span style="color:#242F57;">投放预算：</span>204万元（88万，58万，58万）；<br>
               <span style="color:#242F57;">最优曝光时间：</span>未来7日，每日12-13点/18-23点；<br>
               <span style="color:#242F57;">目标受众：</span>KOL自有粉丝，品牌核心目标消费人群（北京上班族/年轻白领），品牌忠诚消费者；<br>
@@ -694,7 +694,7 @@
           </div>
           <div class="media_five_tab_bom1" v-else-if="ifShowTabCon == 1">
               <span style="color:#242F57;">媒介选择：</span>短视频平台（抖音，快手），垂直兴趣APP（小红书，KEEP，大众点评）；<br>
-              <span style="color:#242F57;">KOL组合：</span>腰部KOL组合（李芮-1，Angel真真-2，胖猫小森-3）；<br>
+              <span style="color:#242F57;">KOL组合：</span>腰部KOL组合（李芮，Angel真真，胖猫小森）；<br>
               <span style="color:#242F57;">投放预算：</span>84万元（38万，28万，18万）；<br>
               <span style="color:#242F57;">最优曝光时间：</span>未来14日，每日7-9点/11-13点/19-23点；<br>
               <span style="color:#242F57;">目标受众：</span>KOL自有粉丝，品牌核心目标消费人群（北京上班族/年轻白领），品牌忠诚消费者；<br>
@@ -703,7 +703,7 @@
           </div>
           <div class="media_five_tab_bom1" v-else>
               <span style="color:#242F57;">媒介选择：</span>娱乐频道，新闻门户，微博热点话题；<br>
-              <span style="color:#242F57;">KOL组合：</span>头部KOL组合（邓荣-1，王瑶-2，吴轩豪-3）；<br>
+              <span style="color:#242F57;">KOL组合：</span>头部KOL组合（邓荣，王瑶，吴轩豪）；<br>
               <span style="color:#242F57;">投放预算：</span>134万元（58万，38万，38万）；<br>
               <span style="color:#242F57;">最优曝光时间：</span>未来29日，每日6-8点/12-13点/17-20点；<br>
               <span style="color:#242F57;">目标受众：</span>KOL自有粉丝，品牌核心目标消费人群（北京上班族/年轻白领），品牌忠诚消费者；<br>
