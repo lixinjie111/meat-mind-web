@@ -1707,11 +1707,38 @@ export default {
                         width: 95/144*window.rem
                     },
                     {
-                        title: '影响力指数',
+                        // title: '影响力指数',
                         tooltip:true,
                         ellipsis:true,
                         key: 'yxiang',
-                        width: 95/144*window.rem
+                        width: 95/144*window.rem,
+                        renderHeader: (h, params)=>{
+                        return h("div", [
+                          h('strong', '影响力指数'),
+                          h("Poptip",
+                            {
+                              props: {
+                                placement: "bottom-end",
+                                popperClass: "saas-poptip",
+                                transfer: true
+                              },
+                              style: {
+                                marginLeft: '2px'
+                              }
+                            },
+                            [
+                              h("i", {
+                                class: "iconfont2 iconguanyu tip-icon"
+                              }),
+                              h("div", {
+                                slot: "content"
+                              },[
+                                 h("p", "影响力指数是系统基于账号粉丝量、真粉率、日均推广时长、代言品牌数、品牌匹配度、用户匹配度以及代言品牌数和带货量等数据分析得出的综合评分。其公式为"),
+                                 h("p", "F = [(粉丝量*真粉率)/10W * 0.27 + 日均推广时长(分钟) * (代言品牌数/100) * 0.23 + 10*用户匹配度*0.26 + 10*品牌匹配度 * 0.24 ] * θ(带货量)")
+                              ])
+                            ])
+                        ])
+                      }
                     },
                     // {
                     //     title: '操作',
