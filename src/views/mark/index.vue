@@ -163,7 +163,7 @@
                             <div class="tags">
                                 <div class="tagList">
                                     <div class="tag" v-for="item in tagList" :key="item">{{item}} 
-                                        <i class="iconfont2 iconicon_close"></i>
+                                        <!-- <i class="iconfont2 iconicon_close"></i> -->
                                     </div>
                                     <!-- <Tag v-if="show" closable @on-close="handleClose">标签三</Tag> -->
                                 </div>
@@ -287,10 +287,10 @@
                         <Col span="4">
                             <div class="boxContent">
                                 <div class="boxTitle">
-                                    按标签
+                                    按教育
                                 </div>
                                 <div class="boxsubTitle">
-                                    运动,养生型人群占大多数
+                                    学生正逐渐成为购买主力
                                 </div>
                                 <div class="boxEcharts">
                                     <barM id="box45" :colorList="$lxjData.colorList" :myData="myMonth5"></barM>
@@ -311,13 +311,13 @@
                                 </div>
                                 <div class="boxEcharts1">
                                     <div class="box1">
-                                        <barHM1 id="box11411" :colorList="$lxjData.colorList" :myData="$lxjData.box11411Data"></barHM1>
+                                        <barHM2 id="box11411" :colorList="$lxjData.colorList" :myData="$lxjData.box11411Data"></barHM2>
                                     </div>
                                     <div class="box1">
-                                        <barHM1 id="box11421" :colorList="$lxjData.colorList" :myData="$lxjData.box11421Data"></barHM1>
+                                        <barHM2 id="box11421" :colorList="$lxjData.colorList" :myData="$lxjData.box11421Data"></barHM2>
                                     </div>
                                     <div class="box1">
-                                        <barHM1 id="box11431" :colorList="$lxjData.colorList" :myData="$lxjData.box11431Data"></barHM1>
+                                        <barHM2 id="box11431" :colorList="$lxjData.colorList" :myData="$lxjData.box11431Data"></barHM2>
                                     </div>
                                 </div>
                                 <div class="label">
@@ -370,13 +370,13 @@
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
-                                            <barHM1 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM1>
+                                            <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM1>
+                                            <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM1>
+                                            <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
                                         </div>
                                     </div>
                                     <div class="label">
@@ -414,13 +414,13 @@
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
-                                            <barHM1 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM1>
+                                            <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM1>
+                                            <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM1>
+                                            <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
                                         </div>
                                     </div>
                                     <div class="label">
@@ -457,13 +457,13 @@
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
-                                            <barHM1 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM1>
+                                            <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM1>
+                                            <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM1>
+                                            <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
                                         </div>
                                     </div>
                                     <div class="label">
@@ -500,13 +500,13 @@
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
-                                            <barHM1 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM1>
+                                            <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM1>
+                                            <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM1>
+                                            <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
                                         </div>
                                     </div>
                                     <div class="label">
@@ -543,13 +543,13 @@
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
-                                            <barHM1 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM1>
+                                            <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM1>
+                                            <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM1>
+                                            <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
                                         </div>
                                     </div>
                                     <div class="label">
@@ -587,13 +587,13 @@
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
-                                            <barHM1 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM1>
+                                            <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM1>
+                                            <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM1>
+                                            <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
                                         </div>
                                     </div>
                                     <div class="label">
@@ -645,13 +645,13 @@
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
-                                            <barHM1 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM1>
+                                            <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM1>
+                                            <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM1>
+                                            <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
                                         </div>
                                     </div>
                                     <div class="label">
@@ -689,13 +689,13 @@
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
-                                            <barHM1 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM1>
+                                            <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM1>
+                                            <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM1>
+                                            <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
                                         </div>
                                     </div>
                                     <div class="label">
@@ -732,13 +732,13 @@
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
-                                            <barHM1 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM1>
+                                            <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM1>
+                                            <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM1>
+                                            <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
                                         </div>
                                     </div>
                                     <div class="label">
@@ -775,13 +775,13 @@
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
-                                            <barHM1 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM1>
+                                            <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM1>
+                                            <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM1>
+                                            <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
                                         </div>
                                     </div>
                                     <div class="label">
@@ -818,13 +818,13 @@
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
-                                            <barHM1 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM1>
+                                            <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM1>
+                                            <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM1>
+                                            <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
                                         </div>
                                     </div>
                                     <div class="label">
@@ -862,13 +862,13 @@
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
-                                            <barHM1 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM1>
+                                            <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM1>
+                                            <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
                                         </div>
                                         <div class="box1">
-                                            <barHM1 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM1>
+                                            <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
                                         </div>
                                     </div>
                                     <div class="label">
@@ -1052,14 +1052,14 @@ import barL from '../../components/echarts/common/barL';
 import lineM1 from '../../components/echarts/common/lineM1';
 import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
 import barM from '../../components/echarts/common/barM';
-import barHM1 from '../../components/echarts/common/barHM1';
+import barHM2 from '../../components/echarts/common/barHM2';
 import Target from "./base/Target"
 import ShowTotal from "./components/ShowTotal"
 import BrandValue from "./components/BrandValue"
 import SerachPoptip from '../../components/common/SerachPoptip1';
 export default {
     name:"index",
-    components:{SerachPoptip,barHM1,lineM3,barLine,barL,Brand,Card,Target,ShowTotal,barM,lineM1,DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts,BrandValue},
+    components:{SerachPoptip,barHM2,lineM3,barLine,barL,Brand,Card,Target,ShowTotal,barM,lineM1,DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts,BrandValue},
     data () {
 		return {
 			showFlag:true,
@@ -1120,7 +1120,10 @@ export default {
             console.log(params)
             let arr=[...params.age,...params.area,...params.customer,...params.profession,...params.sex,]
             console.log(arr);
-            this.tagList=[arr[0],arr[1]];
+            if(arr.length>3){
+                arr=[arr[0],arr[1],arr[2]]
+            }
+            this.tagList=arr;
             if(this.num%2!=0){
                 this.box240Data=this.$lxjData.box2401Data
             }else{
