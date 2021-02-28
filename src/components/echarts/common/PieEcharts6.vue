@@ -79,7 +79,8 @@
           //   }
           // },
           tooltip: {
-            trigger: 'item'
+            trigger: 'item',
+            formatter: '{b} : {d}%'
           },
           series: [{
             type: 'pie',

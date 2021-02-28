@@ -944,7 +944,7 @@
                 </div>
                 <div class="top-right">
                     <p class="top-title">推荐缘由</p>
-                    <p><span>李子柒为头部KOL，在曝光率及用户影响率上对于品牌推广能起到快速起效。但鉴于李子柒非垂直领域KOL，专业引流不足，故补充垂直类KOL西木西木和泛娱乐类KOL辣目洋子，三者配合投放可使收益达到最高</span></p>
+                    <p><span>李子柒为头部KOL，在曝光分布及用户影响率上对于品牌推广能起到快速起效。但鉴于李子柒非垂直领域KOL，专业引流不足，故补充垂直类KOL西木西木和泛娱乐类KOL辣目洋子，三者配合投放可使收益达到最高</span></p>
                 </div>
             </div>
             <div class="strategy-bottom">
@@ -953,7 +953,7 @@
                     <div class="bottom-title">用户量</div>
                 </div>
                 <div>
-                    <div class="bottom-title light">曝光率</div>
+                    <div class="bottom-title light">曝光分布</div>
                 </div>
                 <div>
                     <div class="bottom-title">销售分布</div>
