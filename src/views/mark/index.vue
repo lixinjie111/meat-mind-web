@@ -453,7 +453,7 @@
                                 </template>    
                                 <template v-if="formItem.pinpai1==2">    
                                     <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
+                                        对标品牌:<span>和其正</span>
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
@@ -496,7 +496,7 @@
                                 </template>    
                                 <template v-if="formItem.pinpai1==3">    
                                     <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
+                                        对标品牌:<span>白云山</span>
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
@@ -539,7 +539,7 @@
                                 </template>    
                                 <template v-if="formItem.pinpai1==4">    
                                     <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
+                                        对标品牌:<span>清心堂</span>
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
@@ -728,7 +728,7 @@
                                 </template>    
                                 <template v-if="formItem.pinpai2==2">    
                                     <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
+                                        对标品牌:<span>和其正</span>
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
@@ -771,7 +771,7 @@
                                 </template>    
                                 <template v-if="formItem.pinpai2==3">    
                                     <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
+                                        对标品牌:<span>白云山</span>
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
@@ -814,7 +814,7 @@
                                 </template>    
                                 <template v-if="formItem.pinpai2==4">    
                                     <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
+                                        对标品牌:<span>清心堂</span>
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
