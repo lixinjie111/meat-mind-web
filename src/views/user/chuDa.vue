@@ -36,7 +36,7 @@
                     <Checkbox v-model="choiceObj[it.key]" @on-change="(checked)=>changeNews(it.key, checked)"></Checkbox>
                   </div>
                   <div class="logo_container">
-                    <img :src="ttIcon" class="logoImg" />
+                    <img :src="iconConfig[it.icon]" class="logoImg" />
                     <span class="cal_txt">{{it.name}}</span>
                   </div>
                   <div class="txt_area">
@@ -57,11 +57,10 @@
               <div class="cdyhmj_bom">
                 <div class="cdyhmj_bom_lef">
                   已选中
-                  <span style="color:#242F57">2</span>个
+                  <span style="color:#242F57">{{checkedNum}}</span>个
                 </div>
                 <div class="cdyhmj_bom_rig">
-                  <img :src="ksIcon" class="cdyhmj_bom_rig1" />
-                  <img :src="xhsIcon" class="cdyhmj_bom_rig1" />
+                  <img :src="iconConfig[e.icon]" class="cdyhmj_bom_rig1" v-for="(e, i) in checkedIcons" :key="i"/>
                 </div>
               </div>
             </div>
@@ -130,7 +129,7 @@
             <div class="cdyhmj_content_bom_rig">
               <div class="cdyhmj_content_bom_rig_top">优化投放方案推荐</div>
               <div class="cdyhmj_content_bom_rig_bom">
-                <img :src="yhtIcon" class="yhtIcon" alt srcset />
+                <img :src="iconConfig.yhtIcon" class="yhtIcon" alt srcset />
               </div>
             </div>
           </div>
@@ -142,9 +141,9 @@
 
 import PieEcharts1 from '../../components/echarts/common/PieEcharts1';
 const arr = [
-  {name: '头条', value: 78, rate: '51', cost: '2500', timeRange: '20:00 - 21:00', key: 'choice1' },
-  {name: '小红书', value: 45, rate: '46', cost: '2300', timeRange: '19:00 - 20:30', key: 'choice2' },
-  {name: '快手', value: 55, rate: '43', cost: '2300', timeRange: '22:00 - 22:30', key: 'choice12'},
+  {name: '头条', value: 78, rate: '51', cost: '2500', timeRange: '20:00 - 21:00', key: 'choice1', icon: 'ttIcon' },
+  {name: '小红书', value: 45, rate: '46', cost: '2300', timeRange: '19:00 - 20:30', key: 'choice2', icon: 'xhsIcon' },
+  {name: '快手', value: 55, rate: '43', cost: '2300', timeRange: '22:00 - 22:30', key: 'choice12', icon: 'ksIcon'},
 ]
 export default {
   components: {
@@ -153,7 +152,6 @@ export default {
   name: "index",
   data() {
     return {
-      ttIcon:require("../../assets/img/yhhx/tt.png"),
       toRIcon: require("../../assets/img/yhhx/toR.png"),
       toLIcon: require("../../assets/img/yhhx/toL.png"),
       toRIcon1: require("../../assets/img/yhhx/toR1.png"),
@@ -188,9 +186,12 @@ export default {
           value:'zyzz'
         }
       ],
-      xhsIcon:require("../../assets/img/yhhx/xhs.png"),
-      ksIcon:require("../../assets/img/yhhx/ks.png"),
-      yhtIcon: require("../../assets/img/yhhx/yht.png"),
+      iconConfig: {
+        ttIcon:require("../../assets/img/yhhx/tt.png"),
+        xhsIcon:require("../../assets/img/yhhx/xhs.png"),
+        ksIcon:require("../../assets/img/yhhx/ks.png"),
+        yhtIcon: require("../../assets/img/yhhx/yht.png"),
+      },
     };
   },
   mounted() {
@@ -219,6 +220,12 @@ export default {
   computed:{
     _list(){
       return this.list.filter(e=>this.choiceObj[e.key])
+    },
+    checkedIcons(){
+      return this.list.filter(e=>this.choiceObj[e.key])
+    },
+    checkedNum(){
+      return Object.values(this.choiceObj).filter(e=>e).length
     },
     targetRate(){
       const len = Object.values(this.choiceObj).filter(e=>e).length
