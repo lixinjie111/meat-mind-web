@@ -31,55 +31,21 @@
                     <img :src="toLIcon" class="toLIcon" />
                   </div>
                 </div>
-                <div class="cal_item2 cal_item21">
+                <div :class="['cal_item2', { cal_item21: !choiceObj[it.key] }]" v-for="(it, i) in list" :key="i">
                   <div class="rt_choice">
-                    <Checkbox v-model="choice1" @on-change="changeNews"></Checkbox>
+                    <Checkbox v-model="choiceObj[it.key]" @on-change="(checked)=>changeNews(it.key, checked)"></Checkbox>
                   </div>
                   <div class="logo_container">
                     <img :src="ttIcon" class="logoImg" />
-                    <span class="cal_txt">头条</span>
+                    <span class="cal_txt">{{it.name}}</span>
                   </div>
                   <div class="txt_area">
                     <div class="txt_area11">触达率</div>
                     <div>投放成本</div>
                   </div>
                   <div class="per_area">
-                    <div class="per_area1">51%</div>
-                    <div>¥2500/千人</div>
-                  </div>
-                </div>
-                <div class="cal_item2">
-                  <div class="rt_choice2">
-                    <Checkbox v-model="choice2"></Checkbox>
-                  </div>
-                  <div class="logo_container">
-                    <img :src="xhsIcon" class="logoImg" />
-                    <span class="cal_txt">小红书</span>
-                  </div>
-                  <div class="txt_area">
-                    <div class="txt_area11">触达率</div>
-                    <div>投放成本</div>
-                  </div>
-                  <div class="per_area">
-                    <div class="per_area1">46%</div>
-                    <div>¥2300/千人</div>
-                  </div>
-                </div>
-                <div class="cal_item2">
-                  <div class="rt_choice2">
-                    <Checkbox v-model="choice12"></Checkbox>
-                  </div>
-                  <div class="logo_container">
-                    <img :src="ksIcon" class="logoImg" />
-                    <span class="cal_txt">快手</span>
-                  </div>
-                  <div class="txt_area">
-                    <div class="txt_area11">触达率</div>
-                    <div>投放成本</div>
-                  </div>
-                  <div class="per_area">
-                    <div class="per_area1">43%</div>
-                    <div>¥2300/千人</div>
+                    <div class="per_area1">{{it.rate}}%</div>
+                    <div>¥{{it.cost}}/千人</div>
                   </div>
                 </div>
                 <div class="cal_item cal_item1">
@@ -127,7 +93,7 @@
                 <div class="item_xtt">活力</div>
               </div>
             </div>
-           
+
           </div>
           <div class="cdyhmj_content_bom">
             <div class="cdyhmj_content_bom_lef">
@@ -140,39 +106,24 @@
                 <div class="echarts1 echarts2box">
                   <div class="echarts11">
                     <div class="echarts111">建议投放金额</div>
-                    <div class="echarts112" v-if="choice1">￥21,800</div>
-                    <div class="echarts112" v-else>￥19,000</div>
+                    <div class="echarts112" >￥{{money}}</div>
                   </div>
                   <div class="echarts12">
                     <div class="echarts121">目标客群触达率</div>
-                    <div class="echarts122" v-if="choice1">93%</div>
-                    <div class="echarts122" v-else>89%</div>
+                    <div class="echarts122" >{{targetRate}}%</div>
                   </div>
                 </div>
                 <div class="echarts1 ec1">
                   <div class="echarts13">建议投放时间段</div>
-                   <div class="echarts15" v-if="choice1">
-                    <div class="echarts142">
-                      <div class="ech_Icon2"></div>
-                      <div class="ech_txt">头条</div>
-                      <div class="ech_time">20:00 - 21:00</div>
+                  <template v-for="(it, i) in _list" >
+                    <div class="echarts15" v-if="choiceObj[it.key]" :key="i">
+                      <div class="echarts142">
+                        <div :class="iconClassObj[i]" :style="{ background: $fjData.colorList[i]}"></div>
+                        <div class="ech_txt">{{it.name}}</div>
+                        <div class="ech_time">{{it.timeRange}}</div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="echarts14">
-                    <div class="echarts141">
-                      <div class="ech_Icon"></div>
-                      <div class="ech_txt">快手</div>
-                      <div class="ech_time">22:00 - 22:30</div>
-                    </div>
-                  </div>
-                  <div class="echarts15">
-                    <div class="echarts142">
-                      <div class="ech_Icon1"></div>
-                      <div class="ech_txt">小红书</div>
-                      <div class="ech_time">19:00 - 20:30</div>
-                    </div>
-                  </div>
-                 
+                  </template>
                 </div>
               </div>
             </div>
@@ -190,7 +141,11 @@
 <script>
 
 import PieEcharts1 from '../../components/echarts/common/PieEcharts1';
-
+const arr = [
+  {name: '头条', value: 78, rate: '51', cost: '2500', timeRange: '20:00 - 21:00', key: 'choice1' },
+  {name: '小红书', value: 45, rate: '46', cost: '2300', timeRange: '19:00 - 20:30', key: 'choice2' },
+  {name: '快手', value: 55, rate: '43', cost: '2300', timeRange: '22:00 - 22:30', key: 'choice12'},
+]
 export default {
   components: {
    PieEcharts1
@@ -202,9 +157,13 @@ export default {
       toRIcon: require("../../assets/img/yhhx/toR.png"),
       toLIcon: require("../../assets/img/yhhx/toL.png"),
       toRIcon1: require("../../assets/img/yhhx/toR1.png"),
-      choice1:false,
-      choice2:true,
-      choice12:true,
+      list: arr,
+      choiceObj: {
+        choice1:false,
+        choice2:true,
+        choice12:true,
+      },
+      iconClassObj: ['ech_Icon', 'ech_Icon2', 'ech_Icon1'],
       mbValue:'bjsbz',
       chuData:this.$fjData.box0Data,
       mubiaoList:[
@@ -237,18 +196,53 @@ export default {
   mounted() {
   },
   methods: {
-    changeNews(val){
-      console.log(val)
-      if(val){
-        this.chuData=this.$fjData.box01Data;
-      }else{
-        this.chuData=this.$fjData.box0Data;
-      }
+    changeNews(key, checked){
+      this.choiceObj[key] = checked;
+      const keys = ['choice1', 'choice2', 'choice12'];
+      const name = []
+      const value = []
+      keys.forEach((it)=>{
+        if(this.choiceObj[it]){
+          const cur = arr.find(e=>e.key === it)
+          name.push(cur.name)
+          value.push(cur.value)
+        }
+      })
+      this.chuData = { name, value }
     },
     goMidea(){
       this.$router.push({
         path:"/media"
       });
+    },
+  },
+  computed:{
+    _list(){
+      return this.list.filter(e=>this.choiceObj[e.key])
+    },
+    targetRate(){
+      const len = Object.values(this.choiceObj).filter(e=>e).length
+      if(len === 3){
+        return '99'
+      }else if(len === 2){
+        return '89'
+      }else if(len === 1){
+        return '65'
+      }else {
+        return  ''
+      }
+    },
+    money(){
+      const len = Object.values(this.choiceObj).filter(e=>e).length
+      if(len === 3){
+        return '23,000'
+      }else if(len === 2){
+        return '19,000'
+      }else if(len === 1){
+        return '11,000'
+      }else {
+        return  ''
+      }
     },
   },
 };
@@ -651,7 +645,7 @@ export default {
           align-items: center;
           padding-right: 24px;
           justify-content: space-between;
-          
+
           .echarts1 {
             &.echarts1box{
               width: 197px;
@@ -748,7 +742,7 @@ export default {
                   font-family: PingFangSC-Regular, PingFang SC;
                   font-weight: 400;
                   color: #242f57;
-                  
+
                 }
                 .ech_txt {
                     width:70px;

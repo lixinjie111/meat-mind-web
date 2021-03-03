@@ -78,7 +78,7 @@
                         <li>扩充抖音、快手短视频平台的推广力度；优化KOL投放结构，以主播类、时尚类为主</li>
                         <li>打造“年轻时尚”营销卖点，及时在微博平台进行公关，并监控效果</li>
                     </ul>
-                    <div class="manage-overview-btn"><img src="../../assets/img/dashboard/manage/icon3@2x.png"/>查看全部经营分析</div>
+                    <div class="manage-overview-btn" @click="goTo"><img  src="../../assets/img/dashboard/manage/icon3@2x.png"/>查看全部经营分析</div>
                 </div>
             </div>
             <div class="manage-overview-right">
@@ -962,6 +962,9 @@
             },
             toDetail4(){
                 this.$router.push({name:"business-analysis-ztgl"})
+            },
+            goTo(){
+              this.$router.push({path:"/business-analysis/ztgl"})
             }
         }
     }
@@ -1248,6 +1251,7 @@
                         font-weight: 500;
                         color: #242F57;
                         text-align: center;
+                        cursor: pointer;
 
                         > img {
                             vertical-align: -5px;
