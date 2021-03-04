@@ -11,6 +11,10 @@
                     </div>
                     <div class="choice_content_container">
                         <div class="timer12" v-if="ifShowTime">
+                            <div class="city-box">
+                              <div class="city-label">城市: </div>
+                              <div :class="['city link', { active: selectedCity === it }]" v-for="it in citys" :key="it" @click="changeCity(it)">{{it}}</div>
+                            </div>
                             <div class="timer12_top">
                                 <div class="timeitem">06:00</div>
                                 <div class="timeitem">08:00</div>
@@ -508,7 +512,12 @@
           交流: '#a49dfa',
           出行: '#CECE7E',
           餐饮: '#8AE6C7',
-        }
+        },
+        citys: ['北京', '上海', '广州'],
+        shanghai_point: [121.473658, 31.230378],
+        guangzhou_point: [113.264385,23.129112],
+        beijing_point: [116.288616, 39.965768],
+        selectedCity: '北京',
       }
     },
     mounted() {
@@ -542,11 +551,11 @@
       ];
       var cir1 = [116.310356, 39.932426];
       // 上海坐标
-      var shanghai_point = [121.473658, 31.230378];
+      var shanghai_point = this.shanghai_point;
       // 广州坐标
-      var guangzhou_point = [113.264385,23.129112];
+      var guangzhou_point = this.guangzhou_point;
      // 北京坐标
-      var beijing_point = [116.288616, 39.965768];
+      var beijing_point = this.beijing_point;
       this.initMap();
       const zoom = 11
       this.marker(shanghai_point, ()=>{
@@ -1140,6 +1149,18 @@
           ]
         });
       },
+      changeCity(city){
+        const config = {
+          '北京': this.beijing_point,
+          '上海': this.shanghai_point,
+          '广州': this.guangzhou_point,
+        }[city]
+        this.selectedCity = city
+        const zoom = 11
+        const center = new AMap.LngLat(config[0],config[1])
+        this.map.setCenter(center)
+        this.map.setZoom(zoom)
+      },
       submit() {
         this.ifShowCon = false;
         this.condiObj = {
@@ -1388,6 +1409,16 @@
 
 <style lang="scss" scoped>
     .dx_Item_container {
+      .link{
+        color:#2373FF;
+        cursor: pointer;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+      .link.active{
+        text-decoration: underline;
+      }
         width: 100%;
         position: relative;
         .test_container1.width {
@@ -1452,11 +1483,34 @@
                             justify-content: center;
                             padding: 0 16px;
                             box-sizing: border-box;
+                            position: relative;
+                            .city-box{
+                              display: flex;
+                              position: absolute;
+                              left: 10px;
+                              top: 10px;
+                              align-items: center;
+                              .city-label, .city{
+                                margin: 0 6px;
+                                cursor: pointer;
+                              }
+                              .city{
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 62px;
+                                height: 24px;
+                                background: #FFFFFF;
+                                border-radius: 4px;
+                                border: 1px solid #EAEDF7;
+                              }
+                            }
                             .timer12_top {
                                 width: 100%;
                                 display: flex;
                                 align-items: center;
                                 justify-content: space-between;
+                                margin-top: 26px;
                             }
                             .timer12_bom {
                                 width: 100%;
