@@ -55,7 +55,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="circle">    
+                            <div class="circle">
                             </div>
                             <div class="desc">
                                 加多宝和王老吉已形成“两超多强”断层局势，共持有95.1%行业市场份额，邓老凉茶市场份额同比下降12.1%（8/53），同时品牌影响力指数排名较往年下降2位（6/53）
@@ -453,7 +453,7 @@
                                 </template>    
                                 <template v-if="formItem.pinpai1==2">    
                                     <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
+                                        对标品牌:<span>和其正</span>
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
@@ -496,7 +496,7 @@
                                 </template>    
                                 <template v-if="formItem.pinpai1==3">    
                                     <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
+                                        对标品牌:<span>白云山</span>
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
@@ -539,7 +539,7 @@
                                 </template>    
                                 <template v-if="formItem.pinpai1==4">    
                                     <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
+                                        对标品牌:<span>清心堂</span>
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
@@ -568,7 +568,7 @@
                                             认知顾虑
                                         </div>
                                         <div class="labelTags">
-                                            <span class="labelTag">不够正中</span>
+                                            <span class="labelTag">不够正宗</span>
                                         </div>
                                     </div>
                                     <div class="label">
@@ -728,7 +728,7 @@
                                 </template>    
                                 <template v-if="formItem.pinpai2==2">    
                                     <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
+                                        对标品牌:<span>和其正</span>
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
@@ -771,7 +771,7 @@
                                 </template>    
                                 <template v-if="formItem.pinpai2==3">    
                                     <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
+                                        对标品牌:<span>白云山</span>
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
@@ -814,7 +814,7 @@
                                 </template>    
                                 <template v-if="formItem.pinpai2==4">    
                                     <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
+                                        对标品牌:<span>清心堂</span>
                                     </div>
                                     <div class="boxEcharts1">
                                         <div class="box1">
