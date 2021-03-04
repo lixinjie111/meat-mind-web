@@ -215,7 +215,7 @@
         .logo {
             width: 108px;
             height: 30px;
-            margin: 48px 84px 48px 48px;
+            margin: 29px 84px 48px 50px;
             background: url("../assets/img/side/logo-colour@2x.png") no-repeat center / 108px 30px;
         }
     }
@@ -297,6 +297,7 @@
         }
 
         .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
+            position: relative;
             color: #FFFFFF;
             height: 48px;
             background: #2373FF;
@@ -306,6 +307,17 @@
             .sub-name {
                 color: #FFFFFF;
                 font-size: 14px;
+            }
+
+            &:before {
+                position: absolute;
+                left: -24px;
+                top: 0;
+                content: '';
+                width: 4px;
+                height: 48px;
+                background: #2373FF;
+                border-radius: 0px 4px 4px 0px;
             }
         }
 
