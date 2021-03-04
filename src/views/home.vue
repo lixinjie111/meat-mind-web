@@ -30,7 +30,8 @@
 </script>
 <style scoped lang="scss">
     .ivu-layout {
-        background: #ffffff;
+        background: #F4F7FC;
+        min-height: 100vh;
     }
 
     .ivu-layout-sider {
@@ -38,7 +39,7 @@
     }
 
     .ivu-layout-header {
-        background: #ffffff;
+        background: #F4F7FC;
         padding: 0;
     }
 </style>

@@ -3083,7 +3083,7 @@ export default {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 24px;
-    background: #FFFFFF #D8D8D8;
+    background: #FFFFFF;
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 12px;
     border: 1px solid #EAEDF7;
@@ -3144,7 +3144,7 @@ export default {
       width: 50%;
       height: 507px;
       padding: 24px;
-      background: #FFFFFF #6371c0;
+      background: #FFFFFF;
       box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
       border-radius: 12px;
       border: 1px solid #EAEDF7;
@@ -3377,6 +3377,7 @@ export default {
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 12px;
     border: 1px solid #EAEDF7;
+    background: #fff;
     .m-f-line{
         display: flex;
         width: 100%;
@@ -3449,6 +3450,7 @@ export default {
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 12px;
     border: 1px solid #EAEDF7;
+    background: #fff;
      .m-pie-title{
             height: 24px;
             margin-bottom: 16px;
