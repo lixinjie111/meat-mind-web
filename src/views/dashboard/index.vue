@@ -34,13 +34,12 @@
 </template>
 
 <script>
-    import DefaultPage from "../../layouts/DefaultPage";
     import BusinessOwner from "../../components/dashboard/BusinessOwner";
     import Analyst from "../../components/dashboard/Analyst";
 
     export default {
         name: "index",
-        components: {Analyst, BusinessOwner, DefaultPage},
+        components: {Analyst, BusinessOwner},
         data() {
             return {
                 flag: localStorage.getItem("dashboard"),

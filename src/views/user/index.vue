@@ -994,7 +994,6 @@
     </div>
 </template>
 <script>
-import DefaultPage from "../../layouts/DefaultPage";
 import barEcharts from '../../components/echarts/common/barEcharts';
 import barL from '../../components/echarts/common/barL';
 import barM from '../../components/echarts/common/barM';
@@ -1028,7 +1027,7 @@ import vTabCard from "./tabCard";
 import chuDa from "./chuDa";
 export default {
   components: {
-   PieEcharts1,barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,DefaultPage, PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
+   PieEcharts1,barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
    vDxitem,vDxitem1,vTabCard,chuDa
   },
   name: "index",

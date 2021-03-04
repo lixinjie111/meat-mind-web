@@ -1036,7 +1036,6 @@
 <script>
 import Brand from "./components/Brand"
 import Card from "../../components/Card"
-import DefaultPage from "../../layouts/DefaultPage";
 import ThirdLine from "./components/Benchmark"
 import Colourfol from "./base/Colourfol"
 import Details from "./components/Details"
@@ -1058,7 +1057,7 @@ import BrandValue from "./components/BrandValue"
 import SerachPoptip from '../../components/common/SerachPoptip1';
 export default {
     name:"index",
-    components:{SerachPoptip,barHM2,lineM3,barLine,barL,Brand,Card,Target,ShowTotal,barM,lineM1,DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts,BrandValue},
+    components:{SerachPoptip,barHM2,lineM3,barLine,barL,Brand,Card,Target,ShowTotal,barM,lineM1,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts,BrandValue},
     data () {
 		return {
 			showFlag:true,

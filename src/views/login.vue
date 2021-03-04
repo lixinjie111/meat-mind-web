@@ -1,23 +1,22 @@
 <template>
-    <DefaultPage>
-        <div class="login-box">
-            <div class="nav">
-                <p class="nav-title">Dashboard</p>
-                <div class="btn_container">
-                    <img :src="downLoad" class="btn_download" />
-                    <span class="btntxt">一键生成报告</span>
-                </div>
+    <div class="login-box">
+        <div class="nav">
+            <p class="nav-title">Dashboard</p>
+            <div class="btn_container">
+                <img :src="downLoad" class="btn_download" />
+                <span class="btntxt">一键生成报告</span>
             </div>
-            <div class="welcome">
-                <img class="user" src="../static/img/header/oval@2x.png" alt="" />
-                <div class="user_intro_container">
-                    <p>早安，分析师，欢迎使用 Meta-Mind-Marketing！</p>
-                    <p>
-                        轻松上手分析模型，探索不同业务中的关键行为，洞察指标背后的增长点。
-                    </p>
-                </div>
+        </div>
+        <div class="welcome">
+            <img class="user" src="../static/img/header/oval@2x.png" alt="" />
+            <div class="user_intro_container">
+                <p>早安，分析师，欢迎使用 Meta-Mind-Marketing！</p>
+                <p>
+                    轻松上手分析模型，探索不同业务中的关键行为，洞察指标背后的增长点。
+                </p>
+            </div>
 
-                <span class="infoIcon">
+            <span class="infoIcon">
             <img :src="infoIcon" alt="" srcset="" class="infoIcon-img"/>
             <div class="infoIcon-desc">
                 <div class="infoIcon-desc-item">
@@ -38,64 +37,62 @@
                 </div>
             </div>
         </span>
-            </div>
-            <div class="guide_container">
-                <div class="guide_title_container">
-                    <div class="guide_title_lef">
-                        <span style="margin-right: 4px">新手导航</span>
-                        <img :src="infoIcon" alt="" srcset="" class="infoIcon" />
-                        <Progress :percent="45" status="active"></Progress>
-                        <span>(3/6)</span>
-                    </div>
-                    <div class="guide_title_rig">
-                        <div class="guide_title_rig_til">收起</div>
-                        <div class="guide_title_rig_icon"></div>
-                    </div>
-                </div>
-                <div class="card_container">
-                    <vCard0
-                            v-for="(item, index) in guideList"
-                            :key="index"
-                            :cardData="item"
-                    ></vCard0>
-                </div>
-            </div>
-            <Modal v-model="showModal"
-                   footer-hide
-                   :mask-closable="false"
-                   :closable="false"
-                   class-name="login-modal">
-                <div class="middle">
-                    <div class="title">欢迎使用智慧营销</div>
-                    <div class="sub-title">请选择您的身份</div>
-                    <div class="select">
-                        <div @click="role = 0" :class="role == 0 ? 'active' : ''">
-                            <img src="../assets/img/login/head1.png" alt="">
-                            <p>分析师</p>
-                        </div>
-                        <div @click="role = 1" :class="role == 1 ? 'active' : ''">
-                            <img src="../assets/img/login/head2.png" alt="">
-                            <p>企业主</p>
-                        </div>
-                        <div @click="role = 2" :class="role == 2 ? 'active' : ''">
-                            <img src="../assets/img/login/head3.png" alt="">
-                            <p>数据管理员</p>
-                        </div>
-                    </div>
-                    <div :class="[role >= 0 ? 'active' : '','confirm']" @click="confirm">确认</div>
-                </div>
-            </Modal>
         </div>
-    </DefaultPage>
+        <div class="guide_container">
+            <div class="guide_title_container">
+                <div class="guide_title_lef">
+                    <span style="margin-right: 4px">新手导航</span>
+                    <img :src="infoIcon" alt="" srcset="" class="infoIcon" />
+                    <Progress :percent="45" status="active"></Progress>
+                    <span>(3/6)</span>
+                </div>
+                <div class="guide_title_rig">
+                    <div class="guide_title_rig_til">收起</div>
+                    <div class="guide_title_rig_icon"></div>
+                </div>
+            </div>
+            <div class="card_container">
+                <vCard0
+                        v-for="(item, index) in guideList"
+                        :key="index"
+                        :cardData="item"
+                ></vCard0>
+            </div>
+        </div>
+        <Modal v-model="showModal"
+               footer-hide
+               :mask-closable="false"
+               :closable="false"
+               class-name="login-modal">
+            <div class="middle">
+                <div class="title">欢迎使用智慧营销</div>
+                <div class="sub-title">请选择您的身份</div>
+                <div class="select">
+                    <div @click="role = 0" :class="role == 0 ? 'active' : ''">
+                        <img src="../assets/img/login/head1.png" alt="">
+                        <p>分析师</p>
+                    </div>
+                    <div @click="role = 1" :class="role == 1 ? 'active' : ''">
+                        <img src="../assets/img/login/head2.png" alt="">
+                        <p>企业主</p>
+                    </div>
+                    <div @click="role = 2" :class="role == 2 ? 'active' : ''">
+                        <img src="../assets/img/login/head3.png" alt="">
+                        <p>数据管理员</p>
+                    </div>
+                </div>
+                <div :class="[role >= 0 ? 'active' : '','confirm']" @click="confirm">确认</div>
+            </div>
+        </Modal>
+    </div>
 </template>
 
 <script>
     import vCard0 from "../components/common/card0";
-    import DefaultPage from "../layouts/DefaultPage";
 
     export default {
         name: "Analyst",
-        components: {DefaultPage, vCard0},
+        components: {vCard0},
         data() {
             return {
                 showModal: true,

@@ -1571,7 +1571,6 @@
 </template>
 
 <script>
-import DefaultPage from "../../layouts/DefaultPage";
 import Triple from "./base/Triple"
 import Half from "./base/Half"
 import Full from "./base/Full"
@@ -1589,7 +1588,7 @@ import barM from '../../components/echarts/common/barM';
 
 export default {
   name: "index",
-  components: { DefaultPage, Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vGraph,vTree,lineM,barM},
+  components: { Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vGraph,vTree,lineM,barM},
   data(){
       return{
         modelUserL:"过去一个月",

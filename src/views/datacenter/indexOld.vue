@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Side from "../../components/Side"
+import Side from "../../components/DefaultSide"
 import Header from "../../components/DefaultHeader"
     export default {
         name: "indexOld",

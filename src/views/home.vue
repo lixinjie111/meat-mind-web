@@ -1,10 +1,10 @@
 <template>
     <Layout>
         <Sider :style="{position: 'fixed', height: '100vh', width: '240px', minWidth: '240px', left: 0, overflow: 'auto'}">
-            <Side></Side>
+            <DefaultSide></DefaultSide>
         </Sider>
         <Layout :style="{marginLeft: '240px'}">
-            <Header :style="{position: 'fixed', width: '100%', zIndex: 10000}">
+            <Header :style="{position: 'fixed', width: '100%', zIndex: 1000}">
                 <DefaultHeader target="Dashboard"></DefaultHeader>
             </Header>
             <Content :style="{marginTop: '64px'}">
@@ -17,8 +17,8 @@
     </Layout>
 </template>
 <script>
-    import Side from "../components/Side"
-    import DefaultHeader from "../components/DefaultHeader"
+    import DefaultSide from "../layouts/DefaultSide"
+    import DefaultHeader from "../layouts/DefaultHeader"
 
     export default {
         name:"home",
@@ -28,7 +28,7 @@
                 default: ''
             }
         },
-        components: {Side, DefaultHeader}
+        components: {DefaultSide, DefaultHeader}
     }
 </script>
 <style scoped lang="scss">
