@@ -130,7 +130,6 @@
                 </Col>
             </Row>
       </div> -->
-
       <div class="media_first_panel">
         <div class="media_first_panel_item1">
           <div class="logo_til_container">
