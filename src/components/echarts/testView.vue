@@ -3,14 +3,22 @@
         <div class="box">
 			<treeEcharts id="box1"></treeEcharts>
 		</div>       
+        <div class="heigh">
+			<graphEcharts id="box2"></graphEcharts>
+		</div>       
+        <div class="row">
+			<scatterEcharts id="box3"></scatterEcharts>
+		</div>       
     </div>
 </template>
 
 <script>
 	import echarts from 'echarts';
 	import treeEcharts from './common/tree/treeEcharts';
+	import graphEcharts from './common/graph/graphEcharts';
+	import scatterEcharts from './common/scatter/scatterEcharts';
     export default {
-		components: {treeEcharts},
+		components: {treeEcharts,graphEcharts,scatterEcharts},
     }
 </script>
 
@@ -23,9 +31,16 @@
 			height: 300px;
 			margin: 3px;
 			border: 1px solid #f00;
-			.box1{
-				height: 30%;
-			}
+		}
+		.row{
+			width: 100%;
+			height: 300px;
+			border: 1px solid red;
+		}
+		.heigh{
+			width: 100%;
+			height: 1000px;
+			border: 1px solid red;
 		}
 	}
 	

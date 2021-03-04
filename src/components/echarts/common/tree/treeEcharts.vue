@@ -49,104 +49,75 @@ export default {
             },
             data: [
               {
-                name: "设为首图",
-                value: "角色：视觉部主管、专员、图片审核员。",
+                name: "新浪财经",
+                value: "发布消息《和其正在凉茶巨头夹缝中迷失，同仁堂与邓老遭多重考验》\n2021/1/21",
                 // symbol: 'roundRect',
                 // symbolSize: 15,
                 label: {
-                  offset: [20, 1],
+                  offset: [-60, 1],
                 },
                 children: [
                   {
-                    name: "saveQuality",
-                    value: "保存首图信息。",
+                    name: "百度百家号",
+                    value: "安安科普转发消息\n2021/1/22",
                     label: {
                       offset: [-30, -15],
                     },
                     children: [
                       {
-                        name: "handlePicInfo",
-                        value: "读取图片业绩人。",
-                        label: {
-                          offset: [-30, -15],
-                        },
-                        children: [
-                          {
-                            name: "findPicInfo",
-                            value: "默认从买卖房源读取图片业绩人。",
-                            symbol: "diamond",
-                            label: {
-                              offset: [-30, -15],
-                            },
-                            children: [
-                              {
-                                name:
-                                  "searchRentHousePicByHousenumber\n(租赁接口：ZL-010)",
-                                value:
-                                  "如果买卖房源无图片业绩人，调租赁接口，读取图片业绩人。",
-                              },
-                              {
-                                name:
-                                  "getReserveUserIdAndReserveDate\n(预约接口：YY-010)",
-                                value:
-                                  "如果租赁房源无图片业绩人，调预约接口，读取图片业绩人。",
-                                label: {
-                                  offset: [10, -15],
-                                },
-                                children: [
-                                  {
-                                    name: "getHRyejiRen\n(人事接口：MH-001)",
-                                    value:
-                                      "校验是否存在离职异动，调人事接口，读取图片业绩人。",
-                                  },
-                                ],
-                              },
-                            ],
-                          },
-                        ],
-                      },
-                      {
-                        name: "saveRecheckPictureAgreeRequest",
-                        value: "若直接审核通过，保存图片初审、复审信息。",
-                        label: {
-                          offset: [-5, -20],
-                        },
-                        children: [
-                          {
-                            name: "synRentPicInfo\n(租赁接口：ZL-009)",
-                            value:
-                              "调租赁接口，同步初审状态、有图标识、/r/n优图标识、图片人…",
-                          },
-                        ],
-                      },
-                      {
                         name:
-                          "updateRentPicForProcessingToLease\n(租赁接口：ZL-011)",
-                        value:
-                          "调租赁接口，同步图片人、优图标识、优图时间/r/n、申请时间、操作类型、操作日志。",
-                      },
-                      {
-                        name:
-                          "syncAppointmentPlatReserveState\n(预约接口：YY-005)",
-                        value: "调预约接口，同步预约状态（已上传完成）。",
-                      },
+                          "搜狐号",
+                        value: "转发了百度百家号的文章",
+                      }
                     ],
                   },
                   {
-                    name: "sysAppoimentEnd",
-                    value: "调接口，同步预约状态（已上传完成）。",
+                    name: "知乎",
+                    value: "知乎上出现热问，该热问提及品牌负面新闻\n2021/1/22",
                     label: {
                       offset: [-30, 15],
                     },
                     children: [
                       {
                         name:
-                          "syncAppointmentPlatReserveState\n(预约接口：YY-005)",
-                        value: "调预约接口，同步预约状态（已上传完成）。",
+                          "新浪微博",
+                        value: "对于提问作出官方回应",
                       },
                       {
-                        name: "synRentUpdateResState\n(租赁接口：ZL-008)",
-                        value: "调租赁接口，同步预约状态（已上传完成）。",
+                        name: "网易自媒体",
+                        value: "对于提问作出官方回应",
+                      },
+                    ],
+                  },
+                  {
+                    name: "抖音",
+                    value: "热门短视频提升了品牌讨论热度 \n 2021/1/23",
+                    label: {
+                      offset: [-30, 15],
+                    },
+                    children: [
+                      {
+                        name: "微信公众号",
+                        value: "讨论了消费者吃各类美食时搭配的凉茶品牌",
+                        label: {
+                        //   offset: [-30, -15],
+                        }
+                      },
+                      {
+                        name: "一点资讯",
+                        value: "简要描述了该事件：百万级的点赞量及万余计的转发",
+                        label: {
+                        //   offset: [-5, -20],
+                        }
+                      },
+                      {
+                        name:"企鹅号",
+                        value:
+                          "讨论了消费者吃各类美食时搭配的凉茶品牌",
+                      },
+                      {
+                        name:"头条号",
+                        value: "简要描述了该事件：百万级的点赞量及万余计的转发",
                       },
                     ],
                   },
