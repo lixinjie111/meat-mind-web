@@ -1,5 +1,5 @@
 <template>
-  <DefaultPage title="用户画像">
+    <!--  用户画像-->
     <div class="user-protrait">
       <!--用户动线部分-->
       <div class="yhdx_container">
@@ -992,7 +992,6 @@
 
 
     </div>
-  </DefaultPage>
 </template>
 <script>
 import DefaultPage from "../../layouts/DefaultPage";

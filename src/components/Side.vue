@@ -222,6 +222,8 @@
 </style>
 <style lang="scss">
     .menu {
+        overflow-x: hidden;
+
         .ivu-menu-light {
             background: none;
         }

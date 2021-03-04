@@ -1,13 +1,12 @@
 <template>
-    <DefaultPage>
-        <div class="home">
-            <!-- 企业主 -->
-            <template v-if="flag==1">
-                <BusinessOwner></BusinessOwner>
-            </template>
-            <!-- 数据管理员 -->
-            <template v-else-if="flag==2">
-              <div class="data-admin">
+    <div class="dashboard-container">
+        <!-- 企业主 -->
+        <template v-if="flag==1">
+            <BusinessOwner></BusinessOwner>
+        </template>
+        <!-- 数据管理员 -->
+        <template v-else-if="flag==2">
+            <div class="data-admin">
                 <div class="part1">
                     <div class="data-canter" @click="toDateCenter"></div>
                     <img src="../../static/img/home/datacenter1@2x.png" alt="">
@@ -26,82 +25,12 @@
                     </Modal>
                 </div>
             </div>
-            </template>
-            <!-- 分析师 -->
-            <template v-else>
-                <Analyst></Analyst>
-<!--                <img src="../../static/img/home/home1@2x.png" alt="">-->
-<!--                <div class="report-btn">一键生成报告</div>-->
-<!--                &lt;!&ndash;品牌运营概览&ndash;&gt;-->
-<!--                <div class="card">-->
-<!--                    <img src="../../static/img/home/home2@2x.png" alt="">-->
-<!--                    <div class="iframe1-bg"></div>-->
-<!--                    <iframe class="iframe1" src="/static/html/dashboard/yibiao.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe2" src="/static/html/dashboard/gmv.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe3" src="/static/html/dashboard/dindanL.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe4" src="/static/html/dashboard/kedanJ.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe5" src="/static/html/dashboard/xiadanR.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                </div>-->
-<!--                &lt;!&ndash;用户生命周期&ndash;&gt;-->
-<!--                <div class="card">-->
-<!--                    <img src="../../static/img/home/home3@2x.png" alt="">-->
-<!--                    <iframe class="iframe iframe6" src="/static/html/dashboard/xinyonH.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe7" src="/static/html/dashboard/huoyueYH.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe8" src="/static/html/dashboard/huiliuYH.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe9" src="/static/html/dashboard/chenmoYH.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe10" src="/static/html/dashboard/liushiYH.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe11" src="/static/html/dashboard/liuRliuCb.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                </div>-->
-<!--                &lt;!&ndash;通道概况&ndash;&gt;-->
-<!--                <div class="card">-->
-<!--                    <img src="../../static/img/home/home4@2x.png" alt="">-->
-<!--                    <iframe class="iframe iframe12" src="/static/html/dashboard/num.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe13" src="/static/html/dashboard/num1.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe14" src="/static/html/dashboard/num2.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe15" src="/static/html/dashboard/num3.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe16" src="/static/html/dashboard/num4.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                </div>-->
-<!--                &lt;!&ndash;产品数据评估&ndash;&gt;-->
-<!--                <div class="card">-->
-<!--                    <img src="../../static/img/home/home5@2x.png" alt="">-->
-<!--                    <iframe class="iframe iframe17" src="/static/html/dashboard/Active-times.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe18" src="/static/html/dashboard/Active-user-core.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe19" src="/static/html/dashboard/Active-enterprises.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe20" src="/static/html/dashboard/Total-core-functions.html"-->
-<!--                            frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe21" src="/static/html/dashboard/Num-active-employees.html"-->
-<!--                            frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe22" src="/static/html/dashboard/Core-function-Enterprise.html"-->
-<!--                            frameborder="0" scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe23" src="/static/html/dashboard/Active-user-core.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                    <iframe class="iframe iframe24" src="/static/html/dashboard/Core-permeability.html" frameborder="0"-->
-<!--                            scrolling="no"></iframe>-->
-<!--                </div>-->
-            </template>
-        </div>
-    </DefaultPage>
+        </template>
+        <!-- 分析师 -->
+        <template v-else>
+            <Analyst></Analyst>
+        </template>
+    </div>
 </template>
 
 <script>
@@ -189,7 +118,7 @@
     }
 </style>
 <style scoped lang="scss">
-    .home {
+    .dashboard-container {
         .data-admin {
             padding: 0 12px 0 18px;
             display: flex;

@@ -1,5 +1,5 @@
 <template>
-  <DefaultPage title="媒介画像">
+<!--  媒介画像-->
     <div class="media-protrait">
       <!-- <div class="m-p-panel">
         <div class="panel1">
@@ -1568,7 +1568,6 @@
           </Tabs>
       </div>
     </div>
-  </DefaultPage>
 </template>
 
 <script>
