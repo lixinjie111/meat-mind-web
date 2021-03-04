@@ -503,9 +503,14 @@
                   dy:require("../../assets/img/yhhx/dyI.png"),
                   txxw:require("../../assets/img/yhhx/txxw.png"),
                   pyq:require("../../assets/img/yhhx/pyq.png"),
+                  wb:require("../../assets/img/yhhx/wb.png"),
                 },
                 mbValue:'bjsbz',
                 mubiaoList:[
+                    {
+                      label:'综合客群',
+                      value:'zs',
+                    },
                     {
                         label:'北京上班族',
                         value:'bjsbz',
@@ -525,10 +530,6 @@
                     {
                         label:'企业高管',
                         value:'qygg',
-                    },
-                    {
-                        label:'总数',
-                        value:'zs',
                     },
                 ],
                 data1: {
@@ -626,17 +627,17 @@
                     },
                 },
                 data4: {
-                  own: '45',
-                  develop: '45',
-                  total: '55,790',
-                  shopping: '7300',
-                  successRate: '85',
-                  Turnover: '¥30,000,000-¥70,000,000',
-                  tag: ['公共交通', '家', '公司'],
-                  trait: ['未婚', '20-29岁', '本科以上', '白领', '15-25k', '一线城市'],
-                  attention: ['秋天的第一杯奶茶', '燃烧我的卡路里'],
-                  noema: { brand: '强势品牌', content: '促进型', attitude: '个性化/颜值…', visualize: '具象化/简洁', hate: '性别歧视', wound: '996/晚高峰' },
-                  medium: ['tt', 'xhs', 'dy', 'ks' ],
+                  own: '17',
+                  develop: '83',
+                  total: '96,911',
+                  shopping: '2600',
+                  successRate: '93',
+                  Turnover: '¥21,800,000-¥35,600,000',
+                  tag: ['驾车', '地铁', '骑行', '住所', '办公地点'],
+                  trait: ['18-35岁', '本科以上', '职场人士', '5-50k', '一线城市', '打工人', '加班'],
+                  attention: ['健康饮食', '养肝'],
+                  noema: { brand: '有名气', content: '积极阳光', attitude: '健康/养护…', visualize: '大方/时尚', hate: '虚假宣传', wound: '喝出杂质、异物' },
+                  medium: ['wb', 'dy', 'pyq', 'tt' ],
                   commute: {
                     time: '7:00 - 9:00',
                     media: '头条/微博/小红书',
@@ -670,7 +671,7 @@
         computed: {
           groupData(){
             const temp = {
-              zs: { ...this.data4, name: '总数' },
+              zs: { ...this.data4, name: '综合客群' },
               bjsbz: { ...this.data1, name: '北京上班族' },
               qygg: { ...this.data1, name: '企业高管', total: '5,158'},
               bpyz: { ...this.data3, name: '北漂一族', total: '1,8197' },
@@ -870,7 +871,7 @@
                 .card-one-left-info {
                     padding: 10px 12px;
                     width: 287px;
-                    height: 72px;
+                    min-height: 72px;
                     background: linear-gradient(221deg, #03A8C8 0%, #8BD5AE 100%);
                     box-shadow: 2px 3px 12px 0px rgba(45, 120, 134, 0.55);
                     border-radius: 8px;
