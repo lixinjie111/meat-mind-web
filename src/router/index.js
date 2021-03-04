@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from '../views/index.vue'
 import Login from "../views/login.vue"
+import Home from "../views/home.vue"
 import dashboard from "../views/dashboard/router"//首页
 import userProtrait from "../views/user/router"//用户画像
 import markProtrait from "../views/mark/router"//品牌画像
@@ -16,13 +17,6 @@ import pieView from "../components/echarts/pieView"
 Vue.use(VueRouter)
 
 const routes = [
-  ...dashboard,
-  ...userProtrait,
-  ...markProtrait,
-  ...mediaProtrait,
-  ...businessAnalysis,
-  ...analysisTool,
-  ...dataCenter,
   {
     path: '/',
     name: 'index',
@@ -32,6 +26,20 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login
+  },
+  {
+    path:"/home",
+    name:"home",
+    component:Home,
+    children:[
+      ...dashboard,
+      ...userProtrait,
+      ...markProtrait,
+      ...mediaProtrait,
+      ...businessAnalysis,
+      ...analysisTool,
+      ...dataCenter
+    ]
   },
   {
     path: '/barView',
