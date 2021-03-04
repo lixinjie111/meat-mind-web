@@ -420,11 +420,13 @@
                     <div class="card-six-left-btn">查看全部案例</div>
                 </div>
                 <div class="card-six-right clearfix">
-                    <div class="card-six-right-item fl">
-                        <p>北京快销品<br>行业分析报告</p>
-                        <p>年度/季度/月度报告</p>
-                        <p>元知智能研究院</p>
-                    </div>
+                    <a target="_blank" href="/static/pdf/2020年快消品行业内容营销报告.pdf">
+                        <div class="card-six-right-item fl">
+                            <p>北京快销品<br>行业分析报告</p>
+                            <p>年度/季度/月度报告</p>
+                            <p>元知智能研究院</p>
+                        </div>
+                    </a>
                     <div class="card-six-right-item fl">
                         <p>北京软饮料<br>市场规模跟踪</p>
                         <p>重点市场规模<br>数据跟踪及提取</p>
