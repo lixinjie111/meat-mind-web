@@ -2,7 +2,9 @@
 <!--    品牌画像-->
     <!-- <Target></Target> -->
     <div class="mark-content">
-
+        <div class="header-nav">
+            <p>品牌画像</p>
+        </div>
         <!-- <div class="first-line">
             <div class="mark-overview">
                 <div class="title">品牌总体概览</div>

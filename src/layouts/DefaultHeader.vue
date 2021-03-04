@@ -120,7 +120,7 @@ export default {
       }
       img{
         position: absolute;
-        top: 4px;
+        top: 20px;
         left: 16px;
         width: 24px;
         height: 24px;

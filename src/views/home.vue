@@ -4,13 +4,10 @@
             <DefaultSide></DefaultSide>
         </Sider>
         <Layout :style="{marginLeft: '240px'}">
-            <Header :style="{position: 'fixed', width: '100%', zIndex: 1000}">
+            <Header :style="{position: 'fixed', width: 'calc(100% - 240px)', zIndex: 1000}">
                 <DefaultHeader target="Dashboard"></DefaultHeader>
             </Header>
             <Content :style="{marginTop: '64px'}">
-                <div class="nav" v-if="title" :style="{background: '#ffffff', padding: '0 24px'}">
-                    <p class="nav-title">{{title}}</p>
-                </div>
                 <router-view></router-view>
             </Content>
         </Layout>

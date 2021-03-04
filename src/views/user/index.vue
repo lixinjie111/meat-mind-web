@@ -1,6 +1,9 @@
 <template>
     <!--  用户画像-->
     <div class="user-protrait">
+      <div class="header-nav">
+        <p>用户画像</p>
+      </div>
       <!--用户动线部分-->
       <div class="yhdx_container">
         <div class="top_title_container">
@@ -988,9 +991,6 @@
         </div>
       </div>
       </div>
-
-
-
     </div>
 </template>
 <script>

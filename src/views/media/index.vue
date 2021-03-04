@@ -1,6 +1,9 @@
 <template>
 <!--  媒介画像-->
     <div class="media-protrait">
+      <div class="header-nav">
+        <p>媒介画像</p>
+      </div>
       <!-- <div class="m-p-panel">
         <div class="panel1">
           <div class="title">

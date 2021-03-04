@@ -57,6 +57,17 @@ li {
   margin-bottom: 8px;
 }
 
+.header-nav {
+  padding: 16px 24px;
+
+  > p {
+    font-size: 20px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #242F57;
+  }
+}
+
 .flex {
   display: flex;
   justify-content: space-between;
