@@ -1,22 +1,24 @@
-]<template>
-    <div class="main">
-        <Side class="main-left"></Side>
-        <div class="container">
-            <Header target="Dashboard" class="main-top"></Header>
-            <div class="content" id="contentD">
-                <div class="nav" v-if="title">
+<template>
+    <Layout>
+        <Sider :style="{position: 'fixed', height: '100vh', width: '240px', minWidth: '240px', left: 0, overflow: 'auto'}">
+            <Side></Side>
+        </Sider>
+        <Layout :style="{marginLeft: '240px'}">
+            <Header :style="{position: 'fixed', width: '100%', zIndex: 10000}">
+                <DefaultHeader target="Dashboard"></DefaultHeader>
+                <div class="nav" v-if="title" :style="{background: '#ffffff', padding: '0 24px'}">
                     <p class="nav-title">{{title}}</p>
                 </div>
+            </Header>
+            <Content :style="{marginTop: '128px'}">
                 <slot></slot>
-                <!-- <BackTop></BackTop> -->
-            </div>
-        </div>
-    </div>
+            </Content>
+        </Layout>
+    </Layout>
 </template>
-
 <script>
     import Side from "../components/Side"
-    import Header from "../components/DefaultHeader"
+    import DefaultHeader from "../components/DefaultHeader"
 
     export default {
         props: {
@@ -25,46 +27,20 @@
                 default: ''
             }
         },
-        components: {Side, Header}
+        components: {Side, DefaultHeader}
     }
 </script>
 <style scoped lang="scss">
-    .main {
-        .main-left {
-            position: fixed;
-            left: 0;
-            top: 0;
-        }
+    .ivu-layout {
+        background: #ffffff;
+    }
 
-        .container {
-            .main-top {
-                position: fixed;
-                left: 240px;
-                top: 0;
-                z-index: 1000;
-                width: calc(100% - 240px);
-            }
+    .ivu-layout-sider {
+        background: #ffffff;
+    }
 
-            .content {
-                position: absolute;
-                left: 240px;
-                top: 64px;
-                width: calc(100% - 240px);
-                height: calc(100vh - 64px);
-                /*overflow-y: scroll;*/
-
-                .nav {
-                    padding: 16px 24px;
-
-                    > p {
-                        padding-left: 24px;
-                        font-size: 20px;
-                        font-family: PingFangSC-Medium, PingFang SC;
-                        font-weight: 500;
-                        color: #242F57;
-                    }
-                }
-            }
-        }
+    .ivu-layout-header {
+        background: #ffffff;
+        padding: 0;
     }
 </style>

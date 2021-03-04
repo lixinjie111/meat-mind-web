@@ -8,7 +8,7 @@
 </template>
 
 <script>
-    import DefaultPage from "../../layouts/DefaultSubPage";
+    import DefaultPage from "../../layouts/DefaultPage";
     export default {
         name: "index",
         components: {DefaultPage},
