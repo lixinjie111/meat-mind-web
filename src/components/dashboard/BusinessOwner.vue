@@ -1,6 +1,6 @@
 <template>
-    <div class="business-owner">
-        <div class="business-owner-tab">
+    <div class="business-box">
+        <div class="business-box-tab">
             <div :class="['tab-item', tabActive == 1 ? 'active' : '']" @click="tabActive = 1">
                 营销洞察
             </div>
@@ -37,10 +37,10 @@
 </script>
 
 <style scoped lang="scss">
-    .business-owner {
+    .business-box {
         position: relative;
 
-        .business-owner-tab {
+        .business-box-tab {
             width: 100%;
             height: 71px;
             background: url("../../assets/img/dashboard/manage/tab2.png") repeat-x left bottom / 100% 16px;

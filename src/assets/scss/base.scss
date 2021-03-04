@@ -57,6 +57,17 @@ li {
   margin-bottom: 8px;
 }
 
+.header-nav {
+  padding: 16px 24px;
+
+  > p {
+    font-size: 20px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #242F57;
+  }
+}
+
 .flex {
   display: flex;
   justify-content: space-between;
@@ -262,5 +273,29 @@ li {
     content: '低';
     color: #007AFF;
     background: #E3ECFE;
+  }
+}
+
+//滚动条样式
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(171, 187, 248, 1);
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0);
+  border-radius: 3px;
+  //background: rgba(171, 187, 248, .3);
+}
+
+// 解决纵向滚动条引起的横向滚动条
+@media screen and (min-width:1436px){
+  body{
+    overflow-x: hidden;
   }
 }

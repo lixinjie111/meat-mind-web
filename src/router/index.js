@@ -24,15 +24,15 @@ const routes = [
     component: Index
   },
   {
-    path: '/login',
-    name: 'login',
-    component: Login
-  },
-  {
     path:"/home",
     name:"home",
     component:Home,
     children:[
+      {
+        path: '/login',
+        name: 'login',
+        component: Login
+      },
       ...dashboard,
       ...userProtrait,
       ...markProtrait,

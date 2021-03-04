@@ -1,35 +1,33 @@
 <template>
-    <div class="side">
-        <div class="menu">
-            <div class="logo"></div>
-            <Menu ref="side_menu"
-                  theme="light"
-                  :active-name="activeName"
-                  :open-names="openName"
-                  @on-select="handleSelect"
-                  @on-open-change="openChange"
-                  width="auto"
-                  accordion>
-                <div v-for="(item, index) in menu" :key="index">
-                    <Submenu v-if="item.children" :name="item.name">
-                        <template slot="title">
-                            <i class="icon iconfont" :class="item.icon"></i>
-                            <span class="title-name">{{ item.label }}</span>
-                        </template>
-                        <MenuItem v-for="(ele, i) in item.children"
-                                  :to="ele.path"
-                                  :name="ele.name"
-                                  :key="i">
-                            <span class="sub-name">{{ ele.label }}</span>
-                        </MenuItem>
-                    </Submenu>
-                    <MenuItem v-else :name="item.name" :to="item.path">
+    <div class="menu">
+        <div class="logo"></div>
+        <Menu ref="side_menu"
+              theme="light"
+              :active-name="activeName"
+              :open-names="openName"
+              @on-select="handleSelect"
+              @on-open-change="openChange"
+              width="auto"
+              accordion>
+            <div v-for="(item, index) in menu" :key="index">
+                <Submenu v-if="item.children" :name="item.name">
+                    <template slot="title">
                         <i class="icon iconfont" :class="item.icon"></i>
                         <span class="title-name">{{ item.label }}</span>
+                    </template>
+                    <MenuItem v-for="(ele, i) in item.children"
+                              :to="ele.path"
+                              :name="ele.name"
+                              :key="i">
+                        <span class="sub-name">{{ ele.label }}</span>
                     </MenuItem>
-                </div>
-            </Menu>
-        </div>
+                </Submenu>
+                <MenuItem v-else :name="item.name" :to="item.path">
+                    <i class="icon iconfont" :class="item.icon"></i>
+                    <span class="title-name">{{ item.label }}</span>
+                </MenuItem>
+            </div>
+        </Menu>
     </div>
 </template>
 
@@ -213,40 +211,19 @@
 </script>
 
 <style scoped lang="scss">
-    .side {
-        /*height: 100vh;*/
-        height: 100%;
-        display: flex;
-
-        .menu {
-            // position: relative;
-            width: 240px;
-            /*height: 100%;*/
-            min-height: 100vh;
-            background: url("../assets/img/side/side-bg@2x.png") no-repeat left top / 240px 2048px;
-
-            // &:after {
-            //     position: absolute;
-            //     top: 0;
-            //     right: 0;
-            //     content: "";
-            //     width: 4px;
-            //     height: 100%;
-            //     background: #FAFCFF;
-            //     box-shadow: inset 1px 1px 1px 0px rgba(211, 213, 217, 0.63);
-            // }
-
-            .logo {
-                width: 108px;
-                height: 30px;
-                margin: 48px 84px 48px 48px;
-                background: url("../assets/img/side/logo-colour@2x.png") no-repeat center / 108px 30px;
-            }
+    .menu {
+        .logo {
+            width: 108px;
+            height: 30px;
+            margin: 48px 84px 48px 48px;
+            background: url("../assets/img/side/logo-colour@2x.png") no-repeat center / 108px 30px;
         }
     }
 </style>
 <style lang="scss">
-    .side {
+    .menu {
+        overflow-x: hidden;
+
         .ivu-menu-light {
             background: none;
         }

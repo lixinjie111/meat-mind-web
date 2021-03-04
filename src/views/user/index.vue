@@ -1,6 +1,9 @@
 <template>
-  <DefaultPage title="用户画像">
+    <!--  用户画像-->
     <div class="user-protrait">
+      <div class="header-nav">
+        <p>用户画像</p>
+      </div>
       <!--用户动线部分-->
       <div class="yhdx_container">
         <div class="top_title_container">
@@ -988,14 +991,9 @@
         </div>
       </div>
       </div>
-
-
-
     </div>
-  </DefaultPage>
 </template>
 <script>
-import DefaultPage from "../../layouts/DefaultPage";
 import barEcharts from '../../components/echarts/common/barEcharts';
 import barL from '../../components/echarts/common/barL';
 import barM from '../../components/echarts/common/barM';
@@ -1029,7 +1027,7 @@ import vTabCard from "./tabCard";
 import chuDa from "./chuDa";
 export default {
   components: {
-   PieEcharts1,barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,DefaultPage, PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
+   PieEcharts1,barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
    vDxitem,vDxitem1,vTabCard,chuDa
   },
   name: "index",

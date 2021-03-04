@@ -1,191 +1,188 @@
 <template>
-  <DefaultPage>
-    <DetailsPage title="编辑" backname="user-defined">
-      <div class="user-defined-edit">
-        <div class="user-group-rule">
-          <p>用户群规则</p>
-          <div class="feature">
-            <div class="line-desc">
-              <div class="name">包含特征</div>
-              <div class="desc">已选择<span style="color:#4488FF">{{num}}</span>个特征</div>
-            </div>
-            <Input v-model="value1" size="large" placeholder="暂无规则 请从右侧选择添加" />
-            <div class="add">
-              <i class="iconfont iconicon_plus"></i>
-              <div>添加一个交集关系框</div>
-            </div>
-            <div class="line-desc filter">
-              <div class="name">过滤特征</div>
-              <div class="desc">已选择<span style="color:#4488FF">0</span>个特征</div>
-            </div>
-            <Input v-model="value2" size="large" placeholder="暂无规则 请从右侧选择添加" />
-            <div class="add">
-              <i class="iconfont iconicon_plus"></i>
-              <div>添加一个交集关系框</div>
-            </div>
+  <DetailsPage title="编辑" backname="user-defined">
+    <div class="user-defined-edit">
+      <div class="user-group-rule">
+        <p>用户群规则</p>
+        <div class="feature">
+          <div class="line-desc">
+            <div class="name">包含特征</div>
+            <div class="desc">已选择<span style="color:#4488FF">{{num}}</span>个特征</div>
           </div>
-          <div class="column"></div>
-          <div class="choose">
-            <RadioGroup v-model="chooseType">
-              <Radio label="且"></Radio>
-              <Radio label="或"></Radio>
-            </RadioGroup>
+          <Input v-model="value1" size="large" placeholder="暂无规则 请从右侧选择添加" />
+          <div class="add">
+            <i class="iconfont iconicon_plus"></i>
+            <div>添加一个交集关系框</div>
           </div>
-          <div class="column"></div>
-          <div class="base-beahvior">
-            <div class="line-desc">
-              <div class="name">基础行为</div>
-              <div class="desc">已选择<span style="color:#4488FF">0</span>个行为</div>
-            </div>
-            <Input v-model="value3" size="large" placeholder="暂无基础行为 请从右侧选择添加" />
+          <div class="line-desc filter">
+            <div class="name">过滤特征</div>
+            <div class="desc">已选择<span style="color:#4488FF">0</span>个特征</div>
           </div>
-          <div class="column"></div>
-          <div class="choose">
-            <RadioGroup v-model="chooseType2">
-              <Radio label="且"></Radio>
-              <Radio label="或"></Radio>
-            </RadioGroup>
-          </div>
-          <div class="column"></div>
-          <div class="base-beahvior">
-            <div class="line-desc">
-              <div class="name">基础行为</div>
-              <div class="desc">已选择<span style="color:#4488FF">0</span>个行为</div>
-            </div>
-            <Input v-model="value4" size="large" placeholder="暂无基础行为 请从右侧选择添加" />
-          </div>
-          <div class="btn-box">
-            <div class="clear" @click="clear">清空</div>
-            <div class="confirm" @click="confirm">确定</div>
+          <Input v-model="value2" size="large" placeholder="暂无规则 请从右侧选择添加" />
+          <div class="add">
+            <i class="iconfont iconicon_plus"></i>
+            <div>添加一个交集关系框</div>
           </div>
         </div>
-        <div class="user-target">
-          <div class="target-left">
-            <!-- <img :src="conditImg" alt="" srcset="" class="conditImg" /> -->
-            <div class="l-item">
-              <div class="l-item-label">常用标签</div>
-              <div class="item-list" v-for="(item, index) in target" :key="index">
-                <div class="item-con">
-                  <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
-                  <i class="iconfont2 iconxiangqian"></i>
-                </div>
-              </div>
-            </div>
-            <div class="l-item">
-              <div class="l-item-label">属性维度</div>
-              <div class="item-list" v-for="(item, index) in property" :key="index" >
-                <div class="item-con">
-                  <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
-                  <i class="iconfont2 iconxiangqian"></i>
-                </div>
-              </div>
-            </div>
-            <div class="l-item">
-              <div class="l-item-label">用户行为</div>
-              <div class="item-list" v-for="(item, index) in behavior" :key="index" >
-                <div class="item-con">
-                  <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
-                  <i class="iconfont2 iconxiangqian"></i>
-                </div>
+        <div class="column"></div>
+        <div class="choose">
+          <RadioGroup v-model="chooseType">
+            <Radio label="且"></Radio>
+            <Radio label="或"></Radio>
+          </RadioGroup>
+        </div>
+        <div class="column"></div>
+        <div class="base-beahvior">
+          <div class="line-desc">
+            <div class="name">基础行为</div>
+            <div class="desc">已选择<span style="color:#4488FF">0</span>个行为</div>
+          </div>
+          <Input v-model="value3" size="large" placeholder="暂无基础行为 请从右侧选择添加" />
+        </div>
+        <div class="column"></div>
+        <div class="choose">
+          <RadioGroup v-model="chooseType2">
+            <Radio label="且"></Radio>
+            <Radio label="或"></Radio>
+          </RadioGroup>
+        </div>
+        <div class="column"></div>
+        <div class="base-beahvior">
+          <div class="line-desc">
+            <div class="name">基础行为</div>
+            <div class="desc">已选择<span style="color:#4488FF">0</span>个行为</div>
+          </div>
+          <Input v-model="value4" size="large" placeholder="暂无基础行为 请从右侧选择添加" />
+        </div>
+        <div class="btn-box">
+          <div class="clear" @click="clear">清空</div>
+          <div class="confirm" @click="confirm">确定</div>
+        </div>
+      </div>
+      <div class="user-target">
+        <div class="target-left">
+          <!-- <img :src="conditImg" alt="" srcset="" class="conditImg" /> -->
+          <div class="l-item">
+            <div class="l-item-label">常用标签</div>
+            <div class="item-list" v-for="(item, index) in target" :key="index">
+              <div class="item-con">
+                <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
+                <i class="iconfont2 iconxiangqian"></i>
               </div>
             </div>
           </div>
-          <div class="target-right">
-            <div class="r-item">
-              <div class="r-item-label">年龄</div>
-              <div class="arr">
-                <div class="ele"
-                  ref="ninlinItem"
-                  v-for="(item, index) in ageList"
-                  :key="index"
-                  @click="clickItem(item,index, 'ninlinItem')">
-                  {{ item }}
-                </div>
+          <div class="l-item">
+            <div class="l-item-label">属性维度</div>
+            <div class="item-list" v-for="(item, index) in property" :key="index" >
+              <div class="item-con">
+                <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
+                <i class="iconfont2 iconxiangqian"></i>
               </div>
             </div>
-            <div class="r-item">
-              <div class="r-item-label">性别</div>
-              <div class="arr">
-                <div
-                  class="ele"
-                  ref="xingbieItem"
-                  v-for="(item, index) in sexList"
-                  :key="index"
-                  @click="clickItem(item,index, 'xingbieItem')"
-                >
-                  {{ item }}
-                </div>
+          </div>
+          <div class="l-item">
+            <div class="l-item-label">用户行为</div>
+            <div class="item-list" v-for="(item, index) in behavior" :key="index" >
+              <div class="item-con">
+                <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
+                <i class="iconfont2 iconxiangqian"></i>
               </div>
             </div>
-            <div class="r-item">
-              <div class="r-item-label">有小孩</div>
-              <div class="arr">
-                <div
-                  class="ele"
-                  ref="hasChild"
-                  v-for="(item, index) in hasChildList"
-                  :key="index"
-                  @click="clickItem(item,index, 'hasChild')"
-                >
-                  {{ item }}
-                </div>
+          </div>
+        </div>
+        <div class="target-right">
+          <div class="r-item">
+            <div class="r-item-label">年龄</div>
+            <div class="arr">
+              <div class="ele"
+                ref="ninlinItem"
+                v-for="(item, index) in ageList"
+                :key="index"
+                @click="clickItem(item,index, 'ninlinItem')">
+                {{ item }}
               </div>
             </div>
-            <div class="r-item">
-              <div class="r-item-label">消费水平</div>
-              <div class="arr">
-                <div
-                  class="ele"
-                  ref="xflevel"
-                  v-for="(item, index) in xiaofeiList"
-                  :key="index"
-                  @click="clickItem(item,index, 'xflevel')"
-                >
-                  {{ item }}
-                </div>
+          </div>
+          <div class="r-item">
+            <div class="r-item-label">性别</div>
+            <div class="arr">
+              <div
+                class="ele"
+                ref="xingbieItem"
+                v-for="(item, index) in sexList"
+                :key="index"
+                @click="clickItem(item,index, 'xingbieItem')"
+              >
+                {{ item }}
               </div>
             </div>
-            <div class="r-item">
-              <div class="r-item-label">婚姻</div>
-              <div class="arr">
-                <div
-                  class="ele"
-                  ref="huny"
-                  v-for="(item, index) in huyList"
-                  :key="index"
-                  @click="clickItem(item,index, 'huny')"
-                >
-                  {{ item }}
-                </div>
+          </div>
+          <div class="r-item">
+            <div class="r-item-label">有小孩</div>
+            <div class="arr">
+              <div
+                class="ele"
+                ref="hasChild"
+                v-for="(item, index) in hasChildList"
+                :key="index"
+                @click="clickItem(item,index, 'hasChild')"
+              >
+                {{ item }}
               </div>
             </div>
-            <div class="r-item">
-              <div class="r-item-label">职业</div>
-              <div class="arr">
-                <div
-                  class="ele"
-                  ref="jobdom"
-                  v-for="(item, index) in jobList"
-                  :key="index"
-                  @click="clickItem(item,index, 'jobdom')"
-                >
-                  {{ item }}
-                </div>
+          </div>
+          <div class="r-item">
+            <div class="r-item-label">消费水平</div>
+            <div class="arr">
+              <div
+                class="ele"
+                ref="xflevel"
+                v-for="(item, index) in xiaofeiList"
+                :key="index"
+                @click="clickItem(item,index, 'xflevel')"
+              >
+                {{ item }}
+              </div>
+            </div>
+          </div>
+          <div class="r-item">
+            <div class="r-item-label">婚姻</div>
+            <div class="arr">
+              <div
+                class="ele"
+                ref="huny"
+                v-for="(item, index) in huyList"
+                :key="index"
+                @click="clickItem(item,index, 'huny')"
+              >
+                {{ item }}
+              </div>
+            </div>
+          </div>
+          <div class="r-item">
+            <div class="r-item-label">职业</div>
+            <div class="arr">
+              <div
+                class="ele"
+                ref="jobdom"
+                v-for="(item, index) in jobList"
+                :key="index"
+                @click="clickItem(item,index, 'jobdom')"
+              >
+                {{ item }}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </DetailsPage>
-  </DefaultPage>
+    </div>
+  </DetailsPage>
 </template>
 
 <script>
-import DefaultPage from "../../layouts/DefaultPage";
 import DetailsPage from "../../layouts/DetailsPage";
 export default {
   name: "defined",
-  components: { DefaultPage, DetailsPage },
+  components: { DetailsPage },
   data() {
     return {
       value1:"",

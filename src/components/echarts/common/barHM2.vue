@@ -66,7 +66,7 @@ export default {
                 data: this.myData.legName,
             },
             grid: {
-                left: 40,
+                left: 40/144*window.rem,
                 right: 16/144*window.rem,
                 bottom: 0,
                 top: 0,

@@ -1,323 +1,384 @@
 <template>
-    <DefaultPage title="品牌画像">
-        <!-- <Target></Target> -->
-        <div class="mark-content">
-
-            <!-- <div class="first-line">
-                <div class="mark-overview">
-                    <div class="title">品牌总体概览</div>
-                    <div class="box-content">
-                       <ShowTotal></ShowTotal>
-                    </div>
-                </div>
-                <div class="tea-trend">
-                    <div class="title">产量趋势 & 市场需求量  </div>
-                    <div class="sub-title">
-                        需求量
-                        <span style="color:#34C724">稳步上升</span>,
-                        市场供需
-                        <span style="color:#FF8800">基本平衡</span>,
-                        市场前景
-                        <span style="color:#FF8800">良好</span>
-                    </div>
-                    <div class="tea-echart">
-                        <barM id="box9999" :colorList="$lxjData.colorList" :myData="$lxjData.box32Data"></barM>
-                    </div>
+<!--    品牌画像-->
+    <!-- <Target></Target> -->
+    <div class="mark-content">
+        <div class="header-nav">
+            <p>品牌画像</p>
+        </div>
+        <!-- <div class="first-line">
+            <div class="mark-overview">
+                <div class="title">品牌总体概览</div>
+                <div class="box-content">
+                   <ShowTotal></ShowTotal>
                 </div>
             </div>
-            <Brand></Brand> -->
-            <div class="mark-line">
-                 <div class="mark-line-top">
-                    <div class="mark-line-sug mark-line-left">
-                        <div class="title">
-                            市场趋势及品牌现状
-                        </div>
-                        <div class="desc">
-                            品牌定位与目标受众契合度良好，但市场份额小幅下滑，需进行产品多元化转型，引流年轻受众
-                        </div>
-                     </div>
-                    <div class="mark-line-sug mark-line-rt">
-                        <div class="title">
-                            优化建议
-                        </div>
-                        <div class="desc">
-                            提高微博、抖音的投放预算，增大品牌正向声量，塑造国医、简约、责任的品牌人设
-                        </div>
-                    </div>
-                 </div>
-                 <div class="mark-line-bt" v-if="showFlag">
-                    <div class="mark-line-sug mark-line-left">
-                        <div class="item">
-                            <div class="circle">
-                            </div>
-                            <div class="desc">
-                                容行业市场供需已进入成熟阶段（97.1Brmb），整体呈平稳上升趋势且仍未饱和，2021年预估走强（+16.7%）
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="circle">
-                            </div>
-                            <div class="desc">
-                                加多宝和王老吉已形成“两超多强”断层局势，共持有95.1%行业市场份额，邓老凉茶市场份额同比下降12.1%（8/53），同时品牌影响力指数排名较往年下降2位（6/53）
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="circle">
-                            </div>
-                            <div class="desc">
-                                东南、华中地区为优势市场，华北地区政策利好拓展新市场，新增用户多为18-29岁年轻一代。
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="circle">
-                            </div>
-                            <div class="desc">
-                                市场舆情总声量一般，顺意舆情占比高，逆意舆情类型多为竞对恶意抹黑，尚处于散播初期
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="circle">
-                            </div>
-                            <div class="desc">
-                                元气森林（牛乳茶+0.51%）、燃茶（蜜桃乌龙+0.19%）等新兴爆品IP出现进军茶饮料市场的趋势。
-                            </div>
-                        </div>
-                     </div>
-                    <div class="mark-line-sug mark-line-rt">
-                        <div class="item">
-                            <div class="circle">
-                            </div>
-                            <div class="desc">
-                                增加15%-20%微信公众号、微博及抖音的营销预算，提高品牌正向声量，促成裂变
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="circle">
-                            </div>
-                            <div class="desc">
-                                线下店需细分季节性核心产品，当前推荐：“香茅桃桃”、“金桂牛乳冻”及“秋梨胶原菊花”
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="circle">
-                            </div>
-                            <div class="desc">
-                               产品包装主打“深松绿”及“萱草黄”配色，突出治愈、新生、传统国医的品牌调性
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="circle">
-                            </div>
-                            <div class="desc">
-                                避开“怕上火”、“好声音”等头部竞对常用标签，通过“国家级非遗”、“抗击SARS药方”等品牌记忆点标签打造“药食一体”的差异化爆品，持续孵化“凉茶研究所“等自营IP
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="circle">
-                            </div>
-                            <div class="desc">
-                               取消产品低价策略，寻求“江小白”、“喜茶”等Z世代受众追捧的主流IP进行跨界合作，预期提升77%同比营收
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="circle">
-                            </div>
-                            <div class="desc">
-                               开拓新市场优先选择华北地区，邓老“大道至简，达济众生”的选材原则符合当地消费者心智期许（47.2%养生经济），强化品牌“养生性”标签的同时预期增加1.81%的市场份额
-                            </div>
-                        </div>
-                    </div>
-                 </div>
-                <div class="showMore" v-if="showFlag" @click="showFlag=!showFlag">
-                     收起详情
-                     <i class="iconfont2 iconshouqi"></i>
-                 </div>
-                 <div class="showMore" v-else @click="showFlag=!showFlag">
-                     展开详情
-                     <i class="iconfont2 iconzhankai"></i>
-                 </div>
+            <div class="tea-trend">
+                <div class="title">产量趋势 & 市场需求量  </div>
+                <div class="sub-title">
+                    需求量
+                    <span style="color:#34C724">稳步上升</span>,
+                    市场供需
+                    <span style="color:#FF8800">基本平衡</span>,
+                    市场前景
+                    <span style="color:#FF8800">良好</span>
+                </div>
+                <div class="tea-echart">
+                    <barM id="box9999" :colorList="$lxjData.colorList" :myData="$lxjData.box32Data"></barM>
+                </div>
             </div>
-            <div class="mark-panel">
+        </div>
+        <Brand></Brand> -->
+        <div class="mark-line">
+             <div class="mark-line-top">
+                <div class="mark-line-sug mark-line-left">
+                    <div class="title">
+                        市场趋势及品牌现状
+                    </div>
+                    <div class="desc">
+                        品牌定位与目标受众契合度良好，但市场份额小幅下滑，需进行产品多元化转型，引流年轻受众
+                    </div>
+                 </div>
+                <div class="mark-line-sug mark-line-rt">
+                    <div class="title">
+                        优化建议
+                    </div>
+                    <div class="desc">
+                        提高微博、抖音的投放预算，增大品牌正向声量，塑造国医、简约、责任的品牌人设
+                    </div>
+                </div>
+             </div>
+             <div class="mark-line-bt" v-if="showFlag">
+                <div class="mark-line-sug mark-line-left">
+                    <div class="item">
+                        <div class="circle">
+                        </div>
+                        <div class="desc">
+                            容行业市场供需已进入成熟阶段（97.1Brmb），整体呈平稳上升趋势且仍未饱和，2021年预估走强（+16.7%）
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="circle">
+                        </div>
+                        <div class="desc">
+                            加多宝和王老吉已形成“两超多强”断层局势，共持有95.1%行业市场份额，邓老凉茶市场份额同比下降12.1%（8/53），同时品牌影响力指数排名较往年下降2位（6/53）
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="circle">
+                        </div>
+                        <div class="desc">
+                            东南、华中地区为优势市场，华北地区政策利好拓展新市场，新增用户多为18-29岁年轻一代。
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="circle">
+                        </div>
+                        <div class="desc">
+                            市场舆情总声量一般，顺意舆情占比高，逆意舆情类型多为竞对恶意抹黑，尚处于散播初期
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="circle">
+                        </div>
+                        <div class="desc">
+                            元气森林（牛乳茶+0.51%）、燃茶（蜜桃乌龙+0.19%）等新兴爆品IP出现进军茶饮料市场的趋势。
+                        </div>
+                    </div>
+                 </div>
+                <div class="mark-line-sug mark-line-rt">
+                    <div class="item">
+                        <div class="circle">
+                        </div>
+                        <div class="desc">
+                            增加15%-20%微信公众号、微博及抖音的营销预算，提高品牌正向声量，促成裂变
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="circle">
+                        </div>
+                        <div class="desc">
+                            线下店需细分季节性核心产品，当前推荐：“香茅桃桃”、“金桂牛乳冻”及“秋梨胶原菊花”
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="circle">
+                        </div>
+                        <div class="desc">
+                           产品包装主打“深松绿”及“萱草黄”配色，突出治愈、新生、传统国医的品牌调性
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="circle">
+                        </div>
+                        <div class="desc">
+                            避开“怕上火”、“好声音”等头部竞对常用标签，通过“国家级非遗”、“抗击SARS药方”等品牌记忆点标签打造“药食一体”的差异化爆品，持续孵化“凉茶研究所“等自营IP
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="circle">
+                        </div>
+                        <div class="desc">
+                           取消产品低价策略，寻求“江小白”、“喜茶”等Z世代受众追捧的主流IP进行跨界合作，预期提升77%同比营收
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="circle">
+                        </div>
+                        <div class="desc">
+                           开拓新市场优先选择华北地区，邓老“大道至简，达济众生”的选材原则符合当地消费者心智期许（47.2%养生经济），强化品牌“养生性”标签的同时预期增加1.81%的市场份额
+                        </div>
+                    </div>
+                </div>
+             </div>
+            <div class="showMore" v-if="showFlag" @click="showFlag=!showFlag">
+                 收起详情
+                 <i class="iconfont2 iconshouqi"></i>
+             </div>
+             <div class="showMore" v-else @click="showFlag=!showFlag">
+                 展开详情
+                 <i class="iconfont2 iconzhankai"></i>
+             </div>
+        </div>
+        <div class="mark-panel">
+            <div class="title">
+                行业趋势
+            </div>
+            <Row :gutter="24">
+                <Col span="8">
+                    <div class="box">
+                        <div class="title">
+                            市场前景
+                        </div>
+                        <div class="subTitle">
+                            市场规模 <span style="color:#8AE6C7">稳步上升</span>，市场供需 <span style="color:#FF9F7F">基本平衡</span>，市场前景 <span style="color:#FF9F7F">良好</span>
+                        </div>
+                        <div class="echartBox">
+                            <barLine id="box101" :colorList="$lxjData.colorList" :myData="$lxjData.box101Data"></barLine>
+                        </div>
+                    </div>
+                </Col>
+                <Col span="8">
+                    <div class="box">
+                    <div class="title">
+                            品牌市场销售额排名（百万元）
+                        </div>
+                        <div class="tags">
+                            <div class="tagList">
+                                <div class="tag" v-for="item in tagList" :key="item">{{item}}
+                                    <!-- <i class="iconfont2 iconicon_close"></i> -->
+                                </div>
+                                <!-- <Tag v-if="show" closable @on-close="handleClose">标签三</Tag> -->
+                            </div>
+                            <SerachPoptip slot="left-operation" @submit="search"></SerachPoptip>
+                        </div>
+                        <div class="echartBox">
+                            <barL id="box240" :colorList="$lxjData.colorList" :myData="box240Data"></barL>
+                        </div>
+                    </div>
+                </Col>
+                <Col span="8">
+                    <div class="box">
+                        <div class="title">
+                            舆情声量
+                        </div>
+                            <div class="selectNav">
+                                <div class="selectDiv selectLf">
+                                   <div class="selectLabel"> 声量类型</div>
+                                    <Select v-model="formItem.select" size="small" style="width:80px" @on-change="selectYin">
+                                        <Option value="2">全部</Option>
+                                        <Option value="0">仅正面声量</Option>
+                                        <Option value="1">仅负面声量</Option>
+                                    </Select>
+                                </div>
+                                <div class="selectDiv selectRt">
+                                    <div class="selectLabel">对标比较</div>
+                                    <Select v-model="formItem.pinpai" size="small" multiple  :max-tag-count="0" style="width:100px;" @on-change="selectPai2">
+                                        <Option value="0">加多宝</Option>
+                                        <Option value="1">王老吉</Option>
+                                        <Option value="2">和其正</Option>
+                                        <Option value="3">白云山</Option>
+                                        <!-- <Option value="4">清心堂</Option> -->
+                                    </Select>
+                                </div>
+                            </div>
+                        <div class="echartBox">
+                            <lineM3 id="box68" :colorList="$lxjData.colorList" :myData="my68Data"></lineM3>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+            <div class="mark-panel1">
                 <div class="title">
-                    行业趋势
+                    新增客户变化趋势
                 </div>
-                <Row :gutter="24">
-                    <Col span="8">
-                        <div class="box">
-                            <div class="title">
-                                市场前景
+                <div class="subTitle">
+                   近期 北京 用户新增量最大，女性占比 环比增加 2.3%，年龄偏向年轻态
+                </div>
+                <div class="selectOiv">
+                    <Select v-model="formItem.date" size="small" style="width:140px" @on-change="selectDate">
+                        <Option value="0">按月</Option>
+                        <Option value="1">按季度</Option>
+                    </Select>
+                </div>
+                <Row :gutter="8">
+                    <Col span="4">
+                        <div class="boxContent">
+                            <div class="boxTitle">
+                                按地区
                             </div>
-                            <div class="subTitle">
-                                市场规模 <span style="color:#8AE6C7">稳步上升</span>，市场供需 <span style="color:#FF9F7F">基本平衡</span>，市场前景 <span style="color:#FF9F7F">良好</span>
+                            <div class="boxsubTitle">
+                                北京地区新增势头正旺
                             </div>
-                            <div class="echartBox">
-                                <barLine id="box101" :colorList="$lxjData.colorList" :myData="$lxjData.box101Data"></barLine>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col span="8">
-                        <div class="box">
-                        <div class="title">
-                                品牌市场销售额排名（百万元）
-                            </div>
-                            <div class="tags">
-                                <div class="tagList">
-                                    <div class="tag" v-for="item in tagList" :key="item">{{item}} 
-                                        <!-- <i class="iconfont2 iconicon_close"></i> -->
-                                    </div>
-                                    <!-- <Tag v-if="show" closable @on-close="handleClose">标签三</Tag> -->
-                                </div>
-                                <SerachPoptip slot="left-operation" @submit="search"></SerachPoptip>
-                            </div>
-                            <div class="echartBox">
-                                <barL id="box240" :colorList="$lxjData.colorList" :myData="box240Data"></barL>
+                            <div class="boxEcharts">
+                                <barM id="box40" :colorList="$lxjData.colorList" :myData="myMonth0"></barM>
                             </div>
                         </div>
                     </Col>
-                    <Col span="8">
-                        <div class="box">
-                            <div class="title">
-                                舆情声量
+                    <Col span="4">
+                        <div class="boxContent">
+                            <div class="boxTitle">
+                                按性别
                             </div>
-                                <div class="selectNav">
-                                    <div class="selectDiv selectLf">
-                                       <div class="selectLabel"> 声量类型</div>
-                                        <Select v-model="formItem.select" size="small" style="width:80px" @on-change="selectYin">
-                                            <Option value="2">全部</Option>
-                                            <Option value="0">仅正面声量</Option>
-                                            <Option value="1">仅负面声量</Option>
-                                        </Select>
-                                    </div>
-                                    <div class="selectDiv selectRt">
-                                        <div class="selectLabel">对标比较</div>
-                                        <Select v-model="formItem.pinpai" size="small" multiple  :max-tag-count="0" style="width:100px;" @on-change="selectPai2">
-                                            <Option value="0">加多宝</Option>
-                                            <Option value="1">王老吉</Option>
-                                            <Option value="2">和其正</Option>
-                                            <Option value="3">白云山</Option>
-                                            <!-- <Option value="4">清心堂</Option> -->
-                                        </Select>
-                                    </div>
-                                </div>
-                            <div class="echartBox">
-                                <lineM3 id="box68" :colorList="$lxjData.colorList" :myData="my68Data"></lineM3>
+                            <div class="boxsubTitle">
+                                女性比例增加
+                            </div>
+                            <div class="boxEcharts">
+                                <barM id="box41" :colorList="$lxjData.colorList" :myData="myMonth1"></barM>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col span="4">
+                        <div class="boxContent">
+                            <div class="boxTitle">
+                                按年龄
+                            </div>
+                            <div class="boxsubTitle">
+                                新客趋于年轻化
+                            </div>
+                            <div class="boxEcharts">
+                                <barM id="box42" :colorList="$lxjData.colorList" :myData="myMonth2"></barM>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col span="4">
+                        <div class="boxContent">
+                            <div class="boxTitle">
+                                按职业
+                            </div>
+                            <div class="boxsubTitle">
+                                职场达人比例有所提升
+                            </div>
+                            <div class="boxEcharts">
+                                <barM id="box43" :colorList="$lxjData.colorList" :myData="myMonth3"></barM>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col span="4">
+                        <div class="boxContent">
+                            <div class="boxTitle">
+                                按收入
+                            </div>
+                            <div class="boxsubTitle">
+                                中收入人群正成为购买主力
+                            </div>
+                            <div class="boxEcharts">
+                                <barM id="box44" :colorList="$lxjData.colorList" :myData="myMonth4"></barM>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col span="4">
+                        <div class="boxContent">
+                            <div class="boxTitle">
+                                按教育
+                            </div>
+                            <div class="boxsubTitle">
+                                学生正逐渐成为购买主力
+                            </div>
+                            <div class="boxEcharts">
+                                <barM id="box45" :colorList="$lxjData.colorList" :myData="myMonth5"></barM>
                             </div>
                         </div>
                     </Col>
                 </Row>
-                <div class="mark-panel1">
-                    <div class="title">
-                        新增客户变化趋势
-                    </div>
-                    <div class="subTitle">
-                       近期 北京 用户新增量最大，女性占比 环比增加 2.3%，年龄偏向年轻态
-                    </div>
-                    <div class="selectOiv">
-                        <Select v-model="formItem.date" size="small" style="width:140px" @on-change="selectDate">
-                            <Option value="0">按月</Option>
-                            <Option value="1">按季度</Option>
-                        </Select>
-                    </div>
-                    <Row :gutter="8">
-                        <Col span="4">
-                            <div class="boxContent">
-                                <div class="boxTitle">
-                                    按地区
-                                </div>
-                                <div class="boxsubTitle">
-                                    北京地区新增势头正旺
-                                </div>
-                                <div class="boxEcharts">
-                                    <barM id="box40" :colorList="$lxjData.colorList" :myData="myMonth0"></barM>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col span="4">
-                            <div class="boxContent">
-                                <div class="boxTitle">
-                                    按性别
-                                </div>
-                                <div class="boxsubTitle">
-                                    女性比例增加
-                                </div>
-                                <div class="boxEcharts">
-                                    <barM id="box41" :colorList="$lxjData.colorList" :myData="myMonth1"></barM>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col span="4">
-                            <div class="boxContent">
-                                <div class="boxTitle">
-                                    按年龄
-                                </div>
-                                <div class="boxsubTitle">
-                                    新客趋于年轻化
-                                </div>
-                                <div class="boxEcharts">
-                                    <barM id="box42" :colorList="$lxjData.colorList" :myData="myMonth2"></barM>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col span="4">
-                            <div class="boxContent">
-                                <div class="boxTitle">
-                                    按职业
-                                </div>
-                                <div class="boxsubTitle">
-                                    职场达人比例有所提升
-                                </div>
-                                <div class="boxEcharts">
-                                    <barM id="box43" :colorList="$lxjData.colorList" :myData="myMonth3"></barM>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col span="4">
-                            <div class="boxContent">
-                                <div class="boxTitle">
-                                    按收入
-                                </div>
-                                <div class="boxsubTitle">
-                                    中收入人群正成为购买主力
-                                </div>
-                                <div class="boxEcharts">
-                                    <barM id="box44" :colorList="$lxjData.colorList" :myData="myMonth4"></barM>
-                                </div>
-                            </div>
-                        </Col>
-                        <Col span="4">
-                            <div class="boxContent">
-                                <div class="boxTitle">
-                                    按教育
-                                </div>
-                                <div class="boxsubTitle">
-                                    学生正逐渐成为购买主力
-                                </div>
-                                <div class="boxEcharts">
-                                    <barM id="box45" :colorList="$lxjData.colorList" :myData="myMonth5"></barM>
-                                </div>
-                            </div>
-                        </Col>
-                    </Row>
+            </div>
+            <div class="mark-panel1">
+                <div class="title">
+                    典型客户画像对比
                 </div>
-                <div class="mark-panel1">
-                    <div class="title">
-                        典型客户画像对比
-                    </div>
-                    <Row>
-                        <Col span="8">
-                            <div class="boxContainer">
+                <Row>
+                    <Col span="8">
+                        <div class="boxContainer">
+                            <div class="boxTitle">
+                                我的品牌:<span>邓老凉茶</span>
+                            </div>
+                            <div class="boxEcharts1">
+                                <div class="box1">
+                                    <barHM2 id="box11411" :colorList="$lxjData.colorList" :myData="$lxjData.box11411Data"></barHM2>
+                                </div>
+                                <div class="box1">
+                                    <barHM2 id="box11421" :colorList="$lxjData.colorList" :myData="$lxjData.box11421Data"></barHM2>
+                                </div>
+                                <div class="box1">
+                                    <barHM2 id="box11431" :colorList="$lxjData.colorList" :myData="$lxjData.box11431Data"></barHM2>
+                                </div>
+                            </div>
+                            <div class="label">
+                                <div class="labelName">
+                                    标签
+                                </div>
+                                <div class="labelTags">
+                                    <span class="labelTag">养生</span>
+                                    <span class="labelTag">国医秘方</span>
+                                    <span class="labelTag">民族荣誉感</span>
+                                    <span class="labelTag">疫情防护</span>
+                                    <span class="labelTag">药食一体</span>
+                                </div>
+                            </div>
+                            <div class="label">
+                                <div class="labelName">
+                                    认知顾虑
+                                </div>
+                                <div class="labelTags">
+                                    <span class="labelTag">线下门店少</span>
+                                    <span class="labelTag">味苦</span>
+                                </div>
+                            </div>
+                            <div class="label">
+                                <div class="labelName">
+                                    敏感词
+                                </div>
+                                <div class="labelTags">
+                                    <span class="labelTag">凉茶非药</span>
+                                    <span class="labelTag">国医</span>
+                                </div>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col span="8">
+                        <div class="boxContainer boxContainer1">
+                            <div class="selectPiv">
+                                <Select v-model="formItem.pinpai1" size="small" style="width:110px" @on-change="selectPai">
+                                        <Option value="0">王老吉</Option>
+                                        <Option value="1">加多宝</Option>
+                                        <Option value="2">和其正</Option>
+                                        <Option value="3">白云山</Option>
+                                        <Option value="4">清心堂</Option>
+                                        <Option value="5">潘高寿</Option>
+                                </Select>
+                            </div>
+                            <template v-if="formItem.pinpai1==0">
                                 <div class="boxTitle">
-                                    我的品牌:<span>邓老凉茶</span>
+                                    对标品牌:<span>王老吉</span>
                                 </div>
                                 <div class="boxEcharts1">
                                     <div class="box1">
-                                        <barHM2 id="box11411" :colorList="$lxjData.colorList" :myData="$lxjData.box11411Data"></barHM2>
+                                        <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
                                     </div>
                                     <div class="box1">
-                                        <barHM2 id="box11421" :colorList="$lxjData.colorList" :myData="$lxjData.box11421Data"></barHM2>
+                                        <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
                                     </div>
                                     <div class="box1">
-                                        <barHM2 id="box11431" :colorList="$lxjData.colorList" :myData="$lxjData.box11431Data"></barHM2>
+                                        <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
                                     </div>
                                 </div>
                                 <div class="label">
@@ -325,11 +386,10 @@
                                         标签
                                     </div>
                                     <div class="labelTags">
-                                        <span class="labelTag">养生</span>
-                                        <span class="labelTag">国医秘方</span>
-                                        <span class="labelTag">民族荣誉感</span>
-                                        <span class="labelTag">疫情防护</span>
-                                        <span class="labelTag">药食一体</span>
+                                        <span class="labelTag">聚会白领</span>
+                                        <span class="labelTag">火锅爱好者</span>
+                                        <span class="labelTag">k歌之王</span>
+                                        <span class="labelTag">中华老字号</span>
                                     </div>
                                 </div>
                                 <div class="label">
@@ -337,8 +397,7 @@
                                         认知顾虑
                                     </div>
                                     <div class="labelTags">
-                                        <span class="labelTag">线下门店少</span>
-                                        <span class="labelTag">味苦</span>
+                                        <span class="labelTag">不够正中</span>
                                     </div>
                                 </div>
                                 <div class="label">
@@ -346,698 +405,639 @@
                                         敏感词
                                     </div>
                                     <div class="labelTags">
-                                        <span class="labelTag">凉茶非药</span>
-                                        <span class="labelTag">国医</span>
+                                        <span class="labelTag">同质化包装</span>
+                                        <span class="labelTag">假冒伪劣</span>
                                     </div>
                                 </div>
-                            </div>
-                        </Col>
-                        <Col span="8">
-                            <div class="boxContainer boxContainer1">
-                                <div class="selectPiv">
-                                    <Select v-model="formItem.pinpai1" size="small" style="width:110px" @on-change="selectPai">
-                                            <Option value="0">王老吉</Option>
-                                            <Option value="1">加多宝</Option>
-                                            <Option value="2">和其正</Option>
-                                            <Option value="3">白云山</Option>
-                                            <Option value="4">清心堂</Option>
-                                            <Option value="5">潘高寿</Option>
-                                    </Select>
+                            </template>
+                            <template v-if="formItem.pinpai1==1">
+                                <div class="boxTitle">
+                                    对标品牌:<span>加多宝</span>
                                 </div>
-                                <template v-if="formItem.pinpai1==0">    
-                                    <div class="boxTitle">
-                                        对标品牌:<span>王老吉</span>
+                                <div class="boxEcharts1">
+                                    <div class="box1">
+                                        <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
                                     </div>
-                                    <div class="boxEcharts1">
-                                        <div class="box1">
-                                            <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
-                                        </div>
+                                    <div class="box1">
+                                        <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            标签
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">聚会白领</span>
-                                            <span class="labelTag">火锅爱好者</span>
-                                            <span class="labelTag">k歌之王</span>
-                                            <span class="labelTag">中华老字号</span>
-                                        </div>
+                                    <div class="box1">
+                                        <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            认知顾虑
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">不够正中</span>
-                                        </div>
-                                    </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            敏感词
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">同质化包装</span>
-                                            <span class="labelTag">假冒伪劣</span>
-                                        </div>
-                                    </div>
-                                </template>    
-                                <template v-if="formItem.pinpai1==1">    
-                                    <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
-                                    </div>
-                                    <div class="boxEcharts1">
-                                        <div class="box1">
-                                            <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
-                                        </div>
-                                    </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            标签
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">红罐喜庆</span>
-                                            <span class="labelTag">防上火</span>
-                                            <span class="labelTag">销量领先</span>
-                                        </div>
-                                    </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            认知顾虑
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">法律纠纷致使口味变化</span>
-                                        </div>
-                                    </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            敏感词
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">装弱势</span>
-                                            <span class="labelTag">博眼球</span>
-                                        </div>
-                                    </div>
-                                </template>    
-                                <template v-if="formItem.pinpai1==2">    
-                                    <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
-                                    </div>
-                                    <div class="boxEcharts1">
-                                        <div class="box1">
-                                            <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
-                                        </div>
-                                    </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            标签
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">年轻态</span>
-                                            <span class="labelTag">运动爱好者</span>
-                                            <span class="labelTag">超大瓶装</span>
-                                        </div>
-                                    </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            认知顾虑
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">补给能量功能性略差</span>
-                                        </div>
-                                    </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            敏感词
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">篡改生产日期 </span>
-                                            <span class="labelTag">望风使舵</span>
-                                        </div>
-                                    </div>
-                                </template>    
-                                <template v-if="formItem.pinpai1==3">    
-                                    <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
-                                    </div>
-                                    <div class="boxEcharts1">
-                                        <div class="box1">
-                                            <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
-                                        </div>
-                                    </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            标签
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">清热解毒</span>
-                                            <span class="labelTag">适合北方人体质</span>
-                                            <span class="labelTag">滋阴补气</span>
-                                        </div>
-                                    </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            认知顾虑
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">宣传力度差，没有了解品牌的途径</span>
-                                        </div>
-                                    </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            敏感词
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">性价比低</span>
-                                            <span class="labelTag">内部贪腐</span>
-                                        </div>
-                                    </div>
-                                </template>    
-                                <template v-if="formItem.pinpai1==4">    
-                                    <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
-                                    </div>
-                                    <div class="boxEcharts1">
-                                        <div class="box1">
-                                            <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
-                                        </div>
-                                    </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            标签
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">聚会白领</span>
-                                            <span class="labelTag">火锅爱好者</span>
-                                            <span class="labelTag">k歌之王</span>
-                                            <span class="labelTag">中华老字号</span>
-                                        </div>
-                                    </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            认知顾虑
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">不够正中</span>
-                                        </div>
-                                    </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            敏感词
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">同质化包装</span>
-                                            <span class="labelTag">假冒伪劣</span>
-                                        </div>
-                                    </div>
-                                </template>    
-                                <template v-if="formItem.pinpai1==5">    
-                                    <div class="boxTitle">
-                                    对标品牌:<span>潘高寿</span>
-                                    </div>
-                                    <div class="boxEcharts1">
-                                        <div class="box1">
-                                            <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
-                                        </div>
-                                    </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            标签
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">年轻人</span>
-                                            <span class="labelTag">口腔保健达人</span>
-                                            <span class="labelTag">足球爱好者</span>
-                                        </div>
-                                    </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            认知顾虑
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">味道差</span>
-                                            <span class="labelTag">没名气</span>
-                                        </div>
-                                    </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            敏感词
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">代购</span>
-                                            <span class="labelTag">性价比</span>
-                                        </div>
-                                    </div>
-                                </template>    
-                            </div>
-                        </Col>
-                        <Col span="8">
-                            <div class="boxContainer boxContainer2">
-                                <div class="selectPiv">
-                                    <Select v-model="formItem.pinpai2" size="small" style="width:110px" @on-change="selectPai1">
-                                            <Option value="0">王老吉</Option>
-                                            <Option value="1">加多宝</Option>
-                                            <Option value="2">和其正</Option>
-                                            <Option value="3">白云山</Option>
-                                            <Option value="4">清心堂</Option>
-                                            <Option value="5">潘高寿</Option>
-                                    </Select>
                                 </div>
-                                <template v-if="formItem.pinpai2==0">    
-                                    <div class="boxTitle">
-                                        对标品牌:<span>王老吉</span>
+                                <div class="label">
+                                    <div class="labelName">
+                                        标签
                                     </div>
-                                    <div class="boxEcharts1">
-                                        <div class="box1">
-                                            <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
-                                        </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">红罐喜庆</span>
+                                        <span class="labelTag">防上火</span>
+                                        <span class="labelTag">销量领先</span>
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            标签
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">聚会白领</span>
-                                            <span class="labelTag">火锅爱好者</span>
-                                            <span class="labelTag">k歌之王</span>
-                                            <span class="labelTag">中华老字号</span>
-                                        </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        认知顾虑
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            认知顾虑
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">不够正中</span>
-                                        </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">法律纠纷致使口味变化</span>
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            敏感词
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">同质化包装</span>
-                                            <span class="labelTag">假冒伪劣</span>
-                                        </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        敏感词
                                     </div>
-                                </template>    
-                                <template v-if="formItem.pinpai2==1">    
-                                    <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
+                                    <div class="labelTags">
+                                        <span class="labelTag">装弱势</span>
+                                        <span class="labelTag">博眼球</span>
                                     </div>
-                                    <div class="boxEcharts1">
-                                        <div class="box1">
-                                            <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
-                                        </div>
+                                </div>
+                            </template>
+                            <template v-if="formItem.pinpai1==2">
+                                <div class="boxTitle">
+                                    对标品牌:<span>和其正</span>
+                                </div>
+                                <div class="boxEcharts1">
+                                    <div class="box1">
+                                        <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            标签
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">红罐喜庆</span>
-                                            <span class="labelTag">防上火</span>
-                                            <span class="labelTag">销量领先</span>
-                                        </div>
+                                    <div class="box1">
+                                        <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            认知顾虑
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">法律纠纷致使口味变化</span>
-                                        </div>
+                                    <div class="box1">
+                                        <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            敏感词
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">装弱势</span>
-                                            <span class="labelTag">博眼球</span>
-                                        </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        标签
                                     </div>
-                                </template>    
-                                <template v-if="formItem.pinpai2==2">    
-                                    <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
+                                    <div class="labelTags">
+                                        <span class="labelTag">年轻态</span>
+                                        <span class="labelTag">运动爱好者</span>
+                                        <span class="labelTag">超大瓶装</span>
                                     </div>
-                                    <div class="boxEcharts1">
-                                        <div class="box1">
-                                            <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
-                                        </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        认知顾虑
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            标签
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">年轻态</span>
-                                            <span class="labelTag">运动爱好者</span>
-                                            <span class="labelTag">超大瓶装</span>
-                                        </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">补给能量功能性略差</span>
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            认知顾虑
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">补给能量功能性略差</span>
-                                        </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        敏感词
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            敏感词
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">篡改生产日期 </span>
-                                            <span class="labelTag">望风使舵</span>
-                                        </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">篡改生产日期 </span>
+                                        <span class="labelTag">望风使舵</span>
                                     </div>
-                                </template>    
-                                <template v-if="formItem.pinpai2==3">    
-                                    <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
+                                </div>
+                            </template>
+                            <template v-if="formItem.pinpai1==3">
+                                <div class="boxTitle">
+                                    对标品牌:<span>白云山</span>
+                                </div>
+                                <div class="boxEcharts1">
+                                    <div class="box1">
+                                        <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
                                     </div>
-                                    <div class="boxEcharts1">
-                                        <div class="box1">
-                                            <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
-                                        </div>
+                                    <div class="box1">
+                                        <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            标签
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">清热解毒</span>
-                                            <span class="labelTag">适合北方人体质</span>
-                                            <span class="labelTag">滋阴补气</span>
-                                        </div>
+                                    <div class="box1">
+                                        <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            认知顾虑
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">宣传力度差，没有了解品牌的途径</span>
-                                        </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        标签
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            敏感词
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">性价比低</span>
-                                            <span class="labelTag">内部贪腐</span>
-                                        </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">清热解毒</span>
+                                        <span class="labelTag">适合北方人体质</span>
+                                        <span class="labelTag">滋阴补气</span>
                                     </div>
-                                </template>    
-                                <template v-if="formItem.pinpai2==4">    
-                                    <div class="boxTitle">
-                                        对标品牌:<span>加多宝</span>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        认知顾虑
                                     </div>
-                                    <div class="boxEcharts1">
-                                        <div class="box1">
-                                            <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
-                                        </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">宣传力度差，没有了解品牌的途径</span>
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            标签
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">聚会白领</span>
-                                            <span class="labelTag">火锅爱好者</span>
-                                            <span class="labelTag">k歌之王</span>
-                                            <span class="labelTag">中华老字号</span>
-                                        </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        敏感词
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            认知顾虑
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">不够正中</span>
-                                        </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">性价比低</span>
+                                        <span class="labelTag">内部贪腐</span>
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            敏感词
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">同质化包装</span>
-                                            <span class="labelTag">假冒伪劣</span>
-                                        </div>
+                                </div>
+                            </template>
+                            <template v-if="formItem.pinpai1==4">
+                                <div class="boxTitle">
+                                    对标品牌:<span>清心堂</span>
+                                </div>
+                                <div class="boxEcharts1">
+                                    <div class="box1">
+                                        <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
                                     </div>
-                                </template>    
-                                <template v-if="formItem.pinpai2==5">    
-                                    <div class="boxTitle">
-                                    对标品牌:<span>潘高寿</span>
+                                    <div class="box1">
+                                        <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
                                     </div>
-                                    <div class="boxEcharts1">
-                                        <div class="box1">
-                                            <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
-                                        </div>
-                                        <div class="box1">
-                                            <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
-                                        </div>
+                                    <div class="box1">
+                                        <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            标签
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">年轻人</span>
-                                            <span class="labelTag">口腔保健达人</span>
-                                            <span class="labelTag">足球爱好者</span>
-                                        </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        标签
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            认知顾虑
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">味道差</span>
-                                            <span class="labelTag">没名气</span>
-                                        </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">聚会白领</span>
+                                        <span class="labelTag">火锅爱好者</span>
+                                        <span class="labelTag">k歌之王</span>
+                                        <span class="labelTag">中华老字号</span>
                                     </div>
-                                    <div class="label">
-                                        <div class="labelName">
-                                            敏感词
-                                        </div>
-                                        <div class="labelTags">
-                                            <span class="labelTag">代购</span>
-                                            <span class="labelTag">性价比</span>
-                                        </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        认知顾虑
                                     </div>
-                                </template>    
+                                    <div class="labelTags">
+                                        <span class="labelTag">不够正中</span>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        敏感词
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">同质化包装</span>
+                                        <span class="labelTag">假冒伪劣</span>
+                                    </div>
+                                </div>
+                            </template>
+                            <template v-if="formItem.pinpai1==5">
+                                <div class="boxTitle">
+                                对标品牌:<span>潘高寿</span>
+                                </div>
+                                <div class="boxEcharts1">
+                                    <div class="box1">
+                                        <barHM2 id="box11410" :colorList="$lxjData.colorList" :myData="myData1"></barHM2>
+                                    </div>
+                                    <div class="box1">
+                                        <barHM2 id="box11420" :colorList="$lxjData.colorList" :myData="myData2"></barHM2>
+                                    </div>
+                                    <div class="box1">
+                                        <barHM2 id="box11430" :colorList="$lxjData.colorList" :myData="myData3"></barHM2>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        标签
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">年轻人</span>
+                                        <span class="labelTag">口腔保健达人</span>
+                                        <span class="labelTag">足球爱好者</span>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        认知顾虑
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">味道差</span>
+                                        <span class="labelTag">没名气</span>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        敏感词
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">代购</span>
+                                        <span class="labelTag">性价比</span>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </Col>
+                    <Col span="8">
+                        <div class="boxContainer boxContainer2">
+                            <div class="selectPiv">
+                                <Select v-model="formItem.pinpai2" size="small" style="width:110px" @on-change="selectPai1">
+                                        <Option value="0">王老吉</Option>
+                                        <Option value="1">加多宝</Option>
+                                        <Option value="2">和其正</Option>
+                                        <Option value="3">白云山</Option>
+                                        <Option value="4">清心堂</Option>
+                                        <Option value="5">潘高寿</Option>
+                                </Select>
                             </div>
-                        </Col>
-                    </Row>
-                </div>
+                            <template v-if="formItem.pinpai2==0">
+                                <div class="boxTitle">
+                                    对标品牌:<span>王老吉</span>
+                                </div>
+                                <div class="boxEcharts1">
+                                    <div class="box1">
+                                        <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
+                                    </div>
+                                    <div class="box1">
+                                        <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
+                                    </div>
+                                    <div class="box1">
+                                        <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        标签
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">聚会白领</span>
+                                        <span class="labelTag">火锅爱好者</span>
+                                        <span class="labelTag">k歌之王</span>
+                                        <span class="labelTag">中华老字号</span>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        认知顾虑
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">不够正中</span>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        敏感词
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">同质化包装</span>
+                                        <span class="labelTag">假冒伪劣</span>
+                                    </div>
+                                </div>
+                            </template>
+                            <template v-if="formItem.pinpai2==1">
+                                <div class="boxTitle">
+                                    对标品牌:<span>加多宝</span>
+                                </div>
+                                <div class="boxEcharts1">
+                                    <div class="box1">
+                                        <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
+                                    </div>
+                                    <div class="box1">
+                                        <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
+                                    </div>
+                                    <div class="box1">
+                                        <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        标签
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">红罐喜庆</span>
+                                        <span class="labelTag">防上火</span>
+                                        <span class="labelTag">销量领先</span>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        认知顾虑
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">法律纠纷致使口味变化</span>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        敏感词
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">装弱势</span>
+                                        <span class="labelTag">博眼球</span>
+                                    </div>
+                                </div>
+                            </template>
+                            <template v-if="formItem.pinpai2==2">
+                                <div class="boxTitle">
+                                    对标品牌:<span>和其正</span>
+                                </div>
+                                <div class="boxEcharts1">
+                                    <div class="box1">
+                                        <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
+                                    </div>
+                                    <div class="box1">
+                                        <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
+                                    </div>
+                                    <div class="box1">
+                                        <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        标签
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">年轻态</span>
+                                        <span class="labelTag">运动爱好者</span>
+                                        <span class="labelTag">超大瓶装</span>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        认知顾虑
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">补给能量功能性略差</span>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        敏感词
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">篡改生产日期 </span>
+                                        <span class="labelTag">望风使舵</span>
+                                    </div>
+                                </div>
+                            </template>
+                            <template v-if="formItem.pinpai2==3">
+                                <div class="boxTitle">
+                                    对标品牌:<span>白云山</span>
+                                </div>
+                                <div class="boxEcharts1">
+                                    <div class="box1">
+                                        <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
+                                    </div>
+                                    <div class="box1">
+                                        <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
+                                    </div>
+                                    <div class="box1">
+                                        <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        标签
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">清热解毒</span>
+                                        <span class="labelTag">适合北方人体质</span>
+                                        <span class="labelTag">滋阴补气</span>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        认知顾虑
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">宣传力度差，没有了解品牌的途径</span>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        敏感词
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">性价比低</span>
+                                        <span class="labelTag">内部贪腐</span>
+                                    </div>
+                                </div>
+                            </template>
+                            <template v-if="formItem.pinpai2==4">
+                                <div class="boxTitle">
+                                    对标品牌:<span>清心堂</span>
+                                </div>
+                                <div class="boxEcharts1">
+                                    <div class="box1">
+                                        <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
+                                    </div>
+                                    <div class="box1">
+                                        <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
+                                    </div>
+                                    <div class="box1">
+                                        <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        标签
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">聚会白领</span>
+                                        <span class="labelTag">火锅爱好者</span>
+                                        <span class="labelTag">k歌之王</span>
+                                        <span class="labelTag">中华老字号</span>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        认知顾虑
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">不够正中</span>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        敏感词
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">同质化包装</span>
+                                        <span class="labelTag">假冒伪劣</span>
+                                    </div>
+                                </div>
+                            </template>
+                            <template v-if="formItem.pinpai2==5">
+                                <div class="boxTitle">
+                                对标品牌:<span>潘高寿</span>
+                                </div>
+                                <div class="boxEcharts1">
+                                    <div class="box1">
+                                        <barHM2 id="bx11410" :colorList="$lxjData.colorList" :myData="myData4"></barHM2>
+                                    </div>
+                                    <div class="box1">
+                                        <barHM2 id="bx11420" :colorList="$lxjData.colorList" :myData="myData5"></barHM2>
+                                    </div>
+                                    <div class="box1">
+                                        <barHM2 id="bx11430" :colorList="$lxjData.colorList" :myData="myData6"></barHM2>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        标签
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">年轻人</span>
+                                        <span class="labelTag">口腔保健达人</span>
+                                        <span class="labelTag">足球爱好者</span>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        认知顾虑
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">味道差</span>
+                                        <span class="labelTag">没名气</span>
+                                    </div>
+                                </div>
+                                <div class="label">
+                                    <div class="labelName">
+                                        敏感词
+                                    </div>
+                                    <div class="labelTags">
+                                        <span class="labelTag">代购</span>
+                                        <span class="labelTag">性价比</span>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </Col>
+                </Row>
             </div>
-            <BrandValue />
-            <Card title="负面舆情的处理意见" class="card-five">
-                <p class="card-five-desc">当前
-                    <span>存在</span>
-                负面舆情。该舆情起于
-                <span>新闻</span>
-                ；传播媒介最多的是
-                <span>微博  论坛</span>
-                ；事件负面级别为 <span>6</span> (影响一般)；根据负面舆情应对模型，推荐的应对方式是
-                <span>逐步降低反击力度</span></p>
-                <div class="card-five-box">
-                    <div class="box1">
-                        <div class="name">信息来源占比（%）</div>
-                        <div class="box1-echart">
-                            <barEcharts id="box15" :colorList="$lxjData.colorList" :myData="$lxjData.box15Data"></barEcharts>
-                        </div>
-                    </div>
-                    <div class="box2">
-                        <div class="box2-left">
-                            <div class="name">敏感占比图</div>
-                            <div class="box2-echart">
-                                <YibiaoCharts2 :colorList="$fjData.colorList" :myData="$fjData.box17Data"></YibiaoCharts2>
-                            </div>
-                        </div>
-                        <div class="second-list">
-                            <div class="warning">
-                                <img src="../../assets/img/mark/warning@2x.png" alt="">
-                                <span>敏感信息</span>
-                                <span class="strong">443</span>
-                            </div>
-                            <ul>
-                                <li>邓老凉茶在凉茶巨头夹缝中迷失 同仁堂等遭</li>
-                                <li>凉茶风光不再:负面新闻频发 高糖饮品销售</li>
-                                <li>凉茶怎么“凉”的:潜规则、边缘化、互撕……_西药</li>
-                                <li>申请挂牌新三板 邓老凉茶年销售收入不及行业龙头2%</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="box3">
-                        <div class="name">负面舆情应对说明</div>
-                        <div class="desc">已错过了最佳反击时间。<br>当前负面舆情已呈现随时间下降趋势，不宜过度反击，否则将造成二次传播扩散</div>
-                        <div class="box3-echart">
-                            <lineM1 id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM1>
-                        </div>
-                    </div>
-                    <div class="box4">
-                        <div class="name">舆情处理建议</div>
-                        <div class="desc">负面舆情没有新的爆点和舆论热点，当前反击力度已足够。<br>应当随负面舆情热度走势逐步降低反击力度，预计3-4周后可回归平静。</div>
-                        <div class="box4-echart">
-                            <Leida2Echarts :colorList="$fjData.colorList" :myData="$fjData.box19Data"></Leida2Echarts>
-                        </div>
-                    </div>
-                </div>
-            </Card>
-            <!-- <ThirdLine></ThirdLine> -->
-            <div class="fourth-line">
-                <div class="fourth-left">
-                    <div class="fourth-title">品牌需求图谱</div>
-                    <div class="fourth-left-echarts">
-                        <iframe src="/static/html/pphx/rdyc1.html" frameborder="0" scrolling="no" style="width:100%;height:100%"></iframe>
-                    </div>
-                </div>
-                <div class="fourth-right">
-                    <div class="fourth-title">市场品类份额及品牌心智效能分析</div>
-                    <div class="fourth-right-show">
-                        <div class="fourth-right-echarts">
-                            <Yuanhuan1 :colorList="$fjData.colorList" :myData="$fjData.box18Data" ></Yuanhuan1>
-                        </div>
-                        <div class="fourth-right-desc">
-                            <div class="desc">覆盖度：品牌行业市场占有率</div>
-                            <div class="desc2">近期行业态势：疫情后，2020年第三季度起增速回升，当前年均复合增长率为5.9%</div>
-                            <div class="desc">总体市场规模：国内 620.5B 海外 385B</div>
-                            <Colourfol :title="'感知度（整体有效性）：'" :color="'active1'" :num="'6'"></Colourfol>
-                            <Colourfol :title="'联想度（记忆触发）：'" :color="'active2'" :num="'7'"></Colourfol>
-                            <Colourfol :title="'关注度（注意力停留）：'" :color="'active3'" :num="'5'"></Colourfol>
-                            <Colourfol :title="'共鸣感（情感投入）：'" :color="'active4'" :num="'8'"></Colourfol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="five-line">
-                <div class="fourth-left">
-                    <div class="fourth-title">全竞品爆款特质分析</div>
-                    <div class="fourth-content">
-                        <div class="fourth-content-left fourth-content-cm">
-                            <div class="fourth-content-title">
-                                <div class="pic"><img src="../../assets/img/mark/wang.png" alt=""></div>
-                                王老吉
-                            </div>
-                            <div class="tagList">
-                                <div class="tag">凉茶饮料</div>
-                                <div class="tag">防上火</div>
-                                <div class="tag">健康功效</div>
-                            </div>
-                            <div class="fourth-content-subTitle">洞悉消费趋势，满足新的需求点</div>
-                            <div class="fourth-content-text">开创凉茶饮料，主打“防上火”的健康功效，深度捆绑吃火锅、熬夜等容易上火的场景。</div>
-                            <div class="fourth-content-subTitle">大面积推广，营销手段需要创意</div>
-                            <div class="fourth-content-text">宣传自身为“凉茶始祖”，始于清道光年间，增强消费者信赖感；在电视上密集投放广告，抢占央视黄金时段。</div>
-                        </div>
-                        <div class="fourth-content-right fourth-content-cm">
-                             <div class="fourth-content-title">
-                                <div class="pic"><img src="../../assets/img/mark/qin.png" alt=""></div>
-                                元气森林
-                            </div>
-                            <div class="tagList">
-                                <div class="tag">无糖</div>
-                                <div class="tag">新风味</div>
-                                <div class="tag">佛系养生</div>
-                            </div>
-                            <div class="fourth-content-subTitle">洞悉消费趋势，满足新的需求点</div>
-                            <div class="fourth-content-text">抓住无糖新风口，将目标锁定在“佛系养生”的年轻消费者身上，打造了无糖气泡水单品。</div>
-                            <div class="fourth-content-subTitle">大面积推广，营销手段需要创意</div>
-                            <div class="fourth-content-text">线下通过高频率、强触达的电梯媒体精准触达目标消费群体。线上通过植入综艺、与年轻群体喜欢的B站合作不断扩大品牌人气。</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="fourth-right">
-                    <div class="fourth-title fourth-rtTitle">细分市场占有率态势</div>
-                    <div class="fourth-subTitle">细分市场占有率态势</div>
-                    <div class="fourth-content">
-                        <lineM id="box66" :colorList="$lxjData.colorList" :myData="$lxjData.box66Data"></lineM>
-                    </div>
-                </div>
-            </div>
-            <Details></Details>
         </div>
-    </DefaultPage>
+        <BrandValue />
+        <Card title="负面舆情的处理意见" class="card-five">
+            <p class="card-five-desc">当前
+                <span>存在</span>
+            负面舆情。该舆情起于
+            <span>新闻</span>
+            ；传播媒介最多的是
+            <span>微博  论坛</span>
+            ；事件负面级别为 <span>6</span> (影响一般)；根据负面舆情应对模型，推荐的应对方式是
+            <span>逐步降低反击力度</span></p>
+            <div class="card-five-box">
+                <div class="box1">
+                    <div class="name">信息来源占比（%）</div>
+                    <div class="box1-echart">
+                        <barEcharts id="box15" :colorList="$lxjData.colorList" :myData="$lxjData.box15Data"></barEcharts>
+                    </div>
+                </div>
+                <div class="box2">
+                    <div class="box2-left">
+                        <div class="name">敏感占比图</div>
+                        <div class="box2-echart">
+                            <YibiaoCharts2 :colorList="$fjData.colorList" :myData="$fjData.box17Data"></YibiaoCharts2>
+                        </div>
+                    </div>
+                    <div class="second-list">
+                        <div class="warning">
+                            <img src="../../assets/img/mark/warning@2x.png" alt="">
+                            <span>敏感信息</span>
+                            <span class="strong">443</span>
+                        </div>
+                        <ul>
+                            <li>邓老凉茶在凉茶巨头夹缝中迷失 同仁堂等遭</li>
+                            <li>凉茶风光不再:负面新闻频发 高糖饮品销售</li>
+                            <li>凉茶怎么“凉”的:潜规则、边缘化、互撕……_西药</li>
+                            <li>申请挂牌新三板 邓老凉茶年销售收入不及行业龙头2%</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box3">
+                    <div class="name">负面舆情应对说明</div>
+                    <div class="desc">已错过了最佳反击时间。<br>当前负面舆情已呈现随时间下降趋势，不宜过度反击，否则将造成二次传播扩散</div>
+                    <div class="box3-echart">
+                        <lineM1 id="box62" :colorList="$lxjData.colorList" :myData="$lxjData.box62Data"></lineM1>
+                    </div>
+                </div>
+                <div class="box4">
+                    <div class="name">舆情处理建议</div>
+                    <div class="desc">负面舆情没有新的爆点和舆论热点，当前反击力度已足够。<br>应当随负面舆情热度走势逐步降低反击力度，预计3-4周后可回归平静。</div>
+                    <div class="box4-echart">
+                        <Leida2Echarts :colorList="$fjData.colorList" :myData="$fjData.box19Data"></Leida2Echarts>
+                    </div>
+                </div>
+            </div>
+        </Card>
+        <!-- <ThirdLine></ThirdLine> -->
+        <div class="fourth-line">
+            <div class="fourth-left">
+                <div class="fourth-title">品牌需求图谱</div>
+                <div class="fourth-left-echarts">
+                    <iframe src="/static/html/pphx/rdyc1.html" frameborder="0" scrolling="no" style="width:100%;height:100%"></iframe>
+                </div>
+            </div>
+            <div class="fourth-right">
+                <div class="fourth-title">市场品类份额及品牌心智效能分析</div>
+                <div class="fourth-right-show">
+                    <div class="fourth-right-echarts">
+                        <Yuanhuan1 :colorList="$fjData.colorList" :myData="$fjData.box18Data" ></Yuanhuan1>
+                    </div>
+                    <div class="fourth-right-desc">
+                        <div class="desc">覆盖度：品牌行业市场占有率</div>
+                        <div class="desc2">近期行业态势：疫情后，2020年第三季度起增速回升，当前年均复合增长率为5.9%</div>
+                        <div class="desc">总体市场规模：国内 620.5B 海外 385B</div>
+                        <Colourfol :title="'感知度（整体有效性）：'" :color="'active1'" :num="'6'"></Colourfol>
+                        <Colourfol :title="'联想度（记忆触发）：'" :color="'active2'" :num="'7'"></Colourfol>
+                        <Colourfol :title="'关注度（注意力停留）：'" :color="'active3'" :num="'5'"></Colourfol>
+                        <Colourfol :title="'共鸣感（情感投入）：'" :color="'active4'" :num="'8'"></Colourfol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="five-line">
+            <div class="fourth-left">
+                <div class="fourth-title">全竞品爆款特质分析</div>
+                <div class="fourth-content">
+                    <div class="fourth-content-left fourth-content-cm">
+                        <div class="fourth-content-title">
+                            <div class="pic"><img src="../../assets/img/mark/wang.png" alt=""></div>
+                            王老吉
+                        </div>
+                        <div class="tagList">
+                            <div class="tag">凉茶饮料</div>
+                            <div class="tag">防上火</div>
+                            <div class="tag">健康功效</div>
+                        </div>
+                        <div class="fourth-content-subTitle">洞悉消费趋势，满足新的需求点</div>
+                        <div class="fourth-content-text">开创凉茶饮料，主打“防上火”的健康功效，深度捆绑吃火锅、熬夜等容易上火的场景。</div>
+                        <div class="fourth-content-subTitle">大面积推广，营销手段需要创意</div>
+                        <div class="fourth-content-text">宣传自身为“凉茶始祖”，始于清道光年间，增强消费者信赖感；在电视上密集投放广告，抢占央视黄金时段。</div>
+                    </div>
+                    <div class="fourth-content-right fourth-content-cm">
+                         <div class="fourth-content-title">
+                            <div class="pic"><img src="../../assets/img/mark/qin.png" alt=""></div>
+                            元气森林
+                        </div>
+                        <div class="tagList">
+                            <div class="tag">无糖</div>
+                            <div class="tag">新风味</div>
+                            <div class="tag">佛系养生</div>
+                        </div>
+                        <div class="fourth-content-subTitle">洞悉消费趋势，满足新的需求点</div>
+                        <div class="fourth-content-text">抓住无糖新风口，将目标锁定在“佛系养生”的年轻消费者身上，打造了无糖气泡水单品。</div>
+                        <div class="fourth-content-subTitle">大面积推广，营销手段需要创意</div>
+                        <div class="fourth-content-text">线下通过高频率、强触达的电梯媒体精准触达目标消费群体。线上通过植入综艺、与年轻群体喜欢的B站合作不断扩大品牌人气。</div>
+                    </div>
+                </div>
+            </div>
+            <div class="fourth-right">
+                <div class="fourth-title fourth-rtTitle">细分市场占有率态势</div>
+                <div class="fourth-subTitle">细分市场占有率态势</div>
+                <div class="fourth-content">
+                    <lineM id="box66" :colorList="$lxjData.colorList" :myData="$lxjData.box66Data"></lineM>
+                </div>
+            </div>
+        </div>
+        <Details></Details>
+    </div>
 </template>
 
 <script>
 import Brand from "./components/Brand"
 import Card from "../../components/Card"
-import DefaultPage from "../../layouts/DefaultPage";
 import ThirdLine from "./components/Benchmark"
 import Colourfol from "./base/Colourfol"
 import Details from "./components/Details"
@@ -1059,7 +1059,7 @@ import BrandValue from "./components/BrandValue"
 import SerachPoptip from '../../components/common/SerachPoptip1';
 export default {
     name:"index",
-    components:{SerachPoptip,barHM2,lineM3,barLine,barL,Brand,Card,Target,ShowTotal,barM,lineM1,DefaultPage,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts,BrandValue},
+    components:{SerachPoptip,barHM2,lineM3,barLine,barL,Brand,Card,Target,ShowTotal,barM,lineM1,ThirdLine,Colourfol,Details,Yuanhuan1,LeidaEcharts,barEcharts,YibiaoCharts2,lineM,Leida2Echarts,BrandValue},
     data () {
 		return {
 			showFlag:true,

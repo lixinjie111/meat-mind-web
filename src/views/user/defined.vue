@@ -1,43 +1,40 @@
 <template>
-  <DefaultPage>
-    <DetailsPage title="自定义客群" backname="user">
-      <div class="defined-customer">
-        <div class="d-c-container">
-          <div class="defined-title">
-            <span>有效行业数据</span>
-            32,124,423
-            <div class="message">
-              <Icon type="ios-information-circle-outline" color="#7C88B1" />
-              <div class="image"></div>
-            </div>
-          </div>
-          <div class="name">
-            <p>标题名称</p>
-            <Input placeholder style="width: 540px" />
-          </div>
-          <div class="rule">
-            <p>
-              客群规则
-              <span @click="edit">编辑</span>
-            </p>
-            <Input type="textarea" :row="6" style="width: 540px;height:160px" />
+  <DetailsPage title="自定义客群" backname="user">
+    <div class="defined-customer">
+      <div class="d-c-container">
+        <div class="defined-title">
+          <span>有效行业数据</span>
+          32,124,423
+          <div class="message">
+            <Icon type="ios-information-circle-outline" color="#7C88B1" />
+            <div class="image"></div>
           </div>
         </div>
-        <div class="d-c-btn">
-          <div class="cancel" @click="cancel">取消</div>
-          <div class="create" @click="create">创建</div>
+        <div class="name">
+          <p>标题名称</p>
+          <Input placeholder style="width: 540px" />
+        </div>
+        <div class="rule">
+          <p>
+            客群规则
+            <span @click="edit">编辑</span>
+          </p>
+          <Input type="textarea" :row="6" style="width: 540px;height:160px" />
         </div>
       </div>
-    </DetailsPage>
-  </DefaultPage>
+      <div class="d-c-btn">
+        <div class="cancel" @click="cancel">取消</div>
+        <div class="create" @click="create">创建</div>
+      </div>
+    </div>
+  </DetailsPage>
 </template>
 
 <script>
-import DefaultPage from "../../layouts/DefaultPage";
 import DetailsPage from "../../layouts/DetailsPage";
 export default {
   name: "defined",
-  components: { DefaultPage, DetailsPage },
+  components: { DetailsPage },
   methods:{
       edit(){
           this.$router.push({name:"user-edit"})

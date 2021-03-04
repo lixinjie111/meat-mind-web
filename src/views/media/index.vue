@@ -1,6 +1,9 @@
 <template>
-  <DefaultPage title="媒介画像">
+<!--  媒介画像-->
     <div class="media-protrait">
+      <div class="header-nav">
+        <p>媒介画像</p>
+      </div>
       <!-- <div class="m-p-panel">
         <div class="panel1">
           <div class="title">
@@ -1568,11 +1571,9 @@
           </Tabs>
       </div>
     </div>
-  </DefaultPage>
 </template>
 
 <script>
-import DefaultPage from "../../layouts/DefaultPage";
 import Triple from "./base/Triple"
 import Half from "./base/Half"
 import Full from "./base/Full"
@@ -1590,7 +1591,7 @@ import barM from '../../components/echarts/common/barM';
 
 export default {
   name: "index",
-  components: { DefaultPage, Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vGraph,vTree,lineM,barM},
+  components: { Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vGraph,vTree,lineM,barM},
   data(){
       return{
         modelUserL:"过去一个月",

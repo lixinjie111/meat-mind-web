@@ -1,25 +1,17 @@
 <template>
     <!-- 经营分析 -->
-    <DefaultPage>
-        <div class="business-analysis">
-            <router-view></router-view>
-        </div>
-    </DefaultPage>
+    <router-view></router-view>
 </template>
 
 <script>
-    import DefaultPage from "../../layouts/DefaultSubPage";
     export default {
         name: "index",
-        components: {DefaultPage},
         data() {
             return {};
-        },
+        }
     };
 </script>
 
 <style scoped lang="scss">
-    .business-analysis {
 
-    }
 </style>

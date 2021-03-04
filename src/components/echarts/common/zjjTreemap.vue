@@ -2,7 +2,7 @@
   <div class="echarts-box" :id="id"></div>
 </template>
 <script>
-import echarts from "../../echarts.min.js";
+import echarts from "../../../utils/echarts.min.js";
 export default {
   props: {
     myData: {
