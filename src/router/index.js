@@ -13,6 +13,7 @@ import dataCenter from "../views/datacenter/router"//数据管理
 // 统计图示例页面
 import barView from "../components/echarts/barView"
 import pieView from "../components/echarts/pieView"
+import testView from "../components/echarts/testView"
 
 Vue.use(VueRouter)
 
@@ -50,6 +51,11 @@ const routes = [
     path: '/pieView',
     name: 'pieView',
     component: pieView
+  },
+  {
+    path: '/testView',
+    name: 'testView',
+    component: testView
   }
 ]
 
