@@ -11,10 +11,10 @@
                     </div>
                     <div class="choice_content_container">
                         <div class="timer12" v-if="ifShowTime">
-                            <div class="city-box">
-                              <div class="city-label">城市: </div>
-                              <div :class="['city link', { active: selectedCity === it }]" v-for="it in citys" :key="it" @click="changeCity(it)">{{it}}</div>
-                            </div>
+                            <!--<div class="city-box">-->
+                              <!--<div class="city-label">城市: </div>-->
+                              <!--<div :class="['city link', { active: selectedCity === it }]" v-for="it in citys" :key="it" @click="changeCity(it)">{{it}}</div>-->
+                            <!--</div>-->
                             <div class="timer12_top">
                                 <div class="timeitem">06:00</div>
                                 <div class="timeitem">08:00</div>
@@ -454,9 +454,7 @@
             ]
           }
         ],
-        districtList: [
-          '朝阳区', '海淀区', '丰台区', '西城区', '东城区', '石景山区', '昌平区', '通州区', '顺义区', '房山区', '门头沟区', '大兴区', '怀柔区', '延庆区', '平谷区', '密云区'
-        ],
+        districtList: ['北京', '上海', '广州'],
         ifShowTime: true,
         timerIdx: 0,
         // timeType:8,
@@ -1226,7 +1224,7 @@
       },
       choiceat(arg) {
         this.currentBtn = arg;
-        this.ifShowMb = false;
+        this.ifShowTime = arg === 2;
       },
       clickTime(arg) {
         this.current = arg;
@@ -1510,7 +1508,6 @@
                                 display: flex;
                                 align-items: center;
                                 justify-content: space-between;
-                                margin-top: 26px;
                             }
                             .timer12_bom {
                                 width: 100%;

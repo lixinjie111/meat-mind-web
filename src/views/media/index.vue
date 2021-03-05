@@ -194,7 +194,7 @@
                 <img :src="wbIcon" alt="" srcset="" class="tenxIcon">
               </div>
               <i class="iconfont2 iconxiangqian"></i>
-            </div>  
+            </div>
             <div class="media_sec_panel_lef1_bom">
               <div class="sec_pan_con1">
                 <div class="sec_pan_con1_lef">
@@ -279,7 +279,7 @@
             </div>
           </div>
           <div class="media_sec_panel_lef2">
-            <div class="media_sec_panel_lef1_top">合作KOL</div>  
+              <div class="media_sec_panel_lef1_top">合作KOL</div>
             <div class="icon_container">
               <div class="tenx" @click="kolFn(1)">
                 <img :src="touxIcon1" alt="" srcset="" class="tenxIcon">
@@ -297,7 +297,7 @@
                 <img :src="touxIcon5" alt="" srcset="" class="tenxIcon">
               </div>
               <i class="iconfont2 iconxiangqian"></i>
-            </div>  
+            </div>
             <div class="media_sec_panel_lef1_bom">
               <div class="sec_pan_con1">
                 <div class="sec_pan_con1_lef">
@@ -768,13 +768,13 @@
           </div>
           <div class="m-p-pie">
               <div class="m-pie-title">
-				  媒介用户画像 
+                  媒介用户画像
 			  <Poptip popper-class="saas-poptip small" placement="right-start">
 			    <i class="iconfont2 iconguanyu tip-icon"></i>
 			    <div slot="content">
 			      <p>展示各个媒介的用户属性特征，深度洞察媒介使用者的人群画像，以及比较不同媒介的偏好人群的差异</p>
 			    </div>
-			  </Poptip>  
+              </Poptip>
 <!-- 			  <span @mouseenter="showTip"  @mouseleave="NshowTip" class="m-p-toolTip"><Icon type="ios-alert-outline" color="#7C88B1"/>
                 <div class="m-pie-tip" v-show="isShowTip">
                   展示各个媒介的用户属性特征，深度洞察媒介使用者的人群画像，以及比较不同媒介的偏好人群的差异
@@ -784,14 +784,16 @@
               <div class="subTitle">抖音用户，以26-45岁的女性自由职业者居多，整体收入水平偏中上等，约有1/3来自于三口之家，使用时间多分布于中午和晚间。</div>
               <div class="m-pie-echarts">
                   <Triple :title1="'性别分布'" :title2="'年龄分布'" :title3="'职业分布'">
-                        <PieCaseEcharts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieCaseEcharts>
-                        <PieCaseEcharts slot="mid" :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieCaseEcharts>
-                        <PieCaseEcharts slot="right" :colorList="$fjData.colorList" :myData="$fjData.box3Data" roseType="radius"></PieCaseEcharts>
+                      <PieCaseEcharts slot="left" :colorList="$fjData.colorList" :myData="sixData"></PieCaseEcharts>
+                      <PieCaseEcharts slot="mid" :colorList="$fjData.colorList" :myData="ageData"></PieCaseEcharts>
+                      <PieCaseEcharts slot="right" :colorList="$fjData.colorList" :myData="professioneData"
+                                      roseType="radius"></PieCaseEcharts>
                   </Triple>
                   <Triple :title1="'收入分布'" :title2="'家庭情况'" :title3="'网龄结构'">
-                        <PieCaseEcharts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box2Data"></PieCaseEcharts>
-                        <PieCaseEcharts slot="mid" :colorList="$fjData.colorList" :myData="$fjData.box11Data"></PieCaseEcharts>
-                        <PieCaseEcharts slot="right" :colorList="$fjData.colorList" :myData="$fjData.box12Data"></PieCaseEcharts>
+                      <PieCaseEcharts slot="left" :colorList="$fjData.colorList" :myData="incomeData"></PieCaseEcharts>
+                      <PieCaseEcharts slot="mid" :colorList="$fjData.colorList" :myData="familyData"></PieCaseEcharts>
+                      <PieCaseEcharts slot="right" :colorList="$fjData.colorList"
+                                      :myData="netetworkAgeData"></PieCaseEcharts>
                   </Triple>
               </div>
           </div>
@@ -846,11 +848,11 @@
                           <p>相关指标预期</p>
                           <div>
                               <div style="margin-right:16px"><Card :title="'综合预期CPE'" :colourfol="'blue'" :number="'0.35'"></Card></div>
-                              <div><Card :title="'组合互动总数'" :colourfol="'purple'" :number="'427,260'"></Card></div>  
+                              <div><Card :title="'组合互动总数'" :colourfol="'purple'" :number="'427,260'"></Card></div>
                           </div>
                           <div>
-                            <div style="margin-right:16px"><Card :title="'组合粉丝数'" :colourfol="'pink'" :number="'6,968,580'"></Card></div>    
-                              <div><Card :title="'组合预算（元）'" :colourfol="'orange'" :number="'29,986'"></Card></div> 
+                            <div style="margin-right:16px"><Card :title="'组合粉丝数'" :colourfol="'pink'" :number="'6,968,580'"></Card></div>
+                              <div><Card :title="'组合预算（元）'" :colourfol="'orange'" :number="'29,986'"></Card></div>
                           </div>
                       </div>
                   </div>
@@ -1039,7 +1041,7 @@
         </div>
         <div class="m-p-kol">
           <div class="m-p-target-title">
-              KOL资源 
+              KOL资源
 			  <Poptip popper-class="saas-poptip small" placement="right-start">
 			    <i class="iconfont2 iconguanyu tip-icon"></i>
 			    <div slot="content">
@@ -1053,520 +1055,8 @@
               </span> -->
           </div>
           <div class="subTitle">抖音媒介资源是品牌本次投放方案的最优选择，“邓荣”的投放效果表现最优。基于分析，“李刚”性价比最高，可作为比较和备选方案。</div>
-          <Tabs value="name1" @on-click="getTab">
-              <TabPane label="短视频" name="name1">
-                <div class="f-list">
-                  <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
-                      <p>{{item}}</p>
-                  </div>
-                </div>
-                <div class="listBox">
-                   <div class="listBox-left">
-                     <Menu active-name="1"  mode="vertical">
-                          <MenuItem name="1"> KOL综合排行</MenuItem>
-                          <MenuItem name="2"> 粉丝增长排行</MenuItem>
-                          <MenuItem name="3"> 粉丝互动排行</MenuItem>
-                          <MenuItem name="4"> 销售转化排行</MenuItem>
-                          <MenuItem name="5"> 性价比排行</MenuItem>
-                    </Menu>
-                   </div>
-                   <div class="listBox-right">
-                       <div class="m-f-line">
-                           <div class="label">类别</div>
-                           <div class="f-list">
-                               <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                                   <p>{{item}}</p>
-                               </div>
-                           </div>
-                       </div>
-                    <Table :columns="columns1" :data="data1" size="large">
-                      <template slot-scope="{ row, index }" slot="paiming">
-                        <div class="paiming1" v-if="index==0">{{index+1}}</div>
-                        <div class="paiming2" v-else-if="index==1">{{index+1}}</div>
-                        <div class="paiming3" v-else-if="index==2">{{index+1}}</div>
-                        <div class="paiming4" v-else>{{index+1}}</div>
-                      </template>
-                      <template slot-scope="{ row, index }" slot="douhao">
-                       <div class="personal">
-                          <div class="left">
-                            <img :src="row.header" alt="">
-                          </div>
-                          <div class="right">
-                            <div class="name">{{row.name}}</div>
-                            <div class="hao">抖音号：{{row.num}}</div>
-                          </div>
-                       </div>
-                      </template>
-                      <template slot-scope="{ row, index }" slot="action">
-                       <div class="actionList">
-                          <div class="detail">详情</div>
-                          <div class="detail">收藏</div>
-                          <div class="detail">合作</div>
-                       </div>
-                      </template>
-                    </Table>
-                    <div class="page">
-                      <Page :total="100" show-total show-sizer class-name="pageS"/>
-                    </div>
-                   </div>
-                </div>
-              </TabPane>
-              <TabPane label="社交传媒" name="name2">
-                <div class="f-list">
-                  <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
-                      <p>{{item}}</p>
-                  </div>
-                </div>
-                <div class="listBox">
-                   <div class="listBox-left">
-                     <Menu active-name="1" width="133px" mode="vertical">
-                          <MenuItem name="1"> KOL综合排行</MenuItem>
-                          <MenuItem name="2"> 粉丝增长排行</MenuItem>
-                          <MenuItem name="3"> 粉丝互动排行</MenuItem>
-                          <MenuItem name="4"> 销售转化排行</MenuItem>
-                          <MenuItem name="5"> 性价比排行</MenuItem>
-                    </Menu>
-                   </div>
-                   <div class="listBox-right">
-                   <div class="m-f-line">
-                       <div class="label">类别</div>
-                       <div class="f-list">
-                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                               <p>{{item}}</p>
-                           </div>
-                       </div>
-                   </div>
-                    <Table :columns="columns1" :data="data1" size="large">
-                      <template slot-scope="{ row, index }" slot="paiming">
-                        <div class="paiming1" v-if="index==0">{{index+1}}</div>
-                        <div class="paiming2" v-else-if="index==1">{{index+1}}</div>
-                        <div class="paiming3" v-else-if="index==2">{{index+1}}</div>
-                        <div class="paiming4" v-else>{{index+1}}</div>
-                      </template>
-                      <template slot-scope="{ row, index }" slot="douhao">
-                       <div class="personal">
-                          <div class="left">
-                            <img :src="row.header" alt="">
-                          </div>
-                          <div class="right">
-                            <div class="name">{{row.name}}</div>
-                            <div class="hao">抖音号：{{row.num}}</div>
-                          </div>
-                       </div>
-                      </template>
-                      <template slot-scope="{ row, index }" slot="action">
-                       <div class="actionList">
-                          <div class="detail">详情</div>
-                          <div class="detail">收藏</div>
-                          <div class="detail">合作</div>
-                       </div>
-                      </template>
-                    </Table>
-                    <div class="page">
-                      <Page :total="100" show-total show-sizer class-name="pageS"/>
-                    </div>
-                   </div>
-                </div>
-              </TabPane>
-              <TabPane label="大众传媒" name="name3">
-               <div class="f-list">
-                  <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
-                      <p>{{item}}</p>
-                  </div>
-               </div>
-                <div class="listBox">
-                   <div class="listBox-left">
-                     <Menu active-name="1" width="133px" mode="vertical">
-                          <MenuItem name="1"> KOL综合排行</MenuItem>
-                          <MenuItem name="2"> 粉丝增长排行</MenuItem>
-                          <MenuItem name="3"> 粉丝互动排行</MenuItem>
-                          <MenuItem name="4"> 销售转化排行</MenuItem>
-                          <MenuItem name="5"> 性价比排行</MenuItem>
-                    </Menu>
-                   </div>
-                   <div class="listBox-right">
-                   <div class="m-f-line">
-                       <div class="label">类别</div>
-                       <div class="f-list">
-                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                               <p>{{item}}</p>
-                           </div>
-                       </div>
-                   </div>
-                    <Table :columns="columns1" :data="data1" size="large">
-                      <template slot-scope="{ row, index }" slot="paiming">
-                        <div class="paiming1" v-if="index==0">{{index+1}}</div>
-                        <div class="paiming2" v-else-if="index==1">{{index+1}}</div>
-                        <div class="paiming3" v-else-if="index==2">{{index+1}}</div>
-                        <div class="paiming4" v-else>{{index+1}}</div>
-                      </template>
-                      <template slot-scope="{ row, index }" slot="douhao">
-                       <div class="personal">
-                          <div class="left">
-                            <img :src="row.header" alt="">
-                          </div>
-                          <div class="right">
-                            <div class="name">{{row.name}}</div>
-                            <div class="hao">抖音号：{{row.num}}</div>
-                          </div>
-                       </div>
-                      </template>
-                      <template slot-scope="{ row, index }" slot="action">
-                       <div class="actionList">
-                          <div class="detail">详情</div>
-                          <div class="detail">收藏</div>
-                          <div class="detail">合作</div>
-                       </div>
-                      </template>
-                    </Table>
-                    <div class="page">
-                      <Page :total="100" show-total show-sizer class-name="pageS"/>
-                    </div>
-                   </div>
-                </div>
-              </TabPane>
-              <TabPane label="体验事件" name="name4">
-                <div class="f-list">
-                  <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
-                      <p>{{item}}</p>
-                  </div>
-                </div>
-                <div class="listBox">
-                   <div class="listBox-left">
-                     <Menu active-name="1" width="133px" mode="vertical">
-                          <MenuItem name="1"> KOL综合排行</MenuItem>
-                          <MenuItem name="2"> 粉丝增长排行</MenuItem>
-                          <MenuItem name="3"> 粉丝互动排行</MenuItem>
-                          <MenuItem name="4"> 销售转化排行</MenuItem>
-                          <MenuItem name="5"> 性价比排行</MenuItem>
-                    </Menu>
-                   </div>
-                   <div class="listBox-right">
-                   <div class="m-f-line">
-                       <div class="label">类别</div>
-                       <div class="f-list">
-                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                               <p>{{item}}</p>
-                           </div>
-                       </div>
-                   </div>
-                    <Table :columns="columns1" :data="data1" size="large">
-                      <template slot-scope="{ row, index }" slot="paiming">
-                        <div class="paiming1" v-if="index==0">{{index+1}}</div>
-                        <div class="paiming2" v-else-if="index==1">{{index+1}}</div>
-                        <div class="paiming3" v-else-if="index==2">{{index+1}}</div>
-                        <div class="paiming4" v-else>{{index+1}}</div>
-                      </template>
-                      <template slot-scope="{ row, index }" slot="douhao">
-                       <div class="personal">
-                          <div class="left">
-                            <img :src="row.header" alt="">
-                          </div>
-                          <div class="right">
-                            <div class="name">{{row.name}}</div>
-                            <div class="hao">抖音号：{{row.num}}</div>
-                          </div>
-                       </div>
-                      </template>
-                      <template slot-scope="{ row, index }" slot="action">
-                       <div class="actionList">
-                          <div class="detail">详情</div>
-                          <div class="detail">收藏</div>
-                          <div class="detail">合作</div>
-                       </div>
-                      </template>
-                    </Table>
-                    <div class="page">
-                      <Page :total="100" show-total show-sizer class-name="pageS"/>
-                    </div>
-                   </div>
-                </div>
-              </TabPane>
-              <TabPane label="促销" name="name5">
-              <div class="f-list">
-                  <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
-                      <p>{{item}}</p>
-                  </div>
-              </div>
-                <div class="listBox">
-                   <div class="listBox-left">
-                     <Menu active-name="1" width="133px" mode="vertical">
-                          <MenuItem name="1"> KOL综合排行</MenuItem>
-                          <MenuItem name="2"> 粉丝增长排行</MenuItem>
-                          <MenuItem name="3"> 粉丝互动排行</MenuItem>
-                          <MenuItem name="4"> 销售转化排行</MenuItem>
-                          <MenuItem name="5"> 性价比排行</MenuItem>
-                    </Menu>
-                   </div>
-                   <div class="listBox-right">
-                   <div class="m-f-line">
-                       <div class="label">类别</div>
-                       <div class="f-list">
-                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                               <p>{{item}}</p>
-                           </div>
-                       </div>
-                   </div>
-                    <Table :columns="columns1" :data="data1" size="large">
-                      <template slot-scope="{ row, index }" slot="paiming">
-                        <div class="paiming1" v-if="index==0">{{index+1}}</div>
-                        <div class="paiming2" v-else-if="index==1">{{index+1}}</div>
-                        <div class="paiming3" v-else-if="index==2">{{index+1}}</div>
-                        <div class="paiming4" v-else>{{index+1}}</div>
-                      </template>
-                      <template slot-scope="{ row, index }" slot="douhao">
-                       <div class="personal">
-                          <div class="left">
-                            <img :src="row.header" alt="">
-                          </div>
-                          <div class="right">
-                            <div class="name">{{row.name}}</div>
-                            <div class="hao">抖音号：{{row.num}}</div>
-                          </div>
-                       </div>
-                      </template>
-                      <template slot-scope="{ row, index }" slot="action">
-                       <div class="actionList">
-                          <div class="detail">详情</div>
-                          <div class="detail">收藏</div>
-                          <div class="detail">合作</div>
-                       </div>
-                      </template>
-                    </Table>
-                    <div class="page">
-                      <Page :total="100" show-total show-sizer class-name="pageS"/>
-                    </div>
-                   </div>
-                </div>
-              </TabPane>
-              <TabPane label="在线社交媒体" name="name6">
-               <div class="f-list">
-                  <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
-                      <p>{{item}}</p>
-                  </div>
-               </div>
-                <div class="listBox">
-                   <div class="listBox-left">
-                     <Menu active-name="1" width="133px" mode="vertical">
-                          <MenuItem name="1"> KOL综合排行</MenuItem>
-                          <MenuItem name="2"> 粉丝增长排行</MenuItem>
-                          <MenuItem name="3"> 粉丝互动排行</MenuItem>
-                          <MenuItem name="4"> 销售转化排行</MenuItem>
-                          <MenuItem name="5"> 性价比排行</MenuItem>
-                    </Menu>
-                   </div>
-                   <div class="listBox-right">
-                   <div class="m-f-line">
-                       <div class="label">类别</div>
-                       <div class="f-list">
-                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                               <p>{{item}}</p>
-                           </div>
-                       </div>
-                   </div>
-                    <Table :columns="columns1" :data="data1" size="large">
-                      <template slot-scope="{ row, index }" slot="paiming">
-                        <div class="paiming1" v-if="index==0">{{index+1}}</div>
-                        <div class="paiming2" v-else-if="index==1">{{index+1}}</div>
-                        <div class="paiming3" v-else-if="index==2">{{index+1}}</div>
-                        <div class="paiming4" v-else>{{index+1}}</div>
-                      </template>
-                      <template slot-scope="{ row, index }" slot="douhao">
-                       <div class="personal">
-                          <div class="left">
-                            <img :src="row.header" alt="">
-                          </div>
-                          <div class="right">
-                            <div class="name">{{row.name}}</div>
-                            <div class="hao">抖音号：{{row.num}}</div>
-                          </div>
-                       </div>
-                      </template>
-                      <template slot-scope="{ row, index }" slot="action">
-                       <div class="actionList">
-                          <div class="detail">详情</div>
-                          <div class="detail">收藏</div>
-                          <div class="detail">合作</div>
-                       </div>
-                      </template>
-                    </Table>
-                    <div class="page">
-                      <Page :total="100" show-total show-sizer class-name="pageS"/>
-                    </div>
-                   </div>
-                </div>
-              </TabPane>
-              <TabPane label="公共关系和宣传" name="name7">
-                <div class="f-list">
-                  <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
-                      <p>{{item}}</p>
-                  </div>
-                </div>
-                <div class="listBox">
-                   <div class="listBox-left">
-                     <Menu active-name="1" width="133px" mode="vertical">
-                          <MenuItem name="1"> KOL综合排行</MenuItem>
-                          <MenuItem name="2"> 粉丝增长排行</MenuItem>
-                          <MenuItem name="3"> 粉丝互动排行</MenuItem>
-                          <MenuItem name="4"> 销售转化排行</MenuItem>
-                          <MenuItem name="5"> 性价比排行</MenuItem>
-                    </Menu>
-                   </div>
-                   <div class="listBox-right">
-                   <div class="m-f-line">
-                       <div class="label">类别</div>
-                       <div class="f-list">
-                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                               <p>{{item}}</p>
-                           </div>
-                       </div>
-                   </div>
-                    <Table :columns="columns1" :data="data1" size="large">
-                      <template slot-scope="{ row, index }" slot="paiming">
-                        <div class="paiming1" v-if="index==0">{{index+1}}</div>
-                        <div class="paiming2" v-else-if="index==1">{{index+1}}</div>
-                        <div class="paiming3" v-else-if="index==2">{{index+1}}</div>
-                        <div class="paiming4" v-else>{{index+1}}</div>
-                      </template>
-                      <template slot-scope="{ row, index }" slot="douhao">
-                       <div class="personal">
-                          <div class="left">
-                            <img :src="row.header" alt="">
-                          </div>
-                          <div class="right">
-                            <div class="name">{{row.name}}</div>
-                            <div class="hao">抖音号：{{row.num}}</div>
-                          </div>
-                       </div>
-                      </template>
-                      <template slot-scope="{ row, index }" slot="action">
-                       <div class="actionList">
-                          <div class="detail">详情</div>
-                          <div class="detail">收藏</div>
-                          <div class="detail">合作</div>
-                       </div>
-                      </template>
-                    </Table>
-                    <div class="page">
-                      <Page :total="100" show-total show-sizer class-name="pageS"/>
-                    </div>
-                   </div>
-                </div>
-              </TabPane>
-              <TabPane label="网站" name="name8">
-                <div class="f-list">
-                  <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
-                      <p>{{item}}</p>
-                  </div>
-                </div>
-                <div class="listBox">
-                   <div class="listBox-left">
-                     <Menu active-name="1" width="133px" mode="vertical">
-                          <MenuItem name="1"> KOL综合排行</MenuItem>
-                          <MenuItem name="2"> 粉丝增长排行</MenuItem>
-                          <MenuItem name="3"> 粉丝互动排行</MenuItem>
-                          <MenuItem name="4"> 销售转化排行</MenuItem>
-                          <MenuItem name="5"> 性价比排行</MenuItem>
-                    </Menu>
-                   </div>
-                   <div class="listBox-right">
-                   <div class="m-f-line">
-                       <div class="label">类别</div>
-                       <div class="f-list">
-                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                               <p>{{item}}</p>
-                           </div>
-                       </div>
-                   </div>
-                    <Table :columns="columns1" :data="data1" size="large">
-                      <template slot-scope="{ row, index }" slot="paiming">
-                        <div class="paiming1" v-if="index==0">{{index+1}}</div>
-                        <div class="paiming2" v-else-if="index==1">{{index+1}}</div>
-                        <div class="paiming3" v-else-if="index==2">{{index+1}}</div>
-                        <div class="paiming4" v-else>{{index+1}}</div>
-                      </template>
-                      <template slot-scope="{ row, index }" slot="douhao">
-                       <div class="personal">
-                          <div class="left">
-                            <img :src="row.header" alt="">
-                          </div>
-                          <div class="right">
-                            <div class="name">{{row.name}}</div>
-                            <div class="hao">抖音号：{{row.num}}</div>
-                          </div>
-                       </div>
-                      </template>
-                      <template slot-scope="{ row, index }" slot="action">
-                       <div class="actionList">
-                          <div class="detail">详情</div>
-                          <div class="detail">收藏</div>
-                          <div class="detail">合作</div>
-                       </div>
-                      </template>
-                    </Table>
-                    <div class="page">
-                      <Page :total="100" show-total show-sizer class-name="pageS"/>
-                    </div>
-                   </div>
-                </div>
-              </TabPane>
-              <TabPane label="其他" name="name9">
-               <div class="f-list">
-                  <div class="f-item" @click="list4Act=index" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
-                      <p>{{item}}</p>
-                  </div>
-               </div>
-                <div class="listBox">
-                   <div class="listBox-left">
-                     <Menu active-name="1" width="133px" mode="vertical">
-                          <MenuItem name="1"> KOL综合排行</MenuItem>
-                          <MenuItem name="2"> 粉丝增长排行</MenuItem>
-                          <MenuItem name="3"> 粉丝互动排行</MenuItem>
-                          <MenuItem name="4"> 销售转化排行</MenuItem>
-                          <MenuItem name="5"> 性价比排行</MenuItem>
-                    </Menu>
-                   </div>
-                   <div class="listBox-right">
-                   <div class="m-f-line">
-                       <div class="label">类别</div>
-                       <div class="f-list">
-                           <div class="f-item" @click="list5Act=index" :class="{'active':index==list5Act}" v-for="(item,index) in list5" :key="index">
-                               <p>{{item}}</p>
-                           </div>
-                       </div>
-                   </div>
-                    <Table :columns="columns1" :data="data1" size="large">
-                      <template slot-scope="{ row, index }" slot="paiming">
-                        <div class="paiming1" v-if="index==0">{{index+1}}</div>
-                        <div class="paiming2" v-else-if="index==1">{{index+1}}</div>
-                        <div class="paiming3" v-else-if="index==2">{{index+1}}</div>
-                        <div class="paiming4" v-else>{{index+1}}</div>
-                      </template>
-                      <template slot-scope="{ row, index }" slot="douhao">
-                       <div class="personal">
-                          <div class="left">
-                            <img :src="row.header" alt="">
-                          </div>
-                          <div class="right">
-                            <div class="name">{{row.name}}</div>
-                            <div class="hao">抖音号：{{row.num}}</div>
-                          </div>
-                       </div>
-                      </template>
-<!--                      <template slot-scope="{ row, index }" slot="action">-->
-<!--                       <div class="actionList">-->
-<!--                          <div class="detail">详情</div>-->
-<!--                          <div class="detail">收藏</div>-->
-<!--                          <div class="detail">合作</div>-->
-<!--                       </div>-->
-<!--                      </template>-->
-                    </Table>
-                    <div class="page">
-                      <Page :total="100" show-total show-sizer class-name="pageS"/>
-                    </div>
-                   </div>
-                </div>
-              </TabPane>
+          <Tabs @on-click="getTab">
+              <TabPaneItem :name="it" :label="it" v-for="it in tabs" :key="it"/>
           </Tabs>
       </div>
     </div>
@@ -1577,6 +1067,7 @@ import Triple from "./base/Triple"
 import Half from "./base/Half"
 import Full from "./base/Full"
 import Card from "./base/Card"
+import TabPaneItem from "./base/TabPaneItem"
 import PieCaseEcharts from '../../components/echarts/common/PieCaseEcharts';
 import barL from '../../components/echarts/common/barL';
 import funnel from '../../components/echarts/common/funnel';
@@ -1590,7 +1081,7 @@ import barM from '../../components/echarts/common/barM';
 
 export default {
   name: "index",
-  components: { Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vGraph,vTree,lineM,barM},
+  components: { Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vGraph,vTree,lineM,barM, TabPaneItem},
   data(){
       return{
         modelUserL:"过去一个月",
@@ -1654,210 +1145,8 @@ export default {
           "科技数码","旅行","美食","美妆","萌宠","明星","母婴","汽车","情感","三农","生活日常",
           "时尚","舞蹈","艺术文化","个护","园艺","运动健身","奢侈品","新闻资讯","品牌组织","颜值达人","知识科普","番剧","游戏","品牌组织"],
           list3:["不限","按照最低刊例价组合","按照最高刊例价组合"],
-
-          list4:["综合","抖音","快手","微视","梨视频","西瓜视频"],
-          list5:["全部","娱乐","才艺","萌宠","搞笑","二次元","游戏","家具","美食","旅游","企业","体育",
-          "教育","科技","汽车","情感","时尚","文化","社会","实事",],
+            tabs: ['短视频','社交传媒', '大众传媒' , '体验事件' , '促销' , '在线社交媒体' , '公共关系和宣传' , '网站'  , '其他' ],
           myEData:[],
-          columns1: [
-                    {
-                        title: '排名',
-                        slot: 'paiming',
-                        width: 70/144*window.rem,
-                    },
-                    {
-                        title: '抖音号',
-                        key: 'name',
-                        slot: 'douhao',
-                        width: 200/144*window.rem,
-                    },
-                    {
-                        title: '带货量',
-                        tooltip:true,
-                        ellipsis:true,
-                        key: 'huo',
-                        width: 100/144*window.rem,
-                    },
-                    {
-                        title: '品牌曝光数',
-                         tooltip:true,
-                        ellipsis:true,
-                        key: 'bao',
-                        width: 95/144*window.rem
-
-                    },
-                    {
-                        title: '真粉量/粉丝数',
-                         tooltip:true,
-                        ellipsis:true,
-                        key: 'fensi'
-                    },
-                    {
-                        title: '品牌匹配度',
-                         tooltip:true,
-                        ellipsis:true,
-                        key: 'zan',
-                        width: 95/144*window.rem
-                    },
-                    {
-                        title: '用户匹配度',
-                         tooltip:true,
-                        ellipsis:true,
-                        key: 'zuopin',
-                        width: 95/144*window.rem
-                    },
-                    {
-                        // title: '影响力指数',
-                        tooltip:true,
-                        ellipsis:true,
-                        key: 'yxiang',
-                        width: 95/144*window.rem,
-                        renderHeader: (h, params)=>{
-                        return h("div", [
-                          h('strong', '影响力指数'),
-                          h("Poptip",
-                            {
-                              props: {
-                                placement: "bottom-end",
-                                popperClass: "saas-poptip",
-                                transfer: true
-                              },
-                              style: {
-                                marginLeft: '2px'
-                              }
-                            },
-                            [
-                              h("i", {
-                                class: "iconfont2 iconguanyu tip-icon"
-                              }),
-                              h("div", {
-                                slot: "content"
-                              },[
-                                 h("p", "影响力指数是系统基于账号粉丝量、真粉率、日均推广时长、代言品牌数、品牌匹配度、用户匹配度以及代言品牌数和带货量等数据分析得出的综合评分。其公式为"),
-                                 h("p", "F = [(粉丝量*真粉率)/10W * 0.27 + 日均推广时长(分钟) * (代言品牌数/100) * 0.23 + 10*用户匹配度*0.26 + 10*品牌匹配度 * 0.24 ] * θ(带货量)")
-                              ])
-                            ])
-                        ])
-                      }
-                    },
-                    // {
-                    //     title: '操作',
-                    //     slot: 'action',
-                    //     width: 150/144*window.rem,
-                    // },
-                ],
-              data1: [
-                {
-                  name: '邓荣',
-                  huo: '418.5w',
-                  bao: 48,
-                  fensi:'8008.5w/8418.5w',
-                  zan:92,
-                  zuopin:90,
-                  yxiang:1480,
-                  header:require("../../assets/img/yhhx/header.png"),
-                  num:"14440078798"
-                },
-                {
-                  name: '李芮',
-                  huo: '398.5w',
-                  bao: 46,
-                  fensi: '7300.5w/7418.5w',
-                  zan:90,
-                  zuopin:86,
-                  yxiang:1450,
-                  header:require("../../assets/img/yhhx/header1.png"),
-                  num:"18540757560"
-                },
-                {
-                  name: '李刚',
-                  huo: '227.5w',
-                  bao: 45,
-                  fensi: '6200.2w/6418.5w',
-                  zan:88,
-                  zuopin:86,
-                  yxiang:1400,
-                  header:require("../../assets/img/yhhx/header2.png"),
-                  num:"18191959422"
-                },
-                {
-                  name: '钱迪',
-                  huo: '115.5w',
-                  bao: 43,
-                  fensi: '5120.3w/5418.5w',
-                  zan:86,
-                  zuopin:83,
-                  yxiang:1380,
-                  header:require("../../assets/img/yhhx/header3.png"),
-                  num:"13875139883"
-                },
-                {
-                  name: '李星',
-                  huo: '114.5w',
-                  bao: 40,
-                  fensi: '5000.1w/5400.5w',
-                  zan:80,
-                  zuopin:88,
-                  yxiang:1300,
-                  header:require("../../assets/img/yhhx/header4.png"),
-                  num:"15305619958"
-                },
-                {
-                  name: '叶春龙',
-                  huo: '110.5w',
-                  bao: 38,
-                  fensi: '4518.5w/4818.5w',
-                  zan:80,
-                  zuopin:82,
-                  yxiang:1280,
-                  header:require("../../assets/img/yhhx/header5.png"),
-                  num:"14881800609"
-                },
-                {
-                  name: '吕若盛',
-                  huo: '109.5w',
-                  bao: 36,
-                  fensi: '4018.5w/4418.5w',
-                  zan:79,
-                  zuopin:82,
-                  yxiang:1200,
-                  header:require("../../assets/img/yhhx/header6.png"),
-                  num:"18748796447"
-                },
-                {
-                  name: '王瑶',
-                  huo: '89.5w',
-                  bao: 36,
-                  fensi: '3238.5w/3438.5w',
-                  zan:79,
-                  zuopin:80,
-                  yxiang:1180,
-                  header:require("../../assets/img/yhhx/header7.png"),
-                  num:"18748796487"
-                },
-                {
-                  name: '吴轩豪',
-                  huo: '87.5w',
-                  bao: 35,
-                  fensi: '2568.5w/2638.5w',
-                  zan:75,
-                  zuopin:82,
-                  yxiang:1100,
-                  header:require("../../assets/img/yhhx/header8.png"),
-                  num:"15622585340"
-                },
-                {
-                  name: '雷晓云',
-                  huo: '57.5w',
-                  bao: 34,
-                  fensi: '1408.5w/1438.5w',
-                  zan:75,
-                  zuopin:80,
-                  yxiang:1040,
-                  header:require("../../assets/img/yhhx/header9.png"),
-                  num:"14628678533"
-                },
-              ],
               upIcon:require("../../assets/img/yhhx/upIcon.png"),
               downIcon:require("../../assets/img/yhhx/down_arro_Icon.png"),
               tabListArr:['推荐策略: 快速拉新获客策略','备选策略1: 低成本高转化策略','备选策略2: 持续转化策略'],
@@ -2212,7 +1501,8 @@ export default {
                   numTxt2:'7.2%',
                   numTxt3:'3.09%',
                 }
-              }
+              },
+        config: {},
       }
   },
   created(){
@@ -2272,7 +1562,7 @@ export default {
         this.averageData = this.$linData.box3Data
       }else{
         this.averageData = this.$linData.box4Data
-      }      
+      }
     },
     changeTabCon(arg){
       this.ifShowTabCon = arg;
@@ -2315,7 +1605,55 @@ export default {
         this.myEData=this.$lxjData[`box27${index-1}Data`];
       }
     }
-  }
+  },
+  computed: {
+    keyNum() {
+      return (this.list1Act + this.list2Act + this.list3Act) % 2
+    },
+    sixData() {
+      return this.keyNum ? this.$fjData.box5Data : {name: ['女', '男'], value: [46, 54]}
+    },
+    ageData() {
+      return this.keyNum
+        ? this.$fjData.box1Data
+        : {
+          name: ['26-30岁', '31-35岁', '41-45岁', '21-25岁', '18-20岁', '36-40岁'],
+          value: [100, 400, 800, 700, 189, 563]
+        }
+    },
+    professioneData() {
+      return this.keyNum
+        ? this.$fjData.box3Data
+        : {
+          name: ['中层管理者', '公司白领', '自由职业者', '全职太太', '高层管理', '其他'],
+          value: [50, 29, 78, 31, 23, 1],
+        }
+    },
+    incomeData() {
+      return this.keyNum
+        ? this.$fjData.box2Data
+        : {
+          name: ["11001-13000元", "10001-11001元", "13001-15000元", "7001-10000元", "5000元以下", "5000-7000元", "15001-17000元", "17001-20000元", "20001-30000元", "30001-50000元", "50000元以上",],
+          value: [30, 44, 89, 21, 48, 45, 34, 55, 100, 0, 47],
+        }
+    },
+    familyData() {
+      return this.keyNum
+        ? this.$fjData.box11Data
+        : {
+          name: ['四口之家', '五口之家', '单身与父母一起住', '俩口之家', '三口之家'],
+          value: [54, 89, 18, 10, 35],
+        }
+    },
+    netetworkAgeData() {
+      return this.keyNum
+        ? this.$fjData.box12Data
+        : {
+          name: ['<25岁', '35-45岁', '>56岁', '26-34岁', '46-55岁'],
+          value: [100, 58, 10, 8, 5],
+        }
+    },
+  },
 };
 </script>
 
@@ -2504,7 +1842,7 @@ export default {
           flex:1;
         }
       }
-      
+
     }
     .hr{
       width: 1px;
@@ -2600,7 +1938,7 @@ export default {
       }
     }
     .box1{
-      height: 100%; 
+        height: 100%;
       background: linear-gradient(225deg, #1C66DE 0%, #98A0F9 100%);
       box-shadow: 4px -4px 24px 0px rgba(41, 59, 149, 0.55);
       border-radius: 8px;
@@ -2624,7 +1962,7 @@ export default {
               width: 100%;
               display: block;
             }
-            
+
           }
         }
       }
@@ -2637,7 +1975,7 @@ export default {
       }
     }
     .box2{
-      height: 100%; 
+        height: 100%;
       background: linear-gradient(221deg, #03A8C8 0%, #8BD5AE 100%);
       box-shadow: 4px -4px 24px 0px rgba(45, 120, 134, 0.55);
       border-radius: 8px;
@@ -2661,7 +1999,7 @@ export default {
               width: 100%;
               display: block;
             }
-            
+
           }
         }
       }
@@ -2674,7 +2012,7 @@ export default {
       }
     }
     .box3{
-      height: 100%; 
+        height: 100%;
       background: linear-gradient(224deg, #8378F9 0%, #F0908F 100%);
       box-shadow: 4px -4px 24px 0px rgba(109, 57, 143, 0.55);
       border-radius: 8px;
@@ -2698,7 +2036,7 @@ export default {
               width: 100%;
               display: block;
             }
-            
+
           }
         }
       }
@@ -3213,10 +2551,10 @@ export default {
                 }
                 &.legend5{
                   background: #8AE6C7;
-                }                
+                }
                 &.legend6{
                   background: #E19564;
-                }                
+                }
               }
               >span{
                 height: 20px;
@@ -3434,13 +2772,13 @@ export default {
             font-weight: 500;
             color: #242F57;
             line-height: 24px;
-           
+
         }
         .m-pie-echarts{
             height: 596px;
         }
     }
-    
+
   }
   .m-p-zuhe{
     width: 100%;
@@ -3621,7 +2959,7 @@ export default {
         align-items: center;
         border-radius: 8px;
         box-shadow: 2px 2px 7px 0px rgb(210 213 225 / 80%) inset;
-        cursor: pointer; 
+          cursor: pointer;
       }
     }
     .relative-data{
@@ -3785,194 +3123,6 @@ export default {
     border-radius: 12px;
     border: 1px solid #EAEDF7;
     padding:24px;
-    .listBox{
-      border-radius: 8px;
-      border: 1px solid #EAEDF7;
-      display: flex;
-      margin-bottom: 1px;
-      padding-bottom: 2px;
-
-      .listBox-left{
-        ::v-deep .ivu-menu{
-          width:120px !important;
-          height: 100%;
-          padding-top: 10px;
-          font-size: 14px;
-          font-family: PingFangSC-Medium, PingFang SC;
-          font-weight: 500;
-          color: #636E95;
-          .ivu-menu-item{
-            text-align: right;
-            padding-right: 16px;
-            padding-left:0;
-          }
-         
-        }
-        ::v-deep .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu){
-            background: #fff;
-        }
-      }
-      .listBox-right{
-        flex: 1;
-        padding:24px;
-        padding-top: 16px;
-        .page{
-          padding-top: 16px;
-          .pageS{
-            text-align: right;
-            ::v-deep .ivu-page-options{
-              float: left;
-            }
-          }
-        }
-        .paiming1{
-          width: 18px;
-          height: 18px;
-          background: #4D94FF;
-          border-radius: 50%;
-          font-size: 12px;
-          font-family: HelveticaNeue-Medium, HelveticaNeue;
-          font-weight: 500;
-          color: #FFFFFF;
-          line-height: 18px;
-          text-align: center;
-        }
-        .paiming2{
-          width: 18px;
-          height: 18px;
-          background:#A49DFA;
-          border-radius: 50%;
-          font-size: 12px;
-          font-family: HelveticaNeue-Medium, HelveticaNeue;
-          font-weight: 500;
-          color: #FFFFFF;
-          line-height: 18px;
-          text-align: center;
-        }
-        .paiming3{
-          width: 18px;
-          height: 18px;
-          background: #FC809F;
-          border-radius: 50%;
-          font-size: 12px;
-          font-family: HelveticaNeue-Medium, HelveticaNeue;
-          font-weight: 500;
-          color: #FFFFFF;
-          line-height: 18px;
-          text-align: center;
-        }
-        .paiming4{
-          width: 18px;
-          height: 18px;
-          background: #D9D9D9;
-          border-radius: 50%;
-          font-size: 12px;
-          font-family: HelveticaNeue-Medium, HelveticaNeue;
-          font-weight: 500;
-          color: #FFFFFF;
-          line-height: 18px;
-          text-align: center;
-        }
-        .personal{
-          display: flex;
-          align-items: center;
-          .left{
-            width: 32px;
-          }
-          .right{
-            margin-left: 3px;
-            .name{
-              font-size: 14px;
-              font-family: PingFangSC-Medium, PingFang SC;
-              font-weight: 500;
-              color: #242F57;
-              line-height: 22px;
-            }
-            .hao{
-              font-size: 12px;
-              font-family: HelveticaNeue;
-              color: #636E95;
-              line-height: 18px;
-            }
-          }
-          .detail{
-            cursor: pointer;
-          }
-        }
-        .actionList{
-          display: flex;
-          justify-content: space-between;
-          font-size: 14px;
-          font-family: PingFangSC-Regular, PingFang SC;
-          font-weight: 400;
-          color: #2373FF;
-          line-height: 20px;
-          .detail{
-            cursor: pointer;
-          }
-        }
-        .m-f-line{
-            display: flex;
-            margin-bottom: 8px;
-            .label{
-                width: 52px;
-                height: 32px;
-                font-size: 14px;
-                font-family: PingFangSC-Regular, PingFang SC;
-                font-weight: 400;
-                color: #636E95;
-                line-height: 32px;
-            }
-            .f-list{
-                width: calc(100% - 96px);
-                display: flex;
-                flex-wrap: wrap;
-                .f-item{
-                    padding: 5px 16px;
-                    margin-right: 16px;
-                    margin-bottom: 16px;
-                    cursor: pointer;
-                    &.active{
-                        background: linear-gradient(135deg, #FF8D0A 0%, #FFA733 100%);
-                        box-shadow: 3px 3px 14px 0px rgba(148, 76, 46, 0.2), -3px -3px 14px 0px #FFFFFF, 1px 1px 2px 0px rgba(255, 247, 230, 0.6);
-                        border-radius: 16px;
-                        >p{
-                            color: #FFFFFF;
-                        }
-                    }
-                    >p{
-                        height: 22px;
-                        font-size: 14px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #242F57;
-                        line-height: 22px;
-                    }
-                }
-            }
-        }
-
-        ::v-deep .ivu-table {
-           tr {
-               .ivu-table-cell {
-                 font-size: 14px;
-                 padding-left: 0;
-                 padding-right: 0;
-               }
-
-               td,th {
-                   &:first-child {
-                       .ivu-table-cell {
-                           font-size: 14px;
-                           padding-left: 10px;
-                           padding-right: 0;
-                       }
-                   }
-               }
-           }
-        }
-      }
-    }
     .m-p-target-title{
       font-size: 16px;
       font-family: PingFangSC-Medium, PingFang SC;
@@ -4000,35 +3150,7 @@ export default {
               }
             }
     }
-    
-    .f-list{
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            .f-item{
-                padding: 5px 16px;
-                margin-right: 16px;
-                margin-bottom: 16px;
-                cursor: pointer;
-                &.active{
-                    background: linear-gradient(135deg, #FF8D0A 0%, #FFA733 100%);
-                    box-shadow: 3px 3px 14px 0px rgba(148, 76, 46, 0.2), -3px -3px 14px 0px #FFFFFF, 1px 1px 2px 0px rgba(255, 247, 230, 0.6);
-                    border-radius: 16px;
-                    >p{
-                        color: #FFFFFF;
-                    }
-                }
-                >p{
-                    height: 22px;
-                    font-size: 14px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    color: #242F57;
-                    line-height: 22px;
-                }
-            }
-        }
-    // background: url("../../assets/img/media/kol@2x.png") no-repeat center center / 100% 100%;
+        // background: url("../../assets/img/media/kol@2x.png") no-repeat center center / 100% 100%;
   }
 }
 </style>
