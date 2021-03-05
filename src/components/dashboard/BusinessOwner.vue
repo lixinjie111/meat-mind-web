@@ -43,12 +43,13 @@
         .business-box-tab {
             width: 100%;
             height: 71px;
-            background: url("../../assets/img/dashboard/manage/tab2.png") repeat-x left bottom / 100% 16px;
+            //background: url("../../assets/img/dashboard/manage/tab2.png") repeat-x left bottom / 100% 16px;
 
             .tab-item {
                 display: inline-block;
                 vertical-align: top;
-                width: 220px;
+                //width: 220px;
+                width: 120px;
                 height: 71px;
                 line-height: 78px;
                 text-align: center;
@@ -62,7 +63,7 @@
                     font-family: PingFangSC-Medium, PingFang SC;
                     font-weight: 500;
                     color: #2373FF;
-                    background: url("../../assets/img/dashboard/manage/tab1.png") no-repeat -1px center / 100% 100%;
+                    //background: url("../../assets/img/dashboard/manage/tab1.png") no-repeat -1px center / 100% 100%;
                 }
             }
         }

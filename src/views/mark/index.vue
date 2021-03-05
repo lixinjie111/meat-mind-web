@@ -1,5 +1,5 @@
 <template>
-<!--    品牌画像-->
+    <!--    品牌画像-->
     <!-- <Target></Target> -->
     <div class="mark-content">
         <div class="header-nav">
@@ -397,7 +397,7 @@
                                         认知顾虑
                                     </div>
                                     <div class="labelTags">
-                                        <span class="labelTag">不够正中</span>
+                                        <span class="labelTag">不够正宗</span>
                                     </div>
                                 </div>
                                 <div class="label">
@@ -570,7 +570,7 @@
                                         认知顾虑
                                     </div>
                                     <div class="labelTags">
-                                        <span class="labelTag">不够正中</span>
+                                        <span class="labelTag">不够正宗</span>
                                     </div>
                                 </div>
                                 <div class="label">
@@ -672,7 +672,7 @@
                                         认知顾虑
                                     </div>
                                     <div class="labelTags">
-                                        <span class="labelTag">不够正中</span>
+                                        <span class="labelTag">不够正宗</span>
                                     </div>
                                 </div>
                                 <div class="label">
@@ -845,7 +845,7 @@
                                         认知顾虑
                                     </div>
                                     <div class="labelTags">
-                                        <span class="labelTag">不够正中</span>
+                                        <span class="labelTag">不够正宗</span>
                                     </div>
                                 </div>
                                 <div class="label">
@@ -1033,6 +1033,7 @@
         </div>
         <Details></Details>
     </div>
+</div>
 </template>
 
 <script>
@@ -1465,11 +1466,12 @@ export default {
         }
      }
      .mark-panel{
-         margin:24px 0;
-         padding: 24px;
+        margin:24px 0;
+        padding: 24px;
         box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
         border-radius: 12px;
         border: 1px solid #EAEDF7;
+        background: #fff;
         .mark-panel1{
             border-radius: 8px;
             border: 1px solid #EAEDF7;

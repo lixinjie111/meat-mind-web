@@ -29,6 +29,7 @@
             <div class="target-right">
               <vDxitem v-if="showComponent" :key="mbValue" :onlyMap="true"/>
               <vDxitem1 v-if="showComponent1" :key="mbValue" :onlyMap="true"/>
+              <vDxitem4 v-if="showComponent2" :key="mbValue" :onlyMap="true"/>
             </div>
         </div>
         <div class="card card-one">
@@ -480,11 +481,12 @@
     import chuDa from '../../views/user/chuDa';
     import vDxitem from "../../views/user/dxItem";
     import vDxitem1 from "../../views/user/dxItem1";
+    import vDxitem4 from "../../views/user/dxItem4";
     import BusinessMarketModal from "./BusinessMarketModal";
 
     export default {
         name: "BusinessMarket",
-        components: {chuDa,Card, barEcharts, barM, YibiaoCharts2, lineM, lineM1, Leida2Echarts, PieEcharts1, vDxitem, vDxitem1, BusinessMarketModal },
+        components: {chuDa,Card, barEcharts, barM, YibiaoCharts2, lineM, lineM1, Leida2Echarts, PieEcharts1, vDxitem, vDxitem1, BusinessMarketModal, vDxitem4 },
         data() {
             return {
                 threeActive: 1,
@@ -501,33 +503,33 @@
                   dy:require("../../assets/img/yhhx/dyI.png"),
                   txxw:require("../../assets/img/yhhx/txxw.png"),
                   pyq:require("../../assets/img/yhhx/pyq.png"),
+                  wb:require("../../assets/img/yhhx/wb.png"),
                 },
                 mbValue:'bjsbz',
                 mubiaoList:[
                     {
+                      label:'综合客群',
+                      value:'zs',
+                    },
+                    {
                         label:'北京上班族',
                         value:'bjsbz',
-                        component: 'vDxitem',
                     },
                     {
                         label:'研学青年',
                         value:'yxqn',
-                        component: 'vDxitem1',
                     },
                     {
                         label:'北漂一族',
                         value:'bpyz',
-                        component: 'vDxitem',
                     },
                     {
                         label:'自由职业',
                         value:'zyzz',
-                        component: 'vDxitem',
                     },
                     {
                         label:'企业高管',
                         value:'qygg',
-                        component: 'vDxitem',
                     },
                 ],
                 data1: {
@@ -624,6 +626,37 @@
                         desc: '用户群体处于通勤及加班工作状态，部分用户仍然在处理工作事务，其他用户处于通勤途中，浏览新闻及娱乐信息，情绪分布较为平均',
                     },
                 },
+                data4: {
+                  own: '17',
+                  develop: '83',
+                  total: '96,911',
+                  shopping: '2600',
+                  successRate: '93',
+                  Turnover: '¥21,800,000-¥35,600,000',
+                  tag: ['驾车', '地铁', '骑行', '住所', '办公地点'],
+                  trait: ['18-35岁', '本科以上', '职场人士', '5-50k', '一线城市', '打工人', '加班'],
+                  attention: ['健康饮食', '养肝'],
+                  noema: { brand: '有名气', content: '积极阳光', attitude: '健康/养护…', visualize: '大方/时尚', hate: '虚假宣传', wound: '喝出杂质、异物' },
+                  medium: ['wb', 'dy', 'pyq', 'tt' ],
+                  commute: {
+                    time: '7:00 - 9:00',
+                    media: '头条/微博/小红书',
+                    mood: [{ name: '一般', value: '26'}, { name: '紧张', value: '39'}],
+                    desc: '用户群体主要处于通勤及工作状态，偏好社交娱乐类型的APP，时间段内对出行、外卖餐饮类的生活服务APP需求显著，成为重要触点，情绪偏向紧张和烦躁',
+                  },
+                  rest: {
+                    time: '12:00 - 13:00',
+                    media: '大众点评/新浪微博/抖音',
+                    mood: [{ name: '紧张', value: '36'}, { name: '一般', value: '36'}],
+                    desc: '用户群体处于工作午间休整状态，偏好浏览美食餐饮、外卖服务类的APP，处理工作相关信息，情绪主要表现为紧张和一般',
+                  },
+                  relax: {
+                    time: '20:00 - 22:00',
+                    media: '抖音/小红书/快手',
+                    mood: [{ name: '放松', value: '48'}, { name: '一般', value: '26'}],
+                    desc: '用户群体处于通勤及加班工作状态，部分用户仍然在处理工作事务，其他用户处于通勤途中，浏览新闻及娱乐信息，情绪分布较为平均',
+                  },
+                },
                 visible: false,
             }
         },
@@ -637,7 +670,14 @@
         },
         computed: {
           groupData(){
-            const temp = { bjsbz: { ...this.data1, name: '北京上班族' }, qygg: { ...this.data1, name: '企业高管', total: '5,158'}, bpyz: { ...this.data3, name: '北漂一族', total: '1,8197' }, zyzz: { ...this.data1, name: '自由职业', total: '1,000'}, yxqn: { ...this.data2, name: '研学青年' }}
+            const temp = {
+              zs: { ...this.data4, name: '综合客群' },
+              bjsbz: { ...this.data1, name: '北京上班族' },
+              qygg: { ...this.data1, name: '企业高管', total: '5,158'},
+              bpyz: { ...this.data3, name: '北漂一族', total: '1,8197' },
+              zyzz: { ...this.data1, name: '自由职业', total: '1,000'},
+              yxqn: { ...this.data4, name: '研学青年' },
+            }
             return temp[this.mbValue]
           },
           showComponent(){
@@ -645,6 +685,9 @@
           },
           showComponent1(){
             return ['yxqn'].includes(this.mbValue)
+          },
+          showComponent2(){
+            return ['zs'].includes(this.mbValue)
           },
           showModal(){
             return ['bjsbz', 'yxqn', 'bpyz'].includes(this.mbValue) && this.visible
@@ -828,7 +871,7 @@
                 .card-one-left-info {
                     padding: 10px 12px;
                     width: 287px;
-                    height: 72px;
+                    min-height: 72px;
                     background: linear-gradient(221deg, #03A8C8 0%, #8BD5AE 100%);
                     box-shadow: 2px 3px 12px 0px rgba(45, 120, 134, 0.55);
                     border-radius: 8px;

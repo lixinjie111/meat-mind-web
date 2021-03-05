@@ -215,7 +215,7 @@
         .logo {
             width: 108px;
             height: 30px;
-            margin: 48px 84px 48px 48px;
+            margin: 29px 84px 48px 50px;
             background: url("../assets/img/side/logo-colour@2x.png") no-repeat center / 108px 30px;
         }
     }
@@ -232,10 +232,12 @@
             > div {
                 width: 240px;
                 padding: 0 24px;
-                margin: 8px 0;
-                line-height: 40px;
+                margin: 2px 0;
+                line-height: 48px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
                 font-size: 14px;
-                color: #636E95;
+                color: #97A0C3;
 
                 &:first-child {
                     font-family: HelveticaNeue;
@@ -245,11 +247,12 @@
                     display: flex;
                     align-items: center;
                     width: 192px;
-                    height: 40px;
-                    border-radius: 8px;
+                    height: 48px;
+                    border-radius: 4px;
                     padding-left: 24px;
+
                     i {
-                        font-size: 24px;
+                        font-size: 20px;
                         margin-right: 12px;
                     }
                 }
@@ -259,14 +262,14 @@
                 display: flex;
                 align-items: center;
                 width: 192px;
-                height: 40px;
-                border-radius: 8px;
+                height: 48px;
+                border-radius: 4px;
                 font-size: 14px;
-                color: #636E95;
+                color: #97A0C3;
                 padding-left: 24px !important;
 
                 i {
-                    font-size: 24px;
+                    font-size: 20px;
                     margin-right: 12px;
 
                     &.ivu-menu-submenu-title-icon {
@@ -278,8 +281,13 @@
 
             .ivu-menu {
                 .ivu-menu-item {
-                    margin: 8px 0;
+                    margin: 2px 0;
                     padding-left: 60px !important;
+
+
+                    .sub-name {
+                        color: #97A0C3;
+                    }
                 }
             }
         }
@@ -289,14 +297,27 @@
         }
 
         .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
+            position: relative;
             color: #FFFFFF;
-            background: url("../assets/img/side/rectangle@2x.png") no-repeat center center / 192px 40px;
-            box-shadow: 2px 2px 8px 0px rgba(31, 108, 219, 0.5);
-            border-radius: 8px;
+            height: 48px;
+            background: #2373FF;
+            box-shadow: 2px 5px 12px 1px rgba(35, 115, 255, 0.3);
+            border-radius: 4px;
 
             .sub-name {
                 color: #FFFFFF;
                 font-size: 14px;
+            }
+
+            &:before {
+                position: absolute;
+                left: -24px;
+                top: 0;
+                content: '';
+                width: 4px;
+                height: 48px;
+                background: #2373FF;
+                border-radius: 0px 4px 4px 0px;
             }
         }
 
@@ -311,10 +332,14 @@
         .ivu-menu-vertical .ivu-menu-item:hover, .ivu-menu-vertical .ivu-menu-submenu-title:hover {
             color: #2373FF;
             width: 192px;
-            height: 40px;
-            background: url("../assets/img/side/rectangle-hover@2x.png") no-repeat center center / 192px 40px;
-            box-shadow: 4px 4px 8px 0px rgba(107, 131, 171, 0.05), -6px -6px 10px 0px rgba(255, 255, 255, 0.29);
-            border-radius: 8px;
+            height: 48px;
+            background: #FFFFFF;
+            box-shadow: 2px 2px 12px 1px rgba(134, 143, 191, 0.15);
+            border-radius: 4px;
+
+            .sub-name {
+                color: #2373FF;
+            }
         }
     }
 </style>
