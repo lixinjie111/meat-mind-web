@@ -1078,7 +1078,7 @@ import vGraph from '../../components/echarts/common/zjjGraph';
 import vTree from '../../components/echarts/common/zjjTreemap';
 import lineM from '../../components/echarts/common/lineM3';
 import barM from '../../components/echarts/common/barM';
-
+let counter = 0
 export default {
   name: "index",
   components: { Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vGraph,vTree,lineM,barM, TabPaneItem},
@@ -1608,7 +1608,12 @@ export default {
   },
   computed: {
     keyNum() {
-      return (this.list1Act + this.list2Act + this.list3Act) % 2
+      if(this.list1Act + this.list2Act + this.list3Act + 1){
+        counter = (counter + 1)
+        const i = counter  % 2
+        return [0, 1][i]
+      }
+      return 0
     },
     sixData() {
       return this.keyNum ? this.$fjData.box5Data : {name: ['女', '男'], value: [46, 54]}
