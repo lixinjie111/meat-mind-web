@@ -10,6 +10,12 @@ export default {
       type: String,
       default: "",
     },
+    colorList:{
+      type:Array,
+      default:()=>{
+        return []
+      }
+    }
   },
   methods: {
     initEcharts() {
@@ -33,14 +39,18 @@ export default {
             layout: "orthogonal",
             orient: "LR",
             symbol: "circle",
-            symbolSize: 10,
-            left: 80,
-            right: 120,
-            initialTreeDepth: 5,
+            symbolSize: 14,
+            left: 70,
+            right: 80,
             label: {
               show: true,
               // offset: [10, 0],
               align: "left",
+              color:"#97A0C3"
+            },
+            lineStyle:{
+              color:"#EAEDF7",
+              curveness:0.6
             },
             tooltip: {
               formatter: function (params) {
@@ -51,8 +61,10 @@ export default {
               {
                 name: "新浪财经",
                 value: "发布消息《和其正在凉茶巨头夹缝中迷失，同仁堂与邓老遭多重考验》\n2021/1/21",
-                // symbol: 'roundRect',
-                // symbolSize: 15,
+                itemStyle:{
+                  color:this.colorList[0],
+                  borderWidth:0,
+                },
                 label: {
                   offset: [-60, 1],
                 },
@@ -60,6 +72,10 @@ export default {
                   {
                     name: "百度百家号",
                     value: "安安科普转发消息\n2021/1/22",
+                    itemStyle:{
+                      color:this.colorList[1],
+                      borderWidth:0,
+                    },
                     label: {
                       offset: [-30, -15],
                     },
@@ -68,12 +84,23 @@ export default {
                         name:
                           "搜狐号",
                         value: "转发了百度百家号的文章",
+                        itemStyle:{
+                          color:this.colorList[2],
+                          borderWidth:0,
+                        },
+                        label: {
+                          offset: [10, 0],
+                        },
                       }
                     ],
                   },
                   {
                     name: "知乎",
                     value: "知乎上出现热问，该热问提及品牌负面新闻\n2021/1/22",
+                    itemStyle:{
+                      color:this.colorList[1],
+                      borderWidth:0,
+                    },
                     label: {
                       offset: [-30, 15],
                     },
@@ -82,16 +109,34 @@ export default {
                         name:
                           "新浪微博",
                         value: "对于提问作出官方回应",
+                        itemStyle:{
+                          color:this.colorList[2],
+                          borderWidth:0,
+                        },
+                        label: {
+                          offset: [10, 0],
+                        },
                       },
                       {
                         name: "网易自媒体",
                         value: "对于提问作出官方回应",
+                        itemStyle:{
+                          color:this.colorList[2],
+                          borderWidth:0,
+                        },
+                        label: {
+                          offset: [10, 0],
+                        },
                       },
                     ],
                   },
                   {
                     name: "抖音",
                     value: "热门短视频提升了品牌讨论热度 \n 2021/1/23",
+                    itemStyle:{
+                      color:this.colorList[1],
+                      borderWidth:0,
+                    },
                     label: {
                       offset: [-30, 15],
                     },
@@ -99,25 +144,46 @@ export default {
                       {
                         name: "微信公众号",
                         value: "讨论了消费者吃各类美食时搭配的凉茶品牌",
+                        itemStyle:{
+                          color:this.colorList[2],
+                          borderWidth:0,
+                        },
                         label: {
-                        //   offset: [-30, -15],
-                        }
+                          offset: [10, 0],
+                        },
                       },
                       {
                         name: "一点资讯",
                         value: "简要描述了该事件：百万级的点赞量及万余计的转发",
+                        itemStyle:{
+                          color:this.colorList[2],
+                          borderWidth:0,
+                        },
                         label: {
-                        //   offset: [-5, -20],
-                        }
+                          offset: [10, 0],
+                        },
                       },
                       {
                         name:"企鹅号",
-                        value:
-                          "讨论了消费者吃各类美食时搭配的凉茶品牌",
+                        value:"讨论了消费者吃各类美食时搭配的凉茶品牌",
+                        itemStyle:{
+                          color:this.colorList[2],
+                          borderWidth:0,
+                        },
+                        label: {
+                          offset: [10, 0],
+                        },
                       },
                       {
                         name:"头条号",
                         value: "简要描述了该事件：百万级的点赞量及万余计的转发",
+                        itemStyle:{
+                          color:this.colorList[2],
+                          borderWidth:0,
+                        },
+                        label: {
+                          offset: [10, 0],
+                        },
                       },
                     ],
                   },

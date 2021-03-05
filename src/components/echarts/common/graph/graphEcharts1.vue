@@ -4,12 +4,24 @@
 
 <script>
 export default {
-  name: "graphEcharts1",
+  name: "graphEcharts",
   props: {
     id: {
       type: String,
       default: "",
     },
+    lines:{
+        type:Array
+    },
+    datas:{
+        type:Array
+    },
+    curColor:{
+        type:String
+    }
+  },
+  data(){
+      return {}
   },
   methods: {
     initEcharts() {
@@ -21,7 +33,73 @@ export default {
       });
     },
     defaultOption() {
-
+    let option = {
+        tooltip : {},
+        animationDuration:1500,
+        animationDurationUpdate : 'quinticInOut',
+        label : {
+            normal : {
+                show : true,
+                textStyle : {
+                    fontSize : 12
+                },
+            }
+        },
+        grid:{
+            top:0,
+            left:0,
+            right:0,
+            bottom:0
+        },
+        series : [ {
+            type : 'graph',
+            layout : 'force',//采用力引导布局
+            symbolSize : 45,
+            legendHoverLink : true,//启用图例 hover 时的联动高亮。
+            focusNodeAdjacency : true,//在鼠标移到节点上的时候突出显示节点以及节点的边和邻接节点。
+            roam : true,
+            force : {
+                repulsion : 100,
+                 edgeLength : [30,100]
+            },
+            edgeSymbolSize : [ 4, 10 ],
+            itemStyle:{
+                color:this.curColor
+            },
+            lineStyle : {
+                normal : {
+                    color:"#EAEDF7",
+                    opacity : 0.9,
+                    width : 1,
+                    curveness : 0
+                }
+            },
+            label : {
+                normal : {
+                    show : true,
+                    position : 'inside',
+                    textStyle : {
+                        fontSize : 10
+                    },
+                }
+            },
+            edgeLabel : {
+                normal : {
+                    show : false,
+                    textStyle : {
+                        fontSize : 10
+                    },
+                    formatter : "{a}{b}{c}"
+                }
+            },
+            data :this.datas,
+            links : this.lines,
+            left:20,
+            right:20,
+            top:0,
+            bottom:0
+        } ]
+    }
       return option;
     },
   },

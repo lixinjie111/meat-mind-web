@@ -10,6 +10,9 @@ export default {
       type: String,
       default: "",
     },
+    colorList:{
+      type:Array
+    }
   },
   methods: {
     initEcharts() {
@@ -182,33 +185,67 @@ export default {
         },
         grid: {
             show: true,
-            left: 0,
-            top: "1%",
-            bottom:"2%",
+            left: 2,
+            top: 2,
+            bottom:2,
+            right:2,
             containLabel: true,
           },
         xAxis: 
           {
             min: 40,
-            name: "年龄",
             nameLocation: "center",
-            // axisPointer:{
-            //     show:true
-            // }
+            nameTextStyle:{
+              color:"#97A0C3"
+            },
+            axisLine:{
+              lineStyle:{
+                color:"#EAEDF7",
+                type:"dashed"
+              },
+              axisTick:{
+                lineStyle:{
+                  color:"#E9EBF1",
+                },
+              }
+            },
+                      splitLine:{
+            lineStyle:{
+              color:"#EAEDF7",
+              type:"dashed"
+            },
+          },
           },
         yAxis: 
           {
             max: 80000,
-            name: "GNI",
             nameLocation: "end",
             nameGap: 10,
-            // axisPointer:{
-            //     show:true
-            // }
+            nameTextStyle:{
+              color:"#97A0C3"
+            },
+            axisLine:{
+              lineStyle:{
+                color:"#EAEDF7",
+                type:"dashed"
+              },
+              axisTick:{
+                lineStyle:{
+                  color:"#E9EBF1",
+                },
+              }
+            },
+                      splitLine:{
+            lineStyle:{
+              color:"#EAEDF7",
+              type:"dashed"
+            },
           },
+          },
+
         series: [
           {
-            name: "china",
+            name: "风险",
             type: "effectScatter",
             data: [
               {
@@ -218,13 +255,23 @@ export default {
                   13345,
                   "【新浪财经】和其正在凉茶巨头夹缝中迷失，同仁堂与邓老遭多重考验",
                 ],
+                itemStyle:{
+                  normal:{
+                    color:"#FF4C60"
+                  }
+                },
+                label: {
+                  normal: {
+                    color: "#FF4C60",
+                  },
+                },
               },
               {
                 name: "机会1",
                 value: [83.684, 37268, "赢商网：邓老凉茶在京开ins风国潮店"],
                 itemStyle: {
                   normal: {
-                    color: "green",
+                    color: this.colorList[1],
                   },
                   // tooltip:{
 
@@ -232,7 +279,7 @@ export default {
                 },
                 label: {
                   normal: {
-                    color: "green",
+                    color: this.colorList[1],
                   },
                 },
               },
@@ -245,12 +292,12 @@ export default {
                 ],
                 itemStyle: {
                   normal: {
-                    color: "green",
+                    color: this.colorList[2],
                   },
                 },
                 label: {
                   normal: {
-                    color: "green",
+                    color: this.colorList[2],
                   },
                 },
               },
@@ -286,7 +333,7 @@ export default {
             data: [  [48.5, 7822],[69.588, 20093],[83.20, 55271.97]],
             itemStyle: {
               normal: {
-                color: "black",
+                color: this.colorList[0],
               },
             },
           },
@@ -295,6 +342,7 @@ export default {
             itemStyle: {
               normal: {
                 color: "skyblue",
+                // color:this.colorList[3]
               },
             },
             data: [
