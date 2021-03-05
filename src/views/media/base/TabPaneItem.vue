@@ -77,28 +77,24 @@
           {
             title: '排名',
             slot: 'paiming',
-            width: 30 / 144 * window.rem,
           },
           {
             title: '账号',
             key: 'name',
             slot: 'douhao',
-            width: 280 / 144 * window.rem,
+            minWidth: 80
           },
           {
             title: '带货量',
             tooltip: true,
             ellipsis: true,
-            key: 'huo',
-            width: 200 / 144 * window.rem,
+            key: 'huo'
           },
           {
             title: '品牌曝光数',
             tooltip: true,
             ellipsis: true,
-            key: 'bao',
-            width: 95 / 144 * window.rem
-
+            key: 'bao'
           },
           {
             title: '真粉量/粉丝数',
@@ -110,22 +106,18 @@
             title: '品牌匹配度',
             tooltip: true,
             ellipsis: true,
-            key: 'zan',
-            width: 95 / 144 * window.rem
+            key: 'zan'
           },
           {
             title: '用户匹配度',
             tooltip: true,
             ellipsis: true,
-            key: 'zuopin',
-            width: 95 / 144 * window.rem
+            key: 'zuopin'
           },
           {
-            // title: '影响力指数',
             tooltip: true,
             ellipsis: true,
             key: 'yxiang',
-            width: 95 / 144 * window.rem,
             renderHeader: (h, params) => {
               return h("div", [
                 h('strong', '影响力指数'),
@@ -156,8 +148,7 @@
           },
           // {
           //     title: '操作',
-          //     slot: 'action',
-          //     width: 150/144*window.rem,
+          //     slot: 'action'
           // },
         ],
         data: [],
