@@ -193,8 +193,8 @@ var keyIndex = 0;
 var dataIndex = 0;
 console.log(Object.keys(chartData))
 Object.keys(chartData).forEach((key,index)=>{
-	keyIndex = index;
-	datas.push({name: key,category:categoryIdx,draggable: true});
+	keyIndex = dataIndex;
+	datas.push({name: key,category:index,draggable: true});
 	keyIndex ++ ;
 	dataIndex ++ ;
 	lines.push({
@@ -202,7 +202,6 @@ Object.keys(chartData).forEach((key,index)=>{
         target: keyIndex,
         value :''
     });
-    console.log(chartData[key])
     if(chartData[key].length){
         chartData[key].forEach((idx,val)=>{
             datas.push({name: val,category:categoryIdx,draggable: true});
@@ -214,7 +213,7 @@ Object.keys(chartData).forEach((key,index)=>{
             });
         });
     }
-
+console.log(keyIndex,dataIndex,datas,lines)
 	categoryIdx++;
 })
 linData.datas = datas
