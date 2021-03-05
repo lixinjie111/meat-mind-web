@@ -4,7 +4,7 @@
 			<treeEcharts id="box1"></treeEcharts>
 		</div>       
         <div class="heigh">
-			<graphEcharts id="box2"></graphEcharts>
+			<graphEcharts id="box2" :datas="$linData.datas" :lines="$linData.lines"></graphEcharts>
 		</div>       
         <div class="row">
 			<scatterEcharts id="box3"></scatterEcharts>
@@ -39,7 +39,7 @@
 		}
 		.heigh{
 			width: 100%;
-			height: 1000px;
+			height: 500px;
 			border: 1px solid red;
 		}
 	}

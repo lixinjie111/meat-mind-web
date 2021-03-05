@@ -3,55 +3,6 @@
 </template>
 
 <script>
-var baseName = "新浪财经";
-var chartData = {
-	'百度百家号' : [ '人员1', '人员2', '人员3','人员4', '人员5', '人员6' ],
-	'知乎' : [ '机构1', '机构2', '机构3','机构4', '机构5', '机构6' ],
-	'抖音' : [ '文献1', '文献2', '文献3','文献4', '文献5', '文献6' ],
-	"快手":[],'微视':[],"西瓜视频":[],'梨视频':[],"小红书":[],'大众点评':[]
-};
-var datas = [ {
-	name : baseName || '',
-	draggable : true,
-	symbolSize:100,
-	itemStyle: {
-                 normal: {
-                     borderColor: "#ff8400",
-                     borderWidth: 4,
-                     shadowBlur: 20,
-                     shadowColor: "#ff8400",
-                     color: "#11213b",
-                 }
-             }
-} ];
-var lines = [];
-var categoryIdx = 0;
-var keyIndex = 0;
-var dataIndex = 0;
-// console.log(Object.keys(chartData))
-Object.keys(chartData).forEach((key)=>{
-	keyIndex = dataIndex;
-	datas.push({name: key,category:categoryIdx,draggable: true});
-	keyIndex ++ ;
-	dataIndex ++ ;
-	lines.push({
-        source: 0,
-        target: keyIndex,
-        value :''
-    });
-    // console.log(chartData[key])
-	chartData[key].forEach((idx,val)=>{
-		datas.push({name: val,category:categoryIdx,draggable: true});
-		dataIndex ++ ;
-		lines.push({
-            source: keyIndex,
-            target: dataIndex,
-            value :''
-        });
-	});
-	categoryIdx++;
-})
-
 export default {
   name: "graphEcharts",
   props: {
@@ -59,6 +10,12 @@ export default {
       type: String,
       default: "",
     },
+    lines:{
+        type:Array
+    },
+    datas:{
+        type:Array
+    }
   },
   data(){
       return {}
@@ -135,8 +92,8 @@ export default {
                     }
                 }
             } ],
-            data :datas,
-            links : lines,
+            data :this.datas,
+            links : this.lines,
             lineStyle : {
                 normal : {
                     opacity : 0.9,
