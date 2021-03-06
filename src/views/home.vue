@@ -7,7 +7,7 @@
             <Header :style="{position: 'fixed', width: 'calc(100% - 240px)', zIndex: 1000}">
                 <DefaultHeader target="Dashboard"></DefaultHeader>
             </Header>
-            <Content :style="{marginTop: '64px'}">
+            <Content :style="{marginTop: '80px'}">
                 <router-view></router-view>
             </Content>
         </Layout>

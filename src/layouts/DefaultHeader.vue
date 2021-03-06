@@ -2,28 +2,31 @@
     <div class="sass-header">
         <div class="header-left">
             <div class="mark-logo">
-                <span>品牌名称</span>
+                <img src="../assets/img/header/rectangle@2x.png" alt="">
                 <div>
                     邓老凉茶
-                    <i class="iconfont2 iconicon_down-triangle"></i>
+                    <!-- <i class="iconfont2 iconicon_down-triangle"></i> -->
                 </div>
             </div>
-            <div class="search">
-                <img src="../static/img/header/search@2x.png" alt="">
-                <input class="input-search" type="text" placeholder="输入关键词进行搜索...">
-            </div>
+
         </div>
         <div class="control">
+            <div class="search" v-if="search">
+                <img src="../static/img/header/search@2x.png" alt="">
+                <input @blur="search=!search" class="input-search" type="text" placeholder="输入关键词进行搜索...">
+            </div>
+            <div class="search-icon" v-else @click="search=!search">
+                <i class="iconfont2 iconicon_search"></i>
+            </div>
             <div class="service">
                 <i class="iconfont iconbangzhuline"></i>
-                <div class="group"></div>
             </div>
             <div class="alarm">
                 <i class="iconfont icontixing"></i>
                 <div class="group"></div>
             </div>
             <div class="column"></div>
-            <div class="avatar">
+            <div class="avatar" @click="select=!select">
                 <template v-if="flag==1">
                     <img class="user" src="../assets/img/login/head2.png" alt="">
                     <span>企业主</span>
@@ -36,7 +39,11 @@
                     <img class="user" src="../assets/img/login/head1.png" alt="">
                     <span>分析师</span>
                 </template>
-                <img class="triangle" src="../assets/img/header/triangle@2x.png" alt="">
+                <!-- <img class="triangle" src="../assets/img/header/triangle@2x.png" alt=""> -->
+                <i class="triangle iconfont2" :class="[select?'iconshouqi':'iconzhankai']" @click.stop="select=!select"></i>
+                <ul ref="select" class="select-box" v-if="select">
+                    <li @click="logout">退出登录</li>
+                </ul>
             </div>
         </div>
         <BackTop :bottom="8" :right="8"></BackTop>
@@ -53,10 +60,16 @@
         },
         data() {
             return {
-                flag: localStorage.getItem("dashboard")
+                flag: localStorage.getItem("dashboard"),
+                search:false,
+                select:false
             };
         },
-        methods: {}
+        methods: {
+            logout(){
+                this.$router.push({path:'/'})
+            }
+        }
     };
 </script>
 
@@ -65,7 +78,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 64px;
+        height: 80px;
         padding: 0 24px;
 
         .header-left {
@@ -74,16 +87,19 @@
 
             .mark-logo {
                 display: flex;
-                flex-direction: column;
-                margin-right: 24px;
-
+                align-items: center;
+                img{
+                    width: 40px;
+                    height: 40px;
+                    margin-right: 8px;
+                }
                 > span {
-                    height: 17px;
-                    font-size: 12px;
+                    height: 26px;
+                    font-size: 18px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
-                    color: #636E95;
-                    line-height: 17px;
+                    color: #242F57;
+                    line-height: 26px;
                 }
 
                 > div {
@@ -100,6 +116,13 @@
                 }
             }
 
+
+        }
+
+        .control {
+            display: flex;
+            // justify-content: flex-end;
+            align-items: center;
             .search {
                 position: relative;
                 cursor: pointer;
@@ -112,9 +135,9 @@
                     border-radius: 8px;
                     border: 0.88px solid #C6CBDE;
                     outline-style: none;
-                    /*&:hover{*/
-                    /*  border: 1px solid #C6CBDE;*/
-                    /*}*/
+                    // &:hover{
+                    //     border: 1px solid #C6CBDE;
+                    // }
                 }
 
                 input::-webkit-input-placeholder {
@@ -135,24 +158,17 @@
                     color: #242F57;
                 }
             }
-        }
-
-        .control {
-            display: flex;
-            // justify-content: flex-end;
-            align-items: center;
-
-            .service, .alarm {
+            .search-icon,.service, .alarm {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 width: 40px;
                 height: 40px;
-                margin-left: 16px;
-                background: rgba(255, 255, 255, 0.5);
-                box-shadow: 4px 4px 8px 0px rgba(36, 47, 87, 0.06), -4px -4px 9px 0px rgba(255, 255, 255, 0.59);
-                border: 1px solid #FFFFFF;
-                border-radius: 50%;
+                margin-left: 8px;
+                // background: rgba(255, 255, 255, 0.5);
+                // box-shadow: 4px 4px 8px 0px rgba(36, 47, 87, 0.06), -4px -4px 9px 0px rgba(255, 255, 255, 0.59);
+                // border: 1px solid #FFFFFF;
+                // border-radius: 50%;
                 cursor: pointer;
 
                 > i {
@@ -182,22 +198,22 @@
             .column {
                 width: 1px;
                 height: 32px;
-                margin: 0 20px;
+                margin: 0 24px;
                 background: #EAEDF7;
             }
-
             .avatar {
+                position: relative;
                 display: flex;
                 align-items: center;
                 height: 40px;
                 cursor: pointer;
-
+                user-select: none;
                 .user {
                     width: 40px;
                     height: 40px;
-                    margin-right: 10px;
+                    margin-right: 8px;
                     box-shadow: 4px 4px 8px 0px rgba(36, 47, 87, 0.2);
-                    border-radius: 28px;
+                    border-radius: 20px;
                     border: 1px solid #FFFFFF;
                 }
 
@@ -214,7 +230,40 @@
                 .triangle {
                     width: 16px;
                     height: 16px;
-                    margin-left: 12px;
+                    margin-left: 8px;
+                    color: #7C88B1;
+                    line-height: 16px;
+                }
+                .iconshouqi{
+                    .select-box{
+                        display: block;
+                    }
+                }
+                .iconzhankai{
+                    .select-box{
+                        display: none;
+                    }
+                }
+                .select-box{
+                    position: absolute;
+                    top: 50px;
+                    right: -22px;
+                    width: 160px;
+                    background: #FFFFFF;
+                    box-shadow: 3px 4px 16px 0px rgba(134, 143, 191, 0.2);
+                    border-radius: 4px;
+                    li{
+                        height: 43px;
+                        padding-left:16px;
+                        line-height: 43px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242F57;
+                        &:hover{
+                            color: #2373FF;
+                        }
+                    }
                 }
             }
         }

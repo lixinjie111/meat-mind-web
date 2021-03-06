@@ -1,6 +1,6 @@
 import echarts from 'echarts';
 const lxjEData = {
-    colorList : ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564','#BF6E9B','#CECE7E','#91C2F2','#B7C8EA','#FF9F7F','#91C2F2','#B380B6','#EDA8AD','#738AD4','#FF9F7F'],
+    colorList : ['#2373FF', '#FE774B', '#1DCEC3', '#F16E84', '#FDD352', '#7BABFF', '#FFAE93', '#77E1DB', '#F6A8B5', '#FEE597', '#BDD5FF', '#FFD7C9', '#BBF1ED', '#FBD4DA', '#FEF1CB', '#FF9F7F'],
     colorList1 : ['#8AE6C7','#4D94FF',  '#FC809F'],
     box1Data:{
         name:['研究生及以上', '本科', '大专', '职高', '高中', '初中及以下',],
