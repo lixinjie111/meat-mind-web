@@ -39,7 +39,7 @@
                 <img class="triangle" src="../assets/img/header/triangle@2x.png" alt="">
             </div>
         </div>
-        <!--    <BackTop :bottom="8" :right="8"></BackTop>-->
+        <BackTop :bottom="8" :right="8"></BackTop>
     </div>
 </template>
 
