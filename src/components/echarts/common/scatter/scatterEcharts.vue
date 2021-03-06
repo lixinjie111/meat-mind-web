@@ -10,9 +10,9 @@ export default {
       type: String,
       default: "",
     },
-    colorList:{
-      type:Array
-    }
+    colorList: {
+      type: Array,
+    },
   },
   methods: {
     initEcharts() {
@@ -172,9 +172,9 @@ export default {
       let option = {
         tooltip: {
           show: true,
-          axisPointer: {
-            type: "cross",
-          },
+          // axisPointer: {
+          //   type: "cross",
+          // },
           formatter: function (params) {
             if (params.value[1] > 55) {
               return params.value[2];
@@ -184,64 +184,60 @@ export default {
           },
         },
         grid: {
-            show: true,
-            left: 2,
-            top: 2,
-            bottom:2,
-            right:2,
-            containLabel: true,
-          },
-        xAxis: 
-          {
-            min: 40,
-            nameLocation: "center",
-            nameTextStyle:{
-              color:"#97A0C3"
-            },
-            axisLine:{
-              lineStyle:{
-                color:"#EAEDF7",
-                type:"dashed"
-              },
-              axisTick:{
-                lineStyle:{
-                  color:"#E9EBF1",
-                },
-              }
-            },
-                      splitLine:{
-            lineStyle:{
-              color:"#EAEDF7",
-              type:"dashed"
+          left: 10,
+          top: 20,
+          bottom: 10,
+          right: 20,
+          containLabel: true,
+        },
+        xAxis: {
+          min: 40,
+          axisLine: {
+            lineStyle: {
+              color: "#EAEDF7",
+              type: "dashed",
             },
           },
+          axisTick: {
+            lineStyle: {
+              color: "#E9EBF1",
+            },
+          },          
+          axisLabel:{
+            color:"#97A0C3"
           },
-        yAxis: 
-          {
-            max: 80000,
-            nameLocation: "end",
-            nameGap: 10,
-            nameTextStyle:{
-              color:"#97A0C3"
-            },
-            axisLine:{
-              lineStyle:{
-                color:"#EAEDF7",
-                type:"dashed"
-              },
-              axisTick:{
-                lineStyle:{
-                  color:"#E9EBF1",
-                },
-              }
-            },
-                      splitLine:{
-            lineStyle:{
-              color:"#EAEDF7",
-              type:"dashed"
+          splitLine: {
+            show:false,
+            lineStyle: {
+              color: "#EAEDF7",
+              type: "dashed",
             },
           },
+        },
+        yAxis: {
+          max: 80000,
+          axisLine: {
+            lineStyle: {
+              color: "#EAEDF7",
+              type: "dashed",
+            },
           },
+          axisTick: {
+            lineStyle: {
+              color: "#E9EBF1",
+            },
+          },
+          axisLabel:{
+            color:"#97A0C3"
+          },
+          splitLine: {
+            show:true,
+            lineStyle: {
+              color: "#EAEDF7",
+              type: "dashed",
+            },
+          },
+        },
 
         series: [
           {
@@ -255,10 +251,10 @@ export default {
                   13345,
                   "【新浪财经】和其正在凉茶巨头夹缝中迷失，同仁堂与邓老遭多重考验",
                 ],
-                itemStyle:{
-                  normal:{
-                    color:"#FF4C60"
-                  }
+                itemStyle: {
+                  normal: {
+                    color: "#FF4C60",
+                  },
                 },
                 label: {
                   normal: {
@@ -330,7 +326,11 @@ export default {
             type: "line",
             showSymbol: false,
             smooth: true,
-            data: [  [48.5, 7822],[69.588, 20093],[83.20, 55271.97]],
+            data: [
+              [48.5, 7822],
+              [69.588, 20093],
+              [83.2, 55271.97],
+            ],
             itemStyle: {
               normal: {
                 color: this.colorList[0],
@@ -556,8 +556,8 @@ export default {
               { name: "Niger", value: [61.936, 889] },
               { name: "Central African Republic", value: [51.458, 587] },
               // {name:"World",value:[71.6234530481016,14447]}
-            ]
-          }
+            ],
+          },
         ],
         animationEasing: "elasticOut",
         animationDelayUpdate: function (idx) {
