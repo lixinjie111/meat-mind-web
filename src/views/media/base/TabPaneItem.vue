@@ -67,7 +67,7 @@
       return {
         list4Act: 0,
         list5Act: 0,
-        total: Math.ceil(Math.random() * 10) * 10,
+        total: 40,
         pageSize: 10,
         current: 1,
         list4: ["综合", "抖音", "快手", "微视", "梨视频", "西瓜视频"],
@@ -82,7 +82,7 @@
             title: '账号',
             key: 'name',
             slot: 'douhao',
-            minWidth: 80
+            minWidth: 60
           },
           {
             title: '带货量',
@@ -177,10 +177,16 @@
       selectMenu(){
         this.generateData()
       },
+      // 生成随机数
+      getRandom(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      },
       generateData(total = this.pageSize) {
         const data = []
-        const name1 = ['邓', '张', '李', '王', '李', '杜', '曾', '胡', '高', '欧阳', '诸葛']
-        const name2 = ['荣', '瑷', '小璐', '大锤', '心怡', '紫藤', '小贤', '一菲', '达', '明', '亮']
+        const name1 = [ '张', '李', '王', '李', '杜', '曾', '胡', '高', '欧阳', '诸葛']
+        const name2 = [ '瑷', '小璐', '大锤', '心怡', '紫藤', '小贤', '一菲', '达', '明', '亮']
         const headers = [
           require("../../../assets/img/yhhx/header1.png"),
           require("../../../assets/img/yhhx/header2.png"),
@@ -196,7 +202,7 @@
         const len = name1.length - 1
         const len2 = name2.length - 1
         for (let i = 0; i < total; i++) {
-          const huo = Math.ceil(Math.random() * 500) + 'w';
+          const huo = this.getRandom(400, 490) + 'w';
           const name_1 = name1[Math.ceil(Math.random() *len) ]
           const name_2 = name2[Math.ceil(Math.random() *len2) ]
           const headerI = Math.ceil(Math.random() * 9)
@@ -204,18 +210,31 @@
             {
               name: name_1 + name_2,
               huo,
-              bao: Math.ceil(Math.random() * 100),
-              fensi: `${Math.ceil(Math.random() * 800)}w/${Math.ceil(Math.random() * 1200)}w`,
-              zan: Math.ceil(Math.random() * 100),
-              zuopin: Math.ceil(Math.random() * 100),
-              yxiang: Math.ceil(Math.random() * 1800),
+              bao: this.getRandom(90, 95),
+              fensi: `${this.getRandom(5000, 6000)}w/${this.getRandom(6000, 7000)}w`,
+              zan: this.getRandom(90, 95),
+              zuopin: this.getRandom(90, 95),
+              yxiang: this.getRandom(1000, 1179),
               header: headers[headerI],
               num: `${Math.ceil(Math.random() * 10000000000)}`,
               index: (this.current - 1) * this.pageSize + i
             }
           )
         }
-
+        if(this.current == 1){
+            data.splice(0,1, {
+                name: '邓荣',
+                huo:  '492w',
+                bao: 92,
+                fensi: `6987w/7200w`,
+                zan: 93,
+                zuopin: 95,
+                yxiang: 1180,
+                header: require("../../../assets/img/yhhx/header1.png"),
+                num: `${Math.ceil(Math.random() * 10000000000)}`,
+                index: 0
+            })
+        }
         this.data = data
       },
     },
