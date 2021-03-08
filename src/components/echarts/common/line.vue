@@ -60,7 +60,8 @@ export default {
 				//设置轴线的属性
 				axisLine:{
 					lineStyle:{
-						color:'#E9EBF1',
+						color:'#EAEDF7',
+						type:"dashed"
 					}
 				} ,
 				axisLabel: {
@@ -68,6 +69,19 @@ export default {
 					textStyle: {
 						color: "#97A0C3",   //这里用参数代替了
 						fontSize:'12'
+					}
+				},
+				splitLine: {
+					show:true,
+                    lineStyle: {
+						color:'#EAEDF7',
+                        type: 'dashed',
+                    }
+                },
+				axisPointer:{
+					type:"shadow",
+					shadowStyle:{
+						color:"rgba(124,136,177,0.1)"
 					}
 				},
 
@@ -83,14 +97,15 @@ export default {
                 },
 				axisLine:{
 					lineStyle:{
-						color:'#E9EBF1',
+						color:'#EAEDF7',
+						type:"dashed"
 						//width:8,//这里是为了突出显示加上的
 					}
 				},
                 splitLine: {
                     lineStyle: {
-						color:'#E9EBF1',
-                        //type: 'dashed',
+						color:'#EAEDF7',
+                        type: 'dashed',
                     }
                 },
             },

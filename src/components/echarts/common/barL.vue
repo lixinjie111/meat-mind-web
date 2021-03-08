@@ -63,10 +63,20 @@ export default {
 				data: this.myData.name,
 				//设置轴线的属性
 				axisLine:{
+					show:true,
 					lineStyle:{
-						color:'#E9EBF1',
+						color:'#EAEDF7',
+						type:"dashed"
+						//width:8,//这里是为了突出显示加上的
 					}
-				} ,
+				},
+                splitLine: {
+					show:true,
+                    lineStyle: {
+						color:'#EAEDF7',
+                        type: 'dashed',
+                    }
+                },
 				axisLabel: {
 					show: true,
 					textStyle: {
@@ -74,7 +84,12 @@ export default {
 						fontSize:'12'
 					}
 				},
-
+				axisPointer:{
+					type:"shadow",
+					shadowStyle:{
+						color:"rgba(124,136,177,0.1)"
+					}
+				},
             },
             xAxis: {
                 type: 'value',
@@ -86,15 +101,17 @@ export default {
 					}
                 },
 				axisLine:{
+					show:true,
 					lineStyle:{
-						color:'#E9EBF1',
-						//width:8,//这里是为了突出显示加上的
+						color:'#EAEDF7',
+						type:"dashed"
 					}
-				},
-                splitLine: {
+				} ,
+				splitLine: {
+					show:true,
                     lineStyle: {
-						color:'#E9EBF1',
-                        //type: 'dashed',
+						color:'#EAEDF7',
+                        type: 'dashed',
                     }
                 },
             },
