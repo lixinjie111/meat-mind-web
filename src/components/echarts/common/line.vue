@@ -107,7 +107,7 @@ export default {
 						color:'#EAEDF7',
                         type: 'dashed',
                     }
-                },
+                },   
             },
             series: [
                 {
