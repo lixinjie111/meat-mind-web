@@ -14,6 +14,7 @@ import dataCenter from "../views/datacenter/router"//数据管理
 import barView from "../components/echarts/barView"
 import pieView from "../components/echarts/pieView"
 import testView from "../components/echarts/testView"
+import jyfxView from "../components/echarts/jyfxView"
 
 Vue.use(VueRouter)
 
@@ -56,6 +57,11 @@ const routes = [
     path: '/testView',
     name: 'testView',
     component: testView
+  },
+  {
+    path: '/jyfxView',
+    name: 'jyfxView',
+    component: jyfxView
   }
 ]
 

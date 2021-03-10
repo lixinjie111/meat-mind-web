@@ -4,6 +4,8 @@
 
 <script>
 import echarts from 'echarts'
+import lodash from 'lodash'
+let id = 0
 export default {
 	props: {
 		myData:{
@@ -14,9 +16,19 @@ export default {
 		id:{
 			type:String,
 			default:()=>{
-				return '';
+				++id
+				return `line-${id}`;
 			},
 		},
+		xName:{
+			type:String,
+			default:'',
+		},
+		yName:{
+			type:String,
+			default:'',
+		},
+    option: { type: Object, default: ()=>({}) },
 		colorList:{
 			type:Array,
 			default:()=>{
@@ -31,7 +43,7 @@ export default {
 	},
 	data () {
 		return {
-			
+
 		}
 	},
     mounted() {
@@ -66,6 +78,7 @@ export default {
             xAxis: {
                 type: 'category',
 				data: this.myData.name,
+                name: this.xName,
 				//设置轴线的属性
 				axisLine:{
 					lineStyle:{
@@ -83,6 +96,7 @@ export default {
             },
             yAxis: {
                 type: 'value',
+                name: this.yName,
                 axisLabel: {
 					formatter: '{value} ',
 					textStyle: {
@@ -105,7 +119,7 @@ export default {
             },
             series: this.myData.value
         };
-			return option;
+			return lodash.merge({}, option, this.option);
 		}
 	}
 }
