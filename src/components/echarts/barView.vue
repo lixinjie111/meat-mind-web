@@ -215,28 +215,28 @@
 		<div class="box">
 			<barLine id="box101" :colorList="$lxjData.colorList" :myData="$lxjData.box101Data"></barLine>
 		</div>
-        
+
     </div>
 </template>
 
 <script>
 	import echarts from 'echarts';
-	import barEcharts from './common/barEcharts';
-	import barL from './common/barL';
-	import barM from './common/barM';
-	import cLine from './common/line';
-	import lineO from './common/lineO';
-	import lineS from './common/lineS';
-	import lineM from './common/lineM';
-	import lineM3 from './common/lineM3';
-	import barC from './common/barC';
-	import barCH from './common/barCH';
-	import barLine from './common/barLine';
-	import barT from './common/barT';
-	import funnel from './common/funnel';
-	import barHM from './common/barHM';
-	import lineSp from './common/lineSp';
-	import pieP from './common/pieP';
+	import barEcharts from './common/bar/barEcharts';
+	import barL from './common/bar/barL';
+	import barM from './common/bar/barM';
+	import cLine from './common/line/line';
+	import lineO from './common/line/lineO';
+	import lineS from './common/line/lineS';
+	import lineM from './common/line/lineM';
+	import lineM3 from './common/line/lineM3';
+	import barC from './common/bar/barC';
+	import barCH from './common/bar/barCH';
+	import barLine from './common/bar/barLine';
+	import barT from './common/bar/barT';
+	import funnel from './common/funnel/funnel';
+	import barHM from './common/bar/barHM';
+	import lineSp from './common/line/lineSp';
+	import pieP from './common/pie/pieP';
     export default {
 		components: {
 		  lineM3,barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,pieP
@@ -261,5 +261,5 @@
 			}
 		}
 	}
-	
+
 </style>

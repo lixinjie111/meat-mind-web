@@ -84,7 +84,7 @@
 <script>
   import Card from "../../../components/Card"
   import Half from "../base/Half"
-  import PieEcharts5 from '../../../components/echarts/common/PieEcharts5';
+  import PieEcharts5 from '../../../components/echarts/common/pie/PieEcharts5';
   import SerachPoptip from '../../../components/common/SerachPoptip';
   export default {
     name: "brand-value",

@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import PieEcharts from "../../../components/echarts/common/PieEcharts"
+import PieEcharts from "../../../components/echarts/common/pie/PieEcharts"
 export default {
     name:"Brand",
     components:{PieEcharts}

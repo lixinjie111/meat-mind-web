@@ -1068,16 +1068,16 @@ import Half from "./base/Half"
 import Full from "./base/Full"
 import Card from "./base/Card"
 import TabPaneItem from "./base/TabPaneItem"
-import PieCaseEcharts from '../../components/echarts/common/PieCaseEcharts';
-import barL from '../../components/echarts/common/barL';
-import funnel from '../../components/echarts/common/funnel';
-import PieEcharts6 from '../../components/echarts/common/PieEcharts6';
-import PieEcharts2 from '../../components/echarts/common/PieEcharts2';
-import LeidaEcharts from '../../components/echarts/common/LeidaEcharts';
-import vGraph from '../../components/echarts/common/zjjGraph';
-import vTree from '../../components/echarts/common/zjjTreemap';
-import lineM from '../../components/echarts/common/lineM3';
-import barM from '../../components/echarts/common/barM';
+import PieCaseEcharts from '../../components/echarts/common/pie/PieCaseEcharts';
+import barL from '../../components/echarts/common/bar/barL';
+import funnel from '../../components/echarts/common/funnel/funnel';
+import PieEcharts6 from '../../components/echarts/common/pie/PieEcharts6';
+import PieEcharts2 from '../../components/echarts/common/pie/PieEcharts2';
+import LeidaEcharts from '../../components/echarts/common/radar/LeidaEcharts';
+import vGraph from '../../components/echarts/common/graph/zjjGraph';
+import vTree from '../../components/echarts/common/treemap/zjjTreemap';
+import lineM from '../../components/echarts/common/line/lineM3';
+import barM from '../../components/echarts/common/bar/barM';
 let counter = 0
 export default {
   name: "index",

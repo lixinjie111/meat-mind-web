@@ -24,10 +24,10 @@
 import Analyse from "../base/Analyse"
 import Half from "../base/Half"
 import Full from "../base/Full"
-import barM from '../../../components/echarts/common/barM';
-import PieEcharts4 from '../../../components/echarts/common/PieEcharts4';
-import barL from '../../../components/echarts/common/barL';
-import lineO from '../../../components/echarts/common/lineO';
+import barM from '../../../components/echarts/common/bar/barM';
+import PieEcharts4 from '../../../components/echarts/common/pie/PieEcharts4';
+import barL from '../../../components/echarts/common/bar/barL';
+import lineO from '../../../components/echarts/common/line/lineO';
 export default {
     name:"Public",
     components:{Analyse,Half,Full,barM,PieEcharts4,barL,lineO},

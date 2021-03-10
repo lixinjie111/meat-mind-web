@@ -129,14 +129,14 @@
 
 <script>
 // import echarts from 'echarts';
-  import PieEcharts from './common/PieEcharts';
-  import RotateChart from './common/RotateChart';
-  import LeidaEcharts from './common/LeidaEcharts';
-  import MatchEcharts from './common/MatchEcharts';
-  import Yibiao1Echarts from './common/Yibiao1Echarts';
-  import YibiaoCharts2 from './common/YibiaoCharts2';
-  import Yuanhuan1 from './common/Yuanhuan1';
-  import Leida2Echarts from './common/Leida2Echarts';
+  import PieEcharts from './common/pie/PieEcharts';
+  import RotateChart from './common/custom/RotateChart';
+  import LeidaEcharts from './common/radar/LeidaEcharts';
+  import MatchEcharts from './common/radar/MatchEcharts';
+  import Yibiao1Echarts from './common/gauge/Yibiao1Echarts';
+  import YibiaoCharts2 from './common/gauge/YibiaoCharts2';
+  import Yuanhuan1 from './common/sunburst/Yuanhuan1';
+  import Leida2Echarts from './common/radar/Leida2Echarts';
 
   export default {
     components: {

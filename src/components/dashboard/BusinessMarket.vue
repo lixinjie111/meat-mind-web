@@ -473,13 +473,13 @@
 
 <script>
     import Card from "../../components/Card"
-    import barEcharts from '../../components/echarts/common/barEcharts';
-    import barM from '../../components/echarts/common/barM';
-    import YibiaoCharts2 from '../../components/echarts/common/YibiaoCharts2';
-    import lineM from '../../components/echarts/common/lineM';
-    import lineM1 from '../../components/echarts/common/lineM1';
-    import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
-    import PieEcharts1 from '../../components/echarts/common/PieEcharts1';
+    import barEcharts from '../echarts/common/bar/barEcharts';
+    import barM from '../echarts/common/bar/barM';
+    import YibiaoCharts2 from '../echarts/common/gauge/YibiaoCharts2';
+    import lineM from '../echarts/common/line/lineM';
+    import lineM1 from '../echarts/common/line/lineM1';
+    import Leida2Echarts from '../echarts/common/radar/Leida2Echarts';
+    import PieEcharts1 from '../echarts/common/pie/PieEcharts1';
     import chuDa from '../../views/user/chuDa';
     import vDxitem from "../../views/user/dxItem";
     import vDxitem1 from "../../views/user/dxItem1";

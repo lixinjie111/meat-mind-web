@@ -109,7 +109,7 @@
         <div class="bjsbz_container">
           <div class="lef_area">
             <div class="lef_area_top">
-              <div class="actImg_container"> 
+              <div class="actImg_container">
                 <img :src="qyggImg" alt="" srcset="" class="avatImg">
               </div>
               <div class="perinfo">
@@ -566,18 +566,18 @@
                   <div class="range_data_left">
                     <div class="range_data_box1">
                       环比
-                    <div class="pic"> 
+                    <div class="pic">
                       <img src="../../assets/img/yhhx/jiantou.png" alt="">
-                    </div> 
+                    </div>
                     <span>1.47%</span>
-                    </div> 
-                    <div class="range_data_box1"> 
+                    </div>
+                    <div class="range_data_box1">
                       同比
-                      <div class="pic"> 
+                      <div class="pic">
                         <img src="../../assets/img/yhhx/jiantou.png" alt="">
-                      </div> 
+                      </div>
                       <span>4.47%</span>
-                    </div> 
+                    </div>
                    </div>
                   <div class="range_data_right">
                     均值<span>839.67</span>人
@@ -610,18 +610,18 @@
                   <div class="range_data_left">
                     <div class="range_data_box1">
                       环比
-                    <div class="pic"> 
+                    <div class="pic">
                       <img src="../../assets/img/yhhx/jiantou.png" alt="">
-                    </div> 
+                    </div>
                     <span>3.47%</span>
-                    </div> 
-                    <div class="range_data_box1"> 
+                    </div>
+                    <div class="range_data_box1">
                       同比
-                      <div class="pic"> 
+                      <div class="pic">
                         <img src="../../assets/img/yhhx/jiantou.png" alt="">
-                      </div> 
+                      </div>
                       <span>8.47%</span>
-                    </div> 
+                    </div>
                    </div>
                   <div class="range_data_right">
                     均值<span>139.67</span>人
@@ -994,33 +994,33 @@
     </div>
 </template>
 <script>
-import barEcharts from '../../components/echarts/common/barEcharts';
-import barL from '../../components/echarts/common/barL';
-import barM from '../../components/echarts/common/barM';
-import cLine from '../../components/echarts/common/line';
-import lineO from '../../components/echarts/common/lineO';
-import lineS from '../../components/echarts/common/lineS';
-import lineM from '../../components/echarts/common/lineM';
-import barC from '../../components/echarts/common/barC';
-import barCH from '../../components/echarts/common/barCH';
-import barLine from '../../components/echarts/common/barLine';
-import barT from '../../components/echarts/common/barT1';
-import barT1 from '../../components/echarts/common/barT2';
-import barT2 from '../../components/echarts/common/barT';
-import funnel from '../../components/echarts/common/funnel';
-import barHM from '../../components/echarts/common/barHM';
-import lineSp from '../../components/echarts/common/lineSp';
-import pieP from '../../components/echarts/common/pieP';
+import barEcharts from '../../components/echarts/common/bar/barEcharts';
+import barL from '../../components/echarts/common/bar/barL';
+import barM from '../../components/echarts/common/bar/barM';
+import cLine from '../../components/echarts/common/line/line';
+import lineO from '../../components/echarts/common/line/lineO';
+import lineS from '../../components/echarts/common/line/lineS';
+import lineM from '../../components/echarts/common/line/lineM';
+import barC from '../../components/echarts/common/bar/barC';
+import barCH from '../../components/echarts/common/bar/barCH';
+import barLine from '../../components/echarts/common/bar/barLine';
+import barT from '../../components/echarts/common/bar/barT1';
+import barT1 from '../../components/echarts/common/bar/barT2';
+import barT2 from '../../components/echarts/common/bar/barT';
+import funnel from '../../components/echarts/common/funnel/funnel';
+import barHM from '../../components/echarts/common/bar/barHM';
+import lineSp from '../../components/echarts/common/line/lineSp';
+import pieP from '../../components/echarts/common/pie/pieP';
 
-import PieEcharts from '../../components/echarts/common/PieEcharts';
-import PieEcharts1 from '../../components/echarts/common/PieEcharts1';
-import RotateChart from '../../components/echarts/common/RotateChart';
-import LeidaEcharts from '../../components/echarts/common/LeidaEcharts';
-import MatchEcharts from '../../components/echarts/common/MatchEcharts';
-import Yibiao1Echarts from '../../components/echarts/common/Yibiao1Echarts';
-import YibiaoCharts2 from '../../components/echarts/common/YibiaoCharts2';
-import Yuanhuan1 from '../../components/echarts/common/Yuanhuan1';
-import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
+import PieEcharts from '../../components/echarts/common/pie/PieEcharts';
+import PieEcharts1 from '../../components/echarts/common/pie/PieEcharts1';
+import RotateChart from '../../components/echarts/common/custom/RotateChart';
+import LeidaEcharts from '../../components/echarts/common/radar/LeidaEcharts';
+import MatchEcharts from '../../components/echarts/common/radar/MatchEcharts';
+import Yibiao1Echarts from '../../components/echarts/common/gauge/Yibiao1Echarts';
+import YibiaoCharts2 from '../../components/echarts/common/gauge/YibiaoCharts2';
+import Yuanhuan1 from '../../components/echarts/common/sunburst/Yuanhuan1';
+import Leida2Echarts from '../../components/echarts/common/radar/Leida2Echarts';
 import vDxitem from "./dxItem";
 import vDxitem1 from "./dxItem1";
 import vTabCard from "./tabCard";
@@ -2782,7 +2782,7 @@ export default {
             align-items: center;
             padding-right: 24px;
             justify-content: space-between;
-            
+
             .echarts1 {
               &.echarts1box{
                 width: 197px;
@@ -2879,7 +2879,7 @@ export default {
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
                     color: #242f57;
-                   
+
                   }
                   .ech_txt {
                      width:70px;
@@ -3489,7 +3489,7 @@ export default {
               font-weight: 400;
               color: #7c88b1;
             }
-            
+
           }
           .jichuhuax_echarts_item_title_rig {
             width: 16px;

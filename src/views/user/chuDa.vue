@@ -139,7 +139,7 @@
 </template>
 <script>
 
-import PieEcharts1 from '../../components/echarts/common/PieEcharts1';
+import PieEcharts1 from '../../components/echarts/common/pie/PieEcharts1';
 const arr = [
   {name: '头条', value: 78, rate: '51', cost: '2500', timeRange: '20:00 - 21:00', key: 'choice1', icon: 'ttIcon' },
   {name: '小红书', value: 45, rate: '46', cost: '2300', timeRange: '19:00 - 20:30', key: 'choice2', icon: 'xhsIcon' },

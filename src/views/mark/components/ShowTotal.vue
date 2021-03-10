@@ -98,7 +98,7 @@
 </template>
 
 <script>
-import LeidaEcharts from "../../../components/echarts/common/LeidaEcharts"
+import LeidaEcharts from "../../../components/echarts/common/radar/LeidaEcharts"
 export default {
   name: "ShowTotal",
   components:{LeidaEcharts}

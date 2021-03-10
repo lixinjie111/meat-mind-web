@@ -55,21 +55,21 @@
           </div>
           <div class="month">
             <Card :title="'月均销量'" :colourfol="'purple'" :number="'721,343'" :data="[-2.17,3.26]"></Card>
-          </div>          
+          </div>
           <div class="view">
             <Card :title="'月浏览'" :colourfol="'pink'" :number="'54,566'" :data="[-1.67,2.78]"></Card>
-          </div>          
+          </div>
           <div class="target">
             <Card :title="'口碑指数'" :colourfol="'orange'" :number="'4,534'" :data="[-1.47,4.47]"></Card>
-          </div>  
+          </div>
       </div>
   </div>
 </template>
 
 <script>
 import Card from "../base/Card"
-import barL from '../../../components/echarts/common/barL';
-import PieCaseEcharts from '../../../components/echarts/common/PieCaseEcharts';
+import barL from '../../../components/echarts/common/bar/barL';
+import PieCaseEcharts from '../../../components/echarts/common/pie/PieCaseEcharts';
 export default {
     name:"Benchmark",
     components:{Card,barL,PieCaseEcharts}

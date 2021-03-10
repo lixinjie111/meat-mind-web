@@ -134,14 +134,14 @@
 </template>
 
 <script>
-    import lineM from "./common/lineM";
-    import lineM1 from "./common/lineM1";
-    import lineM2 from "./common/lineM2";
-    import lineM3 from "./common/lineM3";
-    import lineO from "./common/lineO";
-    import lineS from "./common/lineS";
-    import lineSp from "./common/lineSp";
-    import barM from "./common/barM";
+    import lineM from "./common/line/lineM";
+    import lineM1 from "./common/line/lineM1";
+    import lineM2 from "./common/line/lineM2";
+    import lineM3 from "./common/line/lineM3";
+    import lineO from "./common/line/lineO";
+    import lineS from "./common/line/lineS";
+    import lineSp from "./common/line/lineSp";
+    import barM from "./common/bar/barM";
 
     export default {
         name: "index",

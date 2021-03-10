@@ -48,12 +48,12 @@
 import Analyse from "../base/Analyse"
 import Half from "../base/Half"
 import Full from "../base/Full"
-import RotateChart from '../../../components/echarts/common/RotateChart';
-import MatchEcharts from '../../../components/echarts/common/MatchEcharts';
-import PieEcharts3 from '../../../components/echarts/common/PieEcharts3';
-import barEcharts from '../../../components/echarts/common/barEcharts';
-import lineM from '../../../components/echarts/common/lineM';
-import barCH from '../../../components/echarts/common/barCH';
+import RotateChart from '../../../components/echarts/common/custom/RotateChart';
+import MatchEcharts from '../../../components/echarts/common/radar/MatchEcharts';
+import PieEcharts3 from '../../../components/echarts/common/pie/PieEcharts3';
+import barEcharts from '../../../components/echarts/common/bar/barEcharts';
+import lineM from '../../../components/echarts/common/line/lineM';
+import barCH from '../../../components/echarts/common/bar/barCH';
 
 export default {
     name:"Accept",

@@ -1042,18 +1042,18 @@ import Card from "../../components/Card"
 import ThirdLine from "./components/Benchmark"
 import Colourfol from "./base/Colourfol"
 import Details from "./components/Details"
-import Yuanhuan1 from '../../components/echarts/common/Yuanhuan1';
-import LeidaEcharts from '../../components/echarts/common/LeidaEcharts';
-import barEcharts from '../../components/echarts/common/barEcharts';
-import YibiaoCharts2 from '../../components/echarts/common/YibiaoCharts2';
-import lineM from '../../components/echarts/common/lineM';
-import barLine from '../../components/echarts/common/barLine';
-import lineM3 from '../../components/echarts/common/lineM3';
-import barL from '../../components/echarts/common/barL';
-import lineM1 from '../../components/echarts/common/lineM1';
-import Leida2Echarts from '../../components/echarts/common/Leida2Echarts';
-import barM from '../../components/echarts/common/barM';
-import barHM2 from '../../components/echarts/common/barHM2';
+import Yuanhuan1 from '../../components/echarts/common/sunburst/Yuanhuan1';
+import LeidaEcharts from '../../components/echarts/common/radar/LeidaEcharts';
+import barEcharts from '../../components/echarts/common/bar/barEcharts';
+import YibiaoCharts2 from '../../components/echarts/common/gauge/YibiaoCharts2';
+import lineM from '../../components/echarts/common/line/lineM';
+import barLine from '../../components/echarts/common/bar/barLine';
+import lineM3 from '../../components/echarts/common/line/lineM3';
+import barL from '../../components/echarts/common/bar/barL';
+import lineM1 from '../../components/echarts/common/line/lineM1';
+import Leida2Echarts from '../../components/echarts/common/radar/Leida2Echarts';
+import barM from '../../components/echarts/common/bar/barM';
+import barHM2 from '../../components/echarts/common/bar/barHM2';
 import Target from "./base/Target"
 import ShowTotal from "./components/ShowTotal"
 import BrandValue from "./components/BrandValue"
@@ -1127,9 +1127,9 @@ export default {
             if(this.num%2!=0){
                 this.box240Data=this.$lxjData.box2401Data
             }else{
-                this.box240Data=this.$lxjData.box240Data 
+                this.box240Data=this.$lxjData.box240Data
             }
-            
+
         },
         selectYin(val){
              let obj={
@@ -1419,7 +1419,7 @@ export default {
                     background: url("../../assets/img/mark/mark2.png") no-repeat center center / 100% 100%;
                 }
             }
-           
+
         }
         .mark-line-bt{
             display: flex;
@@ -1462,7 +1462,7 @@ export default {
                     }
                 }
             }
-           
+
         }
      }
      .mark-panel{
@@ -1484,7 +1484,7 @@ export default {
                 font-weight: 500;
                 color: #242F57;
                 margin-bottom: 4px;
-           } 
+           }
             .subTitle{
                 font-size: 12px;
                 font-family: PingFangSC-Regular, PingFang SC;
@@ -1665,7 +1665,7 @@ export default {
                     }
                 }
             }
-            
+
             .subTitle{
                 font-size: 12px;
                 font-family: PingFangSC-Regular, PingFang SC;
@@ -1734,7 +1734,7 @@ export default {
         .card-five {
             margin-top: 24px;
             ::v-deep .title .left > p{font-size: 18px;}
-            
+
             .card-five-desc {
                 margin: -15px 0 24px;
                 font-size: 14px;

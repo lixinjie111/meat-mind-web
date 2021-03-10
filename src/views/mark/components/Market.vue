@@ -57,13 +57,13 @@
 import Analyse from "../base/Analyse"
 import Half from "../base/Half"
 import Full from "../base/Full"
-import Yibiao1Echarts from '../../../components/echarts/common/Yibiao1Echarts';
-import PieEcharts5 from '../../../components/echarts/common/PieEcharts5';
-import lineM from '../../../components/echarts/common/lineM';
-import barHM from '../../../components/echarts/common/barHM';
-import barL from '../../../components/echarts/common/barL';
-import barM from '../../../components/echarts/common/barM';
-import barEcharts from '../../../components/echarts/common/barEcharts';
+import Yibiao1Echarts from '../../../components/echarts/common/gauge/Yibiao1Echarts';
+import PieEcharts5 from '../../../components/echarts/common/pie/PieEcharts5';
+import lineM from '../../../components/echarts/common/line/lineM';
+import barHM from '../../../components/echarts/common/bar/barHM';
+import barL from '../../../components/echarts/common/bar/barL';
+import barM from '../../../components/echarts/common/bar/barM';
+import barEcharts from '../../../components/echarts/common/bar/barEcharts';
 export default {
     name:"Market",
     components:{Analyse,Half,Full,Yibiao1Echarts,PieEcharts5,lineM,barHM,barL,barM,barEcharts},

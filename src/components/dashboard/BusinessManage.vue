@@ -333,10 +333,10 @@
 <script>
     import Card from "../../components/Card";
     import Compare from "../../components/Compare";
-    import barM1 from '../../components/echarts/common/barM1';
-    import lineM2 from '../../components/echarts/common/lineM2';
-    import barL from '../../components/echarts/common/barL';
-    import cLine from '../../components/echarts/common/line';
+    import barM1 from '../echarts/common/bar/barM1';
+    import lineM2 from '../echarts/common/line/lineM2';
+    import barL from '../echarts/common/bar/barL';
+    import cLine from '../echarts/common/line/line';
 
     export default {
         name: "BusinessManage",
