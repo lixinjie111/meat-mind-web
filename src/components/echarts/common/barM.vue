@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import lodash from 'lodash'
+let id = 0
 export default {
 	props: {
 		myData:{
@@ -13,7 +15,8 @@ export default {
 		id:{
 			type:String,
 			default:()=>{
-				return '';
+				++id
+				return `bar-${id}`;
 			},
 		},
 		colorList:{
@@ -22,6 +25,15 @@ export default {
 				return  ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564','#BF6E9B','#CECE7E','#91C2F2','#B7C8EA','#FF9F7F','#91C2F2','#B380B6','#EDA8AD','#738AD4','#FF9F7F'];
 			},
 		},
+		xName:{
+			type:String,
+			default:'',
+		},
+		yName:{
+			type:String,
+			default:'',
+		},
+		option: { type: Object, default: ()=>({}) },
 	},
 	data () {
 		return {
@@ -75,6 +87,7 @@ export default {
 				xAxis: {
 					type: 'category',
 					data: this.myData.name,
+					name: this.xName,
 					axisLine:{
 						lineStyle:{
 							color:'#EAEDF7',
@@ -105,6 +118,7 @@ export default {
 				},
 				yAxis: {
 					type: 'value',
+					name: this.yName,
 					axisLabel: {
 						textStyle: {
 							color: "#97A0C3",   //这里用参数代替了
@@ -130,7 +144,7 @@ export default {
 				},
 				series:this.myData.value
 			};
-			return option;
+			return lodash.merge({}, option, this.option);
 		}
 	}
 }
@@ -141,4 +155,3 @@ export default {
     height:100%;
 }
 </style>
-

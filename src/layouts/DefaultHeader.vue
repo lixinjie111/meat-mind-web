@@ -12,8 +12,9 @@
         </div>
         <div class="control">
             <div class="search" v-if="search">
-                <img src="../static/img/header/search@2x.png" alt="">
-                <input @blur="search=!search" class="input-search" type="text" placeholder="输入关键词进行搜索...">
+                <Input @on-blur="search=!search" class="input-search" type="text" placeholder="输入关键词进行搜索...">
+                    <img src="../static/img/header/search@2x.png" alt="" slot="prefix">
+                </Input>
             </div>
             <div class="search-icon" v-else @click="search=!search">
                 <i class="iconfont2 iconicon_search"></i>
@@ -46,7 +47,7 @@
                 </ul>
             </div>
         </div>
-        <!--    <BackTop :bottom="8" :right="8"></BackTop>-->
+        <BackTop :bottom="8" :right="8"></BackTop>
     </div>
 </template>
 
@@ -124,35 +125,15 @@
             // justify-content: flex-end;
             align-items: center;
             .search {
-                position: relative;
                 cursor: pointer;
-
                 .input-search {
                     width: 360px;
                     height: 32px;
-                    padding-left: 44px;
-                    box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset, -2px -2px 7px 0px #FFFEFA inset;
-                    border-radius: 8px;
-                    border: 0.88px solid #C6CBDE;
-                    outline-style: none;
-                    // &:hover{
-                    //     border: 1px solid #C6CBDE;
-                    // }
                 }
-
-                input::-webkit-input-placeholder {
-                    color: #97A0C3;
-                    font-size: 14px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                }
-
                 img {
-                    position: absolute;
-                    top: 20px;
-                    left: 16px;
                     width: 24px;
                     height: 24px;
+                    margin-top: 4px;
                     padding: 2px;
                     opacity: 0.4;
                     color: #242F57;
