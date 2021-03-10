@@ -1074,14 +1074,13 @@ import funnel from '../../components/echarts/common/funnel/funnel';
 import PieEcharts6 from '../../components/echarts/common/pie/PieEcharts6';
 import PieEcharts2 from '../../components/echarts/common/pie/PieEcharts2';
 import LeidaEcharts from '../../components/echarts/common/radar/LeidaEcharts';
-import vGraph from '../../components/echarts/common/graph/zjjGraph';
 import vTree from '../../components/echarts/common/treemap/zjjTreemap';
 import lineM from '../../components/echarts/common/line/lineM3';
 import barM from '../../components/echarts/common/bar/barM';
 let counter = 0
 export default {
   name: "index",
-  components: { Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vGraph,vTree,lineM,barM, TabPaneItem},
+  components: { Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, TabPaneItem},
   data(){
       return{
         modelUserL:"过去一个月",

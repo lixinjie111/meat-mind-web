@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import echarts from 'echarts'
 export default {
 	props: {
 		myData:{
+			type:Array,
 			default:()=>{
 				return [];
 			},
@@ -20,11 +20,6 @@ export default {
 		colorList:{
 			type:Array,
 		},
-	},
-	data () {
-		return {
-
-		}
 	},
     mounted() {
         	this.initEcharts();
@@ -48,13 +43,7 @@ export default {
 				legend: {
 					data:this.myData.name,
 					bottom:0,
-                    paddin: 10/100*window.rem,
-                    itemWidth: 0.1*window.rem,
-                    itemGap: 0.05*window.rem,
-                    // backgroundColor: 'red',
-                    textStyle: {
-                      fontSize: window.rem ? 0.08 * window.rem  : 12
-                    }
+                    itemGap: 5,
 				},
 
 				series: [
@@ -63,10 +52,8 @@ export default {
 						type:'funnel',
 						left: '10%',
 						top: 60,
-						//x2: 80,
 						bottom: 60,
 						width: '80%',
-						// height: {totalHeight} - y - y2,
 						min: 0,
 						max: 100,
 						minSize: '0%',
