@@ -6,9 +6,9 @@
 export default {
 	props: {
 		myData:{
-			type:Array,
+			type:Object,
 			default:()=>{
-				return [];
+				return {};
 			},
 		},
 		id:{
@@ -56,7 +56,7 @@ export default {
 						width: '80%',
 						min: 0,
 						max: 100,
-						minSize: '0%',
+						minSize: '10%',
 						maxSize: '100%',
 						sort: 'descending',
 						gap: 2,

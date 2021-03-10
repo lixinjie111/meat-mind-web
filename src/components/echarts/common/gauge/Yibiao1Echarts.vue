@@ -180,7 +180,7 @@
             {
               type: 'pie',
               radius: ['0', '40%'],
-              center: ['50%', '50%'],
+              center: ['50%', '40%'],
               z: 8,
               hoverAnimation: false,
               data: [{

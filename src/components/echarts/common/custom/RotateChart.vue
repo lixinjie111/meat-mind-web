@@ -291,7 +291,7 @@
             {
               type: "gauge",
               radius: "58%",
-              center: ['50%', '50%'],
+              center: ['50%', '40%'],
               startAngle: 0,
               endAngle: 359.9,
               splitNumber: 8,

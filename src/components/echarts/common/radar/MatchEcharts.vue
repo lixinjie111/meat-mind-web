@@ -77,7 +77,7 @@
           },
           radar: {
             radius: '58%',
-            center: ['50%', '50%'],
+            center: ['50%', '40%'],
             triggerEvent: true,
             name: {
               textStyle: {

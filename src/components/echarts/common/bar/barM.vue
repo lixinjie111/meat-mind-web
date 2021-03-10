@@ -8,8 +8,9 @@ let id = 0
 export default {
 	props: {
 		myData:{
+			type:Object,
 			default:()=>{
-				return [];
+				return {};
 			},
 		},
 		id:{
@@ -113,7 +114,7 @@ export default {
 						shadowStyle:{
 							color:"rgba(124,136,177,0.1)"
 						}
-					},
+					}
 					
 				},
 				yAxis: {

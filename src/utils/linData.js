@@ -40,7 +40,7 @@ const linData = {
                 stack: '总量',
                 itemStyle: {
                     normal: {
-                        barBorderRadius: [30, 30, 0, 0]
+                        // barBorderRadius: [30, 30, 0, 0]
                     },
                 },
                 data: [320, 302, 301, 334, 290, 390]
@@ -86,7 +86,7 @@ const linData = {
                 stack: '总量',
                 itemStyle: {
                     normal: {
-                        barBorderRadius: [30, 30, 0, 0]
+                        // barBorderRadius: [30, 30, 0, 0]
                     },
                 },
                 data: [5200, 5020, 5001, 5304, 5500, 5673]

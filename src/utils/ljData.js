@@ -1,7 +1,6 @@
 import echarts from 'echarts';
 const ljEData = {
     colorList : ['#2373FF', '#FE774B', '#1DCEC3', '#F16E84', '#FDD352', '#7BABFF', '#FFAE93', '#77E1DB', '#F6A8B5', '#FEE597', '#BDD5FF', '#FFD7C9', '#BBF1ED', '#FBD4DA', '#FEF1CB', '#FF9F7F'],
-    colorList1 : ['#8AE6C7','#4D94FF',  '#FC809F'],
     box1Data:{
         name:['研究生及以上', '本科', '大专', '职高', '高中', '初中及以下',],
         value:[4, 20, 30, 26, 15, 5],
@@ -147,7 +146,7 @@ const ljEData = {
                 stack: '总量',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                 data: [820, 832, 901, 934, 1290, ]
@@ -172,7 +171,7 @@ const ljEData = {
                 barWidth: '10',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                  data: [33, 17, 16, 33,]
@@ -189,7 +188,7 @@ const ljEData = {
                 barWidth: '10',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                 data: [763,	785,	826,	879,	932,	1011                ],
@@ -200,7 +199,7 @@ const ljEData = {
                 barWidth: '10',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                  data: [402,	548,	708,	808,	880,	972 ],
@@ -217,7 +216,7 @@ const ljEData = {
                 barWidth: '10',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                 data: [7433, 9914, 13230],
@@ -228,7 +227,7 @@ const ljEData = {
                 barWidth: '10',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                  data: [2980, 3757, 6031],
@@ -274,7 +273,7 @@ const ljEData = {
                 stack: '总量',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                 data: [120, 132, 101, 134, 90, ]
@@ -327,7 +326,7 @@ const ljEData = {
                 stack: '总量',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                 data: [ 934, 1290, ]
@@ -352,7 +351,7 @@ const ljEData = {
                 barWidth: '10',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                 data: [120, 132, ]
@@ -391,7 +390,7 @@ const ljEData = {
                 stack: '总量',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                 data: [150, 212,  ]
@@ -437,7 +436,7 @@ const ljEData = {
                 stack: '总量',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                 data: [150, 212,  ]
@@ -483,7 +482,7 @@ const ljEData = {
                 stack: '总量',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                 data: [1500, 2120,  ]
@@ -529,7 +528,7 @@ const ljEData = {
                 stack: '总量',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                 data: [1500, 1720,  ]
@@ -582,7 +581,7 @@ const ljEData = {
                 stack: '总量',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                 data: [ 934, 1290, ]
@@ -607,7 +606,7 @@ const ljEData = {
                 barWidth: '10',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                 data: [120, 132, ]
@@ -646,7 +645,7 @@ const ljEData = {
                 stack: '总量',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                 data: [150, 212,  ]
@@ -692,7 +691,7 @@ const ljEData = {
                 stack: '总量',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                 data: [150, 212,  ]
@@ -738,7 +737,7 @@ const ljEData = {
                 stack: '总量',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                 data: [1500, 2120,  ]
@@ -784,7 +783,7 @@ const ljEData = {
                 stack: '总量',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                 data: [1400, 1720,  ]
@@ -830,7 +829,7 @@ const ljEData = {
                 stack: '总量',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:[30,30,0,0]
+                        //LinebarBorderRadius:[30,30,0,0]
                     },
                 },
                 data: [320, 302, 301, 334, 390, ]
@@ -1258,7 +1257,7 @@ const ljEData = {
                 barWidth: '10',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:30
+                        //barBorderRadius:30
                     },
                     emphasis:{
                         color:'#FF9F7F'
@@ -1286,7 +1285,7 @@ const ljEData = {
                 barWidth: '10',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:30
+                        //barBorderRadius:30
                     },
                     emphasis:{
                         color:'#FF9F7F'
@@ -1314,7 +1313,7 @@ const ljEData = {
                 barWidth: '10',
                 itemStyle: {
                     normal: {
-                        barBorderRadius:30
+                        //barBorderRadius:30
                     },
                     emphasis:{
                         color:'#FF9F7F'

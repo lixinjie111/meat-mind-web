@@ -109,7 +109,7 @@
             shape: 'circle',
             scale: true,
             indicator: indicator.map(e=>({ text: e })),
-            center: ['50%', '50%'],
+            center: ['50%', '40%'],
             radius: '28%'
           },
 
@@ -149,7 +149,7 @@
             },
             {
               type: 'sunburst',
-              center: ['50%', '50%'],
+              center: ['50%', '40%'],
               nodeClick: false,
               levels: [
                 {},
