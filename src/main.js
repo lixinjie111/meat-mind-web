@@ -13,7 +13,7 @@ import fjData from "./utils/fjData.js"
 import zjjData from "./utils/zjjData.js"
 import linData from "./utils/linData.js"
 import ljEData from "./utils/ljData.js"
-// import './utils/flexible'
+import './utils/flexible'
 
 Vue.config.productionTip = false;
 Vue.prototype.$echarts = echarts;

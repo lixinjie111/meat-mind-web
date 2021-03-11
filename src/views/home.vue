@@ -1,13 +1,13 @@
 <template>
-    <Layout>
-        <Sider :style="{position: 'fixed', height: '100vh', width: '240px', minWidth: '240px', left: 0, overflow: 'auto'}">
+    <Layout class="main-container">
+        <Sider class="sider-container">
             <DefaultSide></DefaultSide>
         </Sider>
-        <Layout :style="{marginLeft: '240px'}">
-            <Header :style="{position: 'fixed', width: 'calc(100% - 240px)', zIndex: 1000}">
+        <Layout class="layout-container">
+            <Header class="header-container">
                 <DefaultHeader target="Dashboard"></DefaultHeader>
             </Header>
-            <Content :style="{marginTop: '80px'}">
+            <Content class="content-container">
                 <router-view></router-view>
             </Content>
         </Layout>
@@ -29,17 +29,36 @@
     }
 </script>
 <style scoped lang="scss">
-    .ivu-layout {
+    .main-container {
         background: #F4F7FC;
         min-height: 100vh;
-    }
 
-    .ivu-layout-sider {
-        background: #ffffff;
-    }
+        .sider-container{
+            background: #ffffff;
+            position: fixed;
+            height: 100vh;
+            width: 240px!important;
+            min-width: 240px!important;
+            max-width: 240px!important;
+            flex: 0 0 240px!important;
+            left: 0;
+            overflow: auto;
+        }
 
-    .ivu-layout-header {
-        background: #F4F7FC;
-        padding: 0;
+        .layout-container{
+            margin-left: 240px;
+
+            .header-container {
+                background: #F4F7FC;
+                padding: 0;
+                position: fixed;
+                width: calc(100% - 240px);
+                z-index: 1000;
+            }
+
+            .content-container {
+                margin-top: 80px;
+            }
+        }
     }
 </style>
