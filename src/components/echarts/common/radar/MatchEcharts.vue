@@ -1,20 +1,23 @@
 <template>
   <div class="container">
     <div class="echarts-box" :id="chartID"></div>
-<!--    <img id="img" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3363295869,2467511306&fm=26&gp=0.jpg" alt="">-->
   </div>
 </template>
 
 <script>
   let id = 0;
-  const COLORS = ['#2373FF', '#FE774B', '#1DCEC3', '#F16E84', '#FDD352', '#7BABFF', '#FFAE93', '#77E1DB', '#F6A8B5', '#FEE597', '#BDD5FF', '#FFD7C9', '#BBF1ED', '#FBD4DA', '#FEF1CB', '#FF9F7F'];
   export default {
     props: {
       myData: {
         default: () => {
         }
       },
-      colorList: {default: COLORS},
+      colorList: {
+        type:Array,
+        default:()=>{
+          return []
+        }
+      },
       max: {default: 100},
     },
     data() {
@@ -62,11 +65,7 @@
         const max = this.max;
         const option = {
           color: color,
-          title: {show: false},
           tooltip: {
-            textStyle: {
-              fontSize: 14
-            },
             formatter: function () {
               var html = '';
               for (var i = 0; i < value.length; i++) {
@@ -76,25 +75,20 @@
             }
           },
           radar: {
-            radius: '58%',
-            center: ['50%', '40%'],
-            triggerEvent: true,
+            radius: '70%',
+            center: ['50%', '50%'],
+            nameGap: '20',
+            splitNumber: 4,
+            color:"#7C88B1",
             name: {
               textStyle: {
-                fontSize: '14',
-                borderRadius: 3,
-                // padding: [3, 5],
-                align: 'center',
                 rich: {
                   a: {
-                    fontSize: '14',
                     align: 'center',
-                    padding: [6, 0, 0, 0]
+                    padding: [4, 0, 0, 0]
                   },
                   b: {
-                    fontSize: '14',
-                    align: 'center',
-                    padding: [-60, 0, 0, 0]
+                    padding: [-20, 0, 0, 0]
                   }
                 },
               },
@@ -108,39 +102,27 @@
                 return '{a|' + percent + '%}\n' + params
               },
             },
-            nameGap: '60',
-            indicator: name.map(e => ({max, name: e})),
             splitArea: {
-              areaStyle: {
-                color: 'transparent'
-              }
+              show:false
             },
             axisLine: { //指向外圈文本的分隔线样式
               lineStyle: {
-                color: '#cccccc',
-                width: 1,
+                color: '#EAEDF7',
               }
             },
             splitLine: {
               lineStyle: {
-                width: 1,
-                color: '#cccccc',
-                shadowBlur: 0,
-                shadowColor: color[2]
+                color: '#EAEDF7',
               }
             },
-            splitNumber: 4,
+            indicator: name.map(e => ({max, name: e,color: "#7C88B1"})),
           },
           series: [{
             name: '',
             type: 'radar',
+            symbol:"circle",
+            symbolSize: 4,
             areaStyle: {
-              // normal: {
-              //   color: {
-              //     image: document.getElementById('img'),
-              //     repeat: 'repeat'
-              //   },
-              // },
               normal: {
                 color: {
                   type: 'radial',
@@ -148,24 +130,25 @@
                   y: 0.5,
                   r: 1,
                   colorStops: [{
-                    offset: 0, color: '#B2CEFF' // 0% 处的颜色
+                    offset: 0, color: "rgba(35, 115, 255, 0.3)" // 0% 处的颜色
                   }, {
-                    offset: 1, color: '#2373FF' // 100% 处的颜色
+                    offset: 1, color: 'rgba(35, 115, 255, 0)' // 100% 处的颜色
                   }],
                   global: false
                 },
-              opacity: 1,
               }
             },
-            symbolSize: 0,
             lineStyle: {
-              show: false,
-              // normal: {
-              //   color: color[0],
-              //   width: 0,
-              //   opacity: 1,
-              // }
+              normal:{
+                 color: 'rgba(35, 115, 255, 1)',
+                width:1
+              }
             },
+            itemStyle: {
+              color: this.colorList[0],
+              borderColor: this.colorList[0],
+              borderWidth: 1,
+          },
             data: [value],
           }]
         }

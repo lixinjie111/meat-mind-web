@@ -19,9 +19,6 @@ export default {
 		},
 		colorList:{
 			type:Array,
-			default:()=>{
-				return  ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564','#BF6E9B','#CECE7E','#91C2F2','#B7C8EA','#FF9F7F','#91C2F2','#B380B6','#EDA8AD','#738AD4','#FF9F7F'];
-			},
 		},
 	},
 	data () {
@@ -58,7 +55,8 @@ export default {
 					],
 					axisLine:{
 						lineStyle:{
-							color:'#E9EBF1',
+							color:'#EAEDF7',
+							type:"dashed"
 						}
 					} ,
 					axisLabel: {
@@ -70,19 +68,32 @@ export default {
 							color: "#97A0C3",   //这里用参数代替了
 							fontSize:'12'
 						}
+					},
+					axisPointer:{
+						type:"shadow",
+						shadowStyle:{
+							color:"rgba(124,136,177,0.1)"
+						}
 					}
 				},
 				yAxis: {
 					axisLine:{
 						lineStyle:{
-							color:'#E9EBF1',
-							//width:8,//这里是为了突出显示加上的
+							color:'#EAEDF7',
+							type:"dashed"
 						}
 					},
 					axisLabel: {
 						textStyle: {
 							color: "#97A0C3",   //这里用参数代替了
 							fontSize:'12'
+						}
+					},
+					splitLine: {
+						show:true,
+						lineStyle: {
+							color:'#EAEDF7',
+							type: 'dashed',
 						}
 					},
 				},

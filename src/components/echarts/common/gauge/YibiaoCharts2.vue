@@ -73,7 +73,7 @@
               },
               detail: {
                 // width: '80%',
-                offsetCenter: ['0', '-60%'],
+                offsetCenter: ['0', '-50%'],
                 formatter: function (value) {
                   return '{value|' + value + '}';
                 },

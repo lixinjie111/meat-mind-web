@@ -119,7 +119,6 @@ export default {
 						lineStyle:{
 							color:'#EAEDF7',
 							type:"dashed"
-							//width:8,//这里是为了突出显示加上的
 						}
 					},
 					splitLine: {

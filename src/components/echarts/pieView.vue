@@ -37,35 +37,11 @@
     <div class="box box12">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box12Data"></PieEcharts>
     </div>
-    <!-- <div class="box">
-      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts>
-    </div>
-    <div class="box">
-      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts>
-    </div>
-    <div class="box">
-      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts>
-    </div>
-    <div class="box">
-      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts>
-    </div>
-    <div class="box">
-      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts>
-    </div>
-    <div class="box">
-      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts>
-    </div>
-    <div class="box">
-      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts>
-    </div>
-    <div class="box">
-      <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts>
-    </div> -->
     <div class="box box13">
       <RotateChart :colorList="$fjData.colorList" :myData="$fjData.box13Data"></RotateChart>
     </div>
     <div class="box box14">
-      <LeidaEcharts :colorList="$fjData.colorList" :myData="$fjData.box14Data" titleText="92"></LeidaEcharts>
+      <LeidaEcharts :rgbaColor="rgbaList" :colorList="$fjData.colorList" :myData="$fjData.box14Data" titleText="92"></LeidaEcharts>
     </div>
     <div class="box box15">
       <MatchEcharts :colorList="$fjData.colorList" :myData="$fjData.box15Data" ></MatchEcharts>
@@ -90,7 +66,7 @@
     </div>
     <div class="box box32">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box32Data" ></PieEcharts>
-    </div>2
+    </div>
     <div class="box box33">
       <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box33Data" ></PieEcharts>
     </div>
@@ -142,6 +118,11 @@
     components: {
       PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
     },
+    data(){
+      return{
+        rgbaList:[["rgba(35,115,255,0.3)","rgba(35,115,255,0)"],["rgba(254, 119, 75, 0.3)","rgba(254, 119, 75, 0)"]]
+      }
+    }
   }
 </script>
 

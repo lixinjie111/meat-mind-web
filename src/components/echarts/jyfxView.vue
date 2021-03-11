@@ -3,35 +3,35 @@
     <div class="container">
         <div class="half">
             <div>GMV近30天变化趋势</div>
-            <lineS id="box60" y-name="GMV（万元）" x-name="日期" :hasAreaStyle="true" :myData="$ljEData.ljBox1"/>
+            <lineS id="box60" y-name="GMV（万元）" x-name="日期" :hasAreaStyle="true" :colorList="$ljEData.colorList" :myData="$ljEData.ljBox1"/>
         </div>
         <div class="half">
             <div>过去7天日活</div>
             <lineM y-name="日活数" x-name="日期" :hasAreaStyle="true" :option="{ xAxis: { boundaryGap: false } }"
-                   :myData="$ljEData.ljBox2"/>
+                   :colorList="$ljEData.colorList" :myData="$ljEData.ljBox2"/>
         </div>
         <div class="half">
             <div>周访问频次</div>
-            <barM id="box57" x-name="数量" y-name="人数" :myData="$ljEData.ljBox3"/>
+            <barM id="box57" x-name="数量" y-name="人数" :colorList="$ljEData.colorList" :myData="$ljEData.ljBox3"/>
         </div>
         <div class="half">
             <div>APP平均使用时长</div>
-            <lineS id="box56" :myData="$ljEData.ljBox4"/>
+            <lineS id="box56" :colorList="$ljEData.colorList"  :myData="$ljEData.ljBox4"/>
         </div>
         <div class="half">
             <div>日活</div>
             <lineM id="box55" y-name="日活数" x-name="日期" :hasAreaStyle="true" :option="{ xAxis: { boundaryGap: false } }"
-                   :myData="$ljEData.ljBox5"/>
+                   :colorList="$ljEData.colorList" :myData="$ljEData.ljBox5"/>
         </div>
         <div class="half">
             <div>商品详情页浏览总次数</div>
             <lineM y-name="日活数" x-name="日期" :hasAreaStyle="true" :option="{ xAxis: { boundaryGap: false } }"
-                   :myData="$ljEData.ljBox6"/>
+                   :colorList="$ljEData.colorList" :myData="$ljEData.ljBox6"/>
         </div>
         <div class="half">
             <div>使用优惠券的用户数</div>
             <lineM y-name="日活数" x-name="日期" :hasAreaStyle="true" :option="{ xAxis: { boundaryGap: false } }"
-                   :myData="$ljEData.ljBox7"/>
+                   :colorList="$ljEData.colorList" :myData="$ljEData.ljBox7"/>
         </div>
         <div class="half">
             <div>推送转化的人均次数</div>
@@ -43,54 +43,54 @@
         </div>
         <div class="half">
             <div>用户生命周期</div>
-            <barM x-name="数量" y-name="人数" :myData="$ljEData.ljBox8"/>
+            <barM x-name="数量" y-name="人数" :colorList="$ljEData.colorList" :myData="$ljEData.ljBox8"/>
         </div>
         <div class="half">
             <div>每日新增用户</div>
-            <lineS y-name="日活数" x-name="日期" :option="{ xAxis: { boundaryGap: false } }" :myData="$ljEData.ljBox9"/>
+            <lineS y-name="日活数" x-name="日期" :option="{ xAxis: { boundaryGap: false } }" :colorList="$ljEData.colorList" :myData="$ljEData.ljBox9"/>
         </div>
         <div class="half">
             <div>新增用户7日留存量</div>
-            <lineS y-name="日活数" x-name="日期" :option="{ xAxis: { boundaryGap: false } }" :myData="$ljEData.ljBox10"/>
+            <lineS y-name="日活数" x-name="日期" :option="{ xAxis: { boundaryGap: false } }" :colorList="$ljEData.colorList" :myData="$ljEData.ljBox10"/>
         </div>
         <div class="half">
             <div>每周新增用户</div>
-            <lineS y-name="日活数" x-name="日期" :option="{ xAxis: { boundaryGap: false } }" :myData="$ljEData.ljBox11"/>
+            <lineS y-name="日活数" x-name="日期" :option="{ xAxis: { boundaryGap: false } }" :colorList="$ljEData.colorList" :myData="$ljEData.ljBox11"/>
         </div>
         <div class="half">
             <div>每日新增用户</div>
-            <lineS y-name="日活数" x-name="日期" :option="{ xAxis: { boundaryGap: false } }" :myData="$ljEData.ljBox12"/>
+            <lineS y-name="日活数" x-name="日期" :option="{ xAxis: { boundaryGap: false } }" :colorList="$ljEData.colorList" :myData="$ljEData.ljBox12"/>
         </div>
         <div class="half">
             <div>新用户占比趋势</div>
-            <barM x-name="数量" y-name="人数" :myData="$ljEData.ljBox13"/>
+            <barM x-name="数量" y-name="人数" :colorList="$ljEData.colorList" :myData="$ljEData.ljBox13"/>
         </div>
         <div class="half">
             <div>新老活跃用户结构</div>
-            <barM x-name="数量" y-name="人数" :myData="$ljEData.ljBox14"/>
+            <barM x-name="数量" y-name="人数" :colorList="$ljEData.colorList" :myData="$ljEData.ljBox14"/>
         </div>
         <div class="half">
             <div>周活跃用户</div>
-            <lineS :myData="$ljEData.ljBox15"/>
+            <lineS :colorList="$ljEData.colorList" :myData="$ljEData.ljBox15"/>
         </div>
         <div class="half">
             <div>周新增用户占比趋势</div>
-            <barM x-name="数量" y-name="人数" :myData="$ljEData.ljBox16"/>
+            <barM x-name="数量" y-name="人数" :colorList="$ljEData.colorList" :myData="$ljEData.ljBox16"/>
         </div>
         <div class="half">
             <div>7日留存</div>
             <lineM y-name="日活数" x-name="日期" :hasAreaStyle="true" :option="{ xAxis: { boundaryGap: false } }"
-                   :myData="$ljEData.ljBox17"/>
+                   :colorList="$ljEData.colorList" :myData="$ljEData.ljBox17"/>
         </div>
         <div class="half">
             <div>7天流失</div>
             <lineM y-name="日活数" x-name="日期" :hasAreaStyle="true" :option="{ xAxis: { boundaryGap: false } }"
-                   :myData="$ljEData.ljBox18"/>
+                   :colorList="$ljEData.colorList" :myData="$ljEData.ljBox18"/>
         </div>
         <div class="half">
             <div>新增用户8周留存</div>
             <lineM y-name="日活数" x-name="日期" :hasAreaStyle="true" :option="{ xAxis: { boundaryGap: false } }"
-                   :myData="$ljEData.ljBox19"/>
+                   :colorList="$ljEData.colorList" :myData="$ljEData.ljBox19"/>
         </div>
 
     </div>
@@ -230,6 +230,7 @@
             width: 48%;
             height: 400px;
             margin-top: 30px;
+            border:1px solid red
         }
     }
 
