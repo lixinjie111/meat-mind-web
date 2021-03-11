@@ -6,8 +6,9 @@
 export default {
 	props: {
 		myData:{
+			type:Object,
 			default:()=>{
-				return [];
+				return {};
 			},
 		},
 		id:{
@@ -111,13 +112,15 @@ export default {
                 {
                     data: this.myData.value,
                     type: 'bar',
-					barWidth: '10',
+					barWidth: '10%',
+					barMinWidth:"10",
+					barMaxWidth:'40',
 					label:{
 						position: 'right',
 					},
 					itemStyle: {
                          normal: {
-                               barBorderRadius:[30,30,0,0]
+                            //    barBorderRadius:[30,30,0,0]
 						 },
 						 emphasis:{
 							 color:'#FF9F7F'

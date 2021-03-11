@@ -6,8 +6,9 @@
 export default {
 	props: {
 		myData:{
+            type:Object,
 			default:()=>{
-				return [];
+				return {};
 			},
 		},
 		id:{
@@ -17,10 +18,7 @@ export default {
 			},
 		},
 		colorList:{
-			type:Array,
-			default:()=>{
-				return  ['#2373FF', '#FE774B', '#1DCEC3', '#F16E84', '#FDD352', '#7BABFF', '#FFAE93', '#77E1DB', '#F6A8B5', '#FEE597', '#BDD5FF', '#FFD7C9', '#BBF1ED', '#FBD4DA', '#FEF1CB', '#FF9F7F'];
-			},
+			type:Array
 		},
 	},
 	data () {
@@ -129,7 +127,7 @@ export default {
 						barWidth: '10',
 						itemStyle: {
 							normal: {
-								barBorderRadius:[0,30,30,0]
+								// barBorderRadius:[0,30,30,0]
 							},
 							// emphasis:{
 							// 	color:'#FF9F7F'

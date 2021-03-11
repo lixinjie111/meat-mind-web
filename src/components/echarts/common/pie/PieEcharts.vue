@@ -69,8 +69,8 @@
           },
           series: [{
             type: 'pie',
-            center: ['50%', '50%'],
-            radius: ['30%', '50%'],
+            center: ['50%', '40%'],
+            radius: ['40%', '60%'],
             roseType: this.roseType,
             clockwise: true,
             avoidLabelOverlap: true,

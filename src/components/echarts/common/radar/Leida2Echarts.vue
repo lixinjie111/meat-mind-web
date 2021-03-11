@@ -4,11 +4,13 @@
 
 <script>
   let id = 0;
-  const COLORS = ['#2373FF', '#FE774B', '#1DCEC3', '#F16E84', '#FDD352', '#7BABFF', '#FFAE93', '#77E1DB', '#F6A8B5', '#FEE597', '#BDD5FF', '#FFD7C9', '#BBF1ED', '#FBD4DA', '#FEF1CB', '#FF9F7F'];
   export default {
     props: {
       myData: {default: () => {}},
-      colorList: {default: COLORS},
+      colorList: {
+        type:Array,
+        default:()=>[]
+      },
       max: { default: 10 },
       titleText: { default: 92 },
     },
@@ -61,28 +63,25 @@
               }).join('')
             }
           },
-          "legend": {
-            "show": true,
-            "icon": "circle",
-            "left": "35%",
-            "top": "90%",
-            "orient": "horizontal",
-            "textStyle": {
-              "fontSize": 14,
-              "color": "#636E95"
+          legend: {
+            show: true,
+            icon: "circle",
+            left: "35%",
+            top: "90%",
+            orient: "horizontal",
+            textStyle: {
+              fontSize: 14,
+              color: "#636E95"
             },
           },
-          "radar": {
-            "center": ["50%", "50%"],
-            "radius": "60%",
-            "startAngle": 180,
-            "splitNumber": 4,
-            "shape": "polygon",
-            "splitArea": {
-              "areaStyle": {
-                "color": ["transparent"]
-              }
-            },
+          radar: {
+            center: ["50%", "50%"],
+            radius: "70%",
+            startAngle: 180,
+            nameGap: '20',
+            splitNumber: 4,
+            color:"#7C88B1",
+            shape: "polygon",
             name: {
               textStyle: {
                 "color": "#636E95",
@@ -93,41 +92,35 @@
                 return text + '\n' + value;
               }
             },
-            "axisLabel": {
-              "show": false,
-              "fontSize": 18,
-              "color": "#636E95"
+            splitArea: {
+              show:false
             },
-            "axisLine": {
-              "show": true,
-              "lineStyle": {
-                "color": "#636E95",
-                opacity: 0.5
-              },
+            axisLine: { //指向外圈文本的分隔线样式
+              lineStyle: {
+                color: '#EAEDF7',
+              }
             },
-            "splitLine": {
-              "show": true,
-              "lineStyle": {
-                "color": "#636E95",
-                opacity: 0.5
+            splitLine: {
+              lineStyle: {
+                color: '#EAEDF7',
               }
             },
             indicator: (function (){
               // name.map((e, i)=>({ name: e, max, value: value[i] }))
               var res = [];
               for (let i = 0; i < name.length; i++) {
-                res.push({text: name[i], max, value: value[i] });
+                res.push({text: name[i], max, value: value[i],color: "#7C88B1" });
               }
               return res;
             })(),
           },
           series: [
             {
-              "name": "数据",
-              "type": "radar",
-              "symbol": "circle",
-              "symbolSize": 4,
-              "areaStyle": {
+              name: "数据",
+              type: "radar",
+              symbol: "circle",
+              symbolSize: 4,
+              areaStyle: {
                 normal: {
                   color: {
                     type: 'radial',
@@ -135,26 +128,27 @@
                     y: 0.5,
                     r: 1,
                     colorStops: [{
-                      offset: 0, color: '#B2CEFF' // 0% 处的颜色
+                      offset: 0, color: "rgba(35, 115, 255, 0.3)" // 0% 处的颜色
                     }, {
-                      offset: 1, color: '#2373FF' // 100% 处的颜色
+                      offset: 1, color: "rgba(35, 115, 255, 0)" // 100% 处的颜色
                     }],
                     global: false
                   },
                   opacity: 1,
                 }
               },
-              itemStyle: {
-                borderWidth: 3,
-                // color: '#fff'
-              },
-              "lineStyle": {
-                "normal": {
-                  "width": 1,
-                  opacity: 0.5,
-                }
-              },
-              "data": [value]
+            lineStyle: {
+              normal:{
+                 color: 'rgba(35, 115, 255, 1)',
+                width:1
+              }
+            },
+            itemStyle: {
+              color: this.colorList[0],
+              borderColor: this.colorList[0],
+              borderWidth: 1,
+          },
+              data: [value]
             }
           ],
         };

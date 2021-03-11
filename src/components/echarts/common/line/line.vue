@@ -122,18 +122,6 @@ export default {
 							color: '#fff'
 						}])
 					},
-					// label:{
-					// 	position: 'right',
-					// },
-					// itemStyle: {
-                    //      normal: {
-					// 		   fontSize:20,
-                    //            barBorderRadius:30
-					// 	 },
-					// 	 emphasis:{
-					// 		 color:'#FF9F7F'
-					// 	 }
-                    // },
                 }
             ]
         };

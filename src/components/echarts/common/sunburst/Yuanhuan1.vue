@@ -3,9 +3,7 @@
 </template>
 
 <script>
-  import echarts from 'echarts'
   let id = 0;
-  const COLORS = ['#2373FF', '#FE774B', '#1DCEC3', '#F16E84', '#FDD352', '#7BABFF', '#FFAE93', '#77E1DB', '#F6A8B5', '#FEE597', '#BDD5FF', '#FFD7C9', '#BBF1ED', '#FBD4DA', '#FEF1CB', '#FF9F7F'];
   export default {
     // roseType 默认为 false，代表圆环图， radius:圆环南丁格尔图， area: 区域南丁格尔图
     props: {
@@ -13,7 +11,12 @@
         default: () => {
         }
       },
-      colorList: {default: COLORS},
+      colorList: {
+        type:Array,
+        default:()=>{
+          return []
+        }
+      },
       roseType: {default: false},
     },
     data() {
@@ -106,40 +109,59 @@
             padding: [20, 40],
           },
           radar: {
+            center: ['50%', '40%'],
+            radius: '28%',
             shape: 'circle',
-            scale: true,
-            indicator: indicator.map(e=>({ text: e })),
-            center: ['50%', '50%'],
-            radius: '28%'
+            //  symbol:"circle",
+             symbolSize: 4,
+             nameGap:"6",
+            splitArea: {
+              show:false
+            },
+            axisLine: { 
+              lineStyle: {
+                color: '#EAEDF7',
+              }
+            },
+            splitLine: {
+              lineStyle: {
+                color: '#EAEDF7',
+              }
+            },
+             indicator: indicator.map(e=>({ text: e,color: "#7C88B1" })),
           },
-
           series: [
             {
               type: 'radar',
+              symbol:"circle",
+              symbolSize: 4,
               zlevel: 2,
               tooltip: {
                 show: true
               },
               lineStyle: {
+                color: 'rgba(35, 115, 255, 1)',
                 width: 1,
-                opacity: 1
               },
-              itemStyle: {},
-              "areaStyle": {
+              itemStyle: {
+                color: this.colorList[0],
+                borderColor: this.colorList[0],
+                borderWidth: 1,
+              },
+              areaStyle: {
                 normal: {
                   color: {
                     type: 'radial',
                     x: 0.5,
                     y: 0.5,
-                    r: 1,
+                    r: 0.5,
                     colorStops: [{
-                      offset: 0, color: '#B2CEFF' // 0% 处的颜色
+                      offset: 0, color: "rgba(35, 115, 255, 0.3)" // 0% 处的颜色
                     }, {
-                      offset: 1, color: '#2373FF' // 100% 处的颜色
+                      offset: 1, color: "rgba(35, 115, 255, 0)" // 100% 处的颜色
                     }],
                     global: false
                   },
-                  opacity: 1,
                 }
               },
               data: [...name[0], ...name[1]].map((e, i)=>({
@@ -149,7 +171,7 @@
             },
             {
               type: 'sunburst',
-              center: ['50%', '50%'],
+              center: ['50%', '40%'],
               nodeClick: false,
               levels: [
                 {},

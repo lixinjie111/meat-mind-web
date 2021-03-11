@@ -220,7 +220,6 @@
 </template>
 
 <script>
-	import echarts from 'echarts';
 	import barEcharts from './common/bar/barEcharts';
 	import barL from './common/bar/barL';
 	import barM from './common/bar/barM';
@@ -238,12 +237,10 @@
 	import lineSp from './common/line/lineSp';
 	import pieP from './common/pie/pieP';
     export default {
+		name:"barView",
 		components: {
 		  lineM3,barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,pieP
-		},
-		created(){
-			console.log(this.$lxjData)
-		},
+		}
     }
 </script>
 
