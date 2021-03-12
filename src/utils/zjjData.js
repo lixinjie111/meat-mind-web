@@ -525,14 +525,14 @@ const zjjEData = {
                     value: 6,
                     itemStyle: {
                         color: 'rgba(255,217,140,.8)',
-                        borderRadius:[0,0,0,17]
                     },
                 },
                 {
                     name: "安德鲁",
                     value: 5,
                     itemStyle: {
-                        color: 'rgba(255,217,140,.7)'
+                        color: 'rgba(255,217,140,.7)',
+                        borderRadius:[0,0,0,17]
                     },
                 },
                 {
