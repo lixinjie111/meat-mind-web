@@ -2,7 +2,7 @@
   <DetailsPage title="维度表" backname="data-center-metax">
     <HeaderSearch>
       <div class="my-set">
-        <i class="iconfont2 iconicon_setup"></i>
+        <i class="iconfont iconsetup"></i>
         <div>自定义维度表</div>
       </div>
     </HeaderSearch>

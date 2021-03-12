@@ -5,7 +5,7 @@
                 <img src="../assets/img/header/rectangle@2x.png" alt="">
                 <div>
                     邓老凉茶
-                    <!-- <i class="iconfont2 iconicon_down-triangle"></i> -->
+                    <!-- <i class="iconfont icondown"></i> -->
                 </div>
             </div>
 
@@ -41,7 +41,7 @@
                     <span>分析师</span>
                 </template>
                 <!-- <img class="triangle" src="../assets/img/header/triangle@2x.png" alt=""> -->
-                <i class="triangle iconfont2" :class="[select?'iconshouqi':'iconzhankai']" @click.stop="select=!select"></i>
+                <i class="iconfont icondown" :class="[select?'iconshouqi':'iconzhankai']" @click.stop="select=!select"></i>
                 <ul ref="select" class="select-box" v-if="select">
                     <li @click="logout">退出登录</li>
                 </ul>

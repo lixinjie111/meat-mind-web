@@ -132,11 +132,11 @@
              </div>
             <div class="showMore" v-if="showFlag" @click="showFlag=!showFlag">
                  收起详情
-                 <i class="iconfont2 iconshouqi"></i>
+                 <i class="iconfont iconup"></i>
              </div>
              <div class="showMore" v-else @click="showFlag=!showFlag">
                  展开详情
-                 <i class="iconfont2 iconzhankai"></i>
+                 <i class="iconfont icondown"></i>
              </div>
         </div>
         <div class="mark-panel">
@@ -165,7 +165,7 @@
                         <div class="tags">
                             <div class="tagList">
                                 <div class="tag" v-for="item in tagList" :key="item">{{item}}
-                                    <!-- <i class="iconfont2 iconicon_close"></i> -->
+                                    <!-- <i class="iconfont iconClose"></i> -->
                                 </div>
                                 <!-- <Tag v-if="show" closable @on-close="handleClose">标签三</Tag> -->
                             </div>

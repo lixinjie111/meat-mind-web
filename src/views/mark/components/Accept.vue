@@ -4,7 +4,7 @@
             <div class="a-h-title">
                 {{title}}
                 <Poptip popper-class="saas-poptip" placement="right-start">
-                    <!-- <i class="iconfont2 iconguanyu tip-icon"></i> -->
+                    <!-- <i class="iconfont iconguanyuline1 tip-icon"></i> -->
                     <img class="gif" src="../../../assets/img/user/tip.gif" alt="">
                     <div slot="content">
                         <p>用户从接受到产品的宣传营销信息（硬广or软文），到引起兴趣，然后开始搜索进行了解（百度、知乎、微博、淘宝），到在线下载or支付，以及后续的评价分享环节（产品内、微信、微博）</p>

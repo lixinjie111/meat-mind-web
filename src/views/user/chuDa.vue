@@ -6,7 +6,7 @@
           <div class="cdyhmj_title">
             <span>触达用户媒介</span>
             <Poptip popper-class="saas-poptip" placement="right-start">
-              <!-- <i class="iconfont2 iconguanyu tip-icon"></i> -->
+              <!-- <i class="iconfont iconguanyuline1 tip-icon"></i> -->
               <img class="gif" src="../../assets/img/user/tip.gif" alt="">
               <div slot="content">
                 <p><span>触达能力= 触达率 * 平均接触频率：</span></p>

@@ -46,16 +46,16 @@
                 <div class="conditions_lef">
                     <div class="condition_label">条件筛选</div>
                     <div class="condition_item"><span>{{condiObj.label1}}</span>
-                        <!--<i class="iconicon_close iconfont2" style="font-size: 12px;"></i>-->
+                        <!--<i class="iconfont iconClose" style="font-size: 12px;"></i>-->
                     </div>
                     <div class="condition_item"><span>{{condiObj.label2}}</span>
-                        <!--<i class="iconicon_close iconfont2" style="font-size: 12px;"></i>-->
+                        <!--<i class="iconfont iconClose" style="font-size: 12px;"></i>-->
                     </div>
                     <div class="condition_item"><span>{{condiObj.label3}}</span>
-                        <!--<i class="iconicon_close iconfont2" style="font-size: 12px;"></i>-->
+                        <!--<i class="iconfont iconClose" style="font-size: 12px;"></i>-->
                     </div>
                     <div class="condition_item"><span>{{condiObj.label4}}</span>
-                        <!--<i class="iconicon_close iconfont2" style="font-size: 12px;"></i>-->
+                        <!--<i class="iconfont iconClose" style="font-size: 12px;"></i>-->
                     </div>
                 </div>
                 <div class="conditions_rig" @click="expandCond">更多筛选条件</div>
@@ -72,7 +72,7 @@
               <div class="item-list" v-for="(item, index) in target" :key="index">
                 <div class="item-con">
                   <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
-                  <i class="iconfont2 iconxiangqian"></i>
+                  <i class="iconfont iconleft-arrow21"></i>
                 </div>
               </div>
             </div>
@@ -81,7 +81,7 @@
               <div class="item-list" v-for="(item, index) in property" :key="index" >
                 <div class="item-con">
                   <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
-                  <i class="iconfont2 iconxiangqian"></i>
+                  <i class="iconfont iconleft-arrow21"></i>
                 </div>
               </div>
             </div>
@@ -90,7 +90,7 @@
               <div class="item-list" v-for="(item, index) in behavior" :key="index" >
                 <div class="item-con">
                   <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
-                  <i class="iconfont2 iconxiangqian"></i>
+                  <i class="iconfont iconleft-arrow21"></i>
                 </div>
               </div>
             </div>
@@ -165,7 +165,7 @@
                     <div class="til_label">
                         用户状态
                         <Poptip popper-class="saas-poptip" placement="right-start">
-                            <i class="iconfont iconguanyuline tip-icon"></i>
+                            <i class="iconfont iconguanyuline1 tip-icon"></i>
                             <div slot="content">
                                 <p v-if="[6, 8, 10].includes(current)">用户群体主要处于通勤及工作状态，偏好社交娱乐类型的APP，时间段内对出行、外卖餐饮类的生活服务APP需求显著，成为重要触点，情绪偏向紧张和烦躁</p>
                                 <p v-if="[12, 14, 16].includes(current)">用户群体处于工作午间休整状态，偏好浏览美食餐饮、外卖服务类的APP，处理工作相关信息，情绪主要表现为紧张和一般</p>
