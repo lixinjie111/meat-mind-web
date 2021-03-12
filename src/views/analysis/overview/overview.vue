@@ -65,15 +65,7 @@ export default {
       justify-content: space-between;
       height: 268px;
       padding: 24px 0;
-      // background: url("../../../assets/img/analysis/databg.png") no-repeat center center / 100% 268px;
       border-radius: 12px;
-      // .first{
-      //   width: 264px;
-      //   height: 102px;
-      //   background: linear-gradient(225deg, #1C66DE 0%, #98A0F9 100%);
-      //   box-shadow: 2px 4px 10px 0px rgba(41, 59, 149, 0.3);
-      //   border-radius: 8px;
-      // }
     }
   }
 </style>
