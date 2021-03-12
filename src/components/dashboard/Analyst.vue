@@ -259,7 +259,7 @@ export default {
         {
           tilIcon: require("../../assets/img/dashboard/newGif.png"),
           title: "领取新人礼包",
-          iconfont: 'iconlingquxinrenlibao',
+          iconfont: 'iconxinrenlibao',
           desc:
             "根据您行业属性，我们为您精选出一些通用数据包及行业数据包，希望您会喜欢。",
           statusTxt: "已完成",
@@ -303,7 +303,7 @@ export default {
         {
           tilIcon: require("../../assets/img/dashboard/help.png"),
           title: "帮助中心",
-          iconfont: 'iconbianzu2',
+          iconfont: 'iconbangzhuzhongxin',
           desc: "查看功能说明，了解智慧营销平台。",
           statusTxt: "去查看",
           statusIcon: require("../../assets/img/dashboard/tor1.png"),
