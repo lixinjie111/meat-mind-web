@@ -13,7 +13,7 @@
         <img v-if="cardData.leftIcon" :src="cardData.leftIcon" class="per_status" />
         <span v-if="cardData.leftPer" class="per_num" :style="{color:cardData.leftPerColor}" style="margin-right:10px;">{{cardData.leftPer}}</span>
       </div>
-      <div class="per_right">
+      <div class="per_right" ref="per_right">
         <span class="per_title" v-if="cardData.rightText">{{cardData.rightText}}</span>
         <img v-if="cardData.rightIcon" :src="cardData.rightIcon" class="per_status" />
         <span v-if="cardData.rightPer" class="per_num" :style="{color:cardData.rightPerColor}">{{cardData.rightPer}}</span>
@@ -42,6 +42,7 @@ export default {
   },
   mounted() {
     this.changeNum();
+    this.setStyle();
   },
   destroyed() {
     clearInterval(this.timer);
@@ -64,6 +65,12 @@ export default {
       this.timer = setInterval(() => {
         this.numTxt += 1;
       }, _this.cardData.timer);
+    },
+    setStyle(){
+      var riDom = this.$refs.per_right;
+      if(this.cardData.fnType == 5){
+        riDom.style="margin-left:56px;";
+      }
     }
   }
 };
@@ -72,9 +79,7 @@ export default {
 <style scoped lang="scss">
 .card-container {
   min-height: 125px;
-  border: 1px solid #eaedf7;
-  padding: 12px 11px;
-  box-sizing: border-box;
+  border-right: 1px solid #eaedf7;
   margin-bottom: 15px;
   &:hover{
     background: #FFFFFF;
@@ -106,7 +111,7 @@ export default {
   .num_container {
     width: 100%;
     display: flex;
-    align-items: flex-end;
+    align-items: baseline;
     margin-bottom: 7px;
     .num_text {
       margin-right: 12px;
@@ -125,6 +130,7 @@ export default {
   .per_contianer {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     .per_left,
     .per_right {
