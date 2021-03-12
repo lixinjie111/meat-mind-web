@@ -1,7 +1,7 @@
 <template>
     <div class="details-page-model">
         <div class="title" v-if="title">
-            <div class="icon"><i @click="back" class="iconfont iconarrowRight"></i></div>
+            <div class="icon"><i @click="back" class="iconfont iconleft-arrow"></i></div>
             {{title}}
         </div>
         <div class="details-page-content">

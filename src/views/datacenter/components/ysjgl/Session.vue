@@ -7,14 +7,14 @@
     <HeaderSearch>
       <div class="session-header-left">
         <div class="blue-btn">
-          <i class="iconfont2 iconicon_addto1"></i>
+          <i class="iconfont icontianjia"></i>
           <div>新建Session</div>
         </div>
 
         <div class="total">当前条件共 10 个Session</div>
       </div>
       <div class="session-search" slot="text">
-        <i class="iconfont iconsearch"></i>
+        <i class="iconfont iconSearch"></i>
         <span>请输入Session名或Session显示名</span>
       </div>
     </HeaderSearch>

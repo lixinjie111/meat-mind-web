@@ -40,19 +40,19 @@
                     {
                         name: "dashboard",
                         label: "Dashboard",
-                        icon: "iconDashboard",
+                        icon: "icondashboard",
                         path: "/dashboard",
                     },
                     {
                         name: "user",
                         label: "用户画像",
-                        icon: "iconyonghuhuaxiang1",
+                        icon: "iconyonghuhuaxiang",
                         path: "/user",
                     },
                     {
                         name: "mark",
                         label: "品牌画像",
-                        icon: "iconpinpaihuaxiang1",
+                        icon: "iconpinpaihuaxiang",
                         path: "/mark",
                     },
                     {
@@ -64,7 +64,7 @@
                     {
                         name: "business-analysis",
                         label: "经营分析",
-                        icon: "iconjingyingfenxi1",
+                        icon: "iconjingyingfenxi",
                         path: "/business-analysis",
                         children: [
                             {
@@ -92,7 +92,7 @@
                     {
                         name: "analysis-tool",
                         label: "分析工具",
-                        icon: "iconfenxigongju1",
+                        icon: "iconfenxigongju",
                         path: "/analysis-tool",
                         children: [
                             {
@@ -142,7 +142,7 @@
                     {
                         name: "data-center",
                         label: "数据管理",
-                        icon: "iconshujuguanli1",
+                        icon: "iconshujuguanli",
                         path: "/data-center",
                         children: [
                             {

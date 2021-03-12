@@ -43,7 +43,7 @@ export default {
                 title:"分布分析",
                 desc:"分析用户行为在一段时间内的频次和指标分析"
             },{
-                icon:"iconyonghutujing",
+                icon:"iconyonghutujingfenxi",
                 type:"way",
                 title:"用户途径分析",
                 desc:"分析用户实际行为的流向变化"

@@ -56,7 +56,7 @@
                             <p>16.17<span>分</span></p>
                             <Compare :data="[-11.45,1.15]"></Compare>
                             <div class="icon">
-                                <i class="iconfont2 iconshijian"></i>
+                                <i class="iconfont iconshijian"></i>
                             </div>
                         </div>
                     </div>
@@ -137,22 +137,22 @@
                    </div>
                    <div class="detail-info">
                       <div class="detail-info-item">
-                          <p>营销覆盖度<i class="iconfont2 iconjieshou"></i></p>
+                          <p>营销覆盖度<i class="iconfont iconduigou1"></i></p>
                       </div>
                        <div class="detail-info-item">
-                           <p>用户增长趋势<i class="iconfont2 iconguanyu1"></i></p>
+                           <p>用户增长趋势<i class="iconfont iconguanyuline"></i></p>
                        </div>
                        <div class="detail-info-item">
-                           <p>目标客群心智拟合<i class="iconfont2 iconguanyu1"></i></p>
+                           <p>目标客群心智拟合<i class="iconfont iconguanyuline"></i></p>
                        </div>
                        <div class="detail-info-item">
-                           <p>品牌联想度<i class="iconfont2 iconjieshou"></i></p>
+                           <p>品牌联想度<i class="iconfont iconduigou1"></i></p>
                        </div>
                        <div class="detail-info-item">
-                           <p>媒介传播能力<i class="iconfont2 iconguanyu1"></i></p>
+                           <p>媒介传播能力<i class="iconfont iconguanyuline"></i></p>
                        </div>
                        <div class="detail-info-item">
-                           <p>网站成交金额<i class="iconfont2 iconjieshou"></i></p>
+                           <p>网站成交金额<i class="iconfont iconduigou1"></i></p>
                        </div>
                    </div>
                 </div>
@@ -163,7 +163,7 @@
             </div>
         </div>
         <Card title="客群诊断">
-            <div slot="right" class="card-right" @click="toDetail1">查看用户画像详情<i class="iconfont iconarrowRight"></i></div>
+            <div slot="right" class="card-right" @click="toDetail1">查看用户画像详情<i class="iconfont iconleft-arrow"></i></div>
             <div class="manage-card flex-start">
                 <div class="manage-card-left">
                     <p>诊断结果</p>
@@ -194,7 +194,7 @@
             </div>
         </Card>
         <Card title="媒介诊断">
-            <div slot="right" class="card-right" @click="toDetail2">查看媒介画像详情<i class="iconfont iconarrowRight"></i></div>
+            <div slot="right" class="card-right" @click="toDetail2">查看媒介画像详情<i class="iconfont iconleft-arrow"></i></div>
             <div class="manage-card flex-start">
                 <div class="manage-card-left">
                     <p>诊断结果</p>
@@ -223,7 +223,7 @@
             </div>
         </Card>
         <Card title="品牌诊断">
-            <div slot="right" class="card-right" @click="toDetail3">查看品牌画像详情<i class="iconfont iconarrowRight"></i></div>
+            <div slot="right" class="card-right" @click="toDetail3">查看品牌画像详情<i class="iconfont iconleft-arrow"></i></div>
             <div class="manage-card flex-start">
                 <div class="manage-card-left">
                     <p>诊断结果</p>
@@ -254,7 +254,7 @@
             </div>
         </Card>
         <Card title="经营过程风险预警">
-            <div slot="right" class="card-right" @click="toDetail4">更多<i class="iconfont2 iconicon_more"></i></div>
+            <div slot="right" class="card-right" @click="toDetail4">更多<i class="iconfont icongengduo"></i></div>
             <div class="manage-card2">
                 <div class="manage-card2-top flex">
                     <div id="myChart2"></div>

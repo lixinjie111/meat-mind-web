@@ -5,7 +5,7 @@
             <div class="target-left">
                 <div class="target-left-title flex">
                     <p>推荐目标客群</p>
-                    <p @click="toUser" class="check-btn">查看全部<i class="iconfont iconarrowRight"></i></p>
+                    <p @click="toUser" class="check-btn">查看全部<i class="iconfont iconleft-arrow"></i></p>
                 </div>
                 <div class="target-left-content">
                     <Select class="target-left-select" v-model="mbValue">

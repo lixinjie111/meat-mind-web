@@ -3,13 +3,13 @@
     <div class="f-header">
       <div class="empty">
           <div class="blue-btn">
-              <i class="iconfont2 iconicon_addto1"></i>
+              <i class="iconfont icontianjia"></i>
               <div>新建虚拟事件</div>
           </div>
           <div class="total">当前条件共 10 个虚拟事件</div>
       </div>
       <div class="search">
-        <i class="iconfont iconsearch"></i>
+        <i class="iconfont iconSearch"></i>
         <span>请输入事件名或事件显示名</span>
       </div>
       <slot>
@@ -18,9 +18,10 @@
         </div>
       </slot>
       <div class="filter">
+        //icon暂无
         <i class="iconfont iconicon_filter_line"></i>
         <span>筛选</span>
-        <i class="iconfont iconshangjiantou"></i>
+        <i class="iconfont iconup"></i>
       </div>
     </div>
     <div class="filter-container">

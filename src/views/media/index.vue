@@ -57,26 +57,26 @@
             <div class="detail-info">
                   <div class="detail-info-item">
                       <div class="detail-info-left">
-                         <p>信息量<i class="iconfont2 iconjieshou"></i></p>
+                         <p>信息量<i class="iconfont iconduigou1"></i></p>
                       </div>
                       <div class="detail-info-rt">
-                         <p>专业度<i class="iconfont2 iconguanyu1"></i></p>
+                         <p>专业度<i class="iconfont iconguanyu"></i></p>
                       </div>
                   </div>
                   <div class="detail-info-item">
                       <div class="detail-info-left">
-                         <p>友好度<i class="iconfont2 iconguanyu1"></i></p>
+                         <p>友好度<i class="iconfont iconguanyu"></i></p>
                       </div>
                       <div class="detail-info-rt">
-                         <p>公信力<i class="iconfont2 iconjieshou"></i></p>
+                         <p>公信力<i class="iconfont iconduigou1"></i></p>
                       </div>
                   </div>
                   <div class="detail-info-item">
                       <div class="detail-info-left">
-                        <p>转化度<i class="iconfont2 iconguanyu1"></i></p>
+                        <p>转化度<i class="iconfont iconguanyu"></i></p>
                       </div>
                       <div class="detail-info-rt">
-                        <p>ROI<i class="iconfont2 iconjieshou"></i></p>
+                        <p>ROI<i class="iconfont iconduigou1"></i></p>
                       </div>
                   </div>
               </div>
@@ -770,7 +770,7 @@
               <div class="m-pie-title">
                   媒介用户画像
 			  <Poptip popper-class="saas-poptip small" placement="right-start">
-			    <i class="iconfont2 iconguanyu tip-icon"></i>
+			    <i class="iconfont iconguanyuline tip-icon"></i>
 			    <div slot="content">
 			      <p>展示各个媒介的用户属性特征，深度洞察媒介使用者的人群画像，以及比较不同媒介的偏好人群的差异</p>
 			    </div>
@@ -813,7 +813,7 @@
                               <div class="m-p-r-title">
                                 触达方案推荐
 								<Poptip popper-class="saas-poptip small" placement="right-start">
-								  <i class="iconfont2 iconguanyu tip-icon"></i>
+								  <i class="iconfont iconguanyuline tip-icon"></i>
 								  <div slot="content">
 								    <p>展示各个媒介传播效果的评估和预测，结合品牌投放目标，对投放效果做预测，给出媒介综合使用方案建议</p>
 								  </div>
@@ -973,7 +973,7 @@
                         </div>
 <!--                        <div class="card-tip">-->
 <!--                            <Poptip popper-class="saas-poptip" placement="right-start">-->
-<!--                                <i class="iconfont2 iconguanyu tip-icon"></i>-->
+<!--                                <i class="iconfont iconguanyuline tip-icon"></i>-->
 <!--                                <div slot="content">-->
 <!--                                    <p>快速拉新策略KOL，占整体投放预算的55%，投放时间为未来7日投放（2日达到投放预期的80%），预期获得18%的曝光，12%的互动和3%销售转化；</p>-->
 <!--                                    <p>头部KOL，粉丝基数大，影响力高，能够带来高互动和高转化，适合快速拉新需求的投放策略；</p>-->
@@ -1043,7 +1043,7 @@
           <div class="m-p-target-title">
               KOL资源
 			  <Poptip popper-class="saas-poptip small" placement="right-start">
-			    <i class="iconfont2 iconguanyu tip-icon"></i>
+			    <i class="iconfont iconguanyuline tip-icon"></i>
 			    <div slot="content">
 			      <p>媒介资源库，提供具体媒介资源的详细信息，包括基础数据、历史投放效果和合作方案等，以供品牌方比较分析并联系合作</p>
 			    </div>

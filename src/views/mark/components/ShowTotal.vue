@@ -64,31 +64,31 @@
           <div class="detail-info-item">
             <div class="detail-info-left">
               <p>营销覆盖度</p>
-              <i class="iconfont2 iconjieshou"></i>
+              <i class="iconfont iconduigou1"></i>
             </div>
             <div class="detail-info-rt">
               <p>认可度</p>
-              <i class="iconfont2 iconguanyu1"></i>
+              <i class="iconfont iconguanyu"></i>
             </div>
           </div>
           <div class="detail-info-item">
             <div class="detail-info-left">
               <p>匹配度</p>
-              <i class="iconfont2 iconguanyu1"></i>
+              <i class="iconfont iconguanyu"></i>
             </div>
             <div class="detail-info-rt">
               <p>占据力</p>
-              <i class="iconfont2 iconjieshou"></i>
+              <i class="iconfont iconduigou1"></i>
             </div>
           </div>
           <div class="detail-info-item">
             <div class="detail-info-left">
               <p>忠诚度</p>
-              <i class="iconfont2 iconguanyu1"></i>
+              <i class="iconfont iconguanyu"></i>
             </div>
             <div class="detail-info-rt">
               <p>传播度</p>
-              <i class="iconfont2 iconjieshou"></i>
+              <i class="iconfont iconduigou1"></i>
             </div>
           </div>
         </div>

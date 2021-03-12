@@ -132,11 +132,11 @@
              </div>
             <div class="showMore" v-if="showFlag" @click="showFlag=!showFlag">
                  收起详情
-                 <i class="iconfont2 iconshouqi"></i>
+                 <i class="iconfont iconup"></i>
              </div>
              <div class="showMore" v-else @click="showFlag=!showFlag">
                  展开详情
-                 <i class="iconfont2 iconzhankai"></i>
+                 <i class="iconfont icondown"></i>
              </div>
         </div>
         <div class="mark-panel">

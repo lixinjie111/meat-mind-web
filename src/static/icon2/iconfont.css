@@ -299,9 +299,9 @@
   content: "\e670";
 }
 
-.icondashboard:before {
-  content: "\e68d";
-}
+/*.icondashboard:before {*/
+/*  content: "\e68d";*/
+/*}*/
 
 .iconicon_delete1:before {
   content: "\e68c";

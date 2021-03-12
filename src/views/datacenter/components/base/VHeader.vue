@@ -2,7 +2,7 @@
   <div class="datacenter-model-search">
     <div class="s-header">
       <div class="search">
-        <i class="iconfont iconsearch"></i>
+        <i class="iconfont iconSearch"></i>
         <span>请输入显示名进行搜索</span>
       </div>
     </div>

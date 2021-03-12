@@ -4,7 +4,7 @@
       <div class="result-box">
         <div class="title">
           <span class="rotate180">
-            <i class="iconfont iconarrowRight" @click="resultShow = false"></i>
+            <i class="iconfont iconleft-arrow" @click="resultShow = false"></i>
           </span>
           <span class="separate-line"></span>
           2020年上半年奢侈品销售数据</div>

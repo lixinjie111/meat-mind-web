@@ -4,7 +4,7 @@
     <div class="list">
       <div class="show-header">
         <div class="blue-btn">
-          <i class="iconfont2 iconicon_addto1"></i>
+          <i class="iconfont icontianjia"></i>
           <div>新建</div>
         </div>
       </div>

@@ -5,7 +5,7 @@
     </div>
     <slot name="text">
       <div class="search">
-        <i class="iconfont iconsearch"></i>
+        <i class="iconfont iconSearch"></i>
         <span>请输入事件名或事件显示名</span> 
       </div>
     </slot> 

@@ -3,7 +3,7 @@
     <div class="f-header">
       <div class="empty"></div>
       <div class="search">
-        <i class="iconfont iconsearch"></i>
+        <i class="iconfont iconSearch"></i>
         <span>请输入事件名或事件显示名</span>
       </div>
       <slot>
@@ -13,9 +13,10 @@
         </div>
       </slot>
       <div class="filter">
+        //icon暂无
         <i class="iconfont iconicon_filter_line"></i>
         <span>筛选</span>
-        <i class="iconfont iconshangjiantou"></i>
+        <i class="iconfont iconup"></i>
       </div>
     </div>
     <div class="filter-container">

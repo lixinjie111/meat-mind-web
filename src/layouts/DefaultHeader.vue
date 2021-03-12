@@ -17,7 +17,7 @@
                 </Input>
             </div>
             <div class="search-icon" v-else @click="search=!search">
-                <i class="iconfont2 iconicon_search"></i>
+                <i class="iconfont iconSearch"></i>
             </div>
             <div class="service">
                 <i class="iconfont iconbangzhuline"></i>

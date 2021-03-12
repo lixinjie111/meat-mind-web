@@ -10,7 +10,7 @@
           </div>
           <Input v-model="value1" size="large" placeholder="暂无规则 请从右侧选择添加" />
           <div class="add">
-            <i class="iconfont iconicon_plus"></i>
+            <i class="iconfont icontianjia"></i>
             <div>添加一个交集关系框</div>
           </div>
           <div class="line-desc filter">
@@ -19,7 +19,7 @@
           </div>
           <Input v-model="value2" size="large" placeholder="暂无规则 请从右侧选择添加" />
           <div class="add">
-            <i class="iconfont iconicon_plus"></i>
+            <i class="iconfont icontianjia"></i>
             <div>添加一个交集关系框</div>
           </div>
         </div>

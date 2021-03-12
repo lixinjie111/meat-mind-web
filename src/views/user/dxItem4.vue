@@ -196,7 +196,7 @@
                     <div class="til_label">
                         用户状态
                         <Poptip popper-class="saas-poptip" placement="right-start">
-                            <i class="iconfont2 iconguanyu tip-icon"></i>
+                            <i class="iconfont iconguanyuline tip-icon"></i>
                             <div slot="content">
                                 <p v-if="[6, 8, 10].includes(current)">
                                     用户群体主要处于通勤及工作状态，偏好社交娱乐类型的APP，时间段内对出行、外卖餐饮类的生活服务APP需求显著，成为重要触点，情绪偏向紧张和烦躁</p>
