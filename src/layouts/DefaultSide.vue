@@ -54,6 +54,23 @@
                         label: "品牌画像",
                         icon: "iconpinpaihuaxiang",
                         path: "/mark",
+                        children:[
+                            {
+                                name:"mark-view",
+                                label:"品牌概览",
+                                path:"/mark/view"
+                            },
+                            {
+                                name:"mark-negative",
+                                label:"负面舆情",
+                                path:"/mark/negative"
+                            },
+                            {
+                                name:"mark-detail",
+                                label:"品牌详情",
+                                path:"/mark/detail"
+                            }
+                        ]
                     },
                     {
                         name: "media",
