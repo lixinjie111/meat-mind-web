@@ -31,7 +31,7 @@ export default [
         path:`/${moduleName}/detail`,
         label:"品牌详情",
         meta:{title:"品牌画像",moduleName},
-        component:old,
+        component:detail,
         name:`${moduleName}-detail`
       }
     ]

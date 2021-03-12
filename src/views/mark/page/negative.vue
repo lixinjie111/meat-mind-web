@@ -1,7 +1,9 @@
 <template>
     <div class="mark-negative">
         <div class="title">负面舆情</div>
-        
+        <div class="show">
+
+        </div>
     </div>
 </template>
 <script>
@@ -24,6 +26,9 @@ export default {
         font-family: PingFangSC-Medium, PingFang SC;
         font-weight: 500;
         color: #242F57;
+    }
+    .show{
+        
     }
 }
 </style>

@@ -1,12 +1,14 @@
 <template>
     <div class="mark-detail">
         <div class="title">品牌详情</div>
-        
+        <Details></Details>
     </div>
 </template>
 <script>
+import Details from "../components/Details"
 export default {
     name:"detail",
+    components:{Details},
     data(){
         return {} 
     }

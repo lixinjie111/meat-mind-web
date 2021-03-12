@@ -85,7 +85,7 @@ export default {
       justify-content: center;
       font-size: 20px;
     }
-    .iconlingquxinrenlibao{
+    .iconxinrenlibao{
       background: #A49DFA;
       box-shadow: 2px 3px 8px 0 rgba(164, 157, 250, 0.5), -2px -2px 8px 0px #FFFFFF;
     }
@@ -105,7 +105,7 @@ export default {
       background: #B380B6;
       box-shadow: 2px 3px 8px 0px rgba(179, 128, 182, 0.5), -2px -2px 8px 0px #FFFFFF;
     }
-    .iconbianzu2{
+    .iconbangzhuzhongxin{
       background: #738AD4;
       box-shadow: 2px 3px 8px 0 rgba(115, 138, 212, 0.5), -2px -2px 8px 0px #FFFFFF;
     }
