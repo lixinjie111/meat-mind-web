@@ -8,8 +8,40 @@
                     <p>通过将信息在品牌、消费者之间通过媒介传播的全过程进行量化和动态拟合，智能评估营销活动三要素的综合表现与营销活动中出现的问题，提醒企业及时规避风险。</p>
                 </div>
             </div>
-            <div class="me-mart-box">
+            <div class="me-mart-box flex">
+                <div class="left">
+                    <div class="top"></div>
+                    <div class="bottom">
+                        <p>Powered by <span>元知智能研究院</span></p>
+                        <p>量化营销过程中的信息传播全过程，评估</br>品牌、消费者、媒介之间的匹配度</p>
+                    </div>
+                </div>
+                <div class="right flex">
+                    <div class="right-item">
+                        <div class="right-item-top">
 
+                        </div>
+                        <div class="right-item-bottom">
+
+                        </div>
+                    </div>
+                    <div class="right-item">
+                        <div class="right-item-top">
+
+                        </div>
+                        <div class="right-item-bottom">
+
+                        </div>
+                    </div>
+                    <div class="right-item">
+                        <div class="right-item-top">
+
+                        </div>
+                        <div class="right-item-bottom">
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="market-card">
@@ -373,12 +405,68 @@
             }
         }
 
+        .me-mart-box {
+            .left {
+                padding-top: 30px;
+                width: 396px;
+                height: 415px;
+                background: #ffffff;
+                border-radius: 8px;
+                text-align: center;
+
+                .top {
+                    width: 278px;
+                    height: 278px;
+                }
+
+                .bottom {
+                    > p {
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242F57;
+
+                        &:first-child {
+                            margin-bottom: 8px;
+                            font-weight: 500;
+
+                            > span {
+                                font-family: PingFangSC-Medium, PingFang SC;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .right {
+                margin-left: 24px;
+                width: calc(100% - 420px);
+
+                .right-item {
+                    .right-item-top {
+                        min-width: 228px;
+                        height: 320px;
+                        background: #FFFFFF;
+                        box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+                        border-radius: 8px;
+                    }
+
+                    .right-item-bottom {
+                        min-width: 228px;
+                        height: 79px;
+                        background: #D3E3FF;
+                        border: 1px solid #2373FF
+                    }
+                }
+            }
+        }
+
         .group-box {
             .sub-title {
                 margin-left: 12px;
-                font-size: 14px!important;
-                font-weight: 400!important;
-                color: #7C88B1!important;
+                font-size: 14px !important;
+                font-weight: 400 !important;
+                color: #7C88B1 !important;
             }
         }
 
