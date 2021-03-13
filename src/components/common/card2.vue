@@ -1,6 +1,8 @@
 <template>
-  <div class="card_container" ref="card_container">
-      <div class="info_lef"></div>
+  <div class="card_container" ref="card_container" :class="{'removeMb':cardData.id==2||cardData.id==3}">
+      <div class="info_lef">
+          <img :src="cardData.jyIcon" alt="" srcset="" class="jyIcon">
+      </div>
       <div class="txt_rig">
           <div class="til_txt">{{cardData.til}}</div>
           <div class="til_desc">
@@ -24,7 +26,7 @@ export default {
     cardData: {
       type: Object,
       default: {},
-    },
+    }
   },
   created() {
     
@@ -35,9 +37,9 @@ export default {
   methods: {
     setStyle(){
         var domitem = this.$refs.card_container;
+        console.log(domitem,'domitem')
         var styData = this.cardData;
         domitem.style=` background:${styData.bgc};color:${styData.fColor};`;
-        console.log(domitem,'domitem')
     }
   },
 };
@@ -51,7 +53,7 @@ export default {
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 23px;
     position: relative;
     .info_lef{
         width: 52px;
@@ -62,6 +64,11 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
+        .jyIcon{
+            display: block;
+            width:24px;
+            height: 24px;
+        }
     }
     .txt_rig{
         flex: 1;
@@ -94,5 +101,8 @@ export default {
         width:16px;
         height: 19.26px;
     }
+}
+.removeMb{
+    margin-bottom: 0px;
 }
 </style>
