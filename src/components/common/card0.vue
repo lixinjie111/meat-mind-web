@@ -1,8 +1,7 @@
 <template>
   <div class="card-container">
     <div class="til_icon_container">
-      <i v-if="cardData.iconfont" :class="['iconfont', cardData.iconfont]"></i>
-      <img v-else :src="cardData.tilIcon" alt="" srcset="" class="guidIcon" />
+      <i :class="['iconfont', cardData.iconfont]"></i>
       <span class="guide_til">{{ cardData.title }}</span>
     </div>
     <div class="guide_desc">{{ cardData.desc }}</div>
@@ -75,15 +74,15 @@ export default {
       margin-right: 8px;
     }
     .iconfont{
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      margin-right: 8px;
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      margin-right: 16px;
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 30px;
     }
     .iconlingquxinrenlibao{
       background: #A49DFA;
