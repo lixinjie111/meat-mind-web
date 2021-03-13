@@ -1650,6 +1650,7 @@ export default {
                 align-items: center;
                 margin-bottom: 10px;
                 position: relative;
+                margin-top: 21px;
                 .star_container{
                   width: 20px;
                   height: 20px;
