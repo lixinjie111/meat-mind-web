@@ -18,8 +18,7 @@
         </div>
       </slot>
       <div class="filter">
-        //icon暂无
-        <i class="iconfont iconicon_filter_line"></i>
+        <i class="iconfont iconfilter"></i>
         <span>筛选</span>
         <i class="iconfont iconup"></i>
       </div>

@@ -177,7 +177,7 @@
               <Option
                 v-for="item in timeList"
                 :value="item.value"
-                :key="item"
+                :key="item.value"
                 >{{ item.label }}</Option
               >
             </Select>
@@ -259,7 +259,7 @@
               <Option
                 v-for="item in timeList"
                 :value="item.value"
-                :key="item"
+                :key="item.value"
                 >{{ item.label }}</Option
               >
             </Select>

@@ -32,7 +32,7 @@
                             <p>8,639<span>人</span></p>
                             <Compare :data="[-12.73,3.16]"></Compare>
                             <div class="icon">
-                               <i class="iconfont2 iconxianshangshangdian"></i>
+                               <i class="iconfont iconxianshangshangdian"></i>
                             </div>
                         </div>
                         <div class="manage-overview-item fr">
@@ -40,7 +40,7 @@
                             <p>126,470<span>次</span></p>
                             <Compare :data="[-13.14,11.45]"></Compare>
                             <div class="icon">
-                                <i class="iconfont2 iconchengyuan"></i>
+                                <i class="iconfont iconyonghuline"></i>
                             </div>
                         </div>
                         <div class="manage-overview-item fl">
@@ -48,7 +48,7 @@
                             <p>1,509<span>人</span></p>
                             <Compare :data="[-8.62,3.16]"></Compare>
                             <div class="icon">
-                                <i class="iconfont2 icongongxiang1"></i>
+                                <i class="iconfont iconyonghu"></i>
                             </div>
                         </div>
                         <div class="manage-overview-item fr">
@@ -140,16 +140,16 @@
                           <p>营销覆盖度<i class="iconfont iconduigou1"></i></p>
                       </div>
                        <div class="detail-info-item">
-                           <p>用户增长趋势<i class="iconfont iconguanyuline"></i></p>
+                           <p>用户增长趋势<i class="iconfont iconguanyuline1"></i></p>
                        </div>
                        <div class="detail-info-item">
-                           <p>目标客群心智拟合<i class="iconfont iconguanyuline"></i></p>
+                           <p>目标客群心智拟合<i class="iconfont iconguanyuline1"></i></p>
                        </div>
                        <div class="detail-info-item">
                            <p>品牌联想度<i class="iconfont iconduigou1"></i></p>
                        </div>
                        <div class="detail-info-item">
-                           <p>媒介传播能力<i class="iconfont iconguanyuline"></i></p>
+                           <p>媒介传播能力<i class="iconfont iconguanyuline1"></i></p>
                        </div>
                        <div class="detail-info-item">
                            <p>网站成交金额<i class="iconfont iconduigou1"></i></p>

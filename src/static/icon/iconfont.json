@@ -6,6 +6,69 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "20340768",
+      "name": "download",
+      "font_class": "download",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "20340247",
+      "name": "我的数据",
+      "font_class": "wodeshuju",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "20340248",
+      "name": "付费数据",
+      "font_class": "fufeishuju",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "20340151",
+      "name": "filter",
+      "font_class": "filter",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "20340152",
+      "name": "set up",
+      "font_class": "setup",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "20339940",
+      "name": "left-arrow2",
+      "font_class": "left-arrow21",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "20339941",
+      "name": "left-arrow",
+      "font_class": "left-arrow",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "20339942",
+      "name": "right-arrow",
+      "font_class": "right-arrow",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "20339943",
+      "name": "right-arrow2",
+      "font_class": "right-arrow21",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
       "icon_id": "20335742",
       "name": "确认",
       "font_class": "queren",
@@ -137,13 +200,6 @@
       "font_class": "jiangefenxi",
       "unicode": "e60a",
       "unicode_decimal": 58890
-    },
-    {
-      "icon_id": "20329508",
-      "name": "关于 line",
-      "font_class": "guanyuline",
-      "unicode": "e60b",
-      "unicode_decimal": 58891
     },
     {
       "icon_id": "20329509",
@@ -398,13 +454,6 @@
       "unicode_decimal": 58927
     },
     {
-      "icon_id": "20329545",
-      "name": "left-arrow",
-      "font_class": "left-arrow",
-      "unicode": "e630",
-      "unicode_decimal": 58928
-    },
-    {
       "icon_id": "20329546",
       "name": "left-arrow2",
       "font_class": "left-arrow2",
@@ -424,13 +473,6 @@
       "font_class": "dashboard",
       "unicode": "e633",
       "unicode_decimal": 58931
-    },
-    {
-      "icon_id": "20329549",
-      "name": "right-arrow",
-      "font_class": "right-arrow",
-      "unicode": "e634",
-      "unicode_decimal": 58932
     },
     {
       "icon_id": "20329550",

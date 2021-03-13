@@ -4,7 +4,7 @@
             <div class="a-h-title">
                 {{title}}
                 <Poptip popper-class="saas-poptip" placement="right-start">
-                    <!-- <i class="iconfont2 iconguanyu tip-icon"></i> -->
+                    <!-- <i class="iconfont iconguanyuline1 tip-icon"></i> -->
                     <img class="gif" src="../../../assets/img/user/tip.gif" alt="">
                     <div slot="content">
                         <p><span>品牌舆情</span></p>

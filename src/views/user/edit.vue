@@ -66,7 +66,7 @@
             <div class="item-list" v-for="(item, index) in target" :key="index">
               <div class="item-con">
                 <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
-                <i class="iconfont2 iconxiangqian"></i>
+                <i class="iconfont iconleft-arrow21"></i>
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@
             <div class="item-list" v-for="(item, index) in property" :key="index" >
               <div class="item-con">
                 <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
-                <i class="iconfont2 iconxiangqian"></i>
+                <i class="iconfont iconleft-arrow21"></i>
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@
             <div class="item-list" v-for="(item, index) in behavior" :key="index" >
               <div class="item-con">
                 <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
-                <i class="iconfont2 iconxiangqian"></i>
+                <i class="iconfont iconleft-arrow21"></i>
               </div>
             </div>
           </div>
