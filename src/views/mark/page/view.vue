@@ -1,81 +1,171 @@
 <template>
     <div class="mark-overview">
-        <div class="title">品牌概览</div>
-        <div class="show-main"></div>
+        <div class="mark-title">
+            <p>品牌概览</p>
+        </div>
+        <div class="main-show">
+            <div class="main-left">
+                <p>市场趋势及品牌现状</p>
+                <div class="echarts-box">
+                    <div class="bar-echarts">
+                        <div class="bar-title">凉茶市场供需及销售走势</div>
+                        <div class="bar-sub-title">整体市场供需变化及前瞻性预测</div>
+                    </div>
+                    <div class="pie-echarts">
+                        <div class="pie-title">凉茶饮料市场份额</div>
+                        <div class="pie-sub-title">细分市场头部品牌市场份额占比</div>
+                        <div class="pie-date">
+                            <DatePicker type="year" :value="pieDateValue" style="width: 80px"></DatePicker>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="idea-list">
+                <p>优化建议</p> 
+                <ul>
+                    <li>
+                        <div class="icon">
+                            <i class="iconfont iconchanpin"></i>
+                        </div>
+                        <div class="container">
+                            <div class="name">跨界合作</div>
+                            <div class="content">取消低价产品策略，寻求“江小白”等Z世代热门IP跨界联乘，预期提升77%同比营收</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <i class="iconfont iconpinpaihuaxiang"></i>
+                        </div>
+                        <div class="container">
+                            <div class="name">品牌拓展</div>
+                            <div class="content">优先拓展华北地区市场，结合品牌“养生”调性预期增加1.81%市场份额</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <i class="iconfont iconkanbanline"></i>
+                        </div>
+                        <div class="container">
+                            <div class="name">内容营销</div>
+                            <div class="content">避开"良药苦口""怕上火"等负面敏感标签，通过"抗疫神方""现代凉茶"孵化差异化爆品IP</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <i class="iconfont iconxianshangshangdian"></i>
+                        </div>
+                        <div class="container">
+                            <div class="name">线上声量</div>
+                            <div class="content">增加15%-22%微信、微博及抖音投放预算，提高品牌正向声量</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <div class="mark-panel">
-            <div class="title">
+            <div class="panel-title">
                 行业趋势
             </div>
-            <Row :gutter="24">
-                <Col span="8">
-                    <div class="box">
-                        <div class="title">
-                            市场前景
+            <div class="row-first">
+                <div class="box">
+                    <div class="title">市场态势</div>
+                    <div class="sub-title">
+                        <!-- 市场规模 <span style="color:#8AE6C7">稳步上升</span>，市场供需 <span style="color:#FF9F7F">基本平衡</span>，市场前景 <span style="color:#FF9F7F">良好</span> -->
+                        行业宏观趋势及前瞻性预测
+                    </div>
+                    <div class="echartBox">
+                        <barLine id="box101" :colorList="$lxjData.colorList" :myData="$lxjData.box101Data"></barLine>
+                    </div>
+                </div>
+                <div class="box" style="position:relative">
+                    <div class="title">舆情声量</div>
+                    <div class="sub-title">品牌在全域信息传播中的影响力指数</div>
+                    <div class="selectNav">
+                        <div class="selectDiv selectLf">
+                        <div class="selectLabel"> 声量类型：</div>
+                            <Select v-model="formItem.select" size="small" style="width:80px" @on-change="selectYin">
+                                <Option value="2">全部</Option>
+                                <Option value="0">仅正面声量</Option>
+                                <Option value="1">仅负面声量</Option>
+                            </Select>
                         </div>
-                        <div class="subTitle">
-                            市场规模 <span style="color:#8AE6C7">稳步上升</span>，市场供需 <span style="color:#FF9F7F">基本平衡</span>，市场前景 <span style="color:#FF9F7F">良好</span>
-                        </div>
-                        <div class="echartBox">
-                            <barLine id="box101" :colorList="$lxjData.colorList" :myData="$lxjData.box101Data"></barLine>
+                        <div class="selectDiv selectRt">
+                            <div class="selectLabel">对标比较：</div>
+                            <Select v-model="formItem.pinpai" size="small" multiple  :max-tag-count="0" style="width:100px;" @on-change="selectPai2">
+                                <Option value="0">加多宝</Option>
+                                <Option value="1">王老吉</Option>
+                                <Option value="2">和其正</Option>
+                                <Option value="3">白云山</Option>
+                                <!-- <Option value="4">清心堂</Option> -->
+                            </Select>
                         </div>
                     </div>
-                </Col>
-                <Col span="8">
-                    <div class="box">
-                    <div class="title">
-                            品牌市场销售额排名（百万元）
-                        </div>
-                        <div class="tags">
-                            <div class="tagList">
-                                <div class="tag" v-for="item in tagList" :key="item">{{item}}
-                                    <!-- <i class="iconfont2 iconicon_close"></i> -->
-                                </div>
-                                <!-- <Tag v-if="show" closable @on-close="handleClose">标签三</Tag> -->
+                    <div class="echartBox">
+                        <lineM3 id="box68" :colorList="$lxjData.colorList" :myData="my68Data"></lineM3>
+                    </div>
+                </div>
+            </div>
+            <div class="row-second">
+                <div class="second-box">
+                    <div class="title">品牌市场销售额排名（百万元）</div>
+                    <div class="sub-title mb">品牌市场销售额排名（百万元）</div>
+                    <div class="tags">
+                        <div class="tagList">
+                            <div class="tag" v-for="item in tagList" :key="item">{{item}}
+                                <!-- <i class="iconfont2 iconicon_close"></i> -->
                             </div>
-                            <SerachPoptip slot="left-operation" @submit="search"></SerachPoptip>
+                            <!-- <Tag v-if="show" closable @on-close="handleClose">标签三</Tag> -->
                         </div>
-                        <div class="echartBox">
-                            <barL id="box240" :colorList="$lxjData.colorList" :myData="box240Data"></barL>
+                        <SerachPoptip slot="left-operation" @submit="search"></SerachPoptip>
+                    </div>
+                    <div class="echartBox">
+                        <barL id="box240" :colorList="$lxjData.colorList" :myData="box240Data"></barL>
+                    </div>
+                </div>
+                <div class="second-box">
+                    <div class="title">全竞品爆款特质分析</div>
+                    <div class="sub-title mb">行业季节性爆款竞品分析简报</div>
+                    <div class="second-content">
+                    <div class="second-content-left second-content-cm">
+                        <div class="second-content-title">
+                            <div class="pic"><img src="../../../assets/img/mark/wang.png" alt=""></div>
+                            王老吉
+                        </div>
+                        <div class="tagList">
+                            <div class="tag">凉茶饮料</div>
+                            <div class="tag">防上火</div>
+                            <div class="tag">健康功效</div>
+                        </div>
+                        <div class="second-content-subTitle">洞悉消费趋势，满足新的需求点</div>
+                        <div class="second-content-text">开创凉茶饮料，主打“防上火”的健康功效，深度捆绑吃火锅、熬夜等容易上火的场景。</div>
+                        <div class="second-content-subTitle">大面积推广，营销手段需要创意</div>
+                        <div class="second-content-text">宣传自身为“凉茶始祖”，始于清道光年间，增强消费者信赖感；在电视上密集投放广告，抢占央视黄金时段。</div>
+                    </div>
+                    <div class="second-content-right second-content-cm">
+                         <div class="second-content-title">
+                            <div class="pic"><img src="../../../assets/img/mark/qin.png" alt=""></div>
+                            元气森林
+                        </div>
+                        <div class="tagList">
+                            <div class="tag">无糖</div>
+                            <div class="tag">新风味</div>
+                            <div class="tag">佛系养生</div>
+                        </div>
+                        <div class="second-content-subTitle">洞悉消费趋势，满足新的需求点</div>
+                        <div class="second-content-text">抓住无糖新风口，将目标锁定在“佛系养生”的年轻消费者身上，打造了无糖气泡水单品。</div>
+                        <div class="second-content-subTitle">大面积推广，营销手段需要创意</div>
+                        <div class="second-content-text">线下通过高频率、强触达的电梯媒体精准触达目标消费群体。线上通过植入综艺、与年轻群体喜欢的B站合作不断扩大品牌人气。</div>
                         </div>
                     </div>
-                </Col>
-                <Col span="8">
-                    <div class="box">
-                        <div class="title">
-                            舆情声量
-                        </div>
-                            <div class="selectNav">
-                                <div class="selectDiv selectLf">
-                                   <div class="selectLabel"> 声量类型</div>
-                                    <Select v-model="formItem.select" size="small" style="width:80px" @on-change="selectYin">
-                                        <Option value="2">全部</Option>
-                                        <Option value="0">仅正面声量</Option>
-                                        <Option value="1">仅负面声量</Option>
-                                    </Select>
-                                </div>
-                                <div class="selectDiv selectRt">
-                                    <div class="selectLabel">对标比较</div>
-                                    <Select v-model="formItem.pinpai" size="small" multiple  :max-tag-count="0" style="width:100px;" @on-change="selectPai2">
-                                        <Option value="0">加多宝</Option>
-                                        <Option value="1">王老吉</Option>
-                                        <Option value="2">和其正</Option>
-                                        <Option value="3">白云山</Option>
-                                        <!-- <Option value="4">清心堂</Option> -->
-                                    </Select>
-                                </div>
-                            </div>
-                        <div class="echartBox">
-                            <lineM3 id="box68" :colorList="$lxjData.colorList" :myData="my68Data"></lineM3>
-                        </div>
-                    </div>
-                </Col>
-            </Row>
-            <div class="mark-panel1">
+                </div>
+            </div>
+            <div class="mark-panel-sub">
                 <div class="title">
                     新增客户变化趋势
                 </div>
-                <div class="subTitle">
-                   近期 北京 用户新增量最大，女性占比 环比增加 2.3%，年龄偏向年轻态
+                <div class="sub-title">
+                   <!-- 近期 北京 用户新增量最大，女性占比 环比增加 2.3%，年龄偏向年轻态 -->
+                   品牌新增客户画像特征
                 </div>
                 <div class="selectOiv">
                     <Select v-model="formItem.date" size="small" style="width:140px" @on-change="selectDate">
@@ -83,8 +173,8 @@
                         <Option value="1">按季度</Option>
                     </Select>
                 </div>
-                <Row :gutter="8">
-                    <Col span="4">
+                <Row :gutter="16">
+                    <Col span="8">
                         <div class="boxContent">
                             <div class="boxTitle">
                                 按地区
@@ -97,7 +187,7 @@
                             </div>
                         </div>
                     </Col>
-                    <Col span="4">
+                    <Col span="8">
                         <div class="boxContent">
                             <div class="boxTitle">
                                 按性别
@@ -110,7 +200,7 @@
                             </div>
                         </div>
                     </Col>
-                    <Col span="4">
+                    <Col span="8">
                         <div class="boxContent">
                             <div class="boxTitle">
                                 按年龄
@@ -123,7 +213,9 @@
                             </div>
                         </div>
                     </Col>
-                    <Col span="4">
+                </Row>
+                <Row :gutter="16" class-name="mt">
+                    <Col span="8">
                         <div class="boxContent">
                             <div class="boxTitle">
                                 按职业
@@ -136,7 +228,7 @@
                             </div>
                         </div>
                     </Col>
-                    <Col span="4">
+                    <Col span="8">
                         <div class="boxContent">
                             <div class="boxTitle">
                                 按收入
@@ -149,7 +241,7 @@
                             </div>
                         </div>
                     </Col>
-                    <Col span="4">
+                    <Col span="8">
                         <div class="boxContent">
                             <div class="boxTitle">
                                 按教育
@@ -164,7 +256,7 @@
                     </Col>
                 </Row>
             </div>
-            <div class="mark-panel1">
+            <div class="mark-panel-sub">
                 <div class="title">
                     典型客户画像对比
                 </div>
@@ -187,7 +279,7 @@
                             </div>
                             <div class="label">
                                 <div class="labelName">
-                                    标签
+                                    关键词
                                 </div>
                                 <div class="labelTags">
                                     <span class="labelTag">养生</span>
@@ -246,7 +338,7 @@
                                 </div>
                                 <div class="label">
                                     <div class="labelName">
-                                        标签
+                                        关键词
                                     </div>
                                     <div class="labelTags">
                                         <span class="labelTag">聚会白领</span>
@@ -290,7 +382,7 @@
                                 </div>
                                 <div class="label">
                                     <div class="labelName">
-                                        标签
+                                        关键词
                                     </div>
                                     <div class="labelTags">
                                         <span class="labelTag">红罐喜庆</span>
@@ -770,6 +862,12 @@
                 </Row>
             </div>
         </div>
+        <div class="mark-gantt">
+            <div class="gantt-title">品牌营销</div>
+            <div class="gantt-sub-title">
+                根据不同时间、专题事件的品牌受众互动特征，为品牌定位、产品服务优化及传播方式提供决策性参考。
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -784,6 +882,7 @@ export default {
     components:{barL,barM,barHM2,barLine,SerachPoptip,lineM3},
     data(){
         return {
+            pieDateValue:"2021",
             tagList:['华东地区'],
             formItem: {
                 select: '2',
@@ -794,26 +893,34 @@ export default {
             },
             box682Data:{
                 legName:['加多宝','王老吉','和其正','白云山',],
-                name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
+                name:  ['12月11日', '12月12日', '12月13日', '12月14日', '12月15日', '12月16日', '12月17日', '12月18日', '12月19日', '12月20日'],
                 value: [
                     {
                         name: '加多宝',
                         type: 'line',
+                        smooth:true,
+                        symbol:'none',
                         data: [631, 607, 605, 581, 671, 645, 351, 390, 490, 450]
                     },
                     {
                         name: '王老吉',
                         type: 'line',
+                        smooth:true,
+                        symbol:'none',
                         data: [831, 207, 405, 381, 271, 445, 151, 290, 390, 750]
                     },
                     {
                         name: '和其正',
                         type: 'line',
+                        smooth:true,
+                        symbol:'none',
                         data: [131, 207, 305, 481, 571, 645, 751, 890, 910, 980]
                     },
                     {
                         name: '白云山',
                         type: 'line',
+                        smooth:true,
+                        symbol:'none',
                         data: [231, 307, 105, 481, 371, 545, 351, 790, 890, 380]
                     },
                 ]
@@ -838,7 +945,6 @@ export default {
         search(params){
             this.num++;
             let arr=[...params.age,...params.area,...params.customer,...params.profession,...params.sex,]
-            console.log(arr);
             if(arr.length>3){
                 arr=[arr[0],arr[1],arr[2]]
             }
@@ -852,11 +958,13 @@ export default {
         selectYin(val){
              let obj={
                 legName:['邓老凉茶', ],
-                name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
+                name:  ['12月11日', '12月12日', '12月13日', '12月14日', '12月15日', '12月16日', '12月17日', '12月18日', '12月19日', '12月20日'],
                 value:[
                      {
                         name: '邓老凉茶',
                         type: 'line',
+                        smooth:true,
+                        symbol:'none',
                         data: [272, 290, 393, 391, 470, 451, 440, 902, 670, 531]
                     },
                 ],
@@ -864,26 +972,34 @@ export default {
             if(val==2){
                 this.box682Data={
                     legName:['加多宝','王老吉','和其正','白云山',],
-                    name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
+                    name:  ['12月11日', '12月12日', '12月13日', '12月14日', '12月15日', '12月16日', '12月17日', '12月18日', '12月19日', '12月20日'],
                     value: [
                         {
                             name: '加多宝',
                             type: 'line',
+                            smooth:true,
+                            symbol:'none',
                             data: [631, 607, 605, 581, 671, 645, 351, 390, 490, 450]
                         },
                         {
                             name: '王老吉',
                             type: 'line',
+                            smooth:true,
+                            symbol:'none',
                             data: [831, 207, 405, 381, 271, 445, 151, 290, 390, 750]
                         },
                         {
                             name: '和其正',
                             type: 'line',
+                            smooth:true,
+                            symbol:'none',
                             data: [131, 207, 305, 481, 571, 645, 751, 890, 910, 980]
                         },
                         {
                             name: '白云山',
                             type: 'line',
+                            smooth:true,
+                            symbol:'none',
                             data: [231, 307, 105, 481, 371, 545, 351, 790, 890, 380]
                         },
                     ]
@@ -892,26 +1008,34 @@ export default {
             if(val==1){
                 this.box682Data={
                     legName:['加多宝','王老吉','和其正','白云山',],
-                    name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
+                    name:  ['12月11日', '12月12日', '12月13日', '12月14日', '12月15日', '12月16日', '12月17日', '12月18日', '12月19日', '12月20日'],
                     value: [
                         {
                             name: '加多宝',
                             type: 'line',
+                            smooth:true,
+                            symbol:'none',
                             data: [631, 607, 605, 181, 671, 645, 351, 390, 490, 450]
                         },
                         {
                             name: '王老吉',
                             type: 'line',
+                            smooth:true,
+                            symbol:'none',
                             data: [831, 107, 405, 381, 271, 445, 151, 290, 390, 750]
                         },
                         {
                             name: '和其正',
                             type: 'line',
+                            smooth:true,
+                            symbol:'none',
                             data: [131, 207, 305, 481, 571, 245, 751, 890, 910, 980]
                         },
                         {
                             name: '白云山',
                             type: 'line',
+                            smooth:true,
+                            symbol:'none',
                             data: [231, 307, 405, 481, 371, 545, 351, 790, 890, 380]
                         },
                     ]
@@ -920,26 +1044,34 @@ export default {
             if(val==0){
                 this.box682Data={
                     legName:['加多宝','王老吉','和其正','白云山',],
-                    name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
+                    name:  ['12月11日', '12月12日', '12月13日', '12月14日', '12月15日', '12月16日', '12月17日', '12月18日', '12月19日', '12月20日'],
                     value: [
                         {
                             name: '加多宝',
                             type: 'line',
+                            smooth:true,
+                            symbol:'none',
                             data: [331, 607, 605, 581, 671, 645, 351, 390, 490, 450]
                         },
                         {
                             name: '王老吉',
                             type: 'line',
+                            smooth:true,
+                            symbol:'none',
                             data: [831, 207, 305, 381, 271, 445, 151, 290, 390, 750]
                         },
                         {
                             name: '和其正',
                             type: 'line',
+                            smooth:true,
+                            symbol:'none',
                             data: [131, 207, 305, 381, 571, 645, 751, 890, 910, 980]
                         },
                         {
                             name: '白云山',
                             type: 'line',
+                            smooth:true,
+                            symbol:'none',
                             data: [231, 307, 105, 181, 371, 545, 351, 790, 890, 380]
                         },
                     ]
@@ -954,11 +1086,13 @@ export default {
         selectPai2(val){
             let obj={
                 legName:['邓老凉茶', ],
-                name:  ['2020年12月11日', '2020年12月12日', '2020年12月13日', '2020年12月14日', '2020年12月15日', '2020年12月16日', '2020年12月17日', '2020年12月18日', '2020年12月19日', '2020年12月20日'],
+                name:  ['12月11日', '12月12日', '12月13日', '12月14日', '12月15日', '12月16日', '12月17日', '12月18日', '12月19日', '12月20日'],
                 value:[
                      {
                         name: '邓老凉茶',
                         type: 'line',
+                        smooth:true,
+                        symbol:'none',
                         data: [272, 290, 393, 391, 470, 451, 440, 902, 670, 531]
                     },
                 ],
@@ -1059,46 +1193,407 @@ export default {
     height: 100%;
     overflow-y: scroll;
     padding: 0 24px 24px;
-    .title{
-        height: 64px;
-        padding: 16px 24px;
-        font-size: 20px;
-        font-family: PingFangSC-Medium, PingFang SC;
-        font-weight: 500;
-        color: #242F57;
+    .mark-title{
+        height: 80px;
+        padding:24px 0;
+        >p{
+            height: 32px;
+            font-size: 24px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242F57;
+            line-height: 32px;
+        }
     }
-    .show-main{
-        width: 100%;
-        height: 500px;
-        background: #FFFFFF;
-        border-radius: 12px;
+    .main-show{
+        display: flex;
+        margin-bottom: 24px;
+        .main-left{
+            width: calc(100% - 368px);
+            height: 436px;
+            padding: 24px 24px 0;
+            margin-right: 24px;
+            background: #FFFFFF;
+            box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+            border-radius: 8px;
+            >p{
+                height: 26px;
+                margin-bottom: 24px;
+                font-size: 18px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #242F57;
+                line-height: 26px;
+            }
+            .echarts-box{
+                display: flex;
+                .bar-echarts{
+                    width: 65%;
+                    padding-right: 24px;
+                    .bar-title{
+                        height: 22px;
+                        margin-bottom: 4px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242F57;
+                        line-height: 22px;
+                    }
+                    .bar-sub-title{
+                        height: 18px;
+                        font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+                        line-height: 18px;
+                    }
+                }
+                .pie-echarts{
+                    position: relative;
+                    width: 35%;
+                    .pie-title{
+                        height: 22px;
+                        margin-bottom: 4px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242F57;
+                        line-height: 22px;
+                    }
+                    .pie-sub-title{
+                        height: 18px;
+                        font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+                        line-height: 18px;
+                    }
+                    .pie-date{
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                    }
+                }
+            }
+        }
+        .idea-list{
+            width: 368px;
+            height: 436px;
+            padding: 24px 24px 0;
+            background: #FFFFFF;
+            box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+            border-radius: 8px;
+            >p{
+                height: 26px;
+                margin-bottom: 24px;
+                font-size: 18px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #242F57;
+                line-height: 26px;
+            }
+            >ul{
+                height: 344px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                li{
+                    display: flex;
+                    width: 320px;
+                    height: 80px;
+                    padding: 14px 16px;
+                    border-radius: 8px;
+                    &:nth-child(1){
+                        background: #D3E3FF;
+                        color: #2373FF;
+                    }
+                    &:nth-child(2){
+                        background: #FFE6DE;
+                        color: #FE774B;
+                    }
+                    &:nth-child(3){
+                        background: #DFF8F6;
+                        color: #1DCEC3;
+                    }
+                    &:nth-child(4){
+                        background: #FFEBF3;
+                        color: #F16E84;
+                    }
+                    .icon{
+                        width: 40px;
+                        height: 52px;
+                        margin-right: 8px;
+                        background: #FFFFFF;
+                        border-radius: 8px;
+                        line-height: 52px;
+                        text-align: center;
+                        >i{
+                            font-size: 24px;
+                        }
+                    }
+                    .container{
+                        width: 240px;
+                        .name{
+                            height: 20px;
+                            font-size: 14px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 500;
+                            line-height: 20px;
+                        }
+                        .content{
+                            height: 36px;
+                            font-size: 12px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #636E95;
+                            line-height: 18px;
+                            overflow:hidden;
+                        }
+                    }
+                }
+            }
+        }
     }
      .mark-panel{
-        margin:24px 0;
         padding: 24px;
         box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
         border-radius: 12px;
         border: 1px solid #EAEDF7;
         background: #fff;
-        .mark-panel1{
-            border-radius: 8px;
-            border: 1px solid #EAEDF7;
-            margin: 24px 0;
+         .panel-title{
+            height: 24px;
+            margin-bottom: 24px;
+            font-size: 18px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242F57;
+            line-height: 24px;
+         }
+         .row-first,.row-second{
+             display: flex;
+             width: 100%;
+             margin-bottom: 16px;
+            .box,.second-box{
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                padding: 16px;
+                border-radius: 4px;
+                border: 1px solid #EAEDF7;
+                &:nth-child(1){
+                    margin-right:24px
+                }
+                .title{
+                    height: 22px;
+                    margin-bottom: 4px;
+                    font-size: 14px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #242F57;
+                    line-height: 22px;
+                }
+                .sub-title{
+                    height: 18px;
+                    font-size: 12px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #636E95;
+                    line-height: 18px;
+                }
+            }
+         }
+        .row-first{
+            .box{
+                height: 286px;
+                .echartBox{
+                    height: calc(100% - 44px);
+                }
+                .selectNav{
+                    position: absolute;
+                    top: 16px;
+                    right: 16px;
+                    display: flex;
+                    // justify-content: space-between;
+                    ::v-deep .ivu-form-item{
+                        margin-bottom: 0;
+                        }
+                    ::v-deep .ivu-form-item-label{
+                            font-size: 12px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #242F57;
+                            padding-top:0;
+                            padding-bottom:0;
+                        }
+                        .selectDiv{
+                            display: flex;
+                            align-items: center;
+                            // flex:1;
+                            &.selectLf{
+                                margin-right: 14px;
+                            }
+                            .selectLabel{
+                                height: 18px;
+                                font-size: 12px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #636E95;
+                                line-height: 18px;
+                                margin-right: 4px;
+                            }
+                        }
+                }
+            }
+        }
+        .row-second{
+            .second-box{
+                height: 394px;
+                .echartBox{
+                    height: calc(100% - 80px);
+                }
+                .mb{
+                    margin-bottom: 8px;
+                }
+                .tags{
+                    display: flex;
+                    justify-content: space-between;
+                    .operate{
+                        font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+                        line-height: 18px;
+                        cursor: pointer;
+                    }
+                    .tagList{
+                        display: flex;
+                        .tag{
+                            margin-right: 8px;
+                            display: flex;
+                            padding:3px 8px;
+                            font-size: 12px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #2373FF;
+                            background: rgba(221, 233, 255, 0.5);
+                            border-radius: 4px;
+                            align-items: center;
+                            i{
+                                margin-left: 3px;
+                                font-size: 10px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+                .second-content{
+                    flex:1;
+                    display: flex;
+                    justify-content: space-between;
+                    .second-content-cm{
+                        width: calc(50% - 4px);
+                        height: 100%;
+                        border-radius: 8px;
+                        padding:16px;
+                        .second-content-title{
+                            display: flex;
+                            align-items: center;
+                            font-size: 14px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 500;
+                            color: #242F57;
+                            margin-bottom: 8px;
+                            .pic{
+                                width: 32px;
+                                height: 32px;
+                                margin-right: 8px;
+                                img{
+                                    width: 100%;
+                                    height: 100%;
+                                    display: block;
+                                }
+                            }
+                        }
+                        .tagList{
+                            display: flex;
+                            // justify-content: space-between;
+                            margin-bottom: 8px;
+                            .tag{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 24px;
+                                padding: 1px 7px;
+                                margin-right: 8px;
+                                background: rgba(221, 233, 255, 0.5);
+                                border-radius: 4px;
+                                font-size: 14px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #2373FF;
+                                line-height: 22px;
+                                &:last-child{
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+                        .second-content-subTitle{
+                            font-size: 12px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #97A0C3;
+                            line-height: 18px;
+                            margin-bottom: 4px;
+                        }
+                        .second-content-text{
+                            margin-bottom: 8px;
+                            font-size: 14px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #636E95;
+                            line-height: 22px;
+                            &:last-child{
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                    .second-content-left{
+                        background: rgba(255, 241, 244, 0.3);
+                    }
+                    .second-content-right{
+                        background: rgba(219, 234, 255, 0.3);
+                    }
+                }
+            }
+        }
+
+        .mark-panel-sub{
             position: relative;
             padding: 16px;
+            margin-bottom:16px;
+            border-radius: 4px;
+            border: 1px solid #EAEDF7;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            .mt{
+                margin-top:16px
+            }
              .title{
+                height: 22px;
+                margin-bottom: 4px;
                 font-size: 14px;
                 font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
                 color: #242F57;
-                margin-bottom: 4px;
+                line-height: 22px;
            }
-            .subTitle{
+            .sub-title{
                 font-size: 12px;
                 font-family: PingFangSC-Regular, PingFang SC;
                 font-weight: 400;
                 color: #636E95;
-                 margin-bottom: 16px;
+                margin-bottom: 16px;
             }
             .selectOiv{
                 position: absolute;
@@ -1117,6 +1612,7 @@ export default {
                     line-height: 22px;
                 }
                 .boxsubTitle{
+                    margin-bottom: 8px;
                     font-size: 12px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
@@ -1124,7 +1620,7 @@ export default {
                     line-height: 18px;
                 }
                 .boxEcharts{
-                   height: 180px;
+                   height: 196px;
                 }
             }
             .boxContainer{
@@ -1190,100 +1686,30 @@ export default {
                 }
             }
         }
-         .title{
-            font-size: 18px;
+     }
+
+     .mark-gantt{
+        height: 577px;
+        padding: 24px;
+        margin-top: 24px;
+        background: #FFFFFF;
+        border-radius: 8px;
+         .gantt-title{
+             height: 24px;
+             margin-bottom: 4px;
+             font-size: 18px;
+             font-family: PingFangSC-Medium, PingFang SC;
+             font-weight: 500;
+             color: #242F57;
+             line-height: 24px;
+         }
+         .gantt-sub-title{
+            height: 22px;
+            font-size: 14px;
             font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;
-            color: #242F57;
-            margin-bottom: 24px;
-         }
-         .box{
-             padding: 16px;
-             height: 268px;
-            border-radius: 8px;
-            border: 1px solid #EAEDF7;
-            display: flex;
-            flex-direction: column;
-            .title{
-                font-size: 14px;
-                font-family: PingFangSC-Medium, PingFang SC;
-                font-weight: 500;
-                color: #242F57;
-                 margin-bottom: 8px;
-            }
-             .selectNav{
-                display: flex;
-                justify-content: space-between;
-                 ::v-deep .ivu-form-item{
-                       margin-bottom: 0;
-                    }
-                 ::v-deep .ivu-form-item-label{
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #242F57;
-                        padding-top:0;
-                        padding-bottom:0;
-                    }
-                    .selectDiv{
-                        display: flex;
-                        align-items: center;
-                        flex:1;
-                         &.selectLf{
-                            //  margin-right: 8px;
-                         }
-                        .selectLabel{
-                            font-size: 12px;
-                            font-family: PingFangSC-Regular, PingFang SC;
-                            font-weight: 400;
-                            color: #242F57;
-                            margin-right: 5px;
-                        }
-                    }
-             }
-            .tags{
-                display: flex;
-                justify-content: space-between;
-                .operate{
-                    font-size: 12px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    color: #636E95;
-                    line-height: 18px;
-                    cursor: pointer;
-                }
-                .tagList{
-                    display: flex;
-                    .tag{
-                        margin-right: 8px;
-                        display: flex;
-                        padding:3px 8px;
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #2373FF;
-                        background: rgba(221, 233, 255, 0.5);
-                        border-radius: 4px;
-                        align-items: center;
-                        i{
-                            margin-left: 3px;
-                            font-size: 10px;
-                            cursor: pointer;
-                        }
-                    }
-                }
-            }
-
-            .subTitle{
-                font-size: 12px;
-                font-family: PingFangSC-Regular, PingFang SC;
-                font-weight: 400;
-                color: #636E95;
-                line-height: 18px;
-            }
-            .echartBox{
-                flex:1
-            }
+            color: #636E95;
+            line-height: 22px;
          }
      }
 }

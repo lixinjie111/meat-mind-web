@@ -54,6 +54,7 @@
                 padding: 0;
                 position: fixed;
                 width: calc(100% - 240px);
+                height: 80px;
                 z-index: 1000;
             }
 

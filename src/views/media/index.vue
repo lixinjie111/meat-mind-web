@@ -2751,6 +2751,7 @@ export default {
                 }
                 >p{
                     height: 22px;
+                    margin:0;
                     font-size: 14px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;

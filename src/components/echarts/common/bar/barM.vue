@@ -66,20 +66,29 @@ export default {
 				},
 				legend: {
 					type: 'scroll',
-					bottom:0,
+					bottom:-2,
+					icon:"circle",
 					pageFormatter: '',//隐藏翻页的数字
-					pageButtonItemGap: -6,//翻页按钮的两个之间的间距
-					data: this.myData.legName,
+					pageButtonItemGap: 1,//翻页按钮的两个之间的间距
+					pageButtonGap:1,
+					pageIconSize:10,
+					pageTextStyle:{
+						width:0,
+						fontSize:2
+					},
+					itemWidth:6,
+					itemHeight:6,
 					textStyle: {
 						color: "#97A0C3",   //这里用参数代替了
-						fontSize:'12'
-					}
+						fontSize:12
+					},
+					data: this.myData.legName,
 				},
 				grid: {
 					top: '5%',
-					left: '3%',
-					right: '3%',
-					bottom: 30,
+					left: 2,
+					right: 20,
+					bottom: 25,
 					containLabel: true
 				},
 				xAxis: {
