@@ -80,7 +80,7 @@ export default {
 .card-container {
   min-height: 125px;
   border-right: 1px solid #eaedf7;
-  margin-bottom: 15px;
+  margin-bottom: 28px;
   &:hover{
     background: #FFFFFF;
     box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16);

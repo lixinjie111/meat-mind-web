@@ -1,8 +1,7 @@
 <template>
   <div class="card-container">
     <div class="til_icon_container">
-      <i v-if="cardData.iconfont" :class="['iconfont', cardData.iconfont]"></i>
-      <img v-else :src="cardData.tilIcon" alt="" srcset="" class="guidIcon" />
+      <i :class="['iconfont', cardData.iconfont]"></i>
       <span class="guide_til">{{ cardData.title }}</span>
     </div>
     <div class="guide_desc">{{ cardData.desc }}</div>
@@ -75,38 +74,38 @@ export default {
       margin-right: 8px;
     }
     .iconfont{
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      margin-right: 8px;
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      margin-right: 16px;
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 30px;
     }
     .iconxinrenlibao{
-      background: #A49DFA;
+      background: #2373FF;
       box-shadow: 2px 3px 8px 0 rgba(164, 157, 250, 0.5), -2px -2px 8px 0px #FFFFFF;
     }
     .iconshangchuanshuju{
-      background: #FC809F;
+      background: #FE774B;
       box-shadow: 2px 3px 8px 0 rgba(252, 128, 159, 0.5), -2px -2px 8px 0px #FFFFFF;
     }
     .iconSDKmaidian{
-      background: #FFD98C;
+      background: #1DCEC3;
       box-shadow: 2px 3px 8px 0px rgba(255, 217, 140, 0.5), -2px -2px 8px 0px #FFFFFF;
     }
     .iconAPIcaiji{
-      background: #8AE6C7;
+      background: #F16E84;
       box-shadow: 2px 3px 8px 0 rgba(138, 230, 199, 0.5), -2px -2px 8px 0px #FFFFFF;
     }
     .iconshujukuzhilian{
-      background: #B380B6;
+      background: #FDD352;
       box-shadow: 2px 3px 8px 0px rgba(179, 128, 182, 0.5), -2px -2px 8px 0px #FFFFFF;
     }
-    .iconbangzhuzhongxin{
-      background: #738AD4;
+    .iconbangzhu{
+      background: #75B1FF;
       box-shadow: 2px 3px 8px 0 rgba(115, 138, 212, 0.5), -2px -2px 8px 0px #FFFFFF;
     }
     .guide_til {

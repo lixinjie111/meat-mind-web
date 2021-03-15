@@ -153,14 +153,14 @@
     padding: 8px;
 
     &:hover {
-      color: #242F57;
+      color: #2373FF;
     }
   }
 
   .ivu-tabs-tab-active {
     font-family: PingFangSC-Medium, PingFang SC;
     font-weight: 500;
-    color: #242F57;
+    color: #2373FF;
   }
 
   .ivu-tabs-ink-bar {
@@ -176,19 +176,24 @@
       font-size: 14px;
       color: #7C88B1;
       cursor: pointer;
+
+      &:hover {
+        color: #2373FF;
+      }
     }
   }
 }
 .saas-poptip {
   .ivu-poptip-content {
     .ivu-poptip-arrow {
-      display: none;
+      &:after {
+        border-right-color: rgba(0, 0, 0, 0.7);
+      }
     }
 
     .ivu-poptip-inner {
-      background: rgba(219, 234, 255, 0.94);
+      background: rgba(0, 0, 0, 0.7);
       border-radius: 8px;
-      border: 1px solid #4D94FF;
 
       .ivu-poptip-body {
         padding: 16px;
@@ -198,7 +203,7 @@
           font-size: 12px;
           font-family: PingFangSC-Regular, PingFang SC;
           font-weight: 400;
-          color: #636E95;
+          color: #ffffff;
           line-height: 20px;
           white-space: pre-wrap;
 
