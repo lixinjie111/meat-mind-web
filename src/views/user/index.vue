@@ -5,29 +5,29 @@
         <p>用户画像</p>
       </div>
       <!--用户动线部分-->
-      <div class="yhdx_container">
-        <div class="top_title_container">
-          <div class="left_text">
-            <div class="left_title_text">
-              <span>用户动线</span>
-              <Poptip popper-class="saas-poptip" placement="right-start">
-                <!-- <i class="iconfont iconguanyuline1 tip-icon"></i> -->
-                <img class="gif" src="../../assets/img/user/tip.gif" alt="">
-                <div slot="content">
-                  <p><span>出行计算公式：</span>出行总人次/出行总人次*100%</p>
-                  <p><span>空间数据化：</span>对空间进行量化，通过数字化语言，将空间进行尺度划分和重新定义，再利用技术手段来评价空间质量。在商业空间中，意味着可以分析其周边环境对消费者的使用感受影响，以及对商业运营的影响</p>
-                  <p><span>用户动线：</span>依靠计算机快速模拟人流出行行为轨迹，依靠轨迹判断动线布置当中出现可达性、可见性与店铺通行概率问题，通过验证的方法再次修正动线设计</p>
-                </div>
-              </Poptip>
-            </div>
-            <div class="left_desc_text">分析品牌对应的不同用户群对应的在不同时间，不同场景，使用了哪些App/Web，以及详细的数据跟踪。</div>
-          </div>
-          <div class="right_btn" @click="formatUser">
-            <img :src="manIcon" class="manIcon" />
-            <span>自定义客群</span>
-          </div>
-        </div>
-
+	    <div class="top_title_container">
+		    <div class="left_text">
+			    <div class="left_title_text">
+				    <span>用户动线</span>
+				    <!--<Poptip popper-class="saas-poptip" placement="right-start">-->
+				    <!--&lt;!&ndash; <i class="iconfont iconguanyuline1 tip-icon"></i> &ndash;&gt;-->
+				    <!--<img class="gif" src="../../assets/img/user/tip.gif" alt="">-->
+				    <!--<div slot="content">-->
+				    <!--<p><span>出行计算公式：</span>出行总人次/出行总人次*100%</p>-->
+				    <!--<p><span>空间数据化：</span>对空间进行量化，通过数字化语言，将空间进行尺度划分和重新定义，再利用技术手段来评价空间质量。在商业空间中，意味着可以分析其周边环境对消费者的使用感受影响，以及对商业运营的影响</p>-->
+				    <!--<p><span>用户动线：</span>依靠计算机快速模拟人流出行行为轨迹，依靠轨迹判断动线布置当中出现可达性、可见性与店铺通行概率问题，通过验证的方法再次修正动线设计</p>-->
+				    <!--</div>-->
+				    <!--</Poptip>-->
+			    </div>
+			    <div class="left_desc_text">分析品牌对应的不同用户群在不同时间，不同场景，使用了哪些App/Web，以及详细的线上、线下、全方位，立体化数据展示。</div>
+		    </div>
+		    <div class="right_btn" @click="formatUser">
+			    <!--<img :src="manIcon" class="manIcon"/>-->
+			    <i class="iconfont iconyonghuline" ></i>
+			    <span>自定义客群</span>
+		    </div>
+	    </div>
+	    <div class="yhdx_container">
         <div class="bjsbz_container">
           <div class="lef_area">
             <div class="lef_area_top">
@@ -499,498 +499,488 @@
       </div>
 
       <!--触达用户媒介-->
-     <chuDa></chuDa>
+     <!--<chuDa></chuDa>-->
+	    <div class="top_title_container top_title_container_margin_top">
+		    <div class="left_text">
+			    <div class="left_title_text">
+				    <span>用户分群详情</span>
+			    </div>
+			    <div class="left_desc_text">基于用户分群数据，系统智能生成的用户基础画像数据，行为分析数据以及心智分析数据。</div>
+		    </div>
+		    <div class="right_select">
+			    <span class="label">用户群对比</span>
+			    <Select class="select" value="北京上班族">
+				    <Option value="北京上班族">北京上班族</Option>
+			    </Select>
+		    </div>
+	    </div>
+	    <!--目标用户群-->
+	    <div class="da_container">
+		    <div class="jichuhuax_area_container" id="jichuhuax_area_container">
+			    <div class="jichuhuax_area_til">基础画像</div>
+			    <vTabCard :tabData="jchxData"></vTabCard>
+			    <div class="jichuhuax_echarts_container">
 
-      <!--目标用户群-->
-      <div class="da_container">
-      <div class="mubiao_container">
-        <div class="mub_titl_container">
-          <div class="mub_titl_container1">目标用户群</div>
-          <div class="mub_titl_container1">
-            <img :src="input1" class="input1" />
-          </div>
-        </div>
-        <div class="mb_echarts_container">
-          <div class="mb_echarts1">
-            <div class="mb_echarts1_lef">
-              <div class="mb_echarts1_lef_top">
-                <span class="span1">28,790</span>人
-              </div>
-              <div class="mb_echarts1_lef_bom">北京上班族</div>
-            </div>
-            <div class="mb_echarts1_rig">
-              <img :src="tu75" alt="" srcset="" class="tu20">
-            </div>
-          </div>
-          <div class="vscls">VS</div>
-          <div class="mb_echarts2">
-            <div class="mb_echarts1_lef">
-              <div class="mb_echarts1_lef_top">
-                <div class="mb_echarts2_empty_box1"></div>
-              </div>
-              <div class="mb_echarts2_empty_box2"></div>
-            </div>
-            <div class="mb_echarts1_rig">
-              <img :src="tu20" alt="" srcset="" class="tu20">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="mark-detail-anchor">
-      <Anchor show-ink :offset-top="64">
-            <AnchorLink href="#jichuhuax_area_container" title="基础画像" />
-            <AnchorLink href="#xwfx_area_container" title="行为分析" />
-            <AnchorLink href="#xzfx_area_container" title="心智分析" />
-            <AnchorLink href="#smzqfx_area_container" title="生命周期分析" />
-        </Anchor>
-      </div>
-      <div class="jichuhuax_area_container" id="jichuhuax_area_container">
-        <div class="jichuhuax_area_til">基础画像</div>
-        <vTabCard :tabData="jchxData"></vTabCard>
-        <div class="jichuhuax_echarts_container">
+				    <div class="jichuhuax_echarts_item">
+					    <div class="jichuhuax_echarts_item_title">
+						    <div class="jichuhuax_echarts_item_title_lef">
+							    <div class="nljg">年龄结构</div>
+							    <div class="range_titme">1-4当周</div>
+							    <div class="range_data">
+								    <div class="range_data_left">
+									    <span>682</span>人
+								    </div>
+								    <div class="range_data_right">
+									    合计<span>7557</span>人
+								    </div>
+							    </div>
+							    <div class="range_data1">
+								    <div class="range_data_left">
+									    <div class="range_data_box1">
+										    环比
+										    <div class="pic">
+											    <img src="../../assets/img/yhhx/jiantou.png" alt="">
+										    </div>
+										    <span>1.47%</span>
+									    </div>
+									    <div class="range_data_box1">
+										    同比
+										    <div class="pic">
+											    <img src="../../assets/img/yhhx/jiantou.png" alt="">
+										    </div>
+										    <span>4.47%</span>
+									    </div>
+								    </div>
+								    <div class="range_data_right">
+									    均值<span>839.67</span>人
+								    </div>
+							    </div>
+						    </div>
+						    <div class="jichuhuax_echarts_item_title_rig">
+							    <img :src="threeP" class="threeP" />
+						    </div>
+					    </div>
+					    <div class="jichuhuax_echarts_item_content">
+						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts>
+					    </div>
+				    </div>
 
-          <div class="jichuhuax_echarts_item">
-            <div class="jichuhuax_echarts_item_title">
-              <div class="jichuhuax_echarts_item_title_lef">
-                <div class="nljg">年龄结构</div>
-                <div class="range_titme">1-4当周</div>
-                <div class="range_data">
-                  <div class="range_data_left">
-                     <span>682</span>人
-                   </div>
-                  <div class="range_data_right">
-                    合计<span>7557</span>人
-                  </div>
-                </div>
-                <div class="range_data1">
-                  <div class="range_data_left">
-                    <div class="range_data_box1">
-                      环比
-                    <div class="pic">
-                      <img src="../../assets/img/yhhx/jiantou.png" alt="">
-                    </div>
-                    <span>1.47%</span>
-                    </div>
-                    <div class="range_data_box1">
-                      同比
-                      <div class="pic">
-                        <img src="../../assets/img/yhhx/jiantou.png" alt="">
-                      </div>
-                      <span>4.47%</span>
-                    </div>
-                   </div>
-                  <div class="range_data_right">
-                    均值<span>839.67</span>人
-                  </div>
-                </div>
-              </div>
-              <div class="jichuhuax_echarts_item_title_rig">
-                <img :src="threeP" class="threeP" />
-              </div>
-            </div>
-            <div class="jichuhuax_echarts_item_content">
-              <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts>
-            </div>
-          </div>
+				    <div class="jichuhuax_echarts_item">
+					    <div class="jichuhuax_echarts_item_title">
+						    <div class="jichuhuax_echarts_item_title_lef">
+							    <div class="nljg">收入结构</div>
+							    <div class="range_titme">1-4当周</div>
+							    <div class="range_data">
+								    <div class="range_data_left">
+									    <span>782</span>人
+								    </div>
+								    <div class="range_data_right">
+									    合计<span>3557</span>人
+								    </div>
+							    </div>
+							    <div class="range_data1">
+								    <div class="range_data_left">
+									    <div class="range_data_box1">
+										    环比
+										    <div class="pic">
+											    <img src="../../assets/img/yhhx/jiantou.png" alt="">
+										    </div>
+										    <span>3.47%</span>
+									    </div>
+									    <div class="range_data_box1">
+										    同比
+										    <div class="pic">
+											    <img src="../../assets/img/yhhx/jiantou.png" alt="">
+										    </div>
+										    <span>8.47%</span>
+									    </div>
+								    </div>
+								    <div class="range_data_right">
+									    均值<span>139.67</span>人
+								    </div>
+							    </div>
+						    </div>
+						    <div class="jichuhuax_echarts_item_title_rig">
+							    <img :src="threeP" class="threeP">
+						    </div>
+					    </div>
+					    <div class="jichuhuax_echarts_item_content">
+						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box2Data"></PieEcharts>
+					    </div>
+				    </div>
 
-          <div class="jichuhuax_echarts_item">
-            <div class="jichuhuax_echarts_item_title">
-              <div class="jichuhuax_echarts_item_title_lef">
-                <div class="nljg">收入结构</div>
-                <div class="range_titme">1-4当周</div>
-                 <div class="range_data">
-                  <div class="range_data_left">
-                     <span>782</span>人
-                   </div>
-                  <div class="range_data_right">
-                    合计<span>3557</span>人
-                  </div>
-                </div>
-                <div class="range_data1">
-                  <div class="range_data_left">
-                    <div class="range_data_box1">
-                      环比
-                    <div class="pic">
-                      <img src="../../assets/img/yhhx/jiantou.png" alt="">
-                    </div>
-                    <span>3.47%</span>
-                    </div>
-                    <div class="range_data_box1">
-                      同比
-                      <div class="pic">
-                        <img src="../../assets/img/yhhx/jiantou.png" alt="">
-                      </div>
-                      <span>8.47%</span>
-                    </div>
-                   </div>
-                  <div class="range_data_right">
-                    均值<span>139.67</span>人
-                  </div>
-                </div>
-              </div>
-              <div class="jichuhuax_echarts_item_title_rig">
-                <img :src="threeP" class="threeP">
-              </div>
-            </div>
-            <div class="jichuhuax_echarts_item_content">
-              <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box2Data"></PieEcharts>
-            </div>
-          </div>
+				    <div class="jichuhuax_echarts_item">
+					    <div class="jichuhuax_echarts_item_title">
+						    <div class="jichuhuax_echarts_item_title_lef">
+							    <div class="nljg">职业结构</div>
+							    <div class="range_titme">2020.12.01-2020.12.3</div>
+						    </div>
+						    <div class="jichuhuax_echarts_item_title_rig">
+							    <img :src="threeP" class="threeP">
+						    </div>
+					    </div>
+					    <div class="jichuhuax_echarts_item_content">
+						    <cLine id="box58" :colorList="$lxjData.colorList" :myData="$lxjData.box58Data"></cLine>
+					    </div>
+				    </div>
 
-          <div class="jichuhuax_echarts_item">
-            <div class="jichuhuax_echarts_item_title">
-              <div class="jichuhuax_echarts_item_title_lef">
-                <div class="nljg">职业结构</div>
-                <div class="range_titme">2020.12.01-2020.12.3</div>
-              </div>
-              <div class="jichuhuax_echarts_item_title_rig">
-                <img :src="threeP" class="threeP">
-              </div>
-            </div>
-            <div class="jichuhuax_echarts_item_content">
-              <cLine id="box58" :colorList="$lxjData.colorList" :myData="$lxjData.box58Data"></cLine>
-            </div>
-          </div>
+				    <div class="jichuhuax_echarts_item">
+					    <div class="jichuhuax_echarts_item_title">
+						    <div class="jichuhuax_echarts_item_title_lef">
+							    <div class="nljg">行业结构</div>
+							    <div class="range_titme">2020.12.01-2020.12.3</div>
+						    </div>
+						    <div class="jichuhuax_echarts_item_title_rig">
+							    <img :src="threeP" class="threeP">
+						    </div>
+					    </div>
+					    <div class="jichuhuax_echarts_item_content">
+						    <barC id="box7" :colorList="$lxjData.colorList" :myData="$lxjData.box7Data"></barC>
+					    </div>
+				    </div>
 
-          <div class="jichuhuax_echarts_item">
-            <div class="jichuhuax_echarts_item_title">
-              <div class="jichuhuax_echarts_item_title_lef">
-                <div class="nljg">行业结构</div>
-                <div class="range_titme">2020.12.01-2020.12.3</div>
-              </div>
-              <div class="jichuhuax_echarts_item_title_rig">
-                <img :src="threeP" class="threeP">
-              </div>
-            </div>
-            <div class="jichuhuax_echarts_item_content">
-              <barC id="box7" :colorList="$lxjData.colorList" :myData="$lxjData.box7Data"></barC>
-            </div>
-          </div>
+				    <div class="jichuhuax_echarts_item">
+					    <div class="jichuhuax_echarts_item_title">
+						    <div class="jichuhuax_echarts_item_title_lef">
+							    <div class="nljg">教育背景结构</div>
+							    <div class="range_titme">2020.12.01-2020.12.3</div>
+						    </div>
+						    <div class="jichuhuax_echarts_item_title_rig">
+							    <img :src="threeP" class="threeP">
+						    </div>
+					    </div>
+					    <div class="jichuhuax_echarts_item_content">
+						    <barEcharts id="box1" :colorList="$lxjData.colorList" :myData="$lxjData.box1Data"></barEcharts>
+					    </div>
+				    </div>
 
-          <div class="jichuhuax_echarts_item">
-            <div class="jichuhuax_echarts_item_title">
-              <div class="jichuhuax_echarts_item_title_lef">
-                <div class="nljg">教育背景结构</div>
-                <div class="range_titme">2020.12.01-2020.12.3</div>
-              </div>
-              <div class="jichuhuax_echarts_item_title_rig">
-                <img :src="threeP" class="threeP">
-              </div>
-            </div>
-            <div class="jichuhuax_echarts_item_content">
-              <barEcharts id="box1" :colorList="$lxjData.colorList" :myData="$lxjData.box1Data"></barEcharts>
-            </div>
-          </div>
+				    <div class="jichuhuax_echarts_item">
+					    <div class="jichuhuax_echarts_item_title">
+						    <div class="jichuhuax_echarts_item_title_lef">
+							    <div class="nljg">性别结构</div>
+							    <div class="range_titme">2020.12.01-2020.12.3</div>
+						    </div>
+						    <div class="jichuhuax_echarts_item_title_rig">
+							    <img :src="threeP" class="threeP">
+						    </div>
+					    </div>
+					    <div class="jichuhuax_echarts_item_content">
+						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieEcharts>
+					    </div>
+				    </div>
 
-          <div class="jichuhuax_echarts_item">
-            <div class="jichuhuax_echarts_item_title">
-              <div class="jichuhuax_echarts_item_title_lef">
-                <div class="nljg">性别结构</div>
-                <div class="range_titme">2020.12.01-2020.12.3</div>
-              </div>
-              <div class="jichuhuax_echarts_item_title_rig">
-                <img :src="threeP" class="threeP">
-              </div>
-            </div>
-            <div class="jichuhuax_echarts_item_content">
-              <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieEcharts>
-            </div>
-          </div>
+				    <div class="jichuhuax_echarts_item">
+					    <div class="jichuhuax_echarts_item_title">
+						    <div class="jichuhuax_echarts_item_title_lef">
+							    <div class="nljg">主要出行方式</div>
+							    <div class="range_titme">2020.12.01-2020.12.3</div>
+						    </div>
+						    <div class="jichuhuax_echarts_item_title_rig">
+							    <img :src="threeP" class="threeP">
+						    </div>
+					    </div>
+					    <div class="jichuhuax_echarts_item_content">
+						    <barEcharts id="box11" :colorList="$lxjData.colorList" :myData="$lxjData.box11Data"></barEcharts>
+					    </div>
+				    </div>
 
-          <div class="jichuhuax_echarts_item">
-            <div class="jichuhuax_echarts_item_title">
-              <div class="jichuhuax_echarts_item_title_lef">
-                <div class="nljg">主要出行方式</div>
-                <div class="range_titme">2020.12.01-2020.12.3</div>
-              </div>
-              <div class="jichuhuax_echarts_item_title_rig">
-                <img :src="threeP" class="threeP">
-              </div>
-            </div>
-            <div class="jichuhuax_echarts_item_content">
-              <barEcharts id="box11" :colorList="$lxjData.colorList" :myData="$lxjData.box11Data"></barEcharts>
-            </div>
-          </div>
+				    <div class="jichuhuax_echarts_item">
+					    <div class="jichuhuax_echarts_item_title">
+						    <div class="jichuhuax_echarts_item_title_lef">
+							    <div class="nljg">户籍籍贯结构</div>
+							    <div class="range_titme">2020.12.01-2020.12.3</div>
+						    </div>
+						    <div class="jichuhuax_echarts_item_title_rig">
+							    <img :src="threeP" class="threeP">
+						    </div>
+					    </div>
+					    <div class="jichuhuax_echarts_item_content">
+						    <barEcharts id="box12" :colorList="$lxjData.colorList" :myData="$lxjData.box12Data"></barEcharts>
+					    </div>
+				    </div>
 
-          <div class="jichuhuax_echarts_item">
-            <div class="jichuhuax_echarts_item_title">
-              <div class="jichuhuax_echarts_item_title_lef">
-                <div class="nljg">户籍籍贯结构</div>
-                <div class="range_titme">2020.12.01-2020.12.3</div>
-              </div>
-              <div class="jichuhuax_echarts_item_title_rig">
-                <img :src="threeP" class="threeP">
-              </div>
-            </div>
-            <div class="jichuhuax_echarts_item_content">
-              <barEcharts id="box12" :colorList="$lxjData.colorList" :myData="$lxjData.box12Data"></barEcharts>
-            </div>
-          </div>
+				    <div class="jichuhuax_echarts_item">
+					    <div class="jichuhuax_echarts_item_title">
+						    <div class="jichuhuax_echarts_item_title_lef">
+							    <div class="nljg">婚育状态结构</div>
+							    <div class="range_titme">2020.12.01-2020.12.3</div>
+						    </div>
+						    <div class="jichuhuax_echarts_item_title_rig">
+							    <img :src="threeP" class="threeP">
+						    </div>
+					    </div>
+					    <div class="jichuhuax_echarts_item_content">
+						    <barEcharts id="box13" :colorList="$lxjData.colorList" :myData="$lxjData.box13Data"></barEcharts>
+					    </div>
+				    </div>
 
-          <div class="jichuhuax_echarts_item">
-            <div class="jichuhuax_echarts_item_title">
-              <div class="jichuhuax_echarts_item_title_lef">
-                <div class="nljg">婚育状态结构</div>
-                <div class="range_titme">2020.12.01-2020.12.3</div>
-              </div>
-              <div class="jichuhuax_echarts_item_title_rig">
-                <img :src="threeP" class="threeP">
-              </div>
-            </div>
-            <div class="jichuhuax_echarts_item_content">
-              <barEcharts id="box13" :colorList="$lxjData.colorList" :myData="$lxjData.box13Data"></barEcharts>
-            </div>
-          </div>
+				    <div class="jichuhuax_echarts_item">
+					    <div class="jichuhuax_echarts_item_title">
+						    <div class="jichuhuax_echarts_item_title_lef">
+							    <div class="nljg">消费能力结构</div>
+							    <div class="range_titme">2020.12.01-2020.12.3</div>
+						    </div>
+						    <div class="jichuhuax_echarts_item_title_rig">
+							    <img :src="threeP" class="threeP">
+						    </div>
+					    </div>
+					    <div class="jichuhuax_echarts_item_content">
+						    <barC id="box71" :colorList="$lxjData.colorList" :myData="$lxjData.box71Data"></barC>
+					    </div>
+				    </div>
 
-          <div class="jichuhuax_echarts_item">
-            <div class="jichuhuax_echarts_item_title">
-              <div class="jichuhuax_echarts_item_title_lef">
-                <div class="nljg">消费能力结构</div>
-                <div class="range_titme">2020.12.01-2020.12.3</div>
-              </div>
-              <div class="jichuhuax_echarts_item_title_rig">
-                <img :src="threeP" class="threeP">
-              </div>
-            </div>
-            <div class="jichuhuax_echarts_item_content">
-              <barC id="box71" :colorList="$lxjData.colorList" :myData="$lxjData.box71Data"></barC>
-            </div>
-          </div>
+				    <div class="jichuhuax_echarts_item">
+					    <div class="jichuhuax_echarts_item_title">
+						    <div class="jichuhuax_echarts_item_title_lef">
+							    <div class="nljg">车辆保有结构</div>
+							    <div class="range_titme">2020.12.01-2020.12.3</div>
+						    </div>
+						    <div class="jichuhuax_echarts_item_title_rig">
+							    <img :src="threeP" class="threeP">
+						    </div>
+					    </div>
+					    <div class="jichuhuax_echarts_item_content">
+						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box4Data"></PieEcharts>
+					    </div>
+				    </div>
 
-          <div class="jichuhuax_echarts_item">
-            <div class="jichuhuax_echarts_item_title">
-              <div class="jichuhuax_echarts_item_title_lef">
-                <div class="nljg">车辆保有结构</div>
-                <div class="range_titme">2020.12.01-2020.12.3</div>
-              </div>
-              <div class="jichuhuax_echarts_item_title_rig">
-                <img :src="threeP" class="threeP">
-              </div>
-            </div>
-            <div class="jichuhuax_echarts_item_content">
-              <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box4Data"></PieEcharts>
-            </div>
-          </div>
+				    <div class="jichuhuax_echarts_item">
+					    <div class="jichuhuax_echarts_item_title">
+						    <div class="jichuhuax_echarts_item_title_lef">
+							    <div class="nljg">居住地区</div>
+							    <div class="range_titme">2020.12.01-2020.12.3</div>
+						    </div>
+						    <div class="jichuhuax_echarts_item_title_rig">
+							    <img :src="threeP" class="threeP">
+						    </div>
+					    </div>
+					    <div class="jichuhuax_echarts_item_content">
+						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box3Data"></PieEcharts>
+					    </div>
+				    </div>
 
-          <div class="jichuhuax_echarts_item">
-            <div class="jichuhuax_echarts_item_title">
-              <div class="jichuhuax_echarts_item_title_lef">
-                <div class="nljg">居住地区</div>
-                <div class="range_titme">2020.12.01-2020.12.3</div>
-              </div>
-              <div class="jichuhuax_echarts_item_title_rig">
-                <img :src="threeP" class="threeP">
-              </div>
-            </div>
-            <div class="jichuhuax_echarts_item_content">
-              <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box3Data"></PieEcharts>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="xwfx_area_container" id="xwfx_area_container">
-        <div class="xwfx_area_til">
-          <span>行为分析</span>
-          <Poptip popper-class="saas-poptip" placement="right-start">
-            <!-- <i class="iconfont iconguanyuline1 tip-icon"></i> -->
-            <img class="gif" src="../../assets/img/user/tip.gif" alt="">
-            <div slot="content">
-              <p><span>基于群体智能的客户行为分析算法：</span>算法主要思路是首先将客户的消费模式作为平面上的一个点随机分布于一个平面区域内 ; 然后测量当前个体对象在局部环境的群体相似度 ,并通过概率转换函数得到拾起或放下对象的概率 ,以这个概率行动 ,经过群体大量的相互作用 ,最终得到若干聚类中心 ;最后 ,在平面区域内采用递归算法收集聚类结果 ,获得不同消费特征的客户群体</p>
-              <p>
-                <span>群体相似度的基本测量公式为:</span>
-                <img class="small" src="../../assets/img/yhhx/tip1.png"/>
-              </p>
-              <p>其中 Neigh ( r) 表示局部环境 ,在两维网格环境中通常表示以 r 为半径的圆形区域. d ( oi , oj ) 表示对象属性空间里的对象 o i与 o j之间的距离 , 常用方法是 ij 欧氏距离和街市距离等.α定义为群体相似系数. 它是群体相似度测量的关键系数 , 它直接影响聚类中心的个数 ,同时也影响聚类算法的收敛速度. </p>
-              <p><span>算法的基本过程描述如下:</span></p>
-              <p>1.程序初始化,初始化α, number,k,R,size,最大循环次数n等参数,随机赋给每一个模式一对(x,y)坐标 , 赋初始模式值 , 初始状态为无负载 ;</p>
-              <p>2.for i=1,2,⋯,n;</p>
-              <p>（1）对于一组中的每一只个体 ,以R为观察半径 ,利用式(1)计算群体相似度；</p>
-              <p>（2）以一定的步长调整α;</p>
-              <p>3.聚类编号serial- no初始为0;</p>
-              <p>4.在聚类结果平面上,选定一个未标记聚类编号的模式 p为种子;</p>
-              <p>5.用同一编号递归标记所有与模式 p 相距小于 dist的模式 , 即收集所有属于该聚类中心的模式。</p>
-            </div>
-          </Poptip>
-        </div>
-        <vTabCard :tabData="xwfxData"></vTabCard>
-        <!--          <div class="ditu_area">-->
-        <!--            <video-->
-        <!--              class="player"-->
-        <!--              width="100%"-->
-        <!--              height="100%"-->
-        <!--              autoplay-->
-        <!--              loop-->
-        <!--              muted-->
-        <!--              src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"-->
-        <!--            ></video>-->
-        <!--          </div>-->
-        <div class="xwfx_area_til" style="margin-bottom:12px;">不同时段APP使用情况</div>
-        <div class="use_app_area">
-          <img :src="useApp" style="width:100%;" />
-        </div>
-        <div class="use_echart_item">
-          <div class="use_echart_title">不同性别APP内容偏好</div>
-          <div class="use_echart_cont">
-            <lineM id="box6" :colorList="$lxjData.colorList" :myData="$lxjData.box6Data"></lineM>
-          </div>
-        </div>
-        <div class="use_echart_item">
-          <div class="use_echart_title">不同年龄APP内容偏好</div>
-          <div class="use_echart_cont">
-            <barM id="box3" :colorList="$lxjData.colorList" :myData="$lxjData.box3Data"></barM>
-          </div>
-        </div>
-        <div class="use_echart_item1_container">
-          <div class="use_echart_item1">
-            <div class="use_echart_title">时间段内APP使用结构</div>
-            <div class="use_echart_cont">
-              <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box7Data"></PieEcharts>
-            </div>
-          </div>
-          <div class="use_echart_item1">
-            <div class="use_echart_title">APP内容偏好结构</div>
-            <div class="use_echart_cont">
-              <barLine id="box10" :colorList="$lxjData.colorList" :myData="$lxjData.box10Data"></barLine>
-            </div>
-          </div>
-          <div class="use_echart_item1">
-            <div class="use_echart_title">用户行为分布结构</div>
-            <div class="use_echart_cont">
-              <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box8Data"></PieEcharts>
-            </div>
-          </div>
-          <div class="use_echart_item1">
-            <div class="use_echart_title">用户行为消费结构</div>
-            <div class="use_echart_cont">
-              <cLine id="box52" :colorList="$lxjData.colorList" :myData="$lxjData.box52Data"></cLine>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="xzfx_area_container" id="xzfx_area_container">
-        <div class="xzfx_area_title">
-          <span>心智分析</span>
-          <Poptip popper-class="saas-poptip" placement="right-start">
-            <!-- <i class="iconfont iconguanyuline1 tip-icon"></i> -->
-            <img class="gif" src="../../assets/img/user/tip.gif" alt="">
-            <div slot="content">
-              <p><span>心理模型</span>在人机交互和交互设计中起着重要的作用。它们与用户感知周围世界的方式有关，并且基于信念，而不是一个事实概念。但是，如果你能理解用户的心理模型，你就可以在设计中模拟这些模型，使它们更加实用和直观。 心理模型是信念的人工制品。它们是用户对任何给定系统或交互所持有的信念。在大多数情况下，信念在一定程度上会与现实生活模式相似。这一点很重要，因为用户会根据他们的心理模型来计划和预测系统内未来的行为。</p>
-              <p><span>客户需求智能化处理</span></p>
-              <p>设不完备客户需求信息系统是需求决策系统，其中 是非空的客户需求信息集，表示客户需求属性的非空有限集，表示客户需求映射决策的非空有限集，为特征属性值域，f是U和V关系集，也称为需求决策规则集。其中，f(ui,pj)=vij表示某个用户需求ui在需求特征属性pj下的属性量值是vij。令Vi(xj)是对象xj在条件属性Ci上的取值。当∀Ci( X j) = * 时，表明I中含有缺失值。根据粗糙集理论，当不同客户对相同需求的选择一致时，则具有一定的概率选择其他不同的属性值。即当c(x,b)= * 时，使用需求映射系统中在属性集b下出现概率最高的属性值代替。若存在属性值出现概率最高的次数不唯一时，则选用其他属性中相同属性值最高的替代。</p>
-              <p>定义经扩充的可辨识矩阵M为:<img class="small" src="../../assets/img/yhhx/tip2.png"/></p>
-              <p>其中:M(i,j)是可辨识矩阵中第i行第j列元素，i,j=1,2,...,n ; *表示缺失值。</p>
-              <p>设MASi为对象xi的缺失属性集，即:<img class="small" src="../../assets/img/yhhx/tip3.png"/></p>
-              <p>设NSi为 xi的对象集:<img class="small" src="../../assets/img/yhhx/tip4.png"/></p>
-              <p>设MOS 为需求决策表S的缺失对象集，即:<img class="small" src="../../assets/img/yhhx/tip5.png"/></p>
-              <p>输入：不完备信息决策表 I *= (U* , C* UD) ;</p>
-              <p>输出：完备的信息决策表 Ir =(Ur,CrUD) 。</p>
-              <img src="../../assets/img/yhhx/tip6.png"/>
-            </div>
-          </Poptip>
-        </div>
-        <vTabCard :tabData="xzfxData"></vTabCard>
-        <div class="yhsj_echarts">
-          <div class="yhsj_echarts_item_title">
-            用户视觉心智动态捕捉
-          </div>
-          <div class="yhsj_echarts_item_content">
-            <barLine id="box8" :colorList="$lxjData.colorList" :myData="$lxjData.box8Data"></barLine>
-          </div>
-        </div>
-        <div class="xzsk_echarts">
-          <div class="yhsj_echarts_item_title">
-            心智时空曲线
-          </div>
-          <div class="yhsj_echarts_item_content">
-            <barT id="box9" :colorList="$lxjData.colorList" ></barT>
-          </div>
-        </div>
-        <div class="xinzfb_container">
-          <div class="xinzfb_container_lef">
-            <div class="xinzfb_container_lef_tel">心智分布</div>
-            <div class="xinzfb_container_lef_content">
-              <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box6Data"></PieEcharts>
-            </div>
-          </div>
-          <div class="xinzfb_container_rig">
-            <div class="xinzfb_container_rig_tel">心智倾向</div>
-            <div class="xinzfb_container_lef_content">
-              <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box7Data"></PieEcharts>
-            </div>
-          </div>
-        </div>
-        <div class="ppxz_container">
-          <div class="ppxz_title">品牌心智</div>
-          <div class="ppxz_title_desc">分心品牌当前受众的不同阶段的数据</div>
-          <div class="xinzfb_container_lef_content">
-            <lineS id="box57" :colorList="$lxjData.colorList" :myData="$lxjData.box57Data"></lineS>
-          </div>
-        </div>
-        <div class="xzcb_container">
-          <div class="ppxz_title">心智传播网络</div>
-          <div class="ppxz_title_desc">分析传播途径</div>
-          <div class="xinzfb_container_lef_content">
-            <cLine id="box51" :colorList="$lxjData.colorList" :myData="$lxjData.box51Data"></cLine>
-          </div>
-        </div>
-      </div>
-
-      <div class="smzqfx_area_container" id="smzqfx_area_container">
-        <div class="smzqfx_title" >生命周期分析</div>
-        <vTabCard :tabData="smzqfxData"></vTabCard>
-        <div class="xfsmlcpg_container">
-          <div class="xfsmlcpg_title">消费生命旅程评估</div>
-          <div class="xinzfb_container_lef_content1">
-            <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box111Data"></funnel>
-          </div>
-        </div>
-        <div class="xfjzg_container">
-          <div class="xfjzg_container_lef">
-            <div class="jichuhuax_echarts_item_title">
-              <div class="jichuhuax_echarts_item_title_lef">
-                <div class="nljg">消费者价值评估</div>
-                <div class="range_titme">2020.12.01-2020.12.31</div>
-              </div>
-              <div class="jichuhuax_echarts_item_title_rig">
-                <img :src="threeP" class="threeP">
-              </div>
-            </div>
-            <div class="jichuhuax_echarts_item_content">
-              <lineSp id="box112" :colorList="$lxjData.colorList"></lineSp>
-            </div>
-          </div>
-          <div class="xfjzg_container_rig">
-            <div class="jichuhuax_echarts_item_title">
-              <div class="jichuhuax_echarts_item_title_lef">
-                <div class="nljg">加之贡献度（按标签）</div>
-                <div class="range_titme">2020.12.01-2020.12.31</div>
-              </div>
-              <div class="jichuhuax_echarts_item_title_rig">
-                <img :src="threeP" class="threeP">
-              </div>
-            </div>
-            <div class="jichuhuax_echarts_item_content">
-              <cLine id="box53" :colorList="$lxjData.colorList" :myData="$lxjData.box52Data"></cLine>
-            </div>
-          </div>
-        </div>
-        <div class="xfzsxjcfx_container">
-          <div class="xfzsxjcfx_til">消费者时序行为决策分析</div>
-          <div class="xfzsxjcfx_ech">
-            <barT1 id="box91" :colorList="$lxjData.colorList" ></barT1>
-          </div>
-        </div>
-        <div class="xfzsxjcfx_container">
-          <div class="xfzsxjcfx_til">消费者行为决策预测</div>
-          <div class="xfzsxjcfx_ech">
-            <barT2 id="box92" :colorList="$lxjData.colorList" ></barT2>
-          </div>
-        </div>
-      </div>
-      </div>
+			    </div>
+		    </div>
+	    </div>
+	    <div class="da_container">
+		    <div class="xwfx_area_container" id="xwfx_area_container">
+			    <div class="xwfx_area_til">
+				    <span>行为分析</span>
+				    <!--<Poptip popper-class="saas-poptip" placement="right-start">-->
+					    <!--&lt;!&ndash; <i class="iconfont iconguanyuline1 tip-icon"></i> &ndash;&gt;-->
+					    <!--<img class="gif" src="../../assets/img/user/tip.gif" alt="">-->
+					    <!--<div slot="content">-->
+						    <!--<p><span>基于群体智能的客户行为分析算法：</span>算法主要思路是首先将客户的消费模式作为平面上的一个点随机分布于一个平面区域内 ; 然后测量当前个体对象在局部环境的群体相似度 ,并通过概率转换函数得到拾起或放下对象的概率 ,以这个概率行动 ,经过群体大量的相互作用 ,最终得到若干聚类中心 ;最后 ,在平面区域内采用递归算法收集聚类结果 ,获得不同消费特征的客户群体</p>-->
+						    <!--<p>-->
+							    <!--<span>群体相似度的基本测量公式为:</span>-->
+							    <!--<img class="small" src="../../assets/img/yhhx/tip1.png"/>-->
+						    <!--</p>-->
+						    <!--<p>其中 Neigh ( r) 表示局部环境 ,在两维网格环境中通常表示以 r 为半径的圆形区域. d ( oi , oj ) 表示对象属性空间里的对象 o i与 o j之间的距离 , 常用方法是 ij 欧氏距离和街市距离等.α定义为群体相似系数. 它是群体相似度测量的关键系数 , 它直接影响聚类中心的个数 ,同时也影响聚类算法的收敛速度. </p>-->
+						    <!--<p><span>算法的基本过程描述如下:</span></p>-->
+						    <!--<p>1.程序初始化,初始化α, number,k,R,size,最大循环次数n等参数,随机赋给每一个模式一对(x,y)坐标 , 赋初始模式值 , 初始状态为无负载 ;</p>-->
+						    <!--<p>2.for i=1,2,⋯,n;</p>-->
+						    <!--<p>（1）对于一组中的每一只个体 ,以R为观察半径 ,利用式(1)计算群体相似度；</p>-->
+						    <!--<p>（2）以一定的步长调整α;</p>-->
+						    <!--<p>3.聚类编号serial- no初始为0;</p>-->
+						    <!--<p>4.在聚类结果平面上,选定一个未标记聚类编号的模式 p为种子;</p>-->
+						    <!--<p>5.用同一编号递归标记所有与模式 p 相距小于 dist的模式 , 即收集所有属于该聚类中心的模式。</p>-->
+					    <!--</div>-->
+				    <!--</Poptip>-->
+			    </div>
+			    <vTabCard :tabData="xwfxData"></vTabCard>
+			    <!--          <div class="ditu_area">-->
+			    <!--            <video-->
+			    <!--              class="player"-->
+			    <!--              width="100%"-->
+			    <!--              height="100%"-->
+			    <!--              autoplay-->
+			    <!--              loop-->
+			    <!--              muted-->
+			    <!--              src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"-->
+			    <!--            ></video>-->
+			    <!--          </div>-->
+			    <div class="xwfx_area_til" style="margin-bottom:12px;">不同时段APP使用情况</div>
+			    <div class="use_app_area">
+				    <img :src="useApp" style="width:100%;" />
+			    </div>
+			    <div class="use_echart_item">
+				    <div class="use_echart_title">不同性别APP内容偏好</div>
+				    <div class="use_echart_cont">
+					    <lineM id="box6" :colorList="$lxjData.colorList" :myData="$lxjData.box6Data"></lineM>
+				    </div>
+			    </div>
+			    <div class="use_echart_item">
+				    <div class="use_echart_title">不同年龄APP内容偏好</div>
+				    <div class="use_echart_cont">
+					    <barM id="box3" :colorList="$lxjData.colorList" :myData="$lxjData.box3Data"></barM>
+				    </div>
+			    </div>
+			    <div class="use_echart_item1_container">
+				    <div class="use_echart_item1">
+					    <div class="use_echart_title">时间段内APP使用结构</div>
+					    <div class="use_echart_cont">
+						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box7Data"></PieEcharts>
+					    </div>
+				    </div>
+				    <div class="use_echart_item1">
+					    <div class="use_echart_title">APP内容偏好结构</div>
+					    <div class="use_echart_cont">
+						    <barLine id="box10" :colorList="$lxjData.colorList" :myData="$lxjData.box10Data"></barLine>
+					    </div>
+				    </div>
+				    <div class="use_echart_item1">
+					    <div class="use_echart_title">用户行为分布结构</div>
+					    <div class="use_echart_cont">
+						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box8Data"></PieEcharts>
+					    </div>
+				    </div>
+				    <div class="use_echart_item1">
+					    <div class="use_echart_title">用户行为消费结构</div>
+					    <div class="use_echart_cont">
+						    <cLine id="box52" :colorList="$lxjData.colorList" :myData="$lxjData.box52Data"></cLine>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+	    </div>
+	    <div class="da_container">
+		    <div class="xzfx_area_container" id="xzfx_area_container">
+			    <div class="xzfx_area_title">
+				    <span>心智分析</span>
+				    <!--<Poptip popper-class="saas-poptip" placement="right-start">-->
+					    <!--&lt;!&ndash; <i class="iconfont iconguanyuline1 tip-icon"></i> &ndash;&gt;-->
+					    <!--<img class="gif" src="../../assets/img/user/tip.gif" alt="">-->
+					    <!--<div slot="content">-->
+						    <!--<p><span>心理模型</span>在人机交互和交互设计中起着重要的作用。它们与用户感知周围世界的方式有关，并且基于信念，而不是一个事实概念。但是，如果你能理解用户的心理模型，你就可以在设计中模拟这些模型，使它们更加实用和直观。 心理模型是信念的人工制品。它们是用户对任何给定系统或交互所持有的信念。在大多数情况下，信念在一定程度上会与现实生活模式相似。这一点很重要，因为用户会根据他们的心理模型来计划和预测系统内未来的行为。</p>-->
+						    <!--<p><span>客户需求智能化处理</span></p>-->
+						    <!--<p>设不完备客户需求信息系统是需求决策系统，其中 是非空的客户需求信息集，表示客户需求属性的非空有限集，表示客户需求映射决策的非空有限集，为特征属性值域，f是U和V关系集，也称为需求决策规则集。其中，f(ui,pj)=vij表示某个用户需求ui在需求特征属性pj下的属性量值是vij。令Vi(xj)是对象xj在条件属性Ci上的取值。当∀Ci( X j) = * 时，表明I中含有缺失值。根据粗糙集理论，当不同客户对相同需求的选择一致时，则具有一定的概率选择其他不同的属性值。即当c(x,b)= * 时，使用需求映射系统中在属性集b下出现概率最高的属性值代替。若存在属性值出现概率最高的次数不唯一时，则选用其他属性中相同属性值最高的替代。</p>-->
+						    <!--<p>定义经扩充的可辨识矩阵M为:<img class="small" src="../../assets/img/yhhx/tip2.png"/></p>-->
+						    <!--<p>其中:M(i,j)是可辨识矩阵中第i行第j列元素，i,j=1,2,...,n ; *表示缺失值。</p>-->
+						    <!--<p>设MASi为对象xi的缺失属性集，即:<img class="small" src="../../assets/img/yhhx/tip3.png"/></p>-->
+						    <!--<p>设NSi为 xi的对象集:<img class="small" src="../../assets/img/yhhx/tip4.png"/></p>-->
+						    <!--<p>设MOS 为需求决策表S的缺失对象集，即:<img class="small" src="../../assets/img/yhhx/tip5.png"/></p>-->
+						    <!--<p>输入：不完备信息决策表 I *= (U* , C* UD) ;</p>-->
+						    <!--<p>输出：完备的信息决策表 Ir =(Ur,CrUD) 。</p>-->
+						    <!--<img src="../../assets/img/yhhx/tip6.png"/>-->
+					    <!--</div>-->
+				    <!--</Poptip>-->
+			    </div>
+			    <vTabCard :tabData="xzfxData"></vTabCard>
+			    <div class="yhsj_echarts">
+				    <div class="yhsj_echarts_item_title">
+					    用户视觉心智动态捕捉
+				    </div>
+				    <div class="yhsj_echarts_item_content">
+					    <barLine id="box8" :colorList="$lxjData.colorList" :myData="$lxjData.box8Data"></barLine>
+				    </div>
+			    </div>
+			    <div class="xzsk_echarts">
+				    <div class="yhsj_echarts_item_title">
+					    心智时空曲线
+				    </div>
+				    <div class="yhsj_echarts_item_content">
+					    <barT id="box9" :colorList="$lxjData.colorList" ></barT>
+				    </div>
+			    </div>
+			    <div class="xinzfb_container">
+				    <div class="xinzfb_container_lef">
+					    <div class="xinzfb_container_lef_tel">心智分布</div>
+					    <div class="xinzfb_container_lef_content">
+						    <PieEcharts7 :colorList="$fjData.colorList" :myData="$fjData.box6Data"></PieEcharts7>
+					    </div>
+				    </div>
+				    <div class="xinzfb_container_rig">
+					    <div class="xinzfb_container_rig_tel">
+						    <span>
+							    心智倾向
+						    </span>
+							    <div  class="custom_poptip_box">
+							      <span class="custom_poptip_result" @click="customShow=true">{{custom}} <i :class="['iconfont', customShow ? 'iconup' : 'icondown']"></i></span>
+								    <div :class="['custom_poptip_content', { hidden: !customShow }]">
+									    <div :class="['item', { select: custom === '所有'}]" @click="customChange('所有')">所有</div>
+									    <div :class="['item', { select: custom === '汽车'}]" @click="customChange('汽车')">汽车</div>
+									    <div :class="['item', { select: custom === '餐饮'}]" @click="customChange('餐饮')">餐饮</div>
+									    <div :class="['item', { select: custom === '生活配套'}]" @click="customChange('生活配套')">生活配套</div>
+									    <div :class="['item', { select: custom === '服饰'}]" @click="customChange('服饰')">服饰</div>
+									    <div :class="['item', { select: custom === '美妆护肤'}]" @click="customChange('美妆护肤')">美妆护肤</div>
+								    </div>
+						      </div>
+						    </div>
+					    <div class="xinzfb_container_lef_content">
+						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box7Data"></PieEcharts>
+					    </div>
+				    </div>
+			    </div>
+			    <div class="ppxz_container">
+				    <div class="ppxz_title">品牌心智</div>
+				    <div class="ppxz_title_desc">分心品牌当前受众的不同阶段的数据</div>
+				    <div class="xinzfb_container_lef_content">
+					    <lineS id="box57" :colorList="$lxjData.colorList" :myData="$lxjData.box57Data"></lineS>
+				    </div>
+			    </div>
+			    <div class="xzcb_container">
+				    <div class="ppxz_title">心智传播网络</div>
+				    <div class="ppxz_title_desc">分析传播途径</div>
+				    <div class="xinzfb_container_lef_content">
+					    <cLine id="box51" :colorList="$lxjData.colorList" :myData="$lxjData.box51Data"></cLine>
+				    </div>
+			    </div>
+		    </div>
+	    </div>
+	    <div class="da_container">
+		    <div class="smzqfx_area_container" id="smzqfx_area_container">
+			    <div class="smzqfx_title" >生命周期分析</div>
+			    <vTabCard :tabData="smzqfxData"></vTabCard>
+			    <div class="xfsmlcpg_container">
+				    <div class="xfsmlcpg_title">消费生命旅程评估</div>
+				    <div class="xinzfb_container_lef_content1">
+					    <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box111Data"></funnel>
+				    </div>
+			    </div>
+			    <div class="xfjzg_container">
+				    <div class="xfjzg_container_lef">
+					    <div class="jichuhuax_echarts_item_title">
+						    <div class="jichuhuax_echarts_item_title_lef">
+							    <div class="nljg">消费者价值评估</div>
+							    <div class="range_titme">2020.12.01-2020.12.31</div>
+						    </div>
+						    <div class="jichuhuax_echarts_item_title_rig">
+							    <img :src="threeP" class="threeP">
+						    </div>
+					    </div>
+					    <div class="jichuhuax_echarts_item_content">
+						    <lineSp id="box112" :colorList="$lxjData.colorList"></lineSp>
+					    </div>
+				    </div>
+				    <div class="xfjzg_container_rig">
+					    <div class="jichuhuax_echarts_item_title">
+						    <div class="jichuhuax_echarts_item_title_lef">
+							    <div class="nljg">加之贡献度（按标签）</div>
+							    <div class="range_titme">2020.12.01-2020.12.31</div>
+						    </div>
+						    <div class="jichuhuax_echarts_item_title_rig">
+							    <img :src="threeP" class="threeP">
+						    </div>
+					    </div>
+					    <div class="jichuhuax_echarts_item_content">
+						    <cLine id="box53" :colorList="$lxjData.colorList" :myData="$lxjData.box52Data"></cLine>
+					    </div>
+				    </div>
+			    </div>
+			    <div class="xfzsxjcfx_container">
+				    <div class="xfzsxjcfx_til">消费者时序行为决策分析</div>
+				    <div class="xfzsxjcfx_ech">
+					    <barT1 id="box91" :colorList="$lxjData.colorList" ></barT1>
+				    </div>
+			    </div>
+			    <div class="xfzsxjcfx_container">
+				    <div class="xfzsxjcfx_til">消费者行为决策预测</div>
+				    <div class="xfzsxjcfx_ech">
+					    <barT2 id="box92" :colorList="$lxjData.colorList" ></barT2>
+				    </div>
+			    </div>
+		    </div>
+	    </div>
     </div>
 </template>
 <script>
@@ -1013,6 +1003,7 @@ import lineSp from '../../components/echarts/common/line/lineSp';
 import pieP from '../../components/echarts/common/pie/pieP';
 
 import PieEcharts from '../../components/echarts/common/pie/PieEcharts';
+import PieEcharts7 from '../../components/echarts/common/pie/PieEcharts7';
 import PieEcharts1 from '../../components/echarts/common/pie/PieEcharts1';
 import RotateChart from '../../components/echarts/common/custom/RotateChart';
 import LeidaEcharts from '../../components/echarts/common/radar/LeidaEcharts';
@@ -1027,7 +1018,7 @@ import vTabCard from "./tabCard";
 import chuDa from "./chuDa";
 export default {
   components: {
-   PieEcharts1,barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
+   PieEcharts1,barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, PieEcharts7, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
    vDxitem,vDxitem1,vTabCard,chuDa
   },
   name: "index",
@@ -1083,27 +1074,27 @@ export default {
       vDxtxt5:'展开用户动线',
       jchxData:{
         lefData:{
-          til:'当前状况',
-          subTil:'受众群体年龄覆盖范围窄，核心受众20 -25 岁行业覆盖不够深入，只覆盖高收入人群'
+          til:'呈现问题',
+          subTil:'受众群体年龄覆盖范围窄，核心受众20~25岁行业覆盖不够深入，只覆盖高收入人群。'
         },
         rigData:{
           til:'策略建议',
-          subTil:'扩大受众群体的年龄范围，从15岁 - 40岁。行业覆盖宜深入打通渠道'
+          subTil:'扩大受众群体的年龄范围，从15岁-40岁。行业覆盖宜深入打通渠道。'
         }
       },
       xwfxData:{
         lefData:{
-          til:'当前状况',
-          subTil:'用户行为特征与年龄、职业等基本属性高度相关。重要的线上触点是生活服务、视频娱乐、社交通讯类应用'
+          til:'呈现问题',
+          subTil:'用户行为特征与年龄、职业等基本属性高度相关。重要的线上触点是生活服务、视频娱乐、社交通讯类应用。'
         },
         rigData:{
           til:'策略建议',
-          subTil:'结合用户使用习惯及使用场景差异，在19:00 - 22:30时间段使用娱乐场景APP（如抖音）进行品牌推广为佳'
+          subTil:'结合用户使用习惯及使用场景差异，在19:00 - 22:30时间段使用娱乐场景APP（如抖音）进行品牌推广为佳。'
         }
       },
       xzfxData:{
         lefData:{
-          til:'当前状况',
+          til:'呈现问题',
           subTil:'用户对营销信息呈现波动性情绪反馈，注意力集中时间有限；日间情绪随时间波动大，对短视频APP偏好明显。'
         },
         rigData:{
@@ -1113,7 +1104,7 @@ export default {
       },
       smzqfxData:{
         lefData:{
-          til:'当前状况',
+          til:'呈现问题',
           subTil:'早期客户留存转化率较低，成熟期及休眠期的用户消费潜力巨大，用户在餐饮百货品类价值贡献度高。'
         },
         rigData:{
@@ -1147,13 +1138,19 @@ export default {
           label:'自由职业',
           value:'zyzz'
         }
-      ]
+      ],
+	    custom: '所有',
+	    customShow: false,
     };
   },
   mounted() {
     this.initPopEcharts();
   },
   methods: {
+	  customChange(custom){
+	  	this.custom = custom;
+	  	this.customShow = false
+	  },
     changeNews(val){
       console.log(val)
       if(val){
@@ -1962,7 +1959,10 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+	.hidden{
+		display: none !important;
+	}
 .mark-detail-anchor{
     position: relative;
     width:100%;
@@ -2027,69 +2027,96 @@ export default {
 .user-protrait {
   padding: 0 24px 24px 24px;
 
-  .yhdx_container {
-    width: 100%;
-    background: #ffffff;
-    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-    border-radius: 12px;
-    border: 1px solid #EAEDF7;
-    padding: 24px;
-    box-sizing: border-box;
-    .top_title_container {
-      width: 100%;
-      height: 51px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 24px;
-      .left_text {
-        .left_title_text {
-          height: 24px;
-          display: flex;
-          align-items: center;
-          font-size: 16px;
-          font-family: PingFangSC-Medium, PingFang SC;
-          font-weight: 500;
-          color: #242f57;
-          margin-bottom: 4px;
-          ::v-deep .ivu-poptip{
-            height: 24px;
-          }
-          .gif{
-            width: 24px;
-            height: 24px;
-            cursor: pointer;
-          }
-        }
-        .left_desc_text {
-          font-size: 14px;
-          font-family: PingFangSC-Regular, PingFang SC;
-          font-weight: 400;
-          color: #636e95;
-        }
-      }
-      .right_btn {
-        width: 126px;
-        height: 40px;
-        background: #FFFFFF linear-gradient(148deg, rgba(220, 225, 236, 0.2) 0%, rgba(255, 255, 255, 0.76) 100%);
-        box-shadow: 3px 4px 8px 0px rgba(36, 47, 87, 0.1);
-        border-radius: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.4);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 14px;
-        font-family: PingFangSC-Medium, PingFang SC;
-        font-weight: 500;
-        color: #242f57;
-        cursor:pointer;
-        .manIcon {
-          display: block;
-          width: 24px;
-          height: 24px;
-        }
-      }
-    }
+	.top_title_container {
+		width: 100%;
+		height: 51px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 24px;
+		.left_text {
+			.left_title_text {
+				height: 24px;
+				display: flex;
+				align-items: center;
+				font-size: 16px;
+				font-family: PingFangSC-Medium, PingFang SC;
+				font-weight: 500;
+				color: #242f57;
+				margin-bottom: 4px;
+				::v-deep .ivu-poptip {
+					height: 24px;
+				}
+				.gif {
+					width: 24px;
+					height: 24px;
+					cursor: pointer;
+				}
+			}
+			.left_desc_text {
+				font-size: 14px;
+				font-family: PingFangSC-Regular, PingFang SC;
+				font-weight: 400;
+				color: #636e95;
+			}
+		}
+		.right_btn {
+			border: 1px solid rgba(255, 255, 255, 0.4);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 14px;
+			cursor: pointer;
+			width: 116px;
+			height: 32px;
+			background: #2373FF;
+			box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
+			border-radius: 4px;
+			font-weight: 400;
+			color: #FFFFFF;
+			.manIcon {
+				display: block;
+				width: 24px;
+				height: 24px;
+				color: #FFFFFF;
+			}
+			.iconyonghuline{
+				margin-right: 6px;
+			}
+		}
+		.right_select{
+			width: 300px;
+			height: 32px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			font-size: 14px;
+			.label{
+				min-width: 70px;
+				height: 20px;
+				margin-right: 24px;
+				font-weight: 400;
+				color: #2373FF;
+				line-height: 20px;
+			}
+			.select{
+				height: 32px;
+				background: #FFFFFF;
+				border-radius: 4px;
+			}
+		}
+	}
+	.top_title_container_margin_top{
+		margin-top: 32px;
+	}
+	.yhdx_container {
+		width: 100%;
+		background: #ffffff;
+		box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+		border-radius: 12px;
+		border: 1px solid #EAEDF7;
+		padding: 24px;
+		box-sizing: border-box;
     .bjsbz_container{
       width: 100%;
       height: 110px;
@@ -3068,7 +3095,7 @@ export default {
   .jichuhuax_area_container {
     width: 100%;
     background: #ffffff;
-    padding-top: 24px;
+    /*padding-top: 24px;*/
     // box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     // border-radius: 12px;
     border-bottom: 1px solid #EAEDF7;
@@ -3210,7 +3237,7 @@ export default {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    padding-top: 24px;
+    /*padding-top: 24px;*/
     .xwfx_area_til {
       display: flex;
       align-items: center;
@@ -3248,7 +3275,11 @@ export default {
       display: flex;
       flex-direction: column;
       .use_echart_title{
-        padding:10px
+        padding:10px;
+	      font-size: 16px;
+	      font-family: PingFangSC-Regular, PingFang SC;
+	      font-weight: 400;
+	      color: #242F57;
       }
       .use_echart_cont{
         flex:1
@@ -3261,7 +3292,7 @@ export default {
       justify-content: space-between;
       .use_echart_item1 {
         width: 49%;
-        height: 427px;
+        height: 450px;
         background: #ffffff;
         border-radius: 8px;
         border: 1px solid #eaedf7;
@@ -3269,7 +3300,11 @@ export default {
         display: flex;
         flex-direction: column;
         .use_echart_title{
-          padding:10px
+	        padding:10px;
+	        font-size: 16px;
+	        font-family: PingFangSC-Regular, PingFang SC;
+	        font-weight: 400;
+	        color: #242F57;
         }
         .use_echart_cont{
           flex:1
@@ -3288,7 +3323,7 @@ export default {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    padding-top: 24px;
+    /*padding-top: 24px;*/
     .xzfx_area_title {
       display: flex;
       align-items: center;
@@ -3343,8 +3378,46 @@ export default {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        .xinzfb_container_lef_tel {
+        .xinzfb_container_lef_tel, .xinzfb_container_rig_tel {
           width: 100%;
+	        font-size: 16px;
+	        font-family: PingFangSC-Regular, PingFang SC;
+	        font-weight: 400;
+	        color: #242F57;
+	        line-height: 24px;
+	        display: flex;
+	        justify-content: space-between;
+	        .custom_poptip_box{
+		        position: relative;
+		        .custom_poptip_result{
+			        cursor: pointer;
+		        }
+		        .custom_poptip_content{
+			        width: 192px;
+			        height: 203px;
+			        position: absolute;
+			        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.16);
+			        background: #FFFFFF;
+			        border-radius: 4px;
+			        overflow-y: auto;
+			        right: 0;
+			        z-index: 2;
+		        }
+		        .item{
+			        width: 192px;
+			        height: 31px;
+			        display: flex;
+			        align-items: center;
+			        padding-left: 13px;
+			        cursor: pointer;
+			        &:hover{
+				        background: #F5F5F5;
+			        }
+		        }
+		        .item.select{
+			        color: #407AFF;
+		        }
+	        }
         }
         .xinzfb_container_lef_content {
           flex:1
@@ -3419,7 +3492,7 @@ export default {
     // box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     // border-radius: 12px;
     //border: 1px solid #EAEDF7;
-    padding-top: 24px;
+    /*padding-top: 24px;*/
     box-sizing: border-box;
     .smzqfx_title{
       width: 100%;
