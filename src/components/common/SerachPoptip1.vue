@@ -1,6 +1,9 @@
 <template>
     <div  class="serach-poptip-warp">
-        <div class="serach-poptip-btn" @click="openModal">+ 数据筛选</div>
+        <div class="serach-poptip-btn" @click="openModal">
+            <img src="../../assets/img/mark/filter@2x.png" alt="">
+            <span>数据筛选</span>
+        </div>
         <div v-if="show" class="serach-poptip-cntent">
             <div>
                 <div class="item-label">地区</div>
@@ -20,7 +23,7 @@
                     <span  :class="['item', { selected: selected.sex.includes(it.name)}]" v-for="it in sex" :key="it.name" @click="onSelect(it, 'sex')">{{it.name}}</span>
                 </div>
             </div>
-            <div>
+            <!-- <div>
                 <div class="item-label">职业</div>
                 <div class="item-container">
                     <span  :class="['item', { selected: selected.profession.includes(it.name)}]" v-for="it in profession" :key="it.name" @click="onSelect(it, 'profession')">{{it.name}}</span>
@@ -31,7 +34,7 @@
                 <div class="item-container">
                     <span  :class="['item', { selected: selected.customer.includes(it.name)}]" v-for="it in customer" :key="it.name" @click="onSelect(it, 'customer')">{{it.name}}</span>
                 </div>
-            </div>
+            </div> -->
             <div class="serach-poptip-footer">
                 <span class="reset-btn" @click="reset">重置</span>
                 <div>
@@ -58,7 +61,6 @@
     },
     methods: {
       onSelect(item, type){
-        console.log('9999999999999999999', item)
         if(!this.selected[type] || !this.selected.length){
           this.selected[type] = [item.name]
         }else {
@@ -95,15 +97,35 @@
     .serach-poptip-warp{
         position: relative;
         .serach-poptip-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 84px;
+            height: 28px;
+            background: #FFFFFF;
+            border-radius: 4px;
+            border: 1px solid #97A0C3;
             background: #fff;
             cursor: pointer;
-            font-size: 12px;
+            >img{
+                width: 16px;
+                height: 16px;
+                margin-right: 2px;
+            }
+            >span{
+                height: 18px;
+                font-size: 12px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #242F57;
+                line-height: 18px;
+            }
         }
     }
     .serach-poptip-cntent{
         width: 300px;
         padding: 16px 16px 0;
-        height: 570px;
+        height: 366px;
         background: #FFFFFF;
         box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16);
         border-radius: 8px;
@@ -145,7 +167,7 @@
     }
 
     .serach-poptip-footer{
-        height: 32px;
+        height: 53px;
         border-top: 2px solid #EAEDF7;
         display: flex;
         align-items: center;
