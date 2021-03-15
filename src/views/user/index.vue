@@ -862,14 +862,14 @@
 			    <!--              src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"-->
 			    <!--            ></video>-->
 			    <!--          </div>-->
-			    <div class="xwfx_area_til" style="margin-bottom:12px;">不同时段APP使用情况</div>
+<!--			    <div class="xwfx_area_til" style="margin-bottom:12px;">不同时段APP使用情况</div>-->
 			    <div class="use_app_area">
 				    <img :src="useApp" style="width:100%;" />
 			    </div>
 			    <div class="use_echart_item">
 				    <div class="use_echart_title">不同性别APP内容偏好</div>
 				    <div class="use_echart_cont">
-					    <lineM id="box6" :colorList="$lxjData.colorList" :myData="$lxjData.box6Data"></lineM>
+					    <lineM id="box6" :colorList="$lxjData.colorList" :myData="$lxjData.box69Data"></lineM>
 				    </div>
 			    </div>
 			    <div class="use_echart_item">
@@ -977,6 +977,20 @@
 			    <div class="ppxz_container">
 				    <div class="ppxz_title">品牌心智</div>
 				    <div class="ppxz_title_desc">分心品牌当前受众的不同阶段的数据</div>
+            <div class="bottom">
+              <div class="pricle">
+                <Card :title="'认知'" :colourfol="'blue'" :number="'29385'" :data="[-87,9481]"></Card>
+              </div>
+              <div class="month">
+                <Card :title="'兴趣'" :colourfol="'purple'" :number="'29385'" :data="[-87,9481]"></Card>
+              </div>
+              <div class="view">
+                <Card :title="'购买'" :colourfol="'pink'" :number="'29385'" :data="[-87,9481]"></Card>
+              </div>
+              <div class="target">
+                <Card :title="'忠诚'" :colourfol="'orange'" :number="'29385'" :data="[-87,9481]"></Card>
+              </div>
+            </div>
 				    <div class="xinzfb_container_lef_content">
 					    <lineS id="box57" :colorList="$lxjData.colorList" :myData="$lxjData.box57Data"></lineS>
 				    </div>
@@ -985,8 +999,14 @@
 				    <div class="ppxz_title">心智传播网络</div>
 				    <div class="ppxz_title_desc">分析传播途径</div>
 				    <div class="xinzfb_container_lef_content">
-					    <cLine id="box51" :colorList="$lxjData.colorList" :myData="$lxjData.box51Data"></cLine>
+              <div v-for="(it, i) in circleData" :key="i"  class="xinzfb_container_lef_content_item">
+                <i-circle :percent="80" :size="getSize()" :stroke-color="it.color">
+                  <span class="demo-Circle-inner" style="font-size:24px">{{it.value}}%</span>
+                </i-circle>
+                <div class="name">{{it.name}}</div>
+              </div>
 				    </div>
+            <div class="xinzfb_container_lef_content_desc">%的计算公式是根据市场当中品牌受众用户对于品牌的喜好度，忠诚度等多维度数据综合计算而成</div>
 			    </div>
 		    </div>
 	    </div>
@@ -1079,10 +1099,11 @@ import vDxitem from "./dxItem";
 import vDxitem1 from "./dxItem1";
 import vTabCard from "./tabCard";
 import chuDa from "./chuDa";
+import Card from "./base/Card";
 export default {
   components: {
    PieEcharts1,barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, PieEcharts7, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
-   vDxitem,vDxitem1,vTabCard,chuDa
+   vDxitem,vDxitem1,vTabCard,chuDa, Card
   },
   name: "index",
   data() {
@@ -1229,7 +1250,15 @@ export default {
         require("../../assets/img/yhhx/dyI.png"),
         require("../../assets/img/yhhx/xhs.png"),
         require("../../assets/img/yhhx/tt.png")
-      ]
+      ],
+	    circleData: [
+		    { name: '合声', value: '75'},
+		    { name: '合生活', value: '60'},
+		    { name: '珠江', value: '50'},
+		    { name: '合声创展', value: '35', color: '#FF8800'},
+		    { name: '霄云', value: '25', color: '#FF8800'},
+		    { name: '创展', value: '20', color: '#FF8800'},
+	    ],
     };
   },
   mounted() {
@@ -2044,6 +2073,9 @@ export default {
     },
     hidePop5() {
       this.ifShowPop5 = false;
+    },
+    getSize(){
+      return 90 / 144*window.rem
     }
   },
 };
@@ -3439,7 +3471,7 @@ export default {
     background: #ffffff;
       // box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     // border-radius: 12px;
-    border-bottom: 1px solid #EAEDF7;
+    /*border-bottom: 1px solid #EAEDF7;*/
     // padding: 24px;
     box-sizing: border-box;
     display: flex;
@@ -3572,6 +3604,17 @@ export default {
         font-weight: 400;
         color: #636e95;
       }
+      .bottom{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 138px;
+        margin-top: 24px;
+        .pricle,.month,.view,.target{
+          width: 24%;
+          height: 138px;
+        }
+      }
       .xinzfb_container_lef_content{
         flex:1
       }
@@ -3602,8 +3645,31 @@ export default {
         color: #636e95;
       }
       .xinzfb_container_lef_content{
-        flex:1
+        flex:1;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .xinzfb_container_lef_content_item{
+          text-align: center;
+          .demo-Circle-inner{
+            font-size: 18px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #242F57;
+            line-height: 24px;
+          }
+          .name{
+            margin-top: 16px;
+          }
+        }
       }
+      .xinzfb_container_lef_content_desc{
+        font-size: 12px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #636E95;
+      }
+
     }
   }
 
