@@ -145,23 +145,23 @@
 
             </div>
             <div v-if="!onlyMap" class="per_info_container">
-                <div class="yhdx_title">
+                <!-- <div class="yhdx_title">
                     <div class="yhdx_title_top">
                         用户动线分析结果
                     </div>
                     <div class="yhdx_title_bom">
                         2020/12/14
                     </div>
-                </div>
-                <div class="switch_container">
+                </div> -->
+                <!-- <div class="switch_container">
                     <div class="data_title">数据图表</div>
                     <div class="switch_contianer">
                         <i-switch v-model="switch1"></i-switch>
                     </div>
                     <div class="data_title" style="color: #97A0C3;">智能解读</div>
-                </div>
+                </div> -->
 
-                <div class="nl_card_container">
+                <!-- <div class="nl_card_container">
                     <div class="til_label">
                         用户状态
                         <Poptip popper-class="saas-poptip" placement="right-start">
@@ -189,9 +189,9 @@
                         <div class="pro_label">烦躁</div>
                         <div class="pro"><Progress :percent="rightPanelData.userStatObj.stat4" status="active"></Progress></div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="chufa_card_container">
+                <!-- <div class="chufa_card_container">
                     <div class="til_label">出发地</div>
                     <div class="chufadi_container">
                         <div class="diItem" v-if="rightPanelData.chufaObj.chufa1">
@@ -207,9 +207,9 @@
                             <span class="addresstxt">{{rightPanelData.chufaObj.chufa3}}</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="mudd_container">
+                <!-- <div class="mudd_container">
                     <div class="til_label">目的地</div>
                     <div class="chufadi_container">
                         <div class="diItem" v-if="rightPanelData.mudiObj.mudi1">
@@ -225,9 +225,9 @@
                             <span class="addresstxt">{{rightPanelData.mudiObj.mudi3}}</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="tqfs_container">
+                <!-- <div class="tqfs_container">
                     <div class="til_label">通勤方式</div>
                     <div class="cx_type_container">
                         <div class="cx_item" v-if="rightPanelData.tonqinTypeObj.tqType1">
@@ -239,18 +239,18 @@
                             <span class="cxtxt">{{rightPanelData.tonqinTypeObj.tqType2}}</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="tqsjylx_container">
+                <!-- <div class="tqsjylx_container">
                     <div class="til_label">通勤时间与路程</div>
                     <div class="haoshi_container">
                         <img :src="tbIcon" alt="" srcset="" class="timeBiao">
                         <span style="margin-right:16px;">平均耗时</span>
                         <span>{{rightPanelData.tongqinTimeObj.timeN}}分钟</span>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="nl_card_container">
+                <!-- <div class="nl_card_container">
                     <div class="til_label">年龄占比</div>
                     <div class="pro_container">
                         <div class="pro_label">15-25岁</div>
@@ -264,9 +264,9 @@
                         <div class="pro_label">35-45岁</div>
                         <div class="pro"><Progress :percent="20" status="active"></Progress></div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="sex_card_container">
+                <!-- <div class="sex_card_container">
                     <div class="til_label">性别占比</div>
                     <div class="sex_tu_container">
                         <div class="man"></div>
@@ -280,8 +280,13 @@
                         <div class="mansex">男性</div>
                         <div class="womensex">女性</div>
                     </div>
-                </div>
+                </div> -->
 
+                <div class="person_til">用户触达策略</div>
+                <div class="perxon_tab_con">
+                  <div class="perxon_tab_con_lef">投放方案推荐</div>
+                  <div class="perxon_tab_con_rig">自定义媒介投放</div>
+                </div>
             </div>
             <div class="yhxw_container">
                 <!-- <div class="yhxw_title">用户行为</div>
@@ -300,7 +305,7 @@
                   <div class="tab_item_item mbitem4" @click="changMbItem(3)">生命周期分析</div>
                 </div>
                 <div class="tab_con" ref="tab_con">
-                  <div class="tab_content">
+                  <div class="tab_content" v-if="ifShowtcon">
                     <div class="tab_content_item" ref="tab_content_item" v-for="(item,index) in tabconList" :key="index" :class="{'remb':((index==5 || index==6) || (item.til == '话题偏好' || item.til == '个人标签'))}">
                       <div class="tab_content_item_top">{{item.til}}</div>
                       <div class="tab_content_item_bom" v-if="item.descList">
@@ -312,6 +317,20 @@
                           <div class="imitro">{{itm1.txt}}</div>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                  <div class="tab_content" v-else>
+                    <div class="tab_content_item1">
+                      <div class="tab_content_item1_cir"></div>
+                      <div class="tab_content_item1_con">早期客户留存转化率较低，需要加大投放力度；</div>
+                    </div>
+                    <div class="tab_content_item1">
+                      <div class="tab_content_item1_cir"></div>
+                      <div class="tab_content_item1_con">成熟期及休眠期的用户消费潜力巨大，品牌方应充分挖掘其价值；</div>
+                    </div>
+                    <div class="tab_content_item1">
+                      <div class="tab_content_item1_cir"></div>
+                      <div class="tab_content_item1_con">用户在餐饮百货品类价值贡献度高，可迎合其偏好制定策略。</div>
                     </div>
                   </div>
                 </div>
@@ -618,7 +637,8 @@
                   descList:['新锐白领','宝藏浪姐','潮酷女孩'],
                   ticList:null
                  }
-               ]
+               ],
+               ifShowtcon:true
             }
         },
         mounted(){
@@ -665,13 +685,15 @@
               var bgc3 = '#4488FF';
               console.log(tabDom1,'tabDom')
               if(arg == 0){
+                this.ifShowtcon = true;
                 tabDom.style=` background:${bgc0};`;
                 this.tabconList = this.tabconList0;
                 for(var i=0;i<tabDom1.length;i++){
-                  tabDom1[i].style=" margin-right: 71px;";
+                  tabDom1[i].style=" margin-right: 60px;";
                 }
               }
               else if(arg == 1){
+                this.ifShowtcon = true;
                 tabDom.style=` background: ${bgc1};`;
                 this.tabconList = this.tabconList1;
                 for(var i=0;i<tabDom1.length;i++){
@@ -679,6 +701,7 @@
                 }
               }
               else if(arg == 2){
+                this.ifShowtcon = true;
                 tabDom.style=` background: ${bgc2};`;
                 this.tabconList = this.tabconList2;
                 for(var i=0;i<tabDom1.length;i++){
@@ -686,6 +709,7 @@
                 }
               }
               else if(arg == 3){
+                this.ifShowtcon = false;
                 tabDom.style=` background: ${bgc3};`;
               }
             },
@@ -1666,316 +1690,345 @@
         .per_info_container{
             width: 270px;
             height: 100%;
-            padding:13px 12px;
+            padding:17px 16px;
             box-sizing: border-box;
             background: #EAEDF7;
             overflow-y: scroll;
-            .yhdx_title{
-                width: 100%;
-                height: 72px;
-                border-radius: 8px;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
-                padding-left: 16px;
-                box-sizing: border-box;
-                background-image: url("../../assets/img/yhhx/river.png");
-                background-size: cover;
-                .yhdx_title_top{
-                    width: 100%;
-                    font-size: 18px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #FFFFFF;
-                }
-                .yhdx_title_bom{
-                    width: 100%;
-                    font-size: 12px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    color: #FFFFFF;
-                }
+            .person_til{
+              width: 100%;
+              font-size: 18px;
+              font-family: PingFangSC-Medium, PingFang SC;
+              font-weight: 500;
+              color: #242F57;
+              margin-bottom: 15px;
             }
-            .switch_container{
-                width: 100%;
-                padding: 12px 20px;
-                box-sizing: border-box;
-                border-bottom: 1px solid #fdfdfd;
+            .perxon_tab_con{
+              display: flex;
+              .perxon_tab_con_lef,.perxon_tab_con_rig{
+                width: 50%;
+                height: 40px;
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636E95;
+                background-color: darkgoldenrod;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
-                font-size: 14px;
-                font-family: PingFangSC-Medium, PingFang SC;
-                font-weight: 500;
-                color: #242F57;
-            }
-            .nl_card_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                    // ::v-deep .saas-poptip{
-                    //     left: 628px !important;
-                    //     .ivu-poptip-content{
-                    //         width: 270px !important;
-                    //     }
-                    // }
-                }
-                .pro_container{
-                    width: 100%;
-                    margin-bottom: 8px;
-                    display: flex;
-                    align-items: center;
-                    .pro_label{
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #97A0C3;
-                        margin-right: 12px;
-                    }
-                    .pro{
-                        flex: 1;
-                    }
-                }
-            }
+                justify-content: center;
+              }
+              .perxon_tab_con_lef{
 
-            .sex_card_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .sex_tu_container{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-bottom: 4px;
-                    .man{
-                        width: 64%;
-                        height: 16px;
-                        background: #2373FF;
-                        border-radius: 2px;
-                    }
-                    .women{
-                        width: 34%;
-                        height: 16px;
-                        background: #FE763D;
-                        border-radius: 2px;
-                    }
-                }
-                .sex_per_container{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    font-size: 18px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    .man_per{
-                        color: #2373FF;
-                    }
-                    .women_per{
-                        color: #FE763D;
-                    }
-                    .mansex,.womensex{
-                        font-size: 12px;
-                        font-weight: 400;
-                        color: #97A0C3;
-                    }
-                }
-            }
+              }
+              .perxon_tab_con_rig{
 
-            .chufa_card_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .chufadi_container{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-top: 8px;
-                    .diItem{
-                        width: 32%;
-                        height: 24px;
-                        display: flex;
-                        align-items: center;
-                        padding: 2px 7px;
-                        box-sizing: border-box;
-                        background: #F4F7FC;
-                        border-radius: 4px;
-                        .addressIcon{
-                        display: block;
-                        width: 11px;
-                        margin-right: 6px;
-                        }
-                        .addresstxt{
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #242F57;
-                        }
-                    }
-                }
+              }
             }
+            // .yhdx_title{
+            //     width: 100%;
+            //     height: 72px;
+            //     border-radius: 8px;
+            //     display: flex;
+            //     flex-direction: column;
+            //     align-items: flex-start;
+            //     justify-content: center;
+            //     padding-left: 16px;
+            //     box-sizing: border-box;
+            //     background-image: url("../../assets/img/yhhx/river.png");
+            //     background-size: cover;
+            //     .yhdx_title_top{
+            //         width: 100%;
+            //         font-size: 18px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #FFFFFF;
+            //     }
+            //     .yhdx_title_bom{
+            //         width: 100%;
+            //         font-size: 12px;
+            //         font-family: PingFangSC-Regular, PingFang SC;
+            //         font-weight: 400;
+            //         color: #FFFFFF;
+            //     }
+            // }
+            // .switch_container{
+            //     width: 100%;
+            //     padding: 12px 20px;
+            //     box-sizing: border-box;
+            //     border-bottom: 1px solid #fdfdfd;
+            //     display: flex;
+            //     align-items: center;
+            //     justify-content: space-between;
+            //     font-size: 14px;
+            //     font-family: PingFangSC-Medium, PingFang SC;
+            //     font-weight: 500;
+            //     color: #242F57;
+            // }
+            // .nl_card_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //         // ::v-deep .saas-poptip{
+            //         //     left: 628px !important;
+            //         //     .ivu-poptip-content{
+            //         //         width: 270px !important;
+            //         //     }
+            //         // }
+            //     }
+            //     .pro_container{
+            //         width: 100%;
+            //         margin-bottom: 8px;
+            //         display: flex;
+            //         align-items: center;
+            //         .pro_label{
+            //             font-size: 12px;
+            //             font-family: PingFangSC-Regular, PingFang SC;
+            //             font-weight: 400;
+            //             color: #97A0C3;
+            //             margin-right: 12px;
+            //         }
+            //         .pro{
+            //             flex: 1;
+            //         }
+            //     }
+            // }
 
-            .mudd_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .chufadi_container{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-top: 8px;
-                    .diItem{
-                        width: 32%;
-                        height: 24px;
-                        display: flex;
-                        align-items: center;
-                        padding: 2px 7px;
-                        box-sizing: border-box;
-                        background: #F4F7FC;
-                        border-radius: 4px;
-                        .addressIcon{
-                        display: block;
-                        width: 11px;
-                        margin-right: 6px;
-                        }
-                        .addresstxt{
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #242F57;
-                        }
-                    }
-                }
-            }
+            // .sex_card_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //     }
+            //     .sex_tu_container{
+            //         width: 100%;
+            //         display: flex;
+            //         align-items: center;
+            //         justify-content: space-between;
+            //         margin-bottom: 4px;
+            //         .man{
+            //             width: 64%;
+            //             height: 16px;
+            //             background: #2373FF;
+            //             border-radius: 2px;
+            //         }
+            //         .women{
+            //             width: 34%;
+            //             height: 16px;
+            //             background: #FE763D;
+            //             border-radius: 2px;
+            //         }
+            //     }
+            //     .sex_per_container{
+            //         width: 100%;
+            //         display: flex;
+            //         align-items: center;
+            //         justify-content: space-between;
+            //         font-size: 18px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         .man_per{
+            //             color: #2373FF;
+            //         }
+            //         .women_per{
+            //             color: #FE763D;
+            //         }
+            //         .mansex,.womensex{
+            //             font-size: 12px;
+            //             font-weight: 400;
+            //             color: #97A0C3;
+            //         }
+            //     }
+            // }
 
-            .tqfs_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .cx_type_container{
-                    width: 100%;
-                    margin-top: 16px;
-                    display: flex;
-                    align-items: center;
-                    .cx_item{
-                        display: flex;
-                        align-items: center;
-                        margin-right: 25px;
-                        .cxlogo{
-                        display: block;
-                        width: 16px;
-                        margin-right: 4px;
-                        }
-                        .cxtxt{
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #242F57;
-                        }
-                    }
-                }
-            }
+            // .chufa_card_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //     }
+            //     .chufadi_container{
+            //         width: 100%;
+            //         display: flex;
+            //         align-items: center;
+            //         justify-content: space-between;
+            //         margin-top: 8px;
+            //         .diItem{
+            //             width: 32%;
+            //             height: 24px;
+            //             display: flex;
+            //             align-items: center;
+            //             padding: 2px 7px;
+            //             box-sizing: border-box;
+            //             background: #F4F7FC;
+            //             border-radius: 4px;
+            //             .addressIcon{
+            //             display: block;
+            //             width: 11px;
+            //             margin-right: 6px;
+            //             }
+            //             .addresstxt{
+            //             font-size: 12px;
+            //             font-family: PingFangSC-Regular, PingFang SC;
+            //             font-weight: 400;
+            //             color: #242F57;
+            //             }
+            //         }
+            //     }
+            // }
 
-            .tqsjylx_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .haoshi_container{
-                    margin-top: 17px;
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    font-size: 12px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    color: #242F57;
-                    .timeBiao{
-                        display: block;
-                        width: 16px;
-                        height: 16px;
-                        margin-right: 4px;
-                    }
-                }
-            }
+            // .mudd_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //     }
+            //     .chufadi_container{
+            //         width: 100%;
+            //         display: flex;
+            //         align-items: center;
+            //         justify-content: space-between;
+            //         margin-top: 8px;
+            //         .diItem{
+            //             width: 32%;
+            //             height: 24px;
+            //             display: flex;
+            //             align-items: center;
+            //             padding: 2px 7px;
+            //             box-sizing: border-box;
+            //             background: #F4F7FC;
+            //             border-radius: 4px;
+            //             .addressIcon{
+            //             display: block;
+            //             width: 11px;
+            //             margin-right: 6px;
+            //             }
+            //             .addresstxt{
+            //             font-size: 12px;
+            //             font-family: PingFangSC-Regular, PingFang SC;
+            //             font-weight: 400;
+            //             color: #242F57;
+            //             }
+            //         }
+            //     }
+            // }
+
+            // .tqfs_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //     }
+            //     .cx_type_container{
+            //         width: 100%;
+            //         margin-top: 16px;
+            //         display: flex;
+            //         align-items: center;
+            //         .cx_item{
+            //             display: flex;
+            //             align-items: center;
+            //             margin-right: 25px;
+            //             .cxlogo{
+            //             display: block;
+            //             width: 16px;
+            //             margin-right: 4px;
+            //             }
+            //             .cxtxt{
+            //             font-size: 12px;
+            //             font-family: PingFangSC-Regular, PingFang SC;
+            //             font-weight: 400;
+            //             color: #242F57;
+            //             }
+            //         }
+            //     }
+            // }
+
+            // .tqsjylx_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //     }
+            //     .haoshi_container{
+            //         margin-top: 17px;
+            //         width: 100%;
+            //         display: flex;
+            //         align-items: center;
+            //         font-size: 12px;
+            //         font-family: PingFangSC-Regular, PingFang SC;
+            //         font-weight: 400;
+            //         color: #242F57;
+            //         .timeBiao{
+            //             display: block;
+            //             width: 16px;
+            //             height: 16px;
+            //             margin-right: 4px;
+            //         }
+            //     }
+            // }
         }
         .yhxw_container{
             position: absolute;
-            width: 60.2999999%;
+            width: 71%;
             bottom: 20px;
             left: 20px;
             z-index: 999;
@@ -2010,6 +2063,8 @@
               box-sizing: border-box;
               .tab_content{
                 width: 100%;
+                height: 152.82px;
+                overflow-y: auto;
                 padding: 12px 23px;
                 box-sizing: border-box;
                 background: #FFFFFF;
@@ -2060,6 +2115,18 @@
                         color: #242F57;
                       }
                     }
+                  }
+                }
+                .tab_content_item1{
+                  display: flex;
+                  align-items: center;
+                  width: 100%;
+                  .tab_content_item1_cir{
+                    width: 8px;
+                    height: 8px;
+                    background-color: #2373FF;
+                    margin-right: 6px;
+                    border-radius: 50%;
                   }
                 }
                 .remb{
