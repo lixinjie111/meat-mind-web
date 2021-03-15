@@ -777,8 +777,8 @@
                 var polygons=[];
                 var map = new AMap.Map('mapContainer', {
                     resizeEnable: true,
-                    center: [116.397428, 39.90923],//地图中心点
-                    zoom: 11, //地图显示的缩放级别
+                    center: [108.688763,38.084088],//地图中心点
+                    zoom: 4, //地图显示的缩放级别
                     mapStyle: "amap://styles/whitesmoke"
                 });
                 map.setDefaultCursor("pointer");
@@ -811,7 +811,7 @@
                         }
                     }
                     map.add(polygons);
-                    map.setFitView(polygons);//视口自适应
+                    // map.setFitView(polygons);//视口自适应
                 });
 
                 var circle = new AMap.Circle({

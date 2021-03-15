@@ -49,25 +49,33 @@
             <img :src="bjsbzImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
           <div class="rig_area">
-            <div class="yl_container">
-              <div class="yl_lef" style="background: #FF9502;"></div>
-              <div class="yl_rig">娱乐</div>
+            <div class="rig_area_lef">
+              <div class="yl_container">
+                <div class="yl_lef" style="background: #FF9502;"></div>
+                <div class="yl_rig">娱乐</div>
+              </div>
+              <div class="gz_container">
+                <div class="yl_lef" style="background: #A49DFA;"></div>
+                <div class="yl_rig">工作</div>
+              </div>
+              <div class="xw_container">
+                <div class="yl_lef" style="background: #017AFF;"></div>
+                <div class="yl_rig">新闻</div>
+              </div>
+              <div class="sp_container">
+                <div class="yl_lef" style="background: #2EB1FF;"></div>
+                <div class="yl_rig">视频</div>
+              </div>
+              <div class="xs_container">
+                <div class="yl_lef" style="background: #F383FF;"></div>
+                <div class="yl_rig">学术</div>
+              </div>
             </div>
-            <div class="gz_container">
-              <div class="yl_lef" style="background: #A49DFA;"></div>
-              <div class="yl_rig">工作</div>
-            </div>
-            <div class="xw_container">
-              <div class="yl_lef" style="background: #017AFF;"></div>
-              <div class="yl_rig">新闻</div>
-            </div>
-            <div class="sp_container">
-              <div class="yl_lef" style="background: #2EB1FF;"></div>
-              <div class="yl_rig">视频</div>
-            </div>
-            <div class="xs_container">
-              <div class="yl_lef" style="background: #F383FF;"></div>
-              <div class="yl_rig">学术</div>
+            <div class="rig_area_rig">
+              <div class="rig_area_til">偏好媒介</div>
+              <div class="rig_area_icon">
+
+              </div>
             </div>
           </div>
         </div>
@@ -94,21 +102,29 @@
             <img :src="yxqnImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
           <div class="rig_area">
-            <div class="gt_container">
-              <div class="yl_lef" style="background: #36D67B;"></div>
-              <div class="yl_rig">沟通</div>
+            <div class="rig_area_lef">
+              <div class="gt_container">
+                <div class="yl_lef" style="background: #36D67B;"></div>
+                <div class="yl_rig">沟通</div>
+              </div>
+              <div class="gz_container">
+                <div class="yl_lef" style="background: #A49DFA;"></div>
+                <div class="yl_rig">工作</div>
+              </div>
+              <div class="xw_container">
+                <div class="yl_lef" style="background: #017AFF;"></div>
+                <div class="yl_rig">新闻</div>
+              </div>
+              <div class="xs_container">
+                <div class="yl_lef" style="background: #F383FF;"></div>
+                <div class="yl_rig">学术</div>
+              </div>
             </div>
-            <div class="gz_container">
-              <div class="yl_lef" style="background: #A49DFA;"></div>
-              <div class="yl_rig">工作</div>
-            </div>
-            <div class="xw_container">
-              <div class="yl_lef" style="background: #017AFF;"></div>
-              <div class="yl_rig">新闻</div>
-            </div>
-            <div class="xs_container">
-              <div class="yl_lef" style="background: #F383FF;"></div>
-              <div class="yl_rig">学术</div>
+            <div class="rig_area_rig">
+              <div class="rig_area_til">偏好媒介</div>
+              <div class="rig_area_icon">
+
+              </div>
             </div>
           </div>
         </div>
@@ -135,17 +151,26 @@
             <img :src="qyggImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
           <div class="rig_area">
-            <div class="gz_container">
-              <div class="yl_lef" style="background: #A49DFA;"></div>
-              <div class="yl_rig">工作</div>
+            <div class="rig_area_lef">
+              <div class="gz_container">
+                <div class="yl_lef" style="background: #A49DFA;"></div>
+                <div class="yl_rig">工作</div>
+              </div>
+              <div class="xs_container">
+                <div class="yl_lef" style="background: #F383FF;"></div>
+                <div class="yl_rig">学术</div>
+              </div>
             </div>
-            <div class="xs_container">
-              <div class="yl_lef" style="background: #F383FF;"></div>
-              <div class="yl_rig">学术</div>
+            <div class="rig_area_rig">
+              <div class="rig_area_til">偏好媒介</div>
+              <div class="rig_area_icon">
+
+              </div>
             </div>
           </div>
         </div>
-        <vDxitem v-if="ifShowDx3"></vDxitem>
+        <!-- <vDxitem v-if="ifShowDx3"></vDxitem> -->
+        <vDxitem1 v-if="ifShowDx3"></vDxitem1>
 
         <div class="bjsbz_container">
           <div class="lef_area">
@@ -160,37 +185,46 @@
             </div>
             <div class="lef_area_bom" style="background: #FFE6DE;color: #FE774B;" @click="expandfn(4)">
               {{vDxtxt4}}
-              <img v-if="vDxtxt4 == '收起'" :src="czkImg" class="squpImg"/>
-              <img v-else :src="czkImg" class="squpImg"/>
+              <img v-if="vDxtxt4 == '查看动线详情'" :src="czkImg" class="squpImg"/>
+              <i v-else :class="['iconfont','iconup']" class="squpImg"></i>
             </div>
           </div>
           <div class="cen_area">
             <img :src="bjsbzImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
           <div class="rig_area">
-            <div class="yl_container">
-              <div class="yl_lef" style="background: #FF9502;"></div>
-              <div class="yl_rig">娱乐</div>
+            <div class="rig_area_lef">
+              <div class="yl_container">
+                <div class="yl_lef" style="background: #FF9502;"></div>
+                <div class="yl_rig">娱乐</div>
+              </div>
+              <div class="gt_container">
+                <div class="yl_lef" style="background: #36D67B;"></div>
+                <div class="yl_rig">沟通</div>
+              </div>
+              <div class="gz_container">
+                <div class="yl_lef" style="background: #A49DFA;"></div>
+                <div class="yl_rig">工作</div>
+              </div>
+              <div class="xw_container">
+                <div class="yl_lef" style="background: #017AFF;"></div>
+                <div class="yl_rig">新闻</div>
+              </div>
+              <div class="xs_container">
+                <div class="yl_lef" style="background: #F383FF;"></div>
+                <div class="yl_rig">学术</div>
+              </div>
             </div>
-            <div class="gt_container">
-              <div class="yl_lef" style="background: #36D67B;"></div>
-              <div class="yl_rig">沟通</div>
-            </div>
-            <div class="gz_container">
-              <div class="yl_lef" style="background: #A49DFA;"></div>
-              <div class="yl_rig">工作</div>
-            </div>
-            <div class="xw_container">
-              <div class="yl_lef" style="background: #017AFF;"></div>
-              <div class="yl_rig">新闻</div>
-            </div>
-            <div class="xs_container">
-              <div class="yl_lef" style="background: #F383FF;"></div>
-              <div class="yl_rig">学术</div>
+            <div class="rig_area_rig">
+              <div class="rig_area_til">偏好媒介</div>
+              <div class="rig_area_icon">
+
+              </div>
             </div>
           </div>
         </div>
-        <vDxitem v-if="ifShowDx4"></vDxitem>
+        <!-- <vDxitem v-if="ifShowDx4"></vDxitem> -->
+        <vDxitem1 v-if="ifShowDx4"></vDxitem1>
 
         <div class="bjsbz_container">
           <div class="lef_area">
@@ -205,33 +239,42 @@
             </div>
             <div class="lef_area_bom" style="background: #FFE6DE;color: #FE774B;" @click="expandfn(5)">
               {{vDxtxt5}}
-              <img v-if="vDxtxt5 == '收起'" :src="czkImg" class="squpImg"/>
-              <img v-else :src="czkImg" class="squpImg"/>
+              <img v-if="vDxtxt5 == '查看动线详情'" :src="czkImg" class="squpImg"/>
+              <i v-else :class="['iconfont','iconup']" class="squpImg"></i>
             </div>
           </div>
           <div class="cen_area">
             <img :src="zyzyImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
           <div class="rig_area">
-            <div class="yl_container">
-              <div class="yl_lef" style="background: #FF9502;"></div>
-              <div class="yl_rig">娱乐</div>
+            <div class="rig_area_lef">
+              <div class="yl_container">
+                <div class="yl_lef" style="background: #FF9502;"></div>
+                <div class="yl_rig">娱乐</div>
+              </div>
+              <div class="gt_container">
+                <div class="yl_lef" style="background: #36D67B;"></div>
+                <div class="yl_rig">沟通</div>
+              </div>
+              <div class="sp_container">
+                <div class="yl_lef" style="background: #2EB1FF;"></div>
+                <div class="yl_rig">视频</div>
+              </div>
+              <div class="xs_container">
+                <div class="yl_lef" style="background: #F383FF;"></div>
+                <div class="yl_rig">学术</div>
+              </div>
             </div>
-            <div class="gt_container">
-              <div class="yl_lef" style="background: #36D67B;"></div>
-              <div class="yl_rig">沟通</div>
-            </div>
-            <div class="sp_container">
-              <div class="yl_lef" style="background: #2EB1FF;"></div>
-              <div class="yl_rig">视频</div>
-            </div>
-            <div class="xs_container">
-              <div class="yl_lef" style="background: #F383FF;"></div>
-              <div class="yl_rig">学术</div>
+            <div class="rig_area_rig">
+              <div class="rig_area_til">偏好媒介</div>
+              <div class="rig_area_icon">
+
+              </div>
             </div>
           </div>
         </div>
-        <vDxitem v-if="ifShowDx5"></vDxitem>
+        <!-- <vDxitem v-if="ifShowDx5"></vDxitem> -->
+        <vDxitem1 v-if="ifShowDx5"></vDxitem1>
 
         <!-- <div class="echarts_container1">
           <div class="left_timer_container">
@@ -2223,25 +2266,45 @@ export default {
         width: 440px;
         height: 100%;
         border-left:1px solid #EAEDF7;
-        padding: 28px 31px;
+        padding:16px;
         padding-right: 5px;
         box-sizing: border-box;
         display: flex;
-        flex-wrap: wrap;
-        font-size: 12px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        color: #636E95;
-        .yl_container,.gt_container,.gz_container,.xw_container,.sp_container,.xs_container{
+        align-items: flex-start;
+        justify-content: space-between;
+        .rig_area_lef{
+          width: 150px;
           display: flex;
-          align-items: center;
-          margin-bottom: 16px;
-          margin-right: 20px;
-          .yl_lef{
-            width: 8px;
-            height: 8px;
-            border-radius: 2px;
-            margin-right: 4px;
+          flex-wrap: wrap;
+          font-size: 12px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #636E95;
+          .yl_container,.gt_container,.gz_container,.xw_container,.sp_container,.xs_container{
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            margin-right: 16px;
+            .yl_lef{
+              width: 8px;
+              height: 8px;
+              border-radius: 2px;
+              margin-right: 4px;
+            }
+          }
+        }
+        .rig_area_rig{
+          width: 120px;
+          .rig_area_til{
+            width: 100%;
+            font-size: 14px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242F57;
+            margin-bottom: 3px;
+          }
+          .rig_area_icon{
+
           }
         }
       }
