@@ -301,9 +301,11 @@
                 </div>
                 <div class="tab_con" ref="tab_con">
                   <div class="tab_content">
-                    <div class="tab_content_item" v-for="(item,index) in tabconList" :key="index" :class="{'remb':(index==5 || index==6)}">
+                    <div class="tab_content_item" ref="tab_content_item" v-for="(item,index) in tabconList" :key="index" :class="{'remb':((index==5 || index==6) || (item.til == '话题偏好' || item.til == '个人标签'))}">
                       <div class="tab_content_item_top">{{item.til}}</div>
-                      <div class="tab_content_item_bom" v-if="item.desc">{{item.desc}}</div>
+                      <div class="tab_content_item_bom" v-if="item.descList">
+                         <div class="tab_content_item_bom_item" v-for="(itm1,inx) in item.descList" :key="inx">{{itm1}}</div>
+                      </div>
                       <div class="icon_contai" v-if="item.ticList">
                         <div class="icon_contai_itm" v-for="(itm1,inx) in item.ticList" :key="inx">
                           <img :src="itm1.ic" class="icon_im">
@@ -484,37 +486,37 @@
                tabconList:[
                  {
                   til:'年龄结构',
-                  desc:'20-29岁',
+                  descList:['20-29岁'],
                   ticList:null
                  },
                  {
                   til:'收入结构',
-                  desc:'15-25k',
+                  descList:['15-25k'],
                   ticList:null
                  },
                  {
                   til:'职业结构',
-                  desc:'白领',
+                  descList:['白领'],
                   ticList:null
                  },
                  {
                   til:'行业结构',
-                  desc:'互联网',
+                  descList:['互联网'],
                   ticList:null
                  },
-                {
+                 {
                   til:'教育背景',
-                  desc:'本科以上',
+                  descList:['本科以上'],
                   ticList:null
                  },
                  {
                   til:'居住地区',
-                  desc:'一线城市',
+                  descList:['一线城市'],
                   ticList:null
                  },
                  {
                   til:'主要出行方式',
-                  desc:null,
+                  descList:null,
                   ticList:[
                     {
                       ic:require("../../assets/img/yhhx/ditieIcon.png"),
@@ -525,6 +527,96 @@
                       txt:'自驾'
                     }
                   ]
+                 }
+               ],
+               tabconList0:[
+                 {
+                  til:'年龄结构',
+                  descList:['20-29岁'],
+                  ticList:null
+                 },
+                 {
+                  til:'收入结构',
+                  descList:['15-25k'],
+                  ticList:null
+                 },
+                 {
+                  til:'职业结构',
+                  descList:['白领'],
+                  ticList:null
+                 },
+                 {
+                  til:'行业结构',
+                  descList:['互联网'],
+                  ticList:null
+                 },
+                 {
+                  til:'教育背景',
+                  descList:['本科以上'],
+                  ticList:null
+                 },
+                 {
+                  til:'居住地区',
+                  descList:['一线城市'],
+                  ticList:null
+                 },
+                 {
+                  til:'主要出行方式',
+                  descList:null,
+                  ticList:[
+                    {
+                      ic:require("../../assets/img/yhhx/ditieIcon.png"),
+                      txt:'地铁（5号线、10号线、13号线）'
+                    },
+                    {
+                      ic:require("../../assets/img/yhhx/drIcon.png"),
+                      txt:'自驾'
+                    }
+                  ]
+                 }
+               ],
+               tabconList1:[
+                 {
+                  til:'APP使用结构',
+                  descList:['用户对短视频类APP偏好明显，微博成为重要社交平台'],
+                  ticList:null
+                 },
+                 {
+                  til:'内容偏好结构',
+                  descList:['通讯社交及交通出行类覆盖度高，各种类型内容均能吸引一定的忠实用户'],
+                  ticList:null
+                 },
+                 {
+                  til:'用户行为分布结构',
+                  descList:['用户群体工作休闲两不误，放松休闲活动较多，需求强烈'],
+                  ticList:null
+                 },
+                 {
+                  til:'不同性别APP内容偏好',
+                  descList:['85%的女性喜欢开箱测评类内容；60%的男性喜欢深度测评类内容'],
+                  ticList:null
+                 }
+               ],
+               tabconList2:[
+                 {
+                  til:'敏感/厌恶',
+                  descList:['添加剂','卫生条件差','糖分超标'],
+                  ticList:null
+                 },
+                 {
+                  til:'风格偏好',
+                  descList:['INS风','性冷淡风'],
+                  ticList:null
+                 },
+                 {
+                  til:'话题偏好',
+                  descList:['健康运动','金融理财','育儿亲子'],
+                  ticList:null
+                 },
+                 {
+                  til:'个人标签',
+                  descList:['新锐白领','宝藏浪姐','潮酷女孩'],
+                  ticList:null
                  }
                ]
             }
@@ -566,19 +658,32 @@
         methods:{
             changMbItem(arg){
               var tabDom = this.$refs.tab_con;
+              var tabDom1 = this.$refs.tab_content_item || [];
               var bgc0 = '#F0F8FF';
               var bgc1 = '#D3E3FF';
               var bgc2 = '#9ECBFF';
               var bgc3 = '#4488FF';
-              console.log(tabDom,'tabDom')
+              console.log(tabDom1,'tabDom')
               if(arg == 0){
                 tabDom.style=` background:${bgc0};`;
+                this.tabconList = this.tabconList0;
+                for(var i=0;i<tabDom1.length;i++){
+                  tabDom1[i].style=" margin-right: 71px;";
+                }
               }
               else if(arg == 1){
                 tabDom.style=` background: ${bgc1};`;
+                this.tabconList = this.tabconList1;
+                for(var i=0;i<tabDom1.length;i++){
+                  tabDom1[i].style=" margin-right: 22px;";
+                }
               }
               else if(arg == 2){
                 tabDom.style=` background: ${bgc2};`;
+                this.tabconList = this.tabconList2;
+                for(var i=0;i<tabDom1.length;i++){
+                  tabDom1[i].style=" margin-right: 50px;";
+                }
               }
               else if(arg == 3){
                 tabDom.style=` background: ${bgc3};`;
@@ -1870,7 +1975,7 @@
         }
         .yhxw_container{
             position: absolute;
-            width: 60%;
+            width: 60.2999999%;
             bottom: 20px;
             left: 20px;
             z-index: 999;
@@ -1912,7 +2017,7 @@
                 display: flex;
                 flex-wrap: wrap;
                 .tab_content_item{
-                  margin-right: 60px;
+                  margin-right: 50px;
                   display: flex;
                   flex-direction: column;
                   align-items: flex-start;
@@ -1925,11 +2030,16 @@
                     margin-bottom: 8px;
                   }
                   .tab_content_item_bom{
-                    padding: 2px 10px;
-                    box-sizing: border-box;
-                    background: #F0F8FF;
-                    border-radius: 4px;
-                    border: 1px solid #FFFFFF;
+                    display: flex;
+                    align-items: center;
+                    .tab_content_item_bom_item{
+                      padding: 2px 10px;
+                      box-sizing: border-box;
+                      background: #F0F8FF;
+                      border-radius: 4px;
+                      border: 1px solid #FFFFFF;
+                      margin-right: 18px;
+                    }
                   }
                   .icon_contai{
                     display: flex;

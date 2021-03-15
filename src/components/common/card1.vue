@@ -81,10 +81,6 @@ export default {
   min-height: 125px;
   border-right: 1px solid #eaedf7;
   margin-bottom: 28px;
-  &:hover{
-    background: #FFFFFF;
-    box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16);
-  }
   .card_title {
     width: 100%;
     margin-bottom: 8px;
