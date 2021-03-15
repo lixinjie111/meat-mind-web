@@ -47,13 +47,13 @@ export default {
 
 <style scoped lang="scss">
 .card_container{
-    width: 45%;
+    width: 47%;
     border-radius: 8px;
     padding: 30px 20px;
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    margin-bottom: 23px;
+    margin-bottom: 22px;
     position: relative;
     .info_lef{
         width: 52px;
