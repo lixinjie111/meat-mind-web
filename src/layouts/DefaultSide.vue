@@ -62,7 +62,7 @@
                             },
                             {
                                 name:"mark-negative",
-                                label:"负面舆情",
+                                label:"舆情应对",
                                 path:"/mark/negative"
                             },
                             {

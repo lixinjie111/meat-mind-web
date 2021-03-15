@@ -1,6 +1,6 @@
 <template>
     <div class="mark-negative">
-        <div class="title">负面舆情</div>
+        <div class="title">舆情应对</div>
         <div class="show">
 
         </div>

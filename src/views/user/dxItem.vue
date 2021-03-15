@@ -145,23 +145,23 @@
 
             </div>
             <div v-if="!onlyMap" class="per_info_container">
-                <div class="yhdx_title">
+                <!-- <div class="yhdx_title">
                     <div class="yhdx_title_top">
                         用户动线分析结果
                     </div>
                     <div class="yhdx_title_bom">
                         2020/12/14
                     </div>
-                </div>
-                <div class="switch_container">
+                </div> -->
+                <!-- <div class="switch_container">
                     <div class="data_title">数据图表</div>
                     <div class="switch_contianer">
                         <i-switch v-model="switch1"></i-switch>
                     </div>
                     <div class="data_title" style="color: #97A0C3;">智能解读</div>
-                </div>
+                </div> -->
 
-                <div class="nl_card_container">
+                <!-- <div class="nl_card_container">
                     <div class="til_label">
                         用户状态
                         <Poptip popper-class="saas-poptip" placement="right-start">
@@ -189,9 +189,9 @@
                         <div class="pro_label">烦躁</div>
                         <div class="pro"><Progress :percent="rightPanelData.userStatObj.stat4" status="active"></Progress></div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="chufa_card_container">
+                <!-- <div class="chufa_card_container">
                     <div class="til_label">出发地</div>
                     <div class="chufadi_container">
                         <div class="diItem" v-if="rightPanelData.chufaObj.chufa1">
@@ -207,9 +207,9 @@
                             <span class="addresstxt">{{rightPanelData.chufaObj.chufa3}}</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="mudd_container">
+                <!-- <div class="mudd_container">
                     <div class="til_label">目的地</div>
                     <div class="chufadi_container">
                         <div class="diItem" v-if="rightPanelData.mudiObj.mudi1">
@@ -225,9 +225,9 @@
                             <span class="addresstxt">{{rightPanelData.mudiObj.mudi3}}</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="tqfs_container">
+                <!-- <div class="tqfs_container">
                     <div class="til_label">通勤方式</div>
                     <div class="cx_type_container">
                         <div class="cx_item" v-if="rightPanelData.tonqinTypeObj.tqType1">
@@ -239,18 +239,18 @@
                             <span class="cxtxt">{{rightPanelData.tonqinTypeObj.tqType2}}</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="tqsjylx_container">
+                <!-- <div class="tqsjylx_container">
                     <div class="til_label">通勤时间与路程</div>
                     <div class="haoshi_container">
                         <img :src="tbIcon" alt="" srcset="" class="timeBiao">
                         <span style="margin-right:16px;">平均耗时</span>
                         <span>{{rightPanelData.tongqinTimeObj.timeN}}分钟</span>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="nl_card_container">
+                <!-- <div class="nl_card_container">
                     <div class="til_label">年龄占比</div>
                     <div class="pro_container">
                         <div class="pro_label">15-25岁</div>
@@ -264,9 +264,9 @@
                         <div class="pro_label">35-45岁</div>
                         <div class="pro"><Progress :percent="20" status="active"></Progress></div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="sex_card_container">
+                <!-- <div class="sex_card_container">
                     <div class="til_label">性别占比</div>
                     <div class="sex_tu_container">
                         <div class="man"></div>
@@ -280,11 +280,16 @@
                         <div class="mansex">男性</div>
                         <div class="womensex">女性</div>
                     </div>
-                </div>
+                </div> -->
 
+                <div class="person_til">用户触达策略</div>
+                <div class="perxon_tab_con">
+                  <div class="perxon_tab_con_lef">投放方案推荐</div>
+                  <div class="perxon_tab_con_rig">自定义媒介投放</div>
+                </div>
             </div>
             <div class="yhxw_container">
-                <div class="yhxw_title">用户行为</div>
+                <!-- <div class="yhxw_title">用户行为</div>
                 <div class="bqitm_container">
                     <div class="bqitm" v-for="(it, i) in bqitmList" :key="i">
                         <div class="bqitm_lef" :style="`color: ${colorConfig[it.name]}`">{{it.name}}</div>
@@ -292,6 +297,42 @@
                             <img v-for="(item,index) in it.icons" :src="item.icon" :key="index" alt="" class="bqimg">
                         </div>
                     </div>
+                </div> -->
+                <div class="tab_item">
+                  <div class="tab_item_item mbitem1" @click="changMbItem(0)">基础画像</div>
+                  <div class="tab_item_item mbitem2" @click="changMbItem(1)">行为分析</div>
+                  <div class="tab_item_item mbitem3" @click="changMbItem(2)">心智分析</div>
+                  <div class="tab_item_item mbitem4" @click="changMbItem(3)">生命周期分析</div>
+                </div>
+                <div class="tab_con" ref="tab_con">
+                  <div class="tab_content" v-if="ifShowtcon">
+                    <div class="tab_content_item" ref="tab_content_item" v-for="(item,index) in tabconList" :key="index" :class="{'remb':((index==5 || index==6) || (item.til == '话题偏好' || item.til == '个人标签'))}">
+                      <div class="tab_content_item_top">{{item.til}}</div>
+                      <div class="tab_content_item_bom" v-if="item.descList">
+                         <div class="tab_content_item_bom_item" v-for="(itm1,inx) in item.descList" :key="inx">{{itm1}}</div>
+                      </div>
+                      <div class="icon_contai" v-if="item.ticList">
+                        <div class="icon_contai_itm" v-for="(itm1,inx) in item.ticList" :key="inx">
+                          <img :src="itm1.ic" class="icon_im">
+                          <div class="imitro">{{itm1.txt}}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab_content" v-else>
+                    <div class="tab_content_item1">
+                      <div class="tab_content_item1_cir"></div>
+                      <div class="tab_content_item1_con">早期客户留存转化率较低，需要加大投放力度；</div>
+                    </div>
+                    <div class="tab_content_item1">
+                      <div class="tab_content_item1_cir"></div>
+                      <div class="tab_content_item1_con">成熟期及休眠期的用户消费潜力巨大，品牌方应充分挖掘其价值；</div>
+                    </div>
+                    <div class="tab_content_item1">
+                      <div class="tab_content_item1_cir"></div>
+                      <div class="tab_content_item1_con">用户在餐饮百货品类价值贡献度高，可迎合其偏好制定策略。</div>
+                    </div>
+                  </div>
                 </div>
             </div>
         </div>
@@ -401,7 +442,7 @@
                     allBqitm.wb,
                   ]
                 }
-              ],
+                ],
                 districtList:[
                     '朝阳区','海淀区','丰台区','西城区','东城区','石景山区','昌平区','通州区','顺义区','房山区','门头沟区','大兴区','怀柔区','延庆区','平谷区','密云区'
                 ],
@@ -453,14 +494,151 @@
                         timeN:30
                     }
                 },
-              colorConfig: {
-                新闻: '#017AFF',
-                视频: '#5AC8FA',
-                娱乐: '#FF9502',
-                交流: '#a49dfa',
-                出行: '#CECE7E',
-                餐饮: '#8AE6C7',
-              }
+                colorConfig: {
+                  新闻: '#017AFF',
+                  视频: '#5AC8FA',
+                  娱乐: '#FF9502',
+                  交流: '#a49dfa',
+                  出行: '#CECE7E',
+                  餐饮: '#8AE6C7',
+               },
+               tabconList:[
+                 {
+                  til:'年龄结构',
+                  descList:['20-29岁'],
+                  ticList:null
+                 },
+                 {
+                  til:'收入结构',
+                  descList:['15-25k'],
+                  ticList:null
+                 },
+                 {
+                  til:'职业结构',
+                  descList:['白领'],
+                  ticList:null
+                 },
+                 {
+                  til:'行业结构',
+                  descList:['互联网'],
+                  ticList:null
+                 },
+                 {
+                  til:'教育背景',
+                  descList:['本科以上'],
+                  ticList:null
+                 },
+                 {
+                  til:'居住地区',
+                  descList:['一线城市'],
+                  ticList:null
+                 },
+                 {
+                  til:'主要出行方式',
+                  descList:null,
+                  ticList:[
+                    {
+                      ic:require("../../assets/img/yhhx/ditieIcon.png"),
+                      txt:'地铁（5号线、10号线、13号线）'
+                    },
+                    {
+                      ic:require("../../assets/img/yhhx/drIcon.png"),
+                      txt:'自驾'
+                    }
+                  ]
+                 }
+               ],
+               tabconList0:[
+                 {
+                  til:'年龄结构',
+                  descList:['20-29岁'],
+                  ticList:null
+                 },
+                 {
+                  til:'收入结构',
+                  descList:['15-25k'],
+                  ticList:null
+                 },
+                 {
+                  til:'职业结构',
+                  descList:['白领'],
+                  ticList:null
+                 },
+                 {
+                  til:'行业结构',
+                  descList:['互联网'],
+                  ticList:null
+                 },
+                 {
+                  til:'教育背景',
+                  descList:['本科以上'],
+                  ticList:null
+                 },
+                 {
+                  til:'居住地区',
+                  descList:['一线城市'],
+                  ticList:null
+                 },
+                 {
+                  til:'主要出行方式',
+                  descList:null,
+                  ticList:[
+                    {
+                      ic:require("../../assets/img/yhhx/ditieIcon.png"),
+                      txt:'地铁（5号线、10号线、13号线）'
+                    },
+                    {
+                      ic:require("../../assets/img/yhhx/drIcon.png"),
+                      txt:'自驾'
+                    }
+                  ]
+                 }
+               ],
+               tabconList1:[
+                 {
+                  til:'APP使用结构',
+                  descList:['用户对短视频类APP偏好明显，微博成为重要社交平台'],
+                  ticList:null
+                 },
+                 {
+                  til:'内容偏好结构',
+                  descList:['通讯社交及交通出行类覆盖度高，各种类型内容均能吸引一定的忠实用户'],
+                  ticList:null
+                 },
+                 {
+                  til:'用户行为分布结构',
+                  descList:['用户群体工作休闲两不误，放松休闲活动较多，需求强烈'],
+                  ticList:null
+                 },
+                 {
+                  til:'不同性别APP内容偏好',
+                  descList:['85%的女性喜欢开箱测评类内容；60%的男性喜欢深度测评类内容'],
+                  ticList:null
+                 }
+               ],
+               tabconList2:[
+                 {
+                  til:'敏感/厌恶',
+                  descList:['添加剂','卫生条件差','糖分超标'],
+                  ticList:null
+                 },
+                 {
+                  til:'风格偏好',
+                  descList:['INS风','性冷淡风'],
+                  ticList:null
+                 },
+                 {
+                  til:'话题偏好',
+                  descList:['健康运动','金融理财','育儿亲子'],
+                  ticList:null
+                 },
+                 {
+                  til:'个人标签',
+                  descList:['新锐白领','宝藏浪姐','潮酷女孩'],
+                  ticList:null
+                 }
+               ],
+               ifShowtcon:true
             }
         },
         mounted(){
@@ -495,8 +673,46 @@
             var cir1 = [116.310356,39.932426];
             var cir2 = [116.433529,39.941237];
             this.initMap(path,path1,path2,cir1,cir2,'西城区');
+            this.changMbItem(0);
         },
         methods:{
+            changMbItem(arg){
+              var tabDom = this.$refs.tab_con;
+              var tabDom1 = this.$refs.tab_content_item || [];
+              var bgc0 = '#F0F8FF';
+              var bgc1 = '#D3E3FF';
+              var bgc2 = '#9ECBFF';
+              var bgc3 = '#4488FF';
+              console.log(tabDom1,'tabDom')
+              if(arg == 0){
+                this.ifShowtcon = true;
+                tabDom.style=` background:${bgc0};`;
+                this.tabconList = this.tabconList0;
+                for(var i=0;i<tabDom1.length;i++){
+                  tabDom1[i].style=" margin-right: 60px;";
+                }
+              }
+              else if(arg == 1){
+                this.ifShowtcon = true;
+                tabDom.style=` background: ${bgc1};`;
+                this.tabconList = this.tabconList1;
+                for(var i=0;i<tabDom1.length;i++){
+                  tabDom1[i].style=" margin-right: 22px;";
+                }
+              }
+              else if(arg == 2){
+                this.ifShowtcon = true;
+                tabDom.style=` background: ${bgc2};`;
+                this.tabconList = this.tabconList2;
+                for(var i=0;i<tabDom1.length;i++){
+                  tabDom1[i].style=" margin-right: 50px;";
+                }
+              }
+              else if(arg == 3){
+                this.ifShowtcon = false;
+                tabDom.style=` background: ${bgc3};`;
+              }
+            },
             submit(){
                 this.ifShowCon = false;
                 this.condiObj = {
@@ -777,8 +993,8 @@
                 var polygons=[];
                 var map = new AMap.Map('mapContainer', {
                     resizeEnable: true,
-                    center: [116.397428, 39.90923],//地图中心点
-                    zoom: 11, //地图显示的缩放级别
+                    center: [108.688763,38.084088],//地图中心点
+                    zoom: 4, //地图显示的缩放级别
                     mapStyle: "amap://styles/whitesmoke"
                 });
                 map.setDefaultCursor("pointer");
@@ -811,7 +1027,7 @@
                         }
                     }
                     map.add(polygons);
-                    map.setFitView(polygons);//视口自适应
+                    // map.setFitView(polygons);//视口自适应
                 });
 
                 var circle = new AMap.Circle({
@@ -1291,12 +1507,16 @@
             .condition_item{
                 width: 91px;
                 height: 24px;
-                background: #FFFFFF;
+                background: #D3E3FF;
                 border-radius: 4px;
                 border: 1px solid #EAEDF7;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                font-size: 12px;
+                font-family: PingFangSC-Semibold, PingFang SC;
+                font-weight: 600;
+                color: #2373FF;
             }
         }
         .conditions_rig{
@@ -1470,366 +1690,494 @@
         .per_info_container{
             width: 270px;
             height: 100%;
-            padding:13px 12px;
+            padding:17px 16px;
             box-sizing: border-box;
             background: #EAEDF7;
             overflow-y: scroll;
-            .yhdx_title{
-                width: 100%;
-                height: 72px;
-                border-radius: 8px;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
-                padding-left: 16px;
-                box-sizing: border-box;
-                background-image: url("../../assets/img/yhhx/river.png");
-                background-size: cover;
-                .yhdx_title_top{
-                    width: 100%;
-                    font-size: 18px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #FFFFFF;
-                }
-                .yhdx_title_bom{
-                    width: 100%;
-                    font-size: 12px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    color: #FFFFFF;
-                }
+            .person_til{
+              width: 100%;
+              font-size: 18px;
+              font-family: PingFangSC-Medium, PingFang SC;
+              font-weight: 500;
+              color: #242F57;
+              margin-bottom: 15px;
             }
-            .switch_container{
-                width: 100%;
-                padding: 12px 20px;
-                box-sizing: border-box;
-                border-bottom: 1px solid #fdfdfd;
+            .perxon_tab_con{
+              display: flex;
+              .perxon_tab_con_lef,.perxon_tab_con_rig{
+                width: 50%;
+                height: 40px;
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636E95;
+                background-color: darkgoldenrod;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
-                font-size: 14px;
-                font-family: PingFangSC-Medium, PingFang SC;
-                font-weight: 500;
-                color: #242F57;
-            }
-            .nl_card_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                    // ::v-deep .saas-poptip{
-                    //     left: 628px !important;
-                    //     .ivu-poptip-content{
-                    //         width: 270px !important;
-                    //     }
-                    // }
-                }
-                .pro_container{
-                    width: 100%;
-                    margin-bottom: 8px;
-                    display: flex;
-                    align-items: center;
-                    .pro_label{
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #97A0C3;
-                        margin-right: 12px;
-                    }
-                    .pro{
-                        flex: 1;
-                    }
-                }
-            }
+                justify-content: center;
+              }
+              .perxon_tab_con_lef{
 
-            .sex_card_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .sex_tu_container{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-bottom: 4px;
-                    .man{
-                        width: 64%;
-                        height: 16px;
-                        background: #2373FF;
-                        border-radius: 2px;
-                    }
-                    .women{
-                        width: 34%;
-                        height: 16px;
-                        background: #FE763D;
-                        border-radius: 2px;
-                    }
-                }
-                .sex_per_container{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    font-size: 18px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    .man_per{
-                        color: #2373FF;
-                    }
-                    .women_per{
-                        color: #FE763D;
-                    }
-                    .mansex,.womensex{
-                        font-size: 12px;
-                        font-weight: 400;
-                        color: #97A0C3;
-                    }
-                }
-            }
+              }
+              .perxon_tab_con_rig{
 
-            .chufa_card_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .chufadi_container{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-top: 8px;
-                    .diItem{
-                        width: 32%;
-                        height: 24px;
-                        display: flex;
-                        align-items: center;
-                        padding: 2px 7px;
-                        box-sizing: border-box;
-                        background: #F4F7FC;
-                        border-radius: 4px;
-                        .addressIcon{
-                        display: block;
-                        width: 11px;
-                        margin-right: 6px;
-                        }
-                        .addresstxt{
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #242F57;
-                        }
-                    }
-                }
+              }
             }
+            // .yhdx_title{
+            //     width: 100%;
+            //     height: 72px;
+            //     border-radius: 8px;
+            //     display: flex;
+            //     flex-direction: column;
+            //     align-items: flex-start;
+            //     justify-content: center;
+            //     padding-left: 16px;
+            //     box-sizing: border-box;
+            //     background-image: url("../../assets/img/yhhx/river.png");
+            //     background-size: cover;
+            //     .yhdx_title_top{
+            //         width: 100%;
+            //         font-size: 18px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #FFFFFF;
+            //     }
+            //     .yhdx_title_bom{
+            //         width: 100%;
+            //         font-size: 12px;
+            //         font-family: PingFangSC-Regular, PingFang SC;
+            //         font-weight: 400;
+            //         color: #FFFFFF;
+            //     }
+            // }
+            // .switch_container{
+            //     width: 100%;
+            //     padding: 12px 20px;
+            //     box-sizing: border-box;
+            //     border-bottom: 1px solid #fdfdfd;
+            //     display: flex;
+            //     align-items: center;
+            //     justify-content: space-between;
+            //     font-size: 14px;
+            //     font-family: PingFangSC-Medium, PingFang SC;
+            //     font-weight: 500;
+            //     color: #242F57;
+            // }
+            // .nl_card_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //         // ::v-deep .saas-poptip{
+            //         //     left: 628px !important;
+            //         //     .ivu-poptip-content{
+            //         //         width: 270px !important;
+            //         //     }
+            //         // }
+            //     }
+            //     .pro_container{
+            //         width: 100%;
+            //         margin-bottom: 8px;
+            //         display: flex;
+            //         align-items: center;
+            //         .pro_label{
+            //             font-size: 12px;
+            //             font-family: PingFangSC-Regular, PingFang SC;
+            //             font-weight: 400;
+            //             color: #97A0C3;
+            //             margin-right: 12px;
+            //         }
+            //         .pro{
+            //             flex: 1;
+            //         }
+            //     }
+            // }
 
-            .mudd_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .chufadi_container{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-top: 8px;
-                    .diItem{
-                        width: 32%;
-                        height: 24px;
-                        display: flex;
-                        align-items: center;
-                        padding: 2px 7px;
-                        box-sizing: border-box;
-                        background: #F4F7FC;
-                        border-radius: 4px;
-                        .addressIcon{
-                        display: block;
-                        width: 11px;
-                        margin-right: 6px;
-                        }
-                        .addresstxt{
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #242F57;
-                        }
-                    }
-                }
-            }
+            // .sex_card_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //     }
+            //     .sex_tu_container{
+            //         width: 100%;
+            //         display: flex;
+            //         align-items: center;
+            //         justify-content: space-between;
+            //         margin-bottom: 4px;
+            //         .man{
+            //             width: 64%;
+            //             height: 16px;
+            //             background: #2373FF;
+            //             border-radius: 2px;
+            //         }
+            //         .women{
+            //             width: 34%;
+            //             height: 16px;
+            //             background: #FE763D;
+            //             border-radius: 2px;
+            //         }
+            //     }
+            //     .sex_per_container{
+            //         width: 100%;
+            //         display: flex;
+            //         align-items: center;
+            //         justify-content: space-between;
+            //         font-size: 18px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         .man_per{
+            //             color: #2373FF;
+            //         }
+            //         .women_per{
+            //             color: #FE763D;
+            //         }
+            //         .mansex,.womensex{
+            //             font-size: 12px;
+            //             font-weight: 400;
+            //             color: #97A0C3;
+            //         }
+            //     }
+            // }
 
-            .tqfs_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .cx_type_container{
-                    width: 100%;
-                    margin-top: 16px;
-                    display: flex;
-                    align-items: center;
-                    .cx_item{
-                        display: flex;
-                        align-items: center;
-                        margin-right: 25px;
-                        .cxlogo{
-                        display: block;
-                        width: 16px;
-                        margin-right: 4px;
-                        }
-                        .cxtxt{
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #242F57;
-                        }
-                    }
-                }
-            }
+            // .chufa_card_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //     }
+            //     .chufadi_container{
+            //         width: 100%;
+            //         display: flex;
+            //         align-items: center;
+            //         justify-content: space-between;
+            //         margin-top: 8px;
+            //         .diItem{
+            //             width: 32%;
+            //             height: 24px;
+            //             display: flex;
+            //             align-items: center;
+            //             padding: 2px 7px;
+            //             box-sizing: border-box;
+            //             background: #F4F7FC;
+            //             border-radius: 4px;
+            //             .addressIcon{
+            //             display: block;
+            //             width: 11px;
+            //             margin-right: 6px;
+            //             }
+            //             .addresstxt{
+            //             font-size: 12px;
+            //             font-family: PingFangSC-Regular, PingFang SC;
+            //             font-weight: 400;
+            //             color: #242F57;
+            //             }
+            //         }
+            //     }
+            // }
 
-            .tqsjylx_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .haoshi_container{
-                    margin-top: 17px;
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    font-size: 12px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    color: #242F57;
-                    .timeBiao{
-                        display: block;
-                        width: 16px;
-                        height: 16px;
-                        margin-right: 4px;
-                    }
-                }
-            }
+            // .mudd_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //     }
+            //     .chufadi_container{
+            //         width: 100%;
+            //         display: flex;
+            //         align-items: center;
+            //         justify-content: space-between;
+            //         margin-top: 8px;
+            //         .diItem{
+            //             width: 32%;
+            //             height: 24px;
+            //             display: flex;
+            //             align-items: center;
+            //             padding: 2px 7px;
+            //             box-sizing: border-box;
+            //             background: #F4F7FC;
+            //             border-radius: 4px;
+            //             .addressIcon{
+            //             display: block;
+            //             width: 11px;
+            //             margin-right: 6px;
+            //             }
+            //             .addresstxt{
+            //             font-size: 12px;
+            //             font-family: PingFangSC-Regular, PingFang SC;
+            //             font-weight: 400;
+            //             color: #242F57;
+            //             }
+            //         }
+            //     }
+            // }
+
+            // .tqfs_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //     }
+            //     .cx_type_container{
+            //         width: 100%;
+            //         margin-top: 16px;
+            //         display: flex;
+            //         align-items: center;
+            //         .cx_item{
+            //             display: flex;
+            //             align-items: center;
+            //             margin-right: 25px;
+            //             .cxlogo{
+            //             display: block;
+            //             width: 16px;
+            //             margin-right: 4px;
+            //             }
+            //             .cxtxt{
+            //             font-size: 12px;
+            //             font-family: PingFangSC-Regular, PingFang SC;
+            //             font-weight: 400;
+            //             color: #242F57;
+            //             }
+            //         }
+            //     }
+            // }
+
+            // .tqsjylx_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //     }
+            //     .haoshi_container{
+            //         margin-top: 17px;
+            //         width: 100%;
+            //         display: flex;
+            //         align-items: center;
+            //         font-size: 12px;
+            //         font-family: PingFangSC-Regular, PingFang SC;
+            //         font-weight: 400;
+            //         color: #242F57;
+            //         .timeBiao{
+            //             display: block;
+            //             width: 16px;
+            //             height: 16px;
+            //             margin-right: 4px;
+            //         }
+            //     }
+            // }
         }
         .yhxw_container{
             position: absolute;
-            width: 700px;
-            height: 139px;
-            background-image: url(/img/bgImg.a22ae601.png);
-            bottom: -1px;
-            left: 35px;
-            background-size: cover;
+            width: 71%;
+            bottom: 20px;
+            left: 20px;
             z-index: 999;
-            .yhxw_title{
-                position: absolute;
-                top: 18px;
-                left: 25px;
-                font-size: 14px;
-                font-family: PingFangSC-Medium, PingFang SC;
-                font-weight: 500;
-                color: #636E95;
+            .tab_item{
+              width: 100%;
+              display: flex;
+              .tab_item_item{
+                padding: 5px 16px;
+                box-sizing: border-box;
+                &:hover{
+                  cursor: pointer;
+                }
+              }
+              .mbitem1{
+                background: #F0F8FF;
+                border-radius: 4px 0px 0px 0px;
+              }
+              .mbitem2{
+                background: #D3E3FF;
+              }
+              .mbitem3{
+                background: #9ECBFF;
+              }
+              .mbitem4{
+                border-radius: 0px 4px 0px 0px;
+                background:#4488FF;
+              }
             }
-            .bqitm_container{
-                position: absolute;
-                top: 55px;
-                left: 25px;
-                min-width: 400px;
-                height: 60px;
+            .tab_con{
+              width: 100%;
+              padding: 20px 16px;
+              box-sizing: border-box;
+              .tab_content{
+                width: 100%;
+                height: 152.82px;
+                overflow-y: auto;
+                padding: 12px 23px;
+                box-sizing: border-box;
+                background: #FFFFFF;
+                border-radius: 4px;
                 display: flex;
-                align-items: center;
-                .bqitm{
-                    width: 180px;
-                    height: 100%;
-                    background: #FFFFFF;
-                    border-radius: 8px;
-                    margin-right: 16px;
-                    padding: 16px;
-                    box-sizing: border-box;
+                flex-wrap: wrap;
+                .tab_content_item{
+                  margin-right: 50px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  margin-bottom: 18px;
+                  .tab_content_item_top{
+                    font-size: 14px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #242F57;
+                    margin-bottom: 8px;
+                  }
+                  .tab_content_item_bom{
                     display: flex;
                     align-items: center;
-                    justify-content: space-between;
-                    .bqitm_lef{
-                        font-size: 14px;
-                        font-family: PingFangSC-Medium, PingFang SC;
-                        font-weight: 500;
-                        color: #FF9502;
+                    .tab_content_item_bom_item{
+                      padding: 2px 10px;
+                      box-sizing: border-box;
+                      background: #F0F8FF;
+                      border-radius: 4px;
+                      border: 1px solid #FFFFFF;
+                      margin-right: 18px;
                     }
-                    .bqitm_rig{
-                        display: flex;
-                        .bqimg{
-                            width: 24px;
-                            height: 24px;
-                            border-radius: 50%;
-                        }
+                  }
+                  .icon_contai{
+                    display: flex;
+                    align-items: center;
+                    .icon_contai_itm{
+                      margin-right: 23px;
+                      display: flex;
+                      align-items: center;
+                      .icon_im{
+                        margin-right: 4px;
+                        width: 16px;
+                        height: 16px;
+                      }
+                      .imitro{
+                        font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242F57;
+                      }
                     }
+                  }
                 }
+                .tab_content_item1{
+                  display: flex;
+                  align-items: center;
+                  width: 100%;
+                  .tab_content_item1_cir{
+                    width: 8px;
+                    height: 8px;
+                    background-color: #2373FF;
+                    margin-right: 6px;
+                    border-radius: 50%;
+                  }
+                }
+                .remb{
+                  margin-bottom: 0px;
+                }
+              }
             }
+            // .yhxw_title{
+            //     position: absolute;
+            //     top: 18px;
+            //     left: 25px;
+            //     font-size: 14px;
+            //     font-family: PingFangSC-Medium, PingFang SC;
+            //     font-weight: 500;
+            //     color: #636E95;
+            // }
+            // .bqitm_container{
+            //     position: absolute;
+            //     top: 55px;
+            //     left: 25px;
+            //     min-width: 400px;
+            //     height: 60px;
+            //     display: flex;
+            //     align-items: center;
+            //     .bqitm{
+            //         width: 180px;
+            //         height: 100%;
+            //         background: #FFFFFF;
+            //         border-radius: 8px;
+            //         margin-right: 16px;
+            //         padding: 16px;
+            //         box-sizing: border-box;
+            //         display: flex;
+            //         align-items: center;
+            //         justify-content: space-between;
+            //         .bqitm_lef{
+            //             font-size: 14px;
+            //             font-family: PingFangSC-Medium, PingFang SC;
+            //             font-weight: 500;
+            //             color: #FF9502;
+            //         }
+            //         .bqitm_rig{
+            //             display: flex;
+            //             .bqimg{
+            //                 width: 24px;
+            //                 height: 24px;
+            //                 border-radius: 50%;
+            //             }
+            //         }
+            //     }
+            // }
         }
     }
     .test_container.row{

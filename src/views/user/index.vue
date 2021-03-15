@@ -35,35 +35,47 @@
                 <img :src="sbAvatImg" alt="" srcset="" class="avatImg">
               </div>
               <div class="perinfo">
-                <div class="perinfo_t">北京上班族</div>
+                <div class="perinfo_t">全部用户</div>
                 <div class="perinfo_b">用户数 28790人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(1)">{{vDxtxt1}}</div>
+            <div class="lef_area_bom" @click="expandfn(1)">
+              {{vDxtxt1}}
+              <img v-if="vDxtxt1 == '收起'" :src="squpImg" class="squpImg"/>
+              <img v-else :src="zkdwImg" class="squpImg"/>
+            </div>
           </div>
           <div class="cen_area">
             <img :src="bjsbzImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
           <div class="rig_area">
-            <div class="yl_container">
-              <div class="yl_lef" style="background: #FF9502;"></div>
-              <div class="yl_rig">娱乐</div>
+            <div class="rig_area_lef">
+              <div class="yl_container">
+                <div class="yl_lef" style="background: #FF9502;"></div>
+                <div class="yl_rig">娱乐</div>
+              </div>
+              <div class="gz_container">
+                <div class="yl_lef" style="background: #A49DFA;"></div>
+                <div class="yl_rig">工作</div>
+              </div>
+              <div class="xw_container">
+                <div class="yl_lef" style="background: #017AFF;"></div>
+                <div class="yl_rig">新闻</div>
+              </div>
+              <div class="sp_container">
+                <div class="yl_lef" style="background: #2EB1FF;"></div>
+                <div class="yl_rig">视频</div>
+              </div>
+              <div class="xs_container">
+                <div class="yl_lef" style="background: #F383FF;"></div>
+                <div class="yl_rig">学术</div>
+              </div>
             </div>
-            <div class="gz_container">
-              <div class="yl_lef" style="background: #A49DFA;"></div>
-              <div class="yl_rig">工作</div>
-            </div>
-            <div class="xw_container">
-              <div class="yl_lef" style="background: #017AFF;"></div>
-              <div class="yl_rig">新闻</div>
-            </div>
-            <div class="sp_container">
-              <div class="yl_lef" style="background: #2EB1FF;"></div>
-              <div class="yl_rig">视频</div>
-            </div>
-            <div class="xs_container">
-              <div class="yl_lef" style="background: #F383FF;"></div>
-              <div class="yl_rig">学术</div>
+            <div class="rig_area_rig">
+              <div class="rig_area_til">偏好媒介</div>
+              <div class="rig_area_icon">
+                 <img v-for="(item,index) in qbmjList" :src="item" :key="index" alt="" class="bqimg">
+              </div>
             </div>
           </div>
         </div>
@@ -80,27 +92,39 @@
                 <div class="perinfo_b">用户数 7930人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(2)">{{vDxtxt2}}</div>
+            <div class="lef_area_bom" @click="expandfn(2)">
+              {{vDxtxt2}}
+              <img v-if="vDxtxt2 == '收起'" :src="squpImg" class="squpImg"/>
+              <img v-else :src="zkdwImg" class="squpImg"/>
+            </div>
           </div>
           <div class="cen_area">
             <img :src="yxqnImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
           <div class="rig_area">
-            <div class="gt_container">
-              <div class="yl_lef" style="background: #36D67B;"></div>
-              <div class="yl_rig">沟通</div>
+            <div class="rig_area_lef">
+              <div class="gt_container">
+                <div class="yl_lef" style="background: #36D67B;"></div>
+                <div class="yl_rig">沟通</div>
+              </div>
+              <div class="gz_container">
+                <div class="yl_lef" style="background: #A49DFA;"></div>
+                <div class="yl_rig">工作</div>
+              </div>
+              <div class="xw_container">
+                <div class="yl_lef" style="background: #017AFF;"></div>
+                <div class="yl_rig">新闻</div>
+              </div>
+              <div class="xs_container">
+                <div class="yl_lef" style="background: #F383FF;"></div>
+                <div class="yl_rig">学术</div>
+              </div>
             </div>
-            <div class="gz_container">
-              <div class="yl_lef" style="background: #A49DFA;"></div>
-              <div class="yl_rig">工作</div>
-            </div>
-            <div class="xw_container">
-              <div class="yl_lef" style="background: #017AFF;"></div>
-              <div class="yl_rig">新闻</div>
-            </div>
-            <div class="xs_container">
-              <div class="yl_lef" style="background: #F383FF;"></div>
-              <div class="yl_rig">学术</div>
+            <div class="rig_area_rig">
+              <div class="rig_area_til">偏好媒介</div>
+              <div class="rig_area_icon">
+                <img v-for="(item,index) in bjsbList" :src="item" :key="index" alt="" class="bqimg">
+              </div>
             </div>
           </div>
         </div>
@@ -117,23 +141,36 @@
                 <div class="perinfo_b">用户数 3204人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(3)">{{vDxtxt3}}</div>
+            <div class="lef_area_bom" @click="expandfn(3)">
+              {{vDxtxt3}}
+              <img v-if="vDxtxt3 == '收起'" :src="squpImg" class="squpImg"/>
+              <img v-else :src="zkdwImg" class="squpImg"/>
+            </div>
           </div>
           <div class="cen_area">
             <img :src="qyggImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
           <div class="rig_area">
-            <div class="gz_container">
-              <div class="yl_lef" style="background: #A49DFA;"></div>
-              <div class="yl_rig">工作</div>
+            <div class="rig_area_lef">
+              <div class="gz_container">
+                <div class="yl_lef" style="background: #A49DFA;"></div>
+                <div class="yl_rig">工作</div>
+              </div>
+              <div class="xs_container">
+                <div class="yl_lef" style="background: #F383FF;"></div>
+                <div class="yl_rig">学术</div>
+              </div>
             </div>
-            <div class="xs_container">
-              <div class="yl_lef" style="background: #F383FF;"></div>
-              <div class="yl_rig">学术</div>
+            <div class="rig_area_rig">
+              <div class="rig_area_til">偏好媒介</div>
+              <div class="rig_area_icon">
+                <img v-for="(item,index) in qyggList" :src="item" :key="index" alt="" class="bqimg">
+              </div>
             </div>
           </div>
         </div>
-        <vDxitem v-if="ifShowDx3"></vDxitem>
+        <!-- <vDxitem v-if="ifShowDx3"></vDxitem> -->
+        <vDxitem1 v-if="ifShowDx3"></vDxitem1>
 
         <div class="bjsbz_container">
           <div class="lef_area">
@@ -146,35 +183,48 @@
                 <div class="perinfo_b">用户数 18197人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(4)">{{vDxtxt4}}</div>
+            <div class="lef_area_bom" style="background: #FFE6DE;color: #FE774B;" @click="expandfn(4)">
+              {{vDxtxt4}}
+              <img v-if="vDxtxt4 == '查看动线详情'" :src="czkImg" class="squpImg"/>
+              <i v-else :class="['iconfont','iconup']" class="squpImg"></i>
+            </div>
           </div>
           <div class="cen_area">
             <img :src="bjsbzImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
           <div class="rig_area">
-            <div class="yl_container">
-              <div class="yl_lef" style="background: #FF9502;"></div>
-              <div class="yl_rig">娱乐</div>
+            <div class="rig_area_lef">
+              <div class="yl_container">
+                <div class="yl_lef" style="background: #FF9502;"></div>
+                <div class="yl_rig">娱乐</div>
+              </div>
+              <div class="gt_container">
+                <div class="yl_lef" style="background: #36D67B;"></div>
+                <div class="yl_rig">沟通</div>
+              </div>
+              <div class="gz_container">
+                <div class="yl_lef" style="background: #A49DFA;"></div>
+                <div class="yl_rig">工作</div>
+              </div>
+              <div class="xw_container">
+                <div class="yl_lef" style="background: #017AFF;"></div>
+                <div class="yl_rig">新闻</div>
+              </div>
+              <div class="xs_container">
+                <div class="yl_lef" style="background: #F383FF;"></div>
+                <div class="yl_rig">学术</div>
+              </div>
             </div>
-            <div class="gt_container">
-              <div class="yl_lef" style="background: #36D67B;"></div>
-              <div class="yl_rig">沟通</div>
-            </div>
-            <div class="gz_container">
-              <div class="yl_lef" style="background: #A49DFA;"></div>
-              <div class="yl_rig">工作</div>
-            </div>
-            <div class="xw_container">
-              <div class="yl_lef" style="background: #017AFF;"></div>
-              <div class="yl_rig">新闻</div>
-            </div>
-            <div class="xs_container">
-              <div class="yl_lef" style="background: #F383FF;"></div>
-              <div class="yl_rig">学术</div>
+            <div class="rig_area_rig">
+              <div class="rig_area_til">偏好媒介</div>
+              <div class="rig_area_icon">
+                <img v-for="(item,index) in bpyzList" :src="item" :key="index" alt="" class="bqimg">
+              </div>
             </div>
           </div>
         </div>
-        <vDxitem v-if="ifShowDx4"></vDxitem>
+        <!-- <vDxitem v-if="ifShowDx4"></vDxitem> -->
+        <vDxitem1 v-if="ifShowDx4"></vDxitem1>
 
         <div class="bjsbz_container">
           <div class="lef_area">
@@ -187,31 +237,44 @@
                 <div class="perinfo_b">用户数 28790人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(5)">{{vDxtxt5}}</div>
+            <div class="lef_area_bom" style="background: #FFE6DE;color: #FE774B;" @click="expandfn(5)">
+              {{vDxtxt5}}
+              <img v-if="vDxtxt5 == '查看动线详情'" :src="czkImg" class="squpImg"/>
+              <i v-else :class="['iconfont','iconup']" class="squpImg"></i>
+            </div>
           </div>
           <div class="cen_area">
             <img :src="zyzyImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
           <div class="rig_area">
-            <div class="yl_container">
-              <div class="yl_lef" style="background: #FF9502;"></div>
-              <div class="yl_rig">娱乐</div>
+            <div class="rig_area_lef">
+              <div class="yl_container">
+                <div class="yl_lef" style="background: #FF9502;"></div>
+                <div class="yl_rig">娱乐</div>
+              </div>
+              <div class="gt_container">
+                <div class="yl_lef" style="background: #36D67B;"></div>
+                <div class="yl_rig">沟通</div>
+              </div>
+              <div class="sp_container">
+                <div class="yl_lef" style="background: #2EB1FF;"></div>
+                <div class="yl_rig">视频</div>
+              </div>
+              <div class="xs_container">
+                <div class="yl_lef" style="background: #F383FF;"></div>
+                <div class="yl_rig">学术</div>
+              </div>
             </div>
-            <div class="gt_container">
-              <div class="yl_lef" style="background: #36D67B;"></div>
-              <div class="yl_rig">沟通</div>
-            </div>
-            <div class="sp_container">
-              <div class="yl_lef" style="background: #2EB1FF;"></div>
-              <div class="yl_rig">视频</div>
-            </div>
-            <div class="xs_container">
-              <div class="yl_lef" style="background: #F383FF;"></div>
-              <div class="yl_rig">学术</div>
+            <div class="rig_area_rig">
+              <div class="rig_area_til">偏好媒介</div>
+              <div class="rig_area_icon">
+                <img v-for="(item,index) in zyzyList" :src="item" :key="index" alt="" class="bqimg">
+              </div>
             </div>
           </div>
         </div>
-        <vDxitem v-if="ifShowDx5"></vDxitem>
+        <!-- <vDxitem v-if="ifShowDx5"></vDxitem> -->
+        <vDxitem1 v-if="ifShowDx5"></vDxitem1>
 
         <!-- <div class="echarts_container1">
           <div class="left_timer_container">
@@ -799,14 +862,14 @@
 			    <!--              src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"-->
 			    <!--            ></video>-->
 			    <!--          </div>-->
-			    <div class="xwfx_area_til" style="margin-bottom:12px;">不同时段APP使用情况</div>
+<!--			    <div class="xwfx_area_til" style="margin-bottom:12px;">不同时段APP使用情况</div>-->
 			    <div class="use_app_area">
 				    <img :src="useApp" style="width:100%;" />
 			    </div>
 			    <div class="use_echart_item">
 				    <div class="use_echart_title">不同性别APP内容偏好</div>
 				    <div class="use_echart_cont">
-					    <lineM id="box6" :colorList="$lxjData.colorList" :myData="$lxjData.box6Data"></lineM>
+					    <lineM id="box6" :colorList="$lxjData.colorList" :myData="$lxjData.box69Data"></lineM>
 				    </div>
 			    </div>
 			    <div class="use_echart_item">
@@ -914,6 +977,20 @@
 			    <div class="ppxz_container">
 				    <div class="ppxz_title">品牌心智</div>
 				    <div class="ppxz_title_desc">分心品牌当前受众的不同阶段的数据</div>
+            <div class="bottom">
+              <div class="pricle">
+                <Card :title="'认知'" :colourfol="'blue'" :number="'29385'" :data="[-87,9481]"></Card>
+              </div>
+              <div class="month">
+                <Card :title="'兴趣'" :colourfol="'purple'" :number="'29385'" :data="[-87,9481]"></Card>
+              </div>
+              <div class="view">
+                <Card :title="'购买'" :colourfol="'pink'" :number="'29385'" :data="[-87,9481]"></Card>
+              </div>
+              <div class="target">
+                <Card :title="'忠诚'" :colourfol="'orange'" :number="'29385'" :data="[-87,9481]"></Card>
+              </div>
+            </div>
 				    <div class="xinzfb_container_lef_content">
 					    <lineS id="box57" :colorList="$lxjData.colorList" :myData="$lxjData.box57Data"></lineS>
 				    </div>
@@ -922,8 +999,14 @@
 				    <div class="ppxz_title">心智传播网络</div>
 				    <div class="ppxz_title_desc">分析传播途径</div>
 				    <div class="xinzfb_container_lef_content">
-					    <cLine id="box51" :colorList="$lxjData.colorList" :myData="$lxjData.box51Data"></cLine>
+              <div v-for="(it, i) in circleData" :key="i"  class="xinzfb_container_lef_content_item">
+                <i-circle :percent="80" :size="getSize()" :stroke-color="it.color">
+                  <span class="demo-Circle-inner" style="font-size:24px">{{it.value}}%</span>
+                </i-circle>
+                <div class="name">{{it.name}}</div>
+              </div>
 				    </div>
+            <div class="xinzfb_container_lef_content_desc">%的计算公式是根据市场当中品牌受众用户对于品牌的喜好度，忠诚度等多维度数据综合计算而成</div>
 			    </div>
 		    </div>
 	    </div>
@@ -1016,10 +1099,11 @@ import vDxitem from "./dxItem";
 import vDxitem1 from "./dxItem1";
 import vTabCard from "./tabCard";
 import chuDa from "./chuDa";
+import Card from "./base/Card";
 export default {
   components: {
    PieEcharts1,barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, PieEcharts7, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
-   vDxitem,vDxitem1,vTabCard,chuDa
+   vDxitem,vDxitem1,vTabCard,chuDa, Card
   },
   name: "index",
   data() {
@@ -1054,24 +1138,24 @@ export default {
       descTitle:'北京上班族出行场景',
       avatImg:require("../../assets/img/yhhx/avat.png"),
       sbAvatImg:require("../../assets/img/yhhx/sbAvat.png"),
-      qyggImg:require("../../assets/img/yhhx/sbAvat.png"),
-      bpyzImg:require("../../assets/img/yhhx/bpAvat.png"),
-      zyzyImg:require("../../assets/img/yhhx/zyAvat.png"),
+      qyggImg:require("../../assets/img/yhhx/qyggimg1.png"),
+      bpyzImg:require("../../assets/img/yhhx/beipiaoImg.png"),
+      zyzyImg:require("../../assets/img/yhhx/ziyouImg.png"),
       bjsbzImgTime:require("../../assets/img/yhhx/bjsbzImg.png"),
       yxqnImgTime:require("../../assets/img/yhhx/yxqnImg.png"),
       qyggImgTime:require("../../assets/img/yhhx/qyggImg.png"),
       bpyzImgTime:require("../../assets/img/yhhx/bpyzImg.png"),
       zyzyImgTime:require("../../assets/img/yhhx/zyzyImg.png"),
       ifShowDx1:true,
-      vDxtxt1:'收起用户动线',
+      vDxtxt1:'收起',
       ifShowDx2:false,
-      vDxtxt2:'展开用户动线',
+      vDxtxt2:'查看动线详情',
       ifShowDx3:false,
-      vDxtxt3:'展开用户动线',
+      vDxtxt3:'查看动线详情',
       ifShowDx4:false,
-      vDxtxt4:'展开用户动线',
+      vDxtxt4:'查看动线详情',
       ifShowDx5:false,
-      vDxtxt5:'展开用户动线',
+      vDxtxt5:'查看动线详情',
       jchxData:{
         lefData:{
           til:'呈现问题',
@@ -1141,6 +1225,40 @@ export default {
       ],
 	    custom: '所有',
 	    customShow: false,
+      squpImg:require("../../assets/img/yhhx/squpImg.png"),
+      zkdwImg:require("../../assets/img/yhhx/zkdwImg.png"),
+      czkImg:require("../../assets/img/yhhx/czkImg.png"),
+      qbmjList:[
+        require("../../assets/img/yhhx/tt.png"),
+        require("../../assets/img/yhhx/xhs.png"),
+        require("../../assets/img/yhhx/dyI.png")
+      ],
+      bjsbList:[
+        require("../../assets/img/yhhx/dyI.png"),
+        require("../../assets/img/yhhx/xhs.png"),
+      ],
+      qyggList:[
+        require("../../assets/img/yhhx/tt.png"),
+        require("../../assets/img/yhhx/ks.png"),
+      ],
+      bpyzList:[
+        require("../../assets/img/yhhx/tt.png"),
+        require("../../assets/img/yhhx/dyI.png"),
+        require("../../assets/img/yhhx/ks.png")
+      ],
+      zyzyList:[
+        require("../../assets/img/yhhx/dyI.png"),
+        require("../../assets/img/yhhx/xhs.png"),
+        require("../../assets/img/yhhx/tt.png")
+      ],
+	    circleData: [
+		    { name: '合声', value: '75'},
+		    { name: '合生活', value: '60'},
+		    { name: '珠江', value: '50'},
+		    { name: '合声创展', value: '35', color: '#FF8800'},
+		    { name: '霄云', value: '25', color: '#FF8800'},
+		    { name: '创展', value: '20', color: '#FF8800'},
+	    ],
     };
   },
   mounted() {
@@ -1171,126 +1289,126 @@ export default {
       if(arg == 1){
         if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
-          this.vDxtxt2 = '展开用户动线';
+          this.vDxtxt2 = '查看动线详情';
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
-          this.vDxtxt3 = '展开用户动线';
+          this.vDxtxt3 = '查看动线详情';
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
-          this.vDxtxt4 = '展开用户动线';
+          this.vDxtxt4 = '查看动线详情';
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
-          this.vDxtxt5 = '展开用户动线';
+          this.vDxtxt5 = '查看动线详情';
         }
         this.ifShowDx1 = !this.ifShowDx1;
         if(this.ifShowDx1){
-          this.vDxtxt1 = '收起用户动线';
+          this.vDxtxt1 = '收起';
         }
         else{
-          this.vDxtxt1 = '展开用户动线';
+          this.vDxtxt1 = '查看动线详情';
         }
       }
       else if(arg == 2){
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
-          this.vDxtxt1 = '展开用户动线';
+          this.vDxtxt1 = '查看动线详情';
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
-          this.vDxtxt3 = '展开用户动线';
+          this.vDxtxt3 = '查看动线详情';
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
-          this.vDxtxt4 = '展开用户动线';
+          this.vDxtxt4 = '查看动线详情';
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
-          this.vDxtxt5 = '展开用户动线';
+          this.vDxtxt5 = '查看动线详情';
         }
         this.ifShowDx2 = !this.ifShowDx2;
         if(this.ifShowDx2){
-          this.vDxtxt2 = '收起用户动线';
+          this.vDxtxt2 = '收起';
         }
         else{
-          this.vDxtxt2 = '展开用户动线';
+          this.vDxtxt2 = '查看动线详情';
         }
       }
       else if(arg == 3){
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
-          this.vDxtxt1 = '展开用户动线';
+          this.vDxtxt1 = '查看动线详情';
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
-          this.vDxtxt2 = '展开用户动线';
+          this.vDxtxt2 = '查看动线详情';
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
-          this.vDxtxt4 = '展开用户动线';
+          this.vDxtxt4 = '查看动线详情';
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
-          this.vDxtxt5 = '展开用户动线';
+          this.vDxtxt5 = '查看动线详情';
         }
         this.ifShowDx3 = !this.ifShowDx3;
         if(this.ifShowDx3){
-          this.vDxtxt3 = '收起用户动线';
+          this.vDxtxt3 = '收起';
         }
         else{
-          this.vDxtxt3 = '展开用户动线';
+          this.vDxtxt3 = '查看动线详情';
         }
       }
       else if(arg == 4){
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
-          this.vDxtxt1 = '展开用户动线';
+          this.vDxtxt1 = '查看动线详情';
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
-          this.vDxtxt2 = '展开用户动线';
+          this.vDxtxt2 = '查看动线详情';
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
-          this.vDxtxt3 = '展开用户动线';
+          this.vDxtxt3 = '查看动线详情';
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
-          this.vDxtxt5 = '展开用户动线';
+          this.vDxtxt5 = '查看动线详情';
         }
         this.ifShowDx4 = !this.ifShowDx4;
         if(this.ifShowDx4){
-          this.vDxtxt4 = '收起用户动线';
+          this.vDxtxt4 = '收起';
         }
         else{
-          this.vDxtxt4 = '展开用户动线';
+          this.vDxtxt4 = '查看动线详情';
         }
       }
       else if(arg == 5){
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
-          this.vDxtxt1 = '展开用户动线';
+          this.vDxtxt1 = '查看动线详情';
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
-          this.vDxtxt2 = '展开用户动线';
+          this.vDxtxt2 = '查看动线详情';
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
-          this.vDxtxt3 = '展开用户动线';
+          this.vDxtxt3 = '查看动线详情';
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
-          this.vDxtxt4 = '展开用户动线';
+          this.vDxtxt4 = '查看动线详情';
         }
         this.ifShowDx5 = !this.ifShowDx5;
         if(this.ifShowDx5){
-          this.vDxtxt5 = '收起用户动线';
+          this.vDxtxt5 = '收起';
         }
         else{
-          this.vDxtxt5 = '展开用户动线';
+          this.vDxtxt5 = '查看动线详情';
         }
       }
     },
@@ -1955,6 +2073,9 @@ export default {
     },
     hidePop5() {
       this.ifShowPop5 = false;
+    },
+    getSize(){
+      return 90 / 144*window.rem
     }
   },
 };
@@ -2167,15 +2288,21 @@ export default {
         .lef_area_bom{
           width: 100%;
           height: 44px;
-          background: #F4F7FC;
-          border-radius: 8px 0 0 8px;
+          background: #DDE9FF;
+          border-radius: 0 0 0 8px;
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 14px;
-          font-family: PingFangSC-Regular, PingFang SC;
-          font-weight: 400;
-          color: #636E95;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #2373FF;
+          .squpImg{
+            display: block;
+            width: 16px;
+            height: 16px;
+            margin-left: 36px;
+          }
           &:hover{
             cursor: pointer;
           }
@@ -2194,25 +2321,51 @@ export default {
         width: 440px;
         height: 100%;
         border-left:1px solid #EAEDF7;
-        padding: 28px 31px;
+        padding:16px;
         padding-right: 5px;
         box-sizing: border-box;
         display: flex;
-        flex-wrap: wrap;
-        font-size: 12px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        color: #636E95;
-        .yl_container,.gt_container,.gz_container,.xw_container,.sp_container,.xs_container{
+        align-items: flex-start;
+        justify-content: space-between;
+        .rig_area_lef{
+          width: 150px;
           display: flex;
-          align-items: center;
-          margin-bottom: 16px;
-          margin-right: 20px;
-          .yl_lef{
-            width: 8px;
-            height: 8px;
-            border-radius: 2px;
-            margin-right: 4px;
+          flex-wrap: wrap;
+          font-size: 12px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #636E95;
+          .yl_container,.gt_container,.gz_container,.xw_container,.sp_container,.xs_container{
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            margin-right: 16px;
+            .yl_lef{
+              width: 8px;
+              height: 8px;
+              border-radius: 2px;
+              margin-right: 4px;
+            }
+          }
+        }
+        .rig_area_rig{
+          width: 120px;
+          .rig_area_til{
+            width: 100%;
+            font-size: 14px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242F57;
+            margin-bottom: 3px;
+          }
+          .rig_area_icon{
+            display: flex;
+            .bqimg{
+              display: block;
+              width: 28px;
+              height: 28px;
+              margin-right: 8px;
+            }
           }
         }
       }
@@ -3318,7 +3471,7 @@ export default {
     background: #ffffff;
       // box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     // border-radius: 12px;
-    border-bottom: 1px solid #EAEDF7;
+    /*border-bottom: 1px solid #EAEDF7;*/
     // padding: 24px;
     box-sizing: border-box;
     display: flex;
@@ -3451,6 +3604,17 @@ export default {
         font-weight: 400;
         color: #636e95;
       }
+      .bottom{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 138px;
+        margin-top: 24px;
+        .pricle,.month,.view,.target{
+          width: 24%;
+          height: 138px;
+        }
+      }
       .xinzfb_container_lef_content{
         flex:1
       }
@@ -3481,8 +3645,31 @@ export default {
         color: #636e95;
       }
       .xinzfb_container_lef_content{
-        flex:1
+        flex:1;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .xinzfb_container_lef_content_item{
+          text-align: center;
+          .demo-Circle-inner{
+            font-size: 18px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #242F57;
+            line-height: 24px;
+          }
+          .name{
+            margin-top: 16px;
+          }
+        }
       }
+      .xinzfb_container_lef_content_desc{
+        font-size: 12px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #636E95;
+      }
+
     }
   }
 

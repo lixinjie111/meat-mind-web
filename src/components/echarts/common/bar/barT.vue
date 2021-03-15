@@ -17,7 +17,7 @@ export default {
 	},
 	data () {
 		return {
-			
+
 		}
 	},
     mounted() {
@@ -117,7 +117,7 @@ export default {
 							fontSize:'12'
 						}
 					}
-					
+
 				},
 				tooltip: {
 					trigger: 'axis',
@@ -158,7 +158,7 @@ export default {
 					pieces: [{
 						gt: 1,
 						lt: 5,
-						color: this.colorList[5],
+						color: this.colorList[0],
 					},
 					{
 						gt: 6,

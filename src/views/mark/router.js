@@ -22,7 +22,7 @@ export default [
       },
       {
         path:`/${moduleName}/negative`,
-        label:"负面舆情",
+        label:"舆情应对",
         meta:{title:"品牌画像",moduleName},
         component:negative,
         name:`${moduleName}-negative`

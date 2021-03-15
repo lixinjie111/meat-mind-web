@@ -23,7 +23,7 @@ export default {
 	},
 	data () {
 		return {
-			
+
 		}
 	},
     mounted() {
@@ -115,7 +115,8 @@ export default {
 								name: '引入区',
 								xAxis: '0 获客区',
 								itemStyle: {
-									color: 'rgba(164,157,250,.3)',
+									color: this.colorList[0],
+                  opacity: 0.3,
 								}
 							},
 							{
@@ -126,19 +127,21 @@ export default {
 								name: '成长期',
 								xAxis: '1 获客区',
 								itemStyle: {
-									color: 'rgba(252,128,159,.3)',
+                  color: this.colorList[1],
+                  opacity: 0.3,
 								}
 							},
 							{
 								xAxis: '2 升值区',
 							},
-						], 
+						],
 						[
 							{
 								name: '成熟期',
 								xAxis: '2 升值区',
 								itemStyle: {
-									color: 'rgba(255,217,140,.3)',
+                  color: this.colorList[2],
+                  opacity: 0.3,
 								}
 							},
 							{
@@ -150,7 +153,8 @@ export default {
 								name: '休眠区',
 								xAxis: '3 升值区',
 								itemStyle: {
-									color: 'rgba(138,230,199,.3)',
+                  color: this.colorList[3],
+                  opacity: 0.3,
 								}
 							},
 							{
@@ -162,7 +166,8 @@ export default {
 								name: '流失区',
 								xAxis: '4 留存区',
 								itemStyle: {
-									color: 'rgba(225,149,100,.3)',
+                  color: this.colorList[4],
+                  opacity: 0.3,
 								}
 							},
 							{
