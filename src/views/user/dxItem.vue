@@ -284,7 +284,7 @@
 
             </div>
             <div class="yhxw_container">
-                <div class="yhxw_title">用户行为</div>
+                <!-- <div class="yhxw_title">用户行为</div>
                 <div class="bqitm_container">
                     <div class="bqitm" v-for="(it, i) in bqitmList" :key="i">
                         <div class="bqitm_lef" :style="`color: ${colorConfig[it.name]}`">{{it.name}}</div>
@@ -292,6 +292,26 @@
                             <img v-for="(item,index) in it.icons" :src="item.icon" :key="index" alt="" class="bqimg">
                         </div>
                     </div>
+                </div> -->
+                <div class="tab_item">
+                  <div class="tab_item_item mbitem1" @click="changMbItem(0)">基础画像</div>
+                  <div class="tab_item_item mbitem2" @click="changMbItem(1)">行为分析</div>
+                  <div class="tab_item_item mbitem3" @click="changMbItem(2)">心智分析</div>
+                  <div class="tab_item_item mbitem4" @click="changMbItem(3)">生命周期分析</div>
+                </div>
+                <div class="tab_con" ref="tab_con">
+                  <div class="tab_content">
+                    <div class="tab_content_item" v-for="(item,index) in tabconList" :key="index" :class="{'remb':(index==5 || index==6)}">
+                      <div class="tab_content_item_top">{{item.til}}</div>
+                      <div class="tab_content_item_bom" v-if="item.desc">{{item.desc}}</div>
+                      <div class="icon_contai" v-if="item.ticList">
+                        <div class="icon_contai_itm" v-for="(itm1,inx) in item.ticList" :key="inx">
+                          <img :src="itm1.ic" class="icon_im">
+                          <div class="imitro">{{itm1.txt}}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
             </div>
         </div>
@@ -401,7 +421,7 @@
                     allBqitm.wb,
                   ]
                 }
-              ],
+                ],
                 districtList:[
                     '朝阳区','海淀区','丰台区','西城区','东城区','石景山区','昌平区','通州区','顺义区','房山区','门头沟区','大兴区','怀柔区','延庆区','平谷区','密云区'
                 ],
@@ -453,14 +473,60 @@
                         timeN:30
                     }
                 },
-              colorConfig: {
-                新闻: '#017AFF',
-                视频: '#5AC8FA',
-                娱乐: '#FF9502',
-                交流: '#a49dfa',
-                出行: '#CECE7E',
-                餐饮: '#8AE6C7',
-              }
+                colorConfig: {
+                  新闻: '#017AFF',
+                  视频: '#5AC8FA',
+                  娱乐: '#FF9502',
+                  交流: '#a49dfa',
+                  出行: '#CECE7E',
+                  餐饮: '#8AE6C7',
+               },
+               tabconList:[
+                 {
+                  til:'年龄结构',
+                  desc:'20-29岁',
+                  ticList:null
+                 },
+                 {
+                  til:'收入结构',
+                  desc:'15-25k',
+                  ticList:null
+                 },
+                 {
+                  til:'职业结构',
+                  desc:'白领',
+                  ticList:null
+                 },
+                 {
+                  til:'行业结构',
+                  desc:'互联网',
+                  ticList:null
+                 },
+                {
+                  til:'教育背景',
+                  desc:'本科以上',
+                  ticList:null
+                 },
+                 {
+                  til:'居住地区',
+                  desc:'一线城市',
+                  ticList:null
+                 },
+                 {
+                  til:'主要出行方式',
+                  desc:null,
+                  ticList:[
+                    {
+                      ic:require("../../assets/img/yhhx/ditieIcon.png"),
+                      txt:'地铁（5号线、10号线、13号线）'
+                    },
+                    {
+                      ic:require("../../assets/img/yhhx/drIcon.png"),
+                      txt:'自驾'
+                    }
+                  ]
+                 }
+               ]
             }
         },
         mounted(){
@@ -495,8 +561,29 @@
             var cir1 = [116.310356,39.932426];
             var cir2 = [116.433529,39.941237];
             this.initMap(path,path1,path2,cir1,cir2,'西城区');
+            this.changMbItem(0);
         },
         methods:{
+            changMbItem(arg){
+              var tabDom = this.$refs.tab_con;
+              var bgc0 = '#F0F8FF';
+              var bgc1 = '#D3E3FF';
+              var bgc2 = '#9ECBFF';
+              var bgc3 = '#4488FF';
+              console.log(tabDom,'tabDom')
+              if(arg == 0){
+                tabDom.style=` background:${bgc0};`;
+              }
+              else if(arg == 1){
+                tabDom.style=` background: ${bgc1};`;
+              }
+              else if(arg == 2){
+                tabDom.style=` background: ${bgc2};`;
+              }
+              else if(arg == 3){
+                tabDom.style=` background: ${bgc3};`;
+              }
+            },
             submit(){
                 this.ifShowCon = false;
                 this.condiObj = {
@@ -1291,12 +1378,16 @@
             .condition_item{
                 width: 91px;
                 height: 24px;
-                background: #FFFFFF;
+                background: #D3E3FF;
                 border-radius: 4px;
                 border: 1px solid #EAEDF7;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                font-size: 12px;
+                font-family: PingFangSC-Semibold, PingFang SC;
+                font-weight: 600;
+                color: #2373FF;
             }
         }
         .conditions_rig{
@@ -1779,57 +1870,137 @@
         }
         .yhxw_container{
             position: absolute;
-            width: 700px;
-            height: 139px;
-            background-image: url(/img/bgImg.a22ae601.png);
-            bottom: -1px;
-            left: 35px;
-            background-size: cover;
+            width: 60%;
+            bottom: 20px;
+            left: 20px;
             z-index: 999;
-            .yhxw_title{
-                position: absolute;
-                top: 18px;
-                left: 25px;
-                font-size: 14px;
-                font-family: PingFangSC-Medium, PingFang SC;
-                font-weight: 500;
-                color: #636E95;
+            .tab_item{
+              width: 100%;
+              display: flex;
+              .tab_item_item{
+                padding: 5px 16px;
+                box-sizing: border-box;
+                &:hover{
+                  cursor: pointer;
+                }
+              }
+              .mbitem1{
+                background: #F0F8FF;
+                border-radius: 4px 0px 0px 0px;
+              }
+              .mbitem2{
+                background: #D3E3FF;
+              }
+              .mbitem3{
+                background: #9ECBFF;
+              }
+              .mbitem4{
+                border-radius: 0px 4px 0px 0px;
+                background:#4488FF;
+              }
             }
-            .bqitm_container{
-                position: absolute;
-                top: 55px;
-                left: 25px;
-                min-width: 400px;
-                height: 60px;
+            .tab_con{
+              width: 100%;
+              padding: 20px 16px;
+              box-sizing: border-box;
+              .tab_content{
+                width: 100%;
+                padding: 12px 23px;
+                box-sizing: border-box;
+                background: #FFFFFF;
+                border-radius: 4px;
                 display: flex;
-                align-items: center;
-                .bqitm{
-                    width: 180px;
-                    height: 100%;
-                    background: #FFFFFF;
-                    border-radius: 8px;
-                    margin-right: 16px;
-                    padding: 16px;
+                flex-wrap: wrap;
+                .tab_content_item{
+                  margin-right: 60px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  margin-bottom: 18px;
+                  .tab_content_item_top{
+                    font-size: 14px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #242F57;
+                    margin-bottom: 8px;
+                  }
+                  .tab_content_item_bom{
+                    padding: 2px 10px;
                     box-sizing: border-box;
+                    background: #F0F8FF;
+                    border-radius: 4px;
+                    border: 1px solid #FFFFFF;
+                  }
+                  .icon_contai{
                     display: flex;
                     align-items: center;
-                    justify-content: space-between;
-                    .bqitm_lef{
-                        font-size: 14px;
-                        font-family: PingFangSC-Medium, PingFang SC;
-                        font-weight: 500;
-                        color: #FF9502;
+                    .icon_contai_itm{
+                      margin-right: 23px;
+                      display: flex;
+                      align-items: center;
+                      .icon_im{
+                        margin-right: 4px;
+                        width: 16px;
+                        height: 16px;
+                      }
+                      .imitro{
+                        font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242F57;
+                      }
                     }
-                    .bqitm_rig{
-                        display: flex;
-                        .bqimg{
-                            width: 24px;
-                            height: 24px;
-                            border-radius: 50%;
-                        }
-                    }
+                  }
                 }
+                .remb{
+                  margin-bottom: 0px;
+                }
+              }
             }
+            // .yhxw_title{
+            //     position: absolute;
+            //     top: 18px;
+            //     left: 25px;
+            //     font-size: 14px;
+            //     font-family: PingFangSC-Medium, PingFang SC;
+            //     font-weight: 500;
+            //     color: #636E95;
+            // }
+            // .bqitm_container{
+            //     position: absolute;
+            //     top: 55px;
+            //     left: 25px;
+            //     min-width: 400px;
+            //     height: 60px;
+            //     display: flex;
+            //     align-items: center;
+            //     .bqitm{
+            //         width: 180px;
+            //         height: 100%;
+            //         background: #FFFFFF;
+            //         border-radius: 8px;
+            //         margin-right: 16px;
+            //         padding: 16px;
+            //         box-sizing: border-box;
+            //         display: flex;
+            //         align-items: center;
+            //         justify-content: space-between;
+            //         .bqitm_lef{
+            //             font-size: 14px;
+            //             font-family: PingFangSC-Medium, PingFang SC;
+            //             font-weight: 500;
+            //             color: #FF9502;
+            //         }
+            //         .bqitm_rig{
+            //             display: flex;
+            //             .bqimg{
+            //                 width: 24px;
+            //                 height: 24px;
+            //                 border-radius: 50%;
+            //             }
+            //         }
+            //     }
+            // }
         }
     }
     .test_container.row{

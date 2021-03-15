@@ -74,7 +74,7 @@
             <div class="rig_area_rig">
               <div class="rig_area_til">偏好媒介</div>
               <div class="rig_area_icon">
-
+                 <img v-for="(item,index) in qbmjList" :src="item" :key="index" alt="" class="bqimg">
               </div>
             </div>
           </div>
@@ -123,7 +123,7 @@
             <div class="rig_area_rig">
               <div class="rig_area_til">偏好媒介</div>
               <div class="rig_area_icon">
-
+                <img v-for="(item,index) in bjsbList" :src="item" :key="index" alt="" class="bqimg">
               </div>
             </div>
           </div>
@@ -164,7 +164,7 @@
             <div class="rig_area_rig">
               <div class="rig_area_til">偏好媒介</div>
               <div class="rig_area_icon">
-
+                <img v-for="(item,index) in qyggList" :src="item" :key="index" alt="" class="bqimg">
               </div>
             </div>
           </div>
@@ -218,7 +218,7 @@
             <div class="rig_area_rig">
               <div class="rig_area_til">偏好媒介</div>
               <div class="rig_area_icon">
-
+                <img v-for="(item,index) in bpyzList" :src="item" :key="index" alt="" class="bqimg">
               </div>
             </div>
           </div>
@@ -268,7 +268,7 @@
             <div class="rig_area_rig">
               <div class="rig_area_til">偏好媒介</div>
               <div class="rig_area_icon">
-
+                <img v-for="(item,index) in zyzyList" :src="item" :key="index" alt="" class="bqimg">
               </div>
             </div>
           </div>
@@ -1207,6 +1207,29 @@ export default {
       squpImg:require("../../assets/img/yhhx/squpImg.png"),
       zkdwImg:require("../../assets/img/yhhx/zkdwImg.png"),
       czkImg:require("../../assets/img/yhhx/czkImg.png"),
+      qbmjList:[
+        require("../../assets/img/yhhx/tt.png"),
+        require("../../assets/img/yhhx/xhs.png"),
+        require("../../assets/img/yhhx/dyI.png")
+      ],
+      bjsbList:[
+        require("../../assets/img/yhhx/dyI.png"),
+        require("../../assets/img/yhhx/xhs.png"),
+      ],
+      qyggList:[
+        require("../../assets/img/yhhx/tt.png"),
+        require("../../assets/img/yhhx/ks.png"),
+      ],
+      bpyzList:[
+        require("../../assets/img/yhhx/tt.png"),
+        require("../../assets/img/yhhx/dyI.png"),
+        require("../../assets/img/yhhx/ks.png")
+      ],
+      zyzyList:[
+        require("../../assets/img/yhhx/dyI.png"),
+        require("../../assets/img/yhhx/xhs.png"),
+        require("../../assets/img/yhhx/tt.png")
+      ]
     };
   },
   mounted() {
@@ -2304,7 +2327,13 @@ export default {
             margin-bottom: 3px;
           }
           .rig_area_icon{
-
+            display: flex;
+            .bqimg{
+              display: block;
+              width: 28px;
+              height: 28px;
+              margin-right: 8px;
+            }
           }
         }
       }
