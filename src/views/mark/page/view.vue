@@ -1,7 +1,33 @@
 <template>
     <div class="mark-overview">
         <div class="title">品牌概览</div>
-        <div class="show-main"></div>
+        <div class="main-show">
+            <div class="main-left">
+                <p>市场趋势及品牌现状</p>
+                <div class="echarts-box">
+                    <div class="bar-echarts">
+                        <div class="bar-title">凉茶市场供需及销售走势</div>
+                        <div class="bar-sub-title">整体市场供需变化及前瞻性预测</div>
+                    </div>
+                    <div class="pie-echarts">
+                        <div class="pie-title">凉茶饮料市场份额</div>
+                        <div class="pie-sub-title">细分市场头部品牌市场份额占比</div>
+                        <div class="pie-date">
+                            <DatePicker type="year" style="width: 80px"></DatePicker>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="idea-list">
+                <p>优化建议</p> 
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
         <div class="mark-panel">
             <div class="title">
                 行业趋势
@@ -1067,11 +1093,116 @@ export default {
         font-weight: 500;
         color: #242F57;
     }
-    .show-main{
-        width: 100%;
-        height: 500px;
-        background: #FFFFFF;
-        border-radius: 12px;
+    .main-show{
+        display: flex;
+        .main-left{
+            width: calc(100% - 368px);
+            height: 436px;
+            padding: 24px 24px 0;
+            margin-right: 24px;
+            background: #FFFFFF;
+            box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+            border-radius: 8px;
+            >p{
+                height: 26px;
+                margin-bottom: 24px;
+                font-size: 18px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #242F57;
+                line-height: 26px;
+            }
+            .echarts-box{
+                display: flex;
+                .bar-echarts{
+                    width: 65%;
+                    padding-right: 24px;
+                    .bar-title{
+                        height: 22px;
+                        margin-bottom: 4px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242F57;
+                        line-height: 22px;
+                    }
+                    .bar-sub-title{
+                        height: 18px;
+                        font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+                        line-height: 18px;
+                    }
+                }
+                .pie-echarts{
+                    position: relative;
+                    width: 35%;
+                    .pie-title{
+                        height: 22px;
+                        margin-bottom: 4px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242F57;
+                        line-height: 22px;
+                    }
+                    .pie-sub-title{
+                        height: 18px;
+                        font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+                        line-height: 18px;
+                    }
+                    .pie-date{
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                    }
+                }
+            }
+        }
+        .idea-list{
+            width: 368px;
+            height: 436px;
+            padding: 24px 24px 0;
+            background: #FFFFFF;
+            box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+            border-radius: 8px;
+            >p{
+                height: 26px;
+                margin-bottom: 24px;
+                font-size: 18px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #242F57;
+                line-height: 26px;
+            }
+            >ul{
+                height: ;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                li{
+                    width: 320px;
+                    height: 80px;
+                    border-radius: 8px;
+                    &:nth-child(1){
+                        background: #D3E3FF;
+                    }
+                    &:nth-child(2){
+                        background: #FFE6DE;
+                    }
+                    &:nth-child(3){
+                        background: #DFF8F6;
+                    }
+                    &:nth-child(4){
+                        background: #FFEBF3;
+                    }
+                }
+            }
+        }
     }
      .mark-panel{
         margin:24px 0;
