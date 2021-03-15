@@ -35,11 +35,15 @@
                 <img :src="sbAvatImg" alt="" srcset="" class="avatImg">
               </div>
               <div class="perinfo">
-                <div class="perinfo_t">北京上班族</div>
+                <div class="perinfo_t">全部用户</div>
                 <div class="perinfo_b">用户数 28790人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(1)">{{vDxtxt1}}</div>
+            <div class="lef_area_bom" @click="expandfn(1)">
+              {{vDxtxt1}}
+              <img v-if="vDxtxt1 == '收起'" :src="squpImg" class="squpImg"/>
+              <img v-else :src="zkdwImg" class="squpImg"/>
+            </div>
           </div>
           <div class="cen_area">
             <img :src="bjsbzImgTime" alt="" srcset="" class="cen_areaImg">
@@ -80,7 +84,11 @@
                 <div class="perinfo_b">用户数 7930人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(2)">{{vDxtxt2}}</div>
+            <div class="lef_area_bom" @click="expandfn(2)">
+              {{vDxtxt2}}
+              <img v-if="vDxtxt2 == '收起'" :src="squpImg" class="squpImg"/>
+              <img v-else :src="zkdwImg" class="squpImg"/>
+            </div>
           </div>
           <div class="cen_area">
             <img :src="yxqnImgTime" alt="" srcset="" class="cen_areaImg">
@@ -117,7 +125,11 @@
                 <div class="perinfo_b">用户数 3204人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(3)">{{vDxtxt3}}</div>
+            <div class="lef_area_bom" @click="expandfn(3)">
+              {{vDxtxt3}}
+              <img v-if="vDxtxt3 == '收起'" :src="squpImg" class="squpImg"/>
+              <img v-else :src="zkdwImg" class="squpImg"/>
+            </div>
           </div>
           <div class="cen_area">
             <img :src="qyggImgTime" alt="" srcset="" class="cen_areaImg">
@@ -146,7 +158,11 @@
                 <div class="perinfo_b">用户数 18197人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(4)">{{vDxtxt4}}</div>
+            <div class="lef_area_bom" style="background: #FFE6DE;color: #FE774B;" @click="expandfn(4)">
+              {{vDxtxt4}}
+              <img v-if="vDxtxt4 == '收起'" :src="czkImg" class="squpImg"/>
+              <img v-else :src="czkImg" class="squpImg"/>
+            </div>
           </div>
           <div class="cen_area">
             <img :src="bjsbzImgTime" alt="" srcset="" class="cen_areaImg">
@@ -187,7 +203,11 @@
                 <div class="perinfo_b">用户数 28790人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(5)">{{vDxtxt5}}</div>
+            <div class="lef_area_bom" style="background: #FFE6DE;color: #FE774B;" @click="expandfn(5)">
+              {{vDxtxt5}}
+              <img v-if="vDxtxt5 == '收起'" :src="czkImg" class="squpImg"/>
+              <img v-else :src="czkImg" class="squpImg"/>
+            </div>
           </div>
           <div class="cen_area">
             <img :src="zyzyImgTime" alt="" srcset="" class="cen_areaImg">
@@ -1054,24 +1074,24 @@ export default {
       descTitle:'北京上班族出行场景',
       avatImg:require("../../assets/img/yhhx/avat.png"),
       sbAvatImg:require("../../assets/img/yhhx/sbAvat.png"),
-      qyggImg:require("../../assets/img/yhhx/sbAvat.png"),
-      bpyzImg:require("../../assets/img/yhhx/bpAvat.png"),
-      zyzyImg:require("../../assets/img/yhhx/zyAvat.png"),
+      qyggImg:require("../../assets/img/yhhx/qyggimg1.png"),
+      bpyzImg:require("../../assets/img/yhhx/beipiaoImg.png"),
+      zyzyImg:require("../../assets/img/yhhx/ziyouImg.png"),
       bjsbzImgTime:require("../../assets/img/yhhx/bjsbzImg.png"),
       yxqnImgTime:require("../../assets/img/yhhx/yxqnImg.png"),
       qyggImgTime:require("../../assets/img/yhhx/qyggImg.png"),
       bpyzImgTime:require("../../assets/img/yhhx/bpyzImg.png"),
       zyzyImgTime:require("../../assets/img/yhhx/zyzyImg.png"),
       ifShowDx1:true,
-      vDxtxt1:'收起用户动线',
+      vDxtxt1:'收起',
       ifShowDx2:false,
-      vDxtxt2:'展开用户动线',
+      vDxtxt2:'查看动线详情',
       ifShowDx3:false,
-      vDxtxt3:'展开用户动线',
+      vDxtxt3:'查看动线详情',
       ifShowDx4:false,
-      vDxtxt4:'展开用户动线',
+      vDxtxt4:'查看动线详情',
       ifShowDx5:false,
-      vDxtxt5:'展开用户动线',
+      vDxtxt5:'查看动线详情',
       jchxData:{
         lefData:{
           til:'呈现问题',
@@ -1141,6 +1161,9 @@ export default {
       ],
 	    custom: '所有',
 	    customShow: false,
+      squpImg:require("../../assets/img/yhhx/squpImg.png"),
+      zkdwImg:require("../../assets/img/yhhx/zkdwImg.png"),
+      czkImg:require("../../assets/img/yhhx/czkImg.png"),
     };
   },
   mounted() {
@@ -1171,126 +1194,126 @@ export default {
       if(arg == 1){
         if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
-          this.vDxtxt2 = '展开用户动线';
+          this.vDxtxt2 = '查看动线详情';
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
-          this.vDxtxt3 = '展开用户动线';
+          this.vDxtxt3 = '查看动线详情';
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
-          this.vDxtxt4 = '展开用户动线';
+          this.vDxtxt4 = '查看动线详情';
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
-          this.vDxtxt5 = '展开用户动线';
+          this.vDxtxt5 = '查看动线详情';
         }
         this.ifShowDx1 = !this.ifShowDx1;
         if(this.ifShowDx1){
-          this.vDxtxt1 = '收起用户动线';
+          this.vDxtxt1 = '收起';
         }
         else{
-          this.vDxtxt1 = '展开用户动线';
+          this.vDxtxt1 = '查看动线详情';
         }
       }
       else if(arg == 2){
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
-          this.vDxtxt1 = '展开用户动线';
+          this.vDxtxt1 = '查看动线详情';
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
-          this.vDxtxt3 = '展开用户动线';
+          this.vDxtxt3 = '查看动线详情';
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
-          this.vDxtxt4 = '展开用户动线';
+          this.vDxtxt4 = '查看动线详情';
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
-          this.vDxtxt5 = '展开用户动线';
+          this.vDxtxt5 = '查看动线详情';
         }
         this.ifShowDx2 = !this.ifShowDx2;
         if(this.ifShowDx2){
-          this.vDxtxt2 = '收起用户动线';
+          this.vDxtxt2 = '收起';
         }
         else{
-          this.vDxtxt2 = '展开用户动线';
+          this.vDxtxt2 = '查看动线详情';
         }
       }
       else if(arg == 3){
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
-          this.vDxtxt1 = '展开用户动线';
+          this.vDxtxt1 = '查看动线详情';
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
-          this.vDxtxt2 = '展开用户动线';
+          this.vDxtxt2 = '查看动线详情';
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
-          this.vDxtxt4 = '展开用户动线';
+          this.vDxtxt4 = '查看动线详情';
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
-          this.vDxtxt5 = '展开用户动线';
+          this.vDxtxt5 = '查看动线详情';
         }
         this.ifShowDx3 = !this.ifShowDx3;
         if(this.ifShowDx3){
-          this.vDxtxt3 = '收起用户动线';
+          this.vDxtxt3 = '收起';
         }
         else{
-          this.vDxtxt3 = '展开用户动线';
+          this.vDxtxt3 = '查看动线详情';
         }
       }
       else if(arg == 4){
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
-          this.vDxtxt1 = '展开用户动线';
+          this.vDxtxt1 = '查看动线详情';
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
-          this.vDxtxt2 = '展开用户动线';
+          this.vDxtxt2 = '查看动线详情';
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
-          this.vDxtxt3 = '展开用户动线';
+          this.vDxtxt3 = '查看动线详情';
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
-          this.vDxtxt5 = '展开用户动线';
+          this.vDxtxt5 = '查看动线详情';
         }
         this.ifShowDx4 = !this.ifShowDx4;
         if(this.ifShowDx4){
-          this.vDxtxt4 = '收起用户动线';
+          this.vDxtxt4 = '收起';
         }
         else{
-          this.vDxtxt4 = '展开用户动线';
+          this.vDxtxt4 = '查看动线详情';
         }
       }
       else if(arg == 5){
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
-          this.vDxtxt1 = '展开用户动线';
+          this.vDxtxt1 = '查看动线详情';
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
-          this.vDxtxt2 = '展开用户动线';
+          this.vDxtxt2 = '查看动线详情';
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
-          this.vDxtxt3 = '展开用户动线';
+          this.vDxtxt3 = '查看动线详情';
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
-          this.vDxtxt4 = '展开用户动线';
+          this.vDxtxt4 = '查看动线详情';
         }
         this.ifShowDx5 = !this.ifShowDx5;
         if(this.ifShowDx5){
-          this.vDxtxt5 = '收起用户动线';
+          this.vDxtxt5 = '收起';
         }
         else{
-          this.vDxtxt5 = '展开用户动线';
+          this.vDxtxt5 = '查看动线详情';
         }
       }
     },
@@ -2167,15 +2190,21 @@ export default {
         .lef_area_bom{
           width: 100%;
           height: 44px;
-          background: #F4F7FC;
-          border-radius: 8px 0 0 8px;
+          background: #DDE9FF;
+          border-radius: 0 0 0 8px;
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 14px;
-          font-family: PingFangSC-Regular, PingFang SC;
-          font-weight: 400;
-          color: #636E95;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #2373FF;
+          .squpImg{
+            display: block;
+            width: 16px;
+            height: 16px;
+            margin-left: 36px;
+          }
           &:hover{
             cursor: pointer;
           }
