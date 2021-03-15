@@ -1,17 +1,24 @@
 <template>
     <div class="tabPanl_container">
         <div class="tabpan_lef">
-        <div class="tabpan_lef_lef">
-            <img :src="serImg1" alt="" srcset="" class="serImg1">
-        </div>
-        <div class="tabpan_lef_rig">
-            <div class="tabpan_lef_rig_top">{{tabData.lefData.til}}</div>
-            <div class="tabpan_lef_rig_bom">{{tabData.lefData.subTil}}</div>
-        </div>
+	        <div class="tabpan_lef_lef">
+	            <!--<img :src="serImg1" alt="" srcset="" class="serImg1">-->
+							<div class="icon_box">
+								<i class="iconfont iconjingshi"></i>
+							</div>
+
+	        </div>
+	        <div class="tabpan_lef_rig">
+	            <div class="tabpan_lef_rig_top">{{tabData.lefData.til}}</div>
+	            <div class="tabpan_lef_rig_bom">{{tabData.lefData.subTil}}</div>
+	        </div>
         </div>
         <div class="tabpan_rig">
             <div class="tabpan_rig_lef">
-                <img :src="serImg2" alt="" srcset="" class="serImg1">
+                <!--<img :src="serImg2" alt="" srcset="" class="serImg1">-->
+	            <div class="icon_box">
+		            <i class="iconfont iconqueren"></i>
+	            </div>
             </div>
             <div class="tabpan_lef_rig">
                 <div class="tabpan_lef_rig_top">{{tabData.rigData.til}}</div>
@@ -44,20 +51,37 @@
       .tabpan_lef{
         width: 49%;
         min-height: 106px;
-        background: rgba(255,136,0, 0.7);
+        background: #FEDFE1;
         border-radius: 8px;
         padding: 18px 24px;
         box-sizing: border-box;
-        display: flex;
-        align-items: flex-start;
+	      display: flex;
+	      align-items: center;
         .tabpan_lef_lef{
-          width: 73px;
-          height: 74px;
-          margin-top: -10px;
-          margin-right: -7px;
+          /*width: 73px;*/
+          /*height: 74px;*/
+          // margin-top: -10px;
+          // margin-right: -7px;
+	        margin-right: 16px;
           .serImg1{
             width: 100%;
           }
+	        .icon_box{
+		        width: 52px;
+		        height: 58px;
+		        background: #FFFFFF;
+		        border-radius: 8px;
+		        text-align: center;
+		        overflow: hidden;
+		        .iconfont{
+			        height: 100%;
+			        width: 100%;
+			        display: inline-block;
+			        text-align: center;
+			        color: #ff4c60;
+			        font-size: 40px;
+		        }
+	        }
         }
         .tabpan_lef_rig{
           flex: 1;
@@ -67,14 +91,14 @@
             font-size: 18px;
             font-family: PingFangSC-Semibold, PingFang SC;
             font-weight: 600;
-            color: #AD5D00;
+            color: #FF4C60;
           }
           .tabpan_lef_rig_bom{
             width: 404px;
             font-size: 16px;
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
-            color: #FFFFFF;
+            color: #FF4C60;
             line-height: 26px;
           }
         }
@@ -82,19 +106,33 @@
       .tabpan_rig{
         width: 49%;
         min-height: 106px;
-        background: rgba(77,148,255, 0.7);
+        background: #D3E3FF;
         border-radius: 8px;
         padding: 18px 24px;
         box-sizing: border-box;
-        display: flex;
-        align-items: flex-start;
+	      display: flex;
+	      align-items: center;
         .tabpan_rig_lef{
-          width: 64px;
-          height: 66px;
-          margin-top: -6px;
+	        margin-right: 0.11111rem;
           .serImg1{
             width: 100%;
           }
+	        .icon_box{
+		        width: 52px;
+		        height: 58px;
+		        background: #FFFFFF;
+		        border-radius: 8px;
+		        text-align: center;
+		        overflow: hidden;
+		        .iconfont{
+			        height: 100%;
+			        width: 100%;
+			        display: inline-block;
+			        text-align: center;
+			        color: #2373ff;
+			        font-size: 40px;
+		        }
+	        }
         }
         .tabpan_lef_rig{
             flex: 1;
@@ -104,14 +142,14 @@
                 font-size: 18px;
                 font-family: PingFangSC-Semibold, PingFang SC;
                 font-weight: 600;
-                color: #0559D7;
+                color: #2373FF;
             }
             .tabpan_lef_rig_bom{
                 width: 404px;
                 font-size: 16px;
                 font-family: PingFangSC-Regular, PingFang SC;
                 font-weight: 400;
-                color: #FFFFFF;
+                color: #2373FF;
                 line-height: 26px;
             }
         }
