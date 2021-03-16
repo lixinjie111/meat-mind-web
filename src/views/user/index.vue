@@ -888,7 +888,18 @@
 				    <div class="use_echart_item1">
 					    <div class="use_echart_title">APP内容偏好结构</div>
 					    <div class="use_echart_cont">
-						    <barLine id="box10" :colorList="$lxjData.colorList" :myData="$lxjData.box10Data"></barLine>
+						    <barLine id="box10" :colorList="$lxjData.colorList" :myData="$lxjData.box10Data" :option="{
+						    grid: {
+                  left: 19,
+                  right: 19,
+                  bottom: '60',
+                  top: '10%',
+                  containLabel: true,
+                  },
+                  legend: {
+                    bottom: 12,
+                  },
+                  }"></barLine>
 					    </div>
 				    </div>
 				    <div class="use_echart_item1">
@@ -969,9 +980,22 @@
 								    </div>
 						      </div>
 						    </div>
-					    <div class="xinzfb_container_lef_content">
-						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box7Data"></PieEcharts>
-					    </div>
+<!--					    <div class="xinzfb_container_lef_content">-->
+<!--						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box7Data"></PieEcharts>-->
+<!--					    </div>-->
+              <div class="xinzfb_container_lef_content">
+                <div class="xinzfb_container_lef_content_chart">
+                  <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box43Data"></PieEcharts>
+                </div>
+                <div class="xinzfb_container_lef_content_chart_match">
+                  <div class="xinzfb_container_lef_content_chart_match_item">
+                    <MatchDegree title="品牌匹配度" :data="matchDegree1"/>
+                  </div>
+                  <div class="xinzfb_container_lef_content_chart_match_item">
+                    <MatchDegree title="渠道匹配度" :data="matchDegree2" colourfol="green"/>
+                  </div>
+                </div>
+              </div>
 				    </div>
 			    </div>
 			    <div class="ppxz_container">
@@ -1100,10 +1124,11 @@ import vDxitem1 from "./dxItem1";
 import vTabCard from "./tabCard";
 import chuDa from "./chuDa";
 import Card from "./base/Card";
+import MatchDegree from "./base/MatchDegree";
 export default {
   components: {
    PieEcharts1,barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, PieEcharts7, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
-   vDxitem,vDxitem1,vTabCard,chuDa, Card
+   vDxitem,vDxitem1,vTabCard,chuDa, Card, MatchDegree
   },
   name: "index",
   data() {
@@ -1259,6 +1284,22 @@ export default {
 		    { name: '霄云', value: '25', color: '#FF8800'},
 		    { name: '创展', value: '20', color: '#FF8800'},
 	    ],
+      matchDegree1: [
+        { name: '喜茶', value: '67'},
+        { name: '奈雪', value: '67'},
+        { name: 'CoCo', value: '74'},
+        { name: '一点点', value: '74', color: '#FF8800'},
+        { name: '乐乐茶', value: '82', color: '#FF8800'},
+        { name: '快乐柠檬', value: '82', color: '#FF8800'},
+      ],
+      matchDegree2: [
+        { name: '微博', value: '67'},
+        { name: '小红书', value: '67'},
+        { name: '微信', value: '74'},
+        { name: 'bilibili', value: '74', color: '#FF8800'},
+        { name: '抖音', value: '82', color: '#FF8800'},
+        { name: '知乎', value: '82', color: '#FF8800'},
+      ],
     };
   },
   mounted() {
@@ -3385,7 +3426,7 @@ export default {
     background: #ffffff;
     // box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     // border-radius: 12px;
-    border-bottom: 1px solid #EAEDF7;
+    /*border-bottom: 1px solid #EAEDF7;*/
     // padding: 24px;
     box-sizing: border-box;
     display: flex;
@@ -3435,7 +3476,8 @@ export default {
 	      color: #242F57;
       }
       .use_echart_cont{
-        flex:1
+        flex:1;
+        padding-bottom: 20px;
       }
     }
     .use_echart_item1_container {
@@ -3471,7 +3513,7 @@ export default {
     background: #ffffff;
       // box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     // border-radius: 12px;
-    /*border-bottom: 1px solid #EAEDF7;*/
+    border-bottom: 1px solid #EAEDF7;
     // padding: 24px;
     box-sizing: border-box;
     display: flex;
@@ -3573,7 +3615,17 @@ export default {
 	        }
         }
         .xinzfb_container_lef_content {
-          flex:1
+          flex:1;
+          .xinzfb_container_lef_content_chart{
+            height: 180px;
+          }
+          .xinzfb_container_lef_content_chart_match{
+            height: 150px;
+            display: flex;
+            .xinzfb_container_lef_content_chart_match_item{
+              flex: 1;
+            }
+          }
         }
       }
     }

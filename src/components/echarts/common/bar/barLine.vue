@@ -3,6 +3,7 @@
 </template>
 
 <script>
+  import _ from 'lodash'
 export default {
 	props: {
 		myData:{
@@ -19,10 +20,13 @@ export default {
 		colorList:{
 			type:Array,
 		},
+    option:{
+			type: Object,
+		},
 	},
 	data () {
 		return {
-			
+
 		}
 	},
     mounted() {
@@ -53,7 +57,7 @@ export default {
 				// 		// if (list[i].seriesName == "SCL") {
 				// 		// 	msg += list[i].seriesName + "：" + list[i].data + "<br>";
 				// 		// }else{
-							
+
 				// 		// }
 				// 	}
 				// 	return msg;
@@ -114,8 +118,8 @@ export default {
 				// name: '情绪指标',
 				type: 'value',
 				nameTextStyle:{
-					color:"#97A0C3", 
-					fontSize:12,  
+					color:"#97A0C3",
+					fontSize:12,
 				},
                 axisLabel: {
 					formatter: '{value} ',
@@ -139,14 +143,14 @@ export default {
 							type: 'dashed',
 						}
 					},
-				
+
 			},
 			{
 				// type: 'value',
 				// name: '眼动注视指数',
 				// nameTextStyle:{
-				// 	color:"#97A0C3", 
-				// 	fontSize:12,  
+				// 	color:"#97A0C3",
+				// 	fontSize:12,
 				// },
 				textStyle: {
 					color: "#97A0C3",   //这里用参数代替了
@@ -176,10 +180,10 @@ export default {
 					},
 			}
 		],
-			
+
             series: this.myData.value
         };
-			return option;
+			return _.merge({}, option, this.option) ;
 		}
 	}
 }

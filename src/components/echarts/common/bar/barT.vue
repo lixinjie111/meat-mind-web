@@ -155,32 +155,33 @@ export default {
 					show: false,
 					dimension: 0,
 					seriesIndex: 0,
-					pieces: [{
-						gt: 1,
-						lt: 5,
-						color: this.colorList[0],
-					},
-					{
-						gt: 6,
-						lt:11,
-						color:this.colorList[1],
-					},
-					{
-						gt: 13,
-						lt: 22,
-						color: this.colorList[2],
-					},
-					{
-						gt: 23,
-						lt: 25,
-						color: this.colorList[3],
-					},
-					{
-						gt: 26,
-						lt: 30,
-						color: this.colorList[4],
-					},
-				]
+					pieces: [
+            {
+              gt: 1,
+              lt: 5,
+              color: 'rgb(163,196,255)',
+            },
+            {
+              gt: 6,
+              lt:11,
+              color:'rgb(255,160,130)',
+            },
+            {
+              gt: 13,
+              lt: 22,
+              color:'rgb(120,220,124)',
+            },
+            {
+              gt: 23,
+              lt: 25,
+              color:'rgb(247,154,268)',
+            },
+            {
+              gt: 26,
+              lt: 30,
+              color:'rgb(254,224,138)',
+            },
+          ]
 				},
 				series: [
 					{
