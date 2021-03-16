@@ -216,7 +216,15 @@
 			<barLine id="box101" :colorList="$lxjData.colorList" :myData="$lxjData.box101Data"></barLine>
 		</div>
 
-    </div>
+		<div class="box">
+			<PieNest1 id="box200" :colorList="$lxjData.colorList" :myData="$lxjData.box101Data"></PieNest1>
+		</div>
+			<div class="box">
+				<pieP1 id="box201" :value="72" title="品牌测评"></pieP1>
+			</div>
+
+
+		</div>
 </template>
 
 <script>
@@ -236,10 +244,12 @@
 	import barHM from './common/bar/barHM';
 	import lineSp from './common/line/lineSp';
 	import pieP from './common/pie/pieP';
+	import pieP1 from './common/pie/pieP1';
+	import PieNest1 from './common/pie/PieNest1';
     export default {
 		name:"barView",
 		components: {
-		  lineM3,barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,pieP
+		  lineM3,barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,pieP,pieP1,PieNest1
 		}
     }
 </script>
