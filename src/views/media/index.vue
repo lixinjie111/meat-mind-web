@@ -4,476 +4,320 @@
       <div class="header-nav">
         <p>媒介画像</p>
       </div>
-      <!-- <div class="m-p-panel">
-        <div class="panel1">
-          <div class="title">
+      <div class="new_media_panel1">
+        <div class="new_media_item1">
+          <div class="title">媒介现状与趋势</div>
+          <div class="new_media_box">
             <div class="left">
-              <div class="top">综合评价指数</div>
-              <div class="bm">截至2020/12/14</div>
+              <div class="subTitle">媒介现状与趋势</div>
+              <div class="subDesc">头部KOL投放成本过高，销售转化与上一季度持平。</div>
+              <div class="new_echart_box">
+              </div>
             </div>
-            <div class="rt">72</div>
-          </div>
-          <div class="nav1">
-            <div class="left">
-              <div class="top">77</div>
-              <div class="bm">近6月最高分</div>
+            <div class="rt">
+              <div class="subTitle">媒介现状与趋势</div>
+              <div class="subDesc">短视频类媒介呈现上升趋势（品牌合作意愿强） 新闻门户类热度下降（投放回报率低）</div>
+              <div class="new_echart_box">
+              </div>
             </div>
-            <div class="rt"><img src="../../assets/img/media/line1.png" alt=""></div>
-          </div>
-          <div class="nav2">
-            <div class="left">
-              <div class="top">69</div>
-              <div class="bm">近6月最低分</div>
-            </div>
-            <div class="rt"><img src="../../assets/img/media/line2.png" alt=""></div>
           </div>
         </div>
-        <div class="panel2">
-          <div class="text1">
-            <div class="circle1">
-              <div class="circle"></div>
-             </div>
-            <div class="text">推荐首选短视频类媒介，辅以垂直兴趣类媒介的投放组合方案；</div>
-          </div>
-          <div class="text1">
-            <div class="circle1">
-              <div class="circle"></div>
-            </div>
-            <div class="text">媒介资源推荐“邓荣”（顶流）和“李刚”（性价比）；</div>
-          </div>
-          <div class="text1">
-            <div class="circle1">
-              <div class="circle"></div>
-            </div>
-            <div class="text">预期媒介投放效果：150万的7日曝光，5%的转化率</div>
-          </div>
-        </div>
-        <div class="hr"></div>
-        <div class="panel3">
-          <Icon type="ios-alert-outline" color="#7C88B1"/>
-          <div class="left">
-            <div class="title">当前媒介：快手</div>
-            <div class="hr1"></div>
-            <div class="detail-info">
-                  <div class="detail-info-item">
-                      <div class="detail-info-left">
-                         <p>信息量<i class="iconfont iconduigou1"></i></p>
-                      </div>
-                      <div class="detail-info-rt">
-                         <p>专业度<i class="iconfont iconguanyu"></i></p>
-                      </div>
-                  </div>
-                  <div class="detail-info-item">
-                      <div class="detail-info-left">
-                         <p>友好度<i class="iconfont iconguanyu"></i></p>
-                      </div>
-                      <div class="detail-info-rt">
-                         <p>公信力<i class="iconfont iconduigou1"></i></p>
-                      </div>
-                  </div>
-                  <div class="detail-info-item">
-                      <div class="detail-info-left">
-                        <p>转化度<i class="iconfont iconguanyu"></i></p>
-                      </div>
-                      <div class="detail-info-rt">
-                        <p>ROI<i class="iconfont iconduigou1"></i></p>
-                      </div>
-                  </div>
+        <div class="new_media_item2">
+          <div class="title">优化建议</div>
+          <div class="box">
+              <div class="title">
+                <div class="boxIcon">
+                  <i class="iconfont iconkanbanline"></i>
+                </div> 媒介扩容
+              </div>
+              <div class="boxDesc">
+                增加媒介类型选择，加入新渠道（如垂直兴趣社区APP）合作计划；
               </div>
           </div>
-          <div class="rt"><LeidaEcharts :colorList="$fjData.colorList" :myData="$fjData.box30Data" titleText="92"></LeidaEcharts></div>
-        </div>
-      </div> -->
-      <!-- <div class="m-p-panel1">
-        <Row :gutter="24">
-                <Col span="8">
-                  <div class="box1">
-                    <div class="m-p-panel1-title">
-                      <div class="left">
-                        <div class="title-icon"><img src="../../assets/img/yhhx/serIcon2.png"/></div>
-                        <span>媒介类型契合</span>
-                      </div>
-                      <div class="rt">短视频</div>
-                    </div>
-                    <div class="content">
-                     基于品牌画像和用户画像，建议以短视频作为主要信息传播媒介（抖音：效果最优，快手：成本相对较低），垂直媒介为辅（小红书在15-25岁女性人群中的传播效果优于短视频）
-                    </div>
-                  </div>
-                </Col>
-                <Col span="8">
-                  <div class="box2">
-                    <div class="m-p-panel1-title">
-                      <div class="left">
-                        <div class="title-icon"><img src="../../assets/img/yhhx/serIcon2.png"/></div>
-                        <span>最优推广时间</span>
-                      </div>
-                      <div class="rt">18:40-22:00</div>
-                    </div>
-                    <div class="content">
-                     抖音用户，以26-45岁的女性自由职业者居多，整体收入水平偏中上等，约有1/3来自于三口之家，使用时间多分布于中午和晚间
-                    </div>
-                  </div>
-                </Col>
-                <Col span="8">
-                  <div class="box3">
-                    <div class="m-p-panel1-title">
-                      <div class="left">
-                        <div class="title-icon"><img src="../../assets/img/yhhx/serIcon2.png"/></div>
-                        <span>媒介KOL资源</span>
-                      </div>
-                      <div class="rt"></div>
-                    </div>
-                    <div class="content">
-                     抖音媒介资源是品牌投放的最优选择，KOL资源中“邓荣”投放效果最优，“李刚”性价比最高
-                    </div>
-                  </div>
-                </Col>
-            </Row>
-      </div> -->
-      <div class="media_first_panel">
-        <div class="media_first_panel_item1">
-          <div class="logo_til_container">
-            <div class="logo_container">
-              <img :src="leflogoIcon" alt="" srcset="" class="logo_icon">
-            </div>
-            <div class="til_con">品牌媒介现状及趋势</div>
+          <div class="box box_panel1">
+              <div class="title">
+                <div class="boxIcon">
+                  <i class="iconfont iconkanbanline"></i>
+                </div> KOL组合优化
+              </div>
+              <div class="boxDesc">
+                下一期头部KOL投放预算降低15%，以增加腰部KOL的合作（品牌匹配度TOP3+用户匹配度TOP3），预期ROI提升8.5%。
+              </div>
           </div>
-          <div class="labl_txt_container">
-            <div class="labl_cir"></div>
-            <div class="labl_txt">上一季度合作媒介TOP3为腾讯、头条、抖音；</div>
-          </div>
-          <div class="labl_txt_container">
-            <div class="labl_cir"></div>
-            <div class="labl_txt">合作KOL的TOP3为雪梨、王瑶、titi；</div>
-          </div>
-          <div class="labl_txt_container">
-            <div class="labl_cir"></div>
-            <div class="labl_txt" style="width:330px;">短视频类媒介呈现上升趋势，品牌合作意愿强；新闻门户类热度下降，投放回报率降低；头部KOL投放成本高居不下，销售转化与上一季度持平</div>
-          </div>
-        </div>
-        <div class="media_first_panel_item2">
-          <div class="logo_til_container">
-            <div class="logo_container">
-              <img :src="riglogoIcon" alt="" srcset="" class="logo_icon">
-            </div>
-            <div class="til_con">优化建议</div>
-          </div>
-          <div class="labl_txt_container">
-            <div class="labl_cir"></div>
-            <div class="labl_txt">增加媒介类型选择，加入新渠道（如垂直兴趣社区APP）合作计划；</div>
-          </div>
-          <div class="labl_txt_container">
-            <div class="labl_cir"></div>
-            <div class="labl_txt" style="width:357px;">减少头部KOL投放预算15%，以增加腰部KOL的合作（品牌匹配度TOP3+用户匹配度TOP3），预期ROI增加8.5%；</div>
-          </div>
-          <div class="labl_txt_container">
-            <div class="labl_cir"></div>
-            <div class="labl_txt" style="width:357px;">增加“健康饮品”话题的知识分享内容投放，向职场白领细分客群重点曝光；</div>
+          <div class="box box_panel2">
+              <div class="title">
+                <div class="boxIcon">
+                  <i class="iconfont iconkanbanline"></i>
+                </div> 话题丰富
+              </div>
+              <div class="boxDesc">
+               增加“健康饮品”话题的知识分享内容投放，向职场白领细分客群重点曝光。
+              </div>
           </div>
         </div>
       </div>
-
       <div class="media_sec_panel">
+        <div class="media_sec_panel_rig">
+          <div class="media_til">自有品牌媒介价值评估</div>
+          <div class="media_desc">基于自有品牌媒介通用评估指数、媒介回报指数和用户媒介匹配指数的综合价值评估</div>
+          <div class="media_cont">
+            <div class="media_cont1 media_box">
+              <div class="media_cont_til">综合曝光度</div>
+              <div class="media_cont_num_container"><span class="spanNum">2500</span>w</div>
+              <div class="media_cont_three_container">环比 <i class="iconfont iconshangsheng"></i> <span style="margin-right:15px;" class="shangsheng">3.46%</span>同比 <i class="iconfont iconxiajiang"></i><span  class="xiajiang"> 2.23%</span></div>
+            </div>
+            <div class="media_cont2 media_box">
+              <div class="media_cont_til">综合互动量/互动率：</div>
+              <div class="media_cont_num_container"><span class="spanNum">548</span>w<span class="spanNum"> / 10</span>%</div>
+              <div class="media_cont_three_container">环比 <i class="iconfont iconxiajiang"></i> <span style="margin-right:15px;" class="xiajiang">3.54%</span>同比 <i class="iconfont iconshangsheng"></i><span  class="shangsheng"> 1.11%</span></div>
+            </div>
+            <div class="media_cont3 media_box">
+              <div class="media_cont_til">销售转化率/转化量：</div>
+              <div class="media_cont_num_container"><span class="spanNum">26</span>%<span class="spanNum"> / 443 w</span></div>
+              <div class="media_cont_three_container">环比 <i class="iconfont iconshangsheng"></i> <span style="margin-right:15px;" class="shangsheng">3.53%</span>同比 <i class="iconfont iconshangsheng"></i> <span  class="shangsheng">12.4%</span></div>
+            </div>
+            <div class="media_cont4 media_box">
+              <div class="media_cont_til">新增留存用户数：</div>
+              <div class="media_cont_num_container"><span class="spanNum">57</span>w<span class="spanNum"></span></div>
+              <div class="media_cont_three_container">环比 <i class="iconfont iconshangsheng"></i> <span style="margin-right:15px;" class="">4.27%</span>同比 <i class="iconfont iconxiajiang"></i> <span  class="xiajiang">5.2%</span></div>
+           </div>
+            <div class="media_cont5 media_box">
+              <div class="media_cont_til">媒介正负情感分布比：</div>
+              <div class="media_cont_num_container"><span class="spanNum">50</span>%<span class="spanNum"> / 27</span>%</div>
+              <div class="media_cont_three_container">环比 <i class="iconfont iconshangsheng"></i> <span style="margin-right:15px;" class="shangsheng">2.12%</span>同比 <i class="iconfont iconshangsheng"></i><span  class="shangsheng"> 6.67%</span></div>
+            </div>
+            <div class="media_cont6 media_box">
+              <div class="media_cont_til">真粉用户比/活跃用户比：</div>
+              <div class="media_cont_num_container"><span class="spanNum">33</span>%<span class="spanNum"> / 11</span>%</div>
+              <div class="media_cont_three_container">环比 <i class="iconfont iconshangsheng"></i> <span style="margin-right:15px;" class="shangsheng">7.17%</span>同比 <i class="iconfont iconshangsheng"></i><span  class="shangsheng"> 4.44%</span></div>
+            </div>
+          </div>
+        </div>
         <div class="media_sec_panel_lef">
           <div class="media_sec_panel_lef1">
-            <div class="media_sec_panel_lef1_top">合作媒介</div>
-            <div class="icon_container">
-              <div class="tenx" @click="meijieFn(1)">
-                <img :src="tenxIcon" alt="" srcset="" class="tenxIcon">
-              </div>
-              <div class="tout" @click="meijieFn(2)">
-                <img :src="ttIcon" alt="" srcset="" class="tenxIcon">
-              </div>
-              <div class="douy" @click="meijieFn(3)">
-                <img :src="dyIcon" alt="" srcset="" class="tenxIcon">
-              </div>
-              <div class="ke36" @click="meijieFn(4)">
-                <img :src="ke36Icon" alt="" srcset="" class="tenxIcon">
-              </div>
-              <div class="weib" @click="meijieFn(5)">
-                <img :src="wbIcon" alt="" srcset="" class="tenxIcon">
-              </div>
-              <i class="iconfont iconleft-arrow21"></i>
+            <div class="media_sec_panel_lef1_top">自有品牌合作媒介</div>
+            <div class="selectList">
+                <Select v-model="model2" @on-change="change1">
+                    <Option v-for="item in optionList" :value="item.value" :key="item.value">{{ item.name }}</Option>
+                </Select>
             </div>
             <div class="media_sec_panel_lef1_bom">
-              <div class="sec_pan_con1">
+              <div class="sec_pan_con1" v-for="(item,index) in mediaList" :key="index">
                 <div class="sec_pan_con1_lef">
-                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>综合曝光度</span></div>
-                  <div class="sec_pan_con1_lef_numtxt">{{meijieObj.meijie1.numTxt1}}</div>
-                </div>
+                  <div class="sec_pan_con1_pic">
+                      <div class="headerPic" :class="'headerPic'+index">
+                        <img :src="item.icon" alt="" srcset="" class="tenxIcon">
+                      </div>
+                   </div>
+                  <div class="sec_pan_con1_num">
+                   {{item.numTxt1}}
+                  </div>
+                </div> 
                 <div class="sec_pan_con1_rig">
                   <div class="sec_pan_con1_rig_lef">
                     <div class="sec_pan_con1_rig_lef_top">环比</div>
-                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie1.numTxt2}}</div>
+                    <div class="sec_pan_con1_rig_lef_bom" >
+                      <span v-if="item.isUp" >
+                         <i class="iconfont iconxiajiang domnIconArr"></i> 
+                          {{item.numTxt2}}
+                      </span>
+                      <span v-else style="color:#34C724;">
+                         <i class="iconfont iconshangsheng domnIconArr"></i> 
+                          {{item.numTxt2}}
+                      </span>
+                     </div>
                   </div>
                   <div class="sec_pan_con1_rig_rig">
                     <div class="sec_pan_con1_rig_lef_top">同比</div>
-                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie1.numTxt3}}</div>
-                  </div>
-                </div>
-              </div>
-              <div class="sec_pan_con2">
-                <div class="sec_pan_con1_lef">
-                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>综合互动量/互动率</span></div>
-                  <div class="sec_pan_con1_lef_numtxt">{{meijieObj.meijie2.numTxt1}}</div>
-                </div>
-                <div class="sec_pan_con1_rig">
-                  <div class="sec_pan_con1_rig_lef">
-                    <div class="sec_pan_con1_rig_lef_top">环比</div>
-                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie2.numTxt2}}</div>
-                  </div>
-                  <div class="sec_pan_con1_rig_rig">
-                    <div class="sec_pan_con1_rig_lef_top">同比</div>
-                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie2.numTxt3}}</div>
-                  </div>
-                </div>
-              </div>
-              <div class="sec_pan_con3">
-                <div class="sec_pan_con1_lef">
-                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>销售转化率/转化量</span></div>
-                  <div class="sec_pan_con1_lef_numtxt">{{meijieObj.meijie3.numTxt1}}</div>
-                </div>
-                <div class="sec_pan_con1_rig">
-                  <div class="sec_pan_con1_rig_lef">
-                    <div class="sec_pan_con1_rig_lef_top">环比</div>
-                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie3.numTxt2}}</div>
-                  </div>
-                  <div class="sec_pan_con1_rig_rig">
-                    <div class="sec_pan_con1_rig_lef_top">同比</div>
-                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie3.numTxt3}}</div>
-                  </div>
-                </div>
-              </div>
-              <div class="sec_pan_con4">
-                <div class="sec_pan_con1_lef">
-                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>新增留存用户数</span></div>
-                  <div class="sec_pan_con1_lef_numtxt">{{meijieObj.meijie4.numTxt1}}</div>
-                </div>
-                <div class="sec_pan_con1_rig">
-                  <div class="sec_pan_con1_rig_lef">
-                    <div class="sec_pan_con1_rig_lef_top">环比</div>
-                    <div class="sec_pan_con1_rig_lef_bom" style="color: rgb(52, 199, 36);"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie4.numTxt2}}</div>
-                  </div>
-                  <div class="sec_pan_con1_rig_rig">
-                    <div class="sec_pan_con1_rig_lef_top">同比</div>
-                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie4.numTxt3}}</div>
-                  </div>
-                </div>
-              </div>
-              <div class="sec_pan_con5">
-                <div class="sec_pan_con1_lef">
-                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>媒介正负情感分布比</span></div>
-                  <div class="sec_pan_con1_lef_numtxt">{{meijieObj.meijie5.numTxt1}}</div>
-                </div>
-                <div class="sec_pan_con1_rig">
-                  <div class="sec_pan_con1_rig_lef">
-                    <div class="sec_pan_con1_rig_lef_top">环比</div>
-                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie5.numTxt2}}</div>
-                  </div>
-                  <div class="sec_pan_con1_rig_rig">
-                    <div class="sec_pan_con1_rig_lef_top">同比</div>
-                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{meijieObj.meijie5.numTxt3}}</div>
+                    <div class="sec_pan_con1_rig_lef_bom" >
+                       <span v-if="item.isUp1" style="color:#34C724;">
+                         <i class="iconfont iconshangsheng domnIconArr"></i> 
+                          {{item.numTxt3}}
+                      </span>
+                      <span v-else >
+                         <i class="iconfont iconxiajiang domnIconArr"></i> 
+                          {{item.numTxt3}}
+                      </span>
+                      </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="media_sec_panel_lef2">
-              <div class="media_sec_panel_lef1_top">合作KOL</div>
-            <div class="icon_container">
-              <div class="tenx" @click="kolFn(1)">
-                <img :src="touxIcon1" alt="" srcset="" class="tenxIcon">
+              <div class="media_sec_panel_lef1_top">自有品牌合作KOL</div>
+              <div class="selectList">
+                  <Select v-model="model2"  @on-change="change2">
+                      <Option v-for="item in optionList" :value="item.value" :key="item.value">{{ item.name }}</Option>
+                  </Select>
               </div>
-              <div class="tout" @click="kolFn(2)">
-                <img :src="touxIcon2" alt="" srcset="" class="tenxIcon">
-              </div>
-              <div class="douy" @click="kolFn(3)">
-                <img :src="touxIcon3" alt="" srcset="" class="tenxIcon">
-              </div>
-              <div class="ke36" @click="kolFn(4)">
-                <img :src="touxIcon4" alt="" srcset="" class="tenxIcon">
-              </div>
-              <div class="weib" @click="kolFn(5)">
-                <img :src="touxIcon5" alt="" srcset="" class="tenxIcon">
-              </div>
-              <i class="iconfont iconleft-arrow21"></i>
-            </div>
             <div class="media_sec_panel_lef1_bom">
-              <div class="sec_pan_con1">
+              <div class="sec_pan_con1" v-for="(item,index) in mediaHlist" :key="index">
                 <div class="sec_pan_con1_lef">
-                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>综合曝光度</span></div>
-                  <div class="sec_pan_con1_lef_numtxt">{{kolObj.meijie1.numTxt1}}</div>
+                  <div class="sec_pan_con1_pic">
+                      <div class="headerPic" :class="'headerPic'+index">
+                        <img :src="item.icon" alt="" srcset="" class="tenxIcon">
+                      </div>
+                   </div>
+                  <div class="sec_pan_con1_num">
+                   {{item.numTxt1}}
+                  </div>
                 </div>
                 <div class="sec_pan_con1_rig">
                   <div class="sec_pan_con1_rig_lef">
                     <div class="sec_pan_con1_rig_lef_top">环比</div>
-                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie1.numTxt2}}</div>
+                    <div class="sec_pan_con1_rig_lef_bom">
+                       <span v-if="item.isUp" >
+                         <i class="iconfont iconxiajiang domnIconArr"></i> 
+                          {{item.numTxt2}}
+                      </span>
+                      <span v-else style="color:#34C724;">
+                         <i class="iconfont iconshangsheng domnIconArr"></i> 
+                          {{item.numTxt2}}
+                      </span>
+                    </div>
                   </div>
                   <div class="sec_pan_con1_rig_rig">
                     <div class="sec_pan_con1_rig_lef_top">同比</div>
-                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie1.numTxt3}}</div>
-                  </div>
-                </div>
-              </div>
-              <div class="sec_pan_con2">
-                <div class="sec_pan_con1_lef">
-                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>综合互动量/互动率</span></div>
-                  <div class="sec_pan_con1_lef_numtxt">{{kolObj.meijie2.numTxt1}}</div>
-                </div>
-                <div class="sec_pan_con1_rig">
-                  <div class="sec_pan_con1_rig_lef">
-                    <div class="sec_pan_con1_rig_lef_top">环比</div>
-                    <div class="sec_pan_con1_rig_lef_bom" style="color: rgb(52, 199, 36);"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie2.numTxt2}}</div>
-                  </div>
-                  <div class="sec_pan_con1_rig_rig">
-                    <div class="sec_pan_con1_rig_lef_top">同比</div>
-                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie2.numTxt3}}</div>
-                  </div>
-                </div>
-              </div>
-              <div class="sec_pan_con3">
-                <div class="sec_pan_con1_lef">
-                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>销售转化率/转化量</span></div>
-                  <div class="sec_pan_con1_lef_numtxt">{{kolObj.meijie3.numTxt1}}</div>
-                </div>
-                <div class="sec_pan_con1_rig">
-                  <div class="sec_pan_con1_rig_lef">
-                    <div class="sec_pan_con1_rig_lef_top">环比</div>
-                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie3.numTxt2}}</div>
-                  </div>
-                  <div class="sec_pan_con1_rig_rig">
-                    <div class="sec_pan_con1_rig_lef_top">同比</div>
-                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie3.numTxt3}}</div>
-                  </div>
-                </div>
-              </div>
-              <div class="sec_pan_con4">
-                <div class="sec_pan_con1_lef">
-                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>新增留存用户数</span></div>
-                  <div class="sec_pan_con1_lef_numtxt">{{kolObj.meijie4.numTxt1}}</div>
-                </div>
-                <div class="sec_pan_con1_rig">
-                  <div class="sec_pan_con1_rig_lef">
-                    <div class="sec_pan_con1_rig_lef_top">环比</div>
-                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie4.numTxt2}}</div>
-                  </div>
-                  <div class="sec_pan_con1_rig_rig">
-                    <div class="sec_pan_con1_rig_lef_top">同比</div>
-                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie4.numTxt3}}</div>
-                  </div>
-                </div>
-              </div>
-              <div class="sec_pan_con5">
-                <div class="sec_pan_con1_lef">
-                  <div class="sec_pan_con1_lef_til"><span class="circie"></span><span>媒介正负情感分布比</span></div>
-                  <div class="sec_pan_con1_lef_numtxt">{{kolObj.meijie5.numTxt1}}</div>
-                </div>
-                <div class="sec_pan_con1_rig">
-                  <div class="sec_pan_con1_rig_lef">
-                    <div class="sec_pan_con1_rig_lef_top">环比</div>
-                    <div class="sec_pan_con1_rig_lef_bom"><img :src="domnIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie5.numTxt2}}</div>
-                  </div>
-                  <div class="sec_pan_con1_rig_rig">
-                    <div class="sec_pan_con1_rig_lef_top">同比</div>
-                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;"><img :src="upIconArr" alt="" srcset="" class="domnIconArr">{{kolObj.meijie5.numTxt3}}</div>
+                    <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;">
+                       <span v-if="item.isUp1" style="color:#34C724;">
+                         <i class="iconfont iconshangsheng domnIconArr"></i> 
+                          {{item.numTxt3}}
+                      </span>
+                      <span v-else >
+                         <i class="iconfont iconxiajiang domnIconArr"></i> 
+                          {{item.numTxt3}}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="media_sec_panel_rig">
-          <div class="media_til">媒介价值评估</div>
-          <div class="media_cont">
-            <div class="media_cont1">
-              <div class="media_cont_til">综合曝光度</div>
-              <div class="media_cont_num_container"><span class="spanNum">2500</span>w</div>
-              <div class="media_cont_three_container">环比<img :src="upIcon" alt="" class="upIcon"><span style="margin-right:15px;">4.07%</span>同比<img :src="upIcon" alt="" class="upIcon">7.1%</div>
-            </div>
-            <div class="media_cont2">
-              <div class="media_cont_til">综合互动量/互动率：</div>
-              <div class="media_cont_num_container"><span class="spanNum">548</span>w<span class="spanNum">/10</span>%</div>
-              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">5.6%</span>同比<img :src="upIcon" alt="" class="upIcon">1.11%</div>
-            </div>
-            <div class="media_cont3">
-              <div class="media_cont_til">销售转化率/转化量：</div>
-              <div class="media_cont_num_container"><span class="spanNum">26</span>%<span class="spanNum">/443w</span></div>
-              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">3.53%</span>同比<img :src="upIcon" alt="" class="upIcon">12.4%</div>
-            </div>
-            <div class="media_cont4">
-              <div class="media_cont_til">新增留存用户数：</div>
-              <div class="media_cont_num_container"><span class="spanNum">57</span>w<span class="spanNum"></span></div>
-              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">4.27%</span>同比<img :src="upIcon" alt="" class="upIcon">5.2%</div>
-            </div>
-            <div class="media_cont5">
-              <div class="media_cont_til">媒介正负情感分布比：</div>
-              <div class="media_cont_num_container"><span class="spanNum">50</span>%<span class="spanNum">/27</span>%</div>
-              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">2.12%</span>同比<img :src="upIcon" alt="" class="upIcon">6.67%</div>
-            </div>
-            <div class="media_cont6">
-              <div class="media_cont_til">真粉用户比/活跃用户比：</div>
-              <div class="media_cont_num_container"><span class="spanNum">33</span>%<span class="spanNum">/11</span>%</div>
-              <div class="media_cont_three_container">环比<img :src="downIcon" alt="" class="upIcon"><span style="margin-right:15px;">7.17%</span>同比<img :src="upIcon" alt="" class="upIcon">4.44%</div>
-            </div>
-          </div>
-        </div>
+        
       </div>
 
       <div class="media_three_panel">
-        <div class="media_three_item">
-          <div class="media_three_item_top">
-            <div class="media_three_item_til">竞品媒介洞察：王老吉</div>
-            <div class="media_three_item_echarts">
-              <vTree id="vTree1" :myData="$zjjData.TreeMapData1"></vTree>
+         <div class="media_three_panel_title">竞品媒介策略洞察</div>
+         <div class="media_three_panel_box">
+            <div class="media_three_item">
+              <div class="media_three_item_top">
+                <div class="media_three_item_til">王老吉</div>
+                <div class="media_three_item_echarts">
+                  <vTree id="vTree1" :myData="$zjjData.TreeMapData1"></vTree>
+                </div>
+              </div>
+              <div class="media_three_item_bom">
+                <div class="media_three_con"><span >策略: </span><span>主要使用电视渠道投放，投放内容 单一，重复性高；</span></div>
+                <div class="media_three_con"><span >优势: </span><span>容易形成品牌记忆</span></div>
+                <div class="media_three_con"><span >威胁: </span><span>受众心智中凉茶行业的第一提及品 牌；</span></div>
+              </div>
             </div>
-          </div>
-          <div class="media_three_item_bom">
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">策略: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">主要使用电视渠道投放，投放内容 单一，重复性高；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">优势: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">容易形成品牌记忆</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">威胁: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">受众心智中凉茶行业的第一提及品 牌；</span></div>
-          </div>
-        </div>
-        <div class="media_three_item">
-          <div class="media_three_item_top">
-            <div class="media_three_item_til">竞品媒介洞察：和其正</div>
-            <div class="media_three_item_echarts">
-              <vTree id="vTree2" :myData="$zjjData.TreeMapData2"></vTree>
+            <div class="media_three_item">
+              <div class="media_three_item_top">
+                <div class="media_three_item_til">和其正</div>
+                <div class="media_three_item_echarts">
+                  <vTree id="vTree2" :myData="$zjjData.TreeMapData2"></vTree>
+                </div>
+              </div>
+              <div class="media_three_item_bom media_three_item_bom2">
+                <div class="media_three_con"><span>策略: </span><span>侧重体育类媒介，布局各类媒介渠道的体育类KOL和内容；</span></div>
+                <div class="media_three_con"><span>优势: </span><span>形成体育兴趣受众的强用户粘性（凉茶消费者类型TOP3之一)；</span></div>
+                <div class="media_three_con"><span>威胁: </span><span>体育兴趣受众难以转化；</span></div>
+              </div>
             </div>
-          </div>
-          <div class="media_three_item_bom media_three_item_bom2">
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">策略: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">侧重体育类媒介，布局各类媒介渠道的体育类KOL和内容；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">优势: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">形成体育兴趣受众的强用户粘性（凉茶消费者类型TOP3之一)；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">威胁: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">体育兴趣受众难以转化；</span></div>
-          </div>
-        </div>
-        <div class="media_three_item">
-          <div class="media_three_item_top">
-            <div class="media_three_item_til">竞品媒介洞察：白云山</div>
-            <div class="media_three_item_echarts">
-              <vTree id="vTree3" :myData="$zjjData.TreeMapData3"></vTree>
+            <div class="media_three_item">
+              <div class="media_three_item_top">
+                <div class="media_three_item_til">白云山</div>
+                <div class="media_three_item_echarts">
+                  <vTree id="vTree3" :myData="$zjjData.TreeMapData3"></vTree>
+                </div>
+              </div>
+              <div class="media_three_item_bom">
+                <div class="media_three_con"><span>策略: </span><span>侧重与年轻消费人群关注的KOL，不计投放成本；</span></div>
+                <div class="media_three_con"><span>优势: </span><span>打造品牌年轻化，消费者复购频率高；</span></div>
+                <div class="media_three_con"><span>威胁: </span><span>媒介组合优势明显，难以形成差异化竞争；</span></div>
+              </div>
             </div>
-          </div>
-          <div class="media_three_item_bom">
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">策略: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">侧重与年轻消费人群关注的KOL，不计投放成本；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">优势: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">打造品牌年轻化，消费者复购频率高；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">威胁: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">媒介组合优势明显，难以形成差异化竞争；</span></div>
-          </div>
-        </div>
-        <div class="media_three_item media_three_item2">
-          <div class="media_three_item_top">
-            <div class="media_three_item_til">竞品媒介洞察：同仁堂</div>
-            <div class="media_three_item_echarts">
-              <vTree id="vTree4" :myData="$zjjData.TreeMapData4"></vTree>
+            <div class="media_three_item media_three_item2">
+              <div class="media_three_item_top">
+                <div class="media_three_item_til">同仁堂</div>
+                <div class="media_three_item_echarts">
+                  <vTree id="vTree4" :myData="$zjjData.TreeMapData4"></vTree>
+                </div>
+              </div>
+              <div class="media_three_item_bom media_three_item_bom2">
+                <div class="media_three_con"><span>策略: </span><span>主要与养生专家类KOL合作， 以健康讲堂形式的内容进行投放；</span></div>
+                <div class="media_three_con"><span>优势: </span><span>医学健康专家的合作，提升品牌信服力；</span></div>
+                <div class="media_three_con"><span>威胁: </span><span>在老年群体中形成护城河，品牌竞争优势巨大；</span></div>
+              </div>
             </div>
-          </div>
-          <div class="media_three_item_bom media_three_item_bom2">
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">策略: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">主要与养生专家类KOL合作， 以健康讲堂形式的内容进行投放；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">优势: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">医学健康专家的合作，提升品牌信服力；</span></div>
-            <div class="media_three_con"><span style="color:#242F57;font-size: 13px;margin-right:4px;width:43px;">威胁: </span><span style="display: inline-block;width:209.2px;font-size: 12px;">在老年群体中形成护城河，品牌竞争优势巨大；</span></div>
-          </div>
-        </div>
+          </div>  
       </div>
+      <div class="zuhetitle">媒介组合推荐方案</div>
+      <div class="media_zuhe_panel">
+        <div class="title">媒介组合方案</div>
+        <div class="subTitle">基于品牌画像和用户画像，建议以短视频作为主要信息传播媒介，垂直媒介为辅的媒介组合，并辅以多KOL多内容类型的投放策略），预算建议在50～75万之间。</div>
+        <div class="navBox">
+          <div class="navItem" :class="currentIndex==1?'navActive':''" @click="changeIndex(1)">
+            <div class="navItem_left">
+              <div class="headerIcon"><img src="../../assets/img/yhhx/headerBg.png" alt=""></div>
+            </div>
+            <div class="navItem_rt">
+               <div class="navItem_title1">
+                 策略1
+               </div>
+               <div class="navItem_title2">
+                 快速拉新获客策略
+               </div>
+            </div>
+          </div>
+          <div class="navItem navItem2" :class="currentIndex==2?'navActive':''" @click="changeIndex(2)">
+            <div class="navItem_left">
+              <div class="headerIcon"><img src="../../assets/img/yhhx/xunh.png" alt=""></div>
+            </div>
+            <div class="navItem_rt">
+               <div class="navItem_title1">
+                 策略1
+               </div>
+               <div class="navItem_title2">
+                 快速拉新获客策略
+               </div>
+            </div>
+          </div>
+          <div class="navItem navItem3" :class="currentIndex==3?'navActive':''" @click="changeIndex(3)">
+            <div class="navItem_left">
+              <div class="headerIcon"><img src="../../assets/img/yhhx/timeIc.png" alt=""></div>
+            </div>
+            <div class="navItem_rt">
+               <div class="navItem_title1">
+                 策略1
+               </div>
+               <div class="navItem_title2">
+                 快速拉新获客策略
+               </div>
+            </div>
+          </div>
+        </div>
+         <div class="navContent">
+            <div class="navContentBox">
+                <div class="navContentTop">
+                  <div class="navContentItem">
 
+                  </div>
+                </div>
+                <div class="navContentBm">
+                    <div class="navContentLf">
+                  
+                    </div>
+                    <div class="navContentRt">
+                  
+                    </div>
+                </div>
+            </div>
+         </div>
+      </div>
       <div class="media_four_panel">
         <div class="media_four_panel_lef">
           <div class="media_four_panel_title">新增用户</div>
@@ -936,41 +780,41 @@
             暂无相关数据
           </div>
       </div>
-        <div class="m-p-kol-strategy">
-            <div class="strategy-title">
-                推荐KOL组合策略
-            </div>
-            <div class="strategy-top">
-                <div class="top-left">
-                    <p><span class="top-title">推荐的KOL组合</span><span class="top-blue">李子柒 + 西木西木 + 辣目洋子</span></p>
-                    <p class="mt12"><span class="top-title">方案效果</span><span>预期以12600元的成本吸引潜客432341人</span></p>
-                </div>
-                <div class="top-right">
-                    <p class="top-title">推荐缘由</p>
-                    <p><span>李子柒为头部KOL，在曝光分布及用户影响率上对于品牌推广能起到快速起效。但鉴于李子柒非垂直领域KOL，专业引流不足，故补充垂直类KOL西木西木和泛娱乐类KOL辣目洋子，三者配合投放可使收益达到最高</span></p>
-                </div>
-            </div>
-            <div class="strategy-bottom">
-                <div></div>
-                <div>
-                    <div class="bottom-title">用户量</div>
-                </div>
-                <div>
-                    <div class="bottom-title light">曝光分布</div>
-                </div>
-                <div>
-                    <div class="bottom-title">销售分布</div>
-                </div>
-                <div>
-                    <div class="bottom-title light">内容方向</div>
-                </div>
-                <div>
-                    <div class="bottom-card">
-                        <img src="../../assets/img/mark/head1.jpg" />
-                        <div class="card-box">
-                            <p>头部KOL</p>
-                            <p>李子柒</p>
-                        </div>
+      <div class="m-p-kol-strategy">
+          <div class="strategy-title">
+              推荐KOL组合策略
+          </div>
+          <div class="strategy-top">
+              <div class="top-left">
+                  <p><span class="top-title">推荐的KOL组合</span><span class="top-blue">李子柒 + 西木西木 + 辣目洋子</span></p>
+                  <p class="mt12"><span class="top-title">方案效果</span><span>预期以12600元的成本吸引潜客432341人</span></p>
+              </div>
+              <div class="top-right">
+                  <p class="top-title">推荐缘由</p>
+                  <p><span>李子柒为头部KOL，在曝光分布及用户影响率上对于品牌推广能起到快速起效。但鉴于李子柒非垂直领域KOL，专业引流不足，故补充垂直类KOL西木西木和泛娱乐类KOL辣目洋子，三者配合投放可使收益达到最高</span></p>
+              </div>
+          </div>
+          <div class="strategy-bottom">
+              <div></div>
+              <div>
+                  <div class="bottom-title">用户量</div>
+              </div>
+              <div>
+                  <div class="bottom-title light">曝光分布</div>
+              </div>
+              <div>
+                  <div class="bottom-title">销售分布</div>
+              </div>
+              <div>
+                  <div class="bottom-title light">内容方向</div>
+              </div>
+              <div>
+                  <div class="bottom-card">
+                      <img src="../../assets/img/mark/head1.jpg" />
+                      <div class="card-box">
+                          <p>头部KOL</p>
+                          <p>李子柒</p>
+                      </div>
 <!--                        <div class="card-tip">-->
 <!--                            <Poptip popper-class="saas-poptip" placement="right-start">-->
 <!--                                <i class="iconfont iconguanyuline1 tip-icon"></i>-->
@@ -981,65 +825,65 @@
 <!--                                </div>-->
 <!--                            </Poptip>-->
 <!--                        </div>-->
-                    </div>
-                </div>
-                <div>
-                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box34Data" ></PieEcharts6>
-                </div>
-                <div>
-                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box37Data" ></PieEcharts6>
-                </div>
-                <div>
-                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box40Data" ></PieEcharts6>
-                </div>
-                <div>
-                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box31Data" ></PieEcharts6>
-                </div>
-                <div>
-                    <div class="bottom-card">
-                        <img src="../../assets/img/mark/head2.jpeg" />
-                        <div class="card-box">
-                            <p>垂直类KOL</p>
-                            <p>西木西木</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box35Data" ></PieEcharts6>
-                </div>
-                <div>
-                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box38Data" ></PieEcharts6>
-                </div>
-                <div>
-                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box41Data" ></PieEcharts6>
-                </div>
-                <div>
-                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box32Data" ></PieEcharts6>
-                </div>
-                <div>
-                    <div class="bottom-card">
-                        <img src="../../assets/img/mark/head3.jpeg" />
-                        <div class="card-box">
-                            <p>泛娱乐类KOL</p>
-                            <p>辣目洋子</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box36Data" ></PieEcharts6>
-                </div>
-                <div>
-                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box39Data" ></PieEcharts6>
-                </div>
-                <div>
-                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box42Data" ></PieEcharts6>
-                </div>
-                <div>
-                    <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box33Data" ></PieEcharts6>
-                </div>
-            </div>
-        </div>
-        <div class="m-p-kol">
+                  </div>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box34Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box37Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box40Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box31Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <div class="bottom-card">
+                      <img src="../../assets/img/mark/head2.jpeg" />
+                      <div class="card-box">
+                          <p>垂直类KOL</p>
+                          <p>西木西木</p>
+                      </div>
+                  </div>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box35Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box38Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box41Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box32Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <div class="bottom-card">
+                      <img src="../../assets/img/mark/head3.jpeg" />
+                      <div class="card-box">
+                          <p>泛娱乐类KOL</p>
+                          <p>辣目洋子</p>
+                      </div>
+                  </div>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box36Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box39Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box42Data" ></PieEcharts6>
+              </div>
+              <div>
+                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box33Data" ></PieEcharts6>
+              </div>
+          </div>
+      </div>
+      <div class="m-p-kol">
           <div class="m-p-target-title">
               KOL资源
 			  <Poptip popper-class="saas-poptip small" placement="right-start">
@@ -1083,6 +927,34 @@ export default {
   components: { Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, TabPaneItem},
   data(){
       return{
+        currentIndex:1,
+        model2:"1",
+        optionList:[
+          {
+            name:"综合曝光度",
+            value:"1",
+          },
+          {
+            name:"综合互动量/互动率",
+            value:"2",
+          },
+          {
+            name:"销售转化率/转化量",
+            value:"3",
+          },
+          {
+            name:"新增留存用户数",
+            value:"4",
+          },
+          {
+            name:"媒介正负情感分布比",
+            value:"5",
+          },
+          {
+            name:"真粉用户比/活跃用户比",
+            value:"6",
+          },
+        ],
         modelUserL:"过去一个月",
         modelUserR:"过去一个月",
         userData:[],
@@ -1164,7 +1036,9 @@ export default {
               touxIcon3:require("../../assets/img/yhhx/toux3.png"),
               touxIcon4:require("../../assets/img/yhhx/toux4.png"),
               touxIcon5:require("../../assets/img/yhhx/toux5.png"),
-
+              xhsIcon:require("../../assets/img/yhhx/xhs.png"),
+              mediaList:[],
+              mediaHlist:[],
               meijieObj:{
                 meijie1:{
                   numTxt1:'8000w',
@@ -1187,7 +1061,7 @@ export default {
                   numTxt3:'1.15%',
                 },
                 meijie5:{
-                  numTxt1:'39%/ 17%',
+                  numTxt1:'39%/17%',
                   numTxt2:'7.2%',
                   numTxt3:'3.09%',
                 }
@@ -1210,12 +1084,13 @@ export default {
                   numTxt3:'2.22%',
                 },
                 meijie4:{
+
                   numTxt1:'18w',
                   numTxt2:'3.38%',
                   numTxt3:'1.15%',
                 },
                 meijie5:{
-                  numTxt1:'39%/ 17%',
+                  numTxt1:'39%/17%',
                   numTxt2:'7.2%',
                   numTxt3:'3.09%',
                 }
@@ -1243,7 +1118,7 @@ export default {
                   numTxt3:'2.39%',
                 },
                 meijie5:{
-                  numTxt1:'40%/ 33%',
+                  numTxt1:'40%/33%',
                   numTxt2:'6.5%',
                   numTxt3:'5.87%',
                 }
@@ -1271,7 +1146,7 @@ export default {
                   numTxt3:'1.15%',
                 },
                 meijie5:{
-                  numTxt1:'36%/ 21%',
+                  numTxt1:'36%/21%',
                   numTxt2:'7.2%',
                   numTxt3:'3.09%',
                 }
@@ -1299,7 +1174,7 @@ export default {
                   numTxt3:'1.15%',
                 },
                 meijie5:{
-                  numTxt1:'27%/ 29%',
+                  numTxt1:'27%/29%',
                   numTxt2:'7.2%',
                   numTxt3:'3.09%',
                 }
@@ -1327,7 +1202,7 @@ export default {
                   numTxt3:'1.15%',
                 },
                 meijie5:{
-                  numTxt1:'54%/ 33%',
+                  numTxt1:'54%/33%',
                   numTxt2:'7.2%',
                   numTxt3:'3.09%',
                 }
@@ -1355,7 +1230,7 @@ export default {
                   numTxt3:'2.23%',
                 },
                 meijie5:{
-                  numTxt1:'47%/ 19%',
+                  numTxt1:'47%/19%',
                   numTxt2:'2.45%',
                   numTxt3:'2.45%',
                 }
@@ -1383,7 +1258,7 @@ export default {
                   numTxt3:'2.23%',
                 },
                 meijie5:{
-                  numTxt1:'47%/ 19%',
+                  numTxt1:'47%/19%',
                   numTxt2:'2.45%',
                   numTxt3:'2.45%',
                 }
@@ -1412,7 +1287,7 @@ export default {
                   numTxt3:'2.45%',
                 },
                 meijie5:{
-                  numTxt1:'29%/ 21%',
+                  numTxt1:'29%/21%',
                   numTxt2:'4.24%',
                   numTxt3:'2.54%',
                 }
@@ -1440,7 +1315,7 @@ export default {
                   numTxt3:'1.15%',
                 },
                 meijie5:{
-                  numTxt1:'28%/ 22%',
+                  numTxt1:'28%/22%',
                   numTxt2:'7.2%',
                   numTxt3:'3.09%',
                 }
@@ -1468,7 +1343,7 @@ export default {
                   numTxt3:'1.15%',
                 },
                 meijie5:{
-                  numTxt1:'28%/ 33%',
+                  numTxt1:'28%/33%',
                   numTxt2:'7.2%',
                   numTxt3:'3.09%',
                 }
@@ -1496,7 +1371,7 @@ export default {
                   numTxt3:'1.15%',
                 },
                 meijie5:{
-                  numTxt1:'34%/ 20%',
+                  numTxt1:'34%/20%',
                   numTxt2:'7.2%',
                   numTxt3:'3.09%',
                 }
@@ -1508,11 +1383,630 @@ export default {
     this.myEData=this.$lxjData.box27Data;
     this.userData=this.$linData.box1Data;
     this.averageData=this.$linData.box3Data;
+    this.mediaList=[
+      {
+        numTxt1:this.meijieObj1.meijie1.numTxt1,
+        numTxt2:this.meijieObj1.meijie1.numTxt2,
+        numTxt3:this.meijieObj1.meijie1.numTxt3,
+        icon:this.dyIcon,
+        isUp:Math.random().toFixed(1)>0.5?true:false,
+        isUp1:Math.random().toFixed(1)>0.5?true:false,
+      },
+      {
+        numTxt1:this.meijieObj2.meijie1.numTxt1,
+        numTxt2:this.meijieObj2.meijie1.numTxt2,
+        numTxt3:this.meijieObj2.meijie1.numTxt3,
+        icon:this.wbIcon,
+        isUp:Math.random().toFixed(1)>0.5?true:false,
+        isUp1:Math.random().toFixed(1)>0.5?true:false,
+      },
+      {
+        numTxt1:this.meijieObj3.meijie1.numTxt1,
+        numTxt2:this.meijieObj3.meijie1.numTxt2,
+        numTxt3:this.meijieObj3.meijie1.numTxt3,
+        icon:this.xhsIcon,
+        isUp:Math.random().toFixed(1)>0.5?true:false,
+        isUp1:Math.random().toFixed(1)>0.5?true:false,
+      },
+      {
+        numTxt1:this.meijieObj4.meijie1.numTxt1,
+        numTxt2:this.meijieObj4.meijie1.numTxt2,
+        numTxt3:this.meijieObj4.meijie1.numTxt3,
+        icon:this.ttIcon,
+        isUp:Math.random().toFixed(1)>0.5?true:false,
+        isUp1:Math.random().toFixed(1)>0.5?true:false,
+      },
+      {
+        numTxt1:this.meijieObj5.meijie1.numTxt1,
+        numTxt2:this.meijieObj5.meijie1.numTxt2,
+        numTxt3:this.meijieObj5.meijie1.numTxt3,
+        icon:this.tenxIcon,
+        isUp:Math.random().toFixed(1)>0.5?true:false,
+        isUp1:Math.random().toFixed(1)>0.5?true:false,
+      },
+    ]
+    this.mediaHlist=[
+      {
+        numTxt1:this.kolObj1.meijie1.numTxt1,
+        numTxt2:this.kolObj1.meijie1.numTxt2,
+        numTxt3:this.kolObj1.meijie1.numTxt3,
+        icon:this.touxIcon1,
+        isUp:Math.random().toFixed(1)>0.5?true:false,
+        isUp1:Math.random().toFixed(1)>0.5?true:false,
+      },
+      {
+        numTxt1:this.kolObj2.meijie1.numTxt1,
+        numTxt2:this.kolObj2.meijie1.numTxt2,
+        numTxt3:this.kolObj2.meijie1.numTxt3,
+        icon:this.touxIcon2,
+        isUp:Math.random().toFixed(1)>0.5?true:false,
+        isUp1:Math.random().toFixed(1)>0.5?true:false,
+      },
+      {
+        numTxt1:this.kolObj3.meijie1.numTxt1,
+        numTxt2:this.kolObj3.meijie1.numTxt2,
+        numTxt3:this.kolObj3.meijie1.numTxt3,
+        icon:this.touxIcon3,
+        isUp:Math.random().toFixed(1)>0.5?true:false,
+        isUp1:Math.random().toFixed(1)>0.5?true:false,
+      },
+      {
+        numTxt1:this.kolObj4.meijie1.numTxt1,
+        numTxt2:this.kolObj4.meijie1.numTxt2,
+        numTxt3:this.kolObj4.meijie1.numTxt3,
+        icon:this.touxIcon4,
+        isUp:Math.random().toFixed(1)>0.5?true:false,
+        isUp1:Math.random().toFixed(1)>0.5?true:false,
+      },
+      {
+        numTxt1:this.kolObj5.meijie1.numTxt1,
+        numTxt2:this.kolObj5.meijie1.numTxt2,
+        numTxt3:this.kolObj5.meijie1.numTxt3,
+        icon:this.touxIcon5,
+        isUp:Math.random().toFixed(1)>0.5?true:false,
+        isUp1:Math.random().toFixed(1)>0.5?true:false,
+      },
+    ]
   },
   mounted(){
     this.changeTabCon(0);
   },
   methods:{
+    changeIndex(arg){
+      this.currentIndex=arg;
+    },
+    change2(arg){
+      if(arg == 1){
+         this.mediaHlist=[
+      {
+        numTxt1:this.kolObj1.meijie1.numTxt1,
+        numTxt2:this.kolObj1.meijie1.numTxt2,
+        numTxt3:this.kolObj1.meijie1.numTxt3,
+        icon:this.touxIcon1,
+        isUp:Math.random().toFixed(1)>0.5?true:false,
+        isUp1:Math.random().toFixed(1)>0.5?true:false,
+      },
+      {
+        numTxt1:this.kolObj2.meijie1.numTxt1,
+        numTxt2:this.kolObj2.meijie1.numTxt2,
+        numTxt3:this.kolObj2.meijie1.numTxt3,
+        icon:this.touxIcon2,
+        isUp:Math.random().toFixed(1)>0.5?true:false,
+        isUp1:Math.random().toFixed(1)>0.5?true:false,
+      },
+      {
+        numTxt1:this.kolObj3.meijie1.numTxt1,
+        numTxt2:this.kolObj3.meijie1.numTxt2,
+        numTxt3:this.kolObj3.meijie1.numTxt3,
+        icon:this.touxIcon3,
+        isUp:Math.random().toFixed(1)>0.5?true:false,
+        isUp1:Math.random().toFixed(1)>0.5?true:false,
+      },
+      {
+        numTxt1:this.kolObj4.meijie1.numTxt1,
+        numTxt2:this.kolObj4.meijie1.numTxt2,
+        numTxt3:this.kolObj4.meijie1.numTxt3,
+        icon:this.touxIcon4,
+        isUp:Math.random().toFixed(1)>0.5?true:false,
+        isUp1:Math.random().toFixed(1)>0.5?true:false,
+      },
+      {
+        numTxt1:this.kolObj5.meijie1.numTxt1,
+        numTxt2:this.kolObj5.meijie1.numTxt2,
+        numTxt3:this.kolObj5.meijie1.numTxt3,
+        icon:this.touxIcon5,
+        isUp:Math.random().toFixed(1)>0.5?true:false,
+        isUp1:Math.random().toFixed(1)>0.5?true:false,
+      },
+          ]
+      }
+      else if(arg == 2){
+        this.mediaHlist=[
+          {
+            numTxt1:this.kolObj1.meijie2.numTxt1,
+            numTxt2:this.kolObj1.meijie2.numTxt2,
+            numTxt3:this.kolObj1.meijie2.numTxt3,
+            icon:this.touxIcon1,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.kolObj2.meijie2.numTxt1,
+            numTxt2:this.kolObj2.meijie2.numTxt2,
+            numTxt3:this.kolObj2.meijie2.numTxt3,
+            icon:this.touxIcon3,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.kolObj3.meijie2.numTxt1,
+            numTxt2:this.kolObj3.meijie2.numTxt2,
+            numTxt3:this.kolObj3.meijie2.numTxt3,
+            icon:this.touxIcon2,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.kolObj4.meijie2.numTxt1,
+            numTxt2:this.kolObj4.meijie2.numTxt2,
+            numTxt3:this.kolObj4.meijie2.numTxt3,
+            icon:this.touxIcon4,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.kolObj5.meijie2.numTxt1,
+            numTxt2:this.kolObj5.meijie2.numTxt2,
+            numTxt3:this.kolObj5.meijie2.numTxt3,
+            icon:this.touxIcon5,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+        ]
+      }
+      else if(arg == 3){
+         this.mediaHlist=[
+          {
+            numTxt1:this.kolObj1.meijie3.numTxt1,
+            numTxt2:this.kolObj1.meijie3.numTxt2,
+            numTxt3:this.kolObj1.meijie3.numTxt3,
+            icon:this.touxIcon1,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.kolObj2.meijie3.numTxt1,
+            numTxt2:this.kolObj2.meijie3.numTxt2,
+            numTxt3:this.kolObj2.meijie3.numTxt3,
+            icon:this.touxIcon5,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.kolObj3.meijie3.numTxt1,
+            numTxt2:this.kolObj3.meijie3.numTxt2,
+            numTxt3:this.kolObj3.meijie3.numTxt3,
+            icon:this.touxIcon2,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.kolObj4.meijie3.numTxt1,
+            numTxt2:this.kolObj4.meijie3.numTxt2,
+            numTxt3:this.kolObj4.meijie3.numTxt3,
+            icon:this.touxIcon4,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.kolObj5.meijie3.numTxt1,
+            numTxt2:this.kolObj5.meijie3.numTxt2,
+            numTxt3:this.kolObj5.meijie3.numTxt3,
+            icon:this.touxIcon3,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+        ]
+      }
+      else if(arg == 4){
+        this.mediaHlist=[
+          {
+            numTxt1:this.kolObj1.meijie4.numTxt1,
+            numTxt2:this.kolObj1.meijie4.numTxt2,
+            numTxt3:this.kolObj1.meijie4.numTxt3,
+            icon:this.touxIcon1,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.kolObj2.meijie4.numTxt1,
+            numTxt2:this.kolObj2.meijie4.numTxt2,
+            numTxt3:this.kolObj2.meijie4.numTxt3,
+            icon:this.touxIcon3,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.kolObj3.meijie4.numTxt1,
+            numTxt2:this.kolObj3.meijie4.numTxt2,
+            numTxt3:this.kolObj3.meijie4.numTxt3,
+            icon:this.touxIcon4,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.kolObj4.meijie4.numTxt1,
+            numTxt2:this.kolObj4.meijie4.numTxt2,
+            numTxt3:this.kolObj4.meijie4.numTxt3,
+            icon:this.touxIcon5,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.kolObj5.meijie4.numTxt1,
+            numTxt2:this.kolObj5.meijie4.numTxt2,
+            numTxt3:this.kolObj5.meijie4.numTxt3,
+            icon:this.touxIcon2,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+        ]
+      }
+      else if(arg == 5){
+         this.mediaHlist=[
+          {
+            numTxt1:this.kolObj1.meijie5.numTxt1,
+            numTxt2:this.kolObj1.meijie5.numTxt2,
+            numTxt3:this.kolObj1.meijie5.numTxt3,
+            icon:this.touxIcon5,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.kolObj2.meijie5.numTxt1,
+            numTxt2:this.kolObj2.meijie5.numTxt2,
+            numTxt3:this.kolObj2.meijie5.numTxt3,
+            icon:this.touxIcon3,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.kolObj3.meijie5.numTxt1,
+            numTxt2:this.kolObj3.meijie5.numTxt2,
+            numTxt3:this.kolObj3.meijie5.numTxt3,
+            icon:this.touxIcon2,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.kolObj4.meijie5.numTxt1,
+            numTxt2:this.kolObj4.meijie5.numTxt2,
+            numTxt3:this.kolObj4.meijie5.numTxt3,
+            icon:this.touxIcon1,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.kolObj5.meijie5.numTxt1,
+            numTxt2:this.kolObj5.meijie5.numTxt2,
+            numTxt3:this.kolObj5.meijie5.numTxt3,
+            icon:this.touxIcon4,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+        ]
+      }
+      else if(arg == 6){
+         this.mediaHlist=[
+          {
+            numTxt1:'23%/11%',
+            numTxt2:'2.81%',
+            numTxt3:'1.74%',
+            icon:this.touxIcon3,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:'21%/18%',
+            numTxt2:'2.76%',
+            numTxt3:'1.74%',
+            icon:this.touxIcon2,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+             numTxt1:'18%/17%',
+            numTxt2:'1.75%',
+            numTxt3:'1.74%',
+             icon:this.touxIcon1,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+             numTxt1:'13%/19%',
+            numTxt2:'1.79%',
+            numTxt3:'1.84%',
+            icon:this.touxIcon4,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:'23%/21%',
+            numTxt2:'1.41%',
+            numTxt3:'3.74%',
+            icon:this.touxIcon5,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+        ]
+      }
+    },
+    change1(arg){
+      if(arg == 1){
+        this.mediaList=[
+            {
+              numTxt1:this.meijieObj1.meijie1.numTxt1,
+              numTxt2:this.meijieObj1.meijie1.numTxt2,
+              numTxt3:this.meijieObj1.meijie1.numTxt3,
+              icon:this.dyIcon,
+              isUp:Math.random().toFixed(1)>0.5?true:false,
+              isUp1:Math.random().toFixed(1)>0.5?true:false,
+            },
+            {
+              numTxt1:this.meijieObj2.meijie1.numTxt1,
+              numTxt2:this.meijieObj2.meijie1.numTxt2,
+              numTxt3:this.meijieObj2.meijie1.numTxt3,
+              icon:this.wbIcon,
+              isUp:Math.random().toFixed(1)>0.5?true:false,
+              isUp1:Math.random().toFixed(1)>0.5?true:false,
+            },
+            {
+              numTxt1:this.meijieObj3.meijie1.numTxt1,
+              numTxt2:this.meijieObj3.meijie1.numTxt2,
+              numTxt3:this.meijieObj3.meijie1.numTxt3,
+              icon:this.xhsIcon,
+              isUp:Math.random().toFixed(1)>0.5?true:false,
+              isUp1:Math.random().toFixed(1)>0.5?true:false,
+            },
+            {
+              numTxt1:this.meijieObj4.meijie1.numTxt1,
+              numTxt2:this.meijieObj4.meijie1.numTxt2,
+              numTxt3:this.meijieObj4.meijie1.numTxt3,
+              icon:this.ttIcon,
+              isUp:Math.random().toFixed(1)>0.5?true:false,
+              isUp1:Math.random().toFixed(1)>0.5?true:false,
+            },
+            {
+              numTxt1:this.meijieObj5.meijie1.numTxt1,
+              numTxt2:this.meijieObj5.meijie1.numTxt2,
+              numTxt3:this.meijieObj5.meijie1.numTxt3,
+              icon:this.tenxIcon,
+              isUp:Math.random().toFixed(1)>0.5?true:false,
+              isUp1:Math.random().toFixed(1)>0.5?true:false,
+            },
+          ];
+      }
+      else if(arg == 2){
+        this.mediaList=[
+          {
+            numTxt1:this.meijieObj1.meijie2.numTxt1,
+            numTxt2:this.meijieObj1.meijie2.numTxt2,
+            numTxt3:this.meijieObj1.meijie2.numTxt3,
+            icon:this.dyIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.meijieObj2.meijie2.numTxt1,
+            numTxt2:this.meijieObj2.meijie2.numTxt2,
+            numTxt3:this.meijieObj2.meijie2.numTxt3,
+            icon:this.wbIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.meijieObj3.meijie2.numTxt1,
+            numTxt2:this.meijieObj3.meijie2.numTxt2,
+            numTxt3:this.meijieObj3.meijie2.numTxt3,
+            icon:this.tenxIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.meijieObj4.meijie2.numTxt1,
+            numTxt2:this.meijieObj4.meijie2.numTxt2,
+            numTxt3:this.meijieObj4.meijie2.numTxt3,
+            icon:this.ttIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.meijieObj5.meijie2.numTxt1,
+            numTxt2:this.meijieObj5.meijie2.numTxt2,
+            numTxt3:this.meijieObj5.meijie2.numTxt3,
+            icon:this.xhsIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+        ]
+      }
+      else if(arg == 3){
+         this.mediaList=[
+          {
+            numTxt1:this.meijieObj1.meijie3.numTxt1,
+            numTxt2:this.meijieObj1.meijie3.numTxt2,
+            numTxt3:this.meijieObj1.meijie3.numTxt3,
+            icon:this.dyIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.meijieObj2.meijie3.numTxt1,
+            numTxt2:this.meijieObj2.meijie3.numTxt2,
+            numTxt3:this.meijieObj2.meijie3.numTxt3,
+            icon:this.xhsIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.meijieObj3.meijie3.numTxt1,
+            numTxt2:this.meijieObj3.meijie3.numTxt2,
+            numTxt3:this.meijieObj3.meijie3.numTxt3,
+            icon:this.tenxIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.meijieObj4.meijie3.numTxt1,
+            numTxt2:this.meijieObj4.meijie3.numTxt2,
+            numTxt3:this.meijieObj4.meijie3.numTxt3,
+            icon:this.wbIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.meijieObj5.meijie3.numTxt1,
+            numTxt2:this.meijieObj5.meijie3.numTxt2,
+            numTxt3:this.meijieObj5.meijie3.numTxt3,
+            icon:this.ttIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+        ]
+      }
+      else if(arg == 4){
+        this.mediaList=[
+          {
+            numTxt1:this.meijieObj1.meijie4.numTxt1,
+            numTxt2:this.meijieObj1.meijie4.numTxt2,
+            numTxt3:this.meijieObj1.meijie4.numTxt3,
+            icon:this.dyIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.meijieObj2.meijie4.numTxt1,
+            numTxt2:this.meijieObj2.meijie4.numTxt2,
+            numTxt3:this.meijieObj2.meijie4.numTxt3,
+            icon:this.ttIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.meijieObj3.meijie4.numTxt1,
+            numTxt2:this.meijieObj3.meijie4.numTxt2,
+            numTxt3:this.meijieObj3.meijie4.numTxt3,
+            icon:this.tenxIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.meijieObj4.meijie4.numTxt1,
+            numTxt2:this.meijieObj4.meijie4.numTxt2,
+            numTxt3:this.meijieObj4.meijie4.numTxt3,
+            icon:this.wbIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.meijieObj5.meijie4.numTxt1,
+            numTxt2:this.meijieObj5.meijie4.numTxt2,
+            numTxt3:this.meijieObj5.meijie4.numTxt3,
+            icon:this.xhsIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+        ]
+      }
+      else if(arg == 5){
+         this.mediaList=[
+          {
+            numTxt1:this.meijieObj1.meijie5.numTxt1,
+            numTxt2:'2.71%',
+            numTxt3:this.meijieObj1.meijie5.numTxt3,
+            icon:this.dyIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.meijieObj2.meijie5.numTxt1,
+            numTxt2:this.meijieObj2.meijie5.numTxt2,
+            numTxt3:this.meijieObj2.meijie5.numTxt3,
+            icon:this.tenxIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.meijieObj3.meijie5.numTxt1,
+            numTxt2:this.meijieObj3.meijie5.numTxt2,
+            numTxt3:this.meijieObj3.meijie5.numTxt3,
+            icon:this.ttIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.meijieObj4.meijie5.numTxt1,
+            numTxt2:this.meijieObj4.meijie5.numTxt2,
+            numTxt3:this.meijieObj4.meijie5.numTxt3,
+            icon:this.wbIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:this.meijieObj5.meijie5.numTxt1,
+            numTxt2:this.meijieObj5.meijie5.numTxt2,
+            numTxt3:this.meijieObj5.meijie5.numTxt3,
+            icon:this.xhsIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+        ]
+      }
+      else if(arg == 6){
+         this.mediaList=[
+          {
+            numTxt1:'33%/11%',
+            numTxt2:'2.71%',
+            numTxt3:'1.74%',
+            icon:this.ttIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:'31%/18%',
+            numTxt2:'2.76%',
+            numTxt3:'3.74%',
+            icon:this.tenxIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+             numTxt1:'13%/17%',
+            numTxt2:'1.75%',
+            numTxt3:'2.74%',
+             icon:this.dyIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+             numTxt1:'13%/19%',
+            numTxt2:'1.79%',
+            numTxt3:'1.84%',
+            icon:this.wbIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+          {
+            numTxt1:'23%/21%',
+            numTxt2:'1.41%',
+            numTxt3:'3.74%',
+            icon:this.xhsIcon,
+            isUp:Math.random().toFixed(1)>0.5?true:false,
+            isUp1:Math.random().toFixed(1)>0.5?true:false,
+          },
+        ]
+      }
+    },
     meijieFn(arg){
       if(arg == 1){
         this.meijieObj = this.meijieObj1;
@@ -1694,6 +2188,158 @@ export default {
 }
 .media-protrait {
   padding: 0 24px 24px 24px;
+  .new_media_panel1{
+    display: flex;
+    margin-bottom: 24px;
+    justify-content: space-between;
+    .new_echart_box{
+      flex:1;
+      background: #ccc;
+    }
+    .new_media_item1{
+      width: 853px;
+      height: 426px;
+      padding: 24px;
+      background: #FFFFFF;
+      box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      .title{
+        font-size: 18px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #242F57;
+        line-height: 26px;
+        margin-bottom: 8px;
+      }
+      .new_media_box{
+        display: flex;
+        justify-content: space-between;
+        flex:1;
+        .left{
+          width:486px;
+          display: flex;
+          flex-direction: column;
+          .subTitle{
+            font-size: 16px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #242F57;
+            line-height: 24px;
+             margin:0;
+          }
+          .subDesc{
+            font-size: 12px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #97A0C3;
+            line-height: 18px;
+            margin:0;
+            margin-bottom: 8px;
+          }
+        }
+        .rt{
+          margin-left: 24px;
+          flex:1;
+           display: flex;
+          flex-direction: column;
+          .subTitle{
+            font-size: 16px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #242F57;
+            line-height: 24px;
+            margin:0;
+          }
+          .subDesc{
+            font-size: 12px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #97A0C3;
+            line-height: 18px;
+            margin:0;
+            margin-bottom: 8px;
+          }
+        }
+      }
+      
+    }
+    .new_media_item2{
+      margin-left: 24px;
+      flex:1;
+      padding: 24px;
+      height: 426px;
+      background: #FFFFFF;
+      box-shadow: 4px 6px 21px 0px rgba(79, 88, 136, 0.15);
+      border-radius: 8px;
+      .title{
+        font-size: 18px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #242F57;
+        line-height: 26px;
+        margin-bottom: 17px;
+      }
+      .box{
+        background: #FF7F55;
+        border-radius: 8px;
+        padding:10px 12px;
+        margin-bottom: 16px;
+         &.box_panel1{
+          background: #4488FF;
+          .title{
+            .boxIcon{
+              i{
+                 color:#4488FF;
+              }
+            }
+          }
+        }
+        &.box_panel2{
+          background: #1DCEC3;
+          margin-bottom: 0;
+          .title{
+            .boxIcon{
+              i{
+                color:#1DCEC3;
+              }
+            }
+          }
+            
+        }
+        .title{
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #FFFFFF;
+          margin-bottom: 3px;
+          
+          .boxIcon{
+            padding:3px 6px;
+            line-height: initial;
+            background:#fff;
+            border-radius: 8px;
+            margin-right: 10px;
+            i{
+              color:#FF7F55;
+              font-size: 14px;
+            }
+          }
+          
+        }
+        .boxDesc{
+          font-size: 12px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #FFFFFF;
+          line-height: 18px;
+        }
+      }
+    }
+  }
   .m-p-panel{
     width: 100%;
     background: url("../../assets/img/media/bg.png") no-repeat center center / 100% 100%;
@@ -2053,105 +2699,34 @@ export default {
       }
     }
   }
-  .media_first_panel{
-    width: 100%;
-    background: rgba(255, 255, 255, 0.65);
-    border-radius: 12px;
-    margin-bottom: 24px;
-    padding: 22px 24px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-image: url('../../assets/img/yhhx/media1.png');
-    background-size: 100% 100%;
-    .media_first_panel_item1,.media_first_panel_item2{
-      width: 48.913%;
-      background: linear-gradient(225deg, #1C66DE 0%, #98A0F9 100%);
-      box-shadow: 4px -4px 24px 0px rgba(41, 59, 149, 0.55);
-      border-radius: 8px;
-      padding: 16px;
-      box-sizing: border-box;
-      .logo_til_container{
-        display: flex;
-        align-items: center;
-        margin-bottom: 18px;
-        .logo_container{
-          width: 24px;
-          height: 24px;
-          margin-right: 8px;
-          .logo_icon{
-            display: block;
-            width: 100%;
-          }
-        }
-        .til_con{
-          font-size: 20px;
-          font-family: PingFangSC-Medium, PingFang SC;
-          font-weight: 500;
-          color: #FFFFFF;
-        }
-      }
-      .labl_txt_container{
-        display: flex;
-        align-items: baseline;
-        margin-bottom: 9px;
-        .labl_cir{
-          width: 4px;
-          height: 4px;
-          background-color: #fff;
-          border-radius: 50%;
-          margin-right: 10px;
-        }
-        .labl_txt{
-          font-size: 12px;
-          font-family: PingFangSC-Regular, PingFang SC;
-          font-weight: 400;
-          color: #fff;
-        }
-      }
-    }
-    .media_first_panel_item1{
-      background-image: url('../../assets/img/yhhx/media9.png');
-      background-size: 100% 100%;
-    }
-    .media_first_panel_item2{
-      background-image: url('../../assets/img/yhhx/media8.png');
-      background-size: 100% 100%;
-    }
-  }
   .media_sec_panel{
     width: 100%;
-    height: 462px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     margin-bottom: 24px;
+    background: #FFFFFF;
+    box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+    border-radius: 8px;
+    padding: 24px;
     .media_sec_panel_lef{
-      width: 57%;
+      flex:1;
       height: 100%;
-      border-radius: 12px;
-      padding: 24px;
-      box-sizing: border-box;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      background-image: url('../../assets/img/yhhx/media2.png');
-      background-size: 100% 100%;
+      background-image: #ccc;
       .media_sec_panel_lef1,.media_sec_panel_lef2{
-        width: 48%;
-        border-radius: 8px;
+        width: 292px;
         border: 1px solid #FFFFFF;
         .media_sec_panel_lef1_top{
-          width: 100%;
-          padding: 16px;
-          box-sizing: border-box;
-          margin-bottom: 11px;
           font-size: 18px;
           font-family: PingFangSC-Medium, PingFang SC;
           font-weight: 500;
           color: #242F57;
-          padding-bottom: 0;
+          margin-bottom: 37px;
+        }
+        .selectList{
+          height: 40px;
+          margin-bottom: 24px;
         }
         .icon_container{
           width: 100%;
@@ -2217,13 +2792,12 @@ export default {
         }
         .media_sec_panel_lef1_bom{
           width: 100%;
-          height: 274px;
           background: #F7F9FD;
-          border-radius: 0px 0px 8px 8px;
-          padding: 14px 13px;
+          border-radius: 8px;
+          padding: 0px 15px;
           box-sizing: border-box;
           .sec_pan_con1{
-            padding-bottom: 7px;
+            padding:11px 0px 11px 0;
             box-sizing: border-box;
             border-bottom: 1px solid #EAEDF7;
             display: flex;
@@ -2235,19 +2809,38 @@ export default {
               font-family: PingFangSC-Regular, PingFang SC;
               font-weight: 400;
               color: #242F57;
-              .sec_pan_con1_lef_til{
-                display: flex;
-                align-items: center;
-                .circie{
-                  width: 4px;
-                  height: 4px;
-                  border-radius: 50%;
-                  background-color:  #242F57;
-                  margin-right: 4px;
+              display: flex;
+              align-items: center;
+              .sec_pan_con1_pic{
+                width: 44px;
+                .headerPic{
+                  width: 44px;
+                  &.headerPic1{
+                    width: 40px;
+                  }
+                  &.headerPic2{
+                    width: 36px;
+                  }
+                  &.headerPic3{
+                    width: 32px;
+                  }
+                  &.headerPic4{
+                    width: 28px;
+                  }
+                  img{
+                    width: 100%;
+                    display: block;
+                  }
                 }
               }
-              .sec_pan_con1_lef_numtxt{
-                margin-left: 8px;
+              
+              .sec_pan_con1_num{
+                text-align: center;
+                flex:1;
+                font-size: 16px;
+                font-family: HelveticaNeue-Bold, HelveticaNeue;
+                font-weight: bold;
+                color: #242F57;
               }
             }
             .sec_pan_con1_rig{
@@ -2262,8 +2855,7 @@ export default {
                   font-weight: 400;
                   color: #7C88B1;
                   .domnIconArr{
-                    width: 12px;
-                    height: 12px;
+                    font-size: 10px;
                   }
                 }
                 .sec_pan_con1_rig_lef_bom{
@@ -2333,52 +2925,76 @@ export default {
       }
     }
     .media_sec_panel_rig{
-      width: 42%;
-      height: 100%;
-      border-radius: 12px;
-      padding: 24px;
-      box-sizing: border-box;
-      background-image: url('../../assets/img/yhhx/media3.png');
-      background-size: 100% 100%;
+      width:483px;
+      margin-right: 24px;
       .media_til{
-        width: 100%;
         font-size: 18px;
         font-family: PingFangSC-Medium, PingFang SC;
         font-weight: 500;
         color: #242F57;
+        margin-bottom: 4px;
+      }
+      .media_desc{
+         font-size: 12px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #636E95;
+        line-height: 17px;
         margin-bottom: 24px;
       }
       .media_cont{
-        width: 100%;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        .media_cont1,.media_cont2,.media_cont3,.media_cont4,.media_cont5,.media_cont6{
-          width: 49%;
-          background: linear-gradient(225deg, #1C66DE 0%, #98A0F9 100%);
-          box-shadow: 2px 4px 10px 0px rgba(41, 59, 149, 0.3);
+        .media_box{
+          width:233px;
           border-radius: 8px;
-          padding: 14px;
+          padding: 16px;
           box-sizing: border-box;
           margin-bottom: 16px;
+          background: #DFF8F6;
+          &.media_cont1{
+             background: #DFF8F6;
+             color: #1DCEC3;
+          }
+          &.media_cont2{
+             background: #FFE6DE;
+             color: #FE774B;
+          }
+          &.media_cont3{
+             background: rgba(253,240,242,1);
+             color: #F16E84;
+          }
+          &.media_cont4{
+             background: #D3E3FF;
+             color: #2373FF;
+          }
+          &.media_cont5{
+             background: #D3E3FF;
+             color: #2373FF;
+          }
+          &.media_cont6{
+             background: #DFF8F6;
+             color: #1DCEC3;
+          }
           .media_cont_til{
-            width: 100%;
             font-size: 14px;
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
-            color: #FFFFFF;
+            line-height: 20px;
             margin-bottom: 4px;
           }
           .media_cont_num_container{
             font-size: 16px;
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
-            color: #FFFFFF;
-            margin-bottom: 4px;
+            line-height: 29px;
+            margin-bottom: 5px;
             .spanNum{
               font-size: 24px;
               font-family: HelveticaNeue-Bold, HelveticaNeue;
               font-weight: bold;
+              line-height: 29px;
               margin-right: 5px;
             }
           }
@@ -2386,29 +3002,23 @@ export default {
             font-size: 14px;
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
-            color: #FFFFFF;
-            .upIcon{
-              display: inline-block;
-              width: 12px;
-              height: 12px;
+            line-height: 20px;
+            .iconshangsheng{
+              color:#08BD6C;
+            }
+            .shangsheng{
+              color:#08BD6C;
+            }
+            .iconxiajiang{
+              color:#FF4C60;
+            }
+            .xiajiang{
+              color:#FF4C60;
+            }
+            i{
+               font-size: 12px;
             }
           }
-        }
-        .media_cont1,.media_cont6{
-          background-image: url('../../assets/img/yhhx/media4.png');
-          background-size: 100% 100%;
-        }
-        .media_cont2,.media_cont5{
-          background-image: url('../../assets/img/yhhx/media5.png');
-          background-size: 100% 100%;
-        }
-        .media_cont3{
-          background-image: url('../../assets/img/yhhx/media6.png');
-          background-size: 100% 100%;
-        }
-        .media_cont4{
-          background-image: url('../../assets/img/yhhx/media7.png');
-          background-size: 100% 100%;
         }
         .media_cont5,.media_cont6{
           margin-bottom: 0;
@@ -2417,59 +3027,182 @@ export default {
     }
   }
   .media_three_panel{
-    width: 100%;
     padding: 24px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 24px;
+    margin-bottom: 35px;
     background: #FFFFFF;
-    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-    border-radius: 12px;
+    box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+    border-radius: 8px;
+    padding: 24px;
     border: 1px solid #EAEDF7;
-    .media_three_item{
-      width: 24%;
-      background: #FFFFFF;
-      border-radius: 8px;
-      border: 1px solid #EAEDF7;
-      .media_three_item_top{
-        width: 100%;
-        height: 264px;
-        padding: 16px;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        .media_three_item_til{
+    .media_three_panel_title{
+      font-size: 18px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #242F57;
+      margin-bottom: 23px;
+    }
+    .media_three_panel_box{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .media_three_item{
+        width: 24%;
+        background: #FFFFFF;
+        border-radius: 8px;
+        border: 1px solid #EAEDF7;
+        .media_three_item_top{
           width: 100%;
-          font-size: 14px;
-          font-family: PingFangSC-Regular, PingFang SC;
-          font-weight: 400;
-          color: #242F57;
-        }
-        .media_three_item_echarts{
-          width: 100%;
-          flex: 1;
-        }
-      }
-      .media_three_item_bom{
-        width: 100%;
-        height: 164px;
-        padding: 16px;
-        box-sizing: border-box;
-        background: rgba(255, 241, 244, 0.3);
-        border-radius: 0px 0px 8px 8px;
-        .media_three_con{
-          font-family: PingFangSC-Regular, PingFang SC;
-          font-weight: 400;
-          color: #242F57;
-          margin-bottom: 12px;
+          height: 264px;
+          padding: 16px;
+          margin-bottom: 47px;
+          box-sizing: border-box;
           display: flex;
-          align-items: baseline;
+          flex-direction: column;
+          .media_three_item_til{
+            font-size: 14px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #242F57;
+          }
+          .media_three_item_echarts{
+            width: 100%;
+            flex: 1;
+          }
+        }
+        .media_three_item_bom{
+          width: 100%;
+          height: 164px;
+          padding: 16px;
+          box-sizing: border-box;
+          background: #F4F7FC;
+          border-radius: 0px 0px 8px 8px;
+          .media_three_con{
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: baseline;
+            span:nth-child(1){
+              color:#242F57;
+              font-size: 13px;
+              margin-right:4px;
+              width:35px;
+            }
+            span:nth-child(2){
+              font-size: 12px;
+              text-align: justify;
+              flex:1;
+              color:#636E95;
+            }
+          }
+        }
+        // .media_three_item_bom2{
+        //   background: rgba(219, 234, 255, 0.3);
+        // }
+      }
+    }
+  }
+  .zuhetitle{
+    font-size: 18px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #242F57;
+    margin-bottom: 19px;
+  }
+  .media_zuhe_panel{
+    background: #FFFFFF;
+    box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+    border-radius: 8px;
+    padding:24px;
+    .title{
+      font-size: 16px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #242F57;
+      margin-bottom: 7px;
+    }
+    .subTitle{
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #636E95;
+      margin-bottom: 24px;
+    }
+    .navBox{
+      display: flex;
+      .navItem{
+        width: 208px;
+        padding-left:24px;
+        padding-top:16px;
+        padding-bottom: 13px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &.navActive{
+           background:#F4F7FC;
+           border-top-left-radius: 8px;
+           border-top-right-radius: 8px;
+           .navItem_rt{
+             color: #2373FF;
+           }
+        }
+        &.navItem2{
+          .navItem_left{
+            .headerIcon{ background: #FFE6DE;}
+          }
+        }
+        &.navItem3{
+          .navItem_left{
+            .headerIcon{ background: #DFF8F6;}
+          }
+        }
+        .navItem_left{
+          .headerIcon{
+            width:34px;
+            box-sizing: border-box;
+            padding:5px;
+            background: #D3E3FF;
+            border-radius: 8px;
+           
+            img{
+              width: 100%;
+              display: block;
+            }
+          }
+        }
+        .navItem_rt{
+          margin-left: 12px;
+          color: #242F57;
+          .navItem_title1{
+            font-size: 14px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+          }
+          .navItem_title2{
+            font-size: 12px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+          }
         }
       }
-      .media_three_item_bom2{
-        background: rgba(219, 234, 255, 0.3);
+    }
+    .navContent{
+      background:#F4F7FC;
+      padding:24px;
+      .navContentBox{
+        padding:16px;
+        background: #FFFFFF;
+        border-radius: 8px;
+        height: 440px;
+        .navContentTop{
+          padding-bottom: 16px;
+          border-bottom: 1px solid #EAEDF7;
+          height: 277px;
+        }
+        .navContentBm{
+          padding-top: 16px;
+          height: 162px;
+        }
       }
     }
   }
