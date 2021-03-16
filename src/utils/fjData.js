@@ -182,5 +182,9 @@ const fjEData = {
         value: [75, 80, 105, 90],
         title: '最大销售分布：电子产品'
     },
+    box43Data: {
+      name: ['正面指数', '负面指数'],
+      value: [19, 19],
+    },
 }
 export default fjEData;

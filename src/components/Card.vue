@@ -2,7 +2,7 @@
     <div class="card-container">
         <div class="title flex">
             <div class="left">
-                <p>{{title}}</p>
+                <span>{{title}}</span>
                 <slot name="left"></slot>
             </div>
             <slot name="right"></slot>
@@ -28,15 +28,14 @@
         margin-bottom: 24px;
         padding: 0 24px;
         background: #FFFFFF;
-        box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-        border-radius: 12px;
-        border: 1px solid #EAEDF7;
+        box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+        border-radius: 8px;
 
         .title {
             height: 64px;
 
             .left {
-                > p {
+                > span {
                     font-size: 16px;
                     font-family: PingFangSC-Medium, PingFang SC;
                     font-weight: 500;

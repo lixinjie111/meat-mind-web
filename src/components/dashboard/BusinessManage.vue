@@ -1028,7 +1028,7 @@
 </style>
 <style scoped lang="scss">
     .manage-box {
-        padding: 0 24px 24px 24px;
+        /*padding: 0 24px 24px 24px;*/
 
         .tips {
             margin-top: 24px;

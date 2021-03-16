@@ -130,16 +130,19 @@ export default {
 					fontSize:2
 				},
 				bottom:0,
-				itemGap:5,
-				itemWidth:8,
-				itemHeight:8,
+				itemWidth:6,
+				itemHeight:6,
+				textStyle: {
+					fontSize: 12,
+					color: '#97A0C3'
+				},
 				icon:"circle",
 				data:this.myData.legName,
 			},
             grid: {
-                left: 14,
-                right: '6%',
-                bottom: 25,
+                left: 2,
+                right: 2,
+                bottom: 30,
                 top: '10%',
                 containLabel: true,
             },

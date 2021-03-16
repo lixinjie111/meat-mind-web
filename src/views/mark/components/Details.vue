@@ -1,6 +1,6 @@
 <template>
     <div class="mark-detail">
-        <div class="mark-detail-header">
+        <!--<div class="mark-detail-header">
             <div class="title">品牌详情</div>
             <div class="operate">
                 <div>
@@ -43,15 +43,15 @@
                 </div>
                  <div class="d-c-l-empty" :class="{'ck':pinpai=='暂无品牌'}">{{pinpai}}</div>
             </div>
-        </div>
-        <!-- -->
-        <div class="mark-detail-anchor">
+        </div>-->
+
+        <!-- <div class="mark-detail-anchor">
             <Anchor show-ink :offset-top="64">
                 <AnchorLink href="#m-d-accept-header" title="品牌受众分析" />
                 <AnchorLink href="#mark-details-market" title="品牌舆情洞察" />
                 <AnchorLink href="#mark-details-public" title="行业态势分析" />
             </Anchor>
-        </div>
+        </div> -->
         <Accept :title="'品牌受众分析'" ></Accept>
         <Market :title="'品牌舆情洞察'" ></Market>
         <Public :title="'行业态势分析'" ></Public>
@@ -73,7 +73,6 @@ export default {
         },
         methods: {
             anchorP(item,aa){
-                console.log(item,aa)
                 //document.getElementById('mark-details-public').scrollIntoView();
             },
             selectEl(value) {
@@ -87,124 +86,64 @@ export default {
 
 }
 </script>  
-<style lang="scss">
-.mark-detail-anchor{
-    position: relative;
-    width:100%;
-    .ivu-affix{
-        left:288px !important;
-        top:48px  !important;
-        z-index: 1001;
-    }
-}
-.ivu-anchor-wrapper{
-    overflow: visible;
-    padding-left: 0;
-    margin-left: 0;
-    max-height: 36px !important;
-    height: 36px;
-    background: #fff;
-    border-bottom:1px solid #DEE2EE;
-    .ivu-anchor{
-        height: 100%;
-        display: flex;
-        padding-left: 0;
-        .ivu-anchor-ink{
-            width: 100%;
-            height: 1px;
-            bottom: 0;
-            top:auto;
-            &::before{
-                display: none;
-                background-color: #DEE2EE;
-            }
-        }
-        .ivu-anchor-link{
-            padding: 0;
-            margin-right: 32px;
-            height: 36px;
-            line-height: 36px;
-        }
-        .ivu-anchor-ink-ball{
-            display: none;
-            width: 84px;
-            height: 2px;
-            background-color:#2373FF;
-            border: none;
-            border-radius: unset;
-        }
-        .ivu-anchor-link-active{
-            border-bottom: 2px solid #2373FF;
-            >.ivu-anchor-link-title{
-                color:#2373FF;
-            }
-        }
-        .ivu-anchor-link-title{
-          font-size: 14px;
-          font-family: PingFangSC-Regular, PingFang SC;
-          font-weight: 400;
-          color: #636E95;
-        }
-    }
-}
-</style>
 <style lang="scss" scoped>
     .mark-detail{
+        position: relative;
         width: 100%;
-        padding: 0 24px 24px;
-        margin-top: 24px;
-        background: #FFFFFF;
-    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-    border-radius: 12px;
-    border: 1px solid #EAEDF7;
-        .mark-detail-header{
-            display: flex;
-            align-items: center;
-            width: 100%;
-            height: 72px;
-            position: relative;
-            .title{
-                height: 26px;
-                font-size: 18px;
-                font-family: PingFangSC-Medium, PingFang SC;
-                font-weight: 500;
-                color: #242F57;
-                line-height: 26px;
-            }
-            .operate{
-                display: flex;
-                align-items: center;
-                margin-left: 24px;
-                >div{
-                    display: flex;
-                    align-items: center;
-                    margin-right: 12px;
-                    background: #FFFFFF;
-                    box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
-                    border-radius: 8px;
-                    opacity: 0.6;
-                    border: 1px solid #C6CBDE;
-                    padding:5px 8px;
-                    cursor: pointer;
-                    img{
-                        width: 16px;
-                        height: 16px;
-                        margin-right: 4px;
-                    }
-                    >p{
-                        font-size: 14px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #636E95;
-                    }
-                }
-            }
-            .d-c-r-select{
-                position: absolute;
-                top: 20px;
-                right: 0;
-            }
-        }
+        // padding: 0 24px 24px;
+        // margin-top: 24px;
+        // background: #FFFFFF;
+        // box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+        // border-radius: 12px;
+        // border: 1px solid #EAEDF7;
+        // .mark-detail-header{
+        //     display: flex;
+        //     align-items: center;
+        //     width: 100%;
+        //     height: 72px;
+        //     position: relative;
+        //     .title{
+        //         height: 26px;
+        //         font-size: 18px;
+        //         font-family: PingFangSC-Medium, PingFang SC;
+        //         font-weight: 500;
+        //         color: #242F57;
+        //         line-height: 26px;
+        //     }
+        //     .operate{
+        //         display: flex;
+        //         align-items: center;
+        //         margin-left: 24px;
+        //         >div{
+        //             display: flex;
+        //             align-items: center;
+        //             margin-right: 12px;
+        //             background: #FFFFFF;
+        //             box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
+        //             border-radius: 8px;
+        //             opacity: 0.6;
+        //             border: 1px solid #C6CBDE;
+        //             padding:5px 8px;
+        //             cursor: pointer;
+        //             img{
+        //                 width: 16px;
+        //                 height: 16px;
+        //                 margin-right: 4px;
+        //             }
+        //             >p{
+        //                 font-size: 14px;
+        //                 font-family: PingFangSC-Regular, PingFang SC;
+        //                 font-weight: 400;
+        //                 color: #636E95;
+        //             }
+        //         }
+        //     }
+        //     .d-c-r-select{
+        //         position: absolute;
+        //         top: 20px;
+        //         right: 0;
+        //     }
+        // }
 
         .details-compare{
             display: flex;

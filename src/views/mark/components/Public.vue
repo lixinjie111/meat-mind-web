@@ -47,7 +47,8 @@ export default {
 
 <style scoped lang="scss">
 .mark-details-public{
-    padding-bottom:24px;
+    padding: 0 24px 24px;
+    // margin-bottom:24px;
     background: #FFFFFF;
     border-radius: 8px;
     .m-d-public-header{
@@ -55,7 +56,7 @@ export default {
         align-items: center;
         justify-content: space-between;
         height: 73px;
-        border-top: 1px solid #EAEDF7;
+        // border-top: 1px solid #EAEDF7;
         .a-h-title{
             height: 26px;
             font-size: 18px;

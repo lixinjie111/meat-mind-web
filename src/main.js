@@ -12,8 +12,6 @@ import fjData from "./utils/fjData.js"
 import zjjData from "./utils/zjjData.js"
 import linData from "./utils/linData.js"
 import ljEData from "./utils/ljData.js"
-import 'x-intelligent-ui/dist/main.css';
-import Xui from 'x-intelligent-ui';
 import './utils/flexible'
 
 Vue.config.productionTip = false;
@@ -24,7 +22,6 @@ Vue.prototype.$zjjData = zjjData;
 Vue.prototype.$linData = linData;
 Vue.prototype.$ljEData = ljEData;
 Vue.use(ViewUI)
-Vue.use(Xui)
 
 new Vue({
     router,

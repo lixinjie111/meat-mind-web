@@ -49,8 +49,8 @@
           <div class="guide_title_rig" @click="exppandFn">
             <div class="guide_title_rig_til">{{szTxt}}</div>
             <div class="guide_title_rig_icon">
-               <i class="iconfont2 iconshouqi" v-if="ifShowCard"></i>
-               <i class="iconfont2 iconzhankai" v-else></i>
+               <i class="iconfont iconup" v-if="ifShowCard"></i>
+               <i class="iconfont icondown" v-else></i>
             </div>
           </div>
         </div>
@@ -82,7 +82,9 @@
             </div>
         </div>
         <div class="kanban_item_container">
-            <div class="kanban_item1"></div>
+            <div class="kanban_item1">
+              <img :src="jylefImg" class="jylefImg">
+            </div>
             <div class="kanban_item2">
               <vCard2 v-for="(item,index) in jinyinLixt" :key="index" :cardData='item'></vCard2>
             </div>
@@ -150,12 +152,10 @@
             </div>
           </div>
           <div class="pin_container">
-            <a-progress type="circle" :percent="72" :stroke-color="{'0%': '#8CB6FF','100%': '#2373FF',}">
-              <template #format="percent">
-                <span style="font-size: 46px;font-family: PingFangSC-Light, PingFang SC;font-weight: 300;color: #242F57;">{{ percent }}</span><br>
+            <i-circle :percent="72" :stroke-color="['rgba(35,115,255,0.3)','#2373FF',]">
+                <span style="font-size: 46px;font-family: PingFangSC-Light, PingFang SC;font-weight: 300;color: #242F57;">72</span><br>
                 <span style="font-size: 10px;font-family: PingFangSC-Regular, PingFang SC;font-weight: 400;color: #636E95;">品牌测评</span>
-              </template>
-            </a-progress>
+            </i-circle>
           </div>
         </div>
 
@@ -219,22 +219,45 @@
       </div>
       <div class="progress_content_container">
           <div class="pro_lef">
-              <div class="fen_txt">86.2<span style="font-size: 14px;font-family: PingFangSC-Regular, PingFang SC;font-weight: 400;color: #7C88B1;">分</span></div>
+              <!-- <div class="fen_txt">86.2<span style="font-size: 14px;font-family: PingFangSC-Regular, PingFang SC;font-weight: 400;color: #7C88B1;">分</span></div>
               <div class="pai_container">
                   <span class="paim">排名</span><span class="goper">前 89%</span>
               </div>
               <div class="progress_container">
                   <Progress :percent="85" status="active"></Progress>
+              </div> -->
+              <div class="pie_pq_per_container">
+                <div class="pie_container">
+                  <div class="progrs_con">
+                    <i-circle :percent="78" :stroke-color="['rgba(35,115,255,0.3)','#2373FF',]">
+                        <span style="font-size: 10px;font-family: PingFangSC-Regular, PingFang SC;font-weight: 400;color: #636E95;">流量评分</span><br>
+                        <span style="font-size: 28px;font-family: PingFangSC-Light, PingFang SC;font-weight: 300;color: #242F57;">78</span>
+                    </i-circle>
+                  </div>
+                </div>
+                <div class="per_container">
+                  <span class="per_txt">排名 前</span>
+                  <span class="per_num">86%</span>
+                </div>
               </div>
               <div class="pinjun_container">
+                <div class="star_container star1">
+                  <img :src="star1" class="starimg">
+                </div>
                 <span class="label">平均分</span>
                 <span class="fen_text" style="color: #2373FF;">77.5</span>
               </div>
               <div class="zuigao_container">
+                <div class="star_container star2">
+                  <img :src="star2" class="starimg">
+                </div>
                 <span class="label">最高分</span>
                 <span class="fen_text" style="color: #34C724;">95.5</span>
               </div>
               <div class="zuidi_container">
+                <div class="star_container star3">
+                  <img :src="star3" class="starimg">
+                </div>
                 <span class="label">最低分</span>
                 <span class="fen_text" style="color: #FB343E;">54.3</span>
               </div>
@@ -850,38 +873,50 @@ export default {
       szTxt:'收起详情',
       jinyinLixt:[
         {
+          id:0,
           bgc:'#FFE6DE',
           fColor:'#FE774B',
           til:'访问店铺',
           jyNum:'8,639',
           jyUnit:'人',
-          ysIcon:require("../../assets/img/dashboard/jyic1.png")
+          ysIcon:require("../../assets/img/dashboard/jyic1.png"),
+          jyIcon:require("../../assets/img/dashboard/jyIcon1.png")
         },
         { 
+          id:1,
           bgc:'#D3E3FF',
           fColor:'#2373FF',
           til:'商品访客数',
           jyNum:'125,740',
           jyUnit:'次',
-          ysIcon:require("../../assets/img/dashboard/jyic2.png")
+          ysIcon:require("../../assets/img/dashboard/jyic2.png"),
+          jyIcon:require("../../assets/img/dashboard/jyIcon2.png")
         },
         {
+          id:2,
           bgc:'#DFF8F6',
           fColor:'#1DCEC3',
           til:'平均停留时长',
           jyNum:'15.67',
           jyUnit:'分',
-          ysIcon:require("../../assets/img/dashboard/jyic3.png")
+          ysIcon:require("../../assets/img/dashboard/jyic3.png"),
+          jyIcon:require("../../assets/img/dashboard/jyIcon3.png")
         },
         {
+          id:3,
           bgc:'#FFEBF3',
           fColor:'#F16E84',
           til:'支付买家数',
           jyNum:'1,873',
           jyUnit:'人',
-          ysIcon:require("../../assets/img/dashboard/jyic4.png")
+          ysIcon:require("../../assets/img/dashboard/jyic4.png"),
+          jyIcon:require("../../assets/img/dashboard/jyIcon4.png")
         }
-      ]
+      ],
+      jylefImg:require('../../assets/img/dashboard/jylefImg.png'),
+      star1:require('../../assets/img/dashboard/star1.png'),
+      star2:require('../../assets/img/dashboard/star2.png'),
+      star3:require('../../assets/img/dashboard/star3.png'),
     };
   },
   methods:{
@@ -1334,6 +1369,11 @@ export default {
         margin-bottom: 32px;
         .kanban_item1,.kanban_item2{
           width: 49%;
+          .jylefImg{
+            display: block;
+            width: 100%;
+            border-radius: 8px;
+          }
         }
         .kanban_item2{
           display: flex;
@@ -1563,17 +1603,85 @@ export default {
                     padding-right: 10px;
                 }
             }
+            .pie_pq_per_container{
+              width: 100%;
+              padding-bottom: 10px;
+              box-sizing: border-box;
+              border-bottom: 1px #EAEDF7 solid;
+              display: flex;
+              align-items: baseline;
+              justify-content: space-between;
+              .pie_container{
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                background: #EAEDF7;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .progrs_con{
+                  width: 90px;
+                  height: 90px;
+                  ::v-deep .ivu-chart-circle{
+                    width: 100% !important;
+                    height: 100% !important;
+                  }
+                }
+              }
+              .per_container{
+                .per_txt{
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #636E95;
+                  margin-right: 7px;
+                }
+                .per_num{
+                  font-size: 30px;
+                  font-family: HelveticaNeue-Medium, HelveticaNeue;
+                  font-weight: 500;
+                  color: #2373FF;
+                }
+              }
+            }
             .pinjun_container,.zuigao_container,.zuidi_container{
                 width: 100%;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
                 margin-bottom: 10px;
+                position: relative;
+                margin-top: 21px;
+                .star_container{
+                  width: 20px;
+                  height: 20px;
+                  border-radius: 4px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-right: 8px;
+                  .starimg{
+                    display: block;
+                    width: 12px;
+                  }
+                }
+                .star1{
+                  background: #D3E3FF;
+                }
+                .star2{
+                  background: #DFF8F6;
+                }
+                .star3{
+                  background: #FFE6DE;
+                }
                 .label,.fen_text{
-                    font-size: 14px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    color: #2373FF;
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #636E95;
+                }
+                .fen_text{
+                  position: absolute;
+                  right: 0;
                 }
             }
         }
@@ -1638,13 +1746,9 @@ export default {
         .pin_container{
           width: 140px;
           height: 140px;
-          ::v-deep .ant-progress{
-            width: 100%;
-            height: 100%;
-            .ant-progress-inner{
-              width: 100% !important;
-              height: 100% !important;
-            }
+          ::v-deep .ivu-chart-circle{
+            width: 100% !important;
+            height: 100% !important;
           }
         }
         // border-radius: 8px;

@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "20383006",
+      "name": "声音",
+      "font_class": "shengyin",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "20383007",
+      "name": "声音line",
+      "font_class": "shengyinline",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
+      "icon_id": "20382638",
+      "name": "时间",
+      "font_class": "shijian1",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "20382639",
+      "name": "时间line",
+      "font_class": "shijianline",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "20382640",
+      "name": "转化",
+      "font_class": "zhuanhua",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "20344815",
+      "name": "分析line",
+      "font_class": "fenxiline",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
       "icon_id": "20340768",
       "name": "download",
       "font_class": "download",
@@ -312,13 +354,6 @@
       "font_class": "moban",
       "unicode": "e61b",
       "unicode_decimal": 58907
-    },
-    {
-      "icon_id": "20329525",
-      "name": "时间",
-      "font_class": "shijian",
-      "unicode": "e61c",
-      "unicode_decimal": 58908
     },
     {
       "icon_id": "20329526",

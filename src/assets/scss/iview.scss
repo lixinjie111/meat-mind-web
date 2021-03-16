@@ -153,14 +153,14 @@
     padding: 8px;
 
     &:hover {
-      color: #242F57;
+      color: #2373FF;
     }
   }
 
   .ivu-tabs-tab-active {
     font-family: PingFangSC-Medium, PingFang SC;
     font-weight: 500;
-    color: #242F57;
+    color: #2373FF;
   }
 
   .ivu-tabs-ink-bar {
@@ -176,19 +176,24 @@
       font-size: 14px;
       color: #7C88B1;
       cursor: pointer;
+
+      &:hover {
+        color: #2373FF;
+      }
     }
   }
 }
 .saas-poptip {
   .ivu-poptip-content {
     .ivu-poptip-arrow {
-      display: none;
+      &:after {
+        border-right-color: rgba(0, 0, 0, 0.7);
+      }
     }
 
     .ivu-poptip-inner {
-      background: rgba(219, 234, 255, 0.94);
+      background: rgba(0, 0, 0, 0.7);
       border-radius: 8px;
-      border: 1px solid #4D94FF;
 
       .ivu-poptip-body {
         padding: 16px;
@@ -198,7 +203,7 @@
           font-size: 12px;
           font-family: PingFangSC-Regular, PingFang SC;
           font-weight: 400;
-          color: #636E95;
+          color: #ffffff;
           line-height: 20px;
           white-space: pre-wrap;
 
@@ -243,4 +248,62 @@
       padding: 5px;
     }
   }
+}
+
+//锚点
+.ivu-anchor-wrapper{
+  overflow: visible;
+  padding-left: 48px;
+  margin-left: 0;
+  max-height: 36px !important;
+  height: 36px;
+  background: #F4F7FC;
+  border-bottom:1px solid #DEE2EE;
+  .ivu-anchor{
+      height: 100%;
+      display: flex;
+      padding-left: 0;
+      .ivu-anchor-ink{
+          width: 100%;
+          height: 1px;
+          bottom: 0;
+          top:auto;
+          &::before{
+              display: none;
+              background-color: #DEE2EE;
+          }
+      }
+      .ivu-anchor-link{
+          padding: 0;
+          margin-right: 32px;
+          height: 36px;
+          line-height: 36px;
+      }
+      .ivu-anchor-link-title{
+          font-size: 14px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #636E95;
+      }
+      .ivu-anchor-ink-ball{
+          display: none;
+          width: 84px;
+          height: 2px;
+          background-color:#2373FF;
+          border: none;
+          border-radius: unset;
+      }
+      .ivu-anchor-link-active{
+          border-bottom: 2px solid #2373FF;
+          >.ivu-anchor-link-title{
+              color:#2373FF;
+          }
+      }
+  }
+}
+// 锚点-悬浮导航
+.ivu-affix{
+  // left:288px !important;
+  // top:48px  !important;
+  z-index: 1001;
 }

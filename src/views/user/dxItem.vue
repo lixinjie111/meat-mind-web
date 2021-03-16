@@ -145,23 +145,23 @@
 
             </div>
             <div v-if="!onlyMap" class="per_info_container">
-                <div class="yhdx_title">
+                <!-- <div class="yhdx_title">
                     <div class="yhdx_title_top">
                         用户动线分析结果
                     </div>
                     <div class="yhdx_title_bom">
                         2020/12/14
                     </div>
-                </div>
-                <div class="switch_container">
+                </div> -->
+                <!-- <div class="switch_container">
                     <div class="data_title">数据图表</div>
                     <div class="switch_contianer">
                         <i-switch v-model="switch1"></i-switch>
                     </div>
                     <div class="data_title" style="color: #97A0C3;">智能解读</div>
-                </div>
+                </div> -->
 
-                <div class="nl_card_container">
+                <!-- <div class="nl_card_container">
                     <div class="til_label">
                         用户状态
                         <Poptip popper-class="saas-poptip" placement="right-start">
@@ -189,9 +189,9 @@
                         <div class="pro_label">烦躁</div>
                         <div class="pro"><Progress :percent="rightPanelData.userStatObj.stat4" status="active"></Progress></div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="chufa_card_container">
+                <!-- <div class="chufa_card_container">
                     <div class="til_label">出发地</div>
                     <div class="chufadi_container">
                         <div class="diItem" v-if="rightPanelData.chufaObj.chufa1">
@@ -207,9 +207,9 @@
                             <span class="addresstxt">{{rightPanelData.chufaObj.chufa3}}</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="mudd_container">
+                <!-- <div class="mudd_container">
                     <div class="til_label">目的地</div>
                     <div class="chufadi_container">
                         <div class="diItem" v-if="rightPanelData.mudiObj.mudi1">
@@ -225,9 +225,9 @@
                             <span class="addresstxt">{{rightPanelData.mudiObj.mudi3}}</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="tqfs_container">
+                <!-- <div class="tqfs_container">
                     <div class="til_label">通勤方式</div>
                     <div class="cx_type_container">
                         <div class="cx_item" v-if="rightPanelData.tonqinTypeObj.tqType1">
@@ -239,18 +239,18 @@
                             <span class="cxtxt">{{rightPanelData.tonqinTypeObj.tqType2}}</span>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="tqsjylx_container">
+                <!-- <div class="tqsjylx_container">
                     <div class="til_label">通勤时间与路程</div>
                     <div class="haoshi_container">
                         <img :src="tbIcon" alt="" srcset="" class="timeBiao">
                         <span style="margin-right:16px;">平均耗时</span>
                         <span>{{rightPanelData.tongqinTimeObj.timeN}}分钟</span>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="nl_card_container">
+                <!-- <div class="nl_card_container">
                     <div class="til_label">年龄占比</div>
                     <div class="pro_container">
                         <div class="pro_label">15-25岁</div>
@@ -264,9 +264,9 @@
                         <div class="pro_label">35-45岁</div>
                         <div class="pro"><Progress :percent="20" status="active"></Progress></div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="sex_card_container">
+                <!-- <div class="sex_card_container">
                     <div class="til_label">性别占比</div>
                     <div class="sex_tu_container">
                         <div class="man"></div>
@@ -280,11 +280,94 @@
                         <div class="mansex">男性</div>
                         <div class="womensex">女性</div>
                     </div>
-                </div>
+                </div> -->
 
+                <div class="person_til">用户触达策略</div>
+                <div class="person_con_con" ref="person_con_con">
+                  <div class="perxon_tab_con">
+                    <div class="perxon_tab_con_lef" @click="clickPerTab(1)">投放方案推荐</div>
+                    <div class="perxon_tab_con_rig" @click="clickPerTab(0)">自定义媒介投放</div>
+                  </div>
+                  <div class="person_tffatj_con" v-if="ifShowtffatj">
+                    <div class="top_img_con">
+                      <div class="top_img_con_lef">
+                        <img :src="fanganObj.qdObj1.icon" class="douyIcon">
+                        <div class="con_lef_label">{{fanganObj.qdObj1.name}}</div>
+                        <div class="con_lef_num">{{fanganObj.qdObj1.money}}</div>
+                        <div class="con_lef_label">触达率</div>
+                        <div class="con_lef_num1">{{fanganObj.qdObj1.vdlNum}}</div>
+                      </div>
+                      <div class="top_img_con_rig">
+                        <img :src="fanganObj.qdObj2.icon" class="douyIcon">
+                        <div class="con_lef_label">{{fanganObj.qdObj2.name}}</div>
+                        <div class="con_lef_num">{{fanganObj.qdObj2.money}}</div>
+                        <div class="con_lef_label">触达率</div>
+                        <div class="con_lef_num1">{{fanganObj.qdObj2.vdlNum}}</div>
+                      </div>
+                    </div>
+                    <div class="tf_time">建议投放时间段</div>
+                    <div class="tf_time_txt1">
+                      <div class="cir_txt_con">
+                        <div class="cir_con"></div>
+                        <div class="qu_dao_name">{{fanganObj.qdObj1.name}}</div>
+                      </div>
+                      <div class="tim_txt_con">{{fanganObj.qdObj1.timeRang}}</div>
+                    </div>
+                    <div class="tf_time_txt2">
+                      <div class="cir_txt_con">
+                        <div class="cir_con" style="background:#FE774B;"></div>
+                        <div class="qu_dao_name">{{fanganObj.qdObj2.name}}</div>
+                      </div>
+                      <div class="tim_txt_con">{{fanganObj.qdObj2.timeRang}}</div>
+                    </div>
+                    <div class="tf_time">预期效果</div>
+                    <div class="yqxg_con_con">
+                      <div class="yqxg_con_con_item" v-for="(itm,inx) in yqxgList" :key="inx">
+                        <div class="yqxg_til">{{itm.til}}</div>
+                        <div class="yqxg_num_desc">{{itm.desc}}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="person_tffatj_con" v-else>
+                    <div class="tf_time">投放预算 (元)</div>
+                    <div class="tfys_input_con">
+                      <i :class="['iconfont','iconjine']" class="cmon"></i>
+                      <Poptip trigger="focus">
+                          <Input v-model="tfys" placeholder="请输入价格" style="width:173px" />
+                          <div slot="content">{{ formatNumber }}</div>
+                      </Poptip><span class="zhi">至</span>
+                    </div>
+                    <div class="tfys_input_con">
+                      <i :class="['iconfont','iconjine']" class="cmon"></i>
+                      <Poptip trigger="focus">
+                          <Input placeholder="请输入价格" style="width:173px" />
+                          <div slot="content">{{ formatNumber }}</div>
+                      </Poptip>
+                    </div>
+                    <div class="tf_time">选择投放媒介</div>
+                    <div class="tfmjchoice_con">
+                      <div class="meijie_item" :class="{'actBor':itm.check}" v-for="(itm,inx) in meijieList" :key="inx">
+                        <Checkbox v-model="itm.check"></Checkbox>
+                        <img :src="itm.srcIm" class="srcIMG">
+                        <div class="qudtil">{{itm.til}}</div>
+                      </div>
+                    </div>
+                    <div class="tf_time">投放建议及预期</div>
+                    <div class="radio_txt_con">
+                      <div class="radio_cir"></div>
+                      <div class="radio_txt">小红书</div>
+                    </div>
+                    <div class="yqxg_con_con">
+                      <div class="yqxg_con_con_item" v-for="(itm,inx) in yqxgList1" :key="inx">
+                        <div class="yqxg_til">{{itm.til}}</div>
+                        <div class="yqxg_num_desc yqxg_num_desc1">{{itm.desc}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
             <div class="yhxw_container">
-                <div class="yhxw_title">用户行为</div>
+                <!-- <div class="yhxw_title">用户行为</div>
                 <div class="bqitm_container">
                     <div class="bqitm" v-for="(it, i) in bqitmList" :key="i">
                         <div class="bqitm_lef" :style="`color: ${colorConfig[it.name]}`">{{it.name}}</div>
@@ -292,6 +375,42 @@
                             <img v-for="(item,index) in it.icons" :src="item.icon" :key="index" alt="" class="bqimg">
                         </div>
                     </div>
+                </div> -->
+                <div class="tab_item">
+                  <div class="tab_item_item mbitem1" @click="changMbItem(0)">基础画像</div>
+                  <div class="tab_item_item mbitem2" @click="changMbItem(1)">行为分析</div>
+                  <div class="tab_item_item mbitem3" @click="changMbItem(2)">心智分析</div>
+                  <div class="tab_item_item mbitem4" @click="changMbItem(3)">生命周期分析</div>
+                </div>
+                <div class="tab_con" ref="tab_con">
+                  <div class="tab_content" v-if="ifShowtcon">
+                    <div class="tab_content_item" ref="tab_content_item" v-for="(item,index) in tabconList" :key="index" :class="{'remb':((index==5 || index==6))}">
+                      <div class="tab_content_item_top">{{item.til}}</div>
+                      <div class="tab_content_item_bom" v-if="item.descList">
+                         <div class="tab_content_item_bom_item" v-for="(itm1,inx) in item.descList" :key="inx">{{itm1}}</div>
+                      </div>
+                      <div class="icon_contai" v-if="item.ticList">
+                        <div class="icon_contai_itm" v-for="(itm1,inx) in item.ticList" :key="inx">
+                          <img :src="itm1.ic" class="icon_im">
+                          <div class="imitro">{{itm1.txt}}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab_content" v-else>
+                    <div class="tab_content_item1">
+                      <div class="tab_content_item1_cir"></div>
+                      <div class="tab_content_item1_con">早期客户留存转化率较低，需要加大投放力度；</div>
+                    </div>
+                    <div class="tab_content_item1">
+                      <div class="tab_content_item1_cir"></div>
+                      <div class="tab_content_item1_con">成熟期及休眠期的用户消费潜力巨大，品牌方应充分挖掘其价值；</div>
+                    </div>
+                    <div class="tab_content_item1">
+                      <div class="tab_content_item1_cir"></div>
+                      <div class="tab_content_item1_con">用户在餐饮百货品类价值贡献度高，可迎合其偏好制定策略。</div>
+                    </div>
+                  </div>
                 </div>
             </div>
         </div>
@@ -401,7 +520,7 @@
                     allBqitm.wb,
                   ]
                 }
-              ],
+                ],
                 districtList:[
                     '朝阳区','海淀区','丰台区','西城区','东城区','石景山区','昌平区','通州区','顺义区','房山区','门头沟区','大兴区','怀柔区','延庆区','平谷区','密云区'
                 ],
@@ -453,14 +572,275 @@
                         timeN:30
                     }
                 },
-              colorConfig: {
-                新闻: '#017AFF',
-                视频: '#5AC8FA',
-                娱乐: '#FF9502',
-                交流: '#a49dfa',
-                出行: '#CECE7E',
-                餐饮: '#8AE6C7',
-              }
+                colorConfig: {
+                  新闻: '#017AFF',
+                  视频: '#5AC8FA',
+                  娱乐: '#FF9502',
+                  交流: '#a49dfa',
+                  出行: '#CECE7E',
+                  餐饮: '#8AE6C7',
+               },
+               tabconList:[
+                 {
+                  til:'年龄结构',
+                  descList:['20-29岁'],
+                  ticList:null
+                 },
+                 {
+                  til:'收入结构',
+                  descList:['15-25k'],
+                  ticList:null
+                 },
+                 {
+                  til:'职业结构',
+                  descList:['白领'],
+                  ticList:null
+                 },
+                 {
+                  til:'行业结构',
+                  descList:['互联网'],
+                  ticList:null
+                 },
+                 {
+                  til:'教育背景',
+                  descList:['本科以上'],
+                  ticList:null
+                 },
+                 {
+                  til:'居住地区',
+                  descList:['一线城市'],
+                  ticList:null
+                 },
+                 {
+                  til:'主要出行方式',
+                  descList:null,
+                  ticList:[
+                    {
+                      ic:require("../../assets/img/yhhx/ditieIcon.png"),
+                      txt:'地铁（5号线、10号线、13号线）'
+                    },
+                    {
+                      ic:require("../../assets/img/yhhx/drIcon.png"),
+                      txt:'自驾'
+                    }
+                  ]
+                 }
+               ],
+               tabconList0:[
+                 {
+                  til:'年龄结构',
+                  descList:['20-29岁'],
+                  ticList:null
+                 },
+                 {
+                  til:'收入结构',
+                  descList:['15-25k'],
+                  ticList:null
+                 },
+                 {
+                  til:'职业结构',
+                  descList:['白领'],
+                  ticList:null
+                 },
+                 {
+                  til:'行业结构',
+                  descList:['互联网'],
+                  ticList:null
+                 },
+                 {
+                  til:'教育背景',
+                  descList:['本科以上'],
+                  ticList:null
+                 },
+                 {
+                  til:'居住地区',
+                  descList:['一线城市'],
+                  ticList:null
+                 },
+                 {
+                  til:'主要出行方式',
+                  descList:null,
+                  ticList:[
+                    {
+                      ic:require("../../assets/img/yhhx/ditieIcon.png"),
+                      txt:'地铁（5号线、10号线、13号线）'
+                    },
+                    {
+                      ic:require("../../assets/img/yhhx/drIcon.png"),
+                      txt:'自驾'
+                    }
+                  ]
+                 }
+               ],
+               tabconList1:[
+                 {
+                  til:'APP使用结构',
+                  descList:['用户对短视频类APP偏好明显，微博成为重要社交平台'],
+                  ticList:null
+                 },
+                 {
+                  til:'内容偏好结构',
+                  descList:['通讯社交及交通出行类覆盖度高，各种类型内容均能吸引一定的忠实用户'],
+                  ticList:null
+                 },
+                 {
+                  til:'用户行为分布结构',
+                  descList:['用户群体工作休闲两不误，放松休闲活动较多，需求强烈'],
+                  ticList:null
+                 },
+                 {
+                  til:'不同性别APP内容偏好',
+                  descList:['85%的女性喜欢开箱测评类内容；60%的男性喜欢深度测评类内容'],
+                  ticList:null
+                 }
+               ],
+               tabconList2:[
+                 {
+                  til:'敏感/厌恶',
+                  descList:['添加剂','卫生条件差','糖分超标'],
+                  ticList:null
+                 },
+                 {
+                  til:'风格偏好',
+                  descList:['INS风','性冷淡风'],
+                  ticList:null
+                 },
+                 {
+                  til:'话题偏好',
+                  descList:['健康运动','金融理财','育儿亲子'],
+                  ticList:null
+                 },
+                 {
+                  til:'个人标签',
+                  descList:['新锐白领','宝藏浪姐','潮酷女孩'],
+                  ticList:null
+                 }
+               ],
+               ifShowtcon:true,
+               yqxgList:[
+                 {
+                   til:'触达用户：',
+                   desc:'28万'
+                 },
+                 {
+                   til:'互动量提升：',
+                   desc:'12%'
+                 },
+                 {
+                   til:'品牌印象提升：',
+                   desc:'7%'
+                 },
+                 {
+                   til:'销售转化率：',
+                   desc:'3%'
+                 },
+               ],
+               yqxgList1:[
+                 {
+                   til:'触达率',
+                   desc:'46%'
+                 },
+                 {
+                   til:'投放成本',
+                   desc:'¥2300/千人'
+                 },
+                 {
+                   til:'投放金额',
+                   desc:'¥9,900'
+                 },
+                 {
+                   til:'投放时间',
+                   desc:'22:00 - 22:30'
+                 },
+               ],
+               ifShowtffatj:true,
+               tfys:'15000元',
+               meijieList:[
+                 {
+                   check:true,
+                   srcIm:require("../../assets/img/yhhx/xhs.png"),
+                   til:'小红书'
+                 },
+                 {
+                   check:true,
+                   srcIm:require("../../assets/img/yhhx/tt.png"),
+                   til:'头条'
+                 },
+                 {
+                   check:false,
+                   srcIm:require("../../assets/img/yhhx/ks.png"),
+                   til:'快手'
+                 },
+                 {
+                   check:false,
+                   srcIm:require("../../assets/img/yhhx/weib1.png"),
+                   til:'微博'
+                 }
+               ],
+               fanganObj:{
+                 qdObj1:{
+                  icon: require("../../assets/img/yhhx/tt.png"),
+                  name:'今日头条',
+                  money:'￥9200',
+                  vdlNum:'53%',
+                  timeRang:'8:00 - 9:30'
+                 },
+                 qdObj2:{
+                  icon: require("../../assets/img/yhhx/wyIcon.png"),
+                  name:'网易',
+                  money:'￥3200',
+                  vdlNum:'43%',
+                  timeRang:'7:40-8:30'
+                 }
+               },
+               fanganObj1:{
+                 qdObj1:{
+                  icon: require("../../assets/img/yhhx/tt.png"),
+                  name:'今日头条',
+                  money:'￥9200',
+                  vdlNum:'53%',
+                  timeRang:'8:00 - 9:30'
+                 },
+                 qdObj2:{
+                  icon: require("../../assets/img/yhhx/wyIcon.png"),
+                  name:'网易',
+                  money:'￥3200',
+                  vdlNum:'43%',
+                  timeRang:'7:40 - 8:30'
+                 }
+               },
+               fanganObj2:{
+                 qdObj1:{
+                  icon: require("../../assets/img/yhhx/wx.jpeg"),
+                  name:'微信',
+                  money:'￥7200',
+                  vdlNum:'43%',
+                  timeRang:'12:00 - 1:00'
+                 },
+                 qdObj2:{
+                  icon: require("../../assets/img/yhhx/dz.jpg"),
+                  name:'大众点评',
+                  money:'￥2200',
+                  vdlNum:'30%',
+                  timeRang:'11:20 - 12:30'
+                 }
+               },
+               fanganObj3:{
+                 qdObj1:{
+                  icon: require("../../assets/img/yhhx/dyI.png"),
+                  name:'抖音',
+                  money:'￥17200',
+                  vdlNum:'73%',
+                  timeRang:'19:00-23:00'
+                 },
+                 qdObj2:{
+                  icon: require("../../assets/img/yhhx/weib1.png"),
+                  name:'新浪微博',
+                  money:'￥5200',
+                  vdlNum:'40%',
+                  timeRang:'19:20-22:30'
+                 }
+               }
             }
         },
         mounted(){
@@ -495,8 +875,70 @@
             var cir1 = [116.310356,39.932426];
             var cir2 = [116.433529,39.941237];
             this.initMap(path,path1,path2,cir1,cir2,'西城区');
+            this.changMbItem(0);
+            this.clickPerTab(1);
+        },
+        computed: {
+            formatNumber () {
+                if (this.tfys === '') return '请输入价格';
+                function parseNumber(str) {
+                    const re = /(?=(?!)(d{3})+$)/g;
+                    return str.replace(re, ',');
+                }
+                return parseNumber(this.tfys);
+            }
         },
         methods:{
+            clickPerTab(arg){
+              var conDom = this.$refs.person_con_con;
+              let actLef = require('../../assets/img/yhhx/actLef.png');
+              let actrig = require('../../assets/img/yhhx/actRig.png');
+              if(arg == 1){
+                conDom.style=`background-image: url(${actLef});background-size: cover;`;
+              }
+              else{
+                conDom.style=`background-image: url(${actrig});background-size: cover;`;
+              }
+              
+              this.ifShowtffatj = arg;
+            },
+            changMbItem(arg){
+              var tabDom = this.$refs.tab_con;
+              var tabDom1 = this.$refs.tab_content_item || [];
+              var bgc0 = '#F0F8FF';
+              var bgc1 = '#D3E3FF';
+              var bgc2 = '#9ECBFF';
+              var bgc3 = '#4488FF';
+              console.log(tabDom1,'tabDom')
+              if(arg == 0){
+                this.ifShowtcon = true;
+                tabDom.style=` background:${bgc0};`;
+                this.tabconList = this.tabconList0;
+                for(var i=0;i<tabDom1.length;i++){
+                  tabDom1[i].style=" margin-right: 45px;";
+                }
+              }
+              else if(arg == 1){
+                this.ifShowtcon = true;
+                tabDom.style=` background: ${bgc1};`;
+                this.tabconList = this.tabconList1;
+                for(var i=0;i<tabDom1.length;i++){
+                  tabDom1[i].style=" margin-right: 22px;";
+                }
+              }
+              else if(arg == 2){
+                this.ifShowtcon = true;
+                tabDom.style=` background: ${bgc2};`;
+                this.tabconList = this.tabconList2;
+                for(var i=0;i<tabDom1.length;i++){
+                  tabDom1[i].style=" margin-right: 25px;";
+                }
+              }
+              else if(arg == 3){
+                this.ifShowtcon = false;
+                tabDom.style=` background: ${bgc3};`;
+              }
+            },
             submit(){
                 this.ifShowCon = false;
                 this.condiObj = {
@@ -662,6 +1104,25 @@
                     timeN: 30
                   }
                 };
+                this.fanganObj = this.fanganObj1;
+                this.yqxgList = [
+                 {
+                   til:'触达用户：',
+                   desc:'28万'
+                 },
+                 {
+                   til:'互动量提升：',
+                   desc:'12%'
+                 },
+                 {
+                   til:'品牌印象提升：',
+                   desc:'7%'
+                 },
+                 {
+                   til:'销售转化率：',
+                   desc:'3%'
+                 },
+                ];
               }
               else if (arg == 12 || arg == 14 || arg == 16) {
                 // this.timeType = arg;
@@ -714,6 +1175,25 @@
                     timeN: 10
                   }
                 };
+                this.fanganObj = this.fanganObj2;
+                this.yqxgList = [
+                 {
+                   til:'触达用户：',
+                   desc:'20万'
+                 },
+                 {
+                   til:'互动量提升：',
+                   desc:'10%'
+                 },
+                 {
+                   til:'品牌印象提升：',
+                   desc:'5%'
+                 },
+                 {
+                   til:'销售转化率：',
+                   desc:'3%'
+                 },
+                ];
               }
               else if (arg == 18 || arg == 20) {
                 // this.timeType = arg;
@@ -768,6 +1248,25 @@
                     timeN: 30
                   }
                 };
+                this.fanganObj = this.fanganObj3;
+                this.yqxgList = [
+                 {
+                   til:'触达用户：',
+                   desc:'60万'
+                 },
+                 {
+                   til:'互动量提升：',
+                   desc:'20%'
+                 },
+                 {
+                   til:'品牌印象提升：',
+                   desc:'9%'
+                 },
+                 {
+                   til:'销售转化率：',
+                   desc:'6%'
+                 },
+                ];
               }
               this.changeBqitm(arg)
             },
@@ -777,8 +1276,8 @@
                 var polygons=[];
                 var map = new AMap.Map('mapContainer', {
                     resizeEnable: true,
-                    center: [116.397428, 39.90923],//地图中心点
-                    zoom: 11, //地图显示的缩放级别
+                    center: [108.688763,38.084088],//地图中心点
+                    zoom: 4, //地图显示的缩放级别
                     mapStyle: "amap://styles/whitesmoke"
                 });
                 map.setDefaultCursor("pointer");
@@ -811,7 +1310,7 @@
                         }
                     }
                     map.add(polygons);
-                    map.setFitView(polygons);//视口自适应
+                    // map.setFitView(polygons);//视口自适应
                 });
 
                 var circle = new AMap.Circle({
@@ -1125,7 +1624,7 @@
     width: 100%;
     position: relative;
     .test_container1.width{
-        width: 792px;
+        width: 692px;
     }
     .test_container1{
         height: 80px;
@@ -1149,7 +1648,7 @@
                 align-items: center;
                 background: #FFFFFF;
                 box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-                border-radius: 4px;
+                border-radius: 4px 4px 0 0;
                 border: 1px solid #EAEDF7;
                 z-index: 999;
                 .choice_btn_area{
@@ -1245,12 +1744,12 @@
             }
         }
         .per_info_container{
-            width: 270px;
+            width: 370px;
             height: 100%;
         }
     }
     .conditions_container-box.width{
-        width: 792px;
+        width: 692px;
     }
     .conditions_container-box{
         position: absolute;
@@ -1291,12 +1790,16 @@
             .condition_item{
                 width: 91px;
                 height: 24px;
-                background: #FFFFFF;
+                background: #D3E3FF;
                 border-radius: 4px;
                 border: 1px solid #EAEDF7;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                font-size: 12px;
+                font-family: PingFangSC-Semibold, PingFang SC;
+                font-weight: 600;
+                color: #2373FF;
             }
         }
         .conditions_rig{
@@ -1313,7 +1816,7 @@
         position: absolute;
         left: 1.9%;
         top: 168px;
-        width: 787.06px;
+        width: 692px;
         z-index: 1000;
         height: 557px;
         background: #FFF;
@@ -1468,368 +1971,694 @@
             align-items: center;
         }
         .per_info_container{
-            width: 270px;
+            width: 370px;
             height: 100%;
-            padding:13px 12px;
+            padding:17px 16px;
             box-sizing: border-box;
             background: #EAEDF7;
             overflow-y: scroll;
-            .yhdx_title{
-                width: 100%;
-                height: 72px;
-                border-radius: 8px;
+            .person_til{
+              width: 100%;
+              font-size: 18px;
+              font-family: PingFangSC-Medium, PingFang SC;
+              font-weight: 500;
+              color: #242F57;
+              margin-bottom: 15px;
+            }
+            .person_con_con{
+              width: 100%;
+              .perxon_tab_con{
                 display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
-                padding-left: 16px;
-                box-sizing: border-box;
-                background-image: url("../../assets/img/yhhx/river.png");
-                background-size: cover;
-                .yhdx_title_top{
-                    width: 100%;
-                    font-size: 18px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #FFFFFF;
+                .perxon_tab_con_lef,.perxon_tab_con_rig{
+                  width: 50%;
+                  height: 40px;
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #636E95;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  &:hover{
+                    cursor: pointer;
+                  }
                 }
-                .yhdx_title_bom{
-                    width: 100%;
+              }
+              .person_tffatj_con{
+                width: 100%;
+                border-radius: 0px 12px 12px 12px;
+                padding-bottom: 20px;
+                box-sizing: border-box;
+                .top_img_con{
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  .top_img_con_lef,.top_img_con_rig{
+                    width: 48%;
+                    margin-top: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    background: rgba(235,236,240,.4);
+                    border-radius: 8px;
+                    .douyIcon{
+                      display: block;
+                      width: 40px;
+                      height: 40px;
+                      border-radius: 50%;
+                      margin-top: -16px;
+                      margin-bottom: 4px;
+                    }
+                    .con_lef_label{
+                      font-size: 14px;
+                      font-family: PingFangSC-Regular, PingFang SC;
+                      font-weight: 400;
+                      color: #636E95;
+                    }
+                    .con_lef_num{
+                      font-size: 18px;
+                      font-family: PingFangSC-Semibold, PingFang SC;
+                      font-weight: 600;
+                      color: #242F57;
+                      margin-bottom: 14px;
+                    }
+                    .con_lef_num1{
+                      font-size: 16px;
+                      font-family: PingFangSC-Medium, PingFang SC;
+                      font-weight: 500;
+                      color: #242F57;
+                      margin-bottom: 15px;
+                    }
+                  }
+                }
+                .tf_time{
+                  width: 100%;
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  margin-top: 30px;
+                  margin-bottom: 10px;
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #242F57;
+                }
+                .tfmjchoice_con{
+                  width: 100%;
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  display: flex;
+                  justify-content: space-between;
+                  flex-wrap: wrap;
+                  .meijie_item{
+                    display: flex;
+                    align-items: center;
+                    width: 49%;
+                    padding: 10px 7px;
+                    box-sizing: border-box;
+                    border-radius: 4px;
+                    border: 1px solid #D3E3FF;
+                    margin-bottom: 9px;
+                    .srcIMG{
+                      margin-left: 7px;
+                      display: block;
+                      width: 24px;
+                      height: 24px;
+                      margin-right: 3px;
+                    }
+                    .qudtil{
+                      font-size: 12px;
+                      font-family: PingFangSC-Medium, PingFang SC;
+                      font-weight: 500;
+                      color: #242F57;
+                    }
+                  }
+                  .actBor{
+                    border: 1px solid #2373FF;
+                  }
+                }
+                .tfys_input_con{
+                  width: 100%;
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  margin-bottom: 13px;
+                  display: flex;
+                  align-items: center;
+                  position: relative;
+                  ::v-deep .ivu-poptip .ivu-poptip-rel .ivu-input-type-text .ivu-input-default{
+                    padding-left: 30px !important;
+                  }
+                  .cmon{
+                    position: absolute;
+                    color: #97A0C3;
+                    left: 25px;
+                    z-index: 999;
+                  }
+                  .zhi{
                     font-size: 12px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
-                    color: #FFFFFF;
+                    color: #97A0C3;
+                    margin-left: 6px;
+                  }
                 }
-            }
-            .switch_container{
-                width: 100%;
-                padding: 12px 20px;
-                box-sizing: border-box;
-                border-bottom: 1px solid #fdfdfd;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                font-size: 14px;
-                font-family: PingFangSC-Medium, PingFang SC;
-                font-weight: 500;
-                color: #242F57;
-            }
-            .nl_card_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
+                .tf_time_txt1,.tf_time_txt2{
+                  width: 100%;
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #242F57;
+                  .cir_txt_con{
+                    display: flex;
+                    align-items: center;
+                    .cir_con{
+                      width: 8px;
+                      height: 8px;
+                      background: #2373FF;
+                      border-radius: 50%;
+                      margin-right: 7px;
+                    }
+                  }
+                }
+                .radio_txt_con{
+                  width: 100%;
+                  display: flex;
+                  align-items: center;
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  margin-bottom: 7px;
+                  .radio_cir{
+                    display: block;
+                    width: 8px;
+                    height: 8px;
+                    background: #2373FF;
+                    border-radius: 50%;
+                    margin-right: 7px;
+                  }
+                  .radio_txt{
                     font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                    // ::v-deep .saas-poptip{
-                    //     left: 628px !important;
-                    //     .ivu-poptip-content{
-                    //         width: 270px !important;
-                    //     }
-                    // }
-                }
-                .pro_container{
-                    width: 100%;
-                    margin-bottom: 8px;
-                    display: flex;
-                    align-items: center;
-                    .pro_label{
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #97A0C3;
-                        margin-right: 12px;
-                    }
-                    .pro{
-                        flex: 1;
-                    }
-                }
-            }
-
-            .sex_card_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .sex_tu_container{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-bottom: 4px;
-                    .man{
-                        width: 64%;
-                        height: 16px;
-                        background: #2373FF;
-                        border-radius: 2px;
-                    }
-                    .women{
-                        width: 34%;
-                        height: 16px;
-                        background: #FE763D;
-                        border-radius: 2px;
-                    }
-                }
-                .sex_per_container{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    font-size: 18px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    .man_per{
-                        color: #2373FF;
-                    }
-                    .women_per{
-                        color: #FE763D;
-                    }
-                    .mansex,.womensex{
-                        font-size: 12px;
-                        font-weight: 400;
-                        color: #97A0C3;
-                    }
-                }
-            }
-
-            .chufa_card_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .chufadi_container{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-top: 8px;
-                    .diItem{
-                        width: 32%;
-                        height: 24px;
-                        display: flex;
-                        align-items: center;
-                        padding: 2px 7px;
-                        box-sizing: border-box;
-                        background: #F4F7FC;
-                        border-radius: 4px;
-                        .addressIcon{
-                        display: block;
-                        width: 11px;
-                        margin-right: 6px;
-                        }
-                        .addresstxt{
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #242F57;
-                        }
-                    }
-                }
-            }
-
-            .mudd_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .chufadi_container{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-top: 8px;
-                    .diItem{
-                        width: 32%;
-                        height: 24px;
-                        display: flex;
-                        align-items: center;
-                        padding: 2px 7px;
-                        box-sizing: border-box;
-                        background: #F4F7FC;
-                        border-radius: 4px;
-                        .addressIcon{
-                        display: block;
-                        width: 11px;
-                        margin-right: 6px;
-                        }
-                        .addresstxt{
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #242F57;
-                        }
-                    }
-                }
-            }
-
-            .tqfs_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .cx_type_container{
-                    width: 100%;
-                    margin-top: 16px;
-                    display: flex;
-                    align-items: center;
-                    .cx_item{
-                        display: flex;
-                        align-items: center;
-                        margin-right: 25px;
-                        .cxlogo{
-                        display: block;
-                        width: 16px;
-                        margin-right: 4px;
-                        }
-                        .cxtxt{
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #242F57;
-                        }
-                    }
-                }
-            }
-
-            .tqsjylx_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .haoshi_container{
-                    margin-top: 17px;
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    font-size: 12px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
                     color: #242F57;
-                    .timeBiao{
-                        display: block;
-                        width: 16px;
-                        height: 16px;
-                        margin-right: 4px;
-                    }
+                  }
                 }
+                .yqxg_con_con{
+                  display: flex;
+                  justify-content: space-between;
+                  flex-wrap: wrap;
+                  padding: 0px 16px;
+                  box-sizing: border-box;
+                  .yqxg_con_con_item{
+                    width: 48%;
+                    margin-bottom:8px;
+                    background: #F0F8FF;
+                    border-radius: 4px;
+                    padding: 7px 10px;
+                    box-sizing: border-box;
+                    .yqxg_til{
+                      width: 100%;
+                      font-size: 11px;
+                      font-family: PingFangSC-Regular, PingFang SC;
+                      font-weight: 400;
+                      color: #636E95;
+                    }
+                    .yqxg_num_desc{
+                      font-size: 16px;
+                      font-family: PingFangSC-Medium, PingFang SC;
+                      font-weight: 500;
+                      color: #2373FF;
+                    }
+                    .yqxg_num_desc1{
+                      font-size: 14px;
+                      font-family: PingFangSC-Medium, PingFang SC;
+                      font-weight: 500;
+                      color: #2373FF;
+                    }
+                  }
+                }
+              }
             }
+            // .yhdx_title{
+            //     width: 100%;
+            //     height: 72px;
+            //     border-radius: 8px;
+            //     display: flex;
+            //     flex-direction: column;
+            //     align-items: flex-start;
+            //     justify-content: center;
+            //     padding-left: 16px;
+            //     box-sizing: border-box;
+            //     background-image: url("../../assets/img/yhhx/river.png");
+            //     background-size: cover;
+            //     .yhdx_title_top{
+            //         width: 100%;
+            //         font-size: 18px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #FFFFFF;
+            //     }
+            //     .yhdx_title_bom{
+            //         width: 100%;
+            //         font-size: 12px;
+            //         font-family: PingFangSC-Regular, PingFang SC;
+            //         font-weight: 400;
+            //         color: #FFFFFF;
+            //     }
+            // }
+            // .switch_container{
+            //     width: 100%;
+            //     padding: 12px 20px;
+            //     box-sizing: border-box;
+            //     border-bottom: 1px solid #fdfdfd;
+            //     display: flex;
+            //     align-items: center;
+            //     justify-content: space-between;
+            //     font-size: 14px;
+            //     font-family: PingFangSC-Medium, PingFang SC;
+            //     font-weight: 500;
+            //     color: #242F57;
+            // }
+            // .nl_card_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //         // ::v-deep .saas-poptip{
+            //         //     left: 628px !important;
+            //         //     .ivu-poptip-content{
+            //         //         width: 270px !important;
+            //         //     }
+            //         // }
+            //     }
+            //     .pro_container{
+            //         width: 100%;
+            //         margin-bottom: 8px;
+            //         display: flex;
+            //         align-items: center;
+            //         .pro_label{
+            //             font-size: 12px;
+            //             font-family: PingFangSC-Regular, PingFang SC;
+            //             font-weight: 400;
+            //             color: #97A0C3;
+            //             margin-right: 12px;
+            //         }
+            //         .pro{
+            //             flex: 1;
+            //         }
+            //     }
+            // }
+
+            // .sex_card_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //     }
+            //     .sex_tu_container{
+            //         width: 100%;
+            //         display: flex;
+            //         align-items: center;
+            //         justify-content: space-between;
+            //         margin-bottom: 4px;
+            //         .man{
+            //             width: 64%;
+            //             height: 16px;
+            //             background: #2373FF;
+            //             border-radius: 2px;
+            //         }
+            //         .women{
+            //             width: 34%;
+            //             height: 16px;
+            //             background: #FE763D;
+            //             border-radius: 2px;
+            //         }
+            //     }
+            //     .sex_per_container{
+            //         width: 100%;
+            //         display: flex;
+            //         align-items: center;
+            //         justify-content: space-between;
+            //         font-size: 18px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         .man_per{
+            //             color: #2373FF;
+            //         }
+            //         .women_per{
+            //             color: #FE763D;
+            //         }
+            //         .mansex,.womensex{
+            //             font-size: 12px;
+            //             font-weight: 400;
+            //             color: #97A0C3;
+            //         }
+            //     }
+            // }
+
+            // .chufa_card_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //     }
+            //     .chufadi_container{
+            //         width: 100%;
+            //         display: flex;
+            //         align-items: center;
+            //         justify-content: space-between;
+            //         margin-top: 8px;
+            //         .diItem{
+            //             width: 32%;
+            //             height: 24px;
+            //             display: flex;
+            //             align-items: center;
+            //             padding: 2px 7px;
+            //             box-sizing: border-box;
+            //             background: #F4F7FC;
+            //             border-radius: 4px;
+            //             .addressIcon{
+            //             display: block;
+            //             width: 11px;
+            //             margin-right: 6px;
+            //             }
+            //             .addresstxt{
+            //             font-size: 12px;
+            //             font-family: PingFangSC-Regular, PingFang SC;
+            //             font-weight: 400;
+            //             color: #242F57;
+            //             }
+            //         }
+            //     }
+            // }
+
+            // .mudd_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //     }
+            //     .chufadi_container{
+            //         width: 100%;
+            //         display: flex;
+            //         align-items: center;
+            //         justify-content: space-between;
+            //         margin-top: 8px;
+            //         .diItem{
+            //             width: 32%;
+            //             height: 24px;
+            //             display: flex;
+            //             align-items: center;
+            //             padding: 2px 7px;
+            //             box-sizing: border-box;
+            //             background: #F4F7FC;
+            //             border-radius: 4px;
+            //             .addressIcon{
+            //             display: block;
+            //             width: 11px;
+            //             margin-right: 6px;
+            //             }
+            //             .addresstxt{
+            //             font-size: 12px;
+            //             font-family: PingFangSC-Regular, PingFang SC;
+            //             font-weight: 400;
+            //             color: #242F57;
+            //             }
+            //         }
+            //     }
+            // }
+
+            // .tqfs_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //     }
+            //     .cx_type_container{
+            //         width: 100%;
+            //         margin-top: 16px;
+            //         display: flex;
+            //         align-items: center;
+            //         .cx_item{
+            //             display: flex;
+            //             align-items: center;
+            //             margin-right: 25px;
+            //             .cxlogo{
+            //             display: block;
+            //             width: 16px;
+            //             margin-right: 4px;
+            //             }
+            //             .cxtxt{
+            //             font-size: 12px;
+            //             font-family: PingFangSC-Regular, PingFang SC;
+            //             font-weight: 400;
+            //             color: #242F57;
+            //             }
+            //         }
+            //     }
+            // }
+
+            // .tqsjylx_container{
+            //     width: 100%;
+            //     background: rgba(255, 255, 255, 0.8);
+            //     border-radius: 8px;
+            //     border: 1px solid #FFFFFF;
+            //     padding: 12px 14px;
+            //     box-sizing: border-box;
+            //     margin-bottom: 8px;
+            //     .til_label{
+            //         width: 100%;
+            //         font-size: 14px;
+            //         font-family: PingFangSC-Medium, PingFang SC;
+            //         font-weight: 500;
+            //         color: #242F57;
+            //         margin-bottom: 10px;
+            //     }
+            //     .haoshi_container{
+            //         margin-top: 17px;
+            //         width: 100%;
+            //         display: flex;
+            //         align-items: center;
+            //         font-size: 12px;
+            //         font-family: PingFangSC-Regular, PingFang SC;
+            //         font-weight: 400;
+            //         color: #242F57;
+            //         .timeBiao{
+            //             display: block;
+            //             width: 16px;
+            //             height: 16px;
+            //             margin-right: 4px;
+            //         }
+            //     }
+            // }
         }
         .yhxw_container{
             position: absolute;
-            width: 700px;
-            height: 139px;
-            background-image: url(/img/bgImg.a22ae601.png);
-            bottom: -1px;
-            left: 35px;
-            background-size: cover;
+            width: 61%;
+            bottom: 20px;
+            left: 20px;
             z-index: 999;
-            .yhxw_title{
-                position: absolute;
-                top: 18px;
-                left: 25px;
-                font-size: 14px;
-                font-family: PingFangSC-Medium, PingFang SC;
-                font-weight: 500;
-                color: #636E95;
+            .tab_item{
+              width: 100%;
+              display: flex;
+              .tab_item_item{
+                padding: 5px 16px;
+                box-sizing: border-box;
+                &:hover{
+                  cursor: pointer;
+                }
+              }
+              .mbitem1{
+                background: #F0F8FF;
+                border-radius: 4px 0px 0px 0px;
+              }
+              .mbitem2{
+                background: #D3E3FF;
+              }
+              .mbitem3{
+                background: #9ECBFF;
+              }
+              .mbitem4{
+                border-radius: 0px 4px 0px 0px;
+                background:#4488FF;
+              }
             }
-            .bqitm_container{
-                position: absolute;
-                top: 55px;
-                left: 25px;
-                min-width: 400px;
-                height: 60px;
+            .tab_con{
+              width: 100%;
+              padding: 20px 16px;
+              box-sizing: border-box;
+              .tab_content{
+                width: 100%;
+                height: 152.82px;
+                overflow-y: auto;
+                padding: 12px 23px;
+                box-sizing: border-box;
+                background: #FFFFFF;
+                border-radius: 4px;
                 display: flex;
-                align-items: center;
-                .bqitm{
-                    width: 180px;
-                    height: 100%;
-                    background: #FFFFFF;
-                    border-radius: 8px;
-                    margin-right: 16px;
-                    padding: 16px;
-                    box-sizing: border-box;
+                flex-wrap: wrap;
+                .tab_content_item{
+                  margin-right: 10px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  margin-bottom: 18px;
+                  .tab_content_item_top{
+                    font-size: 14px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #242F57;
+                    margin-bottom: 8px;
+                  }
+                  .tab_content_item_bom{
                     display: flex;
                     align-items: center;
-                    justify-content: space-between;
-                    .bqitm_lef{
-                        font-size: 14px;
-                        font-family: PingFangSC-Medium, PingFang SC;
-                        font-weight: 500;
-                        color: #FF9502;
+                    .tab_content_item_bom_item{
+                      padding: 2px 10px;
+                      box-sizing: border-box;
+                      background: #F0F8FF;
+                      border-radius: 4px;
+                      border: 1px solid #FFFFFF;
+                      margin-right: 18px;
                     }
-                    .bqitm_rig{
-                        display: flex;
-                        .bqimg{
-                            width: 24px;
-                            height: 24px;
-                            border-radius: 50%;
-                        }
+                  }
+                  .icon_contai{
+                    display: flex;
+                    align-items: center;
+                    .icon_contai_itm{
+                      margin-right: 23px;
+                      display: flex;
+                      align-items: center;
+                      .icon_im{
+                        margin-right: 4px;
+                        width: 16px;
+                        height: 16px;
+                      }
+                      .imitro{
+                        font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242F57;
+                      }
                     }
+                  }
                 }
+                .tab_content_item1{
+                  display: flex;
+                  align-items: center;
+                  width: 100%;
+                  .tab_content_item1_cir{
+                    width: 8px;
+                    height: 8px;
+                    background-color: #2373FF;
+                    margin-right: 6px;
+                    border-radius: 50%;
+                  }
+                }
+                .remb{
+                  margin-bottom: 0px;
+                }
+              }
             }
+            // .yhxw_title{
+            //     position: absolute;
+            //     top: 18px;
+            //     left: 25px;
+            //     font-size: 14px;
+            //     font-family: PingFangSC-Medium, PingFang SC;
+            //     font-weight: 500;
+            //     color: #636E95;
+            // }
+            // .bqitm_container{
+            //     position: absolute;
+            //     top: 55px;
+            //     left: 25px;
+            //     min-width: 400px;
+            //     height: 60px;
+            //     display: flex;
+            //     align-items: center;
+            //     .bqitm{
+            //         width: 180px;
+            //         height: 100%;
+            //         background: #FFFFFF;
+            //         border-radius: 8px;
+            //         margin-right: 16px;
+            //         padding: 16px;
+            //         box-sizing: border-box;
+            //         display: flex;
+            //         align-items: center;
+            //         justify-content: space-between;
+            //         .bqitm_lef{
+            //             font-size: 14px;
+            //             font-family: PingFangSC-Medium, PingFang SC;
+            //             font-weight: 500;
+            //             color: #FF9502;
+            //         }
+            //         .bqitm_rig{
+            //             display: flex;
+            //             .bqimg{
+            //                 width: 24px;
+            //                 height: 24px;
+            //                 border-radius: 50%;
+            //             }
+            //         }
+            //     }
+            // }
         }
     }
     .test_container.row{
