@@ -50,7 +50,7 @@ export default {
             },
             grid: {
                 left: 2,
-                right: 2,
+                right: 10,
                 bottom: 2,
                 top: '6%',
                 containLabel: true,

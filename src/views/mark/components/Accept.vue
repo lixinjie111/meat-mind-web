@@ -74,7 +74,8 @@ export default {
 
 <style scoped lang="scss">
 .mark-details-accept{
-    padding-bottom:24px;
+    padding:0 24px 24px;
+    margin-bottom: 24px;
     background: #FFFFFF;
     border-radius: 8px;
     .m-d-accept-header{

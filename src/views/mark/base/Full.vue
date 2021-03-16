@@ -35,17 +35,17 @@ export default {
     height: 100%;
     padding: 16px;
     background: #ffffff;
-    border-radius: 8px;
+    border-radius: 4px;
     border: 1px solid #eaedf7;
     &.all {
       width: 100%;
     }
     .title {
-      height: 24px;
+      height: 22px;
       margin-bottom: 4px;
       font-size: 14px;
       color: #242f57;
-      line-height: 24px;
+      line-height: 22px;
     }
     .r-all-echarts {
       width: 100%;
