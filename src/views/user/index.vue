@@ -3289,11 +3289,6 @@ export default {
   .jichuhuax_area_container {
     width: 100%;
     background: #ffffff;
-    /*padding-top: 24px;*/
-    // box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-    // border-radius: 12px;
-    border-bottom: 1px solid #EAEDF7;
-    //padding: 24px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -3511,10 +3506,6 @@ export default {
   .xzfx_area_container {
     width: 100%;
     background: #ffffff;
-      // box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-    // border-radius: 12px;
-    border-bottom: 1px solid #EAEDF7;
-    // padding: 24px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -3591,6 +3582,7 @@ export default {
 			        width: 192px;
 			        height: 203px;
 			        position: absolute;
+              padding: 8px 0;
 			        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.16);
 			        background: #FFFFFF;
 			        border-radius: 4px;
@@ -3617,10 +3609,10 @@ export default {
         .xinzfb_container_lef_content {
           flex:1;
           .xinzfb_container_lef_content_chart{
-            height: 180px;
+            height: 230px;
           }
           .xinzfb_container_lef_content_chart_match{
-            height: 150px;
+            height: 100px;
             display: flex;
             .xinzfb_container_lef_content_chart_match_item{
               flex: 1;
