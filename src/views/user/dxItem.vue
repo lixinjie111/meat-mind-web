@@ -291,34 +291,34 @@
                   <div class="person_tffatj_con" v-if="ifShowtffatj">
                     <div class="top_img_con">
                       <div class="top_img_con_lef">
-                        <img :src="douyIcon" class="douyIcon">
-                        <div class="con_lef_label">抖音</div>
-                        <div class="con_lef_num">￥9,600</div>
+                        <img :src="fanganObj.qdObj1.icon" class="douyIcon">
+                        <div class="con_lef_label">{{fanganObj.qdObj1.name}}</div>
+                        <div class="con_lef_num">{{fanganObj.qdObj1.money}}</div>
                         <div class="con_lef_label">触达率</div>
-                        <div class="con_lef_num1">46%</div>
+                        <div class="con_lef_num1">{{fanganObj.qdObj1.vdlNum}}</div>
                       </div>
                       <div class="top_img_con_rig">
-                        <img :src="ttIcon" class="douyIcon">
-                        <div class="con_lef_label">今日头条</div>
-                        <div class="con_lef_num">￥9,200</div>
+                        <img :src="fanganObj.qdObj2.icon" class="douyIcon">
+                        <div class="con_lef_label">{{fanganObj.qdObj2.name}}</div>
+                        <div class="con_lef_num">{{fanganObj.qdObj2.money}}</div>
                         <div class="con_lef_label">触达率</div>
-                        <div class="con_lef_num1">43%</div>
+                        <div class="con_lef_num1">{{fanganObj.qdObj2.vdlNum}}</div>
                       </div>
                     </div>
                     <div class="tf_time">建议投放时间段</div>
                     <div class="tf_time_txt1">
                       <div class="cir_txt_con">
                         <div class="cir_con"></div>
-                        <div class="qu_dao_name">抖音</div>
+                        <div class="qu_dao_name">{{fanganObj.qdObj1.name}}</div>
                       </div>
-                      <div class="tim_txt_con">22:00 - 22:30</div>
+                      <div class="tim_txt_con">{{fanganObj.qdObj1.timeRang}}</div>
                     </div>
                     <div class="tf_time_txt2">
                       <div class="cir_txt_con">
                         <div class="cir_con" style="background:#FE774B;"></div>
-                        <div class="qu_dao_name">今日头条</div>
+                        <div class="qu_dao_name">{{fanganObj.qdObj2.name}}</div>
                       </div>
-                      <div class="tim_txt_con">19:00 - 20:30</div>
+                      <div class="tim_txt_con">{{fanganObj.qdObj2.timeRang}}</div>
                     </div>
                     <div class="tf_time">预期效果</div>
                     <div class="yqxg_con_con">
@@ -353,10 +353,14 @@
                       </div>
                     </div>
                     <div class="tf_time">投放建议及预期</div>
+                    <div class="radio_txt_con">
+                      <div class="radio_cir"></div>
+                      <div class="radio_txt">小红书</div>
+                    </div>
                     <div class="yqxg_con_con">
-                      <div class="yqxg_con_con_item" v-for="(itm,inx) in yqxgList" :key="inx">
+                      <div class="yqxg_con_con_item" v-for="(itm,inx) in yqxgList1" :key="inx">
                         <div class="yqxg_til">{{itm.til}}</div>
-                        <div class="yqxg_num_desc">{{itm.desc}}</div>
+                        <div class="yqxg_num_desc yqxg_num_desc1">{{itm.desc}}</div>
                       </div>
                     </div>
                   </div>
@@ -380,7 +384,7 @@
                 </div>
                 <div class="tab_con" ref="tab_con">
                   <div class="tab_content" v-if="ifShowtcon">
-                    <div class="tab_content_item" ref="tab_content_item" v-for="(item,index) in tabconList" :key="index" :class="{'remb':((index==5 || index==6) || (item.til == '话题偏好' || item.til == '个人标签'))}">
+                    <div class="tab_content_item" ref="tab_content_item" v-for="(item,index) in tabconList" :key="index" :class="{'remb':((index==5 || index==6))}">
                       <div class="tab_content_item_top">{{item.til}}</div>
                       <div class="tab_content_item_bom" v-if="item.descList">
                          <div class="tab_content_item_bom_item" v-for="(itm1,inx) in item.descList" :key="inx">{{itm1}}</div>
@@ -713,8 +717,6 @@
                  }
                ],
                ifShowtcon:true,
-               douyIcon:require("../../assets/img/yhhx/dyI.png"),
-               ttIcon:require("../../assets/img/yhhx/tt.png"),
                yqxgList:[
                  {
                    til:'触达用户：',
@@ -731,6 +733,24 @@
                  {
                    til:'销售转化率：',
                    desc:'3%'
+                 },
+               ],
+               yqxgList1:[
+                 {
+                   til:'触达率',
+                   desc:'46%'
+                 },
+                 {
+                   til:'投放成本',
+                   desc:'¥2300/千人'
+                 },
+                 {
+                   til:'投放金额',
+                   desc:'¥9,900'
+                 },
+                 {
+                   til:'投放时间',
+                   desc:'22:00 - 22:30'
                  },
                ],
                ifShowtffatj:true,
@@ -756,7 +776,71 @@
                    srcIm:require("../../assets/img/yhhx/weib1.png"),
                    til:'微博'
                  }
-               ]
+               ],
+               fanganObj:{
+                 qdObj1:{
+                  icon: require("../../assets/img/yhhx/tt.png"),
+                  name:'今日头条',
+                  money:'￥9200',
+                  vdlNum:'53%',
+                  timeRang:'8:00 - 9:30'
+                 },
+                 qdObj2:{
+                  icon: require("../../assets/img/yhhx/wyIcon.png"),
+                  name:'网易',
+                  money:'￥3200',
+                  vdlNum:'43%',
+                  timeRang:'7:40-8:30'
+                 }
+               },
+               fanganObj1:{
+                 qdObj1:{
+                  icon: require("../../assets/img/yhhx/tt.png"),
+                  name:'今日头条',
+                  money:'￥9200',
+                  vdlNum:'53%',
+                  timeRang:'8:00 - 9:30'
+                 },
+                 qdObj2:{
+                  icon: require("../../assets/img/yhhx/wyIcon.png"),
+                  name:'网易',
+                  money:'￥3200',
+                  vdlNum:'43%',
+                  timeRang:'7:40 - 8:30'
+                 }
+               },
+               fanganObj2:{
+                 qdObj1:{
+                  icon: require("../../assets/img/yhhx/wx.jpeg"),
+                  name:'微信',
+                  money:'￥7200',
+                  vdlNum:'43%',
+                  timeRang:'12:00 - 1:00'
+                 },
+                 qdObj2:{
+                  icon: require("../../assets/img/yhhx/dz.jpg"),
+                  name:'大众点评',
+                  money:'￥2200',
+                  vdlNum:'30%',
+                  timeRang:'11:20 - 12:30'
+                 }
+               },
+               fanganObj3:{
+                 qdObj1:{
+                  icon: require("../../assets/img/yhhx/dyI.png"),
+                  name:'抖音',
+                  money:'￥17200',
+                  vdlNum:'73%',
+                  timeRang:'19:00-23:00'
+                 },
+                 qdObj2:{
+                  icon: require("../../assets/img/yhhx/weib1.png"),
+                  name:'新浪微博',
+                  money:'￥5200',
+                  vdlNum:'40%',
+                  timeRang:'19:20-22:30'
+                 }
+               }
             }
         },
         mounted(){
@@ -831,7 +915,7 @@
                 tabDom.style=` background:${bgc0};`;
                 this.tabconList = this.tabconList0;
                 for(var i=0;i<tabDom1.length;i++){
-                  tabDom1[i].style=" margin-right: 60px;";
+                  tabDom1[i].style=" margin-right: 45px;";
                 }
               }
               else if(arg == 1){
@@ -847,7 +931,7 @@
                 tabDom.style=` background: ${bgc2};`;
                 this.tabconList = this.tabconList2;
                 for(var i=0;i<tabDom1.length;i++){
-                  tabDom1[i].style=" margin-right: 50px;";
+                  tabDom1[i].style=" margin-right: 25px;";
                 }
               }
               else if(arg == 3){
@@ -1020,6 +1104,25 @@
                     timeN: 30
                   }
                 };
+                this.fanganObj = this.fanganObj1;
+                this.yqxgList = [
+                 {
+                   til:'触达用户：',
+                   desc:'28万'
+                 },
+                 {
+                   til:'互动量提升：',
+                   desc:'12%'
+                 },
+                 {
+                   til:'品牌印象提升：',
+                   desc:'7%'
+                 },
+                 {
+                   til:'销售转化率：',
+                   desc:'3%'
+                 },
+                ];
               }
               else if (arg == 12 || arg == 14 || arg == 16) {
                 // this.timeType = arg;
@@ -1072,6 +1175,25 @@
                     timeN: 10
                   }
                 };
+                this.fanganObj = this.fanganObj2;
+                this.yqxgList = [
+                 {
+                   til:'触达用户：',
+                   desc:'20万'
+                 },
+                 {
+                   til:'互动量提升：',
+                   desc:'10%'
+                 },
+                 {
+                   til:'品牌印象提升：',
+                   desc:'5%'
+                 },
+                 {
+                   til:'销售转化率：',
+                   desc:'3%'
+                 },
+                ];
               }
               else if (arg == 18 || arg == 20) {
                 // this.timeType = arg;
@@ -1126,6 +1248,25 @@
                     timeN: 30
                   }
                 };
+                this.fanganObj = this.fanganObj3;
+                this.yqxgList = [
+                 {
+                   til:'触达用户：',
+                   desc:'60万'
+                 },
+                 {
+                   til:'互动量提升：',
+                   desc:'20%'
+                 },
+                 {
+                   til:'品牌印象提升：',
+                   desc:'9%'
+                 },
+                 {
+                   til:'销售转化率：',
+                   desc:'6%'
+                 },
+                ];
               }
               this.changeBqitm(arg)
             },
@@ -1483,7 +1624,7 @@
     width: 100%;
     position: relative;
     .test_container1.width{
-        width: 792px;
+        width: 692px;
     }
     .test_container1{
         height: 80px;
@@ -1507,7 +1648,7 @@
                 align-items: center;
                 background: #FFFFFF;
                 box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-                border-radius: 4px;
+                border-radius: 4px 4px 0 0;
                 border: 1px solid #EAEDF7;
                 z-index: 999;
                 .choice_btn_area{
@@ -1603,12 +1744,12 @@
             }
         }
         .per_info_container{
-            width: 270px;
+            width: 370px;
             height: 100%;
         }
     }
     .conditions_container-box.width{
-        width: 792px;
+        width: 692px;
     }
     .conditions_container-box{
         position: absolute;
@@ -1675,7 +1816,7 @@
         position: absolute;
         left: 1.9%;
         top: 168px;
-        width: 787.06px;
+        width: 692px;
         z-index: 1000;
         height: 557px;
         background: #FFF;
@@ -1830,7 +1971,7 @@
             align-items: center;
         }
         .per_info_container{
-            width: 270px;
+            width: 370px;
             height: 100%;
             padding:17px 16px;
             box-sizing: border-box;
@@ -1886,6 +2027,7 @@
                       display: block;
                       width: 40px;
                       height: 40px;
+                      border-radius: 50%;
                       margin-top: -16px;
                       margin-bottom: 4px;
                     }
@@ -2004,6 +2146,28 @@
                     }
                   }
                 }
+                .radio_txt_con{
+                  width: 100%;
+                  display: flex;
+                  align-items: center;
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  margin-bottom: 7px;
+                  .radio_cir{
+                    display: block;
+                    width: 8px;
+                    height: 8px;
+                    background: #2373FF;
+                    border-radius: 50%;
+                    margin-right: 7px;
+                  }
+                  .radio_txt{
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #242F57;
+                  }
+                }
                 .yqxg_con_con{
                   display: flex;
                   justify-content: space-between;
@@ -2026,6 +2190,12 @@
                     }
                     .yqxg_num_desc{
                       font-size: 16px;
+                      font-family: PingFangSC-Medium, PingFang SC;
+                      font-weight: 500;
+                      color: #2373FF;
+                    }
+                    .yqxg_num_desc1{
+                      font-size: 14px;
                       font-family: PingFangSC-Medium, PingFang SC;
                       font-weight: 500;
                       color: #2373FF;
@@ -2339,7 +2509,7 @@
         }
         .yhxw_container{
             position: absolute;
-            width: 71%;
+            width: 61%;
             bottom: 20px;
             left: 20px;
             z-index: 999;
@@ -2383,7 +2553,7 @@
                 display: flex;
                 flex-wrap: wrap;
                 .tab_content_item{
-                  margin-right: 50px;
+                  margin-right: 10px;
                   display: flex;
                   flex-direction: column;
                   align-items: flex-start;

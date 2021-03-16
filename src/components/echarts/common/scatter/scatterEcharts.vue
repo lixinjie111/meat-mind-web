@@ -18,7 +18,7 @@ export default {
     initEcharts() {
       let option = this.defaultOption();
       let myEchart = this.$echarts.init(document.getElementById(this.id));
-      myEchart.setOption(option);
+      myEchart.setOption(option,true);
       window.addEventListener("resize", () => {
         myEchart.resize();
       });
@@ -320,22 +320,6 @@ export default {
               },
             },
             zlevel: 1,
-          },
-          {
-            name: "line",
-            type: "line",
-            showSymbol: false,
-            smooth: true,
-            data: [
-              [48.5, 7822],
-              [69.588, 20093],
-              [83.2, 55271.97],
-            ],
-            itemStyle: {
-              normal: {
-                color: this.colorList[0],
-              },
-            },
           },
           {
             type: "scatter",

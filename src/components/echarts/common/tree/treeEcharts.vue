@@ -85,7 +85,7 @@ export default {
                           "搜狐号",
                         value: "转发了百度百家号的文章",
                         itemStyle:{
-                          color:this.colorList[2],
+                          color:this.colorList[1],
                           borderWidth:0,
                         },
                         label: {
@@ -98,7 +98,7 @@ export default {
                     name: "知乎",
                     value: "知乎上出现热问，该热问提及品牌负面新闻\n2021/1/22",
                     itemStyle:{
-                      color:this.colorList[1],
+                      color:this.colorList[2],
                       borderWidth:0,
                     },
                     label: {
@@ -134,7 +134,7 @@ export default {
                     name: "抖音",
                     value: "热门短视频提升了品牌讨论热度 \n 2021/1/23",
                     itemStyle:{
-                      color:this.colorList[1],
+                      color:this.colorList[3],
                       borderWidth:0,
                     },
                     label: {
@@ -145,7 +145,7 @@ export default {
                         name: "微信公众号",
                         value: "讨论了消费者吃各类美食时搭配的凉茶品牌",
                         itemStyle:{
-                          color:this.colorList[2],
+                          color:this.colorList[3],
                           borderWidth:0,
                         },
                         label: {
@@ -156,7 +156,7 @@ export default {
                         name: "一点资讯",
                         value: "简要描述了该事件：百万级的点赞量及万余计的转发",
                         itemStyle:{
-                          color:this.colorList[2],
+                          color:this.colorList[3],
                           borderWidth:0,
                         },
                         label: {
@@ -167,7 +167,7 @@ export default {
                         name:"企鹅号",
                         value:"讨论了消费者吃各类美食时搭配的凉茶品牌",
                         itemStyle:{
-                          color:this.colorList[2],
+                          color:this.colorList[3],
                           borderWidth:0,
                         },
                         label: {
@@ -178,7 +178,7 @@ export default {
                         name:"头条号",
                         value: "简要描述了该事件：百万级的点赞量及万余计的转发",
                         itemStyle:{
-                          color:this.colorList[2],
+                          color:this.colorList[3],
                           borderWidth:0,
                         },
                         label: {
