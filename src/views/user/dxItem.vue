@@ -1529,7 +1529,7 @@
                 align-items: center;
                 background: #FFFFFF;
                 box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-                border-radius: 4px;
+                border-radius: 4px 4px 0 0;
                 border: 1px solid #EAEDF7;
                 z-index: 999;
                 .choice_btn_area{
