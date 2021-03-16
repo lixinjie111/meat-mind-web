@@ -283,9 +283,83 @@
                 </div> -->
 
                 <div class="person_til">用户触达策略</div>
-                <div class="perxon_tab_con">
-                  <div class="perxon_tab_con_lef">投放方案推荐</div>
-                  <div class="perxon_tab_con_rig">自定义媒介投放</div>
+                <div class="person_con_con" ref="person_con_con">
+                  <div class="perxon_tab_con">
+                    <div class="perxon_tab_con_lef" @click="clickPerTab(1)">投放方案推荐</div>
+                    <div class="perxon_tab_con_rig" @click="clickPerTab(0)">自定义媒介投放</div>
+                  </div>
+                  <div class="person_tffatj_con" v-if="ifShowtffatj">
+                    <div class="top_img_con">
+                      <div class="top_img_con_lef">
+                        <img :src="douyIcon" class="douyIcon">
+                        <div class="con_lef_label">抖音</div>
+                        <div class="con_lef_num">￥9,600</div>
+                        <div class="con_lef_label">触达率</div>
+                        <div class="con_lef_num1">46%</div>
+                      </div>
+                      <div class="top_img_con_rig">
+                        <img :src="ttIcon" class="douyIcon">
+                        <div class="con_lef_label">今日头条</div>
+                        <div class="con_lef_num">￥9,200</div>
+                        <div class="con_lef_label">触达率</div>
+                        <div class="con_lef_num1">43%</div>
+                      </div>
+                    </div>
+                    <div class="tf_time">建议投放时间段</div>
+                    <div class="tf_time_txt1">
+                      <div class="cir_txt_con">
+                        <div class="cir_con"></div>
+                        <div class="qu_dao_name">抖音</div>
+                      </div>
+                      <div class="tim_txt_con">22:00 - 22:30</div>
+                    </div>
+                    <div class="tf_time_txt2">
+                      <div class="cir_txt_con">
+                        <div class="cir_con" style="background:#FE774B;"></div>
+                        <div class="qu_dao_name">今日头条</div>
+                      </div>
+                      <div class="tim_txt_con">19:00 - 20:30</div>
+                    </div>
+                    <div class="tf_time">预期效果</div>
+                    <div class="yqxg_con_con">
+                      <div class="yqxg_con_con_item" v-for="(itm,inx) in yqxgList" :key="inx">
+                        <div class="yqxg_til">{{itm.til}}</div>
+                        <div class="yqxg_num_desc">{{itm.desc}}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="person_tffatj_con" v-else>
+                    <div class="tf_time">投放预算 (元)</div>
+                    <div class="tfys_input_con">
+                      <i :class="['iconfont','iconjine']" class="cmon"></i>
+                      <Poptip trigger="focus">
+                          <Input v-model="tfys" placeholder="请输入价格" style="width:173px" />
+                          <div slot="content">{{ formatNumber }}</div>
+                      </Poptip><span class="zhi">至</span>
+                    </div>
+                    <div class="tfys_input_con">
+                      <i :class="['iconfont','iconjine']" class="cmon"></i>
+                      <Poptip trigger="focus">
+                          <Input placeholder="请输入价格" style="width:173px" />
+                          <div slot="content">{{ formatNumber }}</div>
+                      </Poptip>
+                    </div>
+                    <div class="tf_time">选择投放媒介</div>
+                    <div class="tfmjchoice_con">
+                      <div class="meijie_item" :class="{'actBor':itm.check}" v-for="(itm,inx) in meijieList" :key="inx">
+                        <Checkbox v-model="itm.check"></Checkbox>
+                        <img :src="itm.srcIm" class="srcIMG">
+                        <div class="qudtil">{{itm.til}}</div>
+                      </div>
+                    </div>
+                    <div class="tf_time">投放建议及预期</div>
+                    <div class="yqxg_con_con">
+                      <div class="yqxg_con_con_item" v-for="(itm,inx) in yqxgList" :key="inx">
+                        <div class="yqxg_til">{{itm.til}}</div>
+                        <div class="yqxg_num_desc">{{itm.desc}}</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
             </div>
             <div class="yhxw_container">
@@ -638,7 +712,51 @@
                   ticList:null
                  }
                ],
-               ifShowtcon:true
+               ifShowtcon:true,
+               douyIcon:require("../../assets/img/yhhx/dyI.png"),
+               ttIcon:require("../../assets/img/yhhx/tt.png"),
+               yqxgList:[
+                 {
+                   til:'触达用户：',
+                   desc:'28万'
+                 },
+                 {
+                   til:'互动量提升：',
+                   desc:'12%'
+                 },
+                 {
+                   til:'品牌印象提升：',
+                   desc:'7%'
+                 },
+                 {
+                   til:'销售转化率：',
+                   desc:'3%'
+                 },
+               ],
+               ifShowtffatj:true,
+               tfys:'15000元',
+               meijieList:[
+                 {
+                   check:true,
+                   srcIm:require("../../assets/img/yhhx/xhs.png"),
+                   til:'小红书'
+                 },
+                 {
+                   check:true,
+                   srcIm:require("../../assets/img/yhhx/tt.png"),
+                   til:'头条'
+                 },
+                 {
+                   check:false,
+                   srcIm:require("../../assets/img/yhhx/ks.png"),
+                   til:'快手'
+                 },
+                 {
+                   check:false,
+                   srcIm:require("../../assets/img/yhhx/weib1.png"),
+                   til:'微博'
+                 }
+               ]
             }
         },
         mounted(){
@@ -674,8 +792,32 @@
             var cir2 = [116.433529,39.941237];
             this.initMap(path,path1,path2,cir1,cir2,'西城区');
             this.changMbItem(0);
+            this.clickPerTab(1);
+        },
+        computed: {
+            formatNumber () {
+                if (this.tfys === '') return '请输入价格';
+                function parseNumber(str) {
+                    const re = /(?=(?!)(d{3})+$)/g;
+                    return str.replace(re, ',');
+                }
+                return parseNumber(this.tfys);
+            }
         },
         methods:{
+            clickPerTab(arg){
+              var conDom = this.$refs.person_con_con;
+              let actLef = require('../../assets/img/yhhx/actLef.png');
+              let actrig = require('../../assets/img/yhhx/actRig.png');
+              if(arg == 1){
+                conDom.style=`background-image: url(${actLef});background-size: cover;`;
+              }
+              else{
+                conDom.style=`background-image: url(${actrig});background-size: cover;`;
+              }
+              
+              this.ifShowtffatj = arg;
+            },
             changMbItem(arg){
               var tabDom = this.$refs.tab_con;
               var tabDom1 = this.$refs.tab_content_item || [];
@@ -1702,25 +1844,194 @@
               color: #242F57;
               margin-bottom: 15px;
             }
-            .perxon_tab_con{
-              display: flex;
-              .perxon_tab_con_lef,.perxon_tab_con_rig{
-                width: 50%;
-                height: 40px;
-                font-size: 14px;
-                font-family: PingFangSC-Regular, PingFang SC;
-                font-weight: 400;
-                color: #636E95;
-                background-color: darkgoldenrod;
+            .person_con_con{
+              width: 100%;
+              .perxon_tab_con{
                 display: flex;
-                align-items: center;
-                justify-content: center;
+                .perxon_tab_con_lef,.perxon_tab_con_rig{
+                  width: 50%;
+                  height: 40px;
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #636E95;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  &:hover{
+                    cursor: pointer;
+                  }
+                }
               }
-              .perxon_tab_con_lef{
-
-              }
-              .perxon_tab_con_rig{
-
+              .person_tffatj_con{
+                width: 100%;
+                border-radius: 0px 12px 12px 12px;
+                padding-bottom: 20px;
+                box-sizing: border-box;
+                .top_img_con{
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  .top_img_con_lef,.top_img_con_rig{
+                    width: 48%;
+                    margin-top: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    background: rgba(235,236,240,.4);
+                    border-radius: 8px;
+                    .douyIcon{
+                      display: block;
+                      width: 40px;
+                      height: 40px;
+                      margin-top: -16px;
+                      margin-bottom: 4px;
+                    }
+                    .con_lef_label{
+                      font-size: 14px;
+                      font-family: PingFangSC-Regular, PingFang SC;
+                      font-weight: 400;
+                      color: #636E95;
+                    }
+                    .con_lef_num{
+                      font-size: 18px;
+                      font-family: PingFangSC-Semibold, PingFang SC;
+                      font-weight: 600;
+                      color: #242F57;
+                      margin-bottom: 14px;
+                    }
+                    .con_lef_num1{
+                      font-size: 16px;
+                      font-family: PingFangSC-Medium, PingFang SC;
+                      font-weight: 500;
+                      color: #242F57;
+                      margin-bottom: 15px;
+                    }
+                  }
+                }
+                .tf_time{
+                  width: 100%;
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  margin-top: 30px;
+                  margin-bottom: 10px;
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #242F57;
+                }
+                .tfmjchoice_con{
+                  width: 100%;
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  display: flex;
+                  justify-content: space-between;
+                  flex-wrap: wrap;
+                  .meijie_item{
+                    display: flex;
+                    align-items: center;
+                    width: 49%;
+                    padding: 10px 7px;
+                    box-sizing: border-box;
+                    border-radius: 4px;
+                    border: 1px solid #D3E3FF;
+                    margin-bottom: 9px;
+                    .srcIMG{
+                      margin-left: 7px;
+                      display: block;
+                      width: 24px;
+                      height: 24px;
+                      margin-right: 3px;
+                    }
+                    .qudtil{
+                      font-size: 12px;
+                      font-family: PingFangSC-Medium, PingFang SC;
+                      font-weight: 500;
+                      color: #242F57;
+                    }
+                  }
+                  .actBor{
+                    border: 1px solid #2373FF;
+                  }
+                }
+                .tfys_input_con{
+                  width: 100%;
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  margin-bottom: 13px;
+                  display: flex;
+                  align-items: center;
+                  position: relative;
+                  ::v-deep .ivu-poptip .ivu-poptip-rel .ivu-input-type-text .ivu-input-default{
+                    padding-left: 30px !important;
+                  }
+                  .cmon{
+                    position: absolute;
+                    color: #97A0C3;
+                    left: 25px;
+                    z-index: 999;
+                  }
+                  .zhi{
+                    font-size: 12px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #97A0C3;
+                    margin-left: 6px;
+                  }
+                }
+                .tf_time_txt1,.tf_time_txt2{
+                  width: 100%;
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #242F57;
+                  .cir_txt_con{
+                    display: flex;
+                    align-items: center;
+                    .cir_con{
+                      width: 8px;
+                      height: 8px;
+                      background: #2373FF;
+                      border-radius: 50%;
+                      margin-right: 7px;
+                    }
+                  }
+                }
+                .yqxg_con_con{
+                  display: flex;
+                  justify-content: space-between;
+                  flex-wrap: wrap;
+                  padding: 0px 16px;
+                  box-sizing: border-box;
+                  .yqxg_con_con_item{
+                    width: 48%;
+                    margin-bottom:8px;
+                    background: #F0F8FF;
+                    border-radius: 4px;
+                    padding: 7px 10px;
+                    box-sizing: border-box;
+                    .yqxg_til{
+                      width: 100%;
+                      font-size: 11px;
+                      font-family: PingFangSC-Regular, PingFang SC;
+                      font-weight: 400;
+                      color: #636E95;
+                    }
+                    .yqxg_num_desc{
+                      font-size: 16px;
+                      font-family: PingFangSC-Medium, PingFang SC;
+                      font-weight: 500;
+                      color: #2373FF;
+                    }
+                  }
+                }
               }
             }
             // .yhdx_title{
