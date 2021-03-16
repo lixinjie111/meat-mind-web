@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "20412827",
+      "name": "星形line",
+      "font_class": "xingxingline",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "20412825",
+      "name": "新人礼包LINE",
+      "font_class": "xinrenlibaoLINE",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "20412820",
+      "name": "心line",
+      "font_class": "xinline",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "20412821",
+      "name": "心",
+      "font_class": "xin",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "20412815",
+      "name": "更新",
+      "font_class": "gengxin",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "20412807",
+      "name": "转化line",
+      "font_class": "zhuanhualine",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
       "icon_id": "20383006",
       "name": "声音",
       "font_class": "shengyin",

@@ -38,7 +38,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="right-item-bottom">
+                        <div class="right-item-bottom bg1">
                             <p class="p-blue">客群定位较为准确</p>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="right-item-bottom">
+                        <div class="right-item-bottom bg2">
                             <p class="p-orange">媒介能力存在问题</p>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="right-item-bottom">
+                        <div class="right-item-bottom bg3">
                             <p class="p-red">品牌尚有提升空间</p>
                         </div>
                     </div>
@@ -104,7 +104,70 @@
             </div>
             <div class="group-box">
                 <div class="group-map">
-
+                    <div class="left">
+                        <div class="left-top">
+                            <div class="change-group flex" v-for="(item,index) in groupList" :key="index"
+                                 v-if="groupActive == index">
+                                <div class="pre" @click="groupPre(index)"><i class="iconfont iconright-arrow21"></i>
+                                </div>
+                                <div class="info">
+                                    <div class="num">{{index+1}}/{{groupList.length}}</div>
+                                    <div class="rate flex">
+                                        <div>{{item.short}}</div>
+                                        <div>
+                                            <p>{{item.rate}}</p>
+                                            <p>成交率</p>
+                                        </div>
+                                    </div>
+                                    <p class="name">{{item.name}}</p>
+                                    <p class="total">客群人数：{{item.total}}</p>
+                                    <div class="self-latent flex">
+                                        <div>
+                                            <p>{{item.self}}%</p>
+                                            <p>自有客户</p>
+                                        </div>
+                                        <div>
+                                            <p>{{item.latent}}%</p>
+                                            <p>高潜客户</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="next" @click="groupNext(index)"><i class="iconfont iconleft-arrow21"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-list" v-for="(item,index) in  groupList" :key="index"
+                             v-if="groupActive == index">
+                            <div class="left-item">
+                                <div class="blue">身份类</div>
+                                <p v-for="(desc,index) in item.desc1" :key="index">
+                                    <span>{{desc.name}}：</span>
+                                    <span>{{desc.value}}</span>
+                                </p>
+                            </div>
+                            <div class="left-item">
+                                <div class="green">偏好类</div>
+                                <p v-for="(desc,index) in item.desc2" :key="index">
+                                    <span>{{desc.name}}：</span>
+                                    <span>{{desc.value}}</span>
+                                </p>
+                            </div>
+                            <div class="left-item">
+                                <div class="orange">消费类</div>
+                                <p v-for="(desc,index) in item.desc3" :key="index">
+                                    <span>{{desc.name}}：</span>
+                                    <span>{{desc.value}}</span>
+                                </p>
+                            </div>
+                            <div class="left-item">
+                                <div class="yellow">行为类</div>
+                                <p v-for="(desc,index) in item.desc4" :key="index">
+                                    <span>{{desc.name}}：</span>
+                                    <span>{{desc.value}}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <Card title="营销内容方案">
                     <span slot="left" class="sub-title">|  预期销量增长16%</span>
@@ -114,8 +177,8 @@
                             <p>北京上班族，时间和空间制约影响较大，信息获取窗口集中，对于含有“健康”属性的产品营销较为敏感并有着强主观判断力，品牌需要精准把握营销机会，确保营销内容的可信度和高传播力。</p>
                             <div>查看营销内容方案库</div>
                         </div>
-                        <div>
-
+                        <div class="right-content">
+                            <img src="../../assets/img/dashboard/market/group-content@2x.png"/>
                         </div>
                     </div>
                 </Card>
@@ -128,10 +191,43 @@
                             <div>查看KOL带货详情</div>
                         </div>
                         <div class="right-top">
-                           <p>快消品类带货达人TOP3</p>
-                           <div class="right-top-item">
+                            <p>快消品类带货达人TOP3</p>
+                            <div class="right-top-item flex">
+                                <div>
+                                    <img src=""/>
+                                    <div>
+                                        <p>李子柒</p>
+                                        <p>粉丝数：5428.8w | 作品数：718</p>
+                                    </div>
+                                </div>
+                                <div>
 
-                           </div>
+                                </div>
+                            </div>
+                            <div class="right-top-item flex" style="background: #F4F7FC;">
+                                <div>
+                                    <img src=""/>
+                                    <div>
+                                        <p>疯产姐妹</p>
+                                        <p>粉丝数：3608.3w | 作品数：111</p>
+                                    </div>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+                            <div class="right-top-item flex">
+                                <div>
+                                    <img src=""/>
+                                    <div>
+                                        <p>浪胃仙</p>
+                                        <p>粉丝数：3811.7w | 作品数：83</p>
+                                    </div>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </Card>
@@ -411,10 +507,413 @@
         components: {Card, barM},
         data() {
             return {
-                threeActive: 1
+                threeActive: 1,
+                groupActive: 0,
+                groupList: [
+                    {
+
+                        name: '全部客群',
+                        short:'全',
+                        total: 28790,
+                        rate: 80,
+                        self: 23,
+                        latent: 77,
+                        desc1: [
+                            {
+                                name: '婚姻状态',
+                                value: '未婚'
+                            },
+                            {
+                                name: '年龄',
+                                value: '20-29岁'
+                            },
+                            {
+                                name: '学历',
+                                value: '本科以上'
+                            },
+                            {
+                                name: '所属地区',
+                                value: '一线城市'
+                            }
+                        ],
+                        desc2: [
+                            {
+                                name: '关注话题',
+                                value: '#秋天的第一杯奶茶、#低卡糖'
+                            },
+                            {
+                                name: '品类偏好',
+                                value: '水果茶、仙草茶、奶盖茶'
+                            }
+                        ],
+                        desc3: [
+                            {
+                                name: '一年到店频率',
+                                value: '中频'
+                            },
+                            {
+                                name: '总到店次数',
+                                value: '16次'
+                            },
+                            {
+                                name: '月均购物支出',
+                                value: '1100元'
+                            },
+                            {
+                                name: '客单价',
+                                value: '50-100元'
+                            }
+                        ],
+                        desc4: [
+                            {
+                                name: '旗舰店互动',
+                                value: '12757次'
+                            },
+                            {
+                                name: '微信互动次数',
+                                value: '10454次'
+                            },
+                            {
+                                name: '最近互动时间',
+                                value: '1天前'
+                            },
+                            {
+                                name: '线下活动参与',
+                                value: '423次'
+                            },
+                            {
+                                name: '线上直播参与',
+                                value: '2056次'
+                            }
+                        ]
+                    },
+                    {
+
+                        name: '北京上班族',
+                        short:'北',
+                        total: 7930,
+                        rate: 82,
+                        self: 80,
+                        latent: 20,
+                        desc1: [
+                            {
+                                name: '婚姻状态',
+                                value: '未婚&已婚'
+                            },
+                            {
+                                name: '年龄',
+                                value: '25-35岁'
+                            },
+                            {
+                                name: '学历',
+                                value: '专科以上'
+                            },
+                            {
+                                name: '所属地区',
+                                value: '一线城市'
+                            }
+                        ],
+                        desc2: [
+                            {
+                                name: '关注话题',
+                                value: '#一夜暴富、#科技前沿'
+                            },
+                            {
+                                name: '品类偏好',
+                                value: '咖啡、奶茶、绿茶'
+                            }
+                        ],
+                        desc3: [
+                            {
+                                name: '一年到店频率',
+                                value: '高频'
+                            },
+                            {
+                                name: '总到店次数',
+                                value: '36次'
+                            },
+                            {
+                                name: '月均购物支出',
+                                value: '1500元'
+                            },
+                            {
+                                name: '客单价',
+                                value: '30-50元'
+                            }
+                        ],
+                        desc4: [
+                            {
+                                name: '旗舰店互动',
+                                value: '7867次'
+                            },
+                            {
+                                name: '微信互动次数',
+                                value: '19867次'
+                            },
+                            {
+                                name: '最近互动时间',
+                                value: '1天前'
+                            },
+                            {
+                                name: '线下活动参与',
+                                value: '128次'
+                            },
+                            {
+                                name: '线上直播参与',
+                                value: '1755次'
+                            }
+                        ]
+                    },
+                    {
+
+                        name: '全部客群',
+                        short:'全',
+                        total: 28790,
+                        rate: 80,
+                        self: 23,
+                        latent: 77,
+                        desc1: [
+                            {
+                                name: '婚姻状态',
+                                value: '未婚'
+                            },
+                            {
+                                name: '年龄',
+                                value: '20-29岁'
+                            },
+                            {
+                                name: '学历',
+                                value: '本科以上'
+                            },
+                            {
+                                name: '所属地区',
+                                value: '一线城市'
+                            }
+                        ],
+                        desc2: [
+                            {
+                                name: '关注话题',
+                                value: '#秋天的第一杯奶茶、#低卡糖'
+                            },
+                            {
+                                name: '品类偏好',
+                                value: '水果茶、仙草茶、奶盖茶'
+                            }
+                        ],
+                        desc3: [
+                            {
+                                name: '一年到店频率',
+                                value: '中频'
+                            },
+                            {
+                                name: '总到店次数',
+                                value: '16次'
+                            },
+                            {
+                                name: '月均购物支出',
+                                value: '1100元'
+                            },
+                            {
+                                name: '客单价',
+                                value: '50-100元'
+                            }
+                        ],
+                        desc4: [
+                            {
+                                name: '旗舰店互动',
+                                value: '12757次'
+                            },
+                            {
+                                name: '微信互动次数',
+                                value: '10454次'
+                            },
+                            {
+                                name: '最近互动时间',
+                                value: '1天前'
+                            },
+                            {
+                                name: '线下活动参与',
+                                value: '423次'
+                            },
+                            {
+                                name: '线上直播参与',
+                                value: '2056次'
+                            }
+                        ]
+                    },
+                    {
+
+                        name: '全部客群',
+                        short:'全',
+                        total: 28790,
+                        rate: 80,
+                        self: 23,
+                        latent: 77,
+                        desc1: [
+                            {
+                                name: '婚姻状态',
+                                value: '未婚'
+                            },
+                            {
+                                name: '年龄',
+                                value: '20-29岁'
+                            },
+                            {
+                                name: '学历',
+                                value: '本科以上'
+                            },
+                            {
+                                name: '所属地区',
+                                value: '一线城市'
+                            }
+                        ],
+                        desc2: [
+                            {
+                                name: '关注话题',
+                                value: '#秋天的第一杯奶茶、#低卡糖'
+                            },
+                            {
+                                name: '品类偏好',
+                                value: '水果茶、仙草茶、奶盖茶'
+                            }
+                        ],
+                        desc3: [
+                            {
+                                name: '一年到店频率',
+                                value: '中频'
+                            },
+                            {
+                                name: '总到店次数',
+                                value: '16次'
+                            },
+                            {
+                                name: '月均购物支出',
+                                value: '1100元'
+                            },
+                            {
+                                name: '客单价',
+                                value: '50-100元'
+                            }
+                        ],
+                        desc4: [
+                            {
+                                name: '旗舰店互动',
+                                value: '12757次'
+                            },
+                            {
+                                name: '微信互动次数',
+                                value: '10454次'
+                            },
+                            {
+                                name: '最近互动时间',
+                                value: '1天前'
+                            },
+                            {
+                                name: '线下活动参与',
+                                value: '423次'
+                            },
+                            {
+                                name: '线上直播参与',
+                                value: '2056次'
+                            }
+                        ]
+                    },
+                    {
+
+                        name: '全部客群',
+                        short:'全',
+                        total: 28790,
+                        rate: 80,
+                        self: 23,
+                        latent: 77,
+                        desc1: [
+                            {
+                                name: '婚姻状态',
+                                value: '未婚'
+                            },
+                            {
+                                name: '年龄',
+                                value: '20-29岁'
+                            },
+                            {
+                                name: '学历',
+                                value: '本科以上'
+                            },
+                            {
+                                name: '所属地区',
+                                value: '一线城市'
+                            }
+                        ],
+                        desc2: [
+                            {
+                                name: '关注话题',
+                                value: '#秋天的第一杯奶茶、#低卡糖'
+                            },
+                            {
+                                name: '品类偏好',
+                                value: '水果茶、仙草茶、奶盖茶'
+                            }
+                        ],
+                        desc3: [
+                            {
+                                name: '一年到店频率',
+                                value: '中频'
+                            },
+                            {
+                                name: '总到店次数',
+                                value: '16次'
+                            },
+                            {
+                                name: '月均购物支出',
+                                value: '1100元'
+                            },
+                            {
+                                name: '客单价',
+                                value: '50-100元'
+                            }
+                        ],
+                        desc4: [
+                            {
+                                name: '旗舰店互动',
+                                value: '12757次'
+                            },
+                            {
+                                name: '微信互动次数',
+                                value: '10454次'
+                            },
+                            {
+                                name: '最近互动时间',
+                                value: '1天前'
+                            },
+                            {
+                                name: '线下活动参与',
+                                value: '423次'
+                            },
+                            {
+                                name: '线上直播参与',
+                                value: '2056次'
+                            }
+                        ]
+                    },
+                ]
             }
         },
-        methods: {},
+        methods: {
+            groupPre(index) {
+                if (index == 0) {
+                    this.groupActive = this.groupList.length - 1;
+                } else {
+                    this.groupActive = index - 1;
+                }
+            },
+            groupNext(index) {
+                if (index + 1 == this.groupList.length) {
+                    this.groupActive = 0;
+                } else {
+                    this.groupActive = index + 1;
+                }
+            }
+        },
         computed: {}
     }
 </script>
@@ -633,15 +1132,28 @@
                     }
 
                     .right-item-bottom {
+                        margin-top: 16px;
                         min-width: 228px;
                         height: 79px;
-                        background: #D3E3FF;
+                        line-height: 95px;
 
                         > p {
                             font-size: 18px;
                             font-family: PingFangSC-Regular, PingFang SC;
                             font-weight: 400;
                             text-align: center;
+                        }
+
+                        &.bg1 {
+                            background: url("../../assets/img/dashboard/market/mart1@2x.png") no-repeat center center / 100% 100%;
+                        }
+
+                        &.bg2 {
+                            background: url("../../assets/img/dashboard/market/mart2@2x.png") no-repeat center center / 100% 100%;
+                        }
+
+                        &.bg3 {
+                            background: url("../../assets/img/dashboard/market/mart3@2x.png") no-repeat center center / 100% 100%;
                         }
                     }
                 }
@@ -657,10 +1169,200 @@
             }
 
             .group-map {
-                width: 100%;
-                height: 618px;
-                background: #C1DAFE;
                 margin-bottom: 24px;
+
+                .left {
+                    width: 320px;
+                    background: #FFFFFF;
+                    box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+                    border-radius: 8px;
+
+                    .left-top {
+                        .change-group {
+                            .pre, .next {
+                                width: 24px;
+                                height: 40px;
+                                line-height: 40px;
+                                background: #F4F7FC;
+                                border-radius: 8px 0px 0px 8px;
+                                text-align: center;
+                                cursor: pointer;
+                            }
+
+                            .info {
+                                position: relative;
+
+                                .num {
+                                    position: absolute;
+                                    top: 14px;
+                                    left: 0;
+                                    width: 40px;
+                                    height: 24px;
+                                    line-height: 24px;
+                                    border-radius: 4px;
+                                    border: 1px solid #EAEDF7;
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-weight: 500;
+                                    color: #7C88B1;
+                                    text-align: center;
+                                }
+
+                                .rate {
+                                    width: 128px;
+                                    height: 64px;
+                                    background: #FFFFFF;
+                                    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+                                    border-radius: 4px;
+                                    border: 1px solid #EAEDF7;
+                                    margin: 48px auto 8px;
+
+                                    >div {
+                                      &:first-child {
+                                          display: flex;
+                                          justify-content: center;
+                                          align-items: center;
+                                          width: 64px;
+                                          height: 64px;
+                                          background: #DBE9FF;
+                                          font-size: 38px;
+                                          font-family: PingFangSC-Medium, PingFang SC;
+                                          font-weight: 500;
+                                          color: #2373FF
+                                      }
+
+                                      &:last-child {
+                                          width: 64px;
+                                          height: 64px;
+                                          text-align: center;
+
+                                          > p {
+                                              font-size: 12px;
+                                              font-family: PingFangSC-Medium, PingFang SC;
+                                              font-weight: 500;
+                                              color: #97A0C3;
+
+                                              &:first-child {
+                                                  font-size: 24px;
+                                                  font-family: PingFangSC-Medium, PingFang SC;
+                                                  font-weight: 500;
+                                                  color: #1DCEC3;
+                                              }
+                                          }
+                                      }
+                                    }
+                                }
+
+                                .name {
+                                    font-size: 18px;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-weight: 500;
+                                    color: #242F57;
+                                    text-align: center;
+                                }
+
+                                .total {
+                                    font-size: 12px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #97A0C3;
+                                    text-align: center;
+                                }
+
+                                .self-latent {
+                                    margin-top: 12px;
+
+                                    >div {
+                                        width: 140px;
+                                        text-align: center;
+
+                                        >p {
+                                            font-size: 12px;
+                                            font-family: PingFangSC-Regular, PingFang SC;
+                                            font-weight: 400;
+                                            color: #97A0C3;
+
+                                            &:first-child {
+                                                font-size: 16px;
+                                                font-family: PingFangSC-Medium, PingFang SC;
+                                                font-weight: 500;
+                                                color: #242F57;
+                                            }
+                                        }
+
+                                        &:first-child {
+                                            border-right: 1px solid #EAEDF7;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .left-list {
+                        padding: 12px;
+
+                        .left-item {
+                            padding: 4px 8px;
+                            margin-top: 8px;
+                            width: 296px;
+                            background: #F4F7FC;
+                            border-radius: 4px;
+
+                            > p {
+                                display: inline-block;
+                                margin-top: 4px;
+                                margin-right: 16px;
+                                font-size: 12px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #97A0C3;
+                            }
+
+                            > div {
+                                position: relative;
+                                margin-bottom: 4px;
+                                font-size: 12px;
+                                font-family: PingFangSC-Medium, PingFang SC;
+                                font-weight: 500;
+                                color: #242F57;
+
+                                &:before {
+                                    position: absolute;
+                                    left: -8px;
+                                    top: 3px;
+                                    content: '';
+                                    width: 4px;
+                                    height: 12px;
+                                }
+
+                                &.blue {
+                                    &:before {
+                                        background: #2373FF;
+                                    }
+                                }
+
+                                &.orange {
+                                    &:before {
+                                        background: #FE774B;
+                                    }
+                                }
+
+                                &.green {
+                                    &:before {
+                                        background: #1DCEC3;
+                                    }
+                                }
+
+                                &.yellow {
+                                    &:before {
+                                        background: #FDD352;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
             .group-content {
@@ -696,6 +1398,63 @@
                         font-family: PingFangSC-Medium, PingFang SC;
                         font-weight: 500;
                         color: #2373FF
+                    }
+                }
+
+                .right-content {
+                    margin-top: -36px;
+                    margin-left: 34px;
+
+                    > img {
+                        width: 540px;
+                        height: 170px;
+                    }
+                }
+
+                .right-top {
+                    margin-top: -36px;
+                    margin-left: 24px;
+
+                    > p {
+                        font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #7C88B1;
+                    }
+
+                    .right-top-item {
+                        padding: 8px;
+
+                        > div {
+                            &:nth-child(1) {
+                                > img {
+                                    width: 32px;
+                                    height: 32px;
+                                }
+
+                                > div {
+                                    margin-left: 8px;
+                                    display: inline-block;
+                                    vertical-align: top;
+
+                                    > p {
+                                        font-size: 12px;
+                                        font-family: PingFangSC-Medium, PingFang SC;
+                                        font-weight: 500;
+                                        color: #7C88B1;
+
+                                        &:last-child {
+                                            margin-left: -14px;
+                                            transform: scale(0.83);
+                                        }
+                                    }
+                                }
+                            }
+
+                            &:nth-child(2) {
+
+                            }
+                        }
                     }
                 }
             }
