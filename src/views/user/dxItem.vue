@@ -291,34 +291,34 @@
                   <div class="person_tffatj_con" v-if="ifShowtffatj">
                     <div class="top_img_con">
                       <div class="top_img_con_lef">
-                        <img :src="douyIcon" class="douyIcon">
-                        <div class="con_lef_label">抖音</div>
-                        <div class="con_lef_num">￥9,600</div>
+                        <img :src="fanganObj.qdObj1.icon" class="douyIcon">
+                        <div class="con_lef_label">{{fanganObj.qdObj1.name}}</div>
+                        <div class="con_lef_num">{{fanganObj.qdObj1.money}}</div>
                         <div class="con_lef_label">触达率</div>
-                        <div class="con_lef_num1">46%</div>
+                        <div class="con_lef_num1">{{fanganObj.qdObj1.vdlNum}}</div>
                       </div>
                       <div class="top_img_con_rig">
-                        <img :src="ttIcon" class="douyIcon">
-                        <div class="con_lef_label">今日头条</div>
-                        <div class="con_lef_num">￥9,200</div>
+                        <img :src="fanganObj.qdObj2.icon" class="douyIcon">
+                        <div class="con_lef_label">{{fanganObj.qdObj2.name}}</div>
+                        <div class="con_lef_num">{{fanganObj.qdObj2.money}}</div>
                         <div class="con_lef_label">触达率</div>
-                        <div class="con_lef_num1">43%</div>
+                        <div class="con_lef_num1">{{fanganObj.qdObj2.vdlNum}}</div>
                       </div>
                     </div>
                     <div class="tf_time">建议投放时间段</div>
                     <div class="tf_time_txt1">
                       <div class="cir_txt_con">
                         <div class="cir_con"></div>
-                        <div class="qu_dao_name">抖音</div>
+                        <div class="qu_dao_name">{{fanganObj.qdObj1.name}}</div>
                       </div>
-                      <div class="tim_txt_con">22:00 - 22:30</div>
+                      <div class="tim_txt_con">{{fanganObj.qdObj1.timeRang}}</div>
                     </div>
                     <div class="tf_time_txt2">
                       <div class="cir_txt_con">
                         <div class="cir_con" style="background:#FE774B;"></div>
-                        <div class="qu_dao_name">今日头条</div>
+                        <div class="qu_dao_name">{{fanganObj.qdObj2.name}}</div>
                       </div>
-                      <div class="tim_txt_con">19:00 - 20:30</div>
+                      <div class="tim_txt_con">{{fanganObj.qdObj2.timeRang}}</div>
                     </div>
                     <div class="tf_time">预期效果</div>
                     <div class="yqxg_con_con">
@@ -717,8 +717,6 @@
                  }
                ],
                ifShowtcon:true,
-               douyIcon:require("../../assets/img/yhhx/dyI.png"),
-               ttIcon:require("../../assets/img/yhhx/tt.png"),
                yqxgList:[
                  {
                    til:'触达用户：',
@@ -778,7 +776,71 @@
                    srcIm:require("../../assets/img/yhhx/weib1.png"),
                    til:'微博'
                  }
-               ]
+               ],
+               fanganObj:{
+                 qdObj1:{
+                  icon: require("../../assets/img/yhhx/tt.png"),
+                  name:'今日头条',
+                  money:'￥9200',
+                  vdlNum:'53%',
+                  timeRang:'8:00 - 9:30'
+                 },
+                 qdObj2:{
+                  icon: require("../../assets/img/yhhx/wyIcon.png"),
+                  name:'网易',
+                  money:'￥3200',
+                  vdlNum:'43%',
+                  timeRang:'7:40-8:30'
+                 }
+               },
+               fanganObj1:{
+                 qdObj1:{
+                  icon: require("../../assets/img/yhhx/tt.png"),
+                  name:'今日头条',
+                  money:'￥9200',
+                  vdlNum:'53%',
+                  timeRang:'8:00 - 9:30'
+                 },
+                 qdObj2:{
+                  icon: require("../../assets/img/yhhx/wyIcon.png"),
+                  name:'网易',
+                  money:'￥3200',
+                  vdlNum:'43%',
+                  timeRang:'7:40 - 8:30'
+                 }
+               },
+               fanganObj2:{
+                 qdObj1:{
+                  icon: require("../../assets/img/yhhx/wx.jpeg"),
+                  name:'微信',
+                  money:'￥7200',
+                  vdlNum:'43%',
+                  timeRang:'12:00 - 1:00'
+                 },
+                 qdObj2:{
+                  icon: require("../../assets/img/yhhx/dz.jpg"),
+                  name:'大众点评',
+                  money:'￥2200',
+                  vdlNum:'30%',
+                  timeRang:'11:20 - 12:30'
+                 }
+               },
+               fanganObj3:{
+                 qdObj1:{
+                  icon: require("../../assets/img/yhhx/dyI.png"),
+                  name:'抖音',
+                  money:'￥17200',
+                  vdlNum:'73%',
+                  timeRang:'19:00-23:00'
+                 },
+                 qdObj2:{
+                  icon: require("../../assets/img/yhhx/weib1.png"),
+                  name:'新浪微博',
+                  money:'￥5200',
+                  vdlNum:'40%',
+                  timeRang:'19:20-22:30'
+                 }
+               }
             }
         },
         mounted(){
@@ -1042,6 +1104,25 @@
                     timeN: 30
                   }
                 };
+                this.fanganObj = this.fanganObj1;
+                this.yqxgList = [
+                 {
+                   til:'触达用户：',
+                   desc:'28万'
+                 },
+                 {
+                   til:'互动量提升：',
+                   desc:'12%'
+                 },
+                 {
+                   til:'品牌印象提升：',
+                   desc:'7%'
+                 },
+                 {
+                   til:'销售转化率：',
+                   desc:'3%'
+                 },
+                ];
               }
               else if (arg == 12 || arg == 14 || arg == 16) {
                 // this.timeType = arg;
@@ -1094,6 +1175,25 @@
                     timeN: 10
                   }
                 };
+                this.fanganObj = this.fanganObj2;
+                this.yqxgList = [
+                 {
+                   til:'触达用户：',
+                   desc:'20万'
+                 },
+                 {
+                   til:'互动量提升：',
+                   desc:'10%'
+                 },
+                 {
+                   til:'品牌印象提升：',
+                   desc:'5%'
+                 },
+                 {
+                   til:'销售转化率：',
+                   desc:'3%'
+                 },
+                ];
               }
               else if (arg == 18 || arg == 20) {
                 // this.timeType = arg;
@@ -1148,6 +1248,25 @@
                     timeN: 30
                   }
                 };
+                this.fanganObj = this.fanganObj3;
+                this.yqxgList = [
+                 {
+                   til:'触达用户：',
+                   desc:'60万'
+                 },
+                 {
+                   til:'互动量提升：',
+                   desc:'20%'
+                 },
+                 {
+                   til:'品牌印象提升：',
+                   desc:'9%'
+                 },
+                 {
+                   til:'销售转化率：',
+                   desc:'6%'
+                 },
+                ];
               }
               this.changeBqitm(arg)
             },
@@ -1908,6 +2027,7 @@
                       display: block;
                       width: 40px;
                       height: 40px;
+                      border-radius: 50%;
                       margin-top: -16px;
                       margin-bottom: 4px;
                     }
