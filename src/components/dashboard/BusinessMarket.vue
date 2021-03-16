@@ -19,26 +19,77 @@
                 <div class="right flex">
                     <div class="right-item">
                         <div class="right-item-top">
-
+                            <div class="top">
+                                <div class="top-icon blue"><i class="iconfont iconyonghu"></i></div>
+                                <div class="top-title">
+                                    <p class="p-blue">78</p>
+                                    <p>客群定位</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="bottom-item flex">
+                                    <p>客群覆盖度</p><i class="iconfont iconduigou1"></i>
+                                </div>
+                                <div class="bottom-item flex">
+                                    <p>目标客群心智拟合度</p><i class="iconfont iconguanyu"></i>
+                                </div>
+                                <div class="bottom-item flex">
+                                    <p>用户增长趋势</p><i class="iconfont iconduigou1"></i>
+                                </div>
+                            </div>
                         </div>
                         <div class="right-item-bottom">
-
+                            <p class="p-blue">客群定位较为准确</p>
                         </div>
                     </div>
                     <div class="right-item">
                         <div class="right-item-top">
-
+                            <div class="top">
+                                <div class="top-icon orange"><i class="iconfont iconxingxing"></i></div>
+                                <div class="top-title">
+                                    <p class="p-orange">46</p>
+                                    <p>媒介评测</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="bottom-item flex">
+                                    <p>媒介匹配度</p><i class="iconfont iconduigou1"></i>
+                                </div>
+                                <div class="bottom-item flex">
+                                    <p>媒介传播效率</p><i class="iconfont iconguanyu"></i>
+                                </div>
+                                <div class="bottom-item flex">
+                                    <p>品牌媒介分布</p><i class="iconfont iconguanyu"></i>
+                                </div>
+                            </div>
                         </div>
                         <div class="right-item-bottom">
-
+                            <p class="p-orange">媒介能力存在问题</p>
                         </div>
                     </div>
                     <div class="right-item">
                         <div class="right-item-top">
-
+                            <div class="top">
+                                <div class="top-icon red"><i class="iconfont iconpinpaihuaxiang"></i></div>
+                                <div class="top-title">
+                                    <p class="p-red">32</p>
+                                    <p>品牌评价</p>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <div class="bottom-item flex">
+                                    <p>品牌受众匹配度</p><i class="iconfont iconduigou1"></i>
+                                </div>
+                                <div class="bottom-item flex">
+                                    <p>品牌心智占有率</p><i class="iconfont iconguanyu"></i>
+                                </div>
+                                <div class="bottom-item flex">
+                                    <p>公关事件响应策略</p><i class="iconfont iconguanyu"></i>
+                                </div>
+                            </div>
                         </div>
                         <div class="right-item-bottom">
-
+                            <p class="p-red">品牌尚有提升空间</p>
                         </div>
                     </div>
                 </div>
@@ -52,11 +103,37 @@
                 </div>
             </div>
             <div class="group-box">
+                <div class="group-map">
+
+                </div>
                 <Card title="营销内容方案">
                     <span slot="left" class="sub-title">|  预期销量增长16%</span>
+                    <div class="group-content flex">
+                        <div class="left">
+                            <p>制作以<span>汉方</span>、<span>懒人随身饮</span>和<span>健康茶饮</span>为主题的营销内容</p>
+                            <p>北京上班族，时间和空间制约影响较大，信息获取窗口集中，对于含有“健康”属性的产品营销较为敏感并有着强主观判断力，品牌需要精准把握营销机会，确保营销内容的可信度和高传播力。</p>
+                            <div>查看营销内容方案库</div>
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
                 </Card>
                 <Card title="渠道投放方案">
                     <span slot="left" class="sub-title">|  预期销量增长56%</span>
+                    <div class="group-content flex-start">
+                        <div class="left">
+                            <p>在抖音“<span>健康生活</span>”频道，通过品牌签约的KOL进行品牌内容广告投放</p>
+                            <p>北京上班族在通勤路上与工作休息时段使用抖音频率高，从互动情况分析主要是为了缓解紧张情绪，适时推送相关营销内容易于被接受。</p>
+                            <div>查看KOL带货详情</div>
+                        </div>
+                        <div class="right-top">
+                           <p>快消品类带货达人TOP3</p>
+                           <div class="right-top-item">
+
+                           </div>
+                        </div>
+                    </div>
                 </Card>
             </div>
         </div>
@@ -379,6 +456,7 @@
                         color: #242F57;
 
                         &:nth-child(2) {
+                            margin-top: 12px;
                             font-size: 14px;
                             font-family: PingFangSC-Regular, PingFang SC;
                             font-weight: 400;
@@ -443,19 +521,128 @@
                 width: calc(100% - 420px);
 
                 .right-item {
+                    .p-blue {
+                        color: #2373FF;
+                    }
+
+                    .p-orange {
+                        color: #FE774B;
+                    }
+
+                    .p-red {
+                        color: #FF4C60;
+                    }
+
                     .right-item-top {
+                        padding: 24px;
                         min-width: 228px;
                         height: 320px;
                         background: #FFFFFF;
                         box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
                         border-radius: 8px;
+
+                        .top {
+                            display: flex;
+
+                            .top-icon {
+                                width: 72px;
+                                height: 72px;
+                                line-height: 72px;
+                                border-radius: 12px;
+                                text-align: center;
+
+                                > i {
+                                    font-size: 48px;
+                                }
+
+                                &.blue {
+                                    background: rgba(211, 227, 255, .3);
+
+                                    > i {
+                                        color: #2373FF;
+                                    }
+                                }
+
+                                &.orange {
+                                    background: rgba(255, 230, 222, .3);
+
+                                    > i {
+                                        color: #FE774B;
+                                    }
+                                }
+
+                                &.red {
+                                    background: rgba(254, 223, 225, .3);
+
+                                    > i {
+                                        color: #FF4C60;
+                                    }
+                                }
+                            }
+
+                            .top-title {
+                                margin-left: 8px;
+
+                                > p {
+                                    margin-top: 5px;
+                                    font-size: 18px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #7C88B1;
+                                    line-height: 25px;
+
+                                    &:first-child {
+                                        font-size: 32px;
+                                        font-family: PingFangSC-Medium, PingFang SC;
+                                        font-weight: 500;
+                                        line-height: 32px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .bottom {
+                            margin-top: 32px;
+
+                            .bottom-item {
+                                margin-top: 8px;
+                                padding: 14px 12px;
+                                width: 180px;
+                                height: 48px;
+                                background: rgba(211, 227, 255, .3);
+                                border-radius: 8px;
+
+                                > p {
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #242F57;
+                                }
+
+                                > i {
+                                    &.iconduigou1 {
+                                        color: #08BD6C;
+                                    }
+
+                                    &.iconguanyu {
+                                        color: #FF8359;
+                                    }
+                                }
+                            }
+                        }
                     }
 
                     .right-item-bottom {
                         min-width: 228px;
                         height: 79px;
                         background: #D3E3FF;
-                        border: 1px solid #2373FF
+
+                        > p {
+                            font-size: 18px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            text-align: center;
+                        }
                     }
                 }
             }
@@ -467,6 +654,50 @@
                 font-size: 14px !important;
                 font-weight: 400 !important;
                 color: #7C88B1 !important;
+            }
+
+            .group-map {
+                width: 100%;
+                height: 618px;
+                background: #C1DAFE;
+                margin-bottom: 24px;
+            }
+
+            .group-content {
+                padding-bottom: 24px;
+
+                > div {
+                    width: 50%;
+                }
+
+                .left {
+                    > p {
+                        font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #7C88B1;
+
+                        &:first-child {
+                            margin-bottom: 8px;
+                            font-size: 14px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 500;
+                            color: #242F57;
+
+                            > span {
+                                color: #2373FF;
+                            }
+                        }
+                    }
+
+                    > div {
+                        margin-top: 44px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #2373FF
+                    }
+                }
             }
         }
 
