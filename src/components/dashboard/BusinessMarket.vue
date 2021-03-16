@@ -434,7 +434,7 @@
 </style>
 <style scoped lang="scss">
     .market-box {
-        padding: 0 24px 24px 24px;
+        /*padding: 0 24px 24px 24px;*/
 
         .tips {
             margin-top: 8px;

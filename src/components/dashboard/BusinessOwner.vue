@@ -1,72 +1,83 @@
 <template>
     <div class="business-box">
-        <Tabs :animated="false">
-            <TabPane label="营销洞察">
-                <BusinessMarket></BusinessMarket>
-                <div class="report-btn">
-                    <img src="../../assets/img/dashboard/downLoad.png" class="btn-download"/>
-                    <span class="btn-txt">一键生成洞察报告</span>
-                </div>
-            </TabPane>
-            <TabPane label="经营诊断">
-                <BusinessManage></BusinessManage>
-                <div class="report-btn">
-                    <img src="../../assets/img/dashboard/downLoad.png" class="btn-download"/>
-                    <span class="btn-txt">一键生成诊断报告</span>
-                </div>
-            </TabPane>
-        </Tabs>
+        <p class="business-title">Dashboard</p>
+        <Tab :tab-list="['营销洞察','经营诊断']" @change="changeTab"></Tab>
+        <div v-if="tabActive == 1">
+            <BusinessMarket></BusinessMarket>
+            <div class="report-btn">
+                <i class="iconfont iconxiazai"/>
+                <span class="btn-txt">一键生成洞察报告</span>
+            </div>
+        </div>
+        <div v-else>
+            <BusinessManage></BusinessManage>
+            <div class="report-btn">
+                <i class="iconfont iconxiazai"/>
+                <span class="btn-txt">一键生成诊断报告</span>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
     import BusinessManage from "./BusinessManage";
     import BusinessMarket from "./BusinessMarket";
+    import Tab from "../../components/Tab"
 
     export default {
         name: "BusinessOwner",
-        components: {BusinessMarket, BusinessManage},
+        components: {BusinessMarket, BusinessManage, Tab},
         data() {
             return {
                 tabActive: 1
             }
         },
+        methods: {
+            changeTab(index) {
+                this.tabActive = index;
+            }
+        }
     }
 </script>
 
 <style scoped lang="scss">
     .business-box {
         position: relative;
+        padding: 24px;
 
         ::v-deep .ivu-tabs-bar {
             margin-top: 14px;
         }
 
-        ::v-deep .ivu-tabs-nav {
-            margin-left: 16px;
-        }
-        .report-btn {
-            position: absolute;
-            right: 24px;
-            top: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 169px;
-            height: 40px;
-            background: linear-gradient(139deg, #F0F3F6 0%, #FFFFFF 100%);
-            box-shadow: 4px 4px 16px 0px rgba(55, 84, 170, 0.16), -4px -4px 16px 0px #FFFFFF, 1px 1px 0px 0px #FFFFFF;
-            border-radius: 8px;
-            font-size: 14px;
+        .business-title {
+            margin-bottom: 24px;
+            font-size: 24px;
             font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;
             color: #242F57;
+            line-height: 32px
+        }
 
-            .btn-download {
-                display: block;
-                width: 14px;
-                height: 14px;
-                margin-right: 3px;
+        .report-btn {
+            position: absolute;
+            right: 24px;
+            top: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 164px;
+            height: 40px;
+            background: #2373FF;
+            box-shadow: 3px 4px 8px 0px rgba(36, 47, 87, 0.1);
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #FFFFFF;
+
+            > i {
+                margin-right: 8px;
+                color: #ffffff;
             }
         }
     }
