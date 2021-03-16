@@ -353,10 +353,14 @@
                       </div>
                     </div>
                     <div class="tf_time">投放建议及预期</div>
+                    <div class="radio_txt_con">
+                      <div class="radio_cir"></div>
+                      <div class="radio_txt">小红书</div>
+                    </div>
                     <div class="yqxg_con_con">
-                      <div class="yqxg_con_con_item" v-for="(itm,inx) in yqxgList" :key="inx">
+                      <div class="yqxg_con_con_item" v-for="(itm,inx) in yqxgList1" :key="inx">
                         <div class="yqxg_til">{{itm.til}}</div>
-                        <div class="yqxg_num_desc">{{itm.desc}}</div>
+                        <div class="yqxg_num_desc yqxg_num_desc1">{{itm.desc}}</div>
                       </div>
                     </div>
                   </div>
@@ -380,7 +384,7 @@
                 </div>
                 <div class="tab_con" ref="tab_con">
                   <div class="tab_content" v-if="ifShowtcon">
-                    <div class="tab_content_item" ref="tab_content_item" v-for="(item,index) in tabconList" :key="index" :class="{'remb':((index==5 || index==6) || (item.til == '话题偏好' || item.til == '个人标签'))}">
+                    <div class="tab_content_item" ref="tab_content_item" v-for="(item,index) in tabconList" :key="index" :class="{'remb':((index==5 || index==6))}">
                       <div class="tab_content_item_top">{{item.til}}</div>
                       <div class="tab_content_item_bom" v-if="item.descList">
                          <div class="tab_content_item_bom_item" v-for="(itm1,inx) in item.descList" :key="inx">{{itm1}}</div>
@@ -733,6 +737,24 @@
                    desc:'3%'
                  },
                ],
+               yqxgList1:[
+                 {
+                   til:'触达率',
+                   desc:'46%'
+                 },
+                 {
+                   til:'投放成本',
+                   desc:'¥2300/千人'
+                 },
+                 {
+                   til:'投放金额',
+                   desc:'¥9,900'
+                 },
+                 {
+                   til:'投放时间',
+                   desc:'22:00 - 22:30'
+                 },
+               ],
                ifShowtffatj:true,
                tfys:'15000元',
                meijieList:[
@@ -831,7 +853,7 @@
                 tabDom.style=` background:${bgc0};`;
                 this.tabconList = this.tabconList0;
                 for(var i=0;i<tabDom1.length;i++){
-                  tabDom1[i].style=" margin-right: 60px;";
+                  tabDom1[i].style=" margin-right: 45px;";
                 }
               }
               else if(arg == 1){
@@ -847,7 +869,7 @@
                 tabDom.style=` background: ${bgc2};`;
                 this.tabconList = this.tabconList2;
                 for(var i=0;i<tabDom1.length;i++){
-                  tabDom1[i].style=" margin-right: 50px;";
+                  tabDom1[i].style=" margin-right: 25px;";
                 }
               }
               else if(arg == 3){
@@ -1483,7 +1505,7 @@
     width: 100%;
     position: relative;
     .test_container1.width{
-        width: 792px;
+        width: 692px;
     }
     .test_container1{
         height: 80px;
@@ -1603,12 +1625,12 @@
             }
         }
         .per_info_container{
-            width: 270px;
+            width: 370px;
             height: 100%;
         }
     }
     .conditions_container-box.width{
-        width: 792px;
+        width: 692px;
     }
     .conditions_container-box{
         position: absolute;
@@ -1675,7 +1697,7 @@
         position: absolute;
         left: 1.9%;
         top: 168px;
-        width: 787.06px;
+        width: 692px;
         z-index: 1000;
         height: 557px;
         background: #FFF;
@@ -1830,7 +1852,7 @@
             align-items: center;
         }
         .per_info_container{
-            width: 270px;
+            width: 370px;
             height: 100%;
             padding:17px 16px;
             box-sizing: border-box;
@@ -2004,6 +2026,28 @@
                     }
                   }
                 }
+                .radio_txt_con{
+                  width: 100%;
+                  display: flex;
+                  align-items: center;
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  margin-bottom: 7px;
+                  .radio_cir{
+                    display: block;
+                    width: 8px;
+                    height: 8px;
+                    background: #2373FF;
+                    border-radius: 50%;
+                    margin-right: 7px;
+                  }
+                  .radio_txt{
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #242F57;
+                  }
+                }
                 .yqxg_con_con{
                   display: flex;
                   justify-content: space-between;
@@ -2026,6 +2070,12 @@
                     }
                     .yqxg_num_desc{
                       font-size: 16px;
+                      font-family: PingFangSC-Medium, PingFang SC;
+                      font-weight: 500;
+                      color: #2373FF;
+                    }
+                    .yqxg_num_desc1{
+                      font-size: 14px;
                       font-family: PingFangSC-Medium, PingFang SC;
                       font-weight: 500;
                       color: #2373FF;
@@ -2339,7 +2389,7 @@
         }
         .yhxw_container{
             position: absolute;
-            width: 71%;
+            width: 61%;
             bottom: 20px;
             left: 20px;
             z-index: 999;
@@ -2383,7 +2433,7 @@
                 display: flex;
                 flex-wrap: wrap;
                 .tab_content_item{
-                  margin-right: 50px;
+                  margin-right: 10px;
                   display: flex;
                   flex-direction: column;
                   align-items: flex-start;
