@@ -244,7 +244,7 @@
 	import barHM from './common/bar/barHM';
 	import lineSp from './common/line/lineSp';
 	import pieP from './common/pie/pieP';
-	import pieP1 from './common/pie/pieP1';
+	import pieP1 from './common/pie/PieOne1';
 	import PieNest1 from './common/pie/PieNest1';
     export default {
 		name:"barView",

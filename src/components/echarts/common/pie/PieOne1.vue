@@ -77,8 +77,11 @@ export default {
 						type: 'pie',
 						radius: ['84%', '87.5%'],
 						avoidLabelOverlap: false,
+						hoverAnimation: false,
 						itemStyle: {
 							borderRadius: 30,
+							shadowBlur: 20,
+							shadowColor: 'rgba(35,115,255, 0.3)',
 						},
 						label: {
 							show: false,
@@ -90,6 +93,18 @@ export default {
 						data: [
 							{value: value},
 							{value: 100 - value},
+						]
+					},
+					{
+						type: 'pie',
+						radius: [0, '84%'],
+						hoverAnimation: false,
+						labelLine: {
+							show: false
+						},
+						data: [
+							{value: 0},
+							{value: 1},
 						]
 					}
 				]
