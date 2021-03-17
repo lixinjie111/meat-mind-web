@@ -2289,7 +2289,7 @@ export default {
       margin-bottom: 16px;
       box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
       .lef_area{
-        width: 334px;
+        width: 193px;
         height: 100%;
         border-right:1px solid #EAEDF7;
         .lef_area_top{
@@ -2350,16 +2350,15 @@ export default {
         }
       }
       .cen_area{
-        flex-grow: 1;
+        flex: 1;
         height: 100%;
         .cen_areaImg{
           display: block;
           width: 100%;
-          height: 100%;
         }
       }
       .rig_area{
-        width: 470px;
+        width: 300px;
         height: 100%;
         border-left:1px solid #EAEDF7;
         padding:16px;
