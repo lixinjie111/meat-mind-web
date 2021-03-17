@@ -874,7 +874,7 @@
             ];
             var cir1 = [116.310356,39.932426];
             var cir2 = [116.433529,39.941237];
-            this.initMap(path,path1,path2,cir1,cir2,'西城区');
+            this.initMap(path,path1,path2,cir1,cir2,'中国');
             this.changMbItem(0);
             this.clickPerTab(1);
         },
@@ -1045,7 +1045,10 @@
                     ];
                     var cir1 = [116.310356,39.932426];
                     var cir2 = [116.433529,39.941237];
-                    this.initMap(path,path1,path2,cir1,cir2,'朝阳区');
+                    this.initMap(path,path1,path2,cir1,cir2,'中国');
+                    setTimeout(()=>{
+                      this.initMap(path,path1,path2,cir1,cir2,'朝阳区');
+                    },1000);
                 }
             },
             clickTime(arg){
@@ -1083,7 +1086,7 @@
                 ];
                 var cir1 = [116.310356, 39.932426];
                 var cir2 = [116.433529, 39.941237];
-                this.initMap(path, path1, path2, cir1, cir2, '西城区');
+                this.initMap(path, path1, path2, cir1, cir2, '中国');
                 this.rightPanelData = {
                   userStatObj: {
                     stat1: 16,
@@ -1157,7 +1160,7 @@
                 ];
                 var cir1 = [116.274969, 39.92418];
                 var cir2 = [116.288616, 39.965768];
-                this.initMap(path, path1, path2, cir1, cir2, '海淀区');
+                this.initMap(path, path1, path2, cir1, cir2, '中国');
                 this.rightPanelData = {
                   userStatObj: {
                     stat1: 37,
@@ -1227,7 +1230,7 @@
                 ];
                 var cir1 = [116.373332, 39.924206];
                 var cir2 = [116.427341, 39.902842];
-                this.initMap(path, path1, path2, cir1, cir2, '西城区');
+                this.initMap(path, path1, path2, cir1, cir2, '中国');
                 this.rightPanelData = {
                   userStatObj: {
                     stat1: 25,
@@ -1316,7 +1319,7 @@
                         }
                     }
                     map.add(polygons);
-                    // map.setFitView(polygons);//视口自适应
+                    map.setFitView(polygons);//视口自适应
                 });
 
                 var circle = new AMap.Circle({
