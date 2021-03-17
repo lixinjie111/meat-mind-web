@@ -5,6 +5,7 @@ import store from './store'
 import ViewUI from 'view-design'
 import '../src/assets/viewui-theme/index.less'
 import echarts from 'echarts'
+// import * as echarts from "echarts"
 import "../src/static/icon/iconfont.css"
 import "../src/assets/scss/main.scss"
 import lxjData from "./utils/lxjData.js"

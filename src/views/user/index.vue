@@ -1503,12 +1503,12 @@ export default {
             layout: "none",
             symbolSize: 50,
             label: {
-              normal: {
+              
                 show: true,
                 fontWeight:600,
                 fontFamily:'PingFangSC-Semibold, PingFang SC',
                 fontSize:14
-              }
+              
             },
             data: [
               {
@@ -1517,11 +1517,11 @@ export default {
                 symbolSize: 40,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "#8AE6C7",
                     color: "#8AE6C7"
-                  }
+                  
                 }
               },
               {
@@ -1532,11 +1532,11 @@ export default {
                 symbolSize: 120,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1544,12 +1544,12 @@ export default {
                 symbolSize: 103,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(255,217,140,0.2)",
                     color: "rgba(255,217,140,0.2)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1559,12 +1559,12 @@ export default {
                 symbolSize: 88,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(255,159,127,0.7)",
                     color: "rgba(255,159,127,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1572,12 +1572,12 @@ export default {
                 symbolSize: 30,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1587,12 +1587,12 @@ export default {
                 symbolSize: 104,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(164,157,250,0.7)",
                     color: "rgba(164,157,250,0.7)"
                   }
-                }
+                
               }
             ]
           }
@@ -1616,12 +1616,12 @@ export default {
             layout: "none",
             symbolSize: 50,
             label: {
-              normal: {
+              
                 show: true,
                 fontWeight:600,
                 fontFamily:'PingFangSC-Semibold, PingFang SC',
                 fontSize:14
-              }
+              
             },
             data: [
               {
@@ -1630,11 +1630,11 @@ export default {
                 symbolSize: 50,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "#FF9F7F",
                     color: "#FF9F7F"
-                  }
+                  
                 }
               },
               {
@@ -1644,12 +1644,12 @@ export default {
                 symbolSize: 90,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(255,217,140,0.7)",
                     color: "rgba(255,217,140,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1659,12 +1659,12 @@ export default {
                 symbolSize: 103,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(138,230,199,0.7)",
                     color: "rgba(138,230,199,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1674,12 +1674,12 @@ export default {
                 symbolSize: 88,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(183,200,234,0.7)",
                     color: "rgba(183,200,234,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1687,12 +1687,12 @@ export default {
                 symbolSize: 30,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(164,157,250,0.7)",
                     color: "rgba(164,157,250,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1700,12 +1700,12 @@ export default {
                 symbolSize: 29,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(252,128,159,0.7)",
                     color: "rgba(252,128,159,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1715,12 +1715,12 @@ export default {
                 symbolSize: 102,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(164,157,250,0.7)",
                     color: "rgba(164,157,250,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1728,12 +1728,12 @@ export default {
                 symbolSize: 33,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(255,159,127,0.7)",
                     color: "rgba(255,159,127,0.7)"
                   }
-                }
+                
               }
             ]
           }
@@ -1757,12 +1757,12 @@ export default {
             layout: "none",
             symbolSize: 50,
             label: {
-              normal: {
+              
                 show: true,
                 fontWeight:600,
                 fontFamily:'PingFangSC-Semibold, PingFang SC',
                 fontSize:14
-              }
+              
             },
             data: [
               {
@@ -1771,12 +1771,12 @@ export default {
                 symbolSize: 40,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(138,230,199,0.7)",
                     color: "rgba(138,230,199,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1784,12 +1784,12 @@ export default {
                 symbolSize: 80,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(252,128,159,0.7)",
                     color: "rgba(252,128,159,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1797,12 +1797,12 @@ export default {
                 symbolSize: 38,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(255,217,140,0.7)",
                     color: "rgba(255,217,140,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1812,12 +1812,12 @@ export default {
                 symbolSize: 102,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1827,12 +1827,12 @@ export default {
                 symbolSize: 82,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(252,128,159,0.7)",
                     color: "rgba(252,128,159,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1842,13 +1842,13 @@ export default {
                 symbolSize: 88,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
                     borderWidth: 0,
 
                     shadowColor: "rgba(255,159,127,0.7)",
                     color: "rgba(255,159,127,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1856,12 +1856,12 @@ export default {
                 symbolSize: 30,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1871,12 +1871,12 @@ export default {
                 symbolSize: 104,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(164,157,250,0.7)",
                     color: "rgba(164,157,250,0.7)"
                   }
-                }
+                
               }
             ]
           }
@@ -1900,12 +1900,12 @@ export default {
             layout: "none",
             symbolSize: 50,
             label: {
-              normal: {
+              
                 show: true,
                 fontWeight:600,
                 fontFamily:'PingFangSC-Semibold, PingFang SC',
                 fontSize:14
-              }
+              
             },
             data: [
               {
@@ -1915,12 +1915,12 @@ export default {
                 symbolSize: 90,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(255,217,140,0.7)",
                     color: "rgba(255,217,140,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1928,12 +1928,12 @@ export default {
                 symbolSize: 90,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1943,12 +1943,12 @@ export default {
                 symbolSize: 88,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(255,159,127,0.7)",
                     color: "rgba(255,159,127,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -1956,12 +1956,12 @@ export default {
                 symbolSize: 30,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
-                }
+                
               }
             ]
           }
@@ -1985,12 +1985,12 @@ export default {
             layout: "none",
             symbolSize: 50,
             label: {
-              normal: {
+              
                 show: true,
                 fontWeight:600,
                 fontFamily:'PingFangSC-Semibold, PingFang SC',
                 fontSize:14
-              }
+              
             },
             data: [
               {
@@ -1999,13 +1999,13 @@ export default {
                 symbolSize: 40,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
                     borderWidth: 4,
 
                     shadowColor: "#8AE6C7",
                     color: "#8AE6C7"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -2015,12 +2015,12 @@ export default {
                 symbolSize: 90,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -2029,12 +2029,12 @@ export default {
                 symbolSize: 88,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(255,217,140,0.7)",
                     color: "rgba(255,217,140,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -2044,12 +2044,12 @@ export default {
                 symbolSize: 88,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(255,159,127,0.7)",
                     color: "rgba(255,159,127,0.7)"
                   }
-                }
+                
               },
               {
                 x: 10,
@@ -2057,11 +2057,11 @@ export default {
                 symbolSize: 30,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(77,148,255,0.7)",
                     color: "rgba(77,148,255,0.7)"
-                  }
+                  
                 }
               },
               {
@@ -2072,11 +2072,11 @@ export default {
                 symbolSize: 104,
                 draggable: true,
                 itemStyle: {
-                  normal: {
+                  
 
                     shadowColor: "rgba(164,157,250,0.7)",
                     color: "rgba(164,157,250,0.7)"
-                  }
+                  
                 }
               }
             ]

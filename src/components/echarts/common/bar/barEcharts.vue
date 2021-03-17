@@ -117,9 +117,9 @@ export default {
 						position: 'right',
 					},
 					itemStyle: {
-                         normal: {
+                  
                             //    barBorderRadius:[30,30,0,0]
-						 },
+					
 						 emphasis:{
 							 color:'#FF9F7F'
 						 }

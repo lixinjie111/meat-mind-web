@@ -31,11 +31,6 @@ export default {
       var echartJson = {
         series: [
           {
-            edgeLabel: {
-              normal: {
-
-              },
-            },
             edgeSymbol: "circle",
             force: {
               repulsion: 160,
@@ -45,17 +40,17 @@ export default {
             layout: "force",
             roam: true,
             itemStyle: {
-              normal: {
+    
                 color: "#6495ED",
-              },
+              
             },
             label: {
-              normal: {
+       
                 show: true,
                 align:'center',
                 verticalAlign:'center',
                 position: ['50%', '120%']
-              }
+              
             },
             symbol: "circle",
             symbolSize: 50,

@@ -126,13 +126,19 @@ export default {
                     data: this.myData.value,
 					type: 'line',
 					areaStyle: {
-						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-							offset: 0,
-							color: this.colorList[0],
-						}, {
-							offset: 1,
-							color: '#fff'
-						}])
+						color: {
+							type: 'linear',
+							x: 0,
+							y: 0,
+							x2: 0,
+							y2: 1,
+							colorStops: [{
+								offset: 0, color: this.colorList[0], // 0% 处的颜色
+							}, {
+								offset: 1, color: '#FFFFFF' // 100% 处的颜色
+							}],
+							global: false // 缺省为 false
+						}
 					},
 					smooth:true
                 }

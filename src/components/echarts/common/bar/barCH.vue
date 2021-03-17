@@ -135,12 +135,9 @@ export default {
                         barMinWidth:10,
                         barMaxWidth:40,
 						itemStyle: {
-							normal: {
+					
 								// barBorderRadius:[0,30,30,0]
-							},
-							// emphasis:{
-							// 	color:'#FF9F7F'
-							// }
+						
 						},
                         label: {
                             show: true,

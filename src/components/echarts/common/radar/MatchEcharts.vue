@@ -123,7 +123,7 @@
             symbol:"circle",
             symbolSize: 4,
             areaStyle: {
-              normal: {
+              
                 color: {
                   type: 'radial',
                   x: 0.5,
@@ -135,8 +135,8 @@
                     offset: 1, color: 'rgba(35, 115, 255, 0)' // 100% 处的颜色
                   }],
                   global: false
-                },
-              }
+                }
+              
             },
             lineStyle: {
               normal:{

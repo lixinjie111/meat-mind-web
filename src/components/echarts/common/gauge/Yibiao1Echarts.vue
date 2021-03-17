@@ -50,20 +50,28 @@
       },
       defaultOption(myData) {
         const {name, value} = myData || {name: [], value: []};
-        const color = new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-          {
-            offset: 0.1,
-            color: "#4D94FF"
-          },
-          {
-            offset: 0.6,
-            color: "#A49DFA"
-          },
-          {
-            offset: 1,
-            color: "#FC809F"
-          }
-        ])
+        const color = {
+          type:"linear",
+          x:0,
+          y:0,
+          x2:0,
+          y2:1,
+          colorStops:[
+            {
+              offset: 0.1,
+              color: "#4D94FF"
+            },
+            {
+              offset: 0.6,
+              color: "#A49DFA"
+            },
+            {
+              offset: 1,
+              color: "#FC809F"
+            }
+          ],
+          global:false
+        }
         const option ={
           backgroundColor: "#FFFFFF",
           title: {
@@ -187,19 +195,24 @@
                 name: '检查进度',
                 value: value[1],
                 itemStyle: {
-                  normal: {
-                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                      offset: 0,
-                      color: '#3398ff'
-                    }, {
-                      offset: 1,
-                      color: '#7db0fd'
-                    }])
-                  }
-
+               
+                    color: {
+                      type: 'linear',
+                      x: 0,
+                      y: 0,
+                      x2: 0,
+                      y2: 1,
+                      colorStops: [{
+                          offset: 0, color: '#3398ff'
+                      }, {
+                          offset: 1, color: '#7db0fd' 
+                      }],
+                      global: false 
+                    }
+              
                 },
                 label: {
-                  normal: {
+               
                     formatter: function (params) {
                       return params.value + '%';
                     },
@@ -208,7 +221,7 @@
                     fontWeight: "bold",
                     position: 'center',
                     show: true
-                  }
+                  
                 },
                 labelLine: {
                   show: false
@@ -233,9 +246,9 @@
               data: [{
                 value: 1,
                 itemStyle: {
-                  normal: {
+               
                     color: '#8DC4FD'
-                  }
+                  
                 }
               }],
             },
@@ -256,9 +269,9 @@
               data: [{
                 "value": 1,
                 itemStyle: {
-                  normal: {
+      
                     color: '#e3edf8'
-                  }
+            
                 }
               }]
             }

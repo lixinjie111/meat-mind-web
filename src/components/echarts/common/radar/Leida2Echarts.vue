@@ -121,7 +121,7 @@
               symbol: "circle",
               symbolSize: 4,
               areaStyle: {
-                normal: {
+                
                   color: {
                     type: 'radial',
                     x: 0.5,
@@ -135,7 +135,7 @@
                     global: false
                   },
                   opacity: 1,
-                }
+                
               },
             lineStyle: {
               normal:{
