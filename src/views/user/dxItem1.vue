@@ -1294,12 +1294,16 @@
             .condition_item{
                 width: 91px;
                 height: 24px;
-                background: #FFFFFF;
+                background: #D3E3FF;
                 border-radius: 4px;
                 border: 1px solid #EAEDF7;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                font-size: 12px;
+                font-family: PingFangSC-Semibold, PingFang SC;
+                font-weight: 600;
+                color: #2373FF;
             }
         }
         .conditions_rig{

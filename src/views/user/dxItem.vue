@@ -916,7 +916,7 @@
                 this.tabconList = this.tabconList0;
                 setTimeout(()=>{
                   for(var i=0;i<tabDom1.length;i++){
-                    tabDom1[i].style=" margin-right: 90px;";
+                    tabDom1[i].style=" margin-right: 75px;";
                   }
                 },100);
               }
@@ -2525,6 +2525,9 @@
             .tab_item{
               width: 100%;
               display: flex;
+              font-size: 14px;
+              font-family: PingFangSC-Regular, PingFang SC;
+              color: #242F57;
               .tab_item_item{
                 padding: 5px 16px;
                 box-sizing: border-box;
@@ -2540,9 +2543,11 @@
                 background: #D3E3FF;
               }
               .mbitem3{
+                color: #FFFFFF;
                 background: #9ECBFF;
               }
               .mbitem4{
+                color: #FFFFFF;
                 border-radius: 0px 4px 0px 0px;
                 background:#4488FF;
               }
@@ -2561,6 +2566,7 @@
                 border-radius: 4px;
                 display: flex;
                 flex-wrap: wrap;
+                overflow-y: auto;
                 .tab_content_item{
                   display: flex;
                   flex-direction: column;
