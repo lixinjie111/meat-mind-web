@@ -94,7 +94,7 @@ export default {
 						name: '访问来源',
 						type: 'pie',
 						z: 2,
-						radius: ['84%', '87.5%'],
+						radius: ['67%', '70.6%'],
 						avoidLabelOverlap: false,
 						hoverAnimation: false,
 						label: {
