@@ -2,13 +2,15 @@
     <div class="mark-negative">
         <div class="title">舆情应对</div>
         <div class="show">
-
+            <NewEcharts></NewEcharts>
         </div>
     </div>
 </template>
 <script>
+import  NewEcharts from "../components/NewEcharts"
 export default {
     name:"negative",
+    components:{NewEcharts},
     data(){
         return {} 
     }
@@ -28,7 +30,9 @@ export default {
         color: #242F57;
     }
     .show{
-        
+        padding: 24px;
+        background: #FFFFFF;
+        border-radius: 8px;
     }
 }
 </style>

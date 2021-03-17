@@ -43,6 +43,13 @@ export default {
               return result;
           }
         },
+         grid: {
+                left: 0,
+                right: 0,
+                bottom: 0,
+                top:0,
+                containLabel: true,
+            },
         series: [
           {
             breadcrumb: { show: false },
@@ -50,6 +57,11 @@ export default {
             nodeClick:false,
             roam:false,
             data: this.myData,
+            itemStyle: {
+                borderColor: '#fff',
+                //borderWidth: 0,
+                gapWidth: 1
+            },
           },
         ],
       });
