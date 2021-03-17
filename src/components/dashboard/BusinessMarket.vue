@@ -194,38 +194,41 @@
                             <p>快消品类带货达人TOP3</p>
                             <div class="right-top-item flex">
                                 <div>
-                                    <img src=""/>
+                                    <img src="../../assets/img/dashboard/market/head1@2x.png"/>
                                     <div>
                                         <p>李子柒</p>
                                         <p>粉丝数：5428.8w | 作品数：718</p>
                                     </div>
                                 </div>
                                 <div>
-
+                                    <img src="../../assets/img/dashboard/market/star@2x.png"/>
+                                    <span>4.99 高</span>
                                 </div>
                             </div>
                             <div class="right-top-item flex" style="background: #F4F7FC;">
                                 <div>
-                                    <img src=""/>
+                                    <img src="../../assets/img/dashboard/market/head2@2x.png"/>
                                     <div>
                                         <p>疯产姐妹</p>
                                         <p>粉丝数：3608.3w | 作品数：111</p>
                                     </div>
                                 </div>
                                 <div>
-
+                                    <img src="../../assets/img/dashboard/market/star@2x.png"/>
+                                    <span>4.86 高</span>
                                 </div>
                             </div>
                             <div class="right-top-item flex">
                                 <div>
-                                    <img src=""/>
+                                    <img src="../../assets/img/dashboard/market/head3@2x.png"/>
                                     <div>
                                         <p>浪胃仙</p>
                                         <p>粉丝数：3811.7w | 作品数：83</p>
                                     </div>
                                 </div>
                                 <div>
-
+                                    <img src="../../assets/img/dashboard/market/star@2x.png"/>
+                                    <span>4.74 高</span>
                                 </div>
                             </div>
                         </div>
@@ -666,20 +669,20 @@
                     },
                     {
 
-                        name: '全部客群',
-                        short:'全',
-                        total: 28790,
-                        rate: 80,
-                        self: 23,
-                        latent: 77,
+                        name: '企业高管',
+                        short:'企',
+                        total: 3204,
+                        rate: 78,
+                        self: 67,
+                        latent: 33,
                         desc1: [
                             {
                                 name: '婚姻状态',
-                                value: '未婚'
+                                value: '已婚'
                             },
                             {
                                 name: '年龄',
-                                value: '20-29岁'
+                                value: '30-40岁'
                             },
                             {
                                 name: '学历',
@@ -693,21 +696,21 @@
                         desc2: [
                             {
                                 name: '关注话题',
-                                value: '#秋天的第一杯奶茶、#低卡糖'
+                                value: '#政策、#股市、#科技前沿'
                             },
                             {
                                 name: '品类偏好',
-                                value: '水果茶、仙草茶、奶盖茶'
+                                value: '咖啡、功能性饮品'
                             }
                         ],
                         desc3: [
                             {
                                 name: '一年到店频率',
-                                value: '中频'
+                                value: '低频'
                             },
                             {
                                 name: '总到店次数',
-                                value: '16次'
+                                value: '7次'
                             },
                             {
                                 name: '月均购物支出',
@@ -715,40 +718,40 @@
                             },
                             {
                                 name: '客单价',
-                                value: '50-100元'
+                                value: '120-180元'
                             }
                         ],
                         desc4: [
                             {
                                 name: '旗舰店互动',
-                                value: '12757次'
+                                value: '564次'
                             },
                             {
                                 name: '微信互动次数',
-                                value: '10454次'
+                                value: '4355次'
                             },
                             {
                                 name: '最近互动时间',
-                                value: '1天前'
+                                value: '3天前'
                             },
                             {
                                 name: '线下活动参与',
-                                value: '423次'
+                                value: '65次'
                             },
                             {
                                 name: '线上直播参与',
-                                value: '2056次'
+                                value: '212次'
                             }
                         ]
                     },
                     {
 
-                        name: '全部客群',
-                        short:'全',
-                        total: 28790,
-                        rate: 80,
-                        self: 23,
-                        latent: 77,
+                        name: '北漂一族',
+                        short:'北',
+                        total: 18197,
+                        rate: 76,
+                        self: 12,
+                        latent: 88,
                         desc1: [
                             {
                                 name: '婚姻状态',
@@ -756,11 +759,11 @@
                             },
                             {
                                 name: '年龄',
-                                value: '20-29岁'
+                                value: '18-24岁'
                             },
                             {
                                 name: '学历',
-                                value: '本科以上'
+                                value: '高中以上'
                             },
                             {
                                 name: '所属地区',
@@ -770,11 +773,11 @@
                         desc2: [
                             {
                                 name: '关注话题',
-                                value: '#秋天的第一杯奶茶、#低卡糖'
+                                value: '#娱乐新闻、#天气、#物价'
                             },
                             {
                                 name: '品类偏好',
-                                value: '水果茶、仙草茶、奶盖茶'
+                                value: '软饮料、果汁'
                             }
                         ],
                         desc3: [
@@ -784,25 +787,25 @@
                             },
                             {
                                 name: '总到店次数',
-                                value: '16次'
+                                value: '15次'
                             },
                             {
                                 name: '月均购物支出',
-                                value: '1100元'
+                                value: '700元'
                             },
                             {
                                 name: '客单价',
-                                value: '50-100元'
+                                value: '30-60元'
                             }
                         ],
                         desc4: [
                             {
                                 name: '旗舰店互动',
-                                value: '12757次'
+                                value: '12564次'
                             },
                             {
                                 name: '微信互动次数',
-                                value: '10454次'
+                                value: '14355次'
                             },
                             {
                                 name: '最近互动时间',
@@ -810,30 +813,30 @@
                             },
                             {
                                 name: '线下活动参与',
-                                value: '423次'
+                                value: '565次'
                             },
                             {
                                 name: '线上直播参与',
-                                value: '2056次'
+                                value: '371次'
                             }
                         ]
                     },
                     {
 
-                        name: '全部客群',
-                        short:'全',
-                        total: 28790,
-                        rate: 80,
-                        self: 23,
-                        latent: 77,
+                        name: '自由职业',
+                        short:'自',
+                        total: 17240,
+                        rate: 81,
+                        self: 3,
+                        latent: 97,
                         desc1: [
                             {
                                 name: '婚姻状态',
-                                value: '未婚'
+                                value: '已婚'
                             },
                             {
                                 name: '年龄',
-                                value: '20-29岁'
+                                value: '27-40岁'
                             },
                             {
                                 name: '学历',
@@ -847,39 +850,39 @@
                         desc2: [
                             {
                                 name: '关注话题',
-                                value: '#秋天的第一杯奶茶、#低卡糖'
+                                value: '#供需、#金融'
                             },
                             {
                                 name: '品类偏好',
-                                value: '水果茶、仙草茶、奶盖茶'
+                                value: '拿铁、咖啡、软饮料'
                             }
                         ],
                         desc3: [
                             {
                                 name: '一年到店频率',
-                                value: '中频'
+                                value: '高频'
                             },
                             {
                                 name: '总到店次数',
-                                value: '16次'
+                                value: '23次'
                             },
                             {
                                 name: '月均购物支出',
-                                value: '1100元'
+                                value: '1400元'
                             },
                             {
                                 name: '客单价',
-                                value: '50-100元'
+                                value: '50-80元'
                             }
                         ],
                         desc4: [
                             {
                                 name: '旗舰店互动',
-                                value: '12757次'
+                                value: '14563次'
                             },
                             {
                                 name: '微信互动次数',
-                                value: '10454次'
+                                value: '19832次'
                             },
                             {
                                 name: '最近互动时间',
@@ -887,14 +890,14 @@
                             },
                             {
                                 name: '线下活动参与',
-                                value: '423次'
+                                value: '953次'
                             },
                             {
                                 name: '线上直播参与',
-                                value: '2056次'
+                                value: '6712次'
                             }
                         ]
-                    },
+                    }
                 ]
             }
         },
@@ -1189,6 +1192,10 @@
                                 cursor: pointer;
                             }
 
+                            .pre {
+                                border-radius: 0px 8px 8px 0px;
+                            }
+
                             .info {
                                 position: relative;
 
@@ -1452,7 +1459,20 @@
                             }
 
                             &:nth-child(2) {
+                                > img {
+                                    width: 116px;
+                                    height: 24px;
+                                }
 
+                                > span {
+                                    margin-left: 16px;
+                                    display: inline-block;
+                                    vertical-align: 7px;
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Medium, PingFang SC;
+                                    font-weight: 500;
+                                    color: #F16E84;
+                                }
                             }
                         }
                     }
