@@ -103,7 +103,7 @@
                 </div>
             </div>
             <div class="group-box">
-                <div class="group-map">
+                <div class="group-map flex">
                     <div class="left">
                         <div class="left-top">
                             <div class="change-group flex" v-for="(item,index) in groupList" :key="index"
@@ -166,6 +166,15 @@
                                     <span>{{desc.value}}</span>
                                 </p>
                             </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="time-line" v-for="(item,index) in groupList" :key="index"
+                             v-if="groupActive == index">
+                            <img :src="item.timeImg"/>
+                        </div>
+                        <div class="map-box">
+
                         </div>
                     </div>
                 </div>
@@ -437,6 +446,9 @@
                     </div>
                 </div>
             </div>
+            <div class="content index-box">
+                <NewEcharts></NewEcharts>
+            </div>
         </div>
         <div class="market-card">
             <div class="title">
@@ -504,10 +516,11 @@
 <script>
     import Card from "../../components/Card"
     import barM from '../echarts/common/bar/barM';
+    import NewEcharts from "../../views/mark/components/NewEcharts";
 
     export default {
         name: "BusinessMarket",
-        components: {Card, barM},
+        components: {NewEcharts, Card, barM},
         data() {
             return {
                 threeActive: 1,
@@ -588,7 +601,8 @@
                                 name: '线上直播参与',
                                 value: '2056次'
                             }
-                        ]
+                        ],
+                        timeImg: require("../../assets/img/yhhx/bjsbzImg.png")
                     },
                     {
 
@@ -665,7 +679,8 @@
                                 name: '线上直播参与',
                                 value: '1755次'
                             }
-                        ]
+                        ],
+                        timeImg:require("../../assets/img/yhhx/bjsbzImg.png")
                     },
                     {
 
@@ -742,7 +757,8 @@
                                 name: '线上直播参与',
                                 value: '212次'
                             }
-                        ]
+                        ],
+                        timeImg:require("../../assets/img/yhhx/yxqnImg.png")
                     },
                     {
 
@@ -819,7 +835,8 @@
                                 name: '线上直播参与',
                                 value: '371次'
                             }
-                        ]
+                        ],
+                        timeImg:require("../../assets/img/yhhx/qyggImg.png")
                     },
                     {
 
@@ -896,7 +913,8 @@
                                 name: '线上直播参与',
                                 value: '6712次'
                             }
-                        ]
+                        ],
+                        timeImg:require("../../assets/img/yhhx/bpyzImg.png")
                     }
                 ]
             }
@@ -1175,6 +1193,7 @@
                 margin-bottom: 24px;
 
                 .left {
+                    padding-bottom: 52px;
                     width: 320px;
                     background: #FFFFFF;
                     box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
@@ -1182,6 +1201,8 @@
 
                     .left-top {
                         .change-group {
+                            border-radius: 8px;
+
                             .pre, .next {
                                 width: 24px;
                                 height: 40px;
@@ -1370,6 +1391,26 @@
                                 }
                             }
                         }
+                    }
+                }
+
+                .right {
+                    margin-left: 16px;
+
+                    .time-line {
+                        border-radius: 8px 8px 0 0;
+                        background: #FFFFFF;
+
+                        >img {
+                            width: 100%;
+                            height: 104px;
+                        }
+                    }
+
+                    .map-box {
+                       width: 100%;
+                       height: 530px;
+                       background: #fff;
                     }
                 }
             }
@@ -1836,6 +1877,10 @@
                     }
                 }
             }
+        }
+
+        .index-box {
+            margin-top: 24px;
         }
 
         .report-box {
