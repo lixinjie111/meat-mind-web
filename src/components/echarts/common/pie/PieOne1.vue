@@ -69,6 +69,9 @@ export default {
 						fontSize: 38,
 						fontWeight: 400
 					},
+					subtextStyle: {
+						color: '#666'
+					},
 					itemGap: 0
 				},
 				series: [{

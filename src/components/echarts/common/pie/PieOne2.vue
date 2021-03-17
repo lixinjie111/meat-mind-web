@@ -61,15 +61,21 @@ export default {
 			var option = {
 				color:this.colorList,
 				title: {
-					text: ''+value,
-					subtext: this.title,
-					top: 'center',
+					subtext: ''+value,
+					text: this.title,
+					top: '35%',
 					left: 'center',
 					textStyle: {
-						fontSize: 38,
-						fontWeight: 400
+						fontSize: 12,
+						fontWeight: 400,
+						color: '#666'
 					},
-					itemGap: 0
+					subtextStyle: {
+						fontSize: 38,
+						fontWeight: 400,
+						color: 'black'
+					},
+					itemGap: 20
 				},
 				series: [{
 					name: 'shadow',

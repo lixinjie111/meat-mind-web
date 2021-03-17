@@ -217,13 +217,33 @@
 		</div>
 
 		<div class="box">
-			<PieNest1 id="box200" :colorList="$lxjData.colorList" :myData="$lxjData.box101Data"></PieNest1>
+			<PieNest1 id="box201" :colorList="$abelData.colorList" :myData="$abelData.nest01Data" title="匹配度" value="92"></PieNest1>
+		</div>
+
+		<div class="box">
+			<PieNest1 id="box202" :colorList="$abelData.colorList" :myData="$abelData.nest02Data" title="匹配度" value="88"></PieNest1>
+		</div>
+
+		<div class="box">
+			<PieNest1 id="box203" :colorList="$abelData.colorList" :myData="$abelData.nest03Data" title="匹配度" value="90"></PieNest1>
+		</div>
+
+		<div class="box">
+			<PieNest1 id="box204" :colorList="$abelData.colorList" :myData="$abelData.nest04Data" title="匹配度" value="80"></PieNest1>
+		</div>
+
+		<div class="box">
+			<PieNest1 id="box205" :colorList="$abelData.colorList" :myData="$abelData.nest05Data" title="匹配度" value="87"></PieNest1>
+		</div>
+
+		<div class="box">
+			<PieNest1 id="box206" :colorList="$abelData.colorList" :myData="$abelData.nest06Data" title="匹配度" value="87"></PieNest1>
 		</div>
 			<div class="box">
-				<PieOne1 id="box201" :value="72" title="品牌测评"></PieOne1>
+				<PieOne1 id="box301" :value="72" title="品牌测评"></PieOne1>
 			</div>
 			<div class="box">
-				<PieOne2 id="box202" :value="72" title="品牌测评"></PieOne2>
+				<PieOne2 id="box302" :value="78" title="流量评分"></PieOne2>
 			</div>
 
 

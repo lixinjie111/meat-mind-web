@@ -17,6 +17,18 @@ export default {
 				return '';
 			},
 		},
+		title:{
+			type:String,
+			default:()=>{
+				return '';
+			},
+		},
+		value:{
+			type:String,
+			default:()=>{
+				return '';
+			},
+		},
 		colorList:{
 			type:Array,
 			default:()=>{
@@ -29,41 +41,53 @@ export default {
 
 		}
 	},
-    mounted(){this.initEcharts()},
+    mounted(){this.initEcharts(this.myData)},
 	methods: {
-		initEcharts() {
-			let _option = this.defaultOption();
+		initEcharts(myData) {
+			if(!myData || !myData.inner){
+				return
+			}
+			let _option = this.defaultOption(myData);
+			console.log(_option)
 			let myChart = this.$echarts.init(document.getElementById(this.id));
 			myChart.setOption(_option);
 			window.addEventListener('resize',()=>{
 				myChart.resize();
 			})
 		},
-		defaultOption() {
+		defaultOption(myData) {
+			const { inner, outer } = myData || { name: [], value: [] };
 			var option = {
                 color:this.colorList,
-				title: [{
-					text: '报表名'
-				},
+				title: [
 					{
-						text: '{h1|匹配度}\n\n{h2|70%}',
-						top: '32%',
+						text: this.title,
+						subtext: this.value+'%',
+						top: '35%',
 						left: 'center',
 						textStyle: {
-							rich: {
-								h1: {
-									fontSize: 20
-								},
-								h2: {
-									fontSize: 12
-								}
-							}
+							fontSize: 12,
+							fontWeight: 400,
+							color: '#636E95'
+						},
+						subtextStyle: {
+							fontSize: 12,
+							fontWeight: 600,
+							color: '#242F57'
 						}
 					}],
 				legend: {
-					data: ['直达', '营销广告', '搜索引擎', '邮件营销', '联盟广告', '视频广告', '百度', '谷歌', '必应', '其他'],
-					top: '80%',
-					width: '60%'
+					data: inner.name,
+					icon: 'circle',
+					itemWidth: 6,
+					itemHeight: 6,
+					itemGap: 10,
+					top: '78%',
+					width: '90%',
+					textStyle: {
+						fontSize: 10,
+						color: '#999'
+					}
 				},
 				series: [
 					{
@@ -79,11 +103,7 @@ export default {
 							borderColor: '#fff',
 							borderWidth: 2
 						},
-						data: [
-							{value: 1548, name: '搜索引擎'},
-							{value: 775, name: '直达'},
-							{value: 679, name: '营销广告'}
-						]
+						data: inner.name.map((e, i)=>({ name: e, value: inner.value[i] })),
 					},
 					{
 						name: '访问来源',
@@ -97,16 +117,7 @@ export default {
 							borderColor: '#fff',
 							borderWidth: 2
 						},
-						data: [
-							{value: 1048, name: '百度'},
-							{value: 335, name: '直达'},
-							{value: 310, name: '邮件营销'},
-							{value: 251, name: '谷歌'},
-							{value: 234, name: '联盟广告'},
-							{value: 147, name: '必应'},
-							{value: 135, name: '视频广告'},
-							{value: 102, name: '其他'}
-						]
+						data: outer.name.map((e, i)=>({ name: e, value: outer.value[i] })),
 					}
 				]
             };
