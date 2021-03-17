@@ -216,7 +216,38 @@
 			<barLine id="box101" :colorList="$lxjData.colorList" :myData="$lxjData.box101Data"></barLine>
 		</div>
 
-    </div>
+		<div class="box">
+			<PieNest1 id="box201" :colorList="$abelData.colorList" :myData="$abelData.nest01Data" title="匹配度" value="92"></PieNest1>
+		</div>
+
+		<div class="box">
+			<PieNest1 id="box202" :colorList="$abelData.colorList" :myData="$abelData.nest02Data" title="匹配度" value="88"></PieNest1>
+		</div>
+
+		<div class="box">
+			<PieNest1 id="box203" :colorList="$abelData.colorList" :myData="$abelData.nest03Data" title="匹配度" value="90"></PieNest1>
+		</div>
+
+		<div class="box">
+			<PieNest1 id="box204" :colorList="$abelData.colorList" :myData="$abelData.nest04Data" title="匹配度" value="80"></PieNest1>
+		</div>
+
+		<div class="box">
+			<PieNest1 id="box205" :colorList="$abelData.colorList" :myData="$abelData.nest05Data" title="匹配度" value="87"></PieNest1>
+		</div>
+
+		<div class="box">
+			<PieNest1 id="box206" :colorList="$abelData.colorList" :myData="$abelData.nest06Data" title="匹配度" value="87"></PieNest1>
+		</div>
+			<div class="box">
+				<PieOne1 id="box301" :value="72" title="品牌测评"></PieOne1>
+			</div>
+			<div class="box">
+				<PieOne2 id="box302" :value="78" title="流量评分"></PieOne2>
+			</div>
+
+
+		</div>
 </template>
 
 <script>
@@ -236,10 +267,13 @@
 	import barHM from './common/bar/barHM';
 	import lineSp from './common/line/lineSp';
 	import pieP from './common/pie/pieP';
+	import PieOne1 from './common/pie/PieOne1';
+	import PieOne2 from './common/pie/PieOne2';
+	import PieNest1 from './common/pie/PieNest1';
     export default {
 		name:"barView",
 		components: {
-		  lineM3,barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,pieP
+		  lineM3,barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,pieP,PieOne1,PieOne2,PieNest1
 		}
     }
 </script>
