@@ -1073,9 +1073,7 @@ export default {
                             show: false,
                         },
                         itemStyle: {
-                            normal: {
-                                color: '#54F200',
-                            }
+                          color: '#54F200'
                         },
                     }
                 ]

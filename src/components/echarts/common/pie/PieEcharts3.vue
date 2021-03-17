@@ -79,13 +79,13 @@
               show: false
             },
             labelLine: {
-              normal: {
+           
                 length: 10,
                 length2: 20,
                 lineStyle: {
                   width: 1
                 }
-              }
+              
             },
             data: name.map((e, i)=>({ name: e, value: value[i] })),
           }]

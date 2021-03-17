@@ -90,9 +90,9 @@ export default {
             center: ['20%', '50%'],
             radius : ['50%', '40%'],
             label: {
-              normal: {
+              
                 position: "inner",
-              },
+
             },
 
             data: [
@@ -104,18 +104,18 @@ export default {
                     shadowBlur: 10,
                     shadowOffsetX: 0,
                     shadowColor: "rgba(0, 0, 0, 0.5)",
-                    normal: {
+                    
                       color: "#dc1439",
-                    },
+                
                   },
                 },
               },
               {
                 value: "2800",
                 itemStyle: {
-                  normal: {
+                  
                     color: "rgba(213,223,236,1)",
-                  },
+        
                 },
               },
             ],
@@ -134,18 +134,18 @@ export default {
                     shadowBlur: 10,
                     shadowOffsetX: 0,
                     shadowColor: "rgba(0, 0, 0, 0.5)",
-                    normal: {
+                    
                       color: "#dc1439",
-                    },
+           
                   },
                 },
               },
               {
                 value: "500",
                 itemStyle: {
-                  normal: {
+                  
                     color: "transparent",
-                  },
+                
                 },
               },
             ],
@@ -165,19 +165,19 @@ export default {
                             shadowBlur: 10,
                             shadowOffsetX: 0,
                             shadowColor: 'rgba(0, 0, 0, 0.5)',
-                            normal: {
+                            
                                 color: "rgba(213,223,236,1)",
-                            }
+                          
                         }
                     }
                 },
                 {
                     value:'800', 
                     itemStyle: {
-                        normal: {
+                        
                             color: "rgba(213,223,236,1)",
                         }
-                    }
+                    
                 }
                 
             ]

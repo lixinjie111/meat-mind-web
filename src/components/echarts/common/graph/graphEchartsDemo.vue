@@ -45,13 +45,13 @@ export default {
             type: "graph",
             layout: "none",
             label: {
-              normal: {
+          
                 show: false,
                 position: "inside",
                 textStyle: {
                   fontSize: 10,
                 },
-              },
+       
             },
             data: [
               {

@@ -105,10 +105,10 @@ export default {
 					markArea: {
 						silent: true,
 						itemStyle: {
-							normal: {
+						
 								borderWidth: 1,
 								borderType: 'dashed'
-							}
+						
 						},
 						data: [[
 							{

@@ -145,9 +145,9 @@ const lxjEData = {
                 barWidth: '10',
                 stack: '回流用户',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                 data: [820, 832, 901, 934, 1290, ]
             },
@@ -170,9 +170,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '10',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                  data: [33, 17, 16, 33,]
             },
@@ -187,9 +187,9 @@ const lxjEData = {
                 type: 'bar',
                 barWidth: '10',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                 data: [763,	785,	826,	879,	932,	1011                ],
             },
@@ -198,9 +198,9 @@ const lxjEData = {
                 type: 'bar',
                 barWidth: '10',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                  data: [402,	548,	708,	808,	880,	972 ],
             },
@@ -215,10 +215,10 @@ const lxjEData = {
                 type: 'bar',
                 barWidth: '10',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
                     },
-                },
+                
                 data: [7433, 9914, 13230],
             },
             {
@@ -226,9 +226,9 @@ const lxjEData = {
                 type: 'bar',
                 barWidth: '10',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                  data: [2980, 3757, 6031],
             },
@@ -272,9 +272,9 @@ const lxjEData = {
                 barWidth: '10',
                 stack: '总量',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                 data: [120, 132, 101, 134, 90, ]
             },
@@ -325,9 +325,9 @@ const lxjEData = {
                 barWidth: '10',
                 stack: '总量',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                 data: [ 934, 1290, ]
             },
@@ -350,9 +350,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '10',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                 data: [120, 132, ]
             },
@@ -389,9 +389,9 @@ const lxjEData = {
                 barWidth: '10',
                 stack: '总量',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                 data: [150, 212,  ]
             },
@@ -435,9 +435,9 @@ const lxjEData = {
                 barWidth: '10',
                 stack: '总量',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                 data: [150, 212,  ]
             },
@@ -481,9 +481,9 @@ const lxjEData = {
                 barWidth: '10',
                 stack: '总量',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                 data: [1500, 2120,  ]
             },
@@ -527,9 +527,9 @@ const lxjEData = {
                 barWidth: '10',
                 stack: '总量',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                 data: [1500, 1720,  ]
             },
@@ -580,9 +580,9 @@ const lxjEData = {
                 barWidth: '10',
                 stack: '总量',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                 data: [ 934, 1290, ]
             },
@@ -605,9 +605,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '10',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                 data: [120, 132, ]
             },
@@ -644,9 +644,9 @@ const lxjEData = {
                 barWidth: '10',
                 stack: '总量',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                 data: [150, 212,  ]
             },
@@ -690,9 +690,9 @@ const lxjEData = {
                 barWidth: '10',
                 stack: '总量',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                 data: [150, 212,  ]
             },
@@ -736,9 +736,9 @@ const lxjEData = {
                 barWidth: '10',
                 stack: '总量',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                 data: [1500, 2120,  ]
             },
@@ -782,9 +782,9 @@ const lxjEData = {
                 barWidth: '10',
                 stack: '总量',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                 data: [1400, 1720,  ]
             },
@@ -828,9 +828,9 @@ const lxjEData = {
                 barWidth: '10',
                 stack: '总量',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[30,30,0,0]
-                    },
+                    
                 },
                 data: [320, 302, 301, 334, 390, ]
             },
@@ -1038,30 +1038,50 @@ const lxjEData = {
                 type: 'line',
                 data: [2440, 2755, 2310, 3405, 3100, 2440, 2755,],
                 areaStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: '#4D94FF',
-                        }, {
-                            offset: 1,
-                            color: '#fff'
-                        }])
-                    }
+                    
+                        color:{
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: [{
+                                    offset: 0,
+                                    color: "#4D94FF",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "#ffffff",
+                                }
+                            ],
+                            global: false // 缺省为 false
+                        }
+                    
                 },
             },
             {
                 name: '搜索数',
                 type: 'line',
                 areaStyle: {
-                    normal: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: '#A49DFA',
-                        }, {
-                            offset: 1,
-                            color: '#fff'
-                        }])
-                    }
+                    
+                        color:{
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: [{
+                                    offset: 0,
+                                    color: "#4D94FF",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "#ffffff",
+                                }
+                            ],
+                            global: false // 缺省为 false
+                        }
+                    
                 },
                 data: [ 8900,10500,9730,13000,12850,8990,10800 ]
             },
@@ -1296,9 +1316,9 @@ const lxjEData = {
                 type: 'bar',
                 barWidth: '10',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:30
-                    },
+                    
                     emphasis:{
                         color:'#FF9F7F'
                     }
@@ -1326,9 +1346,9 @@ const lxjEData = {
                 barMinWidth:10,
                 barMaxWidth:40,
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:30
-                    },
+                    
                     emphasis:{
                         color:'#FF9F7F'
                     }
@@ -1357,9 +1377,9 @@ const lxjEData = {
                 barMinWidth:10,
                 barMaxWidth:40,
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:30
-                    },
+                    
                     emphasis:{
                         color:'#FF9F7F'
                     }
@@ -1421,9 +1441,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '10',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+                
                 // },
                 label: {
                     show: true,
@@ -1482,9 +1502,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '10',
                 itemStyle: {
-                    normal: {
+                    
                         //barBorderRadius:[0,30,30,0]
-                    },
+                    
                 },
                 label: {
                     show: true,
@@ -1505,9 +1525,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+       
                 // },
                 label: {
                     show: true,
@@ -1519,7 +1539,7 @@ const lxjEData = {
                 data: [3.5,]
             },
             {
-                name: '26-40',
+                name: '26-35',
                 type: 'bar',
                 stack: '总量',
                 label: {
@@ -1549,9 +1569,9 @@ const lxjEData = {
                 type: 'bar',
                 stack: '总量',
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+                
                 },
                 label: {
                     show: true,
@@ -1583,7 +1603,7 @@ const lxjEData = {
                 data: [3]
             },
             {
-                name: '26-40',
+                name: '26-35',
                 type: 'bar',
                 stack: '总量',
                 label: {
@@ -1614,9 +1634,9 @@ const lxjEData = {
                 type: 'bar',
                 stack: '总量',
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+              
                 },
                 label: {
                     show: true,
@@ -1639,9 +1659,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+           
                 // },
                 label: {
                     show: true,
@@ -1664,9 +1684,9 @@ const lxjEData = {
                     },
                 },
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+            
                 },
                 data: [3]
             },
@@ -1683,9 +1703,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+     
                 // },
                 label: {
                     show: true,
@@ -1727,9 +1747,9 @@ const lxjEData = {
                 type: 'bar',
                 stack: '总量',
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+          
                 },
                 label: {
                     show: true,
@@ -1752,9 +1772,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+     
                 // },
                 label: {
                     show: true,
@@ -1777,9 +1797,9 @@ const lxjEData = {
                     },
                 },
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+         
                 },
                 data: [7,]
             },
@@ -1796,9 +1816,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+          
                 // },
                 label: {
                     show: true,
@@ -1810,7 +1830,7 @@ const lxjEData = {
                 data: [2,]
             },
             {
-                name: '26-40',
+                name: '26-35',
                 type: 'bar',
                 stack: '总量',
                 label: {
@@ -1840,9 +1860,9 @@ const lxjEData = {
                 type: 'bar',
                 stack: '总量',
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+             
                 },
                 label: {
                     show: true,
@@ -1865,9 +1885,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+            
                 // },
                 label: {
                     show: true,
@@ -1890,9 +1910,9 @@ const lxjEData = {
                     },
                 },
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+                
                 },
                 data: [4,]
             },
@@ -1909,9 +1929,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+          
                 // },
                 label: {
                     show: true,
@@ -1953,9 +1973,9 @@ const lxjEData = {
                 type: 'bar',
                 stack: '总量',
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+              
                 },
                 label: {
                     show: true,
@@ -1978,9 +1998,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+              
                 // },
                 label: {
                     show: true,
@@ -1992,7 +2012,7 @@ const lxjEData = {
                 data: [1.5]
             },
             {
-                name: '26-40',
+                name: '26-35',
                 type: 'bar',
                 stack: '总量',
                 label: {
@@ -2022,9 +2042,9 @@ const lxjEData = {
                 type: 'bar',
                 stack: '总量',
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+               
                 },
                 label: {
                     show: true,
@@ -2047,9 +2067,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+             
                 // },
                 label: {
                     show: true,
@@ -2072,9 +2092,9 @@ const lxjEData = {
                     },
                 },
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+              
                 },
                 data: [7,]
             },
@@ -2091,9 +2111,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+            
                 // },
                 label: {
                     show: true,
@@ -2135,9 +2155,9 @@ const lxjEData = {
                 type: 'bar',
                 stack: '总量',
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+              
                 },
                 label: {
                     show: true,
@@ -2160,9 +2180,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+        
                 // },
                 label: {
                     show: true,
@@ -2174,7 +2194,7 @@ const lxjEData = {
                 data: [2]
             },
             {
-                name: '26-40',
+                name: '26-35',
                 type: 'bar',
                 stack: '总量',
                 label: {
@@ -2204,9 +2224,9 @@ const lxjEData = {
                 type: 'bar',
                 stack: '总量',
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+            
                 },
                 label: {
                     show: true,
@@ -2229,9 +2249,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+             
                 // },
                 label: {
                     show: true,
@@ -2254,9 +2274,9 @@ const lxjEData = {
                     },
                 },
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+             
                 },
                 data: [8,]
             },
@@ -2273,9 +2293,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+           
                 // },
                 label: {
                     show: true,
@@ -2317,9 +2337,9 @@ const lxjEData = {
                 type: 'bar',
                 stack: '总量',
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+          
                 },
                 label: {
                     show: true,
@@ -2351,7 +2371,7 @@ const lxjEData = {
                 data: [2]
             },
             {
-                name: '26-40',
+                name: '26-35',
                 type: 'bar',
                 stack: '总量',
                 label: {
@@ -2381,9 +2401,9 @@ const lxjEData = {
                 type: 'bar',
                 stack: '总量',
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+           
                 },
                 label: {
                     show: true,
@@ -2406,9 +2426,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+           
                 // },
                 label: {
                     show: true,
@@ -2431,9 +2451,9 @@ const lxjEData = {
                     },
                 },
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+            
                 },
                 data: [1]
             },
@@ -2450,9 +2470,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+          
                 // },
                 label: {
                     show: true,
@@ -2494,9 +2514,9 @@ const lxjEData = {
                 type: 'bar',
                 stack: '总量',
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+            
                 },
                 label: {
                     show: true,
@@ -2519,9 +2539,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+            
                 // },
                 label: {
                     show: true,
@@ -2533,7 +2553,7 @@ const lxjEData = {
                 data: [1,]
             },
             {
-                name: '26-40',
+                name: '26-35',
                 type: 'bar',
                 stack: '总量',
                 label: {
@@ -2563,9 +2583,9 @@ const lxjEData = {
                 type: 'bar',
                 stack: '总量',
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+              
                 },
                 label: {
                     show: true,
@@ -2588,9 +2608,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+             
                 // },
                 label: {
                     show: true,
@@ -2613,9 +2633,9 @@ const lxjEData = {
                     },
                 },
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+             
                 },
                 data: [6]
             },
@@ -2632,9 +2652,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+            
                 // },
                 label: {
                     show: true,
@@ -2676,9 +2696,9 @@ const lxjEData = {
                 type: 'bar',
                 stack: '总量',
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+            
                 },
                 label: {
                     show: true,
@@ -2701,9 +2721,9 @@ const lxjEData = {
                 stack: '总量',
                 barWidth: '15',
                 // itemStyle: {
-                // 	normal: {
+                // 	
                 // 		//barBorderRadius:[0,30,30,0]
-                // 	},
+           
                 // },
                 label: {
                     show: true,
@@ -2745,9 +2765,9 @@ const lxjEData = {
                 type: 'bar',
                 stack: '总量',
                 itemStyle: {
-                	normal: {
+                	
                 		//barBorderRadius:[0,30,30,0]
-                	},
+                	
                 },
                 label: {
                     show: true,

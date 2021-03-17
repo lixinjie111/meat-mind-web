@@ -252,31 +252,31 @@ export default {
                   "【新浪财经】和其正在凉茶巨头夹缝中迷失，同仁堂与邓老遭多重考验",
                 ],
                 itemStyle: {
-                  normal: {
+                  
                     color: "#FF4C60",
-                  },
+              
                 },
                 label: {
-                  normal: {
+                  
                     color: "#FF4C60",
-                  },
+            
                 },
               },
               {
                 name: "机会1",
                 value: [83.684, 37268, "赢商网：邓老凉茶在京开ins风国潮店"],
                 itemStyle: {
-                  normal: {
+                  
                     color: this.colorList[1],
-                  },
+               
                   // tooltip:{
 
                   // },
                 },
                 label: {
-                  normal: {
+                  
                     color: this.colorList[1],
-                  },
+              
                 },
               },
               {
@@ -287,14 +287,14 @@ export default {
                   "和其正发表律师函声明，要依法惩治网络舆论散播者",
                 ],
                 itemStyle: {
-                  normal: {
+                  
                     color: this.colorList[2],
-                  },
+                
                 },
                 label: {
-                  normal: {
+                  
                     color: this.colorList[2],
-                  },
+             
                 },
               },
             ],
@@ -304,30 +304,30 @@ export default {
             },
             hoverAnimation: true,
             label: {
-              normal: {
+              
                 formatter: "{b}",
                 position: "right",
                 show: true,
                 color: "red",
-              },
+              
             },
             symbolSize: 15,
             itemStyle: {
-              normal: {
+              
                 color: "red",
                 shadowBlur: 10,
                 shadowColor: "#333",
-              },
+              
             },
             zlevel: 1,
           },
           {
             type: "scatter",
             itemStyle: {
-              normal: {
+              
                 color: "skyblue",
                 // color:this.colorList[3]
-              },
+            
             },
             data: [
               { name: "Norway", value: [81.711, 67614] },

@@ -144,11 +144,11 @@ export default {
 						]
 					},
 					itemStyle: {
-						normal: {
+					
 							lineStyle: {
 								type: 'dashed'
 							}
-						}
+						
 					},
 					data: [11,	591,	2391,	2964,	1646,	816,	386,	300,	157,	128,	128 ]
 				},
@@ -157,11 +157,11 @@ export default {
 					type: 'line',
 					smooth:true,
 					itemStyle: {
-						normal: {
+				
 							lineStyle: {
 								type: 'dashed'
 							}
-						}
+						
 					},
 					data:[11,	591,	4367,	5513,	5140,	3943,	3788,	4357,	4900,	4564,	4021]
 				},
@@ -171,12 +171,12 @@ export default {
 					data: [11,	591,	4367,	5513,	5140,	3852,	2831,	1978,	1254,	730,	502],
 					smooth:true,
 					itemStyle: {
-						normal: {
+						
 							lineStyle: {
 								color:'#8AE6C7',
 								width:3,
 							}
-						}
+						
 					},
 					
 				},
@@ -185,12 +185,12 @@ export default {
 					type: 'line',
 					smooth:true,
 					itemStyle: {
-						normal: {
+				
 							lineStyle: {
 								type: 'dashed',
 								color:'#f00',
 							}
-						}
+						
 					},
 					data:[1500,	1500,	1500,	1500,	1500,	1500,	1500,	1500,	1500,	1500,	1500,
 ]

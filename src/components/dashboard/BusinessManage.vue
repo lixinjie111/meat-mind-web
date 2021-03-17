@@ -586,7 +586,6 @@
                             smooth: true,
                             symbol: "none",
                             itemStyle: {
-                                normal: {
                                     lineStyle: {
                                         width: 4,
                                         type: 'solid',
@@ -601,7 +600,6 @@
                                         shadowBlur: 6,
                                         shadowOffsetY: 8,
                                     }
-                                },
                             },
                             zlevel: 1,
                             data: data3
@@ -612,13 +610,11 @@
                             smooth: true,
                             symbol: "none",
                             itemStyle: {
-                                normal: {
-                                    lineStyle: {
-                                        width: 1,
-                                        type: 'dashed',
-                                        color: "rgba(35, 115, 255, .5)"
-                                    }
-                                },
+                                lineStyle: {
+                                    width: 1,
+                                    type: 'dashed',
+                                    color: "rgba(35, 115, 255, .5)"
+                                }
                             },
                             data: data4
                         },
@@ -628,13 +624,11 @@
                             smooth: true,
                             symbol: "none",
                             itemStyle: {
-                                normal: {
-                                    lineStyle: {
-                                        width: 1,
-                                        type: 'dashed',
-                                        color: "rgba(245, 74, 69, .5)"
-                                    }
-                                },
+                                lineStyle: {
+                                    width: 1,
+                                    type: 'dashed',
+                                    color: "rgba(245, 74, 69, .5)"
+                                }
                             },
                             data: data5
                         },
@@ -645,7 +639,6 @@
                             symbol: "none",
                             stack: 100,
                             itemStyle: {
-                                normal: {
                                     color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                         offset: 0,
                                         color: 'rgba(252, 212, 201, 0)'
@@ -661,10 +654,6 @@
                                         type: 'dashed',
                                         color: "#DFDBDD"
                                     }
-                                },
-                            },
-                            areaStyle: {
-                                normal: {}
                             },
                             data: data,
                         },
@@ -675,7 +664,6 @@
                             symbol: "none",
                             stack: 100,
                             itemStyle: {
-                                normal: {
                                     color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [{
                                         offset: 0,
                                         color: 'rgba(184, 205, 251, 0)'
@@ -691,10 +679,6 @@
                                         type: 'solid',
                                         color: "#FFFFFF"
                                     }
-                                },
-                            },
-                            areaStyle: {
-                                normal: {}
                             },
                             data: data2,
                         },
@@ -713,11 +697,10 @@
                                 brushType: 'fill',
                             },
                             itemStyle: {
-                                normal: {
                                     color: '#F54A45',
                                     shadowBlur: 5,
                                     shadowColor: '#F54A45'
-                                }
+                                
                             },
                             zlevel: 1
                         },
@@ -736,11 +719,11 @@
                                 brushType: 'fill',
                             },
                             itemStyle: {
-                                normal: {
+                               
                                     color: '#2373FF',
                                     shadowBlur: 5,
                                     shadowColor: '#2373FF'
-                                }
+                            
                             },
                             zlevel: 1
                         },
@@ -750,14 +733,14 @@
                             symbol: 'circle',
                             data: effectValues2,
                             itemStyle: {
-                                normal: {
+                              
                                     borderWidth: '2',
                                     borderType: 'solid',
                                     borderColor: '#ffffff',
                                     color: '#999999',
                                     shadowColor: '#515a6e',
                                     shadowBlur: 10
-                                }
+                              
                             },
                             cursor: 'pointer',
                             zlevel: 1
@@ -897,32 +880,25 @@
                         symbolSize: 5,
                         zlevel: 30,
                         itemStyle: {
-                            normal: {
+                          
                                 color: '#FF9F7F',
                                 shadowBlur: 5,
                                 shadowColor: '#FF9F7F'
-                            }
+                           
                         },
                         lineStyle: {
-                            normal: {
+                      
                                 width: 4,
                                 // shadowBlur: 3,
                                 // shadowColor: 'rgba(3, 13, 41, .2)',
                                 // shadowOffsetY: 8,
                                 type: 'solid',
                                 color: '#4488FF',
-                                // color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [{
-                                //         offset: 0,
-                                //         color: 'rgba(187, 134, 252, 1)'
-                                //     }, {
-                                //         offset: 1,
-                                //         color: 'rgba(94, 139, 255, 1)'
-                                //     }]
-                                // )
-                            }
+
+                            
                         },
                         areaStyle: {
-                            normal: {
+                         
                                 color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                         offset: 0,
                                         color: hexToRgba('#4488FF', 0.8)
@@ -938,7 +914,7 @@
                                     ], false),
                                 // shadowColor: hexToRgba('#0090FF', 0.1),
                                 // shadowBlur: 10
-                            }
+                        
                         },
                         data: yAxisData
                     }]

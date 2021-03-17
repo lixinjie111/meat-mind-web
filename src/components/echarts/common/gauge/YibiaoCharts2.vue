@@ -47,18 +47,19 @@
       },
       defaultOption(myData) {
         const { value } = myData || {}
-        var color = new echarts.graphic.LinearGradient(
-          0, 0, 1, 0,
-          [{
-            offset: 0,
-            color: "rgba(3, 110, 255, .5)",
-          },
-            {
-              offset: 1,
-              color: "rgba(3, 110, 255, 1)",
-            }
-          ]
-        );
+        var color = {
+          type: 'linear',
+          x: 0,
+          y: 0,
+          x2: 1,
+          y2: 0,
+          colorStops: [{
+              offset: 0, color: "rgba(3, 110, 255, .5)" // 0% 处的颜色
+          }, {
+              offset: 1, color: "rgba(3, 110, 255, 1)" // 100% 处的颜色
+          }],
+          global: false // 缺省为 false
+        };
         const option = {
           series: [
             {
@@ -154,8 +155,14 @@
                 lineStyle: {
                   width: 10,
                   color: [
-                    [1,new echarts.graphic.LinearGradient(0, 0, 1, 0, [
-                      {
+                    [1,
+                    {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 1,
+                        y2: 0,
+                        colorStops: [{
                         offset: 0.1,
                         color: "#4D94FF"
                       },
@@ -166,8 +173,9 @@
                       {
                         offset: 1,
                         color: "#FC809F"
-                      }
-                    ])]
+                      }],
+                        global: false // 缺省为 false
+                    }]
                   ],
                 }
               },
@@ -184,9 +192,9 @@
                 show: false,
               },
               itemStyle: {
-                normal: {
+         
                   color: '#54F200',
-                }
+        
               },
             },
             // {
