@@ -4,20 +4,17 @@
 
 <script>
 export default {
-  name: "graphEcharts",
+  name: "graphEcharts3",
   props: {
     id: {
       type: String,
       default: "",
     },
-    lines:{
-        type:Array
+    graphDatas:{
+        type:Object
     },
-    datas:{
-        type:Array
-    },
-    colorList:{
-        type:Array
+    curColor:{
+        type:String
     }
   },
   data(){
@@ -33,93 +30,54 @@ export default {
       });
     },
     defaultOption() {
-    let option = {
-        title : {
-            text : ''
-        },
-        tooltip : {},
+        let arr = this.graphDatas.nodes.filter((item)=>{
+            return item.category == 3
+        })
+        arr.sort((a,b)=>{
+            return b.symbolSize - a.symbolSize
+        })
+        let links = []
+        for(let i = 0;i < arr.length;i++){
+            if(arr[i].symbolSize>8){arr[i].symbolSize -= 8}
+            if(i>0){
+                arr[i].name="文献"+i
+            }
+            links.push({source:i+1,target:0})
+        }
+        let option = {
+        color:[this.curColor],
         animationDuration:1500,
         animationDurationUpdate : 'quinticInOut',
-        label : {
-            normal : {
-                show : true,
-                textStyle : {
-                    fontSize : 12
-                },
-            }
-        },
-        grid:{
-            top:0,
-            left:0,
-            right:0,
-            bottom:0
-        },
         series : [ {
             type : 'graph',
-            layout : 'force',//采用力引导布局
-            symbolSize : 45,
-            legendHoverLink : true,//启用图例 hover 时的联动高亮。
-            focusNodeAdjacency : true,//在鼠标移到节点上的时候突出显示节点以及节点的边和邻接节点。
+            layout : 'none',
+            label: {
+              show: true,
+              position: "inside",
+              textStyle: {
+                fontSize: 10,
+              },
+              formatter: (params)=>{
+                if(params.dataIndex==0){
+                  return '抖音'
+                }
+              },
+            },
             roam : true,
-            force : {
-                repulsion : 100,
-                 edgeLength : [30,100]
+            labelLayout: {
+              hideOverlap: true,
             },
-            edgeSymbolSize : [ 4, 10 ],
-            itemStyle:{
-                color:this.colorList[0]
+            scaleLimit: {
+              min: 0.4,
+              max: 2,
             },
-            lineStyle : {
-                normal : {
-                    color:"#EAEDF7",
-                    opacity : 0.9,
-                    width : 1,
-                    curveness : 0
-                }
+            lineStyle: {
+              color: "source",
+              curveness: 0.3,
             },
-            label : {
-                normal : {
-                    show : true,
-                    position : 'inside',
-                    textStyle : {
-                        fontSize : 10
-                    },
-                }
-            },
-            edgeLabel : {
-                normal : {
-                    show : false,
-                    textStyle : {
-                        fontSize : 10
-                    },
-                    formatter : "{a}{b}{c}"
-                }
-            },
-            categories : [ {
-                itemStyle : {
-                    normal : {
-                        color : this.colorList[1],
-                    }
-                }
-            }, {
-                itemStyle : {
-                    normal : {
-                        color : this.colorList[2],
-                    }
-                }
-            }, {
-                itemStyle : {
-                    normal : {
-                        color : this.colorList[3],
-                    }
-                }
-            } ],
-            data :this.datas,
-            links : this.lines,
-            left:20,
-            right:20,
-            top:0,
-            bottom:0
+            data:arr,
+            links,
+            categories:[{name:"知乎"}],
         } ]
     }
       return option;

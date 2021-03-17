@@ -10,18 +10,12 @@ export default {
       type: String,
       default: "",
     },
-    lines:{
-        type:Array
+    colorList: {
+      type: Array,
     },
-    datas:{
-        type:Array
-    },
-    colorList:{
-        type:Array
+    graphDatas:{
+      type: Object
     }
-  },
-  data(){
-      return {}
   },
   methods: {
     initEcharts() {
@@ -33,95 +27,55 @@ export default {
       });
     },
     defaultOption() {
-    let option = {
-        title : {
-            text : ''
-        },
-        tooltip : {},
-        animationDuration:1500,
-        animationDurationUpdate : 'quinticInOut',
-        label : {
-            normal : {
-                show : true,
-                textStyle : {
-                    fontSize : 12
-                },
-            }
-        },
-        grid:{
-            top:0,
-            left:0,
-            right:0,
-            bottom:0
-        },
-        series : [ {
-            type : 'graph',
-            layout : 'force',//采用力引导布局
-            symbolSize : 45,
-            legendHoverLink : true,//启用图例 hover 时的联动高亮。
-            focusNodeAdjacency : true,//在鼠标移到节点上的时候突出显示节点以及节点的边和邻接节点。
-            roam : true,
-            force : {
-                repulsion : 100,
-                 edgeLength : [30,100]
+      let option = {
+        color: this.colorList,
+        // legend: [
+        //   {
+        //     data: ["新浪财经", "百度百家号", "知乎", "抖音"],
+        //   },
+        // ],
+        animationDuration: 1500,
+        animationEasingUpdate: "quinticInOut",
+        series: [
+          {
+            type: "graph",
+            layout: "none",
+            roam: true,
+            label: {
+              show: true,
+              position: "inside",
+              textStyle: {
+                fontSize: 10,
+              },
+              formatter: (params)=>{
+                if(params.dataIndex==9){
+                  return '百度百家号'
+                }else if(params.dataIndex == 3){
+                  return '新浪财经'
+                }else if(params.dataIndex == 26){
+                  return '知乎'
+                }else if(params.dataIndex == 19){
+                  return '抖音'
+                }
+              },
             },
-            edgeSymbolSize : [ 4, 10 ],
-            itemStyle:{
-                color:this.colorList[0]
+            labelLayout: {
+              hideOverlap: true,
             },
-            lineStyle : {
-                normal : {
-                    color:"#EAEDF7",
-                    opacity : 0.9,
-                    width : 1,
-                    curveness : 0
-                }
+            scaleLimit: {
+              min: 0.4,
+              max: 2,
             },
-            label : {
-                normal : {
-                    show : true,
-                    position : 'inside',
-                    textStyle : {
-                        fontSize : 10
-                    },
-                }
+            lineStyle: {
+              color: "source",
+              curveness: 0.3,
             },
-            edgeLabel : {
-                normal : {
-                    show : false,
-                    textStyle : {
-                        fontSize : 10
-                    },
-                    formatter : "{a}{b}{c}"
-                }
-            },
-            categories : [ {
-                itemStyle : {
-                    normal : {
-                        color : this.colorList[1],
-                    }
-                }
-            }, {
-                itemStyle : {
-                    normal : {
-                        color : this.colorList[2],
-                    }
-                }
-            }, {
-                itemStyle : {
-                    normal : {
-                        color : this.colorList[3],
-                    }
-                }
-            } ],
-            data :this.datas,
-            links : this.lines,
-            left:20,
-            right:20,
-            top:0,
-            bottom:0
-        } ]
-    }
+            data:this.graphDatas.nodes,
+            links:this.graphDatas.links,
+            categories: this.graphDatas.categories,
+          },
+        ],
+      };
       return option;
     },
   },

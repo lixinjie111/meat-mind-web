@@ -4,100 +4,63 @@
 
 <script>
 export default {
-  name: "graphEcharts",
+  name: "graphEcharts1",
   props: {
     id: {
       type: String,
       default: "",
     },
-    lines:{
-        type:Array
-    },
-    datas:{
-        type:Array
+    graphDatas:{
+        type:Object
     },
     curColor:{
         type:String
     }
   },
-  data(){
-      return {}
-  },
   methods: {
     initEcharts() {
       let option = this.defaultOption();
       let myEchart = this.$echarts.init(document.getElementById(this.id));
-      myEchart.setOption(option);
+      myEchart.setOption(option,true);
       window.addEventListener("resize", () => {
         myEchart.resize();
       });
     },
     defaultOption() {
     let option = {
-        tooltip : {},
+        color:[this.curColor],
         animationDuration:1500,
-        animationDurationUpdate : 'quinticInOut',
-        label : {
-            normal : {
-                show : true,
-                textStyle : {
-                    fontSize : 12
-                },
-            }
-        },
-        grid:{
-            top:0,
-            left:0,
-            right:0,
-            bottom:0
-        },
+        animationEasingUpdate : 'quinticInOut',
         series : [ {
             type : 'graph',
-            layout : 'force',//采用力引导布局
-            symbolSize : 45,
-            legendHoverLink : true,//启用图例 hover 时的联动高亮。
-            focusNodeAdjacency : true,//在鼠标移到节点上的时候突出显示节点以及节点的边和邻接节点。
+            layout : 'none',
+            label: {
+              show: true,
+              position: "inside",
+              textStyle: {
+                fontSize: 10,
+              },
+              formatter: (params)=>{
+                if(params.dataIndex==0){
+                  return '百度百家号'
+                }
+              },              
+            },
             roam : true,
-            force : {
-                repulsion : 100,
-                 edgeLength : [30,100]
+            labelLayout: {
+              hideOverlap: true,
             },
-            edgeSymbolSize : [ 4, 10 ],
-            itemStyle:{
-                color:this.curColor
+            scaleLimit: {
+              min: 0.4,
+              max: 2,
             },
-            lineStyle : {
-                normal : {
-                    color:"#EAEDF7",
-                    opacity : 0.9,
-                    width : 1,
-                    curveness : 0
-                }
+            lineStyle: {
+              color: "source",
+              curveness: 0.3,
             },
-            label : {
-                normal : {
-                    show : true,
-                    position : 'inside',
-                    textStyle : {
-                        fontSize : 10
-                    },
-                }
-            },
-            edgeLabel : {
-                normal : {
-                    show : false,
-                    textStyle : {
-                        fontSize : 10
-                    },
-                    formatter : "{a}{b}{c}"
-                }
-            },
-            data :this.datas,
-            links : this.lines,
-            left:20,
-            right:20,
-            top:0,
-            bottom:0
+            data:this.graphDatas.nodes,
+            links:this.graphDatas.links,
+            categories:[{name:"百度百家号"}],
         } ]
     }
       return option;
