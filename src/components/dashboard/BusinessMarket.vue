@@ -1250,10 +1250,12 @@
                                               color: #97A0C3;
 
                                               &:first-child {
+                                                  margin-top: 7px;
                                                   font-size: 24px;
                                                   font-family: PingFangSC-Medium, PingFang SC;
                                                   font-weight: 500;
                                                   color: #1DCEC3;
+                                                  line-height: 31px;
                                               }
                                           }
                                       }
