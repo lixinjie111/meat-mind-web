@@ -47,7 +47,7 @@
                 </ul>
             </div>
         </div>
-        <BackTop :bottom="8" :right="8"></BackTop>
+<!--        <BackTop :bottom="8" :right="8"></BackTop>-->
     </div>
 </template>
 
