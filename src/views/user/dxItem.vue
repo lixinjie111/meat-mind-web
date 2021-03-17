@@ -333,14 +333,14 @@
                     <div class="tfys_input_con">
                       <i :class="['iconfont','iconjine']" class="cmon"></i>
                       <Poptip trigger="focus">
-                          <Input v-model="tfys" placeholder="请输入价格" style="width:173px" />
+                          <Input v-model="tfys" placeholder="请输入价格" style="width:200px" />
                           <div slot="content">{{ formatNumber }}</div>
                       </Poptip><span class="zhi">至</span>
                     </div>
                     <div class="tfys_input_con">
                       <i :class="['iconfont','iconjine']" class="cmon"></i>
                       <Poptip trigger="focus">
-                          <Input placeholder="请输入价格" style="width:173px" />
+                          <Input placeholder="请输入价格" style="width:200px" />
                           <div slot="content">{{ formatNumber }}</div>
                       </Poptip>
                     </div>
@@ -790,7 +790,7 @@
                   name:'网易',
                   money:'￥3200',
                   vdlNum:'43%',
-                  timeRang:'7:40-8:30'
+                  timeRang:'7:40 - 8:30'
                  }
                },
                fanganObj1:{
@@ -831,14 +831,14 @@
                   name:'抖音',
                   money:'￥17200',
                   vdlNum:'73%',
-                  timeRang:'19:00-23:00'
+                  timeRang:'19:00 - 23:00'
                  },
                  qdObj2:{
                   icon: require("../../assets/img/yhhx/weib1.png"),
                   name:'新浪微博',
                   money:'￥5200',
                   vdlNum:'40%',
-                  timeRang:'19:20-22:30'
+                  timeRang:'19:20 - 22:30'
                  }
                }
             }
@@ -914,25 +914,31 @@
                 this.ifShowtcon = true;
                 tabDom.style=` background:${bgc0};`;
                 this.tabconList = this.tabconList0;
-                for(var i=0;i<tabDom1.length;i++){
-                  tabDom1[i].style=" margin-right: 45px;";
-                }
+                setTimeout(()=>{
+                  for(var i=0;i<tabDom1.length;i++){
+                    tabDom1[i].style=" margin-right: 90px;";
+                  }
+                },100);
               }
               else if(arg == 1){
                 this.ifShowtcon = true;
                 tabDom.style=` background: ${bgc1};`;
                 this.tabconList = this.tabconList1;
-                for(var i=0;i<tabDom1.length;i++){
-                  tabDom1[i].style=" margin-right: 22px;";
-                }
+                setTimeout(()=>{
+                  for(var i=0;i<tabDom1.length;i++){
+                    tabDom1[i].style=" margin-right: 22px;";
+                  }
+                },100);
               }
               else if(arg == 2){
                 this.ifShowtcon = true;
                 tabDom.style=` background: ${bgc2};`;
                 this.tabconList = this.tabconList2;
-                for(var i=0;i<tabDom1.length;i++){
-                  tabDom1[i].style=" margin-right: 25px;";
-                }
+                setTimeout(()=>{
+                  for(var i=0;i<tabDom1.length;i++){
+                    tabDom1[i].style=" margin-right: 87px;";
+                  }
+                },100);
               }
               else if(arg == 3){
                 this.ifShowtcon = false;
@@ -1624,7 +1630,7 @@
     width: 100%;
     position: relative;
     .test_container1.width{
-        width: 692px;
+        width: 762px;
     }
     .test_container1{
         height: 80px;
@@ -1643,7 +1649,7 @@
             justify-content: center;
             .area_timer_choice_container{
                 width: 100%;
-                height: 96px;
+                height: 66px;
                 display: flex;
                 align-items: center;
                 background: #FFFFFF;
@@ -1700,8 +1706,8 @@
                             margin-top: 4px;
                             border-radius: 10px;
                             .cirle_dian{
-                                width: 20px;
-                                height: 20px;
+                                width: 12px;
+                                height: 12px;
                                 border-radius: 50%;
                                 background: #C6CBDE;
                                 &:hover{
@@ -1744,17 +1750,17 @@
             }
         }
         .per_info_container{
-            width: 370px;
+            width: 310px;
             height: 100%;
         }
     }
     .conditions_container-box.width{
-        width: 692px;
+        width: 762px;
     }
     .conditions_container-box{
         position: absolute;
         z-index: 999;
-        top: 115px;
+        top: 84px;
         display: flex;
         left: 20px;
         right: 20px
@@ -1815,8 +1821,8 @@
     .condition_content{
         position: absolute;
         left: 1.9%;
-        top: 168px;
-        width: 692px;
+        top: 132px;
+        width: 762px;
         z-index: 1000;
         height: 557px;
         background: #FFF;
@@ -1971,7 +1977,7 @@
             align-items: center;
         }
         .per_info_container{
-            width: 370px;
+            width: 300px;
             height: 100%;
             padding:17px 16px;
             box-sizing: border-box;
@@ -2509,7 +2515,7 @@
         }
         .yhxw_container{
             position: absolute;
-            width: 61%;
+            width: 762px;
             bottom: 20px;
             left: 20px;
             z-index: 999;
@@ -2545,7 +2551,7 @@
               .tab_content{
                 width: 100%;
                 height: 152.82px;
-                overflow-y: auto;
+                overflow-y: hidden;
                 padding: 12px 23px;
                 box-sizing: border-box;
                 background: #FFFFFF;
@@ -2553,7 +2559,6 @@
                 display: flex;
                 flex-wrap: wrap;
                 .tab_content_item{
-                  margin-right: 10px;
                   display: flex;
                   flex-direction: column;
                   align-items: flex-start;
