@@ -56,7 +56,7 @@ export default {
 			})
 		},
 		defaultOption(myData) {
-			const { inner, outer } = myData || { name: [], value: [] };
+			const { inner, outer } = myData || {inner: { name: [], value: [] }, outer: { name: [], value: [] }};
 			var option = {
                 color:this.colorList,
 				title: [
