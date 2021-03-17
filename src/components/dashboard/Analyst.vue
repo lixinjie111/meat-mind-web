@@ -9,7 +9,7 @@
     </div>
     <div class="wel_guid_container">
       <div class="welcome">
-        <img class="user" src="../../static/img/header/oval@2x.png" alt="" />
+        <img class="user" src="../../assets/img/login/head1.png" alt="" />
         <div class="user_intro_container">
           <p class="til_img_container"><span>早安，分析师，欢迎使用 Meta-Mind-Marketing！</span><img :src="infoIcon" alt="" srcset="" class="infoIcon-img"/></p>
           <p>

@@ -602,7 +602,7 @@
                                 value: '2056次'
                             }
                         ],
-                        timeImg: require("../../assets/img/yhhx/bjsbzImg.png")
+                        timeImg: require("../../assets/img/dashboard/market/timeline1@2x.png")
                     },
                     {
 
@@ -680,7 +680,7 @@
                                 value: '1755次'
                             }
                         ],
-                        timeImg:require("../../assets/img/yhhx/bjsbzImg.png")
+                        timeImg: require("../../assets/img/dashboard/market/timeline2@2x.png")
                     },
                     {
 
@@ -758,7 +758,7 @@
                                 value: '212次'
                             }
                         ],
-                        timeImg:require("../../assets/img/yhhx/yxqnImg.png")
+                        timeImg: require("../../assets/img/dashboard/market/timeline3@2x.png")
                     },
                     {
 
@@ -836,7 +836,7 @@
                                 value: '371次'
                             }
                         ],
-                        timeImg:require("../../assets/img/yhhx/qyggImg.png")
+                        timeImg: require("../../assets/img/dashboard/market/timeline4@2x.png")
                     },
                     {
 
@@ -914,7 +914,7 @@
                                 value: '6712次'
                             }
                         ],
-                        timeImg:require("../../assets/img/yhhx/bpyzImg.png")
+                        timeImg: require("../../assets/img/dashboard/market/timeline5@2x.png")
                     }
                 ]
             }
@@ -1402,7 +1402,7 @@
                         background: #FFFFFF;
 
                         >img {
-                            width: 100%;
+                            /*width: 100%;*/
                             height: 104px;
                         }
                     }
