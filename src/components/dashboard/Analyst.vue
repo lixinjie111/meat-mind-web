@@ -11,7 +11,18 @@
       <div class="welcome">
         <img class="user" src="../../assets/img/login/head1.png" alt="" />
         <div class="user_intro_container">
-          <p class="til_img_container"><span>早安，分析师，欢迎使用 Meta-Mind-Marketing！</span><img :src="infoIcon" alt="" srcset="" class="infoIcon-img"/></p>
+          <p class="til_img_container">
+            <span>早安，分析师，欢迎使用 Meta-Mind-Marketing！</span>
+            <Poptip popper-class="saas-poptip small" placement="right-start">
+              <i class="iconfont iconguanyu tip-icon"></i>
+              <div slot="content">
+                <p>迅速掌握各项数据情报</p >
+                <p>定制化的展示看板</p >
+                <p>灵活可配置的分析纬度及标签</p >
+                <p>海量新潮分析模板素材</p >
+              </div>
+            </Poptip>
+          </p>
           <p>
             轻松上手分析模型，探索不同业务中的关键行为，洞察指标背后的增长点。
           </p>
@@ -41,8 +52,7 @@
       <div class="guide_container">
         <div class="guide_title_container">
           <div class="guide_title_lef">
-            <span style="margin-right: 4px">新手导航</span>
-            <img :src="infoIcon" alt="" srcset="" class="infoIcon" />
+            <span style="margin-right: 18px">新手导航</span>
             <Progress :percent="45" status="active"></Progress>
             <span>(3/6)</span>
           </div>
@@ -66,8 +76,13 @@
     <div class="kanban_container">
         <div class="title_1container">
             <div class="title_1lef">
-                <span>经营情况概览</span>
-                <img :src="infoIcon" alt="" srcset="" class="infoIcon" />
+                <span style="margin-right:10px;">经营情况概览</span>
+                <Poptip popper-class="saas-poptip small" placement="right-start" style="margin-right:10px;">
+                  <i class="iconfont iconguanyu tip-icon"></i>
+                  <div slot="content">
+                    <p>快速了解商业活动的经营状况，辅助决策调整。</p >
+                  </div>
+                </Poptip>
                 <!-- <span style="color: #2373FF;">系统默认看板</span> -->
             </div>
             <div class="title_1rig">
@@ -118,7 +133,12 @@
       <div class="title_container">
         <div class="left_area">
           <span>品牌运营概览</span>
-          <img :src="gdImg" class="gdImg" />
+          <Poptip popper-class="saas-poptip small" placement="right-start" style="margin-right:10px;">
+            <i class="iconfont iconguanyu tip-icon"></i>
+            <div slot="content">
+              <p>关注运营关键指标，快速了解品牌运营现状</p >
+            </div>
+          </Poptip>
           <div class="time_range_container">
             <Date-picker type="daterange" placement="bottom-end" placeholder="选择日期" style="width: 100%;"></Date-picker>
           </div>
@@ -171,7 +191,12 @@
       <div class="title_container">
         <div class="left_area">
           <span>用户生命周期</span>
-          <img :src="gdImg" class="gdImg" />
+          <Poptip popper-class="saas-poptip small" placement="right-start" style="margin-right:10px;">
+            <i class="iconfont iconguanyu tip-icon"></i>
+            <div slot="content">
+              <p>了解不同阶段的用户构成，寻找提升用户价值的切入点</p >
+            </div>
+          </Poptip>
           <div class="time_range_container">
             <Select v-model="timeRange" style="width: 100%">
               <Option
@@ -201,7 +226,12 @@
       <div class="title_container">
         <div class="left_area">
           <span>媒介概览</span>
-          <img :src="gdImg" class="gdImg" />
+          <Poptip popper-class="saas-poptip small" placement="right-start" style="margin-right:10px;">
+            <i class="iconfont iconguanyu tip-icon"></i>
+            <div slot="content">
+              <p>关注媒介核心指标，实时掌握媒介推广情况</p >
+            </div>
+          </Poptip>
           <div class="time_range_container">
           </div>
         </div>
@@ -276,7 +306,12 @@
       <div class="title_container">
         <div class="left_area">
           <span>产品数据评估</span>
-          <img :src="gdImg" class="gdImg" />
+          <Poptip popper-class="saas-poptip small" placement="right-start" style="margin-right:10px;">
+            <i class="iconfont iconguanyu tip-icon"></i>
+            <div slot="content">
+              <p>了解产品在企业内部的使用情况，深化管理效果</p >
+            </div>
+          </Poptip>
           <div class="time_range_container">
             <Select v-model="timeRange" style="width: 100%">
               <Option
@@ -304,6 +339,7 @@
 import vCard0 from "../common/card0";
 import vCard1 from "../common/card1";
 import vCard2 from "../common/card2";
+var dayjs = require('dayjs');
 export default {
   name: "Analyst",
   components: { vCard0, vCard1,vCard2 },
@@ -375,7 +411,7 @@ export default {
           id: 1,
           width: "15%",
           title: "GMV",
-          timeRange: "2020.10.16～2020.10.16",
+          timeRange: dayjs(new Date()).format('YYYY-MM-DD'),
           time: "今日",
           numText: 134,
           unitText: "万",
@@ -393,7 +429,7 @@ export default {
           id: 2,
           width: "15%",
           title: "GMV",
-          timeRange: "2020.10.16～2020.10.16",
+          timeRange: dayjs(new Date()).format('YYYY-MM-DD'),
           time: "今日",
           numText: 567,
           unitText: "万",
@@ -411,7 +447,7 @@ export default {
           id: 3,
           width: "15%",
           title: "GMV",
-          timeRange: "2020.10.16～2020.10.16",
+          timeRange: dayjs(new Date()).format('YYYY-MM-DD'),
           time: "今日",
           numText: 734,
           unitText: "万",
@@ -429,7 +465,7 @@ export default {
           id: 4,
           width: "15%",
           title: "GMV",
-          timeRange: "2020.10.16～2020.10.16",
+          timeRange: dayjs(new Date()).format('YYYY-MM-DD'),
           time: "今日",
           numText: 489,
           unitText: "万",
@@ -449,7 +485,7 @@ export default {
           id: 1,
           width: "15%",
           title: "新用户",
-          timeRange: "2020.10.16～2020.10.16",
+          timeRange:dayjs(dayjs(new Date()).subtract(2, 'day')).format('YYYY-MM-DD') + '～' + dayjs(new Date()).format('YYYY-MM-DD'),
           time: "过去3天",
           numText: 1234,
           unitText: "人",
@@ -467,7 +503,7 @@ export default {
           id: 2,
           width: "15%",
           title: "连续活跃用户",
-          timeRange: "2020.10.16～2020.10.16",
+          timeRange: dayjs(dayjs(new Date()).subtract(2, 'day')).format('YYYY-MM-DD') + '～' + dayjs(new Date()).format('YYYY-MM-DD'),
           time: "过去3天",
           numText: 101,
           unitText: "人",
@@ -485,7 +521,7 @@ export default {
           id: 3,
           width: "15%",
           title: "回流用户",
-          timeRange: "2020.10.16～2020.10.16",
+          timeRange: dayjs(dayjs(new Date()).subtract(2, 'day')).format('YYYY-MM-DD') + '～' + dayjs(new Date()).format('YYYY-MM-DD'),
           time: "过去3天",
           numText: 1027,
           unitText: "人",
@@ -503,7 +539,7 @@ export default {
           id: 4,
           width: "15%",
           title: "沉默用户",
-          timeRange: "2020.10.16～2020.10.16",
+          timeRange:dayjs(dayjs(new Date()).subtract(2, 'day')).format('YYYY-MM-DD') + '～' + dayjs(new Date()).format('YYYY-MM-DD'),
           time: "过去3天",
           numText: 1290,
           unitText: "人",
@@ -521,7 +557,7 @@ export default {
           id: 5,
           width: "15%",
           title: "流失用户",
-          timeRange: "2020.10.16～2020.10.16",
+          timeRange: dayjs(dayjs(new Date()).subtract(2, 'day')).format('YYYY-MM-DD') + '～' + dayjs(new Date()).format('YYYY-MM-DD'),
           time: "过去3天",
           numText: 1089,
           unitText: "人",
@@ -539,7 +575,7 @@ export default {
           id: 6,
           width: "15%",
           title: "流入流出比",
-          timeRange: "2020.10.16～2020.10.16",
+          timeRange: dayjs(dayjs(new Date()).subtract(2, 'day')).format('YYYY-MM-DD') + '～' + dayjs(new Date()).format('YYYY-MM-DD'),
           time: "过去3天",
           numText: 0.8,
           unitText: "",
@@ -719,7 +755,7 @@ export default {
           id: 1,
           width: "24%",
           title: "活跃次数",
-          timeRange: "2020.10.16～2020.10.16 | 本周",
+          timeRange:dayjs(new Date()).format('YYYY-MM-DD'),
           time: "今日",
           numText: 1847,
           unitText: "人",
@@ -738,7 +774,7 @@ export default {
           id: 2,
           width: "24%",
           title: "活跃员工数",
-          timeRange: "2020.10.16～2020.10.16 | 本周",
+          timeRange:dayjs(new Date()).format('YYYY-MM-DD'),
           time: "今日",
           numText: 1847,
           unitText: "人",
@@ -757,7 +793,7 @@ export default {
           id: 3,
           width: "24%",
           title: "活跃企业数",
-          timeRange: "2020.10.16～2020.10.16 | 本周",
+          timeRange: dayjs(new Date()).format('YYYY-MM-DD'),
           time: "今日",
           numText: 1847,
           unitText: "人",
@@ -776,7 +812,7 @@ export default {
           id: 4,
           width: "24%",
           title: "核心功能使用的总次数",
-          timeRange: "2020.10.16～2020.10.16 | 本周",
+          timeRange: dayjs(new Date()).format('YYYY-MM-DD'),
           time: "今日",
           numText: 1847,
           unitText: "人",
@@ -795,7 +831,7 @@ export default {
           id: 5,
           width: "24%",
           title: "核心功能使用员工数",
-          timeRange: "2020.10.16～2020.10.16 | 本周",
+          timeRange: dayjs(new Date()).format('YYYY-MM-DD'),
           time: "今日",
           numText: 1847,
           unitText: "人",
@@ -814,7 +850,7 @@ export default {
           id: 6,
           width: "24%",
           title: "核心功能的企业数",
-          timeRange: "2020.10.16～2020.10.16 | 本周",
+          timeRange: dayjs(new Date()).format('YYYY-MM-DD'),
           time: "今日",
           numText: 972,
           unitText: "个",
@@ -833,7 +869,7 @@ export default {
           id: 7,
           width: "24%",
           title: "活跃用户中使用核心功能",
-          timeRange: "2020.10.16～2020.10.16 | 本周",
+          timeRange: dayjs(new Date()).format('YYYY-MM-DD'),
           time: "今日",
           numText: 92.47,
           unitText: "%",
@@ -852,7 +888,7 @@ export default {
           id: 8,
           width: "24%",
           title: "核心功能渗透率",
-          timeRange: "2020.10.16～2020.10.16 | 本周",
+          timeRange: dayjs(new Date()).format('YYYY-MM-DD'),
           time: "今日",
           numText: 26.45,
           unitText: "%",
@@ -1215,7 +1251,7 @@ export default {
         }
         .til_img_container{
           display: flex;
-          align-items: center;
+          align-items: baseline;
           :nth-child(1){
             margin-right: 4px;
           }
