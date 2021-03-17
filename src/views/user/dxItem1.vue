@@ -112,144 +112,202 @@
             <div class="mapContainer" id="mapContainer">
             </div>
             <div v-if="!onlyMap" class="per_info_container">
-                <div class="yhdx_title">
-                    <div class="yhdx_title_top">
-                        用户动线分析结果
-                    </div>
-                    <div class="yhdx_title_bom">
-                        2020/12/14
-                    </div>
-                </div>
-                <div class="switch_container">
-                    <div class="data_title">数据图表</div>
-                    <div class="switch_contianer">
-                        <i-switch v-model="switch1"></i-switch>
-                    </div>
-                    <div class="data_title" style="color: #97A0C3;">智能解读</div>
-                </div>
 
-                <div class="nl_card_container">
-                    <div class="til_label">
-                        用户状态
-                        <Poptip popper-class="saas-poptip" placement="right-start">
-                            <i class="iconfont iconguanyuline1 tip-icon"></i>
-                            <div slot="content">
-                                <p>用户群体主要处于通勤及工作状态，偏好社交娱乐类型的APP，时间段内对出行、外卖餐</p>
-                                <p>饮类的生活服务APP需求显著，成为重要触点，情绪偏向紧张和烦躁</p>
+                <div class="person_til">用户触达策略</div>
+                <div class="person_con_con" ref="person_con_con">
+                  <div class="perxon_tab_con">
+                    <div class="perxon_tab_con_lef" @click="clickPerTab(1)">用户动线</div>
+                    <div class="perxon_tab_con_rig" @click="clickPerTab(0)">投放方案推荐</div>
+                  </div>
+
+
+                  <div class="person_tffatj_con" v-if="ifShowtffatj">
+                    <!-- <div class="yhdx_title">
+                        <div class="yhdx_title_top">
+                            用户动线分析结果
+                        </div>
+                        <div class="yhdx_title_bom">
+                            2020/12/14
+                        </div>
+                    </div> -->
+                    <div class="switch_container">
+                        <div class="data_title">数据图表</div>
+                        <div class="switch_contianer">
+                            <i-switch v-model="switch1"></i-switch>
+                        </div>
+                        <div class="data_title" style="color: #97A0C3;">智能解读</div>
+                    </div>
+
+                    <div class="nl_card_container">
+                        <div class="til_label">
+                            用户状态
+                            <Poptip popper-class="saas-poptip" placement="right-start">
+                                <i class="iconfont iconguanyuline1 tip-icon"></i>
+                                <div slot="content">
+                                    <p>用户群体主要处于通勤及工作状态，偏好社交娱乐类型的APP，时间段内对出行、外卖餐</p>
+                                    <p>饮类的生活服务APP需求显著，成为重要触点，情绪偏向紧张和烦躁</p>
+                                </div>
+                            </Poptip>
+                        </div>
+                        <div class="pro_container">
+                            <div class="pro_label">放松</div>
+                            <div class="pro"><Progress :percent="rightPanelData.userStatObj.stat1" status="active"></Progress></div>
+                        </div>
+                        <div class="pro_container">
+                            <div class="pro_label">紧张</div>
+                            <div class="pro"><Progress :percent="rightPanelData.userStatObj.stat2" status="active"></Progress></div>
+                        </div>
+                        <div class="pro_container">
+                            <div class="pro_label">一般</div>
+                            <div class="pro"><Progress :percent="rightPanelData.userStatObj.stat3" status="active"></Progress></div>
+                        </div>
+                        <div class="pro_container">
+                            <div class="pro_label">烦躁</div>
+                            <div class="pro"><Progress :percent="rightPanelData.userStatObj.stat4" status="active"></Progress></div>
+                        </div>
+                    </div>
+
+                    <div class="chufa_card_container">
+                        <div class="til_label">出发地</div>
+                        <div class="chufadi_container">
+                            <div class="diItem" v-if="rightPanelData.chufaObj.chufa1">
+                                <img :src="locaIcon" alt="" srcset="" class="addressIcon">
+                                <span class="addresstxt">{{rightPanelData.chufaObj.chufa1}}</span>
                             </div>
-                        </Poptip>
+                            <div class="diItem" v-if="rightPanelData.chufaObj.chufa2">
+                                <img :src="locaIcon" alt="" srcset="" class="addressIcon">
+                                <span class="addresstxt">{{rightPanelData.chufaObj.chufa2}}</span>
+                            </div>
+                            <div class="diItem" v-if="rightPanelData.chufaObj.chufa3">
+                                <img :src="locaIcon" alt="" srcset="" class="addressIcon">
+                                <span class="addresstxt">{{rightPanelData.chufaObj.chufa3}}</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="pro_container">
-                        <div class="pro_label">放松</div>
-                        <div class="pro"><Progress :percent="rightPanelData.userStatObj.stat1" status="active"></Progress></div>
-                    </div>
-                    <div class="pro_container">
-                        <div class="pro_label">紧张</div>
-                        <div class="pro"><Progress :percent="rightPanelData.userStatObj.stat2" status="active"></Progress></div>
-                    </div>
-                    <div class="pro_container">
-                        <div class="pro_label">一般</div>
-                        <div class="pro"><Progress :percent="rightPanelData.userStatObj.stat3" status="active"></Progress></div>
-                    </div>
-                    <div class="pro_container">
-                        <div class="pro_label">烦躁</div>
-                        <div class="pro"><Progress :percent="rightPanelData.userStatObj.stat4" status="active"></Progress></div>
-                    </div>
-                </div>
 
-                <div class="chufa_card_container">
-                    <div class="til_label">出发地</div>
-                    <div class="chufadi_container">
-                        <div class="diItem" v-if="rightPanelData.chufaObj.chufa1">
-                            <img :src="locaIcon" alt="" srcset="" class="addressIcon">
-                            <span class="addresstxt">{{rightPanelData.chufaObj.chufa1}}</span>
-                        </div>
-                        <div class="diItem" v-if="rightPanelData.chufaObj.chufa2">
-                            <img :src="locaIcon" alt="" srcset="" class="addressIcon">
-                            <span class="addresstxt">{{rightPanelData.chufaObj.chufa2}}</span>
-                        </div>
-                        <div class="diItem" v-if="rightPanelData.chufaObj.chufa3">
-                            <img :src="locaIcon" alt="" srcset="" class="addressIcon">
-                            <span class="addresstxt">{{rightPanelData.chufaObj.chufa3}}</span>
+                    <div class="mudd_container">
+                        <div class="til_label">目的地</div>
+                        <div class="chufadi_container">
+                            <div class="diItem" v-if="rightPanelData.mudiObj.mudi1">
+                                <img :src="locaIcon" srcset="" class="addressIcon">
+                                <span class="addresstxt">{{rightPanelData.mudiObj.mudi1}}</span>
+                            </div>
+                            <div class="diItem" v-if="rightPanelData.mudiObj.mudi2">
+                                <img :src="locaIcon" alt="" srcset="" class="addressIcon">
+                                <span class="addresstxt">{{rightPanelData.mudiObj.mudi2}}</span>
+                            </div>
+                            <div class="diItem" v-if="rightPanelData.mudiObj.mudi3">
+                                <img :src="locaIcon" alt="" srcset="" class="addressIcon">
+                                <span class="addresstxt">{{rightPanelData.mudiObj.mudi3}}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="mudd_container">
-                    <div class="til_label">目的地</div>
-                    <div class="chufadi_container">
-                        <div class="diItem" v-if="rightPanelData.mudiObj.mudi1">
-                            <img :src="locaIcon" srcset="" class="addressIcon">
-                            <span class="addresstxt">{{rightPanelData.mudiObj.mudi1}}</span>
-                        </div>
-                        <div class="diItem" v-if="rightPanelData.mudiObj.mudi2">
-                            <img :src="locaIcon" alt="" srcset="" class="addressIcon">
-                            <span class="addresstxt">{{rightPanelData.mudiObj.mudi2}}</span>
-                        </div>
-                        <div class="diItem" v-if="rightPanelData.mudiObj.mudi3">
-                            <img :src="locaIcon" alt="" srcset="" class="addressIcon">
-                            <span class="addresstxt">{{rightPanelData.mudiObj.mudi3}}</span>
+                    <div class="tqfs_container">
+                        <div class="til_label">通勤方式</div>
+                        <div class="cx_type_container">
+                            <div class="cx_item" v-if="rightPanelData.tonqinTypeObj.tqType1">
+                                <img :src="rightPanelData.tonqinTypeObj.tqType1Icon" alt="" srcset="" class="cxlogo">
+                                <span class="cxtxt">{{rightPanelData.tonqinTypeObj.tqType1}}</span>
+                            </div>
+                            <div class="cx_item" v-if="rightPanelData.tonqinTypeObj.tqType2">
+                                <img :src="drIcon" alt="" srcset="" class="cxlogo">
+                                <span class="cxtxt">{{rightPanelData.tonqinTypeObj.tqType2}}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="tqfs_container">
-                    <div class="til_label">通勤方式</div>
-                    <div class="cx_type_container">
-                        <div class="cx_item" v-if="rightPanelData.tonqinTypeObj.tqType1">
-                            <img :src="rightPanelData.tonqinTypeObj.tqType1Icon" alt="" srcset="" class="cxlogo">
-                            <span class="cxtxt">{{rightPanelData.tonqinTypeObj.tqType1}}</span>
-                        </div>
-                        <div class="cx_item" v-if="rightPanelData.tonqinTypeObj.tqType2">
-                            <img :src="drIcon" alt="" srcset="" class="cxlogo">
-                            <span class="cxtxt">{{rightPanelData.tonqinTypeObj.tqType2}}</span>
+                    <div class="tqsjylx_container">
+                        <div class="til_label">通勤时间与路程</div>
+                        <div class="haoshi_container">
+                            <img :src="tbIcon" alt="" srcset="" class="timeBiao">
+                            <span style="margin-right:16px;">平均耗时</span>
+                            <span>{{rightPanelData.tongqinTimeObj.timeN}}分钟</span>
                         </div>
                     </div>
-                </div>
 
-                <div class="tqsjylx_container">
-                    <div class="til_label">通勤时间与路程</div>
-                    <div class="haoshi_container">
-                        <img :src="tbIcon" alt="" srcset="" class="timeBiao">
-                        <span style="margin-right:16px;">平均耗时</span>
-                        <span>{{rightPanelData.tongqinTimeObj.timeN}}分钟</span>
-                    </div>
-                </div>
+                    <div class="nobgi_con">
+                        <div class="nl_card_container">
+                            <div class="til_label">年龄占比</div>
+                            <div class="pro_container">
+                                <div class="pro_label">15-25岁</div>
+                                <div class="pro"><Progress :percent="30" status="active"></Progress></div>
+                            </div>
+                            <div class="pro_container">
+                                <div class="pro_label">25-35岁</div>
+                                <div class="pro"><Progress :percent="30" status="active"></Progress></div>
+                            </div>
+                            <div class="pro_container">
+                                <div class="pro_label">35-45岁</div>
+                                <div class="pro"><Progress :percent="20" status="active"></Progress></div>
+                            </div>
+                        </div>
 
-                <div class="nl_card_container">
-                    <div class="til_label">年龄占比</div>
-                    <div class="pro_container">
-                        <div class="pro_label">15-25岁</div>
-                        <div class="pro"><Progress :percent="30" status="active"></Progress></div>
+                        <div class="sex_card_container">
+                            <div class="til_label">性别占比</div>
+                            <div class="sex_tu_container">
+                                <div class="man"></div>
+                                <div class="women"></div>
+                            </div>
+                            <div class="sex_per_container">
+                                <div class="man_per">65%</div>
+                                <div class="women_per">35%</div>
+                            </div>
+                            <div class="sex_per_container">
+                                <div class="mansex">男性</div>
+                                <div class="womensex">女性</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="pro_container">
-                        <div class="pro_label">25-35岁</div>
-                        <div class="pro"><Progress :percent="30" status="active"></Progress></div>
-                    </div>
-                    <div class="pro_container">
-                        <div class="pro_label">35-45岁</div>
-                        <div class="pro"><Progress :percent="20" status="active"></Progress></div>
-                    </div>
-                </div>
 
-                <div class="sex_card_container">
-                    <div class="til_label">性别占比</div>
-                    <div class="sex_tu_container">
-                        <div class="man"></div>
-                        <div class="women"></div>
+                  </div>
+
+                  
+                  <div class="person_tffatj_con" v-else>
+                    <div class="top_img_con">
+                      <div class="top_img_con_lef">
+                        <img :src="fanganObj.qdObj1.icon" class="douyIcon">
+                        <div class="con_lef_label">{{fanganObj.qdObj1.name}}</div>
+                        <div class="con_lef_num">{{fanganObj.qdObj1.money}}</div>
+                        <div class="con_lef_label">触达率</div>
+                        <div class="con_lef_num1">{{fanganObj.qdObj1.vdlNum}}</div>
+                      </div>
+                      <div class="top_img_con_rig">
+                        <img :src="fanganObj.qdObj2.icon" class="douyIcon">
+                        <div class="con_lef_label">{{fanganObj.qdObj2.name}}</div>
+                        <div class="con_lef_num">{{fanganObj.qdObj2.money}}</div>
+                        <div class="con_lef_label">触达率</div>
+                        <div class="con_lef_num1">{{fanganObj.qdObj2.vdlNum}}</div>
+                      </div>
                     </div>
-                    <div class="sex_per_container">
-                        <div class="man_per">65%</div>
-                        <div class="women_per">35%</div>
+                    <div class="tf_time">建议投放时间段</div>
+                    <div class="tf_time_txt1">
+                      <div class="cir_txt_con">
+                        <div class="cir_con"></div>
+                        <div class="qu_dao_name">{{fanganObj.qdObj1.name}}</div>
+                      </div>
+                      <div class="tim_txt_con">{{fanganObj.qdObj1.timeRang}}</div>
                     </div>
-                    <div class="sex_per_container">
-                        <div class="mansex">男性</div>
-                        <div class="womensex">女性</div>
+                    <div class="tf_time_txt2">
+                      <div class="cir_txt_con">
+                        <div class="cir_con" style="background:#FE774B;"></div>
+                        <div class="qu_dao_name">{{fanganObj.qdObj2.name}}</div>
+                      </div>
+                      <div class="tim_txt_con">{{fanganObj.qdObj2.timeRang}}</div>
                     </div>
+                    <div class="tf_time">预期效果</div>
+                    <div class="yqxg_con_con">
+                      <div class="yqxg_con_con_item" v-for="(itm,inx) in yqxgList" :key="inx">
+                        <div class="yqxg_til">{{itm.til}}</div>
+                        <div class="yqxg_num_desc">{{itm.desc}}</div>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
 
             </div>
-            <div class="yhxw_container">
+            <!-- <div class="yhxw_container">
                 <div class="yhxw_title">用户行为</div>
                 <div class="bqitm_container">
                     <div class="bqitm" v-for="(it, i) in bqitmList" :key="i">
@@ -259,7 +317,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
@@ -426,7 +484,42 @@
                   交流: '#a49dfa',
                   出行: '#CECE7E',
                   餐饮: '#8AE6C7',
-                }
+                },
+                ifShowtffatj:true,
+                fanganObj:{
+                 qdObj1:{
+                  icon: require("../../assets/img/yhhx/tt.png"),
+                  name:'今日头条',
+                  money:'￥9200',
+                  vdlNum:'53%',
+                  timeRang:'8:00 - 9:30'
+                 },
+                 qdObj2:{
+                  icon: require("../../assets/img/yhhx/wyIcon.png"),
+                  name:'网易',
+                  money:'￥3200',
+                  vdlNum:'43%',
+                  timeRang:'7:40 - 8:30'
+                 }
+                },
+                yqxgList:[
+                 {
+                   til:'触达用户：',
+                   desc:'28万'
+                 },
+                 {
+                   til:'互动量提升：',
+                   desc:'12%'
+                 },
+                 {
+                   til:'品牌印象提升：',
+                   desc:'7%'
+                 },
+                 {
+                   til:'销售转化率：',
+                   desc:'3%'
+                 },
+                ],
             }
         },
         mounted(){
@@ -455,8 +548,26 @@
             ];
             var cir1 = [116.402394,39.937182];
             this.initMap(path,path1,path2,cir1,'西城区');
+            this.clickPerTab(1);
         },
         methods:{
+            clickPerTab(arg){
+              var conDom = this.$refs.person_con_con;
+              let actLef = require('../../assets/img/yhhx/actLef.png');
+              let actrig = require('../../assets/img/yhhx/actRig.png');
+              if(arg == 1){
+                conDom.style=`background-image: url(${actLef});background-size:contain;background-repeat:no-repeat;`;
+              }
+              else{
+                conDom.style=`background-image: url(${actrig});background-size: cover;`;
+              }
+              if(arg == 1){
+                this.ifShowtffatj = true;
+              }
+              else{
+                this.ifShowtffatj = false;
+              }
+            },
             submit(){
                 this.ifShowCon = false;
                 this.condiObj = {
@@ -1017,7 +1128,7 @@
     width: 100%;
     position: relative;
     .test_container1.width{
-        width: 792px;
+        width: 762px;
     }
     .test_container1{
         height: 80px;
@@ -1036,7 +1147,7 @@
             justify-content: center;
             .area_timer_choice_container{
                 width: 100%;
-                height: 96px;
+                height: 66px;
                 display: flex;
                 align-items: center;
                 background: #FFFFFF;
@@ -1093,8 +1204,8 @@
                             margin-top: 4px;
                             border-radius: 10px;
                             .cirle_dian{
-                                width: 20px;
-                                height: 20px;
+                                width: 12px;
+                                height: 12px;
                                 border-radius: 50%;
                                 background: #C6CBDE;
                                 &:hover{
@@ -1137,17 +1248,17 @@
             }
         }
         .per_info_container{
-            width: 270px;
+            width: 310px;
             height: 100%;
         }
     }
     .conditions_container-box.width{
-        width: 792px;
+        width: 762px;
     }
     .conditions_container-box{
         position: absolute;
         z-index: 999;
-        top: 115px;
+        top: 84px;
         display: flex;
         left: 20px;
         right: 20px
@@ -1204,8 +1315,8 @@
     .condition_content{
         position: absolute;
         left: 1.9%;
-        top: 168px;
-        width: 787.06px;
+        top: 132px;
+        width: 762px;
         z-index: 1000;
         height: 557px;
         background: #FFF;
@@ -1330,10 +1441,10 @@
                 margin-top: 4px;
                 border-radius: 10px;
                 .cirle_dian{
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                background-color: #a49dfa;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background-color: #a49dfa;
                 }
                 .activeDian{
                 background-color: brown;
@@ -1342,307 +1453,528 @@
             }
         }
         .per_info_container{
-            width: 270px;
+            width: 300px;
             height: 100%;
-            padding:13px 12px;
+            padding:17px 16px;
             box-sizing: border-box;
             background: #EAEDF7;
             overflow-y: scroll;
-            .yhdx_title{
-                width: 100%;
-                height: 72px;
-                border-radius: 8px;
+
+            .person_til{
+              width: 100%;
+              font-size: 18px;
+              font-family: PingFangSC-Medium, PingFang SC;
+              font-weight: 500;
+              color: #242F57;
+              margin-bottom: 15px;
+            }
+            .person_con_con{
+              width: 100%;
+              .perxon_tab_con{
                 display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
-                padding-left: 16px;
-                box-sizing: border-box;
-                background-image: url("../../assets/img/yhhx/river.png");
-                background-size: cover;
-                .yhdx_title_top{
-                    width: 100%;
-                    font-size: 18px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #FFFFFF;
+                .perxon_tab_con_lef,.perxon_tab_con_rig{
+                  width: 50%;
+                  height: 40px;
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #636E95;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  &:hover{
+                    cursor: pointer;
+                  }
                 }
-                .yhdx_title_bom{
-                    width: 100%;
+              }
+              .person_tffatj_con{
+                width: 100%;
+                border-radius: 0px 12px 12px 12px;
+                padding-bottom: 20px;
+                box-sizing: border-box;
+                .top_img_con{
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  .top_img_con_lef,.top_img_con_rig{
+                    width: 48%;
+                    margin-top: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    background: rgba(235,236,240,.4);
+                    border-radius: 8px;
+                    .douyIcon{
+                      display: block;
+                      width: 40px;
+                      height: 40px;
+                      border-radius: 50%;
+                      margin-top: -16px;
+                      margin-bottom: 4px;
+                    }
+                    .con_lef_label{
+                      font-size: 14px;
+                      font-family: PingFangSC-Regular, PingFang SC;
+                      font-weight: 400;
+                      color: #636E95;
+                    }
+                    .con_lef_num{
+                      font-size: 18px;
+                      font-family: PingFangSC-Semibold, PingFang SC;
+                      font-weight: 600;
+                      color: #242F57;
+                      margin-bottom: 14px;
+                    }
+                    .con_lef_num1{
+                      font-size: 16px;
+                      font-family: PingFangSC-Medium, PingFang SC;
+                      font-weight: 500;
+                      color: #242F57;
+                      margin-bottom: 15px;
+                    }
+                  }
+                }
+                .tf_time{
+                  width: 100%;
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  margin-top: 30px;
+                  margin-bottom: 10px;
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #242F57;
+                }
+                .tfmjchoice_con{
+                  width: 100%;
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  display: flex;
+                  justify-content: space-between;
+                  flex-wrap: wrap;
+                  .meijie_item{
+                    display: flex;
+                    align-items: center;
+                    width: 49%;
+                    padding: 10px 7px;
+                    box-sizing: border-box;
+                    border-radius: 4px;
+                    border: 1px solid #D3E3FF;
+                    margin-bottom: 9px;
+                    .srcIMG{
+                      margin-left: 7px;
+                      display: block;
+                      width: 24px;
+                      height: 24px;
+                      margin-right: 3px;
+                    }
+                    .qudtil{
+                      font-size: 12px;
+                      font-family: PingFangSC-Medium, PingFang SC;
+                      font-weight: 500;
+                      color: #242F57;
+                    }
+                  }
+                  .actBor{
+                    border: 1px solid #2373FF;
+                  }
+                }
+                .tfys_input_con{
+                  width: 100%;
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  margin-bottom: 13px;
+                  display: flex;
+                  align-items: center;
+                  position: relative;
+                  ::v-deep .ivu-poptip .ivu-poptip-rel .ivu-input-type-text .ivu-input-default{
+                    padding-left: 30px !important;
+                  }
+                  .cmon{
+                    position: absolute;
+                    color: #97A0C3;
+                    left: 25px;
+                    z-index: 999;
+                  }
+                  .zhi{
                     font-size: 12px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
-                    color: #FFFFFF;
+                    color: #97A0C3;
+                    margin-left: 6px;
+                  }
                 }
-            }
-            .switch_container{
-                width: 100%;
-                padding: 12px 20px;
-                box-sizing: border-box;
-                border-bottom: 1px solid #fdfdfd;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                font-size: 14px;
-                font-family: PingFangSC-Medium, PingFang SC;
-                font-weight: 500;
-                color: #242F57;
-            }
-            .nl_card_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
+                .tf_time_txt1,.tf_time_txt2{
+                  width: 100%;
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  font-size: 14px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #242F57;
+                  .cir_txt_con{
+                    display: flex;
+                    align-items: center;
+                    .cir_con{
+                      width: 8px;
+                      height: 8px;
+                      background: #2373FF;
+                      border-radius: 50%;
+                      margin-right: 7px;
+                    }
+                  }
+                }
+                .radio_txt_con{
+                  width: 100%;
+                  display: flex;
+                  align-items: center;
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  margin-bottom: 7px;
+                  .radio_cir{
+                    display: block;
+                    width: 8px;
+                    height: 8px;
+                    background: #2373FF;
+                    border-radius: 50%;
+                    margin-right: 7px;
+                  }
+                  .radio_txt{
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #242F57;
+                  }
+                }
+                .yqxg_con_con{
+                  display: flex;
+                  justify-content: space-between;
+                  flex-wrap: wrap;
+                  padding: 0px 16px;
+                  box-sizing: border-box;
+                  .yqxg_con_con_item{
+                    width: 48%;
+                    margin-bottom:8px;
+                    background: #F0F8FF;
+                    border-radius: 4px;
+                    padding: 7px 10px;
+                    box-sizing: border-box;
+                    .yqxg_til{
+                      width: 100%;
+                      font-size: 11px;
+                      font-family: PingFangSC-Regular, PingFang SC;
+                      font-weight: 400;
+                      color: #636E95;
+                    }
+                    .yqxg_num_desc{
+                      font-size: 16px;
+                      font-family: PingFangSC-Medium, PingFang SC;
+                      font-weight: 500;
+                      color: #2373FF;
+                    }
+                    .yqxg_num_desc1{
+                      font-size: 14px;
+                      font-family: PingFangSC-Medium, PingFang SC;
+                      font-weight: 500;
+                      color: #2373FF;
+                    }
+                  }
+                }
+                // .yhdx_title{
+                //     width: 100%;
+                //     height: 72px;
+                //     border-radius: 8px;
+                //     display: flex;
+                //     flex-direction: column;
+                //     align-items: flex-start;
+                //     justify-content: center;
+                //     padding-left: 16px;
+                //     box-sizing: border-box;
+                //     background-image: url("../../assets/img/yhhx/river.png");
+                //     background-size: cover;
+                //     .yhdx_title_top{
+                //         width: 100%;
+                //         font-size: 18px;
+                //         font-family: PingFangSC-Medium, PingFang SC;
+                //         font-weight: 500;
+                //         color: #FFFFFF;
+                //     }
+                //     .yhdx_title_bom{
+                //         width: 100%;
+                //         font-size: 12px;
+                //         font-family: PingFangSC-Regular, PingFang SC;
+                //         font-weight: 400;
+                //         color: #FFFFFF;
+                //     }
+                // }
+                .switch_container{
                     width: 100%;
+                    padding: 12px 20px;
+                    box-sizing: border-box;
+                    border-bottom: 1px solid #fdfdfd;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
                     font-size: 14px;
                     font-family: PingFangSC-Medium, PingFang SC;
                     font-weight: 500;
                     color: #242F57;
-                    margin-bottom: 10px;
                 }
-                .pro_container{
+                .nl_card_container{
                     width: 100%;
+                    padding: 12px 14px;
+                    box-sizing: border-box;
                     margin-bottom: 8px;
-                    display: flex;
-                    align-items: center;
-                    .pro_label{
+                    .til_label{
+                        width: 100%;
+                        font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #242F57;
+                        margin-bottom: 10px;
+                    }
+                    .pro_container{
+                        width: 100%;
+                        margin-bottom: 8px;
+                        display: flex;
+                        align-items: center;
+                        .pro_label{
+                            font-size: 12px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #97A0C3;
+                            margin-right: 12px;
+                        }
+                        .pro{
+                            flex: 1;
+                        }
+                    }
+                }
+                .chufa_card_container{
+                    width: 100%;
+                    background: rgba(255, 255, 255, 0.8);
+                    border-radius: 8px;
+                    border: 1px solid #FFFFFF;
+                    padding: 12px 14px;
+                    box-sizing: border-box;
+                    margin-bottom: 8px;
+                    .til_label{
+                        width: 100%;
+                        font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #242F57;
+                        margin-bottom: 10px;
+                    }
+                    .chufadi_container{
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-top: 8px;
+                        .diItem{
+                            width: 32%;
+                            height: 24px;
+                            display: flex;
+                            align-items: center;
+                            padding: 2px 7px;
+                            box-sizing: border-box;
+                            background: #F4F7FC;
+                            border-radius: 4px;
+                            .addressIcon{
+                            display: block;
+                            width: 11px;
+                            margin-right: 6px;
+                            }
+                            .addresstxt{
+                            font-size: 12px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #242F57;
+                            }
+                        }
+                    }
+                }
+                .mudd_container{
+                    width: 100%;
+                    background: rgba(255, 255, 255, 0.8);
+                    border-radius: 8px;
+                    border: 1px solid #FFFFFF;
+                    padding: 12px 14px;
+                    box-sizing: border-box;
+                    margin-bottom: 8px;
+                    .til_label{
+                        width: 100%;
+                        font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #242F57;
+                        margin-bottom: 10px;
+                    }
+                    .chufadi_container{
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-top: 8px;
+                        .diItem{
+                            width: 32%;
+                            height: 24px;
+                            display: flex;
+                            align-items: center;
+                            padding: 2px 7px;
+                            box-sizing: border-box;
+                            background: #F4F7FC;
+                            border-radius: 4px;
+                            .addressIcon{
+                            display: block;
+                            width: 11px;
+                            margin-right: 6px;
+                            }
+                            .addresstxt{
+                            font-size: 12px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #242F57;
+                            }
+                        }
+                    }
+                }
+                .tqfs_container{
+                    width: 100%;
+                    background: rgba(255, 255, 255, 0.8);
+                    border-radius: 8px;
+                    border: 1px solid #FFFFFF;
+                    padding: 12px 14px;
+                    box-sizing: border-box;
+                    margin-bottom: 8px;
+                    .til_label{
+                        width: 100%;
+                        font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #242F57;
+                        margin-bottom: 10px;
+                    }
+                    .cx_type_container{
+                        width: 100%;
+                        margin-top: 16px;
+                        display: flex;
+                        align-items: center;
+                        .cx_item{
+                            display: flex;
+                            align-items: center;
+                            margin-right: 25px;
+                            .cxlogo{
+                            display: block;
+                            width: 16px;
+                            margin-right: 4px;
+                            }
+                            .cxtxt{
+                            font-size: 12px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #242F57;
+                            }
+                        }
+                    }
+                }
+                .tqsjylx_container{
+                    width: 100%;
+                    background: rgba(255, 255, 255, 0.8);
+                    border-radius: 8px;
+                    border: 1px solid #FFFFFF;
+                    padding: 12px 14px;
+                    box-sizing: border-box;
+                    margin-bottom: 8px;
+                    .til_label{
+                        width: 100%;
+                        font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #242F57;
+                        margin-bottom: 10px;
+                    }
+                    .haoshi_container{
+                        margin-top: 17px;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
                         font-size: 12px;
                         font-family: PingFangSC-Regular, PingFang SC;
                         font-weight: 400;
-                        color: #97A0C3;
-                        margin-right: 12px;
-                    }
-                    .pro{
-                        flex: 1;
-                    }
-                }
-            }
-
-            .sex_card_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .sex_tu_container{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-bottom: 4px;
-                    .man{
-                        width: 64%;
-                        height: 16px;
-                        background: #2373FF;
-                        border-radius: 2px;
-                    }
-                    .women{
-                        width: 34%;
-                        height: 16px;
-                        background: #FE763D;
-                        border-radius: 2px;
+                        color: #242F57;
+                        .timeBiao{
+                            display: block;
+                            width: 16px;
+                            height: 16px;
+                            margin-right: 4px;
+                        }
                     }
                 }
-                .sex_per_container{
+                .nobgi_con{
                     width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    font-size: 18px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    .man_per{
-                        color: #2373FF;
-                    }
-                    .women_per{
-                        color: #FE763D;
-                    }
-                    .mansex,.womensex{
-                        font-size: 12px;
-                        font-weight: 400;
-                        color: #97A0C3;
-                    }
-                }
-            }
-
-            .chufa_card_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .chufadi_container{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-top: 8px;
-                    .diItem{
-                        width: 32%;
-                        height: 24px;
-                        display: flex;
-                        align-items: center;
-                        padding: 2px 7px;
+                    background: white;
+                    .sex_card_container{
+                        width: 100%;
+                        padding: 12px 14px;
                         box-sizing: border-box;
-                        background: #F4F7FC;
-                        border-radius: 4px;
-                        .addressIcon{
-                        display: block;
-                        width: 11px;
-                        margin-right: 6px;
+                        margin-bottom: 8px;
+                        .til_label{
+                            width: 100%;
+                            font-size: 14px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 500;
+                            color: #242F57;
+                            margin-bottom: 10px;
                         }
-                        .addresstxt{
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #242F57;
+                        .sex_tu_container{
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-bottom: 4px;
+                            .man{
+                                width: 64%;
+                                height: 16px;
+                                background: #2373FF;
+                                border-radius: 2px;
+                            }
+                            .women{
+                                width: 34%;
+                                height: 16px;
+                                background: #FE763D;
+                                border-radius: 2px;
+                            }
                         }
-                    }
-                }
-            }
-
-            .mudd_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .chufadi_container{
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-top: 8px;
-                    .diItem{
-                        width: 32%;
-                        height: 24px;
-                        display: flex;
-                        align-items: center;
-                        padding: 2px 7px;
-                        box-sizing: border-box;
-                        background: #F4F7FC;
-                        border-radius: 4px;
-                        .addressIcon{
-                        display: block;
-                        width: 11px;
-                        margin-right: 6px;
-                        }
-                        .addresstxt{
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #242F57;
+                        .sex_per_container{
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            font-size: 18px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 500;
+                            .man_per{
+                                color: #2373FF;
+                            }
+                            .women_per{
+                                color: #FE763D;
+                            }
+                            .mansex,.womensex{
+                                font-size: 12px;
+                                font-weight: 400;
+                                color: #97A0C3;
+                            }
                         }
                     }
                 }
-            }
-
-            .tqfs_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .cx_type_container{
-                    width: 100%;
-                    margin-top: 16px;
-                    display: flex;
-                    align-items: center;
-                    .cx_item{
-                        display: flex;
-                        align-items: center;
-                        margin-right: 25px;
-                        .cxlogo{
-                        display: block;
-                        width: 16px;
-                        margin-right: 4px;
-                        }
-                        .cxtxt{
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #242F57;
-                        }
-                    }
-                }
-            }
-
-            .tqsjylx_container{
-                width: 100%;
-                background: rgba(255, 255, 255, 0.8);
-                border-radius: 8px;
-                border: 1px solid #FFFFFF;
-                padding: 12px 14px;
-                box-sizing: border-box;
-                margin-bottom: 8px;
-                .til_label{
-                    width: 100%;
-                    font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-                    margin-bottom: 10px;
-                }
-                .haoshi_container{
-                    margin-top: 17px;
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    font-size: 12px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    color: #242F57;
-                    .timeBiao{
-                        display: block;
-                        width: 16px;
-                        height: 16px;
-                        margin-right: 4px;
-                    }
-                }
+              }
             }
         }
         .yhxw_container{
