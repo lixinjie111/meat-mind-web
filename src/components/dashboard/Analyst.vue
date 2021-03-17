@@ -14,12 +14,12 @@
           <p class="til_img_container">
             <span>早安，分析师，欢迎使用 Meta-Mind-Marketing！</span>
             <Poptip popper-class="saas-poptip small" placement="right-start">
-              <i class="iconfont iconguanyu tip-icon"></i>
+              <i class="iconfont iconguanyu tip-icon"></i>     
               <div slot="content">
-                <p>迅速掌握各项数据情报</p >
-                <p>定制化的展示看板</p >
-                <p>灵活可配置的分析纬度及标签</p >
-                <p>海量新潮分析模板素材</p >
+                <p><i class="iconfont iconwodeshuju"></i>迅速掌握各项数据情报</p >
+                <p><i class="iconfont iconkanban"></i>定制化的展示看板</p >
+                <p><i class="iconfont iconfenxiline"></i>灵活可配置的分析纬度及标签</p >
+                <p><i class="iconfont iconfenbufenxi"></i>海量新潮分析模板素材</p >
               </div>
             </Poptip>
           </p>
