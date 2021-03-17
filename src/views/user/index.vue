@@ -2359,7 +2359,7 @@ export default {
         }
       }
       .rig_area{
-        width: 440px;
+        width: 470px;
         height: 100%;
         border-left:1px solid #EAEDF7;
         padding:16px;

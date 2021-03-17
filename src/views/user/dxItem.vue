@@ -333,14 +333,14 @@
                     <div class="tfys_input_con">
                       <i :class="['iconfont','iconjine']" class="cmon"></i>
                       <Poptip trigger="focus">
-                          <Input v-model="tfys" placeholder="请输入价格" style="width:173px" />
+                          <Input v-model="tfys" placeholder="请输入价格" style="width:200px" />
                           <div slot="content">{{ formatNumber }}</div>
                       </Poptip><span class="zhi">至</span>
                     </div>
                     <div class="tfys_input_con">
                       <i :class="['iconfont','iconjine']" class="cmon"></i>
                       <Poptip trigger="focus">
-                          <Input placeholder="请输入价格" style="width:173px" />
+                          <Input placeholder="请输入价格" style="width:200px" />
                           <div slot="content">{{ formatNumber }}</div>
                       </Poptip>
                     </div>
@@ -790,7 +790,7 @@
                   name:'网易',
                   money:'￥3200',
                   vdlNum:'43%',
-                  timeRang:'7:40-8:30'
+                  timeRang:'7:40 - 8:30'
                  }
                },
                fanganObj1:{
@@ -831,14 +831,14 @@
                   name:'抖音',
                   money:'￥17200',
                   vdlNum:'73%',
-                  timeRang:'19:00-23:00'
+                  timeRang:'19:00 - 23:00'
                  },
                  qdObj2:{
                   icon: require("../../assets/img/yhhx/weib1.png"),
                   name:'新浪微博',
                   money:'￥5200',
                   vdlNum:'40%',
-                  timeRang:'19:20-22:30'
+                  timeRang:'19:20 - 22:30'
                  }
                }
             }
@@ -1744,7 +1744,7 @@
             }
         }
         .per_info_container{
-            width: 370px;
+            width: 310px;
             height: 100%;
         }
     }
@@ -1971,7 +1971,7 @@
             align-items: center;
         }
         .per_info_container{
-            width: 370px;
+            width: 310px;
             height: 100%;
             padding:17px 16px;
             box-sizing: border-box;
