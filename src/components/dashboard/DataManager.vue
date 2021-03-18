@@ -15,9 +15,94 @@
             </div>
         </div>
         <div class="overview-box">
-            <p>数据源概览</p>
+            <div class="overview-title flex">
+                <p>数据源概览</p>
+                <div @click="toMark">品牌画像<i class="iconfont iconleft-arrow"></i></div>
+            </div>
+            <div class="overview-top flex-start">
+                <div class="card1">
+                    <div>
+                        <i class="iconfont iconfenxiline"></i>
+                    </div>
+                    <div>
+                        <p>数据源统计</p>
+                        <p>14</p>
+                    </div>
+                </div>
+                <div class="card2">
+                    <div>
+                        <i class="iconfont iconfile"></i>
+                    </div>
+                    <div>
+                        <p>本月新增数据源</p>
+                        <p>16</p>
+                    </div>
+                </div>
+                <div class="card3">
+                    <div>
+                        <i class="iconfont icongengxin"></i>
+                    </div>
+                    <div>
+                        <p>数据源待更新</p>
+                        <p>5</p>
+                    </div>
+                </div>
+                <div class="card4">
+                    <div>
+                        <i class="iconfont iconrili"></i>
+                    </div>
+                    <div>
+                        <p>本月到期数据源</p>
+                        <p>5</p>
+                    </div>
+                </div>
+                <div class="card5">
+                    <div>
+                        <i class="iconfont iconzhuanhualine"></i>
+                    </div>
+                    <div>
+                        <p>数据源市场上新</p>
+                        <p>12</p>
+                    </div>
+                </div>
+            </div>
+            <div class="overview-bottom">
+                <div class="list1">
+                    <div><p>数据源信息</p></div>
+                    <ul>
+                        <li><span>我上传的数据</span><span>5</span></li>
+                        <li><span>SDK埋点</span><span>3</span></li>
+                        <li><span>API采集</span><span>4</span></li>
+                        <li><span>数据库直连</span><span>0</span></li>
+                        <li><span>已购数据包</span><span>2</span></li>
+                    </ul>
+                </div>
+                <div class="list2">
+                    <div><p>可更新数据源</p>
+                        <p>一键更新</p></div>
+                    <ul>
+                        <li><span>通用数字化媒体数据包</span><span style="color: #97A0C3">已下载 36%</span><span style="color: #FB343E">中止</span></li>
+                        <li><span>连锁品牌零售行业数据包</span><span></span><span>更新</span></li>
+                        <li><span>脑电波测试-消费场景数据包</span><span></span><span></span></li>
+                        <li><span>视觉捕捉教育场景数据包</span><span></span><span></span></li>
+                        <li><span>用户消费场景心智测试数据包</span><span></span><span></span></li>
+                    </ul>
+                </div>
+                <div class="list2">
+                    <div><p>到期数据源</p>
+                        <p>一键续费</p></div>
+                    <ul>
+                        <li><span>女性色彩感知测试数据包</span><span>2021-01-01</span><span>续费</span></li>
+                        <li><span>用户消费场景心智测试数据包</span><span>2021-02-01</span><span></span></li>
+                        <li><span>女性色彩感知测试数据包</span><span>2021-03-01</span><span></span></li>
+                        <li><span>青少年课堂应激行为测试数据包</span><span>2021-03-12</span><span></span></li>
+                        <li><span>重大事件记忆联想测试数据包</span><span>2021-04-01</span><span></span></li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <Card title="数据市场" class="last-card">
+            <div slot="right" class="right-more" @click="toMore">查看更多<i class="iconfont iconleft-arrow"></i></div>
             <div class="data-box">
                 <div class="data-box-title"><p>为您推荐</p></div>
                 <div class="data-box-content">
@@ -125,6 +210,12 @@
                 this.detailModal = false
                 this.detail1 = false
                 this.detail2 = false
+            },
+            toMark() {
+                this.$router.push({name:"mark-view"})
+            },
+            toMore() {
+                this.$router.push({name:"data-center-market"})
             }
         }
     }
@@ -239,17 +330,210 @@
         }
 
         .overview-box {
-            > p {
+            margin-bottom: 24px;
+
+            .overview-title {
                 margin-bottom: 24px;
-                font-size: 18px;
-                font-family: PingFangSC-Medium, PingFang SC;
-                font-weight: 500;
-                color: #242F57;
+
+                > p {
+                    font-size: 18px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #242F57;
+                }
+
+                > div {
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #636E95;
+                    cursor: pointer;
+
+                    > i {
+                        margin-left: 8px;
+                    }
+                }
+            }
+
+            .overview-top {
+                margin-bottom: 16px;
+
+                > div {
+                    display: flex;
+                    padding: 24px 16px;
+                    width: 216px;
+                    height: 108px;
+                    border-radius: 8px;
+
+                    > div {
+                        &:nth-child(1) {
+                            margin-right: 16px;
+                            width: 52px;
+                            height: 60px;
+                            line-height: 60px;
+                            background: #FFFFFF;
+                            border-radius: 8px;
+                            text-align: center;
+
+                            > i {
+                                font-size: 24px;
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            > p {
+                                font-size: 14px;
+                                font-family: PingFangSC-Medium, PingFang SC;
+                                font-weight: 500;
+
+                                &:last-child {
+                                    font-size: 28px;
+                                }
+                            }
+                        }
+                    }
+
+                    &.card1 {
+                        background: #D3E3FF;
+
+                        > div {
+                            color: #2373FF;
+                        }
+                    }
+
+                    &.card2 {
+                        background: #FFE6DE;
+
+                        > div {
+                            color: #FE774B;
+                        }
+                    }
+
+                    &.card3 {
+                        background: #DFF8F6;
+
+                        > div {
+                            color: #1DCEC3;
+                        }
+                    }
+
+                    &.card4 {
+                        background: #FFEBF3;
+
+                        > div {
+                            color: #F16E84;
+                        }
+                    }
+
+                    &.card5 {
+                        background: #FFF6DC;
+
+                        > div {
+                            color: #FFC800;
+                        }
+                    }
+                }
+            }
+
+            .overview-bottom {
+                display: flex;
+                justify-content: space-between;
+
+                > div {
+                    background: #FFFFFF;
+                    border-radius: 8px;
+                    border: 1px solid #EAEDF7;
+
+                    > div {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 0 16px;
+                        height: 48px;
+                        line-height: 48px;
+                        background: #F6F9FF;
+
+                        > p {
+                            font-size: 14px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 500;
+                            color: #242F57;
+
+                            &:nth-child(2) {
+                                color: #2373FF;
+                            }
+                        }
+                    }
+
+                    > ul {
+                        background: #FFFFFF;
+                        border-radius: 8px;
+
+                        > li {
+                            display: flex;
+                            justify-content: space-between;
+                            padding: 0 16px;
+                            height: 48px;
+                            line-height: 48px;
+                            border-bottom: 1px solid #EAEDF7;
+
+                            &:last-child {
+                                border-bottom: none;
+                            }
+
+                            > span {
+                                font-size: 14px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #242F57;
+                            }
+                        }
+                    }
+
+                    &.list1 {
+                        width: 216px;
+                    }
+
+                    &.list2 {
+                        width: 450px;
+
+                        > ul {
+                            > li {
+                                >span {
+                                    &:nth-child(1) {
+                                        width: 200px;
+                                    }
+
+                                    &:nth-child(2) {
+                                        width: 92px;
+                                        color: #242F57;
+                                    }
+
+                                    &:nth-child(3) {
+                                        width: 30px;
+                                        color: #2373FF;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 
         .last-card {
             margin-bottom: 0;
+
+            .right-more {
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636E95;
+                cursor: pointer;
+
+                > i {
+                    margin-left: 8px;
+                }
+            }
         }
 
         .data-box {
