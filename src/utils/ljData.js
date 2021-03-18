@@ -594,6 +594,18 @@ const ljEData = {
 
 		]
 	},
+	ljBox38: {
+    name: ['抖音', '小红书', '维度'],
+    value: [50, 43, 25],
+  },
+	ljBox39: {
+    name: ['小红书','抖音', '维度'],
+    value: [50, 43, 25],
+  },
+	ljBox40: {
+    name: ['抖音', '小红书', '维度'],
+    value: [50, 43, 25],
+  },
 
 }
 export default ljEData;
