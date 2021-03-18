@@ -1693,6 +1693,182 @@ const lxjEData = {
 
         ]
     },
+    box11490Data:{
+        legName:['转化率', '销售额', ],
+        name:  ['媒介转化效率'],
+        value:[
+            {
+                name: '转化率',
+                type: 'bar',
+                barWidth: '10',
+                // itemStyle: {
+                // 	
+                // 		//barBorderRadius:[0,30,30,0]
+           
+                // },
+                label: {
+                    show: true,
+                    position: 'right',
+                    formatter:(val)=>{
+                        return val.value+"%"
+                    },
+                },
+                data: [1.2]
+            },
+            {
+                name: '销售额',
+                type: 'bar',
+                barWidth: '10',
+                // stack: '总量',
+                label: {
+                    show: true,
+                    position: 'right',
+                    formatter:(val)=>{
+                        return val.value+"万元"
+                    },
+                },
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,30,30,0]
+            
+                },
+                data: [70]
+            },
+
+        ]
+    },
+    box11491Data:{
+        legName:['转化率', '销售额', ],
+        name:  ['媒介转化效率'],
+        value:[
+            {
+                name: '转化率',
+                type: 'bar',
+                barWidth: '10',
+                // itemStyle: {
+                // 	
+                // 		//barBorderRadius:[0,30,30,0]
+           
+                // },
+                label: {
+                    show: true,
+                    position: 'right',
+                    formatter:(val)=>{
+                        return val.value+"%"
+                    },
+                },
+                data: [5.8]
+            },
+            {
+                name: '销售额',
+                type: 'bar',
+                barWidth: '10',
+                // stack: '总量',
+                label: {
+                    show: true,
+                    position: 'right',
+                    formatter:(val)=>{
+                        return val.value+"万元"
+                    },
+                },
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,30,30,0]
+            
+                },
+                data: [50]
+            },
+
+        ]
+    },
+    box11492Data:{
+        legName:['转化率', '销售额', ],
+        name:  ['媒介转化效率'],
+        value:[
+            {
+                name: '转化率',
+                type: 'bar',
+                barWidth: '10',
+                // itemStyle: {
+                // 	
+                // 		//barBorderRadius:[0,30,30,0]
+           
+                // },
+                label: {
+                    show: true,
+                    position: 'right',
+                    formatter:(val)=>{
+                        return val.value+"%"
+                    },
+                },
+                data: [7.24]
+            },
+            {
+                name: '销售额',
+                type: 'bar',
+                barWidth: '10',
+                // stack: '总量',
+                label: {
+                    show: true,
+                    position: 'right',
+                    formatter:(val)=>{
+                        return val.value+"万元"
+                    },
+                },
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,30,30,0]
+            
+                },
+                data: [45]
+            },
+
+        ]
+    },
+    box11493Data:{
+        legName:['转化率', '销售额', ],
+        name:  ['媒介转化效率'],
+        value:[
+            {
+                name: '转化率',
+                type: 'bar',
+                barWidth: '10',
+                // itemStyle: {
+                // 	
+                // 		//barBorderRadius:[0,30,30,0]
+           
+                // },
+                label: {
+                    show: true,
+                    position: 'right',
+                    formatter:(val)=>{
+                        return val.value+"%"
+                    },
+                },
+                data: [8.1]
+            },
+            {
+                name: '销售额',
+                type: 'bar',
+                barWidth: '10',
+                // stack: '总量',
+                label: {
+                    show: true,
+                    position: 'right',
+                    formatter:(val)=>{
+                        return val.value+"万元"
+                    },
+                },
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,30,30,0]
+            
+                },
+                data: [180]
+            },
+
+        ]
+    },
     box11431Data:{
         legName:['5000以下', '5001-10000', '10001-20000', '20000以上',],
         name:  ['收入'],
