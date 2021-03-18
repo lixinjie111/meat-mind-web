@@ -288,7 +288,6 @@
                 }
             },
             toDetail(index) {
-                console.log(index);
                 if (index == 0) {
                     this.detailModal = true
                     this.detail1 = true
