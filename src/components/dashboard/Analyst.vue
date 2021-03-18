@@ -1,7 +1,7 @@
 <template>
   <div class="analyst-box">
-    <div class="nav">
-      <p class="nav-title">Dashboard</p>
+    <div class="header-nav">
+      <p>Dashboard</p>
       <!-- <div class="btn_container">
         <img :src="downLoad" class="btn_download" />
         <span class="btntxt">一键生成报告</span>
