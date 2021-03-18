@@ -138,34 +138,37 @@ const fjEData = {
         title: '最大内容方向：短视频'
     },
     box34Data: {
-        name: ['真粉丝',  '僵尸粉'],
+        name: ['真粉丝','僵尸粉'],
         value: [6500, 500],
-        title: '7000w'
+        title: '{title|191,993}{subTitle|人}'
     },
     box35Data: {
-        name: ['真粉丝',  '僵尸粉'],
+        name: ['真粉丝','僵尸粉'],
         value: [5000, 1690],
-        title: '6690w'
+        title: '{title|187,779}{subTitle|人}'
     },
     box36Data: {
-        name: ['真粉丝',  '僵尸粉'],
+        name: ['真粉丝','僵尸粉'],
         value: [5800, 1000],
-        title: '6800w'
+        title: '{title|154,201}{subTitle|人}'
     },
     box37Data: {
         name: ['广告', '直播','短视频'],
         value: [40, 60, 74],
-        title: '最大曝光分布：短视频'
+        title: '{subTitle|最大曝光}\n{titleB|短视频}',
+        // title: '最大曝光分布：短视频'
     },
     box38Data: {
         name: ['广告', '直播','短视频'],
         value: [70, 90, 80],
-        title: '最大曝光分布：直播'
+        title: '{subTitle|最大曝光}\n{titleB|直播}',
+        // title: '最大曝光分布：直播'
     },
     box39Data: {
         name: ['广告', '直播','短视频'],
         value: [95, 82, 60],
-        title: '最大曝光分布：广告'
+        // title: '最大曝光分布：广告'
+        title: '{subTitle|最大曝光}\n{titleB|广告}',
     },
     box40Data: {
         name: ['食品类', '快消品', '电子产品', '运动户外'],
