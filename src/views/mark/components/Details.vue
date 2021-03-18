@@ -52,10 +52,10 @@
                 <AnchorLink href="#mark-details-public" title="行业态势分析" />
             </Anchor>
         </div> -->
-        <Tab :tab-list="['品牌受众分析','品牌舆情洞察','行业态势分析']"></Tab>
-        <Accept :title="'品牌受众分析'" ></Accept>
-        <Market :title="'品牌舆情洞察'" ></Market>
-        <Public :title="'行业态势分析'" ></Public>
+        <Tab :tab-list="['品牌受众分析','品牌舆情洞察','行业态势分析']" @change="changeTab"></Tab>
+        <Accept v-if="curTab==1" :title="'品牌受众分析'" ></Accept>
+        <Market v-if="curTab==2" :title="'品牌舆情洞察'" ></Market>
+        <Public v-if="curTab==3" :title="'行业态势分析'" ></Public>
     </div>
 </template>
 
@@ -71,6 +71,7 @@ export default {
             return {
                 pinpai: '暂无品牌',
                 pic1:require('../../../assets/img/mark/question.png'),
+                curTab:1
             }
         },
         methods: {
@@ -83,6 +84,9 @@ export default {
                 }else{
                     this.pic1=require('../../../assets/img/mark/question.png');
                 }
+            },
+            changeTab(index){
+                this.curTab = index
             }
         }
 

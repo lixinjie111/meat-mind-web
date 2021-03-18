@@ -1,7 +1,7 @@
 <template>
     <div class="mark-detail">
-        <div class="title">
-            品牌详情
+        <div class="header-nav title">
+            <p>品牌详情</p>
             <div class="operate">
                 <div>
                     <img src="../../../assets/img/mark/add@2x.png" alt="">
@@ -18,13 +18,13 @@
                 
             </div>
         </div>
-        <div class="mark-detail-anchor">
+        <!-- <div class="mark-detail-anchor">
             <Anchor show-ink :offset-top="80">
                 <AnchorLink href="#m-d-accept-header" title="品牌受众分析" :scroll-offset="120"/>
                 <AnchorLink href="#mark-details-market" title="品牌舆情洞察" :scroll-offset="120"/>
                 <AnchorLink href="#mark-details-public" title="行业态势分析" :scroll-offset="120"/>
             </Anchor>
-        </div>
+        </div> -->
         <div class="details"><Details></Details></div>
     </div>
 </template>
@@ -45,13 +45,13 @@ export default {
     // padding: 0 24px 24px;
     .title{
         position: relative;
-        height: 64px;
-        padding: 16px 24px;
+        // height: 64px;
+        // padding: 16px 24px;
         margin: 0 24px;
-        font-size: 20px;
-        font-family: PingFangSC-Medium, PingFang SC;
-        font-weight: 500;
-        color: #242F57;
+        // font-size: 20px;
+        // font-family: PingFangSC-Medium, PingFang SC;
+        // font-weight: 500;
+        // color: #242F57;
             .operate{
                 position: absolute;
                 top: 16px;
