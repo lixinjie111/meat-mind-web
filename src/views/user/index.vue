@@ -571,16 +571,17 @@
 			    <div class="left_desc_text">基于用户分群数据，系统智能生成的用户基础画像数据，行为分析数据以及心智分析数据。</div>
 		    </div>
 		    <div class="right_select">
-			    <span class="label">用户群对比</span>
-			    <Select class="select" value="北京上班族">
-				    <Option value="北京上班族">北京上班族</Option>
-			    </Select>
+			    <div class="select-btn"><i class="iconfont icontianjia"></i>用户群对比</div>
+<!--			    <Select class="select" value="北京上班族">-->
+<!--				    <Option value="北京上班族">北京上班族</Option>-->
+<!--			    </Select>-->
 		    </div>
 	    </div>
-	    <!--目标用户群-->
-	    <div class="da_container">
+		<Tab :tab-list="['基础画像','行为分析','心智分析','生命周期分析']" @change="changeTab"></Tab>
+		<!--目标用户群-->
+	    <div class="da_container" v-if="tabActive == 1">
 		    <div class="jichuhuax_area_container" id="jichuhuax_area_container">
-			    <div class="jichuhuax_area_til">基础画像</div>
+<!--			    <div class="jichuhuax_area_til">基础画像</div>-->
 			    <vTabCard :tabData="jchxData"></vTabCard>
 			    <div class="jichuhuax_echarts_container">
 
@@ -825,10 +826,10 @@
 			    </div>
 		    </div>
 	    </div>
-	    <div class="da_container">
+	    <div class="da_container" v-if="tabActive == 2">
 		    <div class="xwfx_area_container" id="xwfx_area_container">
-			    <div class="xwfx_area_til">
-				    <span>行为分析</span>
+<!--			    <div class="xwfx_area_til">-->
+<!--				    <span>行为分析</span>-->
 				    <!--<Poptip popper-class="saas-poptip" placement="right-start">-->
 					    <!--&lt;!&ndash; <i class="iconfont iconguanyuline1 tip-icon"></i> &ndash;&gt;-->
 					    <!--<img class="gif" src="../../assets/img/user/tip.gif" alt="">-->
@@ -849,7 +850,7 @@
 						    <!--<p>5.用同一编号递归标记所有与模式 p 相距小于 dist的模式 , 即收集所有属于该聚类中心的模式。</p>-->
 					    <!--</div>-->
 				    <!--</Poptip>-->
-			    </div>
+<!--			    </div>-->
 			    <vTabCard :tabData="xwfxData"></vTabCard>
 			    <!--          <div class="ditu_area">-->
 			    <!--            <video-->
@@ -917,10 +918,10 @@
 			    </div>
 		    </div>
 	    </div>
-	    <div class="da_container">
+	    <div class="da_container" v-if="tabActive == 3">
 		    <div class="xzfx_area_container" id="xzfx_area_container">
-			    <div class="xzfx_area_title">
-				    <span>心智分析</span>
+<!--			    <div class="xzfx_area_title">-->
+<!--				    <span>心智分析</span>-->
 				    <!--<Poptip popper-class="saas-poptip" placement="right-start">-->
 					    <!--&lt;!&ndash; <i class="iconfont iconguanyuline1 tip-icon"></i> &ndash;&gt;-->
 					    <!--<img class="gif" src="../../assets/img/user/tip.gif" alt="">-->
@@ -938,7 +939,7 @@
 						    <!--<img src="../../assets/img/yhhx/tip6.png"/>-->
 					    <!--</div>-->
 				    <!--</Poptip>-->
-			    </div>
+<!--			    </div>-->
 			    <vTabCard :tabData="xzfxData"></vTabCard>
 			    <div class="yhsj_echarts">
 				    <div class="yhsj_echarts_item_title">
@@ -1034,9 +1035,9 @@
 			    </div>
 		    </div>
 	    </div>
-	    <div class="da_container">
+	    <div class="da_container" v-if="tabActive == 4">
 		    <div class="smzqfx_area_container" id="smzqfx_area_container">
-			    <div class="smzqfx_title" >生命周期分析</div>
+<!--			    <div class="smzqfx_title" >生命周期分析</div>-->
 			    <vTabCard :tabData="smzqfxData"></vTabCard>
 			    <div class="xfsmlcpg_container">
 				    <div class="xfsmlcpg_title">消费生命旅程评估</div>
@@ -1125,14 +1126,17 @@ import vTabCard from "./tabCard";
 import chuDa from "./chuDa";
 import Card from "./base/Card";
 import MatchDegree from "./base/MatchDegree";
+import Tab from "../../components/Tab";
+
 export default {
   components: {
    PieEcharts1,barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, PieEcharts7, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
-   vDxitem,vDxitem1,vTabCard,chuDa, Card, MatchDegree
+   vDxitem,vDxitem1,vTabCard,chuDa, Card, MatchDegree,Tab
   },
   name: "index",
   data() {
     return {
+      tabActive: 1,
       manIcon: require("../../assets/img/yhhx/man.png"),
       leftTimerImg: require("../../assets/img/yhhx/leftTimerImg.png"),
       ifShowPop1: false,
@@ -2117,7 +2121,10 @@ export default {
     },
     getSize(){
       return 90 / 144*window.rem
-    }
+    },
+	  changeTab(index){
+         this.tabActive = index;
+	  }
   },
 };
 </script>
@@ -2201,10 +2208,10 @@ export default {
 				height: 24px;
 				display: flex;
 				align-items: center;
-				font-size: 16px;
+				font-size: 18px;
 				font-family: PingFangSC-Medium, PingFang SC;
 				font-weight: 500;
-				color: #242f57;
+				color: #242F57;
 				margin-bottom: 4px;
 				::v-deep .ivu-poptip {
 					height: 24px;
@@ -2219,7 +2226,7 @@ export default {
 				font-size: 14px;
 				font-family: PingFangSC-Regular, PingFang SC;
 				font-weight: 400;
-				color: #636e95;
+				color: #7C88B1;
 			}
 		}
 		.right_btn {
@@ -2247,25 +2254,30 @@ export default {
 			}
 		}
 		.right_select{
-			width: 300px;
-			height: 32px;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			font-size: 14px;
-			.label{
-				min-width: 70px;
-				height: 20px;
-				margin-right: 24px;
-				font-weight: 400;
-				color: #2373FF;
-				line-height: 20px;
-			}
-			.select{
+			/*width: 300px;*/
+			/*height: 32px;*/
+			/*display: flex;*/
+			/*align-items: center;*/
+			/*justify-content: space-between;*/
+			/*font-size: 14px;*/
+			.select-btn {
+				width: 112px;
 				height: 32px;
-				background: #FFFFFF;
+				line-height: 32px;
+				background: #2373FF;
+				box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
 				border-radius: 4px;
+				font-size: 14px;
+				font-family: PingFangSC-Regular, PingFang SC;
+				font-weight: 400;
+				color: #FFFFFF;
+				text-align: center;
 			}
+			/*.select{*/
+			/*	height: 32px;*/
+			/*	background: #FFFFFF;*/
+			/*	border-radius: 4px;*/
+			/*}*/
 		}
 	}
 	.top_title_container_margin_top{
@@ -3151,10 +3163,10 @@ export default {
       box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
       border-radius: 12px;
       border: 1px solid #EAEDF7;
-      margin-top: 24px;
+      margin-top: 16px;
       padding: 24px;
       box-sizing: border-box;
-      margin-bottom: 24px;
+      /*margin-bottom: 24px;*/
   }
   .mubiao_container {
     width: 100%;
