@@ -279,10 +279,10 @@
             </div>
             <div class="navItem_rt">
                <div class="navItem_title1">
-                 策略1
+                 策略2
                </div>
                <div class="navItem_title2">
-                 快速拉新获客策略
+                低成本高转化策略
                </div>
             </div>
           </div>
@@ -292,273 +292,167 @@
             </div>
             <div class="navItem_rt">
                <div class="navItem_title1">
-                 策略1
+                 策略3
                </div>
                <div class="navItem_title2">
-                 快速拉新获客策略
+                  持续转化策略
                </div>
             </div>
           </div>
         </div>
-         <div class="navContent">
-            <div class="navContentBox">
-                <div class="navContentTop">
-                  <div class="navContentItem">
-
-                  </div>
-                </div>
-                <div class="navContentBm">
-                    <div class="navContentLf">
-                  
+        <div class="navContent">
+          <div class="navContentBox">
+              <div class="navContentTop">
+                <div class="navContentItem">
+                  <div class="navTitle">媒介选择</div>
+                  <div class="navSubTitle">短视频作为主要信息传播媒介</div>
+                  <div class="list" v-for="(item,index) in mediaList1" :key="index">
+                    <div class="logoPic"><img :src="item.icon" alt=""></div>
+                    <div class="navMid1">
+                      <div class="navtop">
+                      目标受众数
+                      </div>
+                      <div class="navBm">
+                      {{item.numTxt1}}人
+                      </div>
                     </div>
-                    <div class="navContentRt">
-                  
+                    <div class="navMid1">
+                      <div class="navtop">
+                      投放预算
+                      </div>
+                      <div class="navBm">
+                      {{item.numTxt2}}人
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </div>
-         </div>
-      </div>
-      <div class="media_four_panel">
-        <div class="media_four_panel_lef">
-          <div class="media_four_panel_title">新增用户</div>
-          <div class="media_four_panel_select">
-            <Select v-model="modelUserL" style="width: 120px" placeholder="过去一个月" @on-change="mediaFourChange">
-              <Option value="过去一个月" :key="1">过去一个月</Option>
-              <Option value="过去一个季度" :key="2">过去一个季度</Option>
-            </Select>
-          </div>
-          <div v-show="modelUserL=='过去一个月'">
-            <div class="media_four_panel_lef_day">
-              <!-- <div class="today">2020.02.26</div> -->
-              <ul>
-                <li>
-                  <div class="today-num">11,700</div>
-                  <div class="target-name">
-                    <i class="legend1"></i>
-                    <span>微博</span>
+                <div class="navContentItem">
+                  <div class="navTitle">KOL组合</div>
+                  <div class="navSubTitle">头部KOL组合</div>
+                  <div class="list" v-for="(item,index) in mediaHlist1" :key="index">
+                    <div class="logoPic"><img :src="item.icon" alt=""></div>
+                    <div class="navMid1">
+                      <div class="navtop">
+                      目标受众数
+                      </div>
+                      <div class="navBm">
+                      {{item.numTxt1}}人
+                      </div>
+                    </div>
+                    <div class="navMid1">
+                      <div class="navtop">
+                      投放预算
+                      </div>
+                      <div class="navBm">
+                      {{item.numTxt2}}人
+                      </div>
+                    </div>
                   </div>
-                </li>
-                <li>
-                  <div class="today-num">38,700</div>
-                  <div class="target-name">
-                    <i class="legend2"></i>
-                    <span>微信</span>
+                </div>
+                <div class="navContentItem">
+                  <div class="navTitle">最优曝光时间</div>
+                  <div class="navSubTitle">未来7日，每日12-13点/18-23点；</div>
+                  <div class="new_echart_box">
                   </div>
-                </li>
-                <li>
-                  <div class="today-num">5,700</div>
-                  <div class="target-name">
-                    <i class="legend3"></i>
-                    <span>百度</span>
+                </div>
+                <div class="navContentItem">
+                  <div class="navTitle">投放预算</div>
+                  <div class="navSubTitle"></div>
+                  <div class="new_echart_box">
                   </div>
-                </li>
-                <li>
-                  <div class="today-num">8,700</div>
-                  <div class="target-name">
-                    <i class="legend4"></i>
-                    <span>今日头条</span>
+                </div>
+              </div>
+              <div class="navContentBm">
+                  <div class="navContentLf">
+                        <div class="navbmTitle">投放内容和形式</div>
+                        <div class="navbmList">
+                          <div class="navbmItem">品牌官方产品发布</div>
+                          <div class="navbmItem">营销季活动详情</div>
+                          <div class="navbmItem">直播</div>
+                          <div class="navbmItem">微博博文</div>
+                          <div class="navbmItem">节日礼品上新</div>
+                        </div>
                   </div>
-                </li>
-                <li>
-                  <div class="today-num">12,300</div>
-                  <div class="target-name">
-                    <i class="legend5"></i>
-                    <span>地推</span>
+                  <div class="navContentRt">
+                    <div class="navbmTitle">目标受众</div>
+                        <div class="navbmList">
+                          <div class="navbmItem1">KOL自有粉丝</div>
+                          <div class="navbmItem1">品牌核心目标消费人群<br>(北京上班族/年轻白领)</div>
+                          <div class="navbmItem1">品牌忠诚消费者</div>
+                        </div>
                   </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div v-show="modelUserL=='过去一个季度'">
-            <div class="media_four_panel_lef_day">
-              <!-- <div class="today">2月下半月</div> -->
-              <ul>
-                <li>
-                  <div class="today-num">35,100</div>
-                  <div class="target-name">
-                    <i class="legend1"></i>
-                    <span>微博</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="today-num">116,100</div>
-                  <div class="target-name">
-                    <i class="legend2"></i>
-                    <span>微信</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="today-num">17,100</div>
-                  <div class="target-name">
-                    <i class="legend3"></i>
-                    <span>百度</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="today-num">26,100</div>
-                  <div class="target-name">
-                    <i class="legend4"></i>
-                    <span>今日头条</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="today-num">36,900</div>
-                  <div class="target-name">
-                    <i class="legend5"></i>
-                    <span>地推</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="media_four_panel_echarts">
-            <barM id="box46" :colorList="$lxjData.colorList" :myData="userData"></barM>
+              </div>
           </div>
         </div>
-        <div class="media_four_panel_rig">
-          <div class="media_four_panel_title">平均使用时长</div>
-          <div class="media_four_panel_select">
-            <Select v-model="modelUserR" style="width: 120px" placeholder="过去一个月" @on-change="mediaFourChangeR">
-              <Option value="过去一个月" :key="1">过去一个月</Option>
-              <Option value="过去一个季度" :key="2">过去一个季度</Option>
-            </Select>
-          </div>
-          <div v-if="modelUserR=='过去一个月'" class="media_four_panel_lef_day">
-            <!-- <div class="today">2020.02.26</div> -->
-            <ul>
-              <li>
-                <div class="today-num">314</div>
-                <div class="target-name">
-                  <i class="legend1"></i>
-                  <span>今日头条</span>
+        <div class="zuhe_echarts">
+            <div class="zuhe_echarts_left">
+              <div class="zuhe_echarts_title">预期投放效果</div>
+               <div class="zuhe_echarts_Box">
+                 <div class="zuhe_echarts_leftBox">
+                    <div class="zuhe_echarts_subtitle">预期投放效果</div>
+                    <div class="zuhe_echarts_num">800万</div>
+                  </div>
+                  <div class="new_echart_box">
+                  </div>
+               </div>
+               
+            </div>
+            <div class="zuhe_echarts_rt">
+              <div class="zuhe_echarts_list">
+                <div class="zuhe_echarts_Item">
+                  <div class="zuhe_echarts_Item_title">
+                    <span class="zuhe_echarts_Item_title1">真实CPE(去水军）</span>
+                    <i class="iconfont icongengduo"></i>
+                  </div>
+                  <div class="zuhe_echarts_Item_num">
+                    0.39
+                  </div>
                 </div>
-              </li>
-              <li>
-                <div class="today-num">570</div>
-                <div class="target-name">
-                  <i class="legend2"></i>
-                  <span>朋友圈广告</span>
+                <div class="zuhe_echarts_Item zuhe_echarts_Item1">
+                  <div class="zuhe_echarts_Item_title">
+                    <span class="zuhe_echarts_Item_title1">综合互动数</span>
+                    <i class="iconfont icongengduo"></i>
+                  </div>
+                  <div class="zuhe_echarts_Item_num">
+                    800,000 <span class="zuhe_echarts_danwei">次</span> 
+                  </div>
                 </div>
-              </li>
-              <li>
-                <div class="today-num">232</div>
-                <div class="target-name">
-                  <i class="legend3"></i>
-                  <span>360搜索</span>
+              </div>
+              <div class="zuhe_echarts_list zuhe_echarts_list1">
+                <div class="zuhe_echarts_Item zuhe_echarts_Item2">
+                  <div class="zuhe_echarts_Item_title">
+                    <span class="zuhe_echarts_Item_title1">新增粉丝数</span>
+                    <i class="iconfont icongengduo"></i>
+                  </div>
+                  <div class="zuhe_echarts_Item_num">
+                    30,000<span class="zuhe_echarts_danwei">人</span> 
+                  </div>
                 </div>
-              </li>
-              <li>
-                <div class="today-num">384</div>
-                <div class="target-name">
-                  <i class="legend4"></i>
-                  <span>百度</span>
+                <div class="zuhe_echarts_Item zuhe_echarts_Item3">
+                  <div class="zuhe_echarts_Item_title">
+                    <span class="zuhe_echarts_Item_title1">销售达成</span>
+                    <i class="iconfont icongengduo"></i>
+                  </div>
+                  <div class="zuhe_echarts_Item_num">
+                    1,2<span class="zuhe_echarts_danwei">亿元</span> 
+                  </div>
                 </div>
-              </li>
-              <li>
-                <div class="today-num">478</div>
-                <div class="target-name">
-                  <i class="legend5"></i>
-                  <span>分享裂变</span>
-                </div>
-              </li>
-              <li>
-                <div class="today-num">579</div>
-                <div class="target-name">
-                  <i class="legend6"></i>
-                  <span>抖音</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div v-else class="media_four_panel_lef_day">
-            <!-- <div class="today">2月下半月</div> -->
-            <ul>
-              <li>
-                <div class="today-num">308</div>
-                <div class="target-name">
-                  <i class="legend1"></i>
-                  <span>今日头条</span>
-                </div>
-              </li>
-              <li>
-                <div class="today-num">571</div>
-                <div class="target-name">
-                  <i class="legend2"></i>
-                  <span>朋友圈广告</span>
-                </div>
-              </li>
-              <li>
-                <div class="today-num">212</div>
-                <div class="target-name">
-                  <i class="legend3"></i>
-                  <span>360搜索</span>
-                </div>
-              </li>
-              <li>
-                <div class="today-num">395</div>
-                <div class="target-name">
-                  <i class="legend4"></i>
-                  <span>百度</span>
-                </div>
-              </li>
-              <li>
-                <div class="today-num">475</div>
-                <div class="target-name">
-                  <i class="legend5"></i>
-                  <span>分享裂变</span>
-                </div>
-              </li>
-              <li>
-                <div class="today-num">555</div>
-                <div class="target-name">
-                  <i class="legend6"></i>
-                  <span>抖音</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="media_four_panel_echarts">
-            <lineM id="box67" :colorList="$lxjData.colorList" :myData="averageData"></lineM>
-          </div>
+              </div>
+            </div>
+        </div>
+        <div class="zuhe_echarts1">
+            <div class="zuhe_echarts_left">
+              <div class="zuhe_echarts_title">媒介曝光触达</div>
+              <div class="new_echart_box">
+              </div>
+            </div>
+            <div class="zuhe_echarts_rt">
+              <div class="zuhe_echarts_title">媒介转化效率</div>
+              <div class="new_echart_box">
+              </div>
+            </div>
         </div>
       </div>
-
-      <div class="media_five_panel">
-        <div class="media_five_tab_top">
-          <div class="media_five_tab_item" ref="mediaFiveTabItem" v-for="(item,index) in tabListArr" :key="index" @click="changeTabCon(index)">{{item}}</div>
-        </div>
-        <div class="media_five_tab_bom">
-          <div class="media_five_tab_bom1" v-if="ifShowTabCon == 0">
-              <span style="color:#242F57;">媒介选择：</span>微博，电商APP直播；<br>
-              <span style="color:#242F57;">KOL组合：</span>头部KOL组合（李子柒，西木西木，辣目洋子）；<br>
-              <span style="color:#242F57;">投放预算：</span>204万元（88万，58万，58万）；<br>
-              <span style="color:#242F57;">最优曝光时间：</span>未来7日，每日12-13点/18-23点；<br>
-              <span style="color:#242F57;">目标受众：</span>KOL自有粉丝，品牌核心目标消费人群（北京上班族/年轻白领），品牌忠诚消费者；<br>
-              <span style="color:#242F57;">投放内容和形式：</span>品牌官方产品发布，营销季活动详情，节日礼品上新；微博博文，直播；<br>
-              <span style="color:#242F57;">预期投放效果：</span>目标覆盖800万用户，预期获得18%的曝光，12%的互动和3%销售转化；
-          </div>
-          <div class="media_five_tab_bom1" v-else-if="ifShowTabCon == 1">
-              <span style="color:#242F57;">媒介选择：</span>短视频平台（抖音，快手），垂直兴趣APP（小红书，KEEP，大众点评）；<br>
-              <span style="color:#242F57;">KOL组合：</span>腰部KOL组合（李芮，Angel真真，胖猫小森）；<br>
-              <span style="color:#242F57;">投放预算：</span>84万元（38万，28万，18万）；<br>
-              <span style="color:#242F57;">最优曝光时间：</span>未来14日，每日7-9点/11-13点/19-23点；<br>
-              <span style="color:#242F57;">目标受众：</span>KOL自有粉丝，品牌核心目标消费人群（北京上班族/年轻白领），品牌忠诚消费者；<br>
-              <span style="color:#242F57;">投放内容和形式：</span>品牌产品种草视频，品牌产品介绍/体验笔记；<br>
-              <span style="color:#242F57;">预期投放效果：</span>目标覆盖300万用户，预期获得15%的曝光，9%的互动和6%销售转化；
-          </div>
-          <div class="media_five_tab_bom1" v-else>
-              <span style="color:#242F57;">媒介选择：</span>娱乐频道，新闻门户，微博热点话题；<br>
-              <span style="color:#242F57;">KOL组合：</span>头部KOL组合（邓荣，王瑶，吴轩豪）；<br>
-              <span style="color:#242F57;">投放预算：</span>134万元（58万，38万，38万）；<br>
-              <span style="color:#242F57;">最优曝光时间：</span>未来29日，每日6-8点/12-13点/17-20点；<br>
-              <span style="color:#242F57;">目标受众：</span>KOL自有粉丝，品牌核心目标消费人群（北京上班族/年轻白领），品牌忠诚消费者；<br>
-              <span style="color:#242F57;">投放内容和形式：</span>行业趋势（品牌/产品露出），生活指南，好物推荐；<br>
-              <span style="color:#242F57;">预期投放效果：</span>目标覆盖1000万用户，预期获得11%的曝光，8%的互动和2%销售转化；
-          </div>
-        </div>
-      </div>
-
-
       <div class="m-p-rank">
         <div class="m-p-rank-header">
           <ul class="h-name-list">
@@ -583,325 +477,6 @@
         <div class="m-p-rank-echarts">
             <barL id="box27" :colorList="$lxjData.colorList" :myData="myEData"></barL>
         </div>
-      </div>
-      <div class="m-p-filter">
-          <div class="m-f-line">
-              <div class="label">主投平台</div>
-              <div class="f-list">
-                <div class="f-item" @click="list1Act=index" :class="{'active':index==list1Act}" v-for="(item,index) in list1" :key="index">
-                    <p>{{item}}</p>
-                </div>
-              </div>
-          </div>
-          <div class="m-f-line">
-              <div class="label">领域</div>
-              <div class="f-list">
-                <div class="f-item" @click="list2Act=index" :class="{'active':index==list2Act}" v-for="(item,index) in list2" :key="index">
-                    <p>{{item}}</p>
-                </div>
-              </div>
-          </div>
-          <div class="m-f-line">
-              <div class="label"><span style="color:#FB343E">*</span>
-              价格类型</div>
-              <div class="f-list">
-                <div class="f-item" @click="list3Act=index" :class="{'active':index==list3Act}" v-for="(item,index) in list3" :key="index">
-                    <p>{{item}}</p>
-                </div>
-              </div>
-          </div>
-          <div class="m-p-pie">
-              <div class="m-pie-title">
-                  媒介用户画像
-			  <Poptip popper-class="saas-poptip small" placement="right-start">
-			    <i class="iconfont iconguanyuline1 tip-icon"></i>
-			    <div slot="content">
-			      <p>展示各个媒介的用户属性特征，深度洞察媒介使用者的人群画像，以及比较不同媒介的偏好人群的差异</p>
-			    </div>
-              </Poptip>
-<!-- 			  <span @mouseenter="showTip"  @mouseleave="NshowTip" class="m-p-toolTip"><Icon type="ios-alert-outline" color="#7C88B1"/>
-                <div class="m-pie-tip" v-show="isShowTip">
-                  展示各个媒介的用户属性特征，深度洞察媒介使用者的人群画像，以及比较不同媒介的偏好人群的差异
-                </div>
-              </span> -->
-			  </div>
-              <div class="subTitle">抖音用户，以26-45岁的女性自由职业者居多，整体收入水平偏中上等，约有1/3来自于三口之家，使用时间多分布于中午和晚间。</div>
-              <div class="m-pie-echarts">
-                  <Triple :title1="'性别分布'" :title2="'年龄分布'" :title3="'职业分布'">
-                      <PieCaseEcharts slot="left" :colorList="$fjData.colorList" :myData="sixData"></PieCaseEcharts>
-                      <PieCaseEcharts slot="mid" :colorList="$fjData.colorList" :myData="ageData"></PieCaseEcharts>
-                      <PieCaseEcharts slot="right" :colorList="$fjData.colorList" :myData="professioneData"
-                                      roseType="radius"></PieCaseEcharts>
-                  </Triple>
-                  <Triple :title1="'收入分布'" :title2="'家庭情况'" :title3="'网龄结构'">
-                      <PieCaseEcharts slot="left" :colorList="$fjData.colorList" :myData="incomeData"></PieCaseEcharts>
-                      <PieCaseEcharts slot="mid" :colorList="$fjData.colorList" :myData="familyData"></PieCaseEcharts>
-                      <PieCaseEcharts slot="right" :colorList="$fjData.colorList"
-                                      :myData="netetworkAgeData"></PieCaseEcharts>
-                  </Triple>
-              </div>
-          </div>
-      </div>
-      <div class="m-p-zuhe">
-              <div class="m-pie-title">媒介组合方案</div>
-              <div class="subTitle">基于品牌画像和用户画像，建议以短视频作为主要信息传播媒介（其中抖音整体传播效果最优，快手成本投入相对较低），垂直媒介为辅（小红书在15-25岁女性人群中的传播效果优于短视频）的媒介组合，并辅以多KOL多内容类型的投放策略，预算建议5-10万之间，预计能获得150万的曝光量（是上一次投放效果的3倍）。</div>
-              <div class="m-p-third-module">
-                  <div class="m-p-t-left">
-                      <Full :title="'媒介领域热度排名'">
-                        <barL id="box28" :colorList="$lxjData.colorList" :myData="$lxjData.box28Data"></barL>
-                      </Full>
-                  </div>
-                  <div class="m-p-t-right">
-                      <div class="m-p-right-top">
-                          <div class="m-p-right-push">
-                              <div class="m-p-r-title">
-                                触达方案推荐
-								<Poptip popper-class="saas-poptip small" placement="right-start">
-								  <i class="iconfont iconguanyuline1 tip-icon"></i>
-								  <div slot="content">
-								    <p>展示各个媒介传播效果的评估和预测，结合品牌投放目标，对投放效果做预测，给出媒介综合使用方案建议</p>
-								  </div>
-								</Poptip>
-<!--                                <span @mouseenter="showTip2" class="m-p-toolTip" @mouseleave="NshowTip2"><Icon type="ios-alert-outline" color="#7C88B1"/>
-                                  <div class="m-pie-tip" v-show="isShowTip2">
-                                    展示各个媒介传播效果的评估和预测，结合品牌投放目标，对投放效果做预测，给出媒介综合使用方案建议
-                                  </div>
-                                </span> -->
-                              </div>
-                              <div>
-                                  <p>方案一</p>
-                                  <img src="../../assets/img/mark/douyin.png" alt="">+
-                                  <img src="../../assets/img/mark/xiaohongshu.png" alt="">+
-                                  <img src="../../assets/img/mark/kuaishou.png" alt="">
-                              </div>
-                              <div>
-                                  <p>方案二</p>
-                                  <img src="../../assets/img/mark/douyin.png" alt="">+
-                                  <img src="../../assets/img/mark/weibo.png" alt="">
-                              </div>
-                          </div>
-                          <div class="m-p-right-media">
-                              <div class="m-p-r-title">组合媒介曝光量预期 </div>
-<!--                              <div class="m-p-r-num">324,343</div>-->
-                              <div class="m-p-r-echarts">
-                                <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box111Data"></funnel>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="m-p-right-bottom">
-                          <p>相关指标预期</p>
-                          <div>
-                              <div style="margin-right:16px"><Card :title="'综合预期CPE'" :colourfol="'blue'" :number="'0.35'"></Card></div>
-                              <div><Card :title="'组合互动总数'" :colourfol="'purple'" :number="'427,260'"></Card></div>
-                          </div>
-                          <div>
-                            <div style="margin-right:16px"><Card :title="'组合粉丝数'" :colourfol="'pink'" :number="'6,968,580'"></Card></div>
-                              <div><Card :title="'组合预算（元）'" :colourfol="'orange'" :number="'29,986'"></Card></div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="m-p-last">
-                  <Half :lTitle="'媒介曝光触达'" :rTitle="'媒介传播效率'">
-                    <div class="m-p-last-touch" slot="left">
-                      <PieEcharts2 :colorList="$fjData.colorList" :myData="$fjData.box0Data"></PieEcharts2>
-                    </div>
-                    <barL slot="right" id="box29" :colorList="$lxjData.colorList" :myData="$lxjData.box29Data"></barL>
-                  </Half>
-              </div>
-      </div>
-      <div class="m-p-target">
-          <!-- 优化指标 -->
-          <div class="m-p-target-title">优化指标</div>
-          <Form :model="formTop" label-position="top"  :rules="ruleValidate">
-            <Row  :gutter="42">
-                <Col span="8">
-                  <FormItem label="项目预算（不高于)" prop="budget">
-                      <Input v-model="formTop.budget"  placeholder="请输入项目预算(元)"></Input>
-                  </FormItem>
-                </Col>
-                <Col span="8">
-                    <FormItem label="优化表现指标" prop="quota">
-                        <Select v-model="formTop.quota" placeholder="请选择指标">
-                            <Option value="1">组合预期CPE最低</Option>
-                            <Option value="2">组合互动数最高</Option>
-                            <Option value="3">组合粉丝数最高</Option>
-                        </Select>
-                    </FormItem>
-                </Col>
-                <Col span="8"></Col>
-            </Row>
-           <div class="m-p-target-title">其他限定条件</div>
-           <Row  :gutter="42">
-                <Col span="8">
-                  <FormItem label="单一 KOL 平均互动数不低于">
-                      <Input v-model="formTop.kolNum"  placeholder="请输入平均互动数"></Input>
-                  </FormItem>
-                </Col>
-                <Col span="8">
-                  <FormItem label="单一 KOL 粉丝数不低于">
-                      <Input v-model="formTop.kolFs"  placeholder="请输入粉丝数"></Input>
-                  </FormItem>
-                </Col>
-                <Col span="8">
-                    <FormItem label="包含 KOL">
-                       <Input v-model="formTop.contain"  placeholder="请输入包含 KOL"></Input>
-                    </FormItem>
-                </Col>
-                <Col span="8">
-                    <FormItem label="排除 KOL">
-                        <Input v-model="formTop.exclude"  placeholder="请输入排除 KOL"></Input>
-                    </FormItem>
-                </Col>
-                <Col span="8">
-                   <FormItem label="KOL 数量">
-                     <Row  :gutter="16">
-                       <Col span="12">
-                        <Select v-model="formTop.compare" placeholder="请选择类型">
-                            <Option value="1">等于</Option>
-                            <Option value="2">大于等于</Option>
-                            <Option value="3">小于等于</Option>
-                            <Option value="4">小于</Option>
-                        </Select>
-                        </Col>
-                        <Col span="12">
-                          <Input v-model="formTop.num"  placeholder="请输入数量"></Input>
-                        </Col>
-                      </Row>
-                  </FormItem>
-                </Col>
-            </Row>
-          </Form>
-          <div class="btnList">
-            <div class="submit">生产组合</div>
-            <div class="reset">重置条件</div>
-          </div>
-          <div class="relative-data">
-            暂无相关数据
-          </div>
-      </div>
-      <div class="m-p-kol-strategy">
-          <div class="strategy-title">
-              推荐KOL组合策略
-          </div>
-          <div class="strategy-top">
-              <div class="top-left">
-                  <p><span class="top-title">推荐的KOL组合</span><span class="top-blue">李子柒 + 西木西木 + 辣目洋子</span></p>
-                  <p class="mt12"><span class="top-title">方案效果</span><span>预期以12600元的成本吸引潜客432341人</span></p>
-              </div>
-              <div class="top-right">
-                  <p class="top-title">推荐缘由</p>
-                  <p><span>李子柒为头部KOL，在曝光分布及用户影响率上对于品牌推广能起到快速起效。但鉴于李子柒非垂直领域KOL，专业引流不足，故补充垂直类KOL西木西木和泛娱乐类KOL辣目洋子，三者配合投放可使收益达到最高</span></p>
-              </div>
-          </div>
-          <div class="strategy-bottom">
-              <div></div>
-              <div>
-                  <div class="bottom-title">用户量</div>
-              </div>
-              <div>
-                  <div class="bottom-title light">曝光分布</div>
-              </div>
-              <div>
-                  <div class="bottom-title">销售分布</div>
-              </div>
-              <div>
-                  <div class="bottom-title light">内容方向</div>
-              </div>
-              <div>
-                  <div class="bottom-card">
-                      <img src="../../assets/img/mark/head1.jpg" />
-                      <div class="card-box">
-                          <p>头部KOL</p>
-                          <p>李子柒</p>
-                      </div>
-<!--                        <div class="card-tip">-->
-<!--                            <Poptip popper-class="saas-poptip" placement="right-start">-->
-<!--                                <i class="iconfont iconguanyuline1 tip-icon"></i>-->
-<!--                                <div slot="content">-->
-<!--                                    <p>快速拉新策略KOL，占整体投放预算的55%，投放时间为未来7日投放（2日达到投放预期的80%），预期获得18%的曝光，12%的互动和3%销售转化；</p>-->
-<!--                                    <p>头部KOL，粉丝基数大，影响力高，能够带来高互动和高转化，适合快速拉新需求的投放策略；</p>-->
-<!--                                    <p>与品牌所属行业关联度为中等水平，但该KOL口碑极好，具有极高的影响力和覆盖范围，能够实现快速拉新的投放效果；</p>-->
-<!--                                </div>-->
-<!--                            </Poptip>-->
-<!--                        </div>-->
-                  </div>
-              </div>
-              <div>
-                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box34Data" ></PieEcharts6>
-              </div>
-              <div>
-                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box37Data" ></PieEcharts6>
-              </div>
-              <div>
-                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box40Data" ></PieEcharts6>
-              </div>
-              <div>
-                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box31Data" ></PieEcharts6>
-              </div>
-              <div>
-                  <div class="bottom-card">
-                      <img src="../../assets/img/mark/head2.jpeg" />
-                      <div class="card-box">
-                          <p>垂直类KOL</p>
-                          <p>西木西木</p>
-                      </div>
-                  </div>
-              </div>
-              <div>
-                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box35Data" ></PieEcharts6>
-              </div>
-              <div>
-                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box38Data" ></PieEcharts6>
-              </div>
-              <div>
-                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box41Data" ></PieEcharts6>
-              </div>
-              <div>
-                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box32Data" ></PieEcharts6>
-              </div>
-              <div>
-                  <div class="bottom-card">
-                      <img src="../../assets/img/mark/head3.jpeg" />
-                      <div class="card-box">
-                          <p>泛娱乐类KOL</p>
-                          <p>辣目洋子</p>
-                      </div>
-                  </div>
-              </div>
-              <div>
-                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box36Data" ></PieEcharts6>
-              </div>
-              <div>
-                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box39Data" ></PieEcharts6>
-              </div>
-              <div>
-                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box42Data" ></PieEcharts6>
-              </div>
-              <div>
-                  <PieEcharts6 :colorList="$fjData.colorList" :myData="$fjData.box33Data" ></PieEcharts6>
-              </div>
-          </div>
-      </div>
-      <div class="m-p-kol">
-          <div class="m-p-target-title">
-              KOL资源
-			  <Poptip popper-class="saas-poptip small" placement="right-start">
-			    <i class="iconfont iconguanyuline1 tip-icon"></i>
-			    <div slot="content">
-			      <p>媒介资源库，提供具体媒介资源的详细信息，包括基础数据、历史投放效果和合作方案等，以供品牌方比较分析并联系合作</p>
-			    </div>
-			  </Poptip>
-<!--              <span @mouseenter="showTip1"  @mouseleave="NshowTip1" class="m-p-toolTip"><Icon type="ios-alert-outline" color="#7C88B1"/>
-                <div class="m-pie-tip" v-show="isShowTip1">
-                  媒介资源库，提供具体媒介资源的详细信息，包括基础数据、历史投放效果和合作方案等，以供品牌方比较分析并联系合作
-                </div>
-              </span> -->
-          </div>
-          <div class="subTitle">抖音媒介资源是品牌本次投放方案的最优选择，“邓荣”的投放效果表现最优。基于分析，“李刚”性价比最高，可作为比较和备选方案。</div>
-          <Tabs @on-click="getTab">
-              <TabPaneItem :name="it" :label="it" v-for="it in tabs" :key="it"/>
-          </Tabs>
       </div>
     </div>
 </template>
@@ -1038,7 +613,9 @@ export default {
               touxIcon5:require("../../assets/img/yhhx/toux5.png"),
               xhsIcon:require("../../assets/img/yhhx/xhs.png"),
               mediaList:[],
+              mediaList1:[],
               mediaHlist:[],
+              mediaHlist1:[],
               meijieObj:{
                 meijie1:{
                   numTxt1:'8000w',
@@ -1377,12 +954,47 @@ export default {
                 }
               },
         config: {},
+        currentNum:0,
       }
   },
   created(){
     this.myEData=this.$lxjData.box27Data;
     this.userData=this.$linData.box1Data;
     this.averageData=this.$linData.box3Data;
+    this.mediaList1=[
+      {
+        numTxt1:'150W',
+        numTxt2:'30W',
+        icon:this.wbIcon,
+      },
+      {
+        numTxt1:'90W',
+        numTxt2:'200W',
+        icon:this.dyIcon,
+      },
+      {
+        numTxt1:'30W',
+        numTxt2:'60W',
+        icon:this.xhsIcon,
+      },
+    ]
+    this.mediaHlist1=[
+      {
+        numTxt1:'30W',
+        numTxt2:'15W',
+        icon:this.touxIcon1,
+      },
+      {
+        numTxt1:'15W',
+        numTxt2:'10W',
+        icon:this.touxIcon2,
+      },
+      {
+        numTxt1:'9W',
+        numTxt2:'5W',
+        icon:this.touxIcon3,
+      },
+    ]
     this.mediaList=[
       {
         numTxt1:this.meijieObj1.meijie1.numTxt1,
@@ -1474,6 +1086,80 @@ export default {
   methods:{
     changeIndex(arg){
       this.currentIndex=arg;
+      this.currentNum++;
+      if(this.currentNum%2==0){
+                this.mediaList1=[
+        {
+          numTxt1:'150W',
+          numTxt2:'30W',
+          icon:this.wbIcon,
+        },
+        {
+          numTxt1:'90W',
+          numTxt2:'200W',
+          icon:this.dyIcon,
+        },
+        {
+          numTxt1:'30W',
+          numTxt2:'60W',
+          icon:this.xhsIcon,
+        },
+      ]
+      this.mediaHlist1=[
+        {
+          numTxt1:'30W',
+          numTxt2:'15W',
+          icon:this.touxIcon1,
+        },
+        {
+          numTxt1:'15W',
+          numTxt2:'10W',
+          icon:this.touxIcon2,
+        },
+        {
+          numTxt1:'9W',
+          numTxt2:'5W',
+          icon:this.touxIcon3,
+        },
+      ]
+      }else{
+        this.mediaList1=[
+        {
+          numTxt1:'130W',
+          numTxt2:'70W',
+          icon:this.wbIcon,
+        },
+        {
+          numTxt1:'70W',
+          numTxt2:'200W',
+          icon:this.xhsIcon,
+        },
+        {
+          numTxt1:'20W',
+          numTxt2:'60W',
+          icon:this.dyIcon,
+        },
+      ]
+      this.mediaHlist1=[
+        {
+          numTxt1:'40W',
+          numTxt2:'15W',
+          icon:this.touxIcon2,
+        },
+        {
+          numTxt1:'15W',
+          numTxt2:'5W',
+          icon:this.touxIcon1,
+          
+        },
+        {
+          numTxt1:'10W',
+          numTxt2:'5W',
+          icon:this.touxIcon3,
+        },
+      ]
+      }
+      
     },
     change2(arg){
       if(arg == 1){
@@ -2188,14 +1874,14 @@ export default {
 }
 .media-protrait {
   padding: 0 24px 24px 24px;
+  .new_echart_box{
+      flex:1;
+      background: #ccc;
+    }
   .new_media_panel1{
     display: flex;
     margin-bottom: 24px;
     justify-content: space-between;
-    .new_echart_box{
-      flex:1;
-      background: #ccc;
-    }
     .new_media_item1{
       width: 853px;
       height: 426px;
@@ -3114,6 +2800,7 @@ export default {
     box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
     border-radius: 8px;
     padding:24px;
+    margin-bottom: 24px;
     .title{
       font-size: 16px;
       font-family: PingFangSC-Regular, PingFang SC;
@@ -3193,169 +2880,283 @@ export default {
         padding:16px;
         background: #FFFFFF;
         border-radius: 8px;
-        height: 440px;
         .navContentTop{
           padding-bottom: 16px;
           border-bottom: 1px solid #EAEDF7;
-          height: 277px;
+          display: flex;
+          .navContentItem{
+            flex:1;
+            padding: 0 16px;
+            border-right: 1px solid #EAEDF7;
+            display: flex;
+            flex-direction: column;
+            .navTitle{
+              font-size: 14px;
+              font-family: PingFangSC-Medium, PingFang SC;
+              font-weight: 500;
+              color: #242F57;
+              margin-bottom: 7px;
+            }
+            .navSubTitle{
+              font-size: 12px;
+              font-family: PingFangSC-Regular, PingFang SC;
+              font-weight: 400;
+              color: #636E95;
+              height: 16px;
+              margin-bottom: 26px;
+            }
+            .list{
+              flex:1;
+              border-bottom: 1px solid #EAEDF7;
+              padding: 10px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .logoPic{
+                width: 32px;
+                img{
+                  width: 100%;
+                  display: block;
+                }
+              }
+              .navMid1{
+                .navtop{
+                  font-size: 12px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #97A0C3;
+                  line-height: 20px;
+                }
+                .navBm{
+                  font-size: 12px;
+                  font-family: PingFangSC-Regular, PingFang SC;
+                  font-weight: 400;
+                  color: #242F57;
+                  line-height: 20px;
+                }
+              }
+            }
+            .list:last-child{
+              border-bottom: none;
+            }
+          }
+          .navContentItem:last-child{
+            border-right: none;
+          }
         }
         .navContentBm{
           padding-top: 16px;
-          height: 162px;
-        }
-      }
-    }
-  }
-
-  .media_four_panel{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 24px;
-    .media_four_panel_lef,.media_four_panel_rig{
-      position: relative;
-      width: 50%;
-      height: 507px;
-      padding: 24px;
-      background: #FFFFFF;
-      box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-      border-radius: 12px;
-      border: 1px solid #EAEDF7;
-      .media_four_panel_title{
-        height: 24px;
-        margin-bottom: 3px;
-        font-size: 14px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        color: #242F57;
-        line-height: 24px;
-      }
-      .media_four_panel_select{
-        position: absolute;
-        top: 18px;
-        right: 24px;
-      }
-      .media_four_panel_lef_day{
-        // .today{
-        //   height: 22px;
-        //   font-size: 14px;
-        //   font-family: PingFangSC-Regular, PingFang SC;
-        //   font-weight: 400;
-        //   color: #7C88B1;
-        //   line-height: 22px;
-        // }
-        ul{
           display: flex;
-          justify-content: space-between;
-          list-style: none;
-          >li{
-            // margin-right: 20px;
-            .today-num{
-              height: 38px;
-              font-size: 24px;
-              font-family: HelveticaNeue-Medium, HelveticaNeue;
+          .navContentLf{
+            flex:1;
+            border-right: 1px solid #EAEDF7;
+            padding-right: 16px;
+            .navbmTitle{
+              font-size: 14px;
+              font-family: PingFangSC-Medium, PingFang SC;
               font-weight: 500;
               color: #242F57;
-              line-height: 38px;
-              .text{
-                margin-left: 3px;
-                font-size: 14px;
-                font-family: PingFangSC-Regular, PingFang SC;
-                font-weight: 400;
-                color: #7C88B1;
-              }
+              margin-bottom: 14px;
             }
-            .target-name{
+            .navbmList{
               display: flex;
-              align-items: center;
-              >i{
-                width: 6px;
-                height: 6px;
-                margin-right: 6px;
-                border-radius: 50%;
-                &.legend1{
-                  background: #4D94FF;
-                }
-                &.legend2{
-                  background: #A49DFA;
-                }
-                &.legend3{
-                  background: #FC809F;
-                }
-                &.legend4{
-                  background: #FFD98C;
-                }
-                &.legend5{
-                  background: #8AE6C7;
-                }
-                &.legend6{
-                  background: #E19564;
-                }
-              }
-              >span{
-                height: 20px;
+              flex-flow: wrap;
+              .navbmItem{
+                margin-right: 16px;
+                margin-bottom: 12px;
+                width: 148px;
+                height: 40px;
+                background: #F0F8FF;
+                border-radius: 4px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 font-size: 12px;
                 font-family: PingFangSC-Regular, PingFang SC;
                 font-weight: 400;
-                color: #97A0C3;
-                line-height: 20px;
+                color: #636E95;
+              }
+            }
+          }
+          .navContentRt{
+            flex:1;
+            padding-left: 16px;
+            .navbmTitle{
+              font-size: 14px;
+              font-family: PingFangSC-Medium, PingFang SC;
+              font-weight: 500;
+              color: #242F57;
+              margin-bottom: 14px;
+            }
+            .navbmList{
+              display: flex;
+              flex-flow: wrap;
+              .navbmItem1{
+                padding:0 8px;
+                margin-right: 16px;
+                margin-bottom: 12px;
+                width: 153px;
+                height: 58px;
+                background: #F0F8FF;
+                border-radius: 4px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 12px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636E95;
+              }
+              .navbmItem1:last-child{
+                margin-right: 0
               }
             }
           }
         }
       }
-
-      .media_four_panel_echarts{
-        height: calc(100% - 80px);
-      }
     }
-    .media_four_panel_lef{
-      margin-right: 24px;
-    }
-  }
-
-  .media_five_panel{
-    width: 100%;
-    height: 250px;
-    margin-bottom: 24px;
-    padding: 24px;
-    box-sizing: border-box;
-    background: #FFFFFF;
-    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-    border-radius: 12px;
-    border: 1px solid #EAEDF7;
-    .media_five_tab_top{
-      width: 100%;
+    .zuhe_echarts1{
+      height: 241px;
       display: flex;
-      margin-bottom: 16px;
-      .media_five_tab_item{
-        margin-right: 32px;
-        font-size: 14px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        color: #636E95;
-        padding-bottom: 8px;
+      .zuhe_echarts_left{
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        padding-bottom: 0;
+        border-right: 1px solid #EAEDF7;
         box-sizing: border-box;
-      }
-      .media_five_tab_item:hover{
-        cursor: pointer;
-      }
-    }
-    .media_five_tab_bom{
-      width: 100%;
-      font-size: 12px;
-      font-family: PingFangSC-Regular, PingFang SC;
-      font-weight: 400;
-      color: #636E95;
-      .media_five_tab_bom1{
-        >span{
-          height: 22px;
+        .zuhe_echarts_title{
+          font-size: 14px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #242F57;
           line-height: 22px;
+          margin-bottom: 10px;
         }
       }
+      .zuhe_echarts_rt{
+        padding: 24px;
+        padding-bottom: 0;
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        .zuhe_echarts_title{
+          font-size: 14px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #242F57;
+          line-height: 22px;
+          margin-bottom: 10px;
+        }
+      }
+     
+    }
+    .zuhe_echarts{
+      margin-top: 24px;
+      height: 220px;
+      display: flex;
+      margin-bottom: 38px;
+      .zuhe_echarts_left{
+        flex:1;
+        background: #F0F8FF;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        padding: 24px;
+        padding-bottom: 0;
+        .zuhe_echarts_title{
+          font-size: 14px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #242F57;
+          line-height: 22px;
+          margin-bottom: 10px;
+        }
+        .zuhe_echarts_Box{
+           flex:1;
+           display: flex;
+           .zuhe_echarts_leftBox{
+              width:100px;
+              .zuhe_echarts_subtitle{
+                font-size: 12px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636E95;
+                line-height: 20px;
+              }
+              .zuhe_echarts_num{
+                font-size: 32px;
+                font-family: HelveticaNeue-Medium, HelveticaNeue;
+                font-weight: 500;
+                color: #2373FF;
+                line-height: 32px;
+              }
+            }
+            // .zuhe_echarts_leftBox{
+            //   flex:1;
+            // }
+        }
+        
+      }
+      .zuhe_echarts_rt{
+        flex:1;
+        margin-left: 24px;
+        border-radius: 8px;
+        .zuhe_echarts_list{
+          display: flex;
+          justify-content: space-between;
+          &.zuhe_echarts_list1{
+            margin-top: 24px;
+          }
+          .zuhe_echarts_Item{
+            width: 48%;
+            background: rgba(241,110,132,.1);
+            border-radius: 8px;
+            padding:16px;
+            color: #F16E84;
+            &.zuhe_echarts_Item1{
+              color: #1DCEC3;;
+              background: rgba(29,206,195,.1);
+            }
+            &.zuhe_echarts_Item2{
+              color: #FE774B;
+              background: rgba(254,119,75,.1);
+            }
+            &.zuhe_echarts_Item3{
+              color: #2373FF;
+              background: rgba(35,115,255,.1);
+            }
+            .zuhe_echarts_Item_title{
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              .zuhe_echarts_Item_title1{
+                font-size: 16px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                line-height: 26px;
+              }
+             }
+             .zuhe_echarts_Item_num{
+                font-size: 32px;
+                font-family: HelveticaNeue-Medium, HelveticaNeue;
+                font-weight: 500;
+                line-height: 32px;
+                margin-top: 8px;
+                .zuhe_echarts_danwei{
+                  font-size: 14px;
+                  margin-left: 8px;
+                  line-height: 20px;
+                }
+             }
+          }
+        }
+      }
+     
     }
   }
+
 
   .m-p-rank {
     width: 100%;

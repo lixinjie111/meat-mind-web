@@ -81,7 +81,7 @@
                         <p>数据管理员</p>
                     </div>
                 </div>
-                <div :class="[role >= 0 ? 'active' : '','confirm']" @click="confirm">确认</div>
+                <div :class="[role >= 0 ? 'active' : '','confirm']" @click="confirm">登录</div>
             </div>
         </Modal>
     </div>
@@ -156,7 +156,7 @@
             }
         },
         created() {
-            localStorage.setItem("dashboard", 0);
+            // localStorage.setItem("dashboard", -1);
         },
         methods: {
             confirm() {
@@ -164,8 +164,8 @@
                     this.$Message.error('请选择您的身份');
                     return false;
                 }
-                this.$router.push({name: "dashboard"});
                 localStorage.setItem("dashboard", this.role);
+                this.$router.push({name: "dashboard"});
             }
         }
     }
@@ -254,24 +254,22 @@
 
                         .confirm {
                             margin: 78px auto 4px;
-                            width: 120px;
-                            height: 48px;
-                            line-height: 48px;
-                            background: linear-gradient(139deg, #F0F3F6 0%, #FFFFFF 100%);
-                            box-shadow: 4px 4px 16px 0px rgba(55, 84, 170, 0.16), -4px -4px 16px 0px #FFFFFF, 1px 1px 2px 0px #FFFFFF;
-                            border-radius: 8px;
-                            font-size: 22px;
+                            width: 104px;
+                            height: 40px;
+                            line-height: 40px;
+                            background: #9ECBFF;
+                            box-shadow: 4px 6px 12px 1px rgba(35, 115, 255, 0.15);
+                            border-radius: 4px;
+                            font-size: 16px;
                             font-family: PingFangSC-Regular, PingFang SC;
                             font-weight: 400;
-                            color: #C6CBDE;
+                            color: #FFFFFF;
                             text-align: center;
                             cursor: pointer;
 
                             &.active {
-                                background: url("../assets/img/login/btn.png") no-repeat center center / 100% 100%;
-                                font-family: PingFangSC-Medium, PingFang SC;
-                                font-weight: 500;
-                                color: #FFFFFF;
+                                background: #2373FF;
+                                box-shadow: 4px 6px 12px 1px rgba(35, 115, 255, 0.3);
                             }
                         }
                     }
