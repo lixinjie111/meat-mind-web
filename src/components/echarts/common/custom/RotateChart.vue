@@ -248,17 +248,17 @@
               z: 0,
               zlevel: 0,
               label: {
-                normal: {
+          
                   show: false
                   //position: "center",
-                }
+                
               },
               data: [
                 {
                   value: num1,
                   name: _this.myData.name[0],
                   itemStyle: {
-                    normal: {
+                
                       //color: '#73ACFF'
                       // { // 完成的圆环的颜色
                       //     colorStops: [{
@@ -269,21 +269,21 @@
                       //         color: '#28E8FA' // 100% 处的颜色
                       //     }]
                       // },
-                    }
+
                   }
                 },
                 {
                   value: num2,
                   name: _this.myData.name[1],
                   label: {
-                    normal: {
+                
                       show: false
-                    }
+                    
                   },
                   itemStyle: {
-                    normal: {
+                  
                       //color: "#FD866A"
-                    }
+                    
                   }
                 }
               ]

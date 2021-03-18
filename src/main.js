@@ -5,6 +5,7 @@ import store from './store'
 import ViewUI from 'view-design'
 import '../src/assets/viewui-theme/index.less'
 import echarts from 'echarts'
+// import * as echarts from "echarts"
 import "../src/static/icon/iconfont.css"
 import "../src/assets/scss/main.scss"
 import lxjData from "./utils/lxjData.js"
@@ -12,6 +13,7 @@ import fjData from "./utils/fjData.js"
 import zjjData from "./utils/zjjData.js"
 import linData from "./utils/linData.js"
 import ljEData from "./utils/ljData.js"
+import abelData from "./utils/abelData.js"
 import './utils/flexible'
 
 Vue.config.productionTip = false;
@@ -21,6 +23,7 @@ Vue.prototype.$fjData = fjData;
 Vue.prototype.$zjjData = zjjData;
 Vue.prototype.$linData = linData;
 Vue.prototype.$ljEData = ljEData;
+Vue.prototype.$abelData = abelData;
 Vue.use(ViewUI)
 
 new Vue({

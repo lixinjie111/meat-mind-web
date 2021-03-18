@@ -4,19 +4,16 @@
 			<treeEcharts id="box1" :colorList="$linData.colorList"></treeEcharts>
 		</div>       
         <div class="box">
-			<graphEcharts id="graph" :datas="$linData.graphData" :lines="$linData.graphLinks" :colorList="$linData.colorList"></graphEcharts>
-		</div>       
-        <!-- <div class="box"> -->
-			<!-- <graphEchartsDemo id="graph1"></graphEchartsDemo> -->
-		<!-- </div>       -->
+			<graphEcharts id="graph" :graphDatas="$linData.graphData" :colorList="$linData.colorList"></graphEcharts>
+		</div>           
 		<div class="box1">
-			<graphEcharts1 id="graph2" :datas="$linData.graphData1" :lines="$linData.graphLinks1" :curColor="$linData.colorList[0]"></graphEcharts1>
+			<graphEcharts1 id="graph2" :graphDatas="$linData.graphData1" :curColor="$linData.colorList[1]"></graphEcharts1>
 		</div>  
 		<div class="box1">
-			<graphEcharts1 id="graph3" :datas="$linData.graphData2" :lines="$linData.graphLinks1" :curColor="$linData.colorList[1]"></graphEcharts1>
+			<graphEcharts2 id="graph3" :graphDatas="$linData.graphData" :curColor="$linData.colorList[2]"></graphEcharts2>
 		</div>  
 		<div class="box1">
-			<graphEcharts1 id="graph4" :datas="$linData.graphData3" :lines="$linData.graphLinks1" :curColor="$linData.colorList[2]"></graphEcharts1>
+			<graphEcharts3 id="graph4" :graphDatas="$linData.graphData" :curColor="$linData.colorList[3]"></graphEcharts3>
 		</div>     		 
         <div class="row">
 			<scatterEcharts id="scatter" :colorList="$linData.colorList"></scatterEcharts>
@@ -30,10 +27,9 @@
 	import graphEcharts1 from './common/graph/graphEcharts1';
 	import graphEcharts2 from './common/graph/graphEcharts2';
 	import graphEcharts3 from './common/graph/graphEcharts3';
-	import graphEchartsDemo from './common/graph/graphEchartsDemo';
 	import scatterEcharts from './common/scatter/scatterEcharts';
     export default {
-		components: {treeEcharts,graphEcharts,graphEcharts1,graphEcharts2,graphEcharts3,graphEchartsDemo,scatterEcharts},
+		components: {treeEcharts,graphEcharts,graphEcharts1,graphEcharts2,graphEcharts3,scatterEcharts},
     }
 </script>
 

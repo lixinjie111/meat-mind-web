@@ -71,7 +71,6 @@
             return
           }
           current.push(item.name)
-          console.log('ooooooo',this.selected)
         }
 
       },

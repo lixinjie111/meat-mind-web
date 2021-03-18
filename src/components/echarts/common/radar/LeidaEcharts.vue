@@ -122,7 +122,7 @@ export default {
           symbol: "circle",
           symbolSize: 4,
           areaStyle: {
-            normal: {
+            
               color: {
                 type: 'radial',
                 x: 0.5,
@@ -134,7 +134,7 @@ export default {
                     offset: 1, color: this.rgbaColor[i][1] // 100% 处的颜色
                 }],
                 global: false // 缺省为 false
-            }
+            
             },
           },
           itemStyle: {
@@ -143,10 +143,10 @@ export default {
             borderWidth: 1,
           },
           lineStyle: {
-            normal: {
+            
               color: this.colorList[i],
               width: 1,
-            },
+            
           },
           data: [it],
         })),

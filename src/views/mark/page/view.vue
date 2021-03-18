@@ -878,7 +878,7 @@ import barLine from '../../../components/echarts/common/bar/barLine';
 import SerachPoptip from '../../../components/common/SerachPoptip1';
 import lineM3 from '../../../components/echarts/common/line/lineM3';
 export default {
-    name:"view",
+    name:"markView",
     components:{barL,barM,barHM2,barLine,SerachPoptip,lineM3},
     data(){
         return {

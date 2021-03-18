@@ -48,7 +48,9 @@
               <div class="gh-echarts-l">
                   <p>传播关系</p>
                   <span>舆论场关系图展示，溯源舆情关键节点</span>
-                  <div class="gh-echarts-view"></div>
+                  <div class="gh-echarts-view">
+                      <graphEcharts id="graph" :graphDatas="$linData.graphData" :colorList="$linData.colorList"></graphEcharts>
+                  </div>
               </div>
               <div class="gh-echarts-r">
                   <p>主要传播链路</p>
@@ -66,7 +68,9 @@
                         <span>2021/1/22  15:03:09</span>
                         <div class="gh-sub-desc">【百度百家号】账号“安安科普”转发该篇新浪财经文章；</div>
                     </div>
-                    <div class="sub-index-r"></div>
+                    <div class="sub-index-r">
+                        <graphEcharts1 id="graph2" :graphDatas="$linData.graphData1" :curColor="$linData.colorList[1]"></graphEcharts1>
+                    </div>
                   </div>
                   <div class="sub-bot">
                       <p>舆情应对策略建议：</p>
@@ -80,7 +84,9 @@
                         <span>2021/1/22  19:36:13</span>
                         <div class="gh-sub-desc">【知乎】用户“疯狂中医”创建知乎热问：如何评价邓老跌出《2020五大凉茶品牌口碑榜》？</div>
                     </div>
-                    <div class="sub-index-r"></div>
+                    <div class="sub-index-r">
+                        <graphEcharts2 id="graph3" :graphDatas="$linData.graphData" :curColor="$linData.colorList[2]"></graphEcharts2>
+                    </div>
                   </div>
                   <div class="sub-bot">
                       <p>舆情应对策略建议：</p>
@@ -94,7 +100,9 @@
                         <span>2021/1/23  11:31:55</span>
                         <div class="gh-sub-desc">【抖音】账号“探店北上广”发布“邓老凉茶在京开ins风国潮店”的短视频；</div>
                     </div>
-                    <div class="sub-index-r"></div>
+                    <div class="sub-index-r">
+                        <graphEcharts3 id="graph4" :graphDatas="$linData.graphData" :curColor="$linData.colorList[3]"></graphEcharts3>
+                    </div>
                   </div>
                   <div class="sub-bot">
                       <p>舆情应对策略建议：</p>
@@ -108,10 +116,14 @@
 
 <script>
 import ScatterEcharts from "../../../components/echarts/common/scatter/scatterEcharts"
+import graphEcharts from "../../../components/echarts/common/graph/graphEcharts"
+import graphEcharts1 from "../../../components/echarts/common/graph/graphEcharts1"
+import graphEcharts2 from "../../../components/echarts/common/graph/graphEcharts2"
+import graphEcharts3 from "../../../components/echarts/common/graph/graphEcharts3"
 import treeEcharts from "../../../components/echarts/common/tree/treeEcharts"
 export default {
     name:"NewEcharts",
-    components:{ScatterEcharts,treeEcharts}
+    components:{ScatterEcharts,graphEcharts,graphEcharts1,graphEcharts2,graphEcharts3,treeEcharts}
 }
 </script>
 

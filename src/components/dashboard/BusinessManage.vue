@@ -1,167 +1,201 @@
 <template>
     <div class="manage-box">
         <p class="tips">经营诊断可以智能监测营销活动效果，依据心智模型进行智能评测，针对性提出改进方案，提供海量新潮营销创意及案例</p>
-        <div class="manage-overview flex">
-            <div class="manage-overview-left flex-start">
-                <div class="manage-overview-chart">
-                    <div class="manage-overview-select">
-                        <Select class="w120" value="邓老凉茶">
-                            <Option value="邓老凉茶">邓老凉茶</Option>
-                        </Select>
-                        <Select class="w120" value="淘宝旗舰店">
-                            <Option value="淘宝旗舰店">淘宝旗舰店</Option>
-                        </Select>
-                        <Select class="w120" value="营收状况">
-                            <Option value="营收状况">营收状况</Option>
-                        </Select>
-                    </div>
-                    <div id="myChart" style="width:100%;height: 100%;"></div>
-                    <div class="chart-tooltip red">
-                        <!--                        <span>￥</span>-->
-                        <div class="value">6000万</div>
-                        <div class="month">2020年8月</div>
-                    </div>
-                    <div class="chart-tooltip blue">
-<!--                        <span>￥</span>-->
-                        <div class="value">7200万</div>
-                        <div class="month">目标</div>
-                    </div>
-                    <div class="manage-overview-list clearfix">
-                        <div class="manage-overview-item fl">
-                            <p>访问店铺</p>
-                            <p>8,639<span>人</span></p>
-                            <Compare :data="[-12.73,3.16]"></Compare>
-                            <div class="icon">
-                               <i class="iconfont iconxianshangshangdian"></i>
-                            </div>
-                        </div>
-                        <div class="manage-overview-item fr">
-                            <p>商品访客数</p>
-                            <p>126,470<span>次</span></p>
-                            <Compare :data="[-13.14,11.45]"></Compare>
-                            <div class="icon">
-                                <i class="iconfont iconyonghuline"></i>
-                            </div>
-                        </div>
-                        <div class="manage-overview-item fl">
-                            <p>支付买家数</p>
-                            <p>1,509<span>人</span></p>
-                            <Compare :data="[-8.62,3.16]"></Compare>
-                            <div class="icon">
-                                <i class="iconfont iconyonghu"></i>
-                            </div>
-                        </div>
-                        <div class="manage-overview-item fr">
-                            <p>平均停留时长</p>
-                            <p>16.17<span>分</span></p>
-                            <Compare :data="[-11.45,1.15]"></Compare>
-                            <div class="icon">
-                                <i class="iconfont iconshijian"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="manage-overview-info">
-                    <p>当前经营状况</p>
-                    <div class="manage-overview-result">
-                        <img src="../../assets/img/dashboard/manage/icon1@2x.png"/>
-                        <p>低于预期</p>
-                    </div>
-                    <p>呈现问题</p>
-                    <ul class="orange-card-ul">
-                        <li>新增消费者数量下降</li>
-                        <li>已有渠道扩展乏力，品牌营销卖点接受度下降，微博平台上品牌负面舆情呈上升趋势</li>
-                    </ul>
-                    <p>策略建议</p>
-                    <ul class="blue-card-ul">
-                        <li>及时进行引流，放宽对获客目标群体的年龄限制，增大对中低收入人群的覆盖</li>
-                        <li>扩充抖音、快手短视频平台的推广力度；优化KOL投放结构，以主播类、时尚类为主</li>
-                        <li>打造“年轻时尚”营销卖点，及时在微博平台进行公关，并监控效果</li>
-                    </ul>
-                    <div class="manage-overview-btn" @click="goTo"><img  src="../../assets/img/dashboard/manage/icon3@2x.png"/>查看全部经营分析</div>
-                </div>
-            </div>
-            <div class="manage-overview-right">
-                <p>心智模型智能指标评测<Icon type="ios-alert-outline" color="#7C88B1"/></p>
-                <div class="overview-right-top">
-                   <video class="info-player" width="100%" height="100%" autoplay loop muted
-                           src="../../assets/video/model.mp4"></video>
-                   <div class="info-content">
-                       <div class="info-top flex">
-                           <div>
-                               <p>综合评价指数</p>
-                               <p>截至2020/12/14</p>
-                           </div>
-                           <div>
-                               72
-                           </div>
-                       </div>
-                       <div class="info-bottom flex">
-                           <div>
-                               <div>
-                                   <p>77</p>
-                                   <p>近6月最高分</p>
-                               </div>
-                               <img src="../../assets/img/dashboard/manage/line1@2x.png"/>
-                           </div>
-                           <div>
-                               <div>
-                                   <p>69</p>
-                                   <p>近6月最低分</p>
-                               </div>
-                               <img src="../../assets/img/dashboard/manage/line2@2x.png"/>
-                           </div>
-                       </div>
-                   </div>
-                </div>
-                <div class="overview-right-middle">
-                   <div class="detail-chart flex">
-                       <div>
-                          <i-circle :percent="80" trail-color="#fff" :size="54" :stroke-color="['#F80069','#FF7F50']">
-                             <span class="circle-inner circle-inner1">良好</span>
-                          </i-circle>
-                          <p>客群定位</p>
-                       </div>
-                       <div>
-                           <i-circle :percent="80" trail-color="#fff" :size="54" :stroke-color="['#F59808','#F9C544','#FDE772','#FFD28E']">
-                               <span class="circle-inner circle-inner2">异常</span>
-                           </i-circle>
-                           <p>媒介评测</p>
-                       </div>
-                       <div>
-                           <i-circle :percent="80" trail-color="#fff" :size="54" :stroke-color="['#46C2F4','#BBEB63']">
-                               <span class="circle-inner circle-inner3">普通</span>
-                           </i-circle>
-                           <p>品牌评价</p>
-                       </div>
-                   </div>
-                   <div class="detail-info">
-                      <div class="detail-info-item">
-                          <p>营销覆盖度<i class="iconfont iconduigou1"></i></p>
-                      </div>
-                       <div class="detail-info-item">
-                           <p>用户增长趋势<i class="iconfont iconguanyuline1"></i></p>
-                       </div>
-                       <div class="detail-info-item">
-                           <p>目标客群心智拟合<i class="iconfont iconguanyuline1"></i></p>
-                       </div>
-                       <div class="detail-info-item">
-                           <p>品牌联想度<i class="iconfont iconduigou1"></i></p>
-                       </div>
-                       <div class="detail-info-item">
-                           <p>媒介传播能力<i class="iconfont iconguanyuline1"></i></p>
-                       </div>
-                       <div class="detail-info-item">
-                           <p>网站成交金额<i class="iconfont iconduigou1"></i></p>
-                       </div>
-                   </div>
-                </div>
-                <div class="overview-right-bottom">
-                    <p>客群心智模型评测结果</p>
-                    <div class="result-btn"><img src="../../assets/img/dashboard/manage/icon2@2x.png"/>客群定位较为准确</div>
-                </div>
-            </div>
-        </div>
+	    <CardList />
+	    <Card title="营业额总览">
+		    <div class="overview_new">
+			    <div class="overview_new_top">
+				    <div class="overview_new_top_item">
+					    <div class="name">去年 | 2020年</div>
+					    <div class="legend_box">
+						    <div class="legend" :style="{ backgroundColor: $lxjData.colorList[0] }"></div>
+						    <div class="number">￥125,489</div>
+					    </div>
+				    </div>
+				    <div class="overview_new_top_item">
+					    <div class="name">今年 | 2021年</div>
+					    <div class="legend_box">
+						    <div class="legend" :style="{ backgroundColor: $lxjData.colorList[1] }"></div>
+						    <div class="number">￥16,489
+						      <span class="number_target">/ 目标 130,000</span>
+						    </div>
+					    </div>
+				    </div>
+				    <div class="overview_new_top_item">
+					    <div class="name">经营状况</div>
+					    <div class="tips">
+						    <i class="iconfont iconjingshi"></i>
+						    <span>低于预期</span>
+					    </div>
+				    </div>
+			    </div>
+			    <div class="overview_new_chart">
+				    <lineM4 :hasAreaStyle="true" :colorList="$lxjData.colorList" :myData="$ljEData.ljBox37"/>
+			    </div>
+		    </div>
+
+	    </Card>
+        <!--<div class="manage-overview flex">-->
+            <!--<div class="manage-overview-left flex-start">-->
+                <!--<div class="manage-overview-chart">-->
+                    <!--<div class="manage-overview-select">-->
+                        <!--<Select class="w120" value="邓老凉茶">-->
+                            <!--<Option value="邓老凉茶">邓老凉茶</Option>-->
+                        <!--</Select>-->
+                        <!--<Select class="w120" value="淘宝旗舰店">-->
+                            <!--<Option value="淘宝旗舰店">淘宝旗舰店</Option>-->
+                        <!--</Select>-->
+                        <!--<Select class="w120" value="营收状况">-->
+                            <!--<Option value="营收状况">营收状况</Option>-->
+                        <!--</Select>-->
+                    <!--</div>-->
+                    <!--<div id="myChart" style="width:100%;height: 100%;"></div>-->
+                    <!--<div class="chart-tooltip red">-->
+                        <!--&lt;!&ndash;                        <span>￥</span>&ndash;&gt;-->
+                        <!--<div class="value">6000万</div>-->
+                        <!--<div class="month">2020年8月</div>-->
+                    <!--</div>-->
+                    <!--<div class="chart-tooltip blue">-->
+<!--&lt;!&ndash;                        <span>￥</span>&ndash;&gt;-->
+                        <!--<div class="value">7200万</div>-->
+                        <!--<div class="month">目标</div>-->
+                    <!--</div>-->
+                    <!--<div class="manage-overview-list clearfix">-->
+                        <!--<div class="manage-overview-item fl">-->
+                            <!--<p>访问店铺</p>-->
+                            <!--<p>8,639<span>人</span></p>-->
+                            <!--<Compare :data="[-12.73,3.16]"></Compare>-->
+                            <!--<div class="icon">-->
+                               <!--<i class="iconfont iconxianshangshangdian"></i>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="manage-overview-item fr">-->
+                            <!--<p>商品访客数</p>-->
+                            <!--<p>126,470<span>次</span></p>-->
+                            <!--<Compare :data="[-13.14,11.45]"></Compare>-->
+                            <!--<div class="icon">-->
+                                <!--<i class="iconfont iconyonghuline"></i>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="manage-overview-item fl">-->
+                            <!--<p>支付买家数</p>-->
+                            <!--<p>1,509<span>人</span></p>-->
+                            <!--<Compare :data="[-8.62,3.16]"></Compare>-->
+                            <!--<div class="icon">-->
+                                <!--<i class="iconfont iconyonghu"></i>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="manage-overview-item fr">-->
+                            <!--<p>平均停留时长</p>-->
+                            <!--<p>16.17<span>分</span></p>-->
+                            <!--<Compare :data="[-11.45,1.15]"></Compare>-->
+                            <!--<div class="icon">-->
+                                <!--<i class="iconfont iconshijian"></i>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="manage-overview-info">-->
+                    <!--<p>当前经营状况</p>-->
+                    <!--<div class="manage-overview-result">-->
+                        <!--<img src="../../assets/img/dashboard/manage/icon1@2x.png"/>-->
+                        <!--<p>低于预期</p>-->
+                    <!--</div>-->
+                    <!--<p>呈现问题</p>-->
+                    <!--<ul class="orange-card-ul">-->
+                        <!--<li>新增消费者数量下降</li>-->
+                        <!--<li>已有渠道扩展乏力，品牌营销卖点接受度下降，微博平台上品牌负面舆情呈上升趋势</li>-->
+                    <!--</ul>-->
+                    <!--<p>策略建议</p>-->
+                    <!--<ul class="blue-card-ul">-->
+                        <!--<li>及时进行引流，放宽对获客目标群体的年龄限制，增大对中低收入人群的覆盖</li>-->
+                        <!--<li>扩充抖音、快手短视频平台的推广力度；优化KOL投放结构，以主播类、时尚类为主</li>-->
+                        <!--<li>打造“年轻时尚”营销卖点，及时在微博平台进行公关，并监控效果</li>-->
+                    <!--</ul>-->
+                    <!--<div class="manage-overview-btn" @click="goTo"><img  src="../../assets/img/dashboard/manage/icon3@2x.png"/>查看全部经营分析</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="manage-overview-right">-->
+                <!--<p>心智模型智能指标评测<Icon type="ios-alert-outline" color="#7C88B1"/></p>-->
+                <!--<div class="overview-right-top">-->
+                   <!--<video class="info-player" width="100%" height="100%" autoplay loop muted-->
+                           <!--src="../../assets/video/model.mp4"></video>-->
+                   <!--<div class="info-content">-->
+                       <!--<div class="info-top flex">-->
+                           <!--<div>-->
+                               <!--<p>综合评价指数</p>-->
+                               <!--<p>截至2020/12/14</p>-->
+                           <!--</div>-->
+                           <!--<div>-->
+                               <!--72-->
+                           <!--</div>-->
+                       <!--</div>-->
+                       <!--<div class="info-bottom flex">-->
+                           <!--<div>-->
+                               <!--<div>-->
+                                   <!--<p>77</p>-->
+                                   <!--<p>近6月最高分</p>-->
+                               <!--</div>-->
+                               <!--<img src="../../assets/img/dashboard/manage/line1@2x.png"/>-->
+                           <!--</div>-->
+                           <!--<div>-->
+                               <!--<div>-->
+                                   <!--<p>69</p>-->
+                                   <!--<p>近6月最低分</p>-->
+                               <!--</div>-->
+                               <!--<img src="../../assets/img/dashboard/manage/line2@2x.png"/>-->
+                           <!--</div>-->
+                       <!--</div>-->
+                   <!--</div>-->
+                <!--</div>-->
+                <!--<div class="overview-right-middle">-->
+                   <!--<div class="detail-chart flex">-->
+                       <!--<div>-->
+                          <!--<i-circle :percent="80" trail-color="#fff" :size="54" :stroke-color="['#F80069','#FF7F50']">-->
+                             <!--<span class="circle-inner circle-inner1">良好</span>-->
+                          <!--</i-circle>-->
+                          <!--<p>客群定位</p>-->
+                       <!--</div>-->
+                       <!--<div>-->
+                           <!--<i-circle :percent="80" trail-color="#fff" :size="54" :stroke-color="['#F59808','#F9C544','#FDE772','#FFD28E']">-->
+                               <!--<span class="circle-inner circle-inner2">异常</span>-->
+                           <!--</i-circle>-->
+                           <!--<p>媒介评测</p>-->
+                       <!--</div>-->
+                       <!--<div>-->
+                           <!--<i-circle :percent="80" trail-color="#fff" :size="54" :stroke-color="['#46C2F4','#BBEB63']">-->
+                               <!--<span class="circle-inner circle-inner3">普通</span>-->
+                           <!--</i-circle>-->
+                           <!--<p>品牌评价</p>-->
+                       <!--</div>-->
+                   <!--</div>-->
+                   <!--<div class="detail-info">-->
+                      <!--<div class="detail-info-item">-->
+                          <!--<p>营销覆盖度<i class="iconfont iconduigou1"></i></p>-->
+                      <!--</div>-->
+                       <!--<div class="detail-info-item">-->
+                           <!--<p>用户增长趋势<i class="iconfont iconguanyuline1"></i></p>-->
+                       <!--</div>-->
+                       <!--<div class="detail-info-item">-->
+                           <!--<p>目标客群心智拟合<i class="iconfont iconguanyuline1"></i></p>-->
+                       <!--</div>-->
+                       <!--<div class="detail-info-item">-->
+                           <!--<p>品牌联想度<i class="iconfont iconduigou1"></i></p>-->
+                       <!--</div>-->
+                       <!--<div class="detail-info-item">-->
+                           <!--<p>媒介传播能力<i class="iconfont iconguanyuline1"></i></p>-->
+                       <!--</div>-->
+                       <!--<div class="detail-info-item">-->
+                           <!--<p>网站成交金额<i class="iconfont iconduigou1"></i></p>-->
+                       <!--</div>-->
+                   <!--</div>-->
+                <!--</div>-->
+                <!--<div class="overview-right-bottom">-->
+                    <!--<p>客群心智模型评测结果</p>-->
+                    <!--<div class="result-btn"><img src="../../assets/img/dashboard/manage/icon2@2x.png"/>客群定位较为准确</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
         <Card title="客群诊断">
             <div slot="right" class="card-right" @click="toDetail1">查看用户画像详情<i class="iconfont iconleft-arrow"></i></div>
             <div class="manage-card flex-start">
@@ -335,12 +369,14 @@
     import Compare from "../../components/Compare";
     import barM1 from '../echarts/common/bar/barM1';
     import lineM2 from '../echarts/common/line/lineM2';
+    import lineM4 from '../echarts/common/line/lineM4';
     import barL from '../echarts/common/bar/barL';
     import cLine from '../echarts/common/line/line';
+    import CardList from '../common/CardList';
 
     export default {
         name: "BusinessManage",
-        components: {Compare, Card, barL, barM1, cLine, lineM2},
+        components: {Compare, Card, barL, barM1, cLine, lineM2, CardList, lineM4},
         data() {
             return {}
         },
@@ -586,7 +622,6 @@
                             smooth: true,
                             symbol: "none",
                             itemStyle: {
-                                normal: {
                                     lineStyle: {
                                         width: 4,
                                         type: 'solid',
@@ -601,7 +636,6 @@
                                         shadowBlur: 6,
                                         shadowOffsetY: 8,
                                     }
-                                },
                             },
                             zlevel: 1,
                             data: data3
@@ -612,13 +646,11 @@
                             smooth: true,
                             symbol: "none",
                             itemStyle: {
-                                normal: {
-                                    lineStyle: {
-                                        width: 1,
-                                        type: 'dashed',
-                                        color: "rgba(35, 115, 255, .5)"
-                                    }
-                                },
+                                lineStyle: {
+                                    width: 1,
+                                    type: 'dashed',
+                                    color: "rgba(35, 115, 255, .5)"
+                                }
                             },
                             data: data4
                         },
@@ -628,13 +660,11 @@
                             smooth: true,
                             symbol: "none",
                             itemStyle: {
-                                normal: {
-                                    lineStyle: {
-                                        width: 1,
-                                        type: 'dashed',
-                                        color: "rgba(245, 74, 69, .5)"
-                                    }
-                                },
+                                lineStyle: {
+                                    width: 1,
+                                    type: 'dashed',
+                                    color: "rgba(245, 74, 69, .5)"
+                                }
                             },
                             data: data5
                         },
@@ -645,7 +675,6 @@
                             symbol: "none",
                             stack: 100,
                             itemStyle: {
-                                normal: {
                                     color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                         offset: 0,
                                         color: 'rgba(252, 212, 201, 0)'
@@ -661,10 +690,6 @@
                                         type: 'dashed',
                                         color: "#DFDBDD"
                                     }
-                                },
-                            },
-                            areaStyle: {
-                                normal: {}
                             },
                             data: data,
                         },
@@ -675,7 +700,6 @@
                             symbol: "none",
                             stack: 100,
                             itemStyle: {
-                                normal: {
                                     color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [{
                                         offset: 0,
                                         color: 'rgba(184, 205, 251, 0)'
@@ -691,10 +715,6 @@
                                         type: 'solid',
                                         color: "#FFFFFF"
                                     }
-                                },
-                            },
-                            areaStyle: {
-                                normal: {}
                             },
                             data: data2,
                         },
@@ -713,11 +733,10 @@
                                 brushType: 'fill',
                             },
                             itemStyle: {
-                                normal: {
                                     color: '#F54A45',
                                     shadowBlur: 5,
                                     shadowColor: '#F54A45'
-                                }
+                                
                             },
                             zlevel: 1
                         },
@@ -736,11 +755,11 @@
                                 brushType: 'fill',
                             },
                             itemStyle: {
-                                normal: {
+                               
                                     color: '#2373FF',
                                     shadowBlur: 5,
                                     shadowColor: '#2373FF'
-                                }
+                            
                             },
                             zlevel: 1
                         },
@@ -750,14 +769,14 @@
                             symbol: 'circle',
                             data: effectValues2,
                             itemStyle: {
-                                normal: {
+                              
                                     borderWidth: '2',
                                     borderType: 'solid',
                                     borderColor: '#ffffff',
                                     color: '#999999',
                                     shadowColor: '#515a6e',
                                     shadowBlur: 10
-                                }
+                              
                             },
                             cursor: 'pointer',
                             zlevel: 1
@@ -897,32 +916,25 @@
                         symbolSize: 5,
                         zlevel: 30,
                         itemStyle: {
-                            normal: {
+                          
                                 color: '#FF9F7F',
                                 shadowBlur: 5,
                                 shadowColor: '#FF9F7F'
-                            }
+                           
                         },
                         lineStyle: {
-                            normal: {
+                      
                                 width: 4,
                                 // shadowBlur: 3,
                                 // shadowColor: 'rgba(3, 13, 41, .2)',
                                 // shadowOffsetY: 8,
                                 type: 'solid',
                                 color: '#4488FF',
-                                // color: new this.$echarts.graphic.LinearGradient(1, 0, 0, 0, [{
-                                //         offset: 0,
-                                //         color: 'rgba(187, 134, 252, 1)'
-                                //     }, {
-                                //         offset: 1,
-                                //         color: 'rgba(94, 139, 255, 1)'
-                                //     }]
-                                // )
-                            }
+
+                            
                         },
                         areaStyle: {
-                            normal: {
+                         
                                 color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                         offset: 0,
                                         color: hexToRgba('#4488FF', 0.8)
@@ -938,7 +950,7 @@
                                     ], false),
                                 // shadowColor: hexToRgba('#0090FF', 0.1),
                                 // shadowBlur: 10
-                            }
+                        
                         },
                         data: yAxisData
                     }]
@@ -1028,7 +1040,7 @@
 </style>
 <style scoped lang="scss">
     .manage-box {
-        /*padding: 0 24px 24px 24px;*/
+        padding: 0 24px 24px 24px;
 
         .tips {
             margin-top: 24px;
@@ -1506,6 +1518,62 @@
                 }
             }
         }
+	      .overview_new{
+					.overview_new_top_item{
+						display: inline-block;
+						margin-right: 40px;
+						&:last-child{
+							margin-right: 0;
+						}
+						.name{
+							font-size: 16px;
+							font-weight: 400;
+							color: #7C88B1;
+							padding-left: 16px;
+						}
+						.legend_box{
+							.legend{
+								width: 16px;
+								height: 16px;
+								border-radius: 50%;
+								display: inline-block;
+								margin-right: 4px;
+							}
+							.number{
+								display: inline-block;
+								font-size: 24px;
+								font-weight: 500;
+								color: #242F57;
+								.number_target{
+									font-size: 16px;
+									font-weight: 400;
+									color: #7C88B1;
+								}
+							}
+						}
+						.tips{
+							width: 160px;
+							height: 40px;
+							background: #FEDFE1;
+							border-radius: 8px;
+							font-size: 24px;
+							font-weight: 500;
+							color: #FF4C60;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							margin-top: 0;
+							.iconfont{
+								font-size: 24px;
+								margin-right: 4px;
+							}
+						}
+					}
+		      .overview_new_chart{
+						height: 230px;
+			      width: 100%;
+		      }
+	      }
 
         .card-right {
             font-size: 14px;

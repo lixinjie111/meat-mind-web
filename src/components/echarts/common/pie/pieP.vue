@@ -85,31 +85,43 @@ export default {
             }, {
                 value: 60,
                 itemStyle: {
-                    normal: {
+                    
                         borderWidth: 5,
-                        borderColor: new echarts.graphic.LinearGradient(
-    0, 0, 1, 0, [{
-            offset: 0,
-            color: "#4D94FF",
-        },
-        {
-            offset: 1,
-            color: "#4D94FF",
-        }
-    ]
-),
-                        color: new echarts.graphic.LinearGradient(
-    0, 0, 1, 0, [{
-            offset: 0,
-            color: "#4D94FF",
-        },
-        {
-            offset: 1,
-            color: "#4D94FF",
-        }
-    ]
-)
-                    }
+                        borderColor: {
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 1,
+                            y2: 0,
+                            colorStops: [{
+                                    offset: 0,
+                                    color: "#4D94FF",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "#4D94FF",
+                                }
+                            ],
+                            global: false // 缺省为 false
+                        },
+                        color: {
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 1,
+                            y2: 0,
+                            colorStops: [{
+                                    offset: 0,
+                                    color: "#4D94FF",
+                                },
+                                {
+                                    offset: 1,
+                                    color: "#4D94FF",
+                                }
+                            ],
+                            global: false // 缺省为 false
+                        }
+                    
                 },
             }, ]
         },
