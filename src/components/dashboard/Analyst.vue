@@ -915,7 +915,9 @@ export default {
           til:'访问店铺',
           jyNum:'8,639',
           jyUnit:'人',
-          ysIcon:require("../../assets/img/dashboard/jyic1.png"),
+          ysIcon:'bgi1',
+          upper:'9.72%',
+          downper:'3.54%',
           jyIcon:require("../../assets/img/dashboard/jyIcon1.png")
         },
         { 
@@ -925,7 +927,9 @@ export default {
           til:'商品访客数',
           jyNum:'125,740',
           jyUnit:'次',
-          ysIcon:require("../../assets/img/dashboard/jyic2.png"),
+          ysIcon:'bgi2',
+          upper:'4.56%',
+          downper:'1.12%',
           jyIcon:require("../../assets/img/dashboard/jyIcon2.png")
         },
         {
@@ -935,7 +939,9 @@ export default {
           til:'平均停留时长',
           jyNum:'15.67',
           jyUnit:'分',
-          ysIcon:require("../../assets/img/dashboard/jyic3.png"),
+          ysIcon:'bgi3',
+          upper:'8.06%',
+          downper:'5.12%',
           jyIcon:require("../../assets/img/dashboard/jyIcon3.png")
         },
         {
@@ -945,7 +951,9 @@ export default {
           til:'支付买家数',
           jyNum:'1,873',
           jyUnit:'人',
-          ysIcon:require("../../assets/img/dashboard/jyic4.png"),
+          ysIcon:'bgi4',
+          upper:'2.56%',
+          downper:'9.12%',
           jyIcon:require("../../assets/img/dashboard/jyIcon4.png")
         }
       ],

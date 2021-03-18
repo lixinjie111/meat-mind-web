@@ -234,7 +234,7 @@
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">自由职业</div>
-                <div class="perinfo_b">用户数 28790人</div>
+                <div class="perinfo_b">用户数 6790人</div>
               </div>
             </div>
             <div class="lef_area_bom" style="background: #FFE6DE;color: #FE774B;" @click="expandfn(5)">

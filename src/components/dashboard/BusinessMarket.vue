@@ -530,7 +530,7 @@
 
                         name: '全部客群',
                         short:'全',
-                        total: 28790,
+                        total: 75361,
                         rate: 80,
                         self: 23,
                         latent: 77,
