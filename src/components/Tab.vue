@@ -29,19 +29,19 @@
 
 <style scoped lang="scss">
     .tabs-container {
-        border-bottom: 1px solid #EAEDF7;
+        border-bottom: 1px solid #DEE2EE;
 
         > div {
-            padding: 16px 0;
-            margin-right: 40px;
+            padding: 8px 0 6px 0;
+            margin-right: 32px;
             display: inline-block;
             vertical-align: top;
-            font-size: 24px;
+            font-size: 20px;
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
-            color: #7C88B1;
+            color: #97A0C3;
             cursor: pointer;
-            line-height: 32px;
+            line-height: 28px;
 
             &.active {
                 font-family: PingFangSC-Medium, PingFang SC;

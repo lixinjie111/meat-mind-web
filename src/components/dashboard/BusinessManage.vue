@@ -1,6 +1,6 @@
 <template>
     <div class="manage-box">
-        <p class="tips">经营诊断可以智能监测营销活动效果，依据心智模型进行智能评测，针对性提出改进方案，提供海量新潮营销创意及案例</p>
+<!--        <p class="tips">经营诊断可以智能监测营销活动效果，依据心智模型进行智能评测，针对性提出改进方案，提供海量新潮营销创意及案例</p>-->
 	    <CardList />
 	    <Card title="营业额总览">
 		    <div class="overview_new">

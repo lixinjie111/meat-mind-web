@@ -3555,7 +3555,7 @@ export default {
       .xinzfb_container_lef,
       .xinzfb_container_rig {
         width: 49%;
-        height: 393px;
+        height: 429px;
         background: #ffffff;
         border-radius: 8px;
         border: 1px solid #eaedf7;
@@ -3609,8 +3609,10 @@ export default {
           flex:1;
           .xinzfb_container_lef_content_chart{
             height: 230px;
+			border-bottom: 1px solid #F0F0F0;
           }
           .xinzfb_container_lef_content_chart_match{
+			margin-top: 12px;
             height: 100px;
             display: flex;
             .xinzfb_container_lef_content_chart_match_item{
