@@ -155,16 +155,13 @@
                 downLoad: require("../assets/img/dashboard/downLoad.png"),
             }
         },
-        created() {
-            // localStorage.setItem("dashboard", -1);
-        },
         methods: {
             confirm() {
                 if (this.role < 0) {
                     this.$Message.error('请选择您的身份');
                     return false;
                 }
-                localStorage.setItem("dashboard", this.role);
+                this.$store.commit('setRole', this.role);
                 this.$router.push({name: "dashboard"});
             }
         }

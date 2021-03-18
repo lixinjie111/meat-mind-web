@@ -60,13 +60,19 @@
         },
         data() {
             return {
-                flag: localStorage.getItem("dashboard"),
+                flag: this.$store.state.role,
                 search:false,
                 select:false
             };
         },
+        watch:{
+            '$store.state.role'(val){
+                this.flag = val
+            }
+        },
         methods: {
             logout(){
+                this.$store.commit('setRole', 0);
                 this.$router.push({path:'/'})
             }
         }

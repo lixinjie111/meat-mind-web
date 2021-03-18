@@ -42,10 +42,15 @@
         components: {Analyst, BusinessOwner},
         data() {
             return {
-                flag: localStorage.getItem("dashboard"),
+                flag: this.$store.state.role,
                 detailModal: false,
                 detail1: true,
                 detail2: false
+            }
+        },
+        watch:{
+            '$store.state.role'(val){
+                this.flag = val
             }
         },
         methods: {
