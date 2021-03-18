@@ -27,7 +27,7 @@
           <div class="box">
               <div class="title">
                 <div class="boxIcon">
-                  <i class="iconfont iconkanbanline"></i>
+                  <img src="../../assets/img/yhhx/xunh.png" alt="">
                 </div> 媒介扩容
               </div>
               <div class="boxDesc">
@@ -37,7 +37,7 @@
           <div class="box box_panel1">
               <div class="title">
                 <div class="boxIcon">
-                  <i class="iconfont iconkanbanline"></i>
+                  <img src="../../assets/img/yhhx/sp.png" alt="">
                 </div> KOL组合优化
               </div>
               <div class="boxDesc">
@@ -47,7 +47,7 @@
           <div class="box box_panel2">
               <div class="title">
                 <div class="boxIcon">
-                  <i class="iconfont iconkanbanline"></i>
+                  <img src="../../assets/img/yhhx/laba.png" alt="">
                 </div> 话题丰富
               </div>
               <div class="boxDesc">
@@ -359,6 +359,7 @@
                   <div class="navTitle">投放预算</div>
                   <div class="navSubTitle"></div>
                   <div class="new_echart_box">
+                    <PieCaseEcharts  :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieCaseEcharts>
                   </div>
                 </div>
               </div>
@@ -444,11 +445,32 @@
             <div class="zuhe_echarts_left">
               <div class="zuhe_echarts_title">媒介曝光触达</div>
               <div class="new_echart_box">
+                 <PieEcharts2 :colorList="$fjData.colorList" :myData="$fjData.box0Data"></PieEcharts2>
               </div>
             </div>
             <div class="zuhe_echarts_rt">
               <div class="zuhe_echarts_title">媒介转化效率</div>
-              <div class="new_echart_box">
+              <div class="new_echart_box1">
+                <!-- <barC5 :colorList="$fjData.colorList" :myData="progressData" id="progressData"></barC5> -->
+               <div class="new_echart_list_box">
+                  <div class="m-rank-lf-list" v-for="(item,index) in rankList" :key="index">
+                    <div class="m-rank-item-lf">
+                        <div class="m-rank-icon">
+                          <img :src="item.icon" alt="">
+                        </div>
+                        <div class="m-rank-text">
+                          {{item.text}}
+                        </div>
+                      </div>
+                      <div class="m-rank-progress">
+                        <barHM2 :id="'box1141'+index" :colorList="$lxjData.colorList" :myData='$lxjData["box1149"+ index + "Data"]'></barHM2>
+                      </div>
+                  </div>
+                </div>
+                <ul class="new_echart_legend">
+                    <li><div class="circle"></div> 转化率</li>
+                    <li><div class="circle circleBox"></div> 销售额</li>
+                </ul>
               </div>
             </div>
         </div>
@@ -475,7 +497,49 @@
           </div>
         </div>
         <div class="m-p-rank-echarts">
-            <barL id="box27" :colorList="$lxjData.colorList" :myData="myEData"></barL>
+          <div class="m-rank-lf">
+            <div class="m-rank-lf-list" @click="changeIndex1(index)" :class="currentIndex1==index?'m-rank-lf-active':''" v-for="(item,index) in rankList" :key="index">
+              <div class="m-rank-item-lf">
+                  <div class="m-rank-num">
+                    {{index+1}}
+                  </div>
+                  <div class="m-rank-icon">
+                    <img :src="item.icon" alt="">
+                  </div>
+                  <div class="m-rank-text">
+                    {{item.text}}
+                  </div>
+                </div>
+                <div class="m-rank-progress">
+                  <Progress :percent="item.per" status="active" :stroke-width="9"/>
+                </div>
+            </div>
+          </div>
+          <div class="m-rank-rt">
+            <div class="m-rank-tp">
+              <div class="m-rank-tp-title">
+                媒介声量趋势图
+              </div>
+              <div class="new_echart_box">
+              </div>
+            </div>
+            <div class="m-rank-bm">
+              <div class="m-rank-bm-lf">
+                    <div class="m-rank-tp-title">
+                      用户总数和新增用户
+                    </div>
+                    <div class="new_echart_box">
+                    </div>
+              </div>
+              <div class="m-rank-bm-rt">
+                <div class="m-rank-tp-title">
+                      使用时长和次数
+                </div>
+                <div class="new_echart_box">
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -489,20 +553,24 @@ import Card from "./base/Card"
 import TabPaneItem from "./base/TabPaneItem"
 import PieCaseEcharts from '../../components/echarts/common/pie/PieCaseEcharts';
 import barL from '../../components/echarts/common/bar/barL';
+import barC5 from '../../components/echarts/common/bar/barC5';
 import funnel from '../../components/echarts/common/funnel/funnel';
 import PieEcharts6 from '../../components/echarts/common/pie/PieEcharts6';
 import PieEcharts2 from '../../components/echarts/common/pie/PieEcharts2';
+import PieEcharts from '../../components/echarts/common/pie/PieEcharts';
 import LeidaEcharts from '../../components/echarts/common/radar/LeidaEcharts';
 import vTree from '../../components/echarts/common/treemap/zjjTreemap';
 import lineM from '../../components/echarts/common/line/lineM3';
 import barM from '../../components/echarts/common/bar/barM';
+import barHM2 from '../../components/echarts/common/bar/barHM3';
 let counter = 0
 export default {
   name: "index",
-  components: { Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, TabPaneItem},
+  components: { barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, TabPaneItem},
   data(){
       return{
         currentIndex:1,
+        currentIndex1:0,
         model2:"1",
         optionList:[
           {
@@ -592,6 +660,12 @@ export default {
           "时尚","舞蹈","艺术文化","个护","园艺","运动健身","奢侈品","新闻资讯","品牌组织","颜值达人","知识科普","番剧","游戏","品牌组织"],
           list3:["不限","按照最低刊例价组合","按照最高刊例价组合"],
             tabs: ['短视频','社交传媒', '大众传媒' , '体验事件' , '促销' , '在线社交媒体' , '公共关系和宣传' , '网站'  , '其他' ],
+          progressData: {
+              value: [528, 464, 958, 423],
+              value1: [52, 464, 958, 423],
+              legName:['微博','淘宝直播','抖音直播','小红书直播'],
+              iconList:["http://localhost:8080/img/toux4.8e9bfdb4.png",],
+          },
           myEData:[],
               upIcon:require("../../assets/img/yhhx/upIcon.png"),
               downIcon:require("../../assets/img/yhhx/down_arro_Icon.png"),
@@ -955,12 +1029,37 @@ export default {
               },
         config: {},
         currentNum:0,
+        rankList:[
+         
+        ],
       }
   },
   created(){
     this.myEData=this.$lxjData.box27Data;
     this.userData=this.$linData.box1Data;
     this.averageData=this.$linData.box3Data;
+    this.rankList=[
+          {
+            per:23,
+            text:'抖音',
+            icon:this.dyIcon,
+          },
+          {
+            per:22,
+            text:'微博',
+            icon:this.wbIcon,
+          },
+          {
+            per:18,
+            text:'小红书',
+            icon:this.xhsIcon,
+          },
+          {
+            per:11,
+            text:'今日头条',
+            icon:this.ttIcon,
+          },
+        ];
     this.mediaList1=[
       {
         numTxt1:'150W',
@@ -1084,6 +1183,9 @@ export default {
     this.changeTabCon(0);
   },
   methods:{
+     changeIndex1(arg){
+       this.currentIndex1=arg;
+     },
     changeIndex(arg){
       this.currentIndex=arg;
       this.currentNum++;
@@ -1974,25 +2076,10 @@ export default {
         margin-bottom: 16px;
          &.box_panel1{
           background: #4488FF;
-          .title{
-            .boxIcon{
-              i{
-                 color:#4488FF;
-              }
-            }
-          }
         }
         &.box_panel2{
           background: #1DCEC3;
           margin-bottom: 0;
-          .title{
-            .boxIcon{
-              i{
-                color:#1DCEC3;
-              }
-            }
-          }
-            
         }
         .title{
           display: flex;
@@ -2004,14 +2091,14 @@ export default {
           margin-bottom: 3px;
           
           .boxIcon{
-            padding:3px 6px;
-            line-height: initial;
+            width: 28px;
+            height: 28px;
+            padding:6px;
             background:#fff;
             border-radius: 8px;
             margin-right: 10px;
-            i{
-              color:#FF7F55;
-              font-size: 14px;
+            img{
+              width:100%;display: block;
             }
           }
           
@@ -3039,6 +3126,7 @@ export default {
         padding: 24px;
         padding-bottom: 0;
         flex:1;
+        padding-right: 0;
         display: flex;
         flex-direction: column;
         .zuhe_echarts_title{
@@ -3048,6 +3136,71 @@ export default {
           color: #242F57;
           line-height: 22px;
           margin-bottom: 10px;
+        }
+        .new_echart_box1{
+          flex:1;
+           display: flex;
+          .new_echart_list_box{
+             flex:1;
+             .m-rank-lf-list{
+              display: flex;
+              margin-bottom: 21px;
+              height: 28px;
+              align-items: center;
+              padding:0 8px;
+              border-left: 1px solid #fff;
+              cursor: pointer;
+              .m-rank-item-lf{
+                width: 115px;
+                display: flex;
+                align-items: center;
+                  .m-rank-icon{
+                    width:28px;
+                    height: 28px;
+                    img{
+                      width: 100%;
+                      display: block;
+                    }
+                  }
+                  .m-rank-text{
+                    font-size: 12px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #97A0C3;
+                    margin-left: 5px;
+                  }
+              }
+            
+              .m-rank-progress{
+                flex:1;
+                height: 50px;
+              }
+            }
+          }
+          .new_echart_legend{
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            li{
+              text-align: right;
+              padding-right: 30px;
+              margin-bottom: 20px;
+              .circle{
+                &.circleBox{
+                  background:#FE774B ;
+                }
+                display: inline-block;
+                width: 6px;
+                height: 6px;
+                background:#2373FF ;
+                border-radius: 50%;
+                margin-right: 3px;
+              }
+            }
+          }
+          .m-rank-lf-list:last-child{
+            margin-bottom: 0;
+          }
         }
       }
      
@@ -3160,18 +3313,16 @@ export default {
 
   .m-p-rank {
     width: 100%;
-    height: 339px;
     margin-bottom: 24px;
-    background:  #fff;
-    // background: url("../../assets/img/media/colourfol.png") no-repeat center
-    //   center / 100% 339px;
-    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-    border-radius: 12px;
-    border: 1px solid #EAEDF7;
+    background: #FFFFFF;
+    box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+    border-radius: 8px;
+    padding:24px;
+    margin-bottom: 24px;
     .m-p-rank-header {
       display: flex;
       justify-content: space-between;
-      padding: 20px 24px 0;
+       margin-bottom: 24px;
       .h-name-list {
         display: flex;
         align-items: center;
@@ -3241,8 +3392,138 @@ export default {
     }
     .m-p-rank-echarts {
       width: 100%;
-      height: 287px;
-      padding: 0 24px;
+      height: 636px;
+      background: #F4F7FC;
+      display: flex;
+      .m-rank-lf{
+        width: 306px;
+        background: #fff;
+        .m-rank-lf-list{
+          height: 60px;
+          display: flex;
+          align-items: center;
+          padding:0 8px;
+          border-left: 1px solid #fff;
+          cursor: pointer;
+          &.m-rank-lf-active{
+            background: #F4F7FC;
+            border-left: 2px solid #2373FF;
+             .m-rank-item-lf{
+               .m-rank-text{
+                 color: #2373FF;
+               }
+             }
+          }
+          .m-rank-item-lf{
+            width: 135px;
+            display: flex;
+            align-items: center;
+             .m-rank-num{
+                width:18px;
+                height: 18px;
+                background: #C6CBDE;
+                font-size: 12px;
+                font-family: HelveticaNeue-Medium, HelveticaNeue;
+                font-weight: 500;
+                color: #FFFFFF;
+                text-align: center;
+                line-height: 18px;
+                margin-right: 10px;
+                border-radius: 50%;
+              }
+              .m-rank-icon{
+                width:28px;
+                height: 28px;
+                img{
+                  width: 100%;
+                  display: block;
+                }
+              }
+              .m-rank-text{
+                margin-left: 5px;
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636E95;
+              }
+          }
+         
+          .m-rank-progress{
+            flex:1;
+            
+          }
+        }
+        .m-rank-lf-list:nth-child(1){
+          .m-rank-item-lf{
+            .m-rank-num{
+              background: #4D94FF;
+            }
+          }
+        }
+        .m-rank-lf-list:nth-child(2){
+          .m-rank-num{
+            background: #FE774B;
+          }
+        }
+        .m-rank-lf-list:nth-child(3){
+          .m-rank-num{
+              background: #FDD352;
+          }
+        }
+      }
+      .m-rank-rt{
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        padding:16px;
+        .m-rank-tp{
+          height: 302px;
+          margin-bottom: 16px;
+          background: #fff;
+          border-radius: 8px;
+          padding:16px;
+          display: flex;
+          flex-direction: column;
+          .m-rank-tp-title{
+            font-size: 14px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242F57;
+            line-height: 22px;
+          }
+        }
+        .m-rank-bm{
+          flex:1;
+          background: #fff;
+          border-radius: 8px;
+          display: flex;
+          padding:16px;
+          .m-rank-bm-lf{
+            flex:1;
+            display: flex;
+            flex-direction: column;
+            .m-rank-tp-title{
+              font-size: 14px;
+              font-family: PingFangSC-Medium, PingFang SC;
+              font-weight: 500;
+              color: #242F57;
+              line-height: 22px;
+            }
+          }
+          .m-rank-bm-rt{
+            flex:1;
+            display: flex;
+            flex-direction: column;
+            .m-rank-tp-title{
+              font-size: 14px;
+              font-family: PingFangSC-Medium, PingFang SC;
+              font-weight: 500;
+              color: #242F57;
+              line-height: 22px;
+            }
+          }
+        }
+      }
     }
   }
   .m-p-filter{

@@ -61,10 +61,10 @@ export default {
     defaultOption(myData) {
       const { name, value } = myData || { name: [], value: [] };
       const option = {
-        color:[ "#FC809F","#A49DFA","#4D94FF"],
+        color:["#FDD352","#FE774B","#2373FF",],
         grid: {
           left: "center",
-          // right: '4%',
+          right: '4%',
           top: "0",
           bottom: "60",
           containLabel: true,
@@ -87,7 +87,7 @@ export default {
           {
             name: "忠实顾客",
             type: "pie",
-            center: ['20%', '50%'],
+            center: ['30%', '50%'],
             radius : ['50%', '40%'],
             label: {
               
@@ -99,16 +99,16 @@ export default {
               {
                 value: "967",
                 name: "忠实顾客",
-                itemStyle: {
-                  emphasis: {
-                    shadowBlur: 10,
-                    shadowOffsetX: 0,
-                    shadowColor: "rgba(0, 0, 0, 0.5)",
+                // itemStyle: {
+                //   emphasis: {
+                //     shadowBlur: 10,
+                //     shadowOffsetX: 0,
+                //     shadowColor: "rgba(0, 0, 0, 0.5)",
                     
-                      color: "#dc1439",
+                //       color: "#dc1439",
                 
-                  },
-                },
+                //   },
+                // },
               },
               {
                 value: "2800",
@@ -123,22 +123,22 @@ export default {
           {
             name: "摇摆顾客",
             type: "pie",
-            center: ['20%', '50%'],
+            center: ['30%', '50%'],
             radius : ['60%', '70%'],
             data: [
               {
                 value: "825",
                 name: "摇摆顾客",
-                itemStyle: {
-                  emphasis: {
-                    shadowBlur: 10,
-                    shadowOffsetX: 0,
-                    shadowColor: "rgba(0, 0, 0, 0.5)",
+                // itemStyle: {
+                //   emphasis: {
+                //     shadowBlur: 10,
+                //     shadowOffsetX: 0,
+                //     shadowColor: "rgba(0, 0, 0, 0.5)",
                     
-                      color: "#dc1439",
+                //       color: "#dc1439",
            
-                  },
-                },
+                //   },
+                // },
               },
               {
                 value: "500",
@@ -153,23 +153,23 @@ export default {
           {
             name: '潜在顾客',
             type: 'pie',
-            center: ['20%', '50%'],
+            center: ['30%', '50%'],
             radius : ['80%', '90%'],
             data:[
                 // {value:1078, name:'潜在顾客'}
                 {
                     value:'1078',
                     name:'潜在顾客',
-                    itemStyle: {
-                        emphasis: {
-                            shadowBlur: 10,
-                            shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)',
+                    // itemStyle: {
+                    //     emphasis: {
+                    //         shadowBlur: 10,
+                    //         shadowOffsetX: 0,
+                    //         shadowColor: 'rgba(0, 0, 0, 0.5)',
                             
-                                color: "rgba(213,223,236,1)",
+                    //             color: "rgba(213,223,236,1)",
                           
-                        }
-                    }
+                    //     }
+                    // }
                 },
                 {
                     value:'800', 
