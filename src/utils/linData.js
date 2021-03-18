@@ -165,6 +165,59 @@ const linData = {
             },
         ]
     },
+    barLine:{
+      formatter:'',
+      legName: ['市场供应量','市场需求量','销售额（行业）','销售额（自身）'],
+      name: ['2018', '2019', '2020', '2021E(预测)'],
+      value:  [
+          {
+              name: '市场供应量',
+              type: 'bar',
+              barWidth: '10%',
+              barMinWidth:10,
+              barMaxWidth:40,
+              itemStyle: {
+                 //barBorderRadius:30
+                  emphasis:{
+                      color:'#FF9F7F'
+                  }
+              },
+              data: [2800, 3000, 3800, 4150]
+          },
+          {
+              name: '市场需求量',
+              type: 'bar',
+              barWidth: '10%',
+              barMinWidth:10,
+              barMaxWidth:40,
+              itemStyle: {
+                 //barBorderRadius:30
+                  emphasis:{
+                      color:'#FF9F7F'
+                  }
+              },
+              data: [3000, 2300, 3500, 4250]
+          },
+          {
+              name: '销售额（行业）',
+              type: 'line',
+              smooth:true,
+              yAxisIndex: 1,
+              data: [650, 510, 780, 850]
+          },
+          {
+              name: '销售额（自身）',
+              type: 'line',
+              smooth:true,
+              yAxisIndex: 1,
+              data: [320, 200, 300, 380]
+          }
+      ]      
+    },
+    pieData:{
+      name: ['邓老凉茶', '王老吉', '和其正', '加多宝', '其他'],
+      value: ['20%','18%','22%','20%','20%'],   
+    },
     graphData:{
         nodes: [
             {

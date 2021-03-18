@@ -52,6 +52,7 @@
                 <AnchorLink href="#mark-details-public" title="行业态势分析" />
             </Anchor>
         </div> -->
+        <Tab :tab-list="['品牌受众分析','品牌舆情洞察','行业态势分析']"></Tab>
         <Accept :title="'品牌受众分析'" ></Accept>
         <Market :title="'品牌舆情洞察'" ></Market>
         <Public :title="'行业态势分析'" ></Public>
@@ -59,12 +60,13 @@
 </template>
 
 <script>
+import Tab from "../../../components/Tab"
 import Accept from "./Accept"
 import Market from "./Market"
 import Public from "./Public"
 export default {
     name:"Details",
-    components:{Accept,Market,Public},
+    components:{Tab,Accept,Market,Public},
      data() {
             return {
                 pinpai: '暂无品牌',

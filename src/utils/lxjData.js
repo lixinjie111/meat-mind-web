@@ -1361,8 +1361,7 @@ const lxjEData = {
                 smooth:true,
                 yAxisIndex: 1,
                 data: [4.1, 4.5, 5.6, 5.4, 5.9, 8,]
-            },
-
+            }
         ]
     },
     box10Data:{

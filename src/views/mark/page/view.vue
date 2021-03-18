@@ -10,12 +10,18 @@
                     <div class="bar-echarts">
                         <div class="bar-title">凉茶市场供需及销售走势</div>
                         <div class="bar-sub-title">整体市场供需变化及前瞻性预测</div>
+                        <div class="bar-echarts-view">
+                            <barLine id="bar" :colorList="$linData.colorList" :myData="$linData.barLine"></barLine>
+                        </div>
                     </div>
                     <div class="pie-echarts">
                         <div class="pie-title">凉茶饮料市场份额</div>
                         <div class="pie-sub-title">细分市场头部品牌市场份额占比</div>
                         <div class="pie-date">
                             <DatePicker type="year" :value="pieDateValue" style="width: 80px"></DatePicker>
+                        </div>
+                        <div class="pie-echarts-view">
+                            <PieEcharts :colorList="$linData.colorList" :myData="$linData.pieData"></PieEcharts>
                         </div>
                     </div>
                 </div>
@@ -875,11 +881,12 @@ import barL from '../../../components/echarts/common/bar/barL';
 import barM from '../../../components/echarts/common/bar/barM';
 import barHM2 from '../../../components/echarts/common/bar/barHM2';
 import barLine from '../../../components/echarts/common/bar/barLine';
+import PieEcharts from '../../../components/echarts/common/pie/PieEcharts';
 import SerachPoptip from '../../../components/common/SerachPoptip1';
 import lineM3 from '../../../components/echarts/common/line/lineM3';
 export default {
     name:"markView",
-    components:{barL,barM,barHM2,barLine,SerachPoptip,lineM3},
+    components:{barL,barM,barHM2,barLine,PieEcharts,SerachPoptip,lineM3},
     data(){
         return {
             pieDateValue:"2021",
@@ -1227,10 +1234,8 @@ export default {
             }
             .echarts-box{
                 display: flex;
-                .bar-echarts{
-                    width: 65%;
-                    padding-right: 24px;
-                    .bar-title{
+                .bar-echarts,.pie-echarts{
+                    .bar-title,.pie-title{
                         height: 22px;
                         margin-bottom: 4px;
                         font-size: 14px;
@@ -1239,35 +1244,26 @@ export default {
                         color: #242F57;
                         line-height: 22px;
                     }
-                    .bar-sub-title{
+                    .bar-sub-title,.pie-sub-title{
                         height: 18px;
+                        margin-bottom: 10px;
                         font-size: 12px;
                         font-family: PingFangSC-Regular, PingFang SC;
                         font-weight: 400;
                         color: #636E95;
                         line-height: 18px;
                     }
+                    .bar-echarts-view,.pie-echarts-view{
+                        height: 290px;
+                    }
+                }
+                .bar-echarts{
+                    width: 65%;
+                    padding-right: 24px;
                 }
                 .pie-echarts{
                     position: relative;
                     width: 35%;
-                    .pie-title{
-                        height: 22px;
-                        margin-bottom: 4px;
-                        font-size: 14px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #242F57;
-                        line-height: 22px;
-                    }
-                    .pie-sub-title{
-                        height: 18px;
-                        font-size: 12px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #636E95;
-                        line-height: 18px;
-                    }
                     .pie-date{
                         position: absolute;
                         top: 0;
