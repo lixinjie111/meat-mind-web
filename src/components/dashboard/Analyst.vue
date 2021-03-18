@@ -125,8 +125,7 @@
     </div>
 
     <div class="xit_tab_container">
-      <div class="xit_item1">系统默认看板</div>
-      <div class="xit_item2">自定义看板一</div>
+      <Tab :tab-list="['系统默认看板','自定义看板1','自定义看板2']"></Tab>
     </div>
 
     <div class="pinpai_container">
@@ -339,10 +338,11 @@
 import vCard0 from "../common/card0";
 import vCard1 from "../common/card1";
 import vCard2 from "../common/card2";
+import Tab from "../../components/Tab";
 var dayjs = require('dayjs');
 export default {
   name: "Analyst",
-  components: { vCard0, vCard1,vCard2 },
+  components: { vCard0, vCard1,vCard2,Tab },
   data() {
     return {
       guideList: [
