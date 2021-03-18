@@ -48,43 +48,37 @@
           grid: {
             left: 'center',
             // right: '4%',
-            top:"0",
-            bottom: '60',
+            top:0,
+            bottom: 20,
             containLabel: true
           },
           legend: {
             icon: 'circle',
-            type: 'scroll',
-            orient: 'horizontal',
-            //orient: 'vertical',
-            left: 'center',
-            //top: 'center',
-            bottom: 12,
+			itemWidth:6,
+			itemHeight:6,
+			bottom: 0,
+			textStyle: {
+				fontSize: 12,
+				color: '#97A0C3'
+			},
             data: name,
-            padding: [20, 40],
           },
           tooltip: {
-            trigger: 'item'
+            trigger: 'item',
+            formatter:(params)=>{
+                return params.marker+params.name+":"+params.percent+"%"
+            }
           },
           series: [{
             type: 'pie',
-            center: ['50%', '40%'],
-            radius: ['40%', '60%'],
+            center: ['50%', '45%'],
+            radius: ['50%', '70%'],
             roseType: this.roseType,
             clockwise: true,
             avoidLabelOverlap: true,
             hoverOffset: 15,
             label: {
               show: false
-            },
-            labelLine: {
-           
-                length: 10,
-                length2: 20,
-                lineStyle: {
-                  width: 1
-                }
-              
             },
             data: name.map((e, i)=>({ name: e, value: value[i] })),
           }]

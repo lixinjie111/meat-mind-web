@@ -17,7 +17,7 @@
           1.00>SOI>0.50视为营销机会，0.50>SOI>-0.50视为正常舆情，-0.50>SOI>-1.00视为风险公关事件，点击单个事件可以查看舆情传播链路解构详情分析及相应策略。
       </div>
       <div class="scatter-echarts">
-        <ScatterEcharts id="scatter" :colorList="$linData.colorList"></ScatterEcharts>
+        <ScatterEcharts id="scatter" :colorList="$linData.scatterData.colorList" :scatterData="$linData.scatterData"></ScatterEcharts>
       </div>
       <div class="cur-value">
           <div class="cur-left">
@@ -162,7 +162,7 @@ export default {
 
     .echarts-data-desc{
         height: 22px;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
         font-size: 14px;
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
@@ -173,6 +173,7 @@ export default {
     .scatter-echarts{
         width: 100%;
         height: 450px;
+        margin-bottom: 16px;
     }
 
     .cur-value{
