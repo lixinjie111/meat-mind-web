@@ -35,8 +35,8 @@
                 <img :src="sbAvatImg" alt="" srcset="" class="avatImg">
               </div>
               <div class="perinfo">
-                <div class="perinfo_t">全部用户</div>
-                <div class="perinfo_b">用户数 28790人</div>
+                <div class="perinfo_t">全部客群</div>
+                <div class="perinfo_b">用户数 75361人</div>
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(1)">
