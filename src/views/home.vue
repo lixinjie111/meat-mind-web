@@ -43,7 +43,7 @@
             flex: 0 0 240px!important;
             left: 0;
             overflow: auto;
-            z-index: 1000;
+            z-index: 10000;
         }
 
         .layout-container{
@@ -55,7 +55,7 @@
                 position: fixed;
                 width: calc(100% - 240px);
                 height: 80px;
-                z-index: 1000;
+                z-index: 10000;
             }
 
             .content-container {

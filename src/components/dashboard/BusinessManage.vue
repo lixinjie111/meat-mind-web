@@ -287,7 +287,7 @@
                 </div>
             </div>
         </Card>
-        <Card title="经营过程风险预警">
+        <Card title="经营过程风险预警" class="last-card">
             <div slot="right" class="card-right" @click="toDetail4">更多<i class="iconfont icongengduo"></i></div>
             <div class="manage-card2">
                 <div class="manage-card2-top flex">
@@ -1040,7 +1040,7 @@
 </style>
 <style scoped lang="scss">
     .manage-box {
-        padding: 0 24px 24px 24px;
+        /*padding: 0 24px 24px 24px;*/
 
         .tips {
             margin-top: 24px;
@@ -1518,7 +1518,8 @@
                 }
             }
         }
-	      .overview_new{
+
+	    .overview_new{
 					.overview_new_top_item{
 						display: inline-block;
 						margin-right: 40px;
@@ -1574,6 +1575,10 @@
 			      width: 100%;
 		      }
 	      }
+
+        .last-card {
+            margin-bottom: 0;
+        }
 
         .card-right {
             font-size: 14px;
