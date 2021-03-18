@@ -8,7 +8,6 @@
                     <!-- <i class="iconfont icondown"></i> -->
                 </div>
             </div>
-
         </div>
         <div class="control">
             <div class="search" v-if="search">

@@ -1,6 +1,8 @@
 <template>
     <div class="business-box">
-        <p class="business-title">Dashboard</p>
+        <div class="header-nav">
+            <p>Dashboard</p>
+        </div>
         <Tab :tab-list="['营销洞察','经营诊断']" @change="changeTab"></Tab>
         <div v-if="tabActive == 1">
             <BusinessMarket></BusinessMarket>
@@ -43,19 +45,10 @@
 <style scoped lang="scss">
     .business-box {
         position: relative;
-        padding: 24px;
+        padding: 0 24px 24px 24px;
 
         ::v-deep .ivu-tabs-bar {
             margin-top: 14px;
-        }
-
-        .business-title {
-            margin-bottom: 24px;
-            font-size: 24px;
-            font-family: PingFangSC-Medium, PingFang SC;
-            font-weight: 500;
-            color: #242F57;
-            line-height: 32px
         }
 
         .report-btn {
