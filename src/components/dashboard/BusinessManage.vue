@@ -381,10 +381,10 @@
             return {}
         },
         mounted() {
-            this.initChart();
+            //this.initChart();
             this.initChart2();
             window.onresize = () => {
-                this.myChart.resize();
+               // this.myChart.resize();
                 this.myChart2.resize();
             }
         },
