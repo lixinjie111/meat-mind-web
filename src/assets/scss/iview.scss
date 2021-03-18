@@ -170,6 +170,9 @@
 
 // poptip
 .ivu-poptip {
+  &:hover{
+    cursor: pointer;
+  }
   .ivu-poptip-rel {
     .tip-icon {
       vertical-align: baseline;
