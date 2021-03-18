@@ -170,9 +170,10 @@
 
 // poptip
 .ivu-poptip {
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
+
   .ivu-poptip-rel {
     .tip-icon {
       vertical-align: baseline;
@@ -192,14 +193,39 @@
 }
 
 .saas-poptip {
-  .ivu-poptip-content {
+  &[x-placement^="right"] {
     .ivu-poptip-arrow {
       &:after {
         border-right-color: rgba(0, 0, 0, 0.7);
-        margin-left: -1px;
       }
     }
+  }
 
+  &[x-placement^="top"] {
+    .ivu-poptip-arrow {
+      &:after {
+        border-top-color: rgba(0, 0, 0, 0.7);
+      }
+    }
+  }
+
+  &[x-placement^="left"] {
+    .ivu-poptip-arrow {
+      &:after {
+        border-left-color: rgba(0, 0, 0, 0.7);
+      }
+    }
+  }
+
+  &[x-placement^="bottom"] {
+    .ivu-poptip-arrow {
+      &:after {
+        border-bottom-color: rgba(0, 0, 0, 0.7);
+      }
+    }
+  }
+
+  .ivu-poptip-content {
     .ivu-poptip-inner {
       background: rgba(0, 0, 0, 0.7);
       border-radius: 8px;
@@ -215,16 +241,20 @@
           color: #ffffff;
           line-height: 20px;
           white-space: pre-wrap;
-          .upnumIcon,.downnumIcon{
+
+          .upnumIcon, .downnumIcon {
             font-size: 10px;
             color: #08BD6C;
           }
-          .upnum{
+
+          .upnum {
             color: #08BD6C;
           }
-          .downnumIcon,.downnum{
+
+          .downnumIcon, .downnum {
             color: #FF4C60;
           }
+
           span {
             font-weight: 600;
           }
