@@ -212,7 +212,16 @@
           color: #ffffff;
           line-height: 20px;
           white-space: pre-wrap;
-
+          .upnumIcon,.downnumIcon{
+            font-size: 10px;
+            color: #08BD6C;
+          }
+          .upnum{
+            color: #08BD6C;
+          }
+          .downnumIcon,.downnum{
+            color: #FF4C60;
+          }
           span {
             font-weight: 600;
           }

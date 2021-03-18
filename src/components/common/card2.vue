@@ -10,7 +10,13 @@
               <span class="til_unit">{{cardData.jyUnit}}</span>
           </div>
       </div>
-      <img :src="cardData.ysIcon" alt="" srcset="" class="ysIcon">
+      <Poptip popper-class="saas-poptip small" placement="right-start" style="margin-right:10px;">
+        <i :class="['iconfont','icongengduo',cardData.ysIcon]"></i>
+        <div slot="content">
+            <p>环比<i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">{{cardData.upper}}</span></p >
+            <p>同比<i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">{{cardData.downper}}</span></p >
+        </div>
+      </Poptip>
   </div>
 </template>
 
@@ -93,13 +99,22 @@ export default {
             }
         }
     }
-    .ysIcon{
+    .ivu-poptip{
         position: absolute;
-        right: 20px;
-        top: 24px;
-        display: block;
-        width:16px;
-        height: 19.26px;
+        top: 10px;
+        right: 10px;
+    }
+    .bgi1{
+        color: #FE774B;
+    }
+    .bgi2{
+        color: #2373FF;
+    }
+    .bgi3{
+        color: #1DCEC3;
+    }
+    .bgi4{
+        color: #F16E84;
     }
 }
 .removeMb{
