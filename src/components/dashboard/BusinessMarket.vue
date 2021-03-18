@@ -1,6 +1,6 @@
 <template>
     <div class="market-box">
-        <p class="tips">营销洞察助力智能获取精准目标客群，快速掌握市场趋势及竞对情报，发掘商业机会，借助热点打造爆款，提供海量营销创意、行业案例</p>
+<!--        <p class="tips">营销洞察助力智能获取精准目标客群，快速掌握市场趋势及竞对情报，发掘商业机会，借助热点打造爆款，提供海量营销创意、行业案例</p>-->
         <div class="market-card">
             <div class="title">
                 <div class="left">
