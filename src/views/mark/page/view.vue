@@ -873,6 +873,7 @@
             <div class="gantt-sub-title">
                 根据不同时间、专题事件的品牌受众互动特征，为品牌定位、产品服务优化及传播方式提供决策性参考。
             </div>
+            <div class="gantt-echarts"></div>
         </div>
     </div>
 </template>
@@ -881,7 +882,7 @@ import barL from '../../../components/echarts/common/bar/barL';
 import barM from '../../../components/echarts/common/bar/barM';
 import barHM2 from '../../../components/echarts/common/bar/barHM2';
 import barLine from '../../../components/echarts/common/bar/barLine';
-import PieEcharts from '../../../components/echarts/common/pie/PieEcharts';
+import PieEcharts from '../../../components/echarts/common/pie/PieEchartsOfTea';
 import SerachPoptip from '../../../components/common/SerachPoptip1';
 import lineM3 from '../../../components/echarts/common/line/lineM3';
 export default {
@@ -1686,12 +1687,13 @@ export default {
 
      .mark-gantt{
         height: 577px;
-        padding: 24px;
+        padding: 24px 0;
         margin-top: 24px;
         background: #FFFFFF;
         border-radius: 8px;
          .gantt-title{
              height: 24px;
+             padding: 0 24px;
              margin-bottom: 4px;
              font-size: 18px;
              font-family: PingFangSC-Medium, PingFang SC;
@@ -1701,11 +1703,17 @@ export default {
          }
          .gantt-sub-title{
             height: 22px;
+            padding: 0 24px;
             font-size: 14px;
             font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;
             color: #636E95;
             line-height: 22px;
+         }
+         .gantt-echarts{
+             margin-top: 16px;
+             height: 463px;
+             background: url("../../../assets/img/mark/echarts.png") no-repeat center center / 100% 100%;
          }
      }
 }
