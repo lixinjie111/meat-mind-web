@@ -2,10 +2,10 @@
   <div class="analyst-box">
     <div class="nav">
       <p class="nav-title">Dashboard</p>
-      <div class="btn_container">
+      <!-- <div class="btn_container">
         <img :src="downLoad" class="btn_download" />
         <span class="btntxt">一键生成报告</span>
-      </div>
+      </div> -->
     </div>
     <div class="wel_guid_container">
       <div class="welcome">
@@ -86,12 +86,12 @@
                 <!-- <span style="color: #2373FF;">系统默认看板</span> -->
             </div>
             <div class="title_1rig">
-                <div class="btn_container" style="margin-right:24px;">
+                <div class="btn_container">
                     <!-- <img :src="tvIcon" class="btn_download" /> -->
                     <span class="btntxt btntxt1">看板管理</span>
                 </div>
                 <div class="btn_container btn2">
-                    <!-- <i class="iconxiazai iconfont"></i> -->
+                    <i class="iconfont iconxiazai"></i>
                     <span class="btntxt">下载报表</span>
                 </div>
             </div>
@@ -1362,17 +1362,16 @@ export default {
             display: flex;
             align-items: center;
             .btn_container {
-                padding: 14px;
-                box-sizing: border-box;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 font-size: 14px;
                 font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
-                color: #242f57;
+                background: #FFFFFF;
                 border-radius: 4px;
                 border: 1px solid #97A0C3;
+                color: #242f57;
                 width: 90px;
                 height: 32px;
                 cursor: pointer;
@@ -1394,12 +1393,18 @@ export default {
                 font-family: PingFangSC-Regular, PingFang SC;
                 font-weight: 400;
                 color: #FFFFFF;
-                width: 90px;
+                width: 130px;
                 height: 32px;
                 background: #2373FF;
                 box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
                 border-radius: 4px;
                 border: 1px solid rgba(255, 255, 255, 0.4);
+                margin-left: 24px;
+                .iconxiazai{
+                  font-size: 14px;
+                  color: #FFFFFF;
+                  margin-right: 8px;
+                }
             }
         }
     }
@@ -1492,8 +1497,6 @@ export default {
   }
     .xit_tab_container{
       width: 100%;
-      display: flex;
-      align-items: center;
       margin-bottom: 16px;
       .xit_item1,.xit_item2{
         width: 132px;
