@@ -255,6 +255,7 @@
             </div>
           </div>
       </div>
+      <!-- <Tab :tab-list="['媒介策略','媒介剖析']" @change="changeTab"></Tab> -->
       <div class="zuhetitle">媒介组合推荐方案</div>
       <div class="media_zuhe_panel">
         <div class="title">媒介组合方案</div>
@@ -561,6 +562,7 @@
 </template>
 
 <script>
+import Tab from "@/components/Tab"
 import Triple from "./base/Triple"
 import Half from "./base/Half"
 import Full from "./base/Full"
@@ -585,7 +587,7 @@ import PieEcharts9 from '../../components/echarts/common/pie/PieEcharts9';
 let counter = 0
 export default {
   name: "index",
-  components: { PieEcharts9,cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, TabPaneItem, MediaAnalysis},
+  components: {Tab, PieEcharts9,cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, TabPaneItem, MediaAnalysis},
   data(){
       return{
         myChartData0:null,
@@ -1255,112 +1257,20 @@ export default {
     this.changeTabCon(0);
   },
   methods:{
+    changeTab(index) {
+       console.log(index)
+    },
     changeIndex1(arg){
       this.currentIndex1=arg;
       this.currentNum1++;
       if(this.currentNum1%2==0){
-          this.myChartData1=this.$lxjData.box581Data,
-          this.myChartData2=this.$lxjData.box102Data,
-          this.myChartData3=this.$lxjData.box103Data,
-          this.rankList=[
-            {
-              per:23,
-              text:'抖音',
-              icon:this.dyIcon,
-            },
-            {
-              per:22,
-              text:'微博',
-              icon:this.wbIcon,
-            },
-            {
-              per:18,
-              text:'小红书',
-              icon:this.xhsIcon,
-            },
-            {
-              per:11,
-              text:'今日头条',
-              icon:this.ttIcon,
-            },
-            {
-              per:8,
-              text:'微信',
-              icon:require("../../assets/img/yhhx/weiicon.png"),
-            },
-            {
-              per:7,
-              text:'大众点评',
-              icon:require("../../assets/img/yhhx/daicon.png"),
-            },
-            {
-              per:5,
-              text:'人民日报',
-              icon:require("../../assets/img/yhhx/renicon.png"),
-            },
-            {
-              per:3,
-              text:'虎嗅',
-              icon:require("../../assets/img/yhhx/huicon.png"),
-            },
-            {
-              per:3,
-              text:'第一财经',
-              icon:require("../../assets/img/yhhx/caiicon.png"),
-            },
-      ];
+          this.myChartData1=this.$lxjData.box581Data;
+          this.myChartData2=this.$lxjData.box102Data;
+          this.myChartData3=this.$lxjData.box103Data;
       }else{
-        this.myChartData1=this.$lxjData.box582Data,
-        this.myChartData2=this.$lxjData.box1021Data,
-        this.myChartData3=this.$lxjData.box1031Data,
-        this.rankList=[
-              {
-                per:35,
-                text:'抖音',
-                icon:this.dyIcon,
-              },
-              {
-                per:32,
-                text:'今日头条',
-                icon:this.ttIcon,
-              },
-              {
-                per:27,
-                text:'微博',
-                icon:this.wbIcon,
-              },
-              {
-                per:18,
-                text:'小红书',
-                icon:this.xhsIcon,
-              },
-              {
-                per:8,
-                text:'微信',
-                icon:require("../../assets/img/yhhx/weiicon.png"),
-              },
-              {
-                per:7,
-                text:'大众点评',
-                icon:require("../../assets/img/yhhx/daicon.png"),
-              },
-              {
-                per:5,
-                text:'人民日报',
-                icon:require("../../assets/img/yhhx/renicon.png"),
-              },
-              {
-                per:3,
-                text:'虎嗅',
-                icon:require("../../assets/img/yhhx/huicon.png"),
-              },
-              {
-                per:3,
-                text:'第一财经',
-                icon:require("../../assets/img/yhhx/caiicon.png"),
-              },
-        ];
-
+        this.myChartData1=this.$lxjData.box582Data;
+        this.myChartData2=this.$lxjData.box1021Data;
+        this.myChartData3=this.$lxjData.box1031Data;
       }
     },
     changeIndex(arg){
