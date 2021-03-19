@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import TableModel from "../../datacenter/components/base/TableModel";
+import TableModel from "../../datacenter/base/TableModel";
 import CreateLable from "./bqgl/CreateLable";
 export default {
   name: "LabelAdmin",

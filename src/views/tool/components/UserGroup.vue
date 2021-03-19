@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import TableModel from "../../datacenter/components/base/TableModel";
+import TableModel from "../../datacenter/base/TableModel";
 export default {
   name:"yhfq",
   components:{TableModel},
