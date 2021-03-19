@@ -1,8 +1,8 @@
-const DataCenter = () => import('./index');
-const Mydata = () => import('./page/mydata.vue')
-const Market = () => import('./page/market.vue')
-const System = () => import('./page/system.vue')
-const Metax = () => import('./page/metax.vue')
+const dataCenter = () => import('./index');
+const mydata = () => import('./page/mydata.vue')
+const market = () => import('./page/market.vue')
+const system = () => import('./page/system.vue')
+const metax = () => import('./page/metax.vue')
 
 const Rule = () => import('./components/Rule.vue')
 const Unit = () => import('./components/Unit.vue')
@@ -22,34 +22,34 @@ export default [
         name: moduleName,
         redirect: {name: `${moduleName}-my`},
         meta: {title: "数据管理", moduleName},
-        component: DataCenter,
+        component: dataCenter,
         children: [
             {
                 path: `/${moduleName}/my`,
                 label: "我的数据",
                 meta: {title: "我的数据", moduleName},
-                component: Mydata,
+                component: mydata,
                 name: `${moduleName}-my`
             },
             {
                 path: `/${moduleName}/market`,
                 label: "数据市场",
                 meta: {title: "数据市场", moduleName},
-                component: Market,
+                component: market,
                 name: `${moduleName}-market`
             },
             {
                 path: `/${moduleName}/system`,
                 label: "系统集成",
                 meta: {title: "系统集成", moduleName},
-                component: System,
+                component: system,
                 name: `${moduleName}-system`
             },
             {
                 path: `/${moduleName}/metax`,
                 label: "元数据管理",
                 meta: {title: "元数据管理", moduleName},
-                component: Metax,
+                component: metax,
                 name: `${moduleName}-metax`
             },
             {
