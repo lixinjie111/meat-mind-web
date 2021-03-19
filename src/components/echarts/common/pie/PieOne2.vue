@@ -100,7 +100,7 @@ export default {
 						name: '访问来源',
 						type: 'pie',
 						z: 2,
-						radius: ['67%', '70.6%'],
+						radius: ['65%', '70.6%'],
 						avoidLabelOverlap: false,
 						hoverAnimation: false,
 						label: {
@@ -115,6 +115,32 @@ export default {
 							{value: 100 - value},
 						]
 					},
+					{
+						name: 'Pressure',
+						type: 'gauge',
+						detail: {
+							show: false,
+						},
+						progress: {
+							show: false,
+						},
+						axisLabel: {
+							show: false,
+						},
+						axisLine: {
+							show: false,
+						},
+						splitLine: {
+							length: 10,
+							lineStyle: {
+								width: 1,
+							}
+						},
+						radius: '87.5%',
+						splitNumber: 12,
+						startAngle: 90,
+						endAngle: 90+360,
+					}
 				]
             };
 			return option;
