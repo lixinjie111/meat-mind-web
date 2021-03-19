@@ -112,17 +112,17 @@
                   <div class="sec_pan_con1_num">
                    {{item.numTxt1}}
                   </div>
-                </div> 
+                </div>
                 <div class="sec_pan_con1_rig">
                   <div class="sec_pan_con1_rig_lef">
                     <div class="sec_pan_con1_rig_lef_top">环比</div>
                     <div class="sec_pan_con1_rig_lef_bom" >
                       <span v-if="item.isUp" >
-                         <i class="iconfont iconxiajiang domnIconArr"></i> 
+                         <i class="iconfont iconxiajiang domnIconArr"></i>
                           {{item.numTxt2}}
                       </span>
                       <span v-else style="color:#34C724;">
-                         <i class="iconfont iconshangsheng domnIconArr"></i> 
+                         <i class="iconfont iconshangsheng domnIconArr"></i>
                           {{item.numTxt2}}
                       </span>
                      </div>
@@ -131,11 +131,11 @@
                     <div class="sec_pan_con1_rig_lef_top">同比</div>
                     <div class="sec_pan_con1_rig_lef_bom" >
                        <span v-if="item.isUp1" style="color:#34C724;">
-                         <i class="iconfont iconshangsheng domnIconArr"></i> 
+                         <i class="iconfont iconshangsheng domnIconArr"></i>
                           {{item.numTxt3}}
                       </span>
                       <span v-else >
-                         <i class="iconfont iconxiajiang domnIconArr"></i> 
+                         <i class="iconfont iconxiajiang domnIconArr"></i>
                           {{item.numTxt3}}
                       </span>
                       </div>
@@ -168,11 +168,11 @@
                     <div class="sec_pan_con1_rig_lef_top">环比</div>
                     <div class="sec_pan_con1_rig_lef_bom">
                        <span v-if="item.isUp" >
-                         <i class="iconfont iconxiajiang domnIconArr"></i> 
+                         <i class="iconfont iconxiajiang domnIconArr"></i>
                           {{item.numTxt2}}
                       </span>
                       <span v-else style="color:#34C724;">
-                         <i class="iconfont iconshangsheng domnIconArr"></i> 
+                         <i class="iconfont iconshangsheng domnIconArr"></i>
                           {{item.numTxt2}}
                       </span>
                     </div>
@@ -181,11 +181,11 @@
                     <div class="sec_pan_con1_rig_lef_top">同比</div>
                     <div class="sec_pan_con1_rig_lef_bom" style="color:#34C724;">
                        <span v-if="item.isUp1" style="color:#34C724;">
-                         <i class="iconfont iconshangsheng domnIconArr"></i> 
+                         <i class="iconfont iconshangsheng domnIconArr"></i>
                           {{item.numTxt3}}
                       </span>
                       <span v-else >
-                         <i class="iconfont iconxiajiang domnIconArr"></i> 
+                         <i class="iconfont iconxiajiang domnIconArr"></i>
                           {{item.numTxt3}}
                       </span>
                     </div>
@@ -195,7 +195,7 @@
             </div>
           </div>
         </div>
-        
+
       </div>
 
       <div class="media_three_panel">
@@ -253,7 +253,7 @@
                 <div class="media_three_con"><span>威胁: </span><span>在老年群体中形成护城河，品牌竞争优势巨大；</span></div>
               </div>
             </div>
-          </div>  
+          </div>
       </div>
       <div class="zuhetitle">媒介组合推荐方案</div>
       <div class="media_zuhe_panel">
@@ -397,7 +397,7 @@
                     <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box119Data"></funnel>
                   </div>
                </div>
-               
+
             </div>
             <div class="zuhe_echarts_rt">
               <div class="zuhe_echarts_list">
@@ -416,7 +416,7 @@
                     <i class="iconfont icongengduo"></i>
                   </div>
                   <div class="zuhe_echarts_Item_num">
-                    800,000 <span class="zuhe_echarts_danwei">次</span> 
+                    800,000 <span class="zuhe_echarts_danwei">次</span>
                   </div>
                 </div>
               </div>
@@ -427,7 +427,7 @@
                     <i class="iconfont icongengduo"></i>
                   </div>
                   <div class="zuhe_echarts_Item_num">
-                    30,000<span class="zuhe_echarts_danwei">人</span> 
+                    30,000<span class="zuhe_echarts_danwei">人</span>
                   </div>
                 </div>
                 <div class="zuhe_echarts_Item zuhe_echarts_Item3">
@@ -546,6 +546,23 @@
           </div>
         </div>
       </div>
+	    <div class="zuhetitle">媒介剖析</div>
+	    <MediaAnalysis />
+	    <div class="m-p-kol">
+		    <div class="m-p-target-title">
+			    KOL资源
+			    <Poptip popper-class="saas-poptip small" placement="right-start">
+				    <i class="iconfont iconguanyu tip-icon blue-tip-icon"></i>
+				    <div slot="content">
+					    <p>媒介资源库，提供具体媒介资源的详细信息，包括基础数据、历史投放效果和合作方案等，以供品牌方比较分析并联系合作</p>
+				    </div>
+			    </Poptip>
+		    </div>
+		    <div class="subTitle">抖音媒介资源是品牌本次投放方案的最优选择，“邓荣”的投放效果表现最优。基于分析，“李刚”性价比最高，可作为比较和备选方案。</div>
+		    <Tabs @on-click="getTab">
+			    <TabPaneItem :name="it" :label="it" v-for="it in tabs" :key="it"/>
+		    </Tabs>
+	    </div>
     </div>
 </template>
 
@@ -569,10 +586,11 @@ import lineM from '../../components/echarts/common/line/lineM3';
 import cLine from '../../components/echarts/common/line/line';
 import barM from '../../components/echarts/common/bar/barM';
 import barHM2 from '../../components/echarts/common/bar/barHM3';
+import MediaAnalysis from './base/MediaAnalysis';
 let counter = 0
 export default {
   name: "index",
-  components: { cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, TabPaneItem},
+  components: { cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, TabPaneItem, MediaAnalysis},
   data(){
       return{
         myChartData1:this.$lxjData.box581Data,
@@ -1411,7 +1429,7 @@ export default {
           numTxt1:'15W',
           numTxt2:'5W',
           icon:this.touxIcon1,
-          
+
         },
         {
           numTxt1:'10W',
@@ -1420,7 +1438,7 @@ export default {
         },
       ]
       }
-      
+
     },
     change2(arg){
       if(arg == 1){
@@ -2317,7 +2335,7 @@ export default {
           }
         }
       }
-      
+
     }
     .new_media_item2{
       margin-left: 24px;
@@ -2355,7 +2373,7 @@ export default {
           font-weight: 500;
           color: #FFFFFF;
           margin-bottom: 3px;
-          
+
           .boxIcon{
             width: 28px;
             height: 28px;
@@ -2367,7 +2385,7 @@ export default {
               width:100%;display: block;
             }
           }
-          
+
         }
         .boxDesc{
           font-size: 12px;
@@ -2872,7 +2890,7 @@ export default {
                   }
                 }
               }
-              
+
               .sec_pan_con1_num{
                 text-align: center;
                 flex:1;
@@ -3203,7 +3221,7 @@ export default {
             padding:5px;
             background: #D3E3FF;
             border-radius: 8px;
-           
+
             img{
               width: 100%;
               display: block;
@@ -3436,7 +3454,7 @@ export default {
                     margin-left: 5px;
                   }
               }
-            
+
               .m-rank-progress{
                 flex:1;
                 height: 50px;
@@ -3469,7 +3487,7 @@ export default {
           }
         }
       }
-     
+
     }
     .zuhe_echarts{
       margin-top: 24px;
@@ -3516,7 +3534,7 @@ export default {
             //   flex:1;
             // }
         }
-        
+
       }
       .zuhe_echarts_rt{
         flex:1;
@@ -3572,7 +3590,7 @@ export default {
           }
         }
       }
-     
+
     }
   }
 
@@ -3713,10 +3731,10 @@ export default {
                 color: #636E95;
               }
           }
-         
+
           .m-rank-progress{
             flex:1;
-            
+
           }
         }
         .m-rank-lf-list:nth-child(1){
@@ -4061,144 +4079,6 @@ export default {
       text-align: center;
     }
   }
-  .m-p-kol-strategy {
-        margin-bottom: 24px;
-        width: 100%;
-        background: #FFFFFF;
-        box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-        border-radius: 12px;
-        border: 1px solid #EAEDF7;
-        padding:24px;
-        .strategy-title {
-            font-size: 16px;
-            font-family: PingFangSC-Medium, PingFang SC;
-            font-weight: 500;
-            color: #242F57;
-        }
-        .strategy-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px;
-            margin-top: 24px;
-            width: 100%;
-            height: 95px;
-            background: #F7F9FD;
-            border-radius: 8px;
-            border: 1px solid #EAEDF7;
-
-            >div {
-                width: 45%;
-
-                &.top-right {
-                    width: 52%;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: flex-start;
-
-                    >p {
-                        &:nth-child(1) {
-                            width: 160px;
-                            margin-right: 24px;
-                        }
-                    }
-                }
-
-                .mt12 {
-                    margin-top: 12px;
-                }
-
-                .top-title {
-                    font-size: 14px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    color: #242F57;
-                }
-
-                span {
-                    margin-right: 24px;
-                    font-size: 14px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    color: #636E95;
-
-                    &.top-blue {
-                        color: #2373FF;
-                    }
-                }
-            }
-        }
-
-        .strategy-bottom {
-            margin-top: 24px;
-            display: grid;
-            grid-template-columns: 15% 19% 19% 19% 19%;
-            grid-template-rows: 48px 150px 150px 150px;
-            grid-row-gap: 24px;
-            grid-column-gap: 24px;
-
-            .bottom-title {
-                width: 100%;
-                height: 48px;
-                line-height: 48px;
-                background: #73A0FA;
-                border-radius: 8px;
-                text-align: center;
-                font-size: 14px;
-                font-family: PingFangSC-Medium, PingFang SC;
-                font-weight: 500;
-                color: #FFFFFF;
-
-                &.light {
-                    color: #242F57;
-                    background: #DBE7FF;
-                }
-            }
-
-            .bottom-card {
-                position: relative;
-                text-align: center;
-
-                > img {
-                    width: 56px;
-                    height: 56px;
-                    border-radius: 50%;
-                }
-
-                .card-box {
-                    margin-top: -30px;
-                    width: 100%;
-                    min-width: 140px;
-                    height: 116px;
-                    background: #FFFFFF;
-                    box-shadow: 5px 8px 16px 0px rgba(121, 131, 168, 0.15);
-                    border-radius: 8px;
-                    border: 2px solid #EAEDF7;
-
-                    >p {
-                        font-size: 14px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #636E95;
-
-                        &:nth-child(1) {
-                            margin-top: 48px;
-                            font-family: PingFangSC-Medium, PingFang SC;
-                            font-weight: 500;
-                            color: #242F57;
-                        }
-                    }
-                }
-
-                .card-tip {
-                    position: absolute;
-                    right: -15px;
-                    top: 30px;
-                    text-align: left;
-                }
-            }
-        }
-    }
     .m-p-kol{
     width: 100%;
     img{

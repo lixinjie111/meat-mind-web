@@ -11,10 +11,10 @@
       <div class="welcome">
         <img class="user" src="../../assets/img/login/head1.png" alt="" />
         <div class="user_intro_container">
-          <p class="til_img_container">
+          <div class="til_img_container">
             <span>早安，分析师，欢迎使用 Meta-Mind-Marketing！</span>
             <Poptip popper-class="saas-poptip small" placement="right-start">
-              <i class="iconfont iconguanyu tip-icon"></i>     
+              <i class="iconfont iconguanyu tip-icon"></i>
               <div slot="content">
                 <p><i class="iconfont iconwodeshuju"></i>迅速掌握各项数据情报</p >
                 <p><i class="iconfont iconkanban"></i>定制化的展示看板</p >
@@ -22,7 +22,7 @@
                 <p><i class="iconfont iconfenbufenxi"></i>海量新潮分析模板素材</p >
               </div>
             </Poptip>
-          </p>
+          </div>
           <p>
             轻松上手分析模型，探索不同业务中的关键行为，洞察指标背后的增长点。
           </p>
@@ -123,11 +123,9 @@
             </div> -->
         </div>
     </div>
-
     <div class="xit_tab_container">
       <Tab :tab-list="['系统默认看板','自定义看板1','自定义看板2']"></Tab>
     </div>
-
     <div class="pinpai_container">
       <div class="title_container">
         <div class="left_area">
@@ -185,7 +183,6 @@
         ></vCard1>
       </div>
     </div>
-
     <div class="pinpai_container">
       <div class="title_container">
         <div class="left_area">
@@ -220,7 +217,6 @@
         ></vCard1>
       </div>
     </div>
-
     <div class="pinpai_container">
       <div class="title_container">
         <div class="left_area">
@@ -300,7 +296,6 @@
           </div>
       </div>
     </div>
-
     <div class="pinpai_container">
       <div class="title_container">
         <div class="left_area">
@@ -331,7 +326,6 @@
         ></vCard1>
       </div>
     </div>
-
   </div>
 </template>
 <script>
@@ -920,7 +914,7 @@ export default {
           downper:'3.54%',
           jyIcon:require("../../assets/img/dashboard/jyIcon1.png")
         },
-        { 
+        {
           id:1,
           bgc:'#D3E3FF',
           fColor:'#2373FF',
@@ -1242,19 +1236,20 @@ export default {
       .user_intro_container {
         display: inline-block;
         vertical-align: top;
-        > p {
-          font-size: 14px;
-          font-family: PingFangSC-Regular, PingFang SC;
-          font-weight: 400;
-          color: #242f57;
-          &:first-child {
-            margin-bottom: 12px;
-            font-size: 24px;
-            font-family: PingFangSC-Medium, PingFang SC;
-            font-weight: 500;
-            color: #242f57;
+          > div {
+              font-size: 24px;
+              font-family: PingFangSC-Medium, PingFang SC;
+              font-weight: 500;
+              color: #242F57;
           }
-        }
+
+          > p {
+              margin-top: 12px;
+              font-size: 14px;
+              font-family: PingFangSC-Regular, PingFang SC;
+              font-weight: 400;
+              color: #7C88B1;
+          }
         .til_img_container{
           display: flex;
           align-items: baseline;

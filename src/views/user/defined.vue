@@ -12,14 +12,14 @@
         </div>
         <div class="name">
           <p>标题名称</p>
-          <Input placeholder style="width: 540px" />
+          <Input placeholder="请输入内容" style="width: 540px" />
         </div>
         <div class="rule">
           <p>
             客群规则
             <span @click="edit">编辑</span>
           </p>
-          <Input type="textarea" :row="6" style="width: 540px;height:160px" />
+          <Input type="textarea" :placeholder="plObj" :row="6" style="width: 540px;height:160px" />
         </div>
       </div>
       <div class="d-c-btn">
@@ -35,6 +35,15 @@ import DetailsPage from "../../layouts/DetailsPage";
 export default {
   name: "defined",
   components: { DetailsPage },
+  data(){
+    return{
+      plObj:''
+    }
+  },
+  created(){
+    var parm = this.$route.query.parmObj ? this.$route.query.parmObj : {til1:'',til2:''};
+    this.plObj = `${parm.til1}\n\n${parm.til2}`
+  },
   methods:{
       edit(){
           this.$router.push({name:"user-edit"})
@@ -55,8 +64,8 @@ export default {
     height: 510px;
     padding: 24px;
     margin-bottom: 24px;
-    background: #ffffff #d8d8d8;
-    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+    background: #FFFFFF;
+    box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
     border-radius: 12px;
     border: 1px solid #eaedf7;
     .defined-title {

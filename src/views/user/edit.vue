@@ -91,6 +91,7 @@
         </div>
         <div class="target-right">
           <div class="r-item">
+            <Checkbox v-model="age"></Checkbox>
             <div class="r-item-label">年龄</div>
             <div class="arr">
               <div class="ele"
@@ -103,6 +104,7 @@
             </div>
           </div>
           <div class="r-item">
+            <Checkbox v-model="sex"></Checkbox>
             <div class="r-item-label">性别</div>
             <div class="arr">
               <div
@@ -117,6 +119,7 @@
             </div>
           </div>
           <div class="r-item">
+            <Checkbox v-model="hasChild"></Checkbox>
             <div class="r-item-label">有小孩</div>
             <div class="arr">
               <div
@@ -131,6 +134,7 @@
             </div>
           </div>
           <div class="r-item">
+            <Checkbox v-model="xiaofei"></Checkbox>
             <div class="r-item-label">消费水平</div>
             <div class="arr">
               <div
@@ -145,6 +149,7 @@
             </div>
           </div>
           <div class="r-item">
+            <Checkbox v-model="mery"></Checkbox>
             <div class="r-item-label">婚姻</div>
             <div class="arr">
               <div
@@ -159,6 +164,7 @@
             </div>
           </div>
           <div class="r-item">
+            <Checkbox v-model="jd"></Checkbox>
             <div class="r-item-label">职业</div>
             <div class="arr">
               <div
@@ -221,6 +227,12 @@ export default {
         "程序员",
         "教师货车司机",
       ],
+      age:'',
+      sex:'',
+      hasChild:'',
+      xiaofei:'',
+      mery:'',
+      jd:''
     };
   },
   methods: {
@@ -231,10 +243,11 @@ export default {
       for (var i = 0; i < itemDom.length; i++) {
         if (i == arg) {
           itemDom[i].style = "background: #2373FF;color: #FFFFFF";
-        } else {
-          //如果需要多选去掉else
-          itemDom[i].style = "color: #636E95;background: none;";
         }
+        // else {
+        //   //如果需要多选去掉else
+        //   itemDom[i].style = "color: #636E95;background: none;";
+        // }
       }
     },
     clear(){
@@ -247,7 +260,17 @@ export default {
       this.num = 0
     },
     confirm(){
-      this.$router.push({name:"user-defined"})
+      this.$router.push(
+        {
+          name:"user-defined",
+          query:{
+            parmObj:{
+              til1:'复用基础规则',
+              til2:'附加筛选条件'
+            }
+          }
+        }
+      )
     }
   },
 };

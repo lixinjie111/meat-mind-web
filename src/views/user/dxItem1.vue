@@ -116,7 +116,7 @@
                 <div class="person_til">用户触达策略</div>
                 <div class="person_con_con" ref="person_con_con">
                   <div class="perxon_tab_con">
-                    <div class="perxon_tab_con_lef" @click="clickPerTab(1)">用户动线</div>
+                    <div class="perxon_tab_con_lef" @click="clickPerTab(1)">用户动线分析</div>
                     <div class="perxon_tab_con_rig" @click="clickPerTab(0)">投放方案推荐</div>
                   </div>
 
@@ -130,24 +130,24 @@
                             2020/12/14
                         </div>
                     </div> -->
-                    <div class="switch_container">
+                    <!-- <div class="switch_container">
                         <div class="data_title">数据图表</div>
                         <div class="switch_contianer">
                             <i-switch v-model="switch1"></i-switch>
                         </div>
                         <div class="data_title" style="color: #97A0C3;">智能解读</div>
-                    </div>
+                    </div> -->
 
                     <div class="nl_card_container">
                         <div class="til_label">
                             用户状态
-                            <Poptip popper-class="saas-poptip" placement="right-start">
+                            <!-- <Poptip popper-class="saas-poptip" placement="right-start">
                                 <i class="iconfont iconguanyuline1 tip-icon"></i>
                                 <div slot="content">
                                     <p>用户群体主要处于通勤及工作状态，偏好社交娱乐类型的APP，时间段内对出行、外卖餐</p>
                                     <p>饮类的生活服务APP需求显著，成为重要触点，情绪偏向紧张和烦躁</p>
                                 </div>
-                            </Poptip>
+                            </Poptip> -->
                         </div>
                         <div class="pro_container">
                             <div class="pro_label">放松</div>
@@ -164,6 +164,18 @@
                         <div class="pro_container">
                             <div class="pro_label">烦躁</div>
                             <div class="pro"><Progress :percent="rightPanelData.userStatObj.stat4" status="active"></Progress></div>
+                        </div>
+                    </div>
+
+                    <div class="chufa_card_container">
+                        <div class="til_label">偏好媒介类型</div>
+                        <div class="bqitm_container">
+                            <div class="bqitm" v-for="(it, i) in bqitmList" :key="i">
+                                <div class="bqitm_lef">{{it.name}}</div>
+                                <div class="bqitm_rig">
+                                    <img v-for="(item,index) in it.icons" :src="item.icon" :key="index" alt="" class="bqimg">
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -1765,8 +1777,8 @@
                     border-radius: 8px;
                     border: 1px solid #FFFFFF;
                     padding: 12px 14px;
+                    padding-top: 0px;
                     box-sizing: border-box;
-                    margin-bottom: 8px;
                     .til_label{
                         width: 100%;
                         font-size: 14px;
@@ -1774,6 +1786,38 @@
                         font-weight: 500;
                         color: #242F57;
                         margin-bottom: 10px;
+                    }
+                    .bqitm_container{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        .bqitm{
+                            width: 100%;
+                            background: #FFFFFF;
+                            border-radius: 8px;
+                            margin-right: 16px;
+                            padding: 16px;
+                            padding: 0 16px 14px 10px;
+                            box-sizing: border-box;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            .bqitm_lef{
+                                font-size: 12px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #7C88B1;
+                            }
+                            .bqitm_rig{
+                                display: flex;
+                                .bqimg{
+                                    width: 24px;
+                                    height: 24px;
+                                    border-radius: 50%;
+                                    margin-right: 6px;
+                                }
+                            }
+                        }
                     }
                     .chufadi_container{
                         width: 100%;
@@ -1851,12 +1895,9 @@
                 }
                 .tqfs_container{
                     width: 100%;
-                    background: rgba(255, 255, 255, 0.8);
-                    border-radius: 8px;
-                    border: 1px solid #FFFFFF;
+                    background: #FFF;
                     padding: 12px 14px;
                     box-sizing: border-box;
-                    margin-bottom: 8px;
                     .til_label{
                         width: 100%;
                         font-size: 14px;
@@ -1890,12 +1931,10 @@
                 }
                 .tqsjylx_container{
                     width: 100%;
-                    background: rgba(255, 255, 255, 0.8);
-                    border-radius: 8px;
+                    background: #FFF;
                     border: 1px solid #FFFFFF;
                     padding: 12px 14px;
                     box-sizing: border-box;
-                    margin-bottom: 8px;
                     .til_label{
                         width: 100%;
                         font-size: 14px;

@@ -926,7 +926,10 @@
                 this.tabconList = this.tabconList1;
                 setTimeout(()=>{
                   for(var i=0;i<tabDom1.length;i++){
-                    tabDom1[i].style=" margin-right: 22px;";
+                    if(i==0 || i ==2){
+                      tabDom1[i].style="width:357px;";
+                    }
+                    // tabDom1[i].style=" margin-right: 22px;";
                   }
                 },100);
               }
@@ -961,9 +964,9 @@
                     if(i==arg){
                         itemDom[i].style="background: #2373FF;color: #FFFFFF;";
                     }
-                    else{  //如果需要多选去掉else
-                        itemDom[i].style="color: #636E95;background: none;";
-                    }
+                    // else{  //如果需要多选去掉else
+                    //     itemDom[i].style="color: #636E95;background: none;";
+                    // }
                 }
                 // console.log(itemDom,'itemDom')
             },
@@ -2622,6 +2625,13 @@
                     background-color: #2373FF;
                     margin-right: 6px;
                     border-radius: 50%;
+                  }
+                  .tab_content_item1_con{
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #242F57;
+                    line-height: 27px;
                   }
                 }
                 .remb{

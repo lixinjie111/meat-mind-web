@@ -7,15 +7,15 @@
             </div>
         </div>
         <div class="listBox">
-            <div class="listBox-left">
-                <Menu active-name="1" width="133px" mode="vertical" @on-select="selectMenu">
-                    <MenuItem name="1"> KOL综合排行</MenuItem>
-                    <MenuItem name="2"> 粉丝增长排行</MenuItem>
-                    <MenuItem name="3"> 粉丝互动排行</MenuItem>
-                    <MenuItem name="4"> 销售转化排行</MenuItem>
-                    <MenuItem name="5"> 性价比排行</MenuItem>
-                </Menu>
-            </div>
+            <!--<div class="listBox-left">-->
+                <!--<Menu active-name="1" width="133px" mode="vertical" @on-select="selectMenu">-->
+                    <!--<MenuItem name="1"> KOL综合排行</MenuItem>-->
+                    <!--<MenuItem name="2"> 粉丝增长排行</MenuItem>-->
+                    <!--<MenuItem name="3"> 粉丝互动排行</MenuItem>-->
+                    <!--<MenuItem name="4"> 销售转化排行</MenuItem>-->
+                    <!--<MenuItem name="5"> 性价比排行</MenuItem>-->
+                <!--</Menu>-->
+            <!--</div>-->
             <div class="listBox-right">
                 <div class="m-f-line">
                     <div class="label">类别</div>
@@ -26,7 +26,7 @@
                         </div>
                     </div>
                 </div>
-                <Table :columns="columns1" :data="data" size="large">
+                <Table :columns="columns1" :data="data" size="large" :width="tableWidth">
                     <template slot-scope="{ row, index }" slot="paiming">
                         <div class="paiming1" v-if="row.index==0">{{row.index+1}}</div>
                         <div class="paiming2" v-else-if="row.index==1">{{row.index+1}}</div>
@@ -77,50 +77,71 @@
           {
             title: '排名',
             slot: 'paiming',
+	          width: 50 / 144 * window.rem,
           },
           {
             title: '账号',
             key: 'name',
             slot: 'douhao',
-            minWidth: 60
+	          width: 160 / 144 * window.rem,
           },
           {
             title: '带货量',
             tooltip: true,
             ellipsis: true,
-            key: 'huo'
+            key: 'huo',
+	          width: 100 / 144 * window.rem,
           },
           {
             title: '品牌曝光数',
             tooltip: true,
             ellipsis: true,
-            key: 'bao'
+            key: 'bao',
+	          width: 100 / 144 * window.rem,
+          },
+          {
+            title: '作品数',
+            tooltip: true,
+            ellipsis: true,
+            key: 'zuopin',
+	          width: 100 / 144 * window.rem,
+          },
+          {
+            title: '互动总数',
+            tooltip: true,
+            ellipsis: true,
+            key: 'hudong',
+	          width: 100 / 144 * window.rem,
           },
           {
             title: '真粉量/粉丝数',
             tooltip: true,
             ellipsis: true,
-            key: 'fensi'
+            key: 'fensi',
+	          width: 120 / 144 * window.rem,
           },
           {
             title: '品牌匹配度',
             tooltip: true,
             ellipsis: true,
-            key: 'zan'
+            key: 'pinpaipipei',
+	          width: 100 / 144 * window.rem,
           },
           {
             title: '用户匹配度',
             tooltip: true,
             ellipsis: true,
-            key: 'zuopin'
+            key: 'yonghupipei',
+	          width: 100 / 144 * window.rem,
           },
           {
             tooltip: true,
             ellipsis: true,
             key: 'yxiang',
+	          width: 120 / 144 * window.rem,
             renderHeader: (h, params) => {
               return h("div", [
-                h('strong', '影响力指数'),
+                h('strong', 'KOL影响力指数'),
                 h("Poptip",
                   {
                     props: {
@@ -146,10 +167,12 @@
               ])
             }
           },
-          // {
-          //     title: '操作',
-          //     slot: 'action'
-          // },
+          {
+              title: '操作',
+              slot: 'action',
+	            fixed: 'right',
+	            width: 120 / 144 * window.rem,
+          },
         ],
         data: [],
       }
@@ -177,11 +200,22 @@
       selectMenu(){
         this.generateData()
       },
-      // 生成随机数
-      getRandom(min, max) {
+	    /**
+	     * 生成随机数
+	     * @param min
+	     * @param max
+	     * @param precise {Number}精准小数
+	     * @returns {*}
+	     */
+      getRandom(min, max, precise) {
         min = Math.ceil(min);
         max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+        const num =  Math.floor(Math.random() * (max - min + 1)) + min;
+        if(!precise){
+        	return num
+        }
+        let tmp = Math.random().toFixed(precise);
+        return num + Number(tmp)
       },
       generateData(total = this.pageSize) {
         const data = []
@@ -202,7 +236,7 @@
         const len = name1.length - 1
         const len2 = name2.length - 1
         for (let i = 0; i < total; i++) {
-          const huo = this.getRandom(400, 490) + 'w';
+          const huo = this.getRandom(400, 490, 2) + 'w';
           const name_1 = name1[Math.ceil(Math.random() *len) ]
           const name_2 = name2[Math.ceil(Math.random() *len2) ]
           const headerI = Math.ceil(Math.random() * 9)
@@ -214,7 +248,10 @@
               fensi: `${this.getRandom(5000, 6000)}w/${this.getRandom(6000, 7000)}w`,
               zan: this.getRandom(90, 95),
               zuopin: this.getRandom(90, 95),
-              yxiang: this.getRandom(1000, 1179),
+	            pinpaipipei: `${this.getRandom(90, 95, 2)}%`,
+	            yonghupipei: `${this.getRandom(90, 95, 2)}%`,
+	            hudong: `${this.getRandom(1, 20, 2)}亿`,
+              yxiang: this.getRandom(1000, 1179, 1),
               header: headers[headerI],
               num: `${Math.ceil(Math.random() * 10000000000)}`,
               index: (this.current - 1) * this.pageSize + i
@@ -228,6 +265,9 @@
                 bao: 92,
                 fensi: `6987w/7200w`,
                 zan: 93,
+		            pinpaipipei: '92.2%',
+		            yonghupipei: '92.2%',
+		            hudong: '5.32亿',
                 zuopin: 95,
                 yxiang: 1180,
                 header: require("../../../assets/img/yhhx/header1.png"),
@@ -238,6 +278,11 @@
         this.data = data
       },
     },
+	  computed: {
+    	tableWidth(){
+    		return 1050 / 144 * window.rem
+	    },
+	  }
   }
 </script>
 
@@ -252,9 +297,8 @@
             margin-bottom: 16px;
             cursor: pointer;
             &.active {
-                background: linear-gradient(135deg, #FF8D0A 0%, #FFA733 100%);
-                box-shadow: 3px 3px 14px 0px rgba(148, 76, 46, 0.2), -3px -3px 14px 0px #FFFFFF, 1px 1px 2px 0px rgba(255, 247, 230, 0.6);
-                border-radius: 16px;
+		            background: #2373FF;
+		            border-radius: 4px;
                 > p {
                     color: #FFFFFF;
                 }
@@ -272,7 +316,6 @@
 
     .listBox {
         border-radius: 8px;
-        border: 1px solid #EAEDF7;
         display: flex;
         margin-bottom: 1px;
         padding-bottom: 2px;
@@ -422,9 +465,8 @@
                         margin-bottom: 16px;
                         cursor: pointer;
                         &.active {
-                            background: linear-gradient(135deg, #FF8D0A 0%, #FFA733 100%);
-                            box-shadow: 3px 3px 14px 0px rgba(148, 76, 46, 0.2), -3px -3px 14px 0px #FFFFFF, 1px 1px 2px 0px rgba(255, 247, 230, 0.6);
-                            border-radius: 16px;
+	                        background: #75B1FF;
+	                        border-radius: 4px;
                             > p {
                                 color: #FFFFFF;
                             }
