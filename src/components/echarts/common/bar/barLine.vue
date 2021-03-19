@@ -29,6 +29,11 @@ export default {
 
 		}
 	},
+	watch:{
+		myData(){
+			this.initEcharts();
+		}
+	},
     mounted() {
         	this.initEcharts();
     },

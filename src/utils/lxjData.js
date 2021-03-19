@@ -868,6 +868,14 @@ const lxjEData = {
         name: ['1月', '2月', '3月', '4月', '5月','6月','7月','8月','9月','10月','11月','12月', ],
         value:[300, 182, 181,  150, 430,400, 382, 181,  350, 230,400, 182,  ]
     },
+    box581Data:{
+        name: ['2020-3-1', '2020-3-2', '2020-3-3', '2020-3-4', '2020-3-5','2020-3-6','2020-3-7',],
+        value:[2000, 3200, 2800,  3800, 4300,3500,4500 ]
+    },
+    box582Data:{
+        name: ['2020-3-1', '2020-3-2', '2020-3-3', '2020-3-4', '2020-3-5','2020-3-6','2020-3-7',],
+        value:[3000, 2200, 3100,  3800, 4100,3200,4500 ]
+    },
     box58Data:{
         name: ['中层管理者', '公司白领', '自由职业者', '全职太太', '高级管理','其他',],
         value:[300, 182, 181,  150, 430,10 ]
@@ -1365,6 +1373,130 @@ const lxjEData = {
 
         ]
     },
+    box102Data:{
+        formatter:'W',
+        legName: ['新增用户数', '用户总数'],
+        name: ['2020-3-1', '2020-3-2', '2020-3-3', '2020-3-4', '2020-3-5','2020-3-6','2020-3-7',],
+        value:  [
+            {
+                name: '新增用户数',
+                type: 'bar',
+                barWidth: '10%',
+                barMinWidth:10,
+                barMaxWidth:40,
+                itemStyle: {
+                    
+                        //barBorderRadius:30
+                    
+                    emphasis:{
+                        color:'#FF9F7F'
+                    }
+                },
+                data: [1500, 1300, 1200, 1800, 2500, 1480,]
+            },
+            {
+                name: '用户总数',
+                type: 'line',
+                smooth:true,
+                yAxisIndex: 1,
+                data: [1600, 1500, 1900, 1700, 2600, 2900,]
+            },
+
+        ]
+    },
+    box1021Data:{
+        formatter:'W',
+        legName: ['新增用户数', '用户总数'],
+        name: ['2020-3-1', '2020-3-2', '2020-3-3', '2020-3-4', '2020-3-5','2020-3-6','2020-3-7',],
+        value:  [
+            {
+                name: '新增用户数',
+                type: 'bar',
+                barWidth: '10%',
+                barMinWidth:10,
+                barMaxWidth:40,
+                itemStyle: {
+                    
+                        //barBorderRadius:30
+                    
+                    emphasis:{
+                        color:'#FF9F7F'
+                    }
+                },
+                data: [1700, 1300, 1400, 1800, 2400, 1480,]
+            },
+            {
+                name: '用户总数',
+                type: 'line',
+                smooth:true,
+                yAxisIndex: 1,
+                data: [1600, 1300, 1900, 1700, 1600, 2900,]
+            },
+
+        ]
+    },
+    box103Data:{
+        formatter:'次',
+        legName: ['时长', '次数'],
+        name: ['2020-3-1', '2020-3-2', '2020-3-3', '2020-3-4', '2020-3-5','2020-3-6','2020-3-7',],
+        value:  [
+            {
+                name: '时长',
+                type: 'bar',
+                barWidth: '10%',
+                barMinWidth:10,
+                barMaxWidth:40,
+                itemStyle: {
+                    
+                        //barBorderRadius:30
+                    
+                    emphasis:{
+                        color:'#FF9F7F'
+                    }
+                },
+                data: [3, 3.5, 2.8, 2.7, 2.5, 3.2,]
+            },
+            {
+                name: '次数',
+                type: 'line',
+                smooth:true,
+                yAxisIndex: 1,
+                data: [2.8, 1.5, 1, 2, 3, 4,]
+            },
+
+        ]
+    },
+    box1031Data:{
+        formatter:'次',
+        legName: ['时长', '次数'],
+        name: ['2020-3-1', '2020-3-2', '2020-3-3', '2020-3-4', '2020-3-5','2020-3-6','2020-3-7',],
+        value:  [
+            {
+                name: '时长',
+                type: 'bar',
+                barWidth: '10%',
+                barMinWidth:10,
+                barMaxWidth:40,
+                itemStyle: {
+                    
+                        //barBorderRadius:30
+                    
+                    emphasis:{
+                        color:'#FF9F7F'
+                    }
+                },
+                data: [3, 2.5, 2.8, 1.7, 2.5, 3.2,]
+            },
+            {
+                name: '次数',
+                type: 'line',
+                smooth:true,
+                yAxisIndex: 1,
+                data: [2.5, 1.8, 2.3, 1.4, 3, 2,]
+            },
+
+        ]
+    },
     box10Data:{
         formatter:'%',
         legName: ['覆盖率', 'TGL'],
@@ -1404,6 +1536,14 @@ const lxjEData = {
             {value: 80, name: '新增用户'},
             {value: 10, name: '铁粉'},
             {value: 100, name: '潜在用户'}
+        ]
+    },
+    box119Data:{
+        name: ['曝光率','互动率','销售转化率'],
+        value:  [
+            {value: 60, name: '曝光率'},
+            {value: 40, name: '互动率'},
+            {value: 20, name: '销售转化率'},
         ]
     },
     box113Data:{
