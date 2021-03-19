@@ -17,13 +17,13 @@
           1.00>SOI>0.50视为营销机会，0.50>SOI>-0.50视为正常舆情，-0.50>SOI>-1.00视为风险公关事件，点击单个事件可以查看舆情传播链路解构详情分析及相应策略。
       </div>
       <div class="scatter-echarts">
-        <ScatterEcharts id="scatter" :colorList="$linData.scatterData.colorList" :scatterData="$linData.scatterData"></ScatterEcharts>
+        <ScatterEcharts id="scatter" @changeSeries="changeSeries" :colorList="$linData.scatterData.colorList" :scatterData="$linData.scatterData"></ScatterEcharts>
       </div>
-      <div class="cur-value">
+      <div class="cur-value red" v-if="seriesName=='风险'">
           <div class="cur-left">
-              <div class="cur-l-title">
+              <div class="cur-l-title risk">
                   <p>新浪财经</p>
-                  <div class="cur-l-status">
+                  <div class="cur-l-status status1">
                       <span>风险</span>
                   </div>
                   <div class="cur-l-data">
@@ -41,6 +41,30 @@
               <div class="cur-r-title">策略建议</div>
               <p>跟踪行业趋势和竞品动向；</p>
               <p>推广药企跨界凉茶品牌的产品优势。</p>
+          </div>
+      </div>
+      <div class="cur-value green" v-if="seriesName=='机会'">
+          <div class="cur-left">
+              <div class="cur-l-title chance">
+                  <p>人民网</p>
+                  <div class="cur-l-status status2">
+                      <span>机会</span>
+                  </div>
+                  <div class="cur-l-data">
+                      <i class="iconfont iconshangsheng"></i>
+                      <span>+0.77%</span>
+                  </div>
+              </div>
+              <p>【人民网】凉茶“红罐之争”，加多宝广告停用王老吉获赔300万</p>
+              <ul class="cur-l-target">
+                  <li>行业相关</li>
+                  <li>非紧急事件</li>
+                  <li>品牌口碑提升机会</li>
+              </ul>
+          </div>
+          <div class="cur-right">
+              <div class="cur-r-title">策略建议</div>
+              <p>紧跟凉茶行业热度，提高自有品牌曝光和品牌口碑；</p>
           </div>
       </div>
       <div class="view-container">
@@ -123,7 +147,17 @@ import graphEcharts3 from "../../../components/echarts/common/graph/graphEcharts
 import treeEcharts from "../../../components/echarts/common/tree/treeEcharts"
 export default {
     name:"NewEcharts",
-    components:{ScatterEcharts,graphEcharts,graphEcharts1,graphEcharts2,graphEcharts3,treeEcharts}
+    components:{ScatterEcharts,graphEcharts,graphEcharts1,graphEcharts2,graphEcharts3,treeEcharts},
+    data(){
+        return {
+            seriesName:'风险'
+        }
+    },
+    methods:{
+        changeSeries(name){
+            this.seriesName = name
+        }
+    }
 }
 </script>
 
@@ -180,8 +214,13 @@ export default {
         display: flex;
         height: 114px;
         padding: 16px;
-        background: #FEDFE1;
         border-radius: 4px 4px 0px 0px;
+        &.red{
+            background: #FEDFE1;
+        }
+        &.green{
+            background: #D8F3E7;
+        }
         .cur-left{
             width: 50%;
             border-right: 1px solid #FFFFFF;
@@ -189,28 +228,39 @@ export default {
                 display: flex;
                 align-items: center;
                 margin-bottom: 4px;
+                &.chance{
+                    color: #08BD6C;
+                }
+                &.risk{
+                    color: #FF4C60;
+                }
                 >p{
                     height: 24px;
                     margin-right: 8px;
                     font-size: 16px;
                     font-family: PingFangSC-Medium, PingFang SC;
                     font-weight: 500;
-                    color: #FF4C60;
+                    // color: #FF4C60;
                     line-height: 24px;
                 }
                 .cur-l-status{
                     width: 44px;
                     height: 24px;
                     padding: 1px 8px;
-                    background: rgba(255, 76, 96, 0.2);
                     border-radius: 4px;
+                    &.status1{
+                        background: rgba(255, 76, 96, 0.2);
+                    }
+                    &.status2{
+                        background: rgba(8, 189, 108, 0.2);
+                    }
                     >span{
                         display: inline-block;
                         height: 22px;
                         font-size: 14px;
                         font-family: PingFangSC-Medium, PingFang SC;
                         font-weight: 500;
-                        color: #FF4C60;
+                        // color: #FF4C60;
                         line-height: 22px;
                     }
                 }
@@ -222,13 +272,13 @@ export default {
                         height: 10px;
                         margin-right: 2px;
                         font-size: 10px;
-                        color:#FF4C60
+                        // color:#FF4C60
                     }
                     >span{
                         height: 18px;
                         font-size: 12px;
                         font-family: HelveticaNeue;
-                        color: #FF4C60;
+                        // color: #FF4C60;
                         line-height: 18px;
                     }
                 }
