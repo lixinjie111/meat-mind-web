@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import DetailsPage from "../../../../layouts/DetailsPage";
+import DetailsPage from "../../../layouts/DetailsPage";
 import VirtualHeader from "../base/VirtualHeader";
 import TableModel from "../base/TableModel";
 export default {

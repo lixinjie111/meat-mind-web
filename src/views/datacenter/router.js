@@ -1,19 +1,19 @@
 const dataCenter=()=>import('./index');
-const Mydata=()=>import('./components/Mydata.vue')
-const Market=()=>import('./components/Market.vue')
-const System=()=>import('./components/System.vue')
-const Metax=()=>import('./components/Metax.vue')
+const Mydata=()=>import('./page/mydata.vue')
+const Market=()=>import('./page/market.vue')
+const System=()=>import('./page/system.vue')
+const Metax=()=>import('./page/metax.vue')
 
-const rule=()=>import('./components/ysjgl/Rule.vue')
-const unit=()=>import('./components/ysjgl/Unit.vue')
-const event=()=>import('./components/ysjgl/EventAttribute.vue')
-const user=()=>import('./components/ysjgl/UserAttribute.vue')
-const dimension=()=>import('./components/ysjgl/Dimension.vue')
-const item=()=>import('./components/ysjgl/ItemAttribute.vue')
-const virtual=()=>import('./components/ysjgl/VirtualAttribute.vue')
-const virtualEvent=()=>import('./components/ysjgl/VirtualEvent.vue')
-const session=()=>import('./components/ysjgl/Session.vue')
-const visualization=()=>import('./components/ysjgl/Visualization.vue')
+const rule=()=>import('./components/Rule.vue')
+const unit=()=>import('./components/Unit.vue')
+const event=()=>import('./components/EventAttribute.vue')
+const user=()=>import('./components/UserAttribute.vue')
+const dimension=()=>import('./components/Dimension.vue')
+const item=()=>import('./components/ItemAttribute.vue')
+const virtual=()=>import('./components/VirtualAttribute.vue')
+const virtualEvent=()=>import('./components/VirtualEvent.vue')
+const session=()=>import('./components/Session.vue')
+const visualization=()=>import('./components/Visualization.vue')
 const moduleName='data-center';
 
 export default [

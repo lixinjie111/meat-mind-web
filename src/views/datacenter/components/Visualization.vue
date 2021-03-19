@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import DetailsPage from "../../../../layouts/DetailsPage";
+import DetailsPage from "../../../layouts/DetailsPage";
 import VHeader from "../base/VHeader";
 export default {
   name: "Visualization",

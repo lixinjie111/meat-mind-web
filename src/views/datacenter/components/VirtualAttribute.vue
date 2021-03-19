@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import DetailsPage from "../../../../layouts/DetailsPage";
+import DetailsPage from "../../../layouts/DetailsPage";
 import HeaderSearch from "../base/HeaderSearch";
 import TableModel from "../base/TableModel";
 export default {

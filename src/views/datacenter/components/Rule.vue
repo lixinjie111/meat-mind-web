@@ -64,7 +64,7 @@
 </template>
 
 <script>
-    import DetailsPage from "../../../../layouts/DetailsPage";
+    import DetailsPage from "../../../layouts/DetailsPage";
     import HeaderNav from "../base/HeaderNav";
 
     export default {

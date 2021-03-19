@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import DetailsPage from "../../../../layouts/DetailsPage";
+import DetailsPage from "../../../layouts/DetailsPage";
 import HeaderNav from "../base/HeaderNav";
 import TableModel from "../base/TableModel";
 export default {
