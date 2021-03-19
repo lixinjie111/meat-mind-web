@@ -1632,6 +1632,7 @@
 .dx_Item_container{
     width: 100%;
     position: relative;
+    margin-top: -16px;
     .test_container1.width{
         width: 806px;
     }

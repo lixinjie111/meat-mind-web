@@ -234,7 +234,7 @@
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">自由职业</div>
-                <div class="perinfo_b">用户数 6790人</div>
+                <div class="perinfo_b">用户数 46030人</div>
               </div>
             </div>
             <div class="lef_area_bom" style="background: #FFE6DE;color: #FE774B;" @click="expandfn(5,'cen_area5','rig_area5')">
@@ -2318,14 +2318,16 @@ export default {
       height: 110px;
       display: flex;
       align-items: center;
+      margin-bottom: 16px;
+      background: #FFFFFF;
+      box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
       border-radius: 8px;
       border: 1px solid #EAEDF7;
-      margin-bottom: 16px;
-      box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
       .lef_area{
         width: 193px;
         height: 100%;
         border-right:1px solid #EAEDF7;
+        border-radius: 8px 0 0 8px;
         .lef_area_top{
           width: 100%;
           height: 64px;
@@ -2362,9 +2364,8 @@ export default {
         }
         .lef_area_bom{
           width: 100%;
-          height: 44px;
+          height: 45px;
           background: #DDE9FF;
-          border-radius: 0 0 0 8px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -2372,6 +2373,7 @@ export default {
           font-family: PingFangSC-Medium, PingFang SC;
           font-weight: 500;
           color: #2373FF;
+          border-radius: 0 0 0 8px;
           .squpImg{
             display: block;
             width: 16px;
@@ -2401,6 +2403,7 @@ export default {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
+        border-radius: 0 8px 8px 0;
         .rig_area_lef{
           width: 150px;
           display: flex;
