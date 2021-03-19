@@ -926,10 +926,7 @@
                 this.tabconList = this.tabconList1;
                 setTimeout(()=>{
                   for(var i=0;i<tabDom1.length;i++){
-                    if(i==0 || i ==2){
-                      tabDom1[i].style="width:357px;";
-                    }
-                    // tabDom1[i].style=" margin-right: 22px;";
+                    tabDom1[i].style="margin-right: 27px;";
                   }
                 },100);
               }
@@ -941,7 +938,7 @@
                   for(var i=0;i<tabDom1.length;i++){
                     tabDom1[i].style=" margin-right: 87px;";
                   }
-                },100);
+                },50);
               }
               else if(arg == 3){
                 this.ifShowtcon = false;
@@ -1636,7 +1633,7 @@
     width: 100%;
     position: relative;
     .test_container1.width{
-        width: 762px;
+        width: 806px;
     }
     .test_container1{
         height: 80px;
@@ -1761,7 +1758,7 @@
         }
     }
     .conditions_container-box.width{
-        width: 762px;
+        width: 806px;
     }
     .conditions_container-box{
         position: absolute;
@@ -1828,7 +1825,7 @@
         position: absolute;
         left: 1.9%;
         top: 132px;
-        width: 762px;
+        width: 806px;
         z-index: 1000;
         height: 557px;
         background: #FFF;
@@ -2521,7 +2518,7 @@
         }
         .yhxw_container{
             position: absolute;
-            width: 762px;
+            width: 806px;
             bottom: 20px;
             left: 20px;
             z-index: 999;
@@ -2591,7 +2588,10 @@
                       background: #F0F8FF;
                       border-radius: 4px;
                       border: 1px solid #FFFFFF;
-                      margin-right: 18px;
+                      font-size: 12px;
+                      font-family: PingFangSC-Regular, PingFang SC;
+                      font-weight: 400;
+                      color: #242F57;
                     }
                   }
                   .icon_contai{
