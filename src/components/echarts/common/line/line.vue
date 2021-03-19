@@ -56,7 +56,7 @@ export default {
 				top: '10%',
 				left: 15,
 				right: 20,
-				bottom: 25,
+				bottom: 5,
                 containLabel: true,
             },
             xAxis: {

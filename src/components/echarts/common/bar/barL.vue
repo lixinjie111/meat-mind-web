@@ -52,7 +52,7 @@ export default {
 				top: '10%',
 				left: 20,
 				right: 20,
-				bottom: 25,
+				bottom: 5,
                 containLabel: true,
             },
             yAxis: {
