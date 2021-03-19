@@ -41,10 +41,10 @@
 </template>
 
 <script>
-    import Card from "../components/Card"
-    import DataCard from "../components/DataCard"
-    import Half from "../components/Half"
-    import Full from "../components/Full"
+    import Card from "../base/Card"
+    import DataCard from "../base/DataCard"
+    import Half from "../base/Half"
+    import Full from "../base/Full"
 
     export default {
         name: "overview",
