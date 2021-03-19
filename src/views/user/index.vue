@@ -2285,12 +2285,12 @@ export default {
 	}
 	.yhdx_container {
 		width: 100%;
-		background: #ffffff;
-		box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-		border-radius: 12px;
-		border: 1px solid #EAEDF7;
-		padding: 24px;
-		box-sizing: border-box;
+		// background: #ffffff;
+		// box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+		// border-radius: 12px;
+		// border: 1px solid #EAEDF7;
+		// padding: 24px;
+		// box-sizing: border-box;
     .bjsbz_container{
       width: 100%;
       height: 110px;
