@@ -41,8 +41,9 @@ export default {
 					formatter: "{a} <br/>{b} : {c}%"
 				},
 				legend: {
+					show:false,
 					data:this.myData.name,
-					bottom:0,
+					right:0,
                     itemGap: 5,
 				},
 
@@ -51,7 +52,7 @@ export default {
 						name:'',
 						type:'funnel',
 						left: '10%',
-						top: 60,
+						top: 10,
 						bottom: 60,
 						width: '80%',
 						min: 0,
