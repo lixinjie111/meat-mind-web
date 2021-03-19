@@ -964,9 +964,9 @@
                     if(i==arg){
                         itemDom[i].style="background: #2373FF;color: #FFFFFF;";
                     }
-                    else{  //如果需要多选去掉else
-                        itemDom[i].style="color: #636E95;background: none;";
-                    }
+                    // else{  //如果需要多选去掉else
+                    //     itemDom[i].style="color: #636E95;background: none;";
+                    // }
                 }
                 // console.log(itemDom,'itemDom')
             },
