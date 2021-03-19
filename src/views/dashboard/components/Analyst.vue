@@ -9,7 +9,7 @@
     </div>
     <div class="wel_guid_container">
       <div class="welcome">
-        <img class="user" src="../../assets/img/login/head1.png" alt="" />
+        <img class="user" src="../../../assets/img/login/head1.png" alt="" />
         <div class="user_intro_container">
           <div class="til_img_container">
             <span>早安，分析师，欢迎使用 Meta-Mind-Marketing！</span>
@@ -329,10 +329,10 @@
   </div>
 </template>
 <script>
-import vCard0 from "../common/card0";
-import vCard1 from "../common/card1";
-import vCard2 from "../common/card2";
-import Tab from "../../components/Tab";
+import vCard0 from "@/components/common/card0";
+import vCard1 from "@/components/common/card1";
+import vCard2 from "@/components/common/card2";
+import Tab from "@/components/Tab";
 var dayjs = require('dayjs');
 export default {
   name: "Analyst",
@@ -341,65 +341,65 @@ export default {
     return {
       guideList: [
         {
-          tilIcon: require("../../assets/img/dashboard/newGif.png"),
+          tilIcon: require("../../../assets/img/dashboard/newGif.png"),
           title: "领取新人礼包",
           iconfont: "iconxinrenlibao",
           desc:
             "根据您行业属性，我们为您精选出一些通用数据包及行业数据包，希望您会喜欢。",
           statusTxt: "已完成",
-          statusIcon: require("../../assets/img/dashboard/checked.png"),
+          statusIcon: require("../../../assets/img/dashboard/checked.png"),
         },
         {
-          tilIcon: require("../../assets/img/dashboard/upData.png"),
+          tilIcon: require("../../../assets/img/dashboard/upData.png"),
           title: "上传数据",
           iconfont: 'iconshangchuanshuju',
           desc: "开启第一步，去上传你的第一个数据文件，列入EXCEL报表文件。",
           statusTxt: "已完成",
-          statusIcon: require("../../assets/img/dashboard/checked.png"),
+          statusIcon: require("../../../assets/img/dashboard/checked.png"),
         },
         {
-          tilIcon: require("../../assets/img/dashboard/SDK.png"),
+          tilIcon: require("../../../assets/img/dashboard/SDK.png"),
           title: "SDK埋点",
           iconfont: 'iconSDKmaidian',
           desc:
             "使用 SDK 实现数据采集功能，添加跟踪代码即可完成 SDK 的集成，为数据采集和分析做好准备。",
           statusTxt: "已完成",
-          statusIcon: require("../../assets/img/dashboard/checked.png"),
+          statusIcon: require("../../../assets/img/dashboard/checked.png"),
         },
         {
-          tilIcon: require("../../assets/img/dashboard/API.png"),
+          tilIcon: require("../../../assets/img/dashboard/API.png"),
           title: "API采集",
           iconfont: 'iconAPIcaiji',
           desc:
             "为满足广大客户更灵活管理需求，我们提供了一套可以直接调用的 API 接口。",
           statusTxt: "去查看",
-          statusIcon: require("../../assets/img/dashboard/tor1.png"),
+          statusIcon: require("../../../assets/img/dashboard/tor1.png"),
         },
         {
-          tilIcon: require("../../assets/img/dashboard/sjkzl.png"),
+          tilIcon: require("../../../assets/img/dashboard/sjkzl.png"),
           title: "数据库直连",
           iconfont: 'iconshujukuzhilian',
           desc:
             "采用端口通信的方式进行客户端的数据库连接，安全有保障。连接数据库进行分析，实时性更高。",
           statusTxt: "去查看",
-          statusIcon: require("../../assets/img/dashboard/tor1.png"),
+          statusIcon: require("../../../assets/img/dashboard/tor1.png"),
         },
         {
-          tilIcon: require("../../assets/img/dashboard/help.png"),
+          tilIcon: require("../../../assets/img/dashboard/help.png"),
           title: "帮助中心",
           iconfont: 'iconbangzhu',
           desc: "查看功能说明，了解智慧营销平台。",
           statusTxt: "去查看",
-          statusIcon: require("../../assets/img/dashboard/tor1.png"),
+          statusIcon: require("../../../assets/img/dashboard/tor1.png"),
         },
       ],
-      infoIcon: require("../../assets/img/dashboard/infoIcon.png"),
-      downLoad: require("../../assets/img/dashboard/downLoad.png"),
-      whitedownload:require("../../assets/img/dashboard/whitedownload.png"),
-      tvIcon:require("../../assets/img/dashboard/tv.png"),
-      kanbanIcon: require("../../assets/img/dashboard/kbIcon.png"),
-      gdImg: require("../../assets/img/dashboard/infoIcon.png"),
-      trImg: require("../../assets/img/dashboard/toR.png"),
+      infoIcon: require("../../../assets/img/dashboard/infoIcon.png"),
+      downLoad: require("../../../assets/img/dashboard/downLoad.png"),
+      whitedownload:require("../../../assets/img/dashboard/whitedownload.png"),
+      tvIcon:require("../../../assets/img/dashboard/tv.png"),
+      kanbanIcon: require("../../../assets/img/dashboard/kbIcon.png"),
+      gdImg: require("../../../assets/img/dashboard/infoIcon.png"),
+      trImg: require("../../../assets/img/dashboard/toR.png"),
       ppCardList: [
         {
           id: 1,
@@ -410,11 +410,11 @@ export default {
           numText: 134,
           unitText: "万",
           leftText: "环比",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
+          leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "9.07%",
           leftPerColor: "#F54A45",
           rightText: "同比",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
           timer: 1000,
@@ -428,11 +428,11 @@ export default {
           numText: 567,
           unitText: "万",
           leftText: "环比",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
+          leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "9.07%",
           leftPerColor: "#F54A45",
           rightText: "同比",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
           timer: 500,
@@ -446,11 +446,11 @@ export default {
           numText: 734,
           unitText: "万",
           leftText: "环比",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
+          leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "9.07%",
           leftPerColor: "#F54A45",
           rightText: "同比",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
           timer: 200,
@@ -464,11 +464,11 @@ export default {
           numText: 489,
           unitText: "万",
           leftText: "环比",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
+          leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "9.07%",
           leftPerColor: "#F54A45",
           rightText: "同比",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
           timer: 3000,
@@ -488,7 +488,7 @@ export default {
           leftPer: "",
           leftPerColor: "#F54A45",
           rightText: "",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
           timer: 1000,
@@ -502,7 +502,7 @@ export default {
           numText: 101,
           unitText: "人",
           leftText: "",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
+          leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "9.07%",
           leftPerColor: "#F54A45",
           rightText: "",
@@ -524,7 +524,7 @@ export default {
           leftPer: "",
           leftPerColor: "#F54A45",
           rightText: "",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
           timer: 2000,
@@ -542,7 +542,7 @@ export default {
           leftPer: "",
           leftPerColor: "#F54A45",
           rightText: "",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
           timer: 2000,
@@ -556,7 +556,7 @@ export default {
           numText: 1089,
           unitText: "人",
           leftText: "",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
+          leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "9.07%",
           leftPerColor: "#F54A45",
           rightText: "",
@@ -574,7 +574,7 @@ export default {
           numText: 0.8,
           unitText: "",
           leftText: "",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
+          leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "9.07%",
           leftPerColor: "#F54A45",
           rightText: "",
@@ -598,7 +598,7 @@ export default {
           leftPer: "",
           leftPerColor: "#F54A45",
           rightText: "同比上周",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "8.04",
           rightPerColor: "#34C724",
           timer: 300,
@@ -612,7 +612,7 @@ export default {
           numText: 1297,
           unitText: "",
           leftText: "同比上周",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
+          leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "8.04",
           leftPerColor: "#F54A45",
           rightText: "",
@@ -634,7 +634,7 @@ export default {
           leftPer: "",
           leftPerColor: "#F54A45",
           rightText: "同比上周",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "8.04",
           rightPerColor: "#34C724",
           timer: 1500,
@@ -648,7 +648,7 @@ export default {
           numText: 3904,
           unitText: "",
           leftText: "同比上周",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
+          leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "8.04",
           leftPerColor: "#F54A45",
           rightText: "",
@@ -670,7 +670,7 @@ export default {
           leftPer: "",
           leftPerColor: "#F54A45",
           rightText: "同比上周",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "8.04",
           rightPerColor: "#34C724",
           timer: 1700,
@@ -684,7 +684,7 @@ export default {
           numText: 1297,
           unitText: "",
           leftText: "同比上周",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
+          leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "8.04",
           leftPerColor: "#F54A45",
           rightText: "",
@@ -706,7 +706,7 @@ export default {
           leftPer: "",
           leftPerColor: "#F54A45",
           rightText: "同比上周",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "8.04",
           rightPerColor: "#34C724",
           timer: 800,
@@ -720,7 +720,7 @@ export default {
           numText: 3904,
           unitText: "",
           leftText: "同比上周",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
+          leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "8.04",
           leftPerColor: "#F54A45",
           rightText: "",
@@ -754,11 +754,11 @@ export default {
           numText: 1847,
           unitText: "人",
           leftText: "环比",
-          leftIcon: require("../../assets/img/dashboard/upIcon.png"),
+          leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
           leftPer: "9.07%",
           leftPerColor: "#34C724",
           rightText: "同比",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
           timer: 1000,
@@ -773,11 +773,11 @@ export default {
           numText: 1847,
           unitText: "人",
           leftText: "环比",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
+          leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "9.07%",
           leftPerColor: "#F54A45",
           rightText: "同比",
-          rightIcon: require("../../assets/img/dashboard/downIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/downIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#F54A45",
           timer: 500,
@@ -792,11 +792,11 @@ export default {
           numText: 1847,
           unitText: "人",
           leftText: "环比",
-          leftIcon: require("../../assets/img/dashboard/upIcon.png"),
+          leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
           leftPer: "9.07%",
           leftPerColor: "#34C724",
           rightText: "同比",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
           timer: 1000,
@@ -811,11 +811,11 @@ export default {
           numText: 1847,
           unitText: "人",
           leftText: "环比",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
+          leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "9.07%",
           leftPerColor: "#F54A45",
           rightText: "同比",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
           timer: 1000,
@@ -830,11 +830,11 @@ export default {
           numText: 1847,
           unitText: "人",
           leftText: "环比",
-          leftIcon:require("../../assets/img/dashboard/upIcon.png"),
+          leftIcon:require("../../../assets/img/dashboard/upIcon.png"),
           leftPer: "9.07%",
           leftPerColor:"#34C724",
           rightText: "同比",
-          rightIcon: require("../../assets/img/dashboard/downIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/downIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#F54A45",
           timer: 1000,
@@ -849,11 +849,11 @@ export default {
           numText: 972,
           unitText: "个",
           leftText: "环比",
-          leftIcon: require("../../assets/img/dashboard/upIcon.png"),
+          leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
           leftPer: "9.07%",
           leftPerColor: "#34C724",
           rightText: "同比",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
           timer: 1000,
@@ -868,11 +868,11 @@ export default {
           numText: 92.47,
           unitText: "%",
           leftText: "环比",
-          leftIcon: require("../../assets/img/dashboard/downIcon.png"),
+          leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "9.07%",
           leftPerColor: "#F54A45",
           rightText: "同比",
-          rightIcon: require("../../assets/img/dashboard/upIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
           timer: 100000,
@@ -887,11 +887,11 @@ export default {
           numText: 26.45,
           unitText: "%",
           leftText: "环比",
-          leftIcon:require("../../assets/img/dashboard/upIcon.png"),
+          leftIcon:require("../../../assets/img/dashboard/upIcon.png"),
           leftPer: "9.07%",
           leftPerColor:"#34C724",
           rightText: "同比",
-          rightIcon: require("../../assets/img/dashboard/downIcon.png"),
+          rightIcon: require("../../../assets/img/dashboard/downIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#F54A45",
           timer: 200000,
@@ -912,7 +912,7 @@ export default {
           ysIcon:'bgi1',
           upper:'9.72%',
           downper:'3.54%',
-          jyIcon:require("../../assets/img/dashboard/jyIcon1.png")
+          jyIcon:require("../../../assets/img/dashboard/jyIcon1.png")
         },
         {
           id:1,
@@ -924,7 +924,7 @@ export default {
           ysIcon:'bgi2',
           upper:'4.56%',
           downper:'1.12%',
-          jyIcon:require("../../assets/img/dashboard/jyIcon2.png")
+          jyIcon:require("../../../assets/img/dashboard/jyIcon2.png")
         },
         {
           id:2,
@@ -936,7 +936,7 @@ export default {
           ysIcon:'bgi3',
           upper:'8.06%',
           downper:'5.12%',
-          jyIcon:require("../../assets/img/dashboard/jyIcon3.png")
+          jyIcon:require("../../../assets/img/dashboard/jyIcon3.png")
         },
         {
           id:3,
@@ -948,13 +948,13 @@ export default {
           ysIcon:'bgi4',
           upper:'2.56%',
           downper:'9.12%',
-          jyIcon:require("../../assets/img/dashboard/jyIcon4.png")
+          jyIcon:require("../../../assets/img/dashboard/jyIcon4.png")
         }
       ],
-      jylefImg:require('../../assets/img/dashboard/jylefImg.png'),
-      star1:require('../../assets/img/dashboard/star1.png'),
-      star2:require('../../assets/img/dashboard/star2.png'),
-      star3:require('../../assets/img/dashboard/star3.png'),
+      jylefImg:require('../../../assets/img/dashboard/jylefImg.png'),
+      star1:require('../../../assets/img/dashboard/star1.png'),
+      star2:require('../../../assets/img/dashboard/star2.png'),
+      star3:require('../../../assets/img/dashboard/star3.png'),
     };
   },
   methods:{
@@ -1474,18 +1474,18 @@ export default {
       // .kanbanitem1{
       //   box-shadow: 4px -4px 24px 0px rgba(56, 88, 148, 0.55);
       //   border-radius: 8px;
-      //     background-image: url("../../assets/img/dashboard/kanban1.png");
+      //     background-image: url("../../../assets/img/dashboard/kanban1.png");
       // }
       // .kanbanitem2{
-      //     background-image: url("../../assets/img/dashboard/kanban2.png");
+      //     background-image: url("../../../assets/img/dashboard/kanban2.png");
       //   box-shadow: 4px -4px 24px 0px rgba(45, 120, 134, 0.55);
       // }
       // .kanbanitem3{
-      //     background-image: url("../../assets/img/dashboard/kanban3.png");
+      //     background-image: url("../../../assets/img/dashboard/kanban3.png");
       //   box-shadow: 4px -4px 24px 0px rgba(109, 57, 143, 0.55);
       // }
       // .kanbanitem4{
-      //     background-image: url("../../assets/img/dashboard/kanban4.png");
+      //     background-image: url("../../../assets/img/dashboard/kanban4.png");
       //   box-shadow: 4px -4px 24px 0px rgba(41, 59, 149, 0.55);
       // }
     }

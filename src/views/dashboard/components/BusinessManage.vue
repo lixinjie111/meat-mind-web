@@ -98,7 +98,7 @@
                 <!--<div class="manage-overview-info">-->
                     <!--<p>当前经营状况</p>-->
                     <!--<div class="manage-overview-result">-->
-                        <!--<img src="../../assets/img/dashboard/manage/icon1@2x.png"/>-->
+                        <!--<img src="../../../assets/img/dashboard/manage/icon1@2x.png"/>-->
                         <!--<p>低于预期</p>-->
                     <!--</div>-->
                     <!--<p>呈现问题</p>-->
@@ -112,14 +112,14 @@
                         <!--<li>扩充抖音、快手短视频平台的推广力度；优化KOL投放结构，以主播类、时尚类为主</li>-->
                         <!--<li>打造“年轻时尚”营销卖点，及时在微博平台进行公关，并监控效果</li>-->
                     <!--</ul>-->
-                    <!--<div class="manage-overview-btn" @click="goTo"><img  src="../../assets/img/dashboard/manage/icon3@2x.png"/>查看全部经营分析</div>-->
+                    <!--<div class="manage-overview-btn" @click="goTo"><img  src="../../../assets/img/dashboard/manage/icon3@2x.png"/>查看全部经营分析</div>-->
                 <!--</div>-->
             <!--</div>-->
             <!--<div class="manage-overview-right">-->
                 <!--<p>心智模型智能指标评测<Icon type="ios-alert-outline" color="#7C88B1"/></p>-->
                 <!--<div class="overview-right-top">-->
                    <!--<video class="info-player" width="100%" height="100%" autoplay loop muted-->
-                           <!--src="../../assets/video/model.mp4"></video>-->
+                           <!--src="../../../assets/video/model.mp4"></video>-->
                    <!--<div class="info-content">-->
                        <!--<div class="info-top flex">-->
                            <!--<div>-->
@@ -136,14 +136,14 @@
                                    <!--<p>77</p>-->
                                    <!--<p>近6月最高分</p>-->
                                <!--</div>-->
-                               <!--<img src="../../assets/img/dashboard/manage/line1@2x.png"/>-->
+                               <!--<img src="../../../assets/img/dashboard/manage/line1@2x.png"/>-->
                            <!--</div>-->
                            <!--<div>-->
                                <!--<div>-->
                                    <!--<p>69</p>-->
                                    <!--<p>近6月最低分</p>-->
                                <!--</div>-->
-                               <!--<img src="../../assets/img/dashboard/manage/line2@2x.png"/>-->
+                               <!--<img src="../../../assets/img/dashboard/manage/line2@2x.png"/>-->
                            <!--</div>-->
                        <!--</div>-->
                    <!--</div>-->
@@ -192,7 +192,7 @@
                 <!--</div>-->
                 <!--<div class="overview-right-bottom">-->
                     <!--<p>客群心智模型评测结果</p>-->
-                    <!--<div class="result-btn"><img src="../../assets/img/dashboard/manage/icon2@2x.png"/>客群定位较为准确</div>-->
+                    <!--<div class="result-btn"><img src="../../../assets/img/dashboard/manage/icon2@2x.png"/>客群定位较为准确</div>-->
                 <!--</div>-->
             <!--</div>-->
         <!--</div>-->
@@ -365,14 +365,14 @@
 </template>
 
 <script>
-    import Card from "../../components/Card";
-    import Compare from "../../components/Compare";
-    import barM1 from '../echarts/common/bar/barM1';
-    import lineM2 from '../echarts/common/line/lineM2';
-    import lineM4 from '../echarts/common/line/lineM4';
-    import barL from '../echarts/common/bar/barL';
-    import cLine from '../echarts/common/line/line';
-    import CardList from '../common/CardList';
+    import Card from "@/components/Card";
+    import Compare from "@/components/Compare";
+    import barM1 from '@/components/echarts/common/bar/barM1';
+    import lineM2 from '@/components/echarts/common/line/lineM2';
+    import lineM4 from '@/components/echarts/common/line/lineM4';
+    import barL from '@/components/echarts/common/bar/barL';
+    import cLine from '@/components/echarts/common/line/line';
+    import CardList from '@/components/common/CardList';
 
     export default {
         name: "BusinessManage",
@@ -1058,7 +1058,7 @@
                 height: 618px;
                 border-radius: 12px;
                 background: #E5F5FF;
-                //background: url("../../assets/img/dashboard/manage/overview-bg1.png") no-repeat center center / 100% 100%;
+                //background: url("../../../assets/img/dashboard/manage/overview-bg1.png") no-repeat center center / 100% 100%;
                 box-shadow: 0px 0px 8px 0px rgba(166, 171, 189, 0.3);
 
                 .manage-overview-chart {
@@ -1280,7 +1280,7 @@
                 width: 368px;
                 height: 618px;
                 background:#E5F5FF;
-                //background: url("../../assets/img/dashboard/manage/overview-bg2.png") no-repeat center center / 100% 100%;
+                //background: url("../../../assets/img/dashboard/manage/overview-bg2.png") no-repeat center center / 100% 100%;
                 border-radius: 12px;
                 box-shadow: 0px 0px 8px 0px rgba(166, 171, 189, 0.3);
 
@@ -1674,20 +1674,20 @@
                         }
 
                         &:nth-child(1) {
-                            background: url("../../assets/img/dashboard/manage/gradient-bg1@2x.png") no-repeat center / 100% 100%;
+                            background: url("../../../assets/img/dashboard/manage/gradient-bg1@2x.png") no-repeat center / 100% 100%;
                         }
 
                         &:nth-child(2) {
-                            background: url("../../assets/img/dashboard/manage/gradient-bg2@2x.png") no-repeat center / 100% 100%;
+                            background: url("../../../assets/img/dashboard/manage/gradient-bg2@2x.png") no-repeat center / 100% 100%;
                         }
 
                         &:nth-child(3) {
-                            background: url("../../assets/img/dashboard/manage/gradient-bg3@2x.png") no-repeat center / 100% 100%;
+                            background: url("../../../assets/img/dashboard/manage/gradient-bg3@2x.png") no-repeat center / 100% 100%;
                         }
 
                         &:nth-child(4) {
                             margin-bottom: 0;
-                            background: url("../../assets/img/dashboard/manage/gradient-bg4@2x.png") no-repeat center / 100% 100%;
+                            background: url("../../../assets/img/dashboard/manage/gradient-bg4@2x.png") no-repeat center / 100% 100%;
                         }
 
                         &:hover {

@@ -16,9 +16,9 @@
 </template>
 
 <script>
-    import BusinessOwner from "../../components/dashboard/BusinessOwner";
-    import Analyst from "../../components/dashboard/Analyst";
-    import DataManager from "../../components/dashboard/DataManager";
+    import BusinessOwner from "./components/BusinessOwner";
+    import Analyst from "./components/Analyst";
+    import DataManager from "./components/DataManager";
 
     export default {
         name: "index",

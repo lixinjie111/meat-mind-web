@@ -4,7 +4,7 @@
             <p>Dashboard</p>
         </div>
         <div class="welcome">
-            <img class="user" src="../../assets/img/login/head2.png" alt=""/>
+            <img class="user" src="../../../assets/img/login/head2.png" alt=""/>
             <div class="user-intro-container" v-if="tabActive == 1">
                 <p>早安，叶总，欢迎使用 Meta-Mind-Marketing！</p>
                 <p>营销洞察助力智能获取精准目标客群，掌握市场趋势及竞对情报，发掘商业机会，借助热点打造爆款，提供海量营销创意案例。</p>
@@ -35,7 +35,7 @@
 <script>
     import BusinessManage from "./BusinessManage";
     import BusinessMarket from "./BusinessMarket";
-    import Tab from "../../components/Tab"
+    import Tab from "@/components/Tab"
 
     export default {
         name: "BusinessOwner",

@@ -4,7 +4,7 @@
             <p>Dashboard</p>
         </div>
         <div class="welcome">
-            <img class="user" src="../../assets/img/login/head3.png" alt=""/>
+            <img class="user" src="../../../assets/img/login/head3.png" alt=""/>
             <div class="user-intro-container">
                 <p>早安，数据管理员，欢迎使用 Meta-Mind-Marketing！</p>
                 <p>整合行业生态资源，融合全场景、全链条、全维度数据，为企业营销提供完整数据支撑，打造全维画像系统。</p>
@@ -131,8 +131,8 @@
         </Card>
         <Modal class-name="data-market-modal" v-model="detailModal" footer-hide :closable="false">
             <div class="download">
-                <img v-if="detail1" src="../../assets/img/datacenter/market/detail1@2x.png" alt="">
-                <img v-if="detail2" src="../../assets/img/datacenter/market/detail2@2x.png" alt="">
+                <img v-if="detail1" src="../../../assets/img/datacenter/market/detail1@2x.png" alt="">
+                <img v-if="detail2" src="../../../assets/img/datacenter/market/detail2@2x.png" alt="">
                 <div class="close-btn" @click="closeDetail"></div>
             </div>
         </Modal>
@@ -140,13 +140,13 @@
 </template>
 
 <script>
-    import Card from "../../components/Card"
-    import Img1 from "../../assets/img/datacenter/market/1.png"
-    import Img2 from "../../assets/img/datacenter/market/2.png"
-    import Img3 from "../../assets/img/datacenter/market/3.png"
-    import Img4 from "../../assets/img/datacenter/market/4.png"
-    import Img5 from "../../assets/img/datacenter/market/5.png"
-    import Img6 from "../../assets/img/datacenter/market/6.png"
+    import Card from "@/components/Card"
+    import Img1 from "@/assets/img/datacenter/market/1.png"
+    import Img2 from "@/assets/img/datacenter/market/2.png"
+    import Img3 from "@/assets/img/datacenter/market/3.png"
+    import Img4 from "@/assets/img/datacenter/market/4.png"
+    import Img5 from "@/assets/img/datacenter/market/5.png"
+    import Img6 from "@/assets/img/datacenter/market/6.png"
 
     export default {
         name: "DataManager",

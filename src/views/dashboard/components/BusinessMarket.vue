@@ -187,7 +187,7 @@
                             <div>查看营销内容方案库</div>
                         </div>
                         <div class="right-content">
-                            <img src="../../assets/img/dashboard/market/group-content@2x.png"/>
+                            <img src="../../../assets/img/dashboard/market/group-content@2x.png"/>
                         </div>
                     </div>
                 </Card>
@@ -203,40 +203,40 @@
                             <p>快消品类带货达人TOP3</p>
                             <div class="right-top-item flex">
                                 <div>
-                                    <img src="../../assets/img/dashboard/market/head1@2x.png"/>
+                                    <img src="../../../assets/img/dashboard/market/head1@2x.png"/>
                                     <div>
                                         <p>李子柒</p>
                                         <p>粉丝数：5428.8w | 作品数：718</p>
                                     </div>
                                 </div>
                                 <div>
-                                    <img src="../../assets/img/dashboard/market/star@2x.png"/>
+                                    <img src="../../../assets/img/dashboard/market/star@2x.png"/>
                                     <span>4.99 高</span>
                                 </div>
                             </div>
                             <div class="right-top-item flex" style="background: #F4F7FC;">
                                 <div>
-                                    <img src="../../assets/img/dashboard/market/head2@2x.png"/>
+                                    <img src="../../../assets/img/dashboard/market/head2@2x.png"/>
                                     <div>
                                         <p>疯产姐妹</p>
                                         <p>粉丝数：3608.3w | 作品数：111</p>
                                     </div>
                                 </div>
                                 <div>
-                                    <img src="../../assets/img/dashboard/market/star@2x.png"/>
+                                    <img src="../../../assets/img/dashboard/market/star@2x.png"/>
                                     <span>4.86 高</span>
                                 </div>
                             </div>
                             <div class="right-top-item flex">
                                 <div>
-                                    <img src="../../assets/img/dashboard/market/head3@2x.png"/>
+                                    <img src="../../../assets/img/dashboard/market/head3@2x.png"/>
                                     <div>
                                         <p>浪胃仙</p>
                                         <p>粉丝数：3811.7w | 作品数：83</p>
                                     </div>
                                 </div>
                                 <div>
-                                    <img src="../../assets/img/dashboard/market/star@2x.png"/>
+                                    <img src="../../../assets/img/dashboard/market/star@2x.png"/>
                                     <span>4.74 高</span>
                                 </div>
                             </div>
@@ -274,22 +274,22 @@
                         <div class="right-content-left">
                             <div :class="['right-content-left-item',threeActive == 1 ?'active':'']"
                                  @click="threeActive=1">
-                                <img src="../../assets/img/dashboard/market/icon-redbull@2x.png"/>
+                                <img src="../../../assets/img/dashboard/market/icon-redbull@2x.png"/>
                                 <p>红牛<span>·250ml</span></p>
                             </div>
                             <div :class="['right-content-left-item',threeActive == 2 ?'active':'']"
                                  @click="threeActive=2">
-                                <img src="../../assets/img/dashboard/market/icon-jiaduobao@2x.png"/>
+                                <img src="../../../assets/img/dashboard/market/icon-jiaduobao@2x.png"/>
                                 <p>加多宝<span>·250ml</span></p>
                             </div>
                             <div :class="['right-content-left-item',threeActive == 3 ?'active':'']"
                                  @click="threeActive=3">
-                                <img src="../../assets/img/dashboard/market/icon-wanglaoji@2x.png"/>
+                                <img src="../../../assets/img/dashboard/market/icon-wanglaoji@2x.png"/>
                                 <p>王老吉<span>·250ml</span></p>
                             </div>
                             <div :class="['right-content-left-item',threeActive == 4 ?'active':'']"
                                  @click="threeActive=4">
-                                <img src="../../assets/img/dashboard/market/icon-maidong@2x.png"/>
+                                <img src="../../../assets/img/dashboard/market/icon-maidong@2x.png"/>
                                 <p>脉动<span>·250ml</span></p>
                             </div>
                             <div class="right-content-left-btn">
@@ -458,7 +458,7 @@
             </div>
             <div class="content report-box flex-start">
                 <div class="left">
-                    <img src="../../assets/img/dashboard/market/report@2x.png"/>
+                    <img src="../../../assets/img/dashboard/market/report@2x.png"/>
                     <p>行业分析报告营销创意及案例</p>
                     <div class="left-btn">查看全部案例</div>
                 </div>
@@ -514,9 +514,9 @@
 </template>
 
 <script>
-    import Card from "../../components/Card"
-    import barM from '../echarts/common/bar/barM';
-    import NewEcharts from "../../views/mark/components/NewEcharts";
+    import Card from "@/components/Card"
+    import barM from '@/components/echarts/common/bar/barM';
+    import NewEcharts from "@/views/mark/components/NewEcharts";
 
     export default {
         name: "BusinessMarket",
@@ -602,7 +602,7 @@
                                 value: '2056次'
                             }
                         ],
-                        timeImg: require("../../assets/img/dashboard/market/timeline1@2x.png")
+                        timeImg: require("../../../assets/img/dashboard/market/timeline1@2x.png")
                     },
                     {
 
@@ -680,7 +680,7 @@
                                 value: '1755次'
                             }
                         ],
-                        timeImg: require("../../assets/img/dashboard/market/timeline2@2x.png")
+                        timeImg: require("../../../assets/img/dashboard/market/timeline2@2x.png")
                     },
                     {
 
@@ -758,7 +758,7 @@
                                 value: '212次'
                             }
                         ],
-                        timeImg: require("../../assets/img/dashboard/market/timeline3@2x.png")
+                        timeImg: require("../../../assets/img/dashboard/market/timeline3@2x.png")
                     },
                     {
 
@@ -836,7 +836,7 @@
                                 value: '371次'
                             }
                         ],
-                        timeImg: require("../../assets/img/dashboard/market/timeline4@2x.png")
+                        timeImg: require("../../../assets/img/dashboard/market/timeline4@2x.png")
                     },
                     {
 
@@ -914,7 +914,7 @@
                                 value: '6712次'
                             }
                         ],
-                        timeImg: require("../../assets/img/dashboard/market/timeline5@2x.png")
+                        timeImg: require("../../../assets/img/dashboard/market/timeline5@2x.png")
                     }
                 ]
             }
@@ -1166,15 +1166,15 @@
                         }
 
                         &.bg1 {
-                            background: url("../../assets/img/dashboard/market/mart1@2x.png") no-repeat center center / 100% 100%;
+                            background: url("../../../assets/img/dashboard/market/mart1@2x.png") no-repeat center center / 100% 100%;
                         }
 
                         &.bg2 {
-                            background: url("../../assets/img/dashboard/market/mart2@2x.png") no-repeat center center / 100% 100%;
+                            background: url("../../../assets/img/dashboard/market/mart2@2x.png") no-repeat center center / 100% 100%;
                         }
 
                         &.bg3 {
-                            background: url("../../assets/img/dashboard/market/mart3@2x.png") no-repeat center center / 100% 100%;
+                            background: url("../../../assets/img/dashboard/market/mart3@2x.png") no-repeat center center / 100% 100%;
                         }
                     }
                 }
@@ -1885,14 +1885,14 @@
 
         .report-box {
             padding: 40px 40px 24px 24px !important;
-            background: url("../../assets/img/dashboard/market/report-box-bg@2x.png") #ffffff no-repeat left center / 614px 560px !important;
+            background: url("../../../assets/img/dashboard/market/report-box-bg@2x.png") #ffffff no-repeat left center / 614px 560px !important;
 
             .left {
                 width: 296px;
                 height: 442px;
                 box-shadow: 0px 0px 48px 0px rgba(255, 255, 255, 0.8);
                 border-radius: 8px;
-                background: url("../../assets/img/dashboard/market/report-box-left-bg@2x.png") no-repeat center center / 100% 100%;
+                background: url("../../../assets/img/dashboard/market/report-box-left-bg@2x.png") no-repeat center center / 100% 100%;
 
                 > img {
                     width: 296px;
@@ -1980,35 +1980,35 @@
                     }
 
                     &:nth-child(1) {
-                        background: url("../../assets/img/dashboard/market/report-bg1@2x.png") no-repeat center center / 100% 100%;
+                        background: url("../../../assets/img/dashboard/market/report-bg1@2x.png") no-repeat center center / 100% 100%;
                     }
 
                     &:nth-child(2) {
-                        background: url("../../assets/img/dashboard/market/report-bg2@2x.png") no-repeat center center / 100% 100%;
+                        background: url("../../../assets/img/dashboard/market/report-bg2@2x.png") no-repeat center center / 100% 100%;
                     }
 
                     &:nth-child(3) {
-                        background: url("../../assets/img/dashboard/market/report-bg3@2x.png") no-repeat center center / 100% 100%;
+                        background: url("../../../assets/img/dashboard/market/report-bg3@2x.png") no-repeat center center / 100% 100%;
                     }
 
                     &:nth-child(4) {
-                        background: url("../../assets/img/dashboard/market/report-bg4@2x.png") no-repeat center center / 100% 100%;
+                        background: url("../../../assets/img/dashboard/market/report-bg4@2x.png") no-repeat center center / 100% 100%;
                     }
 
                     &:nth-child(5) {
-                        background: url("../../assets/img/dashboard/market/report-bg5@2x.png") no-repeat center center / 100% 100%;
+                        background: url("../../../assets/img/dashboard/market/report-bg5@2x.png") no-repeat center center / 100% 100%;
                     }
 
                     &:nth-child(6) {
-                        background: url("../../assets/img/dashboard/market/report-bg6@2x.png") no-repeat center center / 100% 100%;
+                        background: url("../../../assets/img/dashboard/market/report-bg6@2x.png") no-repeat center center / 100% 100%;
                     }
 
                     &:nth-child(7) {
-                        background: url("../../assets/img/dashboard/market/report-bg7@2x.png") no-repeat center center / 100% 100%;
+                        background: url("../../../assets/img/dashboard/market/report-bg7@2x.png") no-repeat center center / 100% 100%;
                     }
 
                     &:nth-child(8) {
-                        background: url("../../assets/img/dashboard/market/report-bg8@2x.png") no-repeat center center / 100% 100%;
+                        background: url("../../../assets/img/dashboard/market/report-bg8@2x.png") no-repeat center center / 100% 100%;
                     }
                 }
             }
