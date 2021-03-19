@@ -18,7 +18,7 @@
                         <div class="pie-title">凉茶饮料市场份额</div>
                         <div class="pie-sub-title">细分市场头部品牌市场份额占比</div>
                         <div class="pie-date">
-                            <DatePicker type="year" :value="pieDateValue" style="width: 80px"></DatePicker>
+                            <DatePicker type="year" :value="pieDateValue" size="small"></DatePicker>
                         </div>
                         <div class="pie-echarts-view">
                             <PieEcharts :colorList="$linData.colorList" :myData="$linData.pieData"></PieEcharts>
@@ -58,7 +58,7 @@
                     </li>
                     <li>
                         <div class="icon">
-                            <i class="iconfont iconxianshangshangdian"></i>
+                            <i class="iconfont iconshengyinline"></i>
                         </div>
                         <div class="container">
                             <div class="name">线上声量</div>
@@ -89,7 +89,7 @@
                     <div class="selectNav">
                         <div class="selectDiv selectLf">
                         <div class="selectLabel"> 声量类型：</div>
-                            <Select v-model="formItem.select" size="small" style="width:80px" @on-change="selectYin">
+                            <Select v-model="formItem.select" size="small" @on-change="selectYin">
                                 <Option value="2">全部</Option>
                                 <Option value="0">仅正面声量</Option>
                                 <Option value="1">仅负面声量</Option>
@@ -97,7 +97,7 @@
                         </div>
                         <div class="selectDiv selectRt">
                             <div class="selectLabel">对标比较：</div>
-                            <Select v-model="formItem.pinpai" size="small" multiple  :max-tag-count="0" style="width:100px;" @on-change="selectPai2">
+                            <Select v-model="formItem.pinpai" size="small" multiple  :max-tag-count="0" @on-change="selectPai2">
                                 <Option value="0">加多宝</Option>
                                 <Option value="1">王老吉</Option>
                                 <Option value="2">和其正</Option>
@@ -174,7 +174,7 @@
                    品牌新增客户画像特征
                 </div>
                 <div class="selectOiv">
-                    <Select v-model="formItem.date" size="small" style="width:140px" @on-change="selectDate">
+                    <Select v-model="formItem.date" size="small" @on-change="selectDate">
                         <Option value="0">按月</Option>
                         <Option value="1">按季度</Option>
                     </Select>
@@ -1269,6 +1269,9 @@ export default {
                         position: absolute;
                         top: 0;
                         right: 0;
+                        .ivu-date-picker{
+                            width: 80px;
+                        }
                     }
                 }
             }
@@ -1428,6 +1431,14 @@ export default {
                             // flex:1;
                             &.selectLf{
                                 margin-right: 14px;
+                                .ivu-select{
+                                    width:80px;
+                                }
+                            }
+                            &.selectRt{
+                                .ivu-select{
+                                    width:100px;
+                                }
                             }
                             .selectLabel{
                                 height: 18px;
@@ -1596,7 +1607,10 @@ export default {
                 position: absolute;
                 width: 120px;
                 right: 26px;
-                top:16px
+                top:16px;
+                .ivu-select{
+                    width:120px
+                }
             }
             .boxContent{
                 display: flex;

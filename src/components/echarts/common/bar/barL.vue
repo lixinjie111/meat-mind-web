@@ -49,10 +49,10 @@ export default {
                 trigger: 'axis'
             },
             grid: {
-                left: 2,
-                right: 10,
-                bottom: 2,
-                top: '6%',
+				top: '10%',
+				left: 20,
+				right: 20,
+				bottom: 5,
                 containLabel: true,
             },
             yAxis: {

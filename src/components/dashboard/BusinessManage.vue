@@ -1571,7 +1571,7 @@
 						}
 					}
 		      .overview_new_chart{
-						height: 230px;
+						height: 320px;
 			      width: 100%;
 		      }
 	      }
