@@ -43,10 +43,10 @@ export default {
 		defaultOption() {
 			var option = {
 				grid: {
-					left: '4%',
-					right: '4%',
-					bottom: '5%',
-					top:'5%',
+					top: '10%',
+					left: 10,
+					right: 10,
+					bottom: 25,
 				//	padding:'0 0 10 0',
 					containLabel: true,
 				},

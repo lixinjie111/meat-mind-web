@@ -2272,6 +2272,12 @@ export default {
 				font-weight: 400;
 				color: #FFFFFF;
 				text-align: center;
+
+				 >i {
+					font-size: 13px;
+					margin-top: -1px;
+					margin-right: 3px;
+				 }
 			}
 			/*.select{*/
 			/*	height: 32px;*/
@@ -3334,17 +3340,17 @@ export default {
           justify-content: space-between;
           .jichuhuax_echarts_item_title_lef {
             .nljg {
-              font-size: 14px;
-              font-family: PingFangSC-Regular, PingFang SC;
-              font-weight: 400;
-              color: #242f57;
+				font-size: 16px;
+				font-family: PingFangSC-Regular, PingFang SC;
+				font-weight: 400;
+				color: #242F57;
             }
             .range_titme {
-              margin-top: 4px;
-              font-size: 14px;
-              font-family: PingFangSC-Regular, PingFang SC;
-              font-weight: 400;
-              color: #7c88b1;
+                margin-top: 4px;
+				font-size: 12px;
+				font-family: PingFangSC-Regular, PingFang SC;
+				font-weight: 400;
+				color: #636E95
             }
             .range_data{
               width: 340px;
@@ -3467,6 +3473,7 @@ export default {
     }
     .use_echart_item {
       width: 100%;
+	  padding: 16px;
       height: 400px;
       background: #ffffff;
       border-radius: 8px;
@@ -3475,15 +3482,13 @@ export default {
       display: flex;
       flex-direction: column;
       .use_echart_title{
-        padding:10px;
-	      font-size: 16px;
-	      font-family: PingFangSC-Regular, PingFang SC;
-	      font-weight: 400;
-	      color: #242F57;
+		  font-size: 16px;
+		  font-family: PingFangSC-Regular, PingFang SC;
+		  font-weight: 400;
+		  color: #242F57;
       }
       .use_echart_cont{
         flex:1;
-        padding-bottom: 20px;
       }
     }
     .use_echart_item1_container {
@@ -3492,6 +3497,7 @@ export default {
       flex-wrap: wrap;
       justify-content: space-between;
       .use_echart_item1 {
+		padding: 16px;
         width: 49%;
         height: 450px;
         background: #ffffff;
@@ -3501,11 +3507,11 @@ export default {
         display: flex;
         flex-direction: column;
         .use_echart_title{
-	        padding:10px;
-	        font-size: 16px;
-	        font-family: PingFangSC-Regular, PingFang SC;
-	        font-weight: 400;
-	        color: #242F57;
+			/*padding:16px 16px 0 16px;*/
+			font-size: 16px;
+			font-family: PingFangSC-Regular, PingFang SC;
+			font-weight: 400;
+			color: #242F57
         }
         .use_echart_cont{
           flex:1
@@ -3550,10 +3556,10 @@ export default {
       display: flex;
       flex-direction: column;
       .yhsj_echarts_item_title{
-        font-size: 14px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        color: #242f57;
+		  font-size: 16px;
+		  font-family: PingFangSC-Regular, PingFang SC;
+		  font-weight: 400;
+		  color: #242F57;
       }
       .yhsj_echarts_item_content{
         flex:1
@@ -3648,18 +3654,18 @@ export default {
       flex-direction: column;
       .ppxz_title {
         width: 100%;
-        font-size: 14px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        color: #242f57;
+	    font-size: 16px;
+	    font-family: PingFangSC-Regular, PingFang SC;
+	    font-weight: 400;
+	    color: #242F57;
         margin-bottom: 4px;
       }
       .ppxz_title_desc {
         width: 100%;
-        font-size: 12px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        color: #636e95;
+		font-size: 12px;
+		font-family: PingFangSC-Regular, PingFang SC;
+		font-weight: 400;
+		color: #636E95;
       }
       .bottom{
         display: flex;
@@ -3688,18 +3694,18 @@ export default {
       flex-direction: column;
       .ppxz_title {
         width: 100%;
-        font-size: 14px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        color: #242f57;
+		font-size: 16px;
+		font-family: PingFangSC-Regular, PingFang SC;
+		font-weight: 400;
+		color: #242F57;
         margin-bottom: 4px;
       }
       .ppxz_title_desc {
         width: 100%;
-        font-size: 12px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        color: #636e95;
+		font-size: 12px;
+		font-family: PingFangSC-Regular, PingFang SC;
+		font-weight: 400;
+		color: #636E95;
       }
       .xinzfb_container_lef_content{
         flex:1;
@@ -3721,10 +3727,10 @@ export default {
         }
       }
       .xinzfb_container_lef_content_desc{
-        font-size: 12px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        color: #636E95;
+		  font-size: 12px;
+		  font-family: PingFangSC-Regular, PingFang SC;
+		  font-weight: 400;
+		  color: #636E95;
       }
 
     }
@@ -3758,16 +3764,16 @@ export default {
       flex-direction: column;
       .xfsmlcpg_title{
         width: 100%;
-        font-size: 14px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        color: #242F57;
+		font-size: 16px;
+		font-family: PingFangSC-Regular, PingFang SC;
+		font-weight: 400;
+		color: #242F57;
       }
       .xinzfb_container_lef_content{
         flex:1
       }
       .xinzfb_container_lef_content1{
-        width:40%;
+        width:60%;
         margin:auto;
         flex:1
       }
@@ -3793,20 +3799,19 @@ export default {
           align-items: center;
           justify-content: space-between;
           .jichuhuax_echarts_item_title_lef {
-            .nljg {
-              font-size: 14px;
-              font-family: PingFangSC-Regular, PingFang SC;
-              font-weight: 400;
-              color: #242f57;
-            }
-            .range_titme {
-              margin-top: 4px;
-              font-size: 14px;
-              font-family: PingFangSC-Regular, PingFang SC;
-              font-weight: 400;
-              color: #7c88b1;
-            }
-
+			  .nljg {
+				  font-size: 16px;
+				  font-family: PingFangSC-Regular, PingFang SC;
+				  font-weight: 400;
+				  color: #242F57;
+			  }
+			  .range_titme {
+				  margin-top: 4px;
+				  font-size: 12px;
+				  font-family: PingFangSC-Regular, PingFang SC;
+				  font-weight: 400;
+				  color: #636E95
+			  }
           }
           .jichuhuax_echarts_item_title_rig {
             width: 16px;
@@ -3836,11 +3841,11 @@ export default {
       .xfzsxjcfx_til{
         width: 100%;
         height: 21px;
-        font-size: 14px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        color: #242F57;
-        margin-bottom: 18px;
+		font-size: 16px;
+		font-family: PingFangSC-Regular, PingFang SC;
+		font-weight: 400;
+		color: #242F57;
+        margin-bottom: 15px;
       }
       .xfzsxjcfx_ech{
         flex:1;

@@ -54,10 +54,10 @@ export default {
 				data:this.myData.legName,
 			},
             grid: {
-                left: 14,
-                right: '6%',
-				bottom: 30,
-                top: '10%',
+				top: '10%',
+				left: 20,
+				right: 20,
+				bottom: 25,
                 containLabel: true,
             },
             xAxis: {

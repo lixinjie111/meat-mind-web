@@ -60,10 +60,10 @@ export default {
 					}
 				},
 				grid: {
-					top: '5%',
-					left: '3%',
-					right: '3%',
-					bottom: 30,
+					top: '10%',
+					left: 20,
+					right: 20,
+					bottom: 25,
 					containLabel: true
 				},
 				xAxis: {
