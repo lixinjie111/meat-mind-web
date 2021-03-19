@@ -26,7 +26,7 @@ export default {
         position: relative;
         padding: 24px;
         margin-top: 24px;
-        background: #FFFFFF #D8D8D8;
+        background: #FFFFFF;
         box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
         border-radius: 12px;
         border: 1px solid #EAEDF7;

@@ -100,9 +100,9 @@
                                 path: "/business-analysis/qdfx"
                             },
                             {
-                                name: "business-analysis-ywgl",
+                                name: "business-analysis-yyfx",
                                 label: "品牌运营分析",
-                                path: "/business-analysis/ywgl"
+                                path: "/business-analysis/yyfx"
                             },
                         ]
                     },

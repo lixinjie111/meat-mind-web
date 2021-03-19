@@ -1,13 +1,9 @@
-const analysis=()=>import('./index');
-const yhfx=()=>import('./user/xzyh.vue')
-// const yhfx=()=>import('./components/User.vue')
-const qdfx=()=>import('./channel/qdss.vue')
-// const qdfx=()=>import('./components/Channel.vue')
-const ywgl=()=>import('./brand/ywgl.vue')
-// const ywgl=()=>import('./components/Brand.vue')
-const anchor=()=>import('./overview/overview.vue')
-// const anchor=()=>import('./components/Overview.vue')
-const moduleName='business-analysis';
+const analysis=()=>import('./index')
+const ztgl=()=>import('./page/overview.vue')
+const yhfx=()=>import('./page/user.vue')
+const qdfx=()=>import('./page/channel.vue')
+const yyfx=()=>import('./page/brand.vue')
+const moduleName='business-analysis'
 
 export default [
   {
@@ -21,7 +17,7 @@ export default [
         path:`/${moduleName}/ztgl`,
         label:"整体概览",
         meta:{title:"整体概览",moduleName},
-        component:anchor,
+        component:ztgl,
         name:`${moduleName}-ztgl`
       },
       {
@@ -39,11 +35,11 @@ export default [
         name:`${moduleName}-qdfx`
       },
       {
-        path:`/${moduleName}/ywgl`,
+        path:`/${moduleName}/yyfx`,
         label:"品牌运营分析",
         meta:{title:"品牌运营分析",moduleName},
-        component:ywgl,
-        name:`${moduleName}-ywgl`
+        component:yyfx,
+        name:`${moduleName}-yyfx`
       }
     ]
   }
