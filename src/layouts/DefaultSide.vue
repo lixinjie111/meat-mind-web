@@ -85,24 +85,24 @@
                         path: "/business-analysis",
                         children: [
                             {
-                                name: "business-analysis-ztgl",
+                                name: "business-analysis-overview",
                                 label: "整体概览",
-                                path: "/business-analysis/ztgl"
+                                path: "/business-analysis/overview"
                             },
                             {
-                                name: "business-analysis-yhfx",
+                                name: "business-analysis-user",
                                 label: "用户分析",
-                                path: "/business-analysis/yhfx"
+                                path: "/business-analysis/user"
                             },
                             {
-                                name: "business-analysis-qdfx",
+                                name: "business-analysis-channel",
                                 label: "渠道分析",
-                                path: "/business-analysis/qdfx"
+                                path: "/business-analysis/channel"
                             },
                             {
-                                name: "business-analysis-yyfx",
+                                name: "business-analysis-brand",
                                 label: "品牌运营分析",
-                                path: "/business-analysis/yyfx"
+                                path: "/business-analysis/brand"
                             },
                         ]
                     },
