@@ -147,7 +147,7 @@
           <div class="media_sec_panel_lef2">
               <div class="media_sec_panel_lef1_top">自有品牌合作KOL</div>
               <div class="selectList">
-                  <Select v-model="model2"  @on-change="change2">
+                  <Select v-model="model3"  @on-change="change2">
                       <Option v-for="item in optionList" :value="item.value" :key="item.value">{{ item.name }}</Option>
                   </Select>
               </div>
@@ -595,6 +595,7 @@ export default {
         currentIndex:1,
         currentIndex1:0,
         model2:"1",
+        model3:"1",
         optionList:[
           {
             name:"综合曝光度",
