@@ -4,15 +4,15 @@ const Market=()=>import('./page/market.vue')
 const System=()=>import('./page/system.vue')
 const Metax=()=>import('./page/metax.vue')
 
-const rule=()=>import('./components/Rule.vue')
-const unit=()=>import('./components/Unit.vue')
-const event=()=>import('./components/EventAttribute.vue')
-const user=()=>import('./components/UserAttribute.vue')
-const dimension=()=>import('./components/Dimension.vue')
-const item=()=>import('./components/ItemAttribute.vue')
-const virtual=()=>import('./components/VirtualAttribute.vue')
-const virtualEvent=()=>import('./components/VirtualEvent.vue')
-const session=()=>import('./components/Session.vue')
+const Rule=()=>import('./components/Rule.vue')
+const Unit=()=>import('./components/Unit.vue')
+const EventAttribute=()=>import('./components/EventAttribute.vue')
+const UserAttribute=()=>import('./components/UserAttribute.vue')
+const Dimension=()=>import('./components/Dimension.vue')
+const ItemAttribute=()=>import('./components/ItemAttribute.vue')
+const VirtualAttribute=()=>import('./components/VirtualAttribute.vue')
+const VirtualEvent=()=>import('./components/VirtualEvent.vue')
+const Session=()=>import('./components/Session.vue')
 const visualization=()=>import('./components/Visualization.vue')
 const moduleName='data-center';
 
@@ -56,63 +56,63 @@ export default [
         path:`/${moduleName}/metax/rule`,
         label:"入库检验规则设置",
         meta:{title:"元数据管理",moduleName},
-        component:rule,
+        component:Rule,
         name:`${moduleName}-metax-rule`
       },
       {
         path:`/${moduleName}/metax/unit`,
         label:"元事件",
         meta:{title:"元数据管理",moduleName},
-        component:unit,
+        component:Unit,
         name:`${moduleName}-metax-unit`
       },
       {
         path:`/${moduleName}/metax/event`,
         label:"事件属性",
         meta:{title:"元数据管理",moduleName},
-        component:event,
+        component:EventAttribute,
         name:`${moduleName}-metax-event`
       },
       {
         path:`/${moduleName}/metax/user`,
         label:"用户属性",
         meta:{title:"元数据管理",moduleName},
-        component:user,
+        component:UserAttribute,
         name:`${moduleName}-metax-user`
       },
       {
         path:`/${moduleName}/metax/dimension`,
         label:"维度表",
         meta:{title:"元数据管理",moduleName},
-        component:dimension,
+        component:Dimension,
         name:`${moduleName}-metax-dimension`
       },
       {
         path:`/${moduleName}/metax/item`,
         label:"物品属性",
         meta:{title:"元数据管理",moduleName},
-        component:item,
+        component:ItemAttribute,
         name:`${moduleName}-metax-item`
       },
       {
         path:`/${moduleName}/metax/virtual`,
         label:"虚拟属性",
         meta:{title:"元数据管理",moduleName},
-        component:virtual,
+        component:VirtualAttribute,
         name:`${moduleName}-metax-virtual`
       },
       {
         path:`/${moduleName}/metax/virtualEvent`,
         label:"虚拟事件",
         meta:{title:"元数据管理",moduleName},
-        component:virtualEvent,
+        component:VirtualEvent,
         name:`${moduleName}-metax-virtualEvent`
       },
       {
         path:`/${moduleName}/metax/session`,
         label:"Session管理",
         meta:{title:"元数据管理",moduleName},
-        component:session,
+        component:Session,
         name:`${moduleName}-metax-session`
       },
       {
