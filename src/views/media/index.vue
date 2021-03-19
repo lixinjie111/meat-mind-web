@@ -147,7 +147,7 @@
           <div class="media_sec_panel_lef2">
               <div class="media_sec_panel_lef1_top">自有品牌合作KOL</div>
               <div class="selectList">
-                  <Select v-model="model2"  @on-change="change2">
+                  <Select v-model="model3"  @on-change="change2">
                       <Option v-for="item in optionList" :value="item.value" :key="item.value">{{ item.name }}</Option>
                   </Select>
               </div>
@@ -359,7 +359,7 @@
                   <div class="navTitle">投放预算</div>
                   <div class="navSubTitle"></div>
                   <div class="new_echart_box">
-                    <PieCaseEcharts  :colorList="$fjData.colorList" :myData="$fjData.box51Data"></PieCaseEcharts>
+                    <PieEcharts9 :colorList="$fjData.colorList" :myData="myChartData0" ></PieEcharts9>
                   </div>
                 </div>
               </div>
@@ -367,19 +367,13 @@
                   <div class="navContentLf">
                         <div class="navbmTitle">投放内容和形式</div>
                         <div class="navbmList">
-                          <div class="navbmItem">品牌官方产品发布</div>
-                          <div class="navbmItem">营销季活动详情</div>
-                          <div class="navbmItem">直播</div>
-                          <div class="navbmItem">微博博文</div>
-                          <div class="navbmItem">节日礼品上新</div>
+                          <div class="navbmItem" v-for="item in contList" :key="item">{{item}}</div>
                         </div>
                   </div>
                   <div class="navContentRt">
                     <div class="navbmTitle">目标受众</div>
                         <div class="navbmList">
-                          <div class="navbmItem1">KOL自有粉丝</div>
-                          <div class="navbmItem1">品牌核心目标消费人群<br>(北京上班族/年轻白领)</div>
-                          <div class="navbmItem1">品牌忠诚消费者</div>
+                          <div class="navbmItem1"  v-for="item in contList1" :key="item" v-html="item"></div>
                         </div>
                   </div>
               </div>
@@ -587,18 +581,21 @@ import cLine from '../../components/echarts/common/line/line';
 import barM from '../../components/echarts/common/bar/barM';
 import barHM2 from '../../components/echarts/common/bar/barHM3';
 import MediaAnalysis from './base/MediaAnalysis';
+import PieEcharts9 from '../../components/echarts/common/pie/PieEcharts9';
 let counter = 0
 export default {
   name: "index",
-  components: { cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, TabPaneItem, MediaAnalysis},
+  components: { PieEcharts9,cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, TabPaneItem, MediaAnalysis},
   data(){
       return{
+        myChartData0:null,
         myChartData1:this.$lxjData.box581Data,
         myChartData2:this.$lxjData.box102Data,
         myChartData3:this.$lxjData.box103Data,
         currentIndex:1,
         currentIndex1:0,
         model2:"1",
+        model3:"1",
         optionList:[
           {
             name:"综合曝光度",
@@ -1060,9 +1057,12 @@ export default {
         currentNum2:0,
         rankList:[],
         rankList1:[],
+        contList:['品牌官方产品发布','直播','微博博文','节日礼品上新',],
+        contList1:['KOL自有粉丝','品牌核心目标消费人群<br>(北京上班族/年轻白领)','品牌忠诚消费者',],
       }
   },
   created(){
+    this.myChartData0=this.$fjData.box51Data;
     this.myEData=this.$lxjData.box27Data;
     this.userData=this.$linData.box1Data;
     this.averageData=this.$linData.box3Data;
@@ -1365,25 +1365,27 @@ export default {
     },
     changeIndex(arg){
       this.currentIndex=arg;
-      this.currentNum++;
-      if(this.currentNum%2==0){
+      if(arg==1){
+        this.myChartData0=this.$fjData.box51Data;
+        this.contList=['品牌官方产品发布','直播','微博博文','节日礼品上新',];
+        this.contList1=['KOL自有粉丝','品牌核心目标消费人群<br>(北京上班族/年轻白领)','品牌忠诚消费者',];
         this.mediaList1=[
-        {
-          numTxt1:'150W',
-          numTxt2:'30W',
-          icon:this.wbIcon,
-        },
-        {
-          numTxt1:'90W',
-          numTxt2:'200W',
-          icon:this.dyIcon,
-        },
-        {
-          numTxt1:'30W',
-          numTxt2:'60W',
-          icon:this.xhsIcon,
-        },
-        ]
+            {
+              numTxt1:'150W',
+              numTxt2:'30W',
+              icon:this.wbIcon,
+            },
+            {
+              numTxt1:'90W',
+              numTxt2:'200W',
+              icon:this.dyIcon,
+            },
+            {
+              numTxt1:'30W',
+              numTxt2:'60W',
+              icon:this.xhsIcon,
+            },
+          ]
         this.mediaHlist1=[
           {
             numTxt1:'30W',
@@ -1401,44 +1403,83 @@ export default {
             icon:this.touxIcon3,
           },
         ]
-      }else{
+      }else if(arg==2){
+        this.myChartData0=this.$fjData.box52Data;
         this.mediaList1=[
-        {
-          numTxt1:'500W',
-          numTxt2:'70W',
-          icon:this.wbIcon,
-        },
-        {
-          numTxt1:'300W',
-          numTxt2:'200W',
-          icon:this.xhsIcon,
-        },
-        {
-          numTxt1:'150W',
-          numTxt2:'60W',
-          icon:this.dyIcon,
-        },
-      ]
-      this.mediaHlist1=[
-        {
-          numTxt1:'40W',
-          numTxt2:'15W',
-          icon:this.touxIcon2,
-        },
-        {
-          numTxt1:'15W',
-          numTxt2:'5W',
-          icon:this.touxIcon1,
-
-        },
-        {
-          numTxt1:'10W',
-          numTxt2:'5W',
-          icon:this.touxIcon3,
-        },
-      ]
+            {
+              numTxt1:'500W',
+              numTxt2:'30W',
+              icon:this.ttIcon,
+            },
+            {
+              numTxt1:'300W',
+              numTxt2:'50W',
+              icon:this.dyIcon,
+            },
+            {
+              numTxt1:'150W',
+              numTxt2:'10W',
+              icon:this.xhsIcon,
+            },
+          ]
+        this.mediaHlist1=[
+          {
+            numTxt1:'50W',
+            numTxt2:'15W',
+            icon:this.touxIcon1,
+          },
+          {
+            numTxt1:'45W',
+            numTxt2:'10W',
+            icon:this.touxIcon2,
+          },
+          {
+            numTxt1:'35W',
+            numTxt2:'5W',
+            icon:this.touxIcon3,
+          },
+        ]
+        this.contList=['品牌产品种草短视频','品牌产品介绍视频	','品牌产品体验笔记',];
+        this.contList1=['KOL自有粉丝','品牌核心目标消费人群<br>(北京上班族/年轻白领)','品牌忠诚消费者',];
+      }else{
+        this.myChartData0=this.$fjData.box53Data;
+        this.mediaList1=[
+            {
+              numTxt1:'2200W',
+              numTxt2:'80W',
+              icon:require("../../assets/img/yhhx/taoicon.png"),
+            },
+            {
+              numTxt1:'1700W',
+              numTxt2:'70W',
+              icon:require("../../assets/img/yhhx/daicon.png"),
+            },
+            {
+              numTxt1:'1500W',
+              numTxt2:'30W',
+              icon:this.xhsIcon,
+            },
+          ]
+        this.mediaHlist1=[
+          {
+            numTxt1:'200W',
+            numTxt2:'35W',
+            icon:this.touxIcon4,
+          },
+          {
+            numTxt1:'150W',
+            numTxt2:'15W',
+            icon:this.touxIcon5,
+          },
+          {
+            numTxt1:'80W',
+            numTxt2:'10W',
+            icon:this.touxIcon3,
+          },
+        ]
+        this.contList=['行业趋势(品牌/产品露出)','生活指南','好物推荐',];
+        this.contList1=['KOL自有粉丝','品牌核心目标消费人群<br>(北京上班族/年轻白领)','品牌忠诚消费者',];
       }
-
     },
     change2(arg){
       if(arg == 1){
@@ -2262,7 +2303,6 @@ export default {
   padding: 0 24px 24px 24px;
   .new_echart_box{
       flex:1;
-      background: #ccc;
     }
   .new_media_panel1{
     display: flex;
@@ -2894,7 +2934,7 @@ export default {
               .sec_pan_con1_num{
                 text-align: center;
                 flex:1;
-                font-size: 16px;
+                font-size: 12px;
                 font-family: HelveticaNeue-Bold, HelveticaNeue;
                 font-weight: bold;
                 color: #242F57;
@@ -3393,7 +3433,7 @@ export default {
         flex:1;
         display: flex;
         flex-direction: column;
-        padding: 24px;
+        padding-right: 24px;
         padding-bottom: 0;
         border-right: 1px solid #EAEDF7;
         box-sizing: border-box;
@@ -3407,10 +3447,8 @@ export default {
         }
       }
       .zuhe_echarts_rt{
-        padding: 24px;
-        padding-bottom: 0;
+        padding-left: 24px;
         flex:1;
-        padding-right: 0;
         display: flex;
         flex-direction: column;
         .zuhe_echarts_title{
