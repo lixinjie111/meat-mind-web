@@ -1,23 +1,23 @@
 <template>
-  <div class="fxmx-keep">
-      <img src="../../../../static/img/tool/fxmx/keep@2x.png" alt="">
+  <div class="fxmx-distribute">
+      <img src="../../../static/img/tool/fxmx/distribute@2x.png" alt="">
       <div class="back" @click="back"></div>
   </div>
 </template>
 
 <script>
 export default {
-    name:"Keep",
+    name:"Distribute",
     methods:{
         back(){
-            this.$router.push({name:"analysis-tool-fxmx"})
+            this.$router.push({name:"analysis-tool-model"})
         }
     }
 }
 </script>
 
 <style scoped lang="scss">
-.fxmx-keep{
+.fxmx-distribute{
     position: relative;
     width: 100%;
     height: 100%;

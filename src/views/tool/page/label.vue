@@ -31,7 +31,7 @@
 
 <script>
 import TableModel from "../../datacenter/base/TableModel";
-import CreateLable from "./bqgl/CreateLable";
+import CreateLable from "../base/CreateLable";
 export default {
   name: "LabelAdmin",
   components: { CreateLable, TableModel },

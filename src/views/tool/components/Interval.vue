@@ -1,23 +1,23 @@
 <template>
-  <div class="fxmx-defined">
-      <img src="../../../../static/img/tool/fxmx/defined@2x.png" alt="">
+  <div class="fxmx-interval">
+      <img src="../../../static/img/tool/fxmx/interval@2x.png" alt="">
       <div class="back" @click="back"></div>
   </div>
 </template>
 
 <script>
 export default {
-    name:"Defined",
+    name:"Interval",
     methods:{
         back(){
-            this.$router.push({name:"analysis-tool-fxmx"})
+            this.$router.push({name:"analysis-tool-model"})
         }
     }
 }
 </script>
 
 <style scoped lang="scss">
-.fxmx-defined{
+.fxmx-interval{
     position: relative;
     width: 100%;
     height: 100%;

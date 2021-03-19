@@ -1,5 +1,5 @@
 <template>
-  <DetailsPage title="事件分析" backname="analysis-tool-fxmx">
+  <DetailsPage title="事件分析" backname="analysis-tool-model">
     <div>
       <div class="filter-container">
         <p class="c-title">事件</p>
@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import DetailsPage from "../../../../layouts/DetailsPage";
+import DetailsPage from "@/layouts/DetailsPage";
 export default {
   name: "Event",
   components: {

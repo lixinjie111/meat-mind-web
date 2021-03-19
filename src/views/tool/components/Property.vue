@@ -1,23 +1,23 @@
 <template>
-  <div class="fxmx-app">
-      <img src="../../../../static/img/tool/fxmx/app@2x.png" alt="">
+  <div class="fxmx-property">
+      <img src="../../../static/img/tool/fxmx/property@2x.png" alt="">
       <div class="back" @click="back"></div>
   </div>
 </template>
 
 <script>
 export default {
-    name:"App",
+    name:"Property",
     methods:{
         back(){
-            this.$router.push({name:"analysis-tool-fxmx"})
+            this.$router.push({name:"analysis-tool-model"})
         }
     }
 }
 </script>
 
 <style scoped lang="scss">
-.fxmx-app{
+.fxmx-property{
     position: relative;
     width: 100%;
     height: 100%;

@@ -1,23 +1,23 @@
 <template>
-  <div class="fxmx-way">
-      <img src="../../../../static/img/tool/fxmx/way@2x.png" alt="">
+  <div class="fxmx-defined">
+      <img src="../../../static/img/tool/fxmx/defined@2x.png" alt="">
       <div class="back" @click="back"></div>
   </div>
 </template>
 
 <script>
 export default {
-    name:"Way",
+    name:"Defined",
     methods:{
         back(){
-            this.$router.push({name:"analysis-tool-fxmx"})
+            this.$router.push({name:"analysis-tool-model"})
         }
     }
 }
 </script>
 
 <style scoped lang="scss">
-.fxmx-way{
+.fxmx-defined{
     position: relative;
     width: 100%;
     height: 100%;

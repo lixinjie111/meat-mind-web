@@ -1,23 +1,23 @@
 <template>
-  <div class="fxmx-property">
-      <img src="../../../../static/img/tool/fxmx/property@2x.png" alt="">
+  <div class="fxmx-funnel">
+      <img src="../../../static/img/tool/fxmx/funnel@2x.png" alt="">
       <div class="back" @click="back"></div>
   </div>
 </template>
 
 <script>
 export default {
-    name:"Property",
+    name:"Funnel",
     methods:{
         back(){
-            this.$router.push({name:"analysis-tool-fxmx"})
+            this.$router.push({name:"analysis-tool-model"})
         }
     }
 }
 </script>
 
 <style scoped lang="scss">
-.fxmx-property{
+.fxmx-funnel{
     position: relative;
     width: 100%;
     height: 100%;

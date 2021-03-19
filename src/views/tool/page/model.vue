@@ -80,37 +80,37 @@ export default {
         this[name]()
     },
     event(){
-      this.$router.push({name:"analysis-tool-fxmx-event"})
+      this.$router.push({name:"analysis-tool-model-event"})
     },
     funnel(){
-      this.$router.push({name:"analysis-tool-fxmx-funnel"})
+      this.$router.push({name:"analysis-tool-model-funnel"})
     },
     keep(){
-      this.$router.push({name:"analysis-tool-fxmx-keep"})
+      this.$router.push({name:"analysis-tool-model-keep"})
     },
     distribute(){
-      this.$router.push({name:"analysis-tool-fxmx-distribute"})
+      this.$router.push({name:"analysis-tool-model-distribute"})
     },
     way(){
-      this.$router.push({name:"analysis-tool-fxmx-way"})
+      this.$router.push({name:"analysis-tool-model-way"})
     },
     hot(){
-      this.$router.push({name:"analysis-tool-fxmx-hot"})
+      this.$router.push({name:"analysis-tool-model-hot"})
     },
     interval(){
-      this.$router.push({name:"analysis-tool-fxmx-interval"})
+      this.$router.push({name:"analysis-tool-model-interval"})
     },
     defined(){
-      this.$router.push({name:"analysis-tool-fxmx-defined"})
+      this.$router.push({name:"analysis-tool-model-defined"})
     },
     cause(){
-      this.$router.push({name:"analysis-tool-fxmx-cause"})
+      this.$router.push({name:"analysis-tool-model-cause"})
     },
     property(){
-      this.$router.push({name:"analysis-tool-fxmx-property"})
+      this.$router.push({name:"analysis-tool-model-property"})
     },
     app(){
-      this.$router.push({name:"analysis-tool-fxmx-app"})
+      this.$router.push({name:"analysis-tool-model-app"})
     }
   }  
 

@@ -1,6 +1,6 @@
 <template>
   <div class="fxmx-cause">
-      <img src="../../../../static/img/tool/fxmx/cause@2x.png" alt="">
+      <img src="../../../static/img/tool/fxmx/cause@2x.png" alt="">
       <div class="back" @click="back"></div>
   </div>
 </template>
@@ -10,7 +10,7 @@ export default {
     name:"Cause",
     methods:{
         back(){
-            this.$router.push({name:"analysis-tool-fxmx"})
+            this.$router.push({name:"analysis-tool-model"})
         }
     }
 }
