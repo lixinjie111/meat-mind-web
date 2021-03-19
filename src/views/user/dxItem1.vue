@@ -1140,7 +1140,7 @@
     width: 100%;
     position: relative;
     .test_container1.width{
-        width: 762px;
+        width: 806px;
     }
     .test_container1{
         height: 80px;
@@ -1265,7 +1265,7 @@
         }
     }
     .conditions_container-box.width{
-        width: 762px;
+        width: 806px;
     }
     .conditions_container-box{
         position: absolute;
@@ -1332,7 +1332,7 @@
         position: absolute;
         left: 1.9%;
         top: 132px;
-        width: 762px;
+        width: 806px;
         z-index: 1000;
         height: 557px;
         background: #FFF;

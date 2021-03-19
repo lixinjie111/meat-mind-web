@@ -359,7 +359,7 @@
                   <div class="navTitle">投放预算</div>
                   <div class="navSubTitle"></div>
                   <div class="new_echart_box">
-                    <PieCaseEcharts  :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieCaseEcharts>
+                    <PieCaseEcharts  :colorList="$fjData.colorList" :myData="$fjData.box51Data"></PieCaseEcharts>
                   </div>
                 </div>
               </div>
@@ -394,6 +394,7 @@
                     <div class="zuhe_echarts_num">800万</div>
                   </div>
                   <div class="new_echart_box">
+                    <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box119Data"></funnel>
                   </div>
                </div>
 
@@ -435,7 +436,7 @@
                     <i class="iconfont icongengduo"></i>
                   </div>
                   <div class="zuhe_echarts_Item_num">
-                    1,2<span class="zuhe_echarts_danwei">亿元</span>
+                    1.2<span class="zuhe_echarts_danwei">亿元</span> 
                   </div>
                 </div>
               </div>
@@ -453,7 +454,7 @@
               <div class="new_echart_box1">
                 <!-- <barC5 :colorList="$fjData.colorList" :myData="progressData" id="progressData"></barC5> -->
                <div class="new_echart_list_box">
-                  <div class="m-rank-lf-list" v-for="(item,index) in rankList" :key="index">
+                  <div class="m-rank-lf-list" v-for="(item,index) in rankList1" :key="index">
                     <div class="m-rank-item-lf">
                         <div class="m-rank-icon">
                           <img :src="item.icon" alt="">
@@ -521,6 +522,7 @@
                 媒介声量趋势图
               </div>
               <div class="new_echart_box">
+                <cLine id="box58" :colorList="$lxjData.colorList" :myData="myChartData1"></cLine>
               </div>
             </div>
             <div class="m-rank-bm">
@@ -529,6 +531,7 @@
                       用户总数和新增用户
                     </div>
                     <div class="new_echart_box">
+                      <barLine id="box101" :colorList="$lxjData.colorList" :myData="myChartData2"></barLine>
                     </div>
               </div>
               <div class="m-rank-bm-rt">
@@ -536,6 +539,7 @@
                       使用时长和次数
                 </div>
                 <div class="new_echart_box">
+                  <barLine id="box102" :colorList="$lxjData.colorList" :myData="myChartData3"></barLine>
                 </div>
               </div>
             </div>
@@ -548,7 +552,7 @@
 		    <div class="m-p-target-title">
 			    KOL资源
 			    <Poptip popper-class="saas-poptip small" placement="right-start">
-				    <i class="iconfont iconguanyuline1 tip-icon"></i>
+				    <i class="iconfont iconguanyu tip-icon blue-tip-icon"></i>
 				    <div slot="content">
 					    <p>媒介资源库，提供具体媒介资源的详细信息，包括基础数据、历史投放效果和合作方案等，以供品牌方比较分析并联系合作</p>
 				    </div>
@@ -570,6 +574,7 @@ import Card from "./base/Card"
 import TabPaneItem from "./base/TabPaneItem"
 import PieCaseEcharts from '../../components/echarts/common/pie/PieCaseEcharts';
 import barL from '../../components/echarts/common/bar/barL';
+import barLine from '../../components/echarts/common/bar/barLine';
 import barC5 from '../../components/echarts/common/bar/barC5';
 import funnel from '../../components/echarts/common/funnel/funnel';
 import PieEcharts6 from '../../components/echarts/common/pie/PieEcharts6';
@@ -578,15 +583,19 @@ import PieEcharts from '../../components/echarts/common/pie/PieEcharts';
 import LeidaEcharts from '../../components/echarts/common/radar/LeidaEcharts';
 import vTree from '../../components/echarts/common/treemap/zjjTreemap';
 import lineM from '../../components/echarts/common/line/lineM3';
+import cLine from '../../components/echarts/common/line/line';
 import barM from '../../components/echarts/common/bar/barM';
 import barHM2 from '../../components/echarts/common/bar/barHM3';
 import MediaAnalysis from './base/MediaAnalysis';
 let counter = 0
 export default {
   name: "index",
-  components: { barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, TabPaneItem, MediaAnalysis},
+  components: { cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, TabPaneItem, MediaAnalysis},
   data(){
       return{
+        myChartData1:this.$lxjData.box581Data,
+        myChartData2:this.$lxjData.box102Data,
+        myChartData3:this.$lxjData.box103Data,
         currentIndex:1,
         currentIndex1:0,
         model2:"1",
@@ -1047,15 +1056,35 @@ export default {
               },
         config: {},
         currentNum:0,
-        rankList:[
-
-        ],
+        currentNum1:0,
+        currentNum2:0,
+        rankList:[],
+        rankList1:[],
       }
   },
   created(){
     this.myEData=this.$lxjData.box27Data;
     this.userData=this.$linData.box1Data;
     this.averageData=this.$linData.box3Data;
+    this.rankList1=[
+          {
+            text:'微博',
+            icon:this.wbIcon,
+          },
+          {
+            text:'淘宝直播',
+            icon:require("../../assets/img/yhhx/taoicon.png"),
+          },
+          {
+            text:'抖音',
+            icon:this.dyIcon,
+          },
+          {
+            text:'小红书',
+            icon:this.xhsIcon,
+          },
+         
+    ];
     this.rankList=[
           {
             per:23,
@@ -1077,7 +1106,32 @@ export default {
             text:'今日头条',
             icon:this.ttIcon,
           },
-        ];
+          {
+            per:8,
+            text:'微信',
+            icon:require("../../assets/img/yhhx/weiicon.png"),
+          },
+          {
+            per:7,
+            text:'大众点评',
+            icon:require("../../assets/img/yhhx/daicon.png"),
+          },
+          {
+            per:5,
+            text:'人民日报',
+            icon:require("../../assets/img/yhhx/renicon.png"),
+          },
+          {
+            per:3,
+            text:'虎嗅',
+            icon:require("../../assets/img/yhhx/huicon.png"),
+          },
+          {
+            per:3,
+            text:'第一财经',
+            icon:require("../../assets/img/yhhx/caiicon.png"),
+          },
+    ];
     this.mediaList1=[
       {
         numTxt1:'150W',
@@ -1201,14 +1255,119 @@ export default {
     this.changeTabCon(0);
   },
   methods:{
-     changeIndex1(arg){
-       this.currentIndex1=arg;
-     },
+    changeIndex1(arg){
+      this.currentIndex1=arg;
+      this.currentNum1++;
+      if(this.currentNum1%2==0){
+          this.myChartData1=this.$lxjData.box581Data,
+          this.myChartData2=this.$lxjData.box102Data,
+          this.myChartData3=this.$lxjData.box103Data,
+          this.rankList=[
+            {
+              per:23,
+              text:'抖音',
+              icon:this.dyIcon,
+            },
+            {
+              per:22,
+              text:'微博',
+              icon:this.wbIcon,
+            },
+            {
+              per:18,
+              text:'小红书',
+              icon:this.xhsIcon,
+            },
+            {
+              per:11,
+              text:'今日头条',
+              icon:this.ttIcon,
+            },
+            {
+              per:8,
+              text:'微信',
+              icon:require("../../assets/img/yhhx/weiicon.png"),
+            },
+            {
+              per:7,
+              text:'大众点评',
+              icon:require("../../assets/img/yhhx/daicon.png"),
+            },
+            {
+              per:5,
+              text:'人民日报',
+              icon:require("../../assets/img/yhhx/renicon.png"),
+            },
+            {
+              per:3,
+              text:'虎嗅',
+              icon:require("../../assets/img/yhhx/huicon.png"),
+            },
+            {
+              per:3,
+              text:'第一财经',
+              icon:require("../../assets/img/yhhx/caiicon.png"),
+            },
+      ];
+      }else{
+        this.myChartData1=this.$lxjData.box582Data,
+        this.myChartData2=this.$lxjData.box1021Data,
+        this.myChartData3=this.$lxjData.box1031Data,
+        this.rankList=[
+              {
+                per:35,
+                text:'抖音',
+                icon:this.dyIcon,
+              },
+              {
+                per:32,
+                text:'今日头条',
+                icon:this.ttIcon,
+              },
+              {
+                per:27,
+                text:'微博',
+                icon:this.wbIcon,
+              },
+              {
+                per:18,
+                text:'小红书',
+                icon:this.xhsIcon,
+              },
+              {
+                per:8,
+                text:'微信',
+                icon:require("../../assets/img/yhhx/weiicon.png"),
+              },
+              {
+                per:7,
+                text:'大众点评',
+                icon:require("../../assets/img/yhhx/daicon.png"),
+              },
+              {
+                per:5,
+                text:'人民日报',
+                icon:require("../../assets/img/yhhx/renicon.png"),
+              },
+              {
+                per:3,
+                text:'虎嗅',
+                icon:require("../../assets/img/yhhx/huicon.png"),
+              },
+              {
+                per:3,
+                text:'第一财经',
+                icon:require("../../assets/img/yhhx/caiicon.png"),
+              },
+        ];
+
+      }
+    },
     changeIndex(arg){
       this.currentIndex=arg;
       this.currentNum++;
       if(this.currentNum%2==0){
-                this.mediaList1=[
+        this.mediaList1=[
         {
           numTxt1:'150W',
           numTxt2:'30W',
@@ -1224,38 +1383,38 @@ export default {
           numTxt2:'60W',
           icon:this.xhsIcon,
         },
-      ]
-      this.mediaHlist1=[
-        {
-          numTxt1:'30W',
-          numTxt2:'15W',
-          icon:this.touxIcon1,
-        },
-        {
-          numTxt1:'15W',
-          numTxt2:'10W',
-          icon:this.touxIcon2,
-        },
-        {
-          numTxt1:'9W',
-          numTxt2:'5W',
-          icon:this.touxIcon3,
-        },
-      ]
+        ]
+        this.mediaHlist1=[
+          {
+            numTxt1:'30W',
+            numTxt2:'15W',
+            icon:this.touxIcon1,
+          },
+          {
+            numTxt1:'15W',
+            numTxt2:'10W',
+            icon:this.touxIcon2,
+          },
+          {
+            numTxt1:'9W',
+            numTxt2:'5W',
+            icon:this.touxIcon3,
+          },
+        ]
       }else{
         this.mediaList1=[
         {
-          numTxt1:'130W',
+          numTxt1:'500W',
           numTxt2:'70W',
           icon:this.wbIcon,
         },
         {
-          numTxt1:'70W',
+          numTxt1:'300W',
           numTxt2:'200W',
           icon:this.xhsIcon,
         },
         {
-          numTxt1:'20W',
+          numTxt1:'150W',
           numTxt2:'60W',
           icon:this.dyIcon,
         },
@@ -1898,6 +2057,113 @@ export default {
     },
     targetClick(index){
       this.act = index;
+       this.currentNum1++;
+      if(this.currentNum1%2==0){
+          this.myChartData1=this.$lxjData.box581Data,
+          this.myChartData2=this.$lxjData.box102Data,
+          this.myChartData3=this.$lxjData.box103Data,
+          this.rankList=[
+            {
+              per:23,
+              text:'抖音',
+              icon:this.dyIcon,
+            },
+            {
+              per:22,
+              text:'微博',
+              icon:this.wbIcon,
+            },
+            {
+              per:18,
+              text:'小红书',
+              icon:this.xhsIcon,
+            },
+            {
+              per:11,
+              text:'今日头条',
+              icon:this.ttIcon,
+            },
+            {
+              per:8,
+              text:'微信',
+              icon:require("../../assets/img/yhhx/weiicon.png"),
+            },
+            {
+              per:7,
+              text:'大众点评',
+              icon:require("../../assets/img/yhhx/daicon.png"),
+            },
+            {
+              per:5,
+              text:'人民日报',
+              icon:require("../../assets/img/yhhx/renicon.png"),
+            },
+            {
+              per:3,
+              text:'虎嗅',
+              icon:require("../../assets/img/yhhx/huicon.png"),
+            },
+            {
+              per:3,
+              text:'第一财经',
+              icon:require("../../assets/img/yhhx/caiicon.png"),
+            },
+      ];
+      }else{
+        this.myChartData1=this.$lxjData.box582Data,
+        this.myChartData2=this.$lxjData.box1021Data,
+        this.myChartData3=this.$lxjData.box1031Data,
+        this.rankList=[
+              {
+                per:35,
+                text:'抖音',
+                icon:this.dyIcon,
+              },
+              {
+                per:32,
+                text:'今日头条',
+                icon:this.ttIcon,
+              },
+              {
+                per:27,
+                text:'微博',
+                icon:this.wbIcon,
+              },
+              {
+                per:18,
+                text:'小红书',
+                icon:this.xhsIcon,
+              },
+              {
+                per:10,
+                text:'大众点评',
+                icon:require("../../assets/img/yhhx/daicon.png"),
+              },
+              {
+                per:9,
+                text:'第一财经',
+                icon:require("../../assets/img/yhhx/caiicon.png"),
+              },
+              {
+                per:8,
+                text:'微信',
+                icon:require("../../assets/img/yhhx/weiicon.png"),
+              },
+              
+              {
+                per:5,
+                text:'人民日报',
+                icon:require("../../assets/img/yhhx/renicon.png"),
+              },
+              {
+                per:3,
+                text:'虎嗅',
+                icon:require("../../assets/img/yhhx/huicon.png"),
+              },
+              
+        ];
+
+      }
       if(index==0){
         this.myEData=this.$lxjData.box27Data;
       }else{
@@ -3520,6 +3786,7 @@ export default {
             flex:1;
             display: flex;
             flex-direction: column;
+            padding-right: 12px;
             .m-rank-tp-title{
               font-size: 14px;
               font-family: PingFangSC-Medium, PingFang SC;
@@ -3532,6 +3799,7 @@ export default {
             flex:1;
             display: flex;
             flex-direction: column;
+             padding-left: 12px;
             .m-rank-tp-title{
               font-size: 14px;
               font-family: PingFangSC-Medium, PingFang SC;

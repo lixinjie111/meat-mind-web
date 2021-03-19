@@ -29,6 +29,11 @@ export default {
 			
 		}
 	},
+	watch:{
+		myData(){
+			this.initEcharts();
+		}
+	},
     mounted() {
         	this.initEcharts();
     },
@@ -113,6 +118,7 @@ export default {
                 {
                     data: this.myData.value,
 					type: 'line',
+					smooth:true,
 					areaStyle: {
 						color: {
 							type: 'linear',

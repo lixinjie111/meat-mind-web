@@ -297,9 +297,8 @@
             margin-bottom: 16px;
             cursor: pointer;
             &.active {
-                background: linear-gradient(135deg, #FF8D0A 0%, #FFA733 100%);
-                box-shadow: 3px 3px 14px 0px rgba(148, 76, 46, 0.2), -3px -3px 14px 0px #FFFFFF, 1px 1px 2px 0px rgba(255, 247, 230, 0.6);
-                border-radius: 16px;
+		            background: #2373FF;
+		            border-radius: 4px;
                 > p {
                     color: #FFFFFF;
                 }
@@ -317,7 +316,6 @@
 
     .listBox {
         border-radius: 8px;
-        border: 1px solid #EAEDF7;
         display: flex;
         margin-bottom: 1px;
         padding-bottom: 2px;
@@ -467,9 +465,8 @@
                         margin-bottom: 16px;
                         cursor: pointer;
                         &.active {
-                            background: linear-gradient(135deg, #FF8D0A 0%, #FFA733 100%);
-                            box-shadow: 3px 3px 14px 0px rgba(148, 76, 46, 0.2), -3px -3px 14px 0px #FFFFFF, 1px 1px 2px 0px rgba(255, 247, 230, 0.6);
-                            border-radius: 16px;
+	                        background: #75B1FF;
+	                        border-radius: 4px;
                             > p {
                                 color: #FFFFFF;
                             }

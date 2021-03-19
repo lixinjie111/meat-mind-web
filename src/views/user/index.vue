@@ -39,16 +39,16 @@
                 <div class="perinfo_b">用户数 75361人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(1)">
+            <div class="lef_area_bom" @click="expandfn(1,'cen_area1','rig_area1')">
               {{vDxtxt1}}
               <img v-if="vDxtxt1 == '收起'" :src="squpImg" class="squpImg"/>
               <img v-else :src="zkdwImg" class="squpImg"/>
             </div>
           </div>
-          <div class="cen_area">
+          <div class="cen_area cen_area1" ref="cen_area1">
             <img :src="bjsbzImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
-          <div class="rig_area">
+          <div class="rig_area rig_area1" ref="rig_area1">
             <div class="rig_area_lef">
               <div class="yl_container">
                 <div class="yl_lef" style="background: #FF9502;"></div>
@@ -92,16 +92,16 @@
                 <div class="perinfo_b">用户数 7930人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(2)">
+            <div class="lef_area_bom" @click="expandfn(2,'cen_area2','rig_area2')">
               {{vDxtxt2}}
               <img v-if="vDxtxt2 == '收起'" :src="squpImg" class="squpImg"/>
               <img v-else :src="zkdwImg" class="squpImg"/>
             </div>
           </div>
-          <div class="cen_area">
+          <div class="cen_area" ref="cen_area2">
             <img :src="yxqnImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
-          <div class="rig_area">
+          <div class="rig_area" ref="rig_area2">
             <div class="rig_area_lef">
               <div class="gt_container">
                 <div class="yl_lef" style="background: #36D67B;"></div>
@@ -141,16 +141,16 @@
                 <div class="perinfo_b">用户数 3204人</div>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(3)">
+            <div class="lef_area_bom" @click="expandfn(3,'cen_area3','rig_area3')">
               {{vDxtxt3}}
               <img v-if="vDxtxt3 == '收起'" :src="squpImg" class="squpImg"/>
               <img v-else :src="zkdwImg" class="squpImg"/>
             </div>
           </div>
-          <div class="cen_area">
+          <div class="cen_area" ref="cen_area3">
             <img :src="qyggImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
-          <div class="rig_area">
+          <div class="rig_area" ref="rig_area3">
             <div class="rig_area_lef">
               <div class="gz_container">
                 <div class="yl_lef" style="background: #A49DFA;"></div>
@@ -183,16 +183,16 @@
                 <div class="perinfo_b">用户数 18197人</div>
               </div>
             </div>
-            <div class="lef_area_bom" style="background: #FFE6DE;color: #FE774B;" @click="expandfn(4)">
+            <div class="lef_area_bom" style="background: #FFE6DE;color: #FE774B;" @click="expandfn(4,'cen_area4','rig_area4')">
               {{vDxtxt4}}
               <img v-if="vDxtxt4 == '查看动线详情'" :src="czkImg" class="squpImg"/>
               <i v-else :class="['iconfont','iconup']" class="squpImg"></i>
             </div>
           </div>
-          <div class="cen_area">
+          <div class="cen_area" ref="cen_area4">
             <img :src="bjsbzImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
-          <div class="rig_area">
+          <div class="rig_area" ref="rig_area4">
             <div class="rig_area_lef">
               <div class="yl_container">
                 <div class="yl_lef" style="background: #FF9502;"></div>
@@ -237,16 +237,16 @@
                 <div class="perinfo_b">用户数 6790人</div>
               </div>
             </div>
-            <div class="lef_area_bom" style="background: #FFE6DE;color: #FE774B;" @click="expandfn(5)">
+            <div class="lef_area_bom" style="background: #FFE6DE;color: #FE774B;" @click="expandfn(5,'cen_area5','rig_area5')">
               {{vDxtxt5}}
               <img v-if="vDxtxt5 == '查看动线详情'" :src="czkImg" class="squpImg"/>
               <i v-else :class="['iconfont','iconup']" class="squpImg"></i>
             </div>
           </div>
-          <div class="cen_area">
+          <div class="cen_area" ref="cen_area5">
             <img :src="zyzyImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
-          <div class="rig_area">
+          <div class="rig_area" ref="rig_area5">
             <div class="rig_area_lef">
               <div class="yl_container">
                 <div class="yl_lef" style="background: #FF9502;"></div>
@@ -1330,7 +1330,9 @@ export default {
         path:"/media"
       });
     },
-    expandfn(arg){
+    expandfn(arg,c,r){
+      var cenDom = this.$refs[c];
+      var rDom = this.$refs[r];
       if(arg == 1){
         if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
@@ -1351,9 +1353,13 @@ export default {
         this.ifShowDx1 = !this.ifShowDx1;
         if(this.ifShowDx1){
           this.vDxtxt1 = '收起';
+          cenDom.style="background-color:#EAEDF7;";  
+          rDom.style="background-color:#EAEDF7;";
         }
         else{
           this.vDxtxt1 = '查看动线详情';
+          cenDom.style="background-color:inherit;";  
+          rDom.style="background-color:inherit;";
         }
       }
       else if(arg == 2){
@@ -1376,9 +1382,13 @@ export default {
         this.ifShowDx2 = !this.ifShowDx2;
         if(this.ifShowDx2){
           this.vDxtxt2 = '收起';
+          cenDom.style="background-color:#EAEDF7;";  
+          rDom.style="background-color:#EAEDF7;";
         }
         else{
           this.vDxtxt2 = '查看动线详情';
+          cenDom.style="background-color:inherit;";  
+          rDom.style="background-color:inherit;";
         }
       }
       else if(arg == 3){
@@ -1401,9 +1411,13 @@ export default {
         this.ifShowDx3 = !this.ifShowDx3;
         if(this.ifShowDx3){
           this.vDxtxt3 = '收起';
+          cenDom.style="background-color:#EAEDF7;";  
+          rDom.style="background-color:#EAEDF7;";
         }
         else{
           this.vDxtxt3 = '查看动线详情';
+          cenDom.style="background-color:inherit;";  
+          rDom.style="background-color:inherit;";
         }
       }
       else if(arg == 4){
@@ -1426,9 +1440,13 @@ export default {
         this.ifShowDx4 = !this.ifShowDx4;
         if(this.ifShowDx4){
           this.vDxtxt4 = '收起';
+          cenDom.style="background-color:#EAEDF7;";  
+          rDom.style="background-color:#EAEDF7;";
         }
         else{
           this.vDxtxt4 = '查看动线详情';
+          cenDom.style="background-color:inherit;";  
+          rDom.style="background-color:inherit;";
         }
       }
       else if(arg == 5){
@@ -1451,9 +1469,13 @@ export default {
         this.ifShowDx5 = !this.ifShowDx5;
         if(this.ifShowDx5){
           this.vDxtxt5 = '收起';
+          cenDom.style="background-color:#EAEDF7;";  
+          rDom.style="background-color:#EAEDF7;";
         }
         else{
           this.vDxtxt5 = '查看动线详情';
+          cenDom.style="background-color:inherit;";  
+          rDom.style="background-color:inherit;";
         }
       }
     },
@@ -2291,12 +2313,12 @@ export default {
 	}
 	.yhdx_container {
 		width: 100%;
-		background: #ffffff;
-		box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-		border-radius: 12px;
-		border: 1px solid #EAEDF7;
-		padding: 24px;
-		box-sizing: border-box;
+		// background: #ffffff;
+		// box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+		// border-radius: 12px;
+		// border: 1px solid #EAEDF7;
+		// padding: 24px;
+		// box-sizing: border-box;
     .bjsbz_container{
       width: 100%;
       height: 110px;
@@ -2426,6 +2448,9 @@ export default {
             }
           }
         }
+      }
+      .cen_area1,.rig_area1{
+        background-color:#EAEDF7;
       }
     }
     .echarts_container1 {
