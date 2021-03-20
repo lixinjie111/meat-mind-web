@@ -54,7 +54,7 @@ export default {
         // color: #242F57;
             .operate{
                 position: absolute;
-                top: 16px;
+                top: 22px;
                 right: -10px;
                 display: flex;
                 align-items: center;
@@ -64,11 +64,11 @@ export default {
                     align-items: center;
                     margin-right: 12px;
                     background: #FFFFFF;
-                    box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
-                    border-radius: 8px;
-                    opacity: 0.6;
-                    border: 1px solid #C6CBDE;
-                    padding:5px 8px;
+                    // box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
+                    border-radius: 4px;
+                    // opacity: 0.6;
+                    border: 1px solid #97A0C3;
+                    padding:4px 8px;
                     cursor: pointer;
                     img{
                         width: 16px;
@@ -76,10 +76,12 @@ export default {
                         margin-right: 4px;
                     }
                     >p{
+                        height: 22px;
                         font-size: 14px;
                         font-family: PingFangSC-Regular, PingFang SC;
                         font-weight: 400;
-                        color: #636E95;
+                        color: #242F57;
+                        line-height: 22px;
                     }
                 }
             }        
