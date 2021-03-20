@@ -1,6 +1,8 @@
 <template>
   <div class="analysis-model">
-      <div class="title">分析模型</div>
+      <div class="header-nav">
+          <p>分析模型</p>
+      </div>
       <div class="choose-model">
           <div class="choose-model-title">选择模型</div>
           <ul>
@@ -112,37 +114,28 @@ export default {
     app(){
       this.$router.push({name:"analysis-tool-model-app"})
     }
-  }  
-
+  }
 }
 </script>
 
 <style scoped lang="scss">
 .analysis-model{
-    .title{
-        height: 64px;
-        padding-left: 48px;
-        font-size: 20px;
-        font-family: PingFangSC-Medium, PingFang SC;
-        font-weight: 500;
-        color: #242F57;
-        line-height: 64px;
-    }
+    padding: 0 24px;
     .choose-model{
         height: 740px;
         padding: 24px 0 24px 24px;
-        margin:0 24px 24px;
         background: #FFFFFF;
-        box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+        box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
         border-radius: 8px;
+
         .choose-model-title{
-            height: 24px;
-            margin-bottom: 16px;
-            font-size: 16px;
+            margin-bottom: 24px;
+            height: 26px;
+            line-height: 26px;
+            font-size: 18px;
             font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;
             color: #242F57;
-            line-height: 24px;
         }
 
         >ul {
@@ -162,60 +155,50 @@ export default {
             border: 1px solid #EAEDF7;
             cursor: pointer;
             &:hover{
-                box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16);
+                box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16), 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+                border-radius: 4px;
             }
             .icon{
-                width: 50px;
-                height: 50px;
-                line-height: 50px;
-                border-radius: 25px;
-                border: 1px solid #FFFFFF;
+                width: 48px;
+                height: 48px;
+                line-height: 48px;
+                border-radius: 8px;
                 text-align: center;
 
                 > i {
-                    font-size: 24px;
+                    font-size: 32px;
                     color: #ffffff;
                 }
 
                 &.event{
-                    background: #4D94FF;
-                    box-shadow: 2px 3px 8px 0px rgba(77, 148, 255, 0.5), -2px -2px 8px 0px #FFFFFF;
+                    background: #2373FF;
                 }
                 &.funnel{
-                    background: #FFD98C;
-                    box-shadow: 2px 3px 8px 0px rgba(255, 217, 140, 0.5), -2px -2px 8px 0px #FFFFFF;
+                    background: #FE774B;
                 }
                 &.keep{
-                    background: #FC809F;
-                    box-shadow: 2px 3px 8px 0px rgba(252, 128, 159, 0.5), -2px -2px 8px 0px #FFFFFF;
+                    background: #1DCEC3;
                 }
                 &.distribute{
-                    background: #A49DFA;
-                    box-shadow: 2px 3px 8px 0px rgba(164, 157, 250, 0.5), -2px -2px 8px 0px #FFFFFF;
+                    background: #F16E84;
                 }
                 &.way{
-                    background: #95E9ED;
-                    box-shadow: 2px 3px 8px 0px rgba(149, 233, 237, 0.5), -2px -2px 8px 0px #FFFFFF;
+                    background: #FDD352;
                 }
                 &.hot{
-                    background: #4D94FF;
-                    box-shadow: 2px 3px 8px 0px rgba(77, 148, 255, 0.5), -2px -2px 8px 0px #FFFFFF;
+                    background: #2373FF;
                 }
                 &.interval{
-                    background: #FC809F;
-                    box-shadow: 2px 3px 8px 0px rgba(252, 128, 159, 0.5), -2px -2px 8px 0px #FFFFFF;
+                    background: #FE774B;
                 }
                 &.defined{
-                    background: #A49DFA;
-                    box-shadow: 2px 3px 8px 0px rgba(164, 157, 250, 0.5), -2px -2px 8px 0px #FFFFFF;
+                    background: #1DCEC3;
                 }
                 &.cause{
-                    background: #95E9ED;
-                    box-shadow: 2px 3px 8px 0px rgba(149, 233, 237, 0.5), -2px -2px 8px 0px #FFFFFF;
+                    background: #F16E84;
                 }
                 &.property{
-                    background: #FFD98C;
-                    box-shadow: 2px 3px 8px 0px rgba(255, 217, 140, 0.5), -2px -2px 8px 0px #FFFFFF;
+                    background: #FDD352;
                 }
             }
             .right{
