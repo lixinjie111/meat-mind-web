@@ -36,7 +36,7 @@
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">全部客群</div>
-                <div class="perinfo_b">用户数 75361人</div>
+                <div class="perinfo_b">用户数 46571人</div>
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(1,'cen_area1','rig_area1')">
@@ -234,7 +234,7 @@
               </div>
               <div class="perinfo">
                 <div class="perinfo_t">自由职业</div>
-                <div class="perinfo_b">用户数 46030人</div>
+                <div class="perinfo_b">用户数 17240人</div>
               </div>
             </div>
             <div class="lef_area_bom" style="background: #FFE6DE;color: #FE774B;" @click="expandfn(5,'cen_area5','rig_area5')">
