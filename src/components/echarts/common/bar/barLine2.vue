@@ -3,7 +3,8 @@
 </template>
 
 <script>
-  import _ from 'lodash'
+  import _ from 'lodash';
+	import logo01 from '@/assets/img/medias/logo01.png';
 export default {
 	props: {
 		myData:{
@@ -50,7 +51,7 @@ export default {
 			var option = {
             color: this.colorList,
             tooltip: {
-				trigger: 'axis',
+				trigger: 'item',
 				confine:true
 				// formatter: function(list) {
 				// 	var msg = "";

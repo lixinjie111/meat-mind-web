@@ -1,4 +1,27 @@
 import echarts from 'echarts';
+
+function mediaTooltip(medias, percents) {
+  return `<div style="line-height: 24px; color: rgba(255,255,255,0.7);"><span style="display: inline-block;background: #4D94FF;font-size: 6px;border-radius: 6px;margin-right: 6px;width: 12px;height: 12px;vertical-align: top;margin-top: 6px;line-height: 1;text-align: center;">1</span><img style="width: 18px; display: inline-block; vertical-align: top; margin-top: 3px" src="/static/img/medias/logo${medias[0]}.png"> <span style="font-size: 12px;margin-left: 12px;">贡献占比：${percents[0]}%</span></div>
+<div style="line-height: 24px; color: rgba(255,255,255,0.7);"><span style="display: inline-block;background: #A49DFA;font-size: 6px;border-radius: 6px;margin-right: 6px;width: 12px;height: 12px;vertical-align: top;margin-top: 6px;line-height: 1;text-align: center;">2</span><img style="width: 18px; display: inline-block; vertical-align: top; margin-top: 3px" src="/static/img/medias/logo${medias[1]}.png"> <span style="font-size: 12px;margin-left: 12px;">贡献占比：${percents[1]}%</span></div>
+<div style="line-height: 24px; color: rgba(255,255,255,0.7);"><span style="display: inline-block;background: #FC809F;font-size: 6px;border-radius: 6px;margin-right: 6px;width: 12px;height: 12px;vertical-align: top;margin-top: 6px;line-height: 1;text-align: center;">3</span><img style="width: 18px; display: inline-block; vertical-align: top; margin-top: 3px" src="/static/img/medias/logo${medias[2]}.png"> <span style="font-size: 12px;margin-left: 12px;">贡献占比：${percents[2]}%</span></div>`;
+}
+
+const mediaHezuo = [
+  {media: ['03', '01', '11', ], percent: [8, 6, 5]},
+  {media: ['02', '06', '10', ], percent: [10, 8, 6]},
+  {media: ['05', '01', '07', ], percent: [9, 7, 6]},
+  {media: ['06', '02', '08', ], percent: [11, 8, 5]},
+  {media: ['07', '04', '05', ], percent: [10, 9, 5]},
+  {media: ['08', '05', '02', ], percent: [9, 6, 5]}];
+
+const mediaKOL = [
+  {media: ['01', '05', '07', ], percent: [9, 7, 6]},
+  {media: ['02', '06', '08', ], percent: [11, 6, 5]},
+  {media: ['05', '08', '02', ], percent: [9, 7, 5]},
+  {media: ['04', '05', '07', ], percent: [10, 8, 5]},
+  {media: ['01', '11', '03', ], percent: [9, 6, 5]},
+  {media: ['06', '10', '02', ], percent: [10, 9, 7]},];
+
 const abelData = {
   colorList : ['#2373FF', '#FE774B', '#1DCEC3', '#F16E84', '#FDD352', '#7BABFF', '#FFAE93', '#77E1DB', '#F6A8B5', '#FEE597', '#BDD5FF', '#FFD7C9', '#BBF1ED', '#FBD4DA', '#FEF1CB', '#FF9F7F'],
   nest01Data:{
@@ -163,6 +186,7 @@ barLine:{
             color:'#FF9F7F'
           }
         },
+        tooltip: {show: false},
         data: [220, 368, 264, 496, 242, 385]
       },
       {
@@ -178,6 +202,7 @@ barLine:{
             color:'#FF9F7F'
           }
         },
+        tooltip: {show: false},
         data: [438, 653, 565, 778, 620, 699]
       },
       {
@@ -199,6 +224,12 @@ barLine:{
             global: false // 缺省为 false
           }
         },
+        tooltip: {
+          show: true,
+          formatter: (params) => {
+            return mediaTooltip(mediaHezuo[params.dataIndex].media, mediaHezuo[params.dataIndex].percent);
+          }
+        },
         data: [6.3, 7.9, 6.5, 7.1, 7.2, 9.3]
       },
       {
@@ -218,6 +249,12 @@ barLine:{
               offset: 1, color: 'rgba(255,255,255, 0)' // 100% 处的颜色
             }],
             global: false // 缺省为 false
+          }
+        },
+        tooltip: {
+          show: true,
+          formatter: (params) => {
+            return mediaTooltip(mediaKOL[params.dataIndex].media, mediaKOL[params.dataIndex].percent);
           }
         },
         data: [4.9, 5.2, 3.6, 4.7, 4.8, 7.1]
