@@ -15,7 +15,7 @@
     data() {
       id++
       return {
-        chartID: `pie-6-${id}`,
+        chartID: `pie-8-${id}`,
         myChart: null
       }
     },
