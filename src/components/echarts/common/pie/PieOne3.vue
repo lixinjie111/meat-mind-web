@@ -65,6 +65,12 @@ export default {
 
 		}
 	},
+	watch: {
+      myData(myData){
+		  console.log(1111111111)
+        this.initEcharts()
+      },
+    },
     mounted(){this.initEcharts()},
 	methods: {
 		initEcharts() {
@@ -184,7 +190,6 @@ export default {
 						label: {
 							show: true,
 							formatter: params => {
-								console.log(params)
 								if (params.name)
 									return `${params.seriesName}\n${params.name}`;
 							},

@@ -355,6 +355,7 @@
                 <div class="navTitle">最优曝光时间</div>
                 <div class="navSubTitle">未来7日，每日12-13点/18-23点；</div>
                 <div class="new_echart_box">
+                  <PieOne3 id="304" :myData="myChartData5" title="未来7日"></PieOne3>
                 </div>
               </div>
               <div class="navContentItem">
@@ -571,16 +572,18 @@
   import vTree from '../../components/echarts/common/treemap/zjjTreemap';
   import lineM from '../../components/echarts/common/line/lineM3';
   import cLine from '../../components/echarts/common/line/line';
+  import PieOne3 from '../../components/echarts/common/pie/PieOne3';
   import barM from '../../components/echarts/common/bar/barM';
   import barHM2 from '../../components/echarts/common/bar/barHM3';
   import MediaAnalysis from './base/MediaAnalysis';
   import PieEcharts9 from '../../components/echarts/common/pie/PieEcharts9';
   import PortraitMatching from './base/PortraitMatching';
+  
 
   let counter = 0
   export default {
     name: "index",
-    components: {Tab, PieEcharts9,cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, KOLResource, MediaAnalysis, PortraitMatching},
+    components: {PieOne3,Tab, PieEcharts9,cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, KOLResource, MediaAnalysis, PortraitMatching},
     data(){
       return{
         tabActive: 1,
@@ -588,6 +591,7 @@
         myChartData1:this.$lxjData.box581Data,
         myChartData2:this.$lxjData.box102Data,
         myChartData3:this.$lxjData.box103Data,
+        myChartData5:this.$abelData.nest202Data,
         currentIndex:1,
         currentIndex1:0,
         model2:"1",
@@ -1260,10 +1264,12 @@
           this.myChartData1=this.$lxjData.box581Data;
           this.myChartData2=this.$lxjData.box102Data;
           this.myChartData3=this.$lxjData.box103Data;
+         
         }else{
           this.myChartData1=this.$lxjData.box582Data;
           this.myChartData2=this.$lxjData.box1021Data;
           this.myChartData3=this.$lxjData.box1031Data;
+         
         }
       },
       changeIndex(arg){
@@ -1306,7 +1312,9 @@
               icon:this.touxIcon3,
             },
           ]
+           this.myChartData5=this.$abelData.nest202Data;
         }else if(arg==2){
+           this.myChartData5=this.$abelData.nest203Data;
           this.myChartData0=this.$fjData.box52Data;
           this.mediaList1=[
             {
@@ -1345,6 +1353,7 @@
           this.contList=['品牌产品种草短视频','品牌产品介绍视频	','品牌产品体验笔记',];
           this.contList1=['KOL自有粉丝','品牌核心目标消费人群<br>(北京上班族/年轻白领)','品牌忠诚消费者',];
         }else{
+           this.myChartData5=this.$abelData.nest204Data;
           this.myChartData0=this.$fjData.box53Data;
           this.mediaList1=[
             {
