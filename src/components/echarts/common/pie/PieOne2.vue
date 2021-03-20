@@ -64,19 +64,19 @@ export default {
 				title: {
 					subtext: ''+value,
 					text: this.title,
-					top: '35%',
+					top: '30%',
 					left: 'center',
 					textStyle: {
-						fontSize: 12,
+						fontSize: 10,
 						fontWeight: 400,
-						color: '#666'
+						color: '#999'
 					},
 					subtextStyle: {
-						fontSize: 38,
+						fontSize: 20,
 						fontWeight: 400,
 						color: 'black'
 					},
-					itemGap: 20
+					itemGap: 10
 				},
 				series: [{
 					name: 'shadow1',
@@ -88,7 +88,7 @@ export default {
 						show: false
 					},
 					itemStyle: {
-						shadowBlur: 20,
+						shadowBlur: 10,
 						shadowColor: 'rgba(134, 143, 191, 0.3)',
 					},
 					data: [
@@ -106,7 +106,7 @@ export default {
 						show: false
 					},
 					itemStyle: {
-						shadowBlur: 20,
+						shadowBlur: 10,
 						shadowColor: 'rgba(134, 143, 191, 0.3)',
 					},
 					data: [
@@ -149,6 +149,7 @@ export default {
 							lineStyle: {
 								width: 1,
 								color: '#EAEDF7',
+								opacity: .5
 							}
 						},
 						detail: {
@@ -172,6 +173,7 @@ export default {
 							lineStyle: {
 								width: 1,
 								color: '#EAEDF7',
+								opacity: .5
 							}
 						},
 						radius: '87.5%',

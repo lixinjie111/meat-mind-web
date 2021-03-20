@@ -85,7 +85,7 @@ export default {
 						show: false
 					},
 					itemStyle: {
-						shadowBlur: 20,
+						shadowBlur: 15,
 						shadowColor: 'rgba(134, 143, 191, 0.3)',
 					},
 					data: [
@@ -106,7 +106,7 @@ export default {
 						},
 						itemStyle: {
 							borderRadius: 30,
-							shadowBlur: 20,
+							shadowBlur: 10,
 							shadowColor: 'rgba(35,115,255, 0.3)',
 						},
 						labelLine: {
