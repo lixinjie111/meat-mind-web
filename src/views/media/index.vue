@@ -147,7 +147,7 @@
           <div class="media_sec_panel_lef2">
               <div class="media_sec_panel_lef1_top">自有品牌合作KOL</div>
               <div class="selectList">
-                  <Select v-model="model2"  @on-change="change2">
+                  <Select v-model="model3"  @on-change="change2">
                       <Option v-for="item in optionList" :value="item.value" :key="item.value">{{ item.name }}</Option>
                   </Select>
               </div>
@@ -255,323 +255,310 @@
             </div>
           </div>
       </div>
-      <div class="zuhetitle">媒介组合推荐方案</div>
-      <div class="media_zuhe_panel">
-        <div class="title">媒介组合方案</div>
-        <div class="subTitle">基于品牌画像和用户画像，建议以短视频作为主要信息传播媒介，垂直媒介为辅的媒介组合，并辅以多KOL多内容类型的投放策略），预算建议在50～75万之间。</div>
-        <div class="navBox">
-          <div class="navItem" :class="currentIndex==1?'navActive':''" @click="changeIndex(1)">
-            <div class="navItem_left">
-              <div class="headerIcon"><img src="../../assets/img/yhhx/headerBg.png" alt=""></div>
-            </div>
-            <div class="navItem_rt">
-               <div class="navItem_title1">
-                 策略1
-               </div>
-               <div class="navItem_title2">
-                 快速拉新获客策略
-               </div>
-            </div>
-          </div>
-          <div class="navItem navItem2" :class="currentIndex==2?'navActive':''" @click="changeIndex(2)">
-            <div class="navItem_left">
-              <div class="headerIcon"><img src="../../assets/img/yhhx/xunh.png" alt=""></div>
-            </div>
-            <div class="navItem_rt">
-               <div class="navItem_title1">
-                 策略2
-               </div>
-               <div class="navItem_title2">
-                低成本高转化策略
-               </div>
-            </div>
-          </div>
-          <div class="navItem navItem3" :class="currentIndex==3?'navActive':''" @click="changeIndex(3)">
-            <div class="navItem_left">
-              <div class="headerIcon"><img src="../../assets/img/yhhx/timeIc.png" alt=""></div>
-            </div>
-            <div class="navItem_rt">
-               <div class="navItem_title1">
-                 策略3
-               </div>
-               <div class="navItem_title2">
-                  持续转化策略
-               </div>
-            </div>
-          </div>
-        </div>
-        <div class="navContent">
-          <div class="navContentBox">
-              <div class="navContentTop">
-                <div class="navContentItem">
-                  <div class="navTitle">媒介选择</div>
-                  <div class="navSubTitle">短视频作为主要信息传播媒介</div>
-                  <div class="list" v-for="(item,index) in mediaList1" :key="index">
-                    <div class="logoPic"><img :src="item.icon" alt=""></div>
-                    <div class="navMid1">
-                      <div class="navtop">
-                      目标受众数
-                      </div>
-                      <div class="navBm">
-                      {{item.numTxt1}}人
-                      </div>
-                    </div>
-                    <div class="navMid1">
-                      <div class="navtop">
-                      投放预算
-                      </div>
-                      <div class="navBm">
-                      {{item.numTxt2}}人
-                      </div>
-                    </div>
-                  </div>
+      <Tab :tab-list="['媒介策略','媒介剖析']" @change="changeTab"></Tab>
+      <template v-if="tabActive == 1">
+          <div class="zuhetitle">媒介组合推荐方案</div>
+          <div class="media_zuhe_panel">
+            <div class="title">媒介组合方案</div>
+            <div class="subTitle">基于品牌画像和用户画像，建议以短视频作为主要信息传播媒介，垂直媒介为辅的媒介组合，并辅以多KOL多内容类型的投放策略），预算建议在50～75万之间。</div>
+            <div class="navBox">
+              <div class="navItem" :class="currentIndex==1?'navActive':''" @click="changeIndex(1)">
+                <div class="navItem_left">
+                  <div class="headerIcon"><img src="../../assets/img/yhhx/headerBg.png" alt=""></div>
                 </div>
-                <div class="navContentItem">
-                  <div class="navTitle">KOL组合</div>
-                  <div class="navSubTitle">头部KOL组合</div>
-                  <div class="list" v-for="(item,index) in mediaHlist1" :key="index">
-                    <div class="logoPic"><img :src="item.icon" alt=""></div>
-                    <div class="navMid1">
-                      <div class="navtop">
-                      目标受众数
-                      </div>
-                      <div class="navBm">
-                      {{item.numTxt1}}人
-                      </div>
-                    </div>
-                    <div class="navMid1">
-                      <div class="navtop">
-                      投放预算
-                      </div>
-                      <div class="navBm">
-                      {{item.numTxt2}}人
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="navContentItem">
-                  <div class="navTitle">最优曝光时间</div>
-                  <div class="navSubTitle">未来7日，每日12-13点/18-23点；</div>
-                  <div class="new_echart_box">
-                  </div>
-                </div>
-                <div class="navContentItem">
-                  <div class="navTitle">投放预算</div>
-                  <div class="navSubTitle"></div>
-                  <div class="new_echart_box">
-                    <PieCaseEcharts  :colorList="$fjData.colorList" :myData="$fjData.box51Data"></PieCaseEcharts>
-                  </div>
+                <div class="navItem_rt">
+                   <div class="navItem_title1">
+                     策略1
+                   </div>
+                   <div class="navItem_title2">
+                     快速拉新获客策略
+                   </div>
                 </div>
               </div>
-              <div class="navContentBm">
-                  <div class="navContentLf">
-                        <div class="navbmTitle">投放内容和形式</div>
-                        <div class="navbmList">
-                          <div class="navbmItem">品牌官方产品发布</div>
-                          <div class="navbmItem">营销季活动详情</div>
-                          <div class="navbmItem">直播</div>
-                          <div class="navbmItem">微博博文</div>
-                          <div class="navbmItem">节日礼品上新</div>
+              <div class="navItem navItem2" :class="currentIndex==2?'navActive':''" @click="changeIndex(2)">
+                <div class="navItem_left">
+                  <div class="headerIcon"><img src="../../assets/img/yhhx/xunh.png" alt=""></div>
+                </div>
+                <div class="navItem_rt">
+                   <div class="navItem_title1">
+                     策略2
+                   </div>
+                   <div class="navItem_title2">
+                    低成本高转化策略
+                   </div>
+                </div>
+              </div>
+              <div class="navItem navItem3" :class="currentIndex==3?'navActive':''" @click="changeIndex(3)">
+                <div class="navItem_left">
+                  <div class="headerIcon"><img src="../../assets/img/yhhx/timeIc.png" alt=""></div>
+                </div>
+                <div class="navItem_rt">
+                   <div class="navItem_title1">
+                     策略3
+                   </div>
+                   <div class="navItem_title2">
+                      持续转化策略
+                   </div>
+                </div>
+              </div>
+            </div>
+            <div class="navContent">
+              <div class="navContentBox">
+                  <div class="navContentTop">
+                    <div class="navContentItem">
+                      <div class="navTitle">媒介选择</div>
+                      <div class="navSubTitle">短视频作为主要信息传播媒介</div>
+                      <div class="list" v-for="(item,index) in mediaList1" :key="index">
+                        <div class="logoPic"><img :src="item.icon" alt=""></div>
+                        <div class="navMid1">
+                          <div class="navtop">
+                          目标受众数
+                          </div>
+                          <div class="navBm">
+                          {{item.numTxt1}}人
+                          </div>
                         </div>
+                        <div class="navMid1">
+                          <div class="navtop">
+                          投放预算
+                          </div>
+                          <div class="navBm">
+                          {{item.numTxt2}}人
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="navContentItem">
+                      <div class="navTitle">KOL组合</div>
+                      <div class="navSubTitle">头部KOL组合</div>
+                      <div class="list" v-for="(item,index) in mediaHlist1" :key="index">
+                        <div class="logoPic"><img :src="item.icon" alt=""></div>
+                        <div class="navMid1">
+                          <div class="navtop">
+                          目标受众数
+                          </div>
+                          <div class="navBm">
+                          {{item.numTxt1}}人
+                          </div>
+                        </div>
+                        <div class="navMid1">
+                          <div class="navtop">
+                          投放预算
+                          </div>
+                          <div class="navBm">
+                          {{item.numTxt2}}人
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="navContentItem">
+                      <div class="navTitle">最优曝光时间</div>
+                      <div class="navSubTitle">未来7日，每日12-13点/18-23点；</div>
+                      <div class="new_echart_box">
+                      </div>
+                    </div>
+                    <div class="navContentItem">
+                      <div class="navTitle">投放预算</div>
+                      <div class="navSubTitle"></div>
+                      <div class="new_echart_box">
+                        <PieEcharts9 :colorList="$fjData.colorList" :myData="myChartData0" ></PieEcharts9>
+                      </div>
+                    </div>
                   </div>
-                  <div class="navContentRt">
-                    <div class="navbmTitle">目标受众</div>
-                        <div class="navbmList">
-                          <div class="navbmItem1">KOL自有粉丝</div>
-                          <div class="navbmItem1">品牌核心目标消费人群<br>(北京上班族/年轻白领)</div>
-                          <div class="navbmItem1">品牌忠诚消费者</div>
-                        </div>
+                  <div class="navContentBm">
+                      <div class="navContentLf">
+                            <div class="navbmTitle">投放内容和形式</div>
+                            <div class="navbmList">
+                              <div class="navbmItem" v-for="item in contList" :key="item">{{item}}</div>
+                            </div>
+                      </div>
+                      <div class="navContentRt">
+                        <div class="navbmTitle">目标受众</div>
+                            <div class="navbmList">
+                              <div class="navbmItem1"  v-for="item in contList1" :key="item" v-html="item"></div>
+                            </div>
+                      </div>
                   </div>
               </div>
-          </div>
-        </div>
-        <div class="zuhe_echarts">
-            <div class="zuhe_echarts_left">
-              <div class="zuhe_echarts_title">预期投放效果</div>
-               <div class="zuhe_echarts_Box">
-                 <div class="zuhe_echarts_leftBox">
-                    <div class="zuhe_echarts_subtitle">预期投放效果</div>
-                    <div class="zuhe_echarts_num">800万</div>
-                  </div>
-                  <div class="new_echart_box">
-                    <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box119Data"></funnel>
-                  </div>
-               </div>
+            </div>
+            <div class="zuhe_echarts">
+                <div class="zuhe_echarts_left">
+                  <div class="zuhe_echarts_title">预期投放效果</div>
+                   <div class="zuhe_echarts_Box">
+                     <div class="zuhe_echarts_leftBox">
+                        <div class="zuhe_echarts_subtitle">预期投放效果</div>
+                        <div class="zuhe_echarts_num">800万</div>
+                      </div>
+                      <div class="new_echart_box">
+                        <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box119Data"></funnel>
+                      </div>
+                   </div>
 
-            </div>
-            <div class="zuhe_echarts_rt">
-              <div class="zuhe_echarts_list">
-                <div class="zuhe_echarts_Item">
-                  <div class="zuhe_echarts_Item_title">
-                    <span class="zuhe_echarts_Item_title1">真实CPE(去水军）</span>
-                    <i class="iconfont icongengduo"></i>
-                  </div>
-                  <div class="zuhe_echarts_Item_num">
-                    0.39
-                  </div>
                 </div>
-                <div class="zuhe_echarts_Item zuhe_echarts_Item1">
-                  <div class="zuhe_echarts_Item_title">
-                    <span class="zuhe_echarts_Item_title1">综合互动数</span>
-                    <i class="iconfont icongengduo"></i>
-                  </div>
-                  <div class="zuhe_echarts_Item_num">
-                    800,000 <span class="zuhe_echarts_danwei">次</span>
-                  </div>
-                </div>
-              </div>
-              <div class="zuhe_echarts_list zuhe_echarts_list1">
-                <div class="zuhe_echarts_Item zuhe_echarts_Item2">
-                  <div class="zuhe_echarts_Item_title">
-                    <span class="zuhe_echarts_Item_title1">新增粉丝数</span>
-                    <i class="iconfont icongengduo"></i>
-                  </div>
-                  <div class="zuhe_echarts_Item_num">
-                    30,000<span class="zuhe_echarts_danwei">人</span>
-                  </div>
-                </div>
-                <div class="zuhe_echarts_Item zuhe_echarts_Item3">
-                  <div class="zuhe_echarts_Item_title">
-                    <span class="zuhe_echarts_Item_title1">销售达成</span>
-                    <i class="iconfont icongengduo"></i>
-                  </div>
-                  <div class="zuhe_echarts_Item_num">
-                    1.2<span class="zuhe_echarts_danwei">亿元</span> 
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-        <div class="zuhe_echarts1">
-            <div class="zuhe_echarts_left">
-              <div class="zuhe_echarts_title">媒介曝光触达</div>
-              <div class="new_echart_box">
-                 <PieEcharts2 :colorList="$fjData.colorList" :myData="$fjData.box0Data"></PieEcharts2>
-              </div>
-            </div>
-            <div class="zuhe_echarts_rt">
-              <div class="zuhe_echarts_title">媒介转化效率</div>
-              <div class="new_echart_box1">
-                <!-- <barC5 :colorList="$fjData.colorList" :myData="progressData" id="progressData"></barC5> -->
-               <div class="new_echart_list_box">
-                  <div class="m-rank-lf-list" v-for="(item,index) in rankList1" :key="index">
-                    <div class="m-rank-item-lf">
-                        <div class="m-rank-icon">
-                          <img :src="item.icon" alt="">
-                        </div>
-                        <div class="m-rank-text">
-                          {{item.text}}
-                        </div>
+                <div class="zuhe_echarts_rt">
+                  <div class="zuhe_echarts_list">
+                    <div class="zuhe_echarts_Item">
+                      <div class="zuhe_echarts_Item_title">
+                        <span class="zuhe_echarts_Item_title1">真实CPE(去水军）</span>
+                        <i class="iconfont icongengduo"></i>
                       </div>
-                      <div class="m-rank-progress">
-                        <barHM2 :id="'box1141'+index" :colorList="$lxjData.colorList" :myData='$lxjData["box1149"+ index + "Data"]'></barHM2>
+                      <div class="zuhe_echarts_Item_num">
+                        0.39
                       </div>
+                    </div>
+                    <div class="zuhe_echarts_Item zuhe_echarts_Item1">
+                      <div class="zuhe_echarts_Item_title">
+                        <span class="zuhe_echarts_Item_title1">综合互动数</span>
+                        <i class="iconfont icongengduo"></i>
+                      </div>
+                      <div class="zuhe_echarts_Item_num">
+                        800,000 <span class="zuhe_echarts_danwei">次</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="zuhe_echarts_list zuhe_echarts_list1">
+                    <div class="zuhe_echarts_Item zuhe_echarts_Item2">
+                      <div class="zuhe_echarts_Item_title">
+                        <span class="zuhe_echarts_Item_title1">新增粉丝数</span>
+                        <i class="iconfont icongengduo"></i>
+                      </div>
+                      <div class="zuhe_echarts_Item_num">
+                        30,000<span class="zuhe_echarts_danwei">人</span>
+                      </div>
+                    </div>
+                    <div class="zuhe_echarts_Item zuhe_echarts_Item3">
+                      <div class="zuhe_echarts_Item_title">
+                        <span class="zuhe_echarts_Item_title1">销售达成</span>
+                        <i class="iconfont icongengduo"></i>
+                      </div>
+                      <div class="zuhe_echarts_Item_num">
+                        1.2<span class="zuhe_echarts_danwei">亿元</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <ul class="new_echart_legend">
-                    <li><div class="circle"></div> 转化率</li>
-                    <li><div class="circle circleBox"></div> 销售额</li>
-                </ul>
-              </div>
             </div>
-        </div>
-      </div>
-      <div class="m-p-rank">
-        <div class="m-p-rank-header">
-          <ul class="h-name-list">
-            <li :class="{'h-name-active':index==act}" v-for="(item,index) in target" :key="index" @click="targetClick(index)">{{item}}</li>
-            <!-- <li>媒介声量排名</li>
-            <li>媒介使用时长排名</li>
-            <li>媒介口碑排名</li>
-            <li>媒介价值贡献排名</li> -->
-          </ul>
-          <div class="h-right">
-            <div class="h-tab">
-              <div class="left" :class="{'act':cur==0}" @click="cur=0">类型</div>
-              <div class="right" :class="{'act':cur==1}" @click="cur=1">渠道名称</div>
-            </div>
-            <!-- <div class="h-select"> -->
-              <Select v-model="model1" style="width: 120px" placeholder="过去3天">
-                <Option v-for="item in dateList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-              </Select>
-            <!-- </div> -->
-          </div>
-        </div>
-        <div class="m-p-rank-echarts">
-          <div class="m-rank-lf">
-            <div class="m-rank-lf-list" @click="changeIndex1(index)" :class="currentIndex1==index?'m-rank-lf-active':''" v-for="(item,index) in rankList" :key="index">
-              <div class="m-rank-item-lf">
-                  <div class="m-rank-num">
-                    {{index+1}}
-                  </div>
-                  <div class="m-rank-icon">
-                    <img :src="item.icon" alt="">
-                  </div>
-                  <div class="m-rank-text">
-                    {{item.text}}
+            <div class="zuhe_echarts1">
+                <div class="zuhe_echarts_left">
+                  <div class="zuhe_echarts_title">媒介曝光触达</div>
+                  <div class="new_echart_box">
+                     <PieEcharts2 :colorList="$fjData.colorList" :myData="$fjData.box0Data"></PieEcharts2>
                   </div>
                 </div>
-                <div class="m-rank-progress">
-                  <Progress :percent="item.per" status="active" :stroke-width="9"/>
+                <div class="zuhe_echarts_rt">
+                  <div class="zuhe_echarts_title">媒介转化效率</div>
+                  <div class="new_echart_box1">
+                    <!-- <barC5 :colorList="$fjData.colorList" :myData="progressData" id="progressData"></barC5> -->
+                   <div class="new_echart_list_box">
+                      <div class="m-rank-lf-list" v-for="(item,index) in rankList1" :key="index">
+                        <div class="m-rank-item-lf">
+                            <div class="m-rank-icon">
+                              <img :src="item.icon" alt="">
+                            </div>
+                            <div class="m-rank-text">
+                              {{item.text}}
+                            </div>
+                          </div>
+                          <div class="m-rank-progress">
+                            <barHM2 :id="'box1141'+index" :colorList="$lxjData.colorList" :myData='$lxjData["box1149"+ index + "Data"]'></barHM2>
+                          </div>
+                      </div>
+                    </div>
+                    <ul class="new_echart_legend">
+                        <li><div class="circle"></div> 转化率</li>
+                        <li><div class="circle circleBox"></div> 销售额</li>
+                    </ul>
+                  </div>
                 </div>
             </div>
           </div>
-          <div class="m-rank-rt">
-            <div class="m-rank-tp">
-              <div class="m-rank-tp-title">
-                媒介声量趋势图
-              </div>
-              <div class="new_echart_box">
-                <cLine id="box58" :colorList="$lxjData.colorList" :myData="myChartData1"></cLine>
+          <div class="m-p-rank">
+            <div class="m-p-rank-header">
+              <ul class="h-name-list">
+                <li :class="{'h-name-active':index==act}" v-for="(item,index) in target" :key="index" @click="targetClick(index)">{{item}}</li>
+                <!-- <li>媒介声量排名</li>
+                <li>媒介使用时长排名</li>
+                <li>媒介口碑排名</li>
+                <li>媒介价值贡献排名</li> -->
+              </ul>
+              <div class="h-right">
+                <div class="h-tab">
+                  <div class="left" :class="{'act':cur==0}" @click="cur=0">类型</div>
+                  <div class="right" :class="{'act':cur==1}" @click="cur=1">渠道名称</div>
+                </div>
+                <!-- <div class="h-select"> -->
+                  <Select v-model="model1" style="width: 120px" placeholder="过去3天">
+                    <Option v-for="item in dateList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                  </Select>
+                <!-- </div> -->
               </div>
             </div>
-            <div class="m-rank-bm">
-              <div class="m-rank-bm-lf">
+            <div class="m-p-rank-echarts">
+              <div class="m-rank-lf">
+                <div class="m-rank-lf-list" @click="changeIndex1(index)" :class="currentIndex1==index?'m-rank-lf-active':''" v-for="(item,index) in rankList" :key="index">
+                  <div class="m-rank-item-lf">
+                      <div class="m-rank-num">
+                        {{index+1}}
+                      </div>
+                      <div class="m-rank-icon">
+                        <img :src="item.icon" alt="">
+                      </div>
+                      <div class="m-rank-text">
+                        {{item.text}}
+                      </div>
+                    </div>
+                    <div class="m-rank-progress">
+                      <Progress :percent="item.per" status="active" :stroke-width="9"/>
+                    </div>
+                </div>
+              </div>
+              <div class="m-rank-rt">
+                <div class="m-rank-tp">
+                  <div class="m-rank-tp-title">
+                    媒介声量趋势图
+                  </div>
+                  <div class="new_echart_box">
+                    <cLine id="box58" :colorList="$lxjData.colorList" :myData="myChartData1"></cLine>
+                  </div>
+                </div>
+                <div class="m-rank-bm">
+                  <div class="m-rank-bm-lf">
+                        <div class="m-rank-tp-title">
+                          用户总数和新增用户
+                        </div>
+                        <div class="new_echart_box">
+                          <barLine id="box101" :colorList="$lxjData.colorList" :myData="myChartData2"></barLine>
+                        </div>
+                  </div>
+                  <div class="m-rank-bm-rt">
                     <div class="m-rank-tp-title">
-                      用户总数和新增用户
+                          使用时长和次数
                     </div>
                     <div class="new_echart_box">
-                      <barLine id="box101" :colorList="$lxjData.colorList" :myData="myChartData2"></barLine>
+                      <barLine id="box102" :colorList="$lxjData.colorList" :myData="myChartData3"></barLine>
                     </div>
-              </div>
-              <div class="m-rank-bm-rt">
-                <div class="m-rank-tp-title">
-                      使用时长和次数
-                </div>
-                <div class="new_echart_box">
-                  <barLine id="box102" :colorList="$lxjData.colorList" :myData="myChartData3"></barLine>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+          <PortraitMatching />
+      </template>
+      <template v-if="tabActive == 2">
 	    <div class="zuhetitle">媒介剖析</div>
 	    <MediaAnalysis />
-	    <div class="m-p-kol">
-		    <div class="m-p-target-title">
-			    KOL资源
-			    <Poptip popper-class="saas-poptip small" placement="right-start">
-				    <i class="iconfont iconguanyu tip-icon blue-tip-icon"></i>
-				    <div slot="content">
-					    <p>媒介资源库，提供具体媒介资源的详细信息，包括基础数据、历史投放效果和合作方案等，以供品牌方比较分析并联系合作</p>
-				    </div>
-			    </Poptip>
-		    </div>
-		    <div class="subTitle">抖音媒介资源是品牌本次投放方案的最优选择，“邓荣”的投放效果表现最优。基于分析，“李刚”性价比最高，可作为比较和备选方案。</div>
-		    <Tabs @on-click="getTab">
-			    <TabPaneItem :name="it" :label="it" v-for="it in tabs" :key="it"/>
-		    </Tabs>
-	    </div>
+        <KOLResource />
+      </template>
     </div>
 </template>
 
 <script>
+import Tab from "@/components/Tab"
 import Triple from "./base/Triple"
 import Half from "./base/Half"
 import Full from "./base/Full"
 import Card from "./base/Card"
-import TabPaneItem from "./base/TabPaneItem"
+import KOLResource from "./base/KOLResource"
 import PieCaseEcharts from '../../components/echarts/common/pie/PieCaseEcharts';
 import barL from '../../components/echarts/common/bar/barL';
 import barLine from '../../components/echarts/common/bar/barLine';
@@ -587,18 +574,24 @@ import cLine from '../../components/echarts/common/line/line';
 import barM from '../../components/echarts/common/bar/barM';
 import barHM2 from '../../components/echarts/common/bar/barHM3';
 import MediaAnalysis from './base/MediaAnalysis';
+import PieEcharts9 from '../../components/echarts/common/pie/PieEcharts9';
+import PortraitMatching from './base/PortraitMatching';
+
 let counter = 0
 export default {
   name: "index",
-  components: { cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, TabPaneItem, MediaAnalysis},
+  components: {Tab, PieEcharts9,cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, KOLResource, MediaAnalysis, PortraitMatching},
   data(){
       return{
+        tabActive: 1,
+        myChartData0:null,
         myChartData1:this.$lxjData.box581Data,
         myChartData2:this.$lxjData.box102Data,
         myChartData3:this.$lxjData.box103Data,
         currentIndex:1,
         currentIndex1:0,
         model2:"1",
+        model3:"1",
         optionList:[
           {
             name:"综合曝光度",
@@ -686,7 +679,6 @@ export default {
           "科技数码","旅行","美食","美妆","萌宠","明星","母婴","汽车","情感","三农","生活日常",
           "时尚","舞蹈","艺术文化","个护","园艺","运动健身","奢侈品","新闻资讯","品牌组织","颜值达人","知识科普","番剧","游戏","品牌组织"],
           list3:["不限","按照最低刊例价组合","按照最高刊例价组合"],
-            tabs: ['短视频','社交传媒', '大众传媒' , '体验事件' , '促销' , '在线社交媒体' , '公共关系和宣传' , '网站'  , '其他' ],
           progressData: {
               value: [528, 464, 958, 423],
               value1: [52, 464, 958, 423],
@@ -1060,9 +1052,12 @@ export default {
         currentNum2:0,
         rankList:[],
         rankList1:[],
+        contList:['品牌官方产品发布','直播','微博博文','节日礼品上新',],
+        contList1:['KOL自有粉丝','品牌核心目标消费人群<br>(北京上班族/年轻白领)','品牌忠诚消费者',],
       }
   },
   created(){
+    this.myChartData0=this.$fjData.box51Data;
     this.myEData=this.$lxjData.box27Data;
     this.userData=this.$linData.box1Data;
     this.averageData=this.$linData.box3Data;
@@ -1083,7 +1078,7 @@ export default {
             text:'小红书',
             icon:this.xhsIcon,
           },
-         
+
     ];
     this.rankList=[
           {
@@ -1255,135 +1250,45 @@ export default {
     this.changeTabCon(0);
   },
   methods:{
+    changeTab(index) {
+        this.tabActive = index;
+    },
     changeIndex1(arg){
       this.currentIndex1=arg;
       this.currentNum1++;
       if(this.currentNum1%2==0){
-          this.myChartData1=this.$lxjData.box581Data,
-          this.myChartData2=this.$lxjData.box102Data,
-          this.myChartData3=this.$lxjData.box103Data,
-          this.rankList=[
-            {
-              per:23,
-              text:'抖音',
-              icon:this.dyIcon,
-            },
-            {
-              per:22,
-              text:'微博',
-              icon:this.wbIcon,
-            },
-            {
-              per:18,
-              text:'小红书',
-              icon:this.xhsIcon,
-            },
-            {
-              per:11,
-              text:'今日头条',
-              icon:this.ttIcon,
-            },
-            {
-              per:8,
-              text:'微信',
-              icon:require("../../assets/img/yhhx/weiicon.png"),
-            },
-            {
-              per:7,
-              text:'大众点评',
-              icon:require("../../assets/img/yhhx/daicon.png"),
-            },
-            {
-              per:5,
-              text:'人民日报',
-              icon:require("../../assets/img/yhhx/renicon.png"),
-            },
-            {
-              per:3,
-              text:'虎嗅',
-              icon:require("../../assets/img/yhhx/huicon.png"),
-            },
-            {
-              per:3,
-              text:'第一财经',
-              icon:require("../../assets/img/yhhx/caiicon.png"),
-            },
-      ];
+          this.myChartData1=this.$lxjData.box581Data;
+          this.myChartData2=this.$lxjData.box102Data;
+          this.myChartData3=this.$lxjData.box103Data;
       }else{
-        this.myChartData1=this.$lxjData.box582Data,
-        this.myChartData2=this.$lxjData.box1021Data,
-        this.myChartData3=this.$lxjData.box1031Data,
-        this.rankList=[
-              {
-                per:35,
-                text:'抖音',
-                icon:this.dyIcon,
-              },
-              {
-                per:32,
-                text:'今日头条',
-                icon:this.ttIcon,
-              },
-              {
-                per:27,
-                text:'微博',
-                icon:this.wbIcon,
-              },
-              {
-                per:18,
-                text:'小红书',
-                icon:this.xhsIcon,
-              },
-              {
-                per:8,
-                text:'微信',
-                icon:require("../../assets/img/yhhx/weiicon.png"),
-              },
-              {
-                per:7,
-                text:'大众点评',
-                icon:require("../../assets/img/yhhx/daicon.png"),
-              },
-              {
-                per:5,
-                text:'人民日报',
-                icon:require("../../assets/img/yhhx/renicon.png"),
-              },
-              {
-                per:3,
-                text:'虎嗅',
-                icon:require("../../assets/img/yhhx/huicon.png"),
-              },
-              {
-                per:3,
-                text:'第一财经',
-                icon:require("../../assets/img/yhhx/caiicon.png"),
-              },
-        ];
-
+        this.myChartData1=this.$lxjData.box582Data;
+        this.myChartData2=this.$lxjData.box1021Data;
+        this.myChartData3=this.$lxjData.box1031Data;
       }
     },
     changeIndex(arg){
       this.currentIndex=arg;
-      this.currentNum++;
-      if(this.currentNum%2==0){
+      if(arg==1){
+        this.myChartData0=this.$fjData.box51Data;
+        this.contList=['品牌官方产品发布','直播','微博博文','节日礼品上新',];
+        this.contList1=['KOL自有粉丝','品牌核心目标消费人群<br>(北京上班族/年轻白领)','品牌忠诚消费者',];
         this.mediaList1=[
-        {
-          numTxt1:'150W',
-          numTxt2:'30W',
-          icon:this.wbIcon,
-        },
-        {
-          numTxt1:'90W',
-          numTxt2:'200W',
-          icon:this.dyIcon,
-        },
-        {
-          numTxt1:'30W',
-          numTxt2:'60W',
-          icon:this.xhsIcon,
-        },
-        ]
+            {
+              numTxt1:'150W',
+              numTxt2:'30W',
+              icon:this.wbIcon,
+            },
+            {
+              numTxt1:'90W',
+              numTxt2:'200W',
+              icon:this.dyIcon,
+            },
+            {
+              numTxt1:'30W',
+              numTxt2:'60W',
+              icon:this.xhsIcon,
+            },
+          ]
         this.mediaHlist1=[
           {
             numTxt1:'30W',
@@ -1401,44 +1306,83 @@ export default {
             icon:this.touxIcon3,
           },
         ]
-      }else{
+      }else if(arg==2){
+        this.myChartData0=this.$fjData.box52Data;
         this.mediaList1=[
-        {
-          numTxt1:'500W',
-          numTxt2:'70W',
-          icon:this.wbIcon,
-        },
-        {
-          numTxt1:'300W',
-          numTxt2:'200W',
-          icon:this.xhsIcon,
-        },
-        {
-          numTxt1:'150W',
-          numTxt2:'60W',
-          icon:this.dyIcon,
-        },
-      ]
-      this.mediaHlist1=[
-        {
-          numTxt1:'40W',
-          numTxt2:'15W',
-          icon:this.touxIcon2,
-        },
-        {
-          numTxt1:'15W',
-          numTxt2:'5W',
-          icon:this.touxIcon1,
-
-        },
-        {
-          numTxt1:'10W',
-          numTxt2:'5W',
-          icon:this.touxIcon3,
-        },
-      ]
+            {
+              numTxt1:'500W',
+              numTxt2:'30W',
+              icon:this.ttIcon,
+            },
+            {
+              numTxt1:'300W',
+              numTxt2:'50W',
+              icon:this.dyIcon,
+            },
+            {
+              numTxt1:'150W',
+              numTxt2:'10W',
+              icon:this.xhsIcon,
+            },
+          ]
+        this.mediaHlist1=[
+          {
+            numTxt1:'50W',
+            numTxt2:'15W',
+            icon:this.touxIcon1,
+          },
+          {
+            numTxt1:'45W',
+            numTxt2:'10W',
+            icon:this.touxIcon2,
+          },
+          {
+            numTxt1:'35W',
+            numTxt2:'5W',
+            icon:this.touxIcon3,
+          },
+        ]
+        this.contList=['品牌产品种草短视频','品牌产品介绍视频	','品牌产品体验笔记',];
+        this.contList1=['KOL自有粉丝','品牌核心目标消费人群<br>(北京上班族/年轻白领)','品牌忠诚消费者',];
+      }else{
+        this.myChartData0=this.$fjData.box53Data;
+        this.mediaList1=[
+            {
+              numTxt1:'2200W',
+              numTxt2:'80W',
+              icon:require("../../assets/img/yhhx/taoicon.png"),
+            },
+            {
+              numTxt1:'1700W',
+              numTxt2:'70W',
+              icon:require("../../assets/img/yhhx/daicon.png"),
+            },
+            {
+              numTxt1:'1500W',
+              numTxt2:'30W',
+              icon:this.xhsIcon,
+            },
+          ]
+        this.mediaHlist1=[
+          {
+            numTxt1:'200W',
+            numTxt2:'35W',
+            icon:this.touxIcon4,
+          },
+          {
+            numTxt1:'150W',
+            numTxt2:'15W',
+            icon:this.touxIcon5,
+          },
+          {
+            numTxt1:'80W',
+            numTxt2:'10W',
+            icon:this.touxIcon3,
+          },
+        ]
+        this.contList=['行业趋势(品牌/产品露出)','生活指南','好物推荐',];
+        this.contList1=['KOL自有粉丝','品牌核心目标消费人群<br>(北京上班族/年轻白领)','品牌忠诚消费者',];
       }
-
     },
     change2(arg){
       if(arg == 1){
@@ -2149,7 +2093,7 @@ export default {
                 text:'微信',
                 icon:require("../../assets/img/yhhx/weiicon.png"),
               },
-              
+
               {
                 per:5,
                 text:'人民日报',
@@ -2160,7 +2104,7 @@ export default {
                 text:'虎嗅',
                 icon:require("../../assets/img/yhhx/huicon.png"),
               },
-              
+
         ];
 
       }
@@ -2262,7 +2206,6 @@ export default {
   padding: 0 24px 24px 24px;
   .new_echart_box{
       flex:1;
-      background: #ccc;
     }
   .new_media_panel1{
     display: flex;
@@ -2894,7 +2837,7 @@ export default {
               .sec_pan_con1_num{
                 text-align: center;
                 flex:1;
-                font-size: 16px;
+                font-size: 12px;
                 font-family: HelveticaNeue-Bold, HelveticaNeue;
                 font-weight: bold;
                 color: #242F57;
@@ -3160,11 +3103,11 @@ export default {
     }
   }
   .zuhetitle{
+    margin: 18px 0;
     font-size: 18px;
     font-family: PingFangSC-Medium, PingFang SC;
     font-weight: 500;
     color: #242F57;
-    margin-bottom: 19px;
   }
   .media_zuhe_panel{
     background: #FFFFFF;
@@ -3393,7 +3336,7 @@ export default {
         flex:1;
         display: flex;
         flex-direction: column;
-        padding: 24px;
+        padding-right: 24px;
         padding-bottom: 0;
         border-right: 1px solid #EAEDF7;
         box-sizing: border-box;
@@ -3407,10 +3350,8 @@ export default {
         }
       }
       .zuhe_echarts_rt{
-        padding: 24px;
-        padding-bottom: 0;
+        padding-left: 24px;
         flex:1;
-        padding-right: 0;
         display: flex;
         flex-direction: column;
         .zuhe_echarts_title{

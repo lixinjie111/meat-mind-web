@@ -378,7 +378,8 @@
                     </div>
                 </div> -->
                 <div class="tab_item">
-                  <div class="tab_item_item mbitem1" @click="changMbItem(0)">基础画像</div>
+<!--                      hd修改-1-->
+<!--                  <div class="tab_item_item mbitem1" @click="changMbItem(0)">基础画像</div>-->
                   <div class="tab_item_item mbitem2" @click="changMbItem(1)">行为分析</div>
                   <div class="tab_item_item mbitem3" @click="changMbItem(2)">心智分析</div>
                   <div class="tab_item_item mbitem4" @click="changMbItem(3)">生命周期分析</div>
@@ -421,61 +422,61 @@
 <script>
     const allBqitm = {
     xhs: {
-      icon: require("../../assets/img/yhhx/xhs.png")
+      icon: require("../../../assets/img/yhhx/xhs.png")
     },
     ks: {
-      icon: require("../../assets/img/yhhx/ks.png")
+      icon: require("../../../assets/img/yhhx/ks.png")
     },
     wb: {
-      icon: require("../../assets/img/yhhx/wb.png")
+      icon: require("../../../assets/img/yhhx/wb.png")
     },
     tt: {
-      icon: require("../../assets/img/yhhx/tt.png")
+      icon: require("../../../assets/img/yhhx/tt.png")
     },
     zhIcon: {
-      icon: require("../../assets/img/yhhx/zhIcon.png")
+      icon: require("../../../assets/img/yhhx/zhIcon.png")
     },
     dyI: {
-      icon: require("../../assets/img/yhhx/dyI.png")
+      icon: require("../../../assets/img/yhhx/dyI.png")
     },
     dd: {
-      icon: require("../../assets/img/yhhx/dd.jpg")
+      icon: require("../../../assets/img/yhhx/dd.jpg")
     },
     dc: {
-      icon: require("../../assets/img/yhhx/dc.jpg")
+      icon: require("../../../assets/img/yhhx/dc.jpg")
     },
     bx: {
-      icon: require("../../assets/img/yhhx/bx.jpeg")
+      icon: require("../../../assets/img/yhhx/bx.jpeg")
     },
     wx: {
-      icon: require("../../assets/img/yhhx/wx.jpeg")
+      icon: require("../../../assets/img/yhhx/wx.jpeg")
     },
     qq: {
-      icon: require("../../assets/img/yhhx/qq.jpg")
+      icon: require("../../../assets/img/yhhx/qq.jpg")
     },
     pyq: {
-      icon: require("../../assets/img/yhhx/pyq.png")
+      icon: require("../../../assets/img/yhhx/pyq.png")
     },
     mt: {
-      icon: require("../../assets/img/yhhx/mt.jpeg")
+      icon: require("../../../assets/img/yhhx/mt.jpeg")
     },
     elm: {
-      icon: require("../../assets/img/yhhx/elm.jpeg")
+      icon: require("../../../assets/img/yhhx/elm.jpeg")
     },
     dz: {
-      icon: require("../../assets/img/yhhx/dz.jpg")
+      icon: require("../../../assets/img/yhhx/dz.jpg")
     },
     wy: {
-      icon: require("../../assets/img/yhhx/wyIcon.png")
+      icon: require("../../../assets/img/yhhx/wyIcon.png")
     },
     wzry: {
-      icon: require("../../assets/img/yhhx/wzry.jpeg")
+      icon: require("../../../assets/img/yhhx/wzry.jpeg")
     },
     jdqs: {
-      icon: require("../../assets/img/yhhx/jdqs.png")
+      icon: require("../../../assets/img/yhhx/jdqs.png")
     },
     xxl: {
-      icon: require("../../assets/img/yhhx/xxl.jpg")
+      icon: require("../../../assets/img/yhhx/xxl.jpg")
     },
   }
     export default {
@@ -487,15 +488,15 @@
                 currentBtn:2,
                 AMap: null,
                 switch1:true,
-                yhdxImg:require("../../assets/img/yhhx/yhdxImg.png"),
-                closeIcon:require("../../assets/img/yhhx/icon_close.png"),
-                locaIcon:require("../../assets/img/yhhx/dwIcon.png"),
-                // dtIcon:require("../../assets/img/yhhx/dtIcon.png"),
-                drIcon:require("../../assets/img/yhhx/drIcon.png"),
-                tbIcon:require("../../assets/img/yhhx/tbIcon.png"),
-                // tbIcon:require("../../assets/img/yhhx/bgImg.png"),
-                xhsIcon:require("../../assets/img/yhhx/xhs.png"),
-                quyResult:require("../../assets/img/yhhx/quyResult.png"),
+                yhdxImg:require("../../../assets/img/yhhx/yhdxImg.png"),
+                closeIcon:require("../../../assets/img/yhhx/icon_close.png"),
+                locaIcon:require("../../../assets/img/yhhx/dwIcon.png"),
+                // dtIcon:require("../../../assets/img/yhhx/dtIcon.png"),
+                drIcon:require("../../../assets/img/yhhx/drIcon.png"),
+                tbIcon:require("../../../assets/img/yhhx/tbIcon.png"),
+                // tbIcon:require("../../../assets/img/yhhx/bgImg.png"),
+                xhsIcon:require("../../../assets/img/yhhx/xhs.png"),
+                quyResult:require("../../../assets/img/yhhx/quyResult.png"),
                 bqitmList: [
                 {
                   name: '出行',
@@ -530,7 +531,7 @@
                 // timeType:8,
                 ifShowMb:false,
                 ifShowCon:false,
-                // conditImg:require("../../assets/img/yhhx/conditImg.png"),
+                // conditImg:require("../../../assets/img/yhhx/conditImg.png"),
                 cur:"基本信息",
                 target: ["自定义标签", "基本信息", "兴趣爱好", "设备属性"],
                 property: ["用户维度", "媒介维度", "品牌维度"],
@@ -566,7 +567,7 @@
                     },
                     tonqinTypeObj:{
                         tqType1:'地铁',
-                        tqType1Icon:require("../../assets/img/yhhx/dtIcon.png"),
+                        tqType1Icon:require("../../../assets/img/yhhx/dtIcon.png"),
                         tqType2:'开车',
                     },
                     tongqinTimeObj:{
@@ -617,11 +618,11 @@
                   descList:null,
                   ticList:[
                     {
-                      ic:require("../../assets/img/yhhx/ditieIcon.png"),
+                      ic:require("../../../assets/img/yhhx/ditieIcon.png"),
                       txt:'地铁（5号线、10号线、13号线）'
                     },
                     {
-                      ic:require("../../assets/img/yhhx/drIcon.png"),
+                      ic:require("../../../assets/img/yhhx/drIcon.png"),
                       txt:'自驾'
                     }
                   ]
@@ -663,11 +664,11 @@
                   descList:null,
                   ticList:[
                     {
-                      ic:require("../../assets/img/yhhx/ditieIcon.png"),
+                      ic:require("../../../assets/img/yhhx/ditieIcon.png"),
                       txt:'地铁（5号线、10号线、13号线）'
                     },
                     {
-                      ic:require("../../assets/img/yhhx/drIcon.png"),
+                      ic:require("../../../assets/img/yhhx/drIcon.png"),
                       txt:'自驾'
                     }
                   ]
@@ -759,35 +760,35 @@
                meijieList:[
                  {
                    check:true,
-                   srcIm:require("../../assets/img/yhhx/xhs.png"),
+                   srcIm:require("../../../assets/img/yhhx/xhs.png"),
                    til:'小红书'
                  },
                  {
                    check:true,
-                   srcIm:require("../../assets/img/yhhx/tt.png"),
+                   srcIm:require("../../../assets/img/yhhx/tt.png"),
                    til:'头条'
                  },
                  {
                    check:false,
-                   srcIm:require("../../assets/img/yhhx/ks.png"),
+                   srcIm:require("../../../assets/img/yhhx/ks.png"),
                    til:'快手'
                  },
                  {
                    check:false,
-                   srcIm:require("../../assets/img/yhhx/weib1.png"),
+                   srcIm:require("../../../assets/img/yhhx/weib1.png"),
                    til:'微博'
                  }
                ],
                fanganObj:{
                  qdObj1:{
-                  icon: require("../../assets/img/yhhx/tt.png"),
+                  icon: require("../../../assets/img/yhhx/tt.png"),
                   name:'今日头条',
                   money:'￥9200',
                   vdlNum:'53%',
                   timeRang:'8:00 - 9:30'
                  },
                  qdObj2:{
-                  icon: require("../../assets/img/yhhx/wyIcon.png"),
+                  icon: require("../../../assets/img/yhhx/wyIcon.png"),
                   name:'网易',
                   money:'￥3200',
                   vdlNum:'43%',
@@ -796,14 +797,14 @@
                },
                fanganObj1:{
                  qdObj1:{
-                  icon: require("../../assets/img/yhhx/tt.png"),
+                  icon: require("../../../assets/img/yhhx/tt.png"),
                   name:'今日头条',
                   money:'￥9200',
                   vdlNum:'53%',
                   timeRang:'8:00 - 9:30'
                  },
                  qdObj2:{
-                  icon: require("../../assets/img/yhhx/wyIcon.png"),
+                  icon: require("../../../assets/img/yhhx/wyIcon.png"),
                   name:'网易',
                   money:'￥3200',
                   vdlNum:'43%',
@@ -812,14 +813,14 @@
                },
                fanganObj2:{
                  qdObj1:{
-                  icon: require("../../assets/img/yhhx/wx.jpeg"),
+                  icon: require("../../../assets/img/yhhx/wx.jpeg"),
                   name:'微信',
                   money:'￥7200',
                   vdlNum:'43%',
                   timeRang:'12:00 - 1:00'
                  },
                  qdObj2:{
-                  icon: require("../../assets/img/yhhx/dz.jpg"),
+                  icon: require("../../../assets/img/yhhx/dz.jpg"),
                   name:'大众点评',
                   money:'￥2200',
                   vdlNum:'30%',
@@ -828,14 +829,14 @@
                },
                fanganObj3:{
                  qdObj1:{
-                  icon: require("../../assets/img/yhhx/dyI.png"),
+                  icon: require("../../../assets/img/yhhx/dyI.png"),
                   name:'抖音',
                   money:'￥17200',
                   vdlNum:'73%',
                   timeRang:'19:00 - 23:00'
                  },
                  qdObj2:{
-                  icon: require("../../assets/img/yhhx/weib1.png"),
+                  icon: require("../../../assets/img/yhhx/weib1.png"),
                   name:'新浪微博',
                   money:'￥5200',
                   vdlNum:'40%',
@@ -901,8 +902,8 @@
         methods:{
             clickPerTab(arg){
               var conDom = this.$refs.person_con_con;
-              let actLef = require('../../assets/img/yhhx/actLef.png');
-              let actrig = require('../../assets/img/yhhx/actRig.png');
+              let actLef = require('../../../assets/img/yhhx/actLef.png');
+              let actrig = require('../../../assets/img/yhhx/actRig.png');
               if(arg == 1){
                 conDom.style=`background-image: url(${actLef});background-size: cover;`;
               }
@@ -1169,7 +1170,7 @@
                   },
                   tonqinTypeObj: {
                     tqType1: '地铁',
-                    tqType1Icon: require("../../assets/img/yhhx/dtIcon.png"),
+                    tqType1Icon: require("../../../assets/img/yhhx/dtIcon.png"),
                     tqType2: '开车',
                   },
                   tongqinTimeObj: {
@@ -1241,7 +1242,7 @@
                   },
                   tonqinTypeObj: {
                     tqType1: '步行',
-                    tqType1Icon: require("../../assets/img/yhhx/buxIcon.png"),
+                    tqType1Icon: require("../../../assets/img/yhhx/buxIcon.png"),
                   },
                   tongqinTimeObj: {
                     timeN: 10
@@ -1313,7 +1314,7 @@
                   },
                   tonqinTypeObj: {
                     tqType1: '地铁',
-                    tqType1Icon: require("../../assets/img/yhhx/dtIcon.png"),
+                    tqType1Icon: require("../../../assets/img/yhhx/dtIcon.png"),
                     tqType2: '开车',
                   },
                   tongqinTimeObj: {
@@ -1893,7 +1894,8 @@
         position: absolute;
         left: 1.9%;
         top: 132px;
-        width: 806px;
+        // hd修改-2
+        width: 780px;
         z-index: 1000;
         height: 557px;
         background: #FFF;
@@ -2035,7 +2037,8 @@
     .test_container{
         /*margin-top: 20px;*/
         width: 100%;
-        height: 600px;
+        // hd修改-3
+        height: 545px;
         margin-bottom: 20px;
         display: flex;
         align-items: center;
@@ -2046,6 +2049,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            // hd修改-4
+            border-radius: 0 0 8px 8px;
         }
         .per_info_container{
             width: 300px;
@@ -2291,7 +2296,7 @@
             //     justify-content: center;
             //     padding-left: 16px;
             //     box-sizing: border-box;
-            //     background-image: url("../../assets/img/yhhx/river.png");
+            //     background-image: url("../../../assets/img/yhhx/river.png");
             //     background-size: cover;
             //     .yhdx_title_top{
             //         width: 100%;
@@ -2586,7 +2591,8 @@
         }
         .yhxw_container{
             position: absolute;
-            width: 806px;
+            // hd修改-5
+            width: 780px;
             bottom: 20px;
             left: 20px;
             z-index: 999;
@@ -2753,8 +2759,8 @@
             // }
         }
     }
-    .test_container.row{
-      height: 442px;
-    }
+    /*.test_container.row{*/
+    /*  height: 442px;*/
+    /*}*/
 }
 </style>

@@ -337,61 +337,61 @@
 <script>
     const allBqitm = {
     xhs: {
-      icon: require("../../assets/img/yhhx/xhs.png")
+      icon: require("../../../assets/img/yhhx/xhs.png")
     },
     ks: {
-      icon: require("../../assets/img/yhhx/ks.png")
+      icon: require("../../../assets/img/yhhx/ks.png")
     },
     wb: {
-      icon: require("../../assets/img/yhhx/wb.png")
+      icon: require("../../../assets/img/yhhx/wb.png")
     },
     tt: {
-      icon: require("../../assets/img/yhhx/tt.png")
+      icon: require("../../../assets/img/yhhx/tt.png")
     },
     zhIcon: {
-      icon: require("../../assets/img/yhhx/zhIcon.png")
+      icon: require("../../../assets/img/yhhx/zhIcon.png")
     },
     dyI: {
-      icon: require("../../assets/img/yhhx/dyI.png")
+      icon: require("../../../assets/img/yhhx/dyI.png")
     },
     dd: {
-      icon: require("../../assets/img/yhhx/dd.jpg")
+      icon: require("../../../assets/img/yhhx/dd.jpg")
     },
     dc: {
-      icon: require("../../assets/img/yhhx/dc.jpg")
+      icon: require("../../../assets/img/yhhx/dc.jpg")
     },
     bx: {
-      icon: require("../../assets/img/yhhx/bx.jpeg")
+      icon: require("../../../assets/img/yhhx/bx.jpeg")
     },
     wx: {
-      icon: require("../../assets/img/yhhx/wx.jpeg")
+      icon: require("../../../assets/img/yhhx/wx.jpeg")
     },
     qq: {
-      icon: require("../../assets/img/yhhx/qq.jpg")
+      icon: require("../../../assets/img/yhhx/qq.jpg")
     },
     pyq: {
-      icon: require("../../assets/img/yhhx/pyq.png")
+      icon: require("../../../assets/img/yhhx/pyq.png")
     },
     mt: {
-      icon: require("../../assets/img/yhhx/mt.jpeg")
+      icon: require("../../../assets/img/yhhx/mt.jpeg")
     },
     elm: {
-      icon: require("../../assets/img/yhhx/elm.jpeg")
+      icon: require("../../../assets/img/yhhx/elm.jpeg")
     },
     dz: {
-      icon: require("../../assets/img/yhhx/dz.jpg")
+      icon: require("../../../assets/img/yhhx/dz.jpg")
     },
     wy: {
-      icon: require("../../assets/img/yhhx/wyIcon.png")
+      icon: require("../../../assets/img/yhhx/wyIcon.png")
     },
     wzry: {
-      icon: require("../../assets/img/yhhx/wzry.jpeg")
+      icon: require("../../../assets/img/yhhx/wzry.jpeg")
     },
     jdqs: {
-      icon: require("../../assets/img/yhhx/jdqs.png")
+      icon: require("../../../assets/img/yhhx/jdqs.png")
     },
     xxl: {
-      icon: require("../../assets/img/yhhx/xxl.jpg")
+      icon: require("../../../assets/img/yhhx/xxl.jpg")
     },
   }
     export default {
@@ -402,20 +402,20 @@
                 current:8,
                 AMap: null,
                 switch1:true,
-                yhdxImg:require("../../assets/img/yhhx/yhdxImg.png"),
-                closeIcon:require("../../assets/img/yhhx/icon_close.png"),
-                locaIcon:require("../../assets/img/yhhx/dwIcon.png"),
-                dtIcon:require("../../assets/img/yhhx/dtIcon.png"),
-                drIcon:require("../../assets/img/yhhx/drIcon.png"),
-                tbIcon:require("../../assets/img/yhhx/tbIcon.png"),
-                // tbIcon:require("../../assets/img/yhhx/bgImg.png"),
-                xhsIcon:require("../../assets/img/yhhx/xhs.png"),
-                ksIcon:require("../../assets/img/yhhx/ks.png"),
-                dyIcon:require("../../assets/img/yhhx/dyI.png"),
-                wbIcon:require("../../assets/img/yhhx/wb.png"),
-                ttIcon:require("../../assets/img/yhhx/tt.png"),
-                wyIcon:require("../../assets/img/yhhx/wyIcon.png"),
-                zhIcon:require("../../assets/img/yhhx/zhIcon.png"),
+                yhdxImg:require("../../../assets/img/yhhx/yhdxImg.png"),
+                closeIcon:require("../../../assets/img/yhhx/icon_close.png"),
+                locaIcon:require("../../../assets/img/yhhx/dwIcon.png"),
+                dtIcon:require("../../../assets/img/yhhx/dtIcon.png"),
+                drIcon:require("../../../assets/img/yhhx/drIcon.png"),
+                tbIcon:require("../../../assets/img/yhhx/tbIcon.png"),
+                // tbIcon:require("../../../assets/img/yhhx/bgImg.png"),
+                xhsIcon:require("../../../assets/img/yhhx/xhs.png"),
+                ksIcon:require("../../../assets/img/yhhx/ks.png"),
+                dyIcon:require("../../../assets/img/yhhx/dyI.png"),
+                wbIcon:require("../../../assets/img/yhhx/wb.png"),
+                ttIcon:require("../../../assets/img/yhhx/tt.png"),
+                wyIcon:require("../../../assets/img/yhhx/wyIcon.png"),
+                zhIcon:require("../../../assets/img/yhhx/zhIcon.png"),
                 bqitmList: [
                 {
                   name: '出行',
@@ -450,7 +450,7 @@
                 timeType:8,
                 currentBtn:2,
                 ifShowCon:false,
-                conditImg:require("../../assets/img/yhhx/conditImg.png"),
+                conditImg:require("../../../assets/img/yhhx/conditImg.png"),
                 nilinList:['18-24','35-44','45+'],
                 sexList:['男','女'],
                 hasChildList:['妈妈','母婴','二胎','中学生家长','0-3岁小孩父母','3-6岁小孩父母','孕期','备孕','小学生家长'],
@@ -482,7 +482,7 @@
                     },
                     tonqinTypeObj:{
                         tqType1:'地铁',
-                        tqType1Icon:require("../../assets/img/yhhx/dtIcon.png"),
+                        tqType1Icon:require("../../../assets/img/yhhx/dtIcon.png"),
                         tqType2:'开车',
                     },
                     tongqinTimeObj:{
@@ -500,14 +500,14 @@
                 ifShowtffatj:true,
                 fanganObj:{
                  qdObj1:{
-                  icon: require("../../assets/img/yhhx/tt.png"),
+                  icon: require("../../../assets/img/yhhx/tt.png"),
                   name:'今日头条',
                   money:'￥9200',
                   vdlNum:'53%',
                   timeRang:'8:00 - 9:30'
                  },
                  qdObj2:{
-                  icon: require("../../assets/img/yhhx/wyIcon.png"),
+                  icon: require("../../../assets/img/yhhx/wyIcon.png"),
                   name:'网易',
                   money:'￥3200',
                   vdlNum:'43%',
@@ -572,8 +572,8 @@
         methods:{
             clickPerTab(arg){
               var conDom = this.$refs.person_con_con;
-              let actLef = require('../../assets/img/yhhx/actLef.png');
-              let actrig = require('../../assets/img/yhhx/actRig.png');
+              let actLef = require('../../../assets/img/yhhx/actLef.png');
+              let actrig = require('../../../assets/img/yhhx/actRig.png');
               if(arg == 1){
                 conDom.style=`background-image: url(${actLef});background-size:contain;background-repeat:no-repeat;`;
               }
@@ -776,7 +776,7 @@
                     },
                     tonqinTypeObj:{
                         tqType1:'地铁',
-                        tqType1Icon:require("../../assets/img/yhhx/dtIcon.png"),
+                        tqType1Icon:require("../../../assets/img/yhhx/dtIcon.png"),
                         tqType2:'开车',
                     },
                     tongqinTimeObj:{
@@ -828,7 +828,7 @@
                     },
                     tonqinTypeObj:{
                         tqType1:'步行',
-                        tqType1Icon:require("../../assets/img/yhhx/buxIcon.png"),
+                        tqType1Icon:require("../../../assets/img/yhhx/buxIcon.png"),
                     },
                     tongqinTimeObj:{
                         timeN:10
@@ -878,7 +878,7 @@
                     },
                     tonqinTypeObj:{
                         tqType1:'地铁',
-                        tqType1Icon:require("../../assets/img/yhhx/dtIcon.png"),
+                        tqType1Icon:require("../../../assets/img/yhhx/dtIcon.png"),
                         tqType2:'开车',
                     },
                     tongqinTimeObj:{
@@ -1488,7 +1488,8 @@
     .test_container{
         /*margin-top: 20px;*/
         width: 100%;
-        height: 600px;
+        // hd修改-1
+        height: 545px;
         margin-bottom: 20px;
         display: flex;
         align-items: center;
@@ -1498,6 +1499,8 @@
             height: 100%;
             display: flex;
             justify-content: center;
+            // hd修改-2
+            border-radius: 0 0 8px 8px;
             .timer12{
             width: 95%;
             height: 80px;
@@ -1778,7 +1781,7 @@
                 //     justify-content: center;
                 //     padding-left: 16px;
                 //     box-sizing: border-box;
-                //     background-image: url("../../assets/img/yhhx/river.png");
+                //     background-image: url("../../../assets/img/yhhx/river.png");
                 //     background-size: cover;
                 //     .yhdx_title_top{
                 //         width: 100%;
@@ -2142,8 +2145,8 @@
             }
         }
     }
-    .test_container.row{
-      height: 442px;
-    }
+    /*.test_container.row{*/
+    /*  height: 442px;*/
+    /*}*/
 }
 </style>
