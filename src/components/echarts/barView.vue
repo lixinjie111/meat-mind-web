@@ -248,7 +248,7 @@
 
 
 			<div class="box">
-				<PieNest2 id="303" :myData="$abelData.nest201Data" title="匹配度" value="87"></PieNest2>
+				<PieNest2 id="303" :myData="$abelData.nest201Data" title="综合指数" value="72"></PieNest2>
 			</div>
 
 		</div>

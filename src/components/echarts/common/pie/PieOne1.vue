@@ -3,7 +3,6 @@
 </template>
 
 <script>
-	import echarts from 'echarts';
 export default {
 	props: {
 		value:{
@@ -37,7 +36,9 @@ export default {
 						offset: 0, color: '#8CB6FF' // 0% 处的颜色
 					}, {
 						offset: 1, color: '#2373FF' // 100% 处的颜色
-					}]}, '#fff'];
+					}]},
+					'#fff',
+				'transparent'];
 			},
 		},
 	},
@@ -50,7 +51,7 @@ export default {
 	methods: {
 		initEcharts() {
 			let _option = this.defaultOption();
-			let myChart = this.$echarts.init(document.getElementById(this.id));
+			let myChart = echarts5.init(document.getElementById(this.id));
 			myChart.setOption(_option);
 			window.addEventListener('resize',()=>{
 				myChart.resize();
@@ -78,15 +79,14 @@ export default {
 					name: 'shadow',
 					type: 'pie',
 					z: 1,
-					radius: [0, '87.5%'],
+					radius: [0, '84.5%'],
 					hoverAnimation: false,
 					labelLine: {
 						show: false
 					},
 					itemStyle: {
-						borderRadius: 30,
 						shadowBlur: 20,
-						shadowColor: 'rgba(35,115,255, 0.3)',
+						shadowColor: 'rgba(134, 143, 191, 0.3)',
 					},
 					data: [
 						{value: 0},
@@ -97,18 +97,24 @@ export default {
 						name: '访问来源',
 						type: 'pie',
 						z: 2,
-						radius: ['84%', '87.5%'],
+						radius: ['80%', '87.5%'],
 						avoidLabelOverlap: false,
 						hoverAnimation: false,
 						label: {
 							show: false,
 							position: 'center'
 						},
+						itemStyle: {
+							borderRadius: 30,
+							shadowBlur: 20,
+							shadowColor: 'rgba(35,115,255, 0.3)',
+						},
 						labelLine: {
 							show: false
 						},
 						data: [
 							{value: value},
+							{value: 0},
 							{value: 100 - value},
 						]
 					},
