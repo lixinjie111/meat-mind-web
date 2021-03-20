@@ -3,7 +3,8 @@
 </template>
 
 <script>
-export default {
+  let id = 0
+  export default {
 	props: {
 		myData:{
 			default:()=>{
@@ -13,7 +14,8 @@ export default {
 		id:{
 			type:String,
 			default:()=>{
-				return '';
+			  ++id;
+				return `PieNest1-${id}`;
 			},
 		},
 		title:{

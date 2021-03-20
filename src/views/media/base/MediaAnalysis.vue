@@ -3,6 +3,9 @@
 		<div class="strategy-title">
 			KOL推荐组合
 		</div>
+		<div class="strategy-sub-title">
+      基于账号影响力和品牌&用户匹配度的最优ROI的KOL组合推荐。
+		</div>
 		<div class="strategy-top">
 			<div class="top-left">
 				<p><span class="top-title">推荐的KOL组合</span><span class="top-blue">李子柒 + 西木西木 + 辣目洋子</span></p>
@@ -16,13 +19,13 @@
 		<div class="strategy-bottom">
 			<div></div>
 			<div>
-				<div class="bottom-title">用户量</div>
+				<div class="bottom-title">用户总量</div>
 			</div>
 			<div>
-				<div class="bottom-title light">曝光分布</div>
+				<div class="bottom-title light">曝光率</div>
 			</div>
 			<div>
-				<div class="bottom-title">销售分布</div>
+				<div class="bottom-title">转化率</div>
 			</div>
 			<div>
 				<div class="bottom-title light">影响力指数</div>
@@ -56,7 +59,7 @@
 				<BarEcharts1 :colorList="$fjData.colorList" :myData="$ljEData.ljBox38" ></BarEcharts1>
 			</div>
 			<div>
-				<!--                  <PieEcharts8 :colorList="$fjData.colorList" :myData="$fjData.box31Data" ></PieEcharts8>-->
+        <PieOne1 id="box301" :value="96.9" title="影响力指数"></PieOne1>
 			</div>
 			<div>
 				<div class="bottom-card">
@@ -77,7 +80,7 @@
 				<BarEcharts1 :colorList="$fjData.colorList" :myData="$ljEData.ljBox39" ></BarEcharts1>
 			</div>
 			<div>
-				<!--                  <PieEcharts8 :colorList="$fjData.colorList" :myData="$fjData.box32Data" ></PieEcharts8>-->
+        <PieOne1 id="box302" :value="91.1" title="影响力指数"></PieOne1>
 			</div>
 			<div>
 				<div class="bottom-card">
@@ -98,7 +101,7 @@
 				<BarEcharts1 :colorList="$fjData.colorList" :myData="$ljEData.ljBox40" ></BarEcharts1>
 			</div>
 			<div>
-				<!--                  <PieEcharts8 :colorList="$fjData.colorList" :myData="$fjData.box33Data" ></PieEcharts8>-->
+        <PieOne1 id="box303" :value="95.2" title="影响力指数"></PieOne1>
 			</div>
 		</div>
 	</div>
@@ -107,9 +110,10 @@
 <script>
 	import PieEcharts8 from '../../../components/echarts/common/pie/PieEcharts8';
 	import BarEcharts1 from '../../../components/echarts/common/bar/barEcharts1';
+	import PieOne1 from '../../../components/echarts/common/pie/PieOne1';
 
 	export default {
-		components: { PieEcharts8, BarEcharts1 }
+		components: { PieEcharts8, BarEcharts1, PieOne1 }
 	}
 </script>
 
@@ -128,53 +132,60 @@
 			font-weight: 500;
 			color: #242F57;
 		}
+		.strategy-sub-title {
+      font-size: 14px;
+      font-weight: 400;
+      color: #636E95;
+      line-height: 20px;
+      margin: 6px 0 17px;
+		}
 		.strategy-top {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			padding: 16px;
-			margin-top: 24px;
+			/*margin-top: 24px;*/
 			width: 100%;
-			height: 95px;
-			background: #F7F9FD;
-			border-radius: 8px;
-			border: 1px solid #EAEDF7;
-
 			>div {
-				width: 45%;
-
+        min-height: 114px;
+        background: #F4F7FC;
+        border-radius: 8px;
+        margin-right: 24px;
+        padding: 17px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1 1 50%;
+        &.top-left{
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+        }
 				&.top-right {
-					width: 52%;
 					display: flex;
 					justify-content: space-between;
 					align-items: flex-start;
-
+          margin-right: 0;
 					>p {
 						&:nth-child(1) {
-							width: 160px;
+							width: 190px;
 							margin-right: 24px;
 						}
 					}
 				}
-
 				.mt12 {
 					margin-top: 12px;
 				}
-
 				.top-title {
-					font-size: 14px;
-					font-family: PingFangSC-Regular, PingFang SC;
-					font-weight: 400;
-					color: #242F57;
+          font-size: 14px;
+          font-weight: 400;
+          color: #242F57;
 				}
 
 				span {
 					margin-right: 24px;
 					font-size: 14px;
-					font-family: PingFangSC-Regular, PingFang SC;
 					font-weight: 400;
 					color: #636E95;
-
 					&.top-blue {
 						color: #2373FF;
 					}
@@ -194,51 +205,51 @@
 				width: 100%;
 				height: 48px;
 				line-height: 48px;
-				background: #73A0FA;
 				border-radius: 8px;
 				text-align: center;
 				font-size: 14px;
-				font-family: PingFangSC-Medium, PingFang SC;
 				font-weight: 500;
-				color: #FFFFFF;
-
+        background: #D3E3FF;
+        color: #242F57;
+        font-family: PingFangSC-Medium, PingFang SC;
 				&.light {
 					color: #242F57;
-					background: #DBE7FF;
+          background: #F0F8FF;
 				}
 			}
 
 			.bottom-card {
 				position: relative;
 				text-align: center;
+        margin-top: 36px;
 
 				> img {
-					width: 56px;
-					height: 56px;
+          position: absolute;
+					width: 36px;
+					height: 36px;
 					border-radius: 50%;
+          transform: translate(-50%, -50%);
 				}
 
 				.card-box {
-					margin-top: -30px;
-					width: 100%;
-					min-width: 140px;
-					height: 116px;
-					background: #FFFFFF;
-					box-shadow: 5px 8px 16px 0px rgba(121, 131, 168, 0.15);
-					border-radius: 8px;
-					border: 2px solid #EAEDF7;
-
+          height: 90px;
+          background: #F4F7FC;
+          border-radius: 6px;
+          overflow: hidden;
+          padding-top: 22px;
 					>p {
-						font-size: 14px;
-						font-family: PingFangSC-Regular, PingFang SC;
-						font-weight: 400;
-						color: #636E95;
-
+            font-size: 11px;
+            font-weight: 500;
+            color: #242F57;
 						&:nth-child(1) {
-							margin-top: 48px;
-							font-family: PingFangSC-Medium, PingFang SC;
 							font-weight: 500;
 							color: #242F57;
+						}
+						&:nth-child(2) {
+              font-size: 11px;
+              font-weight: 400;
+              margin-top: 6px;
+              color: #636E95;
 						}
 					}
 				}

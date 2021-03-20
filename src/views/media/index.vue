@@ -431,7 +431,7 @@
                     <i class="iconfont icongengduo"></i>
                   </div>
                   <div class="zuhe_echarts_Item_num">
-                    1.2<span class="zuhe_echarts_danwei">亿元</span> 
+                    1.2<span class="zuhe_echarts_danwei">亿元</span>
                   </div>
                 </div>
               </div>
@@ -541,23 +541,10 @@
           </div>
         </div>
       </div>
+      <PortraitMatching />
 	    <div class="zuhetitle">媒介剖析</div>
 	    <MediaAnalysis />
-	    <div class="m-p-kol">
-		    <div class="m-p-target-title">
-			    KOL资源
-			    <Poptip popper-class="saas-poptip small" placement="right-start">
-				    <i class="iconfont iconguanyu tip-icon blue-tip-icon"></i>
-				    <div slot="content">
-					    <p>媒介资源库，提供具体媒介资源的详细信息，包括基础数据、历史投放效果和合作方案等，以供品牌方比较分析并联系合作</p>
-				    </div>
-			    </Poptip>
-		    </div>
-		    <div class="subTitle">抖音媒介资源是品牌本次投放方案的最优选择，“邓荣”的投放效果表现最优。基于分析，“李刚”性价比最高，可作为比较和备选方案。</div>
-		    <Tabs @on-click="getTab">
-			    <TabPaneItem :name="it" :label="it" v-for="it in tabs" :key="it"/>
-		    </Tabs>
-	    </div>
+      <KOLResource />
     </div>
 </template>
 
@@ -567,7 +554,7 @@ import Triple from "./base/Triple"
 import Half from "./base/Half"
 import Full from "./base/Full"
 import Card from "./base/Card"
-import TabPaneItem from "./base/TabPaneItem"
+import KOLResource from "./base/KOLResource"
 import PieCaseEcharts from '../../components/echarts/common/pie/PieCaseEcharts';
 import barL from '../../components/echarts/common/bar/barL';
 import barLine from '../../components/echarts/common/bar/barLine';
@@ -584,10 +571,12 @@ import barM from '../../components/echarts/common/bar/barM';
 import barHM2 from '../../components/echarts/common/bar/barHM3';
 import MediaAnalysis from './base/MediaAnalysis';
 import PieEcharts9 from '../../components/echarts/common/pie/PieEcharts9';
+import PortraitMatching from './base/PortraitMatching';
+
 let counter = 0
 export default {
   name: "index",
-  components: {Tab, PieEcharts9,cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, TabPaneItem, MediaAnalysis},
+  components: {Tab, PieEcharts9,cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, KOLResource, MediaAnalysis, PortraitMatching},
   data(){
       return{
         myChartData0:null,
@@ -685,7 +674,6 @@ export default {
           "科技数码","旅行","美食","美妆","萌宠","明星","母婴","汽车","情感","三农","生活日常",
           "时尚","舞蹈","艺术文化","个护","园艺","运动健身","奢侈品","新闻资讯","品牌组织","颜值达人","知识科普","番剧","游戏","品牌组织"],
           list3:["不限","按照最低刊例价组合","按照最高刊例价组合"],
-            tabs: ['短视频','社交传媒', '大众传媒' , '体验事件' , '促销' , '在线社交媒体' , '公共关系和宣传' , '网站'  , '其他' ],
           progressData: {
               value: [528, 464, 958, 423],
               value1: [52, 464, 958, 423],
@@ -1085,7 +1073,7 @@ export default {
             text:'小红书',
             icon:this.xhsIcon,
           },
-         
+
     ];
     this.rankList=[
           {
@@ -2100,7 +2088,7 @@ export default {
                 text:'微信',
                 icon:require("../../assets/img/yhhx/weiicon.png"),
               },
-              
+
               {
                 per:5,
                 text:'人民日报',
@@ -2111,7 +2099,7 @@ export default {
                 text:'虎嗅',
                 icon:require("../../assets/img/yhhx/huicon.png"),
               },
-              
+
         ];
 
       }
