@@ -180,7 +180,7 @@ export default {
 						z: 3,
 						radius: ['60%', '78.5%'],
 						avoidLabelOverlap: false,
-						hoverAnimation: false,
+						// hoverAnimation: false,
 						label: {
 							show: true,
 							formatter: params => {

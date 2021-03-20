@@ -120,7 +120,7 @@ export default {
 						z: 3,
 						radius: ['64%', '70.6%'],
 						avoidLabelOverlap: false,
-						hoverAnimation: false,
+						// hoverAnimation: false,
 						label: {
 							show: false,
 							position: 'center'

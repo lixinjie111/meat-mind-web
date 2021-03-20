@@ -167,7 +167,7 @@ export default {
 						z: 2,
 						radius: ['82%', '87.5%'],
 						avoidLabelOverlap: false,
-						hoverAnimation: false,
+						// hoverAnimation: false,
 						label: {
 							show: false,
 							position: 'center'
@@ -220,7 +220,7 @@ export default {
 						z: 2,
 						radius: ['67.75%', '73.25%'],
 						avoidLabelOverlap: false,
-						hoverAnimation: false,
+						// hoverAnimation: false,
 						label: {
 							show: false,
 							position: 'center'
@@ -243,9 +243,9 @@ export default {
 						name: '访问来源',
 						type: 'pie',
 						z: 2,
-						radius: ['50%', '62.5%'],
+						radius: ['53.5%', '60%'],
 						avoidLabelOverlap: false,
-						hoverAnimation: false,
+						// hoverAnimation: false,
 						label: {
 							show: false,
 							position: 'center'
