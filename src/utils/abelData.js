@@ -62,8 +62,7 @@ const abelData = {
     },
   },
   nest201Data:{
-    name: ['<25岁', '35-45岁', '>56岁', '26-34岁', '46-55岁'],
-    value: [76, 51, 35,],
+    value: [76, 51, 35,]
   },
   nest202Data:{
     value: [
