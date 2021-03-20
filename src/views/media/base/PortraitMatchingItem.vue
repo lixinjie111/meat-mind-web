@@ -1,5 +1,5 @@
 <template>
-  <TabPane :label="label" :name="name">
+  <div class="portrait-matching-item">
     <div class="f-list">
       <div class="f-item" @click="changeModel(index)" :class="{'active':index==list4Act}" v-for="(item,index) in list4" :key="index">
         <p>{{item}}</p>
@@ -11,31 +11,31 @@
       <div class="chart-box">
         <div>
           <div class="chart-item-title">性别分布</div>
-          <PieNest1 :colorList="$abelData.colorList" :myData="nest01Data" :key="`1-${index}`" title="匹配度" value="92"></PieNest1>
+          <PieNest1 :colorList="$abelData.colorList" :myData="nest01Data" :key="`1-${index}`" title="匹配度" :value="index === 1 ? 92 : 85"></PieNest1>
         </div>
         <div>
           <div class="chart-item-title">年龄分布</div>
-          <PieNest1 :colorList="$abelData.colorList" :myData="nest02Data" :key="`2-${index}`" title="匹配度" value="88"></PieNest1>
+          <PieNest1 :colorList="$abelData.colorList" :myData="nest02Data" :key="`2-${index}`" title="匹配度" :value="index === 1 ? 92 : 85"></PieNest1>
         </div>
         <div>
           <div class="chart-item-title">职业分布</div>
-          <PieNest1 :colorList="$abelData.colorList" :myData="nest03Data" :key="`3-${index}`" title="匹配度" value="90"></PieNest1>
+          <PieNest1 :colorList="$abelData.colorList" :myData="nest03Data" :key="`3-${index}`" title="匹配度" :value="index === 1 ? 90 : 85"></PieNest1>
         </div>
         <div>
           <div class="chart-item-title">收入分布</div>
-          <PieNest1 :colorList="$abelData.colorList" :myData="nest04Data" :key="`4-${index}`" title="匹配度" value="80"></PieNest1>
+          <PieNest1 :colorList="$abelData.colorList" :myData="nest04Data" :key="`4-${index}`" title="匹配度" :value="index === 1 ? 80 : 74"></PieNest1>
         </div>
         <div>
           <div class="chart-item-title">家庭情况</div>
-          <PieNest1 :colorList="$abelData.colorList" :myData="nest05Data" :key="`5-${index}`" title="匹配度" value="87"></PieNest1>
+          <PieNest1 :colorList="$abelData.colorList" :myData="nest05Data" :key="`5-${index}`" title="匹配度" :value="index === 1 ? 87 : 30"></PieNest1>
         </div>
         <div>
           <div class="chart-item-title">网龄结构</div>
-          <PieNest1 :colorList="$abelData.colorList" :myData="nest06Data" :key="`6-${index}`" title="匹配度" value="87"></PieNest1>
+          <PieNest1 :colorList="$abelData.colorList" :myData="nest06Data" :key="`6-${index}`" title="匹配度" :value="index === 1 ? 87 : 45"></PieNest1>
         </div>
       </div>
     </div>
-  </TabPane>
+  </div>
 </template>
 
 <script>
@@ -44,6 +44,7 @@
     components: { PieNest1 },
     props: ['name', 'label'],
     data() {
+      console.log('pppppppppppppppp')
       return {
         list4Act: 0,
         list4: ["综合", "抖音", "快手", "微视", "梨视频", "西瓜视频"],
@@ -93,6 +94,9 @@
 </script>
 
 <style scoped lang="scss">
+  .portrait-matching-item{
+    margin-top: 16px;
+  }
   .m-p-target-title {
     font-size: 16px;
     font-family: PingFangSC-Medium, PingFang SC;

@@ -1,5 +1,5 @@
 <template>
-  <TabPane :label="label" :name="name">
+  <div class="tab-pane-item">
     <div class="f-list">
       <div class="f-item" @click="changeModel(index)" :class="{'active':index==list4Act}"
            v-for="(item,index) in list4" :key="index">
@@ -59,7 +59,7 @@
         </div>
       </div>
     </div>
-  </TabPane>
+  </div>
 </template>
 
 <script>
@@ -296,6 +296,9 @@
 </script>
 
 <style scoped lang="scss">
+  .tab-pane-item{
+    margin-top: 16px;
+  }
   .f-list {
     width: calc(100% - 96px);
     display: flex;

@@ -3,35 +3,37 @@
     <div class="m-p-target-title">
       KOL资源
       <Poptip popper-class="saas-poptip small" placement="right-start">
-        <i class="iconfont iconguanyu tip-icon blue-tip-icon"></i>
+        <i class="iconfont iconguanyu tip-icon"></i>
         <div slot="content">
           <p>媒介资源库，提供具体媒介资源的详细信息，包括基础数据、历史投放效果和合作方案等，以供品牌方比较分析并联系合作</p>
         </div>
       </Poptip>
     </div>
     <div class="subTitle">抖音媒介资源是品牌本次投放方案的最优选择，“邓荣”的投放效果表现最优。基于分析，“李刚”性价比最高，可作为比较和备选方案。</div>
-    <Tabs @on-click="getTab" class="">
-      <TabPaneItem :name="it" :label="it" v-for="it in tabs" :key="it"/>
-    </Tabs>
+    <Tab :tab-list="tabs" @change="changeTab"></Tab>
+    <TabPaneItem v-if="tabActive === (i + 1)" :name="it" :label="it" v-for="(it, i) in tabs" :key="it"/>
   </div>
 </template>
 
 <script>
   import TabPaneItem from './TabPaneItem';
+  import Tab from "@/components/TabSmall"
 
   export default {
     name: "index",
-    components: {TabPaneItem},
+    components: {TabPaneItem, Tab},
     data() {
       return {
         tabs: ['短视频', '社交传媒', '大众传媒', '体验事件', '促销', '在线社交媒体', '公共关系和宣传', '网站', '其他'],
+        tabActive: 1,
       }
     },
     mounted() {
     },
     methods: {
-      getTab(name) {
-        console.log(name)
+      changeTab(index) {
+        console.log('index', index)
+        this.tabActive = index;
       },
     },
     computed: {},

@@ -4,21 +4,22 @@
       媒介用户画像匹配度
     </div>
     <div class="subTitle">媒介泛用户与品牌用户的匹配度分析。</div>
-    <Tabs @on-click="getTab">
-      <PortraitMatchingItem :label="it" :name="it" v-for="(it, i) in tabs" :key="i"  />
-    </Tabs>
+    <Tab :tab-list="tabs" @change="changeTab"></Tab>
+    <PortraitMatchingItem v-if="tabActive === (i + 1)" :label="it" :name="it" v-for="(it, i) in tabs" :key="i"  />
   </div>
 </template>
 
 <script>
   import PortraitMatchingItem from './PortraitMatchingItem';
+  import Tab from "@/components/TabSmall"
   export default {
-    components: { PortraitMatchingItem },
+    components: { PortraitMatchingItem, Tab },
     data() {
       return {
         list4Act: 0,
         list4: ["抖音", "快手", "微视", "梨视频", "西瓜视频"],
         tabs: ['短视频','社交传媒', '大众传媒' , '体验事件' , '促销' , '在线社交媒体' , '公共关系和宣传' , '网站'  , '其他' ],
+        tabActive: 1,
       }
     },
     mounted() {
@@ -26,6 +27,9 @@
     methods: {
       changeModel(current) {
         this.list4Act = current
+      },
+      changeTab(index) {
+        this.tabActive = index;
       },
       clickMoreType() {
         this.moreOpen = !this.moreOpen
