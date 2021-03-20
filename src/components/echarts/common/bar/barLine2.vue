@@ -94,7 +94,7 @@ export default {
 					axisLine:{
 						lineStyle:{
 							color:'#EAEDF7',
-							type:"dashed"
+							type:"solid"
 						}
 					} ,
 					axisLabel: {
@@ -121,8 +121,9 @@ export default {
             },
             yAxis: [
 			{
-				name: '媒介声量',
+				name: '媒介声量\n万',
 				type: 'value',
+				nameGap: 6,
 				nameTextStyle:{
 					color:"#97A0C3",
 					fontSize:12,
@@ -143,17 +144,19 @@ export default {
 						}
 					},
 					splitLine: {
-						show:true,
-						lineStyle: {
-							color:'#EAEDF7',
-							type: 'dashed',
-						}
+						show:false,
+						// lineStyle: {
+						// 	color:'#EAEDF7',
+						// 	type:"solid",
+						// 	width: 2,//这里是为了突出显示加上的
+						// }
 					},
 
 			},
 			{
 				// type: 'value',
-				name: '投放回报',
+				name: '投放回报\n千万元',
+				nameGap: 6,
 				nameTextStyle:{
 					color:"#97A0C3",
 					fontSize:12,
@@ -180,8 +183,9 @@ export default {
 					splitLine: {
 						show:true,
 						lineStyle: {
-							color:'#EAEDF7',
-							type: 'dashed',
+							color:'#ADADAD',
+							type:"solid",
+							width: 1,//这里是为了突出显示加上的
 						}
 					},
 			}

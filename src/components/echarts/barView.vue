@@ -259,6 +259,10 @@
 				<BarLine2 id="305" :colorList="$abelData.colorList" :myData="$abelData.barLine"></BarLine2>
 			</div>
 
+			<div class="box">
+				<BarHM4 id="306" :colorList="$abelData.colorList" :myData="$abelData.barStack01"></BarHM4>
+			</div>
+
 		</div>
 </template>
 
@@ -277,6 +281,7 @@
 	import barT from './common/bar/barT';
 	import funnel from './common/funnel/funnel';
 	import barHM from './common/bar/barHM';
+	import BarHM4 from './common/bar/barHM4';
 	import lineSp from './common/line/lineSp';
 	import pieP from './common/pie/pieP';
 	import PieOne1 from './common/pie/PieOne1';
@@ -288,7 +293,7 @@
     export default {
 		name:"barView",
 		components: {
-			BarLine2,
+			BarLine2, BarHM4,
 		  lineM3,barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,pieP,PieOne1,PieOne2,PieOne3,PieNest1,PieNest2
 		}
     }
