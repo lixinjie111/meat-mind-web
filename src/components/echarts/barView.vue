@@ -251,6 +251,10 @@
 				<PieNest2 id="303" :myData="$abelData.nest201Data" title="综合指数" value="72"></PieNest2>
 			</div>
 
+			<div class="box">
+				<PieOne3 id="304" :myData="$abelData.nest201Data" title="未来7日"></PieOne3>
+			</div>
+
 		</div>
 </template>
 
@@ -273,12 +277,13 @@
 	import pieP from './common/pie/pieP';
 	import PieOne1 from './common/pie/PieOne1';
 	import PieOne2 from './common/pie/PieOne2';
+	import PieOne3 from './common/pie/PieOne3';
 	import PieNest1 from './common/pie/PieNest1';
 	import PieNest2 from './common/pie/PieNest2';
     export default {
 		name:"barView",
 		components: {
-		  lineM3,barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,pieP,PieOne1,PieOne2,PieNest1,PieNest2
+		  lineM3,barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,pieP,PieOne1,PieOne2,PieOne3,PieNest1,PieNest2
 		}
     }
 </script>
