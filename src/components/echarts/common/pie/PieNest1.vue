@@ -3,8 +3,8 @@
 </template>
 
 <script>
-	import echarts from 'echarts';
-export default {
+  let id = 0
+  export default {
 	props: {
 		myData:{
 			default:()=>{
@@ -14,7 +14,8 @@ export default {
 		id:{
 			type:String,
 			default:()=>{
-				return '';
+			  ++id;
+				return `PieNest1-${id}`;
 			},
 		},
 		title:{
@@ -56,7 +57,7 @@ export default {
 			})
 		},
 		defaultOption(myData) {
-			const { inner, outer } = myData || { name: [], value: [] };
+			const { inner, outer } = myData || {inner: { name: [], value: [] }, outer: { name: [], value: [] }};
 			var option = {
                 color:this.colorList,
 				title: [

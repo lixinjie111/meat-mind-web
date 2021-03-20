@@ -85,24 +85,24 @@
                         path: "/business-analysis",
                         children: [
                             {
-                                name: "business-analysis-ztgl",
+                                name: "business-analysis-overview",
                                 label: "整体概览",
-                                path: "/business-analysis/ztgl"
+                                path: "/business-analysis/overview"
                             },
                             {
-                                name: "business-analysis-yhfx",
+                                name: "business-analysis-user",
                                 label: "用户分析",
-                                path: "/business-analysis/yhfx"
+                                path: "/business-analysis/user"
                             },
                             {
-                                name: "business-analysis-qdfx",
+                                name: "business-analysis-channel",
                                 label: "渠道分析",
-                                path: "/business-analysis/qdfx"
+                                path: "/business-analysis/channel"
                             },
                             {
-                                name: "business-analysis-ywgl",
+                                name: "business-analysis-brand",
                                 label: "品牌运营分析",
-                                path: "/business-analysis/ywgl"
+                                path: "/business-analysis/brand"
                             },
                         ]
                     },
@@ -113,46 +113,39 @@
                         path: "/analysis-tool",
                         children: [
                             {
-                                name: "analysis-tool-fxmx",
+                                name: "analysis-tool-model",
                                 label: "分析模型",
-                                path: "/analysis-tool/fxmx",
+                                path: "/analysis-tool/model",
                             },
                             {
-                                name: "analysis-tool-zbgl",
+                                name: "analysis-tool-indicator",
                                 label: "指标管理",
-                                path: "/analysis-tool/zbgl",
+                                path: "/analysis-tool/indicator",
                             },
                             {
-                                name: "analysis-tool-bqgl",
+                                name: "analysis-tool-label",
                                 label: "标签管理",
-                                path: "/analysis-tool/bqgl",
+                                path: "/analysis-tool/label",
                             },
                             {
-                                name: "analysis-tool-yhfq",
+                                name: "analysis-tool-user",
                                 label: "用户分群",
-                                path: "/analysis-tool/yhfq",
+                                path: "/analysis-tool/user",
                             },
-                            // {
-                            //   name:"analysis-tool-qdzz",
-                            //   label: "渠道追踪",
-                            //   path: "/analysis-tool/qdzz",
-                            //   children:[
                             {
-                                name: "analysis-tool-qdzz-qdlj",
+                                name: "analysis-tool-link",
                                 label: "渠道链接",
-                                path: "/analysis-tool/qdzz/qdlj",
+                                path: "/analysis-tool/link",
                             },
                             {
-                                name: "analysis-tool-qdzz-qdgl",
+                                name: "analysis-tool-manage",
                                 label: "渠道管理",
-                                path: "/analysis-tool/qdzz/qdgl",
+                                path: "/analysis-tool/manage",
                             },
-                            // ]
-                            // },
                             {
-                                name: "analysis-tool-cjk",
+                                name: "analysis-tool-scene",
                                 label: "场景库",
-                                path: "/analysis-tool/cjk",
+                                path: "/analysis-tool/scene",
                             },
                         ]
                     },

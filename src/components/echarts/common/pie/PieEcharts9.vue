@@ -15,7 +15,7 @@
     data() {
       id++
       return {
-        chartID: `pie-8-${id}`,
+        chartID: `pie-9-${id}`,
         myChart: null
       }
     },
@@ -69,15 +69,15 @@
                   color: '#242F57',
                 },
                 titleB: {
-                  fontSize: 12,
+                  fontSize: 18,
                   fontWeight: 500,
-                  color: '#242F57',
+                  color: '#4D94FF',
                   padding: [6, 0]
                 },
                 subTitle: {
-                  fontSize: 10,
+                  fontSize: 12,
                   fontWeight: 400,
-                  color: '#7C88B1',
+                  color: '#97A0C3',
                 },
               }
             },

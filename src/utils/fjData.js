@@ -31,14 +31,17 @@ const fjEData = {
     box51Data: {
         name: ['渠道1', '渠道2','渠道3','其他'],
         value: [200, 60,30,30],
+        title: '{subTitle|预算投放总额}\n{titleB|320万元}',
     },
     box52Data: {
         name: ['渠道1', '渠道2','渠道3','其他'],
         value: [50,30, 10,30],
+        title: '{subTitle|预算投放总额}\n{titleB|120万元}',
     },
     box53Data: {
         name: ['渠道1', '渠道2','渠道3','其他'],
         value: [80, 70,30,60],
+        title: '{subTitle|预算投放总额}\n{titleB|240万元}',
     },
     box6Data: {
         name: ['喜好', '厌恶', '一般', '创伤'],

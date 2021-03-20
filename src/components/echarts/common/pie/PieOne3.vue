@@ -3,12 +3,26 @@
 </template>
 
 <script>
+	import {timeValue} from "../../../../utils/func";
+
+	const color = {
+				type: 'linear',
+				x: 0,
+				y: 0,
+				x2: 0,
+				y2: 1,
+				colorStops: [{
+					offset: 0, color: '#8CB6FF' // 0% 处的颜色
+				}, {
+					offset: 1, color: '#2373FF' // 100% 处的颜色
+				}]};
+
 export default {
 	props: {
-		value:{
-			type: Number,
+		myData:{
+			type: Object,
 			default:()=>{
-				return 50;
+				return {};
 			},
 		},
 		id:{
@@ -26,18 +40,22 @@ export default {
 		colorList:{
 			type:Array,
 			default:()=>{
-				return  [{
-					type: 'linear',
-					x: 0,
-					y: 0,
-					x2: 0,
-					y2: 1,
-					colorStops: [{
-						offset: 0, color: '#8CB6FF' // 0% 处的颜色
-					}, {
-						offset: 1, color: '#2373FF' // 100% 处的颜色
-					}]},
+				return  [
 					'#fff',
+					'transparent',
+						color,
+					'transparent',
+						color,
+					'transparent',
+						color,
+					'transparent',
+						color,
+					'transparent',
+						color,
+					'transparent',
+						color,
+					'transparent',
+						color,
 					'transparent'];
 			},
 		},
@@ -50,49 +68,50 @@ export default {
     mounted(){this.initEcharts()},
 	methods: {
 		initEcharts() {
-			let _option = this.defaultOption();
+			let _option = this.defaultOption(this.myData.value);
 			let myChart = echarts5.init(document.getElementById(this.id));
 			myChart.setOption(_option);
 			window.addEventListener('resize',()=>{
 				myChart.resize();
 			})
 		},
-		defaultOption() {
-			let value = this.value;
+		defaultOption(value) {
+			let data = [{value: 0}];
+			let prev = 0;
+			for (let i=0; i<value.length/2; i++) {
+				data.push({value: timeValue(value[ i*2 ]) - prev, label: {show: false}}, {name: value[ i*2 ] +' - '+ value[ i*2+1 ], value: timeValue(value[ i*2+1 ]) - timeValue(value[ i*2 ])});
+				prev = timeValue(value[ i*2+1 ]);
+			}
+			if (prev < 24)
+				data.push({value: 24 - prev});
+
 			var option = {
 				color:this.colorList,
 				title: {
-					subtext: ''+value,
 					text: this.title,
-					top: '30%',
+					top: 'center',
 					left: 'center',
 					textStyle: {
-						fontSize: 10,
-						fontWeight: 400,
-						color: '#999'
-					},
-					subtextStyle: {
-						fontSize: 20,
-						fontWeight: 400,
+						fontSize: 16,
+						fontWeight: 500,
 						color: 'black'
 					},
-					itemGap: 10
+					itemGap: 20
 				},
 				series: [{
 					name: 'shadow1',
 					type: 'pie',
 					z: 1,
-					radius: [0, '87.5%'],
+					radius: [0, '80%'],
 					hoverAnimation: false,
 					labelLine: {
 						show: false
 					},
 					itemStyle: {
-						shadowBlur: 10,
+						shadowBlur: 20,
 						shadowColor: 'rgba(134, 143, 191, 0.3)',
 					},
 					data: [
-						{value: 0},
 						{value: 1},
 					]
 				},
@@ -100,48 +119,24 @@ export default {
 					name: 'shadow2',
 					type: 'pie',
 					z: 2,
-					radius: [0, '67.3%'],
+					radius: [0, '60%'],
 					hoverAnimation: false,
 					labelLine: {
 						show: false
 					},
 					itemStyle: {
-						shadowBlur: 10,
+						shadowBlur: 20,
 						shadowColor: 'rgba(134, 143, 191, 0.3)',
 					},
 					data: [
-						{value: 0},
 						{value: 1},
 					]
 				},
 					{
-						name: '访问来源',
-						type: 'pie',
-						z: 3,
-						radius: ['64%', '70.6%'],
-						avoidLabelOverlap: false,
-						// hoverAnimation: false,
-						label: {
-							show: false,
-							position: 'center'
-						},
-						labelLine: {
-							show: false
-						},
-						itemStyle: {
-							borderRadius: 30,
-						},
-						data: [
-							{value: value},
-							{value: 0},
-							{value: 100 - value},
-						]
-					},
-					{
 						name: 'Pressure',
 						type: 'gauge',
 						silent: true,
-						z: 2,
+						z: 4,
 						animation: false,
 						axisTick: {
 							distance: 0,
@@ -149,7 +144,6 @@ export default {
 							lineStyle: {
 								width: 1,
 								color: '#EAEDF7',
-								opacity: .5
 							}
 						},
 						detail: {
@@ -173,15 +167,36 @@ export default {
 							lineStyle: {
 								width: 1,
 								color: '#EAEDF7',
-								opacity: .5
 							}
 						},
-						radius: '87.5%',
-						splitNumber: 12,
+						radius: '78.5%',
+						splitNumber: 24,
 						startAngle: 90,
 						endAngle: 90+360,
-					}
-				]
+					},
+					{
+						name: '最优曝光时间',
+						type: 'pie',
+						z: 3,
+						radius: ['60%', '78.5%'],
+						avoidLabelOverlap: false,
+						// hoverAnimation: false,
+						label: {
+							show: true,
+							formatter: params => {
+								console.log(params)
+								if (params.name)
+									return `${params.seriesName}\n${params.name}`;
+							},
+							color: '#97A0C3'
+						},
+						labelLine: {
+							show: true
+						},
+						data
+					},
+
+				],
             };
 			return option;
 		}
