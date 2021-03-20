@@ -4,7 +4,6 @@
 
 <script>
   import _ from 'lodash';
-	import logo01 from '@/assets/img/medias/logo01.png';
 export default {
 	props: {
 		myData:{

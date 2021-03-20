@@ -41,9 +41,10 @@ export default {
 			var option = {
             color: this.colorList,
             tooltip: {
-                trigger: 'axis'
+                trigger: 'item',
+							formatter: '{a}: {c}%',
 			},
-			legend: {
+				legend: {
                 bottom: 0,
                 data: this.myData.legName,
             },
