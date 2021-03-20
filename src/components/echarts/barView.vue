@@ -252,7 +252,7 @@
 			</div>
 
 			<div class="box">
-				<PieOne3 id="304" :myData="$abelData.nest201Data" title="未来7日"></PieOne3>
+				<PieOne3 id="304" :myData="$abelData.nest202Data" title="未来7日"></PieOne3>
 			</div>
 
 		</div>

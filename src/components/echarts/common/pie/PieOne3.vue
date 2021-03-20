@@ -19,10 +19,10 @@
 
 export default {
 	props: {
-		value:{
-			type: Number,
+		myData:{
+			type: Object,
 			default:()=>{
-				return 50;
+				return {};
 			},
 		},
 		id:{
@@ -68,19 +68,14 @@ export default {
     mounted(){this.initEcharts()},
 	methods: {
 		initEcharts() {
-			let _option = this.defaultOption();
+			let _option = this.defaultOption(this.myData.value);
 			let myChart = echarts5.init(document.getElementById(this.id));
 			myChart.setOption(_option);
 			window.addEventListener('resize',()=>{
 				myChart.resize();
 			})
 		},
-		defaultOption() {
-			const value = [
-				'7:00',	'9:00',
-				'11:30',	'13:00',
-				'18:00',	'21:00'
-			];
+		defaultOption(value) {
 			let data = [{value: 0}];
 			let prev = 0;
 			for (let i=0; i<value.length/2; i++) {
