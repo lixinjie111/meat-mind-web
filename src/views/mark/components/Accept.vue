@@ -1,10 +1,9 @@
 <template>
     <div class="mark-details-accept" id="m-d-accept-header">
-        <div class="m-d-accept-header">
+        <!-- <div class="m-d-accept-header">
             <div class="a-h-title">
                 {{title}}
                 <Poptip popper-class="saas-poptip" placement="right-start">
-                    <!-- <i class="iconfont iconguanyuline1 tip-icon"></i> -->
                     <img class="gif" src="../../../assets/img/user/tip.gif" alt="">
                     <div slot="content">
                         <p>用户从接受到产品的宣传营销信息（硬广or软文），到引起兴趣，然后开始搜索进行了解（百度、知乎、微博、淘宝），到在线下载or支付，以及后续的评价分享环节（产品内、微信、微博）</p>
@@ -14,7 +13,7 @@
                 </Poptip>
             </div>
             <div class="a-h-arrow"></div>
-        </div>
+        </div> -->
         <Analyse :descL="descL" :descR="descR"></Analyse>
         <div class="m-d-show-echarts">
             <Half :lTitle="'品牌真实受众覆盖度'" :rTitle="'品牌真实受众匹配度'" :subDate="'2021.1.1-2021.1.31'">
@@ -74,7 +73,7 @@ export default {
 
 <style scoped lang="scss">
 .mark-details-accept{
-    padding:0 24px 24px;
+    padding:24px;
     // margin-bottom: 24px;
     background: #FFFFFF;
     border-radius: 8px;

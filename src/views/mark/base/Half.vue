@@ -70,6 +70,8 @@
       height: 22px;
       margin-bottom: 4px;
       font-size: 14px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
       color: #242f57;
       line-height: 22px;
     }

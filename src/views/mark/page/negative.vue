@@ -1,6 +1,6 @@
 <template>
     <div class="mark-negative">
-        <div class="title">舆情应对</div>
+        <div class="header-nav"><p>舆情应对</p></div>
         <div class="show">
             <NewEcharts></NewEcharts>
         </div>

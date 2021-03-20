@@ -1,10 +1,9 @@
 <template>
     <div class="mark-details-market" id="mark-details-market">
-        <div class="m-d-market-header">
+        <!-- <div class="m-d-market-header">
             <div class="a-h-title">
                 {{title}}
                 <Poptip popper-class="saas-poptip" placement="right-start">
-                    <!-- <i class="iconfont iconguanyuline1 tip-icon"></i> -->
                     <img class="gif" src="../../../assets/img/user/tip.gif" alt="">
                     <div slot="content">
                         <p><span>品牌舆情</span></p>
@@ -25,7 +24,7 @@
 
             </div>
             <div class="a-h-arrow"></div>
-        </div>
+        </div> -->
         <Analyse :descL="descL" :descR="descR"></Analyse>
         <div class="m-d-show-echarts">
             <Full :title="'品牌舆情总声量基础特征'">
@@ -83,7 +82,7 @@ export default {
 
 <style scoped lang="scss">
 .mark-details-market{
-    padding: 0 24px 24px;
+    padding: 24px;
     margin-bottom:24px;
     background: #FFFFFF;
     border-radius: 8px;
@@ -92,7 +91,6 @@ export default {
         align-items: center;
         justify-content: space-between;
         height: 73px;
-        // border-top: 1px solid #EAEDF7;
         .a-h-title{
             display: flex;
             align-items: center;
