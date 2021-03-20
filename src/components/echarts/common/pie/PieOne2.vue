@@ -141,7 +141,7 @@ export default {
 						name: 'Pressure',
 						type: 'gauge',
 						silent: true,
-						z: 1,
+						z: 2,
 						animation: false,
 						axisTick: {
 							distance: 0,
