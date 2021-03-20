@@ -1,4 +1,19 @@
 let colorList = ['#2373FF', '#FE774B', '#1DCEC3', '#F16E84', '#FDD352', '#7BABFF', '#FFAE93', '#77E1DB', '#F6A8B5', '#FEE597', '#BDD5FF', '#FFD7C9', '#BBF1ED', '#FBD4DA', '#FEF1CB', '#FF9F7F'];
+// scatterData 30个随机数
+let starr = [],chance=[],risk=[]
+for(let i=0;i<31;i++){
+  let num = Math.random()*(1-0.5)+0.5
+  num>0.9?num=0:null
+  num<0.6?num=0:null;
+  let num2 = Math.random() - 0.5
+  num2>0&&num2<0.1?num2+=0.1:null
+  let num3 = Math.random() * 0.5 -1
+  num3>-0.6?num3=0:null
+  num3<-0.9?num3=0:null
+  starr.push(num)
+  chance.push(num2)
+  risk.push(num3)
+}
 const linData = {
     colorList: ['#2373FF', '#FE774B', '#1DCEC3', '#F16E84', '#FDD352', '#7BABFF', '#FFAE93', '#77E1DB', '#F6A8B5', '#FEE597', '#BDD5FF', '#FFD7C9', '#BBF1ED', '#FBD4DA', '#FEF1CB', '#FF9F7F'],
     box1Data: {
@@ -1047,7 +1062,11 @@ const linData = {
       legend:['机会','风险','正常'],
       name:['03-01','03-02','03-03','03-04','03-05','03-06','03-07','03-08','03-09','03-10',
       '03-11','03-12','03-13','03-14','03-15','03-16','03-17','03-18','03-19','03-20',
-      '03-21','03-22','03-23','03-24','03-25','03-26','03-27','03-28','03-29','03-30','03-31']
+      '03-21','03-22','03-23','03-24','03-25','03-26','03-27','03-28','03-29','03-30','03-31'],
+      starr,
+      chance,
+      risk
     }
 }
+
 export default linData;

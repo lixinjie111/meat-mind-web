@@ -17,33 +17,31 @@ export default {
       type:Object
     }
   },
+  data(){
+    return {
+      lengndName:"风险",
+      xName:"03-15",
+      yValue:this.scatterData.risk[14]
+    }
+  },
   methods: {
     initEcharts() {
       let option = this.defaultOption();
       let myEchart = this.$echarts.init(document.getElementById(this.id));
       myEchart.setOption(option,true);
-      myEchart.on('click',(params)=>{
+      myEchart.on('click',async (params)=>{
+        this.lengndName = params.seriesName
+        this.xName = params.name
+        this.yValue = params.value
         this.$emit('changeSeries',params.seriesName)
+        let options = await this.defaultOption()
+        myEchart.setOption(options,true)
       })
       window.addEventListener("resize", () => {
         myEchart.resize();
       });
     },
     defaultOption() {
-      let arr = [],ary=[],warn=[]
-      for(let i=0;i<31;i++){
-        let num = Math.random()*(1-0.5)+0.5
-        num>0.9?num=0:null
-        num<0.6?num=0:null;
-        let num2 = Math.random() - 0.5
-        num2>0&&num2<0.1?num2+=0.1:null
-        let num3 = Math.random() * 0.5 -1
-        num3>-0.6?num3=0:null
-        num3<-0.9?num3=0:null
-        arr.push(num)
-        ary.push(num2)
-        warn.push(num3)
-      }
       let option = {
         color:this.colorList,
         legend: {
@@ -120,7 +118,10 @@ export default {
         dataZoom:[
           {
             type:'slider',
-            start:30,
+            backgroundColor:'#F4F7FC',
+            fillerColor:'rgba(35, 115, 255, 0.2)',
+            showDataShadow: false,
+            start:30, 
             end:70,
             bottom:25,
             height:22
@@ -128,54 +129,12 @@ export default {
         ],
         series: [
           {
-            type: "effectScatter",
-            data: [
-              {
-                // name: "风险",
-                data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.7,0,0,0,-0.8,0,0,0,0,0,0,0,0,0,0,0,0],
-                // "【新浪财经】和其正在凉茶巨头夹缝中迷失，同仁堂与邓老遭多重考验",
-                itemStyle: {
-                  color: "#FF4C60",
-                },
-                label: {
-                  color: "#FF4C60",
-                },
-              }
-              // {
-              //   name: "机会1",
-              //   value: [0.684, 0.8, "赢商网：邓老凉茶在京开ins风国潮店"],
-              // },
-              // {
-              //   name: "机会2",
-              //   value: [0.222,0.5,"和其正发表律师函声明，要依法惩治网络舆论散播者"],
-              // },
-            ],
-            // showEffectOn: "render",
-            rippleEffect: {
-              brushType: "stroke",
-            },
-            hoverAnimation: true,
-            label: {
-                formatter: "{b}",
-                position: "right",
-                show: true,
-                color: "red",
-            },
-            symbolSize: 50,
-            itemStyle: {
-                color: "red",
-                shadowBlur: 10,
-                shadowColor: "#333",
-            },
-            zlevel: 1,
-          },
-          {
             type: "scatter",
             name:"机会",
             symbolSize:(value,params)=>{
               return value*16
             },
-            data:arr
+            data:this.scatterData.starr
           },
           {
             type: "scatter",
@@ -183,7 +142,7 @@ export default {
             symbolSize:(value,params)=>{
               return value*22
             },
-            data:warn 
+            data:this.scatterData.risk 
           },
           {
             type: "scatter",
@@ -191,7 +150,14 @@ export default {
             symbolSize:(value,params)=>{
               return value*40
             },
-            data: ary
+            data: this.scatterData.chance
+          },
+          {
+            name:this.lengndName,
+            type: "effectScatter",
+            symbolSize: 20,
+            data:[[this.xName,this.yValue]],
+            zlevel: 1,
           },
         ],
       };

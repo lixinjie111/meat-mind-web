@@ -1,6 +1,6 @@
 <template>
     <div class="mark-overview">
-        <div class="mark-title">
+        <div class="header-nav">
             <p>品牌概览</p>
         </div>
         <div class="main-show">
@@ -265,6 +265,9 @@
             <div class="mark-panel-sub">
                 <div class="title">
                     典型客户画像对比
+                </div>
+                <div class="sub-title">
+                    品牌与竞品典型受众特征对比
                 </div>
                 <Row>
                     <Col span="8">
@@ -1637,7 +1640,7 @@ export default {
             .boxContainer{
                 display: flex;
                 flex-direction: column;
-                margin-top: 16px;
+                // margin-top: 16px;
                 border-right: 1px solid #EAEDF7;
                 position: relative;
                 .selectPiv{
@@ -1662,7 +1665,7 @@ export default {
                     }
                 }
                 .boxEcharts1{
-                    margin-top: 5px;
+                    margin-top: 14px;
                     margin-bottom: 8px;
                    .box1{
                        height: 35px;

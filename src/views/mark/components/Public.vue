@@ -1,9 +1,9 @@
 <template>
     <div class="mark-details-public" id="mark-details-public">
-        <div class="m-d-public-header">
+        <!-- <div class="m-d-public-header">
             <div class="a-h-title">{{title}}</div>
             <div class="a-h-arrow"></div>
-        </div>
+        </div> -->
         <Analyse :descL="descL" :descR="descR"></Analyse>
         <div class="m-d-show-echarts">
             <Full :title="'品牌市场情况'">
@@ -47,8 +47,7 @@ export default {
 
 <style scoped lang="scss">
 .mark-details-public{
-    padding: 0 24px 24px;
-    // margin-bottom:24px;
+    padding: 24px;
     background: #FFFFFF;
     border-radius: 8px;
     .m-d-public-header{
@@ -56,7 +55,6 @@ export default {
         align-items: center;
         justify-content: space-between;
         height: 73px;
-        // border-top: 1px solid #EAEDF7;
         .a-h-title{
             height: 26px;
             font-size: 18px;
