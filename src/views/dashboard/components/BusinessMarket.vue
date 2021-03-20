@@ -176,7 +176,11 @@
                             <img :src="item.timeImg"/>
                         </div>
                         <div class="map-box">
-
+                            <vDxitem v-if="groupActive == 0" :onlyMap="true"></vDxitem>
+                            <vDxitem1 v-if="groupActive == 1" :onlyMap="true"></vDxitem1>
+                            <vDxitem1 v-if="groupActive == 2" :onlyMap="true"></vDxitem1>
+                            <vDxitem1 v-if="groupActive == 3" :onlyMap="true"></vDxitem1>
+                            <vDxitem1 v-if="groupActive == 4" :onlyMap="true"></vDxitem1>
                         </div>
                     </div>
                 </div>
@@ -516,6 +520,8 @@
 </template>
 
 <script>
+    import vDxitem from "../base/dxItem";
+    import vDxitem1 from "../base/dxItem1";
     import Card from "@/components/Card"
     import barM from '@/components/echarts/common/bar/barM';
     import NewEcharts from "@/views/mark/components/NewEcharts";
@@ -523,7 +529,7 @@
 
     export default {
         name: "BusinessMarket",
-        components: {NewEcharts, Card, barM, PieNest2},
+        components: {vDxitem, vDxitem1, NewEcharts, Card, barM, PieNest2},
         data() {
             return {
                 threeActive: 1,
@@ -1406,15 +1412,14 @@
                         background: #FFFFFF;
 
                         >img {
-                            /*width: 100%;*/
+                            border-radius: 8px 8px 0 0;
                             height: 104px;
                         }
                     }
 
                     .map-box {
                        width: 100%;
-                       height: 530px;
-                       background: #fff;
+                       height: 545px;
                     }
                 }
             }
