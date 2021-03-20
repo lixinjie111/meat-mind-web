@@ -145,6 +145,85 @@ const abelData = {
       '18:00',	'21:00'
     ],
   },
+barLine:{
+    formatter:'',
+    legName: ['投放成本','销售转化','合作媒介','合作KOL'],
+    name: ['2-10', '2-17', '2-24', '3-3', '3-10', '3-17'],
+    value:  [
+      {
+        name: '投放成本',
+        type: 'bar',
+        barWidth: '10%',
+        barMinWidth:10,
+        barMaxWidth:40,
+        yAxisIndex: 1,
+        itemStyle: {
+          barBorderRadius:3,
+          emphasis:{
+            color:'#FF9F7F'
+          }
+        },
+        data: [220, 368, 264, 496, 242, 385]
+      },
+      {
+        name: '销售转化',
+        type: 'bar',
+        barWidth: '10%',
+        barMinWidth:10,
+        barMaxWidth:40,
+        yAxisIndex: 1,
+        itemStyle: {
+          barBorderRadius:3,
+          emphasis:{
+            color:'#FF9F7F'
+          }
+        },
+        data: [438, 653, 565, 778, 620, 699]
+      },
+      {
+        name: '合作媒介',
+        type: 'line',
+        // smooth:true,
+        areaStyle: {
+          color: {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: 0.6,
+            colorStops: [{
+              offset: 0, color: '#1DCEC3' // 0% 处的颜色
+            }, {
+              offset: 1, color: 'rgba(255,255,255, 0)' // 100% 处的颜色
+            }],
+            global: false // 缺省为 false
+          }
+        },
+        data: [6.3, 7.9, 6.5, 7.1, 7.2, 9.3]
+      },
+      {
+        name: '合作KOL',
+        type: 'line',
+        // smooth:true,
+        areaStyle: {
+          color: {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: .8,
+            colorStops: [{
+              offset: 0, color: '#FE774B' // 0% 处的颜色
+            }, {
+              offset: 1, color: 'rgba(255,255,255, 0)' // 100% 处的颜色
+            }],
+            global: false // 缺省为 false
+          }
+        },
+        data: [4.9, 5.2, 3.6, 4.7, 4.8, 7.1]
+      }
+    ]
+  },
   box67Data:{
     legName:['线下门店', '朋友圈广告', '360搜索', '百度','分享裂变','抖音',],
     name: ['10-01', '10-02', '10-03', '10-04', '10-05', '10-06', '10-07', '10-08', '10-09', '10-10', '10-11', '10-12','10-13','10-14','10-15','10-16','10-17','10-18','10-19','10-20','10-21','10-22','10-23','10-24','10-25','10-26','10-27','10-28','10-29','10-30','10-31'],

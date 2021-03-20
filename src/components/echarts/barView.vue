@@ -255,6 +255,10 @@
 				<PieOne3 id="304" :myData="$abelData.nest202Data" title="未来7日"></PieOne3>
 			</div>
 
+			<div class="box">
+				<BarLine2 id="305" :colorList="$abelData.colorList" :myData="$abelData.barLine"></BarLine2>
+			</div>
+
 		</div>
 </template>
 
@@ -280,9 +284,11 @@
 	import PieOne3 from './common/pie/PieOne3';
 	import PieNest1 from './common/pie/PieNest1';
 	import PieNest2 from './common/pie/PieNest2';
+	import BarLine2 from "./common/bar/barLine2";
     export default {
 		name:"barView",
 		components: {
+			BarLine2,
 		  lineM3,barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,pieP,PieOne1,PieOne2,PieOne3,PieNest1,PieNest2
 		}
     }
