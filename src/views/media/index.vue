@@ -255,296 +255,300 @@
             </div>
           </div>
       </div>
-      <!-- <Tab :tab-list="['媒介策略','媒介剖析']" @change="changeTab"></Tab> -->
-      <div class="zuhetitle">媒介组合推荐方案</div>
-      <div class="media_zuhe_panel">
-        <div class="title">媒介组合方案</div>
-        <div class="subTitle">基于品牌画像和用户画像，建议以短视频作为主要信息传播媒介，垂直媒介为辅的媒介组合，并辅以多KOL多内容类型的投放策略），预算建议在50～75万之间。</div>
-        <div class="navBox">
-          <div class="navItem" :class="currentIndex==1?'navActive':''" @click="changeIndex(1)">
-            <div class="navItem_left">
-              <div class="headerIcon"><img src="../../assets/img/yhhx/headerBg.png" alt=""></div>
-            </div>
-            <div class="navItem_rt">
-               <div class="navItem_title1">
-                 策略1
-               </div>
-               <div class="navItem_title2">
-                 快速拉新获客策略
-               </div>
-            </div>
-          </div>
-          <div class="navItem navItem2" :class="currentIndex==2?'navActive':''" @click="changeIndex(2)">
-            <div class="navItem_left">
-              <div class="headerIcon"><img src="../../assets/img/yhhx/xunh.png" alt=""></div>
-            </div>
-            <div class="navItem_rt">
-               <div class="navItem_title1">
-                 策略2
-               </div>
-               <div class="navItem_title2">
-                低成本高转化策略
-               </div>
-            </div>
-          </div>
-          <div class="navItem navItem3" :class="currentIndex==3?'navActive':''" @click="changeIndex(3)">
-            <div class="navItem_left">
-              <div class="headerIcon"><img src="../../assets/img/yhhx/timeIc.png" alt=""></div>
-            </div>
-            <div class="navItem_rt">
-               <div class="navItem_title1">
-                 策略3
-               </div>
-               <div class="navItem_title2">
-                  持续转化策略
-               </div>
-            </div>
-          </div>
-        </div>
-        <div class="navContent">
-          <div class="navContentBox">
-              <div class="navContentTop">
-                <div class="navContentItem">
-                  <div class="navTitle">媒介选择</div>
-                  <div class="navSubTitle">短视频作为主要信息传播媒介</div>
-                  <div class="list" v-for="(item,index) in mediaList1" :key="index">
-                    <div class="logoPic"><img :src="item.icon" alt=""></div>
-                    <div class="navMid1">
-                      <div class="navtop">
-                      目标受众数
-                      </div>
-                      <div class="navBm">
-                      {{item.numTxt1}}人
-                      </div>
-                    </div>
-                    <div class="navMid1">
-                      <div class="navtop">
-                      投放预算
-                      </div>
-                      <div class="navBm">
-                      {{item.numTxt2}}人
-                      </div>
-                    </div>
-                  </div>
+      <Tab :tab-list="['媒介策略','媒介剖析']" @change="changeTab"></Tab>
+      <template v-if="tabActive == 1">
+          <div class="zuhetitle">媒介组合推荐方案</div>
+          <div class="media_zuhe_panel">
+            <div class="title">媒介组合方案</div>
+            <div class="subTitle">基于品牌画像和用户画像，建议以短视频作为主要信息传播媒介，垂直媒介为辅的媒介组合，并辅以多KOL多内容类型的投放策略），预算建议在50～75万之间。</div>
+            <div class="navBox">
+              <div class="navItem" :class="currentIndex==1?'navActive':''" @click="changeIndex(1)">
+                <div class="navItem_left">
+                  <div class="headerIcon"><img src="../../assets/img/yhhx/headerBg.png" alt=""></div>
                 </div>
-                <div class="navContentItem">
-                  <div class="navTitle">KOL组合</div>
-                  <div class="navSubTitle">头部KOL组合</div>
-                  <div class="list" v-for="(item,index) in mediaHlist1" :key="index">
-                    <div class="logoPic"><img :src="item.icon" alt=""></div>
-                    <div class="navMid1">
-                      <div class="navtop">
-                      目标受众数
-                      </div>
-                      <div class="navBm">
-                      {{item.numTxt1}}人
-                      </div>
-                    </div>
-                    <div class="navMid1">
-                      <div class="navtop">
-                      投放预算
-                      </div>
-                      <div class="navBm">
-                      {{item.numTxt2}}人
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="navContentItem">
-                  <div class="navTitle">最优曝光时间</div>
-                  <div class="navSubTitle">未来7日，每日12-13点/18-23点；</div>
-                  <div class="new_echart_box">
-                  </div>
-                </div>
-                <div class="navContentItem">
-                  <div class="navTitle">投放预算</div>
-                  <div class="navSubTitle"></div>
-                  <div class="new_echart_box">
-                    <PieEcharts9 :colorList="$fjData.colorList" :myData="myChartData0" ></PieEcharts9>
-                  </div>
+                <div class="navItem_rt">
+                   <div class="navItem_title1">
+                     策略1
+                   </div>
+                   <div class="navItem_title2">
+                     快速拉新获客策略
+                   </div>
                 </div>
               </div>
-              <div class="navContentBm">
-                  <div class="navContentLf">
-                        <div class="navbmTitle">投放内容和形式</div>
-                        <div class="navbmList">
-                          <div class="navbmItem" v-for="item in contList" :key="item">{{item}}</div>
+              <div class="navItem navItem2" :class="currentIndex==2?'navActive':''" @click="changeIndex(2)">
+                <div class="navItem_left">
+                  <div class="headerIcon"><img src="../../assets/img/yhhx/xunh.png" alt=""></div>
+                </div>
+                <div class="navItem_rt">
+                   <div class="navItem_title1">
+                     策略2
+                   </div>
+                   <div class="navItem_title2">
+                    低成本高转化策略
+                   </div>
+                </div>
+              </div>
+              <div class="navItem navItem3" :class="currentIndex==3?'navActive':''" @click="changeIndex(3)">
+                <div class="navItem_left">
+                  <div class="headerIcon"><img src="../../assets/img/yhhx/timeIc.png" alt=""></div>
+                </div>
+                <div class="navItem_rt">
+                   <div class="navItem_title1">
+                     策略3
+                   </div>
+                   <div class="navItem_title2">
+                      持续转化策略
+                   </div>
+                </div>
+              </div>
+            </div>
+            <div class="navContent">
+              <div class="navContentBox">
+                  <div class="navContentTop">
+                    <div class="navContentItem">
+                      <div class="navTitle">媒介选择</div>
+                      <div class="navSubTitle">短视频作为主要信息传播媒介</div>
+                      <div class="list" v-for="(item,index) in mediaList1" :key="index">
+                        <div class="logoPic"><img :src="item.icon" alt=""></div>
+                        <div class="navMid1">
+                          <div class="navtop">
+                          目标受众数
+                          </div>
+                          <div class="navBm">
+                          {{item.numTxt1}}人
+                          </div>
                         </div>
+                        <div class="navMid1">
+                          <div class="navtop">
+                          投放预算
+                          </div>
+                          <div class="navBm">
+                          {{item.numTxt2}}人
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="navContentItem">
+                      <div class="navTitle">KOL组合</div>
+                      <div class="navSubTitle">头部KOL组合</div>
+                      <div class="list" v-for="(item,index) in mediaHlist1" :key="index">
+                        <div class="logoPic"><img :src="item.icon" alt=""></div>
+                        <div class="navMid1">
+                          <div class="navtop">
+                          目标受众数
+                          </div>
+                          <div class="navBm">
+                          {{item.numTxt1}}人
+                          </div>
+                        </div>
+                        <div class="navMid1">
+                          <div class="navtop">
+                          投放预算
+                          </div>
+                          <div class="navBm">
+                          {{item.numTxt2}}人
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="navContentItem">
+                      <div class="navTitle">最优曝光时间</div>
+                      <div class="navSubTitle">未来7日，每日12-13点/18-23点；</div>
+                      <div class="new_echart_box">
+                      </div>
+                    </div>
+                    <div class="navContentItem">
+                      <div class="navTitle">投放预算</div>
+                      <div class="navSubTitle"></div>
+                      <div class="new_echart_box">
+                        <PieEcharts9 :colorList="$fjData.colorList" :myData="myChartData0" ></PieEcharts9>
+                      </div>
+                    </div>
                   </div>
-                  <div class="navContentRt">
-                    <div class="navbmTitle">目标受众</div>
-                        <div class="navbmList">
-                          <div class="navbmItem1"  v-for="item in contList1" :key="item" v-html="item"></div>
-                        </div>
+                  <div class="navContentBm">
+                      <div class="navContentLf">
+                            <div class="navbmTitle">投放内容和形式</div>
+                            <div class="navbmList">
+                              <div class="navbmItem" v-for="item in contList" :key="item">{{item}}</div>
+                            </div>
+                      </div>
+                      <div class="navContentRt">
+                        <div class="navbmTitle">目标受众</div>
+                            <div class="navbmList">
+                              <div class="navbmItem1"  v-for="item in contList1" :key="item" v-html="item"></div>
+                            </div>
+                      </div>
                   </div>
               </div>
-          </div>
-        </div>
-        <div class="zuhe_echarts">
-            <div class="zuhe_echarts_left">
-              <div class="zuhe_echarts_title">预期投放效果</div>
-               <div class="zuhe_echarts_Box">
-                 <div class="zuhe_echarts_leftBox">
-                    <div class="zuhe_echarts_subtitle">预期投放效果</div>
-                    <div class="zuhe_echarts_num">800万</div>
-                  </div>
-                  <div class="new_echart_box">
-                    <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box119Data"></funnel>
-                  </div>
-               </div>
+            </div>
+            <div class="zuhe_echarts">
+                <div class="zuhe_echarts_left">
+                  <div class="zuhe_echarts_title">预期投放效果</div>
+                   <div class="zuhe_echarts_Box">
+                     <div class="zuhe_echarts_leftBox">
+                        <div class="zuhe_echarts_subtitle">预期投放效果</div>
+                        <div class="zuhe_echarts_num">800万</div>
+                      </div>
+                      <div class="new_echart_box">
+                        <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box119Data"></funnel>
+                      </div>
+                   </div>
 
-            </div>
-            <div class="zuhe_echarts_rt">
-              <div class="zuhe_echarts_list">
-                <div class="zuhe_echarts_Item">
-                  <div class="zuhe_echarts_Item_title">
-                    <span class="zuhe_echarts_Item_title1">真实CPE(去水军）</span>
-                    <i class="iconfont icongengduo"></i>
-                  </div>
-                  <div class="zuhe_echarts_Item_num">
-                    0.39
-                  </div>
                 </div>
-                <div class="zuhe_echarts_Item zuhe_echarts_Item1">
-                  <div class="zuhe_echarts_Item_title">
-                    <span class="zuhe_echarts_Item_title1">综合互动数</span>
-                    <i class="iconfont icongengduo"></i>
-                  </div>
-                  <div class="zuhe_echarts_Item_num">
-                    800,000 <span class="zuhe_echarts_danwei">次</span>
-                  </div>
-                </div>
-              </div>
-              <div class="zuhe_echarts_list zuhe_echarts_list1">
-                <div class="zuhe_echarts_Item zuhe_echarts_Item2">
-                  <div class="zuhe_echarts_Item_title">
-                    <span class="zuhe_echarts_Item_title1">新增粉丝数</span>
-                    <i class="iconfont icongengduo"></i>
-                  </div>
-                  <div class="zuhe_echarts_Item_num">
-                    30,000<span class="zuhe_echarts_danwei">人</span>
-                  </div>
-                </div>
-                <div class="zuhe_echarts_Item zuhe_echarts_Item3">
-                  <div class="zuhe_echarts_Item_title">
-                    <span class="zuhe_echarts_Item_title1">销售达成</span>
-                    <i class="iconfont icongengduo"></i>
-                  </div>
-                  <div class="zuhe_echarts_Item_num">
-                    1.2<span class="zuhe_echarts_danwei">亿元</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-        <div class="zuhe_echarts1">
-            <div class="zuhe_echarts_left">
-              <div class="zuhe_echarts_title">媒介曝光触达</div>
-              <div class="new_echart_box">
-                 <PieEcharts2 :colorList="$fjData.colorList" :myData="$fjData.box0Data"></PieEcharts2>
-              </div>
-            </div>
-            <div class="zuhe_echarts_rt">
-              <div class="zuhe_echarts_title">媒介转化效率</div>
-              <div class="new_echart_box1">
-                <!-- <barC5 :colorList="$fjData.colorList" :myData="progressData" id="progressData"></barC5> -->
-               <div class="new_echart_list_box">
-                  <div class="m-rank-lf-list" v-for="(item,index) in rankList1" :key="index">
-                    <div class="m-rank-item-lf">
-                        <div class="m-rank-icon">
-                          <img :src="item.icon" alt="">
-                        </div>
-                        <div class="m-rank-text">
-                          {{item.text}}
-                        </div>
+                <div class="zuhe_echarts_rt">
+                  <div class="zuhe_echarts_list">
+                    <div class="zuhe_echarts_Item">
+                      <div class="zuhe_echarts_Item_title">
+                        <span class="zuhe_echarts_Item_title1">真实CPE(去水军）</span>
+                        <i class="iconfont icongengduo"></i>
                       </div>
-                      <div class="m-rank-progress">
-                        <barHM2 :id="'box1141'+index" :colorList="$lxjData.colorList" :myData='$lxjData["box1149"+ index + "Data"]'></barHM2>
+                      <div class="zuhe_echarts_Item_num">
+                        0.39
                       </div>
+                    </div>
+                    <div class="zuhe_echarts_Item zuhe_echarts_Item1">
+                      <div class="zuhe_echarts_Item_title">
+                        <span class="zuhe_echarts_Item_title1">综合互动数</span>
+                        <i class="iconfont icongengduo"></i>
+                      </div>
+                      <div class="zuhe_echarts_Item_num">
+                        800,000 <span class="zuhe_echarts_danwei">次</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="zuhe_echarts_list zuhe_echarts_list1">
+                    <div class="zuhe_echarts_Item zuhe_echarts_Item2">
+                      <div class="zuhe_echarts_Item_title">
+                        <span class="zuhe_echarts_Item_title1">新增粉丝数</span>
+                        <i class="iconfont icongengduo"></i>
+                      </div>
+                      <div class="zuhe_echarts_Item_num">
+                        30,000<span class="zuhe_echarts_danwei">人</span>
+                      </div>
+                    </div>
+                    <div class="zuhe_echarts_Item zuhe_echarts_Item3">
+                      <div class="zuhe_echarts_Item_title">
+                        <span class="zuhe_echarts_Item_title1">销售达成</span>
+                        <i class="iconfont icongengduo"></i>
+                      </div>
+                      <div class="zuhe_echarts_Item_num">
+                        1.2<span class="zuhe_echarts_danwei">亿元</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <ul class="new_echart_legend">
-                    <li><div class="circle"></div> 转化率</li>
-                    <li><div class="circle circleBox"></div> 销售额</li>
-                </ul>
-              </div>
             </div>
-        </div>
-      </div>
-      <div class="m-p-rank">
-        <div class="m-p-rank-header">
-          <ul class="h-name-list">
-            <li :class="{'h-name-active':index==act}" v-for="(item,index) in target" :key="index" @click="targetClick(index)">{{item}}</li>
-            <!-- <li>媒介声量排名</li>
-            <li>媒介使用时长排名</li>
-            <li>媒介口碑排名</li>
-            <li>媒介价值贡献排名</li> -->
-          </ul>
-          <div class="h-right">
-            <div class="h-tab">
-              <div class="left" :class="{'act':cur==0}" @click="cur=0">类型</div>
-              <div class="right" :class="{'act':cur==1}" @click="cur=1">渠道名称</div>
-            </div>
-            <!-- <div class="h-select"> -->
-              <Select v-model="model1" style="width: 120px" placeholder="过去3天">
-                <Option v-for="item in dateList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-              </Select>
-            <!-- </div> -->
-          </div>
-        </div>
-        <div class="m-p-rank-echarts">
-          <div class="m-rank-lf">
-            <div class="m-rank-lf-list" @click="changeIndex1(index)" :class="currentIndex1==index?'m-rank-lf-active':''" v-for="(item,index) in rankList" :key="index">
-              <div class="m-rank-item-lf">
-                  <div class="m-rank-num">
-                    {{index+1}}
-                  </div>
-                  <div class="m-rank-icon">
-                    <img :src="item.icon" alt="">
-                  </div>
-                  <div class="m-rank-text">
-                    {{item.text}}
+            <div class="zuhe_echarts1">
+                <div class="zuhe_echarts_left">
+                  <div class="zuhe_echarts_title">媒介曝光触达</div>
+                  <div class="new_echart_box">
+                     <PieEcharts2 :colorList="$fjData.colorList" :myData="$fjData.box0Data"></PieEcharts2>
                   </div>
                 </div>
-                <div class="m-rank-progress">
-                  <Progress :percent="item.per" status="active" :stroke-width="9"/>
+                <div class="zuhe_echarts_rt">
+                  <div class="zuhe_echarts_title">媒介转化效率</div>
+                  <div class="new_echart_box1">
+                    <!-- <barC5 :colorList="$fjData.colorList" :myData="progressData" id="progressData"></barC5> -->
+                   <div class="new_echart_list_box">
+                      <div class="m-rank-lf-list" v-for="(item,index) in rankList1" :key="index">
+                        <div class="m-rank-item-lf">
+                            <div class="m-rank-icon">
+                              <img :src="item.icon" alt="">
+                            </div>
+                            <div class="m-rank-text">
+                              {{item.text}}
+                            </div>
+                          </div>
+                          <div class="m-rank-progress">
+                            <barHM2 :id="'box1141'+index" :colorList="$lxjData.colorList" :myData='$lxjData["box1149"+ index + "Data"]'></barHM2>
+                          </div>
+                      </div>
+                    </div>
+                    <ul class="new_echart_legend">
+                        <li><div class="circle"></div> 转化率</li>
+                        <li><div class="circle circleBox"></div> 销售额</li>
+                    </ul>
+                  </div>
                 </div>
             </div>
           </div>
-          <div class="m-rank-rt">
-            <div class="m-rank-tp">
-              <div class="m-rank-tp-title">
-                媒介声量趋势图
-              </div>
-              <div class="new_echart_box">
-                <cLine id="box58" :colorList="$lxjData.colorList" :myData="myChartData1"></cLine>
+          <div class="m-p-rank">
+            <div class="m-p-rank-header">
+              <ul class="h-name-list">
+                <li :class="{'h-name-active':index==act}" v-for="(item,index) in target" :key="index" @click="targetClick(index)">{{item}}</li>
+                <!-- <li>媒介声量排名</li>
+                <li>媒介使用时长排名</li>
+                <li>媒介口碑排名</li>
+                <li>媒介价值贡献排名</li> -->
+              </ul>
+              <div class="h-right">
+                <div class="h-tab">
+                  <div class="left" :class="{'act':cur==0}" @click="cur=0">类型</div>
+                  <div class="right" :class="{'act':cur==1}" @click="cur=1">渠道名称</div>
+                </div>
+                <!-- <div class="h-select"> -->
+                  <Select v-model="model1" style="width: 120px" placeholder="过去3天">
+                    <Option v-for="item in dateList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                  </Select>
+                <!-- </div> -->
               </div>
             </div>
-            <div class="m-rank-bm">
-              <div class="m-rank-bm-lf">
+            <div class="m-p-rank-echarts">
+              <div class="m-rank-lf">
+                <div class="m-rank-lf-list" @click="changeIndex1(index)" :class="currentIndex1==index?'m-rank-lf-active':''" v-for="(item,index) in rankList" :key="index">
+                  <div class="m-rank-item-lf">
+                      <div class="m-rank-num">
+                        {{index+1}}
+                      </div>
+                      <div class="m-rank-icon">
+                        <img :src="item.icon" alt="">
+                      </div>
+                      <div class="m-rank-text">
+                        {{item.text}}
+                      </div>
+                    </div>
+                    <div class="m-rank-progress">
+                      <Progress :percent="item.per" status="active" :stroke-width="9"/>
+                    </div>
+                </div>
+              </div>
+              <div class="m-rank-rt">
+                <div class="m-rank-tp">
+                  <div class="m-rank-tp-title">
+                    媒介声量趋势图
+                  </div>
+                  <div class="new_echart_box">
+                    <cLine id="box58" :colorList="$lxjData.colorList" :myData="myChartData1"></cLine>
+                  </div>
+                </div>
+                <div class="m-rank-bm">
+                  <div class="m-rank-bm-lf">
+                        <div class="m-rank-tp-title">
+                          用户总数和新增用户
+                        </div>
+                        <div class="new_echart_box">
+                          <barLine id="box101" :colorList="$lxjData.colorList" :myData="myChartData2"></barLine>
+                        </div>
+                  </div>
+                  <div class="m-rank-bm-rt">
                     <div class="m-rank-tp-title">
-                      用户总数和新增用户
+                          使用时长和次数
                     </div>
                     <div class="new_echart_box">
-                      <barLine id="box101" :colorList="$lxjData.colorList" :myData="myChartData2"></barLine>
+                      <barLine id="box102" :colorList="$lxjData.colorList" :myData="myChartData3"></barLine>
                     </div>
-              </div>
-              <div class="m-rank-bm-rt">
-                <div class="m-rank-tp-title">
-                      使用时长和次数
-                </div>
-                <div class="new_echart_box">
-                  <barLine id="box102" :colorList="$lxjData.colorList" :myData="myChartData3"></barLine>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <PortraitMatching />
+          <PortraitMatching />
+      </template>
+      <template v-if="tabActive == 2">
 	    <div class="zuhetitle">媒介剖析</div>
 	    <MediaAnalysis />
-      <KOLResource />
+        <KOLResource />
+      </template>
     </div>
 </template>
 
@@ -579,6 +583,7 @@ export default {
   components: {Tab, PieEcharts9,cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, KOLResource, MediaAnalysis, PortraitMatching},
   data(){
       return{
+        tabActive: 1,
         myChartData0:null,
         myChartData1:this.$lxjData.box581Data,
         myChartData2:this.$lxjData.box102Data,
@@ -1246,7 +1251,7 @@ export default {
   },
   methods:{
     changeTab(index) {
-       console.log(index)
+        this.tabActive = index;
     },
     changeIndex1(arg){
       this.currentIndex1=arg;
@@ -3098,11 +3103,11 @@ export default {
     }
   }
   .zuhetitle{
+    margin: 18px 0;
     font-size: 18px;
     font-family: PingFangSC-Medium, PingFang SC;
     font-weight: 500;
     color: #242F57;
-    margin-bottom: 19px;
   }
   .media_zuhe_panel{
     background: #FFFFFF;
