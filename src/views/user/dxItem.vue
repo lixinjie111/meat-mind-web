@@ -45,18 +45,19 @@
             <div :class="['conditions_container', { 'conditions_container_row': onlyMap }]">
                 <div class="conditions_lef">
                     <div class="condition_label">条件筛选</div>
-                    <div class="condition_item"><span>{{condiObj.label1}}</span>
+                    <div class="condition_item" v-for="(itm,inx) in condiList" :key="inx"><span>{{itm}}</span>
                         <!--<i class="iconfont iconClose" style="font-size: 12px;"></i>-->
                     </div>
-                    <div class="condition_item"><span>{{condiObj.label2}}</span>
+
+                    <!-- <div class="condition_item"><span>{{condiObj.label2}}</span> -->
                         <!--<i class="iconfont iconClose" style="font-size: 12px;"></i>-->
-                    </div>
-                    <div class="condition_item"><span>{{condiObj.label3}}</span>
+                    <!-- </div> -->
+                    <!-- <div class="condition_item"><span>{{condiObj.label3}}</span> -->
                         <!--<i class="iconfont iconClose" style="font-size: 12px;"></i>-->
-                    </div>
-                    <div class="condition_item"><span>{{condiObj.label4}}</span>
+                    <!-- </div> -->
+                    <!-- <div class="condition_item"><span>{{condiObj.label4}}</span> -->
                         <!--<i class="iconfont iconClose" style="font-size: 12px;"></i>-->
-                    </div>
+                    <!-- </div> -->
                 </div>
                 <div class="conditions_rig" @click="expandCond">更多筛选条件</div>
             </div>
@@ -840,7 +841,16 @@
                   vdlNum:'40%',
                   timeRang:'19:20 - 22:30'
                  }
-               }
+               },
+               condiList:[],
+
+               nlList:[],
+               xingbieList:[],
+               hasChList:[],
+               xiaoFList:[],
+               huyiList:[],
+               zhYList:[]
+
             }
         },
         mounted(){
@@ -953,21 +963,74 @@
                     label3:'已婚',
                     label4:'广告',
                 };
+                var itemDom1 = this.$refs['ninlinItem'] || [];
+                var itemDom2 = this.$refs['xingbieItem'] || [];
+                var itemDom3 = this.$refs['hasChild'] || [];
+                var itemDom4 = this.$refs['xflevel'] || [];
+                var itemDom5 = this.$refs['huny'] || [];
+                var itemDom6 = this.$refs['jobdom'] || [];
+
+                for(var i=0;i<itemDom1.length;i++){
+                    if(itemDom1[i].style.background == 'rgb(35, 115, 255)'){
+                      this.nlList.push(itemDom1[i].innerText)
+                    }
+                }
+
+
+                for(var i=0;i<itemDom2.length;i++){
+                    if(itemDom2[i].style.background == 'rgb(35, 115, 255)'){
+                      this.xingbieList.push(itemDom2[i].innerText)
+                    }
+                }
+
+
+                for(var i=0;i<itemDom3.length;i++){
+                    if(itemDom3[i].style.background == 'rgb(35, 115, 255)'){
+                      this.hasChList.push(itemDom3[i].innerText)
+                    }
+                }
+
+
+                for(var i=0;i<itemDom4.length;i++){
+                    if(itemDom4[i].style.background == 'rgb(35, 115, 255)'){
+                      this.xiaoFList.push(itemDom4[i].innerText)
+                    }
+                }
+
+
+                for(var i=0;i<itemDom5.length;i++){
+                    if(itemDom5[i].style.background == 'rgb(35, 115, 255)'){
+                      this.huyiList.push(itemDom5[i].innerText)
+                    }
+                }
+
+                for(var i=0;i<itemDom6.length;i++){
+                    if(itemDom6[i].style.background == 'rgb(35, 115, 255)'){
+                      this.zhYList.push(itemDom6[i].innerText)
+                    }
+                }
+
+                this.condiList = this.nlList.concat(this.xingbieList,this.hasChList,this.xiaoFList,this.huyiList,this.zhYList)
             },
             nianlinClick(arg,art){
-                // console.log(art)
-                var itemDom = this.$refs[art] || [];
-                for(var i=0;i<itemDom.length;i++){
-                    if(i==arg){
-                        itemDom[i].style="background: #2373FF;color: #FFFFFF;";
-                    }
-                    // else{  //如果需要多选去掉else
-                    //     itemDom[i].style="color: #636E95;background: none;";
-                    // }
-                }
-                // console.log(itemDom,'itemDom')
+              var itemDom = this.$refs[art] || [];
+              for(var i=0;i<itemDom.length;i++){
+                  if(i==arg){
+                      itemDom[i].style="background: #2373FF;color: #FFFFFF;";
+                  }
+                  else{  //如果需要多选去掉else
+                      itemDom[i].style="color: #636E95;background: none;";
+                  }
+              }
             },
             expandCond(){
+                this.nlList = [];
+                this.xingbieList = [];
+                this.hasChList = [];
+                this.xiaoFList = [];
+                this.huyiList = [];
+                this.zhYList = [];
+                this.condiList = [];
                 this.ifShowCon = true;
             },
             hideMe(){
@@ -1810,6 +1873,10 @@
                 font-family: PingFangSC-Semibold, PingFang SC;
                 font-weight: 600;
                 color: #2373FF;
+                overflow:hidden;
+                text-overflow:ellipsis;
+                -o-text-overflow:ellipsis;
+                white-space:nowrap;
             }
         }
         .conditions_rig{
