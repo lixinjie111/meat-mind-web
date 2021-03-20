@@ -10,7 +10,9 @@
             </div>
             <div class="me-mart-box flex">
                 <div class="left">
-                    <div class="top"></div>
+                    <div class="top">
+                        <PieNest2 id="303" :myData="$abelData.nest201Data" title="综合指数" value="72"></PieNest2>
+                    </div>
                     <div class="bottom">
                         <p>Powered by <span>元知智能研究院</span></p>
                         <p>量化营销过程中的信息传播全过程，评估</br>品牌、消费者、媒介之间的匹配度</p>
@@ -517,10 +519,11 @@
     import Card from "@/components/Card"
     import barM from '@/components/echarts/common/bar/barM';
     import NewEcharts from "@/views/mark/components/NewEcharts";
+    import PieNest2 from '@/components/echarts/common/pie/PieNest2';
 
     export default {
         name: "BusinessMarket",
-        components: {NewEcharts, Card, barM},
+        components: {NewEcharts, Card, barM, PieNest2},
         data() {
             return {
                 threeActive: 1,
@@ -530,7 +533,7 @@
 
                         name: '全部客群',
                         short:'全',
-                        total: 75361,
+                        total: 46571,
                         rate: 80,
                         self: 23,
                         latent: 77,
@@ -606,8 +609,8 @@
                     },
                     {
 
-                        name: '北京上班族',
-                        short:'北',
+                        name: '研学青年',
+                        short:'研',
                         total: 7930,
                         rate: 82,
                         self: 80,
@@ -1013,6 +1016,7 @@
                 text-align: center;
 
                 .top {
+                    margin: 0 auto;
                     width: 278px;
                     height: 278px;
                 }

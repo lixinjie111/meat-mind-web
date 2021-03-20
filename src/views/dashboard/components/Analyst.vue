@@ -169,10 +169,11 @@
             </div>
           </div>
           <div class="pin_container">
-            <i-circle :percent="72" :stroke-color="['rgba(35,115,255,0.3)','#2373FF',]">
-                <span style="font-size: 46px;font-family: PingFangSC-Light, PingFang SC;font-weight: 300;color: #242F57;">72</span><br>
-                <span style="font-size: 10px;font-family: PingFangSC-Regular, PingFang SC;font-weight: 400;color: #636E95;">品牌测评</span>
-            </i-circle>
+              <PieOne1 id="box301" :value="72" title="品牌测评"></PieOne1>
+<!--            <i-circle :percent="72" :stroke-color="['rgba(35,115,255,0.3)','#2373FF',]">-->
+<!--                <span style="font-size: 46px;font-family: PingFangSC-Light, PingFang SC;font-weight: 300;color: #242F57;">72</span><br>-->
+<!--                <span style="font-size: 10px;font-family: PingFangSC-Regular, PingFang SC;font-weight: 400;color: #636E95;">品牌测评</span>-->
+<!--            </i-circle>-->
           </div>
         </div>
 
@@ -253,12 +254,13 @@
               </div> -->
               <div class="pie_pq_per_container">
                 <div class="pie_container">
-                  <div class="progrs_con">
-                    <i-circle :percent="78" :stroke-color="['rgba(35,115,255,0.3)','#2373FF',]">
-                        <span style="font-size: 10px;font-family: PingFangSC-Regular, PingFang SC;font-weight: 400;color: #636E95;">流量评分</span><br>
-                        <span style="font-size: 28px;font-family: PingFangSC-Light, PingFang SC;font-weight: 300;color: #242F57;">78</span>
-                    </i-circle>
-                  </div>
+<!--                  <div class="progrs_con">-->
+                      <PieOne2 id="box302" :value="78" title="流量评分"></PieOne2>
+<!--                    <i-circle :percent="78" :stroke-color="['rgba(35,115,255,0.3)','#2373FF',]">-->
+<!--                        <span style="font-size: 10px;font-family: PingFangSC-Regular, PingFang SC;font-weight: 400;color: #636E95;">流量评分</span><br>-->
+<!--                        <span style="font-size: 28px;font-family: PingFangSC-Light, PingFang SC;font-weight: 300;color: #242F57;">78</span>-->
+<!--                    </i-circle>-->
+<!--                  </div>-->
                 </div>
                 <div class="per_container">
                   <span class="per_txt">排名 前</span>
@@ -333,10 +335,13 @@ import vCard0 from "@/components/common/card0";
 import vCard1 from "@/components/common/card1";
 import vCard2 from "@/components/common/card2";
 import Tab from "@/components/Tab";
+import PieOne1 from '@/components/echarts/common/pie/PieOne1';
+import PieOne2 from '@/components/echarts/common/pie/PieOne2';
+
 var dayjs = require('dayjs');
 export default {
   name: "Analyst",
-  components: { vCard0, vCard1,vCard2,Tab },
+  components: { vCard0, vCard1,vCard2,Tab,PieOne1,PieOne2 },
   data() {
     return {
       guideList: [
@@ -1654,19 +1659,6 @@ export default {
               .pie_container{
                 width: 120px;
                 height: 120px;
-                border-radius: 50%;
-                background: #EAEDF7;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                .progrs_con{
-                  width: 90px;
-                  height: 90px;
-                  ::v-deep .ivu-chart-circle{
-                    width: 100% !important;
-                    height: 100% !important;
-                  }
-                }
               }
               .per_container{
                 .per_txt{
@@ -1786,10 +1778,6 @@ export default {
         .pin_container{
           width: 140px;
           height: 140px;
-          ::v-deep .ivu-chart-circle{
-            width: 100% !important;
-            height: 100% !important;
-          }
         }
         // border-radius: 8px;
         // border: 1px solid #eaedf7;
