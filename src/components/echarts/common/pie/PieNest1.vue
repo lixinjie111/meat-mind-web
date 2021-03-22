@@ -26,9 +26,9 @@
 			},
 		},
 		value:{
-			type:String,
+			type: Number,
 			default:()=>{
-				return '';
+				return 80;
 			},
 		},
 		colorList:{
