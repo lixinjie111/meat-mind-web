@@ -42,7 +42,7 @@ export default {
               },
               formatter: (params)=>{
                 if(params.dataIndex==0){
-                  return '百度百家号'
+                  return params.name
                 }
               },              
             },
@@ -60,7 +60,7 @@ export default {
             },
             data:this.graphDatas.nodes,
             links:this.graphDatas.links,
-            categories:[{name:"百度百家号"}],
+            categories:this.graphDatas.categories,
         } ]
     }
       return option;

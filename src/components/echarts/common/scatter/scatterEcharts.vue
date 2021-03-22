@@ -30,6 +30,9 @@ export default {
       let myEchart = this.$echarts.init(document.getElementById(this.id));
       myEchart.setOption(option,true);
       myEchart.on('click',async (params)=>{
+        if(params.seriesName=='正常'){
+          return
+        }
         this.lengndName = params.seriesName
         this.xName = params.name
         this.yValue = params.value
@@ -44,6 +47,15 @@ export default {
     defaultOption() {
       let option = {
         color:this.colorList,
+        tooltip:{
+          trigger:"item"
+        //   formatter:(params)=>{
+        //     console.log(params)
+        //     if(params.seriesName=='正常'){
+        //       return params.dataIndex 
+        //     }
+        //   }
+        },
         legend: {
           icon: 'circle',
           itemWidth:6,
@@ -134,6 +146,9 @@ export default {
             symbolSize:(value,params)=>{
               return value*16
             },
+            tooltip:{
+              show:false
+            },
             data:this.scatterData.starr
           },
           {
@@ -141,6 +156,9 @@ export default {
             name:"风险",
             symbolSize:(value,params)=>{
               return value*22
+            },
+            tooltip:{
+              show:false
             },
             data:this.scatterData.risk 
           },
@@ -150,12 +168,21 @@ export default {
             symbolSize:(value,params)=>{
               return value*40
             },
+            tooltip:{
+              formatter:(params)=>{
+                return this.scatterData.common[params.dataIndex]
+                // console.log(params)
+              }
+            },
             data: this.scatterData.chance
           },
           {
             name:this.lengndName,
             type: "effectScatter",
             symbolSize: 20,
+            tooltip:{
+              show:false
+            },
             data:[[this.xName,this.yValue]],
             zlevel: 1,
           },

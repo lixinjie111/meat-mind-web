@@ -172,15 +172,19 @@ export default {
   justify-content: flex-end;
   height: 56px;
   padding: 0 16px;
-  color: #2373ff;
+  color: #ffffff;
   cursor: pointer;
   > div {
-    height: 20px;
-    font-size: 14px;
-    font-family: PingFangSC-Regular, PingFang SC;
-    font-weight: 400;
-    color: #2373ff;
-    line-height: 20px;
+      width: 114px;
+      height: 32px;
+      background: #2373FF;
+      box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
+      border-radius: 4px;
+      line-height: 32px;
+      text-align: center;
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
   }
 }
 </style>

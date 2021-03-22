@@ -1,6 +1,8 @@
 <template>
   <div class="ysjgl">
-    <div class="page-title">元数据管理</div>
+    <div class="header-nav">
+      <p>元数据管理</p>
+    </div>
     <div class="ysjgl-content">
       <div v-for="(it, i) in list" :key="it.name" class="item-box">
         <Card class="item">
@@ -52,7 +54,6 @@
     },
     methods: {
       click1() {
-        console.log('oooo')
         this.$router.push({name: "data-center-metax-rule"})
       },
       click2() {
@@ -92,14 +93,14 @@
     width: 100%;
     height: 100%;
     padding: 0 24px;
-    .page-title{
-      font-size: 20px;
-      font-weight: 500;
-      color: #242F57;
-      display: flex;
-      align-items: center;
-      height: 64px;
-    }
+    // .page-title{
+    //   font-size: 20px;
+    //   font-weight: 500;
+    //   color: #242F57;
+    //   display: flex;
+    //   align-items: center;
+    //   height: 64px;
+    // }
     .ysjgl-content{
       background: #FFFFFF;
       box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
@@ -109,13 +110,14 @@
       // height: 100%;
       display: flex;
       flex-wrap: wrap;
-      padding: 12px 0;
+      justify-content: space-between;
+      padding: 24px 24px 0;
     }
     .item-box{
-      width: 48%;
-      padding: 12px 1%;
+      width: calc(50% - 12px);
+      margin-bottom: 24px;
       &:nth-child(odd){
-        padding-left: 24px;
+        margin-right: 24px;
       }
     }
     .item {
@@ -130,12 +132,12 @@
       }
       .icon-box{
         display: inline-block;
-        height: 50px;
-        min-width: 50px;
-        border-radius: 50%;
-        line-height: 50px;
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
         text-align: center;
-        margin-right: 12px;
+        margin-right: 16px;
+        flex-shrink: 0;
         .icon{
           font-size: 30px;
           color: #fff;
@@ -144,43 +146,43 @@
       }
       .icon-box1{
         background: #4D94FF;
-        box-shadow: 2px 3px 8px 0px rgba(77, 148, 255, 0.5), -2px -2px 8px 0px #FFFFFF;
+        // box-shadow: 2px 3px 8px 0px rgba(77, 148, 255, 0.5), -2px -2px 8px 0px #FFFFFF;
       }
       .icon-box2{
         background: #A49DFA;
-        box-shadow: 2px 3px 8px 0px rgba(164, 157, 250, 0.5), -2px -2px 8px 0px #FFFFFF;
+        // box-shadow: 2px 3px 8px 0px rgba(164, 157, 250, 0.5), -2px -2px 8px 0px #FFFFFF;
       }
       .icon-box3{
         background: #FC809F;
-        box-shadow: 2px 3px 8px 0px rgba(252, 128, 159, 0.5), -2px -2px 8px 0px #FFFFFF;
+        // box-shadow: 2px 3px 8px 0px rgba(252, 128, 159, 0.5), -2px -2px 8px 0px #FFFFFF;
       }
       .icon-box4{
         background: #FFD98C;
-        box-shadow: 2px 3px 8px 0px rgba(255, 217, 140, 0.5), -2px -2px 8px 0px #FFFFFF;
+        // box-shadow: 2px 3px 8px 0px rgba(255, 217, 140, 0.5), -2px -2px 8px 0px #FFFFFF;
       }
       .icon-box5{
         background: #8AE6C7;
-        box-shadow: 2px 3px 8px 0px rgba(138, 230, 199, 0.5), -2px -2px 8px 0px #FFFFFF;
+        // box-shadow: 2px 3px 8px 0px rgba(138, 230, 199, 0.5), -2px -2px 8px 0px #FFFFFF;
       }
       .icon-box6{
         background: #E19564;
-        box-shadow: 2px 3px 8px 0px rgba(225, 149, 100, 0.5), -2px -2px 8px 0px #FFFFFF;
+        // box-shadow: 2px 3px 8px 0px rgba(225, 149, 100, 0.5), -2px -2px 8px 0px #FFFFFF;
       }
       .icon-box7{
         background: #BF6E9B;
-        box-shadow: 2px 3px 8px 0px rgba(191, 110, 155, 0.5), -2px -2px 8px 0px #FFFFFF;
+        // box-shadow: 2px 3px 8px 0px rgba(191, 110, 155, 0.5), -2px -2px 8px 0px #FFFFFF;
       }
       .icon-box8{
         background: #CECE7E;
-        box-shadow: 2px 3px 8px 0px rgba(206, 206, 126, 0.5), -2px -2px 8px 0px #FFFFFF;
+        // box-shadow: 2px 3px 8px 0px rgba(206, 206, 126, 0.5), -2px -2px 8px 0px #FFFFFF;
       }
       .icon-box9{
         background: #FF9F7F;
-        box-shadow: 2px 3px 8px 0px rgba(255, 159, 127, 0.5), -2px -2px 8px 0px #FFFFFF;
+        // box-shadow: 2px 3px 8px 0px rgba(255, 159, 127, 0.5), -2px -2px 8px 0px #FFFFFF;
       }
       .icon-box10{
         background: #91C2F2;
-        box-shadow: 2px 3px 8px 0px rgba(145, 194, 242, 0.5), -2px -2px 8px 0px #FFFFFF;
+        // box-shadow: 2px 3px 8px 0px rgba(145, 194, 242, 0.5), -2px -2px 8px 0px #FFFFFF;
       }
 
     }
@@ -195,13 +197,17 @@
       color: #FFFFFF;
     }
     .item-title{
+      height: 22px;
+      font-size: 14px;
+      font-family: PingFangSC-Medium, PingFang SC;
       font-weight: 500;
       color: #242F57;
-      font-size: 14px;
+      line-height: 22px;
     }
     .item-desc{
       font-weight: 400;
       color: #636E95;
+      font-family: PingFangSC-Regular, PingFang SC;
       font-size: 12px;
     }
     .click-modal {

@@ -24,7 +24,7 @@ export default {
     initEcharts() {
       let option = this.defaultOption();
       let myEchart = this.$echarts.init(document.getElementById(this.id));
-      myEchart.setOption(option);
+      myEchart.setOption(option,true);
       window.addEventListener("resize", () => {
         myEchart.resize();
       });
@@ -59,7 +59,7 @@ export default {
               },
               formatter: (params)=>{
                 if(params.dataIndex==0){
-                  return '知乎'
+                  return params.name
                 }
               },              
             },
@@ -77,7 +77,7 @@ export default {
             },
             data:arr,
             links,
-            categories:[{name:"知乎"}],
+            categories:[{name:this.graphDatas.categories[2]}],
         } ]
     }
       return option;

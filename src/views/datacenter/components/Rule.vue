@@ -2,7 +2,7 @@
     <!--  <div class="fxmx-rule">-->
     <!--      <img src="../../../../static/img/datacenter/ysjgl/rule@2x.png" alt="">-->
     <!--      <div class="back" @click="back"></div>-->
-    <DetailsPage title="事件与事件属性的入库设置" backname="data-center-metax">
+    <DetailsPage title="入库检验规则设置" backname="data-center-metax">
         <div class="page-container">
             <div class="module-rule">
                 <div class="module-rule-title">事件与事件属性的入库设置</div>
@@ -17,13 +17,13 @@
                     <div class="poll">IP 黑名单
                         <Switch/>
                     </div>
-                    <Input type="textarea" class="module-area" :rows="4"/>
+                    <Input type="textarea" :rows="4"/>
                 </div>
                 <div>
-                    <div class="poll">域名黑名单
+                    <div class="poll mt">域名黑名单
                         <Switch/>
                     </div>
-                    <Input type="textarea" class="module-area" :rows="4"/>
+                    <Input type="textarea" :rows="4"/>
                 </div>
             </div>
             <div class="module-rule">
@@ -33,7 +33,7 @@
                 <div class="divider mg-t-b"></div>
                 <div class="user-box">
                     <div class="user-item">
-                        <div>接收用户「设备 ID」</div>
+                        <div class="user-item-title">接收用户「设备 ID」</div>
                         <div class="user-item-desc">如：匿名 ID 或游客 ID，不符合以下规则时，不能入库</div>
                         <div v-for="it in list" class="device-item-container" :key="it.name">
                             <div class="device-item">
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                     <div class="user-item">
-                        <div>接收用户「登录 ID」</div>
+                        <div class="user-item-title">接收用户「登录 ID」</div>
                         <div class="user-item-desc">用户在产品内的唯一标示，不符合以下规则时，不能入库</div>
                         <div v-for="it in list1" class="device-item-container" :key="it.name">
                             <div class="device-item">
@@ -93,8 +93,6 @@
 
 <style scoped lang="scss">
     .page-container {
-        padding-bottom: 24px;
-
         .link {
             color: #2373FF;
             cursor: pointer;
@@ -111,49 +109,53 @@
 
         .module-rule {
             background: #FFFFFF;
-            box-shadow: 3px 5px 10px 0 rgba(121, 131, 168, 0.15);
-            border-radius: 12px;
-            border: 1px solid #EAEDF7;
+            box-shadow: 4px 6px 20px 0 rgba(134, 143, 191, 0.15);
+            border-radius: 8px;
+            // border: 1px solid #EAEDF7;
             padding: 24px;
-            margin: 16px 0;
-
+            margin-bottom: 16px;
+            &:last-child{
+                margin-bottom: 0;
+            }
             .module-rule-title {
-                font-size: 16px;
+                height: 26px;
+                font-size: 18px;
+                font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
                 color: #242F57;
-                line-height: 24px;
+                line-height: 26px;
             }
 
             .module-rule-desc {
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
                 font-weight: 400;
                 color: #636E95;
-                line-height: 22px;
-                margin: 8px 0;
+                margin: 7px 0 4px;
             }
 
             .module-rule-link {
+                height: 22px;
                 font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
                 font-weight: 400;
                 color: #2373FF;
                 line-height: 22px;
             }
 
             .divider {
-                border: 1px solid #EAEDF7;
+                border-bottom: 1px solid #EAEDF7;
             }
 
             .poll {
-                padding: 24px 0 8px;
+                padding: 4px 0 8px;
             }
 
             .mg-t-b {
-                margin: 10px 0;
+                margin: 20px 0;
             }
-
-            .module-area {
-                box-shadow: 2px 2px 7px 0 rgba(210, 213, 225, 0.8), -2px -2px 7px 0px #FFFEFA;
-                border-radius: 8px;
-                border: 1px solid #C6CBDE;
+            .mt{
+                margin-top: 24px;
             }
 
             .user-box {
@@ -165,14 +167,28 @@
                     width: calc((100% - 24px) / 2);
                     display: flex;
                     flex-direction: column;
-                }
-
-                .user-item-desc {
-                    margin: 4px 0;
+                    .user-item-title{
+                        height: 22px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #242F57;
+                        line-height: 22px;
+                    }
+                    .user-item-desc {
+                        height: 22px;
+                        margin: 4px 0 8px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+                        line-height: 22px;
+                    }
                 }
 
                 .user-link {
                     font-weight: 400;
+                    font-size: 14px;
                     margin-top: 16px;
                 }
             }

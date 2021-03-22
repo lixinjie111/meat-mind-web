@@ -173,7 +173,7 @@ export default {
     justify-content: center;
     width: 152px;
     height: 55px;
-      border-right: 2px solid #eaedf7;
-      border-bottom: 1px solid #EAEDF7;
+      // border-right: 2px solid #eaedf7;
+      // border-bottom: 1px solid #EAEDF7;
 }
 </style>

@@ -67,7 +67,7 @@
               <p>紧跟凉茶行业热度，提高自有品牌曝光和品牌口碑；</p>
           </div>
       </div>
-      <div class="view-container">
+      <div class="view-container" v-if="seriesName=='风险'">
           <div class="graph-echarts">
               <div class="gh-echarts-l">
                   <p>传播关系</p>
@@ -135,6 +135,76 @@
               </div>
           </div>
       </div>
+      <div class="view-container" v-if="seriesName=='机会'">
+          <div class="graph-echarts">
+              <div class="gh-echarts-l">
+                  <p>传播关系</p>
+                  <span>舆论场关系图展示，溯源舆情关键节点</span>
+                  <div class="gh-echarts-view">
+                      <graphEcharts id="graph" :graphDatas="$linData.graphDataChance" :colorList="$linData.colorList"></graphEcharts>
+                  </div>
+              </div>
+              <div class="gh-echarts-r">
+                  <p>主要传播链路</p>
+                  <span>解构单一舆情事件传播链路核心参与者</span>
+                  <div class="tree-echarts-view">
+                    <treeEcharts1 id="tree" :colorList="$linData.colorList"></treeEcharts1>
+                  </div>
+              </div>
+          </div>
+          <div class="graph-echarts-sub">
+              <div class="gh-echarts-sl">
+                  <div class="sub-top">
+                    <div class="sub-index-l">
+                        <p>舆情关键传播点1</p>
+                        <span>2021/1/22  15:03:09</span>
+                        <div class="gh-sub-desc">【知乎】账号“猪猪雪源”创建知乎热问：凉茶两大品牌之争，留给后来者的机会还有多少？</div>
+                    </div>
+                    <div class="sub-index-r">
+                        <graphEcharts1 id="graph2" :graphDatas="$linData.graphDataChance1" :curColor="$linData.colorList[1]"></graphEcharts1>
+                    </div>
+                  </div>
+                  <div class="sub-bot">
+                      <p>舆情应对策略建议：</p>
+                      <div class="gh-sub-desc">该知乎问题探讨行业格局，可见消费者对各大品牌的产品特点和品牌地位的认知是模糊的；
+建议创建知乎问题：邓老品牌的成长之路，细数品牌发展和成功背后的技术积累，增强品牌可信度，提升品牌曝光度；</div>
+                  </div>
+              </div>
+              <div class="gh-echarts-sm">
+                  <div class="sub-top">
+                    <div class="sub-index-l">
+                        <p>舆情关键传播点2</p>
+                        <span>2021/1/22  19:36:13</span>
+                        <div class="gh-sub-desc">【微博】账号“犀牛财经”发布《中国十大凉茶品牌》的内容；（邓老排名第7）</div>
+                    </div>
+                    <div class="sub-index-r">
+                        <graphEcharts2 id="graph3" :graphDatas="$linData.graphDataChance" :curColor="$linData.colorList[2]"></graphEcharts2>
+                    </div>
+                  </div>
+                  <div class="sub-bot">
+                      <p>舆情应对策略建议：</p>
+                      <div class="gh-sub-desc">该微博带来8000+的转发和500+的评论；建议邓老官方微博开启一个#谁才是中国凉茶的TOP玩家#的热门话题，参与消费者的讨论，提升品牌认知度；</div>
+                  </div>
+              </div>
+              <div class="gh-echarts-sr">
+                  <div class="sub-top">
+                    <div class="sub-index-l">
+                        <p>舆情关键传播点3</p>
+                        <span>2021/1/23  11:31:55</span>
+                        <div class="gh-sub-desc">【小红书】多个账号发布“凉茶如何搭配美食”相关话题的笔记；</div>
+                    </div>
+                    <div class="sub-index-r">
+                        <graphEcharts3 id="graph4" :graphDatas="$linData.graphDataChance" :curColor="$linData.colorList[3]"></graphEcharts3>
+                    </div>
+                  </div>
+                  <div class="sub-bot">
+                      <p>舆情应对策略建议：</p>
+                      <div class="gh-sub-desc">这些笔记内容讨论了消费者吃各类美食时搭配的凉茶品牌，热度中等，对品牌口碑影响较小；
+建议保持事件关注，现阶段无需做出回应</div>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
 </template>
 
@@ -145,9 +215,10 @@ import graphEcharts1 from "../../../components/echarts/common/graph/graphEcharts
 import graphEcharts2 from "../../../components/echarts/common/graph/graphEcharts2"
 import graphEcharts3 from "../../../components/echarts/common/graph/graphEcharts3"
 import treeEcharts from "../../../components/echarts/common/tree/treeEcharts"
+import treeEcharts1 from "../../../components/echarts/common/tree/treeEcharts1"
 export default {
     name:"NewEcharts",
-    components:{ScatterEcharts,graphEcharts,graphEcharts1,graphEcharts2,graphEcharts3,treeEcharts},
+    components:{ScatterEcharts,graphEcharts,graphEcharts1,graphEcharts2,graphEcharts3,treeEcharts,treeEcharts1},
     data(){
         return {
             seriesName:'风险'

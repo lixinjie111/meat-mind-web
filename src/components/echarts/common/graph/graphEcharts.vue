@@ -21,7 +21,7 @@ export default {
     initEcharts() {
       let option = this.defaultOption();
       let myEchart = this.$echarts.init(document.getElementById(this.id));
-      myEchart.setOption(option);
+      myEchart.setOption(option,true);
       window.addEventListener("resize", () => {
         myEchart.resize();
       });
@@ -48,14 +48,15 @@ export default {
                 fontSize: 10,
               },
               formatter: (params)=>{
+                // console.log(params)
                 if(params.dataIndex==9){
-                  return '百度百家号'
+                  return params.name
                 }else if(params.dataIndex == 3){
-                  return '新浪财经'
+                  return params.name
                 }else if(params.dataIndex == 26){
-                  return '知乎'
+                  return params.name
                 }else if(params.dataIndex == 19){
-                  return '抖音'
+                  return params.name
                 }
               },
             },
