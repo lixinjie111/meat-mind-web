@@ -64,33 +64,27 @@ export default {
 <style scoped lang="scss">
 .datacenter-model-filter {
   height: 155px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   background: #ffffff;
-  box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-  border-radius: 12px;
-  border: 1px solid #eaedf7;
+  box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+  border-radius: 8px;
+  // border: 1px solid #eaedf7;
   .f-header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     height: 55px;
+    margin:0 24px;
+    border-bottom: 1px solid #EAEDF7;
     .empty{
       height: 55px;
       flex: auto;
-      border-bottom: 1px solid #EAEDF7;
+      // border-bottom: 1px solid #EAEDF7;
     }
     .search,.download,.filter{
       display: flex;
       align-items: center;
-      justify-content: center;
-      > i {
-        width: 24px;
-        height: 24px;
-        color: #7c88b1;
-        font-size: 24px;
-        margin-right: 8px;
-        line-height: 24px;
-      }
+      // justify-content: center;
       > span {
         font-size: 14px;
         font-family: PingFangSC-Regular, PingFang SC;
@@ -99,20 +93,56 @@ export default {
       }
     }
     .search {
-      width: 246px;
-      height: 55px;
-      border-right: 2px solid #eaedf7;
-      border-bottom: 1px solid #EAEDF7;
+      width: 260px;
+      height: 32px;
+      padding-left: 12px;
+      background: #FFFFFF;
+      border-radius: 4px;
+      border: 1px solid #97A0C3;
+      > i {
+        width: 20px;
+        height: 20px;
+        color: #7c88b1;
+        font-size: 20px;
+        margin-right: 8px;
+        line-height: 20px;
+      }
     }
     .download {
-      width: 201px;
+      // width: 201px;
       height: 55px;
-      border-right: 2px solid #eaedf7;
-      border-bottom: 1px solid #EAEDF7;
+      margin-left: 24px;
+      margin-right: 16px;
+      // border-right: 2px solid #eaedf7;
+      // border-bottom: 1px solid #EAEDF7;
+      > i {
+        width: 16px;
+        height: 16px;
+        color: #7c88b1;
+        font-size: 16px;
+        margin-right: 4px;
+        line-height: 16px;
+      }
     }
     .filter{
-      width: 117px;
+      // width: 117px;
       height: 55px;
+      > i {
+        width: 18px;
+        height: 18px;
+        color: #7c88b1;
+        font-size: 18px;
+        margin-right: 4px;
+        line-height: 18px;
+      }
+      > .iconup {
+        width: 12px;
+        height: 12px;
+        color: #7c88b1;
+        margin-left: 11px;
+        font-size: 12px;
+        line-height: 12px;
+      }
     }
   }
 
@@ -122,6 +152,9 @@ export default {
     align-items: center;
     height: 100px;
     padding: 0 24px;
+   ::v-deep .ivu-select-selection{
+      color: #97A0C3;
+    }
     .show-status,.mid,.target-filter{
       margin-right: 24px;
       >p{
@@ -136,36 +169,37 @@ export default {
     }
     .operate-box{
       position: absolute;
-      right: 26px;
+      right: 24px;
       bottom: 24px;
       display: flex;
       .left-btn{
-        width: 48px;
-        height: 28px;
+        width: 76px;
+        height: 32px;
         margin-right: 8px;
-        box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8), -2px -2px 7px 0px #FFFEFA;
-        border-radius: 8px;
-        border: 1px solid #C6CBDE;
+        // box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8), -2px -2px 7px 0px #FFFEFA;
+        border-radius: 4px;
+        border: 1px solid #97A0C3;
         cursor: pointer;
-        font-size: 12px;
+        font-size: 14px;
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
-        color: #636E95;
-        line-height: 26px;
+        color: #242F57;
+        line-height: 30px;
         text-align: center;
       }
       .right-btn{
-        width: 48px;
-        height: 28px;
+        width: 76px;
+        height: 32px;
         background: #2373FF;
-        border-radius: 8px;
-        border: 1px solid #2373FF;
+        border-radius: 4px;
+        box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
+        // border: 1px solid #2373FF;
         cursor: pointer;
-        font-size: 12px;
+        font-size: 14px;
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
         color: #FFFFFF;
-        line-height: 26px;
+        line-height: 32px;
         text-align: center;
       }
     }

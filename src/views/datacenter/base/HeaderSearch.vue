@@ -1,14 +1,15 @@
 <template>
   <div class="datacenter-model-search">
-    <div class="empty">
-      <slot></slot>
-    </div>
+    <div class="left"></div>
     <slot name="text">
       <div class="search">
         <i class="iconfont iconSearch"></i>
         <span>请输入事件名或事件显示名</span> 
       </div>
     </slot> 
+    <div class="empty">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -27,29 +28,37 @@ export default {
   justify-content: flex-end;
   align-items: center;
   height: 56px;
-  margin-bottom: 8px;
-  background: #ffffff;
-  box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-  border-radius: 12px;
-  border: 1px solid #eaedf7;
+  margin-bottom: 4px;
+  // background: #ffffff;
+  // box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+  // border-radius: 12px;
+  // border: 1px solid #eaedf7;
+  .left{
+    flex:auto
+  }
   .empty {
+    display: flex;
     height: 56px;
-    flex: auto;
-    border-right: 2px solid #eaedf7;
+    align-items: center;
+    // flex: auto;
+    // border-right: 2px solid #eaedf7;
   }
   .search {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 246px;
-    height: 56px;
+    // justify-content: center;
+    width: 260px;
+    height: 32px;
+    padding-left: 12px;
+    background: #FFFFFF;
+    border-radius: 4px;
     > i {
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
       color: #7c88b1;
-      font-size: 24px;
+      font-size: 20px;
       margin-right: 8px;
-      line-height: 24px;
+      line-height: 20px;
     }
     > span {
       font-size: 14px;

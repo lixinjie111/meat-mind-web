@@ -130,22 +130,25 @@ export default {
 .my-set{
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  height: 56px;
-  padding: 0 16px;
-  color: #2373FF;
+  justify-content: center;
+  width: 130px;
+  height: 32px;
+  margin-left: 16px;
+  background: #2373FF;
+  color: #FFFFFF;
+  box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
+  border-radius: 4px;
   cursor: pointer;
   >i{
-    font-size: 20px;
+    font-size: 14px;
     margin-right: 4px;
   }
   >div{
-    height: 20px;
+    height: 22px;
     font-size: 14px;
     font-family: PingFangSC-Regular, PingFang SC;
     font-weight: 400;
-    color: #2373FF;
-    line-height: 20px;
+    line-height: 22px;
   }
 }
 </style>

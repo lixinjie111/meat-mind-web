@@ -39,12 +39,11 @@
         .title {
             display: flex;
             align-items: center;
-            height: 76px;
-            padding-left:8px;
+            height: 72px;
             font-size: 24px;
             color: #242F57;
             .icon{
-                width: 56px;
+                padding-left:16px;
                 height: 24px;
                 margin-right: 16px;
                 transform: rotate(180deg);

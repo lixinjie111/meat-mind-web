@@ -61,10 +61,10 @@ export default {
 .table-model {
 //   height: 686px;
   padding: 16px 24px;
-  background: #ffffff #d8d8d8;
-  box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-  border-radius: 12px;
-  border: 1px solid #eaedf7;
+  background: #ffffff;
+  box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+  border-radius: 8px;
+  // border: 1px solid #eaedf7;
   cursor: pointer;
     .ivu-table{
         font-size: 14px;
@@ -79,6 +79,7 @@ export default {
         font-family: PingFangSC-Medium, PingFang SC;
         font-weight: 500;
         color: #242F57;
+        border-radius: 2px;
     }
     ::v-deep .ivu-table th,::v-deep .ivu-table td{
         height: 56px;

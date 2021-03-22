@@ -7,7 +7,7 @@
     <HeaderSearch></HeaderSearch>
     <TableModel :columns="columns" :tableData="tableData">
       <div class="more-opterate">
-        <div>批量操作：</div>
+        <div class="more-opterate-title">批量操作：</div>
         <div class="reset-btn">批量重命名</div>
       </div>
     </TableModel>
@@ -198,7 +198,7 @@ export default {
   align-items: center;
   height: 56px;
   border-bottom: 1px solid #eaedf7;
-  .more-opterate {
+  .more-opterate-title {
     width: 70px;
     height: 20px;
     margin-right: 8px;
@@ -209,18 +209,17 @@ export default {
     line-height: 20px;
   }
   .reset-btn {
-    width: 84px;
+    width: 90px;
     height: 28px;
-    box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8),
-      -2px -2px 7px 0px #fffefa;
-    border-radius: 8px;
-    border: 1px solid #c6cbde;
+    // box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8), -2px -2px 7px 0px #fffefa;
+    border-radius: 4px;
+    border: 1px solid #97A0C3;
     line-height: 26px;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     font-family: PingFangSC-Regular, PingFang SC;
     font-weight: 400;
-    color: #636e95;
+    color: #242F57;
   }
 }
 </style>
