@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "treeEcharts",
+  name: "treeEcharts1",
   props: {
     id: {
       type: String,
@@ -59,7 +59,7 @@ export default {
             },
             data: [
               {
-                name: "新浪财经",
+                name: "人民网",
                 value: "发布消息《和其正在凉茶巨头夹缝中迷失，同仁堂与邓老遭多重考验》\n2021/1/21",
                 itemStyle:{
                   color:this.colorList[0],
@@ -69,9 +69,9 @@ export default {
                   offset: [-60, 1],
                 },
                 children: [
-                  {
-                    name: "百度百家号",
-                    value: "安安科普转发消息\n2021/1/22",
+                {
+                    name: "知乎",
+                    value: "知乎上出现热问，该热问提及品牌负面新闻\n2021/1/22",
                     itemStyle:{
                       color:this.colorList[1],
                       borderWidth:0,
@@ -95,12 +95,13 @@ export default {
                     ],
                   },
                   {
-                    name: "知乎",
-                    value: "知乎上出现热问，该热问提及品牌负面新闻\n2021/1/22",
+                    name: "微博",
+                    value: "安安科普转发消息\n2021/1/22",
                     itemStyle:{
                       color:this.colorList[2],
                       borderWidth:0,
                     },
+
                     label: {
                       offset: [-30, 15],
                     },
@@ -131,7 +132,7 @@ export default {
                     ],
                   },
                   {
-                    name: "抖音",
+                    name: "小红书",
                     value: "热门短视频提升了品牌讨论热度 \n 2021/1/23",
                     itemStyle:{
                       color:this.colorList[3],

@@ -39,10 +39,10 @@
         .title {
             display: flex;
             align-items: center;
-            height: 64px;
+            height: 76px;
             padding-left:8px;
-            font-size: 20px;
-            color: #212121;
+            font-size: 24px;
+            color: #242F57;
             .icon{
                 width: 56px;
                 height: 24px;

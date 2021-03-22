@@ -115,7 +115,7 @@
             border-radius: 12px;
             border: 1px solid #EAEDF7;
             padding: 24px;
-            margin: 16px 0;
+            margin-bottom: 16px;
 
             .module-rule-title {
                 font-size: 16px;
