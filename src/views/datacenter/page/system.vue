@@ -1,6 +1,8 @@
 <template>
     <div class="xtjc">
-        <div class="title">系统集成</div>
+        <div class="header-nav">
+            <p>集成数据</p>
+        </div>
         <div class="content">
             <div class="top">
                <div class="topzi">
@@ -109,19 +111,11 @@
         }
     .xtjc {
         padding: 24px;
-        padding-top:0 ;
-        .title{
-            font-size: 20px;
-            font-family: PingFangSC-Medium, PingFang SC;
-            font-weight: 500;
-            color: #242F57;
-            padding:16px 24px;
-        }
+
         .content{
             background: #FFFFFF;
-            box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-            border-radius: 12px;
-            border: 1px solid #EAEDF7;
+            box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+            border-radius: 8px;
             padding: 0 24px;
             font-size: 14px;
             font-family: PingFangSC-Regular, PingFang SC;
@@ -139,30 +133,29 @@
                     }
                 }
                 .btn{
+                    margin: 16px auto 0;
+                    width: 104px;
+                    height: 32px;
+                    line-height: 32px;
+                    background: #2373FF;
+                    box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
+                    border-radius: 4px;
                     font-size: 14px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
-                    color: #2373FF;
-                    width: 88px;
-                    height: 32px;
-                    box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
-                    border-radius: 8px;
-                    border: 1px solid rgba(135,133,127,1);
-                    line-height: 32px;
+                    color: #FFFFFF;
                     text-align: center;
-                    margin: 0 auto;
-                    margin-top: 16px;
                     cursor: pointer;
                 }
             }
             .bottom{
                 margin-bottom: 8px;
                 .bottom-title{
-                    font-size: 16px;
+                    font-size: 18px;
                     font-family: PingFangSC-Medium, PingFang SC;
                     font-weight: 500;
                     color: #242F57;
-                    padding: 24px 0;
+                    padding: 22px 0;
                 }
                 .boximg{
                     position: relative;
@@ -196,7 +189,7 @@
                 }
                 .img-title{
                     margin-top: 12px;
-                    margin-bottom: 24px; 
+                    margin-bottom: 24px;
                     font-size: 14px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;

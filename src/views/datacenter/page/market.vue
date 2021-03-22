@@ -1,6 +1,8 @@
 <template>
     <div class="data-market-container">
-        <p class="title">数据市场</p>
+        <div class="header-nav">
+            <p>数据市场</p>
+        </div>
         <div class="data-card">
             <div class="data-card-title"><p>为您推荐</p></div>
             <div class="data-card-content">
@@ -29,7 +31,9 @@
         <div class="data-card mt-24">
             <div class="data-card-title flex">
                 <p>热门推荐</p>
-                <Input prefix="ios-search" class="data-card-title-right" placeholder="输入关键词搜索"/>
+                <Input class="data-card-title-right" placeholder="输入关键词搜索">
+                    <i class="iconfont iconSearch" slot="prefix" />
+                </Input>
             </div>
             <div class="data-card-content hot-data">
                 <div class="item" v-for="(item,index) in hotList" :key="index">
@@ -53,8 +57,8 @@
                     </div>
                 </div>
             </div>
-            <div class="data-card-page pb-24">
-                <Page :current="currentPage" :total="totalPage" :page-size="pageSize" simple
+            <div class="data-card-page">
+                <Page :current="currentPage" :total="totalPage" :page-size="pageSize" show-total
                       @on-change="changePage"/>
             </div>
         </div>
@@ -317,38 +321,25 @@
             margin-top: 24px;
         }
 
-        .pb-24 {
-            padding-bottom: 24px!important;
-        }
-
-        .title {
-            padding: 16px 24px;
-            font-size: 20px;
-            font-family: PingFangSC-Medium, PingFang SC;
-            font-weight: 500;
-            color: #242F57;
-        }
-
         .data-card {
+            padding: 15px 0 16px 24px;
             background: #FFFFFF;
-            box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-            border-radius: 12px;
-            border: 1px solid #EAEDF7;
+            box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+            border-radius: 8px;
 
             .data-card-title {
-                margin: 0 24px;
-                padding: 16px 0;
-                border-bottom: 1px dashed #242F57;
+                margin: 0 0 23px 6px;
 
                 > p {
-                    font-size: 16px;
+                    font-size: 18px;
                     font-family: PingFangSC-Medium, PingFang SC;
                     font-weight: 500;
                     color: #242F57;
                 }
 
                 .data-card-title-right {
-                    width: 220px;
+                    padding-right: 24px;
+                    width: 200px;
 
                     ::v-deep .ivu-input {
                         padding: 9px 24px;
@@ -357,12 +348,11 @@
             }
 
             .data-card-content {
-                padding: 24px 0 8px 24px;
                 //解决滚动条影响页面宽度
-                margin-right: -10px;
+                //margin-right: -10px;
 
                 &.hot-data {
-                   height: 422px;
+                   height: 376px;
                 }
 
                 .item {
@@ -446,30 +436,30 @@
 
                             .try-btn {
                                 margin-right: 8px;
-                                width: 80px;
-                                height: 30px;
-                                line-height: 30px;
-                                box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
-                                border-radius: 8px;
-                                border: 1px solid #C6CBDE;
-                                font-size: 14px;
-                                font-family: PingFangSC-Medium, PingFang SC;
-                                font-weight: 500;
-                                color: #636E95;
+                                width: 68px;
+                                height: 28px;
+                                line-height: 28px;
+                                background: #FFFFFF;
+                                border-radius: 4px;
+                                border: 1px solid #97A0C3;
+                                font-size: 12px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #242F57;
                                 text-align: center;
                             }
 
                             .blue-btn {
-                                width: 60px;
-                                height: 30px;
-                                line-height: 30px;
-                                box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8) inset;
-                                border-radius: 8px;
-                                border: 1px solid #2373FF;
-                                font-size: 14px;
-                                font-family: PingFangSC-Medium, PingFang SC;
-                                font-weight: 500;
-                                color: #2373FF;
+                                width: 56px;
+                                height: 28px;
+                                line-height: 28px;
+                                background: #2373FF;
+                                box-shadow: 2px 4px 8px 0px rgba(35, 115, 255, 0.3);
+                                border-radius: 4px;
+                                font-size: 12px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #FFFFFF;
                                 text-align: center;
                                 cursor: pointer;
                             }
@@ -479,6 +469,7 @@
             }
 
             .data-card-page {
+                margin-top: 16px;
                 padding: 0 24px;
                 text-align: right;
             }

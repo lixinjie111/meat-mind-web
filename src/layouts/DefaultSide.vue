@@ -167,7 +167,7 @@
                             },
                             {
                                 name: "data-center-system",
-                                label: "系统集成",
+                                label: "集成数据",
                                 path: "/data-center/system",
                             },
                             {
