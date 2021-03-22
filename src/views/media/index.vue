@@ -12,12 +12,14 @@
             <div class="subTitle">媒介现状与趋势</div>
             <div class="subDesc">头部KOL投放成本过高，销售转化与上一季度持平。</div>
             <div class="new_echart_box">
+              <BarLine2 id="305" :colorList="$abelData.colorList" :myData="$abelData.barLine"></BarLine2>
             </div>
           </div>
           <div class="rt">
             <div class="subTitle">媒介现状与趋势</div>
             <div class="subDesc">短视频类媒介呈现上升趋势（品牌合作意愿强） 新闻门户类热度下降（投放回报率低）</div>
             <div class="new_echart_box">
+              <BarHM4 id="306" :colorList="$abelData.colorList" :myData="$abelData.barStack01"></BarHM4>
             </div>
           </div>
         </div>
@@ -574,6 +576,8 @@
   import cLine from '../../components/echarts/common/line/line';
   import PieOne3 from '../../components/echarts/common/pie/PieOne3';
   import barM from '../../components/echarts/common/bar/barM';
+  import BarLine2 from '../../components/echarts/common/bar/barLine2';
+  import BarHM4 from '../../components/echarts/common/bar/barHM4';
   import barHM2 from '../../components/echarts/common/bar/barHM3';
   import MediaAnalysis from './base/MediaAnalysis';
   import PieEcharts9 from '../../components/echarts/common/pie/PieEcharts9';
@@ -583,7 +587,7 @@
   let counter = 0
   export default {
     name: "index",
-    components: {PieOne3,Tab, PieEcharts9,cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, KOLResource, MediaAnalysis, PortraitMatching},
+    components: {BarHM4,BarLine2,PieOne3,Tab, PieEcharts9,cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, KOLResource, MediaAnalysis, PortraitMatching},
     data(){
       return{
         tabActive: 1,
