@@ -1,5 +1,5 @@
 <template>
-  <div class="card_container" ref="card_container" :class="{'removeMb':cardData.id==2||cardData.id==3}">
+  <div class="card_container" ref="card_container" :class="{'removeMb':((cardData.id==2||cardData.id==3)&&cardData.type=='dash')}">
       <div class="info_lef">
           <img :src="cardData.jyIcon" alt="" srcset="" class="jyIcon">
       </div>
@@ -38,14 +38,19 @@ export default {
     
   },
   mounted() {
-      this.setStyle();
+    this.setStyle();
   },
   methods: {
     setStyle(){
         var domitem = this.$refs.card_container;
         console.log(domitem,'domitem')
         var styData = this.cardData;
-        domitem.style=` background:${styData.bgc};color:${styData.fColor};`;
+        if(styData.type == 'dash'){
+            domitem.style=` background:${styData.bgc};color:${styData.fColor};width: 47%;`;
+        }
+        else if(styData.type == 'jyfx'){
+            domitem.style=` background:${styData.bgc};color:${styData.fColor};width: 24%;`;
+        }
     }
   },
 };
@@ -53,7 +58,6 @@ export default {
 
 <style scoped lang="scss">
 .card_container{
-    width: 47%;
     border-radius: 8px;
     padding: 30px 20px;
     box-sizing: border-box;
@@ -91,6 +95,7 @@ export default {
                 font-size: 28px;
                 font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
+                margin-right: 5px;
             }
             .til_unit{
                 font-size: 14px;

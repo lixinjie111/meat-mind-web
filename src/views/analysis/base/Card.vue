@@ -2,7 +2,7 @@
   <div class="sub-module">
       <div class="sub-title">{{title}}</div>
       <div class="sub-date">
-        <DatePicker type="daterange" style="width:214px" :value="['2020-1-1','2020-2-29']" show-week-numbers
+        <DatePicker type="daterange" show-week-numbers
             placement="bottom-end" placeholder="请选择时间"></DatePicker>
       </div>
       <slot></slot>
@@ -44,6 +44,12 @@ export default {
             position: absolute;
             top: 24px;
             right: 24px;
+            ::v-deep .ivu-date-picker{
+                min-width: 213px !important;
+            }
+            ::v-deep .ivu-date-picker .ivu-date-picker-rel{
+                width: 100%;
+            }
         }
     }
 </style>
