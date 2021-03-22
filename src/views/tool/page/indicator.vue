@@ -1,28 +1,25 @@
 <template>
     <div class="zbgl">
-        <div class="change1" @click="active = 1"></div>
-        <div class="change2" @click="active = 2"></div>
-        <div class="new" @click="newModal = true"></div>
-        <div class="ztzb" v-if="active == 1">
-            <img src="../../../static/img/tool/zbgl/ztzb-header@2x.png" alt="">
-            <div class="ztzb-table">
-                <Table :columns="columns" :data="data">
-                    <template slot-scope="" slot="operate">
-                        <div class="operation"><Icon type="md-create" color="#778ca2" class="icon-create"/><Icon type="ios-trash-outline" color="#f35a3d"/></div>
+        <div class="header-nav"><p>指标管理</p></div>
+         <Tab :tab-list="['整体指标','客户指标']" @change="changeTab"></Tab>
+         <div class="header-new">
+             <Button type="primary" icon="md-add" size="small" @click="newModal = true">新建</Button>
+         </div>
+        <div class="ztzb">
+                <Table :columns="columns" :data="active == 1?data:data1">
+                    <template slot-scope="" slot="action">
+                        <div class="actionList">
+                            <div class="detail">编辑</div>
+                            <div class="detail">删除</div>
+                        </div>
                     </template>
                 </Table>
-            </div>
+                <div class="page">
+                    <Page :total="total" :current="current" @on-change="change" @on-page-size-change="changeSize"
+                            :pageSize="pageSize" show-total show-sizer class-name="pageS"/>
+                </div>
         </div>
-        <div class="ztzb" v-else>
-            <img src="../../../static/img/tool/zbgl/khzb-header@2x.png" alt="">
-            <div class="ztzb-table">
-                <Table :columns="columns1" :data="data1">
-                    <template slot-scope="" slot="operate">
-                        <div class="operation"><Icon type="md-create" color="#778ca2" class="icon-create"/><Icon type="ios-trash-outline" color="#f35a3d"/></div>
-                    </template>
-                </Table>
-            </div>
-        </div> 
+        
         <Modal class-name="zbgl-modal" v-model="newModal" footer-hide :closable="false">
             <div class="content">
                 <div class="close-btn" @click="newModal = false"></div>
@@ -33,9 +30,14 @@
 </template>
 
 <script>
+  import Tab from "@/components/Tab"
     export default {
+        components: {Tab,},
         data() {
             return {
+                total: 10,
+                pageSize: 10,
+                current: 1,
                 active: 1,
                 newModal: false,
                 columns:[
@@ -45,38 +47,39 @@
                     },
                     {
                         title:"操作",
-                        slot:"operate",
-                        align:"center"
+                        slot:"action",
+                        align:"left",
+                        width: 130 / 144 * window.rem,
                     }
                 ],
                 data:[
                     {
                         name:"总客户数",
-                        operate:""
+                        action:""
                     },{
                         name:"有效客户数",
-                        operate:""
+                        action:""
                     },{
                         name:"周活跃客户数",
-                        operate:""
+                        action:""
                     },{
                         name:"周活跃用户",
-                        operate:""
+                        action:""
                     },{
                         name:"周报错次数",
-                        operate:""
+                        action:""
                     },{
                         name:"月活跃客户数",
-                        operate:""
+                        action:""
                     },{
                         name:"报错客户数",
-                        operate:""
+                        action:""
                     },{
                         name:"使用初级功能客户",
-                        operate:""
+                        action:""
                     },{
                         name:"使用高级功能客户",
-                        operate:""
+                        action:""
                     } 
                 ],
                 columns1:[
@@ -86,55 +89,87 @@
                     },
                     {
                         title:"操作",
-                        slot:"operate",
-                        align:"center"
+                        slot:"action",
+                        align:"left",
+                        width: 130 / 144 * window.rem,
                     }
                 ],
                 data1:[
                     {
                         name:"客户详情查看次数",
-                        operate:""
+                        action:""
                     },{
                         name:"报表导出次数",
-                        operate:""
+                        action:""
                     },{
                         name:"设置点击次数",
-                        operate:""
+                        action:""
                     },{
                         name:"帮助点击次数",
-                        operate:""
+                        action:""
                     },{
                         name:"PC端访问次数",
-                        operate:""
+                        action:""
                     },{
                         name:"报错次数",
-                        operate:""
+                        action:""
                     },{
                         name:"活跃用户数",
-                        operate:""
+                        action:""
                     },{
                         name:"高级功能点击次数",
-                        operate:""
+                        action:""
                     },{
                         name:"任意事件的总次数",
-                        operate:""
+                        action:""
                     } 
                 ]
             }
+        },
+        mounted(){
+            this.changeTabCon(0);
+        },
+        methods:{
+            change(current) {
+                this.current = current
+               // this.generateData()
+            },
+            changeSize(pageSize) {
+                this.pageSize = pageSize
+               // this.generateData()
+            },
+            changeTab(index) {
+                console.log(index)
+                this.active = index;
+            },
         }
     }
 </script>
 
 <style scoped lang="scss">
     .zbgl {
+        padding:0 24px;
         position: relative;
         width: 100%;
         height: 100%;
         background: #f5f5f5;
-
+        .header-new{
+            margin-top: 16px;
+            background: #fff;
+            padding:16px 24px;
+        }
         img {
             width: 100%;
             // height: 100%;
+        }
+        .page {
+            padding-top: 16px;
+            .pageS {
+            text-align: right;
+            ::v-deep .ivu-page-options {
+                float: left;
+            }
+            }
         }
 
         .change1 {
@@ -164,18 +199,21 @@
             cursor: pointer;
         }
         .ztzb{
-            display: flex;
-            flex-direction: column;
-            .ztzb-table{
-                padding: 0 24px 24px;
-                .operation{
-                    font-size: 16px;
-                    cursor: pointer;
-                    .icon-create{
-                        margin-right: 10px;
+            margin-top: 16px;
+            background: #fff;
+            padding: 16px 24px;
+                .actionList {
+                    display: flex;
+                    //justify-content: flex-end;
+                    .detail {
+                        margin-right: 16px;
+                        cursor: pointer;
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: #2373FF;
+                        line-height: 22px;
                     }
                 }
-            }
         }
     }
 </style>

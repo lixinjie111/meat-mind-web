@@ -1,6 +1,6 @@
 <template>
   <div class="bqgl">
-    <p class="bqgl-title">标签管理</p>
+    <div class="header-nav"><p>标签管理</p></div>
     <CreateLable></CreateLable>
     <TableModel :columns="columns" :tableData="tableData"></TableModel>
     <div class="create-target" @click="create"></div>
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import TableModel from "../../datacenter/base/TableModel";
+import TableModel from "../base/TableModel";
 import CreateLable from "../base/CreateLable";
 export default {
   name: "LabelAdmin",
@@ -42,6 +42,7 @@ export default {
       columns: [
         {
           title: "标签名",
+          tooltip: true,
           key: "name"
         },
         {
@@ -59,21 +60,22 @@ export default {
         {
           title: "计算状态",
           key: "type",
+          width: 100 / 144 * window.rem,
         },
         {
           title: "更新时间",
           key: "target",
-          width: 120
+          width: 180/ 144 * window.rem,
         },
         {
           title: "完成时间",
           key: "deadline",
-          width: 120,
+          width: 180/ 144 * window.rem,
         },
         {
           title: "操作",
           slot: "operate",
-          width: 120
+          width: 150 / 144 * window.rem,
         }
       ],
       tableData: [
@@ -195,10 +197,7 @@ export default {
 <style scoped lang="scss">
 .bqgl {
   position: relative;
-  width: 100%;
-  height: 100%;
   padding: 0 24px;
-  background: #ffffff;
   .bqgl-title {
     height: 64px;
     padding-left: 24px;

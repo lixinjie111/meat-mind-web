@@ -1,6 +1,6 @@
 <template>
   <div class="user-group">
-    <p class="yhfq-title">用户分群</p>
+    <div class="header-nav"><p>用户分群</p></div>
     <div class="list">
       <div class="show-header">
         <div class="blue-btn">
@@ -8,7 +8,7 @@
           <div>新建</div>
         </div>
       </div>
-    <TableModel :columns="columns" :tableData="tableData"></TableModel>
+      <TableModel :columns="columns" :tableData="tableData"></TableModel>
       <div class="create" @click="create"></div>
     </div>
     <Modal title="通过哪种方式进行标签的创建" class-name="create-fq-modal" v-model="createModal" footer-hide>
@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import TableModel from "../../datacenter/base/TableModel";
+import TableModel from "../base/TableModel";
 export default {
   name:"yhfq",
   components:{TableModel},
@@ -66,32 +66,29 @@ export default {
         {
           title: "人数",
           key: "number",
-          width:120
         },
         {
           title: "创建方式",
           key: "type",
-          width:140
         },
         {
           title: "创建者",
           key: "user",
-          width:140
+          width: 150/ 144 * window.rem,
         },
         {
           title: "更新方式",
           key: "change",
-          width:140
         },
         {
           title: "最近更新时间",
           key: "date",
-          width: 120,
+           width: 180/ 144 * window.rem,
         },
         {
           title: "操作",
           slot: "operate",
-          width: 120,
+           width: 150/ 144 * window.rem,
         }
       ],
             tableData: [
@@ -223,7 +220,6 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0 24px;
-  background: #ffffff;
   .yhfq-title {
     height: 64px;
     padding-left: 24px;
@@ -236,12 +232,13 @@ export default {
   .list {
     position: relative;
     .show-header {
+      background: #fff;
         display: flex;
         align-items: center;
       height: 56px;
       margin-bottom: 8px;
-      box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-      border-radius: 12px;
+      box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+      border-radius: 8px;
       border: 1px solid #eaedf7;
             .blue-btn {
         display: flex;
@@ -252,7 +249,7 @@ export default {
         
         margin-left: 32px;
         background: #2373ff;
-        border-radius: 8px;
+        border-radius: 4px;
         > i {
           width: 14px;
           height: 14px;

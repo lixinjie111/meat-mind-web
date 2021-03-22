@@ -9,8 +9,7 @@
         <div class="group-admin">管理分组</div>
       </div>
       <div class="search">
-        <i class="iconfont iconSearch"></i>
-        <span>请输入标签名进行搜索</span>
+        <Input prefix="ios-search" placeholder="请输入标签名进行搜索" />
       </div>
       <div class="filter">
         <i class="iconfont iconfilter"></i>
@@ -59,8 +58,8 @@ export default {
   height: 155px;
   margin-bottom: 8px;
   background: #ffffff;
-  box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-  border-radius: 12px;
+  box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+  border-radius: 8px;
   border: 1px solid #eaedf7;
   .f-header {
     display: flex;
@@ -84,7 +83,7 @@ export default {
         // padding: 0 16px;
         margin-right: 8px;
         background: #2373ff;
-        border-radius: 8px;
+        border-radius: 4px;
         > i {
           width: 14px;
           height: 14px;
@@ -108,15 +107,15 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 88px;
+        width: 80px;
         height: 32px;
-        color: #2373ff;
+        background: #FFFFFF;
+        border-radius: 4px;
+        border: 1px solid #97A0C3;
         font-size: 14px;
-        font-family: PingFangSC-Regular;
-        border-radius: 8px;
-        box-shadow: inset 2px 2px 7px 0px rgba(210, 213, 225, 0.8),
-          inset -2px -2px 7px 0px rgba(255, 254, 250, 1);
-        border: 0.88px solid rgba(35, 115, 255, 1);
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #242F57;
       }
     }
     .search,
@@ -145,6 +144,7 @@ export default {
       height: 55px;
       border-right: 2px solid #eaedf7;
       border-bottom: 1px solid #eaedf7;
+      padding-right: 16px;
     }
     .download {
       width: 111px;
@@ -187,7 +187,7 @@ export default {
         margin-right: 8px;
         box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8),
           -2px -2px 7px 0px #fffefa;
-        border-radius: 8px;
+        border-radius: 4px;
         border: 1px solid #c6cbde;
         cursor: pointer;
         font-size: 12px;
@@ -201,7 +201,7 @@ export default {
         width: 48px;
         height: 28px;
         background: #2373ff;
-        border-radius: 8px;
+        border-radius: 4px;
         border: 1px solid #2373ff;
         cursor: pointer;
         font-size: 12px;

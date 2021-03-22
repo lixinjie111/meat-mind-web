@@ -1,68 +1,84 @@
 <template>
   <div class="qdlj">
-    <img src="../../../static/img/tool/qdzz/qdlj/qdlj-header.png" alt=""/>
+    <div class="header-nav"><p>渠道链接</p></div>
+    <CreateLable></CreateLable>
+    <!-- <img src="../../../static/img/tool/qdzz/qdlj/qdlj-header.png" alt=""/> -->
     <div class="qdlj-table">
       <Table :columns="columns" :data="data">
         <template slot-scope="" slot="operation">
-          <div class="operation"><Icon type="ios-link" /><Icon type="ios-stats" /></div>
+           <div class="actionList">
+              <div class="detail">链接</div>
+              <div class="detail">查看</div>
+              <div class="detail">编辑</div>
+              <div class="detail">删除</div>
+          </div>
         </template>
       </Table>
-      <div class="page-box">
-        <Page :current="currentPage" :total="totalPage" :page-size="pageSize"
-        @on-change="changePage"/>
+      <div class="page">
+          <Page :total="totalPage" :current="currentPage" @on-change="changePage" @on-page-size-change="changeSize"
+                  :pageSize="pageSize" show-total show-sizer class-name="pageS"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import CreateLable from "../base/CreateLable";
 export default {
+  components: { CreateLable },
   name: "qdlj",
   data() {
     return {
       currentPage:1,
-      totalPage:25,
-      pageSize:15,
+      totalPage:10,
+      pageSize:10,
       columns: [
         {
           title: "链接名称",
           key: "name",
-          tooltip:true
+          fixed: 'left',
+          width: 300 / 144 * window.rem,
         },
         {
           title: "渠道类型",
           key: "qd_type",
-          tooltip:true
+          width: 150 / 144 * window.rem,
         },
         {
           title: "设备类型",
           key: "unit_type",
+           width: 150 / 144 * window.rem,
         },
         {
           title: "所属活动",
           key: "activity",
+           width: 150 / 144 * window.rem,
         },
         {
           title: "广告来源",
           key: "source",
+           width: 150 / 144 * window.rem,
         },
         {
           title: "广告媒介",
           key: "medium",
+           width: 130 / 144 * window.rem,
         },
         {
           title: "关键词",
           key: "keyword",
+           width: 130 / 144 * window.rem,
         },
         {
           title: "广告内容",
           key: "content",
+           width: 130 / 144 * window.rem,
         },
         {
           title: "操作",
           slot: "operation",
-          width:120,
-          align:"center"
+          fixed: 'right',
+          width: 220 / 144 * window.rem,
         },
       ],
       data: [
@@ -176,61 +192,61 @@ export default {
           content: "39",
           operation: "0"
         },
-        {
-          name: "网页通用渠道_未知活动_20201222_9165",
-          qd_type: "网页通用渠道",
-          unit_type: "通用",
-          activity: "APP推广",
-          source: "百度",
-          medium:"关键词",
-          keyword: "18",
-          content: "39",
-          operation: "0"
-        },
-        {
-          name: "APP 通用渠道_充值_20210111_0600",
-          qd_type: "APP 通用渠道",
-          unit_type: "iOS",
-          activity: "测试",
-          source: "微博",
-          medium:"关键词",
-          keyword: "18",
-          content: "39",
-          operation: "0"
-        },
-        {
-          name: "APP 通用渠道_充值_20210111_0600",
-          qd_type: "APP 通用渠道",
-          unit_type: "iOS",
-          activity: "APP推广",
-          source: "微博",
-          medium:"文章",
-          keyword: "18",
-          content: "39",
-          operation: "0"
-        },
-        {
-          name: "APP 通用渠道_充值_20210111_0600",
-          qd_type: "APP 通用渠道",
-          unit_type: "iOS",
-          activity: "测试",
-          source: "微博",
-          medium:"文章",
-          keyword: "18",
-          content: "39",
-          operation: "0"
-        },
-        {
-          name: "APP 通用渠道_充值_20210111_0600",
-          qd_type: "APP 通用渠道",
-          unit_type: "iOS",
-          activity: "APP推广",
-          source: "新浪",
-          medium:"文章",
-          keyword: "18",
-          content: "39",
-          operation: "0"
-        },
+        // {
+        //   name: "网页通用渠道_未知活动_20201222_9165",
+        //   qd_type: "网页通用渠道",
+        //   unit_type: "通用",
+        //   activity: "APP推广",
+        //   source: "百度",
+        //   medium:"关键词",
+        //   keyword: "18",
+        //   content: "39",
+        //   operation: "0"
+        // },
+        // {
+        //   name: "APP 通用渠道_充值_20210111_0600",
+        //   qd_type: "APP 通用渠道",
+        //   unit_type: "iOS",
+        //   activity: "测试",
+        //   source: "微博",
+        //   medium:"关键词",
+        //   keyword: "18",
+        //   content: "39",
+        //   operation: "0"
+        // },
+        // {
+        //   name: "APP 通用渠道_充值_20210111_0600",
+        //   qd_type: "APP 通用渠道",
+        //   unit_type: "iOS",
+        //   activity: "APP推广",
+        //   source: "微博",
+        //   medium:"文章",
+        //   keyword: "18",
+        //   content: "39",
+        //   operation: "0"
+        // },
+        // {
+        //   name: "APP 通用渠道_充值_20210111_0600",
+        //   qd_type: "APP 通用渠道",
+        //   unit_type: "iOS",
+        //   activity: "测试",
+        //   source: "微博",
+        //   medium:"文章",
+        //   keyword: "18",
+        //   content: "39",
+        //   operation: "0"
+        // },
+        // {
+        //   name: "APP 通用渠道_充值_20210111_0600",
+        //   qd_type: "APP 通用渠道",
+        //   unit_type: "iOS",
+        //   activity: "APP推广",
+        //   source: "新浪",
+        //   medium:"文章",
+        //   keyword: "18",
+        //   content: "39",
+        //   operation: "0"
+        // },
       ],
             data1: [
         {
@@ -581,22 +597,45 @@ export default {
 .qdlj {
   width: 100%;
   height: 100%;
-  background: #F5F5F5;
+  padding:0 24px;
   img {
     width: 100%;
   }
   .qdlj-table{
-    padding: 0 24px 24px;
+    margin-top: 16px;
+    padding: 16px 24px;
+    background: #fff;
     width: 100%;
-      .page-box {
-        margin-top: 10px;
-        text-align: right;
-      }
-      .operation{
-        display: flex;
-        justify-content: space-around;
-        color: #c0ccda;
-      }
+     .page {
+            padding-top: 16px;
+            .pageS {
+            text-align: right;
+            ::v-deep .ivu-page-options {
+                float: left;
+            }
+            }
+        }
+      // .page-box {
+      //   margin-top: 10px;
+      //   text-align: right;
+      // }
+       .actionList {
+                  display: flex;
+                    //justify-content: flex-end;
+            .detail {
+                margin-right: 16px;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 400;
+                color: #2373FF;
+                line-height: 22px;
+            }
+        }
+      // .operation{
+      //   display: flex;
+      //   justify-content: space-around;
+      //   color: #c0ccda;
+      // }
   }
 }
 </style>
