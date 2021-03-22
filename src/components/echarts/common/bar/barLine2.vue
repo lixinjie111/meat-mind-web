@@ -144,12 +144,11 @@ export default {
 						}
 					},
 					splitLine: {
-						show:false,
-						// lineStyle: {
-						// 	color:'#EAEDF7',
-						// 	type:"solid",
-						// 	width: 2,//这里是为了突出显示加上的
-						// }
+						show:true,
+						lineStyle: {
+							color:'#EAEDF7',
+							type: 'dashed',
+						}
 					},
 
 			},
@@ -181,7 +180,7 @@ export default {
 						}
 					},
 					splitLine: {
-						show:true,
+						show:false,
 						lineStyle: {
 							color:'#ADADAD',
 							type:"solid",

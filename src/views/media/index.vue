@@ -1992,7 +1992,7 @@
         }
       },
       getTab(name){
-        console.log(name)
+        // console.log(name)
       },
       showTip(name){
         this.isShowTip=true;
