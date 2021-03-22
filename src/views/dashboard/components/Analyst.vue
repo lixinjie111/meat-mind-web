@@ -917,7 +917,8 @@ export default {
           ysIcon:'bgi1',
           upper:'9.72%',
           downper:'3.54%',
-          jyIcon:require("../../../assets/img/dashboard/jyIcon1.png")
+          jyIcon:require("../../../assets/img/dashboard/jyIcon1.png"),
+          type:'dash'
         },
         {
           id:1,
@@ -929,7 +930,8 @@ export default {
           ysIcon:'bgi2',
           upper:'4.56%',
           downper:'1.12%',
-          jyIcon:require("../../../assets/img/dashboard/jyIcon2.png")
+          jyIcon:require("../../../assets/img/dashboard/jyIcon2.png"),
+          type:'dash'
         },
         {
           id:2,
@@ -941,7 +943,8 @@ export default {
           ysIcon:'bgi3',
           upper:'8.06%',
           downper:'5.12%',
-          jyIcon:require("../../../assets/img/dashboard/jyIcon3.png")
+          jyIcon:require("../../../assets/img/dashboard/jyIcon3.png"),
+          type:'dash'
         },
         {
           id:3,
@@ -953,7 +956,8 @@ export default {
           ysIcon:'bgi4',
           upper:'2.56%',
           downper:'9.12%',
-          jyIcon:require("../../../assets/img/dashboard/jyIcon4.png")
+          jyIcon:require("../../../assets/img/dashboard/jyIcon4.png"),
+          type:'dash'
         }
       ],
       jylefImg:require('../../../assets/img/dashboard/jylefImg.png'),

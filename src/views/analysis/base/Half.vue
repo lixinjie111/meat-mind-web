@@ -6,6 +6,7 @@
       <div class="r-half-echarts">
         <slot name="day"></slot>
         <slot name="left"></slot>
+        <slot name='echarts'></slot>
       </div>
     </div>
     <div class="col half">
@@ -13,6 +14,7 @@
       <p class="sub-title">{{ subDateR }}</p>
       <div class="r-half-echarts">
         <slot name="right"></slot>
+        <slot name="rightEcharts"></slot>
       </div>
     </div>
   </div>
