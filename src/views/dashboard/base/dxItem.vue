@@ -2038,7 +2038,7 @@
         /*margin-top: 20px;*/
         width: 100%;
         // hd修改-3
-        height: 545px;
+        height: 530px;
         margin-bottom: 20px;
         display: flex;
         align-items: center;

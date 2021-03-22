@@ -178,9 +178,9 @@
                         <div class="map-box">
                             <vDxitem v-if="groupActive == 0" :onlyMap="true"></vDxitem>
                             <vDxitem1 v-if="groupActive == 1" :onlyMap="true"></vDxitem1>
-                            <vDxitem1 v-if="groupActive == 2" :onlyMap="true"></vDxitem1>
-                            <vDxitem1 v-if="groupActive == 3" :onlyMap="true"></vDxitem1>
-                            <vDxitem1 v-if="groupActive == 4" :onlyMap="true"></vDxitem1>
+                            <vDxitem2 v-if="groupActive == 2" :onlyMap="true"></vDxitem2>
+                            <vDxitem3 v-if="groupActive == 3" :onlyMap="true"></vDxitem3>
+                            <vDxitem2 v-if="groupActive == 4" :onlyMap="true"></vDxitem2>
                         </div>
                     </div>
                 </div>
@@ -522,6 +522,8 @@
 <script>
     import vDxitem from "../base/dxItem";
     import vDxitem1 from "../base/dxItem1";
+    import vDxitem2 from "../base/dxItem2";
+    import vDxitem3 from "../base/dxItem3";
     import Card from "@/components/Card"
     import barM from '@/components/echarts/common/bar/barM';
     import NewEcharts from "@/views/mark/components/NewEcharts";
@@ -529,7 +531,7 @@
 
     export default {
         name: "BusinessMarket",
-        components: {vDxitem, vDxitem1, NewEcharts, Card, barM, PieNest2},
+        components: {vDxitem, vDxitem1, vDxitem2, vDxitem3 , NewEcharts, Card, barM, PieNest2},
         data() {
             return {
                 threeActive: 1,
@@ -1405,9 +1407,11 @@
                 }
 
                 .right {
+                    display: block;
                     margin-left: 16px;
 
                     .time-line {
+                        height: 104px;
                         border-radius: 8px 8px 0 0;
                         background: #FFFFFF;
 
@@ -1418,8 +1422,9 @@
                     }
 
                     .map-box {
+                       margin-top: 16px;
                        width: 100%;
-                       height: 545px;
+                       height: 530px;
                     }
                 }
             }
