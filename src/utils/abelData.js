@@ -145,7 +145,7 @@ const abelData = {
     },
   },
   nest201Data:{
-    value: [76, 51, 35,]
+    value: [32, 46, 78,]
   },
   nest202Data:{
     value: [

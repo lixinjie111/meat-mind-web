@@ -615,6 +615,84 @@
                         ],
                         timeImg: require("../../../assets/img/dashboard/market/timeline1@2x.png")
                     },
+                    // {
+                    //
+                    //     name: '北京上班族',
+                    //     short:'北',
+                    //     total: 7930,
+                    //     rate: 82,
+                    //     self: 80,
+                    //     latent: 20,
+                    //     desc1: [
+                    //         {
+                    //             name: '婚姻状态',
+                    //             value: '未婚&已婚'
+                    //         },
+                    //         {
+                    //             name: '年龄',
+                    //             value: '25-35岁'
+                    //         },
+                    //         {
+                    //             name: '学历',
+                    //             value: '专科以上'
+                    //         },
+                    //         {
+                    //             name: '所属地区',
+                    //             value: '一线城市'
+                    //         }
+                    //     ],
+                    //     desc2: [
+                    //         {
+                    //             name: '关注话题',
+                    //             value: '#一夜暴富、#科技前沿'
+                    //         },
+                    //         {
+                    //             name: '品类偏好',
+                    //             value: '咖啡、奶茶、绿茶'
+                    //         }
+                    //     ],
+                    //     desc3: [
+                    //         {
+                    //             name: '一年到店频率',
+                    //             value: '高频'
+                    //         },
+                    //         {
+                    //             name: '总到店次数',
+                    //             value: '36次'
+                    //         },
+                    //         {
+                    //             name: '月均购物支出',
+                    //             value: '1500元'
+                    //         },
+                    //         {
+                    //             name: '客单价',
+                    //             value: '30-50元'
+                    //         }
+                    //     ],
+                    //     desc4: [
+                    //         {
+                    //             name: '旗舰店互动',
+                    //             value: '7867次'
+                    //         },
+                    //         {
+                    //             name: '微信互动次数',
+                    //             value: '19867次'
+                    //         },
+                    //         {
+                    //             name: '最近互动时间',
+                    //             value: '1天前'
+                    //         },
+                    //         {
+                    //             name: '线下活动参与',
+                    //             value: '128次'
+                    //         },
+                    //         {
+                    //             name: '线上直播参与',
+                    //             value: '1755次'
+                    //         }
+                    //     ],
+                    //     timeImg: require("../../../assets/img/dashboard/market/timeline2@2x.png")
+                    // },
                     {
 
                         name: '研学青年',
@@ -626,15 +704,15 @@
                         desc1: [
                             {
                                 name: '婚姻状态',
-                                value: '未婚&已婚'
+                                value: '未婚'
                             },
                             {
                                 name: '年龄',
-                                value: '25-35岁'
+                                value: '18-25岁'
                             },
                             {
                                 name: '学历',
-                                value: '专科以上'
+                                value: '本科以上'
                             },
                             {
                                 name: '所属地区',
@@ -644,11 +722,11 @@
                         desc2: [
                             {
                                 name: '关注话题',
-                                value: '#一夜暴富、#科技前沿'
+                                value: '#学术论坛、#科技前沿'
                             },
                             {
                                 name: '品类偏好',
-                                value: '咖啡、奶茶、绿茶'
+                                value: '奶茶、抹茶、软饮料'
                             }
                         ],
                         desc3: [
@@ -662,11 +740,11 @@
                             },
                             {
                                 name: '月均购物支出',
-                                value: '1500元'
+                                value: '1000元'
                             },
                             {
                                 name: '客单价',
-                                value: '30-50元'
+                                value: '20-50元'
                             }
                         ],
                         desc4: [
@@ -1054,15 +1132,15 @@
 
                 .right-item {
                     .p-blue {
-                        color: #2373FF;
+                        color: #2373FF!important;
                     }
 
                     .p-orange {
-                        color: #FE774B;
+                        color: #FE774B!important;
                     }
 
                     .p-red {
-                        color: #FF4C60;
+                        color: #FF4C60!important;
                     }
 
                     .right-item-top {
