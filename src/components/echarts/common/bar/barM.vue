@@ -85,7 +85,7 @@ export default {
 					data: this.myData.legName,
 				},
 				grid: {
-					top: '10%',
+					top: '5%',
 					left: 10,
 					right: 10,
 					bottom: 25,

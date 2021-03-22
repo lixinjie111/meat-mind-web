@@ -1,8 +1,9 @@
 <template>
-  <div class="row">
+  <div class="row" :class="{'hasSubHight':subTile}" >
     <div class="col all">
       <p class="title">{{title}}</p>
-      <div class="r-all-echarts">
+      <p class="subTile" v-if="subTile">{{subTile}}</p>
+      <div class="r-all-echarts" :class="{'hasSubechartsHight':subTile}">
         <slot></slot>
       </div>
     </div>
@@ -15,6 +16,10 @@ export default {
   props:{
       title:{
           type:String
+      },
+      subTile:{
+          type:String,
+          default:''
       }
   }
 };
@@ -27,6 +32,7 @@ export default {
   align-items: flex-start;
   width: 100%;
   height: 536px;
+  margin-bottom: 24px;
   .col {
     height: 100%;
     padding: 16px;
@@ -45,10 +51,23 @@ export default {
       color: #242f57;
       line-height: 24px;
     }
+    .subTile{
+      font-size: 12px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #636E95;
+      line-height: 18px;
+    }
     .r-all-echarts {
       width: 100%;
       height: calc(100% - 20px);
     }
+    .hasSubechartsHight{
+      height: 500px;
+    }
   }
+}
+.hasSubHight{
+  height: 590px;
 }
 </style>
