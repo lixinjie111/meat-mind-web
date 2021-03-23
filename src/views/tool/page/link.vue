@@ -8,14 +8,24 @@
         <template slot-scope="" slot="operation">
            <div class="actionList">
               <div class="detail">链接</div>
-              <div class="detail">查看</div>
-              <div class="detail">编辑</div>
-              <div class="detail">删除</div>
+              <div class="detail">
+                 <Dropdown trigger="click" style="margin-left: 20px">
+                  <a class="detail">
+                      更多
+                      <Icon type="ios-arrow-down"></Icon>
+                  </a>
+                  <DropdownMenu slot="list">
+                      <DropdownItem>查看</DropdownItem>
+                      <DropdownItem>编辑</DropdownItem>
+                      <DropdownItem>删除</DropdownItem>
+                  </DropdownMenu>
+              </Dropdown>
+              </div>
           </div>
         </template>
       </Table>
       <div class="page">
-          <Page :total="totalPage" :current="currentPage" @on-change="changePage" @on-page-size-change="changeSize"
+          <Page :total="totalPage" :current="currentPage" :page-size-opts="[10, 15, 20, 25]"  @on-change="changePage" @on-page-size-change="changeSize"
                   :pageSize="pageSize" show-total show-sizer class-name="pageS"/>
       </div>
     </div>
@@ -23,15 +33,15 @@
 </template>
 
 <script>
-import CreateLable from "../base/CreateLable";
+import CreateLable from "../base/CreateLable1";
 export default {
   components: { CreateLable },
   name: "qdlj",
   data() {
     return {
       currentPage:1,
-      totalPage:10,
-      pageSize:10,
+      totalPage:25,
+      pageSize:15,
       columns: [
         {
           title: "链接名称",
@@ -78,7 +88,7 @@ export default {
           title: "操作",
           slot: "operation",
           fixed: 'right',
-          width: 220 / 144 * window.rem,
+          width: 180 / 144 * window.rem,
         },
       ],
       data: [
@@ -596,8 +606,8 @@ export default {
 <style scoped lang="scss">
 .qdlj {
   width: 100%;
-  height: 100%;
   padding:0 24px;
+   padding-bottom: 24px;
   img {
     width: 100%;
   }
@@ -621,7 +631,7 @@ export default {
       // }
        .actionList {
                   display: flex;
-                    //justify-content: flex-end;
+                    justify-content: flex-end;
             .detail {
                 margin-right: 16px;
                 cursor: pointer;

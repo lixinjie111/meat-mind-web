@@ -2,9 +2,12 @@
     <div class="zbgl">
         <div class="header-nav"><p>指标管理</p></div>
          <Tab :tab-list="['整体指标','客户指标']" @change="changeTab"></Tab>
-         <div class="header-new">
-             <Button type="primary" icon="md-add" size="small" @click="newModal = true">新建</Button>
-         </div>
+         <div class="show-header">
+            <div class="blue-btn" @click="newModal = true">
+            <i class="iconfont icontianjia"></i>
+            <div>新建</div>
+            </div>
+        </div>
         <div class="ztzb">
                 <Table :columns="columns" :data="active == 1?data:data1">
                     <template slot-scope="" slot="action">
@@ -24,6 +27,7 @@
             <div class="content">
                 <div class="close-btn" @click="newModal = false"></div>
                 <img src="../../../static/img/tool/zbgl/xjzb@2x.png" alt="">
+                <div class="close-btn1" @click="newModal = false"></div>
             </div>
         </Modal>
     </div>
@@ -153,11 +157,46 @@
         width: 100%;
         height: 100%;
         background: #f5f5f5;
-        .header-new{
+         .show-header {
             margin-top: 16px;
             background: #fff;
-            padding:16px 24px;
-        }
+            display: flex;
+            align-items: center;
+            height: 64px;
+            margin-bottom: 8px;
+            box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+            border-radius: 8px;
+            border: 1px solid #eaedf7;
+            .blue-btn {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 74px;
+                height: 32px;
+                margin-left: 24px;
+                background: #2373ff;
+                border-radius: 4px;
+                box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
+                > i {
+                    width: 14px;
+                    height: 14px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: #ffffff;
+                    margin-right: 4px;
+                    line-height: 14px;
+                }
+                > div {
+                    height: 14px;
+                    font-size: 14px;
+                    font-family: PingFangSC-Semibold, PingFang SC;
+                    font-weight: 600;
+                    color: #ffffff;
+                    line-height: 14px;
+                }
+            }
+            }
         img {
             width: 100%;
             // height: 100%;
@@ -242,6 +281,14 @@
                 top: 20px;
                 width: 16px;
                 height: 16px;
+                cursor: pointer;
+            }
+            .close-btn1 {
+                position: absolute;
+                right: 75px;
+                bottom: 10px;
+                width: 50px;
+                height: 30px;
                 cursor: pointer;
             }
         }

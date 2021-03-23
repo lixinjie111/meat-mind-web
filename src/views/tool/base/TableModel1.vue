@@ -6,9 +6,24 @@
             <span style="color:#2373FF">{{row.name}}</span>
         </template>
         <template slot="operate" class="operate">
-            <span style="color:#2373FF;margin-right:8px">查看</span>
+            <div class="actionList">
+                <div class="detail">查看</div>
+                <div class="detail">
+                  <Dropdown trigger="click" style="margin-left: 20px">
+                    <a class="detail">
+                        更多
+                        <Icon type="ios-arrow-down"></Icon>
+                    </a>
+                    <DropdownMenu slot="list">
+                        <DropdownItem>编辑</DropdownItem>
+                        <DropdownItem>删除</DropdownItem>
+                    </DropdownMenu>
+                </Dropdown>
+                </div>
+            </div>
+            <!-- <span style="color:#2373FF;margin-right:8px">查看</span>
             <span style="color:#2373FF;margin-right:8px">编辑</span>
-            <span style="color:#2373FF;margin-left:8px">删除</span>
+            <span style="color:#2373FF;margin-left:8px">删除</span> -->
         </template>
     </Table>
     <div class="page">
@@ -55,6 +70,18 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.actionList {
+                  display: flex;
+                    justify-content: flex-end;
+            .detail {
+                margin-right: 16px;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 400;
+                color: #2373FF;
+                line-height: 22px;
+            }
+        }
 .table-model {
 //   height: 686px;
   padding: 16px 24px;
