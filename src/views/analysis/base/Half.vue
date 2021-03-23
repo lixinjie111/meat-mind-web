@@ -48,7 +48,7 @@ export default {
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
-  height: 496px;
+  height: 516px;
   margin-bottom: 24px;
   &:last-child {
     margin-bottom: 0;

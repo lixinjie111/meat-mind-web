@@ -22,7 +22,6 @@
             slot="echarts"
             id="box60"
             y-name="GMV（万元）"
-            x-name="日期"
             :hasAreaStyle="true"
             :colorList="$ljEData.colorList"
             :myData="$ljEData.ljBox1"
@@ -30,7 +29,6 @@
           <lineM
             slot="rightEcharts"
             y-name="日活数"
-            x-name="日期"
             :hasAreaStyle="true"
             :option="{ xAxis: { boundaryGap: false } }"
             :colorList="$ljEData.colorList"
@@ -71,7 +69,6 @@
           slot="echarts"
           id="box55"
           y-name="日活数"
-          x-name="日期"
           :hasAreaStyle="true"
           :option="{ xAxis: { boundaryGap: false } }"
           :colorList="$ljEData.colorList"
@@ -80,7 +77,6 @@
         <lineM
           slot="rightEcharts"
           y-name="日活数"
-          x-name="日期"
           :hasAreaStyle="true"
           :option="{ xAxis: { boundaryGap: false } }"
           :colorList="$ljEData.colorList"
@@ -96,13 +92,17 @@
         <lineM
           slot="echarts"
           y-name="日活数"
-          x-name="日期"
           :hasAreaStyle="true"
           :option="{ xAxis: { boundaryGap: false } }"
           :colorList="$ljEData.colorList"
           :myData="$ljEData.ljBox7"
         />
-        <Table slot="rightEcharts" :columns="columns" :data="tabData" style="margin-top:60px;">
+        <Table
+          slot="rightEcharts"
+          :columns="columns"
+          :data="tabData"
+          style="margin-top: 60px"
+        >
           <template slot-scope="{ row, index }" slot="index">
             <span class="operation">{{ index + 1 }}</span>
           </template>
@@ -330,7 +330,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding:0 0 10px 0;
+    padding: 0 0 10px 0;
     box-sizing: border-box;
     border-radius: 12px;
     margin-bottom: -24px;

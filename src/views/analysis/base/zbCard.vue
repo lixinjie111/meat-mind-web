@@ -10,7 +10,7 @@
       >
         <div class="it_con_item_top">
           <div class="it_til">{{ item.til }}</div>
-          <i class="iconfont iconbangzhu"></i>
+          <!-- <i class="iconfont iconbangzhu"></i> -->
         </div>
         <div class="it_con_item_bom">
           <div class="it_num">{{ item.num }}</div>

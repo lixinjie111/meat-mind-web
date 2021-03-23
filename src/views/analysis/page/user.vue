@@ -14,7 +14,6 @@
           <lineS
             slot="echarts"
             y-name="日活数"
-            x-name="日期"
             :option="{ xAxis: { boundaryGap: false } }"
             :colorList="$ljEData.colorList"
             :myData="$ljEData.ljBox9"
@@ -22,7 +21,6 @@
           <lineS
             slot="rightEcharts"
             y-name="日活数"
-            x-name="日期"
             :option="{ xAxis: { boundaryGap: false } }"
             :colorList="$ljEData.colorList"
             :myData="$ljEData.ljBox10"
@@ -37,7 +35,6 @@
           <lineS
             slot="echarts"
             y-name="日活数"
-            x-name="日期"
             :option="{ xAxis: { boundaryGap: false } }"
             :colorList="$ljEData.colorList"
             :myData="$ljEData.ljBox11"
@@ -45,7 +42,6 @@
           <lineS
             slot="rightEcharts"
             y-name="日活数"
-            x-name="日期"
             :option="{ xAxis: { boundaryGap: false } }"
             :colorList="$ljEData.colorList"
             :myData="$ljEData.ljBox12"
@@ -108,7 +104,6 @@
           <lineM
             slot="echarts"
             y-name="日活数"
-            x-name="日期"
             :hasAreaStyle="true"
             :option="{ xAxis: { boundaryGap: false } }"
             :colorList="$ljEData.colorList"
@@ -118,7 +113,6 @@
           <lineM
             slot="rightEcharts"
             y-name="日活数"
-            x-name="日期"
             :hasAreaStyle="true"
             :option="{ xAxis: { boundaryGap: false } }"
             :colorList="$ljEData.colorList"
@@ -134,7 +128,6 @@
           <lineM
             slot="echarts"
             y-name="日活数"
-            x-name="日期"
             :hasAreaStyle="true"
             :option="{ xAxis: { boundaryGap: false } }"
             :colorList="$ljEData.colorList"
@@ -176,7 +169,6 @@
           <lineM
             slot="echarts"
             y-name="日活数"
-            x-name="日期"
             :hasAreaStyle="true"
             :option="{ xAxis: { boundaryGap: false } }"
             :colorList="$ljEData.colorList"
@@ -185,7 +177,6 @@
           <lineM
             slot="rightEcharts"
             y-name="日活数"
-            x-name="日期"
             :hasAreaStyle="true"
             :option="{ xAxis: { boundaryGap: false } }"
             :colorList="$ljEData.colorList"
@@ -215,7 +206,7 @@ export default {
 <style scoped lang="scss">
 .user-container {
   padding: 0 24px 24px 24px;
-  .header-nav{
+  .header-nav {
     padding-bottom: 0;
   }
 }

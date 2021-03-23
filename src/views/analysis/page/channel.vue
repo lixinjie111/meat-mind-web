@@ -7,8 +7,12 @@
       <Full title="分时新增用户" subTile="2020.12.01-2020.12.31">
         <barM :colorList="$ljEData.colorList" :myData="$ljEData.ljBox25" />
       </Full>
-      <Full title="app渠道对比组件" subTile="2020.12.01-2020.12.31">
-        <Table :columns="columns3" :data="data3" style="margin-top:30px;"></Table>
+      <Full title="app渠道对比组件" subTile="2020.12.01-2020.12.31" style="height:600px;">
+        <Table
+          :columns="columns3"
+          :data="data3"
+          style="margin-top: 30px"
+        ></Table>
       </Full>
     </Card>
     <Card title="渠道概况">
@@ -22,7 +26,6 @@
           <lineM
             slot="echarts"
             y-name="日活数"
-            x-name="日期"
             :option="{ xAxis: { boundaryGap: false } }"
             :colorList="$ljEData.colorList"
             :myData="$ljEData.ljBox26"
@@ -97,24 +100,26 @@
 
 <script>
 const renderHeader = (h, params) => {
-return h("span", [
-    h('strong', params.column.title),
-    h("Poptip",
-    {
+  return h("span", [
+    h("strong", params.column.title),
+    h(
+      "Poptip",
+      {
         props: {
-        placement: "bottom-end",
-        popperClass: "saas-poptip",
-        transfer: true
+          placement: "bottom-end",
+          popperClass: "saas-poptip",
+          transfer: true,
         },
-    },
-    [
+      },
+      [
         h("i", {
-        class: "iconfont iconbangzhuzhongxin tip-icon",
-        style: { marginLeft: '4px' }
-        })
-    ])
-])
-}
+          class: "iconfont iconbangzhuzhongxin tip-icon",
+          style: { marginLeft: "4px" },
+        }),
+      ]
+    ),
+  ]);
+};
 import Card from "../base/Card";
 import DataCard from "../base/DataCard";
 import Half from "../base/Half";
@@ -396,7 +401,7 @@ export default {
 <style scoped lang="scss">
 .channel-container {
   padding: 0 24px 24px 24px;
-  .header-nav{
+  .header-nav {
     padding-bottom: 0;
   }
 }
