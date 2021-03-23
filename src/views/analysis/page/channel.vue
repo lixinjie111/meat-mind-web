@@ -7,7 +7,9 @@
       <Full title="分时新增用户" subTile="2020.12.01-2020.12.31">
         <barM :colorList="$ljEData.colorList" :myData="$ljEData.ljBox25" />
       </Full>
-      <Full title="app渠道对比组件" subTile="2020.12.01-2020.12.31"> </Full>
+      <Full title="app渠道对比组件" subTile="2020.12.01-2020.12.31">
+        <Table :columns="columns3" :data="data3" style="margin-top:30px;"></Table>
+      </Full>
     </Card>
     <Card title="渠道概况">
       <div>
@@ -94,6 +96,25 @@
 </template>
 
 <script>
+const renderHeader = (h, params) => {
+return h("span", [
+    h('strong', params.column.title),
+    h("Poptip",
+    {
+        props: {
+        placement: "bottom-end",
+        popperClass: "saas-poptip",
+        transfer: true
+        },
+    },
+    [
+        h("i", {
+        class: "iconfont iconbangzhuzhongxin tip-icon",
+        style: { marginLeft: '4px' }
+        })
+    ])
+])
+}
 import Card from "../base/Card";
 import DataCard from "../base/DataCard";
 import Half from "../base/Half";
@@ -263,6 +284,97 @@ export default {
           key6: "8.05%",
           key7: 74,
           key8: "5.18%",
+        },
+      ],
+      columns3: [
+        {
+          title: "App通道",
+          align: "center",
+          children: [
+            {
+              title: "名称",
+              key: "appName",
+              align: "center",
+              sortable: true,
+            },
+          ],
+        },
+        {
+          title: "用户规模",
+          align: "center",
+          children: [
+            {
+              title: "激活用户数(万)",
+              key: "huoyue",
+              align: "center",
+              sortable: true,
+              renderHeader,
+            },
+            {
+              title: "新用户7日使用次数",
+              key: "count",
+              align: "center",
+              sortable: true,
+              renderHeader,
+            },
+          ],
+        },
+        {
+          title: "用户质量",
+          align: "center",
+          children: [
+            {
+              title: "新用户人均使用时长",
+              key: "time",
+              align: "center",
+              sortable: true,
+              renderHeader,
+            },
+            {
+              title: "新用户次日留存",
+              key: "chuliu",
+              align: "center",
+              sortable: true,
+              renderHeader,
+            },
+          ],
+        },
+      ],
+      data3: [
+        {
+          appName: "抖音",
+          huoyue: "55.3",
+          count: "32",
+          time: "82",
+          chuliu: "78%",
+        },
+        {
+          appName: "快手",
+          huoyue: "32.1",
+          count: "34",
+          time: "56",
+          chuliu: "89%",
+        },
+        {
+          appName: "今日头条",
+          huoyue: "41.4",
+          count: "22",
+          time: "57",
+          chuliu: "77%",
+        },
+        {
+          appName: "腾讯微博",
+          huoyue: "52.9",
+          count: "42",
+          time: "73",
+          chuliu: "89%",
+        },
+        {
+          appName: "小红书",
+          huoyue: "42.6",
+          count: "28",
+          time: "78",
+          chuliu: "67%",
         },
       ],
     };
