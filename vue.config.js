@@ -2,7 +2,6 @@ const autoprefixer = require('autoprefixer');
 const pxtorem = require('postcss-pxtorem');
 
 module.exports = {
-   publicPath: "./",
    lintOnSave: false, // eslint-loader 是否在保存的时候检查
     //postcss-pxtorem
     css: {
