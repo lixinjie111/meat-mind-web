@@ -3,7 +3,7 @@
         <div class="title-box flex">
             <div class="left">
                 <i @click="back" class="iconfont iconright-arrow"></i>
-                <span>用户群对比</span>
+                <span>对标品牌</span>
             </div>
             <div class="right">
                 <Select value="加多宝">
@@ -13,21 +13,21 @@
         </div>
         <TabD :tab-list="tabList" @change="changeTab"></TabD>
         <div class="comparison-box">
-            <HalfC :title="'年龄结构'">
-                <PieEcharts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts>
-                <PieEcharts slot="right" :colorList="$fjData.colorList" :myData="$fjData.box1Data1"></PieEcharts>
+            <HalfC :title="'品牌真实受众覆盖度'">
+                <RotateChart slot="left" :colorList="$fjData.colorList" :myData="$fjData.box13Data"></RotateChart>
+                <RotateChart slot="right" :colorList="$fjData.colorList" :myData="$fjData.box13Data1"></RotateChart>
             </HalfC>
-            <HalfC :title="'收入结构'">
-                <PieEcharts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box2Data"></PieEcharts>
-                <PieEcharts slot="right" :colorList="$fjData.colorList" :myData="$fjData.box2Data1"></PieEcharts>
+            <HalfC :title="'品牌真实受众匹配度'">
+                <MatchEcharts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box15Data" ></MatchEcharts>
+                <MatchEcharts slot="right" :colorList="$fjData.colorList" :myData="$fjData.box15Data1" ></MatchEcharts>
             </HalfC>
-            <HalfC :title="'职业结构'">
-                <cLine slot="left" id="box58" :colorList="$lxjData.colorList" :myData="$lxjData.box58Data"></cLine>
-                <cLine slot="right" id="box581" :colorList="$lxjData.colorList" :myData="$lxjData.box58Data1"></cLine>
+            <HalfC :title="'核心受众年龄分布'">
+                <PieEcharts3 slot="left" :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts3>
+                <PieEcharts3 slot="right" :colorList="$fjData.colorList" :myData="$fjData.box1Data1"></PieEcharts3>
             </HalfC>
-            <HalfC :title="'行业结构'">
-                <barC slot="left" id="box7" :colorList="$lxjData.colorList" :myData="$lxjData.box7Data"></barC>
-                <barC slot="right" id="box71" :colorList="$lxjData.colorList" :myData="$lxjData.box7Data1"></barC>
+            <HalfC :title="'核心受众性别分布'">
+                <PieEcharts3 slot="left" :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieEcharts3>
+                <PieEcharts3 slot="right" :colorList="$fjData.colorList" :myData="$fjData.box5Data1"></PieEcharts3>
             </HalfC>
         </div>
     </div>
@@ -36,30 +36,26 @@
 <script>
     import TabD from "../../components/TabD";
     import HalfC from "./base/HalfC";
-    import PieEcharts from '@/components/echarts/common/pie/PieEcharts';
-    import cLine from '@/components/echarts/common/line/line';
-    import barC from '@/components/echarts/common/bar/barC';
+    import RotateChart from '@/components/echarts/common/custom/RotateChart';
+    import MatchEcharts from '@/components/echarts/common/radar/MatchEcharts';
+    import PieEcharts3 from '@/components/echarts/common/pie/PieEcharts3'
 
     export default {
         name: "comparison",
-        components: {TabD, HalfC, PieEcharts, cLine, barC},
+        components: {TabD, HalfC, RotateChart, MatchEcharts, PieEcharts3},
         data() {
             return {
                 tabList: [
                     {
-                        name: '基础画像',
+                        name: '品牌受众分析',
                         disabled: true
                     },
                     {
-                        name: '行为分析',
+                        name: '品牌舆情洞察',
                         disabled: false
                     },
                     {
-                        name: '心智分析',
-                        disabled: false
-                    },
-                    {
-                        name: '生命周期分析',
+                        name: '行业态势分析',
                         disabled: false
                     }
                 ]
@@ -67,7 +63,7 @@
         },
         methods: {
             back() {
-                this.$router.push({name:"user"})
+                this.$router.push({name:"mark-detail"})
             },
             changeTab() {
 

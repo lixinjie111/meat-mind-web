@@ -3,6 +3,7 @@ const view=()=>import('./page/view.vue');
 const negative=()=>import('./page/negative.vue');
 const detail=()=>import('./page/detail.vue');
 const old = ()=>import('./indexOld.vue');
+const comparison=()=>import('./comparison');
 const moduleName='mark';
 
 export default [
@@ -33,6 +34,13 @@ export default [
         meta:{title:"品牌画像",moduleName},
         component:detail,
         name:`${moduleName}-detail`
+      },
+      {
+        path:`/${moduleName}/comparison`,
+        label:"品牌详情",
+        meta:{title:"品牌画像",moduleName},
+        component:comparison,
+        name:`${moduleName}-comparison`
       }
     ]
   }

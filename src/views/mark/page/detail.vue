@@ -15,7 +15,9 @@
                     <img src="../../../assets/img/mark/download@2x.png" alt="">
                     <p>一键下载报告</p>
                 </div>
-                
+                <div class="com-btn" @click="toComparison">
+                    <i class="iconfont icontianjia"></i>对标品牌
+                </div>
             </div>
         </div>
         <!-- <div class="mark-detail-anchor">
@@ -35,6 +37,11 @@ export default {
     components:{Details},
     data(){
         return {} 
+    },
+    methods: {
+        toComparison (){
+            this.$router.push({name:"mark-comparison"})
+        },
     }
 }
 </script>
@@ -82,6 +89,28 @@ export default {
                         font-weight: 400;
                         color: #242F57;
                         line-height: 22px;
+                    }
+                }
+
+                .com-btn {
+                    width: 92px;
+                    height: 32px;
+                    line-height: 32px;
+                    background: #2373FF;
+                    box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
+                    border-radius: 4px;
+                    border: none;
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    color: #FFFFFF;
+                    text-align: center;
+                    cursor: pointer;
+
+                    >i {
+                        font-size: 13px;
+                        margin-top: -1px;
+                        margin-right: 3px;
                     }
                 }
             }        
