@@ -151,5 +151,8 @@ export default {
 <style scoped lang="scss">
 .brand-container {
   padding: 0 24px 24px 24px;
+  .header-nav{
+    padding-bottom: 0;
+  }
 }
 </style>

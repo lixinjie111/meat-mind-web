@@ -330,8 +330,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 24px 0;
-    padding-bottom: 10px;
+    padding:0 0 10px 0;
     box-sizing: border-box;
     border-radius: 12px;
     margin-bottom: -24px;
