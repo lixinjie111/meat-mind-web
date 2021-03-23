@@ -33,8 +33,8 @@
         <barM  :colorList="$ljEData.colorList" :myData="$ljEData.ljBox35"/>
       </Full>
     </Card>
-    <Card title="经营概览">
-      <Full title="Quick Ratio">
+    <Card title="Quick Ratio">
+      <Full>
         <barM2 :color-list="['red', 'green']"  :colorList="$ljEData.colorList" :myData="$ljEData.ljBox36"/>
       </Full>
     </Card>
@@ -69,43 +69,43 @@ export default {
           },
           {
             id: 1,
-            til: "总客户数",
-            num: 102,
+            til: "有效客户数",
+            num: 76,
             unit: "家",
           },
           {
             id: 2,
-            til: "总客户数",
-            num: 102,
-            unit: "家",
+            til: "周活跃客户数",
+            num: 42,
+            unit: "个",
           },
           {
             id: 3,
-            til: "总客户数",
-            num: 102,
-            unit: "家",
+            til: "周活跃用户",
+            num: 1028,
+            unit: "个",
           },
           {
             id: 4,
-            til: "总客户数",
-            num: 102,
-            unit: "家",
+            til: "月活跃客户数",
+            num: 44,
+            unit: "个",
           },
           {
             id: 5,
-            til: "总客户数",
-            num: 102,
-            unit: "家",
+            til: "已完成任务",
+            num: 5298,
+            unit: "个",
           },
           {
             id: 6,
-            til: "总客户数",
-            num: 102,
-            unit: "家",
+            til: "待办任务",
+            num: 26165,
+            unit: "个",
           },
           {
             id: 7,
-            til: "总客户数",
+            til: "任务完成率",
             num: 102,
             unit: "家",
           },

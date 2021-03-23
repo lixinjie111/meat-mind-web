@@ -171,9 +171,13 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 152px;
+    // width: 152px;
     height: 55px;
+    padding-left: 24px;
       // border-right: 2px solid #eaedf7;
       // border-bottom: 1px solid #EAEDF7;
+      ::v-deep .ivu-checkbox-wrapper{
+        margin-right: 0;
+      }
 }
 </style>

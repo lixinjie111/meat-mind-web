@@ -412,7 +412,7 @@ export default {
           title: "GMV",
           timeRange: dayjs(new Date()).format('YYYY-MM-DD'),
           time: "今日",
-          numText: 134,
+          numText: 1234,
           unitText: "万",
           leftText: "环比",
           leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
@@ -422,16 +422,16 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
-          timer: 1000,
+          timer: 10000,
         },
         {
           id: 2,
           width: "15%",
-          title: "GMV",
+          title: "订单量",
           timeRange: dayjs(new Date()).format('YYYY-MM-DD'),
           time: "今日",
-          numText: 567,
-          unitText: "万",
+          numText: 10376,
+          unitText: "个",
           leftText: "环比",
           leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "9.07%",
@@ -440,16 +440,16 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
-          timer: 500,
+          timer: 15000,
         },
         {
           id: 3,
           width: "15%",
-          title: "GMV",
+          title: "下单人数",
           timeRange: dayjs(new Date()).format('YYYY-MM-DD'),
           time: "今日",
-          numText: 734,
-          unitText: "万",
+          numText: 248,
+          unitText: "人",
           leftText: "环比",
           leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "9.07%",
@@ -458,16 +458,16 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
-          timer: 200,
+          timer: 20000,
         },
         {
           id: 4,
           width: "15%",
-          title: "GMV",
+          title: "客单量",
           timeRange: dayjs(new Date()).format('YYYY-MM-DD'),
           time: "今日",
-          numText: 489,
-          unitText: "万",
+          numText: 857,
+          unitText: "元",
           leftText: "环比",
           leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "9.07%",
@@ -476,7 +476,7 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
-          timer: 3000,
+          timer: 300000,
         },
       ],
       yhCardList:[
@@ -496,7 +496,7 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
-          timer: 1000,
+          timer: 111000,
         },
         {
           id: 2,
@@ -514,7 +514,7 @@ export default {
           rightIcon: "",
           rightPer: "",
           rightPerColor: "#34C724",
-          timer: 1000,
+          timer: 111000,
         },
         {
           id: 3,
@@ -532,7 +532,7 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
-          timer: 2000,
+          timer: 112000,
         },
         {
           id: 4,
@@ -550,7 +550,7 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
-          timer: 2000,
+          timer: 112000,
         },
         {
           id: 5,
@@ -568,7 +568,7 @@ export default {
           rightIcon: "",
           rightPer: "",
           rightPerColor: "#34C724",
-          timer: 1000,
+          timer: 111000,
         },
         {
           id: 6,
@@ -586,7 +586,7 @@ export default {
           rightIcon: "",
           rightPer: "",
           rightPerColor: "#34C724",
-          timer: 10000,
+          timer: 1110000,
         },
       ],
       hxzbCardList:[
@@ -606,7 +606,7 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "8.04",
           rightPerColor: "#34C724",
-          timer: 300,
+          timer: 111300,
         },
         {
           id: 2,
@@ -624,7 +624,7 @@ export default {
           rightIcon: "",
           rightPer: "",
           rightPerColor: "#34C724",
-          timer: 1000,
+          timer: 111000,
         },
         {
           id: 3,
@@ -642,7 +642,7 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "8.04",
           rightPerColor: "#34C724",
-          timer: 1500,
+          timer: 111500,
         },
         {
           id: 4,
@@ -660,7 +660,7 @@ export default {
           rightIcon: "",
           rightPer: "",
           rightPerColor: "#34C724",
-          timer: 3000,
+          timer: 1113000,
         },
         {
           id: 5,
@@ -678,7 +678,7 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "8.04",
           rightPerColor: "#34C724",
-          timer: 1700,
+          timer: 1111700,
         },
         {
           id: 6,
@@ -696,7 +696,7 @@ export default {
           rightIcon: "",
           rightPer: "",
           rightPerColor: "#34C724",
-          timer: 2000,
+          timer: 1112000,
         },
         {
           id: 7,
@@ -714,7 +714,7 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "8.04",
           rightPerColor: "#34C724",
-          timer: 800,
+          timer: 1111800,
         },
         {
           id: 8,
@@ -732,7 +732,7 @@ export default {
           rightIcon: "",
           rightPer: "",
           rightPerColor: "#34C724",
-          timer: 1900,
+          timer: 1111900,
         }
       ],
       timeList: [
@@ -766,7 +766,7 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
-          timer: 1000,
+          timer: 1111000,
           fnType:5
         },
         {
@@ -785,7 +785,7 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/downIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#F54A45",
-          timer: 500,
+          timer: 111500,
           fnType:5
         },
         {
@@ -804,7 +804,7 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
-          timer: 1000,
+          timer: 1111000,
           fnType:5
         },
         {
@@ -823,7 +823,7 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
-          timer: 1000,
+          timer: 1111000,
           fnType:5
         },
         {
@@ -842,7 +842,7 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/downIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#F54A45",
-          timer: 1000,
+          timer: 1111000,
           fnType:5
         },
         {
@@ -861,7 +861,7 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
-          timer: 1000,
+          timer: 1111000,
           fnType:5
         },
         {
@@ -880,7 +880,7 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#34C724",
-          timer: 100000,
+          timer: 11100000,
           fnType:5
         },
         {
@@ -899,7 +899,7 @@ export default {
           rightIcon: require("../../../assets/img/dashboard/downIcon.png"),
           rightPer: "9.07%",
           rightPerColor: "#F54A45",
-          timer: 200000,
+          timer: 1200000,
           fnType:5
         },
       ],

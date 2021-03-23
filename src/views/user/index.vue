@@ -50,26 +50,26 @@
           </div>
           <div class="rig_area rig_area1" ref="rig_area1">
             <div class="rig_area_lef">
-              <div class="yl_container">
+              <!-- <div class="yl_container">
                 <div class="yl_lef" style="background: #FF9502;"></div>
                 <div class="yl_rig">娱乐</div>
-              </div>
+              </div> -->
               <div class="gz_container">
                 <div class="yl_lef" style="background: #A49DFA;"></div>
                 <div class="yl_rig">工作</div>
-              </div>
-              <div class="xw_container">
-                <div class="yl_lef" style="background: #017AFF;"></div>
-                <div class="yl_rig">新闻</div>
               </div>
               <div class="sp_container">
                 <div class="yl_lef" style="background: #2EB1FF;"></div>
                 <div class="yl_rig">视频</div>
               </div>
-              <div class="xs_container">
+              <div class="xw_container">
+                <div class="yl_lef" style="background: #017AFF;"></div>
+                <div class="yl_rig">新闻</div>
+              </div>
+              <!-- <div class="xs_container">
                 <div class="yl_lef" style="background: #F383FF;"></div>
                 <div class="yl_rig">学术</div>
-              </div>
+              </div> -->
             </div>
             <div class="rig_area_rig">
               <div class="rig_area_til">偏好媒介</div>
@@ -103,22 +103,27 @@
           </div>
           <div class="rig_area" ref="rig_area2">
             <div class="rig_area_lef">
-              <div class="gt_container">
+              <!-- <div class="gt_container">
                 <div class="yl_lef" style="background: #36D67B;"></div>
                 <div class="yl_rig">沟通</div>
-              </div>
-              <div class="gz_container">
-                <div class="yl_lef" style="background: #A49DFA;"></div>
-                <div class="yl_rig">工作</div>
-              </div>
-              <div class="xw_container">
-                <div class="yl_lef" style="background: #017AFF;"></div>
-                <div class="yl_rig">新闻</div>
-              </div>
+              </div> -->
               <div class="xs_container">
                 <div class="yl_lef" style="background: #F383FF;"></div>
                 <div class="yl_rig">学术</div>
               </div>
+              <div class="sp_container">
+                <div class="yl_lef" style="background: #2EB1FF;"></div>
+                <div class="yl_rig">视频</div>
+              </div>
+              <!-- <div class="gz_container">
+                <div class="yl_lef" style="background: #A49DFA;"></div>
+                <div class="yl_rig">工作</div>
+              </div> -->
+              <div class="xw_container">
+                <div class="yl_lef" style="background: #017AFF;"></div>
+                <div class="yl_rig">新闻</div>
+              </div>
+
             </div>
             <div class="rig_area_rig">
               <div class="rig_area_til">偏好媒介</div>
@@ -152,14 +157,22 @@
           </div>
           <div class="rig_area" ref="rig_area3">
             <div class="rig_area_lef">
+              <div class="gt_container">
+                <div class="yl_lef" style="background: #36D67B;"></div>
+                <div class="yl_rig">沟通</div>
+              </div>
               <div class="gz_container">
                 <div class="yl_lef" style="background: #A49DFA;"></div>
                 <div class="yl_rig">工作</div>
               </div>
-              <div class="xs_container">
+              <div class="xw_container">
+                <div class="yl_lef" style="background: #017AFF;"></div>
+                <div class="yl_rig">新闻</div>
+              </div>
+              <!-- <div class="xs_container">
                 <div class="yl_lef" style="background: #F383FF;"></div>
                 <div class="yl_rig">学术</div>
-              </div>
+              </div> -->
             </div>
             <div class="rig_area_rig">
               <div class="rig_area_til">偏好媒介</div>
@@ -194,26 +207,30 @@
           </div>
           <div class="rig_area" ref="rig_area4">
             <div class="rig_area_lef">
-              <div class="yl_container">
-                <div class="yl_lef" style="background: #FF9502;"></div>
-                <div class="yl_rig">娱乐</div>
-              </div>
-              <div class="gt_container">
+              <!-- <div class="gt_container">
                 <div class="yl_lef" style="background: #36D67B;"></div>
                 <div class="yl_rig">沟通</div>
-              </div>
+              </div> -->
               <div class="gz_container">
                 <div class="yl_lef" style="background: #A49DFA;"></div>
                 <div class="yl_rig">工作</div>
               </div>
-              <div class="xw_container">
+              <div class="sp_container">
+                <div class="yl_lef" style="background: #2EB1FF;"></div>
+                <div class="yl_rig">视频</div>
+              </div>
+              <div class="yl_container">
+                <div class="yl_lef" style="background: #FF9502;"></div>
+                <div class="yl_rig">娱乐</div>
+              </div>
+              <!-- <div class="xw_container">
                 <div class="yl_lef" style="background: #017AFF;"></div>
                 <div class="yl_rig">新闻</div>
               </div>
               <div class="xs_container">
                 <div class="yl_lef" style="background: #F383FF;"></div>
                 <div class="yl_rig">学术</div>
-              </div>
+              </div> -->
             </div>
             <div class="rig_area_rig">
               <div class="rig_area_til">偏好媒介</div>
@@ -248,22 +265,26 @@
           </div>
           <div class="rig_area" ref="rig_area5">
             <div class="rig_area_lef">
-              <div class="yl_container">
-                <div class="yl_lef" style="background: #FF9502;"></div>
-                <div class="yl_rig">娱乐</div>
-              </div>
-              <div class="gt_container">
+              <!-- <div class="gt_container">
                 <div class="yl_lef" style="background: #36D67B;"></div>
                 <div class="yl_rig">沟通</div>
-              </div>
+              </div> -->
               <div class="sp_container">
                 <div class="yl_lef" style="background: #2EB1FF;"></div>
                 <div class="yl_rig">视频</div>
               </div>
-              <div class="xs_container">
+              <div class="yl_container">
+                <div class="yl_lef" style="background: #FF9502;"></div>
+                <div class="yl_rig">娱乐</div>
+              </div>
+              <div class="gz_container">
+                <div class="yl_lef" style="background: #A49DFA;"></div>
+                <div class="yl_rig">工作</div>
+              </div>
+              <!-- <div class="xs_container">
                 <div class="yl_lef" style="background: #F383FF;"></div>
                 <div class="yl_rig">学术</div>
-              </div>
+              </div> -->
             </div>
             <div class="rig_area_rig">
               <div class="rig_area_til">偏好媒介</div>
@@ -1263,7 +1284,7 @@ export default {
         require("../../assets/img/yhhx/dyI.png")
       ],
       bjsbList:[
-        require("../../assets/img/yhhx/dyI.png"),
+        require("../../assets/img/yhhx/zhIcon.png"),
         require("../../assets/img/yhhx/xhs.png"),
       ],
       qyggList:[

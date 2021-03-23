@@ -171,7 +171,7 @@ export default {
   align-items: center;
   justify-content: flex-end;
   height: 56px;
-  padding: 0 16px;
+  padding-left:16px;
   color: #ffffff;
   cursor: pointer;
   > div {
