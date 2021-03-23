@@ -1,13 +1,21 @@
 <template>
   <div class="fxmx-keep">
-      <img src="../../../static/img/tool/fxmx/keep@2x.png" alt="">
       <div class="back" @click="back"></div>
+    <MutableArray title="asdf">
+      <template #item="itemProps">
+        <FilterCondition v-bind="itemProps"/>
+      </template>
+    </MutableArray>
   </div>
 </template>
 
 <script>
+  import FilterCondition from '../base/FilterCondition';
+  import MutableArray from '../base/MutableArray';
+
 export default {
     name:"Keep",
+  components: {FilterCondition, MutableArray},
     methods:{
         back(){
             this.$router.push({name:"analysis-tool-model"})
