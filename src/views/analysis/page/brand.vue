@@ -25,6 +25,19 @@
         <vzbcard :zObj="zcObj"></vzbcard>
       </div>
     </Card>
+    <Card title="经营概览">
+      <Full title="MRR" subTile="单位：万元">
+       <barEcharts  :colorList="$ljEData.colorList" :myData="$ljEData.ljBox34"/>
+      </Full>
+      <Full title="MRR构成" subTile="单位：万元">
+        <barM  :colorList="$ljEData.colorList" :myData="$ljEData.ljBox35"/>
+      </Full>
+    </Card>
+    <Card title="经营概览">
+      <Full title="Quick Ratio">
+        <barM2 :color-list="['red', 'green']"  :colorList="$ljEData.colorList" :myData="$ljEData.ljBox36"/>
+      </Full>
+    </Card>
   </div>
 </template>
 
@@ -39,6 +52,8 @@ import lineM from "../../../components/echarts/common/line/lineM";
 import barM from "../../../components/echarts/common/bar/barM";
 import PieCaseEcharts from "../../../components/echarts/common/pie/PieCaseEcharts";
 import vzbcard from "../base/zbCard";
+import barEcharts from '../../../components/echarts/common/bar/barEcharts';
+  import barM2 from '../../../components/echarts/common/bar/barM2';
 export default {
   name: "brand",
   data() {
@@ -127,6 +142,8 @@ export default {
     barM,
     PieCaseEcharts,
     vzbcard,
+    barEcharts,
+    barM2
   },
 };
 </script>
