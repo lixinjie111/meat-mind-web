@@ -378,8 +378,7 @@
                     </div>
                 </div> -->
                 <div class="tab_item">
-<!--                      hd修改-1-->
-<!--                  <div class="tab_item_item mbitem1" @click="changMbItem(0)">基础画像</div>-->
+                  <div class="tab_item_item mbitem1" @click="changMbItem(0)">基础画像</div>
                   <div class="tab_item_item mbitem2" @click="changMbItem(1)">行为分析</div>
                   <div class="tab_item_item mbitem3" @click="changMbItem(2)">心智分析</div>
                   <div class="tab_item_item mbitem4" @click="changMbItem(3)">生命周期分析</div>
