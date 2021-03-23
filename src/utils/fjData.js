@@ -29,17 +29,17 @@ const fjEData = {
         value: [75, 25],
     },
     box51Data: {
-        name: ['渠道1', '渠道2','渠道3','其他'],
+        name: ['头条', '抖音','小红书','其他'],
         value: [200, 60,30,30],
         title: '{subTitle|预算投放总额}\n{titleB|320万元}',
     },
     box52Data: {
-        name: ['渠道1', '渠道2','渠道3','其他'],
+        name: ['头条', '抖音','小红书','其他'],
         value: [50,30, 10,30],
         title: '{subTitle|预算投放总额}\n{titleB|120万元}',
     },
     box53Data: {
-        name: ['渠道1', '渠道2','渠道3','其他'],
+        name: ['头条', '抖音','小红书','其他'],
         value: [80, 70,30,60],
         title: '{subTitle|预算投放总额}\n{titleB|240万元}',
     },
