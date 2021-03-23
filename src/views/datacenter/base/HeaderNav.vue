@@ -12,11 +12,11 @@
           <span>下载数据采集需求文档</span>
         </div>
       </slot>
-      <div class="filter">
+      <!-- <div class="filter">
         <i class="iconfont iconfilter"></i>
         <span>筛选</span>
         <i class="iconfont iconup"></i>
-      </div>
+      </div> -->
     </div>
     <div class="filter-container">
       <div class="show-status">
@@ -89,7 +89,7 @@ export default {
         font-size: 14px;
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
-        color: #97a0c3;
+        color: #636E95;
       }
     }
     .search {
@@ -107,12 +107,15 @@ export default {
         margin-right: 8px;
         line-height: 20px;
       }
+      >span{
+        color: #97A0C3;
+      }
     }
     .download {
       // width: 201px;
       height: 55px;
       margin-left: 24px;
-      margin-right: 16px;
+      // margin-right: 16px;
       // border-right: 2px solid #eaedf7;
       // border-bottom: 1px solid #EAEDF7;
       > i {

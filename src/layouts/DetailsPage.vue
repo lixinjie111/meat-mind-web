@@ -41,6 +41,8 @@
             align-items: center;
             height: 72px;
             font-size: 24px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
             color: #242F57;
             .icon{
                 padding-left:16px;

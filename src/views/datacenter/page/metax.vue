@@ -119,6 +119,10 @@
       &:nth-child(odd){
         margin-right: 24px;
       }
+      ::v-deep .ivu-card:hover{
+        box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16), 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+        border-radius: 4px;
+      }
     }
     .item {
       height: 100%;
