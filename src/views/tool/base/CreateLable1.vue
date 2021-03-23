@@ -2,11 +2,10 @@
   <div class="tool-model-filter">
     <div class="f-header">
       <div class="empty">
-        <div class="blue-btn" @click="create">
+        <div class="blue-btn">
           <i class="iconfont icontianjia"></i>
           <div>新建</div>
         </div>
-        <div class="group-admin">管理分组</div>
       </div>
       <div class="search">
         <Input prefix="ios-search" placeholder="请输入标签名进行搜索" />
@@ -14,15 +13,21 @@
     </div>
     <div class="filter-container">
       <div class="show-status">
-        <p>选择分组</p>
+        <p>渠道类型</p>
         <Select v-model="model1" style="width:258px">
           <Option v-for="(item,index) in list1" :value="item" :key="index">{{ item }}</Option>
         </Select>
       </div>
       <div class="show-status">
-        <p>标签状态</p>
+        <p>设备类型</p>
         <Select v-model="model2" style="width:258px">
           <Option v-for="(item,index) in list2" :value="item" :key="index">{{ item }}</Option>
+        </Select>
+      </div>
+      <div class="show-status">
+        <p>所属活动</p>
+        <Select v-model="model3" style="width:258px">
+          <Option v-for="(item,index) in list3" :value="item" :key="index">{{ item }}</Option>
         </Select>
       </div>
       <div class="operate-box">
@@ -40,24 +45,18 @@ export default {
     return {
       single: false,
       model1: "全部",
-      list1: ["全部", "组1", "组2"],
+      list1: ["全部", "今日头条", "抖音",'小红书','微信广告','网页通用渠道','APP 通用渠道'],
       model2: "全部",
       model3: "全部",
-      list2: ["全部", "启用", "停用"]
+      list2: ["全部", "iOS","通用","Android"],
+      list3: ["全部", "APP推广","测试",],
     };
-  },
-  methods:{
-    create(){
-      this.$emit('create')
-    },
-    
-  },
+  }
 };
 </script>
 
 <style scoped lang="scss">
 .tool-model-filter {
-  margin-top: 16px;
   height: 155px;
   margin-bottom: 8px;
   background: #ffffff;

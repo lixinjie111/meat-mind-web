@@ -1,9 +1,9 @@
 <template>
   <div class="bqgl">
     <div class="header-nav"><p>标签管理</p></div>
-    <CreateLable></CreateLable>
-    <TableModel :columns="columns" :tableData="tableData"></TableModel>
-    <div class="create-target" @click="create"></div>
+    <Tab :tab-list="['全部标签','已启用','已停用',]" @change="changeTab"></Tab>
+    <CreateLable  @create="create"></CreateLable>
+    <TableModel :columns="columns" :tableData="tableData1"></TableModel>
     <Modal title="通过哪种方式进行标签的创建" v-model="showModal" footer-hide class-name="create-target-modal">
       <div class="middle">
         <div class="create-target">
@@ -32,9 +32,10 @@
 <script>
 import TableModel from "../base/TableModel";
 import CreateLable from "../base/CreateLable";
+ import Tab from "@/components/Tab"
 export default {
   name: "LabelAdmin",
-  components: { CreateLable, TableModel },
+  components: { CreateLable, TableModel ,Tab},
   data() {
     return {
       showModal: false,
@@ -78,6 +79,7 @@ export default {
           width: 150 / 144 * window.rem,
         }
       ],
+      tableData1:[],
       tableData: [
         {
           name: "电子产品偏好",
@@ -182,9 +184,34 @@ export default {
       ]
     };
   },
+  created(){
+     this.tableData1=this.tableData;
+  },
   methods: {
+    changeTab(index) {
+      this.tableData1 =[];
+        console.log(index);
+        if(index==1){
+          this.tableData1=this.tableData;
+        }else if(index==2){
+          this.tableData.forEach(item=>{
+            if(item.data=='启用'){
+               this.tableData1.push(item)
+            }
+          })
+        }else{
+          this.tableData.forEach(item=>{
+            if(item.data=='停用'){
+               this.tableData1.push(item)
+            }
+          })
+        }
+        //this.active = index;
+    },
     create() {
       this.showModal = true;
+     
+      console.log(this.tableData1)
     },
     createTarget() {
       this.showModal = false;

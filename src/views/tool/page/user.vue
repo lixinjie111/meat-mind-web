@@ -3,13 +3,12 @@
     <div class="header-nav"><p>用户分群</p></div>
     <div class="list">
       <div class="show-header">
-        <div class="blue-btn">
+        <div class="blue-btn" @click="create">
           <i class="iconfont icontianjia"></i>
           <div>新建</div>
         </div>
       </div>
       <TableModel :columns="columns" :tableData="tableData"></TableModel>
-      <div class="create" @click="create"></div>
     </div>
     <Modal title="通过哪种方式进行标签的创建" class-name="create-fq-modal" v-model="createModal" footer-hide>
       <img src="../../../static/img/tool/yhfq/create1@2x.png" alt @click="userBehavior" />
@@ -41,7 +40,7 @@
 </template>
 
 <script>
-import TableModel from "../base/TableModel";
+import TableModel from "../base/TableModel1";
 export default {
   name:"yhfq",
   components:{TableModel},
@@ -88,7 +87,7 @@ export default {
         {
           title: "操作",
           slot: "operate",
-           width: 150/ 144 * window.rem,
+           width: 180/ 144 * window.rem,
         }
       ],
             tableData: [
@@ -235,19 +234,20 @@ export default {
       background: #fff;
         display: flex;
         align-items: center;
-      height: 56px;
+      height: 66px;
       margin-bottom: 8px;
       box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
       border-radius: 8px;
       border: 1px solid #eaedf7;
             .blue-btn {
+              cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 76px;
         height: 32px;
         
-        margin-left: 32px;
+        margin-left: 24px;
         background: #2373ff;
         border-radius: 4px;
         > i {
