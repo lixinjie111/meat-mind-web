@@ -84,7 +84,7 @@
           },
           tooltip: {
             trigger: 'item',
-            formatter: '{b} : {d}%'
+            formatter: '{b} : {c}W'
           },
           series: [{
             type: 'pie',
