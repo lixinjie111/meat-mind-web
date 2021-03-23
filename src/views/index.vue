@@ -10,7 +10,7 @@
                     <img class="bottom" src="../static/img/index/button@2x.png" @click="go">
                 </div>
                 <div class="video">
-                    <video class="player" width="100%" height="100%" autoplay loop muted :src="src"></video>
+                    <video class="player" width="100%" height="100%" autoplay loop muted src="../../src/static/video/video.mp4"></video>
                 </div>
             </div>
         </div>
@@ -27,13 +27,11 @@
 </template>
 
 <script>
-    import video from '../../src/static/video/video.mp4'
-
     export default {
         name: 'index',
         data() {
             return {
-                src: video
+
             }
         },
         methods: {
