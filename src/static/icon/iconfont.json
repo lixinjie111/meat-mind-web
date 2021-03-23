@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "20562660",
+      "name": "添加场景line",
+      "font_class": "tianjiachangjingline",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "20562661",
+      "name": "下载场景line",
+      "font_class": "xiazaichangjingline",
+      "unicode": "e655",
+      "unicode_decimal": 58965
+    },
+    {
+      "icon_id": "20562662",
+      "name": "创建场景line",
+      "font_class": "chuangjianchangjingline",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "20545781",
+      "name": "媒介line",
+      "font_class": "meijieline",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    },
+    {
+      "icon_id": "20545503",
+      "name": "分析line",
+      "font_class": "fenxiline1",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "20545477",
+      "name": "品牌line",
+      "font_class": "pinpailine",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
       "icon_id": "20412827",
       "name": "星形line",
       "font_class": "xingxingline",
@@ -81,13 +123,6 @@
       "font_class": "zhuanhua",
       "unicode": "e64a",
       "unicode_decimal": 58954
-    },
-    {
-      "icon_id": "20344815",
-      "name": "分析line",
-      "font_class": "fenxiline",
-      "unicode": "e647",
-      "unicode_decimal": 58951
     },
     {
       "icon_id": "20340768",

@@ -31,7 +31,7 @@
                 <ul>
                     <li>
                         <div class="icon">
-                            <i class="iconfont iconchanpin"></i>
+                            <i class="iconfont iconxinline"></i>
                         </div>
                         <div class="container">
                             <div class="name">跨界合作</div>
@@ -40,7 +40,7 @@
                     </li>
                     <li>
                         <div class="icon">
-                            <i class="iconfont iconpinpaihuaxiang"></i>
+                            <i class="iconfont iconpinpailine"></i>
                         </div>
                         <div class="container">
                             <div class="name">品牌拓展</div>
