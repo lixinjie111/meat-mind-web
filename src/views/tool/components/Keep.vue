@@ -1,7 +1,7 @@
 <template>
   <div class="fxmx-keep">
       <div class="back" @click="back"></div>
-    <MutableArray title="asdf">
+    <MutableArray :value="conditions" :init-item="initItem" :on-delete="handleDelete">
       <template #item="itemProps">
         <FilterCondition v-bind="itemProps"/>
       </template>
@@ -15,11 +15,20 @@
 
 export default {
     name:"Keep",
+  data() {
+      return {
+        conditions: [{input: ''}],
+        initItem: {input: ''},
+      }
+  },
   components: {FilterCondition, MutableArray},
     methods:{
         back(){
             this.$router.push({name:"analysis-tool-model"})
-        }
+        },
+      handleDelete(index) {
+        this.conditions.splice(index, 1);
+      }
     }
 }
 </script>

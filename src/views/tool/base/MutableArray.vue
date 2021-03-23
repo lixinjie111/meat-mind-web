@@ -1,21 +1,32 @@
 <template>
   <div>
-    <div v-for="i of [1,2,3,4]">
-      <div>
-        <slot name="item" :condition="1" :compare="2" input="test"></slot>
-        <i class="iconfont icontianjia"></i>
-        <i class="iconfont iconClose"></i>
-      </div>
+    <div v-for="(item,index) of value" class="row">
+        <slot name="item" v-bind="item"></slot>
+        <i class="iconfont iconClose" @click="onDelete(index)"></i>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: "MutableArray"
+    name: "MutableArray",
+    props: {
+      value: Array,
+      initItem: Object,
+      onDelete: Function
+    }
   }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.row {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+  align-items: center;
 
+  .iconClose {
+    cursor: pointer;
+  }
+}
 </style>

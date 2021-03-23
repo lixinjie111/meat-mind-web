@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="condition">
     <Select v-model="condition" style="width: 200px">
       <Option v-for="(item,index) in conditionOptions" :value="index+1" :key="index+1">{{ item }}</Option>
     </Select>
@@ -78,5 +78,9 @@
 </script>
 
 <style scoped>
-
+.condition {
+  width: 520px;
+  display: flex;
+  justify-content: space-between;
+}
 </style>
