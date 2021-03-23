@@ -23,8 +23,7 @@ export default [
     name:'user-edit',
     meta:{title:"用户画像",moduleName},
     component:edit,
-  }
-  ,
+  },
   {
     path:`/${moduleName}/comparison`,
     name:'user-comparison',

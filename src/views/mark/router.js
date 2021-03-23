@@ -34,14 +34,14 @@ export default [
         meta:{title:"品牌画像",moduleName},
         component:detail,
         name:`${moduleName}-detail`
-      },
-      {
-        path:`/${moduleName}/comparison`,
-        label:"品牌详情",
-        meta:{title:"品牌画像",moduleName},
-        component:comparison,
-        name:`${moduleName}-comparison`
       }
     ]
+  },
+  {
+    path:`/${moduleName}/comparison`,
+    label:"品牌详情",
+    meta:{title:"品牌画像",moduleName},
+    component:comparison,
+    name:`${moduleName}-comparison`
   }
 ]
