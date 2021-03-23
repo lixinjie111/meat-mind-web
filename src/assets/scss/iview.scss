@@ -113,14 +113,6 @@
     }
   }
 
-  .ivu-page-total {
-    vertical-align: -3px;
-    font-size: 14px;
-    font-family: PingFangSC-Regular, PingFang SC;
-    font-weight: 400;
-    color: #636E95;
-  }
-
   .ivu-page-item {
     min-width: 32px;
     height: 32px;
@@ -193,7 +185,6 @@
         color: #2373FF;
       }
     }
-
     .tip-icon.blue-tip-icon {
       color: #2373FF;
     }
@@ -376,11 +367,16 @@
   // top:48px  !important;
   z-index: 1001;
 }
-
 // 表格
-.ivu-table {
-  th {
+.ivu-table{
+  th{
     background: #F6F9FF;
     border: none;
+  }
+}
+.ivu-page{
+  font-size: 14px;
+  .ivu-page-options {
+    float: left;
   }
 }

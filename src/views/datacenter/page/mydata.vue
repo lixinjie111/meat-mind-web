@@ -1,28 +1,13 @@
 <template>
   <div class="wdsj">
     <div v-if="resultShow">
-      <div class="result-box">
-        <div class="title">
-          <span class="rotate180">
-            <i class="iconfont iconleft-arrow" @click="resultShow = false"></i>
-          </span>
-          <span class="separate-line"></span>
-          2020年上半年奢侈品销售数据</div>
-        <div class="list">
-          <div class="operation-section">
-            <Input prefix="ios-search" class="operation-section-input" placeholder="请输入商品名称/商品编码" style="width: 217px" />
-          </div>
-          <Table border :columns="columns" :data="data"></Table>
-          <div class="page-box">
-            <Page :current="currentPage" :total="totalPage" :page-size="pageSize" simple
-                  @on-change="changePage"/>
-          </div>
-        </div>
-      </div>
+      <ResultBox />
     </div>
     <div v-else class="page-container ">
-      <div class="title">我的数据</div>
-      <div class="statistics module no-padding">
+      <div class="header-nav">
+        <p>我的数据</p>
+      </div>
+      <div class="statistics no-padding">
         <div :class="['statistics-item-box', {current: listType === 'upload' }]" @click="changeList('upload')">
           <div class="statistics-item-ico icon-bg"><i class="iconfont iconshangchuanshuju"></i></div>
           <div class="statistics-item">
@@ -33,6 +18,7 @@
               0
             </div>
           </div>
+          <i class="iconfont icongengduo"></i>
         </div>
         <div :class="['statistics-item-box', {current: listType === 'SDK' }]" @click="changeList('SDK')">
           <div class="statistics-item-ico icon-bg SDK"><i class="iconfont iconSDKmaidian"></i></div>
@@ -44,6 +30,7 @@
               0
             </div>
           </div>
+          <i class="iconfont icongengduo"></i>
         </div>
         <div :class="['statistics-item-box', {current: listType === 'API' }]" @click="changeList('API')">
           <div class="statistics-item-ico icon-bg API"><i class="iconfont iconAPIcaiji"></i></div>
@@ -55,6 +42,7 @@
               0
             </div>
           </div>
+          <i class="iconfont icongengduo"></i>
         </div>
         <div :class="['statistics-item-box', {current: listType === 'SQL' }]" @click="changeList('SQL')">
           <div class="statistics-item-ico icon-bg SQL"><i class="iconfont iconshujukuzhilian"></i></div>
@@ -66,6 +54,7 @@
               0
             </div>
           </div>
+          <i class="iconfont icongengduo"></i>
         </div>
       </div>
       <template v-if="listType === 'upload'">
@@ -78,7 +67,7 @@
             </div>
           </div>
           <div class="table-warp">
-            <Table  border :columns="uploadPage.file.columns" :data="uploadPage.file.list">
+            <Table   :columns="uploadPage.file.columns" :data="uploadPage.file.list">
               <template slot-scope="" slot="operate">
                 <div class="operation">
                   <span class="operation-item">查看</span>
@@ -87,14 +76,13 @@
               </template>
             </Table>
             <div class="table-page-warp">
-              <Select v-model="uploadPage.file.pageSize" style="width:100px">
-                <Option v-for="item in [10, 20, 30, 40]" :value="item" :key="item">每页{{ item }}/条</Option>
-              </Select>
               <Page
                 :current="uploadPage.file.currentPage"
                 :total="uploadPage.file.totalPage"
                 :page-size="uploadPage.file.pageSize"
                 show-total
+                show-sizer
+                class-name="pageS"
                 @on-change="(page)=>tableChangePage(page, uploadPage.file)"
               />
             </div>
@@ -109,7 +97,7 @@
             </div>
           </div>
           <div class="table-warp">
-            <Table  border :columns="uploadPage.data.columns" :data="uploadPage.data.list">
+            <Table  :columns="uploadPage.data.columns" :data="uploadPage.data.list">
               <template slot-scope="" slot="operate">
                 <div class="operation">
                   <span class="operation-item">更新数据包</span>
@@ -118,14 +106,13 @@
               </template>
             </Table>
             <div class="table-page-warp">
-              <Select v-model="uploadPage.data.pageSize" style="width:100px">
-                <Option v-for="item in [10, 20, 30, 40]" :value="item" :key="item">每页{{ item }}/条</Option>
-              </Select>
               <Page
                 :current="uploadPage.data.currentPage"
                 :total="uploadPage.data.totalPage"
                 :page-size="uploadPage.data.pageSize"
                 show-total
+                show-sizer
+                class-name="pageS"
                 @on-change="(page)=>tableChangePage(page, uploadPage.data)"
               />
             </div>
@@ -143,7 +130,7 @@
             </div>
           </div>
           <div class="table-warp">
-            <Table  border :columns="SDKPage.columns" :data="SDKPage.list">
+            <Table :columns="SDKPage.columns" :data="SDKPage.list">
               <template slot-scope="" slot="operate">
                 <div class="operation">
                   <span class="operation-item">更新数据</span>
@@ -152,14 +139,13 @@
               </template>
             </Table>
             <div class="table-page-warp"  v-if="SDKPage.totalPage>0">
-              <Select v-model="SDKPage.pageSize" style="width:100px">
-                <Option v-for="item in [10, 20, 30, 40]" :value="item" :key="item">每页{{ item }}/条</Option>
-              </Select>
               <Page
                 :current="SDKPage.currentPage"
                 :total="SDKPage.totalPage"
                 :page-size="SDKPage.pageSize"
                 show-total
+                show-sizer
+                class-name="pageS"
                 @on-change="(page)=>tableChangePage(page, SDKPage)"
               />
             </div>
@@ -188,7 +174,7 @@
             </div>
           </div>
           <div class="table-warp">
-            <Table  border :columns="APIPage.columns" :data="APIPage.list">
+            <Table :columns="APIPage.columns" :data="APIPage.list">
               <template slot-scope="" slot="operate">
                 <div class="operation">
                   <span class="operation-item">更新数据</span>
@@ -197,14 +183,13 @@
               </template>
             </Table>
             <div class="table-page-warp"  v-if="APIPage.totalPage>0">
-              <Select v-model="APIPage.pageSize" style="width:100px">
-                <Option v-for="item in [10, 20, 30, 40]" :value="item" :key="item">每页{{ item }}/条</Option>
-              </Select>
               <Page
                 :current="APIPage.currentPage"
                 :total="APIPage.totalPage"
                 :page-size="APIPage.pageSize"
                 show-total
+                show-sizer
+                class-name="pageS"
                 @on-change="(page)=>tableChangePage(page, APIPage)"
               />
             </div>
@@ -229,7 +214,7 @@
             </div>
           </div>
           <div class="table-warp">
-            <Table  border :columns="SQLPage.columns" :data="SQLPage.list">
+            <Table :columns="SQLPage.columns" :data="SQLPage.list">
               <template slot-scope="" slot="operate">
                 <div class="operation">
                   <span class="operation-item">更新数据</span>
@@ -238,14 +223,13 @@
               </template>
             </Table>
             <div class="table-page-warp"  v-if="SQLPage.totalPage>0">
-              <Select v-model="SQLPage.pageSize" style="width:100px">
-                <Option v-for="item in [10, 20, 30, 40]" :value="item" :key="item">每页{{ item }}/条</Option>
-              </Select>
               <Page
                 :current="SQLPage.currentPage"
                 :total="SQLPage.totalPage"
                 :page-size="SQLPage.pageSize"
+                class-name="pageS"
                 show-total
+                show-sizer
                 @on-change="(page)=>tableChangePage(page, SQLPage)"
               />
             </div>
@@ -299,496 +283,17 @@
 </template>
 
 <script>
-  export default {
+import ResultBox from '../components/ResultBox'
+export default {
     name: "Mydata",
+    components: { ResultBox },
     data() {
-      const width = window.innerWidth;
-      console.log(width)
       return {
         uploadModal1: false,
         uploadModal2: false,
         uploadModal3: false,
         isUpload4: false,
         resultShow: false,
-        currentPage: 1,
-        totalPage: 25,
-        pageSize: 15,
-        columns: [
-          {
-            title: '销售日期',
-            key: 'pid'
-          },
-          {
-            title: '店号',
-            key: 'name'
-          },
-          {
-            title: '类别',
-            key: 'vid'
-          },
-          {
-            title: '品牌编号',
-            key: 'cid'
-          },
-          {
-            title: '楼层',
-            key: 'num'
-          },
-          {
-            title: '销售额',
-            key: 'price'
-          },
-          {
-            title: '毛利',
-            key: 'inventory'
-          },
-        ],
-        data: [
-          {
-            pid: '1',
-            name: '苹果汁',
-            vid: '1',
-            cid: '1',
-            num: '每箱24瓶',
-            price: '18',
-            inventory: '39',
-            order: '0',
-            orderA: '10'
-          },
-          {
-            pid: '2',
-            name: '牛奶',
-            vid: '1',
-            cid: '1',
-            num: '每箱24瓶',
-            price: '19',
-            inventory: '17',
-            order: '40',
-            orderA: '25'
-          },
-          {
-            pid: '3',
-            name: '蕃茄酱',
-            vid: '1',
-            cid: '2',
-            num: '每箱12瓶',
-            price: '10',
-            inventory: '13',
-            order: '70',
-            orderA: '25'
-          },
-          {
-            pid: '4',
-            name: '盐',
-            vid: '2',
-            cid: '2',
-            num: '每箱12包',
-            price: '22',
-            inventory: '53',
-            order: '0',
-            orderA: '0'
-          },
-          {
-            pid: '5',
-            name: '麻油',
-            vid: '2',
-            cid: '2',
-            num: '每箱12瓶',
-            price: '21.35',
-            inventory: '0',
-            order: '0',
-            orderA: '0'
-          },
-          {
-            pid: '6',
-            name: '酱油',
-            vid: '3',
-            cid: '2',
-            num: '每箱12瓶',
-            price: '25',
-            inventory: '120',
-            order: '0',
-            orderA: '25'
-          },
-          {
-            pid: '7',
-            name: '海鲜粉',
-            vid: '3',
-            cid: '7',
-            num: '每箱30盒',
-            price: '30',
-            inventory: '15',
-            order: '0',
-            orderA: '10'
-          },
-          {
-            pid: '8',
-            name: '胡椒粉',
-            vid: '3',
-            cid: '2',
-            num: '每箱30盒',
-            price: '40',
-            inventory: '6',
-            order: '1',
-            orderA: '0'
-          },
-          {
-            pid: '9',
-            name: '鸡',
-            vid: '4',
-            cid: '6',
-            num: '每袋500克',
-            price: '97',
-            inventory: '29',
-            order: '3',
-            orderA: '0'
-          },
-          {
-            pid: '10',
-            name: '蟹',
-            vid: '4',
-            cid: '8',
-            num: '每袋500克',
-            price: '31',
-            inventory: '31',
-            order: '0',
-            orderA: '0'
-          },
-          {
-            pid: '11',
-            name: '大众奶酪',
-            vid: '5',
-            cid: '4',
-            num: '每袋6克',
-            price: '21',
-            inventory: '22',
-            order: '30',
-            orderA: '30'
-          },
-          {
-            pid: '12',
-            name: '德国奶酪',
-            vid: '5',
-            cid: '4',
-            num: '每箱12瓶',
-            price: '38',
-            inventory: '86',
-            order: '3',
-            orderA: '0'
-          },
-          {
-            pid: '13',
-            name: '龙虾',
-            vid: '6',
-            cid: '8',
-            num: '每袋500克',
-            price: '6',
-            inventory: '24',
-            order: '0',
-            orderA: '5'
-          },
-          {
-            pid: '14',
-            name: '沙茶',
-            vid: '6',
-            cid: '7',
-            num: '每箱12瓶',
-            price: '23.25',
-            inventory: '35',
-            order: '0',
-            orderA: '0'
-          },
-          {
-            pid: '15',
-            name: '味精',
-            vid: '6',
-            cid: '2',
-            num: '每箱30盒',
-            price: '15.5',
-            inventory: '39',
-            order: '0',
-            orderA: '5'
-          }
-        ],
-        data1: [
-          {
-            pid: '1',
-            name: '苹果汁',
-            vid: '1',
-            cid: '1',
-            num: '每箱24瓶',
-            price: '18',
-            inventory: '39',
-            order: '0',
-            orderA: '10'
-          },
-          {
-            pid: '2',
-            name: '牛奶',
-            vid: '1',
-            cid: '1',
-            num: '每箱24瓶',
-            price: '19',
-            inventory: '17',
-            order: '40',
-            orderA: '25'
-          },
-          {
-            pid: '3',
-            name: '蕃茄酱',
-            vid: '1',
-            cid: '2',
-            num: '每箱12瓶',
-            price: '10',
-            inventory: '13',
-            order: '70',
-            orderA: '25'
-          },
-          {
-            pid: '4',
-            name: '盐',
-            vid: '2',
-            cid: '2',
-            num: '每箱12包',
-            price: '22',
-            inventory: '53',
-            order: '0',
-            orderA: '0'
-          },
-          {
-            pid: '5',
-            name: '麻油',
-            vid: '2',
-            cid: '2',
-            num: '每箱12瓶',
-            price: '21.35',
-            inventory: '0',
-            order: '0',
-            orderA: '0'
-          },
-          {
-            pid: '6',
-            name: '酱油',
-            vid: '3',
-            cid: '2',
-            num: '每箱12瓶',
-            price: '25',
-            inventory: '120',
-            order: '0',
-            orderA: '25'
-          },
-          {
-            pid: '7',
-            name: '海鲜粉',
-            vid: '3',
-            cid: '7',
-            num: '每箱30盒',
-            price: '30',
-            inventory: '15',
-            order: '0',
-            orderA: '10'
-          },
-          {
-            pid: '8',
-            name: '胡椒粉',
-            vid: '3',
-            cid: '2',
-            num: '每箱30盒',
-            price: '40',
-            inventory: '6',
-            order: '1',
-            orderA: '0'
-          },
-          {
-            pid: '9',
-            name: '鸡',
-            vid: '4',
-            cid: '6',
-            num: '每袋500克',
-            price: '97',
-            inventory: '29',
-            order: '3',
-            orderA: '0'
-          },
-          {
-            pid: '10',
-            name: '蟹',
-            vid: '4',
-            cid: '8',
-            num: '每袋500克',
-            price: '31',
-            inventory: '31',
-            order: '0',
-            orderA: '0'
-          },
-          {
-            pid: '11',
-            name: '大众奶酪',
-            vid: '5',
-            cid: '4',
-            num: '每袋6克',
-            price: '21',
-            inventory: '22',
-            order: '30',
-            orderA: '30'
-          },
-          {
-            pid: '12',
-            name: '德国奶酪',
-            vid: '5',
-            cid: '4',
-            num: '每箱12瓶',
-            price: '38',
-            inventory: '86',
-            order: '3',
-            orderA: '0'
-          },
-          {
-            pid: '13',
-            name: '龙虾',
-            vid: '6',
-            cid: '8',
-            num: '每袋500克',
-            price: '6',
-            inventory: '24',
-            order: '0',
-            orderA: '5'
-          },
-          {
-            pid: '14',
-            name: '沙茶',
-            vid: '6',
-            cid: '7',
-            num: '每箱12瓶',
-            price: '23.25',
-            inventory: '35',
-            order: '0',
-            orderA: '0'
-          },
-          {
-            pid: '15',
-            name: '味精',
-            vid: '6',
-            cid: '2',
-            num: '每箱30盒',
-            price: '15.5',
-            inventory: '39',
-            order: '0',
-            orderA: '5'
-          }
-        ],
-        data2: [
-          {
-            pid: '16',
-            name: '饼干',
-            vid: '7',
-            cid: '3',
-            num: '每箱30盒',
-            price: '17.45',
-            inventory: '29',
-            order: '0',
-            orderA: '10'
-          },
-          {
-            pid: '17',
-            name: '猪肉',
-            vid: '7',
-            cid: '6',
-            num: '每袋500克',
-            price: '39',
-            inventory: '0',
-            order: '0',
-            orderA: '0'
-          },
-          {
-            pid: '18',
-            name: '墨鱼',
-            vid: '9',
-            cid: '8',
-            num: '每袋500克',
-            price: '62.5',
-            inventory: '42',
-            order: '4',
-            orderA: '0'
-          },
-          {
-            pid: '19',
-            name: '糖果',
-            vid: '8',
-            cid: '3',
-            num: '每箱30盒',
-            price: '9.2',
-            inventory: '25',
-            order: '0',
-            orderA: '5'
-          },
-          {
-            pid: '20',
-            name: '桂花糕',
-            vid: '8',
-            cid: '3',
-            num: '每箱30盒',
-            price: '81',
-            inventory: '40',
-            order: '0',
-            orderA: '6'
-          },
-          {
-            pid: '21',
-            name: '花生',
-            vid: '8',
-            cid: '3',
-            num: '每箱30包',
-            price: '10',
-            inventory: '3',
-            order: '40',
-            orderA: '5'
-          },
-          {
-            pid: '22',
-            name: '糯米',
-            vid: '9',
-            cid: '5',
-            num: '每袋3公斤',
-            price: '21',
-            inventory: '104',
-            order: '0',
-            orderA: '25'
-          },
-          {
-            pid: '23',
-            name: '燕麦',
-            vid: '9',
-            cid: '5',
-            num: '每袋3公斤',
-            price: '9',
-            inventory: '61',
-            order: '0',
-            orderA: '25'
-          },
-          {
-            pid: '24',
-            name: '汽水',
-            vid: '10',
-            cid: '1',
-            num: '每箱12瓶',
-            price: '4.5',
-            inventory: '20',
-            order: '0',
-            orderA: '0'
-          },
-          {
-            pid: '25',
-            name: '巧克力',
-            vid: '11',
-            cid: '3',
-            num: '每箱30盒',
-            price: '14',
-            inventory: '76',
-            order: '0',
-            orderA: '30'
-          }
-        ],
         listType: 'upload',
         uploadPage: {
           file: {
@@ -800,12 +305,13 @@
               {
                 title: '更新时间',
                 key: 'time',
-                width: '200'
+                // width: '200'
               },
               {
                 title: '操作',
                 slot:"operate",
-                width: '200'
+                width: 200 / 144 * window.rem,
+
               },
             ],
             currentPage: 1,
@@ -835,27 +341,27 @@
               {
                 title: '添加时间',
                 key: 'time',
-                width: '150'
+                // width: '150'
               },
               {
                 title: '最近更新版本',
                 key: 'versions',
-                width: '150'
+                // width: '150'
               },
               {
                 title: '有效期至',
                 key: 'valid',
-                width: '120'
+                // width: '120'
               },
               {
                 title: '状态',
                 key: 'status',
-                width: '80'
+                width: 80 / 144 * window.rem,
               },
               {
                 title: '操作',
                 slot:"operate",
-                width: '200'
+                width: 200 / 144 * window.rem,
               },
             ],
             currentPage: 1,
@@ -915,17 +421,19 @@
             {
               title: '状态',
               key: 'status',
-              // width: '200'
+              width: 80 / 144 * window.rem,
             },
             {
               title: '操作',
               slot:"operate",
-              width: '200'
+              width: 200 / 144 * window.rem,
+
             },
           ],
           currentPage: 1,
-          totalPage: 0,
+          totalPage: 15,
           pageSize: 10,
+          allList: [],
           list: [],
         },
         APIPage: {
@@ -967,13 +475,15 @@
             {
               title: '操作',
               slot:"operate",
-              width: '200'
+              width: 200 / 144 * window.rem,
+
             },
           ],
           currentPage: 1,
-          totalPage: 0,
+          totalPage: 15,
           pageSize: 10,
           list: [],
+          allList: [],
         },
         SQLPage: {
           columns: [
@@ -1001,16 +511,25 @@
           totalPage: 0,
           pageSize: 10,
           list: [],
+          allList: [],
         },
       }
+    },
+    mounted() {
+      this.generateSDKPageData()
+      this.tableChangePage(1, this.SDKPage)
+      this.generateAPIPageData()
+      this.tableChangePage(1, this.APIPage)
+      // this.generateSQLPageData()
+      // this.tableChangePage(1, this.SQLPage)
     },
     methods: {
       changeList(type) {
         this.listType = type
       },
       tableChangePage(page, pageObj) {
-        console.log('currentPage', page, pageObj)
         pageObj.currentPage = page
+        pageObj.list = pageObj.allList.slice((page - 1) * pageObj.pageSize, page * pageObj.pageSize - 1)
       },
       uploadChange1() {
         this.uploadModal1 = false;
@@ -1034,10 +553,24 @@
           }, 1000);
         }
       },
-      changePage(page) {
-        this.currentPage = page;
-        page == 1 ? this.data = this.data1 : this.data = this.data2;
-      }
+      generateSDKPageData(total=this.SDKPage.totalPage){
+        for (let i = 0; i < total; ++i){
+          const curr =  { name: '元信', platform: 'Android', package: 'yxin.apk', url: '--', createUser: 'Mr.Tang', createTime: '2020-11-10 32:01:07', status: '有效'};
+          this.SDKPage.allList.push(curr)
+        }
+      },
+      generateAPIPageData(total=this.APIPage.totalPage){
+        for (let i = 0; i < total; ++i){
+          const curr =  { name: '元信', platform: 'Android', package: 'yxin.apk', url: '--', createUser: 'Mr.Tang', createTime: '2020-11-10 32:01:07', status: '有效'};
+          this.APIPage.allList.push(curr)
+        }
+      },
+      generateSQLPageData(total=this.SQLPage.totalPage){
+        for (let i = 0; i < total; ++i){
+          const curr =  { name: '元信', platform: 'Android', package: 'yxin.apk', url: '--', createUser: 'Mr.Tang', createTime: '2020-11-10 32:01:07', status: '有效'};
+          this.SQLPage.allList.push(curr)
+        }
+      },
     }
   }
 </script>
@@ -1061,38 +594,51 @@
         font-size: 24px;
         font-family: PingFangSC-Medium, PingFang SC;
         font-weight: 500;
-        color: #212121;
+        color: #242F57;
       }
       .rotate180{
         transform:rotate(180deg);
         display: inline-block;
         .iconfont{
           font-size: 24px;
+          color: #7e8ab2;
         }
       }
       .separate-line{
         width: 1px;
         height: 20px;
-        background: #EAEDF7;
+        background: #EAEDF7FF;
         display: inline-block;
-        margin: 0 10px;
+        margin: 0 16px;
       }
       .operation-section{
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        margin: 12px 0;
+        margin-bottom: 12px;
+        .operation-section-input{
+          width: 217px;
+          height: 32px;
+          background: #FFFFFF;
+          border-radius: 4px;
+        }
       }
       .list {
-        margin-top: 24px;
+        margin-top: 22px;
         padding: 12px 24px;
         background: #FFFFFF;
-        box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-        border-radius: 12px;
         border: 1px solid #EAEDF7;
+        box-shadow: 4px 6px 20px 0 rgba(134, 143, 191, 0.15);
+        border-radius: 8px;
         .page-box {
           margin-top: 10px;
           text-align: right;
+          .pageS {
+            text-align: right;
+            ::v-deep .ivu-page-options {
+              float: left;
+            }
+          }
         }
       }
     }
@@ -1262,21 +808,21 @@
     padding: 0 !important;
   }
   .module{
-    border-radius: $radius;
-    background-color: #fff;
+    border-radius: 8px;
     margin: 16px 0;
     padding: 0 24px;
-    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border: 1px solid #EAEDF7;
+    background: #FFFFFF;
+    box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+    padding-bottom: 16px;
     .module-title{
-      font-size: 16px;
-      font-weight: 500;
-      color: #242F57;
       height: 56px;
       line-height: 56px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      font-size: 18px;
+      font-weight: 500;
       .module-btns{
         display: flex;
         align-items: center;
@@ -1292,60 +838,134 @@
     border-radius: $radius $radius 0 0;
 
     .statistics-item-box {
-      padding: 15px 0;
-      height: 100px;
-      width: 25%;
+      padding: 22px 0;
       position: relative;
       cursor: pointer;
+      width: 270px;
+      height: 102px;
+      background: #D3E3FF;
+      border-radius: 8px;
+      margin-right: 24px;
+      &:last-child{
+        margin-right: 0;
+      }
       .statistics-item-ico {
         position: absolute;
-        left: 24px;
+        left: 16px;
         top: 21px;
-        height: 60px;
-        width: 60px;
+      }
+      .statistics-item-ico.icon-bg {
+        width: 48px;
+        height: 52px;
+        background: #FFFFFF;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &>.iconfont {
+          font-size: 36px;
+        }
+      }
+      &>.iconfont{
+        position: absolute;
+        top: 12px;
+        right: 12px;
       }
     }
     .statistics-item {
-      padding-left: 108px;
+      padding-left: 76px;
       height: 100%;
-      border-right: 1px solid #F0F0F0;
       &:last-child{
         /*border-right: none;*/
       }
       .label {
         font-size: 14px;
         font-weight: 400;
-        color: #242F57;
         line-height: 22px;
       }
       .count {
-        font-size: 38px;
+        font-size: 28px;
         font-weight: 400;
-        color: #242F57;
-        line-height: 46px;
+        line-height: 36px;
       }
     }
-    .statistics-item-box.current {
-      border-bottom: 3px solid #2373FF;
+    .statistics-item-box:nth-child(1) {
+      background-color: #D3E3FF;
+      color: #2373FF;
+      .iconfont{
+        color: #2373FF;
+      }
+    }
+    .statistics-item-box:nth-child(1).current {
+      background-color: #2373FF;
+      color: #FFFFFF;
+      .iconfont.icongengduo{
+        color: #FFFFFF;
+      }
+    }
+    .statistics-item-box:nth-child(2) {
+      background-color: #FFE6DE;
+      color: #FE774B;
+      .iconfont{
+        color: #FE774B;
+      }
+    }
+    .statistics-item-box:nth-child(2).current {
+      background-color: #FE774B;
+      color: #FFFFFF;
+      .iconfont.icongengduo{
+        color: #FFFFFF;
+      }
+    }
+    .statistics-item-box:nth-child(3) {
+      background-color: #DFF8F6;
+      color: #1DCEC3;
+      .iconfont{
+        color: #1DCEC3;
+      }
+    }
+    .statistics-item-box:nth-child(3).current {
+      background-color: #1DCEC3;
+      color: #FFFFFF;
+      .iconfont.icongengduo{
+        color: #FFFFFF;
+      }
+    }
+    .statistics-item-box:nth-child(4) {
+      background-color: #FFEBF3;
+      color: #F16E84;
+      .iconfont{
+        color: #F16E84;
+      }
+    }
+    .statistics-item-box:nth-child(4).current {
+      background-color: #F16E84;
+      color: #FFFFFF;
+      .iconfont.icongengduo{
+        color: #FFFFFF;
+      }
     }
   }
+
   .btn-box{
     .ivu-btn{
-      font-size: 14px;
-      line-height: 22px;
       height: 32px;
       border-radius: 8px;
-      border: 1px solid #2373FF;
+      font-size: 14px;
+      font-weight: 400;
+      color: #97A0C3;
     }
     .ivu-btn-default{
-      box-shadow: 2px 2px 7px 0 rgba(210, 213, 225, 0.8), -2px -2px 7px 0px #FFFEFA;
-      border: 1px solid #C6CBDE;
+      background: #FFFFFF;
+      border-radius: 4px;
+      border: 1px solid #97A0C3;
+
     }
     .ivu-btn-primary{
-      border: 1px solid #2373FF;
-      box-shadow: 2px 2px 7px 0 rgba(210, 213, 225, 0.8), -2px -2px 7px 0px #FFFEFA;
-      background-color: #fff;
-      color: #2373FF;
+      background: #2373FF;
+      box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
+      border-radius: 4px;
+      color: #FFFFFF;
     }
 
   }
@@ -1357,51 +977,39 @@
     border-radius: 8px;
     border: 1px solid #2373FF;
   }
-  .icon-bg {
-    background-color: #2373FF;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .iconfont {
-      color: #ffffff;
-      font-size: 36px;
-    }
-  }
-  .icon-bg.SDK {
-    background-color: #A49DFA;
-  }
-  .icon-bg.API {
-    background-color: #8AE6C7;
-  }
-  .icon-bg.SQL {
-    background-color: #FFD98C;
-  }
-
   .table-warp{
     .ivu-table th{
       height: 48px;
       background: #F4F7FC;
     }
     .table-page-warp{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 0;
+      margin-top: 10px;
+      text-align: right;
+      .pageS {
+        text-align: right;
+        ::v-deep .ivu-page-options {
+          float: left;
+        }
+      }
     }
   }
   .operation{
     .operation-item{
-      margin: 0 10px;
+      margin-right: 16px;
       font-weight: 400;
       color: #2373FF;
       cursor: pointer;
+      font-size: 14px;
     }
   }
   .not-data{
-    width: 300px;
     text-align: center;
     margin: 0 auto;
+    width: 486px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #636E95;
     .link{
       color: #2373FF;
       cursor: pointer;
