@@ -592,7 +592,7 @@
 			    <div class="left_desc_text">基于用户分群数据，系统智能生成的用户基础画像数据，行为分析数据以及心智分析数据。</div>
 		    </div>
 		    <div class="right_select">
-			    <div class="select-btn"><i class="iconfont icontianjia"></i>用户群对比</div>
+			    <div class="select-btn" @click="toComparison"><i class="iconfont icontianjia"></i>用户群对比</div>
 <!--			    <Select class="select" value="北京上班族">-->
 <!--				    <Option value="北京上班族">北京上班族</Option>-->
 <!--			    </Select>-->
@@ -1331,6 +1331,9 @@ export default {
     this.initPopEcharts();
   },
   methods: {
+	  toComparison (){
+		  this.$router.push({name:"user-comparison"})
+	  },
 	  customChange(custom){
 	  	this.custom = custom;
 	  	this.customShow = false
@@ -2315,6 +2318,7 @@ export default {
 				font-weight: 400;
 				color: #FFFFFF;
 				text-align: center;
+				cursor: pointer;
 
 				 >i {
 					font-size: 13px;

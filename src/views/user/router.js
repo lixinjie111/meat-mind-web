@@ -1,6 +1,7 @@
 const user=()=>import('./index');
 const defined=()=>import('./defined');
 const edit=()=>import('./edit');
+const comparison=()=>import('./comparison');
 
 const moduleName='user';
 
@@ -22,5 +23,12 @@ export default [
     name:'user-edit',
     meta:{title:"用户画像",moduleName},
     component:edit,
+  }
+  ,
+  {
+    path:`/${moduleName}/comparison`,
+    name:'user-comparison',
+    meta:{title:"用户画像",moduleName},
+    component:comparison,
   }
 ]
