@@ -4,7 +4,7 @@
       <div class="back" @click="back"></div>
   </div> -->
   <DetailsPage title="Session管理" backname="data-center-metax">
-    <HeaderSearch>
+    <div class="session-header">
       <div class="session-header-left">
         <div class="blue-btn">
           <i class="iconfont icontianjia"></i>
@@ -17,7 +17,7 @@
         <i class="iconfont iconSearch"></i>
         <span>请输入Session名或Session显示名</span>
       </div>
-    </HeaderSearch>
+    </div>
     <TableModel :columns="columns" :tableData="tableData">
     </TableModel>
   </DetailsPage>
@@ -25,11 +25,10 @@
 
 <script>
 import DetailsPage from "../../../layouts/DetailsPage";
-import HeaderSearch from "../base/HeaderSearch";
 import TableModel from "../base/TableModel";
 export default {
   name: "Session",
-  components: { DetailsPage, HeaderSearch, TableModel },
+  components: { DetailsPage, TableModel },
   data() {
     return {
       columns: [
@@ -136,63 +135,77 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.session-header-left {
+.session-header{
   display: flex;
   align-items: center;
-  height: 55px;
-  padding-left: 24px;
-  flex: auto;
-  border-bottom: 1px solid #eaedf7;
-  line-height: 54px;
-  .blue-btn {
+  justify-content: space-between;
+  height: 56px;
+  margin-bottom: 16px;
+  background: #FFFFFF;
+  box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+  border-radius: 8px;
+  .session-header-left {
     display: flex;
     align-items: center;
-    width: 140px;
-    height: 32px;
-    padding: 0 16px;
-    margin-right: 8px;
-    background: #2373ff;
-    border-radius: 8px;
-    > i {
-      width: 14px;
-      height: 14px;
-      font-size: 12px;
-      font-weight: 600;
-      color: #ffffff;
-      margin-right: 4px;
-      line-height: 14px;
+    height: 55px;
+    padding-left: 24px;
+    flex: auto;
+    line-height: 54px;
+    .blue-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 125px;
+      height: 32px;
+      margin-right: 16px;
+      background: #2373FF;
+      box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
+      border-radius: 4px;
+      cursor: pointer;
+      > i {
+        width: 14px;
+        height: 14px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #ffffff;
+        margin-right: 4px;
+        line-height: 14px;
+      }
+      > div {
+        height: 22px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 22px;
+      }
     }
-    > div {
-      height: 14px;
-      font-size: 14px;
-      font-family: PingFangSC-Semibold, PingFang SC;
-      font-weight: 600;
-      color: #ffffff;
-      line-height: 14px;
+    .total {
+        height: 20px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #97A0C3;
+        line-height: 20px;
     }
   }
-  .total {
-    height: 20px;
-    font-size: 14px;
-    font-family: PingFangSC-Regular, PingFang SC;
-    font-weight: 400;
-    color: #97a0c3;
-    line-height: 20px;
-  }
-}
   .session-search {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 267px;
-    height: 56px;
+    width: 300px;
+    height: 32px;
+    padding-left: 12px;
+    margin-right: 24px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid #97A0C3;
     > i {
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
       color: #7c88b1;
-      font-size: 24px;
+      font-size: 20px;
       margin-right: 8px;
-      line-height: 24px;
+      line-height: 20px;
     }
     > span {
       font-size: 14px;
@@ -201,4 +214,7 @@ export default {
       color: #97a0c3;
     }
   }
+}
+
+
 </style>

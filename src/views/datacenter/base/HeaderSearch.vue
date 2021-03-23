@@ -29,10 +29,9 @@ export default {
   align-items: center;
   height: 56px;
   margin-bottom: 4px;
-  // background: #ffffff;
-  // box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-  // border-radius: 12px;
-  // border: 1px solid #eaedf7;
+  // background: #FFFFFF;
+  // box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+  // border-radius: 8px;
   .left{
     flex:auto
   }

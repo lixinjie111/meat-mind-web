@@ -90,10 +90,10 @@ export default {
 .vs-table {
   height: 302px;
   padding: 16px 24px;
-  background: #ffffff #d8d8d8;
-  box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-  border-radius: 12px;
-  border: 1px solid #eaedf7;
+  background: #ffffff;
+  box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+  border-radius: 8px;
+  // border: 1px solid #eaedf7;
     .table-header{
         display: flex;
         align-items: center;
@@ -119,11 +119,11 @@ export default {
         .nodata{
             width: 48px;
             height: 48px;
-            border-radius: 24px;
+            border-radius: 4px;
             background: #C6CBDE;
-            border: 1px solid #FFFFFF;
+            // border: 1px solid #FFFFFF;
             text-align: center;
-            line-height: 46px;
+            line-height: 48px;
             >i{
                 font-size: 26px;
                 color: #FFFFFF;
@@ -131,7 +131,7 @@ export default {
         }
         .no-tip{
             height: 20px;
-            margin-top: 8px;
+            margin-top: 4px;
             font-size: 14px;
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;

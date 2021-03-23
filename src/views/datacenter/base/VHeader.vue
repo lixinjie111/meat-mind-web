@@ -52,28 +52,35 @@ export default {
 <style scoped lang="scss">
 .datacenter-model-search {
   height: 155px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   background: #ffffff;
-  box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-  border-radius: 12px;
-  border: 1px solid #eaedf7;
+  box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+  border-radius: 8px;
+  // border: 1px solid #eaedf7;
   .s-header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     height: 55px;
+    margin: 0 24px;
     border-bottom: 1px solid #EAEDF7;
     .search{
       display: flex;
       align-items: center;
-      justify-content: center;
+      // justify-content: center;
+      width: 300px;
+      height: 32px;
+      padding-left: 12px;
+      background: #FFFFFF;
+      border-radius: 4px;
+      border: 1px solid #97A0C3;
       > i {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
         color: #7c88b1;
-        font-size: 24px;
+        font-size: 20px;
         margin-right: 8px;
-        line-height: 24px;
+        line-height: 20px;
       }
       > span {
         font-size: 14px;
@@ -81,10 +88,6 @@ export default {
         font-weight: 400;
         color: #97a0c3;
       }
-    }
-    .search {
-      width: 230px;
-      height: 55px;
     }
   }
 
@@ -94,6 +97,9 @@ export default {
     align-items: center;
     height: 100px;
     padding: 0 24px;
+   ::v-deep .ivu-select-selection{
+      color: #97A0C3;
+    }    
     .show-status,.mid,.target-filter{
       margin-right: 24px;
       >p{
@@ -112,32 +118,33 @@ export default {
       bottom: 24px;
       display: flex;
       .left-btn{
-        width: 48px;
-        height: 28px;
+        width: 76px;
+        height: 32px;
         margin-right: 8px;
-        box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8), -2px -2px 7px 0px #FFFEFA;
-        border-radius: 8px;
-        border: 1px solid #C6CBDE;
+        // box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.8), -2px -2px 7px 0px #FFFEFA;
+        border-radius: 4px;
+        border: 1px solid #97A0C3;
         cursor: pointer;
-        font-size: 12px;
+        font-size: 14px;
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
-        color: #636E95;
-        line-height: 26px;
+        color: #242F57;
+        line-height: 30px;
         text-align: center;
       }
       .right-btn{
-        width: 48px;
-        height: 28px;
+        width: 76px;
+        height: 32px;
         background: #2373FF;
-        border-radius: 8px;
-        border: 1px solid #2373FF;
+        border-radius: 4px;
+        box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
+        // border: 1px solid #2373FF;
         cursor: pointer;
-        font-size: 12px;
+        font-size: 14px;
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
         color: #FFFFFF;
-        line-height: 26px;
+        line-height: 32px;
         text-align: center;
       }
     }
