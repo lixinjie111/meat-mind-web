@@ -118,7 +118,7 @@ export default {
         font-size: 14px;
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
-        color: #97a0c3;
+        color: #636E95;
       }
     }
     .search {
@@ -135,6 +135,9 @@ export default {
         font-size: 20px;
         margin-right: 8px;
         line-height: 20px;
+      }
+      >span{
+        color: #97A0C3;
       }
       // border-right: 2px solid #eaedf7;
       // border-bottom: 1px solid #EAEDF7;
