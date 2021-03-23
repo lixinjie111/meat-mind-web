@@ -6,7 +6,7 @@
         class="it_con_item"
         v-for="(item, index) in zObj.zbList"
         :key="index"
-        :class="{'remb':zObj.id == 6 || zObj.id == 7 || zObj.id == 8 || zObj.id == 9 || zObj.id == 10}"
+        :class="{'remb':item.id == 6 || item.id == 7 || item.id == 8 || item.id == 9 || item.id == 10,'remmr':item.id == 5}"
       >
         <div class="it_con_item_top">
           <div class="it_til">{{ item.til }}</div>
@@ -55,7 +55,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     .it_con_item {
-      width: 16.5%;
+      margin-right: 120px;
       margin-bottom: 67px;
       .it_con_item_top {
         width: 100%;
@@ -96,6 +96,9 @@ export default {
     }
     .remb{
         margin-bottom: 0px;
+    }
+    .remmr{
+        margin-right: 0px;
     }
   }
 }
