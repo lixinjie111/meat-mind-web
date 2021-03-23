@@ -10,7 +10,7 @@
       >
         <div class="it_con_item_top">
           <div class="it_til">{{ item.til }}</div>
-          <img src="" alt="" srcset="" class="help" />
+          <i class="iconfont iconbangzhu"></i>
         </div>
         <div class="it_con_item_bom">
           <div class="it_num">{{ item.num }}</div>
@@ -69,9 +69,8 @@ export default {
           line-height: 22px;
           margin-right: 6px;
         }
-        .help {
-          display: block;
-          width: 14px;
+        .iconbangzhu{
+            font-size: 14px;
         }
       }
       .it_con_item_bom {

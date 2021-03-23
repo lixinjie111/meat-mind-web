@@ -31,7 +31,7 @@
         <Half
           lTitle="每周新增用户"
           subDateL="2020.12.01-2020.12.31"
-          rTitle="每日新增用户"
+          rTitle="月新增用户"
           subDateR="2020.12.01-2020.12.31"
         >
           <lineS
