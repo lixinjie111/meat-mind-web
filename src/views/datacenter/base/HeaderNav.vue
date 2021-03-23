@@ -12,11 +12,11 @@
           <span>下载数据采集需求文档</span>
         </div>
       </slot>
-      <div class="filter">
+      <!-- <div class="filter">
         <i class="iconfont iconfilter"></i>
         <span>筛选</span>
         <i class="iconfont iconup"></i>
-      </div>
+      </div> -->
     </div>
     <div class="filter-container">
       <div class="show-status">
@@ -115,7 +115,7 @@ export default {
       // width: 201px;
       height: 55px;
       margin-left: 24px;
-      margin-right: 16px;
+      // margin-right: 16px;
       // border-right: 2px solid #eaedf7;
       // border-bottom: 1px solid #EAEDF7;
       > i {

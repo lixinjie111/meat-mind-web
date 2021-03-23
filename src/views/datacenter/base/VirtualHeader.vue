@@ -17,11 +17,11 @@
           <Checkbox v-model="single">我创建的</Checkbox>
         </div>
       </slot>
-      <div class="filter">
+      <!-- <div class="filter">
         <i class="iconfont iconfilter"></i>
         <span>筛选</span>
         <i class="iconfont iconup"></i>
-      </div>
+      </div> -->
     </div>
     <div class="filter-container">
       <div class="show-status">
@@ -146,9 +146,12 @@ export default {
       // width: 111px;
       height: 55px;
       margin-left: 24px;
-      margin-right: 16px;
+      // margin-right: 16px;
       // border-right: 2px solid #eaedf7;
       // border-bottom: 1px solid #EAEDF7;
+      ::v-deep .ivu-checkbox-wrapper{
+        margin-right: 0;
+      }
     }
     .filter{
       // width: 117px;
