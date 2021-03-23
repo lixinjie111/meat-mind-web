@@ -55,7 +55,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     .it_con_item {
-      margin-right: 120px;
+      margin-right: 100px;
       margin-bottom: 67px;
       .it_con_item_top {
         width: 100%;
