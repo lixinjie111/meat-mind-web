@@ -24,7 +24,7 @@
 		    <div class="right_btn" @click="formatUser">
 			    <!--<img :src="manIcon" class="manIcon"/>-->
 			    <i class="iconfont iconyonghuline" ></i>
-			    <span>自定义客群</span>
+			    <span class="zdyku">自定义客群</span>
 		    </div>
 	    </div>
 	    <div class="yhdx_container">
@@ -55,12 +55,12 @@
                 <div class="yl_rig">娱乐</div>
               </div> -->
               <div class="gz_container">
-                <div class="yl_lef" style="background: #A49DFA;"></div>
+                <div class="yl_lef" style="background:#F16E84;"></div>
                 <div class="yl_rig">工作</div>
               </div>
               <div class="sp_container">
-                <div class="yl_lef" style="background: #2EB1FF;"></div>
-                <div class="yl_rig">视频</div>
+                <div class="yl_lef" style="background: #1DCEC3;"></div>
+                <div class="yl_rig">沟通</div>
               </div>
               <div class="xw_container">
                 <div class="yl_lef" style="background: #017AFF;"></div>
@@ -108,12 +108,12 @@
                 <div class="yl_rig">沟通</div>
               </div> -->
               <div class="xs_container">
-                <div class="yl_lef" style="background: #F383FF;"></div>
+                <div class="yl_lef" style="background: #FDD352;"></div>
                 <div class="yl_rig">学术</div>
               </div>
               <div class="sp_container">
                 <div class="yl_lef" style="background: #2EB1FF;"></div>
-                <div class="yl_rig">视频</div>
+                <div class="yl_rig">交流</div>
               </div>
               <!-- <div class="gz_container">
                 <div class="yl_lef" style="background: #A49DFA;"></div>
@@ -158,11 +158,11 @@
           <div class="rig_area" ref="rig_area3">
             <div class="rig_area_lef">
               <div class="gt_container">
-                <div class="yl_lef" style="background: #36D67B;"></div>
+                <div class="yl_lef" style="background: #1DCEC3;"></div>
                 <div class="yl_rig">沟通</div>
               </div>
               <div class="gz_container">
-                <div class="yl_lef" style="background: #A49DFA;"></div>
+                <div class="yl_lef" style="background:#F16E84;"></div>
                 <div class="yl_rig">工作</div>
               </div>
               <div class="xw_container">
@@ -212,15 +212,15 @@
                 <div class="yl_rig">沟通</div>
               </div> -->
               <div class="gz_container">
-                <div class="yl_lef" style="background: #A49DFA;"></div>
-                <div class="yl_rig">工作</div>
+                <div class="yl_lef" style="background:#77E1DB;"></div>
+                <div class="yl_rig">沟通</div>
               </div>
               <div class="sp_container">
-                <div class="yl_lef" style="background: #2EB1FF;"></div>
-                <div class="yl_rig">视频</div>
+                <div class="yl_lef" style="background: #7BABFF;"></div>
+                <div class="yl_rig">交流</div>
               </div>
-              <div class="yl_container">
-                <div class="yl_lef" style="background: #FF9502;"></div>
+             <div class="yl_container">
+                <div class="yl_lef" style="background: #FE774B;"></div>
                 <div class="yl_rig">娱乐</div>
               </div>
               <!-- <div class="xw_container">
@@ -270,15 +270,15 @@
                 <div class="yl_rig">沟通</div>
               </div> -->
               <div class="sp_container">
-                <div class="yl_lef" style="background: #2EB1FF;"></div>
-                <div class="yl_rig">视频</div>
+                <div class="yl_lef" style="background: #1DCEC3;"></div>
+                <div class="yl_rig">沟通</div>
               </div>
               <div class="yl_container">
-                <div class="yl_lef" style="background: #FF9502;"></div>
+                <div class="yl_lef" style="background: #FE774B;"></div>
                 <div class="yl_rig">娱乐</div>
               </div>
               <div class="gz_container">
-                <div class="yl_lef" style="background: #A49DFA;"></div>
+                <div class="yl_lef" style="background:#F16E84;"></div>
                 <div class="yl_rig">工作</div>
               </div>
               <!-- <div class="xs_container">
@@ -583,7 +583,7 @@
       </div>
 
       <!--触达用户媒介-->
-     <!--<chuDa></chuDa>-->
+     <!-- <chuDa></chuDa> -->
 	    <div class="top_title_container top_title_container_margin_top">
 		    <div class="left_text">
 			    <div class="left_title_text">
@@ -1373,36 +1373,36 @@ export default {
         if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
           this.vDxtxt2 = '查看动线详情';
-          cenDom2.style="background-color:inherit;";
+          cenDom2.style="background-color:inherit;border-right:none;";
           rDom2.style="background-color:inherit;";  
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
           this.vDxtxt3 = '查看动线详情';
-          cenDom3.style="background-color:inherit;";
+          cenDom3.style="background-color:inherit;border-right:none;";
           rDom3.style="background-color:inherit;"; 
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
           this.vDxtxt4 = '查看动线详情';
-          cenDom4.style="background-color:inherit;";
+          cenDom4.style="background-color:inherit;border-right:none;";
           rDom4.style="background-color:inherit;"; 
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
           this.vDxtxt5 = '查看动线详情';
-          cenDom5.style="background-color:inherit;";
+          cenDom5.style="background-color:inherit;border-right:none;";
           rDom5.style="background-color:inherit;"; 
         }
         this.ifShowDx1 = !this.ifShowDx1;
         if(this.ifShowDx1){
           this.vDxtxt1 = '收起';
-          cenDom.style="background-color:#EAEDF7;";  
+          cenDom.style="background-color:#EAEDF7;border-right: #FFFFFF 1px solid;";  
           rDom.style="background-color:#EAEDF7;";
         }
         else{
           this.vDxtxt1 = '查看动线详情';
-          cenDom.style="background-color:inherit;";  
+          cenDom.style="background-color:inherit;border-right:none;";  
           rDom.style="background-color:inherit;";
         }
       }
@@ -1410,36 +1410,36 @@ export default {
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
           this.vDxtxt1 = '查看动线详情';
-          cenDom1.style="background-color:inherit;";
+          cenDom1.style="background-color:inherit;border-right:none;";
           rDom1.style="background-color:inherit;";  
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
           this.vDxtxt3 = '查看动线详情';
-          cenDom3.style="background-color:inherit;";
+          cenDom3.style="background-color:inherit;border-right:none;";
           rDom3.style="background-color:inherit;";  
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
           this.vDxtxt4 = '查看动线详情';
-          cenDom4.style="background-color:inherit;";
+          cenDom4.style="background-color:inherit;border-right:none;";
           rDom4.style="background-color:inherit;";  
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
           this.vDxtxt5 = '查看动线详情';
-          cenDom5.style="background-color:inherit;";
+          cenDom5.style="background-color:inherit;border-right:none;";
           rDom5.style="background-color:inherit;";  
         }
         this.ifShowDx2 = !this.ifShowDx2;
         if(this.ifShowDx2){
           this.vDxtxt2 = '收起';
-          cenDom.style="background-color:#EAEDF7;";  
+          cenDom.style="background-color:#EAEDF7;border-right: #FFFFFF 1px solid;";  
           rDom.style="background-color:#EAEDF7;";
         }
         else{
           this.vDxtxt2 = '查看动线详情';
-          cenDom.style="background-color:inherit;";  
+          cenDom.style="background-color:inherit;border-right:none;";  
           rDom.style="background-color:inherit;";
         }
       }
@@ -1447,36 +1447,36 @@ export default {
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
           this.vDxtxt1 = '查看动线详情';
-          cenDom1.style="background-color:inherit;";
+          cenDom1.style="background-color:inherit;border-right:none;";
           rDom1.style="background-color:inherit;";  
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
           this.vDxtxt2 = '查看动线详情';
-          cenDom2.style="background-color:inherit;";
+          cenDom2.style="background-color:inherit;border-right:none;";
           rDom2.style="background-color:inherit;";  
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
           this.vDxtxt4 = '查看动线详情';
-          cenDom4.style="background-color:inherit;";
+          cenDom4.style="background-color:inherit;border-right:none;";
           rDom4.style="background-color:inherit;";  
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
           this.vDxtxt5 = '查看动线详情';
-          cenDom5.style="background-color:inherit;";
+          cenDom5.style="background-color:inherit;border-right:none;";
           rDom5.style="background-color:inherit;";  
         }
         this.ifShowDx3 = !this.ifShowDx3;
         if(this.ifShowDx3){
           this.vDxtxt3 = '收起';
-          cenDom.style="background-color:#EAEDF7;";  
+          cenDom.style="background-color:#EAEDF7;border-right: #FFFFFF 1px solid;";  
           rDom.style="background-color:#EAEDF7;";
         }
         else{
           this.vDxtxt3 = '查看动线详情';
-          cenDom.style="background-color:inherit;";  
+          cenDom.style="background-color:inherit;border-right:none;";  
           rDom.style="background-color:inherit;";
         }
       }
@@ -1484,36 +1484,36 @@ export default {
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
           this.vDxtxt1 = '查看动线详情';
-          cenDom1.style="background-color:inherit;";
+          cenDom1.style="background-color:inherit;border-right:none;";
           rDom1.style="background-color:inherit;";  
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
           this.vDxtxt2 = '查看动线详情';
-          cenDom2.style="background-color:inherit;";
+          cenDom2.style="background-color:inherit;border-right:none;";
           rDom2.style="background-color:inherit;";  
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
           this.vDxtxt3 = '查看动线详情';
-          cenDom3.style="background-color:inherit;";
+          cenDom3.style="background-color:inherit;border-right:none;";
           rDom3.style="background-color:inherit;";  
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
           this.vDxtxt5 = '查看动线详情';
-          cenDom5.style="background-color:inherit;";
+          cenDom5.style="background-color:inherit;border-right:none;";
           rDom5.style="background-color:inherit;";  
         }
         this.ifShowDx4 = !this.ifShowDx4;
         if(this.ifShowDx4){
           this.vDxtxt4 = '收起';
-          cenDom.style="background-color:#EAEDF7;";  
+          cenDom.style="background-color:#EAEDF7;border-right: #FFFFFF 1px solid;";  
           rDom.style="background-color:#EAEDF7;";
         }
         else{
           this.vDxtxt4 = '查看动线详情';
-          cenDom.style="background-color:inherit;";  
+          cenDom.style="background-color:inherit;border-right:none;";  
           rDom.style="background-color:inherit;";
         }
       }
@@ -1521,36 +1521,36 @@ export default {
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
           this.vDxtxt1 = '查看动线详情';
-          cenDom1.style="background-color:inherit;";
+          cenDom1.style="background-color:inherit;border-right:none;";
           rDom1.style="background-color:inherit;";  
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
           this.vDxtxt2 = '查看动线详情';
-          cenDom2.style="background-color:inherit;";
+          cenDom2.style="background-color:inherit;border-right:none;";
           rDom2.style="background-color:inherit;";  
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
           this.vDxtxt3 = '查看动线详情';
-          cenDom3.style="background-color:inherit;";
+          cenDom3.style="background-color:inherit;border-right:none;";
           rDom3.style="background-color:inherit;";  
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
           this.vDxtxt4 = '查看动线详情';
-          cenDom4.style="background-color:inherit;";
+          cenDom4.style="background-color:inherit;border-right:none;";
           rDom4.style="background-color:inherit;";  
         }
         this.ifShowDx5 = !this.ifShowDx5;
         if(this.ifShowDx5){
           this.vDxtxt5 = '收起';
-          cenDom.style="background-color:#EAEDF7;";  
+          cenDom.style="background-color:#EAEDF7;border-right: #FFFFFF 1px solid;";  
           rDom.style="background-color:#EAEDF7;";
         }
         else{
           this.vDxtxt5 = '查看动线详情';
-          cenDom.style="background-color:inherit;";  
+          cenDom.style="background-color:inherit;border-right:none;";  
           rDom.style="background-color:inherit;";
         }
       }
@@ -2350,6 +2350,13 @@ export default {
 			.iconyonghuline{
 				margin-right: 6px;
 			}
+      .zdyku{
+        font-size: 14px;
+				font-family: PingFangSC-Regular, PingFang SC;
+				font-weight: 400;
+				color: #FFFFFF;
+				text-align: center;
+      }
 		}
 		.right_select{
 			/*width: 300px;*/
@@ -2531,6 +2538,9 @@ export default {
       }
       .cen_area1,.rig_area1{
         background-color:#EAEDF7;
+      }
+      .cen_area1{
+        border-right: #FFFFFF 1px solid;
       }
     }
     .echarts_container1 {

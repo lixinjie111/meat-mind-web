@@ -341,27 +341,44 @@
                     <div class="tfys_input_con">
                       <i :class="['iconfont','iconjine']" class="cmon"></i>
                       <Poptip trigger="focus">
-                          <Input placeholder="请输入价格" style="width:200px" />
+                          <Input v-model="tfys1" placeholder="请输入价格" style="width:200px" />
                           <div slot="content">{{ formatNumber }}</div>
                       </Poptip>
                     </div>
                     <div class="tf_time">选择投放媒介</div>
                     <div class="tfmjchoice_con">
                       <div class="meijie_item" :class="{'actBor':itm.check}" v-for="(itm,inx) in meijieList" :key="inx">
-                        <Checkbox v-model="itm.check"></Checkbox>
+                        <Checkbox v-model="itm.check" @on-change="changeNews(itm)"></Checkbox>
                         <img :src="itm.srcIm" class="srcIMG">
                         <div class="qudtil">{{itm.til}}</div>
                       </div>
                     </div>
-                    <div class="tf_time">投放建议及预期</div>
-                    <div class="radio_txt_con">
-                      <div class="radio_cir"></div>
-                      <div class="radio_txt">小红书</div>
+                    <div class="tf_time tfjy1">投放建议</div>
+                    <div class="touf_pie">
+                      <div class="touf_pie_con">
+                        <div class="touf_pie_til">投放金额</div>
+                        <div class="touf_pie_con_con">
+                          <PieEcharts1 :colorList="$fjData.colorList" :myData="chuData"></PieEcharts1>
+                        </div>
+                      </div>
                     </div>
-                    <div class="yqxg_con_con">
-                      <div class="yqxg_con_con_item" v-for="(itm,inx) in yqxgList1" :key="inx">
-                        <div class="yqxg_til">{{itm.til}}</div>
-                        <div class="yqxg_num_desc yqxg_num_desc1">{{itm.desc}}</div>
+                    <div class="tfjyq_con">
+                      <div class="yqxg_con_con yqxg_con_con1">
+                        <div class="yqxg_con_con2">
+                          <div class="yqxg_con_con1_tilm">投放时间</div>
+                          <div class="yqxg_con_con1_con" v-for="(item,index) in rangetList" :key="index">
+                            <div class="time_rang">{{item.time}}</div>
+                            <div class="meij_name">{{item.name}}</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tfjyq_con">
+                      <div class="yqxg_con_con">
+                        <div class="yqxg_con_con_item" v-for="(itm,inx) in yqxgList1" :key="inx">
+                          <div class="yqxg_til">{{itm.til}}</div>
+                          <div class="yqxg_num_desc yqxg_num_desc1">{{itm.desc}}</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -419,6 +436,7 @@
 </template>
 
 <script>
+    import PieEcharts1 from '@/components/echarts/common/pie/PieEcharts1';
     const allBqitm = {
     xhs: {
       icon: require("../../assets/img/yhhx/xhs.png")
@@ -744,38 +762,35 @@
                  {
                    til:'投放成本',
                    desc:'¥2300/千人'
-                 },
-                 {
-                   til:'投放金额',
-                   desc:'¥9,900'
-                 },
-                 {
-                   til:'投放时间',
-                   desc:'22:00 - 22:30'
-                 },
+                 }
                ],
                ifShowtffatj:true,
-               tfys:'15000元',
+               tfys:'10000元',
+               tfys1:'25000元',
                meijieList:[
                  {
                    check:true,
                    srcIm:require("../../assets/img/yhhx/xhs.png"),
-                   til:'小红书'
-                 },
-                 {
-                   check:true,
-                   srcIm:require("../../assets/img/yhhx/tt.png"),
-                   til:'头条'
+                   til:'小红书',
+                   num:6000
                  },
                  {
                    check:false,
+                   srcIm:require("../../assets/img/yhhx/tt.png"),
+                   til:'头条',
+                   num:3000
+                 },
+                 {
+                   check:true,
                    srcIm:require("../../assets/img/yhhx/ks.png"),
-                   til:'快手'
+                   til:'快手',
+                   num:4000
                  },
                  {
                    check:false,
                    srcIm:require("../../assets/img/yhhx/weib1.png"),
-                   til:'微博'
+                   til:'微博',
+                   num:4000
                  }
                ],
                fanganObj:{
@@ -843,15 +858,30 @@
                  }
                },
                condiList:[],
-
                nlList:[],
                xingbieList:[],
                hasChList:[],
                xiaoFList:[],
                huyiList:[],
-               zhYList:[]
-
+               zhYList:[],
+               chuData:{
+                name: ['快手', '小红书'],
+                value: [4000, 6000]
+               },
+               rangetList:[
+                 {
+                   time:'19:00 - 20:30',
+                   name:'小红书'
+                 },
+                 {
+                   time:'22:00 - 22:30',
+                   name:'快手'
+                 }
+               ]
             }
+        },
+        components:{
+          PieEcharts1
         },
         mounted(){
             var path = [
@@ -899,6 +929,46 @@
             }
         },
         methods:{
+            changeNews(){
+              var that = this;
+              var myDataList = this.meijieList;
+              var nameList = [];
+              var valueList = [];
+              this.rangetList = [];
+              for(var i=0;i<myDataList.length;i++){
+                if(myDataList[i].check){
+                  nameList.push(myDataList[i].til);
+                  valueList.push(myDataList[i].num);
+                }
+              }
+              nameList.forEach((item,index)=>{
+                if(item == '小红书'){
+                  this.rangetList.push({
+                    name:'小红书',
+                    time:'19:00 - 20:30'
+                  });
+                }
+                else if(item == '快手'){
+                  this.rangetList.push({
+                    name:'快手',
+                    time:'22:00 - 22:30'
+                  });
+                }
+                else if(item == '头条'){
+                  this.rangetList.push({
+                    name:'头条',
+                    time:'20:00 - 21:00'
+                  });
+                }
+                else if(item == '微博'){
+                  this.rangetList.push({
+                    name:'微博',
+                    time:'11:30 - 13:30'
+                  });
+                }
+              });
+              this.chuData = { name:nameList, value:valueList };
+            },
             clickPerTab(arg){
               var conDom = this.$refs.person_con_con;
               let actLef = require('../../assets/img/yhhx/actLef.png');
@@ -907,7 +977,7 @@
                 conDom.style=`background-image: url(${actLef});background-size: cover;`;
               }
               else{
-                conDom.style=`background-image: url(${actrig});background-size: cover;`;
+                conDom.style=`background-image: url(${actrig});background-size: contain;background-repeat:no-repeat;`;
               }
               
               this.ifShowtffatj = arg;
@@ -2141,6 +2211,72 @@
                   font-weight: 400;
                   color: #242F57;
                 }
+                .tfjy1{
+                  margin-top: 24px;
+                }
+                .touf_pie{
+                  width: 100%;
+                  margin-top: 10px;
+                  padding: 0 16px;
+                  box-sizing: border-box;
+                  background-color: #FFFFFF;
+                  .touf_pie_con{
+                    width: 100%;
+                    background: #F0F8FF;
+                    border-radius: 4px;
+                    .touf_pie_til{
+                      width: 100%;
+                      padding: 7px 10px;
+                      box-sizing: border-box;
+                      font-size: 12px;
+                      font-family: PingFangSC-Regular, PingFang SC;
+                      font-weight: 400;
+                      color: #636E95;
+                    }
+                    .touf_pie_con_con{
+                      margin-top: 3px;
+                      width: 100%;
+                      height: 220px;
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                    }
+                  }
+                }
+                .yqxg_con_con{
+                  display: flex;
+                  justify-content: space-between;
+                  flex-wrap: wrap;
+                  padding: 0px 16px;
+                  box-sizing: border-box;
+                  .yqxg_con_con_item{
+                    width: 48%;
+                    margin-bottom:8px;
+                    background: #F0F8FF;
+                    border-radius: 4px;
+                    padding: 7px 10px;
+                    box-sizing: border-box;
+                    .yqxg_til{
+                      width: 100%;
+                      font-size: 11px;
+                      font-family: PingFangSC-Regular, PingFang SC;
+                      font-weight: 400;
+                      color: #636E95;
+                    }
+                    .yqxg_num_desc{
+                      font-size: 16px;
+                      font-family: PingFangSC-Medium, PingFang SC;
+                      font-weight: 500;
+                      color: #2373FF;
+                    }
+                    .yqxg_num_desc1{
+                      font-size: 14px;
+                      font-family: PingFangSC-Medium, PingFang SC;
+                      font-weight: 500;
+                      color: #2373FF;
+                    }
+                  }
+                }
                 .tfmjchoice_con{
                   width: 100%;
                   padding: 0 16px;
@@ -2223,59 +2359,105 @@
                     }
                   }
                 }
-                .radio_txt_con{
+                .tfjyq_con{
                   width: 100%;
-                  display: flex;
-                  align-items: center;
-                  padding: 0 16px;
-                  box-sizing: border-box;
-                  margin-bottom: 7px;
-                  .radio_cir{
-                    display: block;
-                    width: 8px;
-                    height: 8px;
-                    background: #2373FF;
-                    border-radius: 50%;
-                    margin-right: 7px;
-                  }
-                  .radio_txt{
-                    font-size: 14px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    color: #242F57;
-                  }
-                }
-                .yqxg_con_con{
-                  display: flex;
-                  justify-content: space-between;
-                  flex-wrap: wrap;
-                  padding: 0px 16px;
-                  box-sizing: border-box;
-                  .yqxg_con_con_item{
-                    width: 48%;
-                    margin-bottom:8px;
-                    background: #F0F8FF;
-                    border-radius: 4px;
-                    padding: 7px 10px;
+                  background-color: #FFFFFF;
+                  .radio_txt_con{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    padding: 0 16px;
                     box-sizing: border-box;
-                    .yqxg_til{
-                      width: 100%;
-                      font-size: 11px;
+                    margin-bottom: 7px;
+                    .radio_cir{
+                      display: block;
+                      width: 8px;
+                      height: 8px;
+                      background: #2373FF;
+                      border-radius: 50%;
+                      margin-right: 7px;
+                    }
+                    .radio_txt{
+                      font-size: 14px;
                       font-family: PingFangSC-Regular, PingFang SC;
                       font-weight: 400;
-                      color: #636E95;
+                      color: #242F57;
                     }
-                    .yqxg_num_desc{
-                      font-size: 16px;
-                      font-family: PingFangSC-Medium, PingFang SC;
-                      font-weight: 500;
-                      color: #2373FF;
+                  }
+                  .yqxg_con_con{
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    padding: 0px 16px;
+                    padding-bottom: 17px;
+                    box-sizing: border-box;
+                    .yqxg_con_con_item{
+                      width: 48%;
+                      margin-bottom:8px;
+                      background: #F0F8FF;
+                      border-radius: 4px;
+                      padding: 7px 10px;
+                      box-sizing: border-box;
+                      .yqxg_til{
+                        width: 100%;
+                        font-size: 11px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+                      }
+                      .yqxg_num_desc{
+                        font-size: 16px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #2373FF;
+                      }
+                      .yqxg_num_desc1{
+                        font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #2373FF;
+                      }
                     }
-                    .yqxg_num_desc1{
-                      font-size: 14px;
-                      font-family: PingFangSC-Medium, PingFang SC;
-                      font-weight: 500;
-                      color: #2373FF;
+                  }
+                  .yqxg_con_con1{
+                    width: 100%;
+                    padding: 7px 16px;
+                    box-sizing: border-box;
+                    .yqxg_con_con2{
+                      width: 100%;
+                      background: #F0F8FF;
+                      border-radius: 4px;
+                      padding: 7px 16px;
+                      box-sizing: border-box;
+                      .yqxg_con_con1_tilm{
+                        font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+                        line-height: 22px;
+                        margin-right: 2px;
+                      }
+                      .yqxg_con_con1_con{
+                        width: 100%;
+                        margin-bottom: 7px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        .time_rang{
+                          font-size: 14px;
+                          font-family: PingFangSC-Medium, PingFang SC;
+                          font-weight: 500;
+                          color: #2373FF;
+                          line-height: 22px;
+                        }
+                        .meij_name{
+                          font-size: 12px;
+                          font-family: PingFangSC-Medium, PingFang SC;
+                          font-weight: 500;
+                          color: #242F57;
+                          line-height: 22px;
+                        }
+                      }
                     }
                   }
                 }
