@@ -5,7 +5,7 @@
         <div>显示满足如下行为模式的用户留存情况：</div>
         <div>
           设置关联属性
-          <Switch v-model="showRelation" size="small" style="margin-left: 16px;"/>
+          <i-switch v-model="showRelation" size="small" style="margin-left: 16px;"/>
         </div>
       </div>
       <FilterEvent title="初始行为是" show-event></FilterEvent>
