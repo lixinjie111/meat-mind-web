@@ -90,6 +90,9 @@
           yAxis: {
             type: 'value',
             name: this.yName,
+            nameTextStyle:{
+              color:'#636E95'  
+            },
             axisLabel: {
               textStyle: {
                 color: "#97A0C3",   //这里用参数代替了

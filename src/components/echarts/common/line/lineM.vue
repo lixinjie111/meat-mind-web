@@ -107,6 +107,9 @@ export default {
             yAxis: {
                 type: 'value',
                 name: this.yName,
+				nameTextStyle:{
+					color:'#636E95'  
+				},
                 axisLabel: {
 					formatter: '{value} ',
 					textStyle: {

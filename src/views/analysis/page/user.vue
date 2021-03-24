@@ -59,14 +59,12 @@
         >
           <barM
             slot="echarts"
-            x-name="数量"
             y-name="人数"
             :colorList="$ljEData.colorList"
             :myData="$ljEData.ljBox13"
           />
           <barM
             slot="rightEcharts"
-            x-name="数量"
             y-name="人数"
             :colorList="$ljEData.colorList"
             :myData="$ljEData.ljBox14"
@@ -85,7 +83,6 @@
           />
           <barM
             slot="rightEcharts"
-            x-name="数量"
             y-name="人数"
             :colorList="$ljEData.colorList"
             :myData="$ljEData.ljBox16"

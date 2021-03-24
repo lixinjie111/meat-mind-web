@@ -44,7 +44,6 @@
           <barM
             slot="echarts"
             id="box57"
-            x-name="数量"
             y-name="人数"
             :colorList="$ljEData.colorList"
             :myData="$ljEData.ljBox3"
@@ -112,7 +111,6 @@
     <Card title="用户旅程">
       <Full title="用户生命周期">
         <barM
-          x-name="数量"
           y-name="人数"
           :colorList="$ljEData.colorList"
           :myData="$ljEData.ljBox8"
