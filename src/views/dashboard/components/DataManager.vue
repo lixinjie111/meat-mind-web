@@ -22,7 +22,7 @@
             <div class="overview-top flex-start">
                 <div class="card1">
                     <div>
-                        <i class="iconfont iconfenxiline"></i>
+                        <i class="iconfont iconfenxiline1"></i>
                     </div>
                     <div>
                         <p>数据源统计</p>
@@ -280,7 +280,7 @@
                 margin-right: 24px;
                 width: 72px;
                 height: 72px;
-                box-shadow: 6px 6px 12px 0px rgba(99, 110, 149, 0.2), -6px -6px 12px 0px #ffffff;
+                //box-shadow: 6px 6px 12px 0px rgba(99, 110, 149, 0.2), -6px -6px 12px 0px #ffffff;
                 border: 1px solid #ffffff;
                 border-radius: 50%;
             }
@@ -440,7 +440,7 @@
                 justify-content: space-between;
 
                 > div {
-                    background: #FFFFFF;
+                    /*background: #FFFFFF;*/
                     border-radius: 8px;
                     border: 1px solid #EAEDF7;
 
@@ -451,6 +451,7 @@
                         height: 48px;
                         line-height: 48px;
                         background: #F6F9FF;
+                        border-radius: 8px 8px 0 0;
 
                         > p {
                             font-size: 14px;
@@ -466,7 +467,7 @@
 
                     > ul {
                         background: #FFFFFF;
-                        border-radius: 8px;
+                        border-radius: 0 0 8px 8px;
 
                         > li {
                             display: flex;
@@ -561,7 +562,7 @@
                     width: 357px;
                     height: 112px;
                     background: #FFFFFF;
-                    border-radius: 4px;
+                    border-radius: 8px;
                     border: 1px solid #EAEDF7;
 
                     &:nth-child(3n+3) {

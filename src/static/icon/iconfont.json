@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "20583452",
+      "name": "转化",
+      "font_class": "zhuanhua",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "20583453",
+      "name": "分析line",
+      "font_class": "fenxiline",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
+      "icon_id": "20583350",
+      "name": "图表",
+      "font_class": "tubiao",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "20583351",
+      "name": "雷达图",
+      "font_class": "leidatu",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "20583352",
+      "name": "柱状图",
+      "font_class": "zhuzhuangtu",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "20583353",
+      "name": "折线图",
+      "font_class": "zhexiantu",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
       "icon_id": "20562660",
       "name": "添加场景line",
       "font_class": "tianjiachangjingline",
@@ -116,13 +158,6 @@
       "font_class": "shijianline",
       "unicode": "e649",
       "unicode_decimal": 58953
-    },
-    {
-      "icon_id": "20382640",
-      "name": "转化",
-      "font_class": "zhuanhua",
-      "unicode": "e64a",
-      "unicode_decimal": 58954
     },
     {
       "icon_id": "20340768",

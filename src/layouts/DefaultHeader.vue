@@ -198,13 +198,14 @@
                     width: 40px;
                     height: 40px;
                     margin-right: 8px;
-                    box-shadow: 4px 4px 8px 0px rgba(36, 47, 87, 0.2);
+                    //box-shadow: 4px 4px 8px 0px rgba(36, 47, 87, 0.2);
                     border-radius: 20px;
                     border: 1px solid #FFFFFF;
                 }
 
                 span {
                     display: inline-block;
+                    margin-right: 8px;
                     height: 26px;
                     font-size: 18px;
                     font-family: PingFangSC-Regular, PingFang SC;
