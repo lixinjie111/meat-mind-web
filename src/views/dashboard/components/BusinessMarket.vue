@@ -372,7 +372,7 @@
                         </ul>
                     </div>
                     <div class="left-item">
-                        <p>追加关联词汇</p>
+                        <p class="mt">追加关联词汇</p>
                         <ul>
                             <li>礼品</li>
                         </ul>
@@ -1843,18 +1843,24 @@
 
                 .left-item {
                     > p {
-                        margin-bottom: 16px;
+                        margin-bottom: 6px;
                         font-size: 14px;
                         font-family: PingFangSC-Regular, PingFang SC;
                         font-weight: 400;
                         color: #97A0C3;
+
+                        &.mt {
+                            margin-top: 16px;
+                        }
                     }
 
                     > ul {
                         > li {
+                            height: 32px;
+                            line-height: 32px;
                             display: inline-block;
                             vertical-align: middle;
-                            padding: 4px 16px;
+                            padding: 0 16px;
                             margin-right: 8px;
                             background: #ECF3FF;
                             border-radius: 8px;
