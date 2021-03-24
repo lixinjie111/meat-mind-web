@@ -203,7 +203,7 @@
             </div>
           </div>
           <div class="cen_area" ref="cen_area4">
-            <img :src="bjsbzImgTime" alt="" srcset="" class="cen_areaImg">
+            <img :src="bpyzImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
           <div class="rig_area" ref="rig_area4">
             <div class="rig_area_lef">
@@ -1191,11 +1191,13 @@ export default {
       qyggImg:require("../../assets/img/yhhx/qyggimg1.png"),
       bpyzImg:require("../../assets/img/yhhx/beipiaoImg.png"),
       zyzyImg:require("../../assets/img/yhhx/ziyouImg.png"),
-      bjsbzImgTime:require("../../assets/img/yhhx/bjsbzImg.png"),
-      yxqnImgTime:require("../../assets/img/yhhx/yxqnImg.png"),
-      qyggImgTime:require("../../assets/img/yhhx/qyggImg.png"),
-      bpyzImgTime:require("../../assets/img/yhhx/bpyzImg.png"),
-      zyzyImgTime:require("../../assets/img/yhhx/zyzyImg.png"),
+
+      bjsbzImgTime:require("../../assets/img/yhhx/yhdx1.png"),
+      yxqnImgTime:require("../../assets/img/yhhx/yhdx2.png"),
+      qyggImgTime:require("../../assets/img/yhhx/yhdx3.png"),
+      bpyzImgTime:require("../../assets/img/yhhx/yhdx4.png"),
+      zyzyImgTime:require("../../assets/img/yhhx/yhdx5.png"),
+
       ifShowDx1:true,
       vDxtxt1:'收起',
       ifShowDx2:false,
@@ -2403,7 +2405,7 @@ export default {
       background: #FFFFFF;
       box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
       border-radius: 8px;
-      border: 1px solid #EAEDF7;
+      // border: 1px solid #EAEDF7;
       .lef_area{
         width: 193px;
         height: 100%;
@@ -2445,7 +2447,7 @@ export default {
         }
         .lef_area_bom{
           width: 100%;
-          height: 45px;
+          height: 47px;
           background: #DDE9FF;
           display: flex;
           align-items: center;
