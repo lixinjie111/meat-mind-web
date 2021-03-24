@@ -62,6 +62,7 @@ export default {
 			},
 			legend: {
 				bottom:0,
+				icon:"circle",
 				data:this.myData.legName,
 			},
             grid: {

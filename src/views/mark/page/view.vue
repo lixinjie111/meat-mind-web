@@ -88,7 +88,7 @@
                     <div class="sub-title">品牌在全域信息传播中的影响力指数</div>
                     <div class="selectNav">
                         <div class="selectDiv selectLf">
-                        <div class="selectLabel"> 声量类型：</div>
+                        <div class="selectLabel"> 声量类型</div>
                             <Select v-model="formItem.select" size="small" @on-change="selectYin">
                                 <Option value="2">全部</Option>
                                 <Option value="0">仅正面声量</Option>
@@ -96,7 +96,7 @@
                             </Select>
                         </div>
                         <div class="selectDiv selectRt">
-                            <div class="selectLabel">对标比较：</div>
+                            <div class="selectLabel">对标比较</div>
                             <Select v-model="formItem.pinpai" size="small" multiple  :max-tag-count="0" @on-change="selectPai2">
                                 <Option value="0">加多宝</Option>
                                 <Option value="1">王老吉</Option>
@@ -114,7 +114,7 @@
             <div class="row-second">
                 <div class="second-box">
                     <div class="title">品牌市场销售额排名（百万元）</div>
-                    <div class="sub-title mb">品牌市场销售额排名（百万元）</div>
+                    <div class="sub-title mb">分地域细分市场占有率排名</div>
                     <div class="tags">
                         <div class="tagList">
                             <div class="tag" v-for="item in tagList" :key="item">{{item}}
@@ -1381,7 +1381,7 @@ export default {
                 flex-direction: column;
                 width: 50%;
                 padding: 16px;
-                border-radius: 4px;
+                border-radius: 8px;
                 border: 1px solid #EAEDF7;
                 &:nth-child(1){
                     margin-right:24px
@@ -1458,6 +1458,7 @@ export default {
         }
         .row-second{
             .second-box{
+                position: relative;
                 height: 394px;
                 .echartBox{
                     height: calc(100% - 80px);
@@ -1466,6 +1467,9 @@ export default {
                     margin-bottom: 8px;
                 }
                 .tags{
+                    position: absolute;
+                    top: 16px;
+                    right: 16px;
                     display: flex;
                     justify-content: space-between;
                     .operate{
@@ -1521,6 +1525,7 @@ export default {
                                 img{
                                     width: 100%;
                                     height: 100%;
+                                    border-radius:50%;
                                     display: block;
                                 }
                             }
@@ -1582,7 +1587,7 @@ export default {
             position: relative;
             padding: 16px;
             margin-bottom:16px;
-            border-radius: 4px;
+            border-radius: 8px;
             border: 1px solid #EAEDF7;
             &:last-child{
                 margin-bottom: 0;

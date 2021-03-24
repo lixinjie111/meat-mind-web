@@ -19,7 +19,8 @@ export default {
   },
   methods: {
     initEcharts() {
-      let option = this.defaultOption();
+      let option = {}
+      option = this.defaultOption();
       let myEchart = this.$echarts.init(document.getElementById(this.id));
       myEchart.setOption(option,true);
       window.addEventListener("resize", () => {
@@ -48,7 +49,6 @@ export default {
                 fontSize: 10,
               },
               formatter: (params)=>{
-                // console.log(params)
                 if(params.dataIndex==9){
                   return params.name
                 }else if(params.dataIndex == 3){

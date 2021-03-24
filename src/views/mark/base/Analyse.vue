@@ -59,7 +59,7 @@ export default {
       justify-content: center;
       width: 52px;
       height: 58px;
-      margin-right: 16px;
+      margin:auto 0;
       background: #FFFFFF;
       border-radius: 8px;
       >img{
@@ -71,6 +71,7 @@ export default {
       // width: calc(100% - 92px);
       display: flex;
       flex-direction: column;
+      margin-left: 16px;
       > p {
         height: 22px;
         margin-bottom: 4px;

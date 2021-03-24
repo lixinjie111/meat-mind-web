@@ -35,7 +35,7 @@ export default {
     height: 100%;
     padding: 16px;
     background: #ffffff;
-    border-radius: 4px;
+    border-radius: 8px;
     border: 1px solid #eaedf7;
     &.all {
       width: 100%;

@@ -65,7 +65,7 @@
             <div class="l-item-label">常用标签</div>
             <div class="item-list" v-for="(item, index) in target" :key="index">
               <div class="item-con">
-                <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
+                <div class="name" :class="{'act':item==cur}">{{ item }}</div>
                 <i class="iconfont iconleft-arrow21"></i>
               </div>
             </div>
@@ -74,7 +74,7 @@
             <div class="l-item-label">属性维度</div>
             <div class="item-list" v-for="(item, index) in property" :key="index" >
               <div class="item-con">
-                <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
+                <div class="name">{{ item }}</div>
                 <i class="iconfont iconleft-arrow21"></i>
               </div>
             </div>
@@ -83,7 +83,7 @@
             <div class="l-item-label">用户行为</div>
             <div class="item-list" v-for="(item, index) in behavior" :key="index" >
               <div class="item-con">
-                <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
+                <div class="name">{{ item }}</div>
                 <i class="iconfont iconleft-arrow21"></i>
               </div>
             </div>
@@ -91,8 +91,8 @@
         </div>
         <div class="target-right">
           <div class="r-item">
-            <Checkbox v-model="age"></Checkbox>
-            <div class="r-item-label">年龄</div>
+            <!-- <Checkbox v-model="age"></Checkbox> -->
+            <div class="r-item-label">年龄:</div>
             <div class="arr">
               <div class="ele"
                 ref="ninlinItem"
@@ -104,8 +104,8 @@
             </div>
           </div>
           <div class="r-item">
-            <Checkbox v-model="sex"></Checkbox>
-            <div class="r-item-label">性别</div>
+            <!-- <Checkbox v-model="sex"></Checkbox> -->
+            <div class="r-item-label">性别:</div>
             <div class="arr">
               <div
                 class="ele"
@@ -119,8 +119,8 @@
             </div>
           </div>
           <div class="r-item">
-            <Checkbox v-model="hasChild"></Checkbox>
-            <div class="r-item-label">有小孩</div>
+            <!-- <Checkbox v-model="hasChild"></Checkbox> -->
+            <div class="r-item-label">有小孩:</div>
             <div class="arr">
               <div
                 class="ele"
@@ -134,8 +134,8 @@
             </div>
           </div>
           <div class="r-item">
-            <Checkbox v-model="xiaofei"></Checkbox>
-            <div class="r-item-label">消费水平</div>
+            <!-- <Checkbox v-model="xiaofei"></Checkbox> -->
+            <div class="r-item-label">消费水平:</div>
             <div class="arr">
               <div
                 class="ele"
@@ -149,8 +149,8 @@
             </div>
           </div>
           <div class="r-item">
-            <Checkbox v-model="mery"></Checkbox>
-            <div class="r-item-label">婚姻</div>
+            <!-- <Checkbox v-model="mery"></Checkbox> -->
+            <div class="r-item-label">婚姻:</div>
             <div class="arr">
               <div
                 class="ele"
@@ -164,8 +164,8 @@
             </div>
           </div>
           <div class="r-item">
-            <Checkbox v-model="jd"></Checkbox>
-            <div class="r-item-label">职业</div>
+            <!-- <Checkbox v-model="jd"></Checkbox> -->
+            <div class="r-item-label">职业:</div>
             <div class="arr">
               <div
                 class="ele"
@@ -243,11 +243,10 @@ export default {
       for (var i = 0; i < itemDom.length; i++) {
         if (i == arg) {
           itemDom[i].style = "background: #2373FF;color: #FFFFFF";
+        }else {
+          //如果需要多选去掉else
+          itemDom[i].style = "color: #636E95;background: none;";
         }
-        // else {
-        //   //如果需要多选去掉else
-        //   itemDom[i].style = "color: #636E95;background: none;";
-        // }
       }
     },
     clear(){
@@ -498,11 +497,11 @@ export default {
               font-size: 14px;
               font-family: PingFangSC-Regular, PingFang SC;
               font-weight: 400;
-              color: #333333;
+              color: #C6CBDE;
               line-height: 14px;
-              cursor: pointer;
               &.act{
                 color: #2373FF;
+                cursor: pointer;
               }
             }
             > i {

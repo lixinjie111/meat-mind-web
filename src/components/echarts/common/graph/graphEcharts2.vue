@@ -22,7 +22,8 @@ export default {
   },
   methods: {
     initEcharts() {
-      let option = this.defaultOption();
+      let option = {}
+      option = this.defaultOption();
       let myEchart = this.$echarts.init(document.getElementById(this.id));
       myEchart.setOption(option,true);
       window.addEventListener("resize", () => {
@@ -36,6 +37,7 @@ export default {
         arr.sort((a,b)=>{
             return b.symbolSize - a.symbolSize
         })
+        arr = JSON.parse(JSON.stringify(arr))
         let links = []
         for(let i = 0;i < arr.length;i++){
             if(arr[i].symbolSize>12){arr[i].symbolSize -= 8}
