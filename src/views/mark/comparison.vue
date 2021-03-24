@@ -48,15 +48,15 @@
                 tabList: [
                     {
                         name: '品牌受众分析',
-                        disabled: true
+                        disabled: false
                     },
                     {
                         name: '品牌舆情洞察',
-                        disabled: false
+                        disabled: true
                     },
                     {
                         name: '行业态势分析',
-                        disabled: false
+                        disabled: true
                     }
                 ]
             }

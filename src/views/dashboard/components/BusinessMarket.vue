@@ -72,9 +72,9 @@
                     <div class="right-item">
                         <div class="right-item-top">
                             <div class="top">
-                                <div class="top-icon red"><i class="iconfont iconpinpaihuaxiang"></i></div>
+                                <div class="top-icon green"><i class="iconfont iconpinpaihuaxiang"></i></div>
                                 <div class="top-title">
-                                    <p class="p-red">32</p>
+                                    <p class="p-green">32</p>
                                     <p>品牌评价</p>
                                 </div>
                             </div>
@@ -184,71 +184,74 @@
                         </div>
                     </div>
                 </div>
-                <Card title="营销内容方案">
-                    <span slot="left" class="sub-title">|  预期销量增长16%</span>
-                    <div class="group-content flex">
-                        <div class="left">
-                            <p>制作以<span>汉方</span>、<span>懒人随身饮</span>和<span>健康茶饮</span>为主题的营销内容</p>
-                            <p>北京上班族，时间和空间制约影响较大，信息获取窗口集中，对于含有“健康”属性的产品营销较为敏感并有着强主观判断力，品牌需要精准把握营销机会，确保营销内容的可信度和高传播力。</p>
-                            <div>查看营销内容方案库</div>
-                        </div>
-                        <div class="right-content">
-                            <img src="../../../assets/img/dashboard/market/group-content@2x.png"/>
-                        </div>
-                    </div>
-                </Card>
-                <Card title="渠道投放方案">
-                    <span slot="left" class="sub-title">|  预期销量增长56%</span>
-                    <div class="group-content flex-start">
-                        <div class="left">
-                            <p>在抖音“<span>健康生活</span>”频道，通过品牌签约的KOL进行品牌内容广告投放</p>
-                            <p>北京上班族在通勤路上与工作休息时段使用抖音频率高，从互动情况分析主要是为了缓解紧张情绪，适时推送相关营销内容易于被接受。</p>
-                            <div>查看KOL带货详情</div>
-                        </div>
-                        <div class="right-top">
-                            <p>快消品类带货达人TOP3</p>
-                            <div class="right-top-item flex">
-                                <div>
-                                    <img src="../../../assets/img/dashboard/market/head1@2x.png"/>
-                                    <div>
-                                        <p>李子柒</p>
-                                        <p>粉丝数：5428.8w | 作品数：718</p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <img src="../../../assets/img/dashboard/market/star@2x.png"/>
-                                    <span>4.99 高</span>
-                                </div>
+                <template class="time-line" v-for="(item,index) in groupList"
+                          v-if="groupActive == index">
+                    <Card title="营销内容方案" :key="index">
+                        <span slot="left" class="sub-title">|  预期销量增长{{item.market.num}}%</span>
+                        <div class="group-content flex">
+                            <div class="left">
+                                <p v-html="item.market.title"></p>
+                                <p>{{item.market.desc}}</p>
+                                <div class="disabled">查看营销内容方案库</div>
                             </div>
-                            <div class="right-top-item flex" style="background: #F4F7FC;">
-                                <div>
-                                    <img src="../../../assets/img/dashboard/market/head2@2x.png"/>
-                                    <div>
-                                        <p>疯产姐妹</p>
-                                        <p>粉丝数：3608.3w | 作品数：111</p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <img src="../../../assets/img/dashboard/market/star@2x.png"/>
-                                    <span>4.86 高</span>
-                                </div>
-                            </div>
-                            <div class="right-top-item flex">
-                                <div>
-                                    <img src="../../../assets/img/dashboard/market/head3@2x.png"/>
-                                    <div>
-                                        <p>浪胃仙</p>
-                                        <p>粉丝数：3811.7w | 作品数：83</p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <img src="../../../assets/img/dashboard/market/star@2x.png"/>
-                                    <span>4.74 高</span>
-                                </div>
+                            <div class="right-content">
+                                <img src="../../../assets/img/dashboard/market/group-content@2x.png"/>
                             </div>
                         </div>
-                    </div>
-                </Card>
+                    </Card>
+                    <Card title="渠道投放方案" :key="index">
+                        <span slot="left" class="sub-title">|  预期销量增长{{item.channel.num}}%</span>
+                        <div class="group-content flex-start">
+                            <div class="left">
+                                <p v-html="item.channel.title"></p>
+                                <p>{{item.channel.desc}}</p>
+                                <div @click="toMedia">查看KOL带货详情</div>
+                            </div>
+                            <div class="right-top">
+                                <p>快消品类带货达人TOP3</p>
+                                <div class="right-top-item flex">
+                                    <div>
+                                        <img src="../../../assets/img/dashboard/market/head1@2x.png"/>
+                                        <div>
+                                            <p>李子柒</p>
+                                            <p>粉丝数：5428.8w | 作品数：718</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/img/dashboard/market/star@2x.png"/>
+                                        <span>4.99 高</span>
+                                    </div>
+                                </div>
+                                <div class="right-top-item flex" style="background: #F4F7FC;">
+                                    <div>
+                                        <img src="../../../assets/img/dashboard/market/head2@2x.png"/>
+                                        <div>
+                                            <p>疯产姐妹</p>
+                                            <p>粉丝数：3608.3w | 作品数：111</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/img/dashboard/market/star@2x.png"/>
+                                        <span>4.86 高</span>
+                                    </div>
+                                </div>
+                                <div class="right-top-item flex">
+                                    <div>
+                                        <img src="../../../assets/img/dashboard/market/head3@2x.png"/>
+                                        <div>
+                                            <p>浪胃仙</p>
+                                            <p>粉丝数：3811.7w | 作品数：83</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <img src="../../../assets/img/dashboard/market/star@2x.png"/>
+                                        <span>4.74 高</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </Card>
+                </template>
             </div>
         </div>
         <div class="market-card">
@@ -613,6 +616,16 @@
                                 value: '2056次'
                             }
                         ],
+                        market: {
+                           num: 16,
+                           title: `制作以<span style="color: #2373FF;">汉方、懒人随身饮</span>和<span style="color: #2373FF;">健康茶饮</span>为主题的营销内容`,
+                           desc: "客群主体多为北京上班族，时间和空间制约影响较大，信息获取窗口集中，对于含有“健康”属性的产品营销较为敏感并有着强主观判断力，品牌需要精准把握营销机会，确保营销内容的可信度和高传播力。"
+                        },
+                        channel: {
+                            num: 39,
+                            title: `在抖音<span style="color: #2373FF;">健康生活</span>频道，通过品牌签约的KOL进行品牌内容广告投放`,
+                            desc: "客群在通勤路上与工作休息时段使用抖音频率高，从互动情况分析主要是为了缓解紧张情绪，适时推送相关营销内容易于被接受。"
+                        },
                         timeImg: require("../../../assets/img/dashboard/market/timeline1@2x.png")
                     },
                     // {
@@ -769,6 +782,16 @@
                                 value: '1755次'
                             }
                         ],
+                        market: {
+                            num: 23,
+                            title: `制作以<span style="color: #2373FF;">新型草本配方</span>、<span style="color: #2373FF;">每周优惠套餐</span>和<span style="color: #2373FF;">Z世代口味健康茶饮</span>为主题的营销内容`,
+                            desc: "研学青年，消费能力因素制约影响相对较大，对价格较为敏感，看重试错成本，对于含有“减脂”“中草药”属性的产品营销存在负向主观认知，但有意愿尝试并有着效果预期，品牌需要把握营销内容的丰富度，提升品牌说服力和传播持续性。"
+                        },
+                        channel: {
+                            num: 49,
+                            title: `于晚间<span style="color: #2373FF;">18:00-24:00</span>，在<span style="color: #2373FF;">小红书运动达人</span>频道，通过品牌签约的KOL进行品牌内容广告投放`,
+                            desc: "客群中关注“燃脂”、“运动”等话题的人较多，适时推送相关营销内容易于培育品牌口碑，实现消费人群裂变。"
+                        },
                         timeImg: require("../../../assets/img/dashboard/market/timeline2@2x.png")
                     },
                     {
@@ -847,6 +870,16 @@
                                 value: '212次'
                             }
                         ],
+                        market: {
+                            num: 18,
+                            title: `制作以<span style="color: #2373FF;">汉方</span>、<span style="color: #2373FF;">中医</span>和<span style="color: #2373FF;">健康茶饮</span>为主题的营销内容`,
+                            desc: "企业高管，时间制约影响较大，心智模式比较固定，对于“健康”类饮品营销主观判断力强，但尝试意愿强烈，品牌需要精准把握营销机会，确保营销内容的可信度和产品的可靠性。"
+                        },
+                        channel: {
+                            num: 33,
+                            title: `于晚间<span style="color: #2373FF;">21:00-24:00</span>，在<span style="color: #2373FF;">今日头条养生</span>频道，通过品牌营销软文和健康茶饮产品科研文章，实现品牌产品理念的高频曝光`,
+                            desc: "客群中关注“健康”、“养生”、“茶饮”等话题的人较多，适时推送相关营销内容易于提升目标消费人群对于品牌的兴趣度。"
+                        },
                         timeImg: require("../../../assets/img/dashboard/market/timeline3@2x.png")
                     },
                     {
@@ -925,6 +958,16 @@
                                 value: '371次'
                             }
                         ],
+                        market: {
+                            num: 28,
+                            title: `制作以<span style="color: #2373FF;">奋斗</span>、<span style="color: #2373FF;">积极生活</span>为主题的营销内容`,
+                            desc: "北漂一族，情绪波动性大，动线细分度高，由于生活、工作压力的多元性导致其对于能够减压和带来正向情感的产品服务有极高期望值，品牌需要规避负面元素，放大产品服务的正能量和情感影响力通过实际期望值差触发该圈层消费者的奖赏机制带来愉悦感。"
+                        },
+                        channel: {
+                            num: 42,
+                            title: `于早<span style="color: #2373FF;">6:00-8:00和晚20:00-23:00</span>，在<span style="color: #2373FF;">求职类、生活类</span>的应用或频道，通过短视频的形式投放品牌营销内容`,
+                            desc: "客群中关注正向情感故事等话题的人较多，讲述品牌消费者“奋斗”、“积极生活”的生活观念，驱动消费者产生“美好、期望”的品牌联想，可以为品牌带来更强的场景化消费。"
+                        },
                         timeImg: require("../../../assets/img/dashboard/market/timeline4@2x.png")
                     },
                     {
@@ -1003,12 +1046,25 @@
                                 value: '6712次'
                             }
                         ],
+                        market: {
+                            num: 31,
+                            title: `制作以<span style="color: #2373FF;">健康生活</span>为主题的营销内容`,
+                            desc: "自由职业，时间、空间制约较小，动线复杂度高，情感波动随营销内容影响较大，对不同品牌产品有明确的优劣区分，形成固化心智并难以改变，因此品牌需要精准抓住营销机会窗口，向消费者传递正向优质品牌内容。"
+                        },
+                        channel: {
+                            num: 37,
+                            title: `于<span style="color: #2373FF;">10:00-14:00和18:00-23:00</span>，在<span style="color: #2373FF;">抖音、Bilibili、网易云</span>等媒介，通过短视频的形式投放品牌营销内容`,
+                            desc: "客群中身份为编剧、音乐人、动漫作者的人居多，以品牌“健康生活”内核价值、为消费者带来健康补给的品牌愿景进行推广，可以为品牌带来更强的场景化消费。"
+                        },
                         timeImg: require("../../../assets/img/dashboard/market/timeline5@2x.png")
                     }
                 ]
             }
         },
         methods: {
+            toMedia() {
+                this.$router.push({ name:'media'});
+            },
             groupPre(index) {
                 if (index == 0) {
                     this.groupActive = this.groupList.length - 1;
@@ -1055,17 +1111,18 @@
 
         .market-card {
             .title {
-                margin: 24px 0 16px;
+                margin: 32px 0 16px;
 
                 .left {
                     > p {
+                        height: 24px;
                         font-size: 18px;
                         font-family: PingFangSC-Medium, PingFang SC;
                         font-weight: 500;
                         color: #242F57;
+                        line-height: 24px;
 
                         &:nth-child(2) {
-                            margin-top: 12px;
                             font-size: 14px;
                             font-family: PingFangSC-Regular, PingFang SC;
                             font-weight: 400;
@@ -1098,6 +1155,7 @@
                 width: 396px;
                 height: 415px;
                 background: #ffffff;
+                box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
                 border-radius: 8px;
                 text-align: center;
 
@@ -1143,6 +1201,10 @@
                         color: #FF4C60!important;
                     }
 
+                    .p-green {
+                        color: #1DCEC3!important;
+                    }
+
                     .right-item-top {
                         padding: 24px;
                         min-width: 228px;
@@ -1181,11 +1243,11 @@
                                     }
                                 }
 
-                                &.red {
-                                    background: rgba(254, 223, 225, .3);
+                                &.green {
+                                    background: rgba(223,248,246, .3);
 
                                     > i {
-                                        color: #FF4C60;
+                                        color: #1DCEC3;
                                     }
                                 }
                             }
@@ -1539,7 +1601,12 @@
                         font-size: 14px;
                         font-family: PingFangSC-Medium, PingFang SC;
                         font-weight: 500;
-                        color: #2373FF
+                        color: #2373FF;
+                        cursor: pointer;
+
+                        &.disabled {
+                            color: #C6CBDE;
+                        }
                     }
                 }
 

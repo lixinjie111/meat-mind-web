@@ -658,7 +658,7 @@
                 console.log(itemDom,'itemDom')
             },
             expandCond(){
-                this.ifShowCon = true;
+                this.ifShowCon = !this.ifShowCon;
                 this.nlList = [];
                 this.xingbieList = [];
                 this.hasChList = [];

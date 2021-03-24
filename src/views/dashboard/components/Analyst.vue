@@ -124,7 +124,7 @@
         </div>
     </div>
     <div class="xit_tab_container">
-      <Tab :tab-list="['系统默认看板','自定义看板1','自定义看板2']"></Tab>
+      <TabD :tab-list="tabList"></TabD>
     </div>
     <div class="pinpai_container">
       <div class="title_container">
@@ -334,16 +334,26 @@
 import vCard0 from "@/components/common/card0";
 import vCard1 from "@/components/common/card1";
 import vCard2 from "@/components/common/card2";
-import Tab from "@/components/Tab";
+import TabD from "@/components/TabD";
 import PieOne1 from '@/components/echarts/common/pie/PieOne1';
 import PieOne2 from '@/components/echarts/common/pie/PieOne2';
 
 var dayjs = require('dayjs');
 export default {
   name: "Analyst",
-  components: { vCard0, vCard1,vCard2,Tab,PieOne1,PieOne2 },
+  components: { vCard0, vCard1,vCard2,TabD,PieOne1,PieOne2 },
   data() {
     return {
+      tabList:[
+          {
+              name: '系统默认看板',
+              disabled: false
+          },
+          {
+              name: '暂无其他看板',
+              disabled: true
+          }
+      ],
       guideList: [
         {
           tilIcon: require("../../../assets/img/dashboard/newGif.png"),

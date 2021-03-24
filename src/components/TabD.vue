@@ -1,7 +1,7 @@
 <template>
     <div class="tabs-container">
         <template v-for="(item,index) in tabList">
-            <div class="disabled" v-if="!item.disabled" :key="index">{{item.name}}</div>
+            <div class="disabled" v-if="item.disabled" :key="index">{{item.name}}</div>
             <div :class="tabActive == index + 1 ? 'active' : ''" @click="changeTab(index+1)" :key="index" v-else>
                 {{item.name}}
             </div>

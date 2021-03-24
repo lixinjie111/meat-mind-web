@@ -1031,7 +1031,7 @@
                 this.huyiList = [];
                 this.zhYList = [];
                 this.condiList = [];
-                this.ifShowCon = true;
+                this.ifShowCon = !this.ifShowCon;
             },
             hideMe(){
                 this.ifShowMb = false;

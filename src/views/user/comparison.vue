@@ -48,19 +48,19 @@
                 tabList: [
                     {
                         name: '基础画像',
-                        disabled: true
+                        disabled: false
                     },
                     {
                         name: '行为分析',
-                        disabled: false
+                        disabled: true
                     },
                     {
                         name: '心智分析',
-                        disabled: false
+                        disabled: true
                     },
                     {
                         name: '生命周期分析',
-                        disabled: false
+                        disabled: true
                     }
                 ]
             }
