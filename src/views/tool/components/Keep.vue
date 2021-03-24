@@ -1,16 +1,14 @@
 <template>
   <div class="fxmx-keep">
       <div class="back" @click="back"></div>
-    <MutableArray :value="conditions" :init-item="initItem" :on-delete="handleDelete">
-      <template #item="itemProps">
-        <FilterCondition v-bind="itemProps"/>
-      </template>
-    </MutableArray>
+    <h2>留存分析</h2>
+    <FilterEvent title="初始行为是"></FilterEvent>
+    <FilterEvent title="后续行为是"></FilterEvent>
   </div>
 </template>
 
 <script>
-  import FilterCondition from '../base/FilterCondition';
+  import FilterEvent from '../base/FilterEvent';
   import MutableArray from '../base/MutableArray';
 
 export default {
@@ -21,14 +19,11 @@ export default {
         initItem: {input: ''},
       }
   },
-  components: {FilterCondition, MutableArray},
+  components: {FilterEvent, MutableArray},
     methods:{
         back(){
             this.$router.push({name:"analysis-tool-model"})
         },
-      handleDelete(index) {
-        this.conditions.splice(index, 1);
-      }
     }
 }
 </script>
