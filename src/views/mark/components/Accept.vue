@@ -26,7 +26,7 @@
             </Half>
             <Half :lTitle="'职业结构'" :rTitle="'教育背景结构'">
                 <PieEcharts3 slot="left" :colorList="$fjData.colorList" :myData="$fjData.box3Data" roseType="radius"></PieEcharts3>
-                <barEcharts slot="right" id="box1" :colorList="$lxjData.colorList" :myData="$lxjData.box1Data"></barEcharts>
+                <barEchartsMark slot="right" id="box1" :colorList="$lxjData.colorList" :myData="$lxjData.box1Data"></barEchartsMark>
             </Half>
             <Half :lTitle="'购买时段及频次'" :rTitle="'常用高频场景'">
                 <lineM slot="left" id="box63" :colorList="$lxjData.colorList" :myData="$lxjData.box63Data"></lineM>
@@ -51,12 +51,13 @@ import RotateChart from '../../../components/echarts/common/custom/RotateChart';
 import MatchEcharts from '../../../components/echarts/common/radar/MatchEcharts';
 import PieEcharts3 from '../../../components/echarts/common/pie/PieEcharts3';
 import barEcharts from '../../../components/echarts/common/bar/barEcharts';
+import barEchartsMark from '../../../components/echarts/common/bar/barEchartsMark';
 import lineM from '../../../components/echarts/common/line/lineM';
 import barCH from '../../../components/echarts/common/bar/barCH';
 
 export default {
     name:"Accept",
-    components:{Analyse,Half,Full,RotateChart,MatchEcharts,PieEcharts3,barEcharts,lineM,barCH},
+    components:{Analyse,Half,Full,RotateChart,MatchEcharts,PieEcharts3,barEcharts,barEchartsMark,lineM,barCH},
     props:{
         title:{
             type:String

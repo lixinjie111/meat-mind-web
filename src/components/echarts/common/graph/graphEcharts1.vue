@@ -19,7 +19,8 @@ export default {
   },
   methods: {
     initEcharts() {
-      let option = this.defaultOption();
+      let option = {} 
+      option = this.defaultOption();
       let myEchart = this.$echarts.init(document.getElementById(this.id));
       myEchart.setOption(option,true);
       window.addEventListener("resize", () => {

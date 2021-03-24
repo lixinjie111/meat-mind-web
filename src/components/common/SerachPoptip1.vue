@@ -100,7 +100,7 @@
             justify-content: center;
             align-items: center;
             width: 84px;
-            height: 28px;
+            height: 24px;
             background: #FFFFFF;
             border-radius: 4px;
             border: 1px solid #97A0C3;

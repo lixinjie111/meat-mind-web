@@ -14,6 +14,7 @@ for(let i=0;i<31;i++){
   chance.push(num2)
   risk.push(num3)
 }
+risk[14] = -0.6
 const linData = {
     colorList: ['#2373FF', '#FE774B', '#1DCEC3', '#F16E84', '#FDD352', '#7BABFF', '#FFAE93', '#77E1DB', '#F6A8B5', '#FEE597', '#BDD5FF', '#FFD7C9', '#BBF1ED', '#FBD4DA', '#FEF1CB', '#FF9F7F'],
     box1Data: {

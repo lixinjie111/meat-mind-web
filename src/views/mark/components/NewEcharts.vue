@@ -27,8 +27,8 @@
                       <span>风险</span>
                   </div>
                   <div class="cur-l-data">
-                      <i class="iconfont iconxiajiang"></i>
-                      <span>-0.98%</span>
+                      <!-- <i class="iconfont iconxiajiang"></i> -->
+                      <!-- <span>-0.98%</span> -->
                   </div>
               </div>
               <p>和其正在凉茶巨头夹缝中迷失，同仁堂与邓老凉茶遭多重考验</p>
@@ -51,8 +51,8 @@
                       <span>机会</span>
                   </div>
                   <div class="cur-l-data">
-                      <i class="iconfont iconshangsheng"></i>
-                      <span>+0.77%</span>
+                      <!-- <i class="iconfont iconshangsheng"></i> -->
+                      <!-- <span>+0.77%</span> -->
                   </div>
               </div>
               <p>【人民网】凉茶“红罐之争”，加多宝广告停用王老吉获赔300万</p>
@@ -67,13 +67,13 @@
               <p>紧跟凉茶行业热度，提高自有品牌曝光和品牌口碑；</p>
           </div>
       </div>
-      <div class="view-container" v-if="seriesName=='风险'">
+      <div class="view-container" v-show="seriesName=='风险'">
           <div class="graph-echarts">
               <div class="gh-echarts-l">
                   <p>传播关系</p>
                   <span>舆论场关系图展示，溯源舆情关键节点</span>
                   <div class="gh-echarts-view">
-                      <graphEcharts id="graph" :graphDatas="$linData.graphData" :colorList="$linData.colorList"></graphEcharts>
+                      <graphEcharts v-if="seriesName=='风险'" id="graph" :graphDatas="$linData.graphData" :colorList="$linData.colorList"></graphEcharts>
                   </div>
               </div>
               <div class="gh-echarts-r">
@@ -93,7 +93,7 @@
                         <div class="gh-sub-desc">【百度百家号】账号“安安科普”转发该篇新浪财经文章；</div>
                     </div>
                     <div class="sub-index-r">
-                        <graphEcharts1 id="graph2" :graphDatas="$linData.graphData1" :curColor="$linData.colorList[1]"></graphEcharts1>
+                        <graphEcharts1 v-if="seriesName=='风险'" id="graph2" :graphDatas="$linData.graphData1" :curColor="$linData.colorList[1]"></graphEcharts1>
                     </div>
                   </div>
                   <div class="sub-bot">
@@ -109,7 +109,7 @@
                         <div class="gh-sub-desc">【知乎】用户“疯狂中医”创建知乎热问：如何评价邓老跌出《2020五大凉茶品牌口碑榜》？</div>
                     </div>
                     <div class="sub-index-r">
-                        <graphEcharts2 id="graph3" :graphDatas="$linData.graphData" :curColor="$linData.colorList[2]"></graphEcharts2>
+                        <graphEcharts2 v-if="seriesName=='风险'" id="graph3" :graphDatas="$linData.graphData" :curColor="$linData.colorList[2]"></graphEcharts2>
                     </div>
                   </div>
                   <div class="sub-bot">
@@ -125,7 +125,7 @@
                         <div class="gh-sub-desc">【抖音】账号“探店北上广”发布“邓老凉茶在京开ins风国潮店”的短视频；</div>
                     </div>
                     <div class="sub-index-r">
-                        <graphEcharts3 id="graph4" :graphDatas="$linData.graphData" :curColor="$linData.colorList[3]"></graphEcharts3>
+                        <graphEcharts3 v-if="seriesName=='风险'" id="graph4" :graphDatas="$linData.graphData" :curColor="$linData.colorList[3]"></graphEcharts3>
                     </div>
                   </div>
                   <div class="sub-bot">
@@ -135,20 +135,20 @@
               </div>
           </div>
       </div>
-      <div class="view-container" v-if="seriesName=='机会'">
+      <div class="view-container" v-show="seriesName=='机会'">
           <div class="graph-echarts">
               <div class="gh-echarts-l">
                   <p>传播关系</p>
                   <span>舆论场关系图展示，溯源舆情关键节点</span>
                   <div class="gh-echarts-view">
-                      <graphEcharts id="graph" :graphDatas="$linData.graphDataChance" :colorList="$linData.colorList"></graphEcharts>
+                      <graphEchartsChance v-if="seriesName=='机会'" id="graph11" :graphDatas="$linData.graphDataChance" :colorList="$linData.colorList"></graphEchartsChance>
                   </div>
               </div>
               <div class="gh-echarts-r">
                   <p>主要传播链路</p>
                   <span>解构单一舆情事件传播链路核心参与者</span>
                   <div class="tree-echarts-view">
-                    <treeEcharts1 id="tree" :colorList="$linData.colorList"></treeEcharts1>
+                    <treeEcharts1 v-if="seriesName=='机会'" id="tree2" :colorList="$linData.colorList"></treeEcharts1>
                   </div>
               </div>
           </div>
@@ -161,7 +161,7 @@
                         <div class="gh-sub-desc">【知乎】账号“猪猪雪源”创建知乎热问：凉茶两大品牌之争，留给后来者的机会还有多少？</div>
                     </div>
                     <div class="sub-index-r">
-                        <graphEcharts1 id="graph2" :graphDatas="$linData.graphDataChance1" :curColor="$linData.colorList[1]"></graphEcharts1>
+                        <graphEchartsChance1 v-if="seriesName=='机会'" id="graph22" :graphDatas="$linData.graphDataChance1" :curColor="$linData.colorList[1]"></graphEchartsChance1>
                     </div>
                   </div>
                   <div class="sub-bot">
@@ -178,7 +178,7 @@
                         <div class="gh-sub-desc">【微博】账号“犀牛财经”发布《中国十大凉茶品牌》的内容；（邓老排名第7）</div>
                     </div>
                     <div class="sub-index-r">
-                        <graphEcharts2 id="graph3" :graphDatas="$linData.graphDataChance" :curColor="$linData.colorList[2]"></graphEcharts2>
+                        <graphEchartsChance2 v-if="seriesName=='机会'" id="graph33" :graphDatas="$linData.graphDataChance" :curColor="$linData.colorList[2]"></graphEchartsChance2>
                     </div>
                   </div>
                   <div class="sub-bot">
@@ -194,7 +194,7 @@
                         <div class="gh-sub-desc">【小红书】多个账号发布“凉茶如何搭配美食”相关话题的笔记；</div>
                     </div>
                     <div class="sub-index-r">
-                        <graphEcharts3 id="graph4" :graphDatas="$linData.graphDataChance" :curColor="$linData.colorList[3]"></graphEcharts3>
+                        <graphEchartsChance3 v-if="seriesName=='机会'" id="graph44" :graphDatas="$linData.graphDataChance" :curColor="$linData.colorList[3]"></graphEchartsChance3>
                     </div>
                   </div>
                   <div class="sub-bot">
@@ -214,14 +214,18 @@ import graphEcharts from "../../../components/echarts/common/graph/graphEcharts"
 import graphEcharts1 from "../../../components/echarts/common/graph/graphEcharts1"
 import graphEcharts2 from "../../../components/echarts/common/graph/graphEcharts2"
 import graphEcharts3 from "../../../components/echarts/common/graph/graphEcharts3"
+import graphEchartsChance from "../../../components/echarts/common/graph/graphEcharts"
+import graphEchartsChance1 from "../../../components/echarts/common/graph/graphEcharts1"
+import graphEchartsChance2 from "../../../components/echarts/common/graph/graphEcharts2"
+import graphEchartsChance3 from "../../../components/echarts/common/graph/graphEcharts3"
 import treeEcharts from "../../../components/echarts/common/tree/treeEcharts"
 import treeEcharts1 from "../../../components/echarts/common/tree/treeEcharts1"
 export default {
     name:"NewEcharts",
-    components:{ScatterEcharts,graphEcharts,graphEcharts1,graphEcharts2,graphEcharts3,treeEcharts,treeEcharts1},
+    components:{ScatterEcharts,graphEcharts,graphEcharts1,graphEcharts2,graphEcharts3,graphEchartsChance,graphEchartsChance1,graphEchartsChance2,graphEchartsChance3,treeEcharts,treeEcharts1},
     data(){
         return {
-            seriesName:'风险'
+            seriesName:'风险',
         }
     },
     methods:{
@@ -285,7 +289,7 @@ export default {
         display: flex;
         height: 114px;
         padding: 16px;
-        border-radius: 4px 4px 0px 0px;
+        border-radius: 8px 8px 0px 0px;
         &.red{
             background: #FEDFE1;
         }
@@ -407,6 +411,7 @@ export default {
 
     .view-container{
          border: 1px solid #ECEFF8;
+         border-radius: 0 0 8px 8px;
         .graph-echarts{
             display: flex;
             height: 300px;

@@ -289,7 +289,7 @@ const lxjEData = {
                 type: 'bar',
                 stack: '总量',
                 barWidth: '10',
-                data: [320, 302, ]
+                data: [ 934, 1290, ]
             },
             {
                 name: '上海',
@@ -329,7 +329,7 @@ const lxjEData = {
                         //barBorderRadius:[30,30,0,0]
                     
                 },
-                data: [ 934, 1290, ]
+                data: [320, 302, ]
             },
         ]
     },
@@ -544,7 +544,7 @@ const lxjEData = {
                 type: 'bar',
                 stack: '总量',
                 barWidth: '10',
-                data: [920, 302, ]
+                data: [ 602, 1290, ]
             },
             {
                 name: '上海',
@@ -572,7 +572,7 @@ const lxjEData = {
                 type: 'bar',
                 barWidth: '10',
                 stack: '总量',
-                data: [820, 832,]
+                data: [620, 632,]
             },
             {
                 name: '杭州',
@@ -584,7 +584,7 @@ const lxjEData = {
                         //barBorderRadius:[30,30,0,0]
                     
                 },
-                data: [ 934, 1290, ]
+                data: [420,  934]
             },
         ]
     },
@@ -1049,52 +1049,52 @@ const lxjEData = {
                 name: '成单数',
                 type: 'line',
                 data: [2440, 2755, 2310, 3405, 3100, 2440, 2755,],
-                areaStyle: {
+                // areaStyle: {
                     
-                        color:{
-                            type: 'linear',
-                            x: 0,
-                            y: 0,
-                            x2: 0,
-                            y2: 1,
-                            colorStops: [{
-                                    offset: 0,
-                                    color: "#4D94FF",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "#ffffff",
-                                }
-                            ],
-                            global: false // 缺省为 false
-                        }
+                //         color:{
+                //             type: 'linear',
+                //             x: 0,
+                //             y: 0,
+                //             x2: 0,
+                //             y2: 1,
+                //             colorStops: [{
+                //                     offset: 0,
+                //                     color: "#4D94FF",
+                //                 },
+                //                 {
+                //                     offset: 1,
+                //                     color: "#ffffff",
+                //                 }
+                //             ],
+                //             global: false // 缺省为 false
+                //         }
                     
-                },
+                // },
             },
             {
                 name: '搜索数',
                 type: 'line',
-                areaStyle: {
+                // areaStyle: {
                     
-                        color:{
-                            type: 'linear',
-                            x: 0,
-                            y: 0,
-                            x2: 0,
-                            y2: 1,
-                            colorStops: [{
-                                    offset: 0,
-                                    color: "#4D94FF",
-                                },
-                                {
-                                    offset: 1,
-                                    color: "#ffffff",
-                                }
-                            ],
-                            global: false // 缺省为 false
-                        }
+                //         color:{
+                //             type: 'linear',
+                //             x: 0,
+                //             y: 0,
+                //             x2: 0,
+                //             y2: 1,
+                //             colorStops: [{
+                //                     offset: 0,
+                //                     color: "#4D94FF",
+                //                 },
+                //                 {
+                //                     offset: 1,
+                //                     color: "#ffffff",
+                //                 }
+                //             ],
+                //             global: false // 缺省为 false
+                //         }
                     
-                },
+                // },
                 data: [ 8900,10500,9730,13000,12850,8990,10800 ]
             },
         ]
