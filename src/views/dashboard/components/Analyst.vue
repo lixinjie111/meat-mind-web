@@ -86,7 +86,7 @@
                 <!-- <span style="color: #2373FF;">系统默认看板</span> -->
             </div>
             <div class="title_1rig">
-                <div class="btn_container">
+                <div class="btn_container" @click="toManage">
                     <!-- <img :src="tvIcon" class="btn_download" /> -->
                     <span class="btntxt btntxt1">看板管理</span>
                 </div>
@@ -967,6 +967,11 @@ export default {
     };
   },
   methods:{
+      toManage() {
+          this.$router.push({
+              path:'/dashboard/manage'
+          });
+      },
       goPinpai(){
         this.$router.push({
             path:'/mark'
