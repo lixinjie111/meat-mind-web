@@ -3,10 +3,10 @@
     <Select v-model="condition" style="width: 200px">
       <Option v-for="(item,index) in conditionOptions" :value="index+1" :key="index+1">{{ item }}</Option>
     </Select>
-    <Select v-model="compare" style="width: 100px">
+    <Select v-model="compare" style="width: 100px; margin-left: 16px;">
       <Option v-for="item in compareOptions" :value="item.value" :key="item.value">{{ item.label }}</Option>
     </Select>
-    <Input v-model="input" style="width: 200px"/>
+    <Input v-model="input" style="width: 200px; margin-left: 16px;"/>
   </div>
 </template>
 
@@ -71,7 +71,7 @@
           default: 0
         },
         input: {
-          default: '111'
+          default: ''
         },
     }
   }
@@ -79,8 +79,10 @@
 
 <style scoped>
 .condition {
-  width: 520px;
+  /*width: 500px;*/
   display: flex;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
+  height: 42px;
+  align-items: start;
 }
 </style>

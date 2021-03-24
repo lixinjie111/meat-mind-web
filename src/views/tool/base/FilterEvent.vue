@@ -1,15 +1,16 @@
 <template>
-  <div>
-    <div>显示满足如下行为模式的用户留存情况：</div>
-    <div>初始行为是
-      <Select v-model="event" style="width: 100px">
+  <div class="filter-event">
+    <div class="event">
+      {{title}}
+      <Select v-model="event" style="width: 200px; margin-left: 16px;" v-if="showEvent">
         <Option v-for="(item,index) of events" :value="index+1" :key="index+1">{{item}}</Option>
       </Select>
-      <Button @click="handleAddCondition">
+      <Button @click="handleAddCondition" style="margin-left: 16px; background: #FFFFFF; border-radius: 4px; border: 1px solid #97A0C3;">
         <i class="iconfont icontianjia"></i>
-        筛选条件</Button>
+        {{buttonText}}</Button>
+      <span style="margin-left: 16px;">{{suffix}}</span>
     </div>
-    <div>
+    <div class="array">
       <MutableArray :value="conditions" :init-item="initItem" :on-delete="handleDelete">
         <template #item="itemProps">
           <FilterCondition v-bind="itemProps"/>
@@ -96,6 +97,15 @@
       }
     },
     components: {FilterCondition, MutableArray},
+    props: {
+      title: String,
+      suffix: String,
+      showEvent: Boolean,
+      buttonText: {
+        type: String,
+        default: '筛选条件'
+      }
+    },
     methods: {
       handleAddCondition() {
         this.conditions.push(Object.assign({}, this.initItem));
@@ -107,6 +117,20 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.filter-event {
+  border-top: 1px solid #DEE2EE;
 
+  .event {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    font-size: 14px;
+    color: #636E95;
+  }
+
+  .array {
+    margin-left: 72px;
+  }
+}
 </style>
