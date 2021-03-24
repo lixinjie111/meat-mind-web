@@ -1357,22 +1357,40 @@ export default {
     expandfn(arg,c,r){
       var cenDom = this.$refs[c];
       var rDom = this.$refs[r];
+      var cenDom1 = this.$refs['cen_area1'];
+      var cenDom2 = this.$refs['cen_area2'];
+      var cenDom3 = this.$refs['cen_area3'];
+      var cenDom4 = this.$refs['cen_area4'];
+      var cenDom5 = this.$refs['cen_area5'];
+      var rDom1 = this.$refs['rig_area1'];
+      var rDom2 = this.$refs['rig_area2'];
+      var rDom3 = this.$refs['rig_area3'];
+      var rDom4 = this.$refs['rig_area4'];
+      var rDom5 = this.$refs['rig_area5'];
       if(arg == 1){
         if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
           this.vDxtxt2 = '查看动线详情';
+          cenDom2.style="background-color:inherit;";
+          rDom2.style="background-color:inherit;";  
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
           this.vDxtxt3 = '查看动线详情';
+          cenDom3.style="background-color:inherit;";
+          rDom3.style="background-color:inherit;"; 
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
           this.vDxtxt4 = '查看动线详情';
+          cenDom4.style="background-color:inherit;";
+          rDom4.style="background-color:inherit;"; 
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
           this.vDxtxt5 = '查看动线详情';
+          cenDom5.style="background-color:inherit;";
+          rDom5.style="background-color:inherit;"; 
         }
         this.ifShowDx1 = !this.ifShowDx1;
         if(this.ifShowDx1){
@@ -1390,18 +1408,26 @@ export default {
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
           this.vDxtxt1 = '查看动线详情';
+          cenDom1.style="background-color:inherit;";
+          rDom1.style="background-color:inherit;";  
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
           this.vDxtxt3 = '查看动线详情';
+          cenDom3.style="background-color:inherit;";
+          rDom3.style="background-color:inherit;";  
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
           this.vDxtxt4 = '查看动线详情';
+          cenDom4.style="background-color:inherit;";
+          rDom4.style="background-color:inherit;";  
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
           this.vDxtxt5 = '查看动线详情';
+          cenDom5.style="background-color:inherit;";
+          rDom5.style="background-color:inherit;";  
         }
         this.ifShowDx2 = !this.ifShowDx2;
         if(this.ifShowDx2){
@@ -1419,18 +1445,26 @@ export default {
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
           this.vDxtxt1 = '查看动线详情';
+          cenDom1.style="background-color:inherit;";
+          rDom1.style="background-color:inherit;";  
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
           this.vDxtxt2 = '查看动线详情';
+          cenDom2.style="background-color:inherit;";
+          rDom2.style="background-color:inherit;";  
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
           this.vDxtxt4 = '查看动线详情';
+          cenDom4.style="background-color:inherit;";
+          rDom4.style="background-color:inherit;";  
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
           this.vDxtxt5 = '查看动线详情';
+          cenDom5.style="background-color:inherit;";
+          rDom5.style="background-color:inherit;";  
         }
         this.ifShowDx3 = !this.ifShowDx3;
         if(this.ifShowDx3){
@@ -1448,18 +1482,26 @@ export default {
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
           this.vDxtxt1 = '查看动线详情';
+          cenDom1.style="background-color:inherit;";
+          rDom1.style="background-color:inherit;";  
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
           this.vDxtxt2 = '查看动线详情';
+          cenDom2.style="background-color:inherit;";
+          rDom2.style="background-color:inherit;";  
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
           this.vDxtxt3 = '查看动线详情';
+          cenDom3.style="background-color:inherit;";
+          rDom3.style="background-color:inherit;";  
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
           this.vDxtxt5 = '查看动线详情';
+          cenDom5.style="background-color:inherit;";
+          rDom5.style="background-color:inherit;";  
         }
         this.ifShowDx4 = !this.ifShowDx4;
         if(this.ifShowDx4){
@@ -1477,18 +1519,26 @@ export default {
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
           this.vDxtxt1 = '查看动线详情';
+          cenDom1.style="background-color:inherit;";
+          rDom1.style="background-color:inherit;";  
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
           this.vDxtxt2 = '查看动线详情';
+          cenDom2.style="background-color:inherit;";
+          rDom2.style="background-color:inherit;";  
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
           this.vDxtxt3 = '查看动线详情';
+          cenDom3.style="background-color:inherit;";
+          rDom3.style="background-color:inherit;";  
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
           this.vDxtxt4 = '查看动线详情';
+          cenDom4.style="background-color:inherit;";
+          rDom4.style="background-color:inherit;";  
         }
         this.ifShowDx5 = !this.ifShowDx5;
         if(this.ifShowDx5){
