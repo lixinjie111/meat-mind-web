@@ -355,7 +355,7 @@
                     margin-right: 24px;
                     width: 72px;
                     height: 72px;
-                    //box-shadow: 6px 6px 12px 0px rgba(99, 110, 149, 0.2), -6px -6px 12px 0px #ffffff;
+                    box-shadow: 6px 6px 12px 0px rgba(99, 110, 149, 0.2), -6px -6px 12px 0px #ffffff;
                     border: 1px solid #ffffff;
                     border-radius: 50%;
                 }

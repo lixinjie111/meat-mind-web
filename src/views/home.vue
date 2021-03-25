@@ -60,6 +60,7 @@
 
             .content-container {
                 margin-top: 80px;
+                background: #F4F7FC;
             }
         }
     }
