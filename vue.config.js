@@ -10,6 +10,8 @@ module.exports = {
             plugins: [
               autoprefixer(),
               pxtorem({
+                minPixelValue: 1,
+                unitPrecision: 3,
                 rootValue: 144, //设计稿宽度为1440px的
                 propList: ['*']
               })

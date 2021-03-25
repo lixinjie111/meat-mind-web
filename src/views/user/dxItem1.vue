@@ -645,7 +645,6 @@
                 this.condiList = this.nlList.concat(this.xingbieList,this.hasChList,this.xiaoFList,this.huyiList,this.zhYList)
             },
             nianlinClick(arg,art){
-                console.log(art)
                 var itemDom = this.$refs[art] || [];
                 for(var i=0;i<itemDom.length;i++){
                     if(i==arg){
@@ -655,7 +654,6 @@
                         itemDom[i].style="color: #636E95;background: none;";
                     }
                 }
-                console.log(itemDom,'itemDom')
             },
             expandCond(){
                 this.ifShowCon = true;
@@ -1201,7 +1199,7 @@
 .dx_Item_container{
     width: 100%;
     position: relative;
-    margin-top: -19px;
+    margin-top: -16px;
     .test_container1.width{
         width: 806px;
     }
@@ -1573,7 +1571,7 @@
               .person_tffatj_con{
                 width: 100%;
                 border-radius: 0px 12px 12px 12px;
-                padding-bottom: 20px;
+                padding-bottom: 17px;
                 box-sizing: border-box;
                 .top_img_con{
                   padding: 0 16px;

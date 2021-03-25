@@ -155,8 +155,8 @@ export default {
             border: 1px solid #EAEDF7;
             cursor: pointer;
             &:hover{
-                box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16), 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
-                border-radius: 4px;
+                box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.1), 4px 6px 20px 0px rgba(134, 143, 191, 0.1);
+                border: 1px solid #FFFFFF;
             }
             .icon{
                 width: 48px;

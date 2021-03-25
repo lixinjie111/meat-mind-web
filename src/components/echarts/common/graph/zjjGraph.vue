@@ -25,8 +25,6 @@ export default {
   },
   methods: {
     initEcharts() {
-      // console.log(this.id);
-      // console.log(this.myData);
       let myChart = this.$echarts.init(document.getElementById(this.id));
       var echartJson = {
         series: [
@@ -144,9 +142,8 @@ export default {
               },
             ],
           });
-          myChart.on('click',function(parm){
-              // console.log(parm)
-          });
+          // myChart.on('click',function(parm){
+          // });
         });
       }
 

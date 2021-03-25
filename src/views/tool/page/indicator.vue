@@ -23,17 +23,54 @@
                 </div>
         </div>
         
-        <Modal class-name="zbgl-modal" v-model="newModal" footer-hide :closable="false">
+        <Modal class-name="zbgl-modal" v-model="newModal" title="新建指标">
             <div class="content">
-                <div class="close-btn" @click="newModal = false"></div>
-                <img src="../../../static/img/tool/zbgl/xjzb@2x.png" alt="">
-                <div class="close-btn1" @click="newModal = false"></div>
+                <div class="line">
+                    <div class="target-name">
+                        <div class="label">指标名</div>
+                        <Input v-model="modalValue" placeholder="请输入指标名" />
+                    </div>  
+                    <div class="show-target">
+                        <div class="label">显示指标</div>
+                        <Select v-model="attValue" class="select-box">
+                            <Option v-for="ele in attributeList1" :value="ele.value" :key="ele.value">{{ ele.label }}</Option>
+                        </Select>
+                        <span class="mr16">的</span>
+                        <Select v-model="placeValue" class="select-box">
+                            <Option v-for="ele in placeList" :value="ele.value" :key="ele.value">{{ ele.label }}</Option>
+                        </Select>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="default-unit">
+                        <div class="label">默认单位</div>
+                        <Select v-model="unitValue" class="select-box">
+                            <Option v-for="ele in unitList" :value="ele.value" :key="ele.value">{{ ele.label }}</Option>
+                        </Select>
+                    </div>
+                    <div class="choose">
+                        <div class="label">是否累计</div>
+                        <div class="choose-radio">
+                        <RadioGroup v-model="disabledGroup">
+                            <Radio label="是"></Radio>
+                            <Radio label="否"></Radio>
+                        </RadioGroup>
+                        </div>
+                    </div>
+                </div>
+                <div class="textarea">
+                    <div class="label">备注</div>
+                    <!-- <div> -->
+                        <Input v-model="textValue" type="textarea" :rows="4" placeholder="可输入备注信息" />
+                    <!-- </div> -->
+                </div>
             </div>
         </Modal>
     </div>
 </template>
 
 <script>
+
   import Tab from "@/components/Tab"
     export default {
         components: {Tab,},
@@ -127,7 +164,63 @@
                         name:"任意事件的总次数",
                         action:""
                     } 
-                ]
+                ],
+                modalValue:"",
+                attValue:"任意事件",
+                placeValue:"总次数",
+                unitValue:"周",
+                attributeList1: [
+                    {
+                    value: "任意事件",
+                    label: "任意事件",
+                    },
+                    {
+                    value: "APP崩溃",
+                    label: "APP崩溃",
+                    },
+                    {
+                    value: "领取权益",
+                    label: "领取权益",
+                    },
+                    {
+                    value: "收藏商品",
+                    label: "收藏商品",
+                    },
+                    {
+                    value: "完善资料",
+                    label: "完善资料",
+                    },
+                ],
+                placeList: [
+                    {
+                    value: "总次数",
+                    label: "总次数",
+                    },
+                    {
+                    value: "用户数",
+                    label: "用户数",
+                    },
+                    {
+                    value: "人均次数",
+                    label: "人均次数",
+                    },
+                ],
+                unitList:[
+                    {
+                    value: "周",
+                    label: "周",
+                    },
+                    {
+                    value: "月",
+                    label: "月",
+                    },
+                    {
+                    value: "年",
+                    label: "年",
+                    },                    
+                ],
+                disabledGroup:"是",
+                textValue:""
             }
         },
         mounted(){
@@ -143,7 +236,6 @@
                // this.generateData()
             },
             changeTab(index) {
-                console.log(index)
                 this.active = index;
             },
         }
@@ -156,7 +248,7 @@
         position: relative;
         width: 100%;
         height: 100%;
-        background: #f5f5f5;
+
          .show-header {
             margin-top: 16px;
             background: #fff;
@@ -257,40 +349,102 @@
     }
 </style>
 <style lang="scss">
+    .zbgl-modal{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .ivu-modal{
+            top: 0;
+            ::v-deep .ivu-modal-content{
+                ::v-deep .ivu-modal-footer{
+                    border-top: none;
+                }
+                ::v-deep .ivu-btn-text{
+                    border-radius: 4px;
+                    border: 1px solid #97A0C3;
+                    &:hover{
+                        border-radius: 4px;
+                        border: 1px solid #97A0C3; 
+                    }
+                }
+            }
+
+        }
+    }
     .zbgl-modal {
         .ivu-modal{
-            width: 460px!important;
+            width: 700px!important;
         }
         .ivu-modal-body {
             padding: 0;
         }
 
         .content {
-            position: relative;
-            width: 460px;
-            height: 600px;
-
-            img {
-                width: 460px;
-                height: 600px;
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            .line{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 32px;
+                .label{
+                    height: 20px;
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #242F57;
+                    line-height: 20px;
+                }
+                .target-name{
+                    width: 50%;
+                    margin-right: 40px;
+                }
+                .show-target{
+                    width: 50%;
+                    .select-box{
+                        width: 130px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242F57;
+                    }
+                    .mr16{
+                        width: 14px;
+                        height: 22px;
+                        margin: 0 16px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+                        line-height: 22px;
+                    }
+                }
+                .default-unit{
+                    width: 50%;
+                    margin-right: 40px;
+                }
+                .choose{
+                    width: 50%;
+                    .ivu-radio-wrapper{
+                        margin-right: 48px;
+                    }
+                }
             }
-
-            .close-btn {
-                position: absolute;
-                right: 15px;
-                top: 20px;
-                width: 16px;
-                height: 16px;
-                cursor: pointer;
-            }
-            .close-btn1 {
-                position: absolute;
-                right: 75px;
-                bottom: 10px;
-                width: 50px;
-                height: 30px;
-                cursor: pointer;
+            .textarea{
+                .label{
+                    height: 20px;
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #242F57;
+                    line-height: 20px;
+                }
             }
         }
+
+
     }
 </style>

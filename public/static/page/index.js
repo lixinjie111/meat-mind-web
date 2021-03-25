@@ -95,7 +95,6 @@ Paging.prototype.PageClick = function() {
 Paging.prototype.toPage = function (page){
 
     let PageTotalNum = this.getPageTotalNum();
-    console.log(PageTotalNum,'PageTotalNum')
     if(page < 1) {
         page = 1;
     }
@@ -125,9 +124,7 @@ Paging.prototype.toPage = function (page){
                 let resArr = [];
                 let resObj = JSON.parse(xhr.responseText);
                 // let toalCount = resObj.count;
-				console.log(resObj.data,'resObj.data')
                 resArr = resObj.data.slice((page-1)*10,10*page) || [];
-				console.log((page-1))
                 let pageData = resArr;
                 // new Paging({
                 //     total: toalCount,

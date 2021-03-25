@@ -39,7 +39,7 @@
     data() {
       return {
         list: [
-          {name: '入库检验规则设置', icon:'iconrukujianyanguizeshezhi', desc: '分端设置「设备 ID」和「登录 ID」的入库规则，也可以设置「 IP 」和「域名」黑名单，进行数据校验与过滤', click: this.click1},
+          {name: '入库检验规则设置', icon:'iconrukuguize', desc: '分端设置「设备 ID」和「登录 ID」的入库规则，也可以设置「 IP 」和「域名」黑名单，进行数据校验与过滤', click: this.click1},
           {name: '元事件', icon:'iconyuanshijian',desc: '在代码中追踪的原始事件', click: this.click2 },
           {name: '事件属性', icon:'iconshijianshuxing', desc: '可编辑自定义事件属性的显示名、显示状态、配置维度字典', click: this.click3 },
           {name: '用户属性', icon:'iconyonghushuxing', desc: '可编辑自定义用户属性的显示名、显示状态、配置维度字典', click: this.click4 },
@@ -47,8 +47,8 @@
           {name: '物品属性', icon:'iconwupinshuxing', desc: '可查看目前已通过后台命令创建的一些列自定义物品属性', click: this.click6 },
           {name: '虚拟属性', icon:'iconxunishuxing', desc: '通过 SQL 表达式对已有的所有属性进行二次加工生成一个新的事件属性适用于关联查询和复杂查询', click: this.click7 },
           {name: '虚拟事件', icon:'iconxunishijian', desc: '组合多个元事件并可为其分别设置过滤条件，形成符合需要的虚拟事件', click: this.click8 },
-          {name: 'Session 管理', icon:'iconsessionguanli', desc: '创建/管理 Session', click: this.click9 },
-          {name: '可视化全埋点事件', icon:'iconkeshihuaquanmaidianshijian', desc: '管理通过可视化全埋点自动上报的事件', click: this.click10 },
+          {name: 'Session 管理', icon:'iconSession', desc: '创建/管理 Session', click: this.click9 },
+          {name: '可视化全埋点事件', icon:'iconkeshihuashijian', desc: '管理通过可视化全埋点自动上报的事件', click: this.click10 },
         ]
       }
     },
@@ -114,14 +114,15 @@
       padding: 24px 24px 0;
     }
     .item-box{
-      width: calc(50% - 12px);
+      width: calc(50% - 13px);
       margin-bottom: 24px;
       &:nth-child(odd){
         margin-right: 24px;
       }
       ::v-deep .ivu-card:hover{
-        box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16), 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
-        border-radius: 4px;
+        box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.1), 4px 6px 20px 0px rgba(134, 143, 191, 0.1);
+        border: 1px solid #FFFFFF;
+        border-radius: 8px;
       }
     }
     .item {
@@ -197,7 +198,7 @@
       align-items: center;
     }
     .item-icon {
-      font-size: 24px;
+      font-size: 32px;
       color: #FFFFFF;
     }
     .item-title{

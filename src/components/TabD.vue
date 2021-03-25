@@ -1,11 +1,12 @@
 <template>
     <div class="tabs-container">
         <template v-for="(item,index) in tabList">
-            <div class="disabled" v-if="item.disabled" :key="index">{{item.name}}</div>
-            <div :class="tabActive == index + 1 ? 'active' : ''" @click="changeTab(index+1)" :key="index" v-else>
+            <div class="item disabled" v-if="item.disabled" :key="index">{{item.name}}</div>
+            <div class="item" :class="tabActive == index + 1 ? 'active' : ''" @click="changeTab(index+1)" :key="index" v-else>
                 {{item.name}}
             </div>
         </template>
+        <div class="line"></div>
     </div>
 </template>
 
@@ -34,9 +35,20 @@
 
 <style scoped lang="scss">
     .tabs-container {
-        border-bottom: 1px solid #DEE2EE;
+        position: relative;
 
-        > div {
+        .line {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #DEE2EE;
+        }
+
+        .item {
+            position: relative;
+            z-index: 10;
             padding: 8px 0 6px 0;
             margin-right: 32px;
             display: inline-block;

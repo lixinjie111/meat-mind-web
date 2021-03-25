@@ -333,17 +333,12 @@
                     <div class="tf_time">投放预算 (元)</div>
                     <div class="tfys_input_con">
                       <i :class="['iconfont','iconjine']" class="cmon"></i>
-                      <Poptip trigger="focus">
-                          <Input v-model="tfys" placeholder="请输入价格" style="width:200px" />
-                          <div slot="content">{{ formatNumber }}</div>
-                      </Poptip><span class="zhi">至</span>
+                      <Input v-model="tfys" placeholder="请输入价格" class="input_con"/>
+                      <span class="zhi">至</span>
                     </div>
                     <div class="tfys_input_con">
                       <i :class="['iconfont','iconjine']" class="cmon"></i>
-                      <Poptip trigger="focus">
-                          <Input v-model="tfys1" placeholder="请输入价格" style="width:200px" />
-                          <div slot="content">{{ formatNumber }}</div>
-                      </Poptip>
+                      <Input v-model="tfys1" placeholder="请输入价格" class="input_con" />
                     </div>
                     <div class="tf_time">选择投放媒介</div>
                     <div class="tfmjchoice_con">
@@ -918,16 +913,6 @@
             this.changMbItem(0);
             this.clickPerTab(1);
         },
-        computed: {
-            formatNumber () {
-                if (this.tfys === '') return '请输入价格';
-                function parseNumber(str) {
-                    const re = /(?=(?!)(d{3})+$)/g;
-                    return str.replace(re, ',');
-                }
-                return parseNumber(this.tfys);
-            }
-        },
         methods:{
             changeNews(){
               var that = this;
@@ -989,7 +974,6 @@
               var bgc1 = '#D3E3FF';
               var bgc2 = '#9ECBFF';
               var bgc3 = '#4488FF';
-              console.log(tabDom1,'tabDom')
               if(arg == 0){
                 this.ifShowtcon = true;
                 tabDom.style=` background:${bgc0};`;
@@ -1812,6 +1796,9 @@
                             cursor: pointer;
                         }
                     }
+                    .choice_btn_top{
+                      padding-top: 10px;
+                    }
                     .activeBtn{
                         color: #2373FF;
                     }
@@ -1868,7 +1855,7 @@
                         box-sizing: border-box;
                         .timer121_item{
                             width: 62px;
-                            height: 24px;
+                            height: 20px;
                             background: #FFFFFF;
                             border-radius: 4px;
                             border: 1px solid #EAEDF7;
@@ -2154,7 +2141,7 @@
               .person_tffatj_con{
                 width: 100%;
                 border-radius: 0px 12px 12px 12px;
-                padding-bottom: 20px;
+                padding-bottom: 17px;
                 box-sizing: border-box;
                 .top_img_con{
                   padding: 0 16px;
@@ -2319,14 +2306,17 @@
                   display: flex;
                   align-items: center;
                   position: relative;
-                  ::v-deep .ivu-poptip .ivu-poptip-rel .ivu-input-type-text .ivu-input-default{
-                    padding-left: 30px !important;
-                  }
                   .cmon{
                     position: absolute;
                     color: #97A0C3;
                     left: 25px;
                     z-index: 999;
+                  }
+                  .input_con{
+                    width: 200px !important;
+                  }
+                  ::v-deep .input_con .ivu-input-default{
+                      padding-left: 30px !important;
                   }
                   .zhi{
                     font-size: 12px;

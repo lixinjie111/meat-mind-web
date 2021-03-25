@@ -1,7 +1,7 @@
 <template>
   <div class="wdsj">
     <div v-if="resultShow">
-      <ResultBox />
+      <ResultBox @goBack="goBack"/>
     </div>
     <div v-else class="page-container ">
       <div class="header-nav">
@@ -63,7 +63,7 @@
             <div>已上传文件列表</div>
             <div class="module-btns btn-box">
               <Button class="a">更新数据</Button>
-              <Button class="a" type="primary" @click="uploadModal1 = true">上传数据</Button>
+              <Button class="a" type="primary" @click="uploadModalStatus = true">上传数据</Button>
             </div>
           </div>
           <div class="table-warp">
@@ -170,7 +170,7 @@
           <div class="module-title">
             <div>API采集应用列表</div>
             <div class="module-btns btn-box">
-              <Button class="a">下载SDK文件</Button>
+              <Button type="primary" class="a">下载SDK文件</Button>
             </div>
           </div>
           <div class="table-warp">
@@ -204,13 +204,43 @@
 
           </div>
         </div>
+        <div class="module">
+          <div class="module-title">
+            <div>已购买数据</div>
+            <div class="module-btns btn-box">
+              <Button class="a" type="primary">购买数据包</Button>
+            </div>
+          </div>
+          <div class="table-warp">
+            <Table  :columns="APIPage.buyData.columns" :data="APIPage.buyData.list">
+              <template slot-scope="" slot="operate">
+                <div class="operation">
+                  <span class="operation-item">更新数据包</span>
+                  <span class="operation-item">续费</span>
+                </div>
+              </template>
+            </Table>
+            <div class="table-page-warp">
+              <Page
+                  :current="APIPage.buyData.currentPage"
+                  :total="APIPage.buyData.totalPage"
+                  :page-size="APIPage.buyData.pageSize"
+                  show-total
+                  show-sizer
+                  class-name="pageS"
+                  @on-change="(page)=>tableChangePage(page, APIPage.buyData)"
+              />
+            </div>
+
+          </div>
+        </div>
       </template>
       <template v-else-if="listType === 'SQL'">
         <div class="module">
           <div class="module-title">
             <div>已接入数据库</div>
             <div class="module-btns btn-box">
-              <Button class="a" type="primary">新建连接</Button>
+              <Button class="a" type="primary"><i class="iconfont icontianjia"></i> 新建连接</Button>
             </div>
           </div>
           <div class="table-warp">
@@ -250,45 +280,19 @@
         </div>
       </template>
     </div>
-    <Modal class-name="upload-modal1" v-model="uploadModal1" footer-hide :closable="false">
-      <div class="upload1">
-        <div class="left-btn" @click="isUpload4 = false"></div>
-        <div class="right-btn" @click="isUpload4 = true"></div>
-        <div class="close1-btn" @click="uploadModal1 = false"></div>
-        <div v-if="isUpload4">
-          <img src="../../../static/img/datacenter/wdsj/upload4@2x.png" alt="">
-          <div class="upload4-btn" @click="uploadChange1"></div>
-          <div class="upload5-btn" @click="uploadChange3"></div>
-        </div>
-        <div v-else>
-          <img src="../../../static/img/datacenter/wdsj/upload1@2x.png" alt="">
-          <div class="upload1-btn" @click="uploadChange1"></div>
-          <div class="upload3-btn" @click="uploadChange3"></div>
-        </div>
-      </div>
-    </Modal>
-    <Modal class-name="upload-modal2" v-model="uploadModal2" footer-hide :closable="false">
-      <div class="upload2">
-        <img v-if="isUpload4" src="../../../static/img/datacenter/wdsj/upload5.jpeg" alt="">
-        <img v-else src="../../../static/img/datacenter/wdsj/upload2.png" alt="">
-        <div class="upload2-btn" @click="uploadChange2"></div>
-      </div>
-    </Modal>
-    <Modal class-name="upload-modal3" v-model="uploadModal3" footer-hide :closable="false">
-      <div class="upload3">
-        <img src="../../../static/img/datacenter/wdsj/upload3@2x.png" alt="">
-      </div>
-    </Modal>
+    <UploadDataModal :visible="uploadModalStatus" @onControlModal="onCloseUploadModal"/>
   </div>
 </template>
 
 <script>
 import ResultBox from '../components/ResultBox'
+import UploadDataModal from '../components/UploadDataModal'
 export default {
     name: "Mydata",
-    components: { ResultBox },
+    components: { ResultBox, UploadDataModal },
     data() {
       return {
+        uploadModalStatus: false,
         uploadModal1: false,
         uploadModal2: false,
         uploadModal3: false,
@@ -324,7 +328,7 @@ export default {
               },
               {
                 name: '青少年课堂应激行为测试数据包.xlsx',
-                time: '2021-05-07 08:16:08',
+                time: '2021-03-07 08:16:08',
               },
             ],
           },
@@ -484,6 +488,50 @@ export default {
           pageSize: 10,
           list: [],
           allList: [],
+          buyData: {
+            columns: [
+              {
+                title: '资源名称',
+                key: 'name',
+              },
+              {
+                title: '详情描述',
+                key: 'desc',
+                width: 350 / 144 * window.rem,
+                // width: '200'
+              },
+              {
+                title: '添加时间',
+                key: 'time',
+                // width: '200'
+              },
+              {
+                title: '最近更新版本',
+                key: 'versions',
+                // width: '200'
+              },
+              {
+                title: '有效期至',
+                key: 'valid',
+                // width: '200'
+              },
+              {
+                title: '状态',
+                key: 'status',
+                // width: '200'
+              },
+              {
+                title: '操作',
+                slot:"operate",
+                width: 200 / 144 * window.rem,
+              },
+            ],
+            currentPage: 1,
+            totalPage: 2,
+            pageSize: 10,
+            list: [],
+            allList: [],
+          },
         },
         SQLPage: {
           columns: [
@@ -520,6 +568,8 @@ export default {
       this.tableChangePage(1, this.SDKPage)
       this.generateAPIPageData()
       this.tableChangePage(1, this.APIPage)
+      this.generateAPIBuyPageData()
+      this.tableChangePage(1, this.APIPage.buyData)
       // this.generateSQLPageData()
       // this.tableChangePage(1, this.SQLPage)
     },
@@ -530,6 +580,10 @@ export default {
       tableChangePage(page, pageObj) {
         pageObj.currentPage = page
         pageObj.list = pageObj.allList.slice((page - 1) * pageObj.pageSize, page * pageObj.pageSize - 1)
+      },
+      onCloseUploadModal(status, result){
+        this.uploadModalStatus = status
+        this.resultShow = !!result
       },
       uploadChange1() {
         this.uploadModal1 = false;
@@ -565,11 +619,20 @@ export default {
           this.APIPage.allList.push(curr)
         }
       },
+      generateAPIBuyPageData(total=this.APIPage.buyData.totalPage){
+        for (let i = 0; i < total; ++i){
+          const curr =  { name: '用户动线数据包', desc: '2020年上半年某平台中高收入水平会员的城市…', time: '2020-10-12 09:21:03', versions: '2020-11-10 32:01:07', valid: '永久',  status: '有效'};
+          this.APIPage.buyData.allList.push(curr)
+        }
+      },
       generateSQLPageData(total=this.SQLPage.totalPage){
         for (let i = 0; i < total; ++i){
           const curr =  { name: '元信', platform: 'Android', package: 'yxin.apk', url: '--', createUser: 'Mr.Tang', createTime: '2020-11-10 32:01:07', status: '有效'};
           this.SQLPage.allList.push(curr)
         }
+      },
+      goBack(){
+        this.resultShow = false
       },
     }
   }

@@ -53,7 +53,6 @@
         let tolNum = 0;
         const { name, value } = myData || { name: [], value: [] };
         let list = [];
-        console.log(myData,'myData')
         myData['name'].forEach((item,index)=>{
           list.push({
             name:item,
@@ -84,12 +83,13 @@
           },
           legend: {
             icon: 'circle',
-            bottom:8,
+            bottom:50,
             left:'center',
             data: name,
+            align:'auto',
             icon:'circle', 
-            orient: 'vertical', //设置图例排列纵向显示
-            padding:[0,0,0,10], //设置图例与圆环图之间的间距
+            itemGap:20,
+            orient: 'horizontal', //设置图例排列纵向显示
             formatter:function(name){  //该函数用于设置图例显示后的百分比
                 var total = 0;
                 var value;

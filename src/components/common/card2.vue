@@ -43,7 +43,6 @@ export default {
   methods: {
     setStyle(){
         var domitem = this.$refs.card_container;
-        console.log(domitem,'domitem')
         var styData = this.cardData;
         if(styData.type == 'dash'){
             domitem.style=` background:${styData.bgc};color:${styData.fColor};width: 47%;`;
@@ -77,7 +76,6 @@ export default {
         .jyIcon{
             display: block;
             width:24px;
-            height: 24px;
         }
     }
     .txt_rig{

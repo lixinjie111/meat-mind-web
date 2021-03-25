@@ -107,9 +107,6 @@ export default {
           pageSize: 10,
       }
   },
-  created(){
-    console.log(this.total)
-  },
   methods:{
     look(val){
       this.showCover=true;

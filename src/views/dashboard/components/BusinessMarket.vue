@@ -104,12 +104,12 @@
                     <p>全渠道识别与获取客户数据，我们为您发现最有潜力的客群，精准定位重要用户的核心需求，并提供精细化的营销方案，提升用户全生命周期价值，实现低成本获客。</p>
                 </div>
             </div>
-            <div class="group-box">
+            <div class="group-box" v-for="(item,index) in groupList" :key="index"
+                 v-if="groupActive == index">
                 <div class="group-map flex">
                     <div class="left">
                         <div class="left-top">
-                            <div class="change-group flex" v-for="(item,index) in groupList" :key="index"
-                                 v-if="groupActive == index">
+                            <div class="change-group flex">
                                 <div class="pre" @click="groupPre(index)"><i class="iconfont iconright-arrow21"></i>
                                 </div>
                                 <div class="info">
@@ -138,8 +138,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="left-list" v-for="(item,index) in  groupList" :key="index"
-                             v-if="groupActive == index">
+                        <div class="left-list">
                             <div class="left-item">
                                 <div class="blue">身份类</div>
                                 <p v-for="(desc,index) in item.desc1" :key="index">
@@ -171,8 +170,7 @@
                         </div>
                     </div>
                     <div class="right">
-                        <div class="time-line" v-for="(item,index) in groupList" :key="index"
-                             v-if="groupActive == index">
+                        <div class="time-line">
                             <img :src="item.timeImg"/>
                         </div>
                         <div class="map-box">
@@ -184,74 +182,71 @@
                         </div>
                     </div>
                 </div>
-                <template class="time-line" v-for="(item,index) in groupList"
-                          v-if="groupActive == index">
-                    <Card title="营销内容方案" :key="index">
-                        <span slot="left" class="sub-title">|  预期销量增长{{item.market.num}}%</span>
-                        <div class="group-content flex">
-                            <div class="left">
-                                <p v-html="item.market.title"></p>
-                                <p>{{item.market.desc}}</p>
-                                <div class="disabled">查看营销内容方案库</div>
-                            </div>
-                            <div class="right-content">
-                                <img src="../../../assets/img/dashboard/market/group-content@2x.png"/>
-                            </div>
+                <Card title="营销内容方案">
+                    <span slot="left" class="sub-title">|  预期销量增长{{item.market.num}}%</span>
+                    <div class="group-content flex">
+                        <div class="left">
+                            <p v-html="item.market.title"></p>
+                            <p>{{item.market.desc}}</p>
+                            <div class="disabled">查看营销内容方案库</div>
                         </div>
-                    </Card>
-                    <Card title="渠道投放方案" :key="index">
-                        <span slot="left" class="sub-title">|  预期销量增长{{item.channel.num}}%</span>
-                        <div class="group-content flex-start">
-                            <div class="left">
-                                <p v-html="item.channel.title"></p>
-                                <p>{{item.channel.desc}}</p>
-                                <div @click="toMedia">查看KOL带货详情</div>
+                        <div class="right-content">
+                            <img src="../../../assets/img/dashboard/market/group-content@2x.png"/>
+                        </div>
+                    </div>
+                </Card>
+                <Card title="渠道投放方案">
+                    <span slot="left" class="sub-title">|  预期销量增长{{item.channel.num}}%</span>
+                    <div class="group-content flex-start">
+                        <div class="left">
+                            <p v-html="item.channel.title"></p>
+                            <p>{{item.channel.desc}}</p>
+                            <div @click="toMedia">查看KOL带货详情</div>
+                        </div>
+                        <div class="right-top">
+                            <p>快消品类带货达人TOP3</p>
+                            <div class="right-top-item flex">
+                                <div>
+                                    <img src="../../../assets/img/dashboard/market/head1@2x.png"/>
+                                    <div>
+                                        <p>李子柒</p>
+                                        <p>粉丝数：5428.8w | 作品数：718</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="../../../assets/img/dashboard/market/star@2x.png"/>
+                                    <span>4.99 高</span>
+                                </div>
                             </div>
-                            <div class="right-top">
-                                <p>快消品类带货达人TOP3</p>
-                                <div class="right-top-item flex">
+                            <div class="right-top-item flex" style="background: #F4F7FC;">
+                                <div>
+                                    <img src="../../../assets/img/dashboard/market/head2@2x.png"/>
                                     <div>
-                                        <img src="../../../assets/img/dashboard/market/head1@2x.png"/>
-                                        <div>
-                                            <p>李子柒</p>
-                                            <p>粉丝数：5428.8w | 作品数：718</p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <img src="../../../assets/img/dashboard/market/star@2x.png"/>
-                                        <span>4.99 高</span>
+                                        <p>疯产姐妹</p>
+                                        <p>粉丝数：3608.3w | 作品数：111</p>
                                     </div>
                                 </div>
-                                <div class="right-top-item flex" style="background: #F4F7FC;">
+                                <div>
+                                    <img src="../../../assets/img/dashboard/market/star@2x.png"/>
+                                    <span>4.86 高</span>
+                                </div>
+                            </div>
+                            <div class="right-top-item flex">
+                                <div>
+                                    <img src="../../../assets/img/dashboard/market/head3@2x.png"/>
                                     <div>
-                                        <img src="../../../assets/img/dashboard/market/head2@2x.png"/>
-                                        <div>
-                                            <p>疯产姐妹</p>
-                                            <p>粉丝数：3608.3w | 作品数：111</p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <img src="../../../assets/img/dashboard/market/star@2x.png"/>
-                                        <span>4.86 高</span>
+                                        <p>浪胃仙</p>
+                                        <p>粉丝数：3811.7w | 作品数：83</p>
                                     </div>
                                 </div>
-                                <div class="right-top-item flex">
-                                    <div>
-                                        <img src="../../../assets/img/dashboard/market/head3@2x.png"/>
-                                        <div>
-                                            <p>浪胃仙</p>
-                                            <p>粉丝数：3811.7w | 作品数：83</p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <img src="../../../assets/img/dashboard/market/star@2x.png"/>
-                                        <span>4.74 高</span>
-                                    </div>
+                                <div>
+                                    <img src="../../../assets/img/dashboard/market/star@2x.png"/>
+                                    <span>4.74 高</span>
                                 </div>
                             </div>
                         </div>
-                    </Card>
-                </template>
+                    </div>
+                </Card>
             </div>
         </div>
         <div class="market-card">
@@ -266,8 +261,8 @@
                         <!--                        <Select value="快消品">-->
                         <!--                            <Option value="快消品">快消品</Option>-->
                         <!--                        </Select>-->
-                        <Select value="5年">
-                            <Option value="5年">5年</Option>
+                        <Select value="6年">
+                            <Option value="6年">6年</Option>
                         </Select>
                     </div>
                     <div class="chart">
@@ -281,23 +276,23 @@
                     </div>
                     <div class="right-content flex-start">
                         <div class="right-content-left">
-                            <div :class="['right-content-left-item',threeActive == 1 ?'active':'']"
-                                 @click="threeActive=1">
+                            <div :class="['right-content-left-item',goodsActive == 1 ?'active':'']"
+                                 @click="goodsActive=1">
                                 <img src="../../../assets/img/dashboard/market/icon-redbull@2x.png"/>
                                 <p>红牛<span>·250ml</span></p>
                             </div>
-                            <div :class="['right-content-left-item',threeActive == 2 ?'active':'']"
-                                 @click="threeActive=2">
+                            <div :class="['right-content-left-item',goodsActive == 2 ?'active':'']"
+                                 @click="goodsActive=2">
                                 <img src="../../../assets/img/dashboard/market/icon-jiaduobao@2x.png"/>
                                 <p>加多宝<span>·250ml</span></p>
                             </div>
-                            <div :class="['right-content-left-item',threeActive == 3 ?'active':'']"
-                                 @click="threeActive=3">
+                            <div :class="['right-content-left-item',goodsActive == 3 ?'active':'']"
+                                 @click="goodsActive=3">
                                 <img src="../../../assets/img/dashboard/market/icon-wanglaoji@2x.png"/>
                                 <p>王老吉<span>·250ml</span></p>
                             </div>
-                            <div :class="['right-content-left-item',threeActive == 4 ?'active':'']"
-                                 @click="threeActive=4">
+                            <div :class="['right-content-left-item',goodsActive == 4 ?'active':'']"
+                                 @click="goodsActive=4">
                                 <img src="../../../assets/img/dashboard/market/icon-maidong@2x.png"/>
                                 <p>脉动<span>·250ml</span></p>
                             </div>
@@ -306,32 +301,34 @@
                                 添加竞品
                             </div>
                         </div>
-                        <div class="right-content-right">
-                            <div class="right-content-right-item">
-                                <p>月均销量</p>
-                                <p>4,265,322</p>
+                        <template v-for="(item,index) in goodsList" v-if="goodsActive == index + 1">
+                            <div class="right-content-right" :key="index">
+                                <div class="right-content-right-item">
+                                    <p>月均销量</p>
+                                    <p><span>{{item.sales}}</span></p>
+                                </div>
+                                <div class="right-content-right-item">
+                                    <p>客单价</p>
+                                    <p><span>¥ {{item.price}}</span></p>
+                                </div>
+                                <div class="right-content-right-item">
+                                    <p>销量平台</p>
+                                    <p>{{item.platform}}</p>
+                                </div>
+                                <div class="right-content-right-item">
+                                    <p>营销渠道</p>
+                                    <p>{{item.channel}}</p>
+                                </div>
+                                <div class="right-content-right-item">
+                                    <p>舆情热度</p>
+                                    <p><span>{{item.hot}}</span></p>
+                                </div>
+                                <div class="right-content-right-item">
+                                    <p>舆情风向</p>
+                                    <p>{{item.direction}}</p>
+                                </div>
                             </div>
-                            <div class="right-content-right-item">
-                                <p>客单价</p>
-                                <p>¥ 6.5</p>
-                            </div>
-                            <div class="right-content-right-item">
-                                <p>销量平台TOP3</p>
-                                <p>京东/淘宝/美团</p>
-                            </div>
-                            <div class="right-content-right-item">
-                                <p>营销渠道TOP3</p>
-                                <p>抖音/小红书/头条</p>
-                            </div>
-                            <div class="right-content-right-item">
-                                <p>舆情热度</p>
-                                <p>1,554,192 </p>
-                            </div>
-                            <div class="right-content-right-item">
-                                <p>舆情风向</p>
-                                <p>积极</p>
-                            </div>
-                        </div>
+                        </template>
                     </div>
                 </Card>
             </div>
@@ -372,7 +369,7 @@
                         </ul>
                     </div>
                     <div class="left-item">
-                        <p>追加关联词汇</p>
+                        <p class="mt">追加关联词汇</p>
                         <ul>
                             <li>礼品</li>
                         </ul>
@@ -537,7 +534,41 @@
         components: {vDxitem, vDxitem1, vDxitem2, vDxitem3 , NewEcharts, Card, barM, PieNest2},
         data() {
             return {
-                threeActive: 1,
+                goodsActive: 1,
+                goodsList: [
+                    {
+                        sales: '665,382',
+                        price: '7.0',
+                        platform: '淘宝/美团/拼多多',
+                        channel: '抖音/头条/朋友圈',
+                        hot: '2,192',
+                        direction: '积极'
+                    },
+                    {
+                        sales: '3,112,923',
+                        price: '6.5',
+                        platform: '淘宝/京东/美团',
+                        channel: '抖音/公众号',
+                        hot: '8,835',
+                        direction: '一般'
+                    },
+                    {
+                        sales: '3,369,562',
+                        price: '6.5',
+                        platform: '京东/淘宝/美团',
+                        channel: '快手/抖音/头条',
+                        hot: '9,080',
+                        direction: '一般'
+                    },
+                    {
+                        sales: '745,892',
+                        price: '4.5',
+                        platform: '饿了么/拼多多',
+                        channel: '抖音/快手',
+                        hot: '3,553',
+                        direction: '积极'
+                    }
+                ],
                 groupActive: 0,
                 groupList: [
                     {
@@ -1820,10 +1851,17 @@
                                 color: #97A0C3;
 
                                 &:last-child {
+                                    margin-top: 5px;
+                                    height: 26px;
+                                    line-height: 26px;
                                     font-size: 18px;
                                     font-family: PingFangSC-Semibold, PingFang SC;
                                     font-weight: 600;
                                     color: #242F57;
+
+                                    > span {
+                                        font-size: 24px;
+                                    }
                                 }
                             }
                         }
@@ -1843,18 +1881,24 @@
 
                 .left-item {
                     > p {
-                        margin-bottom: 16px;
+                        margin-bottom: 6px;
                         font-size: 14px;
                         font-family: PingFangSC-Regular, PingFang SC;
                         font-weight: 400;
                         color: #97A0C3;
+
+                        &.mt {
+                            margin-top: 16px;
+                        }
                     }
 
                     > ul {
                         > li {
+                            height: 32px;
+                            line-height: 32px;
                             display: inline-block;
                             vertical-align: middle;
-                            padding: 4px 16px;
+                            padding: 0 16px;
                             margin-right: 8px;
                             background: #ECF3FF;
                             border-radius: 8px;
@@ -1901,7 +1945,7 @@
                     border: 1px solid #EAEDF7;
 
                     &:first-child {
-                        margin-right: 24px;
+                        margin-right: 23px;
                     }
 
                     .right-title {
