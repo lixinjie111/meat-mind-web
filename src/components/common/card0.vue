@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container">
+  <div class="card-container" ref="card-container">
     <div class="til_icon_container">
       <i :class="['iconfont', cardData.iconfont]"></i>
       <span class="guide_til">{{ cardData.title }}</span>
@@ -44,9 +44,15 @@ export default {
       this.fontcolor = "color:#7C88B1;";
     }
   },
-  mounted() {},
-
-  methods: {},
+  mounted() {
+    this.setStyle();
+  },
+  methods: {
+    setStyle(){
+      var itDom = this.$refs['card-container'];
+      console.log(itDom,'itDom')
+    }
+  },
 };
 </script>
 
