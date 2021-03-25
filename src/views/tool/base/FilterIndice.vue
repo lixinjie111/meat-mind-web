@@ -5,15 +5,15 @@
       <Select v-model="event" class="item1" v-if="showEvent">
         <Option v-for="(item,index) of events" :value="index+1" :key="index+1">{{item}}</Option>
       </Select>
-      <Button @click="handleAddCondition" class="item2">
+      <Button @click="handleAddCondition" class="item2" :disabled="conditions.length > 0">
         <i class="iconfont icontianjia"></i>
         {{buttonText}}</Button>
-      <span class="item3">{{suffix}}</span>
+      <span style="margin-left: 16px;">{{suffix}}</span>
     </div>
     <div class="array">
       <MutableArray :value="conditions" :init-item="initItem" :on-delete="handleDelete">
         <template #item="itemProps">
-          <FilterCondition v-bind="itemProps"/>
+            <IndiceCondition v-bind="itemProps" />
         </template>
       </MutableArray>
     </div>
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-  import FilterCondition from '../base/FilterCondition';
+  import IndiceCondition from '../base/IndiceCondition';
   import MutableArray from '../base/MutableArray';
 
   export default {
@@ -93,10 +93,10 @@
           "提交订单",
           "提交订单详情",],
         conditions: [],
-        initItem: {condition: 0, compare: 1, input: ''},
+        initItem: {condition: 1, amount: 1},
       }
     },
-    components: {FilterCondition, MutableArray},
+    components: {IndiceCondition, MutableArray},
     props: {
       title: String,
       suffix: String,
@@ -127,24 +127,20 @@
     height: 64px;
     font-size: 14px;
     color: #636E95;
-
-    .item1 {
-      width: 200px;
-      margin-left: 16px;
-    }
-    .item2 {
-      margin-left: 16px;
-      background: #FFFFFF;
-      border-radius: 4px;
-      border: 1px solid #97A0C3;
-    }
-    .item3 {
-      margin-left: 16px;
-    }
   }
 
   .array {
     margin-left: 72px;
+  }
+  .item1 {
+    width: 200px;
+    margin-left: 16px;
+  }
+  .item2 {
+    margin-left: 16px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid #97A0C3;
   }
 }
 </style>

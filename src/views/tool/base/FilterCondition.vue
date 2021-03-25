@@ -1,12 +1,12 @@
 <template>
   <div class="condition">
-    <Select v-model="condition" style="width: 200px">
+    <Select v-model="condition" class="item1">
       <Option v-for="(item,index) in conditionOptions" :value="index+1" :key="index+1">{{ item }}</Option>
     </Select>
-    <Select v-model="compare" style="width: 100px; margin-left: 16px;">
+    <Select v-model="compare" class="item2">
       <Option v-for="item in compareOptions" :value="item.value" :key="item.value">{{ item.label }}</Option>
     </Select>
-    <Input v-model="input" style="width: 200px; margin-left: 16px;"/>
+    <Input v-model="input" class="item3"/>
   </div>
 </template>
 
@@ -77,12 +77,24 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .condition {
   /*width: 500px;*/
   display: flex;
   /*justify-content: space-between;*/
   height: 42px;
   align-items: flex-start;
+
+  .item1 {
+    width: 200px;
+  }
+  .item2 {
+    width: 100px;
+    margin-left: 16px;
+  }
+  .item3 {
+    width: 200px;
+    margin-left: 16px;
+  }
 }
 </style>

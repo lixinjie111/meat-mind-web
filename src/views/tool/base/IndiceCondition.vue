@@ -1,41 +1,30 @@
 <template>
-  <div class="filter-event">
-    <div class="event">
-      {{title}}
-      <Select v-model="event" class="item1" v-if="showEvent">
-        <Option v-for="(item,index) of events" :value="index+1" :key="index+1">{{item}}</Option>
-      </Select>
-      <Button @click="handleAddCondition" class="item2">
-        <i class="iconfont icontianjia"></i>
-        {{buttonText}}</Button>
-      <span class="item3">{{suffix}}</span>
-    </div>
-    <div class="array">
-      <MutableArray :value="conditions" :init-item="initItem" :on-delete="handleDelete">
-        <template #item="itemProps">
-          <FilterCondition v-bind="itemProps"/>
-        </template>
-      </MutableArray>
-    </div>
+  <div class="condition">
+    <Select v-model="condition" class="item1">
+      <Option v-for="(item,index) in conditionOptions" :value="index+1" :key="index+1">{{ item }}</Option>
+    </Select>
+    的
+    <Select v-model="amount" class="item2">
+      <Option v-for="(item,index) in compareOptions" :value="index+1" :key="index+1">{{ item }}</Option>
+    </Select>
   </div>
 </template>
 
 <script>
-  import FilterCondition from '../base/FilterCondition';
-  import MutableArray from '../base/MutableArray';
-
   export default {
-    name: "FilterEvent",
+    name: "IndiceCondition",
     data() {
       return {
-        event: 1,
-        events: ["任意事件",
+        conditionOptions: [
+          "任意事件",
           "App崩溃",
           "领取权益",
           "完善资料",
           "收藏商品",
           "关注微信公众号",
           "评论",
+          "x频道有效点击（只要是点击了页面任何位置都算有效点击）",
+          "x频道任意点击",
           "Web 视区停留",
           "Web 元素点击",
           "微信客服消息终态信息",
@@ -91,60 +80,43 @@
           "注册成功",
           "搜索商品",
           "提交订单",
-          "提交订单详情",],
-        conditions: [],
-        initItem: {condition: 0, compare: 1, input: ''},
+          "提交订单详情",
+        ],
+        compareOptions: [
+          '总次数',
+          '用户数',
+          '人均次数',
+          '停留时长',
+        ]
       }
     },
-    components: {FilterCondition, MutableArray},
     props: {
-      title: String,
-      suffix: String,
-      showEvent: Boolean,
-      buttonText: {
-        type: String,
-        default: '筛选条件'
-      }
-    },
-    methods: {
-      handleAddCondition() {
-        this.conditions.push(Object.assign({}, this.initItem));
-      },
-      handleDelete(index) {
-        this.conditions.splice(index, 1);
-      }
+        condition: {
+          default: 0
+        },
+      amount: {
+          default: 0
+        },
     }
   }
 </script>
 
 <style lang="scss" scoped>
-.filter-event {
-  border-top: 1px solid #DEE2EE;
+.condition {
+  /*width: 500px;*/
+  display: flex;
+  /*justify-content: space-between;*/
+  height: 42px;
+  align-items: center;
+  font-size: 14px;
 
-  .event {
-    display: flex;
-    align-items: center;
-    height: 64px;
-    font-size: 14px;
-    color: #636E95;
-
-    .item1 {
-      width: 200px;
-      margin-left: 16px;
-    }
-    .item2 {
-      margin-left: 16px;
-      background: #FFFFFF;
-      border-radius: 4px;
-      border: 1px solid #97A0C3;
-    }
-    .item3 {
-      margin-left: 16px;
-    }
+  .item1 {
+    width: 200px;
+    margin-right: 16px;
   }
-
-  .array {
-    margin-left: 72px;
+  .item2 {
+    width: 100px;
+    margin-left: 16px;
   }
 }
 </style>
