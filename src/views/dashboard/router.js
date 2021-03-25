@@ -13,17 +13,7 @@ export default [
         path: `/${moduleName}`,
         name: moduleName,
         meta: {title: "Dashboard", moduleName},
-        component: dashboard,
-        beforeEnter:(to,from,next)=>{
-            if(from.name == 'login'){
-                sessionStorage.setItem('ifShowPop',true);
-                next();
-            }
-            else{
-                sessionStorage.setItem('ifShowPop',false);
-                next();
-            }
-        }
+        component: dashboard
     },
     {
         path: `/${moduleName}/manage`,
@@ -49,5 +39,12 @@ export default [
         meta: {title: "dashboard", moduleName},
         component: addManage
     },
+    {
+        path: `/${moduleName}/addEdit`,
+        name: 'dashboard-addEdit',
+        meta: {title: "dashboard", moduleName},
+        component: addEdit
+    },
+    
    
 ]
