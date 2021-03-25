@@ -1119,7 +1119,7 @@ export default {
         search(params){
             this.num++;
             let arr=[...params.age,...params.area,...params.customer,...params.profession,...params.sex,]
-            console.log(arr);
+            // console.log(arr);
             if(arr.length>3){
                 arr=[arr[0],arr[1],arr[2]]
             }

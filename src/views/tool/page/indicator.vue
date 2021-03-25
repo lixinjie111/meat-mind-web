@@ -236,7 +236,6 @@
                // this.generateData()
             },
             changeTab(index) {
-                console.log(index)
                 this.active = index;
             },
         }

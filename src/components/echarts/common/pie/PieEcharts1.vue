@@ -53,7 +53,6 @@
         let tolNum = 0;
         const { name, value } = myData || { name: [], value: [] };
         let list = [];
-        console.log(myData,'myData')
         myData['name'].forEach((item,index)=>{
           list.push({
             name:item,

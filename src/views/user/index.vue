@@ -1341,7 +1341,6 @@ export default {
 	  	this.customShow = false
 	  },
     changeNews(val){
-      console.log(val)
       if(val){
         this.chuData=this.$fjData.box01Data;
       }else{
