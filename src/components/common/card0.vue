@@ -143,5 +143,8 @@ export default {
       display: block;
     }
   }
+  &:hover{
+    box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.1), 4px 6px 20px 0px rgba(134, 143, 191, 0.1);
+  }
 }
 </style>

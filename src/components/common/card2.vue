@@ -76,7 +76,6 @@ export default {
         .jyIcon{
             display: block;
             width:24px;
-            height: 24px;
         }
     }
     .txt_rig{
