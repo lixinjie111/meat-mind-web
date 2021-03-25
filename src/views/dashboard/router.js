@@ -45,6 +45,11 @@ export default [
         meta: {title: "dashboard", moduleName},
         component: addEdit
     },
-    
+    {
+        path: `/${moduleName}/newManage`,
+        name: 'dashboard-newManage',
+        meta: {title: "dashboard", moduleName},
+        component: newManage
+    },
    
 ]
