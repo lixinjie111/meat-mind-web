@@ -40,7 +40,7 @@
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(1,'cen_area1','rig_area1')">
-              {{vDxtxt1}}
+              <span>{{vDxtxt1}}</span>
               <img v-if="vDxtxt1 == '收起'" :src="squpImg" class="squpImg"/>
               <img v-else :src="zkdwImg" class="squpImg"/>
             </div>
@@ -93,7 +93,7 @@
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(2,'cen_area2','rig_area2')">
-              {{vDxtxt2}}
+              <span>{{vDxtxt2}}</span>
               <img v-if="vDxtxt2 == '收起'" :src="squpImg" class="squpImg"/>
               <img v-else :src="zkdwImg" class="squpImg"/>
             </div>
@@ -147,7 +147,7 @@
               </div>
             </div>
             <div class="lef_area_bom" @click="expandfn(3,'cen_area3','rig_area3')">
-              {{vDxtxt3}}
+              <span>{{vDxtxt3}}</span>
               <img v-if="vDxtxt3 == '收起'" :src="squpImg" class="squpImg"/>
               <img v-else :src="zkdwImg" class="squpImg"/>
             </div>
@@ -197,7 +197,7 @@
               </div>
             </div>
             <div class="lef_area_bom" style="background: #FFE6DE;color: #FE774B;" @click="expandfn(4,'cen_area4','rig_area4')">
-              {{vDxtxt4}}
+              <span>{{vDxtxt4}}</span>
               <img v-if="vDxtxt4 == '查看动线详情'" :src="czkImg" class="squpImg"/>
               <i v-else :class="['iconfont','iconup']" class="squpImg"></i>
             </div>
@@ -255,7 +255,7 @@
               </div>
             </div>
             <div class="lef_area_bom" style="background: #FFE6DE;color: #FE774B;" @click="expandfn(5,'cen_area5','rig_area5')">
-              {{vDxtxt5}}
+              <span>{{vDxtxt5}}</span>
               <img v-if="vDxtxt5 == '查看动线详情'" :src="czkImg" class="squpImg"/>
               <i v-else :class="['iconfont','iconup']" class="squpImg"></i>
             </div>
@@ -2405,7 +2405,7 @@ export default {
 		// box-sizing: border-box;
     .bjsbz_container{
       width: 100%;
-      height: 110px;
+      height: 98px;
       display: flex;
       align-items: center;
       margin-bottom: 16px;
@@ -2425,7 +2425,6 @@ export default {
           align-items: center;
           .actImg_container{
             width: 64px;
-            height: 64px;
             .avatImg{
               width: 100%;
             }
@@ -2454,7 +2453,7 @@ export default {
         }
         .lef_area_bom{
           width: 100%;
-          height: 47px;
+          height: 35.3px;
           background: #DDE9FF;
           display: flex;
           align-items: center;
@@ -2466,9 +2465,12 @@ export default {
           border-radius: 0 0 0 8px;
           .squpImg{
             display: block;
+            display: flex;
+            align-items: center;
             width: 16px;
             height: 16px;
             margin-left: 36px;
+            line-height: 22.75px;
           }
           &:hover{
             cursor: pointer;
