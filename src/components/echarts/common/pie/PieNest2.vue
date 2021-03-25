@@ -88,7 +88,6 @@ export default {
 				return
 			}
 			let _option = this.defaultOption(myData);
-			// console.log(_option)
 			let myChart = echarts5.init(document.getElementById(this.id));
 			myChart.setOption(_option);
 			window.addEventListener('resize',()=>{

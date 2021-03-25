@@ -142,9 +142,8 @@ export default {
               },
             ],
           });
-          myChart.on('click',function(parm){
-              // console.log(parm)
-          });
+          // myChart.on('click',function(parm){
+          // });
         });
       }
 

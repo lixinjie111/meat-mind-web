@@ -194,7 +194,6 @@
             },
             // 打开subMenu
             openChange(ary) {
-                // console.log(ary)
                 if (!ary.length) {
                     return;
                 }

@@ -87,9 +87,6 @@ export default {
           pageSize: 10,
       }
   },
-  created(){
-    console.log(this.total)
-  },
   methods:{
     changeSize(){},
        change(page) {
