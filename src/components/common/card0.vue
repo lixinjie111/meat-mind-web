@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container" ref="card-container">
+  <div class="card-container" @click="goData" :class="{'ifPointer':ifPointer}">
     <div class="til_icon_container">
       <i :class="['iconfont', cardData.iconfont]"></i>
       <span class="guide_til">{{ cardData.title }}</span>
@@ -29,6 +29,7 @@ export default {
       timer: null,
       numTxt: "",
       fontcolor: null,
+      ifPointer:false
     };
   },
   props: {
@@ -49,8 +50,16 @@ export default {
   },
   methods: {
     setStyle(){
-      var itDom = this.$refs['card-container'];
-      console.log(itDom,'itDom')
+      if(this.cardData.title == '上传数据'||this.cardData.title == 'SDK埋点'||this.cardData.title == 'API采集'||this.cardData.title == '数据库直连'){
+        this.ifPointer = true;
+      }
+    },
+    goData(){
+      if(this.cardData.title == '上传数据'||this.cardData.title == 'SDK埋点'||this.cardData.title == 'API采集'||this.cardData.title == '数据库直连'){
+        this.$router.push({
+          path:'/data-center/my'
+        });
+      }
     }
   },
 };
@@ -92,27 +101,21 @@ export default {
     }
     .iconxinrenlibao{
       background: #2373FF;
-      box-shadow: 2px 3px 8px 0 rgba(164, 157, 250, 0.5), -2px -2px 8px 0px #FFFFFF;
     }
     .iconshangchuanshuju{
       background: #FE774B;
-      box-shadow: 2px 3px 8px 0 rgba(252, 128, 159, 0.5), -2px -2px 8px 0px #FFFFFF;
     }
     .iconSDKmaidian{
       background: #1DCEC3;
-      box-shadow: 2px 3px 8px 0px rgba(255, 217, 140, 0.5), -2px -2px 8px 0px #FFFFFF;
     }
     .iconAPIcaiji{
       background: #F16E84;
-      box-shadow: 2px 3px 8px 0 rgba(138, 230, 199, 0.5), -2px -2px 8px 0px #FFFFFF;
     }
     .iconshujukuzhilian{
       background: #FDD352;
-      box-shadow: 2px 3px 8px 0px rgba(179, 128, 182, 0.5), -2px -2px 8px 0px #FFFFFF;
     }
     .iconbangzhu{
       background: #75B1FF;
-      box-shadow: 2px 3px 8px 0 rgba(115, 138, 212, 0.5), -2px -2px 8px 0px #FFFFFF;
     }
     .guide_til {
       font-size: 14px;
@@ -151,7 +154,9 @@ export default {
   }
   &:hover{
     box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.1), 4px 6px 20px 0px rgba(134, 143, 191, 0.1);
-    border: 1px solid #FFFFFF;
   }
+}
+.ifPointer{
+  cursor: pointer;
 }
 </style>
