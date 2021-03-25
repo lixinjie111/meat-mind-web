@@ -8,7 +8,7 @@
 	    <div class="top_title_container">
 		    <div class="left_text">
 			    <div class="left_title_text">
-				    <span>用户动线</span>
+				    <span>用户分群数据</span>
 				    <!--<Poptip popper-class="saas-poptip" placement="right-start">-->
 				    <!--&lt;!&ndash; <i class="iconfont iconguanyuline1 tip-icon"></i> &ndash;&gt;-->
 				    <!--<img class="gif" src="../../assets/img/user/tip.gif" alt="">-->
@@ -41,12 +41,13 @@
             </div>
             <div class="lef_area_bom" @click="expandfn(1,'cen_area1','rig_area1')">
               <span>{{vDxtxt1}}</span>
-              <img v-if="vDxtxt1 == '收起'" :src="squpImg" class="squpImg"/>
+              <img v-if="vDxtxt1 == '收起动线详情'" :src="squpImg" class="squpImg"/>
               <img v-else :src="zkdwImg" class="squpImg"/>
             </div>
           </div>
           <div class="cen_area cen_area1" ref="cen_area1">
-            <img :src="bjsbzImgTime" alt="" srcset="" class="cen_areaImg">
+            <img v-if="vDxtxt1 == '收起动线详情'" :src="bjsbzImgTime1" alt="" srcset="" class="cen_areaImg">
+            <img v-else :src="bjsbzImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
           <div class="rig_area rig_area1" ref="rig_area1">
             <div class="rig_area_lef">
@@ -94,12 +95,13 @@
             </div>
             <div class="lef_area_bom" @click="expandfn(2,'cen_area2','rig_area2')">
               <span>{{vDxtxt2}}</span>
-              <img v-if="vDxtxt2 == '收起'" :src="squpImg" class="squpImg"/>
+              <img v-if="vDxtxt2 == '收起动线详情'" :src="squpImg" class="squpImg"/>
               <img v-else :src="zkdwImg" class="squpImg"/>
             </div>
           </div>
           <div class="cen_area" ref="cen_area2">
-            <img :src="yxqnImgTime" alt="" srcset="" class="cen_areaImg">
+            <img v-if="vDxtxt2 == '收起动线详情'" :src="yxqnImgTime1" alt="" srcset="" class="cen_areaImg">
+            <img v-else :src="yxqnImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
           <div class="rig_area" ref="rig_area2">
             <div class="rig_area_lef">
@@ -148,12 +150,13 @@
             </div>
             <div class="lef_area_bom" @click="expandfn(3,'cen_area3','rig_area3')">
               <span>{{vDxtxt3}}</span>
-              <img v-if="vDxtxt3 == '收起'" :src="squpImg" class="squpImg"/>
+              <img v-if="vDxtxt3 == '收起动线详情'" :src="squpImg" class="squpImg"/>
               <img v-else :src="zkdwImg" class="squpImg"/>
             </div>
           </div>
           <div class="cen_area" ref="cen_area3">
-            <img :src="qyggImgTime" alt="" srcset="" class="cen_areaImg">
+            <img v-if="vDxtxt3 == '收起动线详情'" :src="qyggImgTime1" alt="" srcset="" class="cen_areaImg">
+            <img v-else :src="qyggImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
           <div class="rig_area" ref="rig_area3">
             <div class="rig_area_lef">
@@ -203,7 +206,8 @@
             </div>
           </div>
           <div class="cen_area" ref="cen_area4">
-            <img :src="bpyzImgTime" alt="" srcset="" class="cen_areaImg">
+            <img v-if="vDxtxt4 == '收起动线详情'" :src="bpyzImgTime1" alt="" srcset="" class="cen_areaImg">
+            <img v-else :src="bpyzImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
           <div class="rig_area" ref="rig_area4">
             <div class="rig_area_lef">
@@ -261,7 +265,8 @@
             </div>
           </div>
           <div class="cen_area" ref="cen_area5">
-            <img :src="zyzyImgTime" alt="" srcset="" class="cen_areaImg">
+            <img v-if="vDxtxt5 == '收起动线详情'" :src="zyzyImgTime1" alt="" srcset="" class="cen_areaImg">
+            <img v-else :src="zyzyImgTime" alt="" srcset="" class="cen_areaImg">
           </div>
           <div class="rig_area" ref="rig_area5">
             <div class="rig_area_lef">
@@ -1193,13 +1198,22 @@ export default {
       zyzyImg:require("../../assets/img/yhhx/ziyouImg.png"),
 
       bjsbzImgTime:require("../../assets/img/yhhx/yhdx1.png"),
+      bjsbzImgTime1:require("../../assets/img/yhhx/yhdx11.png"),
+
       yxqnImgTime:require("../../assets/img/yhhx/yhdx2.png"),
+      yxqnImgTime1:require("../../assets/img/yhhx/yhdx22.png"),
+
       qyggImgTime:require("../../assets/img/yhhx/yhdx3.png"),
+      qyggImgTime1:require("../../assets/img/yhhx/yhdx33.png"),
+
       bpyzImgTime:require("../../assets/img/yhhx/yhdx4.png"),
+      bpyzImgTime1:require("../../assets/img/yhhx/yhdx44.png"),
+
       zyzyImgTime:require("../../assets/img/yhhx/yhdx5.png"),
+      zyzyImgTime1:require("../../assets/img/yhhx/yhdx55.png"),
 
       ifShowDx1:true,
-      vDxtxt1:'收起',
+      vDxtxt1:'收起动线详情',
       ifShowDx2:false,
       vDxtxt2:'查看动线详情',
       ifShowDx3:false,
@@ -1396,14 +1410,14 @@ export default {
         }
         this.ifShowDx1 = !this.ifShowDx1;
         if(this.ifShowDx1){
-          this.vDxtxt1 = '收起';
+          this.vDxtxt1 = '收起动线详情';
           cenDom.style="background-color:#EAEDF7;border-right: #FFFFFF 1px solid;";  
-          rDom.style="background-color:#EAEDF7;";
+          rDom.style="background-color:#F0F8FF;";
         }
         else{
           this.vDxtxt1 = '查看动线详情';
           cenDom.style="background-color:inherit;border-right:none;";  
-          rDom.style="background-color:inherit;";
+          rDom.style="background-color:#FFFFFF;";
         }
       }
       else if(arg == 2){
@@ -1433,14 +1447,14 @@ export default {
         }
         this.ifShowDx2 = !this.ifShowDx2;
         if(this.ifShowDx2){
-          this.vDxtxt2 = '收起';
+          this.vDxtxt2 = '收起动线详情';
           cenDom.style="background-color:#EAEDF7;border-right: #FFFFFF 1px solid;";  
-          rDom.style="background-color:#EAEDF7;";
+          rDom.style="background-color:#F0F8FF;";
         }
         else{
           this.vDxtxt2 = '查看动线详情';
           cenDom.style="background-color:inherit;border-right:none;";  
-          rDom.style="background-color:inherit;";
+          rDom.style="background-color:#FFFFFF;";
         }
       }
       else if(arg == 3){
@@ -1470,14 +1484,14 @@ export default {
         }
         this.ifShowDx3 = !this.ifShowDx3;
         if(this.ifShowDx3){
-          this.vDxtxt3 = '收起';
+          this.vDxtxt3 = '收起动线详情';
           cenDom.style="background-color:#EAEDF7;border-right: #FFFFFF 1px solid;";  
-          rDom.style="background-color:#EAEDF7;";
+          rDom.style="background-color:#F0F8FF;";
         }
         else{
           this.vDxtxt3 = '查看动线详情';
           cenDom.style="background-color:inherit;border-right:none;";  
-          rDom.style="background-color:inherit;";
+          rDom.style="background-color:#FFFFFF;";
         }
       }
       else if(arg == 4){
@@ -1507,14 +1521,14 @@ export default {
         }
         this.ifShowDx4 = !this.ifShowDx4;
         if(this.ifShowDx4){
-          this.vDxtxt4 = '收起';
+          this.vDxtxt4 = '收起动线详情';
           cenDom.style="background-color:#EAEDF7;border-right: #FFFFFF 1px solid;";  
-          rDom.style="background-color:#EAEDF7;";
+          rDom.style="background-color:#F0F8FF;";
         }
         else{
           this.vDxtxt4 = '查看动线详情';
           cenDom.style="background-color:inherit;border-right:none;";  
-          rDom.style="background-color:inherit;";
+          rDom.style="background-color:#FFFFFF;";
         }
       }
       else if(arg == 5){
@@ -1544,14 +1558,14 @@ export default {
         }
         this.ifShowDx5 = !this.ifShowDx5;
         if(this.ifShowDx5){
-          this.vDxtxt5 = '收起';
+          this.vDxtxt5 = '收起动线详情';
           cenDom.style="background-color:#EAEDF7;border-right: #FFFFFF 1px solid;";  
-          rDom.style="background-color:#EAEDF7;";
+          rDom.style="background-color:#F0F8FF;";
         }
         else{
           this.vDxtxt5 = '查看动线详情';
           cenDom.style="background-color:inherit;border-right:none;";  
-          rDom.style="background-color:inherit;";
+          rDom.style="background-color:#FFFFFF;";
         }
       }
     },
@@ -2483,6 +2497,7 @@ export default {
         .cen_areaImg{
           display: block;
           width: 100%;
+          height: 100%;
         }
       }
       .rig_area{
@@ -2495,7 +2510,7 @@ export default {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        border-radius: 0 8px 8px 0;
+        border-radius: 0 8px 0 0;
         .rig_area_lef{
           width: 150px;
           display: flex;
@@ -2539,7 +2554,7 @@ export default {
         }
       }
       .cen_area1,.rig_area1{
-        background-color:#EAEDF7;
+        background-color:#F0F8FF;
       }
       .cen_area1{
         border-right: #FFFFFF 1px solid;

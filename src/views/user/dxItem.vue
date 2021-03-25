@@ -2142,7 +2142,7 @@
               .person_tffatj_con{
                 width: 100%;
                 border-radius: 0px 12px 12px 12px;
-                padding-bottom: 20px;
+                padding-bottom: 17px;
                 box-sizing: border-box;
                 .top_img_con{
                   padding: 0 16px;
