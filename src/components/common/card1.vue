@@ -1,5 +1,6 @@
 <template>
-  <div class="card-container" :style="{width:cardData.width}">
+  <div class="card-container" :style="{width:cardData.width}" 
+  :class="{'rerb':cardData.title == '客单量' || cardData.title == '流入流出比' || cardData.title =='近7日 UV'|| cardData.title =='核心功能使用的总次数'|| cardData.title =='核心功能渗透率'}">
     <div class="card_title">{{cardData.title}}</div>
     <div class="time_range">{{cardData.timeRange}}</div>
     <div class="time">{{cardData.time}}</div>
@@ -151,5 +152,8 @@ export default {
       }
     }
   }
+}
+.rerb{
+  border-right: none;
 }
 </style>

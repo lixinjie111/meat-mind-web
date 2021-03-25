@@ -132,7 +132,7 @@
       <div class="title_container">
         <div class="left_area">
           <span>品牌运营概览</span>
-          <Poptip popper-class="saas-poptip small" placement="right-start" style="margin-right:10px;">
+          <Poptip popper-class="saas-poptip small" placement="right-start">
             <i class="iconfont iconguanyu tip-icon"></i>
             <div slot="content">
               <p>关注运营关键指标，快速了解品牌运营现状</p >
@@ -190,7 +190,7 @@
       <div class="title_container">
         <div class="left_area">
           <span>用户生命周期</span>
-          <Poptip popper-class="saas-poptip small" placement="right-start" style="margin-right:10px;">
+          <Poptip popper-class="saas-poptip small" placement="right-start">
             <i class="iconfont iconguanyu tip-icon"></i>
             <div slot="content">
               <p>了解不同阶段的用户构成，寻找提升用户价值的切入点</p >
@@ -224,7 +224,7 @@
       <div class="title_container">
         <div class="left_area">
           <span>媒介概览</span>
-          <Poptip popper-class="saas-poptip small" placement="right-start" style="margin-right:10px;">
+          <Poptip popper-class="saas-poptip small" placement="right-start">
             <i class="iconfont iconguanyu tip-icon"></i>
             <div slot="content">
               <p>关注媒介核心指标，实时掌握媒介推广情况</p >
@@ -304,7 +304,7 @@
       <div class="title_container">
         <div class="left_area">
           <span>产品数据评估</span>
-          <Poptip popper-class="saas-poptip small" placement="right-start" style="margin-right:10px;">
+          <Poptip popper-class="saas-poptip small" placement="right-start">
             <i class="iconfont iconguanyu tip-icon"></i>
             <div slot="content">
               <p>了解产品在企业内部的使用情况，深化管理效果</p >
@@ -1680,6 +1680,10 @@ export default {
         .time_range_container {
           width: 276px;
           height: 32px;
+        }
+        .ivu-poptip{
+          margin-right: 16px;
+          margin-left: 8px;
         }
       }
       .right_area {
