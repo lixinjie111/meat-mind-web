@@ -99,6 +99,8 @@
         <div class="kanban_item_container">
             <div class="kanban_item1">
               <img :src="jylefImg" class="jylefImg">
+              <div class="top_cir"></div>
+              <div class="bom_cir"></div>
             </div>
             <div class="kanban_item2">
               <vCard2 v-for="(item,index) in jinyinLixt" :key="index" :cardData='item'></vCard2>
@@ -1477,6 +1479,69 @@ export default {
             display: block;
             width: 100%;
             border-radius: 8px;
+          }
+        }
+        @keyframes myaction {
+          0%   {
+            transform: scale(1);
+            background-color: rgba(6,234,255,1);
+          }
+          25%  {
+            transform: scale(1.5);
+            background-color: rgba(6,234,255,.8);
+          }
+          50%  {
+            transform: scale(1.9);
+            background-color: rgba(6,234,255,.6);
+          }
+          100% {
+            transform: scale(1);
+            background-color: rgba(6,234,255,1);
+          }
+        }
+        @keyframes myaction1 {
+          0%   {
+            transform: scale(1);
+            background-color: rgba(248,200,126,1);
+          }
+          25%  {
+            transform: scale(1.5);
+            background-color: rgba(248,200,126,.8);
+          }
+          50%  {
+            transform: scale(1.9);
+            background-color: rgba(248,200,126,.6);
+          }
+          100% {
+            transform: scale(1);
+            background-color: rgba(248,200,126,1);
+          }
+        }
+        .kanban_item1{
+          position: relative;
+          .top_cir{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: 133.5px;
+            left: 264.3px;
+            border-radius: 50%;
+            background-color: #06eaff;
+            animation-name: myaction;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+          }
+          .bom_cir{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: 165.3px;
+            left: 264.3px;
+            border-radius: 50%;
+            background-color: #F8C87E;
+            animation-name: myaction1;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
           }
         }
         .kanban_item2{
