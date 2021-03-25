@@ -973,10 +973,10 @@
                 this.$router.push({name:"mark"})
             },
             toDetail4(){
-                this.$router.push({name:"business-analysis-ztgl"})
+                this.$router.push({name:"business-analysis-overview"})
             },
             goTo(){
-              this.$router.push({path:"/business-analysis/ztgl"})
+              this.$router.push({path:"/business-analysis/overview"})
             }
         }
     }
