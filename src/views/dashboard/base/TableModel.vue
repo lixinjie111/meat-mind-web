@@ -1,13 +1,22 @@
 <template>
   <div class="table-model">
-      <Table :columns="columns" :data="tableData">
+    <Table :columns="columns" :data="tableData">
+        <template slot-scope="{row}" slot="name">
+            <Poptip popper-class="panel-poptip" placement="right-start" trigger="hover">
+              <span >{{row.name}}</span>
+              <div slot="content">
+                <img src="../../../assets/img/dashboard/kanban/bianji.png" alt="">
+                <img src="../../../assets/img/dashboard/kanban/bianji.png" alt="">
+              </div>
+            </Poptip>
+        </template>
         <template slot-scope="{row}" slot="status">
             <span style="color:#2373FF" v-if="row.type=='使用中'">{{row.type}}</span>
             <span v-else>{{row.type}}</span>
         </template>
         <template slot="operate" class="operate" slot-scope="{ row, index }">
             <div class="actionList" v-if="row.name=='系统默认看板'">
-                <div class="detail">查看</div>
+                <div class="detail" @click="look(row.name)">查看</div>
                 <div class="detail">
                   <Dropdown trigger="click" style="margin-left: 20px">
                     <a class="detail">
@@ -22,7 +31,7 @@
                 </div>
             </div>
             <div class="actionList" v-else>
-                <div class="detail">查看</div>
+                <div class="detail" @click="look(row.name)">查看</div>
                 <div class="detail" v-if="row.type=='使用中'">
                   <Dropdown trigger="click" style="margin-left: 20px">
                     <a class="detail">
@@ -60,6 +69,15 @@
         <Page :total="tableData.length" :current="currentPage" @on-change="change" @on-page-size-change="changeSize"
                 :pageSize="pageSize" show-total show-sizer class-name="pageS"/>
     </div>
+    <div class="cover" v-show="showCover">
+      <div class="box">
+        <div class="title-nav">
+          <span>{{title}}</span>
+          <div class="close" @click="closeModal"><img src="../../../assets/img/dashboard/kanban/close.png" alt=""></div>
+        </div>
+        <div class="boxImg"><img src="../../../assets/img/dashboard/kanban/bianji.png" alt=""></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -82,6 +100,8 @@ export default {
   },
   data(){
       return{
+          title:'',
+          showCover:false,
           currentPage: 1,
           total: this.tableData.length,
           pageSize: 10,
@@ -91,15 +111,78 @@ export default {
     console.log(this.total)
   },
   methods:{
+    look(val){
+      this.showCover=true;
+      this.title=val;
+    },
     changeSize(){},
-       change(page) {
-        this.currentPage = page
-      },
+    closeModal(){
+      this.showCover=false;
+    },
+    change(page) {
+      this.currentPage = page
+    },
   }
 };
 </script>
 
 <style scoped lang="scss">
+.cover{
+  position: fixed;
+  left:0;
+  right: 0;
+  top:0;
+  bottom:0;
+  z-index: 999999;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .box{
+    width: 80%;
+    height: 71%;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: auto;
+    .title-nav{
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom:1px solid #E8E8E8;
+      padding:0 24px;
+      span{
+        font-size: 20px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #242F57;
+        line-height: 28px;
+      }
+      .close{
+        width: 24px;
+      }
+    }
+    .boxImg{
+      padding:0 24px;
+    }
+  }
+}
+img{
+  width: 100%;
+  display: block;
+}
+// ::v-deep .ivu-table-wrapper{
+//   overflow: auto;
+// }
+::v-deep .panel-poptip{
+  width: 700px;
+  height: 250px;
+  overflow: scroll;
+  .ivu-poptip-arrow{
+    display: none;
+  }
+}
 .actionList {
                   display: flex;
                    // justify-content: flex-end;

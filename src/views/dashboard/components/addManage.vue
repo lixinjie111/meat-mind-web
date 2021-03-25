@@ -1,25 +1,16 @@
 <template>
   <div class="analyst-manage-box">
     <div class="header-nav">
-      <div class="back" @click="goBack"><img src="../../assets/img/dashboard/back.png" /></div>
+      <div class="back" @click="goBack"><img src="../../../assets/img/dashboard/back.png" /></div>
       <div class="dliver"></div>
-      <p>编辑看板</p>
+      <p>添加报表</p>
     </div>
-    <div class="header-title">
-      <div class="left">
-        <Input v-model="value" placeholder="2020年上半年XX电商会" style="width: 352px" />
-      </div>
-      <div class="right">
-        
-      </div>
-    </div>
-    <TableModel :columns="columns" :tableData="tableData">
-    </TableModel>
+      <div style="cursor:pointer"  @click="goPage"><img src="../../../assets/img/dashboard/kanban/add.png" alt=""></div>
   </div>
 </template>
 
 <script>
-import TableModel from "./base/TableModel";
+import TableModel from "../base/TableModel";
 export default {
     name: "manage",
     components:{TableModel},
@@ -154,8 +145,10 @@ export default {
     };
     },
     methods:{
-        create(){
-          
+        goPage(){
+           this.$router.push({
+            path:'/dashboard/addEdit'
+          })
         },
         goBack(){
             this.$router.go(-1)
@@ -172,6 +165,47 @@ img {
 .analyst-manage-box {
   padding: 24px;
   padding-top: 0;
+  .header-title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    .left{
+      width: 352px;
+    }
+    .right{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      span{
+        font-size: 12px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #636E95;
+        margin-left: 24px;
+      }
+      .btn{
+        width: 96px;
+        height: 32px;
+        background: #2373FF;
+        box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
+        border-radius: 4px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 32px;
+        text-align: center;
+        cursor: pointer;
+        margin-left: 12px;
+        &.btn1{
+          background: #FFFFFF;
+          border: 1px solid #97A0C3;
+          color: #242F57;
+          margin-left: 24px;
+        }
+      }
+    }
+  }
   .header-nav {
     display: flex;
     align-items: center;

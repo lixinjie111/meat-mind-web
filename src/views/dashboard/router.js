@@ -1,6 +1,10 @@
 const dashboard = () => import('./index');
 const manage = () => import('./manage');
-const editPanel = () => import('./editMange');
+const editPanel = () => import('./components/editMange');
+const editDown = () => import('./components/editDown');
+const addManage = () => import('./components/addManage');
+const addEdit = () => import('./components/addEdit');
+const newManage = () => import('./components/newManage');
 
 const moduleName = 'dashboard';
 
@@ -22,5 +26,18 @@ export default [
         name: 'dashboard-editPanel',
         meta: {title: "dashboard", moduleName},
         component: editPanel
-    }
+    },
+    {
+        path: `/${moduleName}/editDown`,
+        name: 'dashboard-editDown',
+        meta: {title: "dashboard", moduleName},
+        component: editDown
+    },
+    {
+        path: `/${moduleName}/addManage`,
+        name: 'dashboard-addManage',
+        meta: {title: "dashboard", moduleName},
+        component: addManage
+    },
+   
 ]

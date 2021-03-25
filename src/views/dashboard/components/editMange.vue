@@ -1,31 +1,37 @@
 <template>
   <div class="analyst-manage-box">
     <div class="header-nav">
-      <div class="back" @click="goBack"><img src="../../assets/img/dashboard/back.png" /></div>
+      <div class="back" @click="goBack"><img src="../../../assets/img/dashboard/back.png" /></div>
       <div class="dliver"></div>
-      <p>看板管理</p>
-      <div class="blue-btn" @click="create">
-        <i class="iconfont icontianjia"></i>
-        <div>新建看板</div>
+      <p>编辑看板</p>
+    </div>
+    <div class="header-title">
+      <div class="left">
+        <Input v-model="value" placeholder="2020年上半年XX电商会" />
+      </div>
+      <div class="right">
+        <span>创建日期：2020/01/01</span>
+        <span>更新日期：2020/03/01</span>
+        <div class="btn btn1" @click="down">下载报表</div>
+        <div class="btn" @click="add">添加报表</div>
       </div>
     </div>
-    <TableModel :columns="columns" :tableData="tableData">
-    </TableModel>
+    <div><img src="../../../assets/img/dashboard/kanban/bianji.png" alt=""></div>
   </div>
 </template>
 
 <script>
-import TableModel from "./base/TableModel";
+import TableModel from "../base/TableModel";
 export default {
     name: "manage",
     components:{TableModel},
     data() {
     return {
+      value:'',
       columns: [
         {
           title: "看板名称",
           key: "name",
-          slot: "name",
         },
         {
           title: "创建时间",
@@ -150,9 +156,14 @@ export default {
     };
     },
     methods:{
-        create(){
+        down(){
           this.$router.push({
-            path:'/dashboard/newManage'
+            path:'/dashboard/editDown'
+          })
+        },
+        add(){
+          this.$router.push({
+            path:'/dashboard/addManage'
           })
         },
         goBack(){
@@ -170,6 +181,47 @@ img {
 .analyst-manage-box {
   padding: 24px;
   padding-top: 0;
+  .header-title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    .left{
+      width: 352px;
+    }
+    .right{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      span{
+        font-size: 12px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #636E95;
+        margin-left: 24px;
+      }
+      .btn{
+        width: 96px;
+        height: 32px;
+        background: #2373FF;
+        box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
+        border-radius: 4px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 32px;
+        text-align: center;
+        cursor: pointer;
+        margin-left: 12px;
+        &.btn1{
+          background: #FFFFFF;
+          border: 1px solid #97A0C3;
+          color: #242F57;
+          margin-left: 24px;
+        }
+      }
+    }
+  }
   .header-nav {
     display: flex;
     align-items: center;
