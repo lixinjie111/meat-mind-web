@@ -32,7 +32,6 @@
     },
     methods: {
       changeTab(index) {
-        console.log('index', index)
         this.tabActive = index;
       },
     },

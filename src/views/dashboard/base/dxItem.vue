@@ -919,7 +919,6 @@
               var bgc1 = '#D3E3FF';
               var bgc2 = '#9ECBFF';
               var bgc3 = '#4488FF';
-              console.log(tabDom1,'tabDom')
               if(arg == 0){
                 this.ifShowtcon = true;
                 tabDom.style=` background:${bgc0};`;

@@ -196,7 +196,7 @@ export default {
   },
   methods: {
     create() {
-      this.createModal = true;
+      // this.createModal = true;
     },
     userBehavior() {
       this.createModal = false;
