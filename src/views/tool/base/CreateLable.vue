@@ -48,7 +48,7 @@ export default {
   },
   methods:{
     create(){
-      this.$emit('create')
+      // this.$emit('create')
     },
     
   },
@@ -87,6 +87,7 @@ export default {
         margin-right: 8px;
         background: #2373ff;
         border-radius: 4px;
+        cursor: pointer;
         > i {
           width: 14px;
           height: 14px;
