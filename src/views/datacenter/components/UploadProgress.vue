@@ -13,17 +13,8 @@
 <script>
 export default {
   props: ['visible', 'active'],
-  data(){
-    console.log('visible', this.visible)
-    return{
-    }
-  },
-  methods: {
-
-  },
   $watch:{
     visible(v){
-      console.log('-------------------', v)
     }
   },
   computed: {
