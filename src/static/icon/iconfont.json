@@ -6,6 +6,76 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "20600320",
+      "name": "可视化事件",
+      "font_class": "keshihuashijian",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "20600321",
+      "name": "元事件",
+      "font_class": "yuanshijian",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "20600322",
+      "name": "事件属性",
+      "font_class": "shijianshuxing",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    },
+    {
+      "icon_id": "20600323",
+      "name": "物品属性",
+      "font_class": "wupinshuxing",
+      "unicode": "e65f",
+      "unicode_decimal": 58975
+    },
+    {
+      "icon_id": "20600324",
+      "name": "维度表",
+      "font_class": "weidubiao",
+      "unicode": "e660",
+      "unicode_decimal": 58976
+    },
+    {
+      "icon_id": "20600325",
+      "name": "虚拟事件",
+      "font_class": "xunishijian",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
+      "icon_id": "20600326",
+      "name": "入库规则",
+      "font_class": "rukuguize",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "20600327",
+      "name": "Session",
+      "font_class": "Session",
+      "unicode": "e663",
+      "unicode_decimal": 58979
+    },
+    {
+      "icon_id": "20600328",
+      "name": "用户属性",
+      "font_class": "yonghushuxing",
+      "unicode": "e664",
+      "unicode_decimal": 58980
+    },
+    {
+      "icon_id": "20600329",
+      "name": "虚拟属性",
+      "font_class": "xunishuxing",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
       "icon_id": "20583452",
       "name": "转化",
       "font_class": "zhuanhua",

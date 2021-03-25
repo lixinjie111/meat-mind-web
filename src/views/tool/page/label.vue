@@ -190,7 +190,6 @@ export default {
   methods: {
     changeTab(index) {
       this.tableData1 =[];
-        console.log(index);
         if(index==1){
           this.tableData1=this.tableData;
         }else if(index==2){
@@ -210,8 +209,6 @@ export default {
     },
     create() {
       this.showModal = true;
-     
-      console.log(this.tableData1)
     },
     createTarget() {
       this.showModal = false;

@@ -49,12 +49,6 @@ export default {
         color:this.colorList,
         tooltip:{
           trigger:"item"
-        //   formatter:(params)=>{
-        //     console.log(params)
-        //     if(params.seriesName=='正常'){
-        //       return params.dataIndex 
-        //     }
-        //   }
         },
         legend: {
           icon: 'circle',
@@ -171,7 +165,6 @@ export default {
             tooltip:{
               formatter:(params)=>{
                 return this.scatterData.common[params.dataIndex]
-                // console.log(params)
               }
             },
             data: this.scatterData.chance

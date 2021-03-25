@@ -319,7 +319,7 @@ export default {
                     line-height: 24px;
                 }
                 .cur-l-status{
-                    width: 44px;
+                    // width: 44px;
                     height: 24px;
                     padding: 1px 8px;
                     border-radius: 4px;

@@ -130,7 +130,7 @@
                             {
                                 name: "analysis-tool-user",
                                 label: "用户分群",
-                                path: "/analysis-tool/user",
+                                path: "/analysis-tool/user", 
                             },
                             {
                                 name: "analysis-tool-link",
@@ -194,7 +194,6 @@
             },
             // 打开subMenu
             openChange(ary) {
-                // console.log(ary)
                 if (!ary.length) {
                     return;
                 }
@@ -214,7 +213,29 @@
             if (this.$route.name == 'login') {
                 this.activeName = 'dashboard'
             } else {
-                this.activeName = this.$route.name
+                let model = this.$route.name.indexOf('analysis-tool-model') 
+                let  metax= this.$route.name.indexOf("data-center-metax")
+                if(model>-1){
+                    this.activeName = "analysis-tool-model"
+                }else if(metax>-1){
+                    this.activeName = "data-center-metax"
+                }else{
+                    this.activeName = this.$route.name
+                }
+                // this.activeName = this.$route.name
+            }
+        },
+        watch:{
+            '$route'(val){
+                let model = val.name.indexOf('analysis-tool-model') 
+                let  metax= val.name.indexOf("data-center-metax")
+                if(model>-1){
+                    this.activeName = "analysis-tool-model"
+                }else if(metax>-1){
+                    this.activeName = "data-center-metax"
+                }else{
+                    this.activeName = val.name
+                }
             }
         }
     };

@@ -643,7 +643,6 @@
                 this.condiList = this.nlList.concat(this.xingbieList,this.hasChList,this.xiaoFList,this.huyiList,this.zhYList)
             },
             nianlinClick(arg,art){
-                console.log(art)
                 var itemDom = this.$refs[art] || [];
                 for(var i=0;i<itemDom.length;i++){
                     if(i==arg){
@@ -653,7 +652,6 @@
                         itemDom[i].style="color: #636E95;background: none;";
                     }
                 }
-                console.log(itemDom,'itemDom')
             },
             expandCond(){
                 this.ifShowCon = !this.ifShowCon;
