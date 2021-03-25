@@ -53,6 +53,7 @@ export default {
         initItem: {input: ''},
         showRelation: true,
         conditionOptions: [
+          '总体',
           'Distinct ID',
           'IP',
           'SDK版本',
