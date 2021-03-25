@@ -17,7 +17,7 @@
         <div class="overview-box">
             <div class="overview-title flex">
                 <p>数据源概览</p>
-                <div @click="toMark">品牌画像<i class="iconfont iconleft-arrow"></i></div>
+<!--                <div @click="toMark">品牌画像<i class="iconfont iconleft-arrow"></i></div>-->
             </div>
             <div class="overview-top flex-start">
                 <div class="card1">

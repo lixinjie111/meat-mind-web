@@ -15,7 +15,7 @@
               我上传的数据
             </div>
             <div class="count">
-              0
+              2
             </div>
           </div>
           <i class="iconfont icongengduo"></i>
@@ -27,7 +27,7 @@
               SDK埋点
             </div>
             <div class="count">
-              0
+              15
             </div>
           </div>
           <i class="iconfont icongengduo"></i>
@@ -39,7 +39,7 @@
               API采集
             </div>
             <div class="count">
-              0
+              15
             </div>
           </div>
           <i class="iconfont icongengduo"></i>
@@ -204,36 +204,36 @@
 
           </div>
         </div>
-        <div class="module">
-          <div class="module-title">
-            <div>已购买数据</div>
-            <div class="module-btns btn-box">
-              <Button class="a" type="primary">购买数据包</Button>
-            </div>
-          </div>
-          <div class="table-warp">
-            <Table  :columns="APIPage.buyData.columns" :data="APIPage.buyData.list">
-              <template slot-scope="" slot="operate">
-                <div class="operation">
-                  <span class="operation-item">更新数据包</span>
-                  <span class="operation-item">续费</span>
-                </div>
-              </template>
-            </Table>
-            <div class="table-page-warp">
-              <Page
-                  :current="APIPage.buyData.currentPage"
-                  :total="APIPage.buyData.totalPage"
-                  :page-size="APIPage.buyData.pageSize"
-                  show-total
-                  show-sizer
-                  class-name="pageS"
-                  @on-change="(page)=>tableChangePage(page, APIPage.buyData)"
-              />
-            </div>
+<!--        <div class="module">-->
+<!--          <div class="module-title">-->
+<!--            <div>已购买数据</div>-->
+<!--            <div class="module-btns btn-box">-->
+<!--              <Button class="a" type="primary">购买数据包</Button>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="table-warp">-->
+<!--            <Table  :columns="APIPage.buyData.columns" :data="APIPage.buyData.list">-->
+<!--              <template slot-scope="" slot="operate">-->
+<!--                <div class="operation">-->
+<!--                  <span class="operation-item">更新数据包</span>-->
+<!--                  <span class="operation-item">续费</span>-->
+<!--                </div>-->
+<!--              </template>-->
+<!--            </Table>-->
+<!--            <div class="table-page-warp">-->
+<!--              <Page-->
+<!--                  :current="APIPage.buyData.currentPage"-->
+<!--                  :total="APIPage.buyData.totalPage"-->
+<!--                  :page-size="APIPage.buyData.pageSize"-->
+<!--                  show-total-->
+<!--                  show-sizer-->
+<!--                  class-name="pageS"-->
+<!--                  @on-change="(page)=>tableChangePage(page, APIPage.buyData)"-->
+<!--              />-->
+<!--            </div>-->
 
-          </div>
-        </div>
+<!--          </div>-->
+<!--        </div>-->
       </template>
       <template v-else-if="listType === 'SQL'">
         <div class="module">
