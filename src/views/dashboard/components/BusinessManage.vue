@@ -6,18 +6,18 @@
 		    <div class="overview_new">
 			    <div class="overview_new_top">
 				    <div class="overview_new_top_item">
-					    <div class="name">去年 | 2020年</div>
+					    <div class="name">去年 | 2020年3月</div>
 					    <div class="legend_box">
 						    <div class="legend" :style="{ backgroundColor: $lxjData.colorList[0] }"></div>
-						    <div class="number">￥125,489</div>
+						    <div class="number">￥750,000</div>
 					    </div>
 				    </div>
 				    <div class="overview_new_top_item">
-					    <div class="name">今年 | 2021年</div>
+					    <div class="name">今年 | 2021年3月</div>
 					    <div class="legend_box">
 						    <div class="legend" :style="{ backgroundColor: $lxjData.colorList[1] }"></div>
-						    <div class="number">￥16,489
-						      <span class="number_target">/ 目标 130,000</span>
+						    <div class="number">￥650,000
+						      <span class="number_target">/ 目标 800,000</span>
 						    </div>
 					    </div>
 				    </div>
