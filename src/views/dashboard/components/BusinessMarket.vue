@@ -266,8 +266,8 @@
                         <!--                        <Select value="快消品">-->
                         <!--                            <Option value="快消品">快消品</Option>-->
                         <!--                        </Select>-->
-                        <Select value="5年">
-                            <Option value="5年">5年</Option>
+                        <Select value="6年">
+                            <Option value="6年">6年</Option>
                         </Select>
                     </div>
                     <div class="chart">
