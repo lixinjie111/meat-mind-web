@@ -35,7 +35,7 @@
                         <Select v-model="attValue" class="select-box">
                             <Option v-for="ele in attributeList1" :value="ele.value" :key="ele.value">{{ ele.label }}</Option>
                         </Select>
-                        <span class="mr16">的</span>
+                        <span class="mr15">的</span>
                         <Select v-model="placeValue" class="select-box">
                             <Option v-for="ele in placeList" :value="ele.value" :key="ele.value">{{ ele.label }}</Option>
                         </Select>
@@ -410,10 +410,10 @@
                         font-weight: 400;
                         color: #242F57;
                     }
-                    .mr16{
+                    .mr15{
                         width: 14px;
                         height: 22px;
-                        margin: 0 16px;
+                        margin: 0 15px;
                         font-size: 14px;
                         font-family: PingFangSC-Regular, PingFang SC;
                         font-weight: 400;
