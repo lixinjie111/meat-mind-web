@@ -156,7 +156,7 @@
         position: relative;
         width: 100%;
         height: 100%;
-        background: #f5f5f5;
+
          .show-header {
             margin-top: 16px;
             background: #fff;

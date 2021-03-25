@@ -1945,7 +1945,7 @@
                     border: 1px solid #EAEDF7;
 
                     &:first-child {
-                        margin-right: 24px;
+                        margin-right: 23px;
                     }
 
                     .right-title {
