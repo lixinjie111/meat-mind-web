@@ -328,6 +328,30 @@
         ></vCard1>
       </div>
     </div>
+    <div class="pop_win" v-if="ifShowPop">
+      <div class="pop_win_con">
+        <div class="pop_win_con1">
+          <div class="pop_til">新人礼包</div>
+          <i class="iconfont iconClose" @click="closePopwin"></i>
+        </div>
+        <div class="pop_win_con2">
+          <div class="pop_win_con2_lef">
+            <div class="pop_win_con2_lef_top">欢迎使用智慧营销，您有一份大礼待领取</div>
+            <div class="pop_win_con2_lef_bom">我们将根据您的行业归属，我们将赠送您2份相关行业的资源包，可在智能决策查看效果。</div>
+          </div>
+          <div class="pop_win_con2_rig">一键领取</div>
+        </div>
+        <div class="pop_win_con3">
+          <img :src="tableIcon" class="tableIcon">
+          <div class="text1">已领取</div>
+          <div class="text2">已领取</div>
+          <div class="text3" @click="goBuy">去购买</div>
+          <div class="text4" @click="goBuy">去购买</div>
+          <div class="text5" @click="goBuy">去购买</div>
+          <div class="text6" @click="goBuy">去购买</div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -974,9 +998,19 @@ export default {
       star1:require('../../../assets/img/dashboard/star1.png'),
       star2:require('../../../assets/img/dashboard/star2.png'),
       star3:require('../../../assets/img/dashboard/star3.png'),
+      ifShowPop:true,
+      tableIcon:require('../../../assets/img/dashboard/tableIcon.png'),
     };
   },
   methods:{
+      closePopwin(){
+        this.ifShowPop = false;
+      },
+      goBuy(){
+        this.$router.push(
+          {name: 'data-center-market'}
+        );
+      },
       toManage() {
           this.$router.push({
               path:'/dashboard/manage'
@@ -1159,6 +1193,11 @@ export default {
       }
   },
   mounted(){
+    this.$nextTick(()=>{
+      var ifshowPop1 = sessionStorage.getItem('ifShowPop');
+      var ifshowPop2 = JSON.parse(ifshowPop1);
+      this.ifShowPop = ifshowPop2;
+    });
     this.initEcharts()
   }
 };
@@ -1861,6 +1900,131 @@ export default {
         //     color: #ff2744;
         //   }
         // }
+      }
+    }
+  }
+  .pop_win{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10023;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .pop_win_con{
+      width: 900px;
+      height: 611px;
+      background: #FFFFFF;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      .pop_win_con1{
+        width: 100%;
+        padding: 14px 24px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #E8E8E8;
+        .pop_til{
+          font-size: 20px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #242F57;
+        }
+        .iconClose{
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+      .pop_win_con2{
+        width: 100%;
+        padding: 32px 24px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        .pop_win_con2_lef{
+          .pop_win_con2_lef_top{
+            font-size: 18px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242F57;
+          }
+          .pop_win_con2_lef_bom{
+            font-size: 14px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #7C88B1;
+            margin-top: 3px;
+          }
+        }
+        .pop_win_con2_rig{
+          width: 96px;
+          height: 32px;
+          background: #9ECBFF;
+          box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.15);
+          border-radius: 4px;
+          font-size: 14px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #FFFFFF;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      .pop_win_con3{
+        width: 100%;
+        padding: 0 24px 60px 24px;
+        box-sizing: border-box;
+        position: relative;
+        .tableIcon{
+          display: block;
+          width: 100%;
+        }
+        .text1,.text2{
+          font-size: 14px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #C6CBDE;
+        }
+        .text3,.text4,.text5,.text6{
+          font-size: 14px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #2373FF;
+        }
+        .text1,.text2,.text3,.text4,.text5,.text6{
+          position: absolute;
+          right: 94px;
+        }
+        .text1{
+          top: 65px;
+        }
+        .text2{
+          top: 120px;
+        }
+        .text3{
+          top: 175px;
+        }
+        .text4{
+          top: 227px;
+        }
+        .text5{
+          top: 280px;
+        }
+        .text6{
+          top: 335px;
+        }
+        .text3,.text4,.text5,.text6{
+          &:hover{
+            cursor: pointer;
+          }
+        }
       }
     }
   }
