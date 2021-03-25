@@ -904,7 +904,7 @@
               let actLef = require('../../../assets/img/yhhx/actLef.png');
               let actrig = require('../../../assets/img/yhhx/actRig.png');
               if(arg == 1){
-                conDom.style=`background-image: url(${actLef});background-size: cover;`;
+                conDom?conDom.style=`background-image: url(${actLef});background-size: cover;`:null;
               }
               else{
                 conDom.style=`background-image: url(${actrig});background-size: cover;`;

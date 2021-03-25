@@ -224,7 +224,7 @@
             }
         },
         mounted(){
-            this.changeTabCon(0);
+            // this.changeTabCon(0);
         },
         methods:{
             change(current) {

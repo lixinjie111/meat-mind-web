@@ -362,7 +362,10 @@ export default {
     changePage(page){
       this.currentPage = page;
       page == 1 ? this.data = this.data1 : this.data = this.data2;
-    }
+    },
+    changeSize(pageSize) {
+      this.pageSize = pageSize
+    },
   }
 }
 </script>
