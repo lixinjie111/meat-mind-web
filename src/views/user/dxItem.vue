@@ -1797,6 +1797,9 @@
                             cursor: pointer;
                         }
                     }
+                    .choice_btn_top{
+                      padding-top: 10px;
+                    }
                     .activeBtn{
                         color: #2373FF;
                     }
@@ -1853,7 +1856,7 @@
                         box-sizing: border-box;
                         .timer121_item{
                             width: 62px;
-                            height: 24px;
+                            height: 20px;
                             background: #FFFFFF;
                             border-radius: 4px;
                             border: 1px solid #EAEDF7;
@@ -2139,7 +2142,7 @@
               .person_tffatj_con{
                 width: 100%;
                 border-radius: 0px 12px 12px 12px;
-                padding-bottom: 20px;
+                padding-bottom: 17px;
                 box-sizing: border-box;
                 .top_img_con{
                   padding: 0 16px;
