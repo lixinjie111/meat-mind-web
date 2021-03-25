@@ -83,6 +83,6 @@
   display: flex;
   /*justify-content: space-between;*/
   height: 42px;
-  align-items: start;
+  align-items: flex-start;
 }
 </style>
