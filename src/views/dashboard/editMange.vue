@@ -3,10 +3,14 @@
     <div class="header-nav">
       <div class="back" @click="goBack"><img src="../../assets/img/dashboard/back.png" /></div>
       <div class="dliver"></div>
-      <p>看板管理</p>
-      <div class="blue-btn" @click="create">
-        <i class="iconfont icontianjia"></i>
-        <div>新建看板</div>
+      <p>编辑看板</p>
+    </div>
+    <div class="header-title">
+      <div class="left">
+        <Input v-model="value" placeholder="2020年上半年XX电商会" style="width: 352px" />
+      </div>
+      <div class="right">
+        
       </div>
     </div>
     <TableModel :columns="columns" :tableData="tableData">
@@ -21,6 +25,7 @@ export default {
     components:{TableModel},
     data() {
     return {
+      value:'',
       columns: [
         {
           title: "看板名称",

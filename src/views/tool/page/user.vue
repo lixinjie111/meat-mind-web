@@ -90,7 +90,7 @@ export default {
            width: 180/ 144 * window.rem,
         }
       ],
-            tableData: [
+      tableData: [
         {
           name:"分析结果6-112",
           number:"6,272",

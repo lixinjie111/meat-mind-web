@@ -2,7 +2,7 @@
   <div class="result-box">
     <div class="title">
           <span class="rotate180">
-            <i class="iconfont iconleft-arrow" @click="resultShow = false"></i>
+            <i class="iconfont iconleft-arrow" @click="goBack"></i>
           </span>
       <span class="separate-line"></span>
       2020年上半年奢侈品销售数据</div>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import moment from 'moment'
+import dayjs from 'dayjs'
   export default {
     data() {
       return {
@@ -27,7 +27,6 @@ import moment from 'moment'
         uploadModal2: false,
         uploadModal3: false,
         isUpload4: false,
-        resultShow: true,
         currentPage: 1,
         totalPage: 25,
         pageSize: 10,
@@ -77,6 +76,9 @@ import moment from 'moment'
       this.changePage(1)
     },
     methods: {
+      goBack(){
+        this.$emit('goBack')
+      },
       changePage(page) {
         this.currentPage = page;
         this.data = this.totalList.slice((page - 1) * this.pageSize, page * this.pageSize - 1)
@@ -104,7 +106,7 @@ import moment from 'moment'
       generateData(total = this.totalPage){
         for (let i = 0; i < total; ++i){
           const curr =  {
-                date: moment().format('YYYY-MM-DD HH:mm:ss'),
+                date: dayjs(new Date()).format('YYYY-MM-DD HH:mm:ss'),
                 num: this.getRandom(1000, 5000),
                 type: this.getRandom(1, 10),
                 no: `D${this.getRandom(1, 1000)}`,
@@ -135,6 +137,7 @@ import moment from 'moment'
     .iconfont{
       font-size: 24px;
       color: #7e8ab2;
+      cursor: pointer;
     }
   }
   .separate-line{
