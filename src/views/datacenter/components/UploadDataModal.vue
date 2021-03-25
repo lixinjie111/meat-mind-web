@@ -106,7 +106,6 @@ export default {
   },
   computed: {
     modalWidth(){
-      console.log('px', 400 / 144 * window.rem)
       return 400 / 144 * window.rem
     },
     ready(){

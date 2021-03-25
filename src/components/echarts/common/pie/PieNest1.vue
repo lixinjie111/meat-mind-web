@@ -50,7 +50,6 @@
 				return
 			}
 			let _option = this.defaultOption(myData);
-			// console.log(_option)
 			let myChart = this.$echarts.init(document.getElementById(this.id));
 			myChart.setOption(_option);
 			window.addEventListener('resize',()=>{

@@ -11,7 +11,6 @@ export default [
         meta: {title: "Dashboard", moduleName},
         component: dashboard,
         beforeEnter:(to,from,next)=>{
-            console.log(from,'from')
             if(from.name == 'login'){
                 sessionStorage.setItem('ifShowPop',true);
                 next();

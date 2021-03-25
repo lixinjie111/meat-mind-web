@@ -584,7 +584,6 @@ export default {
       onCloseUploadModal(status, result){
         this.uploadModalStatus = status
         this.resultShow = !!result
-        console.log('ppppppppppp', this.resultShow)
       },
       uploadChange1() {
         this.uploadModal1 = false;
