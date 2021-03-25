@@ -9,7 +9,18 @@ export default [
         path: `/${moduleName}`,
         name: moduleName,
         meta: {title: "Dashboard", moduleName},
-        component: dashboard
+        component: dashboard,
+        beforeEnter:(to,from,next)=>{
+            console.log(from,'from')
+            if(from.name == 'login'){
+                sessionStorage.setItem('ifShowPop',true);
+                next();
+            }
+            else{
+                sessionStorage.setItem('ifShowPop',false);
+                next();
+            }
+        }
     },
     {
         path: `/${moduleName}/manage`,

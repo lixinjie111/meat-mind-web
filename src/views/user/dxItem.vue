@@ -333,17 +333,12 @@
                     <div class="tf_time">投放预算 (元)</div>
                     <div class="tfys_input_con">
                       <i :class="['iconfont','iconjine']" class="cmon"></i>
-                      <Poptip trigger="focus">
-                          <Input v-model="tfys" placeholder="请输入价格" style="width:200px" />
-                          <div slot="content">{{ formatNumber }}</div>
-                      </Poptip><span class="zhi">至</span>
+                      <Input v-model="tfys" placeholder="请输入价格" class="input_con"/>
+                      <span class="zhi">至</span>
                     </div>
                     <div class="tfys_input_con">
                       <i :class="['iconfont','iconjine']" class="cmon"></i>
-                      <Poptip trigger="focus">
-                          <Input v-model="tfys1" placeholder="请输入价格" style="width:200px" />
-                          <div slot="content">{{ formatNumber }}</div>
-                      </Poptip>
+                      <Input v-model="tfys1" placeholder="请输入价格" class="input_con" />
                     </div>
                     <div class="tf_time">选择投放媒介</div>
                     <div class="tfmjchoice_con">
@@ -917,16 +912,6 @@
             this.initMap(path,path1,path2,cir1,cir2,'中国');
             this.changMbItem(0);
             this.clickPerTab(1);
-        },
-        computed: {
-            formatNumber () {
-                if (this.tfys === '') return '请输入价格';
-                function parseNumber(str) {
-                    const re = /(?=(?!)(d{3})+$)/g;
-                    return str.replace(re, ',');
-                }
-                return parseNumber(this.tfys);
-            }
         },
         methods:{
             changeNews(){
@@ -2319,14 +2304,17 @@
                   display: flex;
                   align-items: center;
                   position: relative;
-                  ::v-deep .ivu-poptip .ivu-poptip-rel .ivu-input-type-text .ivu-input-default{
-                    padding-left: 30px !important;
-                  }
                   .cmon{
                     position: absolute;
                     color: #97A0C3;
                     left: 25px;
                     z-index: 999;
+                  }
+                  .input_con{
+                    width: 200px !important;
+                  }
+                  ::v-deep .input_con .ivu-input-default{
+                      padding-left: 30px !important;
                   }
                   .zhi{
                     font-size: 12px;
