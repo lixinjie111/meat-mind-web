@@ -5,15 +5,20 @@
       <Select v-model="event" class="item1" v-if="showEvent">
         <Option v-for="(item,index) of events" :value="index+1" :key="index+1">{{item}}</Option>
       </Select>
-      <Button @click="handleAddCondition" :class="['item2', buttonCss]">
+      <Button v-if="!isArray" @click="handleAddCondition" class="item2" :disabled="conditions.length > 0">
         <i class="iconfont icontianjia"></i>
         {{buttonText}}</Button>
-      <span class="item3">{{suffix}}</span>
+      <template v-if="isArray">
+        <Button  v-for="(it, i) in buttonText" @click="handleAddCondition(i)" :class="['item2', buttonCss]" :disabled="conditionsDisabled[i].length > 0">
+          <i class="iconfont icontianjia"></i>
+          {{it}}</Button>
+      </template>
+      <span style="margin-left: 16px;">{{suffix}}</span>
     </div>
     <div class="array">
       <MutableArray :value="conditions" :init-item="initItem" :on-delete="handleDelete">
         <template #item="itemProps">
-          <FilterCondition v-bind="itemProps"/>
+            <IndiceCondition v-bind="itemProps" />
         </template>
       </MutableArray>
     </div>
@@ -21,12 +26,14 @@
 </template>
 
 <script>
-  import FilterCondition from '../base/FilterCondition';
+  import IndiceCondition from '../base/IndiceCondition';
   import MutableArray from '../base/MutableArray';
 
   export default {
     name: "FilterEvent",
     data() {
+      const conditionsDisabled = Array.isArray(this.buttonText) ? this.buttonText.map(()=>([])) : {}
+      console.log('conditionsDisabled', conditionsDisabled)
       return {
         event: 1,
         events: ["任意事件",
@@ -93,16 +100,17 @@
           "提交订单",
           "提交订单详情",],
         conditions: [],
-        initItem: {condition: 0, compare: 1, input: ''},
+        conditionsDisabled,
+        initItem: {condition: 1, amount: 1},
       }
     },
-    components: {FilterCondition, MutableArray},
+    components: {IndiceCondition, MutableArray},
     props: {
       title: String,
       suffix: String,
       showEvent: Boolean,
       buttonText: {
-        type: String,
+        type: [String, Array],
         default: '筛选条件'
       },
       buttonCss: {
@@ -111,13 +119,28 @@
       },
     },
     methods: {
-      handleAddCondition() {
+      handleAddCondition(i) {
         this.conditions.push(Object.assign({}, this.initItem));
+        this.conditionsDisabled[i].push(this.conditions.length - 1)
       },
       handleDelete(index) {
         this.conditions.splice(index, 1);
-      }
-    }
+        this.delEveryItem(index)
+      },
+      delEveryItem(index){
+        for (let i = 0, len = this.conditionsDisabled.length; i < len; ++i){
+          const _i = this.conditionsDisabled[i].indexOf(index)
+          if(_i !== -1){
+            this.conditionsDisabled[i].splice(_i, 1);
+          }
+        }
+      },
+    },
+    computed:{
+      isArray(){
+        return Array.isArray(this.buttonText)
+      },
+    },
   }
 </script>
 
@@ -131,27 +154,23 @@
     height: 64px;
     font-size: 14px;
     color: #636E95;
-
-    .item1 {
-      width: 200px;
-      margin-left: 16px;
-    }
-    .item2 {
-      margin-left: 16px;
-      background: #FFFFFF;
-      border-radius: 4px;
-      border: 1px solid #97A0C3;
-    }
-    .item2.ml0 {
-      margin-left: 0;
-    }
-    .item3 {
-      margin-left: 16px;
-    }
   }
 
   .array {
     margin-left: 72px;
+  }
+  .item1 {
+    width: 200px;
+    margin-left: 16px;
+  }
+  .item2 {
+    margin-left: 16px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid #97A0C3;
+  }
+  .item2.ml0:first-child{
+    margin-left: 0;
   }
 }
 </style>
