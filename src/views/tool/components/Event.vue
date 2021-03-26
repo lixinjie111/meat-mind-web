@@ -2,31 +2,30 @@
   <DetailsPage title="事件分析" backname="analysis-tool-model">
     <div>
       <div class="filter-container">
-        <p class="c-title">事件</p>
         <div class="" slot="content">
-          <div class="property" v-for="(item, index) in propertyList" :key="index">
+          <div class="property nobt" v-for="(item, index) in propertyList" :key="index">
+            <span class="mr12 property-label">任意事件的总次数</span>
             <Select v-model="item.event" class="mr12 w200">
-              <Option v-for="ele in attributeList1" :value="ele.value" :key="ele.value">{{ ele.label }}</Option>
+              <Option v-for="ele in attributeList1" :value="ele" :key="ele">{{ ele }}</Option>
             </Select>
-            <span class="mr12">的</span>
+            <span class="mr12 property-label">的</span>
             <Select v-model="item.place" class="mr12 w200">
               <Option v-for="ele in placeList" :value="ele.value" :key="ele.value">{{ ele.label }}</Option>
             </Select>
-            <div>
-              <i class="add iconfont iconicon_more2" @click="add"> 新增</i>
-            </div>
-            <i class="del iconfont iconicon_close" @click="del(index)"></i>
           </div>
-        </div>
-        <div class="filter-show">
-          按
-          <Select v-model="attribute3" class="mr12 w100">
-            <Option value="总体">总体</Option>
-            <Option value="事件属性">事件属性</Option>
-            <Option value="用户属性">用户属性</Option>
-            <Option value="用户标签">用户标签</Option>
-          </Select>
-          查看
+          <FilterIndice2 :button-text="['指标', '自定义指标']" button-css="ml0"></FilterIndice2>
+          <FilterEvent buttonText="全局筛选" button-css="ml0"></FilterEvent>
+          <div class="property">
+            <span class="mr16 property-label">按</span>
+            <Select v-model="attribute3" class="mr8 w100">
+              <Option value="总体">总体</Option>
+              <Option value="事件属性">事件属性</Option>
+              <Option value="用户属性">用户属性</Option>
+              <Option value="用户标签">用户标签</Option>
+            </Select>
+            <span class="property-label">查看</span>
+          </div>
+
         </div>
       </div>
       <div class="show-container">
@@ -43,20 +42,46 @@
           <DatePicker
             type="daterange"
             :value="dateRangeValue"
-            class="date-range-select"
+            class="date-range-select mr8"
             :options="dateOptions"
+            placement="bottom-end"
+            placeholder="请选择时间范围"
+          ></DatePicker>
+          <Button icon="md-add" class="btn">对比</Button>
+        </div>
+        <div class="bottom">
+          <!-- <p>任意事件的总次数</p> -->
+          <div class="chart-box">
+            <barEcharts2 :key="iframeShow" :colorList="$fjData.colorList" :myData="myData"/>
+          </div>
+        </div>
+      </div>
+      <div class="show-container">
+        <div class="top">
+          <DatePicker
+            type="daterange"
+            :value="tableDateRangeValue"
+            class="date-range-select"
+            placement="bottom-end"
             placeholder="请选择时间范围"
           ></DatePicker>
         </div>
         <div class="bottom">
           <!-- <p>任意事件的总次数</p> -->
-          <div class="chart-box">
-            <iframe v-if="iframeShow == 3" class="iframe" src="/static/html/fxgj/bar3.html" frameborder="0" scrolling="no"></iframe>
-            <iframe
-              v-if="iframeShow == 2" class="iframe" src="/static/html/fxgj/bar2.html" frameborder="0" scrolling="no"></iframe>
-            <iframe v-if="iframeShow == 1" class="iframe" src="/static/html/fxgj/bar1.html" frameborder="0" scrolling="no"></iframe>
-            <iframe v-if="iframeShow == 4" class="iframe" src="/static/html/fxgj/bar4.html" frameborder="0" scrolling="no"></iframe>
-            <iframe v-if="iframeShow == 5" class="iframe" src="/static/html/fxgj/bar5.html" frameborder="0" scrolling="no"></iframe>
+          <div class="table-warp">
+            <Table :columns="tableInfo.columns" :data="tableInfo.list">
+            </Table>
+            <div class="table-page-warp"  v-if="tableInfo.totalPage>0">
+              <Page
+                  :current="tableInfo.currentPage"
+                  :total="tableInfo.totalPage"
+                  :page-size="tableInfo.pageSize"
+                  show-total
+                  show-sizer
+                  class-name="pageS"
+                  @on-change="(page)=>tableChangePage(page, tableInfo)"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -66,10 +91,16 @@
 
 <script>
 import DetailsPage from "@/layouts/DetailsPage";
+import barEcharts2 from "@/components/echarts/common/bar/barEcharts2";
+import dayjs from "dayjs";
+import FilterEvent from '../base/FilterEvent';
+import FilterIndice2 from '../base/FilterIndice2';
+
+const config = { '1': '一', '2': '二' , '3': '三' , '4': '四' , '5': '五' , '6': '六', '0': '日' }
 export default {
   name: "Event",
   components: {
-    DetailsPage,
+    DetailsPage, barEcharts2, FilterEvent, FilterIndice2
   },
   watch: {
     propertyList: {
@@ -81,9 +112,21 @@ export default {
             ).toLocaleString(),
             new Date().toLocaleString(),
           ];
+          this.tableDateRangeValue = [
+            new Date(
+              new Date().getTime() - 3600 * 1000 * 24 * 7
+            ).toLocaleString(),
+            new Date().toLocaleString(),
+          ];
           this.iframeShow = 3;
         } else {
           this.dateRangeValue = [
+            new Date(
+              new Date().getTime() - 3600 * 1000 * 24 * 7
+            ).toLocaleString(),
+            new Date().toLocaleString(),
+          ];
+          this.tableDateRangeValue = [
             new Date(
               new Date().getTime() - 3600 * 1000 * 24 * 7
             ).toLocaleString(),
@@ -170,28 +213,69 @@ export default {
       ],
       panelValue: [1, 2],
       propertyList: [{ event: "任意事件", place: "总次数" }],
-      attributeList1: [
-        {
-          value: "任意事件",
-          label: "任意事件",
-        },
-        {
-          value: "APP崩溃",
-          label: "APP崩溃",
-        },
-        {
-          value: "领取权益",
-          label: "领取权益",
-        },
-        {
-          value: "收藏商品",
-          label: "收藏商品",
-        },
-        {
-          value: "完善资料",
-          label: "完善资料",
-        },
-      ],
+      attributeList1: ["任意事件",
+        "App崩溃",
+        "领取权益",
+        "完善资料",
+        "收藏商品",
+        "关注微信公众号",
+        "评论",
+        "Web 视区停留",
+        "Web 元素点击",
+        "微信客服消息终态信息",
+        "微信公众号接收用户消息",
+        "取关微信公众号",
+        "扫描微信参数二维码",
+        "上报微信用户地理位置",
+        "小程序进入后台",
+        "点击微信公众号菜单",
+        "小程序首次启动",
+        "点击微信菜单会话",
+        "小程序分享",
+        "小程序启动",
+        "小程序页面浏览",
+        "短链跳转",
+        "推送打开",
+        "推送送达",
+        "选择分享方式",
+        "高积分行为",
+        "分享商品",
+        "购买商品",
+        "全端启动",
+        "秒杀坑位",
+        "猜你喜欢点击",
+        "Banner点击",
+        "会员等级提升",
+        "首页点击事件",
+        "App点击",
+        "App 激活",
+        "发起分享",
+        "App页面浏览",
+        "退出App",
+        "启动App",
+        "推送转化",
+        "消息已发送",
+        "消息已准备",
+        "App浏览页面",
+        "web浏览页面",
+        "激活App",
+        "Push 点击",
+        "参与抽奖",
+        "加入购物车",
+        "参与活动",
+        "点击坑位",
+        "优惠券操作",
+        "商品详情页浏览",
+        "登录",
+        "抽奖页面浏览",
+        "抽奖结果",
+        "支付订单",
+        "支付订单详情",
+        "注册",
+        "注册成功",
+        "搜索商品",
+        "提交订单",
+        "提交订单详情",],
       placeList: [
         {
           value: "总次数",
@@ -212,8 +296,12 @@ export default {
       iframeShow: 3,
       dateValue: "1",
       dateRangeValue: [
-        new Date(new Date().getTime() - 3600 * 1000 * 24 * 7).toLocaleString(),
-        new Date().toLocaleString(),
+        new Date(dayjs('2021-02-21').valueOf()).toLocaleString(),
+        new Date(dayjs('2021-03-19').valueOf()).toLocaleString(),
+      ],
+      tableDateRangeValue: [
+        new Date(dayjs('2021-02-21').valueOf()).toLocaleString(),
+        new Date(dayjs('2021-03-19').valueOf()).toLocaleString(),
       ],
       dateOptions: {
         shortcuts: [
@@ -273,6 +361,15 @@ export default {
           },
         ],
       },
+      tableInfo: {
+        columns: [
+        ],
+        currentPage: 1,
+        totalPage: 15,
+        pageSize: 10,
+        allList: [],
+        list: [],
+      },
     };
   },
   methods: {
@@ -285,6 +382,79 @@ export default {
       }
       this.propertyList.splice(index, 1);
     },
+    /**
+     * 生成随机数
+     * @param min
+     * @param max
+     * @param precise {Number}精准小数
+     * @returns {*}
+     */
+    getRandom(min, max, precise) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      const num = Math.floor(Math.random() * (max - min + 1)) + min;
+      if (!precise) {
+        return num
+      }
+      let tmp = Math.random().toFixed(precise);
+      return num + Number(tmp)
+    },
+    generatePageData(total = this.tableInfo.totalPage){
+      for (let i = 0; i < total; ++i){
+        const row = {}
+        let total = 0
+        for (let i = 0, len = this.tableInfo.columns.length; i < len; ++i){
+          const cur = this.tableInfo.columns[i];
+          if(cur.key !== 'total'){
+            const num = this.getRandom(8500, 8900)
+            row[cur.key] = this.thousandsSwitch(num)
+            total += num
+          }
+        }
+        row.total = this.thousandsSwitch(total)
+        this.tableInfo.allList.push(row)
+      }
+    },
+    tableChangePage(page, pageObj) {
+      pageObj.currentPage = page
+      pageObj.list = pageObj.allList.slice((page - 1) * pageObj.pageSize, page * pageObj.pageSize)
+    },
+    generateColumns() {
+      const start = dayjs(this.tableDateRangeValue[0])
+      const stop = dayjs(this.tableDateRangeValue[1])
+      const count = stop.diff(start, 'day')
+      const width = 120 / 144 * window.rem
+      for (let i = 0; i < count; ++i) {
+        const _start = start.add(i, 'day')
+        const day = _start.format('MM-DD')
+        this.tableInfo.columns.push({ title: `${day} (${config[_start.day()]})`, key: dayjs(_start.format('YYYY-MM-DD')).valueOf(), width })
+      }
+      this.tableInfo.columns.unshift({ title: '合计', key: 'total', width })
+    },
+    /**
+     * 把数字转换为以{separator}分割的字符串
+     * @param num {String | Number} 要进行转换的数字，或者数字类型的字符串
+     * @return {string}
+     */
+    thousandsSwitch (num) {
+      return ("" + num).replace(/(\d{1,3})(?=(\d{3})+(?:$|\.))/g, "$1,")
+    }
+  },
+  mounted() {
+    this.generateColumns()
+    this.generatePageData()
+    this.tableChangePage(1, this.tableInfo)
+  },
+  computed:{
+    myData(){
+      return {
+        '1': this.$fjData.box44Data,
+        '2': this.$fjData.box45Data,
+        '3': this.$fjData.box46Data,
+        '4': this.$fjData.box47Data,
+        '5': this.$fjData.box48Data,
+      }[this.iframeShow]
+    }
   },
 };
 </script>
@@ -293,9 +463,14 @@ export default {
     .mt8 {
         margin-top: 8px;
     }
-
     .mr16 {
         margin-right: 16px;
+    }
+    .mr8 {
+        margin-right: 8px;
+    }
+    .ml8 {
+        margin-left: 8px;
     }
 
     .mr12 {
@@ -319,7 +494,7 @@ export default {
     }
   .filter-container {
     // width: 1152px;
-    padding: 24px;
+    padding: 0 24px 16px;
     margin-bottom: 20px;
     background: #ffffff;
     box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
@@ -359,17 +534,43 @@ export default {
         cursor: pointer;
       }
     }
+    .property{
+      border-top: 1px solid #DEE2EE;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      display: flex;
+      align-items: center;
+      &:first-child{
+        border-top: none;
+      }
+      .property-label{
+        font-size: 14px;
+        font-weight: 400;
+        color: #636E95;
+        line-height: 22px;
+      }
+      .btn{
+        border-radius: 4px;
+        border: 1px solid #97A0C3;
+      }
+    }
+    .property.nobt{
+      border-bottom: 0;
+    }
     .filter-show {
       margin-top: 20px;
     }
   }
 
   .show-container {
-    padding: 24px;
+    padding: 12px 24px;
     background: #ffffff;
     box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
     border-radius: 8px;
+    margin-bottom: 16px;
     .top {
+      text-align: right;
+      margin-bottom: 12px;
       .date-select {
         width: 80px;
       }
@@ -377,6 +578,10 @@ export default {
       .date-range-select {
         margin-left: 20px;
         width: 220px;
+      }
+      .btn{
+        border-radius: 4px;
+        border: 1px solid #97A0C3;
       }
     }
 
@@ -386,9 +591,27 @@ export default {
       }
 
       .chart-box {
+        width: 100%;
+        height: 360px;
         .iframe {
           width: 100%;
           height: 360px;
+        }
+      }
+      .table-warp{
+        .ivu-table th{
+          height: 48px;
+          background: #F4F7FC;
+        }
+        .table-page-warp{
+          margin-top: 10px;
+          text-align: right;
+          .pageS {
+            text-align: right;
+            ::v-deep .ivu-page-options {
+              float: left;
+            }
+          }
         }
       }
     }

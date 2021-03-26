@@ -5,7 +5,11 @@
         <p>{{item}}</p>
       </div>
     </div>
-    <div class="subTitle1">抖音用户，以26-45岁的女性自由职业者居多，整体收入水平偏中上等，约有1/3来自于三口之家，使用时间多分布于中午和晚间。</div>
+    <div class="subTitle1" v-if="list4Act === 0">抖音用户，以22-30岁的女性自由职业者居多，占比80%以上。整体收入水平中等，使用时间多分布于中午和晚间。</div>
+    <div class="subTitle1" v-else-if="list4Act === 1">快手用户，以二三线城市居多，28岁以下用户占比82%，偏好休闲娱乐类应用，使用时间多分布于中午和晚间。</div>
+    <div class="subTitle1" v-else-if="list4Act === 2">微视用户，用户多为中年，25-35岁用户居多，男女比例相对均衡，使用时间多分布于中午和晚间。</div>
+    <div class="subTitle1" v-else-if="list4Act === 3">梨视频用户，用户多为中年，整体收入水平偏中上等，男女比例相对均衡，使用时间多分布于早上和中午。</div>
+    <div class="subTitle1" v-else-if="list4Act === 4">西瓜视频用户，用户多为中年，整体收入水平偏中等，男性占比较高，使用时间多分布于中午和晚间。</div>
     <div class="chart-container">
       <div class="chart-box-title">内圈为自身品牌用户画像，外圈为不同媒介用户画像。</div>
       <div class="chart-box">
@@ -44,9 +48,10 @@
     components: { PieNest1 },
     props: ['name', 'label'],
     data() {
+      // console.log('pppppppppppppppp')
       return {
         list4Act: 0,
-        list4: ["综合", "抖音", "快手", "微视", "梨视频", "西瓜视频"],
+        list4: ["抖音", "快手", "微视", "梨视频", "西瓜视频"],
         tabs: ['短视频','社交传媒', '大众传媒' , '体验事件' , '促销' , '在线社交媒体' , '公共关系和宣传' , '网站'  , '其他' ],
         nest01Data: this.$abelData.nest01Data,
         nest02Data: this.$abelData.nest02Data,
