@@ -35,7 +35,7 @@ export default {
 		},
 		defaultOption() {
 			var option = {
-				color: this.colorList,
+				color: ['#4488FF','#75B1FF','#9ECBFF',],
 				tooltip: {
 					trigger: 'item',
 					formatter: "{a} <br/>{b} : {c}%"
@@ -52,9 +52,9 @@ export default {
 						name:'',
 						type:'funnel',
 						left: '10%',
-						top: 10,
+						top: 0,
 						bottom: 60,
-						width: '80%',
+						width: '90%',
 						min: 0,
 						max: 100,
 						minSize: '10%',

@@ -479,7 +479,7 @@
             <div class="zuhe_echarts_title">预期投放效果</div>
             <div class="zuhe_echarts_Box">
               <div class="zuhe_echarts_leftBox">
-                <div class="zuhe_echarts_subtitle">预期投放效果</div>
+                <div class="zuhe_echarts_subtitle">目标覆盖用户</div>
                 <div class="zuhe_echarts_num">800万</div>
               </div>
               <div class="new_echart_box">
