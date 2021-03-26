@@ -54,13 +54,13 @@
           },
           legend: {
             icon: 'circle',
-			itemWidth:6,
-			itemHeight:6,
-			bottom: 0,
-			textStyle: {
-				fontSize: 12,
-				color: '#97A0C3'
-			},
+            itemWidth:6,
+            itemHeight:6,
+            bottom: 0,
+            textStyle: {
+              fontSize: 12,
+              color: '#97A0C3'
+            },
             data: name,
           },
           tooltip: {
