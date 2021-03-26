@@ -13,23 +13,22 @@
     <Card title="整体趋势">
       <div>
         <Half
-          lTitle="GMV近30天变化趋势"
+          lTitle="GMV变化趋势"
           subDateL="2021.02.01-2021.02.28"
-          rTitle="过去7天日活"
+          rTitle="日活量"
           subDateR="2021.02.22-2021.02.28"
         >
           <lineS
             slot="echarts"
             id="box60"
             y-name="GMV（万元）"
-            :hasAreaStyle="true"
+
             :colorList="$ljEData.colorList"
             :myData="$ljEData.ljBox1"
           />
           <lineM
             slot="rightEcharts"
             y-name="日活数"
-            :hasAreaStyle="true"
             :option="{ xAxis: { boundaryGap: false } }"
             :colorList="$ljEData.colorList"
             :myData="$ljEData.ljBox2"
@@ -68,7 +67,6 @@
           slot="echarts"
           id="box55"
           y-name="日活数"
-          :hasAreaStyle="true"
           :option="{ xAxis: { boundaryGap: false } }"
           :colorList="$ljEData.colorList"
           :myData="$ljEData.ljBox5"
@@ -76,7 +74,6 @@
         <lineM
           slot="rightEcharts"
           y-name="日活数"
-          :hasAreaStyle="true"
           :option="{ xAxis: { boundaryGap: false } }"
           :colorList="$ljEData.colorList"
           :myData="$ljEData.ljBox6"
@@ -91,7 +88,6 @@
         <lineM
           slot="echarts"
           y-name="日活数"
-          :hasAreaStyle="true"
           :option="{ xAxis: { boundaryGap: false } }"
           :colorList="$ljEData.colorList"
           :myData="$ljEData.ljBox7"

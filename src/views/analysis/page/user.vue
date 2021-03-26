@@ -8,7 +8,7 @@
         <Half
           lTitle="每日新增用户"
           subDateL="2020.12.01-2020.12.31"
-          rTitle="新增用户7日留存量"
+          rTitle="新增用户留存量"
           subDateR="2020.12.01-2020.12.31"
         >
           <lineS
@@ -93,15 +93,14 @@
     <Card title="留存用户">
       <div>
         <Half
-          lTitle="7日留存"
+          lTitle="留存用户"
           subDateL="2020.12.01-2020.12.31"
-          rTitle="7天流失"
+          rTitle="流失用户"
           subDateR="2020.11.12-2020.11.25"
         >
           <lineM
             slot="echarts"
             y-name="日活数"
-            :hasAreaStyle="true"
             :option="{ xAxis: { boundaryGap: false } }"
             :colorList="$ljEData.colorList"
             :myData="$ljEData.ljBox17"
@@ -110,14 +109,13 @@
           <lineM
             slot="rightEcharts"
             y-name="日活数"
-            :hasAreaStyle="true"
             :option="{ xAxis: { boundaryGap: false } }"
             :colorList="$ljEData.colorList"
             :myData="$ljEData.ljBox18"
           />
         </Half>
         <Half
-          lTitle="新增用户8周留存"
+          lTitle="新增用户留存"
           subDateL="2020.09.27-2020.11.25"
           rTitle="APP平均使用时长"
           subDateR="2020.12.01-2020.12.31"
@@ -125,7 +123,6 @@
           <lineM
             slot="echarts"
             y-name="日活数"
-            :hasAreaStyle="true"
             :option="{ xAxis: { boundaryGap: false } }"
             :colorList="$ljEData.colorList"
             :myData="$ljEData.ljBox19"
@@ -166,7 +163,6 @@
           <lineM
             slot="echarts"
             y-name="日活数"
-            :hasAreaStyle="true"
             :option="{ xAxis: { boundaryGap: false } }"
             :colorList="$ljEData.colorList"
             :myData="$ljEData.ljBox23"
@@ -174,7 +170,6 @@
           <lineM
             slot="rightEcharts"
             y-name="日活数"
-            :hasAreaStyle="true"
             :option="{ xAxis: { boundaryGap: false } }"
             :colorList="$ljEData.colorList"
             :myData="$ljEData.ljBox24"

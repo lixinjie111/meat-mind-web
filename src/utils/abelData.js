@@ -270,7 +270,7 @@ barLine:{
         name: '短视频',
         type: 'bar',
         stack: '总量',
-        barWidth: '10',
+        barWidth: 14,
         // itemStyle: {
         //   barBorderRadius: 3,
         // },
@@ -280,6 +280,7 @@ barLine:{
         name: '社交传媒',
         type: 'bar',
         stack: '总量',
+        barWidth: 14,
         // itemStyle: {
         //   barBorderRadius: 3,
         // },
@@ -289,6 +290,7 @@ barLine:{
         name: '新媒体网站',
         type: 'bar',
         stack: '总量',
+        barWidth: 14,
         // itemStyle: {
         //   barBorderRadius: 3,
         // },
@@ -298,6 +300,7 @@ barLine:{
         name: '新闻门户',
         type: 'bar',
         stack: '总量',
+        barWidth: 14,
         // itemStyle: {
         //   barBorderRadius: 3,
         // },
@@ -307,6 +310,7 @@ barLine:{
         name: '其它',
         type: 'bar',
         stack: '总量',
+        barWidth: 14,
         // itemStyle: {
         //   barBorderRadius: 3,
         // },

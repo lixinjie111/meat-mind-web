@@ -43,6 +43,9 @@ export default {
 		}
 	},
     mounted() {
+			this.myData.lineStyle = {
+				width: 2 / 144 * window.rem,
+			}
         	this.initEcharts();
     },
 	methods: {
@@ -62,6 +65,8 @@ export default {
 			},
 			legend: {
 				bottom:0,
+				itemWidth: 6,
+				itemHeight: 6,
 				icon:"circle",
 				data:this.myData.legName,
 			},
@@ -133,7 +138,15 @@ export default {
 						}
 					},
             },
-            series: this.myData.value
+			series: [
+				{
+					data: this.myData.value,
+					type: 'line',
+					lineStyle: {
+						width: 2 / 144 * window.rem,
+					}
+				}
+			]
         };
 			return lodash.merge({}, option, this.option);
 		}

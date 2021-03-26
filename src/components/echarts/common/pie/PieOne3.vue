@@ -186,17 +186,17 @@ export default {
 						radius: ['60%', '78.5%'],
 						avoidLabelOverlap: false,
 						// hoverAnimation: false,
-						label: {
-							show: true,
-							formatter: params => {
-								if (params.name)
-									return `${params.seriesName}\n${params.name}`;
-							},
-							color: '#97A0C3'
-						},
-						labelLine: {
-							show: true
-						},
+						// label: {
+						// 	show: true,
+						// 	formatter: params => {
+						// 		if (params.name)
+						// 			return `${params.seriesName}\n${params.name}`;
+						// 	},
+						// 	color: '#97A0C3'
+						// },
+						// labelLine: {
+						// 	show: true
+						// },
 						data
 					},
 

@@ -29,7 +29,7 @@
         <div class="box">
           <div class="title">
             <div class="boxIcon">
-              <img src="../../assets/img/yhhx/xunh.png" alt="">
+              <img src="../../assets/img/yhhx/xunh1.png" alt="">
             </div> 媒介扩容
           </div>
           <div class="boxDesc">
@@ -64,34 +64,124 @@
         <div class="media_desc">基于自有品牌媒介通用评估指数、媒介回报指数和用户媒介匹配指数的综合价值评估</div>
         <div class="media_cont">
           <div class="media_cont1 media_box">
-            <div class="media_cont_til">综合曝光度</div>
-            <div class="media_cont_num_container"><span class="spanNum">2500</span>w</div>
-            <div class="media_cont_three_container">环比 <i class="iconfont iconshangsheng"></i> <span style="margin-right:15px;" class="shangsheng">3.46%</span>同比 <i class="iconfont iconxiajiang"></i><span  class="xiajiang"> 2.23%</span></div>
+            <div class="info_lef">
+              <img src="../../assets/img/yhhx/time1.png" alt="" srcset="" class="jyIcon">
+            </div>
+            <div class="txt_rig">
+                <div class="til_txt">综合曝光度</div>
+                <div class="til_desc">
+                    <span class="til_num">2,500</span>
+                    <span class="til_unit">W</span>
+                </div>
+            </div>
+            <Poptip popper-class="saas-poptip small" trigger="hover">
+              <i :class="['iconfont','icongengduo']"></i>
+              <div slot="content">
+                  <p>环比<i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">3.46%</span></p >
+                  <p>同比<i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">2.23%</span></p >
+              </div>
+            </Poptip>
           </div>
           <div class="media_cont2 media_box">
-            <div class="media_cont_til">综合互动量/互动率：</div>
-            <div class="media_cont_num_container"><span class="spanNum">548</span>w<span class="spanNum"> / 10</span>%</div>
-            <div class="media_cont_three_container">环比 <i class="iconfont iconxiajiang"></i> <span style="margin-right:15px;" class="xiajiang">3.54%</span>同比 <i class="iconfont iconshangsheng"></i><span  class="shangsheng"> 1.11%</span></div>
+            <div class="info_lef">
+              <img src="../../assets/img/yhhx/xunh.png" alt="" srcset="" class="jyIcon">
+            </div>
+            <div class="txt_rig">
+                <div class="til_txt">综合互动量/互动率</div>
+                <div class="til_desc">
+                    <span class="til_num">548</span>
+                    <span class="til_unit">W</span>
+                    <span class="til_unit1">/</span>
+                    <span class="til_num">10</span>
+                    <span class="til_unit">%</span>
+                </div>
+            </div>
+            <Poptip popper-class="saas-poptip small" trigger="hover">
+              <i :class="['iconfont','icongengduo']"></i>
+              <div slot="content">
+                  <p>环比<i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">3.54%</span></p >
+                  <p>同比<i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">1.11%</span></p >
+              </div>
+            </Poptip>
           </div>
           <div class="media_cont3 media_box">
-            <div class="media_cont_til">销售转化率/转化量：</div>
-            <div class="media_cont_num_container"><span class="spanNum">26</span>%<span class="spanNum"> / 443 w</span></div>
-            <div class="media_cont_three_container">环比 <i class="iconfont iconshangsheng"></i> <span style="margin-right:15px;" class="shangsheng">3.53%</span>同比 <i class="iconfont iconshangsheng"></i> <span  class="shangsheng">12.4%</span></div>
+            <div class="info_lef">
+              <img src="../../assets/img/yhhx/bag.png" alt="" srcset="" class="jyIcon">
+            </div>
+            <div class="txt_rig">
+                <div class="til_txt">转化量/销售转化率</div>
+                <div class="til_desc">
+                    <span class="til_num">443</span>
+                    <span class="til_unit">W</span>
+                    <span class="til_unit1">/</span>
+                    <span class="til_num">26</span>
+                    <span class="til_unit">%</span>
+                </div>
+            </div>
+            <Poptip popper-class="saas-poptip small" trigger="hover">
+              <i :class="['iconfont','icongengduo']"></i>
+              <div slot="content">
+                  <p>环比<i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">3.53%</span></p >
+                  <p>同比<i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">12.4%</span></p >
+              </div>
+            </Poptip>
           </div>
           <div class="media_cont4 media_box">
-            <div class="media_cont_til">新增留存用户数：</div>
-            <div class="media_cont_num_container"><span class="spanNum">57</span>w<span class="spanNum"></span></div>
-            <div class="media_cont_three_container">环比 <i class="iconfont iconshangsheng"></i> <span style="margin-right:15px;" class="">4.27%</span>同比 <i class="iconfont iconxiajiang"></i> <span  class="xiajiang">5.2%</span></div>
+            <div class="info_lef">
+              <img src="../../assets/img/yhhx/rtou.png" alt="" srcset="" class="jyIcon">
+            </div>
+            <div class="txt_rig">
+                <div class="til_txt">月新增用户数</div>
+                <div class="til_desc">
+                    <span class="til_num">57</span>
+                    <span class="til_unit">W</span>
+                </div>
+            </div>
+            <Poptip popper-class="saas-poptip small" trigger="hover">
+              <i :class="['iconfont','icongengduo']"></i>
+              <div slot="content">
+                  <p>环比<i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">4.27%</span></p >
+                  <p>同比<i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">5.2%</span></p >
+              </div>
+            </Poptip>
           </div>
           <div class="media_cont5 media_box">
-            <div class="media_cont_til">媒介正负情感分布比：</div>
-            <div class="media_cont_num_container"><span class="spanNum">50</span>%<span class="spanNum"> / 27</span>%</div>
-            <div class="media_cont_three_container">环比 <i class="iconfont iconshangsheng"></i> <span style="margin-right:15px;" class="shangsheng">2.12%</span>同比 <i class="iconfont iconshangsheng"></i><span  class="shangsheng"> 6.67%</span></div>
+            <div class="info_lef">
+              <img src="../../assets/img/yhhx/xin.png" alt="" srcset="" class="jyIcon">
+            </div>
+            <div class="txt_rig">
+                <div class="til_txt">真粉用户比</div>
+                <div class="til_desc">
+                    <span class="til_num">33</span>
+                    <span class="til_unit">%</span>
+                </div>
+            </div>
+            <Poptip popper-class="saas-poptip small" trigger="hover">
+              <i :class="['iconfont','icongengduo']"></i>
+              <div slot="content">
+                  <p>环比<i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">2.12%%</span></p >
+                  <p>同比<i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">6.67%</span></p >
+              </div>
+            </Poptip>
           </div>
           <div class="media_cont6 media_box">
-            <div class="media_cont_til">真粉用户比/活跃用户比：</div>
-            <div class="media_cont_num_container"><span class="spanNum">33</span>%<span class="spanNum"> / 11</span>%</div>
-            <div class="media_cont_three_container">环比 <i class="iconfont iconshangsheng"></i> <span style="margin-right:15px;" class="shangsheng">7.17%</span>同比 <i class="iconfont iconshangsheng"></i><span  class="shangsheng"> 4.44%</span></div>
+            <div class="info_lef">
+              <img src="../../assets/img/yhhx/star.png" alt="" srcset="" class="jyIcon">
+            </div>
+            <div class="txt_rig">
+                <div class="til_txt">活跃用户比</div>
+                <div class="til_desc">
+                    <span class="til_num">11</span>
+                    <span class="til_unit">%</span>
+                </div>
+            </div>
+            <Poptip popper-class="saas-poptip small" trigger="hover">
+              <i :class="['iconfont','icongengduo']"></i>
+              <div slot="content">
+                  <p>环比<i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">7.17%</span></p >
+                  <p>同比<i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">4.43%</span></p >
+              </div>
+            </Poptip>
           </div>
         </div>
       </div>
@@ -389,7 +479,7 @@
             <div class="zuhe_echarts_title">预期投放效果</div>
             <div class="zuhe_echarts_Box">
               <div class="zuhe_echarts_leftBox">
-                <div class="zuhe_echarts_subtitle">预期投放效果</div>
+                <div class="zuhe_echarts_subtitle">目标覆盖用户</div>
                 <div class="zuhe_echarts_num">800万</div>
               </div>
               <div class="new_echart_box">
@@ -567,7 +657,6 @@
   import barLine from '../../components/echarts/common/bar/barLine';
   import barC5 from '../../components/echarts/common/bar/barC5';
   import funnel from '../../components/echarts/common/funnel/funnel';
-  import PieEcharts6 from '../../components/echarts/common/pie/PieEcharts6';
   import PieEcharts2 from '../../components/echarts/common/pie/PieEcharts2';
   import PieEcharts from '../../components/echarts/common/pie/PieEcharts';
   import LeidaEcharts from '../../components/echarts/common/radar/LeidaEcharts';
@@ -587,7 +676,7 @@
   let counter = 0
   export default {
     name: "index",
-    components: {BarHM4,BarLine2,PieOne3,Tab, PieEcharts9,cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts6,PieEcharts2,LeidaEcharts,vTree,lineM,barM, KOLResource, MediaAnalysis, PortraitMatching},
+    components: {BarHM4,BarLine2,PieOne3,Tab, PieEcharts9,cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts2,LeidaEcharts,vTree,lineM,barM, KOLResource, MediaAnalysis, PortraitMatching},
     data(){
       return{
         tabActive: 1,
@@ -610,7 +699,7 @@
             value:"2",
           },
           {
-            name:"销售转化率/转化量",
+            name:"转化量/销售转化率",
             value:"3",
           },
           {
@@ -618,11 +707,11 @@
             value:"4",
           },
           {
-            name:"媒介正负情感分布比",
+            name:"真粉用户比",
             value:"5",
           },
           {
-            name:"真粉用户比/活跃用户比",
+            name:"活跃用户比",
             value:"6",
           },
         ],
@@ -757,7 +846,7 @@
             numTxt3:'2.25%',
           },
           meijie3:{
-            numTxt1:'17%/123w',
+            numTxt1:'123w/17%',
             numTxt2:'1.06%',
             numTxt3:'2.22%',
           },
@@ -768,7 +857,7 @@
             numTxt3:'1.15%',
           },
           meijie5:{
-            numTxt1:'39%/17%',
+            numTxt1:'39%',
             numTxt2:'7.2%',
             numTxt3:'3.09%',
           }
@@ -786,7 +875,7 @@
             numTxt3:'3.09%',
           },
           meijie3:{
-            numTxt1:'15%/211w',
+            numTxt1:'211w/15%',
             numTxt2:'2.01%',
             numTxt3:'1.84%',
           },
@@ -796,7 +885,7 @@
             numTxt3:'2.39%',
           },
           meijie5:{
-            numTxt1:'40%/33%',
+            numTxt1:'40%',
             numTxt2:'6.5%',
             numTxt3:'5.87%',
           }
@@ -814,7 +903,7 @@
             numTxt3:'1.87%',
           },
           meijie3:{
-            numTxt1:'21%/256w',
+            numTxt1:'256w/21%',
             numTxt2:'1.06%',
             numTxt3:'2.22%',
           },
@@ -824,7 +913,7 @@
             numTxt3:'1.15%',
           },
           meijie5:{
-            numTxt1:'36%/21%',
+            numTxt1:'36%',
             numTxt2:'7.2%',
             numTxt3:'3.09%',
           }
@@ -842,7 +931,7 @@
             numTxt3:'2.25%',
           },
           meijie3:{
-            numTxt1:'36%/847w',
+            numTxt1:'847w/36%',
             numTxt2:'1.06%',
             numTxt3:'2.22%',
           },
@@ -852,7 +941,7 @@
             numTxt3:'1.15%',
           },
           meijie5:{
-            numTxt1:'27%/29%',
+            numTxt1:'27%',
             numTxt2:'7.2%',
             numTxt3:'3.09%',
           }
@@ -870,7 +959,7 @@
             numTxt3:'2.25%',
           },
           meijie3:{
-            numTxt1:'27%/443w',
+            numTxt1:'443w/27%',
             numTxt2:'1.06%',
             numTxt3:'2.22%',
           },
@@ -880,7 +969,7 @@
             numTxt3:'1.15%',
           },
           meijie5:{
-            numTxt1:'54%/33%',
+            numTxt1:'54%',
             numTxt2:'7.2%',
             numTxt3:'3.09%',
           }
@@ -898,7 +987,7 @@
             numTxt3:'4.64%',
           },
           meijie3:{
-            numTxt1:'26%/435w',
+            numTxt1:'435w/26%',
             numTxt2:'2.1%',
             numTxt3:'1.45%',
           },
@@ -908,7 +997,7 @@
             numTxt3:'2.23%',
           },
           meijie5:{
-            numTxt1:'47%/19%',
+            numTxt1:'47%',
             numTxt2:'2.45%',
             numTxt3:'2.45%',
           }
@@ -926,7 +1015,7 @@
             numTxt3:'4.64%',
           },
           meijie3:{
-            numTxt1:'26%/435w',
+            numTxt1:'435w/26%',
             numTxt2:'2.1%',
             numTxt3:'1.45%',
           },
@@ -936,7 +1025,7 @@
             numTxt3:'2.23%',
           },
           meijie5:{
-            numTxt1:'47%/19%',
+            numTxt1:'47%',
             numTxt2:'2.45%',
             numTxt3:'2.45%',
           }
@@ -955,7 +1044,7 @@
             numTxt3:'3.65%',
           },
           meijie3:{
-            numTxt1:'22%/232w',
+            numTxt1:'232w/22%',
             numTxt2:'2.34%',
             numTxt3:'3.54%',
           },
@@ -965,7 +1054,7 @@
             numTxt3:'2.45%',
           },
           meijie5:{
-            numTxt1:'29%/21%',
+            numTxt1:'29%',
             numTxt2:'4.24%',
             numTxt3:'2.54%',
           }
@@ -983,7 +1072,7 @@
             numTxt3:'2.25%',
           },
           meijie3:{
-            numTxt1:'31%/454w',
+            numTxt1:'454w/31%',
             numTxt2:'1.06%',
             numTxt3:'2.22%',
           },
@@ -993,7 +1082,7 @@
             numTxt3:'1.15%',
           },
           meijie5:{
-            numTxt1:'28%/22%',
+            numTxt1:'28%',
             numTxt2:'7.2%',
             numTxt3:'3.09%',
           }
@@ -1011,7 +1100,7 @@
             numTxt3:'2.25%',
           },
           meijie3:{
-            numTxt1:'20%/558w',
+            numTxt1:'558w/20%',
             numTxt2:'1.06%',
             numTxt3:'2.22%',
           },
@@ -1021,7 +1110,7 @@
             numTxt3:'1.15%',
           },
           meijie5:{
-            numTxt1:'28%/33%',
+            numTxt1:'28%',
             numTxt2:'7.2%',
             numTxt3:'3.09%',
           }
@@ -1039,7 +1128,7 @@
             numTxt3:'2.25%',
           },
           meijie3:{
-            numTxt1:'22%/58w',
+            numTxt1:'58w/22%',
             numTxt2:'1.06%',
             numTxt3:'2.22%',
           },
@@ -1049,7 +1138,7 @@
             numTxt3:'1.15%',
           },
           meijie5:{
-            numTxt1:'34%/20%',
+            numTxt1:'34%',
             numTxt2:'7.2%',
             numTxt3:'3.09%',
           }
@@ -1621,7 +1710,7 @@
         else if(arg == 6){
           this.mediaHlist=[
             {
-              numTxt1:'23%/11%',
+              numTxt1:'23%',
               numTxt2:'2.81%',
               numTxt3:'1.74%',
               icon:this.touxIcon3,
@@ -1629,7 +1718,7 @@
               isUp1:Math.random().toFixed(1)>0.5?true:false,
             },
             {
-              numTxt1:'21%/18%',
+              numTxt1:'21%',
               numTxt2:'2.76%',
               numTxt3:'1.74%',
               icon:this.touxIcon2,
@@ -1637,7 +1726,7 @@
               isUp1:Math.random().toFixed(1)>0.5?true:false,
             },
             {
-              numTxt1:'18%/17%',
+              numTxt1:'18%',
               numTxt2:'1.75%',
               numTxt3:'1.74%',
               icon:this.touxIcon1,
@@ -1645,7 +1734,7 @@
               isUp1:Math.random().toFixed(1)>0.5?true:false,
             },
             {
-              numTxt1:'13%/19%',
+              numTxt1:'13%',
               numTxt2:'1.79%',
               numTxt3:'1.84%',
               icon:this.touxIcon4,
@@ -1653,7 +1742,7 @@
               isUp1:Math.random().toFixed(1)>0.5?true:false,
             },
             {
-              numTxt1:'23%/21%',
+              numTxt1:'23%',
               numTxt2:'1.41%',
               numTxt3:'3.74%',
               icon:this.touxIcon5,
@@ -1887,7 +1976,7 @@
         else if(arg == 6){
           this.mediaList=[
             {
-              numTxt1:'33%/11%',
+              numTxt1:'33%',
               numTxt2:'2.71%',
               numTxt3:'1.74%',
               icon:this.ttIcon,
@@ -1895,7 +1984,7 @@
               isUp1:Math.random().toFixed(1)>0.5?true:false,
             },
             {
-              numTxt1:'31%/18%',
+              numTxt1:'31%',
               numTxt2:'2.76%',
               numTxt3:'3.74%',
               icon:this.tenxIcon,
@@ -1903,7 +1992,7 @@
               isUp1:Math.random().toFixed(1)>0.5?true:false,
             },
             {
-              numTxt1:'13%/17%',
+              numTxt1:'13%',
               numTxt2:'1.75%',
               numTxt3:'2.74%',
               icon:this.dyIcon,
@@ -1911,7 +2000,7 @@
               isUp1:Math.random().toFixed(1)>0.5?true:false,
             },
             {
-              numTxt1:'13%/19%',
+              numTxt1:'13%',
               numTxt2:'1.79%',
               numTxt3:'1.84%',
               icon:this.wbIcon,
@@ -1919,7 +2008,7 @@
               isUp1:Math.random().toFixed(1)>0.5?true:false,
             },
             {
-              numTxt1:'23%/21%',
+              numTxt1:'23%',
               numTxt2:'1.41%',
               numTxt3:'3.74%',
               icon:this.xhsIcon,
@@ -2961,11 +3050,64 @@
           flex-wrap: wrap;
           .media_box{
             width:233px;
+            height: 113px;
             border-radius: 8px;
-            padding: 16px;
-            box-sizing: border-box;
+            padding: 25px 16px;
+            // box-sizing: border-box;
             margin-bottom: 16px;
             background: #DFF8F6;
+            display: flex;
+            align-items: center;
+            position: relative;
+            .info_lef{
+                width: 48px;
+                height: 52px;
+                background: #FFFFFF;
+                border-radius: 8px;
+                margin-right: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .jyIcon{
+                    display: block;
+                    width:24px;
+                }
+            }
+            .txt_rig{
+                flex: 1;
+                .til_txt{
+                    font-size: 12px;
+                    font-family: PingFangSC-Regular, PingFang SC;
+                    font-weight: 400;
+                    margin-bottom: 6px;
+                }
+                .til_desc{
+                    display: flex;
+                    align-items: baseline;
+                    .til_num{
+                      font-size: 24px;
+                      font-family: HelveticaNeue-Bold, HelveticaNeue;
+                      font-weight: bold;
+                      margin-right: 5px;
+                      line-height: 29px;
+                    }
+                    .til_unit{
+                        font-size: 16px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        line-height: 22px;
+                    }
+                    .til_unit1{
+                       font-size: 16px;
+                       margin: 0 3px;
+                    }
+                }
+            }
+            .ivu-poptip{
+                position: absolute;
+                top: 12px;
+                right: 12px;
+            }
             &.media_cont1{
               background: #DFF8F6;
               color: #1DCEC3;
@@ -2983,12 +3125,12 @@
               color: #2373FF;
             }
             &.media_cont5{
-              background: #D3E3FF;
-              color: #2373FF;
-            }
-            &.media_cont6{
               background: #DFF8F6;
               color: #1DCEC3;
+            }
+            &.media_cont6{
+              background: #FFE6DE;;
+              color: #FE774B;
             }
             .media_cont_til{
               font-size: 14px;
@@ -3067,7 +3209,6 @@
             width: 100%;
             height: 264px;
             padding: 16px;
-            margin-bottom: 47px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;

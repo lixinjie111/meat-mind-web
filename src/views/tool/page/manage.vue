@@ -477,12 +477,12 @@ export default {
       .status{
         height: auto;
         margin: 0 8px 0 0;
-        padding: 2px 7px;
+        padding: 1px 7px;
         font-size: 12px;
         line-height: 22px;
         background: #fafafa;
         border: 1px solid #d3dce6;
-        border-radius: 3px;
+        border-radius: 2px;
         cursor: default;
       }
       .status0{
