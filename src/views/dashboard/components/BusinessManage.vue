@@ -916,41 +916,40 @@
                         symbolSize: 5,
                         zlevel: 30,
                         itemStyle: {
-                          
                                 color: '#FF9F7F',
                                 shadowBlur: 5,
                                 shadowColor: '#FF9F7F'
                            
                         },
                         lineStyle: {
-                      
-                                width: 4,
+                                width: 2 / 144 * window.rem,
                                 // shadowBlur: 3,
                                 // shadowColor: 'rgba(3, 13, 41, .2)',
                                 // shadowOffsetY: 8,
                                 type: 'solid',
-                                color: '#4488FF',
-
-                            
+                                color: '#2373FF',
                         },
                         areaStyle: {
-                         
-                                color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                        offset: 0,
-                                        color: hexToRgba('#4488FF', 0.8)
-                                        },
-                                        {
-                                            offset: .5,
-                                            color: hexToRgba('#4488FF', 0.5)
-                                        },
-                                        {
-                                            offset: 1,
-                                            color: hexToRgba('#4488FF', 0)
-                                        }
-                                    ], false),
-                                // shadowColor: hexToRgba('#0090FF', 0.1),
-                                // shadowBlur: 10
-                        
+                            color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0,
+                                    color: 'rgba(35, 155, 255, 0.3)',
+                                },{
+                                    offset: 0.6,
+                                    color: 'rgba(35, 155, 255, 0.2)',
+                                },{
+                                    offset: 1,
+                                    color: 'rgba(255, 255, 255, 0)'
+                                }],
+                                global: false // 缺省为 false
+                            }
+                            // shadowColor: hexToRgba('#0090FF', 0.1),
+                            // shadowBlur: 10
                         },
                         data: yAxisData
                     }]

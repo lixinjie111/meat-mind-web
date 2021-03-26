@@ -157,7 +157,7 @@
                   },
                   [
                     h("i", {
-                      class: "iconfont iconguanyuline1 tip-icon"
+                      class: "iconfont iconguanyu tip-icon"
                     }),
                     h("div", {
                       slot: "content"
