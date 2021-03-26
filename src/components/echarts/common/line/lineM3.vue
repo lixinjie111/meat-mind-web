@@ -206,6 +206,7 @@
                     series: [
                         {
                             data: this.myData.value,
+                            type: 'line',
                             lineStyle: {
                                 width: 2 / 144 * window.rem,
                             }

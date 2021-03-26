@@ -27,11 +27,11 @@
             }
         },
         mounted() {
-            let header = document.querySelector('.tabs-container');
-            let origOffsetY = header.offsetTop;
+            let tabContainer = document.querySelector('.tabs-container');
+            let origOffsetY = tabContainer.offsetTop;
 
             document.addEventListener('scroll', () => {
-                window.scrollY >= origOffsetY ? header.classList.add('sticky') : header.classList.remove('sticky');
+                window.scrollY >= origOffsetY ? tabContainer.classList.add('sticky') : tabContainer.classList.remove('sticky');
             });
         },
         methods: {
