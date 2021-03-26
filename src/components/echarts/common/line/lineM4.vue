@@ -37,6 +37,12 @@
             return {}
         },
         mounted() {
+            this.myData.value.forEach((item)=>{
+                item.lineStyle = {
+                    width: 2 / 144 * window.rem,
+                }
+            });
+            console.log(this.myData.data);
             this.initEcharts();
         },
         methods: {
@@ -116,15 +122,7 @@
                             show: false,
                         },
                     },
-                    series: [
-                        {
-                            data: this.myData.value,
-                            type: 'line',
-                            lineStyle: {
-                                width: 2 / 144 * window.rem,
-                            }
-                        }
-                    ]
+                    series:	this.myData.value
                 };
                 return lodash.merge({}, option, this.option);
             }

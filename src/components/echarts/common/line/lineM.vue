@@ -43,10 +43,12 @@ export default {
 		}
 	},
     mounted() {
-			this.myData.lineStyle = {
+		this.myData.value.forEach((item)=>{
+			item.lineStyle = {
 				width: 2 / 144 * window.rem,
 			}
-        	this.initEcharts();
+		});
+        this.initEcharts();
     },
 	methods: {
 		initEcharts() {
@@ -138,15 +140,7 @@ export default {
 						}
 					},
             },
-			series: [
-				{
-					data: this.myData.value,
-					type: 'line',
-					lineStyle: {
-						width: 2 / 144 * window.rem,
-					}
-				}
-			]
+			series:	this.myData.value
         };
 			return lodash.merge({}, option, this.option);
 		}
