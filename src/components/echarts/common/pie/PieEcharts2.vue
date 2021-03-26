@@ -71,6 +71,8 @@ export default {
         },
         legend: {
           icon: "circle",
+            itemWidth:6,
+            itemHeight:6,
           type: "scroll",
           // orient: 'horizontal',
           orient: "vertical",

@@ -18,9 +18,6 @@ export default {
 		},
 		colorList:{
 			type:Array,
-			default:()=>{
-				return  ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564','#BF6E9B','#CECE7E','#91C2F2','#B7C8EA','#FF9F7F','#91C2F2','#B380B6','#EDA8AD','#738AD4','#FF9F7F'];
-			},
 		},
 	},
 	data () {
@@ -66,8 +63,8 @@ export default {
                 data: this.myData.legName,
             },
             grid: {
-                left: 40/144*window.rem,
-                right: 16/144*window.rem,
+                left: 40,
+                right: 16,
                 bottom: 0,
                 top: 0,
                 containLabel: false,
@@ -97,14 +94,13 @@ export default {
 					show:false,
 					lineStyle:{
 						color:'#636E95',
-						fontSize:14/144*window.rem,
+						// fontSize:14/144*window.rem,
 						//width:8,//这里是为了突出显示加上的
 					}
 				},
 				axisLabel: {
 					textStyle: {
 						color:'#636E95',
-						fontSize:14/144*window.rem,
 					}
 				},
                 // splitLine: {

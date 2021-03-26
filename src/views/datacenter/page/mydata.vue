@@ -955,6 +955,7 @@ export default {
         font-size: 28px;
         font-weight: 400;
         line-height: 36px;
+        font-family: PingFangSC-Medium;
       }
     }
     .statistics-item-box:nth-child(1) {
