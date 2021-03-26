@@ -155,6 +155,9 @@ export default {
       ]
     };
     },
+    created(){
+      this.value=this.$route.query.title;
+    },
     methods:{
         down(){
           this.$router.push({
@@ -203,7 +206,6 @@ img {
         width: 96px;
         height: 32px;
         background: #2373FF;
-        box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
         border-radius: 4px;
         font-size: 14px;
         font-family: PingFangSC-Regular, PingFang SC;
@@ -212,12 +214,14 @@ img {
         line-height: 32px;
         text-align: center;
         cursor: pointer;
+        box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
         margin-left: 12px;
         &.btn1{
           background: #FFFFFF;
           border: 1px solid #97A0C3;
           color: #242F57;
           margin-left: 24px;
+          box-shadow: none;
         }
       }
     }

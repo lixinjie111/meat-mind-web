@@ -2,7 +2,7 @@
   <div class="table-model">
     <Table :columns="columns" :data="tableData">
         <template slot-scope="{row}" slot="name">
-            <Poptip popper-class="panel-poptip" placement="right" trigger="hover">
+            <Poptip transfer-class-name="panel-poptip" placement="right" trigger="hover" :transfer="true">
               <span >{{row.name}}</span>
               <div slot="content">
                 <img src="../../../assets/img/dashboard/kanban/bianji.png" alt="">
@@ -18,7 +18,7 @@
             <div class="actionList" v-if="row.name=='系统默认看板'">
                 <div class="detail" @click="look(row.name)">查看</div>
                 <div class="detail">
-                  <Dropdown trigger="click" style="margin-left: 20px">
+                  <Dropdown trigger="click" style="margin-left: 20px"  @on-visible-change="edit1(row.name)" @on-click="edit">
                     <a class="detail">
                         更多
                         <Icon type="ios-arrow-down"></Icon>
@@ -33,29 +33,29 @@
             <div class="actionList" v-else>
                 <div class="detail" @click="look(row.name)">查看</div>
                 <div class="detail" v-if="row.type=='使用中'">
-                  <Dropdown trigger="click" style="margin-left: 20px">
+                  <Dropdown trigger="click" style="margin-left: 20px"  @on-visible-change="edit1(row.name)" @on-click="edit">
                     <a class="detail">
                         更多
                         <Icon type="ios-arrow-down"></Icon>
                     </a>
                     <DropdownMenu slot="list">
-                        <DropdownItem>编辑</DropdownItem>
-                        <DropdownItem>复制</DropdownItem>
-                        <DropdownItem>删除</DropdownItem>
+                        <DropdownItem name="编辑">编辑</DropdownItem>
+                        <DropdownItem name="复制">复制</DropdownItem>
+                        <DropdownItem name="删除">删除</DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
                 </div>
                 <div class="detail" v-else>
-                  <Dropdown trigger="click" style="margin-left: 20px">
+                  <Dropdown trigger="click" style="margin-left: 20px" @on-visible-change="edit1(row.name)" @on-click="edit">
                     <a class="detail">
                         更多
                         <Icon type="ios-arrow-down"></Icon>
                     </a>
-                    <DropdownMenu slot="list">
-                        <DropdownItem>编辑</DropdownItem>
-                        <DropdownItem>使用</DropdownItem>
-                        <DropdownItem>复制</DropdownItem>
-                        <DropdownItem>删除</DropdownItem>
+                        <DropdownMenu slot="list">
+                          <DropdownItem name="编辑">编辑</DropdownItem>
+                          <DropdownItem name="使用">使用</DropdownItem>
+                          <DropdownItem name="复制">复制</DropdownItem>
+                          <DropdownItem name="删除">删除</DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
                 </div>
@@ -101,6 +101,7 @@ export default {
   data(){
       return{
           title:'',
+          title1:'',
           showCover:false,
           currentPage: 1,
           total: this.tableData.length,
@@ -108,6 +109,17 @@ export default {
       }
   },
   methods:{
+    edit(val){
+      if(val=='编辑'){
+        this.$router.push({
+          path:'/dashboard/editPanel?title='+this.title1
+        })
+      }
+    },
+    edit1(val){
+      console.log(val)
+      this.title1=val;
+    },
     look(val){
       this.showCover=true;
       this.title=val;
@@ -122,7 +134,16 @@ export default {
   }
 };
 </script>
-
+<style  lang="scss">
+.panel-poptip{
+  max-width: 700px;
+  height: 250px;
+  overflow: scroll;
+  .ivu-poptip-arrow{
+    display: none;
+  }
+}
+</style>
 <style scoped lang="scss">
 .cover{
   position: fixed;
@@ -172,14 +193,7 @@ img{
 // ::v-deep .ivu-table-wrapper{
 //   overflow: auto;
 // }
-::v-deep .panel-poptip{
-  width: 700px;
-  height: 250px;
-  overflow: scroll;
-  .ivu-poptip-arrow{
-    display: none;
-  }
-}
+
 .actionList {
                   display: flex;
                    // justify-content: flex-end;

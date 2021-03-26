@@ -7,7 +7,7 @@
     </div>
     <div class="header-title">
       <div class="left">
-        <Input v-model="value" placeholder="2020年上半年XX电商会" />
+        <Input v-model="value" placeholder="请输入看板名称" />
       </div>
       <div class="right">
         <span>创建日期：2020/01/01</span>
@@ -17,7 +17,7 @@
       </div>
     </div>
       <div class="imgContainer">
-         <div class="cover" @click="create">
+         <div class="cover">
            <div class="text1">暂无报表</div>
            <div class="text2" @click="add">添加报表</div>
          </div>
@@ -33,6 +33,7 @@ export default {
     components:{TableModel},
     data() {
     return {
+      value:""
     };
     },
     methods:{
@@ -142,6 +143,7 @@ img {
           border: 1px solid #97A0C3;
           color: #242F57;
           margin-left: 24px;
+          box-shadow: none;
         }
       }
     }
