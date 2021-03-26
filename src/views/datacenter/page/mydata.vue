@@ -93,7 +93,7 @@
           <div class="module-title">
             <div>已购买数据</div>
             <div class="module-btns btn-box">
-              <Button class="a" type="primary">购买数据包</Button>
+              <Button class="a" type="primary" @click="toMarket">购买数据包</Button>
             </div>
           </div>
           <div class="table-warp">
@@ -337,35 +337,37 @@ export default {
               {
                 title: '用户动线数据包',
                 key: 'name',
+                width: 160 / 144 * window.rem,
               },
               {
                 title: '详情描述',
                 key: 'desc',
+                width: 200 / 144 * window.rem,
               },
               {
                 title: '添加时间',
                 key: 'time',
-                // width: '150'
+                width: 180 / 144 * window.rem,
               },
               {
                 title: '最近更新版本',
                 key: 'versions',
-                // width: '150'
+                width: 180 / 144 * window.rem,
               },
               {
                 title: '有效期至',
                 key: 'valid',
-                // width: '120'
+                width: 120 / 144 * window.rem,
               },
               {
                 title: '状态',
                 key: 'status',
-                width: 80 / 144 * window.rem,
+                // width: 80 / 144 * window.rem,
               },
               {
                 title: '操作',
                 slot:"operate",
-                width: 200 / 144 * window.rem,
+                width: 180 / 144 * window.rem,
               },
             ],
             currentPage: 1,
@@ -574,6 +576,9 @@ export default {
       // this.tableChangePage(1, this.SQLPage)
     },
     methods: {
+      toMarket() {
+        this.$router.push({name:"data-center-market"})
+      },
       changeList(type) {
         this.listType = type
       },

@@ -45,13 +45,13 @@
               </div>
             </div>
           </template>
-          <template slot-scope="{ row, index }" slot="action">
-            <div class="actionList">
-              <div class="detail">详情</div>
-              <div class="detail">收藏</div>
-              <div class="detail">合作</div>
-            </div>
-          </template>
+<!--          <template slot-scope="{ row, index }" slot="action">-->
+<!--            <div class="actionList">-->
+<!--              <div class="detail">详情</div>-->
+<!--              <div class="detail">收藏</div>-->
+<!--              <div class="detail">合作</div>-->
+<!--            </div>-->
+<!--          </template>-->
         </Table>
         <div class="page">
           <Page :total="total" :current="current" @on-change="change" @on-page-size-change="changeSize"
@@ -85,14 +85,14 @@
             title: '账号',
             key: 'name',
             slot: 'douhao',
-            width: 160 / 144 * window.rem,
+            width: 180 / 144 * window.rem,
           },
           {
             title: '带货量',
             tooltip: true,
             ellipsis: true,
             key: 'huo',
-            width: 80 / 144 * window.rem,
+            width: 100 / 144 * window.rem,
           },
           {
             title: '品牌曝光数',
@@ -120,7 +120,7 @@
             tooltip: true,
             ellipsis: true,
             key: 'fensi',
-            width: 120 / 144 * window.rem,
+            width: 130 / 144 * window.rem,
           },
           {
             title: '品牌匹配度',
@@ -140,14 +140,14 @@
             tooltip: true,
             ellipsis: true,
             key: 'yxiang',
-            width: 120 / 144 * window.rem,
+            // width: 120 / 144 * window.rem,
             renderHeader: (h, params) => {
               return h("div", [
                 h('strong', 'KOL影响力指数'),
                 h("Poptip",
                   {
                     props: {
-                      placement: "bottom-end",
+                      placement: "bottom",
                       popperClass: "saas-poptip",
                       transfer: true
                     },
@@ -169,12 +169,12 @@
               ])
             }
           },
-          {
-            title: '操作',
-            slot: 'action',
-            fixed: 'right',
-            width: 120 / 144 * window.rem,
-          },
+          // {
+          //   title: '操作',
+          //   slot: 'action',
+          //   fixed: 'right',
+          //   width: 120 / 144 * window.rem,
+          // },
         ],
         data: [],
         moreOpen: false,
@@ -254,7 +254,7 @@
               pinpaipipei: `${this.getRandom(90, 95, 2)}%`,
               yonghupipei: `${this.getRandom(90, 95, 2)}%`,
               hudong: `${this.getRandom(1, 20, 2)}亿`,
-              yxiang: this.getRandom(1000, 1179, 1),
+              yxiang: this.getRandom(800, 950, 0),
               header: headers[headerI],
               num: `${Math.ceil(Math.random() * 10000000000)}`,
               index: (this.current - 1) * this.pageSize + i
@@ -272,7 +272,7 @@
             yonghupipei: '92.2%',
             hudong: '5.32亿',
             zuopin: 95,
-            yxiang: 1180,
+            yxiang: 960,
             header: require("../../../assets/img/yhhx/header1.png"),
             num: `${Math.ceil(Math.random() * 10000000000)}`,
             index: 0
@@ -509,12 +509,12 @@
           font-weight: 400;
           color: #636E95;
           cursor: pointer;
-          padding: 5px 0;
+          /*padding: 5px 0;*/
           margin-bottom: 16px;
         }
       }
       .table-wrapper{
-        padding: 0 24px;
+        /*padding: 0 24px;*/
       }
       ::v-deep .ivu-table {
         tr {
