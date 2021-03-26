@@ -1191,8 +1191,8 @@ export default {
       tu75:require("../../assets/img/yhhx/tu75.png"),
       descTitle:'北京上班族出行场景',
       avatImg:require("../../assets/img/yhhx/avat.png"),
-      sbAvatImg:require("../../assets/img/yhhx/sbAvat.png"),
-      qyggImg:require("../../assets/img/yhhx/qyggimg1.png"),
+      sbAvatImg:require("../../assets/img/yhhx/pic_all_avatar.png"),
+      qyggImg:require("../../assets/img/yhhx/qyggAvt.png"),
       bpyzImg:require("../../assets/img/yhhx/beipiaoImg.png"),
       zyzyImg:require("../../assets/img/yhhx/ziyouImg.png"),
 
@@ -1294,17 +1294,18 @@ export default {
       zkdwImg:require("../../assets/img/yhhx/zkdwImg.png"),
       czkImg:require("../../assets/img/yhhx/czkImg.png"),
       qbmjList:[
-        require("../../assets/img/yhhx/tt.png"),
-        require("../../assets/img/yhhx/xhs.png"),
-        require("../../assets/img/yhhx/dyI.png")
+        require("../../assets/img/yhhx/dingd.png"),
+        require("../../assets/img/yhhx/weiicon.png"),
+        require("../../assets/img/yhhx/tt.png")
       ],
       bjsbList:[
         require("../../assets/img/yhhx/zhIcon.png"),
         require("../../assets/img/yhhx/xhs.png"),
       ],
       qyggList:[
+        require("../../assets/img/yhhx/weiicon.png"),
+        require("../../assets/img/yhhx/dingd.png"),
         require("../../assets/img/yhhx/tt.png"),
-        require("../../assets/img/yhhx/ks.png"),
       ],
       bpyzList:[
         require("../../assets/img/yhhx/tt.png"),
