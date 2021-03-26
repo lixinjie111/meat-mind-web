@@ -59,7 +59,7 @@
 				<BarEcharts1 :colorList="$fjData.colorList" :myData="$ljEData.ljBox38" ></BarEcharts1>
 			</div>
 			<div>
-        <PieOne1 id="box301" :value="96.9" title="影响力指数"></PieOne1>
+        <PieOne1 id="box301" :value="96.9" title=""></PieOne1>
 			</div>
 			<div>
 				<div class="bottom-card">
@@ -80,7 +80,7 @@
 				<BarEcharts1 :colorList="$fjData.colorList" :myData="$ljEData.ljBox39" ></BarEcharts1>
 			</div>
 			<div>
-        <PieOne1 id="box302" :value="91.1" title="影响力指数"></PieOne1>
+        <PieOne1 id="box302" :value="91.1" title=""></PieOne1>
 			</div>
 			<div>
 				<div class="bottom-card">
@@ -101,7 +101,7 @@
 				<BarEcharts1 :colorList="$fjData.colorList" :myData="$ljEData.ljBox40" ></BarEcharts1>
 			</div>
 			<div>
-        <PieOne1 id="box303" :value="95.2" title="影响力指数"></PieOne1>
+        <PieOne1 id="box303" :value="95.2" title=""></PieOne1>
 			</div>
 		</div>
 	</div>

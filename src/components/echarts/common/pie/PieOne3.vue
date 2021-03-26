@@ -84,7 +84,7 @@ export default {
 			let data = [{value: 0}];
 			let prev = 0;
 			for (let i=0; i<value.length/2; i++) {
-				data.push({value: timeValue(value[ i*2 ]) - prev, label: {show: false}}, {name: value[ i*2 ] +' - '+ value[ i*2+1 ], value: timeValue(value[ i*2+1 ]) - timeValue(value[ i*2 ])});
+				data.push({value: timeValue(value[ i*2 ]) - prev, label: {show: false}}, {name: value[ i*2 ] +' - '+ value[ i*2+1 ], value: timeValue(value[ i*2+1 ]) - timeValue(value[ i*2 ]),label: {show: false}});
 				prev = timeValue(value[ i*2+1 ]);
 			}
 			if (prev < 24)

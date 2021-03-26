@@ -1134,7 +1134,6 @@ import barT2 from '../../components/echarts/common/bar/barT';
 import funnel from '../../components/echarts/common/funnel/funnel';
 import barHM from '../../components/echarts/common/bar/barHM';
 import lineSp from '../../components/echarts/common/line/lineSp';
-import pieP from '../../components/echarts/common/pie/pieP';
 
 import PieEcharts from '../../components/echarts/common/pie/PieEcharts';
 import PieEcharts7 from '../../components/echarts/common/pie/PieEcharts7';
@@ -1149,15 +1148,15 @@ import Leida2Echarts from '../../components/echarts/common/radar/Leida2Echarts';
 import vDxitem from "./dxItem";
 import vDxitem1 from "./dxItem1";
 import vTabCard from "./tabCard";
-import chuDa from "./chuDa";
+// import chuDa from "./chuDa";
 import Card from "./base/Card";
 import MatchDegree from "./base/MatchDegree";
 import Tab from "../../components/Tab";
 
 export default {
   components: {
-   barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, PieEcharts7, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Leida2Echarts,
-   vDxitem,vDxitem1,vTabCard,chuDa, Card, MatchDegree,Tab
+   barT1,barT2, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, PieEcharts7, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Leida2Echarts,
+   vDxitem,vDxitem1,vTabCard, Card, MatchDegree,Tab
   },
   name: "index",
   data() {

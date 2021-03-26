@@ -34,6 +34,11 @@
             }
         },
         mounted() {
+            this.myData.value.forEach((item)=>{
+                item.lineStyle = {
+                    width: 2 / 144 * window.rem,
+                }
+            });
             this.initEcharts();
         },
         methods: {
@@ -203,15 +208,7 @@
                             }
                         },
                     },
-                    series: [
-                        {
-                            data: this.myData.value,
-                            type: 'line',
-                            lineStyle: {
-                                width: 2 / 144 * window.rem,
-                            }
-                        }
-                    ]
+                    series:	this.myData.value
                 };
                 return option;
             }

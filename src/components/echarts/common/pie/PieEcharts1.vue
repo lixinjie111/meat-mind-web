@@ -66,14 +66,14 @@
           color: this.colorList || COLORS,
           grid: {
             left: 0,
-            top:10,
+            top:0,
             containLabel: true
           },
           title: {
             show: true,
             text: this.formatNumber(tolNum),
             left:'center',
-            top:'26%',
+            top:'34%',
             textStyle: {
               color: '#242F57',
               fontSize: 20,
@@ -85,7 +85,7 @@
             icon: 'circle',
             itemWidth:6,
             itemHeight:6,
-            bottom:20,
+            bottom:10,
             left:'center',
             data: name,
             align:'auto',
@@ -113,12 +113,12 @@
           },
           series: [{
             type: 'pie',
-            radius: ['37%', '57%'],
-            center:['50%', '30%'],
+            radius: ['40%', '60%'],
+            center:['50%', '40%'],
             roseType: this.roseType,
             clockwise: true,
             avoidLabelOverlap: true,
-            hoverOffset: 15,
+            hoverOffset: 5,
             label: {
               show: false
             },

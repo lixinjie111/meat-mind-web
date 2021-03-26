@@ -38,7 +38,7 @@ export default {
 				color: ['#4488FF','#75B1FF','#9ECBFF',],
 				tooltip: {
 					trigger: 'item',
-					formatter: "{a} <br/>{b} : {c}%"
+					formatter: "{b} : {c}%"
 				},
 				legend: {
 					show:false,
