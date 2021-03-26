@@ -157,7 +157,7 @@
                     .num{
                         height: 48px;
                         font-size: 48px;
-                        font-family: Helvetica-Bold, Helvetica;
+                        font-family: PingFangSC-Medium;
                         font-weight: bold;
                         line-height: 48px;
                     }

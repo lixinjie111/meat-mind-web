@@ -95,7 +95,7 @@
 						name: '访问来源',
 						type: 'pie',
 						selectedMode: 'single',
-						radius: ['20%', '38%'],
+						radius: ['28%', '36%'],
 						top: '-20%',
 						label: {
 							show: false
@@ -109,7 +109,7 @@
 					{
 						name: '访问来源',
 						type: 'pie',
-						radius: ['40%', '58%'],
+						radius: ['36.5%', '45%'],
 						top: '-20%',
 						label: {
 							show: false

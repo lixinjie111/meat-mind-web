@@ -73,7 +73,7 @@
             show: true,
             text: this.formatNumber(tolNum),
             left:'center',
-            top:'26%',
+            top:'34%',
             textStyle: {
               color: '#242F57',
               fontSize: 20,
@@ -83,12 +83,13 @@
           },
           legend: {
             icon: 'circle',
-            bottom:50,
+            itemWidth:6,
+            itemHeight:6,
+            bottom:10,
             left:'center',
             data: name,
             align:'auto',
             icon:'circle', 
-            itemGap:20,
             orient: 'horizontal', //设置图例排列纵向显示
             formatter:function(name){  //该函数用于设置图例显示后的百分比
                 var total = 0;
@@ -112,17 +113,16 @@
           },
           series: [{
             type: 'pie',
-            radius: ['37%', '57%'],
-            center:['50%', '30%'],
+            radius: ['40%', '60%'],
+            center:['50%', '40%'],
             roseType: this.roseType,
             clockwise: true,
             avoidLabelOverlap: true,
-            hoverOffset: 15,
+            hoverOffset: 5,
             label: {
               show: false
             },
             labelLine: {
-            
                 length: 10,
                 length2: 20,
                 lineStyle: {

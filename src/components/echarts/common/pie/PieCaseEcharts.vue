@@ -4,12 +4,12 @@
 
 <script>
   let id = 0;
-  const COLORS = ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564', '#E44C7F', '#CECE7E', '#CECE7E', '#B7C8EA', '#95E9ED', '#91C2F2', '#B380B6', '#EDA8AD', '#738AD4']
   export default {
     // roseType 默认为 false，代表圆环图， radius:圆环南丁格尔图， area: 区域南丁格尔图
+    name:"PieCaseEcharts",
     props: {
       myData: { default: ()=>{}},
-      colorList: { default: COLORS },
+      colorList: { type:Array },
       roseType: { default: false },
     },
     data() {
@@ -45,7 +45,7 @@
       defaultOption(myData) {
         const { name, value } = myData || { name: [], value: [] };
         const option = {
-          color: this.colorList || COLORS,
+          color: this.colorList,
           grid: {
             left: 'center',
             top:0,
@@ -54,6 +54,8 @@
           },
           legend: {
             icon: 'circle',
+            itemWidth:6,
+            itemHeight:6,
             type: 'scroll',
             orient: 'horizontal',
             //orient: 'vertical',
@@ -69,7 +71,7 @@
           series: [{
             type: 'pie',
             center: ['50%', '40%'],
-            radius: ['40%', '60%'],
+            radius: ['35%', '50%'],
             roseType: this.roseType,
             clockwise: true,
             avoidLabelOverlap: true,

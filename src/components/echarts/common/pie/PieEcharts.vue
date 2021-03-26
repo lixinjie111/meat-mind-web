@@ -54,6 +54,8 @@
           },
           legend: {
             icon: 'circle',
+            itemWidth:6,
+            itemHeight:6,
             type: 'scroll',
             orient: 'horizontal',
             //orient: 'vertical',
@@ -69,7 +71,7 @@
           series: [{
             type: 'pie',
             center: ['50%', '40%'],
-            radius: ['40%', '60%'],
+            radius: ['35%', '50%'],
             roseType: this.roseType,
             clockwise: true,
             avoidLabelOverlap: true,
