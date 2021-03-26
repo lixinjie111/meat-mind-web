@@ -266,7 +266,7 @@
                         </Select>
                     </div>
                     <div class="chart">
-                        <barM id="box32" :colorList="$lxjData.colorList" :myData="$lxjData.box32Data"></barM>
+                        <barLine id="bar" :colorList="$linData.colorList" :myData="$linData.barLine"></barLine>
                     </div>
                 </Card>
                 <Card title="竞品行情" class="right">
@@ -525,13 +525,13 @@
     import vDxitem2 from "../base/dxItem2";
     import vDxitem3 from "../base/dxItem3";
     import Card from "@/components/Card"
-    import barM from '@/components/echarts/common/bar/barM';
+    import barLine from '@/components/echarts/common/bar/barLine';
     import NewEcharts from "@/views/mark/components/NewEcharts";
     import PieNest2 from '@/components/echarts/common/pie/PieNest2';
 
     export default {
         name: "BusinessMarket",
-        components: {vDxitem, vDxitem1, vDxitem2, vDxitem3 , NewEcharts, Card, barM, PieNest2},
+        components: {vDxitem, vDxitem1, vDxitem2, vDxitem3 , NewEcharts, Card, barLine, PieNest2},
         data() {
             return {
                 goodsActive: 1,
