@@ -8,7 +8,7 @@
         <template slot="operate" class="operate">
             <span style="color:#2373FF;margin-right:8px">查看</span>
             <span style="color:#2373FF;margin-right:8px">编辑</span>
-            <span style="color:#2373FF;margin-left:8px">删除</span>
+            <span style="color:#2373FF">删除</span>
         </template>
     </Table>
     <div class="page">
@@ -57,31 +57,31 @@ export default {
   padding: 16px 24px;
   background: #ffffff;
   box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid #eaedf7;
   cursor: pointer;
-    // .ivu-table{
-    //     font-size: 14px;
-    //     font-family: PingFangSC-Regular, PingFang SC;
-    //     font-weight: 400;
-    //     color: #242F57;
-    // }
-    // ::v-deep .ivu-table-header thead tr th{
-    //     height: 48px;
-    //     background: #F4F7FC;
-    //     font-size: 14px;
-    //     font-family: PingFangSC-Medium, PingFang SC;
-    //     font-weight: 500;
-    //     color: #242F57;
-    // }
-    // ::v-deep .ivu-table th,::v-deep .ivu-table td{
-    //     height: 56px;
-    //     font-size: 14px;
-    //     font-family: PingFangSC-Regular, PingFang SC;
-    //     font-weight: 400;
-    //     color: #242F57;
-    //     border-bottom: 1px solid #EAEDF7;
-    // }
+    .ivu-table{
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #242F57;
+    }
+    ::v-deep .ivu-table-header thead tr th{
+        height: 48px;
+        background: #F6F9FF;
+        font-size: 14px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #242F57;
+    }
+    ::v-deep .ivu-table th,::v-deep .ivu-table td{
+        height: 56px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #242F57;
+        border-bottom: 1px solid #EAEDF7;
+    }
     .page {
             padding-top: 16px;
             .pageS {

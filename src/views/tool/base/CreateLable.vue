@@ -59,7 +59,7 @@ export default {
 .tool-model-filter {
   margin-top: 16px;
   height: 155px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   background: #ffffff;
   box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
   border-radius: 8px;
@@ -84,6 +84,7 @@ export default {
         width: 76px;
         height: 32px;
         // padding: 0 16px;
+        box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
         margin-right: 8px;
         background: #2373ff;
         border-radius: 4px;

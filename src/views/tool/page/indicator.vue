@@ -12,7 +12,7 @@
                 <Table :columns="columns" :data="active == 1?data:data1">
                     <template slot-scope="" slot="action">
                         <div class="actionList">
-                            <div class="detail">编辑</div>
+                            <div class="detail mr16">编辑</div>
                             <div class="detail">删除</div>
                         </div>
                     </template>
@@ -90,7 +90,7 @@
                         title:"操作",
                         slot:"action",
                         align:"left",
-                        width: 130 / 144 * window.rem,
+                        width: 110 / 144 * window.rem,
                     }
                 ],
                 data:[
@@ -333,16 +333,42 @@
             margin-top: 16px;
             background: #fff;
             padding: 16px 24px;
+            box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+            border-radius: 8px;
+            border: 1px solid #eaedf7;
+                .ivu-table{
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #242F57;
+    }
+    ::v-deep .ivu-table-header thead tr th{
+        height: 48px;
+        background: #F6F9FF;
+        font-size: 14px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #242F57;
+    }
+    ::v-deep .ivu-table th,::v-deep .ivu-table td{
+        height: 56px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #242F57;
+        border-bottom: 1px solid #EAEDF7;
+    }
                 .actionList {
                     display: flex;
-                    //justify-content: flex-end;
                     .detail {
-                        margin-right: 16px;
                         cursor: pointer;
                         font-size: 14px;
                         font-weight: 400;
                         color: #2373FF;
                         line-height: 22px;
+                    }
+                    .mr16{
+                        margin-right: 16px;
                     }
                 }
         }

@@ -69,9 +69,9 @@ export default {
 <style scoped lang="scss">
 .actionList {
                   display: flex;
-                    justify-content: flex-end;
+                    // justify-content: flex-end;
             .detail {
-                margin-right: 16px;
+                // margin-right: 16px;
                 cursor: pointer;
                 font-size: 14px;
                 font-weight: 400;
@@ -87,28 +87,42 @@ export default {
   border-radius: 12px;
   border: 1px solid #eaedf7;
   cursor: pointer;
-    // .ivu-table{
-    //     font-size: 14px;
-    //     font-family: PingFangSC-Regular, PingFang SC;
-    //     font-weight: 400;
-    //     color: #242F57;
-    // }
-    // ::v-deep .ivu-table-header thead tr th{
-    //     height: 48px;
-    //     background: #F4F7FC;
-    //     font-size: 14px;
-    //     font-family: PingFangSC-Medium, PingFang SC;
-    //     font-weight: 500;
-    //     color: #242F57;
-    // }
-    // ::v-deep .ivu-table th,::v-deep .ivu-table td{
-    //     height: 56px;
-    //     font-size: 14px;
-    //     font-family: PingFangSC-Regular, PingFang SC;
-    //     font-weight: 400;
-    //     color: #242F57;
-    //     border-bottom: 1px solid #EAEDF7;
-    // }
+    .ivu-table{
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #242F57;
+    }
+    ::v-deep .ivu-table-header thead tr th{
+        height: 48px;
+        background: #F6F9FF;
+        font-size: 14px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #242F57;
+    }
+    ::v-deep .ivu-table th,::v-deep .ivu-table td{
+        height: 56px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #242F57;
+        border-bottom: 1px solid #EAEDF7;
+    }
+    ::v-deep .ivu-table-cell{
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    ::v-deep .actionList{
+      justify-content: flex-start;
+      .detail{
+        margin-right: 0;
+                .ivu-dropdown{
+          margin-left: 16px!important;
+        }
+      }
+    } 
+
     .page {
             padding-top: 16px;
             .pageS {

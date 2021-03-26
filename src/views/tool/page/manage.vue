@@ -440,13 +440,31 @@ export default {
     // height: 100%;
   }
   .qdgl-table{
-    padding: 16px 24px;
-     background: #FFFFFF;
     width: 100%;
+    padding: 16px 24px;
+    background: #FFFFFF;
+    box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+    border-radius: 8px;
       // .page-box {
       //   margin-top: 10px;
       //   text-align: right;
       // }
+              ::v-deep .ivu-table-header thead tr th{
+            height: 48px;
+            background: #F6F9FF;
+            font-size: 14px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242F57;
+        }
+        ::v-deep .ivu-table th,::v-deep .ivu-table td{
+            height: 56px;
+            font-size: 14px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #242F57;
+            border-bottom: 1px solid #EAEDF7;
+        }
       .page {
             padding-top: 16px;
             .pageS {
@@ -502,5 +520,25 @@ export default {
             }
         }
   }
+}
+</style>
+
+
+<style lang="scss">
+.qdgl-table {
+    .ivu-table{
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #242F57;
+    }
+
+    .table-page-warp{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+
 }
 </style>

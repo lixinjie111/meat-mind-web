@@ -138,7 +138,7 @@
                         border-radius: 8px;
                         text-align: center;
                         line-height: 52px;
-                        cursor: pointer;
+                        // cursor: pointer;
                         >i{
                             font-size: 24px;
                         }

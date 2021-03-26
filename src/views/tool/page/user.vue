@@ -87,7 +87,7 @@ export default {
         {
           title: "操作",
           slot: "operate",
-           width: 180/ 144 * window.rem,
+           width: 130/ 144 * window.rem,
         }
       ],
       tableData: [
@@ -246,7 +246,7 @@ export default {
         justify-content: center;
         width: 76px;
         height: 32px;
-        
+        box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
         margin-left: 24px;
         background: #2373ff;
         border-radius: 4px;
