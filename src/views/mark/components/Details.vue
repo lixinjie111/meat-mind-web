@@ -52,9 +52,7 @@
                 <AnchorLink href="#mark-details-public" title="行业态势分析" />
             </Anchor>
         </div> -->
-        <div style="margin-bottom:16px">
-            <Tab :tab-list="['品牌受众分析','品牌舆情洞察','行业态势分析']" @change="changeTab"></Tab>
-        </div>
+        <Tab class="mb16" :tab-list="['品牌受众分析','品牌舆情洞察','行业态势分析']" @change="changeTab"></Tab>
         <Accept v-if="curTab==1" :title="'品牌受众分析'" ></Accept>
         <Market v-if="curTab==2" :title="'品牌舆情洞察'" ></Market>
         <Public v-if="curTab==3" :title="'行业态势分析'" ></Public>
@@ -96,7 +94,7 @@ export default {
 </script>  
 <style lang="scss" scoped>
     .mark-detail{
-        position: relative;
+        /*position: relative;*/
         width: 100%;
         // padding: 0 24px 24px;
         // margin-top: 24px;
@@ -152,6 +150,10 @@ export default {
         //         right: 0;
         //     }
         // }
+
+        .mb16 {
+           margin-bottom: 16px;
+        }
 
         .details-compare{
             display: flex;
