@@ -27,11 +27,11 @@ const abelData = {
   nest01Data:{
     inner: {
       name: ['男', '女',],
-      value: [250, 110,],
+      value: [110, 250,],
     },
     outer: {
       name: ['男', '女',],
-      value: [225, 135,],
+      value: [135, 225,],
     },
   },
   nest01_cloneData:{
