@@ -38,7 +38,7 @@
 						<p>李子柒</p>
 					</div>
 					<!--                        <div class="card-tip">-->
-					<!--                            <Poptip popper-class="saas-poptip" placement="right-start">-->
+					<!--                            <Poptip popper-class="saas-poptip" trigger="hover" placement="right">-->
 					<!--                                <i class="iconfont iconguanyuline1 tip-icon"></i>-->
 					<!--                                <div slot="content">-->
 					<!--                                    <p>快速拉新策略KOL，占整体投放预算的55%，投放时间为未来7日投放（2日达到投放预期的80%），预期获得18%的曝光，12%的互动和3%销售转化；</p>-->

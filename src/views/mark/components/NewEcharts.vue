@@ -2,7 +2,7 @@
   <div class="negative-content">
       <div class="ng-title">
           舆情综合指数
-        <Poptip popper-class="saas-poptip" placement="right-start">
+        <Poptip popper-class="saas-poptip" trigger="hover" placement="right">
             <i class="iconfont iconguanyu tip-icon"></i>
             <div slot="content">
                 <div class="soi"></div>

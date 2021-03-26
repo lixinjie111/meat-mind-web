@@ -13,7 +13,7 @@
         <div class="user_intro_container">
           <div class="til_img_container">
             <span>早安，分析师，欢迎使用 Meta-Mind-Marketing！</span>
-            <Poptip popper-class="saas-poptip small" placement="right-start">
+            <Poptip popper-class="saas-poptip small" trigger="hover" placement="right">
               <i class="iconfont iconguanyu tip-icon"></i>
               <div slot="content">
                 <p><i class="iconfont iconwodeshuju"></i>迅速掌握各项数据情报</p >
@@ -77,7 +77,7 @@
         <div class="title_1container">
             <div class="title_1lef">
                 <span style="margin-right:10px;">经营情况概览</span>
-                <Poptip popper-class="saas-poptip small" placement="right-start" style="margin-right:10px;">
+                <Poptip popper-class="saas-poptip small" trigger="hover" placement="right" style="margin-right:10px;">
                   <i class="iconfont iconguanyu tip-icon"></i>
                   <div slot="content">
                     <p>快速了解商业活动的经营状况，辅助决策调整。</p >
@@ -132,7 +132,7 @@
       <div class="title_container">
         <div class="left_area">
           <span>品牌运营概览</span>
-          <Poptip popper-class="saas-poptip small" placement="right-start">
+          <Poptip popper-class="saas-poptip small" trigger="hover" placement="right">
             <i class="iconfont iconguanyu tip-icon"></i>
             <div slot="content">
               <p>关注运营关键指标，快速了解品牌运营现状</p >
@@ -190,7 +190,7 @@
       <div class="title_container">
         <div class="left_area">
           <span>用户生命周期</span>
-          <Poptip popper-class="saas-poptip small" placement="right-start">
+          <Poptip popper-class="saas-poptip small" trigger="hover" placement="right">
             <i class="iconfont iconguanyu tip-icon"></i>
             <div slot="content">
               <p>了解不同阶段的用户构成，寻找提升用户价值的切入点</p >
@@ -224,7 +224,7 @@
       <div class="title_container">
         <div class="left_area">
           <span>媒介概览</span>
-          <Poptip popper-class="saas-poptip small" placement="right-start">
+          <Poptip popper-class="saas-poptip small" trigger="hover" placement="right">
             <i class="iconfont iconguanyu tip-icon"></i>
             <div slot="content">
               <p>关注媒介核心指标，实时掌握媒介推广情况</p >
@@ -304,7 +304,7 @@
       <div class="title_container">
         <div class="left_area">
           <span>产品数据评估</span>
-          <Poptip popper-class="saas-poptip small" placement="right-start">
+          <Poptip popper-class="saas-poptip small" trigger="hover" placement="right">
             <i class="iconfont iconguanyu tip-icon"></i>
             <div slot="content">
               <p>了解产品在企业内部的使用情况，深化管理效果</p >

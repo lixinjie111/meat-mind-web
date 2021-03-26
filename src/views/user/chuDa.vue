@@ -5,7 +5,7 @@
         <div class="cdyhmj_title_container">
           <div class="cdyhmj_title">
             <span>触达用户媒介</span>
-            <Poptip popper-class="saas-poptip" placement="right-start">
+            <Poptip popper-class="saas-poptip" trigger="hover" placement="right">
               <!-- <i class="iconfont iconguanyuline1 tip-icon"></i> -->
               <img class="gif" src="../../assets/img/user/tip.gif" alt="">
               <div slot="content">

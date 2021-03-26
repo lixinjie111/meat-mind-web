@@ -9,7 +9,7 @@
                 <div class="user_intro_container">
                     <div class="til_img_container">
                         <span>早安，分析师，欢迎使用 Meta-Mind-Marketing！</span>
-                        <Poptip popper-class="saas-poptip small" placement="right-start">
+                        <Poptip popper-class="saas-poptip small" trigger="hover" placement="right">
                             <i class="iconfont iconguanyu tip-icon"></i>
                             <div slot="content">
                                 <p><i class="iconfont iconwodeshuju"></i>迅速掌握各项数据情报</p>

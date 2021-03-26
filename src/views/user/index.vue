@@ -9,7 +9,7 @@
 		    <div class="left_text">
 			    <div class="left_title_text">
 				    <span>用户分群数据</span>
-				    <!--<Poptip popper-class="saas-poptip" placement="right-start">-->
+				    <!--<Poptip popper-class="saas-poptip" trigger="hover" placement="right">-->
 				    <!--&lt;!&ndash; <i class="iconfont iconguanyuline1 tip-icon"></i> &ndash;&gt;-->
 				    <!--<img class="gif" src="../../assets/img/user/tip.gif" alt="">-->
 				    <!--<div slot="content">-->
@@ -856,7 +856,7 @@
 		    <div class="xwfx_area_container" id="xwfx_area_container">
 <!--			    <div class="xwfx_area_til">-->
 <!--				    <span>行为分析</span>-->
-				    <!--<Poptip popper-class="saas-poptip" placement="right-start">-->
+				    <!--<Poptip popper-class="saas-poptip" trigger="hover" placement="right">-->
 					    <!--&lt;!&ndash; <i class="iconfont iconguanyuline1 tip-icon"></i> &ndash;&gt;-->
 					    <!--<img class="gif" src="../../assets/img/user/tip.gif" alt="">-->
 					    <!--<div slot="content">-->
@@ -948,7 +948,7 @@
 		    <div class="xzfx_area_container" id="xzfx_area_container">
 <!--			    <div class="xzfx_area_title">-->
 <!--				    <span>心智分析</span>-->
-				    <!--<Poptip popper-class="saas-poptip" placement="right-start">-->
+				    <!--<Poptip popper-class="saas-poptip" trigger="hover" placement="right">-->
 					    <!--&lt;!&ndash; <i class="iconfont iconguanyuline1 tip-icon"></i> &ndash;&gt;-->
 					    <!--<img class="gif" src="../../assets/img/user/tip.gif" alt="">-->
 					    <!--<div slot="content">-->

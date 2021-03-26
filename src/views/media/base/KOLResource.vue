@@ -2,7 +2,7 @@
   <div class="m-p-kol">
     <div class="m-p-target-title">
       KOL资源
-      <Poptip popper-class="saas-poptip small" placement="right-start">
+      <Poptip popper-class="saas-poptip small" trigger="hover" placement="right">
         <i class="iconfont iconguanyu tip-icon"></i>
         <div slot="content">
           <p>媒介资源库，提供具体媒介资源的详细信息，包括基础数据、历史投放效果和合作方案等，以供品牌方比较分析并联系合作</p>

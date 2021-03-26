@@ -10,7 +10,7 @@
               <span class="til_unit">{{cardData.jyUnit}}</span>
           </div>
       </div>
-      <Poptip popper-class="saas-poptip small">
+      <Poptip popper-class="saas-poptip small" trigger="hover">
         <i :class="['iconfont','icongengduo',cardData.ysIcon]"></i>
         <div slot="content">
             <p>环比<i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">{{cardData.upper}}</span></p >

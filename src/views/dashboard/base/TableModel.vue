@@ -2,7 +2,7 @@
   <div class="table-model">
     <Table :columns="columns" :data="tableData">
         <template slot-scope="{row}" slot="name">
-            <Poptip popper-class="panel-poptip" placement="right-start" trigger="hover">
+            <Poptip popper-class="panel-poptip" placement="right" trigger="hover">
               <span >{{row.name}}</span>
               <div slot="content">
                 <img src="../../../assets/img/dashboard/kanban/bianji.png" alt="">

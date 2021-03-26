@@ -3,7 +3,7 @@
         <!-- <div class="m-d-market-header">
             <div class="a-h-title">
                 {{title}}
-                <Poptip popper-class="saas-poptip" placement="right-start">
+                <Poptip popper-class="saas-poptip" trigger="hover" placement="right">
                     <img class="gif" src="../../../assets/img/user/tip.gif" alt="">
                     <div slot="content">
                         <p><span>品牌舆情</span></p>

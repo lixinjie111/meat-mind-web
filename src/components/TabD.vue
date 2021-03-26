@@ -57,7 +57,7 @@
                 left: 0;
                 bottom: 0;
                 width: 100%;
-                height: 2px;
+                height: 1px;
                 background: #DEE2EE;
             }
 

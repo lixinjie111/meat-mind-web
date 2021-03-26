@@ -195,7 +195,7 @@
                 <div class="nl_card_container">
                     <div class="til_label">
                         用户状态
-                        <Poptip popper-class="saas-poptip" placement="right-start">
+                        <Poptip popper-class="saas-poptip" trigger="hover" placement="right">
                             <i class="iconfont iconguanyuline1 tip-icon"></i>
                             <div slot="content">
                                 <p v-if="[6, 8, 10].includes(current)">
