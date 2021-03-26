@@ -62,6 +62,8 @@ export default {
 			},
 			legend: {
 				bottom:0,
+				itemWidth: 6,
+				itemHeight: 6,
 				icon:"circle",
 				data:this.myData.legName,
 			},

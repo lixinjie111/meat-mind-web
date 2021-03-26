@@ -30,7 +30,7 @@
 				    </div>
 			    </div>
 			    <div class="overview_new_chart">
-				    <lineM4 :hasAreaStyle="true" :colorList="$lxjData.colorList" :myData="$ljEData.ljBox37"/>
+				    <lineM4 :colorList="$lxjData.colorList" :myData="$ljEData.ljBox37"/>
 			    </div>
 		    </div>
 
