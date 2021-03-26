@@ -100,7 +100,14 @@
                             }
                         },
                     },
-                    series: this.myData.value
+                    series: [
+                        {
+                            data: this.myData.value,
+                            lineStyle: {
+                                width: 2 / 144 * window.rem,
+                            }
+                        }
+                    ]
                 };
                 return option;
             }

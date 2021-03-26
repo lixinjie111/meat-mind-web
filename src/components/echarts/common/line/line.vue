@@ -118,6 +118,9 @@
                             data: this.myData.value,
                             type: 'line',
                             smooth: true,
+                            lineStyle: {
+                               width: 2 / 144 * window.rem,
+                            },
                             areaStyle: {
                                 color: {
                                     type: 'linear',

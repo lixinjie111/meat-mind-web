@@ -128,7 +128,6 @@
                         },
                     },
                     series: [
-
                         {
                             name: '有效反击走势预测',
                             type: 'line',
@@ -146,11 +145,12 @@
                                 ]
                             },
                             itemStyle: {
-
                                 lineStyle: {
                                     type: 'dashed'
                                 }
-
+                            },
+                            lineStyle: {
+                                width: 2 / 144 * window.rem,
                             },
                             data: [11, 591, 2391, 2964, 1646, 816, 386, 300, 157, 128, 128]
                         },
@@ -159,11 +159,13 @@
                             type: 'line',
                             smooth: true,
                             itemStyle: {
-
                                 lineStyle: {
                                     type: 'dashed'
                                 }
 
+                            },
+                            lineStyle: {
+                                width: 2 / 144 * window.rem,
                             },
                             data: [11, 591, 4367, 5513, 5140, 3943, 3788, 4357, 4900, 4564, 4021]
                         },
@@ -173,21 +175,21 @@
                             data: [11, 591, 4367, 5513, 5140, 3852, 2831, 1978, 1254, 730, 502],
                             smooth: true,
                             itemStyle: {
-
                                 lineStyle: {
                                     color: '#8AE6C7',
                                     width: 3,
                                 }
 
                             },
-
+                            lineStyle: {
+                                width: 2 / 144 * window.rem,
+                            },
                         },
                         {
                             name: '反击预警线',
                             type: 'line',
                             smooth: true,
                             itemStyle: {
-
                                 lineStyle: {
                                     type: 'dashed',
                                     color: '#f00',
@@ -195,7 +197,10 @@
 
                             },
                             data: [1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500,
-                            ]
+                            ],
+                            lineStyle: {
+                                width: 2 / 144 * window.rem,
+                            },
                         },
                     ]
                 };

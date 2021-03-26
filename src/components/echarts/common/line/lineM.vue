@@ -43,6 +43,9 @@ export default {
 		}
 	},
     mounted() {
+			this.myData.lineStyle = {
+				width: 2 / 144 * window.rem,
+			}
         	this.initEcharts();
     },
 	methods: {
@@ -135,7 +138,14 @@ export default {
 						}
 					},
             },
-            series: this.myData.value
+			series: [
+				{
+					data: this.myData.value,
+					lineStyle: {
+						width: 2 / 144 * window.rem,
+					}
+				}
+			]
         };
 			return lodash.merge({}, option, this.option);
 		}

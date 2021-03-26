@@ -175,6 +175,9 @@
                                 ],
                             ]
                         },
+                        lineStyle: {
+                            width: 2 / 144 * window.rem,
+                        },
                     }]
                 };
                 return option;

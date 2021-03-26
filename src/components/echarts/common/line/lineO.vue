@@ -144,6 +144,9 @@
                                     global: false // 缺省为 false
                                 }
                             },
+                            lineStyle: {
+                                width: 2 / 144 * window.rem,
+                            },
                             smooth: true
                         }
                     ]
