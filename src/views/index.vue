@@ -66,9 +66,9 @@
             go() {
                 this.$router.push({name: "login"})
             },
-            // changePanel(arg){
-            //     this.currentInx = arg;
-            // }
+            changePanel(arg){
+                this.currentInx = arg;
+            }
         }
     }
 </script>
@@ -98,7 +98,7 @@
                     font-weight: 400;
                     color: #636E95;
                     margin-right: 32px;
-                    height: 98%;
+                    height: 97%;
                     display: flex;
                     align-items: center;
                     &:hover{
@@ -110,7 +110,7 @@
                     font-family: PingFangSC-Medium, PingFang SC;
                     font-weight: 500;
                     color: #2373FF;
-                    border-bottom: 2px solid #2373FF;
+                    border-bottom: 2.5px solid #2373FF;
                 }
             }
         }
