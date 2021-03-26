@@ -23,21 +23,27 @@
       <div class="filter">
         <div class="title">test转化漏斗</div>
         <div>
-          <Select v-model="date1" class="item1">
-            <Option v-for="(item,index) of date1Options" :value="index+1" :key="index+1">{{item}}</Option>
-          </Select>
-          <Select v-model="date2" class="item2">
+          <RadioGroup v-model="date1" type="button" class="item1">
+            <Radio value="1" label="趋势"></Radio>
+            <Radio value="2" label="对比"></Radio>
+          </RadioGroup>
+          <Select v-model="date2" class="item2" placeholder="显示设置">
             <Option v-for="(item,index) of date2Options" :value="index+1" :key="index+1">{{item}}</Option>
           </Select>
-          <Select v-model="date3" class="item2">
-            <Option v-for="(item,index) of date3Options" :value="index+1" :key="index+1">{{item}}</Option>
-          </Select>
           <DatePicker :value="dateRange" format="yyyy-MM-dd" type="daterange" placement="bottom-end" placeholder="请选择日期" class="item3"></DatePicker>
+          <div class="item4">
+            <span>窗口期：</span>
+            <span>24小时</span>
+          </div>
         </div>
       </div>
-      <div>
+      <div class="charts">
         <div class="new_echart_box">
           <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box119Data"></funnel>
+        </div>
+        <div class="gap"></div>
+        <div class="box">
+          <lineS id="box55" :colorList="$lxjData.colorList" :myData="$lxjData.box55Data"></lineS>
         </div>
       </div>
       <Table row-key="id" :columns="columns" :data="data">
@@ -55,6 +61,7 @@
   import MutableArray from '../base/MutableArray';
   import DetailsPage from "@/layouts/DetailsPage";
   import funnel from '../../../components/echarts/common/funnel/funnel';
+  import lineS from '../../../components/echarts/common/line/lineS';
 
   export default {
     name:"Keep",
@@ -99,25 +106,25 @@
           '崩溃原因',
         ],
         showFirstDay: true,
-        date1: 1,
-        date2: 1,
-        date3: 1,
+        date1: '趋势',
+        date2: 0,
         dateRange: [new Date, new Date],
-        date1Options: ['按天', '按周', '按月', ],
-        date2Options: ['默认', '8周', '12周', '24周', ],
-        date3Options: ['留存', '流失', ],
+        date2Options: ['总体转化', '第 1 步转化', ],
         columns: [
           {
-            title: '总体',
+            title: ' ',
             key: 'total',
             tree: true,
           },
           {
-            title: '总人数',
-            key: 'amount'
+            title: '总体转化',
+            key: 'amount',
+            render: (h, params) => {
+              return h('div', [h('div', params.row[params.column.key]), h('div', (params.row[params.column.key]/params.row['day0'] * 100).toFixed(2) + '%')]);
+            }
           },
           {
-            title: '第0日',
+            title: '提交订单详情',
             key: 'day0',
             render: (h, params) => {
               console.log(params)
@@ -125,32 +132,16 @@
             }
           },
           {
-            title: '第1日',
+            title: '第1步转化',
             key: 'day1',
             render: (h, params) => {
-              console.log(params)
-              return h('span', (params.row[params.column.key] * 100).toFixed(2) + '%');
-            }
-          },
-          {
-            title: '第2日',
-            key: 'day2',
-            render: (h, params) => {
-              console.log(params)
-              return h('span', (params.row[params.column.key] * 100).toFixed(2) + '%');
-            }
-          },
-          {
-            title: '第3日',
-            key: 'day3',
-            render: (h, params) => {
-              console.log(params)
-              return h('span', (params.row[params.column.key] * 100).toFixed(2) + '%');
+              return h('div', [h('div', params.row[params.column.key]), h('div', (params.row[params.column.key]/params.row['day0'] * 100).toFixed(2) + '%')]);
             }
           },
         ],
         data: [{
           id: 1,
+          empty: '',
           total: '总体',
           amount: 4049,
           day0: 0.974,
@@ -244,7 +235,7 @@
         }]
       }
     },
-    components: {FilterEvent, FilterIndice, MutableArray, DetailsPage, funnel},
+    components: {FilterEvent, FilterIndice, MutableArray, DetailsPage, funnel, lineS},
     methods:{
       back(){
         this.$router.push({name:"analysis-tool-model"})
@@ -311,7 +302,7 @@
       justify-content: flex-end;
     }
     .item1 {
-      width: 100px;
+      display: inline-block;
     }
     .item2 {
       width: 100px;
@@ -321,11 +312,49 @@
       width: 240px;
       margin-left: 16px;
     }
+    .item4 {
+      margin-left: 16px;
+      font-size: 14px;
+      display: inline-block;
+      span {
+        &:first-child {
+          color: #636E95;
+        }
+        &:last-child {
+          color: #242F57;
+        }
+      }
+    }
     .new_echart_box {
       width: 380px;
       height: 276px;
       background: #F7F9FD;
       border-radius: 4px;
+    }
+    .box {
+      width: 700px;
+      height: 276px;
+      border-radius: 4px;
+      border: 1px solid #EAEDF7;
+    }
+    .charts {
+      display: flex;
+      margin-bottom: 24px;
+    }
+    .gap {
+      width: 24px;
+    }
+  }
+</style>
+<style lang="scss">
+  .data-container {
+    .ivu-icon-ios-add, .ivu-icon-ios-remove {
+      &:before {
+        content: '\F11F';
+      }
+    }
+    .ivu-icon-ios-remove {
+      transform: rotate(90deg);
     }
   }
 </style>
