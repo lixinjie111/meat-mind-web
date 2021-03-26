@@ -1295,17 +1295,18 @@ export default {
       zkdwImg:require("../../assets/img/yhhx/zkdwImg.png"),
       czkImg:require("../../assets/img/yhhx/czkImg.png"),
       qbmjList:[
-        require("../../assets/img/yhhx/tt.png"),
-        require("../../assets/img/yhhx/xhs.png"),
-        require("../../assets/img/yhhx/dyI.png")
+        require("../../assets/img/yhhx/dingd.png"),
+        require("../../assets/img/yhhx/weiicon.png"),
+        require("../../assets/img/yhhx/tt.png")
       ],
       bjsbList:[
         require("../../assets/img/yhhx/zhIcon.png"),
         require("../../assets/img/yhhx/xhs.png"),
       ],
       qyggList:[
+        require("../../assets/img/yhhx/weiicon.png"),
+        require("../../assets/img/yhhx/dingd.png"),
         require("../../assets/img/yhhx/tt.png"),
-        require("../../assets/img/yhhx/ks.png"),
       ],
       bpyzList:[
         require("../../assets/img/yhhx/tt.png"),
