@@ -123,7 +123,7 @@ export default {
 			{
 				name: '媒介声量\n万',
 				type: 'value',
-				nameGap: 6,
+				nameGap: 16,
 				nameTextStyle:{
 					color:"#97A0C3",
 					fontSize:12,
