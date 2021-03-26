@@ -76,7 +76,7 @@ export default {
         {
           title: "操作",
           slot: "operate",
-          width: 150 / 144 * window.rem,
+          width: 136 / 144 * window.rem,
         }
       ],
       tableData1:[],
@@ -221,7 +221,7 @@ export default {
 <style scoped lang="scss">
 .bqgl {
   position: relative;
-  padding: 0 24px;
+  padding: 0 24px 24px;
   .bqgl-title {
     height: 64px;
     padding-left: 24px;

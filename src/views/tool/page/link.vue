@@ -46,7 +46,7 @@ export default {
         {
           title: "链接名称",
           key: "name",
-          fixed: 'left',
+          // fixed: 'left',
           width: 300 / 144 * window.rem,
         },
         {
@@ -88,7 +88,7 @@ export default {
           title: "操作",
           slot: "operation",
           fixed: 'right',
-          width: 180 / 144 * window.rem,
+          width: 130 / 144 * window.rem,
         },
       ],
       data: [
@@ -619,6 +619,60 @@ export default {
     padding: 16px 24px;
     background: #fff;
     width: 100%;
+    box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+    border-radius: 8px;
+        .ivu-table{
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #242F57;
+    }
+    ::v-deep .ivu-table-header thead tr th{
+      height: 48px;
+      background: #F6F9FF;
+      font-size: 14px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #242F57;
+    }
+    ::v-deep .ivu-table-fixed-header thead tr th{
+      height: 48px;
+      background: #F6F9FF;
+      font-size: 14px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #242F57;
+    }
+
+    ::v-deep .ivu-table th,::v-deep .ivu-table td{
+      height: 56px;
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #242F57;
+      border-bottom: 1px solid #EAEDF7;
+    }
+        ::v-deep .ivu-table th,::v-deep .ivu-table td{
+        height: 56px;
+        font-size: 14px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #242F57;
+        border-bottom: 1px solid #EAEDF7;
+    }
+    ::v-deep .ivu-table-cell{
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    ::v-deep .actionList{
+      justify-content: flex-start;
+      .detail{
+        margin-right: 0;
+        .ivu-dropdown{
+          margin-left: 16px!important;
+        }
+      }
+    } 
      .page {
             padding-top: 16px;
             .pageS {
@@ -634,9 +688,9 @@ export default {
       // }
        .actionList {
                   display: flex;
-                    justify-content: flex-end;
+                    justify-content: flex-start;
             .detail {
-                margin-right: 16px;
+                margin-right: 0px;
                 cursor: pointer;
                 font-size: 14px;
                 font-weight: 400;
