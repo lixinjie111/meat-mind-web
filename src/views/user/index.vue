@@ -1033,13 +1033,13 @@
                 <Card :title="'认知'" :colourfol="'blue'" :number="'29385'" :data="[-87,9481]"></Card>
               </div>
               <div class="month">
-                <Card :title="'兴趣'" :colourfol="'purple'" :number="'29385'" :data="[-87,9481]"></Card>
+                <Card :title="'兴趣'" :colourfol="'purple'" :number="'21326'" :data="[-94,8781]"></Card>
               </div>
               <div class="view">
-                <Card :title="'购买'" :colourfol="'pink'" :number="'29385'" :data="[-87,9481]"></Card>
+                <Card :title="'购买'" :colourfol="'pink'" :number="'28532'" :data="[-78,8481]"></Card>
               </div>
               <div class="target">
-                <Card :title="'忠诚'" :colourfol="'orange'" :number="'29385'" :data="[-87,9481]"></Card>
+                <Card :title="'忠诚'" :colourfol="'orange'" :number="'25938'" :data="[-88,8941]"></Card>
               </div>
             </div>
 				    <div class="xinzfb_container_lef_content">
@@ -1138,13 +1138,13 @@ import pieP from '../../components/echarts/common/pie/pieP';
 
 import PieEcharts from '../../components/echarts/common/pie/PieEcharts';
 import PieEcharts7 from '../../components/echarts/common/pie/PieEcharts7';
-import PieEcharts1 from '../../components/echarts/common/pie/PieEcharts1';
+// import PieEcharts1 from '../../components/echarts/common/pie/PieEcharts1';
 import RotateChart from '../../components/echarts/common/custom/RotateChart';
 import LeidaEcharts from '../../components/echarts/common/radar/LeidaEcharts';
 import MatchEcharts from '../../components/echarts/common/radar/MatchEcharts';
 import Yibiao1Echarts from '../../components/echarts/common/gauge/Yibiao1Echarts';
 import YibiaoCharts2 from '../../components/echarts/common/gauge/YibiaoCharts2';
-import Yuanhuan1 from '../../components/echarts/common/sunburst/Yuanhuan1';
+// import Yuanhuan1 from '../../components/echarts/common/sunburst/Yuanhuan1';
 import Leida2Echarts from '../../components/echarts/common/radar/Leida2Echarts';
 import vDxitem from "./dxItem";
 import vDxitem1 from "./dxItem1";
@@ -1156,7 +1156,7 @@ import Tab from "../../components/Tab";
 
 export default {
   components: {
-   PieEcharts1,barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, PieEcharts7, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
+   barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, PieEcharts7, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Leida2Echarts,
    vDxitem,vDxitem1,vTabCard,chuDa, Card, MatchDegree,Tab
   },
   name: "index",

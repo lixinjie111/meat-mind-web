@@ -66,7 +66,7 @@
           color: this.colorList || COLORS,
           grid: {
             left: 0,
-            top:0,
+            top:10,
             containLabel: true
           },
           title: {
@@ -83,12 +83,13 @@
           },
           legend: {
             icon: 'circle',
-            bottom:50,
+            itemWidth:6,
+            itemHeight:6,
+            bottom:20,
             left:'center',
             data: name,
             align:'auto',
             icon:'circle', 
-            itemGap:20,
             orient: 'horizontal', //设置图例排列纵向显示
             formatter:function(name){  //该函数用于设置图例显示后的百分比
                 var total = 0;
@@ -122,7 +123,6 @@
               show: false
             },
             labelLine: {
-            
                 length: 10,
                 length2: 20,
                 lineStyle: {
