@@ -8,16 +8,16 @@
             <div class="name">包含特征</div>
             <div class="desc">已选择<span style="color:#4488FF">{{num}}</span>个特征</div>
           </div>
-          <Input v-model="value1" size="large" placeholder="暂无规则 请从右侧选择添加" />
+          <Input v-model="value1" size="large" @on-focus="handleFocus('value1','num')" placeholder="暂无规则 请从右侧选择添加" />
           <div class="add">
             <i class="iconfont icontianjia"></i>
             <div>添加一个交集关系框</div>
           </div>
           <div class="line-desc filter">
             <div class="name">过滤特征</div>
-            <div class="desc">已选择<span style="color:#4488FF">0</span>个特征</div>
+            <div class="desc">已选择<span style="color:#4488FF">{{num2}}</span>个特征</div>
           </div>
-          <Input v-model="value2" size="large" placeholder="暂无规则 请从右侧选择添加" />
+          <Input v-model="value2" size="large" @on-focus="handleFocus('value2','num2')" placeholder="暂无规则 请从右侧选择添加" />
           <div class="add">
             <i class="iconfont icontianjia"></i>
             <div>添加一个交集关系框</div>
@@ -34,9 +34,9 @@
         <div class="base-beahvior">
           <div class="line-desc">
             <div class="name">基础行为</div>
-            <div class="desc">已选择<span style="color:#4488FF">0</span>个行为</div>
+            <div class="desc">已选择<span style="color:#4488FF">{{num3}}</span>个行为</div>
           </div>
-          <Input v-model="value3" size="large" placeholder="暂无基础行为 请从右侧选择添加" />
+          <Input v-model="value3" size="large" @on-focus="handleFocus('value3','num3')" placeholder="暂无基础行为 请从右侧选择添加" />
         </div>
         <div class="column"></div>
         <div class="choose">
@@ -49,9 +49,9 @@
         <div class="base-beahvior">
           <div class="line-desc">
             <div class="name">基础行为</div>
-            <div class="desc">已选择<span style="color:#4488FF">0</span>个行为</div>
+            <div class="desc">已选择<span style="color:#4488FF">{{num4}}</span>个行为</div>
           </div>
-          <Input v-model="value4" size="large" placeholder="暂无基础行为 请从右侧选择添加" />
+          <Input v-model="value4" size="large" @on-focus="handleFocus('value4','num4')" placeholder="暂无基础行为 请从右侧选择添加" />
         </div>
         <div class="btn-box">
           <div class="clear" @click="clear">清空</div>
@@ -196,6 +196,9 @@ export default {
       value3:"",
       value4:"",
       num:0,
+      num2:0,
+      num3:0,
+      num4:0,
       chooseType:"且",
       chooseType2:"且",
       cur:"基本信息",
@@ -232,13 +235,19 @@ export default {
       hasChild:'',
       xiaofei:'',
       mery:'',
-      jd:''
+      jd:'',
+      curValue:"value1",
+      curNum:"num"
     };
   },
   methods: {
+    handleFocus(val,num){
+      this.curValue = val
+      this.curNum = num
+    },
     clickItem(act,arg, art) {
-      this.value1 = act
-      this.num = 1
+      this[this.curValue] = act
+      this[this.curNum] = 1
       var itemDom = this.$refs[art] || [];
       for (var i = 0; i < itemDom.length; i++) {
         if (i == arg) {
@@ -257,6 +266,9 @@ export default {
       this.chooseType = "且"
       this.chooseType2 = "且"
       this.num = 0
+      this.num2 = 0
+      this.num3 = 0
+      this.num4 = 0
     },
     confirm(){
       this.$router.push(

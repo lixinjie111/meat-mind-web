@@ -245,6 +245,7 @@
 
 <style scoped lang="scss">
     .menu {
+        height: 100%;
         .logo {
             width: 108px;
             height: 30px;

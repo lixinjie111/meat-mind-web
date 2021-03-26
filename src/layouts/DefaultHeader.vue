@@ -11,7 +11,7 @@
         </div>
         <div class="control">
             <div class="search" v-if="search">
-                <Input @on-blur="search=!search" class="input-search" type="text" placeholder="输入关键词进行搜索...">
+                <Input @on-blur="search=!search" :autofocus="autofocus" class="input-search" type="text" placeholder="输入关键词进行搜索...">
                     <img src="../static/img/header/search@2x.png" alt="" slot="prefix">
                 </Input>
             </div>
@@ -62,7 +62,8 @@
             return {
                 flag: this.$store.state.role,
                 search:false,
-                select:false
+                select:false,
+                autofocus:true
             };
         },
         watch:{
