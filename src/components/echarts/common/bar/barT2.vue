@@ -18,9 +18,6 @@ export default {
 		},
 		colorList:{
 			type:Array,
-			default:()=>{
-				return  ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564','#BF6E9B','#CECE7E','#91C2F2','#B7C8EA','#FF9F7F','#91C2F2','#B380B6','#EDA8AD','#738AD4','#FF9F7F'];
-			},
 		},
 	},
 	data () {
@@ -45,7 +42,7 @@ export default {
 				grid: {
 					top: '10%',
 					left: 10,
-					right: 10,
+					right: 20,
 					bottom: 25,
 				//	padding:'0 0 10 0',
 					containLabel: true,
@@ -55,7 +52,8 @@ export default {
 					boundaryGap: false,
 					axisLine:{
 						lineStyle:{
-							color:'#E9EBF1',
+							color:'#EAEDF7',
+							type:"dashed"
 						}
 					} ,
 					axisLabel: {
@@ -65,6 +63,19 @@ export default {
 							fontSize:'12'
 						}
 					},
+					splitLine: {
+						show:true,
+						lineStyle: {
+							color:'#EAEDF7',
+							type: 'dashed',
+						}
+					},
+					axisPointer:{
+						type:"shadow",
+						shadowStyle:{
+							color:"rgba(124,136,177,0.1)"
+						}
+					},					
 					scale:true,
 				},
 				yAxis: {
@@ -74,15 +85,17 @@ export default {
 					interval: 0.25,
 					boundaryGap: [0, '30%'],
 					axisLine:{
+						show:true,
 						lineStyle:{
-							color:'#E9EBF1',
-							//width:8,//这里是为了突出显示加上的
+							color:'#EAEDF7',
+							type:"dashed"
 						}
 					},
 					splitLine: {
+						show:true,
 						lineStyle: {
-							color:'#E9EBF1',
-							//type: 'dashed',
+							color:'#EAEDF7',
+							type: 'dashed',
 						}
 					},
 					axisLabel: {
@@ -113,10 +126,10 @@ export default {
 				tooltip: {
 					trigger: 'axis',
 					axisPointer: {
-						type: 'cross',
-						crossStyle: {
-							color: '#999'
-						}
+						type: 'shadow',
+						// crossStyle: {
+						// 	color: '#999'
+						// }
 					},
 					confine:true,
 					formatter: function(list) {
@@ -146,36 +159,36 @@ export default {
 					show: false,
 					dimension: 0,
 					seriesIndex: 0,
-          inRange: {
-            opacity: 1,
-          },
+					inRange: {
+						// opacity: 1,
+					},
 					pieces: [
-					  {
-              gt: 1,
-              lt: 5,
-              color: 'rgb(163,196,255)',
-            },
-            {
-              gt: 6,
-              lt:11,
-              color:'rgb(255,160,130)',
-            },
-            {
-              gt: 13,
-              lt: 22,
-              color:'rgb(120,220,124)',
-            },
-            {
-              gt: 23,
-              lt: 25,
-              color:'rgb(247,154,268)',
-            },
-            {
-              gt: 26,
-              lt: 30,
-              color:'rgb(254,224,138)',
-            },
-          ]
+						{
+						gt: 1,
+						lt: 5,
+						color: 'rgb(163,196,255)',
+						},
+						{
+						gt: 6,
+						lt:11,
+						color:'rgb(255,160,130)',
+						},
+						{
+						gt: 13,
+						lt: 22,
+						color:'rgb(120,220,124)',
+						},
+						{
+						gt: 23,
+						lt: 25,
+						color:'rgb(247,154,268)',
+						},
+						{
+						gt: 26,
+						lt: 30,
+						color:'rgb(254,224,138)',
+						},
+					]
 				},
 				series: [
 					{

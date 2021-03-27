@@ -553,7 +553,7 @@
                     </div>
                   </div>
                   <div class="m-rank-progress">
-                    <barHM2 :id="'box1141'+index" :colorList="$lxjData.colorList" :myData='$lxjData["box1149"+ index + "Data"]'></barHM2>
+                    <barMediaGroup :id="'box1141'+index" :colorList="$lxjData.colorList" :myData='$lxjData["box1149"+ index + "Data"]'></barMediaGroup>
                   </div>
                 </div>
               </div>
@@ -668,6 +668,7 @@
   import BarLine2 from '../../components/echarts/common/bar/barLine2';
   import BarHM4 from '../../components/echarts/common/bar/barHM4';
   import barHM2 from '../../components/echarts/common/bar/barHM3';
+  import barMediaGroup from '../../components/echarts/common/bar/alone/barMediaGroup';
   import MediaAnalysis from './base/MediaAnalysis';
   import PieEcharts9 from '../../components/echarts/common/pie/PieEcharts9';
   import PortraitMatching from './base/PortraitMatching';
@@ -676,7 +677,7 @@
   let counter = 0
   export default {
     name: "index",
-    components: {BarHM4,BarLine2,PieOne3,Tab, PieEcharts9,cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts2,LeidaEcharts,vTree,lineM,barM, KOLResource, MediaAnalysis, PortraitMatching},
+    components: {BarHM4,BarLine2,PieOne3,Tab, PieEcharts9,cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts2,LeidaEcharts,vTree,lineM,barM, KOLResource,barMediaGroup, MediaAnalysis, PortraitMatching},
     data(){
       return{
         tabActive: 1,
@@ -3562,7 +3563,7 @@
               }
             }
             .new_echart_legend{
-              width: 150px;
+              width: 100px;
               display: flex;
               flex-direction: column;
               li{
@@ -3748,10 +3749,11 @@
             font-weight: 500;
             text-align: center;
             .left {
-              width: 76px;
+              width: 80px;
               height: 32px;
-              border-radius: 8px 0px 0px 8px;
-              border: 1px solid #c6cbde;
+              background: #FFFFFF;
+              border-radius: 4px 0px 0px 4px;
+              border: 1px solid #2373FF;
               color: #636e95;
               line-height: 30px;
               &.act{
@@ -3760,11 +3762,11 @@
               }
             }
             .right {
-              width: 76px;
+              width: 80px;
               height: 32px;
-              border-radius: 0px 8px 8px 0px;
-              border: 1px solid #c6cbde;
-              color: #636e95;
+              border-radius: 0px 4px 4px 0px;
+              border: 1px solid #97A0C3;
+              color: #242F57;
               line-height: 30px;
               &.act{
                 border: 1px solid #2373ff;
