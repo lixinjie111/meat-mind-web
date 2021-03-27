@@ -91,22 +91,18 @@ export default {
             type: "pie",
             center: ['30%', '50%'],
             radius : ['50%', '40%'],
-             //silent: true,
-            // label: {
-            //     show: false,
-            //     position: "inner",
-
-            // },
-            itemStyle:  {
-                normal: {
-                    label: {
-                        show: false
-                    },
-                    labelLine: {
-                        show: false
-                    },
-                }
-            },
+           label: {
+							show: false,
+							position: 'center'
+						},
+						itemStyle: {
+							borderRadius: 30,
+							shadowBlur: 10,
+							shadowColor: 'rgba(35,115,255, 0.3)',
+						},
+						labelLine: {
+							show: false
+						},
             hoverAnimation: false,
             data: [
               {
@@ -139,16 +135,18 @@ export default {
             type: "pie",
             center: ['30%', '50%'],
             radius : ['60%', '70%'],
-            itemStyle:  {
-                normal: {
-                    label: {
-                        show: false
-                    },
-                    labelLine: {
-                        show: false
-                    },
-                }
-            },
+            label: {
+							show: false,
+							position: 'center'
+						},
+						itemStyle: {
+							borderRadius: 30,
+							shadowBlur: 10,
+							shadowColor: 'rgba(35,115,255, 0.3)',
+						},
+						labelLine: {
+							show: false
+						},
             data: [
               {
                 value: "825",
@@ -180,16 +178,18 @@ export default {
             type: 'pie',
             center: ['30%', '50%'],
             radius : ['80%', '90%'],
-            itemStyle:  {
-                normal: {
-                    label: {
-                        show: false
-                    },
-                    labelLine: {
-                        show: false
-                    },
-                }
-            },
+           label: {
+							show: false,
+							position: 'center'
+						},
+						itemStyle: {
+							borderRadius: 30,
+							shadowBlur: 10,
+							shadowColor: 'rgba(35,115,255, 0.3)',
+						},
+						labelLine: {
+							show: false
+						},
             data:[
                 // {value:1078, name:'潜在顾客'}
                 {
