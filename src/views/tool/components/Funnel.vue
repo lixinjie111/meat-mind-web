@@ -4,11 +4,11 @@
       <div class="switch">
         <div>
           显示漏斗
-        <Select v-model="event" class="item1">
-          <Option v-for="(item,index) of conditionOptions" :value="index+1" :key="index+1">{{item}}</Option>
+        <Select v-model="opt1" class="item1">
+          <Option v-for="(item,index) of funnelNames" :value="index+1" :key="index+1">{{item}}</Option>
         </Select>
         <span class="margin16">按</span>
-          <Select v-model="event" class="item1">
+          <Select v-model="opt2" class="item1">
             <Option v-for="(item,index) of conditionOptions" :value="index+1" :key="index+1">{{item}}</Option>
           </Select>
           <span class="margin16">查看</span>
@@ -39,11 +39,11 @@
       </div>
       <div class="charts">
         <div class="new_echart_box">
-          <funnel id="box111" :colorList="$lxjData.colorList2" :myData="$lxjData.box119Data"></funnel>
+          <funnel id="box111" :colorList="$lxjData.colorList2" :myData="$abelData.box119Data"></funnel>
         </div>
         <div class="gap"></div>
         <div class="box">
-          <lineS id="box55" :colorList="$lxjData.colorList" :myData="$lxjData.box55Data"></lineS>
+          <lineS id="box55" :colorList="$lxjData.colorList" :myData="$abelData.box55Data"></lineS>
         </div>
       </div>
       <Table row-key="id" :columns="columns" :data="data">
@@ -63,13 +63,76 @@
   import funnel from '../../../components/echarts/common/funnel/funnel';
   import lineS from '../../../components/echarts/common/line/lineS';
 
+  const detailData = [
+    {
+      id: 3,
+      total: '2-1（一）',
+      amount: 6,
+      day0: 9,
+      day1: 5,
+    },
+    {
+      id: 4,
+      total: '2-2（二）',
+      amount: 4,
+      day0: 8,
+      day1: 5,
+    },
+    {
+      id: 5,
+      total: '2-3（三）',
+      amount: 7,
+      day0: 10,
+      day1: 6,
+    },
+    {
+      id: 6,
+      total: '2-4（四）',
+      amount: 6,
+      day0: 9,
+      day1: 4,
+    },
+    {
+      id: 7,
+      total: '2-5（五）',
+      amount: 5,
+      day0: 8,
+      day1: 3,
+    },
+    {
+      id: 8,
+      total: '2-6（六）',
+      amount: 4,
+      day0: 6,
+      day1: 3,
+    },
+    {
+      id: 9,
+      total: '2-7（七）',
+      amount: 3,
+      day0: 7,
+      day1: 2,
+    },
+  ];
+
   export default {
     name:"Keep",
     data() {
+      let amount = 0;
+      let day0 = 0;
+      let day1 = 0;
+      detailData.forEach(item => {
+        amount += item.amount;
+        day0 += item.day0;
+        day1 += item.day1;
+      });
+
       return {
         conditions: [{input: ''}],
         initItem: {input: ''},
         showRelation: true,
+        opt1: 1,
+        opt2: 1,
         conditionOptions: [
           '总体',
           'Distinct ID',
@@ -105,6 +168,7 @@
           '页面标题',
           '崩溃原因',
         ],
+        funnelNames: ['test','坑位总转化率','Banner转化率','圣诞活动转化率','参与抽奖 - KClZQ2M','抽奖活动注册转化漏斗','全局注册漏斗','线下参与活动漏斗','线上参与活动漏斗','满100减10使用漏斗','访客转化漏斗','近七日某优惠券的转化漏斗（复购时不用券） - KClZQ2M','购买','普通月复购率 - KClZQ2M','用券后月复购率 - KClZQ2M','全局转化','裂变用户转化','接通体验转化','[场景库] Push 启动购买','坑位总转化率 - KClZQ2M2','购买-收藏',],
         showFirstDay: true,
         date1: '趋势',
         date2: 0,
@@ -120,7 +184,7 @@
             title: '总体转化',
             key: 'amount',
             render: (h, params) => {
-              return h('div', [h('div', params.row[params.column.key]), h('div', (params.row[params.column.key]/params.row['day0'] * 100).toFixed(2) + '%')]);
+              return h('div', [h('div', {'class': 'blue'}, params.row[params.column.key] + '人'), h('div', (params.row[params.column.key]/params.row['day0'] * 100).toFixed(2) + '%')]);
             }
           },
           {
@@ -128,14 +192,14 @@
             key: 'day0',
             render: (h, params) => {
               console.log(params)
-              return h('span', (params.row[params.column.key] * 100).toFixed(2) + '%');
+              return h('span', {'class': 'blue'}, params.row[params.column.key] + '人');
             }
           },
           {
             title: '第1步转化',
             key: 'day1',
             render: (h, params) => {
-              return h('div', [h('div', params.row[params.column.key]), h('div', (params.row[params.column.key]/params.row['day0'] * 100).toFixed(2) + '%')]);
+              return h('div', [h('div', {'class': 'blue'}, params.row[params.column.key] + '人'), h('div', (params.row[params.column.key]/params.row['day0'] * 100).toFixed(2) + '%')]);
             }
           },
         ],
@@ -143,95 +207,11 @@
           id: 1,
           empty: '',
           total: '总体',
-          amount: 4049,
-          day0: 0.974,
-          day1: 0.075,
-          day2: 0.0738,
-          day3: 0.0719,
+          amount,
+          day0,
+          day1,
           _showChildren: true,
-          children: [
-            {
-              id: 3,
-              total: '12-14（一）',
-              amount: 4049,
-              day0: 0.976,
-              day1: 0.0778,
-              day2: 0.0731,
-              day3: 0.0711,
-            },
-            {
-              id: 4,
-              total: '12-14（二）',
-              amount: 4049,
-              day0: 0.9735,
-              day1: 0.0798,
-              day2: 0.0785,
-              day3: 0.071,
-            },
-            {
-              id: 5,
-              total: '12-15（一）',
-              amount: 4049,
-              day0: 0.9664,
-              day1: 0.0736,
-              day2: 0.0709,
-              day3: 0.075,
-            },
-            {
-              id: 6,
-              total: '12-15（二）',
-              amount: 4049,
-              day0: 0.9764,
-              day1: 0.0715,
-              day2: 0.0779,
-              day3: 0.0709,
-            },
-            {
-              id: 7,
-              total: '12-16（一）',
-              amount: 4049,
-              day0: 0.935,
-              day1: 0.0735,
-              day2: 0.0766,
-              day3: 0.0732,
-            },
-            {
-              id: 8,
-              total: '12-16（二）',
-              amount: 4049,
-              day0: 0.98,
-              day1: 0.075,
-              day2: 0.0717,
-              day3: 0.0702,
-            },
-            {
-              id: 9,
-              total: '12-17（一）',
-              amount: 4049,
-              day0: 0.978,
-              day1: 0.0756,
-              day2: 0.0716,
-              day3: 0.0792,
-            },
-            {
-              id: 10,
-              total: '12-17（二）',
-              amount: 4049,
-              day0: 0.9767,
-              day1: 0.0755,
-              day2: 0.0742,
-              day3: 0.0765,
-            },
-            {
-              id: 2,
-              total: '12-18（一）',
-              amount: 4049,
-              day0: 0.9633,
-              day1: 0.0765,
-              day2: 0.0713,
-              day3: 0.0723,
-            },
-          ]
+          children: detailData
         }]
       }
     },
@@ -355,6 +335,9 @@
     }
     .ivu-icon-ios-remove {
       transform: rotate(90deg);
+    }
+    .blue {
+      color: #2373FF;
     }
   }
 </style>

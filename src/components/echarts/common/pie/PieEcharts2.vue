@@ -89,7 +89,7 @@ export default {
           {
             name: "忠实顾客",
             type: "pie",
-            center: ['35%', '50%'],
+            center: ['30%', '50%'],
             radius : ['50%', '40%'],
              //silent: true,
             // label: {

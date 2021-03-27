@@ -99,6 +99,7 @@ export default {
 					}
 				},
 				axisLabel: {
+					show:false,
 					textStyle: {
 						color:'#636E95',
 					}
