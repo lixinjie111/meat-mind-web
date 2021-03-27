@@ -10,8 +10,8 @@
             <div class="title-box">
                 <div class="info">
                     <div class="title">
-                        <img class="top" src="../static/img/index/title@2x.png">
-                        <img class="bottom" src="../static/img/index/button@2x.png" @click="go">
+                        <img class="top" src="../assets/img/index/title@2x.png">
+                        <div class="bottom" @click="go">体验DEMO <i class="iconfont iconleft-arrow"></i></div>
                     </div>
                     <div class="video">
                         <video class="player" width="100%" height="100%" autoplay loop muted :src="src"></video>
@@ -19,20 +19,20 @@
                 </div>
             </div>
             <div class="content-top-box">
-                <img src="../../src/static/img/index/content1@2x.png"/>
+                <img src="../../src/assets/img/index/content1@2x.png"/>
             </div>
             <div class="content-bottom-box">
-                <img src="../../src/static/img/index/content2@2x.png"/>
+                <img src="../../src/assets/img/index/content2@2x.png"/>
             </div>
             <div class="footer-box">
-                <img src="../../src/static/img/index/footer@2x.png"/>
+                <img src="../../src/assets/img/index/footer@2x.png"/>
             </div>
         </div>
         <div class="pinpai_container" v-else-if="currentInx == 1">
-            <img :src="imgCont1" class="imgCont">
+            <img :src="imgCont2" class="imgCont">
         </div>
         <div class="yonghu_container" v-else-if="currentInx == 2">
-             <img :src="imgCont2" class="imgCont">
+            <img :src="imgCont1" class="imgCont">
         </div>
         <div class="meijie_container" v-else-if="currentInx == 3">
              <img :src="imgCont3" class="imgCont">
@@ -53,12 +53,12 @@
             return {
                 src: require('../../src/static/video/video.mp4'),
                 logoImg:require('../assets/img/side/logo-colour@2x.png'),
-                imgCont1:require('../assets/img/side/imgCont1.png'),
-                imgCont2:require('../assets/img/side/imgCont2.png'),
-                imgCont3:require('../assets/img/side/imgCont3.png'),
-                imgCont4:require('../assets/img/side/imgCont4.png'),
-                imgCont5:require('../assets/img/side/imgCont5.png'),
-                tabList:['首页','品牌深度画像','用户深度画像','媒介深度画像','经营分析','数据管理中心'],
+                imgCont1:require('../assets/img/index/imgCont1.png'),
+                imgCont2:require('../assets/img/index/imgCont2.png'),
+                imgCont3:require('../assets/img/index/imgCont3.png'),
+                imgCont4:require('../assets/img/index/imgCont4.png'),
+                imgCont5:require('../assets/img/index/imgCont5.png'),
+                tabList:['首页','用户深度画像','品牌深度画像','媒介深度画像','经营分析','数据管理中心'],
                 currentInx:0
             }
         },
@@ -93,15 +93,17 @@
                 height: 60px;
                 margin-left: 94px;
                 .tabTxt_item{
+                    height: 60px;
                     font-size: 14px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
                     color: #636E95;
                     margin-right: 32px;
-                    height: 97%;
                     display: flex;
                     align-items: center;
                     &:hover{
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
                         cursor: pointer;
                     }
                 }
@@ -110,12 +112,13 @@
                     font-family: PingFangSC-Medium, PingFang SC;
                     font-weight: 500;
                     color: #2373FF;
-                    border-bottom: 2.5px solid #2373FF;
+                    border-bottom: 2px solid #2373FF;
                 }
             }
         }
         .index_container{
             width: 100%;
+
             .title-box {
                 background: linear-gradient(to right, #FFFFFF 50%, #F8FAFD 50%);
                 width: 100%;
@@ -137,8 +140,17 @@
                         }
                         .bottom {
                             margin-top: 33px;
-                            width: 182px;
+                            width: 158px;
                             height: 48px;
+                            line-height: 48px;
+                            background: #2373FF;
+                            box-shadow: 4px 6px 12px 1px rgba(35, 115, 255, 0.3);
+                            border-radius: 4px;
+                            font-size: 16px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #FFFFFF;
+                            text-align: center;
                             cursor: pointer;
                         }
                     }
@@ -181,7 +193,7 @@
             }
             .footer-box {
                 width: 100%;
-                height: 100%;
+                height: 80px;
                 text-align: center;
                 background: #FFFFFF;
                 > img {

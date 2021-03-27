@@ -94,25 +94,25 @@ export default {
       this.$router.push({name:"analysis-tool-model-distribute"})
     },
     way(){
-      this.$router.push({name:"analysis-tool-model-way"})
+      // this.$router.push({name:"analysis-tool-model-way"})
     },
     hot(){
-      this.$router.push({name:"analysis-tool-model-hot"})
+      // this.$router.push({name:"analysis-tool-model-hot"})
     },
     interval(){
-      this.$router.push({name:"analysis-tool-model-interval"})
+      // this.$router.push({name:"analysis-tool-model-interval"})
     },
     defined(){
-      this.$router.push({name:"analysis-tool-model-defined"})
+      // this.$router.push({name:"analysis-tool-model-defined"})
     },
     cause(){
-      this.$router.push({name:"analysis-tool-model-cause"})
+      // this.$router.push({name:"analysis-tool-model-cause"})
     },
     property(){
-      this.$router.push({name:"analysis-tool-model-property"})
+      // this.$router.push({name:"analysis-tool-model-property"})
     },
     app(){
-      this.$router.push({name:"analysis-tool-model-app"})
+      // this.$router.push({name:"analysis-tool-model-app"})
     }
   }
 }

@@ -117,7 +117,6 @@ export default {
 							fontSize:'12'
 						}
 					}
-
 				},
 				tooltip: {
 					trigger: 'axis',

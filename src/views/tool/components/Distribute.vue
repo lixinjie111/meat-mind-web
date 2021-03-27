@@ -1,5 +1,5 @@
 <template>
-  <DetailsPage title="事件分析" backname="analysis-tool-model">
+  <DetailsPage title="分布分析" backname="analysis-tool-model">
     <div>
       <div class="filter-container">
         <div class="" slot="content">
