@@ -37,7 +37,7 @@ export default {
 				grid: {
 					top: '10%',
 					left: 10,
-					right: 10,
+					right: 20,
 					bottom: 25,
 				//	padding:'0 0 10 0',
 					containLabel: true,
@@ -122,10 +122,10 @@ export default {
 				tooltip: {
 					trigger: 'axis',
 					axisPointer: {
-						type: 'cross',
-						crossStyle: {
-							color: '#999'
-						}
+						type: 'shadow',
+						// crossStyle: {
+						// 	color: '#999'
+						// }
 					},
 					confine:true,
 					formatter: function(list) {
