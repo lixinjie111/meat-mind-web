@@ -587,7 +587,7 @@
               <div class="right" :class="{'act':cur==1}" @click="cur=1">渠道名称</div>
             </div> -->
             <!-- <div class="h-select"> -->
-            <Select v-model="model1" style="width: 120px" placeholder="过去3天">
+            <Select v-model="model1" class="w120" placeholder="过去3天">
               <Option v-for="item in dateList" :value="item.value" :key="item.value">{{ item.label }}</Option>
             </Select>
             <!-- </div> -->
@@ -2317,6 +2317,10 @@
 
     .mt15 {
       margin-top: -15px;
+    }
+
+    .w120 {
+      width: 120px;
     }
 
     .new_echart_box{
