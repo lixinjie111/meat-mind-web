@@ -83,7 +83,6 @@ export default {
 						fontSize:12
 					}
 				},
-
             },
             yAxis: {
                 type: 'category',
@@ -101,6 +100,12 @@ export default {
 						fontSize:12
 					}
 				},
+				axisPointer: {
+					type: "shadow",
+					shadowStyle: {
+						color: "rgba(124,136,177,0.1)"
+					}
+    			}
                 // splitLine: {
                 //     lineStyle: {
 				// 		color:'#E9EBF1',
