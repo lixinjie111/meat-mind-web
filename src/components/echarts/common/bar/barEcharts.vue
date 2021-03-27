@@ -3,7 +3,8 @@
 </template>
 
 <script>
-	let id = 0
+let id = 0
+import {setBarWidth} from "./utils"
 export default {
 	props: {
 		myData:{
@@ -33,6 +34,7 @@ export default {
 	methods: {
 		initEcharts() {
 			let _option = this.defaultOption();
+			_option = setBarWidth(_option)
 			let myChart = this.$echarts.init(document.getElementById(this.id));
 			myChart.setOption(_option);
 			window.addEventListener('resize',()=>{
@@ -110,19 +112,11 @@ export default {
                 {
                     data: this.myData.value,
                     type: 'bar',
-					barWidth: '10%',
-					barMinWidth:"10",
-					barMaxWidth:'40',
 					label:{
 						position: 'right',
 					},
 					itemStyle: {
-                  
-                            //    barBorderRadius:[30,30,0,0]
-					
-						 emphasis:{
-							 color:'#FF9F7F'
-						 }
+                  		//barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     },
                 }
             ]

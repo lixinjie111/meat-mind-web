@@ -3,7 +3,8 @@
 </template>
 
 <script>
-  import _ from 'lodash'
+import _ from 'lodash'
+import {setBarWidth} from "./utils"
 export default {
 	props: {
 		myData:{
@@ -40,6 +41,7 @@ export default {
 	methods: {
 		initEcharts() {
 			let _option = this.defaultOption();
+			_option = setBarWidth(_option)
 			let myChart = this.$echarts.init(document.getElementById(this.id));
 			myChart.setOption(_option);
 			window.addEventListener('resize',()=>{

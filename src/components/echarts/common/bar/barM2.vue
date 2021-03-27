@@ -4,6 +4,7 @@
 
 <script>
 import lodash from 'lodash'
+import {setBarWidth} from "./utils"
 let id = 0
 export default {
 	props: {
@@ -48,6 +49,7 @@ export default {
 	methods: {
 		initEcharts() {
 			let _option = this.defaultOption();
+			_option = setBarWidth(_option)
 			let myChart = this.$echarts.init(document.getElementById(this.id));
 			myChart.setOption(_option);
 			window.addEventListener('resize',()=>{
@@ -95,6 +97,9 @@ export default {
 				},
 				legend: {
 					type: 'scroll',
+					icon:"circle",
+					itemWidth:6,
+					itemHeight:6,
 					bottom:0,
 					pageFormatter: '',//隐藏翻页的数字
 					pageButtonItemGap: -6,//翻页按钮的两个之间的间距

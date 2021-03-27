@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import {setBarWidth} from "./utils"
 export default {
 	props: {
 		myData:{
@@ -18,9 +19,6 @@ export default {
 		},
 		colorList:{
 			type:Array,
-			default:()=>{
-				return  ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564','#BF6E9B','#CECE7E','#91C2F2','#B7C8EA','#FF9F7F','#91C2F2','#B380B6','#EDA8AD','#738AD4','#FF9F7F'];
-			},
 		},
 	},
 	data () {
@@ -39,6 +37,7 @@ export default {
 	methods: {
 		initEcharts() {
 			let _option = this.defaultOption();
+			_option = setBarWidth(_option)
 			let myChart = this.$echarts.init(document.getElementById(this.id));
 			myChart.setOption(_option);
 			window.addEventListener('resize',()=>{
@@ -60,11 +59,6 @@ export default {
 				// 		return str;
 				// 	}
 			},
-			legend: {
-				show:false,
-                bottom: 0,
-                data: this.myData.legName,
-            },
             grid: {
                 left: 0,
                 right: 50,

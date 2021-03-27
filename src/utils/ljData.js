@@ -33,7 +33,7 @@ const ljEData = {
 	ljBox3: {
 		name: ['1天', '2天', '3天', '4天', '5天', '6天', '7天',],
 		value: [
-			{type: 'bar', stack: '总量', barWidth: '10', data: [741, 632, 501, 232, 122, 73, 32]},
+			{type: 'bar', stack: '总量',  data: [741, 632, 501, 232, 122, 73, 32]},
 		]
 	},
 	ljBox4: {
@@ -106,34 +106,30 @@ const ljEData = {
 				name: '新用户',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
 				data: [380, 382, 373, 388, 392, 379]
 			},
 			{
 				name: '连续活跃用户',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
 				data: [1790, 1822, 1769, 1791, 1726, 1744]
 			},
 			{
 				name: '回流用户',
 				type: 'bar',
-				barWidth: '10',
 				stack: '总量',
 				data: [2643, 2632, 2612, 2624, 2643, 2611]
 			},
 			{
 				name: '沉默用户',
 				type: 'bar',
-				barWidth: '10',
 				stack: '总量',
 				data: [3567, 3416, 3385, 3713, 3808, 3607]
 			},
 			{
 				name: '流失用户',
 				type: 'bar',
-				barWidth: '10',
+				
 				stack: '总量',
 				data: [1764, 1814, 1518, 1575, 1779, 1701]
 			},
@@ -163,14 +159,14 @@ const ljEData = {
 				name: '新用户',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
+				
 				data: [100, 73, 66, 98, 131, 190]
 			},
 			{
 				name: '老用户',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
+				
 				data: [800, 900, 973, 1039, 1137, 1268]
 			},
 		]
@@ -183,14 +179,14 @@ const ljEData = {
 				name: '活跃新用户',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
+				
 				data: [137, 122, 119, 136, 132, 123]
 			},
 			{
 				name: '活跃老用户',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
+				
 				data: [1590, 1522, 1469, 1491, 1526, 1544]
 			},
 		]
@@ -207,14 +203,14 @@ const ljEData = {
 				name: '周新增用户',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
+				
 				data: [100, 110, 130, 140, 140, 150]
 			},
 			{
 				name: '老用户',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
+				
 				data: [1200, 1300, 1410, 1540, 1680, 1820]
 			},
 		]
@@ -344,20 +340,20 @@ const ljEData = {
 				name: '微信',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
+				
 				data: [67, 65, 77, 78, 78, 126, 142, 159, 171]
 			},
 			{
 				name: '腾讯微博',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
+				
 				data: [56, 92, 84, 97, 86, 105, 83, 75, 79]
 			},
 			{
 				name: '今日头条',
 				type: 'bar',
-				barWidth: '10',
+				
 				stack: '总量',
 				data: [78, 93, 101, 98, 87, 83, 64, 67, 56]
 			},
@@ -395,21 +391,21 @@ const ljEData = {
 				name: '腾讯微博',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
+				
 				data: [1364, 1371, 1379, 1432, 1429, 1557]
 			},
 			{
 				name: '今日头条',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
+				
 				data: [1280, 1262, 1279, 1298, 1278, 1299]
 			},
 			{
 				name: '小红书',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
+				
 				data: [1195, 1199, 1198, 1201, 1190, 1211]
 			},
 		]
@@ -490,28 +486,28 @@ const ljEData = {
 				name: '当月新签',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
+				
 				data: [12, 11, 14, 15, 13, 12, 11]
 			},
 			{
 				name: '当月续费',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
+				
 				data: [311, 352, 364, 333, 374, 321, 368]
 			},
 			{
 				name: '当月增购',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
+				
 				data: [112, 123, 103, 114, 108, 105, 113]
 			},
 			{
 				name: '当月存续',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
+				
 				data: [595, 568, 586, 589, 598, 575, 589]
 			},
 		]
@@ -524,7 +520,7 @@ const ljEData = {
 				name: '当月新签',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
+				
 				data: [15.03, 6.33, 3.78, 25.44, 7.37, 6.95, 11.17, 0.58, 0, 0, 0, 0, 0].map(e => ({
 					value: e,
 					clientele: Math.ceil(Math.random() * 100),
@@ -536,7 +532,7 @@ const ljEData = {
 				name: '当月流失',
 				type: 'bar',
 				stack: '总量',
-				barWidth: '10',
+				
 				data: [-2.17, -6.25, -4.35, -27.27, -17.86, -13.5, -12.82, -7.81, -4.25, -7.39, -36.88, -10.93, -11.22].map(e => ({
 					value: e,
 					clientele: Math.ceil(Math.random() * 100),

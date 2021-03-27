@@ -140,16 +140,6 @@
                                     global: false // 缺省为 false
                                 }
                             },
-                            // label: {
-                            //   position: 'right',
-                            // },
-                            // itemStyle: {
-                            //     fontSize: 20,
-                            //     barBorderRadius: 30
-                            //   emphasis: {
-                            //     color: '#FF9F7F'
-                            //   }
-                            // },
                         }
                     ]
                 };

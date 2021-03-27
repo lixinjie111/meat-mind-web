@@ -216,13 +216,13 @@
                 <div class="manage-card-right">
                     <div class="manage-card-right-chart">
                         <p>每日新增用户 | 过去30天</p>
-                        <cLine id="box5" :colorList="$lxjData.colorList"
-                               :myData="$lxjData.box5Data" style="height: 185px"></cLine>
+                        <cLine id="box5" class="h185" :colorList="$lxjData.colorList"
+                               :myData="$lxjData.box5Data"></cLine>
                     </div>
                     <div class="manage-card-right-chart">
                         <p>月活跃用户 | 上线至今</p>
-                        <cLine id="box51" :colorList="$lxjData.colorList"
-                               :myData="$lxjData.box51Data" style="height: 185px"></cLine>
+                        <cLine id="box51" class="h185" :colorList="$lxjData.colorList"
+                               :myData="$lxjData.box51Data"></cLine>
                     </div>
                 </div>
             </div>
@@ -246,12 +246,12 @@
                     <div class="manage-card-right-chart">
                         <p>渠道 | 新增用户</p>
                         <barM1 id="box4" :colorList="$lxjData.colorList"
-                              :myData="$lxjData.box4Data" style="height: 185px"></barM1>
+                              :myData="$lxjData.box4Data" class="h185"></barM1>
                     </div>
                     <div class="manage-card-right-chart">
                         <p>渠道 | 新增用户</p>
                         <lineM2 id="box6" :colorList="$lxjData.colorList"
-                               :myData="$lxjData.box6Data" style="height: 185px"></lineM2>
+                               :myData="$lxjData.box6Data" class="h185"></lineM2>
                     </div>
                 </div>
             </div>
@@ -277,12 +277,12 @@
                     <div class="manage-card-right-chart">
                         <p>B站热度下降</p>
                         <barL id="box2" :colorList="$lxjData.colorList"
-                              :myData="$lxjData.box2Data" style="height: 220px"></barL>
+                              :myData="$lxjData.box2Data" class="h220"></barL>
                     </div>
                     <div class="manage-card-right-chart">
                         <p>品牌负面舆情监控</p>
                         <lineM2 id="box61" :colorList="$lxjData.colorList"
-                               :myData="$lxjData.box61Data" style="height: 220px"></lineM2>
+                               :myData="$lxjData.box61Data" class="h220"></lineM2>
                     </div>
                 </div>
             </div>
@@ -1624,6 +1624,12 @@
                         font-weight: 500;
                         color: #242F57;
                     }
+                    .h185{
+                        height: 185px;
+                    }
+                    .h220{
+                        height: 220px;
+                    }   
                 }
             }
         }

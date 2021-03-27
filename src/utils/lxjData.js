@@ -115,38 +115,38 @@ const lxjEData = {
                 name: '连续活跃用户',
                 type: 'bar',
                 stack: '连续活跃用户',
-                barWidth: 14,
+                
                 data: [320, 302, 301, 334, 390, ]
             },
             {
                 name: '流失用户',
                 type: 'bar',
                 stack: '流失用户',
-                barWidth: 14,
+                
                 data: [120, 132, 101, 134, 90, ]
             },
             {
                 name: '沉默用户',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '沉默用户',
                 data: [220, 182, 191, 234, 290, ]
             },
             {
                 name: '新用户',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '新用户',
                 data: [150, 212, 201, 154, 190, ]
             },
             {
                 name: '回流用户',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '回流用户',
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
                 data: [820, 832, 901, 934, 1290, ]
@@ -161,20 +161,23 @@ const lxjEData = {
                 name: '非敏感',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                data: [67, 83, 84, 67,]
+                
+                itemStyle: {
+                    //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
+                },
+                data: [67, 83, 84, 67]
             },
             {
                 name: '敏感',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
-                 data: [33, 17, 16, 33,]
+                 data: [33, 17, 16, 33]
             },
         ]
     },
@@ -185,10 +188,10 @@ const lxjEData = {
             {
                 name: '产量',
                 type: 'bar',
-                barWidth: 14,
+                
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
                 data: [763,	785,	826,	879,	932,	1011                ],
@@ -196,10 +199,10 @@ const lxjEData = {
             {
                 name: '市场需求量',
                 type: 'bar',
-                barWidth: 14,
+                
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
                  data: [402,	548,	708,	808,	880,	972 ],
@@ -213,10 +216,10 @@ const lxjEData = {
             {
                 name: '饮料整体市场规模及预测',
                 type: 'bar',
-                barWidth: 14,
+                
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     },
                 
                 data: [7433, 9914, 13230],
@@ -224,10 +227,10 @@ const lxjEData = {
             {
                 name: '茶饮料整体市场规模及预测',
                 type: 'bar',
-                barWidth: 14,
+                
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
                  data: [2980, 3757, 6031],
@@ -242,38 +245,38 @@ const lxjEData = {
                 name: '微博',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [320, 302, 301, 334, 390, ]
             },
             {
                 name: '百度',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [120, 132, 101, 134, 90, ]
             },
             {
                 name: '微信',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [220, 182, 191, 234, 290, ]
             },
             {
                 name: '今日头条',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [150, 212, 201, 154, 190, ]
             },
             {
                 name: '地图',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
                 data: [120, 132, 101, 134, 90, ]
@@ -288,45 +291,45 @@ const lxjEData = {
                 name: '北京',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [ 934, 1290, ]
             },
             {
                 name: '上海',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [120, 132, ]
             },
             {
                 name: '南京',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [220, 182,  ]
             },
             {
                 name: '天津',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [150, 212,  ]
             },
             {
                 name: '广州',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [820, 832,]
             },
             {
                 name: '杭州',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
                 data: [320, 302, ]
@@ -341,18 +344,19 @@ const lxjEData = {
                 name: '男',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
+                itemStyle: {
+                    //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
+                },
                 data: [320, 302, ]
             },
             {
                 name: '女',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 itemStyle: {
-                    
-                        //barBorderRadius:[30,30,0,0]
-                    
+                    //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                 },
                 data: [120, 132, ]
             },
@@ -366,31 +370,31 @@ const lxjEData = {
                 name: '15-25',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [320, 302, ]
             },
             {
                 name: '26-29',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [120, 132, ]
             },
             {
                 name: '30-35',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [220, 182,  ]
             },
             {
                 name: '36-39',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
                 data: [150, 212,  ]
@@ -405,38 +409,38 @@ const lxjEData = {
                 name: '中层管理者',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [120, 302, ]
             },
             {
                 name: '公司白领',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [320, 132, ]
             },
             {
                 name: '自由职业者',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [220, 182,  ]
             },
             {
                 name: '高级管理',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [ 934, 1290, ]
             },
             {
                 name: '全职太太',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
                 data: [150, 212,  ]
@@ -451,38 +455,38 @@ const lxjEData = {
                 name: '11001-13000',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [120, 302, ]
             },
             {
                 name: '10001-11001',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [320, 132, ]
             },
             {
                 name: '13000-15000',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [220, 182,  ]
             },
             {
                 name: '7000-1000',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [ 934, 1290, ]
             },
             {
                 name: '15000以上',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
                 data: [1500, 2120,  ]
@@ -497,38 +501,38 @@ const lxjEData = {
                 name: '研究生及以上',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [420, 302, ]
             },
             {
                 name: '本科',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [320, 132, ]
             },
             {
                 name: '大专',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [220, 182,  ]
             },
             {
                 name: '高中',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [ 934, 1290, ]
             },
             {
                 name: '初中及以下',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
                 data: [1500, 1720,  ]
@@ -543,45 +547,45 @@ const lxjEData = {
                 name: '北京',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [ 602, 1290, ]
             },
             {
                 name: '上海',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [120, 132, ]
             },
             {
                 name: '南京',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [520, 182,  ]
             },
             {
                 name: '天津',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [150, 212,  ]
             },
             {
                 name: '广州',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [620, 632,]
             },
             {
                 name: '杭州',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
                 data: [420,  934]
@@ -596,18 +600,22 @@ const lxjEData = {
                 name: '男',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
+                itemStyle: {
+                    
+                    //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
+                
+                },
                 data: [390, 302, ]
             },
             {
                 name: '女',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
-                    
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                 },
                 data: [120, 132, ]
             },
@@ -621,31 +629,31 @@ const lxjEData = {
                 name: '15-25',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [320, 302, ]
             },
             {
                 name: '26-29',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [120, 132, ]
             },
             {
                 name: '30-35',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [290, 182,  ]
             },
             {
                 name: '36-39',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
                 data: [150, 212,  ]
@@ -660,38 +668,38 @@ const lxjEData = {
                 name: '中层管理者',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [720, 302, ]
             },
             {
                 name: '公司白领',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [320, 132, ]
             },
             {
                 name: '自由职业者',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [820, 182,  ]
             },
             {
                 name: '高级管理',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [ 934, 1290, ]
             },
             {
                 name: '全职太太',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
                 data: [150, 212,  ]
@@ -706,38 +714,38 @@ const lxjEData = {
                 name: '11001-13000',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [920, 302, ]
             },
             {
                 name: '10001-11001',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [720, 132, ]
             },
             {
                 name: '13000-15000',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [220, 182,  ]
             },
             {
                 name: '7000-1000',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [ 934, 1290, ]
             },
             {
                 name: '15000以上',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
                 data: [1500, 2120,  ]
@@ -752,38 +760,38 @@ const lxjEData = {
                 name: '研究生及以上',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [420, 302, ]
             },
             {
                 name: '本科',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [620, 132, ]
             },
             {
                 name: '大专',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [220, 182,  ]
             },
             {
                 name: '高中',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [ 994, 1290, ]
             },
             {
                 name: '初中及以下',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
                 data: [1400, 1720,  ]
@@ -798,38 +806,38 @@ const lxjEData = {
                 name: '微信',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [320, 302, 301, 334, 390, ]
             },
             {
                 name: '微博',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 data: [820, 832, 901, 934, 1290, ]
             },
             {
                 name: '百度',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [150, 212, 201, 154, 190, ]
             },
             {
                 name: '今日头条',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 data: [220, 182, 191, 234, 290, ]
             },
             {
                 name: '地推',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 itemStyle: {
                     
-                        //barBorderRadius:[30,30,0,0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
                 data: [320, 302, 301, 334, 390, ]
@@ -1360,14 +1368,9 @@ const lxjEData = {
             {
                 name: 'Emo.I',
                 type: 'bar',
-                barWidth: 14,
+                
                 itemStyle: {
-                    
-                        //barBorderRadius:30
-                    
-                    emphasis:{
-                        color:'#FF9F7F'
-                    }
+                    // barBorderRadius:2 / 144 * window.rem
                 },
                 data: [0.02, 0.03, 0.01, 0.02, 0.025, 0.013, -0.015, -0.01, 0.025, -0.06, -0.03, -0.02]
             },
@@ -1388,16 +1391,8 @@ const lxjEData = {
             {
                 name: '市场规模（亿元）',
                 type: 'bar',
-                barWidth: '10%',
-                barMinWidth:10,
-                barMaxWidth:40,
                 itemStyle: {
-                    
-                        //barBorderRadius:30
-                    
-                    emphasis:{
-                        color:'#FF9F7F'
-                    }
+                    // barBorderRadius:2 / 144 * window.rem
                 },
                 data: [954, 1010.3, 1066.9, 1134.1, 1204.4, 1280.3,]
             },
@@ -1418,16 +1413,8 @@ const lxjEData = {
             {
                 name: '新增用户数',
                 type: 'bar',
-                barWidth: '10%',
-                barMinWidth:10,
-                barMaxWidth:40,
                 itemStyle: {
-                    
-                        //barBorderRadius:30
-                    
-                    emphasis:{
-                        color:'#FF9F7F'
-                    }
+                    // barBorderRadius:2 / 144 * window.rem
                 },
                 data: [1500, 1300, 1200, 1800, 2500, 1480,]
             },
@@ -1449,16 +1436,8 @@ const lxjEData = {
             {
                 name: '新增用户数',
                 type: 'bar',
-                barWidth: '10%',
-                barMinWidth:10,
-                barMaxWidth:40,
                 itemStyle: {
-                    
-                        //barBorderRadius:30
-                    
-                    emphasis:{
-                        color:'#FF9F7F'
-                    }
+                    // barBorderRadius:2 / 144 * window.rem
                 },
                 data: [1700, 1300, 1400, 1800, 2400, 1480,]
             },
@@ -1480,16 +1459,8 @@ const lxjEData = {
             {
                 name: '时长',
                 type: 'bar',
-                barWidth: '10%',
-                barMinWidth:10,
-                barMaxWidth:40,
                 itemStyle: {
-                    
-                        //barBorderRadius:30
-                    
-                    emphasis:{
-                        color:'#FF9F7F'
-                    }
+                    // barBorderRadius:2 / 144 * window.rem
                 },
                 data: [3, 3.5, 2.8, 2.7, 2.5, 3.2,]
             },
@@ -1511,16 +1482,8 @@ const lxjEData = {
             {
                 name: '时长',
                 type: 'bar',
-                barWidth: '10%',
-                barMinWidth:10,
-                barMaxWidth:40,
                 itemStyle: {
-                    
-                        //barBorderRadius:30
-                    
-                    emphasis:{
-                        color:'#FF9F7F'
-                    }
+                    // barBorderRadius:2 / 144 * window.rem
                 },
                 data: [3, 2.5, 2.8, 1.7, 2.5, 3.2,]
             },
@@ -1542,16 +1505,8 @@ const lxjEData = {
             {
                 name: '覆盖率',
                 type: 'bar',
-                barWidth: '10%',
-                barMinWidth:10,
-                barMaxWidth:40,
                 itemStyle: {
-                    
-                        //barBorderRadius:30
-                    
-                    emphasis:{
-                        color:'#FF9F7F'
-                    }
+                    // barBorderRadius:2 / 144 * window.rem
                 },
                 data: [17, 9, 7, 20, 8, 14,]
             },
@@ -1616,12 +1571,12 @@ const lxjEData = {
                 name: '短视频',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
                 
-                // },
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
+                
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -1633,6 +1588,7 @@ const lxjEData = {
                 name: '社交网络',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -1644,6 +1600,7 @@ const lxjEData = {
                 name: '大众传媒',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -1655,6 +1612,7 @@ const lxjEData = {
                 name: '体验事件',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -1666,6 +1624,7 @@ const lxjEData = {
                 name: '促销活动',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -1677,10 +1636,10 @@ const lxjEData = {
                 name: '其他',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 itemStyle: {
                     
-                        //barBorderRadius:[0,30,30,0]
+                        //barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
                     
                 },
                 label: {
@@ -1700,12 +1659,12 @@ const lxjEData = {
                 name: '15-25',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
        
-                // },
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -1719,6 +1678,7 @@ const lxjEData = {
                 name: '26-35',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -1732,6 +1692,7 @@ const lxjEData = {
                 name: '36-45',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -1745,9 +1706,10 @@ const lxjEData = {
                 name: '46以上',
                 type: 'bar',
                 stack: '总量',
+                
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
                 
                 },
                 label: {
@@ -1769,7 +1731,7 @@ const lxjEData = {
                 name: '15-25',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -1783,6 +1745,7 @@ const lxjEData = {
                 name: '26-35',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -1795,7 +1758,7 @@ const lxjEData = {
             {
                 name: '36-45',
                 type: 'bar',
-                barWidth: 14,
+                
                 stack: '总量',
                 label: {
                     show: true,
@@ -1810,9 +1773,10 @@ const lxjEData = {
                 name: '46以上',
                 type: 'bar',
                 stack: '总量',
+                
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
               
                 },
                 label: {
@@ -1834,12 +1798,12 @@ const lxjEData = {
                 name: '男',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
            
-                // },
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -1853,7 +1817,7 @@ const lxjEData = {
                 name: '女',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -1863,7 +1827,7 @@ const lxjEData = {
                 },
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
             
                 },
                 data: [3]
@@ -1878,12 +1842,12 @@ const lxjEData = {
             {
                 name: '转化率',
                 type: 'bar',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
            
-                // },
+                },
                 label: {
                     show: true,
                     position: 'right',
@@ -1896,7 +1860,7 @@ const lxjEData = {
             {
                 name: '销售额',
                 type: 'bar',
-                barWidth: 14,
+                
                 // stack: '总量',
                 label: {
                     show: true,
@@ -1907,7 +1871,7 @@ const lxjEData = {
                 },
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
             
                 },
                 data: [70]
@@ -1922,12 +1886,12 @@ const lxjEData = {
             {
                 name: '转化率',
                 type: 'bar',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
            
-                // },
+                },
                 label: {
                     show: true,
                     position: 'right',
@@ -1940,7 +1904,7 @@ const lxjEData = {
             {
                 name: '销售额',
                 type: 'bar',
-                barWidth: 14,
+                
                 // stack: '总量',
                 label: {
                     show: true,
@@ -1951,7 +1915,7 @@ const lxjEData = {
                 },
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
             
                 },
                 data: [50]
@@ -1966,12 +1930,12 @@ const lxjEData = {
             {
                 name: '转化率',
                 type: 'bar',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
            
-                // },
+                },
                 label: {
                     show: true,
                     position: 'right',
@@ -1984,7 +1948,7 @@ const lxjEData = {
             {
                 name: '销售额',
                 type: 'bar',
-                barWidth: 14,
+                
                 // stack: '总量',
                 label: {
                     show: true,
@@ -1995,7 +1959,7 @@ const lxjEData = {
                 },
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
             
                 },
                 data: [45]
@@ -2010,12 +1974,12 @@ const lxjEData = {
             {
                 name: '转化率',
                 type: 'bar',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
            
-                // },
+                },
                 label: {
                     show: true,
                     position: 'right',
@@ -2028,7 +1992,7 @@ const lxjEData = {
             {
                 name: '销售额',
                 type: 'bar',
-                barWidth: 14,
+                
                 // stack: '总量',
                 label: {
                     show: true,
@@ -2039,7 +2003,7 @@ const lxjEData = {
                 },
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
             
                 },
                 data: [180]
@@ -2055,12 +2019,12 @@ const lxjEData = {
                 name: '5000以下',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
      
-                // },
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -2074,7 +2038,7 @@ const lxjEData = {
                 name: '5001-10000',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2088,7 +2052,7 @@ const lxjEData = {
                 name: '10001-20000',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2102,10 +2066,10 @@ const lxjEData = {
                 name: '20000以上',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
           
                 },
                 label: {
@@ -2127,12 +2091,10 @@ const lxjEData = {
                 name: '男',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
-     
-                // },
+                
+                itemStyle: {
+                	//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -2146,6 +2108,7 @@ const lxjEData = {
                 name: '女',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2155,7 +2118,7 @@ const lxjEData = {
                 },
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
          
                 },
                 data: [7,]
@@ -2171,12 +2134,11 @@ const lxjEData = {
                 name: '15-25',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
-          
-                // },
+                
+                itemStyle: {
+                	//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
+
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -2190,6 +2152,7 @@ const lxjEData = {
                 name: '26-35',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2203,6 +2166,7 @@ const lxjEData = {
                 name: '36-45',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2216,9 +2180,10 @@ const lxjEData = {
                 name: '46以上',
                 type: 'bar',
                 stack: '总量',
+                
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
              
                 },
                 label: {
@@ -2240,12 +2205,12 @@ const lxjEData = {
                 name: '男',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
             
-                // },
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -2259,6 +2224,7 @@ const lxjEData = {
                 name: '女',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2268,7 +2234,7 @@ const lxjEData = {
                 },
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
                 
                 },
                 data: [4,]
@@ -2284,12 +2250,12 @@ const lxjEData = {
                 name: '5000以下',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
           
-                // },
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -2303,6 +2269,7 @@ const lxjEData = {
                 name: '5001-10000',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2316,6 +2283,7 @@ const lxjEData = {
                 name: '10001-20000',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2329,9 +2297,10 @@ const lxjEData = {
                 name: '20000以上',
                 type: 'bar',
                 stack: '总量',
+                
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
               
                 },
                 label: {
@@ -2353,12 +2322,12 @@ const lxjEData = {
                 name: '15-25',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
               
-                // },
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -2372,6 +2341,7 @@ const lxjEData = {
                 name: '26-35',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2385,6 +2355,7 @@ const lxjEData = {
                 name: '36-45',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2398,9 +2369,10 @@ const lxjEData = {
                 name: '46以上',
                 type: 'bar',
                 stack: '总量',
+                
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
                
                 },
                 label: {
@@ -2422,12 +2394,12 @@ const lxjEData = {
                 name: '男',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
              
-                // },
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -2441,6 +2413,7 @@ const lxjEData = {
                 name: '女',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2450,7 +2423,7 @@ const lxjEData = {
                 },
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
               
                 },
                 data: [7,]
@@ -2466,12 +2439,12 @@ const lxjEData = {
                 name: '5000以下',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
             
-                // },
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -2485,6 +2458,7 @@ const lxjEData = {
                 name: '5001-10000',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2498,6 +2472,7 @@ const lxjEData = {
                 name: '10001-20000',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2511,9 +2486,10 @@ const lxjEData = {
                 name: '20000以上',
                 type: 'bar',
                 stack: '总量',
+                
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
               
                 },
                 label: {
@@ -2535,12 +2511,12 @@ const lxjEData = {
                 name: '15-25',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
         
-                // },
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -2554,6 +2530,7 @@ const lxjEData = {
                 name: '26-35',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2567,6 +2544,7 @@ const lxjEData = {
                 name: '36-45',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2580,9 +2558,10 @@ const lxjEData = {
                 name: '46以上',
                 type: 'bar',
                 stack: '总量',
+                
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
             
                 },
                 label: {
@@ -2604,12 +2583,12 @@ const lxjEData = {
                 name: '男',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
              
-                // },
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -2623,6 +2602,7 @@ const lxjEData = {
                 name: '女',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2632,7 +2612,7 @@ const lxjEData = {
                 },
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
              
                 },
                 data: [8,]
@@ -2648,12 +2628,12 @@ const lxjEData = {
                 name: '5000以下',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
            
-                // },
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -2667,6 +2647,7 @@ const lxjEData = {
                 name: '5001-10000',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2680,6 +2661,7 @@ const lxjEData = {
                 name: '10001-20000',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2693,9 +2675,10 @@ const lxjEData = {
                 name: '20000以上',
                 type: 'bar',
                 stack: '总量',
+                
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
           
                 },
                 label: {
@@ -2717,7 +2700,7 @@ const lxjEData = {
                 name: '15-25',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2731,6 +2714,7 @@ const lxjEData = {
                 name: '26-35',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2744,6 +2728,7 @@ const lxjEData = {
                 name: '36-45',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2757,9 +2742,10 @@ const lxjEData = {
                 name: '46以上',
                 type: 'bar',
                 stack: '总量',
+                
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
            
                 },
                 label: {
@@ -2781,12 +2767,12 @@ const lxjEData = {
                 name: '男',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
            
-                // },
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -2800,6 +2786,7 @@ const lxjEData = {
                 name: '女',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2809,7 +2796,7 @@ const lxjEData = {
                 },
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
             
                 },
                 data: [1]
@@ -2825,12 +2812,12 @@ const lxjEData = {
                 name: '5000以下',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
           
-                // },
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -2844,6 +2831,7 @@ const lxjEData = {
                 name: '5001-10000',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2857,6 +2845,7 @@ const lxjEData = {
                 name: '10001-20000',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2870,9 +2859,10 @@ const lxjEData = {
                 name: '20000以上',
                 type: 'bar',
                 stack: '总量',
+                
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
             
                 },
                 label: {
@@ -2894,12 +2884,12 @@ const lxjEData = {
                 name: '15-25',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
             
-                // },
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -2913,6 +2903,7 @@ const lxjEData = {
                 name: '26-35',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2926,6 +2917,7 @@ const lxjEData = {
                 name: '36-45',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2939,9 +2931,10 @@ const lxjEData = {
                 name: '46以上',
                 type: 'bar',
                 stack: '总量',
+                
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
               
                 },
                 label: {
@@ -2963,12 +2956,12 @@ const lxjEData = {
                 name: '男',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
              
-                // },
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -2982,6 +2975,7 @@ const lxjEData = {
                 name: '女',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -2991,7 +2985,7 @@ const lxjEData = {
                 },
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
              
                 },
                 data: [6]
@@ -3007,12 +3001,12 @@ const lxjEData = {
                 name: '5000以下',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
             
-                // },
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -3026,6 +3020,7 @@ const lxjEData = {
                 name: '5001-10000',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -3039,6 +3034,7 @@ const lxjEData = {
                 name: '10001-20000',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -3052,9 +3048,10 @@ const lxjEData = {
                 name: '20000以上',
                 type: 'bar',
                 stack: '总量',
+                
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
             
                 },
                 label: {
@@ -3076,12 +3073,12 @@ const lxjEData = {
                 name: '5000以下',
                 type: 'bar',
                 stack: '总量',
-                barWidth: 14,
-                // itemStyle: {
-                // 	
-                // 		//barBorderRadius:[0,30,30,0]
+                
+                itemStyle: {
+                	
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
            
-                // },
+                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -3095,6 +3092,7 @@ const lxjEData = {
                 name: '5001-10000',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -3108,6 +3106,7 @@ const lxjEData = {
                 name: '10001-20000',
                 type: 'bar',
                 stack: '总量',
+                
                 label: {
                     show: true,
                     position: 'inside',
@@ -3121,9 +3120,10 @@ const lxjEData = {
                 name: '20000以上',
                 type: 'bar',
                 stack: '总量',
+                
                 itemStyle: {
                 	
-                		//barBorderRadius:[0,30,30,0]
+                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
                 	
                 },
                 label: {

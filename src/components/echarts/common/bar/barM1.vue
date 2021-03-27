@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import {setBarWidth} from "./utils"
 export default {
 	props: {
 		myData:{
@@ -34,6 +35,7 @@ export default {
 	methods: {
 		initEcharts() {
 			let _option = this.defaultOption();
+			_option = setBarWidth(_option)
 			let myChart = this.$echarts.init(document.getElementById(this.id));
 			myChart.setOption(_option);
 			window.addEventListener('resize',()=>{
@@ -52,8 +54,9 @@ export default {
 				legend: {
 					bottom: 0,
 					data: this.myData.legName,
-					itemWidth: 12,
-					itemHeight: 12,
+					itemWidth: 6,
+					itemHeight: 6,
+					icon:"circle",
 					textStyle: {
 						color: "#97A0C3",   //这里用参数代替了
 						fontSize:'12'

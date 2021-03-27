@@ -25,38 +25,38 @@ const linData = {
                 name: '微博',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '10',
+                
                 data: [320, 302, 301, 334, 330, 390]
             },
             {
                 name: '微信',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '10',
+                
                 data: [820, 832, 901, 934, 1100, 1290]
             },
             {
                 name: '百度',
                 type: 'bar',
-                barWidth: '10',
+                
                 stack: '总量',
                 data: [150, 212, 201, 154, 190, 190]
             },
             {
                 name: '今日头条',
                 type: 'bar',
-                barWidth: '10',
+                
                 stack: '总量',
                 data: [220, 182, 191, 234, 190, 290]
             },
             {
                 name: '地推',
                 type: 'bar',
-                barWidth: '10',
+                
                 stack: '总量',
                 itemStyle: {
                     
-                        // barBorderRadius: [30, 30, 0, 0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     },
                 
                 data: [320, 302, 301, 334, 290, 390]
@@ -71,38 +71,38 @@ const linData = {
                 name: '微博',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '10',
+                
                 data: [5200, 5020, 5010, 5340, 5300, 5923]
             },
             {
                 name: '微信',
                 type: 'bar',
                 stack: '总量',
-                barWidth: '10',
+                
                 data: [18200, 18320, 19010, 19340, 21000, 20201]
             },
             {
                 name: '百度',
                 type: 'bar',
-                barWidth: '10',
+                
                 stack: '总量',
                 data: [2100, 2220, 2410, 2540, 2900, 2832]
             },
             {
                 name: '今日头条',
                 type: 'bar',
-                barWidth: '10',
+                
                 stack: '总量',
                 data: [4200, 4102, 3901, 4340, 3900, 4350]
             },
             {
                 name: '地推',
                 type: 'bar',
-                barWidth: '10',
+                
                 stack: '总量',
                 itemStyle: {
                     
-                        // barBorderRadius: [30, 30, 0, 0]
+                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
                     
                 },
                 data: [5200, 5020, 5001, 5304, 5500, 5673]
@@ -189,28 +189,16 @@ const linData = {
           {
               name: '市场供应量',
               type: 'bar',
-              barWidth: '10%',
-              barMinWidth:10,
-              barMaxWidth:40,
               itemStyle: {
-                 //barBorderRadius:30
-                  emphasis:{
-                      color:'#FF9F7F'
-                  }
+                 //barBorderRadius:2 / 144 * window.rem
               },
               data: [2800, 3000, 3800, 4150]
           },
           {
               name: '市场需求量',
               type: 'bar',
-              barWidth: '10%',
-              barMinWidth:10,
-              barMaxWidth:40,
               itemStyle: {
-                 //barBorderRadius:30
-                  emphasis:{
-                      color:'#FF9F7F'
-                  }
+                 //barBorderRadius:2 / 144 * window.rem
               },
               data: [3000, 2300, 3500, 4250]
           },
