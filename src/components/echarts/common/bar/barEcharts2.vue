@@ -4,6 +4,7 @@
 
 <script>
 let id = 0
+import {setBarWidth} from "./utils"
 export default {
   props: {
     myData: {
@@ -31,6 +32,7 @@ export default {
   methods: {
     initEcharts() {
       let _option = this.defaultOption();
+      _option = setBarWidth(_option)
       let myChart = this.$echarts.init(document.getElementById(this.id));
       myChart.setOption(_option);
       window.addEventListener('resize', () => {
@@ -54,18 +56,30 @@ export default {
           type: 'category',
           data: this.myData.name,
           //设置轴线的属性
-          axisLine: {
-            lineStyle: {
-              color: '#E9EBF1',
-            }
-          },
-          axisLabel: {
-            show: true,
-            textStyle: {
-              color: "#97A0C3",   //这里用参数代替了
-              fontSize: '12'
-            }
-          },
+             axisLine: {
+                  lineStyle: {
+                      color: '#EAEDF7',
+                      type: "dashed"
+                  }
+              } ,
+              axisLabel: {
+                  textStyle: {
+                      color: "#97A0C3",   //这里用参数代替了
+                      fontSize: '12'
+                  }
+              },
+              splitLine: {
+                  lineStyle: {
+                      color: '#EAEDF7',
+                      type: 'dashed',
+                  }
+              },
+              axisPointer: {
+                  type: "shadow",
+                  shadowStyle: {
+                      color: "rgba(124,136,177,0.1)"
+                  }
+              }
         },
         yAxis: {
           type: 'value',
@@ -78,14 +92,14 @@ export default {
           },
           axisLine: {
             lineStyle: {
-              color: '#E9EBF1',
-              //width:8,//这里是为了突出显示加上的
+              color: '#EAEDF7',
+              type: 'dashed',
             }
           },
           splitLine: {
             lineStyle: {
-              color: '#E9EBF1',
-              //type: 'dashed',
+              color: '#EAEDF7',
+              type: 'dashed',
             }
           },
         },
@@ -93,17 +107,12 @@ export default {
           {
             data: this.myData.value,
             type: 'bar',
-            barWidth: '10',
+            barWidth: 14 / 144 * window.rem,
             label: {
               position: 'right',
             },
             itemStyle: {
-              normal: {
-                barBorderRadius: [30, 30, 0, 0]
-              },
-              emphasis: {
-                color: '#FF9F7F'
-              }
+                // barBorderRadius: [2 / 144 * window.rem, 2 / 144 * window.rem, 0, 0]
             }
           }
         ]

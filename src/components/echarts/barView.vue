@@ -57,7 +57,7 @@
 		<div class="box">
 			<barL id="box29" :colorList="$lxjData.colorList" :myData="$lxjData.box29Data"></barL>
 		</div>
-		<div class="box">
+		<div class="box barM">
 			<barM id="box31" :colorList="$lxjData.colorList" :myData="$lxjData.box31Data"></barM>
 		</div>
 		<div class="box">
@@ -141,10 +141,10 @@
 		<div class="box">
 			<lineM3 id="box68" :colorList="$lxjData.colorList" :myData="$lxjData.box68Data"></lineM3>
 		</div>
-		<div class="box">
+		<div class="box box7">
 			<barC id="box7" :colorList="$lxjData.colorList" :myData="$lxjData.box7Data"></barC>
 		</div>
-		<div class="box">
+		<div class="box box71">
 			<barC id="box71" :colorList="$lxjData.colorList" :myData="$lxjData.box71Data"></barC>
 		</div>
 		<div class="box">
@@ -171,7 +171,7 @@
 		<div class="box">
 			<barCH id="box113" :colorList="$lxjData.colorList" :myData="$lxjData.box113Data"></barCH>
 		</div>
-		<div class="box">
+		<div class="box barHM">
 			<barHM id="box114" :colorList="$lxjData.colorList" :myData="$lxjData.box114Data"></barHM>
 		</div>
 		<div class="box">
@@ -260,6 +260,7 @@
 				<BarHM4 id="306" :colorList="$abelData.colorList" :myData="$abelData.barStack01"></BarHM4>
 			</div>
 
+			
 		</div>
 </template>
 
@@ -267,6 +268,8 @@
 	import barEcharts from './common/bar/barEcharts';
 	import barL from './common/bar/barL';
 	import barM from './common/bar/barM';
+	import barM1 from './common/bar/barM1';
+	import barM2 from './common/bar/barM2';
 	import cLine from './common/line/line';
 	import lineO from './common/line/lineO';
 	import lineS from './common/line/lineS';
@@ -289,7 +292,7 @@
     export default {
 		name:"barView",
 		components: {
-			BarLine2, BarHM4,
+			barM1,barM2,BarLine2, BarHM4,
 		  lineM3,barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,PieOne1,PieOne2,PieOne3,PieNest1,PieNest2
 		}
     }

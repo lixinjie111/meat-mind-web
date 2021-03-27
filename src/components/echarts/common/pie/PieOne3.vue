@@ -3,7 +3,7 @@
 </template>
 
 <script>
-	import {timeValue} from "../../../../utils/func";
+	import {timeValue} from "@/utils/func";
 
 	const color = {
 		type: 'linear',

@@ -548,7 +548,6 @@
           <div class="zuhe_echarts_rt">
             <div class="zuhe_echarts_title">媒介转化效率</div>
             <div class="new_echart_box1">
-              <!-- <barC5 :colorList="$fjData.colorList" :myData="progressData" id="progressData"></barC5> -->
               <div class="new_echart_list_box">
                 <div class="m-rank-lf-list" v-for="(item,index) in rankList1" :key="index">
                   <div class="m-rank-item-lf">
@@ -662,7 +661,6 @@
   import PieCaseEcharts from '../../components/echarts/common/pie/PieCaseEcharts';
   import barL from '../../components/echarts/common/bar/barL';
   import barLine from '../../components/echarts/common/bar/barLine';
-  import barC5 from '../../components/echarts/common/bar/barC5';
   import funnel from '../../components/echarts/common/funnel/funnel';
   import PieEcharts2 from '../../components/echarts/common/pie/PieEcharts2';
   import PieEcharts from '../../components/echarts/common/pie/PieEcharts';
@@ -684,7 +682,7 @@
   let counter = 0
   export default {
     name: "index",
-    components: {BarHM4,BarLine2,PieOne3,Tab, PieEcharts9,cLine,barLine,barHM2,barC5,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts2,LeidaEcharts,vTree,lineM,barM, KOLResource,barMediaGroup, MediaAnalysis, PortraitMatching},
+    components: {BarHM4,BarLine2,PieOne3,Tab, PieEcharts9,cLine,barLine,barHM2,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts2,LeidaEcharts,vTree,lineM,barM, KOLResource,barMediaGroup, MediaAnalysis, PortraitMatching},
     data(){
       return{
         tabActive: 1,

@@ -176,15 +176,9 @@ barLine:{
       {
         name: '投放成本',
         type: 'bar',
-        barWidth: '10%',
-        barMinWidth:10,
-        barMaxWidth:40,
         yAxisIndex: 1,
         itemStyle: {
-          // barBorderRadius:3,
-          emphasis:{
-            color:'#FF9F7F'
-          }
+          //barBorderRadius:2 / 144 * window.rem,
         },
         tooltip: {show: false},
         data: [220, 368, 264, 496, 242, 385]
@@ -192,15 +186,9 @@ barLine:{
       {
         name: '销售转化',
         type: 'bar',
-        barWidth: '10%',
-        barMinWidth:10,
-        barMaxWidth:40,
         yAxisIndex: 1,
         itemStyle: {
-          // barBorderRadius:3,
-          emphasis:{
-            color:'#FF9F7F'
-          }
+          //barBorderRadius:2 / 144 * window.rem,
         },
         tooltip: {show: false},
         data: [438, 653, 565, 778, 620, 699]
@@ -270,50 +258,50 @@ barLine:{
         name: '短视频',
         type: 'bar',
         stack: '总量',
-        barWidth: 14,
-        // itemStyle: {
-        //   barBorderRadius: 3,
-        // },
+        
+        itemStyle: {
+        // barBorderRadius:2 / 144 * window.rem
+        },
         data: [20.2, 23.1, 20.5, 22.6, 21.8, 24.2,]
       },
       {
         name: '社交传媒',
         type: 'bar',
         stack: '总量',
-        barWidth: 14,
-        // itemStyle: {
-        //   barBorderRadius: 3,
-        // },
+        
+        itemStyle: {
+        // barBorderRadius:2 / 144 * window.rem
+        },
         data: [15.1, 18.6, 17.8, 18.5, 15.0, 17.1,]
       },
       {
         name: '新媒体网站',
         type: 'bar',
         stack: '总量',
-        barWidth: 14,
-        // itemStyle: {
-        //   barBorderRadius: 3,
-        // },
+        
+        itemStyle: {
+        // barBorderRadius:2 / 144 * window.rem
+        },
         data: [14.7, 13.2, 14.2, 13.4, 13.6, 14.5,]
       },
       {
         name: '新闻门户',
         type: 'bar',
         stack: '总量',
-        barWidth: 14,
-        // itemStyle: {
-        //   barBorderRadius: 3,
-        // },
+        
+        itemStyle: {
+        // barBorderRadius:2 / 144 * window.rem
+        },
         data: [12.4, 12.6, 12.9, 12.2, 10.1, 11.7,]
       },
       {
         name: '其它',
         type: 'bar',
         stack: '总量',
-        barWidth: 14,
-        // itemStyle: {
-        //   barBorderRadius: 3,
-        // },
+        
+        itemStyle: {
+        // barBorderRadius:2 / 144 * window.rem
+        },
         data: [37.6, 32.5, 34.6, 33.3, 39.5, 32.5,]
       },
     ]

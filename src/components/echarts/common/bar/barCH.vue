@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import {setBarWidth} from "./utils"
 export default {
 	props: {
 		myData:{
@@ -31,6 +32,7 @@ export default {
 	methods: {
 		initEcharts() {
 			let _option = this.defaultOption();
+            _option = setBarWidth(_option)
 			let myChart = this.$echarts.init(document.getElementById(this.id));
 			myChart.setOption(_option);
 			window.addEventListener('resize',()=>{
@@ -44,9 +46,6 @@ export default {
                     axisPointer: {
                         type: 'shadow'
                     }
-                },
-                legend: {
-                    show: false
                 },
                 grid: {
                     top:20,
@@ -102,7 +101,7 @@ export default {
                     data:  this.myData.name,
                     axisLabel: {
                         fontSize: 12,
-                        color: "#97A0C3",   //这里用参数代替了
+                        color: "#97A0C3",   
                     }
                 },
                 series: [{
@@ -123,20 +122,9 @@ export default {
 
                             };
                         }),
-                        //   data: yValue.map((item, i) => {
-                        //       return {
-                        //           value: item,
-                        //           itemStyle: {
-                        //               color:'#6395f9'
-                        //           }
-                        //       };
-						//   }),
-						barWidth: '10%',
-                        barMinWidth:10,
-                        barMaxWidth:40,
 						itemStyle: {
 					
-								// barBorderRadius:[0,30,30,0]
+								//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
 						
 						},
                         label: {
