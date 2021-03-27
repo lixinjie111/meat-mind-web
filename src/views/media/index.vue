@@ -460,7 +460,7 @@
               <div class="navContentItem1">
                 <div class="navTitle">投放预算</div>
                 <div class="navSubTitle"></div>
-                <div class="new_echart_box">
+                <div class="new_echart_box tfys_new_echart_box">
                   <PieEcharts9 :colorList="$fjData.colorList" :myData="myChartData0" ></PieEcharts9>
                 </div>
               </div>
@@ -2322,6 +2322,12 @@
     .new_echart_box{
       flex:1;
     }
+
+    .tfys_new_echart_box {
+      width: 170px;
+      margin: 0 auto;
+    }
+
     .new_media_panel1{
       display: flex;
       margin-bottom: 24px;
