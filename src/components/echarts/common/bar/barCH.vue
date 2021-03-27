@@ -93,9 +93,13 @@ export default {
                         show: false
                     },
                     axisPointer: {
-                        label: {
-                            show: true,
-                            margin: 30
+                        // label: {
+                        //     show: true,
+                        //     margin: 30
+                        // },
+                        type: "shadow",
+                        shadowStyle: {
+                            color: "rgba(124,136,177,0.1)"
                         }
                     },
                     data:  this.myData.name,
