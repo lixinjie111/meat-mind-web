@@ -310,6 +310,12 @@
       height: 276px;
       background: #F7F9FD;
       border-radius: 4px;
+
+      #box111 {
+        margin: 0 auto;
+        width: 300px;
+        height: 276px;
+      }
     }
     .box {
       width: 700px;
