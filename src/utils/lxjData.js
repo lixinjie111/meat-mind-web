@@ -1524,20 +1524,20 @@ const lxjEData = {
     box111Data:{
         name: ['潜在用户','新增用户','留存用户','活跃用户','忠实用户','铁粉'],
         value:  [
-            {value: 100, name: '潜在用户'},
-            {value: 80, name: '新增用户'},
-            {value: 60, name: '留存用户'},
-            {value: 40, name: '活跃用户'},
-            {value: 20, name: '忠实用户'},
-            {value: 10, name: '铁粉'}
+            {value: 98, name: '潜在用户'},
+            {value: 81, name: '新增用户'},
+            {value: 65, name: '留存用户'},
+            {value: 45, name: '活跃用户'},
+            {value: 23, name: '忠实用户'},
+            {value: 11, name: '铁粉'}
         ]
     },
     box119Data:{
         name: ['曝光率','互动率','销售转化率'],
         value:  [
-            {value: 60, name: '曝光率'},
-            {value: 40, name: '互动率'},
-            {value: 20, name: '销售转化率'},
+            {value: 62, name: '曝光率'},
+            {value: 45, name: '互动率'},
+            {value: 26, name: '销售转化率'},
         ]
     },
     box113Data:{
