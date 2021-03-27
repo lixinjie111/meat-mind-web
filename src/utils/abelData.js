@@ -209,21 +209,21 @@ barLine:{
         name: '合作媒介',
         type: 'line',
         // smooth:true,
-        areaStyle: {
-          color: {
-            type: 'linear',
-            x: 0,
-            y: 0,
-            x2: 0,
-            y2: 0.6,
-            colorStops: [{
-              offset: 0, color: '#1DCEC3' // 0% 处的颜色
-            }, {
-              offset: 1, color: 'rgba(255,255,255, 0)' // 100% 处的颜色
-            }],
-            global: false // 缺省为 false
-          }
-        },
+        // areaStyle: {
+        //   color: {
+        //     type: 'linear',
+        //     x: 0,
+        //     y: 0,
+        //     x2: 0,
+        //     y2: 0.6,
+        //     colorStops: [{
+        //       offset: 0, color: '#1DCEC3' // 0% 处的颜色
+        //     }, {
+        //       offset: 1, color: 'rgba(255,255,255, 0)' // 100% 处的颜色
+        //     }],
+        //     global: false // 缺省为 false
+        //   }
+        // },
         tooltip: {
           show: true,
           formatter: (params) => {
@@ -237,21 +237,21 @@ barLine:{
         name: '合作KOL',
         type: 'line',
         // smooth:true,
-        areaStyle: {
-          color: {
-            type: 'linear',
-            x: 0,
-            y: 0,
-            x2: 0,
-            y2: .8,
-            colorStops: [{
-              offset: 0, color: '#FE774B' // 0% 处的颜色
-            }, {
-              offset: 1, color: 'rgba(255,255,255, 0)' // 100% 处的颜色
-            }],
-            global: false // 缺省为 false
-          }
-        },
+        // areaStyle: {
+        //   color: {
+        //     type: 'linear',
+        //     x: 0,
+        //     y: 0,
+        //     x2: 0,
+        //     y2: .8,
+        //     colorStops: [{
+        //       offset: 0, color: '#FE774B' // 0% 处的颜色
+        //     }, {
+        //       offset: 1, color: 'rgba(255,255,255, 0)' // 100% 处的颜色
+        //     }],
+        //     global: false // 缺省为 false
+        //   }
+        // },
         tooltip: {
           show: true,
           formatter: (params) => {
@@ -270,7 +270,7 @@ barLine:{
         name: '短视频',
         type: 'bar',
         stack: '总量',
-        barWidth: '10',
+        barWidth: 14,
         // itemStyle: {
         //   barBorderRadius: 3,
         // },
@@ -280,6 +280,7 @@ barLine:{
         name: '社交传媒',
         type: 'bar',
         stack: '总量',
+        barWidth: 14,
         // itemStyle: {
         //   barBorderRadius: 3,
         // },
@@ -289,6 +290,7 @@ barLine:{
         name: '新媒体网站',
         type: 'bar',
         stack: '总量',
+        barWidth: 14,
         // itemStyle: {
         //   barBorderRadius: 3,
         // },
@@ -298,6 +300,7 @@ barLine:{
         name: '新闻门户',
         type: 'bar',
         stack: '总量',
+        barWidth: 14,
         // itemStyle: {
         //   barBorderRadius: 3,
         // },
@@ -307,6 +310,7 @@ barLine:{
         name: '其它',
         type: 'bar',
         stack: '总量',
+        barWidth: 14,
         // itemStyle: {
         //   barBorderRadius: 3,
         // },

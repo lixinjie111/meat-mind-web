@@ -99,6 +99,9 @@
               color: '#7C88B1'
             },
             labelLine: {
+              length: 5,
+              length2: 8,
+              // smooth: true,
               lineStyle: {
                 color: '#7C88B1'
               },

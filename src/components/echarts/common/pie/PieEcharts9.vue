@@ -89,13 +89,13 @@
           series: [{
             type: 'pie',
             center: ['50%', '50%'],
-            radius: ['45%', '65%'],
+            radius: ['65%', '85%'],
             roseType: this.roseType,
             clockwise: true,
             avoidLabelOverlap: true,
             hoverOffset: 10,
             label: {
-              show: true,
+              show: false,
               color: '#7C88B1'
             },
             labelLine: {

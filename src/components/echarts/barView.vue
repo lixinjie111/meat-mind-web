@@ -163,7 +163,7 @@
 			<barLine id="box10" :colorList="$lxjData.colorList" :myData="$lxjData.box10Data"></barLine>
 		</div>
 		<div class="box">
-			<funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box111Data"></funnel>
+			<funnel id="box111" :colorList="$lxjData.colorList1" :myData="$lxjData.box111Data"></funnel>
 		</div>
 		<div class="box">
 			<lineSp id="box112" :colorList="$lxjData.colorList"></lineSp>
@@ -206,9 +206,6 @@
 			<div class="box1">
 				<barHM id="box11431" :colorList="$lxjData.colorList" :myData="$lxjData.box11431Data"></barHM>
 			</div>
-		</div>
-		<div class="box">
-			<pieP id="box115" :colorList="$lxjData.colorList"></pieP>
 		</div>
 
 
@@ -283,7 +280,6 @@
 	import barHM from './common/bar/barHM';
 	import BarHM4 from './common/bar/barHM4';
 	import lineSp from './common/line/lineSp';
-	import pieP from './common/pie/pieP';
 	import PieOne1 from './common/pie/PieOne1';
 	import PieOne2 from './common/pie/PieOne2';
 	import PieOne3 from './common/pie/PieOne3';
@@ -294,7 +290,7 @@
 		name:"barView",
 		components: {
 			BarLine2, BarHM4,
-		  lineM3,barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,pieP,PieOne1,PieOne2,PieOne3,PieNest1,PieNest2
+		  lineM3,barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,PieOne1,PieOne2,PieOne3,PieNest1,PieNest2
 		}
     }
 </script>

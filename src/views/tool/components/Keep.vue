@@ -115,7 +115,6 @@ export default {
             title: '第0日',
             key: 'day0',
             render: (h, params) => {
-              console.log(params)
               return h('span', (params.row[params.column.key] * 100).toFixed(2) + '%');
             }
           },
@@ -123,7 +122,6 @@ export default {
             title: '第1日',
             key: 'day1',
             render: (h, params) => {
-              console.log(params)
               return h('span', (params.row[params.column.key] * 100).toFixed(2) + '%');
             }
           },
@@ -131,7 +129,6 @@ export default {
             title: '第2日',
             key: 'day2',
             render: (h, params) => {
-              console.log(params)
               return h('span', (params.row[params.column.key] * 100).toFixed(2) + '%');
             }
           },
@@ -139,7 +136,6 @@ export default {
             title: '第3日',
             key: 'day3',
             render: (h, params) => {
-              console.log(params)
               return h('span', (params.row[params.column.key] * 100).toFixed(2) + '%');
             }
           },

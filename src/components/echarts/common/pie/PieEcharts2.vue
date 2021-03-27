@@ -71,6 +71,8 @@ export default {
         },
         legend: {
           icon: "circle",
+          itemWidth:6,
+          itemHeight:6,
           type: "scroll",
           // orient: 'horizontal',
           orient: "vertical",
@@ -87,7 +89,7 @@ export default {
           {
             name: "忠实顾客",
             type: "pie",
-            center: ['30%', '50%'],
+            center: ['35%', '50%'],
             radius : ['50%', '40%'],
              //silent: true,
             // label: {

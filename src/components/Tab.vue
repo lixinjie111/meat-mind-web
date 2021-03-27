@@ -12,7 +12,8 @@
         name: "Tabs",
         data() {
             return {
-                tabActive: 1
+                tabActive: 1,
+                tabTop: 0
             }
         },
         props: {
@@ -22,15 +23,16 @@
             }
         },
         mounted() {
-            let header = document.querySelector('.tabs-container');
-            let origOffsetY = header.offsetTop;
-
+            let tabContainer = document.querySelector('.tabs-container');
+            let origOffsetY = tabContainer.offsetTop;
+            this.tabTop = origOffsetY;
             document.addEventListener('scroll', () => {
-                window.scrollY >= origOffsetY ? header.classList.add('sticky') : header.classList.remove('sticky');
+                window.scrollY >= origOffsetY ? tabContainer.classList.add('sticky') : tabContainer.classList.remove('sticky');
             });
         },
         methods: {
             changeTab(index) {
+                window.scrollTo(0, this.tabTop - 100);
                 this.tabActive = index;
                 this.$emit('change', index);
             }
@@ -42,7 +44,7 @@
     .tabs-container {
         background: #F4F7FC;
         width: 100%;
-        z-index: 100;
+        z-index: 1999;
 
         .tabs-box {
             position: relative;

@@ -1033,13 +1033,13 @@
                 <Card :title="'认知'" :colourfol="'blue'" :number="'29385'" :data="[-87,9481]"></Card>
               </div>
               <div class="month">
-                <Card :title="'兴趣'" :colourfol="'purple'" :number="'29385'" :data="[-87,9481]"></Card>
+                <Card :title="'兴趣'" :colourfol="'purple'" :number="'21326'" :data="[-94,8781]"></Card>
               </div>
               <div class="view">
-                <Card :title="'购买'" :colourfol="'pink'" :number="'29385'" :data="[-87,9481]"></Card>
+                <Card :title="'购买'" :colourfol="'pink'" :number="'28532'" :data="[-78,8481]"></Card>
               </div>
               <div class="target">
-                <Card :title="'忠诚'" :colourfol="'orange'" :number="'29385'" :data="[-87,9481]"></Card>
+                <Card :title="'忠诚'" :colourfol="'orange'" :number="'25938'" :data="[-88,8941]"></Card>
               </div>
             </div>
 				    <div class="xinzfb_container_lef_content">
@@ -1068,7 +1068,7 @@
 			    <div class="xfsmlcpg_container">
 				    <div class="xfsmlcpg_title">消费生命旅程评估</div>
 				    <div class="xinzfb_container_lef_content1">
-					    <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box111Data"></funnel>
+					    <funnel id="box111" :colorList="$lxjData.colorList1" :myData="$lxjData.box111Data"></funnel>
 				    </div>
 			    </div>
 			    <div class="xfjzg_container">
@@ -1134,30 +1134,29 @@ import barT2 from '../../components/echarts/common/bar/barT';
 import funnel from '../../components/echarts/common/funnel/funnel';
 import barHM from '../../components/echarts/common/bar/barHM';
 import lineSp from '../../components/echarts/common/line/lineSp';
-import pieP from '../../components/echarts/common/pie/pieP';
 
 import PieEcharts from '../../components/echarts/common/pie/PieEcharts';
 import PieEcharts7 from '../../components/echarts/common/pie/PieEcharts7';
-import PieEcharts1 from '../../components/echarts/common/pie/PieEcharts1';
+// import PieEcharts1 from '../../components/echarts/common/pie/PieEcharts1';
 import RotateChart from '../../components/echarts/common/custom/RotateChart';
 import LeidaEcharts from '../../components/echarts/common/radar/LeidaEcharts';
 import MatchEcharts from '../../components/echarts/common/radar/MatchEcharts';
 import Yibiao1Echarts from '../../components/echarts/common/gauge/Yibiao1Echarts';
 import YibiaoCharts2 from '../../components/echarts/common/gauge/YibiaoCharts2';
-import Yuanhuan1 from '../../components/echarts/common/sunburst/Yuanhuan1';
+// import Yuanhuan1 from '../../components/echarts/common/sunburst/Yuanhuan1';
 import Leida2Echarts from '../../components/echarts/common/radar/Leida2Echarts';
 import vDxitem from "./dxItem";
 import vDxitem1 from "./dxItem1";
 import vTabCard from "./tabCard";
-import chuDa from "./chuDa";
+// import chuDa from "./chuDa";
 import Card from "./base/Card";
 import MatchDegree from "./base/MatchDegree";
 import Tab from "../../components/Tab";
 
 export default {
   components: {
-   PieEcharts1,barT1,barT2,pieP, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, PieEcharts7, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Yuanhuan1, Leida2Echarts,
-   vDxitem,vDxitem1,vTabCard,chuDa, Card, MatchDegree,Tab
+   barT1,barT2, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, PieEcharts7, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Leida2Echarts,
+   vDxitem,vDxitem1,vTabCard, Card, MatchDegree,Tab
   },
   name: "index",
   data() {
@@ -1192,8 +1191,8 @@ export default {
       tu75:require("../../assets/img/yhhx/tu75.png"),
       descTitle:'北京上班族出行场景',
       avatImg:require("../../assets/img/yhhx/avat.png"),
-      sbAvatImg:require("../../assets/img/yhhx/sbAvat.png"),
-      qyggImg:require("../../assets/img/yhhx/qyggimg1.png"),
+      sbAvatImg:require("../../assets/img/yhhx/pic_all_avatar.png"),
+      qyggImg:require("../../assets/img/yhhx/qyggAvt.png"),
       bpyzImg:require("../../assets/img/yhhx/beipiaoImg.png"),
       zyzyImg:require("../../assets/img/yhhx/ziyouImg.png"),
 
@@ -1295,17 +1294,18 @@ export default {
       zkdwImg:require("../../assets/img/yhhx/zkdwImg.png"),
       czkImg:require("../../assets/img/yhhx/czkImg.png"),
       qbmjList:[
-        require("../../assets/img/yhhx/tt.png"),
-        require("../../assets/img/yhhx/xhs.png"),
-        require("../../assets/img/yhhx/dyI.png")
+        require("../../assets/img/yhhx/dingd.png"),
+        require("../../assets/img/yhhx/weiicon.png"),
+        require("../../assets/img/yhhx/tt.png")
       ],
       bjsbList:[
         require("../../assets/img/yhhx/zhIcon.png"),
         require("../../assets/img/yhhx/xhs.png"),
       ],
       qyggList:[
+        require("../../assets/img/yhhx/weiicon.png"),
+        require("../../assets/img/yhhx/dingd.png"),
         require("../../assets/img/yhhx/tt.png"),
-        require("../../assets/img/yhhx/ks.png"),
       ],
       bpyzList:[
         require("../../assets/img/yhhx/tt.png"),
@@ -3859,8 +3859,8 @@ export default {
         flex:1
       }
       .xinzfb_container_lef_content1{
-        width:60%;
-        margin:auto;
+        width: 60%;
+        margin: 24px auto 0;
         flex:1
       }
     }

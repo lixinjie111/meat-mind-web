@@ -84,7 +84,7 @@ export default {
 			let data = [{value: 0}];
 			let prev = 0;
 			for (let i=0; i<value.length/2; i++) {
-				data.push({value: timeValue(value[ i*2 ]) - prev, label: {show: false}}, {name: value[ i*2 ] +' - '+ value[ i*2+1 ], value: timeValue(value[ i*2+1 ]) - timeValue(value[ i*2 ])});
+				data.push({value: timeValue(value[ i*2 ]) - prev, label: {show: false}}, {name: value[ i*2 ] +' - '+ value[ i*2+1 ], value: timeValue(value[ i*2+1 ]) - timeValue(value[ i*2 ]),label: {show: false}});
 				prev = timeValue(value[ i*2+1 ]);
 			}
 			if (prev < 24)
@@ -187,19 +187,17 @@ export default {
 						radius: ['45%', '65%'],
 						avoidLabelOverlap: false,
 						// hoverAnimation: false,
-						label: {
-							show: true,
-							formatter: params => {
-								if (params.name)
-									return `${params.seriesName}\n${params.name}`;
-							},
-							color: '#97A0C3'
-						},
-						labelLine: {
-							show: true,
-							length: 3,
-              				length2: 3
-						},
+						// label: {
+						// 	show: true,
+						// 	formatter: params => {
+						// 		if (params.name)
+						// 			return `${params.seriesName}\n${params.name}`;
+						// 	},
+						// 	color: '#97A0C3'
+						// },
+						// labelLine: {
+						// 	show: true
+						// },
 						data
 					},
 

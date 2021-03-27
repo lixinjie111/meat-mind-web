@@ -48,8 +48,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  $color: #73A0FA;
-  $green: #73DEB3;
+  $color: #1DCEC3;
+  $green: #F16E84;
 .match_degree {
   width: 100%;
   height: 100%;
@@ -85,7 +85,7 @@ export default {
         align-items: center;
         margin: 0 6px;
         .bar_color{
-          border-radius: 6px;
+          border-radius: 0 5px 5px 0;
           height: 10px;
         }
         .bar_color.blue{

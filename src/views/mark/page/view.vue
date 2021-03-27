@@ -910,28 +910,28 @@ export default {
                         name: '加多宝',
                         type: 'line',
                         smooth:true,
-                        symbol:'none',
+                        // //symbol:'none',
                         data: [631, 607, 605, 581, 671, 645, 351, 390, 490, 450]
                     },
                     {
                         name: '王老吉',
                         type: 'line',
                         smooth:true,
-                        symbol:'none',
+                        // //symbol:'none',
                         data: [831, 207, 405, 381, 271, 445, 151, 290, 390, 750]
                     },
                     {
                         name: '和其正',
                         type: 'line',
                         smooth:true,
-                        symbol:'none',
+                        // //symbol:'none',
                         data: [131, 207, 305, 481, 571, 645, 751, 890, 910, 980]
                     },
                     {
                         name: '白云山',
                         type: 'line',
                         smooth:true,
-                        symbol:'none',
+                        // //symbol:'none',
                         data: [231, 307, 105, 481, 371, 545, 351, 790, 890, 380]
                     },
                 ]
@@ -975,7 +975,7 @@ export default {
                         name: '邓老凉茶',
                         type: 'line',
                         smooth:true,
-                        symbol:'none',
+                        // //symbol:'none',
                         data: [272, 290, 393, 391, 470, 451, 440, 902, 670, 531]
                     },
                 ],
@@ -989,28 +989,28 @@ export default {
                             name: '加多宝',
                             type: 'line',
                             smooth:true,
-                            symbol:'none',
+                            //symbol:'none',
                             data: [631, 607, 605, 581, 671, 645, 351, 390, 490, 450]
                         },
                         {
                             name: '王老吉',
                             type: 'line',
                             smooth:true,
-                            symbol:'none',
+                            //symbol:'none',
                             data: [831, 207, 405, 381, 271, 445, 151, 290, 390, 750]
                         },
                         {
                             name: '和其正',
                             type: 'line',
                             smooth:true,
-                            symbol:'none',
+                            //symbol:'none',
                             data: [131, 207, 305, 481, 571, 645, 751, 890, 910, 980]
                         },
                         {
                             name: '白云山',
                             type: 'line',
                             smooth:true,
-                            symbol:'none',
+                            //symbol:'none',
                             data: [231, 307, 105, 481, 371, 545, 351, 790, 890, 380]
                         },
                     ]
@@ -1025,28 +1025,28 @@ export default {
                             name: '加多宝',
                             type: 'line',
                             smooth:true,
-                            symbol:'none',
+                            //symbol:'none',
                             data: [631, 607, 605, 181, 671, 645, 351, 390, 490, 450]
                         },
                         {
                             name: '王老吉',
                             type: 'line',
                             smooth:true,
-                            symbol:'none',
+                            //symbol:'none',
                             data: [831, 107, 405, 381, 271, 445, 151, 290, 390, 750]
                         },
                         {
                             name: '和其正',
                             type: 'line',
                             smooth:true,
-                            symbol:'none',
+                            //symbol:'none',
                             data: [131, 207, 305, 481, 571, 245, 751, 890, 910, 980]
                         },
                         {
                             name: '白云山',
                             type: 'line',
                             smooth:true,
-                            symbol:'none',
+                            //symbol:'none',
                             data: [231, 307, 405, 481, 371, 545, 351, 790, 890, 380]
                         },
                     ]
@@ -1060,29 +1060,29 @@ export default {
                         {
                             name: '加多宝',
                             type: 'line',
-                            smooth:true,
-                            symbol:'none',
+                            // smooth:true,
+                            // //symbol:'none',
                             data: [331, 607, 605, 581, 671, 645, 351, 390, 490, 450]
                         },
                         {
                             name: '王老吉',
                             type: 'line',
-                            smooth:true,
-                            symbol:'none',
+                            // smooth:true,
+                            // //symbol:'none',
                             data: [831, 207, 305, 381, 271, 445, 151, 290, 390, 750]
                         },
                         {
                             name: '和其正',
                             type: 'line',
-                            smooth:true,
-                            symbol:'none',
+                            // smooth:true,
+                            // //symbol:'none',
                             data: [131, 207, 305, 381, 571, 645, 751, 890, 910, 980]
                         },
                         {
                             name: '白云山',
                             type: 'line',
-                            smooth:true,
-                            symbol:'none',
+                            // smooth:true,
+                            // //symbol:'none',
                             data: [231, 307, 105, 181, 371, 545, 351, 790, 890, 380]
                         },
                     ]
@@ -1103,7 +1103,7 @@ export default {
                         name: '邓老凉茶',
                         type: 'line',
                         smooth:true,
-                        symbol:'none',
+                        //symbol:'none',
                         data: [272, 290, 393, 391, 470, 451, 440, 902, 670, 531]
                     },
                 ],

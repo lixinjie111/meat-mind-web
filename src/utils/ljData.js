@@ -551,47 +551,57 @@ const ljEData = {
 		name: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
 		value: [
 			{
-				name: '今年',
-				type: 'line',
-				smooth: true,
-				areaStyle: {
-					normal: {
-						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-							offset: 0,
-							color: 'rgba(35, 155, 255, 0.4)',
-						}, {
-							offset: 1,
-							color: '#fff'
-						}])
-					},
-				},
-				data: [890000, 550000, 650000]
-			},
-			{
 				name: '去年',
 				type: 'line',
 				smooth: true,
 				areaStyle: {
-					normal: {
-						color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-							{
-								offset: 0,
-								color: 'rgba(254, 119, 75, 0.4)',
-							},
-							// {
-							// 	offset: 0.1,
-							// 	color: 'rgba(254, 119, 75, 0.4)',
-							// },
-							{
-								offset: 1,
-								color: '#fff'
-							}
-						])
-					},
+					color: {
+						type: 'linear',
+						x: 0,
+						y: 0,
+						x2: 0,
+						y2: 1,
+						colorStops: [{
+							offset: 0,
+							color: 'rgba(35, 155, 255, 0.3)',
+						},{
+							offset: 0.6,
+							color: 'rgba(35, 155, 255, 0.2)',
+						},{
+							offset: 1,
+							color: 'rgba(255, 255, 255, 0)'
+						}],
+						global: false // 缺省为 false
+					}
 				},
 				data: [800000, 1200000, 750000, 450000, 760000, 900000, 810000, 960000, 790000, 590000, 630000, 780000, 430000]
 			},
-
+			{
+				name: '今年',
+				type: 'line',
+				smooth: true,
+				areaStyle: {
+					color: {
+						type: 'linear',
+						x: 0,
+						y: 0,
+						x2: 0,
+						y2: 1,
+						colorStops: [{
+							offset: 0,
+							color: 'rgba(254, 119, 75, 0.3)',
+						},{
+							offset: 0.6,
+							color: 'rgba(254, 119, 75, 0.2)',
+						},{
+							offset: 1,
+							color: 'rgba(255, 255, 255, 0)'
+						}],
+						global: false // 缺省为 false
+					}
+				},
+				data: [890000, 550000, 650000]
+			},
 		]
 	},
 	ljBox38: {

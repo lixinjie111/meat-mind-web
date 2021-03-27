@@ -8,10 +8,10 @@
             <div class="user-intro-container">
                 <p>早安，数据管理员，欢迎使用 Meta-Mind-Marketing！</p>
                 <p>整合行业生态资源，融合全场景、全链条、全维度数据，为企业营销提供完整数据支撑，打造全维画像系统。</p>
-                <div class="report-btn">
-                    <i class="iconfont iconxiazai"/>
-                    <span class="btn-txt">一键下载报告</span>
-                </div>
+<!--                <div class="report-btn">-->
+<!--                    <i class="iconfont iconxiazai"/>-->
+<!--                    <span class="btn-txt">一键下载报告</span>-->
+<!--                </div>-->
             </div>
         </div>
         <div class="overview-box">
