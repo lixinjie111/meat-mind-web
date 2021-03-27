@@ -291,7 +291,14 @@
     </div>
 
     <div class="media_three_panel">
-      <div class="media_three_panel_title">竞品媒介策略洞察</div>
+      <div class="media_three_panel_title">
+          <span>竞品媒介策略洞察</span>
+          <ul class="new_echart_legend1">
+                <li><div class="circle"></div>抖音</li>
+                <li><div class="circle circle1"></div>小红书</li>
+                <li><div class="circle circle2"></div>微博</li>
+                <li><div class="circle circle3"></div>快手</li>
+          </ul></div>
       <div class="media_three_panel_box">
         <div class="media_three_item">
           <div class="media_three_item_top">
@@ -3196,11 +3203,39 @@
       padding: 24px;
       border: 1px solid #EAEDF7;
       .media_three_panel_title{
-        font-size: 18px;
-        font-family: PingFangSC-Medium, PingFang SC;
-        font-weight: 500;
-        color: #242F57;
         margin-bottom: 23px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        span{
+           font-size: 18px;
+            font-family: PingFangSC-Medium, PingFang SC;
+            font-weight: 500;
+            color: #242F57;
+        }
+        .new_echart_legend1{
+              display: flex;
+              li{
+                margin-left: 8px;
+                .circle{
+                  &.circle1{
+                    background:#1DCEC3 ;
+                  }
+                  &.circle2{
+                    background:#FDD352 ;
+                  }
+                  &.circle3{
+                    background:#F16E84 ;
+                  }
+                  display: inline-block;
+                  width: 8px;
+                  height: 8px;
+                  background:#2373FF ;
+                  border-radius: 50%;
+                  margin-right: 3px;
+                }
+              }
+            }
       }
       .media_three_panel_box{
         display: flex;

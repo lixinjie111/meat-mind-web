@@ -333,7 +333,7 @@ const zjjEData = {
     ],
     TreeMapData2: [
         {
-            name: "知乎 ",
+            name: "抖音 ",
             value: 35,
             itemStyle: {
                 color:'#2373FF'
@@ -364,7 +364,7 @@ const zjjEData = {
             ],
         },
         {
-            name: "微博",
+            name: "快手",
             value: 10,
             itemStyle: {
                 color:'#F16E84',
@@ -387,7 +387,7 @@ const zjjEData = {
             ],
         },
         {
-            name: "微信",
+            name: "微博",
             value: 20,
             itemStyle: {
                 color: '#FDD352'
@@ -443,7 +443,7 @@ const zjjEData = {
     ],
     TreeMapData3: [
         {
-            name: "抖音 ",
+            name: "快手",
             value: 10,
             itemStyle: {
                 color:'#F16E84',
@@ -480,7 +480,7 @@ const zjjEData = {
             ],
         },
         {
-            name: "微博",
+            name: "小红书",
             value: 15,
             itemStyle: {
                 color: '#1DCEC3',
@@ -503,7 +503,7 @@ const zjjEData = {
             ],
         },
         {
-            name: "微信",
+            name: "抖音",
             value: 30,
             itemStyle: {
                 color:'#2373FF'
@@ -518,7 +518,7 @@ const zjjEData = {
             }, ],
         },
         {
-            name: "小红书",
+            name: "微博",
             value: 18,
             itemStyle: {
                 color: '#FDD352'
@@ -566,7 +566,7 @@ const zjjEData = {
             }, ],
         },
         {
-            name: "微博",
+            name: "快手",
             value: 5,
             itemStyle: {
                 color:'#F16E84',
@@ -591,7 +591,7 @@ const zjjEData = {
             ],
         },
         {
-            name: "快手",
+            name: "小红书",
             value: 20,
             itemStyle: {
                 color:'#1DCEC3',
@@ -614,7 +614,7 @@ const zjjEData = {
             ],
         },
         {
-            name: "小红书",
+            name: "微博",
             value: 25,
             itemStyle: {
                 color: '#FDD352'
