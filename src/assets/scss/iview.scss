@@ -196,6 +196,8 @@
 }
 
 .saas-poptip {
+  min-width: 110px;
+
   &[x-placement^="right"] {
     .ivu-poptip-arrow {
       &:after {
