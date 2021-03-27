@@ -9,7 +9,7 @@
         <i class="iconfont icontianjia"></i>
         {{buttonText}}</Button>
       <template v-if="isArray">
-        <Button  v-for="(it, i) in buttonText" @click="handleAddCondition(i)" :class="['item2', buttonCss]" :disabled="conditionsDisabled[i].length > 0">
+        <Button  v-for="(it, i) in buttonText" :key="i" @click="handleAddCondition(i)" :class="['item2', buttonCss]" :disabled="conditionsDisabled[i].length > 0">
           <i class="iconfont icontianjia"></i>
           {{it}}</Button>
       </template>
