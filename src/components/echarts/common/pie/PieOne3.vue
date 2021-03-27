@@ -103,11 +103,12 @@ export default {
 					},
 					itemGap: 20
 				},
-				series: [{
+				series: [
+					{
 					name: 'shadow1',
 					type: 'pie',
 					z: 1,
-					radius: [0, '80%'],
+					radius: [0, '67%'],
 					hoverAnimation: false,
 					labelLine: {
 						show: false
@@ -124,7 +125,7 @@ export default {
 					name: 'shadow2',
 					type: 'pie',
 					z: 2,
-					radius: [0, '60%'],
+					radius: [0, '45%'],
 					hoverAnimation: false,
 					labelLine: {
 						show: false
@@ -174,7 +175,7 @@ export default {
 								color: '#EAEDF7',
 							}
 						},
-						radius: '78.5%',
+						radius: '65%',
 						splitNumber: 24,
 						startAngle: 90,
 						endAngle: 90+360,
@@ -183,7 +184,7 @@ export default {
 						name: '最优曝光时间',
 						type: 'pie',
 						z: 3,
-						radius: ['60%', '78.5%'],
+						radius: ['45%', '65%'],
 						avoidLabelOverlap: false,
 						// hoverAnimation: false,
 						label: {
@@ -195,7 +196,9 @@ export default {
 							color: '#97A0C3'
 						},
 						labelLine: {
-							show: true
+							show: true,
+							length: 3,
+              				length2: 3
 						},
 						data
 					},

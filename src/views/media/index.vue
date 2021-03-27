@@ -415,7 +415,7 @@
                       投放预算
                     </div>
                     <div class="navBm">
-                      {{item.numTxt2}}人
+                      {{item.numTxt2}}元
                     </div>
                   </div>
                 </div>
@@ -438,19 +438,19 @@
                       投放预算
                     </div>
                     <div class="navBm">
-                      {{item.numTxt2}}人
+                      {{item.numTxt2}}元
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="navContentItem">
+              <div class="navContentItem1">
                 <div class="navTitle">最优曝光时间</div>
                 <div class="navSubTitle">未来7日，每日12-13点/18-23点；</div>
                 <div class="new_echart_box">
                   <PieOne3 id="304" :myData="myChartData5" title="未来7日"></PieOne3>
                 </div>
               </div>
-              <div class="navContentItem">
+              <div class="navContentItem1">
                 <div class="navTitle">投放预算</div>
                 <div class="navSubTitle"></div>
                 <div class="new_echart_box">
@@ -575,10 +575,10 @@
                 <li>媒介价值贡献排名</li> -->
           </ul>
           <div class="h-right">
-            <div class="h-tab">
+            <!-- <div class="h-tab">
               <div class="left" :class="{'act':cur==0}" @click="cur=0">类型</div>
               <div class="right" :class="{'act':cur==1}" @click="cur=1">渠道名称</div>
-            </div>
+            </div> -->
             <!-- <div class="h-select"> -->
             <Select v-model="model1" style="width: 120px" placeholder="过去3天">
               <Option v-for="item in dateList" :value="item.value" :key="item.value">{{ item.label }}</Option>
@@ -601,7 +601,7 @@
                 </div>
               </div>
               <div class="m-rank-progress">
-                <Progress :percent="item.per" status="active" :stroke-width="9"/>
+                <Progress :percent="item.per" status="active" :stroke-width="9" hide-info/>
               </div>
             </div>
           </div>
@@ -1180,47 +1180,47 @@
       ];
       this.rankList=[
         {
-          per:23,
+          per:93,
           text:'抖音',
           icon:this.dyIcon,
         },
         {
-          per:22,
+          per:92,
           text:'微博',
           icon:this.wbIcon,
         },
         {
-          per:18,
+          per:88,
           text:'小红书',
           icon:this.xhsIcon,
         },
         {
-          per:11,
+          per:81,
           text:'今日头条',
           icon:this.ttIcon,
         },
         {
-          per:8,
+          per:78,
           text:'微信',
           icon:require("../../assets/img/yhhx/weiicon.png"),
         },
         {
-          per:7,
+          per:77,
           text:'大众点评',
           icon:require("../../assets/img/yhhx/daicon.png"),
         },
         {
-          per:5,
+          per:75,
           text:'人民日报',
           icon:require("../../assets/img/yhhx/renicon.png"),
         },
         {
-          per:3,
+          per:73,
           text:'虎嗅',
           icon:require("../../assets/img/yhhx/huicon.png"),
         },
         {
-          per:3,
+          per:63,
           text:'第一财经',
           icon:require("../../assets/img/yhhx/caiicon.png"),
         },
@@ -2110,100 +2110,100 @@
             this.myChartData2=this.$lxjData.box102Data,
             this.myChartData3=this.$lxjData.box103Data,
             this.rankList=[
-              {
-                per:23,
-                text:'抖音',
-                icon:this.dyIcon,
-              },
-              {
-                per:22,
-                text:'微博',
-                icon:this.wbIcon,
-              },
-              {
-                per:18,
-                text:'小红书',
-                icon:this.xhsIcon,
-              },
-              {
-                per:11,
-                text:'今日头条',
-                icon:this.ttIcon,
-              },
-              {
-                per:8,
-                text:'微信',
-                icon:require("../../assets/img/yhhx/weiicon.png"),
-              },
-              {
-                per:7,
-                text:'大众点评',
-                icon:require("../../assets/img/yhhx/daicon.png"),
-              },
-              {
-                per:5,
-                text:'人民日报',
-                icon:require("../../assets/img/yhhx/renicon.png"),
-              },
-              {
-                per:3,
-                text:'虎嗅',
-                icon:require("../../assets/img/yhhx/huicon.png"),
-              },
-              {
-                per:3,
-                text:'第一财经',
-                icon:require("../../assets/img/yhhx/caiicon.png"),
-              },
-            ];
+        {
+          per:93,
+          text:'抖音',
+          icon:this.dyIcon,
+        },
+        {
+          per:92,
+          text:'微博',
+          icon:this.wbIcon,
+        },
+        {
+          per:88,
+          text:'小红书',
+          icon:this.xhsIcon,
+        },
+        {
+          per:81,
+          text:'今日头条',
+          icon:this.ttIcon,
+        },
+        {
+          per:78,
+          text:'微信',
+          icon:require("../../assets/img/yhhx/weiicon.png"),
+        },
+        {
+          per:77,
+          text:'大众点评',
+          icon:require("../../assets/img/yhhx/daicon.png"),
+        },
+        {
+          per:75,
+          text:'人民日报',
+          icon:require("../../assets/img/yhhx/renicon.png"),
+        },
+        {
+          per:73,
+          text:'虎嗅',
+          icon:require("../../assets/img/yhhx/huicon.png"),
+        },
+        {
+          per:63,
+          text:'第一财经',
+          icon:require("../../assets/img/yhhx/caiicon.png"),
+        },
+      ];
         }else{
           this.myChartData1=this.$lxjData.box582Data,
             this.myChartData2=this.$lxjData.box1021Data,
             this.myChartData3=this.$lxjData.box1031Data,
             this.rankList=[
               {
-                per:35,
+                per:95,
                 text:'抖音',
                 icon:this.dyIcon,
               },
               {
-                per:32,
+                per:92,
                 text:'今日头条',
                 icon:this.ttIcon,
               },
               {
-                per:27,
+                per:87,
                 text:'微博',
                 icon:this.wbIcon,
               },
               {
-                per:18,
+                per:85,
                 text:'小红书',
                 icon:this.xhsIcon,
               },
               {
-                per:10,
+                per:83,
                 text:'大众点评',
                 icon:require("../../assets/img/yhhx/daicon.png"),
               },
               {
-                per:9,
+                per:79,
                 text:'第一财经',
                 icon:require("../../assets/img/yhhx/caiicon.png"),
               },
               {
-                per:8,
+                per:78,
                 text:'微信',
                 icon:require("../../assets/img/yhhx/weiicon.png"),
               },
 
               {
-                per:5,
+                per:75,
                 text:'人民日报',
                 icon:require("../../assets/img/yhhx/renicon.png"),
               },
               {
-                per:3,
+                per:63,
                 text:'虎嗅',
                 icon:require("../../assets/img/yhhx/huicon.png"),
               },
@@ -3409,7 +3409,30 @@
                 border-bottom: none;
               }
             }
-            .navContentItem:last-child{
+             .navContentItem1{
+              flex:1;
+              border-right: 1px solid #EAEDF7;
+              display: flex;
+              flex-direction: column;
+              .navTitle{
+                padding-left:16px;
+                font-size: 14px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: #242F57;
+                margin-bottom: 7px;
+              }
+              .navSubTitle{
+                 padding-left:16px;
+                font-size: 12px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636E95;
+                height: 16px;
+                margin-bottom: 26px;
+              }
+             }
+            .navContentItem1:last-child{
               border-right: none;
             }
           }

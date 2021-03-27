@@ -89,12 +89,23 @@ export default {
             type: "pie",
             center: ['30%', '50%'],
             radius : ['50%', '40%'],
-            label: {
-              
-                position: "inner",
+             //silent: true,
+            // label: {
+            //     show: false,
+            //     position: "inner",
 
+            // },
+            itemStyle:  {
+                normal: {
+                    label: {
+                        show: false
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                }
             },
-
+            hoverAnimation: false,
             data: [
               {
                 value: "967",
@@ -112,10 +123,11 @@ export default {
               },
               {
                 value: "2800",
+                tooltip:{
+                      show:false,
+                    },
                 itemStyle: {
-                  
                     color: "rgba(213,223,236,1)",
-        
                 },
               },
             ],
@@ -125,6 +137,16 @@ export default {
             type: "pie",
             center: ['30%', '50%'],
             radius : ['60%', '70%'],
+            itemStyle:  {
+                normal: {
+                    label: {
+                        show: false
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                }
+            },
             data: [
               {
                 value: "825",
@@ -142,10 +164,11 @@ export default {
               },
               {
                 value: "500",
-                itemStyle: {
-                  
-                    color: "transparent",
-                
+                tooltip:{
+                      show:false,
+                    },
+                 itemStyle: {
+                    color: "rgba(213,223,236,1)",
                 },
               },
             ],
@@ -155,6 +178,16 @@ export default {
             type: 'pie',
             center: ['30%', '50%'],
             radius : ['80%', '90%'],
+            itemStyle:  {
+                normal: {
+                    label: {
+                        show: false
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                }
+            },
             data:[
                 // {value:1078, name:'潜在顾客'}
                 {
@@ -173,6 +206,9 @@ export default {
                 },
                 {
                     value:'800', 
+                    tooltip:{
+                      show:false,
+                    },
                     itemStyle: {
                         
                             color: "rgba(213,223,236,1)",

@@ -102,7 +102,9 @@
               lineStyle: {
                 color: '#7C88B1'
               },
-
+              smooth: 0.2,
+              length: 6,
+              length2: 6
             },
             data: name.map((e, i)=>({ name: e, value: value[i] })),
           }]
