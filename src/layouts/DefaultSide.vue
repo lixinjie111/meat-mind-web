@@ -1,6 +1,6 @@
 <template>
     <div class="menu">
-        <div class="logo"></div>
+        <div class="logo" @click="back"></div>
         <Menu ref="side_menu"
               theme="light"
               :active-name="activeName"
@@ -183,6 +183,9 @@
             };
         },
         methods: {
+            back() {
+                this.$router.push({name: 'dashboard'});
+            },
             checkItem(item) {
                 if (item.path != this.$route.meta.moduleName) {
                     this.$router.push({name: item.path});
@@ -251,6 +254,7 @@
             height: 30px;
             margin: 29px 84px 48px 50px;
             background: url("../assets/img/side/logo-colour@2x.png") no-repeat center / 108px 30px;
+            cursor: pointer;
         }
     }
 </style>

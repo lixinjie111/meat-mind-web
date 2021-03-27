@@ -72,7 +72,7 @@ export default {
                 left: 2,
                 right: 2,
                 bottom: 30,
-                top: '10%',
+                top: '15%',
                 containLabel: true,
 			},
 			legend: {

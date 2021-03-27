@@ -84,7 +84,7 @@ export default {
   padding: 16px 24px;
   background: #ffffff;
   box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid #eaedf7;
   cursor: pointer;
     .ivu-table{
