@@ -34,11 +34,20 @@ export default {
     },
     defaultOption() {
       var option = (option = {
+         tooltip: {
+          trigger: "item",
+         },
         tooltip: {
           show: true,
+          backgroundColor: "rgba(0,0,0,0.7)", //设置背景图片 rgba格式
+          borderWidth: "0", //边框宽度设置1
+          //borderColor: "gray", //设置边框颜色
+          textStyle: {
+            color: "#fff" //设置文字颜色
+          },
           formatter(params) {
-              var result = "<div style='color:black;'>" + params.treePathInfo[1].name + "</div>";
-              result += `<span style="display:block;margin-right:5px;margin-bottom:2px;border-radius:10px;color:black;'">${params.treePathInfo[2].name} ：${params.treePathInfo[2].value}%</span>`;
+              var result = "<div>" + params.treePathInfo[1].name + "</div>";
+              result += `<span style="display:block;margin-right:5px;margin-bottom:2px;border-radius:10px;'">${params.treePathInfo[2].name} ：${params.treePathInfo[2].value}%</span>`;
               return result;
           }
         },

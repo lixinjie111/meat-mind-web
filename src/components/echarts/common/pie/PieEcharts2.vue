@@ -84,7 +84,13 @@ export default {
         },
         tooltip: {
           trigger: "item",
-        },
+          backgroundColor: "rgba(0,0,0,0.6)", //设置背景图片 rgba格式
+          borderWidth: "0", //边框宽度设置1
+          //borderColor: "gray", //设置边框颜色
+          textStyle: {
+            color: "#fff" //设置文字颜色
+          },
+         },
         series: [
           {
             name: "忠实顾客",
