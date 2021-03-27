@@ -1,9 +1,9 @@
 import echarts from 'echarts';
 
-function mediaTooltip(medias, percents) {
-  return `<div style="line-height: 24px; color: rgba(255,255,255,0.7);"><span style="display: inline-block;background: #4D94FF;font-size: 6px;border-radius: 6px;margin-right: 6px;width: 12px;height: 12px;vertical-align: top;margin-top: 6px;line-height: 1;text-align: center;">1</span><img style="width: 18px; display: inline-block; vertical-align: top; margin-top: 3px" src="/static/img/medias/logo${medias[0]}.png"> <span style="font-size: 12px;margin-left: 12px;">贡献占比：${percents[0]}%</span></div>
-<div style="line-height: 24px; color: rgba(255,255,255,0.7);"><span style="display: inline-block;background: #A49DFA;font-size: 6px;border-radius: 6px;margin-right: 6px;width: 12px;height: 12px;vertical-align: top;margin-top: 6px;line-height: 1;text-align: center;">2</span><img style="width: 18px; display: inline-block; vertical-align: top; margin-top: 3px" src="/static/img/medias/logo${medias[1]}.png"> <span style="font-size: 12px;margin-left: 12px;">贡献占比：${percents[1]}%</span></div>
-<div style="line-height: 24px; color: rgba(255,255,255,0.7);"><span style="display: inline-block;background: #FC809F;font-size: 6px;border-radius: 6px;margin-right: 6px;width: 12px;height: 12px;vertical-align: top;margin-top: 6px;line-height: 1;text-align: center;">3</span><img style="width: 18px; display: inline-block; vertical-align: top; margin-top: 3px" src="/static/img/medias/logo${medias[2]}.png"> <span style="font-size: 12px;margin-left: 12px;">贡献占比：${percents[2]}%</span></div>`;
+function mediaTooltip(medias, percents, dir='medias') {
+  return `<div style="line-height: 24px; color: rgba(255,255,255,0.7);"><span style="display: inline-block;background: #4D94FF;font-size: 6px;border-radius: 6px;margin-right: 6px;width: 12px;height: 12px;vertical-align: top;margin-top: 6px;line-height: 1;text-align: center;">1</span><img style="width: 18px; display: inline-block; vertical-align: top; margin-top: 3px" src="/static/img/${dir}/logo${medias[0]}.png"> <span style="font-size: 12px;margin-left: 12px;">贡献占比：${percents[0]}%</span></div>
+<div style="line-height: 24px; color: rgba(255,255,255,0.7);"><span style="display: inline-block;background: #A49DFA;font-size: 6px;border-radius: 6px;margin-right: 6px;width: 12px;height: 12px;vertical-align: top;margin-top: 6px;line-height: 1;text-align: center;">2</span><img style="width: 18px; display: inline-block; vertical-align: top; margin-top: 3px" src="/static/img/${dir}/logo${medias[1]}.png"> <span style="font-size: 12px;margin-left: 12px;">贡献占比：${percents[1]}%</span></div>
+<div style="line-height: 24px; color: rgba(255,255,255,0.7);"><span style="display: inline-block;background: #FC809F;font-size: 6px;border-radius: 6px;margin-right: 6px;width: 12px;height: 12px;vertical-align: top;margin-top: 6px;line-height: 1;text-align: center;">3</span><img style="width: 18px; display: inline-block; vertical-align: top; margin-top: 3px" src="/static/img/${dir}/logo${medias[2]}.png"> <span style="font-size: 12px;margin-left: 12px;">贡献占比：${percents[2]}%</span></div>`;
 }
 
 const mediaHezuo = [
@@ -255,7 +255,7 @@ barLine:{
         tooltip: {
           show: true,
           formatter: (params) => {
-            return mediaTooltip(mediaKOL[params.dataIndex].media, mediaKOL[params.dataIndex].percent);
+            return mediaTooltip(mediaKOL[params.dataIndex].media, mediaKOL[params.dataIndex].percent, 'heads');
           }
         },
         data: [4.9, 5.2, 3.6, 4.7, 4.8, 7.1]
