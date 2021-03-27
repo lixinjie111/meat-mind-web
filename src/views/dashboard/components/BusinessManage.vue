@@ -736,7 +736,7 @@
                                     color: '#F54A45',
                                     shadowBlur: 5,
                                     shadowColor: '#F54A45'
-                                
+
                             },
                             zlevel: 1
                         },
@@ -755,11 +755,11 @@
                                 brushType: 'fill',
                             },
                             itemStyle: {
-                               
+
                                     color: '#2373FF',
                                     shadowBlur: 5,
                                     shadowColor: '#2373FF'
-                            
+
                             },
                             zlevel: 1
                         },
@@ -769,14 +769,14 @@
                             symbol: 'circle',
                             data: effectValues2,
                             itemStyle: {
-                              
+
                                     borderWidth: '2',
                                     borderType: 'solid',
                                     borderColor: '#ffffff',
                                     color: '#999999',
                                     shadowColor: '#515a6e',
                                     shadowBlur: 10
-                              
+
                             },
                             cursor: 'pointer',
                             zlevel: 1
@@ -839,14 +839,15 @@
                                     break;
                             }
 
-                            html += `<div style="color: #666;font-size: 14px;line-height: 24px; width: 156px">
-                                        <div style="color: #333;font-weight:700;">Q${v.name}: <span style=";font-size: 18px">${v.value}%</span></div>
-                                        <div style="color: red;">风险预警：</div>
-                                        <div style="color: #999;font-size: 12px">${text}</div>
+                            html += `<div class="tips-box">
+                                        <div class="tips-title" >Q${v.name}: <span class="tips-title-value">${v.value}%</span></div>
+                                        <div style="color: red;">风险预警！</div>
+                                        <div class="tips-desc" >${text}</div>
+                                        <div class="tips-btn">监控该风险</div>
                                     </div>`;
                             return html
                         },
-                        extraCssText: 'background: rgba(255, 255, 255, .9); border-radius: 8px;box-shadow: 0 0 10px rgba(0, 0, 0, .2);color: red;padding: 12px;',
+                        extraCssText: 'background: rgba(0, 0, 0, 0.7); border-radius: 8px;box-shadow: 0 0 10px rgba(0, 0, 0, .2);padding: 12px;',
                         axisPointer: {
                             type: 'line',
                             lineStyle: {
@@ -919,7 +920,7 @@
                                 color: '#FF9F7F',
                                 shadowBlur: 5,
                                 shadowColor: '#FF9F7F'
-                           
+
                         },
                         lineStyle: {
                                 width: 2 / 144 * window.rem,
@@ -1036,6 +1037,39 @@
         /*}*/
     }
     }
+</style>
+<style lang="scss">
+.tips-box{
+  font-size: 14px;
+  line-height: 24px;
+  width: 200px;
+  .tips-title{
+    font-weight:700;
+    color: #FFFFFF;
+    .tips-title-value{
+      font-size: 18px
+    }
+  }
+  .tips-desc{
+    font-size: 12px;
+    color: #FFFFFF;
+    line-height: 17px;
+  }
+  .tips-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-top: 16px;
+  }
+}
+
 </style>
 <style scoped lang="scss">
     .manage-box {
@@ -1629,7 +1663,7 @@
                     }
                     .h220{
                         height: 220px;
-                    }   
+                    }
                 }
             }
         }
