@@ -64,15 +64,15 @@ export default {
 				title: {
 					subtext: ''+value,
 					text: this.title,
-					top: '30%',
+					top: '35%',
 					left: 'center',
 					textStyle: {
-						fontSize: 10,
+						fontSize: 10 / 144 * window.rem,
 						fontWeight: 400,
 						color: '#999'
 					},
 					subtextStyle: {
-						fontSize: 20,
+						fontSize: 20 / 144 * window.rem,
 						fontWeight: 400,
 						color: 'black'
 					},
@@ -88,7 +88,7 @@ export default {
 						show: false
 					},
 					itemStyle: {
-						shadowBlur: 10,
+						shadowBlur: 10 / 144 * window.rem,
 						shadowColor: 'rgba(134, 143, 191, 0.3)',
 					},
 					data: [
@@ -106,7 +106,7 @@ export default {
 						show: false
 					},
 					itemStyle: {
-						shadowBlur: 10,
+						shadowBlur: 10 / 144 * window.rem,
 						shadowColor: 'rgba(134, 143, 191, 0.3)',
 					},
 					data: [
@@ -129,7 +129,7 @@ export default {
 							show: false
 						},
 						itemStyle: {
-							borderRadius: 30,
+							borderRadius: 30 / 144 * window.rem,
 						},
 						data: [
 							{value: value},

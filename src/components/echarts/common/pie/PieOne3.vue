@@ -84,13 +84,22 @@
 				let data = [{value: 0}];
 				let prev = 0;
 				for (let i=0; i<value.length/2; i++) {
-					data.push({value: timeValue(value[ i*2 ]) - prev, label: {show: false}}, {name: value[ i*2 ] +' - '+ value[ i*2+1 ], value: timeValue(value[ i*2+1 ]) - timeValue(value[ i*2 ]),label: {show: false}});
+					data.push({value: timeValue(value[ i*2 ]) - prev, label: {show: false}}, {name: value[ i*2 ] +' - '+ value[ i*2+1 ], value: timeValue(value[ i*2+1 ]) - timeValue(value[ i*2 ]),label: {show: false}, tooltip: {show: true, trigger: 'item', formatter: '{a}<br>{b}'}});
 					prev = timeValue(value[ i*2+1 ]);
 				}
 				if (prev < 24)
 					data.push({value: 24 - prev});
 
 				var option = {
+					tooltip: {
+						show: false,
+						trigger: 'item',
+						backgroundColor: 'rgba(0,0,0, .7)',
+						borderWidth: 0,
+						textStyle: {
+							color: '#fff'
+						}
+					},
 					color:this.colorList,
 					title: {
 						text: this.title,

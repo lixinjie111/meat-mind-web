@@ -67,10 +67,11 @@ export default {
 					top: 'center',
 					left: 'center',
 					textStyle: {
-						fontSize: 38,
+						fontSize: 38 / 144 * window.rem,
 						fontWeight: 400
 					},
 					subtextStyle: {
+						fontSize: 12 / 144 * window.rem,
 						color: '#666'
 					},
 					itemGap: 0
@@ -85,7 +86,7 @@ export default {
 						show: false
 					},
 					itemStyle: {
-						shadowBlur: 15,
+						shadowBlur: 15 / 144 * window.rem,
 						shadowColor: 'rgba(134, 143, 191, 0.3)',
 					},
 					data: [
@@ -105,8 +106,8 @@ export default {
 							position: 'center'
 						},
 						itemStyle: {
-							borderRadius: 30,
-							shadowBlur: 10,
+							borderRadius: 30 / 144 * window.rem,
+							shadowBlur: 10 / 144 * window.rem,
 							shadowColor: 'rgba(35,115,255, 0.3)',
 						},
 						labelLine: {
