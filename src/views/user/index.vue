@@ -980,7 +980,7 @@
 					    心智时空曲线
 				    </div>
 				    <div class="yhsj_echarts_item_content">
-					    <barT id="box9" :colorList="$lxjData.colorList" ></barT>
+					    <barT1 id="box9" :colorList="$lxjData.colorList" ></barT1>
 				    </div>
 			    </div>
 			    <div class="xinzfb_container">
@@ -1104,13 +1104,13 @@
 			    <div class="xfzsxjcfx_container">
 				    <div class="xfzsxjcfx_til">消费者时序行为决策分析</div>
 				    <div class="xfzsxjcfx_ech">
-					    <barT1 id="box91" :colorList="$lxjData.colorList" ></barT1>
+					    <barT2 id="box91" :colorList="$lxjData.colorList" ></barT2>
 				    </div>
 			    </div>
 			    <div class="xfzsxjcfx_container">
 				    <div class="xfzsxjcfx_til">消费者行为决策预测</div>
 				    <div class="xfzsxjcfx_ech">
-					    <barT2 id="box92" :colorList="$lxjData.colorList" ></barT2>
+					    <barT id="box92" :colorList="$lxjData.colorList" ></barT>
 				    </div>
 			    </div>
 		    </div>
@@ -1128,9 +1128,9 @@ import lineM from '../../components/echarts/common/line/lineM';
 import barC from '../../components/echarts/common/bar/barC';
 import barCH from '../../components/echarts/common/bar/barCH';
 import barLine from '../../components/echarts/common/bar/barLine';
-import barT from '../../components/echarts/common/bar/barT1';
-import barT1 from '../../components/echarts/common/bar/barT2';
-import barT2 from '../../components/echarts/common/bar/barT';
+import barT from '../../components/echarts/common/bar/barT';
+import barT1 from '../../components/echarts/common/bar/barT1';
+import barT2 from '../../components/echarts/common/bar/barT2';
 import funnel from '../../components/echarts/common/funnel/funnel';
 import barHM from '../../components/echarts/common/bar/barHM';
 import lineSp from '../../components/echarts/common/line/lineSp';
