@@ -18,7 +18,7 @@
             <div class="actionList" v-if="row.name=='系统默认看板'">
                 <div class="detail" @click="look(row.name)">查看</div>
                 <div class="detail">
-                  <Dropdown trigger="click" style="margin-left: 20px"  @on-visible-change="edit1(row.name)" @on-click="edit">
+                  <Dropdown trigger="click" style="margin-left: 20px" :transfer="true" @on-visible-change="edit1(row.name)" @on-click="edit">
                     <a class="detail">
                         更多
                         <Icon type="ios-arrow-down"></Icon>
@@ -33,7 +33,7 @@
             <div class="actionList" v-else>
                 <div class="detail" @click="look(row.name)">查看</div>
                 <div class="detail" v-if="row.type=='使用中'">
-                  <Dropdown trigger="click" style="margin-left: 20px"  @on-visible-change="edit1(row.name)" @on-click="edit">
+                  <Dropdown trigger="click" style="margin-left: 20px" :transfer="true"  @on-visible-change="edit1(row.name)" @on-click="edit">
                     <a class="detail">
                         更多
                         <Icon type="ios-arrow-down"></Icon>
@@ -46,7 +46,7 @@
                     </Dropdown>
                 </div>
                 <div class="detail" v-else>
-                  <Dropdown trigger="click" style="margin-left: 20px" @on-visible-change="edit1(row.name)" @on-click="edit">
+                  <Dropdown trigger="click" style="margin-left: 20px" :transfer="true" @on-visible-change="edit1(row.name)" @on-click="edit">
                     <a class="detail">
                         更多
                         <Icon type="ios-arrow-down"></Icon>

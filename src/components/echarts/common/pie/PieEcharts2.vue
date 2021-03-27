@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     getChart() {
-      this.myChart = this.$echarts.init(document.getElementById(this.chartID));
+      this.myChart = echarts5.init(document.getElementById(this.chartID));
       window.addEventListener("resize", () => {
         this.myChart.resize();
       });
@@ -95,11 +95,6 @@ export default {
 							show: false,
 							position: 'center'
 						},
-						itemStyle: {
-							borderRadius: 30,
-							shadowBlur: 10,
-							shadowColor: 'rgba(35,115,255, 0.3)',
-						},
 						labelLine: {
 							show: false
 						},
@@ -108,6 +103,9 @@ export default {
               {
                 value: "967",
                 name: "忠实顾客",
+                itemStyle: {
+                  borderRadius: 30,
+                },
                 // itemStyle: {
                 //   emphasis: {
                 //     shadowBlur: 10,
@@ -125,7 +123,7 @@ export default {
                       show:false,
                     },
                 itemStyle: {
-                    color: "rgba(213,223,236,1)",
+                    color: "#F4F7FC",
                 },
               },
             ],
@@ -139,11 +137,6 @@ export default {
 							show: false,
 							position: 'center'
 						},
-						itemStyle: {
-							borderRadius: 30,
-							shadowBlur: 10,
-							shadowColor: 'rgba(35,115,255, 0.3)',
-						},
 						labelLine: {
 							show: false
 						},
@@ -151,6 +144,9 @@ export default {
               {
                 value: "825",
                 name: "摇摆顾客",
+                 itemStyle: {
+                  borderRadius: 30,
+                },
                 // itemStyle: {
                 //   emphasis: {
                 //     shadowBlur: 10,
@@ -168,7 +164,7 @@ export default {
                       show:false,
                     },
                  itemStyle: {
-                    color: "rgba(213,223,236,1)",
+                   color: "#F4F7FC",
                 },
               },
             ],
@@ -182,11 +178,6 @@ export default {
 							show: false,
 							position: 'center'
 						},
-						itemStyle: {
-							borderRadius: 30,
-							shadowBlur: 10,
-							shadowColor: 'rgba(35,115,255, 0.3)',
-						},
 						labelLine: {
 							show: false
 						},
@@ -195,6 +186,9 @@ export default {
                 {
                     value:'1078',
                     name:'潜在顾客',
+                     itemStyle: {
+                  borderRadius: 30,
+                },
                     // itemStyle: {
                     //     emphasis: {
                     //         shadowBlur: 10,
@@ -213,7 +207,7 @@ export default {
                     },
                     itemStyle: {
                         
-                            color: "rgba(213,223,236,1)",
+                            color: "#F4F7FC",
                         }
                     
                 }
