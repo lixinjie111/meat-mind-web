@@ -163,7 +163,7 @@
 			<barLine id="box10" :colorList="$lxjData.colorList" :myData="$lxjData.box10Data"></barLine>
 		</div>
 		<div class="box">
-			<funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box111Data"></funnel>
+			<funnel id="box111" :colorList="$lxjData.colorList1" :myData="$lxjData.box111Data"></funnel>
 		</div>
 		<div class="box">
 			<lineSp id="box112" :colorList="$lxjData.colorList"></lineSp>

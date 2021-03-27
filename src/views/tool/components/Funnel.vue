@@ -39,7 +39,7 @@
       </div>
       <div class="charts">
         <div class="new_echart_box">
-          <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box119Data"></funnel>
+          <funnel id="box111" :colorList="$lxjData.colorList2" :myData="$lxjData.box119Data"></funnel>
         </div>
         <div class="gap"></div>
         <div class="box">

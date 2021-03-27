@@ -1068,7 +1068,7 @@
 			    <div class="xfsmlcpg_container">
 				    <div class="xfsmlcpg_title">消费生命旅程评估</div>
 				    <div class="xinzfb_container_lef_content1">
-					    <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box111Data"></funnel>
+					    <funnel id="box111" :colorList="$lxjData.colorList1" :myData="$lxjData.box111Data"></funnel>
 				    </div>
 			    </div>
 			    <div class="xfjzg_container">
@@ -3859,8 +3859,8 @@ export default {
         flex:1
       }
       .xinzfb_container_lef_content1{
-        width:60%;
-        margin:auto;
+        width: 60%;
+        margin: 24px auto 0;
         flex:1
       }
     }

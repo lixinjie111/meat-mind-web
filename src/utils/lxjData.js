@@ -1,6 +1,8 @@
 import echarts from 'echarts';
 const lxjEData = {
     colorList : ['#2373FF', '#FE774B', '#1DCEC3', '#F16E84', '#FDD352', '#7BABFF', '#FFAE93', '#77E1DB', '#F6A8B5', '#FEE597', '#BDD5FF', '#FFD7C9', '#BBF1ED', '#FBD4DA', '#FEF1CB', '#FF9F7F'],
+    colorList1: ['#1455D9','#2373FF','#4488FF','#75B1FF','#9ECBFF', '#D3E3FF','#F0F8FF'],
+    colorList2: ['#4488FF', '#75B1FF','#9ECBFF'],
     box1Data:{
         name:['研究生及以上', '本科', '大专', '职高', '高中', '初中及以下',],
         value:[4, 20, 30, 26, 15, 5],
@@ -1567,12 +1569,12 @@ const lxjEData = {
     box111Data:{
         name: ['潜在用户','新增用户','留存用户','活跃用户','忠实用户','铁粉'],
         value:  [
+            {value: 100, name: '潜在用户'},
+            {value: 80, name: '新增用户'},
             {value: 60, name: '留存用户'},
             {value: 40, name: '活跃用户'},
             {value: 20, name: '忠实用户'},
-            {value: 80, name: '新增用户'},
-            {value: 10, name: '铁粉'},
-            {value: 100, name: '潜在用户'}
+            {value: 10, name: '铁粉'}
         ]
     },
     box119Data:{

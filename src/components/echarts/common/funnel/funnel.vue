@@ -35,26 +35,27 @@ export default {
 		},
 		defaultOption() {
 			var option = {
-				color: ['#4488FF','#75B1FF','#9ECBFF',],
+				color: this.colorList,
 				tooltip: {
 					trigger: 'item',
 					formatter: "{b} : {c}%"
 				},
 				legend: {
-					show:false,
-					data:this.myData.name,
-					right:0,
-                    itemGap: 5,
+					show: false,
+					bottom:0,
+					itemWidth: 6,
+					itemHeight: 6,
+					icon:"circle",
+					data:this.myData.legName,
 				},
-
 				series: [
 					{
 						name:'',
 						type:'funnel',
-						left: '10%',
-						top: 0,
-						bottom: 60,
-						width: '90%',
+						left: 0,
+						top: 20,
+						bottom: 20,
+						width: '100%',
 						min: 0,
 						max: 100,
 						minSize: '10%',

@@ -482,8 +482,8 @@
                 <div class="zuhe_echarts_subtitle">目标覆盖用户</div>
                 <div class="zuhe_echarts_num">800万</div>
               </div>
-              <div class="new_echart_box">
-                <funnel id="box111" :colorList="$lxjData.colorList" :myData="$lxjData.box119Data"></funnel>
+              <div class="new_echart_box mt15">
+                <funnel id="box111" :colorList="$lxjData.colorList2" :myData="$lxjData.box119Data"></funnel>
               </div>
             </div>
 
@@ -2306,6 +2306,11 @@
   }
   .media-protrait {
     padding: 0 24px 24px 24px;
+
+    .mt15 {
+      margin-top: -15px;
+    }
+
     .new_echart_box{
       flex:1;
     }
