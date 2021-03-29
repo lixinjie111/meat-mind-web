@@ -24,7 +24,7 @@ export default {
   data(){
     return {
         modelList:[
-            {   
+            {
                 icon:"iconshijianfenxi",
                 type:"event",
                 title:"事件分析",
@@ -94,7 +94,7 @@ export default {
       this.$router.push({name:"analysis-tool-model-distribute"})
     },
     way(){
-      // this.$router.push({name:"analysis-tool-model-way"})
+      this.$router.push({name:"analysis-tool-model-way"})
     },
     hot(){
       // this.$router.push({name:"analysis-tool-model-hot"})
