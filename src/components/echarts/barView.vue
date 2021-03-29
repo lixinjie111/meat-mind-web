@@ -151,13 +151,13 @@
 			<barLine id="box8" :colorList="$lxjData.colorList" :myData="$lxjData.box8Data"></barLine>
 		</div>
 		<div class="box">
-			<barT id="box9" :colorList="$lxjData.colorList" ></barT>
+			<lineAreaPieces id="box9" :colorList="$lxjData.colorList" ></lineAreaPieces>
 		</div>
 		<div class="box">
-			<barT id="box91" :colorList="$lxjData.colorList" ></barT>
+			<lineAreaPieces id="box91" :colorList="$lxjData.colorList" ></lineAreaPieces>
 		</div>
 		<div class="box">
-			<barT id="box92" :colorList="$lxjData.colorList" ></barT>
+			<lineAreaPieces id="box92" :colorList="$lxjData.colorList" ></lineAreaPieces>
 		</div>
 		<div class="box">
 			<barLine id="box10" :colorList="$lxjData.colorList" :myData="$lxjData.box10Data"></barLine>
@@ -265,22 +265,20 @@
 </template>
 
 <script>
+	import barC from './common/bar/barC';
+	import barCH from './common/bar/barCH';
 	import barEcharts from './common/bar/barEcharts';
+	import barHM from './common/bar/barHM';
 	import barL from './common/bar/barL';
+	import barLine from './common/bar/barLine';
 	import barM from './common/bar/barM';
-	import barM1 from './common/bar/barM1';
-	import barM2 from './common/bar/barM2';
+	import lineAreaPieces from './common/line/lineAreaPieces';	
 	import cLine from './common/line/line';
 	import lineO from './common/line/lineO';
 	import lineS from './common/line/lineS';
 	import lineM from './common/line/lineM';
 	import lineM3 from './common/line/lineM3';
-	import barC from './common/bar/barC';
-	import barCH from './common/bar/barCH';
-	import barLine from './common/bar/barLine';
-	import barT from './common/bar/barT';
 	import funnel from './common/funnel/funnel';
-	import barHM from './common/bar/barHM';
 	import BarHM4 from './common/bar/barHM4';
 	import lineSp from './common/line/lineSp';
 	import PieOne1 from './common/pie/PieOne1';
@@ -291,9 +289,8 @@
 	import BarLine2 from "./common/bar/barLine2";
     export default {
 		name:"barView",
-		components: {
-			barM1,barM2,BarLine2, BarHM4,
-		  lineM3,barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp,PieOne1,PieOne2,PieOne3,PieNest1,PieNest2
+		components: { BarLine2, BarHM4,
+		  lineM3,barEcharts,barL,barM,cLine,lineM,barC,barLine,lineAreaPieces,lineS,funnel,barCH,barHM,lineO,lineSp,PieOne1,PieOne2,PieOne3,PieNest1,PieNest2
 		}
     }
 </script>

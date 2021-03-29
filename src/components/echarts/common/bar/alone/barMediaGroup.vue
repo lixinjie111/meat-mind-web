@@ -5,6 +5,7 @@
 <script>
 import {setBarWidth} from "../utils"
 export default {
+	name:"barMediaGroup",
 	props: {
 		myData:{
 			default:()=>{
@@ -37,7 +38,7 @@ export default {
 	methods: {
 		initEcharts() {
 			let _option = this.defaultOption();
-			_option = setBarWidth(_option)
+			_option = setBarWidth(_option,'row')
 			let myChart = this.$echarts.init(document.getElementById(this.id));
 			myChart.setOption(_option);
 			window.addEventListener('resize',()=>{

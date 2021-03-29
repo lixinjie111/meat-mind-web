@@ -980,7 +980,7 @@
 					    心智时空曲线
 				    </div>
 				    <div class="yhsj_echarts_item_content">
-					    <barT1 id="box9" :colorList="$lxjData.colorList" ></barT1>
+					    <lineAreaPieces1 id="box9" :colorList="$lxjData.colorList" ></lineAreaPieces1>
 				    </div>
 			    </div>
 			    <div class="xinzfb_container">
@@ -1104,13 +1104,13 @@
 			    <div class="xfzsxjcfx_container">
 				    <div class="xfzsxjcfx_til">消费者时序行为决策分析</div>
 				    <div class="xfzsxjcfx_ech">
-					    <barT2 id="box91" :colorList="$lxjData.colorList" ></barT2>
+					    <lineAreaPieces2 id="box91" :colorList="$lxjData.colorList" ></lineAreaPieces2>
 				    </div>
 			    </div>
 			    <div class="xfzsxjcfx_container">
 				    <div class="xfzsxjcfx_til">消费者行为决策预测</div>
 				    <div class="xfzsxjcfx_ech">
-					    <barT id="box92" :colorList="$lxjData.colorList" ></barT>
+					    <lineAreaPieces id="box92" :colorList="$lxjData.colorList" ></lineAreaPieces>
 				    </div>
 			    </div>
 		    </div>
@@ -1128,9 +1128,9 @@ import lineM from '../../components/echarts/common/line/lineM';
 import barC from '../../components/echarts/common/bar/barC';
 import barCH from '../../components/echarts/common/bar/barCH';
 import barLine from '../../components/echarts/common/bar/barLine';
-import barT from '../../components/echarts/common/bar/barT';
-import barT1 from '../../components/echarts/common/bar/barT1';
-import barT2 from '../../components/echarts/common/bar/barT2';
+import lineAreaPieces from '../../components/echarts/common/line/lineAreaPieces';
+import lineAreaPieces1 from '../../components/echarts/common/line/lineAreaPieces1';
+import lineAreaPieces2 from '../../components/echarts/common/line/lineAreaPieces2';
 import funnel from '../../components/echarts/common/funnel/funnel';
 import barHM from '../../components/echarts/common/bar/barHM';
 import lineSp from '../../components/echarts/common/line/lineSp';
@@ -1155,7 +1155,7 @@ import Tab from "../../components/Tab";
 
 export default {
   components: {
-   barT1,barT2, barEcharts,barL,barM,cLine,lineM,barC,barLine,barT,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, PieEcharts7, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Leida2Echarts,
+   lineAreaPieces,lineAreaPieces1,lineAreaPieces2, barEcharts,barL,barM,cLine,lineM,barC,barLine,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, PieEcharts7, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Leida2Echarts,
    vDxitem,vDxitem1,vTabCard, Card, MatchDegree,Tab
   },
   name: "index",

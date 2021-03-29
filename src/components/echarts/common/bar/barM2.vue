@@ -7,6 +7,7 @@ import lodash from 'lodash'
 import {setBarWidth} from "./utils"
 let id = 0
 export default {
+	name:"barM2",
 	props: {
 		myData:{
 			default:()=>{
@@ -49,7 +50,7 @@ export default {
 	methods: {
 		initEcharts() {
 			let _option = this.defaultOption();
-			_option = setBarWidth(_option)
+			_option = setBarWidth(_option,'col2')
 			let myChart = this.$echarts.init(document.getElementById(this.id));
 			myChart.setOption(_option);
 			window.addEventListener('resize',()=>{
@@ -105,7 +106,7 @@ export default {
 					pageButtonItemGap: -6,//翻页按钮的两个之间的间距
 					data: this.myData.legName,
 					textStyle: {
-						color: "#97A0C3",   //这里用参数代替了
+						color: "#97A0C3",   
 						fontSize:'12'
 					}
 				},
@@ -129,7 +130,7 @@ export default {
 					axisLabel: {
 						show: true,
 						textStyle: {
-							color: "#97A0C3",   //这里用参数代替了
+							color: "#97A0C3",   
 							fontSize:'12'
 						}
 					},
@@ -153,7 +154,7 @@ export default {
 					name: this.yName,
 					axisLabel: {
 						textStyle: {
-							color: "#97A0C3",   //这里用参数代替了
+							color: "#97A0C3",   
 							fontSize:'12'
 						}
 					},
@@ -162,7 +163,6 @@ export default {
 						lineStyle:{
 							color:'#EAEDF7',
 							type:"dashed"
-							//width:8,//这里是为了突出显示加上的
 						}
 					},
 					splitLine: {

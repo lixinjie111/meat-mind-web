@@ -7,6 +7,7 @@ import lodash from 'lodash'
 import {setBarWidth} from "./utils"
 let id = 0
 export default {
+	name:"barM",
 	props: {
 		myData:{
 			type:Object,
@@ -50,7 +51,7 @@ export default {
 	methods: {
 		initEcharts() {
 			let _option = this.defaultOption();
-			_option = setBarWidth(_option)
+			_option = setBarWidth(_option,'col')
 			let myChart = this.$echarts.init(document.getElementById(this.id));
 			myChart.setOption(_option);
 			window.addEventListener('resize',()=>{
@@ -62,8 +63,8 @@ export default {
 				color: this.colorList,
 				tooltip: {
 					trigger: 'axis',
-					axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-						type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+					axisPointer: {            
+						type: 'shadow'        
 					}
 				},
 				legend: {
@@ -81,7 +82,7 @@ export default {
 					itemWidth:6,
 					itemHeight:6,
 					textStyle: {
-						color: "#97A0C3",   //这里用参数代替了
+						color: "#97A0C3",   
 						fontSize:12
 					},
 					data: this.myData.legName,
@@ -106,7 +107,7 @@ export default {
 					axisLabel: {
 						show: true,
 						textStyle: {
-							color: "#97A0C3",   //这里用参数代替了
+							color: "#97A0C3",   
 							fontSize:'12'
 						}
 					},
@@ -130,7 +131,7 @@ export default {
 					name: this.yName,
 					axisLabel: {
 						textStyle: {
-							color: "#97A0C3",   //这里用参数代替了
+							color: "#97A0C3",   
 							fontSize:'12'
 						}
 					},
@@ -139,7 +140,6 @@ export default {
 						lineStyle:{
 							color:'#EAEDF7',
 							type:"dashed"
-							//width:8,//这里是为了突出显示加上的
 						}
 					},
 					splitLine: {

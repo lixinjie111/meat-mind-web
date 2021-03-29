@@ -1,11 +1,27 @@
 // 设置bar宽度
-export function setBarWidth(opt){
+export function setBarWidth(opt,bar){
     opt.series.forEach(item=>{
         if(item.type=='bar'){
             item.barWidth  =  14 / 144 * window.rem
             item.barMaxWidth = 20
+            if(item.itemStyle){
+                item.itemStyle.barBorderRadius = bar=="row"?[0, 2 / 144 * window.rem, 2 / 144 * window.rem, 0]:bar=='col'?[2 / 144 * window.rem, 2 / 144 * window.rem, 0, 0]:2 / 144 * window.rem
+            }else{
+                item.itemStyle = {
+                    barBorderRadius:bar=="row"?[0, 2 / 144 * window.rem, 2 / 144 * window.rem, 0]:bar=='col'?[2 / 144 * window.rem, 2 / 144 * window.rem, 0, 0]:2 / 144 * window.rem
+                }
+            }
+            
         }
     })
+    if(bar=='col2'){
+        opt.series[0].itemStyle = {
+            barBorderRadius:[2 / 144 * window.rem, 2 / 144 * window.rem, 0, 0]
+        }
+        opt.series[1].itemStyle = {
+            barBorderRadius:[0, 0, 2 / 144 * window.rem, 2 / 144 * window.rem]
+        }
+    }
     return opt
 }
 // 设置柱状图 xAxis yAxis

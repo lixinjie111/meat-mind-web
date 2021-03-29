@@ -3,9 +3,15 @@
 </template>
 
 <script>
-import {setBarWidth} from "./utils"
+import {setBarWidth} from "../bar/utils"
 export default {
+	name:"lineAreaPieces1",
 	props: {
+		myData:{
+			default:()=>{
+				return [];
+			},
+		},
 		id:{
 			type:String,
 			default:()=>{
@@ -119,6 +125,7 @@ export default {
 							fontSize:'12'
 						}
 					}
+
 				},
 				tooltip: {
 					trigger: 'axis',
@@ -158,31 +165,31 @@ export default {
 					seriesIndex: 0,
 					pieces: [
 						{
-						  gt: 1,
-						  lt: 5,
-						  color: 'rgba(254, 119, 75, .5)',
+							gt: 1,
+							lt: 5,
+							color: 'rgba(254, 119, 75, .5)',
 						},
 						{
-						  gt: 6,
-						  lt:11,
-						  color:'rgba(29, 206, 195, .5)',
+							gt: 6,
+							lt:11,
+							color:'rgba(29, 206, 195, .5)',
 						},
 						{
-						  gt: 13,
-						  lt: 22,
-						  color:'rgba(241, 110, 132, .5)',
+							gt: 13,
+							lt: 22,
+							color:'rgba(241, 110, 132, .5)',
 						},
 						{
-						  gt: 23,
-						  lt: 25,
-						  color:'rgba(253, 211, 82, .5)',
+							gt: 23,
+							lt: 25,
+							color:'rgba(253, 211, 82, .5)',
 						},
 						{
-						  gt: 26,
-						  lt: 30,
-						  color:'rgba(123, 171, 255, .5)',
+							gt: 26,
+							lt: 30,
+							color:'rgba(123, 171, 255, .5)',
 						},
-                    ]
+					]
 				},
 				series: [
 					{
@@ -205,15 +212,15 @@ export default {
 						},
 						areaStyle: {},
 						data: [
-							['6:00', 0.59],
+							['6:00', 0.89],
 							['6:30', 0.61],
 							['7:00', 0.62],
-							['7:30', 0.38],
-							['8:00', 0.26],
-							['8:30', 0.335],
+							['7:30', 0.88],
+							['8:00', 0.86],
+							['8:30', 0.835],
 							['9:00', 0.375],
 							['9:30', 0.33],
-							['10:00',0.295],
+							['10:00',0.195],
 							['10:30',0.605],
 							['11:00',0.755],
 							['11:30',0.795],
@@ -228,7 +235,7 @@ export default {
 							['16:00',0.525],
 							['16:30',0.635],
 							['17:00',0.245],
-							['17:30',0.33],
+							['17:30',0.43],
 							['18:00',0.71],
 							['18:30',0.67],
 							['19:00',0.605],

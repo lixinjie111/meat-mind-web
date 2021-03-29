@@ -162,23 +162,13 @@ const lxjEData = {
             {
                 name: '非敏感',
                 type: 'bar',
-                stack: '总量',
-                
-                itemStyle: {
-                    //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
-                },
+                stack: '总量',            
                 data: [67, 83, 84, 67]
             },
             {
                 name: '敏感',
                 type: 'bar',
                 stack: '总量',
-                
-                itemStyle: {
-                    
-                        //barBorderRadius:[2 / 144 * window.rem,2 / 144 * window.rem,0,0]
-                    
-                },
                  data: [33, 17, 16, 33]
             },
         ]
@@ -1573,12 +1563,6 @@ const lxjEData = {
                 name: '短视频',
                 type: 'bar',
                 stack: '总量',
-                
-                itemStyle: {
-                	
-                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
-                
-                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -1638,12 +1622,6 @@ const lxjEData = {
                 name: '其他',
                 type: 'bar',
                 stack: '总量',
-                
-                itemStyle: {
-                    
-                        //barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
-                    
-                },
                 label: {
                     show: true,
                     position: 'inside',
@@ -1661,12 +1639,6 @@ const lxjEData = {
                 name: '15-25',
                 type: 'bar',
                 stack: '总量',
-                
-                itemStyle: {
-                	
-                		//barBorderRadius:[0,2 / 144 * window.rem,2 / 144 * window.rem,0]
-       
-                },
                 label: {
                     show: true,
                     position: 'inside',

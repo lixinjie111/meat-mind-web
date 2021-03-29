@@ -11,6 +11,7 @@ import businessAnalysis from "../views/analysis/router"//经营分析
 import analysisTool from "../views/tool/router"//分析工具
 import dataCenter from "../views/datacenter/router"//数据管理
 // 统计图示例页面
+import barDemo from "../components/echarts/barDemo"
 import barView from "../components/echarts/barView"
 import pieView from "../components/echarts/pieView"
 import testView from "../components/echarts/testView"
@@ -42,6 +43,11 @@ const routes = [
       ...analysisTool,
       ...dataCenter
     ]
+  },
+  {
+    path: '/barDemo',
+    name: 'barDemo',
+    component: barDemo
   },
   {
     path: '/barView',

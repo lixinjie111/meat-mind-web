@@ -3,8 +3,9 @@
 </template>
 
 <script>
-import {setBarWidth} from "./utils"
+import {setBarWidth} from "../bar/utils"
 export default {
+	name:"lineAreaPieces2",
 	props: {
 		myData:{
 			default:()=>{

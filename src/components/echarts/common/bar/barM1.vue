@@ -5,6 +5,7 @@
 <script>
 import {setBarWidth} from "./utils"
 export default {
+	name:"barM1",
 	props: {
 		myData:{
 			default:()=>{
@@ -18,10 +19,7 @@ export default {
 			},
 		},
 		colorList:{
-			type:Array,
-			default:()=>{
-				return  ['#4D94FF', '#A49DFA', '#FC809F', '#FFD98C', '#8AE6C7', '#E19564','#BF6E9B','#CECE7E','#91C2F2','#B7C8EA','#FF9F7F','#91C2F2','#B380B6','#EDA8AD','#738AD4','#FF9F7F'];
-			},
+			type:Array
 		},
 	},
 	data () {
@@ -35,7 +33,7 @@ export default {
 	methods: {
 		initEcharts() {
 			let _option = this.defaultOption();
-			_option = setBarWidth(_option)
+			_option = setBarWidth(_option,'col')
 			let myChart = this.$echarts.init(document.getElementById(this.id));
 			myChart.setOption(_option);
 			window.addEventListener('resize',()=>{
@@ -58,7 +56,7 @@ export default {
 					itemHeight: 6,
 					icon:"circle",
 					textStyle: {
-						color: "#97A0C3",   //这里用参数代替了
+						color: "#97A0C3",   
 						fontSize:'12'
 					}
 				},
@@ -74,36 +72,43 @@ export default {
 					data: this.myData.name,
 					axisLine:{
 						lineStyle:{
-							color:'#E9EBF1',
+							color:'#EAEDF7',
+							type: 'dashed',
 						}
 					} ,
 					axisLabel: {
 						show: true,
 						textStyle: {
-							color: "#97A0C3",   //这里用参数代替了
+							color: "#97A0C3",   
 							fontSize:'12'
 						}
 					},
+					axisPointer:{
+						type:"shadow",
+						shadowStyle:{
+							color:"rgba(124,136,177,0.1)"
+						}
+					}
 					
 				},
 				yAxis: {
 					type: 'value',
 					axisLabel: {
 						textStyle: {
-							color: "#97A0C3",   //这里用参数代替了
+							color: "#97A0C3",   
 							fontSize:'12'
 						}
 					},
 					axisLine:{
 						lineStyle:{
-							color:'#E9EBF1',
-							//width:8,//这里是为了突出显示加上的
+							color:'#EAEDF7',
+							type: 'dashed',
 						}
 					},
 					splitLine: {
 						lineStyle: {
-							color:'#E9EBF1',
-							//type: 'dashed',
+							color:'#EAEDF7',
+							type: 'dashed',
 						}
 					},
 					

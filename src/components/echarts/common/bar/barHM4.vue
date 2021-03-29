@@ -5,6 +5,7 @@
 <script>
 import { setBarWidth } from "./utils";
 export default {
+  name:"barHM4",
   props: {
     myData: {
       default: () => {
@@ -30,7 +31,7 @@ export default {
   methods: {
     initEcharts() {
       let _option = this.defaultOption();
-      _option = setBarWidth(_option);
+      _option = setBarWidth(_option,'row');
       let myChart = this.$echarts.init(document.getElementById(this.id));
       myChart.setOption(_option);
       window.addEventListener("resize", () => {
@@ -78,7 +79,7 @@ export default {
           axisLabel: {
             formatter: "{value}%",
             textStyle: {
-              color: "#97A0C3", //这里用参数代替了
+              color: "#97A0C3", 
               fontSize: "12",
             },
           },
@@ -100,7 +101,7 @@ export default {
           },
           axisLabel: {
             textStyle: {
-              color: "#97A0C3", //这里用参数代替了
+              color: "#97A0C3", 
               fontSize: "12",
             },
           },

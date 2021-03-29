@@ -672,7 +672,6 @@
   import barM from '../../components/echarts/common/bar/barM';
   import BarLine2 from '../../components/echarts/common/bar/barLine2';
   import BarHM4 from '../../components/echarts/common/bar/barHM4';
-  import barHM2 from '../../components/echarts/common/bar/barHM3';
   import barMediaGroup from '../../components/echarts/common/bar/alone/barMediaGroup';
   import MediaAnalysis from './base/MediaAnalysis';
   import PieEcharts9 from '../../components/echarts/common/pie/PieEcharts9';
@@ -682,7 +681,7 @@
   let counter = 0
   export default {
     name: "index",
-    components: {BarHM4,BarLine2,PieOne3,Tab, PieEcharts9,cLine,barLine,barHM2,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts2,LeidaEcharts,vTree,lineM,barM, KOLResource,barMediaGroup, MediaAnalysis, PortraitMatching},
+    components: {BarHM4,BarLine2,PieOne3,Tab, PieEcharts9,cLine,barLine,PieEcharts,Triple, Full, Card, Half, PieCaseEcharts, barL, funnel,PieEcharts2,LeidaEcharts,vTree,lineM,barM, KOLResource,barMediaGroup, MediaAnalysis, PortraitMatching},
     data(){
       return{
         tabActive: 1,
