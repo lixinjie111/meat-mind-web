@@ -32,22 +32,22 @@ export default {
         {
           title: "显示名",
           key: "show",
-          width: 80,
+          width: 80 / 144 * window.rem,
         },
         {
           title: "平台",
           key: "ios",
-          width: 70,
+          width: 70 / 144 * window.rem,
         },
         {
           title: "事件类型",
           key: "type",
-          width: 100,
+          width: 100 / 144 * window.rem,
         },
         {
           title: "显示状态",
           key: "status",
-          width: 100,
+          width: 100 / 144 * window.rem,
         },
 
         {
@@ -57,27 +57,27 @@ export default {
         {
           title: "最后修改版本",
           slot: "update",
-          width: 160,
+          width: 160 / 144 * window.rem,
         },
         {
           title: "最后更新人",
           slot: "change",
-          width: 160,
+          width: 160 / 144 * window.rem,
         },
         {
           title: "更新时间",
           slot: "updateTime",
-          width: 100,
+          width: 100 / 144 * window.rem,
         },
         {
           title: "创建人",
           slot: "creater",
-          width: 80,
+          width: 80 / 144 * window.rem,
         },
         {
           title: "操作",
           slot: "operate",
-          width: 70,
+          width: 70 / 144 * window.rem,
         },
       ],
       tableData: [],

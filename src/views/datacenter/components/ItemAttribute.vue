@@ -26,7 +26,7 @@ export default {
       columns: [
           {
               type:"selection",
-              width:60,
+              width:60 / 144 * window.rem,
               align:"center"
           },
         {
@@ -40,27 +40,27 @@ export default {
         {
           title: "物品类型",
           key: "type",
-          width: 140,
+          width: 140 / 144 * window.rem,
         },
         {
           title: "数据类型",
           key: "data",
-          width: 140,
+          width: 140 / 144 * window.rem,
         },
         {
           title: "单位/格式",
           key: "format",
-          width: 140,
+          width: 140 / 144 * window.rem,
         },
         {
           title: "显示状态",
           key: "status",
-          width: 140,
+          width: 140 / 144 * window.rem,
         },
         {
           title: "预置",
           key: "target",
-          width: 120,
+          width: 120 / 144 * window.rem,
         },
         // {
         //   title: "操作",

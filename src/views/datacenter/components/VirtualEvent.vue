@@ -23,17 +23,17 @@ export default {
         {
           title: "虚拟事件名",
           slot: "name",
-          width: 140,
+          width: 140 / 144 * window.rem,
         },
         {
           title: "虚拟事件显示名",
           key: "show",
-          width: 140,
+          width: 140 / 144 * window.rem,
         },
         {
           title: "标签",
           key: "target",
-          width: 140,
+          width: 140 / 144 * window.rem,
         },
         {
           title: "包含事件",
@@ -43,7 +43,7 @@ export default {
         {
           title: "备注",
           key: "diction",
-          width: 140,
+          width: 140 / 144 * window.rem,
         }
       ],
       tableData: [

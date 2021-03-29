@@ -35,7 +35,7 @@ export default {
         {
           title: "Session名",
           slot: "name",
-          width: 180,
+          width: 180 / 144 * window.rem,
         },
         {
           title: "Session显示名",
@@ -49,12 +49,12 @@ export default {
         {
           title: "切割规则",
           key: "cut",
-          width: 160,
+          width: 160 / 144 * window.rem,
         },
         {
           title: "备注",
           key: "format",
-          width: 160,
+          width: 160 / 144 * window.rem,
         },
       ],
       tableData: [

@@ -27,27 +27,27 @@ export default {
         {
           title: "属性名",
           slot: "name",
-           width: 120,
+           width: 120 / 144 * window.rem,
         },
         {
           title: "属性显示名",
           key: "show",
-           width: 120,
+           width: 120 / 144 * window.rem,
         },
         {
           title: "属性分类",
           key: "data",
-          width: 120,
+          width: 120 / 144 * window.rem,
         },
         {
           title: "数据类型",
           key: "type",
-          width: 110,
+          width: 110 / 144 * window.rem,
         },
         {
           title: "字典",
           key: "diction",
-          width: 70,
+          width: 70 / 144 * window.rem,
         },
         {
           title: "可用此属性的事件要求",
@@ -56,7 +56,7 @@ export default {
         {
           title: "操作",
           slot: "operate",
-          width: 110,
+          width: 110 / 144 * window.rem,
         },
       ],
       tableData: [

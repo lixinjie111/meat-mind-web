@@ -31,32 +31,32 @@ export default {
         {
           title: "数据类型",
           key: "type",
-          width: 140,
+          width: 140 / 144 * window.rem,
         },
         {
           title: "上报数据",
           key: "data",
-          width: 120,
+          width: 120 / 144 * window.rem,
         },
         {
           title: "显示状态",
           key: "status",
-          width: 120,
+          width: 120 / 144 * window.rem,
         },
         {
           title: "预置",
           key: "target",
-          width: 80,
+          width: 80 / 144 * window.rem,
         },
         {
           title: "字典",
           key: "target2",
-          width: 80,
+          width: 80 / 144 * window.rem,
         },
         {
           title: "操作",
           slot: "operate",
-          width: 120,
+          width: 120 / 144 * window.rem,
         },
       ],
       tableData: [

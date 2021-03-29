@@ -26,27 +26,27 @@ export default {
               {
                   title:"上报数据",
                   key:"data",
-                  width:120
+                  width:120 / 144 * window.rem
               },
               {
                   title:"显示状态",
                   key:"status",
-                  width:120
+                  width:120 / 144 * window.rem
               },
               {
                   title:"应埋店平台",
                   key:"type",
-                  width:140
+                  width:140 / 144 * window.rem
               },
               {
                   title:"标签",
                   key:"target",
-                  width:120
+                  width:120 / 144 * window.rem
               },
               {
                   title:"操作",
                   slot:"operate",
-                  width:120
+                  width:120 / 144 * window.rem
               },
               
           ],
