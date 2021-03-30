@@ -10,7 +10,7 @@
       </div>
       <FilterEvent title="初始行为是" show-event></FilterEvent>
       <FilterEvent title="后续行为是" show-event></FilterEvent>
-      <FilterIndice title="同时显示" button-text="添加指标"></FilterIndice>
+      <FilterIndice title="同时显示" button-text="添加指标" single></FilterIndice>
       <div class="event">
         按
         <Select v-model="event" class="item1">

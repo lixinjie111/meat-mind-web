@@ -47,7 +47,7 @@ export default {
             },{
                 icon:"iconyonghutujingfenxi",
                 type:"way",
-                title:"用户途径分析",
+                title:"用户路径分析",
                 desc:"分析用户实际行为的流向变化"
             },{
                 icon:"iconwangyerelifenxi",

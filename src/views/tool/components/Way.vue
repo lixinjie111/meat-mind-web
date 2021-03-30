@@ -1,7 +1,7 @@
 <template>
-  <DetailsPage title="留存分析" backname="analysis-tool-model">
+  <DetailsPage title="用户路径分析" backname="analysis-tool-model">
     <div class="filter-container">
-      <FilterIndice title="选择参与分析的事件" button-text="事件分组" show-event></FilterIndice>
+      <FilterIndice title="选择参与分析的事件" button-text="事件分组" :events="multiOptions" show-event></FilterIndice>
       <div class="event">
         设置
         <Select v-model="event" class="item1">
@@ -19,30 +19,18 @@
       <div class="switch">
         <div>
           设置 Session 间隔
-          <Input class="item1">
-            <Select v-model="event" slot="append">
-              <Option v-for="(item,index) of conditionOptions" :value="index+1" :key="index+1">{{item}}</Option>
-            </Select>
-          </Input>
+          <ComplexInput class="item1" :options="conditionOptions">
+          </ComplexInput>
         </div>
         <Button type="primary">查询</Button>
       </div>
     </div>
     <div class="data-container">
       <div class="filter">
-        <div><Checkbox v-model="showFirstDay">显示第0日</Checkbox></div>
-        <div>
-          <Select v-model="date1" class="item1">
-            <Option v-for="(item,index) of date1Options" :value="index+1" :key="index+1">{{item}}</Option>
-          </Select>
-          <Select v-model="date2" class="item2">
-            <Option v-for="(item,index) of date2Options" :value="index+1" :key="index+1">{{item}}</Option>
-          </Select>
-          <Select v-model="date3" class="item2">
-            <Option v-for="(item,index) of date3Options" :value="index+1" :key="index+1">{{item}}</Option>
-          </Select>
-          <DatePicker :value="dateRange" format="yyyy-MM-dd" type="daterange" placement="bottom-end" placeholder="请选择日期" class="item3"></DatePicker>
-        </div>
+        <DatePicker :value="dateRange" format="yyyy-MM-dd" type="daterange" placement="bottom-end" placeholder="请选择日期" class="item3"></DatePicker>
+        每层最多显示
+        <Input class="small" />
+        个节点
       </div>
       <Table row-key="id" :columns="columns" :data="data">
       </Table>
@@ -57,6 +45,7 @@
   import FilterEvent from '../base/FilterEvent';
   import FilterIndice from '../base/FilterIndice';
   import MutableArray from '../base/MutableArray';
+  import ComplexInput from '../base/ComplexInput';
   import DetailsPage from "@/layouts/DetailsPage";
 
   export default {
@@ -102,6 +91,71 @@
           '崩溃原因',
         ],
         showFirstDay: true,
+        multiOptions: ["选择全部",
+          "App 激活",
+          "App崩溃",
+          "App浏览页面",
+          "App点击",
+          "App页面浏览",
+          "Banner点击",
+          "Push 点击",
+          "Web 元素点击",
+          "Web 视区停留",
+          "web浏览页面",
+          "x频道任意点击",
+          "x频道有效点击",
+          "上报微信用户地理位置",
+          "优惠券操作",
+          "会员等级提升",
+          "全端启动",
+          "关注微信公众号",
+          "分享商品",
+          "加入购物车",
+          "参与抽奖",
+          "参与活动",
+          "发起分享",
+          "取关微信公众号",
+          "启动App",
+          "商品详情页浏览",
+          "完善资料",
+          "小程序分享",
+          "小程序启动",
+          "小程序进入后台",
+          "小程序页面浏览",
+          "小程序首次启动",
+          "微信公众号接收用户消息",
+          "微信客服消息终态信息",
+          "扫描微信参数二维码",
+          "抽奖结果",
+          "抽奖页面浏览",
+          "推送打开",
+          "推送转化",
+          "推送送达",
+          "提交订单",
+          "提交订单详情",
+          "搜索商品",
+          "支付订单",
+          "支付订单详情",
+          "收藏商品",
+          "注册",
+          "注册成功",
+          "消息已准备",
+          "消息已发送",
+          "激活App",
+          "点击坑位",
+          "点击微信公众号菜单",
+          "点击微信菜单会话",
+          "猜你喜欢点击",
+          "登录",
+          "短链跳转",
+          "秒杀坑位",
+          "评论",
+          "购买商品",
+          "退出App",
+          "选择分享方式",
+          "领取权益",
+          "首页点击事件",
+          "高积分行为",],
         date1: 1,
         date2: 1,
         date3: 1,
@@ -111,139 +165,14 @@
         date3Options: ['留存', '流失', ],
         columns: [
           {
-            title: '总体',
-            key: 'total',
-            tree: true,
-          },
-          {
-            title: '总人数',
-            key: 'amount'
-          },
-          {
-            title: '第0日',
-            key: 'day0',
-            render: (h, params) => {
-              return h('span', (params.row[params.column.key] * 100).toFixed(2) + '%');
-            }
-          },
-          {
-            title: '第1日',
-            key: 'day1',
-            render: (h, params) => {
-              return h('span', (params.row[params.column.key] * 100).toFixed(2) + '%');
-            }
-          },
-          {
-            title: '第2日',
-            key: 'day2',
-            render: (h, params) => {
-              return h('span', (params.row[params.column.key] * 100).toFixed(2) + '%');
-            }
-          },
-          {
-            title: '第3日',
-            key: 'day3',
-            render: (h, params) => {
-              return h('span', (params.row[params.column.key] * 100).toFixed(2) + '%');
-            }
+            title: '文件名称',
+            key: 'filename'
           },
         ],
-        data: [{
-          id: 1,
-          total: '总体',
-          amount: 4049,
-          day0: 0.974,
-          day1: 0.075,
-          day2: 0.0738,
-          day3: 0.0719,
-          _showChildren: true,
-          children: [
-            {
-              id: 3,
-              total: '12-14（一）',
-              amount: 4049,
-              day0: 0.976,
-              day1: 0.0778,
-              day2: 0.0731,
-              day3: 0.0711,
-            },
-            {
-              id: 4,
-              total: '12-14（二）',
-              amount: 4049,
-              day0: 0.9735,
-              day1: 0.0798,
-              day2: 0.0785,
-              day3: 0.071,
-            },
-            {
-              id: 5,
-              total: '12-15（一）',
-              amount: 4049,
-              day0: 0.9664,
-              day1: 0.0736,
-              day2: 0.0709,
-              day3: 0.075,
-            },
-            {
-              id: 6,
-              total: '12-15（二）',
-              amount: 4049,
-              day0: 0.9764,
-              day1: 0.0715,
-              day2: 0.0779,
-              day3: 0.0709,
-            },
-            {
-              id: 7,
-              total: '12-16（一）',
-              amount: 4049,
-              day0: 0.935,
-              day1: 0.0735,
-              day2: 0.0766,
-              day3: 0.0732,
-            },
-            {
-              id: 8,
-              total: '12-16（二）',
-              amount: 4049,
-              day0: 0.98,
-              day1: 0.075,
-              day2: 0.0717,
-              day3: 0.0702,
-            },
-            {
-              id: 9,
-              total: '12-17（一）',
-              amount: 4049,
-              day0: 0.978,
-              day1: 0.0756,
-              day2: 0.0716,
-              day3: 0.0792,
-            },
-            {
-              id: 10,
-              total: '12-17（二）',
-              amount: 4049,
-              day0: 0.9767,
-              day1: 0.0755,
-              day2: 0.0742,
-              day3: 0.0765,
-            },
-            {
-              id: 2,
-              total: '12-18（一）',
-              amount: 4049,
-              day0: 0.9633,
-              day1: 0.0765,
-              day2: 0.0713,
-              day3: 0.0723,
-            },
-          ]
-        }]
+        data: []
       }
     },
-    components: {FilterEvent, FilterIndice, MutableArray, DetailsPage},
+    components: {FilterEvent, FilterIndice, MutableArray, ComplexInput, DetailsPage},
     methods:{
       back(){
         this.$router.push({name:"analysis-tool-model"})
@@ -303,10 +232,15 @@
 
     .filter {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       height: 64px;
       font-size: 14px;
+
+      .small {
+        width: 60px;
+        margin: 0 16px;
+      }
     }
 
     .pager {
@@ -323,7 +257,7 @@
     }
     .item3 {
       width: 240px;
-      margin-left: 16px;
+      margin-right: 16px;
     }
   }
 </style>
