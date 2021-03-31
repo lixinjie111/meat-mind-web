@@ -4,7 +4,7 @@
 			KOL推荐组合
 		</div>
 		<div class="strategy-sub-title">
-      基于账号影响力和品牌&用户匹配度的最优ROI的KOL组合推荐。
+      		基于账号影响力和品牌&用户匹配度的最优ROI的KOL组合推荐。
 		</div>
 		<div class="strategy-top">
 			<div class="top-left">
@@ -59,7 +59,7 @@
 				<BarEcharts1 :colorList="$fjData.colorList" :myData="$ljEData.ljBox38" ></BarEcharts1>
 			</div>
 			<div>
-        <PieOne1 id="box301" :value="96.9" title=""></PieOne1>
+        		<PieOne1 id="box301" :value="96.9" :size="22" title=""></PieOne1>
 			</div>
 			<div>
 				<div class="bottom-card">
@@ -80,7 +80,7 @@
 				<BarEcharts1 :colorList="$fjData.colorList" :myData="$ljEData.ljBox39" ></BarEcharts1>
 			</div>
 			<div>
-        <PieOne1 id="box302" :value="91.1" title=""></PieOne1>
+        		<PieOne1 id="box302" :value="91.1" :size="22" title=""></PieOne1>
 			</div>
 			<div>
 				<div class="bottom-card">
@@ -101,7 +101,7 @@
 				<BarEcharts1 :colorList="$fjData.colorList" :myData="$ljEData.ljBox40" ></BarEcharts1>
 			</div>
 			<div>
-        <PieOne1 id="box303" :value="95.2" title=""></PieOne1>
+        		<PieOne1 id="box303" :value="95.2" :size="22" title=""></PieOne1>
 			</div>
 		</div>
 	</div>
@@ -122,49 +122,47 @@
 		margin-bottom: 24px;
 		width: 100%;
 		background: #FFFFFF;
-		box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-		border-radius: 12px;
-		border: 1px solid #EAEDF7;
+		box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+		border-radius: 8px;
 		padding:24px;
 		.strategy-title {
+			height: 24px;
+			margin-bottom: 6px;
 			font-size: 16px;
-			font-family: PingFangSC-Medium, PingFang SC;
-			font-weight: 500;
+			font-family: PingFangSC-Regular, PingFang SC;
+			font-weight: 400;
 			color: #242F57;
+			line-height: 24px;
 		}
 		.strategy-sub-title {
-      font-size: 14px;
-      font-weight: 400;
-      color: #636E95;
-      line-height: 20px;
-      margin: 6px 0 17px;
+			height: 20px;
+			margin-bottom: 17px;
+			font-size: 14px;
+			font-family: PingFangSC-Regular, PingFang SC;
+			font-weight: 400;
+			color: #636E95;
+			line-height: 20px;
 		}
 		.strategy-top {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			/*margin-top: 24px;*/
 			width: 100%;
+			display: flex;
 			>div {
-        min-height: 114px;
-        background: #F4F7FC;
-        border-radius: 8px;
-        margin-right: 24px;
-        padding: 17px 16px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex: 1 1 50%;
-        &.top-left{
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
-        }
+				display: flex;
+				height: 95px;
+				margin-right: 24px;
+				background: #F4F7FC;
+				border-radius: 8px;
+				&.top-left{
+					width: 486px;
+					padding: 17px 16px;
+					flex-direction: column;
+				}
 				&.top-right {
-					display: flex;
+					width: 599px;
 					justify-content: space-between;
 					align-items: flex-start;
-          margin-right: 0;
+					padding: 16px 24px;
+          			margin-right: 0;
 					>p {
 						&:nth-child(1) {
 							width: 190px;
@@ -176,9 +174,10 @@
 					margin-top: 12px;
 				}
 				.top-title {
-          font-size: 14px;
-          font-weight: 400;
-          color: #242F57;
+					font-size: 14px;
+					font-family: PingFangSC-Regular, PingFang SC;
+					font-weight: 400;
+					color: #242F57;
 				}
 
 				span {
@@ -204,39 +203,38 @@
 			.bottom-title {
 				width: 100%;
 				height: 48px;
+				color: #242F57;
+				background: #D3E3FF;
+				font-size: 14px;
+				font-weight: 500;
+				font-family: PingFangSC-Medium, PingFang SC;
 				line-height: 48px;
 				border-radius: 8px;
 				text-align: center;
-				font-size: 14px;
-				font-weight: 500;
-        background: #D3E3FF;
-        color: #242F57;
-        font-family: PingFangSC-Medium, PingFang SC;
 				&.light {
-					color: #242F57;
-          background: #F0F8FF;
+          			background: #F0F8FF;
 				}
 			}
 
 			.bottom-card {
 				position: relative;
 				text-align: center;
-        margin-top: 36px;
+        		margin-top: 36px;
 
 				> img {
-          position: absolute;
+          			position: absolute;
 					width: 36px;
 					height: 36px;
 					border-radius: 50%;
-          transform: translate(-50%, -50%);
+          			transform: translate(-50%, -50%);
 				}
 
 				.card-box {
-          height: 90px;
-          background: #F4F7FC;
-          border-radius: 6px;
-          overflow: hidden;
-          padding-top: 22px;
+					height: 90px;
+					background: #F4F7FC;
+					border-radius: 6px;
+					overflow: hidden;
+					padding-top: 22px;
 					>p {
             font-size: 11px;
             font-weight: 500;

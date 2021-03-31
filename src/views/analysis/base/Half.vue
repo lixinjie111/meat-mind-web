@@ -49,7 +49,7 @@ export default {
   align-items: flex-start;
   width: 100%;
   height: 516px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   &:last-child {
     margin-bottom: 0;
   }

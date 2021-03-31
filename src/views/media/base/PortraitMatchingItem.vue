@@ -48,7 +48,6 @@
     components: { PieNest1 },
     props: ['name', 'label'],
     data() {
-      // console.log('pppppppppppppppp')
       return {
         list4Act: 0,
         list4: ["抖音", "快手", "微视", "梨视频", "西瓜视频"],

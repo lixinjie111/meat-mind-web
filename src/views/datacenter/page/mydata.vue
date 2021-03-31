@@ -314,7 +314,7 @@ export default {
               {
                 title: '操作',
                 slot:"operate",
-                width: 200 / 144 * window.rem,
+                width: 170 / 144 * window.rem,
 
               },
             ],
@@ -367,7 +367,7 @@ export default {
               {
                 title: '操作',
                 slot:"operate",
-                width: 180 / 144 * window.rem,
+                width: 170 / 144 * window.rem,
               },
             ],
             currentPage: 1,

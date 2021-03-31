@@ -135,7 +135,7 @@
         </Half>
       </div>
     </Card>
-    <Card title="用户参与度">
+    <Card title="用户参与度" style="border:none">
       <div>
         <Half
           lTitle="人均启动次数"

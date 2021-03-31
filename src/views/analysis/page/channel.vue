@@ -7,11 +7,11 @@
       <Full title="分时新增用户" subTile="2020.12.01-2020.12.31">
         <barM :colorList="$ljEData.colorList" :myData="$ljEData.ljBox25" />
       </Full>
-      <Full title="app渠道对比组件" subTile="2020.12.01-2020.12.31" style="height:600px;">
+      <Full title="app渠道对比组件" subTile="2020.12.01-2020.12.31">
         <Table
           :columns="columns3"
           :data="data3"
-          style="margin-top: 30px"
+          style="margin-top: 8px"
         ></Table>
       </Full>
     </Card>
@@ -56,9 +56,23 @@
         </Half>
       </div>
     </Card>
-    <Card title="渠道质量评估">
+    <Card title="渠道质量评估" style="border:none">
       <div>
-        <Half
+        <Full title="科学分析方法" subTile="2020.12.01-2020.12.31">
+          <Table :columns="columns1" :data="data1" style="margin-top:8px">
+            <template slot-scope="{ row, index }" slot="index">
+              <span class="operation">{{ index + 1 }}</span>
+            </template>
+          </Table>
+        </Full>
+        <Full title="用户留存" subTile="2020.12.01-2020.12.31">
+          <Table :columns="columns2" :data="data2" style="margin-top:8px">
+            <template slot-scope="{ row, index }" slot="index">
+              <span class="operation">{{ index + 1 }}</span>
+            </template>
+          </Table>
+        </Full>
+        <!-- <Half
           lTitle="科学分析方法"
           subDateL="2020.12.01-2020.12.31"
           rTitle="用户留存"
@@ -74,7 +88,7 @@
               <span class="operation">{{ index + 1 }}</span>
             </template>
           </Table>
-        </Half>
+        </Half> -->
         <Half
           lTitle="流量去向占比"
           subDateL="2020.12.01-2020.12.31"
@@ -137,32 +151,32 @@ export default {
         {
           title: "序号",
           slot: "index",
-          width: 70,
+          width: 80 / 144 *window.rem,
         },
         {
           title: "进入路径",
           key: "key1",
-          width: 170,
+          width: 140 / 144 *window.rem,
         },
         {
           title: "下载APP的用户数",
           key: "key2",
-          width: 170,
+          // width: 170,
         },
         {
           title: "注册会员的用户数",
           key: "key3",
-          width: 170,
+          // width: 170,
         },
         {
           title: "下单的用户数",
           key: "key4",
-          width: 170,
+          // width: 170,
         },
         {
           title: "支付完成的用户数",
           key: "key5",
-          width: 170,
+          // width: 170,
         },
       ],
       data1: [
@@ -206,47 +220,47 @@ export default {
         {
           title: "序号",
           slot: "index",
-          width: 100,
+          width: 70 / 144 *window.rem,
         },
         {
           title: "进入路径",
           key: "key1",
-          width: 170,
+          width: 110 / 144 *window.rem,
         },
         {
           title: "总人数",
           key: "key2",
-          width: 170,
+          width: 80 / 144 *window.rem,
         },
         {
           title: "第一周流失人数",
           key: "key3",
-          width: 190,
+          // width: 190 / 144 *window.rem,
         },
         {
           title: "第一周流失占比",
           key: "key4",
-          width: 190,
+          // width: 160 / 144 *window.rem,
         },
         {
           title: "第二周流失人数",
           key: "key5",
-          width: 190,
+          // width: 160 / 144 *window.rem,
         },
         {
           title: "第二周留失占比",
           key: "key6",
-          width: 190,
+          // width: 160 / 144 *window.rem,
         },
         {
           title: "第三周流失人数",
           key: "key7",
-          width: 190,
+          // width: 160 / 144 *window.rem,
         },
         {
           title: "第三周留失占比",
           key: "key8",
-          width: 190,
+          // width: 160 / 144 *window.rem,
         },
       ],
       data2: [

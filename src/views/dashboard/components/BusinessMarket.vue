@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <div class="right-item-bottom bg1">
-                            <p class="p-blue">客群定位较为准确</p>
+                            <p>客群定位 <span class="p-blue">较为准确</span></p>
                         </div>
                     </div>
                     <div class="right-item">
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                         <div class="right-item-bottom bg2">
-                            <p class="p-orange">媒介能力存在问题</p>
+                            <p>媒介评测 <span class="p-orange">存在问题</span></p>
                         </div>
                     </div>
                     <div class="right-item">
@@ -91,7 +91,8 @@
                             </div>
                         </div>
                         <div class="right-item-bottom bg3">
-                            <p class="p-red">品牌尚有提升空间</p>
+                            <p>品牌评价 <span class="p-red">有待提升</span></p>
+                            
                         </div>
                     </div>
                 </div>
@@ -465,7 +466,7 @@
             <div class="content report-box flex-start">
                 <div class="left">
                     <img src="../../../assets/img/dashboard/market/report@2x.png"/>
-                    <p>行业分析报告营销创意及案例</p>
+                    <p>行业分析报告<br/>营销创意及案例</p>
                     <div class="left-btn">查看全部案例</div>
                 </div>
                 <div class="right">
@@ -1178,6 +1179,11 @@
                 border-radius: 8px;
                 border: 1px solid #EAEDF7;
             }
+            &:last-child{
+                .content{
+                    border: none;
+                }
+            }
         }
 
         .me-mart-box {
@@ -1255,7 +1261,7 @@
                                 text-align: center;
 
                                 > i {
-                                    font-size: 48px;
+                                    font-size: 40px;
                                 }
 
                                 &.blue {
@@ -1353,11 +1359,11 @@
                         }
 
                         &.bg2 {
-                            background: url("../../../assets/img/dashboard/market/mart2@2x.png") no-repeat center center / 100% 100%;
+                            background: url("../../../assets/img/dashboard/market/mart1@2x.png") no-repeat center center / 100% 100%;
                         }
 
                         &.bg3 {
-                            background: url("../../../assets/img/dashboard/market/mart3@2x.png") no-repeat center center / 100% 100%;
+                            background: url("../../../assets/img/dashboard/market/mart1@2x.png") no-repeat center center / 100% 100%;
                         }
                     }
                 }
@@ -1425,7 +1431,7 @@
                                     background: #FFFFFF;
                                     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
                                     border-radius: 4px;
-                                    border: 1px solid #EAEDF7;
+                                    // border: 1px solid #EAEDF7;
                                     margin: 48px auto 8px;
 
                                     >div {
@@ -1808,17 +1814,17 @@
 
                         .right-content-left-btn {
                             position: absolute;
-                            left: 16px;
-                            bottom: 16px;
-                            width: 128px;
+                            left: 24px;
+                            bottom: 24px;
+                            width: 97px;
                             height: 32px;
                             line-height: 32px;
-                            border-radius: 8px;
-                            border: 1px solid #2373FF;
+                            border-radius: 4px;
+                            border: 1px solid #C6CBDE;
                             font-size: 14px;
                             font-family: PingFangSC-Medium, PingFang SC;
-                            font-weight: 500;
-                            color: #2373FF;
+                            font-weight: 400;
+                            color: #C6CBDE;
                             text-align: center;
                             cursor: pointer;
                         }
@@ -1881,12 +1887,13 @@
 
                 .left-item {
                     > p {
-                        margin-bottom: 6px;
+                        height: 22px;
+                        margin-bottom: 8px;
                         font-size: 14px;
                         font-family: PingFangSC-Regular, PingFang SC;
                         font-weight: 400;
                         color: #97A0C3;
-
+                        line-height: 22px;
                         &.mt {
                             margin-top: 16px;
                         }
@@ -1899,10 +1906,9 @@
                             display: inline-block;
                             vertical-align: middle;
                             padding: 0 16px;
-                            margin-right: 8px;
+                            margin-right: 6px;
                             background: #ECF3FF;
-                            border-radius: 8px;
-                            border: 1px solid #2373FF;
+                            border-radius: 4px;
                             font-size: 16px;
                             font-family: PingFangSC-Regular, PingFang SC;
                             font-weight: 400;
@@ -1912,9 +1918,8 @@
 
                         &.orange {
                             > li {
-                                color: #FF8800;
-                                background: #FFF7E6;
-                                border: 1px solid #FFA53D;
+                                color: #FF4C60;
+                                background: #FEDFE1;
                             }
                         }
                     }
@@ -2088,14 +2093,18 @@
 
         .report-box {
             padding: 40px 40px 24px 24px !important;
-            background: url("../../../assets/img/dashboard/market/report-box-bg@2x.png") #ffffff no-repeat left center / 614px 560px !important;
+            background: #FFFFFF;
+            box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+            border-radius: 8px;
+            border: 1px solid #EAEDF7;
+            // background: url("../../../assets/img/dashboard/market/report-box-bg@2x.png") #ffffff no-repeat left center / 614px 560px !important;
 
             .left {
                 width: 296px;
                 height: 442px;
-                box-shadow: 0px 0px 48px 0px rgba(255, 255, 255, 0.8);
+                background: #F0F8FF;
                 border-radius: 8px;
-                background: url("../../../assets/img/dashboard/market/report-box-left-bg@2x.png") no-repeat center center / 100% 100%;
+                // background: url("../../../assets/img/dashboard/market/report-box-left-bg@2x.png") no-repeat center center / 100% 100%;
 
                 > img {
                     width: 296px;
@@ -2104,7 +2113,7 @@
 
                 > p {
                     margin: 24px auto 42px;
-                    width: 168px;
+                    // width: 168px;
                     height: 64px;
                     font-size: 24px;
                     font-family: PingFangSC-Medium, PingFang SC;
@@ -2120,11 +2129,11 @@
                     height: 40px;
                     line-height: 40px;
                     background: #FFFFFF;
-                    border-radius: 8px;
+                    border-radius: 4px;
                     font-size: 14px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #2373FF;
+                    font-family: PingFangSC-Regular, PingFang SC;;
+                    font-weight: 400;
+                    color: #242F57;
                     text-align: center;
                 }
             }

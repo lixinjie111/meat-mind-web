@@ -47,7 +47,7 @@
     .tabs-container {
         background: #F4F7FC;
         width: 100%;
-        z-index: 1999;
+        z-index: 99;
 
         .tabs-box {
             position: relative;

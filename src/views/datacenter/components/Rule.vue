@@ -149,6 +149,10 @@
 
             .poll {
                 padding: 4px 0 8px;
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636E95;
             }
 
             .mg-t-b {
@@ -206,6 +210,8 @@
 
                 .device-item-name {
                     width: 40%;
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
                     color: #242F57;
                     line-height: 22px;
@@ -213,6 +219,8 @@
 
                 .device-item-desc {
                     width: 60%;
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
                     color: #C6CBDE;
                     line-height: 22px;

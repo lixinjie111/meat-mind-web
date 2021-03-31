@@ -73,6 +73,7 @@ export default {
           icon: "circle",
           itemWidth:6,
           itemHeight:6,
+          itemGap:24,
           type: "scroll",
           // orient: 'horizontal',
           orient: "vertical",
@@ -180,7 +181,7 @@ export default {
             type: 'pie',
             center: ['30%', '50%'],
             radius : ['80%', '90%'],
-           label: {
+            label: {
 							show: false,
 							position: 'center'
 						},

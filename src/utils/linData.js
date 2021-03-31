@@ -227,8 +227,8 @@ const linData = {
             {
               id: "1",
               name: "MlleBaptistine",
-              symbolSize: 6.323809333333333,
-              x: -42.552713999999995,
+              symbolSize: 6.32380,
+              x: -42.552713,
               y: 49.058352,
               value: 9.485714,
               category: 0,
@@ -236,7 +236,7 @@ const linData = {
             {
               id: "2",
               name: "MmeMagloire",
-              symbolSize: 6.323809333333333,
+              symbolSize: 6.32380,
               x: -48.564808,
               y: 47.052566,
               value: 9.485714,
@@ -245,8 +245,8 @@ const linData = {
             {
               id: "3",
               name: "Labarre",
-              symbolSize: 2.6666666666666665,
-              x: -17.868214000000002,
+              symbolSize: 2.6666665,
+              x: -17.86821,
               y: 46.912256,
               value: 4,
               category: 0,
@@ -254,7 +254,7 @@ const linData = {
             {
               id: "4",
               name: "新浪财经",
-              symbolSize: 66.66666666666667,
+              symbolSize: 66.66667,
               x: -17.586058,
               y: -1.3624113,
               value: 100,
@@ -263,16 +263,16 @@ const linData = {
             {
               id: "5",
               name: "Marguerite",
-              symbolSize: 4.495239333333333,
+              symbolSize: 4.49523,
               x: -67.955816,
-              y: -36.938278000000004,
+              y: -36.93827,
               value: 6.742859,
               category: 0,
             },
             {
               id: "6",
               name: "MmeDeR",
-              symbolSize: 2.6666666666666665,
+              symbolSize: 2.6666665,
               x: -38.862626,
               y: 35.710602,
               value: 4,
@@ -281,7 +281,7 @@ const linData = {
             {
               id: "7",
               name: "Isabeau",
-              symbolSize: 2.6666666666666665,
+              symbolSize: 2.6666665,
               x: -31.610336,
               y: 40.399536,
               value: 4,
@@ -290,7 +290,7 @@ const linData = {
             {
               id: "8",
               name: "Gervais",
-              symbolSize: 2.6666666666666665,
+              symbolSize: 2.6666665,
               x: -25.5403092,
               y: 48.510114,
               value: 4,
@@ -299,8 +299,8 @@ const linData = {
             {
               id: "9",
               name: "Cosette",
-              symbolSize: 20.95238266666667,
-              x: 15.729292000000001,
+              symbolSize: 20.952382,
+              x: 15.72929,
               y: -6.3025494,
               value: 31.428574,
               category: 2,
@@ -308,7 +308,7 @@ const linData = {
             {
               id: "10",
               name: "百度百家号",
-              symbolSize: 20.466666666666666,
+              symbolSize: 20.466666,
               x: -77.13683999999999,
               y: -4.0413372,
               value: 23.2,
@@ -317,7 +317,7 @@ const linData = {
             {
               id: "11",
               name: "Scaufflaire",
-              symbolSize: 2.6666666666666665,
+              symbolSize: 2.6666665,
               x: -24.482696,
               y: 42.075006,
               value: 4,
@@ -326,7 +326,7 @@ const linData = {
             {
               id: "12",
               name: "Woman1",
-              symbolSize: 4.495239333333333,
+              symbolSize: 4.49523,
               x: -46.92002,
               y: -22.630134,
               value: 6.742859,
@@ -335,7 +335,7 @@ const linData = {
             {
               id: "13",
               name: "Judge",
-              symbolSize: 11.809524666666666,
+              symbolSize: 11,
               x: -77.56983,
               y: 11.74118,
               value: 17.714287,
@@ -344,7 +344,7 @@ const linData = {
             {
               id: "14",
               name: "Champmathieu",
-              symbolSize: 11.809524666666666,
+              symbolSize: 11,
               x: -67.64614,
               y: 17.49681,
               value: 17.714287,
@@ -353,7 +353,7 @@ const linData = {
             {
               id: "15",
               name: "Brevet",
-              symbolSize: 11.809524666666666,
+              symbolSize: 11,
               x: -90.653748,
               y: 11.789296,
               value: 17.714287,
@@ -362,8 +362,8 @@ const linData = {
             {
               id: "16",
               name: "Chenildieu",
-              symbolSize: 11.809524666666666,
-              x: -77.28980800000001,
+              symbolSize: 11,
+              x: -77.289,
               y: 28.011874,
               value: 17.714287,
               category: 1,
@@ -371,16 +371,16 @@ const linData = {
             {
               id: "17",
               name: "Cochepaille",
-              symbolSize: 11.809524666666666,
+              symbolSize: 11,
               x: -89.35752,
-              y: 24.676009999999998,
+              y: 24.,
               value: 17.714287,
               category: 1,
             },
             {
               id: "18",
               name: "Pontmercy",
-              symbolSize: 6.323809333333333,
+              symbolSize: 6.32380,
               x: 67.299476,
               y: -53.911828,
               value: 9.485714,
@@ -389,7 +389,7 @@ const linData = {
             {
               id: "19",
               name: "Woman2",
-              symbolSize: 6.323809333333333,
+              symbolSize: 6.32380,
               x: -37.400836,
               y: -29.005326000000003,
               value: 9.485714,
@@ -398,7 +398,7 @@ const linData = {
             {
               id: "20",
               name: "抖音",
-              symbolSize: 41.06667066666667,
+              symbolSize: 41.066670,
               x: 77.579144,
               y: 22.0924652,
               value: 61.600006,
@@ -416,7 +416,7 @@ const linData = {
             {
               id: "22",
               name: "Magnon",
-              symbolSize: 4.495239333333333,
+              symbolSize: 4.49523,
               x: 25.41473,
               y: -22.611846,
               value: 6.742859,
@@ -434,7 +434,7 @@ const linData = {
             {
               id: "24",
               name: "MmePontmercy",
-              symbolSize: 4.495239333333333,
+              symbolSize: 4.49523,
               x: 70.73283,
               y: -41.17833,
               value: 6.742859,
@@ -443,7 +443,7 @@ const linData = {
             {
               id: "25",
               name: "MlleVaubois",
-              symbolSize: 2.6666666666666665,
+              symbolSize: 2.6666665,
               x: 33.087878,
               y: 67.95472,
               value: 4,
@@ -452,7 +452,7 @@ const linData = {
             {
               id: "26",
               name: "LtGillenormand",
-              symbolSize: 8.152382000000001,
+              symbolSize: 8.15238,
               x: 27.538695999999998,
               y: 39.221379999999996,
               value: 12.228573,
@@ -462,7 +462,7 @@ const linData = {
               id: "27",
               name: "知乎",
               symbolSize: 35.58095333333333,
-              x: 41.289373999999995,
+              x: 41.289373,
               y: -2.7610821999999997,
               value: 53.37143,
               category: 2,
@@ -470,7 +470,7 @@ const linData = {
             {
               id: "28",
               name: "BaronessT",
-              symbolSize: 4.495239333333333,
+              symbolSize: 4.49523,
               x: 38.965986,
               y: 44.956072,
               value: 6.742859,
@@ -479,7 +479,7 @@ const linData = {
             {
               id: "29",
               name: "Mabeuf",
-              symbolSize: 20.95238266666667,
+              symbolSize: 20.952382,
               x: 119.53236,
               y: 27.036962,
               value: 31.428574,
@@ -488,7 +488,7 @@ const linData = {
             {
               id: "30",
               name: "Enjolras",
-              symbolSize: 28.266666666666665,
+              symbolSize: 28.266665,
               x: 71.156732,
               y: -14.976490799999998,
               value: 42.4,
@@ -497,8 +497,8 @@ const linData = {
             {
               id: "31",
               name: "Combeferre",
-              symbolSize: 20.95238266666667,
-              x: 103.05922000000001,
+              symbolSize: 20.952382,
+              x: 103.0592,
               y: -9.2335128,
               value: 31.428574,
               category: 3,
@@ -515,7 +515,7 @@ const linData = {
             {
               id: "33",
               name: "Feuilly",
-              symbolSize: 20.95238266666667,
+              symbolSize: 20.952382,
               x: 110.03833999999999,
               y: -25.635073999999996,
               value: 31.428574,
@@ -524,7 +524,7 @@ const linData = {
             {
               id: "34",
               name: "Courfeyrac",
-              symbolSize: 24.609526666666667,
+              symbolSize: 24.609527,
               x: 87.23436799999999,
               y: -2.5457365,
               value: 36.91429,
@@ -542,7 +542,7 @@ const linData = {
             {
               id: "36",
               name: "Bossuet",
-              symbolSize: 24.609526666666667,
+              symbolSize: 24.609527,
               x: 91.16391,
               y: -23.091652,
               value: 36.91429,
@@ -569,7 +569,7 @@ const linData = {
             {
               id: "39",
               name: "MotherPlutarch",
-              symbolSize: 2.6666666666666665,
+              symbolSize: 2.6666665,
               x: 133.79136,
               y: 40.930976,
               value: 4,
@@ -578,7 +578,7 @@ const linData = {
             {
               id: "40",
               name: "Toussaint",
-              symbolSize: 6.323809333333333,
+              symbolSize: 6.32380,
               x: 8.1884506,
               y: 22.756543999999998,
               value: 9.485714,
@@ -587,7 +587,7 @@ const linData = {
             {
               id: "41",
               name: "Child1",
-              symbolSize: 4.495239333333333,
+              symbolSize: 4.49523,
               x: 87.5878,
               y: 58.316468,
               value: 6.742859,
@@ -596,7 +596,7 @@ const linData = {
             {
               id: "42",
               name: "Child2",
-              symbolSize: 4.495239333333333,
+              symbolSize: 4.49523,
               x: 93.209844,
               y: 56.67211999999999,
               value: 6.742859,
@@ -912,7 +912,7 @@ const linData = {
                 name: "人员4",
                 symbolSize: 12,
                 x: -89.35752,
-                y: 24.676009999999998,
+                y: 24.,
                 value: 17.714287,
                 category: 1
             },
@@ -920,7 +920,7 @@ const linData = {
                 id:"5",
                 name: "人员5",
                 symbolSize: 10,
-                x: -77.28980800000001,
+                x: -77.289,
                 y: 28.011874,
                 value: 17.714287,
                 category: 1
@@ -955,8 +955,8 @@ const linData = {
           {
             id: "1",
             name: "MlleBaptistine",
-            symbolSize: 6.323809333333333,
-            x: -42.552713999999995,
+            symbolSize: 6.32380,
+            x: -42.552713,
             y: 49.058352,
             value: 9.485714,
             category: 0,
@@ -964,7 +964,7 @@ const linData = {
           {
             id: "2",
             name: "MmeMagloire",
-            symbolSize: 6.323809333333333,
+            symbolSize: 6.32380,
             x: -48.564808,
             y: 47.052566,
             value: 9.485714,
@@ -973,8 +973,8 @@ const linData = {
           {
             id: "3",
             name: "Labarre",
-            symbolSize: 2.6666666666666665,
-            x: -17.868214000000002,
+            symbolSize: 2.6666665,
+            x: -17.86821,
             y: 46.912256,
             value: 4,
             category: 0,
@@ -982,7 +982,7 @@ const linData = {
           {
             id: "4",
             name: "人民网",
-            symbolSize: 66.66666666666667,
+            symbolSize: 66.66667,
             x: -17.586058,
             y: -1.3624113,
             value: 100,
@@ -991,16 +991,16 @@ const linData = {
           {
             id: "5",
             name: "Marguerite",
-            symbolSize: 4.495239333333333,
+            symbolSize: 4.49523,
             x: -67.955816,
-            y: -36.938278000000004,
+            y: -36.93827,
             value: 6.742859,
             category: 0,
           },
           {
             id: "6",
             name: "MmeDeR",
-            symbolSize: 2.6666666666666665,
+            symbolSize: 2.6666665,
             x: -38.862626,
             y: 35.710602,
             value: 4,
@@ -1009,7 +1009,7 @@ const linData = {
           {
             id: "7",
             name: "Isabeau",
-            symbolSize: 2.6666666666666665,
+            symbolSize: 2.6666665,
             x: -31.610336,
             y: 40.399536,
             value: 4,
@@ -1018,7 +1018,7 @@ const linData = {
           {
             id: "8",
             name: "Gervais",
-            symbolSize: 2.6666666666666665,
+            symbolSize: 2.6666665,
             x: -25.5403092,
             y: 48.510114,
             value: 4,
@@ -1027,8 +1027,8 @@ const linData = {
           {
             id: "9",
             name: "Cosette",
-            symbolSize: 20.95238266666667,
-            x: 15.729292000000001,
+            symbolSize: 20.952382,
+            x: 15.72929,
             y: -6.3025494,
             value: 31.428574,
             category: 2,
@@ -1036,7 +1036,7 @@ const linData = {
           {
             id: "10",
             name: "知乎",
-            symbolSize: 20.466666666666666,
+            symbolSize: 20.466666,
             x: -77.13683999999999,
             y: -4.0413372,
             value: 23.2,
@@ -1045,7 +1045,7 @@ const linData = {
           {
             id: "11",
             name: "Scaufflaire",
-            symbolSize: 2.6666666666666665,
+            symbolSize: 2.6666665,
             x: -24.482696,
             y: 42.075006,
             value: 4,
@@ -1054,7 +1054,7 @@ const linData = {
           {
             id: "12",
             name: "Woman1",
-            symbolSize: 4.495239333333333,
+            symbolSize: 4.49523,
             x: -46.92002,
             y: -22.630134,
             value: 6.742859,
@@ -1063,7 +1063,7 @@ const linData = {
           {
             id: "13",
             name: "Judge",
-            symbolSize: 11.809524666666666,
+            symbolSize: 11,
             x: -77.56983,
             y: 11.74118,
             value: 17.714287,
@@ -1072,7 +1072,7 @@ const linData = {
           {
             id: "14",
             name: "Champmathieu",
-            symbolSize: 11.809524666666666,
+            symbolSize: 11,
             x: -67.64614,
             y: 17.49681,
             value: 17.714287,
@@ -1081,7 +1081,7 @@ const linData = {
           {
             id: "15",
             name: "Brevet",
-            symbolSize: 11.809524666666666,
+            symbolSize: 11,
             x: -90.653748,
             y: 11.789296,
             value: 17.714287,
@@ -1090,8 +1090,8 @@ const linData = {
           {
             id: "16",
             name: "Chenildieu",
-            symbolSize: 11.809524666666666,
-            x: -77.28980800000001,
+            symbolSize: 11,
+            x: -77.289,
             y: 28.011874,
             value: 17.714287,
             category: 1,
@@ -1099,16 +1099,16 @@ const linData = {
           {
             id: "17",
             name: "Cochepaille",
-            symbolSize: 11.809524666666666,
+            symbolSize: 11,
             x: -89.35752,
-            y: 24.676009999999998,
+            y: 24.,
             value: 17.714287,
             category: 1,
           },
           {
             id: "18",
             name: "Pontmercy",
-            symbolSize: 6.323809333333333,
+            symbolSize: 6.32380,
             x: 67.299476,
             y: -53.911828,
             value: 9.485714,
@@ -1117,7 +1117,7 @@ const linData = {
           {
             id: "19",
             name: "Woman2",
-            symbolSize: 6.323809333333333,
+            symbolSize: 6.32380,
             x: -37.400836,
             y: -29.005326000000003,
             value: 9.485714,
@@ -1126,7 +1126,7 @@ const linData = {
           {
             id: "20",
             name: "小红书",
-            symbolSize: 41.06667066666667,
+            symbolSize: 41.066670,
             x: 77.579144,
             y: 22.0924652,
             value: 61.600006,
@@ -1144,7 +1144,7 @@ const linData = {
           {
             id: "22",
             name: "Magnon",
-            symbolSize: 4.495239333333333,
+            symbolSize: 4.49523,
             x: 25.41473,
             y: -22.611846,
             value: 6.742859,
@@ -1162,7 +1162,7 @@ const linData = {
           {
             id: "24",
             name: "MmePontmercy",
-            symbolSize: 4.495239333333333,
+            symbolSize: 4.49523,
             x: 70.73283,
             y: -41.17833,
             value: 6.742859,
@@ -1171,7 +1171,7 @@ const linData = {
           {
             id: "25",
             name: "MlleVaubois",
-            symbolSize: 2.6666666666666665,
+            symbolSize: 2.6666665,
             x: 33.087878,
             y: 67.95472,
             value: 4,
@@ -1180,7 +1180,7 @@ const linData = {
           {
             id: "26",
             name: "LtGillenormand",
-            symbolSize: 8.152382000000001,
+            symbolSize: 8.15238,
             x: 27.538695999999998,
             y: 39.221379999999996,
             value: 12.228573,
@@ -1190,7 +1190,7 @@ const linData = {
             id: "27",
             name: "微博",
             symbolSize: 35.58095333333333,
-            x: 41.289373999999995,
+            x: 41.289373,
             y: -2.7610821999999997,
             value: 53.37143,
             category: 2,
@@ -1198,7 +1198,7 @@ const linData = {
           {
             id: "28",
             name: "BaronessT",
-            symbolSize: 4.495239333333333,
+            symbolSize: 4.49523,
             x: 38.965986,
             y: 44.956072,
             value: 6.742859,
@@ -1207,7 +1207,7 @@ const linData = {
           {
             id: "29",
             name: "Mabeuf",
-            symbolSize: 20.95238266666667,
+            symbolSize: 20.952382,
             x: 119.53236,
             y: 27.036962,
             value: 31.428574,
@@ -1216,7 +1216,7 @@ const linData = {
           {
             id: "30",
             name: "Enjolras",
-            symbolSize: 28.266666666666665,
+            symbolSize: 28.266665,
             x: 71.156732,
             y: -14.976490799999998,
             value: 42.4,
@@ -1225,8 +1225,8 @@ const linData = {
           {
             id: "31",
             name: "Combeferre",
-            symbolSize: 20.95238266666667,
-            x: 103.05922000000001,
+            symbolSize: 20.952382,
+            x: 103.0592,
             y: -9.2335128,
             value: 31.428574,
             category: 3,
@@ -1243,7 +1243,7 @@ const linData = {
           {
             id: "33",
             name: "Feuilly",
-            symbolSize: 20.95238266666667,
+            symbolSize: 20.952382,
             x: 110.03833999999999,
             y: -25.635073999999996,
             value: 31.428574,
@@ -1252,7 +1252,7 @@ const linData = {
           {
             id: "34",
             name: "Courfeyrac",
-            symbolSize: 24.609526666666667,
+            symbolSize: 24.609527,
             x: 87.23436799999999,
             y: -2.5457365,
             value: 36.91429,
@@ -1270,7 +1270,7 @@ const linData = {
           {
             id: "36",
             name: "Bossuet",
-            symbolSize: 24.609526666666667,
+            symbolSize: 24.609527,
             x: 91.16391,
             y: -23.091652,
             value: 36.91429,
@@ -1297,7 +1297,7 @@ const linData = {
           {
             id: "39",
             name: "MotherPlutarch",
-            symbolSize: 2.6666666666666665,
+            symbolSize: 2.6666665,
             x: 133.79136,
             y: 40.930976,
             value: 4,
@@ -1306,7 +1306,7 @@ const linData = {
           {
             id: "40",
             name: "Toussaint",
-            symbolSize: 6.323809333333333,
+            symbolSize: 6.32380,
             x: 8.1884506,
             y: 22.756543999999998,
             value: 9.485714,
@@ -1315,7 +1315,7 @@ const linData = {
           {
             id: "41",
             name: "Child1",
-            symbolSize: 4.495239333333333,
+            symbolSize: 4.49523,
             x: 87.5878,
             y: 58.316468,
             value: 6.742859,
@@ -1324,7 +1324,7 @@ const linData = {
           {
             id: "42",
             name: "Child2",
-            symbolSize: 4.495239333333333,
+            symbolSize: 4.49523,
             x: 93.209844,
             y: 56.67211999999999,
             value: 6.742859,
@@ -1640,7 +1640,7 @@ const linData = {
               name: "人员4",
               symbolSize: 12,
               x: -89.35752,
-              y: 24.676009999999998,
+              y: 24.,
               value: 17.714287,
               category: 1
           },
@@ -1648,7 +1648,7 @@ const linData = {
               id:"5",
               name: "人员5",
               symbolSize: 10,
-              x: -77.28980800000001,
+              x: -77.289,
               y: 28.011874,
               value: 17.714287,
               category: 1

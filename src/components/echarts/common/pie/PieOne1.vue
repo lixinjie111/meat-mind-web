@@ -23,6 +23,10 @@ export default {
 				return '';
 			},
 		},
+		size:{
+			type:Number,
+			default:12
+		},
 		colorList:{
 			type:Array,
 			default:()=>{
@@ -64,17 +68,22 @@ export default {
 				title: {
 					text: ''+value,
 					subtext: this.title,
-					top: 'center',
+					padding:0,
+					itemGap: 0,
+					top: 'middle',
 					left: 'center',
+					textVerticalAlign:"auto",
 					textStyle: {
-						fontSize: 38 / 144 * window.rem,
-						fontWeight: 400
+						fontSize: this.size / 144 * window.rem,
+						fontFamily: "PingFangSC-Light, PingFang SC",
+						fontWeight: 300,
+						color:"#242F57"
 					},
 					subtextStyle: {
 						fontSize: 12 / 144 * window.rem,
-						color: '#666'
+						color: '#666',
 					},
-					itemGap: 0
+
 				},
 				series: [{
 					name: 'shadow',

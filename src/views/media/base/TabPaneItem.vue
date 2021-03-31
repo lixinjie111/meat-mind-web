@@ -149,7 +149,8 @@
                     props: {
                       placement: "bottom",
                       popperClass: "saas-poptip",
-                      transfer: true
+                      transfer: true,
+                      trigger:"hover"
                     },
                     style: {
                       marginLeft: '2px'

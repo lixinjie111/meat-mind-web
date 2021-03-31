@@ -2,8 +2,8 @@
     <div class="index-container">
         <div class="header-box">
          <img :src="logoImg" class="logoImg">
-         <div class="tabTxt_con">
-             <div class="tabTxt_item" v-for="(item,index) in tabList" :key="index" :class="{'activTab' : currentInx == index}" @click="changePanel(index)">{{item}}</div>
+         <div class="tab-list">
+             <div class="tab-item" v-for="(item,index) in tabList" :key="index" :class="{'activTab' : currentInx == index}" @click="changePanel(index)">{{item}}</div>
          </div>
         </div>
         <div class="index_container" v-if="currentInx == 0">
@@ -87,12 +87,13 @@
                 width: 90px;
                 margin-left: 244px;
             }
-            .tabTxt_con{
+            .tab-list{
                 display: flex;
                 align-items: center;
                 height: 60px;
                 margin-left: 94px;
-                .tabTxt_item{
+                box-sizing:border-box;
+                .tab-item{
                     height: 60px;
                     font-size: 14px;
                     font-family: PingFangSC-Regular, PingFang SC;
@@ -101,11 +102,13 @@
                     margin-right: 32px;
                     display: flex;
                     align-items: center;
-                    &:hover{
-                        font-family: PingFangSC-Medium, PingFang SC;
-                        font-weight: 500;
-                        cursor: pointer;
-                    }
+                    cursor: pointer;
+                    border-bottom: 2px solid #FFFFFF;
+                    // &:hover{
+                    //     font-family: PingFangSC-Medium, PingFang SC;
+                    //     // font-weight: 500;
+                    //     cursor: pointer;
+                    // }
                 }
                 .activTab{
                     font-size: 14px;

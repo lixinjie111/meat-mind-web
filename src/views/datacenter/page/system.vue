@@ -124,7 +124,7 @@
             line-height: 20px;
             .top{
                 padding:40px 0;
-                border-bottom:1px dashed #000; 
+                border-bottom:1px solid #EAEDF7; 
                 .topzi{
                     text-align: center;
                     .link{

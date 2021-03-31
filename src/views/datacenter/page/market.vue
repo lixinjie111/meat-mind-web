@@ -364,7 +364,7 @@
                     height: 114px;
                     background: #FFFFFF;
                     border-radius: 8px;
-                    border: 1px solid #C6CBDE;
+                    border: 1px solid #EAEDF7;
 
                     > img {
                         margin-right: 8px;

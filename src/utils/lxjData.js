@@ -57,7 +57,7 @@ const lxjEData = {
             {
                 value:400,
                 itemStyle: {
-                    color: '#FC809F'
+                    color: '#FE774B'
                 },
 
             },493,557, 699,  ],

@@ -171,7 +171,7 @@
             </div>
           </div>
           <div class="pin_container">
-              <PieOne1 id="box301" :value="72" title="品牌测评"></PieOne1>
+              <PieOne1 id="box301" :size="38" :value="72" title="品牌测评"></PieOne1>
 <!--            <i-circle :percent="72" :stroke-color="['rgba(35,115,255,0.3)','#2373FF',]">-->
 <!--                <span style="font-size: 46px;font-family: PingFangSC-Light, PingFang SC;font-weight: 300;color: #242F57;">72</span><br>-->
 <!--                <span style="font-size: 10px;font-family: PingFangSC-Regular, PingFang SC;font-weight: 400;color: #636E95;">品牌测评</span>-->
@@ -1458,7 +1458,7 @@ export default {
                 box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
                 border-radius: 4px;
                 border: 1px solid rgba(255, 255, 255, 0.4);
-                margin-left: 24px;
+                margin-left: 12px;
                 .iconxiazai{
                   font-size: 14px;
                   color: #FFFFFF;

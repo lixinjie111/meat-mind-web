@@ -1,9 +1,9 @@
 <template>
-  <div class="row" :class="{'hasSubHight':subTile}" >
+  <div class="row">
     <div class="col all">
       <p class="title">{{title}}</p>
       <p class="subTile" v-if="subTile">{{subTile}}</p>
-      <div class="r-all-echarts" :class="{'hasSubechartsHight':subTile}">
+      <div class="r-all-echarts">
         <slot></slot>
       </div>
     </div>
@@ -60,14 +60,8 @@ export default {
     }
     .r-all-echarts {
       width: 100%;
-      height: calc(100% - 20px);
-    }
-    .hasSubechartsHight{
-      height: 500px;
+      height: calc(100% - 40px);  
     }
   }
-}
-.hasSubHight{
-  height: 590px;
 }
 </style>

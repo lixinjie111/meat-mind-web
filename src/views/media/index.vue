@@ -76,9 +76,9 @@
             </div>
             <Poptip popper-class="saas-poptip small" trigger="hover">
               <i :class="['iconfont','icongengduo']"></i>
-              <div slot="content">
-                  <p>环比<i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">3.46%</span></p >
-                  <p>同比<i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">2.23%</span></p >
+              <div slot="content" class="pop-center">
+                  <p>环比 : <i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">3.46%</span></p >
+                  <p>同比 : <i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">2.23%</span></p >
               </div>
             </Poptip>
           </div>
@@ -98,9 +98,9 @@
             </div>
             <Poptip popper-class="saas-poptip small" trigger="hover">
               <i :class="['iconfont','icongengduo']"></i>
-              <div slot="content">
-                  <p>环比<i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">3.54%</span></p >
-                  <p>同比<i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">1.11%</span></p >
+              <div slot="content" class="pop-center">
+                  <p>环比 : <i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">3.54%</span></p >
+                  <p>同比 : <i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">1.11%</span></p >
               </div>
             </Poptip>
           </div>
@@ -120,9 +120,9 @@
             </div>
             <Poptip popper-class="saas-poptip small" trigger="hover">
               <i :class="['iconfont','icongengduo']"></i>
-              <div slot="content">
-                  <p>环比<i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">3.53%</span></p >
-                  <p>同比<i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">12.4%</span></p >
+              <div slot="content" class="pop-center">
+                  <p>环比 : <i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">3.53%</span></p >
+                  <p>同比 : <i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">12.4%</span></p >
               </div>
             </Poptip>
           </div>
@@ -139,9 +139,9 @@
             </div>
             <Poptip popper-class="saas-poptip small" trigger="hover">
               <i :class="['iconfont','icongengduo']"></i>
-              <div slot="content">
-                  <p>环比<i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">4.27%</span></p >
-                  <p>同比<i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">5.2%</span></p >
+              <div slot="content" class="pop-center">
+                  <p>环比 : <i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">4.27%</span></p >
+                  <p>同比 : <i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">5.2%</span></p >
               </div>
             </Poptip>
           </div>
@@ -158,9 +158,9 @@
             </div>
             <Poptip popper-class="saas-poptip small" trigger="hover">
               <i :class="['iconfont','icongengduo']"></i>
-              <div slot="content">
-                  <p>环比<i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">2.12%%</span></p >
-                  <p>同比<i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">6.67%</span></p >
+              <div slot="content" class="pop-center">
+                  <p>环比 : <i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">2.12%</span></p >
+                  <p>同比 : <i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">6.67%</span></p >
               </div>
             </Poptip>
           </div>
@@ -177,9 +177,9 @@
             </div>
             <Poptip popper-class="saas-poptip small" trigger="hover">
               <i :class="['iconfont','icongengduo']"></i>
-              <div slot="content">
-                  <p>环比<i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">7.17%</span></p >
-                  <p>同比<i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">4.43%</span></p >
+              <div slot="content" class="pop-center">
+                  <p>环比 : <i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">7.17%</span></p >
+                  <p>同比 : <i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">4.43%</span></p >
               </div>
             </Poptip>
           </div>
@@ -564,8 +564,8 @@
                 </div>
               </div>
               <ul class="new_echart_legend">
-                <li><div class="circle"></div> 转化率</li>
-                <li><div class="circle circleBox"></div> 销售额</li>
+                <li><div class="circle circleBox"></div> 转化率</li>
+                <li><div class="circle"></div> 销售额</li>
               </ul>
             </div>
           </div>
@@ -1155,7 +1155,7 @@
         rankList:[],
         rankList1:[],
         contList:['品牌官方产品发布','直播','微博博文','节日礼品上新',],
-        contList1:['KOL自有粉丝','品牌核心目标消费人群<br>(北京上班族/年轻白领)','品牌忠诚消费者',],
+        contList1:['KOL自有粉丝','品牌忠诚消费者','品牌核心目标消费人群(北京上班族/年轻白领)'],
       }
     },
     created(){
@@ -1375,7 +1375,7 @@
         if(arg==1){
           this.myChartData0=this.$fjData.box51Data;
           this.contList=['品牌官方产品发布','直播','微博博文','节日礼品上新',];
-          this.contList1=['KOL自有粉丝','品牌核心目标消费人群<br>(北京上班族/年轻白领)','品牌忠诚消费者',];
+          this.contList1=['KOL自有粉丝','品牌忠诚消费者','品牌核心目标消费人群(北京上班族/年轻白领)'];
           this.mediaList1=[
             {
               numTxt1:'150W',
@@ -1449,7 +1449,7 @@
             },
           ]
           this.contList=['品牌产品种草短视频','品牌产品介绍视频	','品牌产品体验笔记',];
-          this.contList1=['KOL自有粉丝','品牌核心目标消费人群<br>(北京上班族/年轻白领)','品牌忠诚消费者',];
+          this.contList1=['KOL自有粉丝','品牌忠诚消费者','品牌核心目标消费人群(北京上班族/年轻白领)'];
         }else{
            this.myChartData5=this.$abelData.nest204Data;
           this.myChartData0=this.$fjData.box53Data;
@@ -1488,7 +1488,7 @@
             },
           ]
           this.contList=['行业趋势(品牌/产品露出)','生活指南','好物推荐',];
-          this.contList1=['KOL自有粉丝','品牌核心目标消费人群<br>(北京上班族/年轻白领)','品牌忠诚消费者',];
+          this.contList1=['KOL自有粉丝','品牌忠诚消费者','品牌核心目标消费人群(北京上班族/年轻白领)'];
         }
       },
       change2(arg){
@@ -3495,25 +3495,25 @@
                 font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
                 color: #242F57;
-                margin-bottom: 14px;
+                // margin-bottom: 14px;
               }
               .navbmList{
                 display: flex;
                 flex-flow: wrap;
                 .navbmItem{
-                  margin-right: 16px;
-                  margin-bottom: 12px;
-                  width: 148px;
-                  height: 40px;
-                  background: #F0F8FF;
-                  border-radius: 4px;
                   display: flex;
                   justify-content: center;
                   align-items: center;
+                  width: 148px;
+                  height: 32px;
+                  margin-right: 16px;
+                  margin-top: 12px;
                   font-size: 12px;
                   font-family: PingFangSC-Regular, PingFang SC;
                   font-weight: 400;
-                  color: #636E95;
+                  color: #2373FF;
+                  background: #F0F8FF;
+                  border-radius: 4px;
                 }
               }
             }
@@ -3525,28 +3525,28 @@
                 font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
                 color: #242F57;
-                margin-bottom: 14px;
+                // margin-bottom: 14px;
               }
               .navbmList{
                 display: flex;
                 flex-flow: wrap;
                 .navbmItem1{
-                  padding:0 8px;
-                  margin-right: 16px;
-                  margin-bottom: 12px;
-                  width: 153px;
-                  height: 58px;
-                  background: #F0F8FF;
-                  border-radius: 4px;
                   display: flex;
                   justify-content: center;
-                  align-items: center;
+                  align-items: center;                  
+                  width: 153px;
+                  height: 32px;
+                  margin-right: 16px;
+                  margin-top: 12px;
                   font-size: 12px;
                   font-family: PingFangSC-Regular, PingFang SC;
                   font-weight: 400;
-                  color: #636E95;
+                  color: #2373FF;
+                  background: #F0F8FF;
+                  border-radius: 4px;
                 }
                 .navbmItem1:last-child{
+                  width: 288px;
                   margin-right: 0
                 }
               }
@@ -3631,6 +3631,7 @@
               width: 100px;
               display: flex;
               flex-direction: column;
+              justify-content: center;
               li{
                 text-align: right;
                 padding-right: 30px;

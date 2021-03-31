@@ -197,7 +197,6 @@
 
 .saas-poptip {
   min-width: 110px;
-
   &[x-placement^="right"] {
     .ivu-poptip-arrow {
       &:after {
@@ -281,10 +280,15 @@
     }
   }
 
-  &.small {
+  &.small .ivu-poptip-content .ivu-poptip-inner{
     .ivu-poptip-body {
-      padding: 16px;
+      padding: 12px;
       max-width: 240px !important;
+      .ivu-poptip-body-content .pop-center >p{
+          display: flex;
+          justify-content: space-between;
+        }
+      
     }
   }
 }
@@ -373,7 +377,7 @@
 .ivu-table{
   th{
     background: #F6F9FF;
-    border: none;
+    // border: none;
   }
 }
 .ivu-page{
@@ -381,4 +385,11 @@
   .ivu-page-options {
     float: left;
   }
+}
+
+.ivu-table-cell-tree{
+  border: none;
+}
+.ivu-table-cell-tree-empty{
+  display: none;
 }

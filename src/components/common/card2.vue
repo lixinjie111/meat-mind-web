@@ -12,9 +12,9 @@
       </div>
       <Poptip popper-class="saas-poptip small" trigger="hover">
         <i :class="['iconfont','icongengduo',cardData.ysIcon]"></i>
-        <div slot="content">
-            <p>环比<i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">{{cardData.upper}}</span></p >
-            <p>同比<i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">{{cardData.downper}}</span></p >
+        <div slot="content" class="pop-center">
+            <p>环比 : <i :class="['iconfont','iconshangsheng','upnumIcon']"></i><span class="upnum">{{cardData.upper}}</span></p >
+            <p>同比 : <i :class="['iconfont','iconxiajiang','downnumIcon']"></i><span class="downnum">{{cardData.downper}}</span></p >
         </div>
       </Poptip>
   </div>

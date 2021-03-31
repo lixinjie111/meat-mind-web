@@ -88,7 +88,7 @@ export default {
 					data: this.myData.legName,
 				},
 				grid: {
-					top: '5%',
+					top: this.yName?40:10,
 					left: 10,
 					right: 10,
 					bottom: 25,
@@ -129,6 +129,9 @@ export default {
 				yAxis: {
 					type: 'value',
 					name: this.yName,
+					nameTextStyle:{
+						color:'#636E95'  
+					},
 					axisLabel: {
 						textStyle: {
 							color: "#97A0C3",   

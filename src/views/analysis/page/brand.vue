@@ -33,7 +33,7 @@
         <barM  :colorList="$ljEData.colorList" :myData="$ljEData.ljBox35"/>
       </Full>
     </Card>
-    <Card title="Quick Ratio">
+    <Card title="Quick Ratio" style="border:none">
       <Full>
         <barM2 :color-list="['red', 'green']"  :colorList="$ljEData.colorList" :myData="$ljEData.ljBox36"/>
       </Full>

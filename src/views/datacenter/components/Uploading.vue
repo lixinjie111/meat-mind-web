@@ -1,5 +1,5 @@
 <template>
-  <Modal class-name="uploading-modal" :value="visible" footer-hide :closable="false">
+  <Modal class-name="uploading-modal" :value="visible" footer-hide :closable="true" @on-visible-change="change">
     <div class="upload2">
       <img src="../../../assets/img/datacenter/myData/uploading.png" alt="">
       <div class="upload2-btn" @click="uploadChange2"></div>
@@ -20,6 +20,11 @@ export default {
     uploadChange2(v) {
       this.$emit('select', v)
     },
+    change(boolean){
+      if(!boolean){
+        this.$emit('select')
+      }
+    }
   },
   computed: {
     modalWidth() {

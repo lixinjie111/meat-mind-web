@@ -79,32 +79,27 @@
           :myData="$ljEData.ljBox6"
         />
       </Half>
-      <Half
-        lTitle="使用优惠券的用户数"
-        subDateL="2021.02.22-2021.02.28"
-        rTitle="推送转化的人均次数"
-        subDateR="2021.02.22-2021.02.28"
-      >
+      <Full title="使用优惠券的用户数" subTile="2021.02.22-2021.02.28">
         <lineM
-          slot="echarts"
           y-name="日活数"
           :option="{ xAxis: { boundaryGap: false } }"
           :colorList="$ljEData.colorList"
           :myData="$ljEData.ljBox7"
         />
+      </Full>
+      <Full title="推送转化的人均次数" subTile="2021.02.22-2021.02.28">
         <Table
-          slot="rightEcharts"
           :columns="columns"
           :data="tabData"
-          style="margin-top: 60px"
+          style="margin-top: 10px"
         >
           <template slot-scope="{ row, index }" slot="index">
             <span class="operation">{{ index + 1 }}</span>
           </template>
-        </Table>
-      </Half>
+        </Table>        
+      </Full>
     </Card>
-    <Card title="用户旅程">
+    <Card title="用户旅程" style="border:none">
       <Full title="用户生命周期">
         <barM
           y-name="人数"
@@ -239,47 +234,47 @@ export default {
         {
           title: "序号",
           slot: "index",
-          width: 100,
+          width: 80 / 144 * window.rem,
         },
         {
           title: "意向",
           key: "intention",
-          width: 200,
+          width: 120 / 144 * window.rem,
         },
         {
           title: "2021/2/1",
           key: "time1",
-          width: 200,
+          // width: 120 / 144 * window.rem,
         },
         {
           title: "2021/2/1",
           key: "time1",
-          width: 200,
+          // width: 120 / 144 * window.rem,
         },
         {
           title: "2021/2/6",
           key: "time2",
-          width: 200,
+          // width: 120 / 144 * window.rem,
         },
         {
           title: "2021/2/11",
           key: "time3",
-          width: 200,
+          // width: 120 / 144 * window.rem,
         },
         {
           title: "2021/2/16",
           key: "time4",
-          width: 200,
+          // width: 120 / 144 * window.rem,
         },
         {
           title: "2021/2/21",
           key: "time5",
-          width: 200,
+          // width: 120 / 144 * window.rem,
         },
         {
           title: "2021/2/26",
           key: "time6",
-          width: 200,
+          // width: 120 / 144 * window.rem,
         },
       ],
       tabData: [

@@ -2657,7 +2657,7 @@
                     .tab_content_item_bom_item{
                       padding: 2px 10px;
                       box-sizing: border-box;
-                      background: #F0F8FF;
+                      background: #ECF3FF;
                       border-radius: 4px;
                       border: 1px solid #FFFFFF;
                       font-size: 12px;

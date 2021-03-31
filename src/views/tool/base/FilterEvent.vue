@@ -140,7 +140,6 @@
       margin-left: 16px;
       background: #FFFFFF;
       border-radius: 4px;
-      border: 1px solid #97A0C3;
     }
     .item2.ml0 {
       margin-left: 0;

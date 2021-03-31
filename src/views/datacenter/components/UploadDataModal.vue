@@ -2,7 +2,7 @@
   <div>
     <Modal v-show="ready" ok-text="确认上传" title="上传数据" @on-ok="onOk" :width="modalWidth" @on-visible-change="onVisibleChange" :value="visible" :closable="true">
       <template slot="close">
-        <i class="iconfont iconClose" ></i>
+        <i class="iconfont iconClose"></i>
       </template>
       <div class="row">
         <div class="required label">数据类型</div>
@@ -149,27 +149,31 @@ export default {
       justify-content: center;
       cursor: pointer;
       position: relative;
-      overflow: hidden;
+      // overflow: hidden;
       .iconfont{
         font-size: 24px;
         margin-right: 8px;
       }
       .triangle {
         display: none;
-        border-bottom: 20px solid #2373FF;
-        border-left: 20px solid transparent;
+        border-bottom: 24px solid #2373FF;
+        border-left: 24px solid #ffffff;
+        border-radius: 0 0 8px 0;
         width: 0;
         height: 0;
         position: absolute;
-        right: 0;
-        bottom: 0;
+        right: -1px;
+        bottom: -1px;
         >.iconfont{
           position: absolute;
-          left: -12px;
-          bottom: -24px;
+          left: -13px;
+          bottom: -22px;
           color: #ffffff;
           font-weight: bolder;
-          font-size: 14px;
+          width: 10px;
+          height: 10px;
+          font-size: 10px;
+          line-height: 10px;
         }
       }
       &:last-child{
@@ -253,5 +257,8 @@ export default {
     }
   }
 }
-
+::v-deep .ivu-modal-footer .ivu-btn-primary{
+  box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
+  border-radius: 4px;
+}
 </style>

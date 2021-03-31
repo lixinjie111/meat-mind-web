@@ -6,7 +6,7 @@
           <span>有效行业数据</span>
           32,124,423
           <div class="message">
-            <Icon type="ios-information-circle-outline" color="#7C88B1" />
+            <i class="iconfont iconguanyu tip-icon"></i>
             <div class="image"></div>
           </div>
         </div>
@@ -83,6 +83,10 @@ export default {
       }
       .message {
         position: relative;
+        color:#7C88B1;
+        &:hover{
+          color: #2373FF;
+        }
         > i {
           margin-left: 6px;
           cursor: pointer;
@@ -146,19 +150,20 @@ export default {
       justify-content: center;
       width: 80px;
       height: 32px;
-      border-radius: 8px;
+      border-radius: 4px;
       font-size: 14px;
       font-family: PingFangSC-Regular, PingFang SC;
       font-weight: 400;
       cursor: pointer;
     }
     .cancel {
-      border: 1px solid #c6cbde;
-      color: #636e95;
+      border: 1px solid #97A0C3;
+      color: #242F57;
       margin-right: 16px;
     }
     .create {
-      background: #3366ff;
+      background: #2373FF;
+      box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
       color: #ffffff;
 
     }

@@ -2,7 +2,7 @@
 export function setBarWidth(opt,bar){
     opt.series.forEach(item=>{
         if(item.type=='bar'){
-            item.barWidth  =  14 / 144 * window.rem
+            item.barWidth  =  12 / 144 * window.rem
             item.barMaxWidth = 20
             if(item.itemStyle){
                 item.itemStyle.barBorderRadius = bar=="row"?[0, 2 / 144 * window.rem, 2 / 144 * window.rem, 0]:bar=='col'?[2 / 144 * window.rem, 2 / 144 * window.rem, 0, 0]:2 / 144 * window.rem

@@ -288,7 +288,7 @@
             </div>
         </Card>
         <Card title="经营过程风险预警" class="last-card">
-            <div slot="right" class="card-right" @click="toDetail4">更多<i class="iconfont icongengduo"></i></div>
+            <div slot="right" class="card-right" @click="toDetail4">更多<i class="iconfont iconleft-arrow"></i></div>
             <div class="manage-card2">
                 <div class="manage-card2-top flex">
                     <div id="myChart2"></div>
@@ -1566,9 +1566,11 @@
 							padding-left: 16px;
 						}
 						.legend_box{
+                            display: flex;
+                            align-items: center;
 							.legend{
-								width: 16px;
-								height: 16px;
+								width: 8px;
+								height: 8px;
 								border-radius: 50%;
 								display: inline-block;
 								margin-right: 4px;
@@ -1586,20 +1588,24 @@
 							}
 						}
 						.tips{
+                            display: flex;
+							align-items: center;
+							justify-content: center;
 							width: 160px;
 							height: 40px;
 							background: #FEDFE1;
-							border-radius: 8px;
+							border-radius: 4px;
 							font-size: 24px;
+                            font-family: PingFangSC-Medium, PingFang SC;
 							font-weight: 500;
 							color: #FF4C60;
-							display: flex;
-							align-items: center;
-							justify-content: center;
 							margin-top: 0;
 							.iconfont{
+                                width: 24px;
+                                height: 24px;
 								font-size: 24px;
 								margin-right: 4px;
+                                line-height: 24px;
 							}
 						}
 					}
@@ -1694,7 +1700,6 @@
                                 font-size: 16px;
                                 font-family: PingFangSC-Medium, PingFang SC;
                                 font-weight: 500;
-                                color: #242F57;
                             }
 
                             &:nth-child(2) {
@@ -1702,7 +1707,6 @@
                                 font-size: 14px;
                                 font-family: PingFangSC-Regular, PingFang SC;
                                 font-weight: 400;
-                                color: #636E95;
                             }
 
                             >span {
@@ -1713,26 +1717,34 @@
                         }
 
                         &:nth-child(1) {
-                            background: url("../../../assets/img/dashboard/manage/gradient-bg1@2x.png") no-repeat center / 100% 100%;
+                            color:#2373FF;
+                            background: rgb(211, 227, 255);
+                            // background: url("../../../assets/img/dashboard/manage/gradient-bg1@2x.png") no-repeat center / 100% 100%;
                         }
 
                         &:nth-child(2) {
-                            background: url("../../../assets/img/dashboard/manage/gradient-bg2@2x.png") no-repeat center / 100% 100%;
+                            color: #FE774B;
+                            background: rgb(255, 230, 222);
+                            // background: url("../../../assets/img/dashboard/manage/gradient-bg2@2x.png") no-repeat center / 100% 100%;
                         }
 
                         &:nth-child(3) {
-                            background: url("../../../assets/img/dashboard/manage/gradient-bg3@2x.png") no-repeat center / 100% 100%;
+                            color: #1DCEC3;
+                            background: rgb(223, 248, 246);
+                            // background: url("../../../assets/img/dashboard/manage/gradient-bg3@2x.png") no-repeat center / 100% 100%;
                         }
 
                         &:nth-child(4) {
+                            color: #F16E84;
+                            background: rgb(255, 235, 243);
                             margin-bottom: 0;
-                            background: url("../../../assets/img/dashboard/manage/gradient-bg4@2x.png") no-repeat center / 100% 100%;
+                            // background: url("../../../assets/img/dashboard/manage/gradient-bg4@2x.png") no-repeat center / 100% 100%;
                         }
 
-                        &:hover {
-                            background: #FFFFFF;
-                            box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16), 1px 1px 0px 0px #FFFFFF;
-                        }
+                        // &:hover {
+                        //     background: #FFFFFF;
+                        //     box-shadow: 6px 4px 16px 0px rgba(55, 84, 170, 0.16), 1px 1px 0px 0px #FFFFFF;
+                        // }
                     }
                 }
             }
