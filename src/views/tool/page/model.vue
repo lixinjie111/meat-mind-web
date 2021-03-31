@@ -97,7 +97,7 @@ export default {
       this.$router.push({name:"analysis-tool-model-way"})
     },
     hot(){
-      // this.$router.push({name:"analysis-tool-model-hot"})
+      this.$router.push({name:"analysis-tool-model-hot"})
     },
     interval(){
       // this.$router.push({name:"analysis-tool-model-interval"})

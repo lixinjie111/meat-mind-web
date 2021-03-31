@@ -32,11 +32,8 @@
         <Input class="small" />
         个节点
       </div>
-      <Table row-key="id" :columns="columns" :data="data">
-      </Table>
-      <div class="pager">
-        <Page :total="data.length" size="small" show-total show-sizer />
-      </div>
+      <EmptyTable :columns="columns">
+      </EmptyTable>
     </div>
   </DetailsPage>
 </template>
@@ -46,6 +43,7 @@
   import FilterIndice from '../base/FilterIndice';
   import MutableArray from '../base/MutableArray';
   import ComplexInput from '../base/ComplexInput';
+  import EmptyTable from '../base/EmptyTable';
   import DetailsPage from "@/layouts/DetailsPage";
 
   export default {
@@ -172,7 +170,7 @@
         data: []
       }
     },
-    components: {FilterEvent, FilterIndice, MutableArray, ComplexInput, DetailsPage},
+    components: {FilterEvent, FilterIndice, MutableArray, ComplexInput, DetailsPage, EmptyTable},
     methods:{
       back(){
         this.$router.push({name:"analysis-tool-model"})
