@@ -100,7 +100,7 @@ export default {
       this.$router.push({name:"analysis-tool-model-hot"})
     },
     interval(){
-      // this.$router.push({name:"analysis-tool-model-interval"})
+      this.$router.push({name:"analysis-tool-model-interval"})
     },
     defined(){
       // this.$router.push({name:"analysis-tool-model-defined"})
