@@ -8,11 +8,34 @@
 </template>
 <script>
 import  NewEcharts from "../components/NewEcharts"
+import api from "@/utils/api"
 export default {
     name:"negative",
     components:{NewEcharts},
     data(){
         return {} 
+    },
+    methods:{
+        getList(){
+            api.getMarkList({}).then(res=>{
+
+            }).catch(err=>{
+                this.$Message.error(err.msg)
+            })
+        },
+        getDetail(){
+            let params = {
+                id:"200027"
+            }   
+            api.getMarkDetail(params).then(res=>{
+                
+            }).catch(err=>{
+                this.$Message.error(err.msg)
+            })
+        }
+    },
+    mounted(){
+        // this.getDetail()
     }
 }
 </script>
