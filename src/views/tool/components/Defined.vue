@@ -101,10 +101,12 @@
       background: #ffffff;
       box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
       border-radius: 8px;
+      padding: 24px;
+    }
+    .left-pane {
       padding: 0 24px 24px 24px;
     }
     .bottom-pane {
-      padding: 24px;
       margin-top: 24px;
     }
     .right-pane {
