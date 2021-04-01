@@ -187,6 +187,10 @@
     box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
     border-radius: 8px;
 
+    .filter-event {
+      border-top: none;
+    }
+
     .event {
       display: flex;
       align-items: center;
@@ -211,7 +215,7 @@
 
     .item1 {
       width: 200px;
-      margin-left: 16px;
+      margin: 0 16px;
       /*display: inline-block;*/
     }
 

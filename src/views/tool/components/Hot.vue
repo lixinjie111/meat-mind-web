@@ -34,7 +34,7 @@
     {
       "values": [
         [
-          3343,
+          2334,
           0,
           0,
           "返券活动"
@@ -47,53 +47,53 @@
     {
       "values": [
         [
-          509,
-          68,
-          509,
-          "神策数据 | Sensors Data - 国内领先的用户行为分析产品（这个链接可以看热力效果，效果演示请点我！！！）"
+          268,
+          36,
+          268,
+          "元知智能研究院| META SOPHIA RESEARCH INSTITUTE（这个链接可以看热力效果，效果演示请点我！！！）"
         ]
       ],
       "by_values": [
-        "https://heatmap.sensorsdata.cn/index.html?server=http%3A%2F%2F10.10.1.78%3A8106%2Fsa%3Fproject%3DNewRetailDemo"
+        "http://yzmsri.com"
       ]
     },
     {
       "values": [
         [
-          184,
-          64,
-          184,
-          "神策分析|Sensors Analytics-帮你实现数据驱动－demo（这个链接可以看热力效果，效果演示请点我！！！）"
+          107,
+          33,
+          107,
+          "元知智能研究院| Sophia基础技术研发中心平台（这个链接可以看热力效果，效果演示请点我！！！）"
         ]
       ],
       "by_values": [
-        "https://heatmap.sensorsdata.cn/demo.html?server=http%3A%2F%2F10.10.1.78%3A8106%2Fsa%3Fproject%3DNewRetailDemo"
+        "https://www.yzsophia.com/#/index"
       ]
     },
     {
       "values": [
         [
-          176,
-          62,
-          176,
-          "神策分析|Sensors Analytics-帮你实现数据驱动－B轮融资发布会（这个链接可以看热力效果，效果演示请点我！！！）"
+          82,
+          32,
+          82,
+          "元知智能研究院| Sophia平台行业应用试用中心（这个链接可以看热力效果，效果演示请点我！！！）"
         ]
       ],
       "by_values": [
-        "https://heatmap.sensorsdata.cn/b-round.html?server=http%3A%2F%2F10.10.1.78%3A8106%2Fsa%3Fproject%3DNewRetailDemo"
+        "https://www.yzsophia.com/#/trialcenter"
       ]
     },
     {
       "values": [
         [
-          151,
-          62,
-          150,
-          "神策分析|Sensors Analytics-帮你实现数据驱动－产品（这个链接可以看热力效果，效果演示请点我！！！）"
+          77,
+          31,
+          77,
+          "元知智能研究院| Meta-X元知全球科技成果交易平台（这个链接可以看热力效果，效果演示请点我！！！）"
         ]
       ],
       "by_values": [
-        "https://heatmap.sensorsdata.cn/product.html?server=http%3A%2F%2F10.10.1.78%3A8106%2Fsa%3Fproject%3DNewRetailDemo"
+        "https://www.yzmetax.com/zh-CN/"
       ]
     }
   ];
@@ -167,7 +167,7 @@
             key: 'name',
             width: 600,
             render: (h, params) => {
-              return h('div', [h('div', params.row[params.column.key]), h('div', params.row['url'])]);
+              return h('div', [h('span', params.row[params.column.key]), h('span', params.row['url'])]);
             }
           },
           {
@@ -232,8 +232,7 @@
   }
 
   .data-container {
-    padding: 0 24px;
-    margin-bottom: 20px;
+    padding: 0 24px 100px 24px;
     background: #ffffff;
     box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
     border-radius: 8px;
@@ -315,6 +314,17 @@
     }
     .blue {
       color: #2373FF;
+    }
+
+    .ivu-table {
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #242F57;
+
+      .ivu-table-cell {
+        padding: 7px 16px;
+      }
     }
   }
 </style>
