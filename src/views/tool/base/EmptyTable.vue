@@ -2,7 +2,7 @@
   <div class="vs-table">
     <!-- <Table :columns="columns" :data="tableData"></Table> -->
     <ul class="table-header">
-      <li v-for="(item,index) in columns" :key="index">{{item.title}}</li>
+      <li v-for="(item,index) in columns" :key="index" :style="item.width ? 'width: '+item.width+'px;' : ''">{{item.title}}</li>
     </ul>
     <div class="table-empty">
       <div class="nodata">
@@ -43,6 +43,7 @@
         color: #242F57;
         line-height: 22px;
         padding-left: 10px;
+        flex-grow: 1;
       }
     }
     .table-empty{
