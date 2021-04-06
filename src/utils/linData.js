@@ -863,11 +863,11 @@ const linData = {
             },
         ],
         categories:[
-            {name: "新浪财经"},
-            {name: "百度百家号"},
-            {name: "知乎"},
-            {name: "抖音"}
-          ],
+          {name: "新浪财经"},
+          {name: "百度百家号"},
+          {name: "知乎"},
+          {name: "抖音"}
+        ],
     },
     graphData1:{
         nodes: [
@@ -1591,11 +1591,11 @@ const linData = {
           },
       ],
       categories:[
-          {name: "人民网"},
-          {name: "知乎"},
-          {name: "微博"},
-          {name: "小红书"}
-        ],
+        {name: "人民网"},
+        {name: "知乎"},
+        {name: "微博"},
+        {name: "小红书"}
+      ],
     },
     graphDataChance1:{
       nodes: [

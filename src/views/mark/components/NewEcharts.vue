@@ -14,7 +14,7 @@
           将舆情综合指数（SOI）归一化处理后的舆情事件分布散点图：散点大小表示该舆情信息当前影响力指数。
       </div>
       <div class="echarts-data-desc">
-          1.00>SOI>0.50视为营销机会，0.50>SOI>-0.50视为正常舆情，-0.50>SOI>-1.00视为风险公关事件，点击单个事件可以查看舆情传播链路解构详情分析及相应策略。
+          1.00>SOI>0.50视为营销机会，0.50>=SOI>=-0.50视为正常舆情，-0.50>SOI>-1.00视为风险公关事件，点击单个事件可以查看舆情传播链路解构详情分析及相应策略。
       </div>
       <div class="scatter-echarts">
         <ScatterEcharts id="scatter" @changeSeries="changeSeries" :colorList="$linData.scatterData.colorList" :scatterData="$linData.scatterData"></ScatterEcharts>
@@ -220,6 +220,7 @@ import graphEchartsChance2 from "../../../components/echarts/common/graph/graphE
 import graphEchartsChance3 from "../../../components/echarts/common/graph/graphEcharts3"
 import treeEcharts from "../../../components/echarts/common/tree/treeEcharts"
 import treeEcharts1 from "../../../components/echarts/common/tree/treeEcharts1"
+import api from "@/utils/api"
 export default {
     name:"NewEcharts",
     components:{ScatterEcharts,graphEcharts,graphEcharts1,graphEcharts2,graphEcharts3,graphEchartsChance,graphEchartsChance1,graphEchartsChance2,graphEchartsChance3,treeEcharts,treeEcharts1},
@@ -231,8 +232,28 @@ export default {
     methods:{
         changeSeries(name){
             this.seriesName = name
+        },
+        getList(){
+            api.getMarkList({}).then(res=>{
+
+            }).catch(err=>{
+                this.$Message.error(err.msg)
+            })
+        },
+        getDetail(){
+            let params = {
+                id:"200027"
+            }   
+            api.getMarkDetail(params).then(res=>{
+                
+            }).catch(err=>{
+                this.$Message.error(err.msg)
+            })
         }
-    }
+    },
+    mounted(){
+        this.getList()
+    }    
 }
 </script>
 

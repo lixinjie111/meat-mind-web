@@ -4,7 +4,6 @@ import baseUrl from './baseUrl';
 axios.defaults.timeout = 5000;
 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
 axios.defaults.baseURL = baseUrl + '/';
-
 // 返回状态判断
 axios.interceptors.response.use((res) => {
     if (res.status === 200) {
