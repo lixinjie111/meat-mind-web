@@ -1,7 +1,7 @@
 <template>
-  <Input class="complex-input">
+  <Input class="complex-input" v-model="value">
     <template #append>
-      <Select v-model="event">
+      <Select v-model="select">
         <Option v-for="(item,index) of options" :value="index+1" :key="index+1">{{item}}</Option>
       </Select>
     </template>
@@ -15,7 +15,12 @@
       options: {
         type: Array,
         default: []
-      }
+      },
+      value: Number,
+      select: {
+        type: Number,
+        default: 1
+      },
     }
   }
 </script>

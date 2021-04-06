@@ -10,12 +10,12 @@
           <i-switch v-model="showRelation" size="small" class="margin16"/>
         </div>
       </div>
-      <FilterEvent title="" show-event></FilterEvent>
-      <FilterEvent title="" show-event></FilterEvent>
+      <FilterEvent title="" :events="$abelData.appOptions" show-event></FilterEvent>
+      <FilterEvent title="" :events="$abelData.appOptions" show-event></FilterEvent>
       <div class="event">
         按
         <Select v-model="event" class="item1">
-          <Option v-for="(item,index) of conditionOptions" :value="index+1" :key="index+1">{{item}}</Option>
+          <Option v-for="(item,index) of $abelData.conditionOptions" :value="index+1" :key="index+1">{{item}}</Option>
         </Select>
         <span class="margin16">查看</span>
       </div>
@@ -56,41 +56,6 @@
         initItem: {input: ''},
         showRelation: true,
         event: 1,
-        conditionOptions: [
-          '总体',
-          'Distinct ID',
-          'IP',
-          'SDK版本',
-          '停留时长',
-          '元素位置',
-          '分享时的 distinct_id',
-          '分享时的层级',
-          '分享时的页面路径',
-          '前向地址',
-          '受众 ID',
-          '启动场景',
-          '失败原因',
-          '定向跳转页面',
-          '广告系列内容',
-          '广告系列名称',
-          '广告系列媒介',
-          '广告系列字词',
-          '广告系列来源',
-          '推送ID',
-          '推送内容',
-          '推送服务商',
-          '推送类型',
-          '推送通道 ID',
-          '操作系统，例如iOS',
-          '设备型号，例如iphone6',
-          '用户 ID',
-          '运营策略ID',
-          '运营计划ID',
-          '页面参数',
-          '页面名称',
-          '页面标题',
-          '崩溃原因',
-        ],
         funnelNames: ['原始页面','页面分组',],
         showFirstDay: true,
         date1: 1,

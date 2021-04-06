@@ -105,6 +105,16 @@
     }
     .left-pane {
       padding: 0 24px 24px 24px;
+
+      ul {
+        margin-top: 20px;
+
+        li {
+          /*padding-left: 20px;*/
+          color: #2373FF;
+          cursor: pointer;
+        }
+      }
     }
     .bottom-pane {
       margin-top: 24px;

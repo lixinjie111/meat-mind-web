@@ -29,7 +29,25 @@
     data() {
       return {
         event: 1,
-        events: ["任意事件",
+        conditions: [],
+        initItem: {condition: 0, compare: 1, input: ''},
+      }
+    },
+    components: {FilterCondition, MutableArray},
+    props: {
+      title: String,
+      suffix: String,
+      showEvent: Boolean,
+      buttonText: {
+        type: String,
+        default: '筛选条件'
+      },
+      buttonCss: {
+        type: String,
+        default: ''
+      },
+      events: {
+        default: ["任意事件",
           "App崩溃",
           "领取权益",
           "完善资料",
@@ -92,23 +110,7 @@
           "搜索商品",
           "提交订单",
           "提交订单详情",],
-        conditions: [],
-        initItem: {condition: 0, compare: 1, input: ''},
       }
-    },
-    components: {FilterCondition, MutableArray},
-    props: {
-      title: String,
-      suffix: String,
-      showEvent: Boolean,
-      buttonText: {
-        type: String,
-        default: '筛选条件'
-      },
-      buttonCss: {
-        type: String,
-        default: ''
-      },
     },
     methods: {
       handleAddCondition() {
