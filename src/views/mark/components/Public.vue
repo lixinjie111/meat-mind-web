@@ -49,6 +49,7 @@ export default {
 .mark-details-public{
     padding: 24px;
     background: #FFFFFF;
+    box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
     border-radius: 8px;
     .m-d-public-header{
         display: flex;

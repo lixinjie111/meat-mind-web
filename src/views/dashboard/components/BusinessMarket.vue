@@ -1175,9 +1175,8 @@
                 padding: 24px;
                 width: 100%;
                 background: #FFFFFF;
-                box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+                box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
                 border-radius: 8px;
-                border: 1px solid #EAEDF7;
             }
             &:last-child{
                 .content{
@@ -1592,20 +1591,22 @@
                 .right {
                     display: block;
                     margin-left: 16px;
+                    background: #FFFFFF;
+                    border-radius: 8px;
 
                     .time-line {
-                        height: 104px;
+                        height: 105px;
                         border-radius: 8px 8px 0 0;
                         background: #FFFFFF;
 
                         >img {
                             border-radius: 8px 8px 0 0;
-                            height: 104px;
+                            height: 105px;
                         }
                     }
 
                     .map-box {
-                       margin-top: 16px;
+                       margin-top: 24px;
                        width: 100%;
                        height: 530px;
                     }

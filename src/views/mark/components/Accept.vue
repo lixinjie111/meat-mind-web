@@ -77,6 +77,7 @@ export default {
     padding:24px;
     // margin-bottom: 24px;
     background: #FFFFFF;
+    box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
     border-radius: 8px;
     .m-d-accept-header{
         display: flex;

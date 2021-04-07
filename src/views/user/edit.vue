@@ -295,10 +295,9 @@ export default {
     height: 844px;
     padding: 24px;
     margin-right: 24px;
-    background: #ffffff;
-    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-    border-radius: 12px;
-    border: 1px solid #eaedf7;
+    background: #FFFFFF;
+    box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+    border-radius: 8px;
     >p{
       width: 83px;
       height: 16px;
@@ -472,10 +471,9 @@ export default {
   .user-target {
     width: 780px;
     height: 690px;
-    background: #ffffff;
-    box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-    border-radius: 12px;
-    border: 1px solid #eaedf7;
+    background: #FFFFFF;
+    box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+    border-radius: 8px;
     display: flex;
     .target-left {
       width: 186px;
