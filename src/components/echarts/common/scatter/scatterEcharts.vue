@@ -35,7 +35,7 @@ export default {
   },
   data(){
     return {
-      lengndName:"风险",
+      lengndName:this.selectItem.status==1?'机会':this.selectItem.status==2?'正常':'风险',
       xName:this.selectItem.time,
       yValue:this.selectItem.index,
     }
@@ -53,7 +53,7 @@ export default {
         this.lengndName = params.seriesName
         this.xName = params.name
         this.yValue = params.value
-        this.$emit('changeSeries',params.seriesName)
+        this.$emit('changeSeries',params)
         let options = await this.defaultOption()
         myEchart.setOption(options,true)
       })
@@ -179,7 +179,7 @@ export default {
             data: this.starr
           },
           {
-            // name:this.lengndName,
+            name:this.lengndName,
             type: "effectScatter",
             symbolSize: 20,
             data:[[this.xName,this.yValue]],

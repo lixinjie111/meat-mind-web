@@ -15,6 +15,9 @@ export default {
     },
     graphDatas:{
       type: Object
+    },
+    detail:{
+      type:Object
     }
   },
   methods: {
@@ -28,6 +31,14 @@ export default {
       });
     },
     defaultOption() {
+      this.graphDatas.nodes[3].name = this.detail.title
+      this.graphDatas.nodes[9].name = this.detail.subPublicList[0].title
+      this.graphDatas.nodes[19].name = this.detail.subPublicList[2].title
+      this.graphDatas.nodes[26].name = this.detail.subPublicList[1].title
+      this.graphDatas.categories = [{name:this.detail.title},
+                                    {name:this.detail.subPublicList[0].title},
+                                    {name:this.detail.subPublicList[1].title},
+                                    {name:this.detail.subPublicList[2].title}]
       let option = {
         color: this.colorList,
         // legend: [

@@ -15,6 +15,9 @@ export default {
     },
     curColor:{
         type:String
+    },
+    detail:{
+      type:Object
     }
   },
   methods: {
@@ -28,6 +31,8 @@ export default {
       });
     },
     defaultOption() {
+      this.graphDatas.nodes[0].name = this.detail.subPublicList[0].title
+      this.graphDatas.categories = [{name:this.detail.title}]
     let option = {
         color:[this.curColor],
         animationDuration:1500,
