@@ -46,11 +46,11 @@
                 <i v-else class="iconfont icondown" :class="[(item.id == '5' || item.id == '6')? 'originClass': 'blueClass']"></i>
               </div>
             </div>
-            <div class="cen_area cen_area1" :ref="'cen_area'+item.id">
+            <div class="cen_area" :ref="'cen_area'+item.id">
               <img v-if="computedText(item.id) == '收起动线详情'" :src="item.infoUrlDetail" alt="" srcset="" class="cen_areaImg">
               <img v-else :src="item.infoUrl" alt="" srcset="" class="cen_areaImg">
             </div>
-            <div class="rig_area rig_area1" ref="rig_area1">
+            <div class="rig_area rig_area1" :ref="'rig_area'+item.id" :class="{'rigActive':item.id==1}">
               <div class="rig_area_lef">
                 <div class="gz_container" v-for="(item1,index) in item.mediaUrls" :key="index">
                   <div class="yl_lef" :style="item1.bgcolor"></div>
@@ -1115,6 +1115,7 @@ export default {
       });
     },
     expandfn(arg,c,r){
+      var rigDom = this.$refs[r][0];
       if(arg == 1){
         if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
@@ -1139,8 +1140,10 @@ export default {
         this.ifShowDx1 = !this.ifShowDx1;
         if(this.ifShowDx1){
           this.vDxtxt1 = '收起动线详情';
+          rigDom.style='background:#F0F8FF;';
         }
         else{
+          rigDom.style='background:#FFF;';
           this.vDxtxt1 = '查看动线详情';
         }
       }
@@ -1168,9 +1171,11 @@ export default {
         this.ifShowDx2 = !this.ifShowDx2;
         if(this.ifShowDx2){
           this.vDxtxt2 = '收起动线详情';
+          rigDom.style='background:#F0F8FF;';
         }
         else{
           this.vDxtxt2 = '查看动线详情';
+          rigDom.style='background:#FFF;';
         }
       }
       else if(arg == 3){
@@ -1197,9 +1202,11 @@ export default {
         this.ifShowDx3 = !this.ifShowDx3;
         if(this.ifShowDx3){
           this.vDxtxt3 = '收起动线详情';
+          rigDom.style='background:#F0F8FF;';
         }
         else{
           this.vDxtxt3 = '查看动线详情';
+          rigDom.style='background:#FFF;';
         }
       }
       else if(arg == 4){
@@ -1226,9 +1233,11 @@ export default {
         this.ifShowDx4 = !this.ifShowDx4;
         if(this.ifShowDx4){
           this.vDxtxt4 = '收起动线详情';
+          rigDom.style='background:#F0F8FF;';
         }
         else{
           this.vDxtxt4 = '查看动线详情';
+          rigDom.style='background:#FFF;';
         }
       }
       else if(arg == 5){
@@ -1255,9 +1264,11 @@ export default {
         this.ifShowDx5 = !this.ifShowDx5;
         if(this.ifShowDx5){
           this.vDxtxt5 = '收起动线详情';
+          rigDom.style='background:#F0F8FF;';
         }
         else{
           this.vDxtxt5 = '查看动线详情';
+          rigDom.style='background:#FFF;';
         }
       }
       else if(arg == 6){
@@ -1284,9 +1295,11 @@ export default {
         this.ifShowDx6 = !this.ifShowDx6;
         if(this.ifShowDx6){
           this.vDxtxt6 = '收起动线详情';
+          rigDom.style='background:#F0F8FF;';
         }
         else{
           this.vDxtxt6 = '查看动线详情';
+          rigDom.style='background:#FFF;';
         }
       }
     },
@@ -1294,7 +1307,7 @@ export default {
       return 90 / 144*window.rem
     },
 	  changeTab(index){
-         this.tabActive = index;
+      this.tabActive = index;
 	  }
   },
 };
@@ -1624,11 +1637,11 @@ export default {
             }
           }
         }
-        .cen_area1,.rig_area1{
-          background-color:#F0F8FF;
+        .rig_area1{
+          background-color:#FFF;
         }
-        .cen_area1{
-          border-right: #FFFFFF 1px solid;
+        .rigActive{
+          background-color: #F0F8FF;
         }
       }
     }
