@@ -54,8 +54,8 @@
           type:"linear",
           x:0,
           y:0,
-          x2:0,
-          y2:1,
+          x2:1,
+          y2:0,
           colorStops:[
             {
               offset: 0.1,

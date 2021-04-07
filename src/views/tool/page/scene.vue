@@ -77,9 +77,8 @@
             padding: 20px 24px 24px;
             margin-bottom: 24px;
             background: #FFFFFF;
-            box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-            border-radius: 12px;
-            border: 1px solid #EAEDF7;
+            box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+            border-radius: 8px;
             .int-title{
                 height: 24px;
                 margin-bottom: 12px;
@@ -169,9 +168,8 @@
             height: 670px;
             padding: 20px 24px;
             background: #FFFFFF;
-            box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-            border-radius: 12px;
-            border: 1px solid #EAEDF7;
+            box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+            border-radius: 8px;
             .eg-title{
                 height: 24px;
                 margin-bottom: 14px;
