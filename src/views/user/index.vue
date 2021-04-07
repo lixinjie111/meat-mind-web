@@ -28,61 +28,48 @@
 		    </div>
 	    </div>
 	    <div class="yhdx_container">
-        <div class="bjsbz_container">
-          <div class="lef_area">
-            <div class="lef_area_top">
-              <div class="actImg_container">
-                <img :src="sbAvatImg" alt="" srcset="" class="avatImg">
+        <div class="group_list_con" v-for="item in yhGroupList" :key="item.id">
+          <div class="bjsbz_container">
+            <div class="lef_area">
+              <div class="lef_area_top">
+                <div class="actImg_container">
+                  <img :src="item.picture" alt="" srcset="" class="avatImg">
+                </div>
+                <div class="perinfo">
+                  <div class="perinfo_t">{{item.title}}</div>
+                  <div class="perinfo_b">用户数 {{item.userCount}}人</div>
+                </div>
               </div>
-              <div class="perinfo">
-                <div class="perinfo_t">全部客群</div>
-                <div class="perinfo_b">用户数 46571人</div>
+              <div class="lef_area_bom" :style="item.lefbomSty" @click="expandfn(Number(item.id),'cen_area'+item.id,'rig_area'+item.id)">
+                <span>{{computedText(item.id)}}</span>
+                <i v-if="computedText(item.id) == '收起动线详情'" class="iconfont iconup" :class="[(item.id == '5' || item.id == '6')? 'originClass': 'blueClass']"></i>
+                <i v-else class="iconfont icondown" :class="[(item.id == '5' || item.id == '6')? 'originClass': 'blueClass']"></i>
               </div>
             </div>
-            <div class="lef_area_bom" @click="expandfn(1,'cen_area1','rig_area1')">
-              <span>{{vDxtxt1}}</span>
-              <img v-if="vDxtxt1 == '收起动线详情'" :src="squpImg" class="squpImg"/>
-              <img v-else :src="zkdwImg" class="squpImg"/>
+            <div class="cen_area cen_area1" :ref="'cen_area'+item.id">
+              <img v-if="computedText(item.id) == '收起动线详情'" :src="item.infoUrlDetail" alt="" srcset="" class="cen_areaImg">
+              <img v-else :src="item.infoUrl" alt="" srcset="" class="cen_areaImg">
             </div>
-          </div>
-          <div class="cen_area cen_area1" ref="cen_area1">
-            <img v-if="vDxtxt1 == '收起动线详情'" :src="bjsbzImgTime1" alt="" srcset="" class="cen_areaImg">
-            <img v-else :src="bjsbzImgTime" alt="" srcset="" class="cen_areaImg">
-          </div>
-          <div class="rig_area rig_area1" ref="rig_area1">
-            <div class="rig_area_lef">
-              <!-- <div class="yl_container">
-                <div class="yl_lef" style="background: #FF9502;"></div>
-                <div class="yl_rig">娱乐</div>
-              </div> -->
-              <div class="gz_container">
-                <div class="yl_lef" style="background:#F16E84;"></div>
-                <div class="yl_rig">工作</div>
+            <div class="rig_area rig_area1" ref="rig_area1">
+              <div class="rig_area_lef">
+                <div class="gz_container" v-for="(item1,index) in item.mediaUrls" :key="index">
+                  <div class="yl_lef" :style="item1.bgcolor"></div>
+                  <div class="yl_rig">{{item1.til}}</div>
+                </div>
               </div>
-              <div class="sp_container">
-                <div class="yl_lef" style="background: #1DCEC3;"></div>
-                <div class="yl_rig">沟通</div>
-              </div>
-              <div class="xw_container">
-                <div class="yl_lef" style="background: #017AFF;"></div>
-                <div class="yl_rig">新闻</div>
-              </div>
-              <!-- <div class="xs_container">
-                <div class="yl_lef" style="background: #F383FF;"></div>
-                <div class="yl_rig">学术</div>
-              </div> -->
-            </div>
-            <div class="rig_area_rig">
-              <div class="rig_area_til">偏好媒介</div>
-              <div class="rig_area_icon">
-                 <img v-for="(item,index) in qbmjList" :src="item" :key="index" alt="" class="bqimg">
+              <div class="rig_area_rig">
+                <div class="rig_area_til">偏好媒介</div>
+                <div class="rig_area_icon">
+                  <img v-for="(item2,index) in item.mediaTypes" :src="item2" :key="index" alt="" class="bqimg">
+                </div>
               </div>
             </div>
           </div>
+          <vDxitem v-if="conmputIfshow('ifShowDx'+ item.id) && item.id == '1'"></vDxitem>
+          <vDxitem1 v-if="conmputIfshow('ifShowDx'+ item.id) && (item.id == '2' || item.id == '3' || item.id == '4' || item.id == '5' || item.id == '6')"></vDxitem1>
         </div>
-        <vDxitem v-if="ifShowDx1"></vDxitem>
 
-        <div class="bjsbz_container">
+        <!-- <div class="bjsbz_container">
           <div class="lef_area">
             <div class="lef_area_top">
               <div class="actImg_container">
@@ -105,10 +92,6 @@
           </div>
           <div class="rig_area" ref="rig_area2">
             <div class="rig_area_lef">
-              <!-- <div class="gt_container">
-                <div class="yl_lef" style="background: #36D67B;"></div>
-                <div class="yl_rig">沟通</div>
-              </div> -->
               <div class="xs_container">
                 <div class="yl_lef" style="background: #FDD352;"></div>
                 <div class="yl_rig">学术</div>
@@ -117,10 +100,6 @@
                 <div class="yl_lef" style="background: #2EB1FF;"></div>
                 <div class="yl_rig">交流</div>
               </div>
-              <!-- <div class="gz_container">
-                <div class="yl_lef" style="background: #A49DFA;"></div>
-                <div class="yl_rig">工作</div>
-              </div> -->
               <div class="xw_container">
                 <div class="yl_lef" style="background: #017AFF;"></div>
                 <div class="yl_rig">新闻</div>
@@ -135,9 +114,8 @@
             </div>
           </div>
         </div>
-        <vDxitem1 v-if="ifShowDx2"></vDxitem1>
-
-        <div class="bjsbz_container">
+        <vDxitem1 v-if="ifShowDx2"></vDxitem1> -->
+        <!-- <div class="bjsbz_container">
           <div class="lef_area">
             <div class="lef_area_top">
               <div class="actImg_container">
@@ -172,10 +150,6 @@
                 <div class="yl_lef" style="background: #017AFF;"></div>
                 <div class="yl_rig">新闻</div>
               </div>
-              <!-- <div class="xs_container">
-                <div class="yl_lef" style="background: #F383FF;"></div>
-                <div class="yl_rig">学术</div>
-              </div> -->
             </div>
             <div class="rig_area_rig">
               <div class="rig_area_til">偏好媒介</div>
@@ -185,10 +159,8 @@
             </div>
           </div>
         </div>
-        <!-- <vDxitem v-if="ifShowDx3"></vDxitem> -->
-        <vDxitem1 v-if="ifShowDx3"></vDxitem1>
-
-        <div class="bjsbz_container">
+        <vDxitem1 v-if="ifShowDx3"></vDxitem1> -->
+        <!-- <div class="bjsbz_container">
           <div class="lef_area">
             <div class="lef_area_top">
               <div class="actImg_container">
@@ -211,10 +183,6 @@
           </div>
           <div class="rig_area" ref="rig_area4">
             <div class="rig_area_lef">
-              <!-- <div class="gt_container">
-                <div class="yl_lef" style="background: #36D67B;"></div>
-                <div class="yl_rig">沟通</div>
-              </div> -->
               <div class="gz_container">
                 <div class="yl_lef" style="background:#77E1DB;"></div>
                 <div class="yl_rig">沟通</div>
@@ -227,14 +195,6 @@
                 <div class="yl_lef" style="background: #FE774B;"></div>
                 <div class="yl_rig">娱乐</div>
               </div>
-              <!-- <div class="xw_container">
-                <div class="yl_lef" style="background: #017AFF;"></div>
-                <div class="yl_rig">新闻</div>
-              </div>
-              <div class="xs_container">
-                <div class="yl_lef" style="background: #F383FF;"></div>
-                <div class="yl_rig">学术</div>
-              </div> -->
             </div>
             <div class="rig_area_rig">
               <div class="rig_area_til">偏好媒介</div>
@@ -244,10 +204,8 @@
             </div>
           </div>
         </div>
-        <!-- <vDxitem v-if="ifShowDx4"></vDxitem> -->
-        <vDxitem1 v-if="ifShowDx4"></vDxitem1>
-
-        <div class="bjsbz_container">
+        <vDxitem1 v-if="ifShowDx4"></vDxitem1> -->
+        <!-- <div class="bjsbz_container">
           <div class="lef_area">
             <div class="lef_area_top">
               <div class="actImg_container">
@@ -270,10 +228,6 @@
           </div>
           <div class="rig_area" ref="rig_area5">
             <div class="rig_area_lef">
-              <!-- <div class="gt_container">
-                <div class="yl_lef" style="background: #36D67B;"></div>
-                <div class="yl_rig">沟通</div>
-              </div> -->
               <div class="sp_container">
                 <div class="yl_lef" style="background: #1DCEC3;"></div>
                 <div class="yl_rig">沟通</div>
@@ -286,10 +240,6 @@
                 <div class="yl_lef" style="background:#F16E84;"></div>
                 <div class="yl_rig">工作</div>
               </div>
-              <!-- <div class="xs_container">
-                <div class="yl_lef" style="background: #F383FF;"></div>
-                <div class="yl_rig">学术</div>
-              </div> -->
             </div>
             <div class="rig_area_rig">
               <div class="rig_area_til">偏好媒介</div>
@@ -299,291 +249,7 @@
             </div>
           </div>
         </div>
-        <!-- <vDxitem v-if="ifShowDx5"></vDxitem> -->
-        <vDxitem1 v-if="ifShowDx5"></vDxitem1>
-
-        <!-- <div class="echarts_container1">
-          <div class="left_timer_container">
-            <img :src="leftTimerImg" class="leftTimerImg" />
-          </div>
-          <div class="right_qipao_container">
-            <div class="echarts_item">
-              <div class="top_panel" @mouseenter="showPop1" @mouseleave="hidePop1" @click="clickTab(1)">
-                <div class="top_t">
-                  <div class="top_l">
-                    <div class="cer_icon"></div>
-                    <div class="t_text">北京上班族</div>
-                  </div>
-                  <div class="edit_text">编辑</div>
-                </div>
-                <div class="cen_num">
-                  <span>分群用户数：</span>
-                  <span class="cen_num_txt">28790人</span>
-                </div>
-                <div class="tab_item">
-                  <div class="home" style="background:rgba(138,230,199,0.2)">家</div>
-                  <div class="ggjt" style="background:rgba(164,157,250,0.2)">公共交通</div>
-                  <div class="gongsi" style="background:rgba(255,159,127,0.2)">公司</div>
-                </div>
-              </div>
-              <div class="bottom_echarts" id="btmEcharts1"></div>
-              <div
-                      class="model_pop"
-                      v-if="ifShowPop1"
-                      @mouseenter="showPop1"
-                      @mouseleave="hidePop1"
-              >
-                <div class="mo_title">
-                  <div class="mo_title1">北京上班族</div>
-                  <div class="mo_title2">28790人</div>
-                </div>
-                <div class="sex_per">
-                  <div class="sex_tle">性别占比</div>
-                  <div class="sex_per_num">男 65% 女 35%</div>
-                </div>
-                <div class="age_per">
-                  <div class="age_item">年龄占比</div>
-                  <div class="age_item">10-25岁 65%</div>
-                  <div class="age_item">31-45岁 35%</div>
-                  <div class="age_item">26-30岁 15%</div>
-                </div>
-                <div class="more">查看更多</div>
-              </div>
-            </div>
-            <div class="echarts_item">
-              <div class="top_panel" @mouseenter="showPop2" @mouseleave="hidePop2" @click="clickTab(2)">
-                <div class="top_t">
-                  <div class="top_l">
-                    <div class="cer_icon"></div>
-                    <div class="t_text">企业高管</div>
-                  </div>
-                  <div class="edit_text">编辑</div>
-                </div>
-                <div class="cen_num">
-                  <span>分群用户数：</span>
-                  <span class="cen_num_txt">3204人</span>
-                </div>
-                <div class="tab_item">
-                  <div class="home" style="background:rgba(77,148,255,0.2)">汽车</div>
-                </div>
-              </div>
-              <div class="bottom_echarts" id="btmEcharts2"></div>
-              <div
-                      class="model_pop"
-                      v-if="ifShowPop2"
-                      @mouseenter="showPop2"
-                      @mouseleave="hidePop2"
-              >
-                <div class="mo_title">
-                  <div class="mo_title1">企业高管</div>
-                  <div class="mo_title2">3204人</div>
-                </div>
-                <div class="sex_per">
-                  <div class="sex_tle">性别占比</div>
-                  <div class="sex_per_num">男 85% 女 15%</div>
-                </div>
-                <div class="age_per">
-                  <div class="age_item">年龄占比</div>
-                  <div class="age_item">10-25岁 65%</div>
-                  <div class="age_item">31-45岁 35%</div>
-                  <div class="age_item">26-30岁 15%</div>
-                </div>
-                <div class="more">查看更多</div>
-              </div>
-            </div>
-            <div class="echarts_item">
-              <div class="top_panel" @mouseenter="showPop3" @mouseleave="hidePop3" @click="clickTab(3)">
-                <div class="top_t">
-                  <div class="top_l">
-                    <div class="cer_icon"></div>
-                    <div class="t_text">北漂一族</div>
-                  </div>
-                  <div class="edit_text">编辑</div>
-                </div>
-                <div class="cen_num">
-                  <span>分群用户数：</span>
-                  <span class="cen_num_txt">18197人</span>
-                </div>
-                <div class="tab_item">
-                  <div class="home" style="background:rgba(164,157,250,0.2)">公共交通</div>
-                </div>
-              </div>
-              <div class="bottom_echarts" id="btmEcharts3"></div>
-              <div
-                      class="model_pop"
-                      v-if="ifShowPop3"
-                      @mouseenter="showPop3"
-                      @mouseleave="hidePop3"
-              >
-                <div class="mo_title">
-                  <div class="mo_title1">北漂一族</div>
-                  <div class="mo_title2">18197人</div>
-                </div>
-                <div class="sex_per">
-                  <div class="sex_tle">性别占比</div>
-                  <div class="sex_per_num">男 55% 女 45%</div>
-                </div>
-                <div class="age_per">
-                  <div class="age_item">年龄占比</div>
-                  <div class="age_item">10-25岁 65%</div>
-                  <div class="age_item">31-45岁 35%</div>
-                  <div class="age_item">26-30岁 15%</div>
-                </div>
-                <div class="more">查看更多</div>
-              </div>
-            </div>
-            <div class="echarts_item">
-              <div class="top_panel" @mouseenter="showPop4" @mouseleave="hidePop4" @click="clickTab(4)">
-                <div class="top_t">
-                  <div class="top_l">
-                    <div class="cer_icon"></div>
-                    <div class="t_text">研学青年</div>
-                  </div>
-                  <div class="edit_text">编辑</div>
-                </div>
-                <div class="cen_num">
-                  <span>分群用户数：</span>
-                  <span class="cen_num_txt">7930人</span>
-                </div>
-                <div class="tab_item">
-                  <div class="home" style="background:rgba(255,159,127,0.2)">宿舍</div>
-                  <div class="ggjt" style="background:rgba(164,157,250,0.2)">食堂</div>
-                  <div class="gongsi" style="background:rgba(255,159,127,0.2)">公司</div>
-                </div>
-              </div>
-              <div class="bottom_echarts" id="btmEcharts4"></div>
-              <div
-                      class="model_pop"
-                      v-if="ifShowPop4"
-                      @mouseenter="showPop4"
-                      @mouseleave="hidePop4"
-              >
-                <div class="mo_title">
-                  <div class="mo_title1">研学青年</div>
-                  <div class="mo_title2">7930人</div>
-                </div>
-                <div class="sex_per">
-                  <div class="sex_tle">性别占比</div>
-                  <div class="sex_per_num">男 45% 女 55%</div>
-                </div>
-                <div class="age_per">
-                  <div class="age_item">年龄占比</div>
-                  <div class="age_item">10-25岁 65%</div>
-                  <div class="age_item">31-45岁 35%</div>
-                  <div class="age_item">26-30岁 15%</div>
-                </div>
-                <div class="more">查看更多</div>
-              </div>
-            </div>
-            <div class="echarts_item">
-              <div class="top_panel" @mouseenter="showPop5" @mouseleave="hidePop5" @click="clickTab(5)">
-                <div class="top_t">
-                  <div class="top_l">
-                    <div class="cer_icon" style="background: #FF8800;"></div>
-                    <div class="t_text">自由职业</div>
-                  </div>
-                  <div class="edit_text">编辑</div>
-                </div>
-                <div class="cen_num">
-                  <span>分群用户数：</span>
-                  <span class="cen_num_txt">28970人</span>
-                </div>
-                <div class="tab_item">
-                  <div class="home" style="background:rgba(138,230,199,0.2)">家</div>
-                  <div class="ggjt" style="background:rgba(164,157,250,0.2)">公共交通</div>
-                </div>
-              </div>
-              <div class="bottom_echarts" id="btmEcharts5"></div>
-              <div
-                      class="model_pop"
-                      v-if="ifShowPop5"
-                      @mouseenter="showPop5"
-                      @mouseleave="hidePop5"
-              >
-                <div class="mo_title">
-                  <div class="mo_title1">自由职业</div>
-                  <div class="mo_title2">28970人</div>
-                </div>
-                <div class="sex_per">
-                  <div class="sex_tle">性别占比</div>
-                  <div class="sex_per_num">男 49% 女 51%</div>
-                </div>
-                <div class="age_per">
-                  <div class="age_item">年龄占比</div>
-                  <div class="age_item">10-25岁 65%</div>
-                  <div class="age_item">31-45岁 35%</div>
-                  <div class="age_item">26-30岁 15%</div>
-                </div>
-                <div class="more">查看更多</div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- <div class="map_container">
-          <div class="map_content">
-            <video
-                    class="player"
-                    width="100%"
-                    height="100%"
-                    autoplay
-                    loop
-                    muted
-                    src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"
-            ></video>
-          </div>
-          <div class="map_desc_container">
-            <div class="map_title">北京上班族出行场景</div>
-            <div class="map_item">
-              <img :src="icon1" class="item_icon" />
-              <span class="item_txt">7:00-9:00</span>
-            </div>
-            <div class="map_item">
-              <img :src="icon2" class="item_icon" />
-              <span class="item_txt">写字楼、酒吧</span>
-            </div>
-            <div class="map_item">
-              <img :src="icon3" class="item_icon" />
-              <span class="item_txt">
-                  出行软件、网易云音乐、
-                  <br />地铁广告、公交广告
-                </span>
-            </div>
-            <div class="map_item" style="margin-bottom:0;">
-              <img :src="icon4" class="item_icon" />
-              <span class="item_txt">交通、餐饮、娱乐</span>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- <div class="radio_container">
-          <div class="radiocontent">
-            <div class="radiocontent_item">
-              <div class="radiocontent_item_label1"></div>
-              <div class="radiocontent_item_txt">娱乐APP</div>
-            </div>
-            <div class="radiocontent_item">
-              <div class="radiocontent_item_label2"></div>
-              <div class="radiocontent_item_txt">沟通APP</div>
-            </div>
-            <div class="radiocontent_item">
-              <div class="radiocontent_item_label3"></div>
-              <div class="radiocontent_item_txt">工作APP</div>
-            </div>
-            <div class="radiocontent_item">
-              <div class="radiocontent_item_label4"></div>
-              <div class="radiocontent_item_txt">新闻APP</div>
-            </div>
-            <div class="radiocontent_item">
-              <div class="radiocontent_item_label5"></div>
-              <div class="radiocontent_item_txt">视频APP</div>
-            </div>
-            <div class="radiocontent_item">
-              <div class="radiocontent_item_label6"></div>
-              <div class="radiocontent_item_txt">学术APP</div>
-            </div>
-          </div>
-        </div> -->
+        <vDxitem1 v-if="ifShowDx5"></vDxitem1> -->
 
       </div>
 
@@ -1152,6 +818,7 @@ import vTabCard from "./tabCard";
 import Card from "./base/Card";
 import MatchDegree from "./base/MatchDegree";
 import Tab from "../../components/Tab";
+import api from "@/utils/api"
 
 export default {
   components: {
@@ -1220,7 +887,9 @@ export default {
       ifShowDx4:false,
       vDxtxt4:'查看动线详情',
       ifShowDx5:false,
+      ifShowDx6:false,
       vDxtxt5:'查看动线详情',
+      vDxtxt6:'查看动线详情',
       jchxData:{
         lefData:{
           til:'呈现问题',
@@ -1341,12 +1010,88 @@ export default {
         { name: '抖音', value: '82', color: '#FF8800'},
         { name: '知乎', value: '82', color: '#FF8800'},
       ],
+      yhGroupList:[]
     };
   },
   mounted() {
-    // this.initPopEcharts();
+  },
+  created(){
+    this.getYhGroupList();
   },
   methods: {
+    conmputIfshow(parm){
+      return this[parm];
+    },
+    computedText(id){
+      return this['vDxtxt'+id];
+    },
+    getYhGroupList(){
+      api.getGroupsList().then(res=>{
+        if(res.code == 200){
+          var newObjList = [].concat(res.data);
+          newObjList.forEach(item=>{
+            var mediaList = [];
+            for(var i=0;i<item.mediaUrls.length;i++){
+              if(item.mediaUrls[i] == '工作'){
+                mediaList.push({
+                  til:item.mediaUrls[i],
+                  bgcolor:{background:'#1DCEC3'}
+                })
+              }
+              else if(item.mediaUrls[i] == '娱乐'){
+                mediaList.push({
+                  til:item.mediaUrls[i],
+                  bgcolor:{background:'#F16E84'}
+                })
+              }
+              else if(item.mediaUrls[i] == '沟通'){
+                mediaList.push({
+                  til:item.mediaUrls[i],
+                  bgcolor:{background:'#FE774B'}
+                })
+              }
+              else if(item.mediaUrls[i] == '学术'){
+                mediaList.push({
+                  til:item.mediaUrls[i],
+                  bgcolor:{background:'#FDD352'}
+                })
+              }
+              else if(item.mediaUrls[i] == '新闻'){
+                mediaList.push({
+                  til:item.mediaUrls[i],
+                  bgcolor:{background:'#2373FF'}
+                })
+              }
+              else if(item.mediaUrls[i] == '视频'){
+                mediaList.push({
+                  til:item.mediaUrls[i],
+                  bgcolor:{background:'#7BABFF'}
+                })
+              }
+            }
+            if(item.id == '5' || item.id == '6'){
+              item.lefbomSty = {
+                background:'#FFE6DE',
+                color:'#FE774B'
+              };
+            }
+            else{
+              item.lefbomSty = {
+                background:'#DDE9FF',
+                color:'#2373FF'
+              };
+            }
+            item.mediaUrls = mediaList;
+          });
+          this.yhGroupList = newObjList;
+        }
+        else{
+          this.$Message.error('获得用户分组数据失败！')
+        }
+      }).catch(err=>{
+        this.$Message.error(err.msg)
+      });
+    },
 	  toComparison (){
 		  this.$router.push({name:"user-comparison"})
 	  },
@@ -1370,820 +1115,180 @@ export default {
       });
     },
     expandfn(arg,c,r){
-      var cenDom = this.$refs[c];
-      var rDom = this.$refs[r];
-      var cenDom1 = this.$refs['cen_area1'];
-      var cenDom2 = this.$refs['cen_area2'];
-      var cenDom3 = this.$refs['cen_area3'];
-      var cenDom4 = this.$refs['cen_area4'];
-      var cenDom5 = this.$refs['cen_area5'];
-      var rDom1 = this.$refs['rig_area1'];
-      var rDom2 = this.$refs['rig_area2'];
-      var rDom3 = this.$refs['rig_area3'];
-      var rDom4 = this.$refs['rig_area4'];
-      var rDom5 = this.$refs['rig_area5'];
       if(arg == 1){
         if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
           this.vDxtxt2 = '查看动线详情';
-          cenDom2.style="background-color:inherit;border-right:none;";
-          rDom2.style="background-color:inherit;";  
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
           this.vDxtxt3 = '查看动线详情';
-          cenDom3.style="background-color:inherit;border-right:none;";
-          rDom3.style="background-color:inherit;"; 
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
           this.vDxtxt4 = '查看动线详情';
-          cenDom4.style="background-color:inherit;border-right:none;";
-          rDom4.style="background-color:inherit;"; 
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
           this.vDxtxt5 = '查看动线详情';
-          cenDom5.style="background-color:inherit;border-right:none;";
-          rDom5.style="background-color:inherit;"; 
+        }
+        else if(this.ifShowDx6){
+          this.ifShowDx6 = !this.ifShowDx6;
+          this.vDxtxt6 = '查看动线详情';
         }
         this.ifShowDx1 = !this.ifShowDx1;
         if(this.ifShowDx1){
           this.vDxtxt1 = '收起动线详情';
-          cenDom.style="background-color:#EAEDF7;border-right: #FFFFFF 1px solid;";  
-          rDom.style="background-color:#F0F8FF;";
         }
         else{
           this.vDxtxt1 = '查看动线详情';
-          cenDom.style="background-color:inherit;border-right:none;";  
-          rDom.style="background-color:#FFFFFF;";
         }
       }
       else if(arg == 2){
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
           this.vDxtxt1 = '查看动线详情';
-          cenDom1.style="background-color:inherit;border-right:none;";
-          rDom1.style="background-color:inherit;";  
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
-          this.vDxtxt3 = '查看动线详情';
-          cenDom3.style="background-color:inherit;border-right:none;";
-          rDom3.style="background-color:inherit;";  
+          this.vDxtxt3 = '查看动线详情'; 
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
           this.vDxtxt4 = '查看动线详情';
-          cenDom4.style="background-color:inherit;border-right:none;";
-          rDom4.style="background-color:inherit;";  
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
           this.vDxtxt5 = '查看动线详情';
-          cenDom5.style="background-color:inherit;border-right:none;";
-          rDom5.style="background-color:inherit;";  
+        }
+        else if(this.ifShowDx6){
+          this.ifShowDx6 = !this.ifShowDx6;
+          this.vDxtxt6 = '查看动线详情';
         }
         this.ifShowDx2 = !this.ifShowDx2;
         if(this.ifShowDx2){
           this.vDxtxt2 = '收起动线详情';
-          cenDom.style="background-color:#EAEDF7;border-right: #FFFFFF 1px solid;";  
-          rDom.style="background-color:#F0F8FF;";
         }
         else{
           this.vDxtxt2 = '查看动线详情';
-          cenDom.style="background-color:inherit;border-right:none;";  
-          rDom.style="background-color:#FFFFFF;";
         }
       }
       else if(arg == 3){
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
           this.vDxtxt1 = '查看动线详情';
-          cenDom1.style="background-color:inherit;border-right:none;";
-          rDom1.style="background-color:inherit;";  
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
           this.vDxtxt2 = '查看动线详情';
-          cenDom2.style="background-color:inherit;border-right:none;";
-          rDom2.style="background-color:inherit;";  
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
           this.vDxtxt4 = '查看动线详情';
-          cenDom4.style="background-color:inherit;border-right:none;";
-          rDom4.style="background-color:inherit;";  
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
           this.vDxtxt5 = '查看动线详情';
-          cenDom5.style="background-color:inherit;border-right:none;";
-          rDom5.style="background-color:inherit;";  
+        }
+        else if(this.ifShowDx6){
+          this.ifShowDx6 = !this.ifShowDx6;
+          this.vDxtxt6 = '查看动线详情';
         }
         this.ifShowDx3 = !this.ifShowDx3;
         if(this.ifShowDx3){
           this.vDxtxt3 = '收起动线详情';
-          cenDom.style="background-color:#EAEDF7;border-right: #FFFFFF 1px solid;";  
-          rDom.style="background-color:#F0F8FF;";
         }
         else{
           this.vDxtxt3 = '查看动线详情';
-          cenDom.style="background-color:inherit;border-right:none;";  
-          rDom.style="background-color:#FFFFFF;";
         }
       }
       else if(arg == 4){
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
           this.vDxtxt1 = '查看动线详情';
-          cenDom1.style="background-color:inherit;border-right:none;";
-          rDom1.style="background-color:inherit;";  
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
           this.vDxtxt2 = '查看动线详情';
-          cenDom2.style="background-color:inherit;border-right:none;";
-          rDom2.style="background-color:inherit;";  
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
           this.vDxtxt3 = '查看动线详情';
-          cenDom3.style="background-color:inherit;border-right:none;";
-          rDom3.style="background-color:inherit;";  
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
           this.vDxtxt5 = '查看动线详情';
-          cenDom5.style="background-color:inherit;border-right:none;";
-          rDom5.style="background-color:inherit;";  
+        }
+        else if(this.ifShowDx6){
+          this.ifShowDx6 = !this.ifShowDx6;
+          this.vDxtxt6 = '查看动线详情';
         }
         this.ifShowDx4 = !this.ifShowDx4;
         if(this.ifShowDx4){
           this.vDxtxt4 = '收起动线详情';
-          cenDom.style="background-color:#EAEDF7;border-right: #FFFFFF 1px solid;";  
-          rDom.style="background-color:#F0F8FF;";
         }
         else{
           this.vDxtxt4 = '查看动线详情';
-          cenDom.style="background-color:inherit;border-right:none;";  
-          rDom.style="background-color:#FFFFFF;";
         }
       }
       else if(arg == 5){
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
           this.vDxtxt1 = '查看动线详情';
-          cenDom1.style="background-color:inherit;border-right:none;";
-          rDom1.style="background-color:inherit;";  
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
           this.vDxtxt2 = '查看动线详情';
-          cenDom2.style="background-color:inherit;border-right:none;";
-          rDom2.style="background-color:inherit;";  
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
           this.vDxtxt3 = '查看动线详情';
-          cenDom3.style="background-color:inherit;border-right:none;";
-          rDom3.style="background-color:inherit;";  
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
           this.vDxtxt4 = '查看动线详情';
-          cenDom4.style="background-color:inherit;border-right:none;";
-          rDom4.style="background-color:inherit;";  
+        }
+        else if(this.ifShowDx6){
+          this.ifShowDx6 = !this.ifShowDx6;
+          this.vDxtxt6 = '查看动线详情';
         }
         this.ifShowDx5 = !this.ifShowDx5;
         if(this.ifShowDx5){
           this.vDxtxt5 = '收起动线详情';
-          cenDom.style="background-color:#EAEDF7;border-right: #FFFFFF 1px solid;";  
-          rDom.style="background-color:#F0F8FF;";
         }
         else{
           this.vDxtxt5 = '查看动线详情';
-          cenDom.style="background-color:inherit;border-right:none;";  
-          rDom.style="background-color:#FFFFFF;";
         }
       }
-    },
-    clickTab(arg){
-      if(arg == 1){
-        this.descTitle = '北京上班族出行场景';
+      else if(arg == 6){
+        if(this.ifShowDx1){
+          this.ifShowDx1 = !this.ifShowDx1;
+          this.vDxtxt1 = '查看动线详情';
+        }
+        else if(this.ifShowDx2){
+          this.ifShowDx2 = !this.ifShowDx2;
+          this.vDxtxt2 = '查看动线详情';
+        }
+        else if(this.ifShowDx3){
+          this.ifShowDx3 = !this.ifShowDx3;
+          this.vDxtxt3 = '查看动线详情';
+        }
+        else if(this.ifShowDx4){
+          this.ifShowDx4 = !this.ifShowDx4;
+          this.vDxtxt4 = '查看动线详情';
+        }
+        else if(this.ifShowDx5){
+          this.ifShowDx5 = !this.ifShowDx5;
+          this.vDxtxt5 = '查看动线详情';
+        }
+        this.ifShowDx6 = !this.ifShowDx6;
+        if(this.ifShowDx6){
+          this.vDxtxt6 = '收起动线详情';
+        }
+        else{
+          this.vDxtxt6 = '查看动线详情';
+        }
       }
-      else if(arg == 2){
-        this.descTitle = '企业高管出行场景';
-      }
-      else if(arg == 3){
-        this.descTitle = '北漂一族出行场景';
-      }
-      else if(arg == 4){
-        this.descTitle = '研学青年出行场景';
-      }
-      else if(arg == 5){
-        this.descTitle = '自由职业出行场景';
-      }
-    },
-    initPopEcharts() {
-      var echartsData1 = [];
-      var echartsData2 = [];
-      var echartsData3 = [];
-      var echartsData4 = [];
-      var echartsData5 = [];
-      var echartsId1 = "btmEcharts1";
-      var echartsId2 = "btmEcharts2";
-      var echartsId3 = "btmEcharts3";
-      var echartsId4 = "btmEcharts4";
-      var echartsId5 = "btmEcharts5";
-      this.initEcharts1(echartsData1, echartsId1);
-      this.initEcharts2(echartsData2, echartsId2);
-      this.initEcharts3(echartsData3, echartsId3);
-      this.initEcharts4(echartsData4, echartsId4);
-      this.initEcharts5(echartsData5, echartsId5);
-    },
-    initEcharts1(data, id) {
-      var myChart = this.$echarts.init(document.getElementById(id));
-      var option = {
-        backgroundColor: "#fff",
-        tooltip: {},
-        animationDurationUpdate: function(idx) {
-          return idx * 100;
-        },
-        animationEasingUpdate: "bounceIn",
-        color: ["#fff", "#fff", "#fff"],
-        series: [
-          {
-            type: "graph",
-            layout: "none",
-            symbolSize: 50,
-            label: {              
-                show: true,
-                fontWeight:600,
-                fontFamily:'PingFangSC-Semibold, PingFang SC',
-                fontSize:14              
-            },
-            data: [
-              {
-                x: 10,
-                y: 10,
-                symbolSize: 40,
-                draggable: true,
-                itemStyle: {                  
-                    shadowColor: "#8AE6C7",
-                    color: "#8AE6C7"                 
-                }
-              },
-              {
-                x: 10,
-                y: 20,
-                name: "娱乐APP",
-                value: 6181,
-                symbolSize: 120,
-                draggable: true,
-                itemStyle: {                  
-                    shadowColor: "rgba(77,148,255,0.7)",
-                    color: "rgba(77,148,255,0.7)"
-                  }                
-              },
-              {
-                x: 10,
-                y: 40,
-                symbolSize: 103,
-                draggable: true,
-                itemStyle: {                  
-                    shadowColor: "rgba(255,217,140,0.2)",
-                    color: "rgba(255,217,140,0.2)"
-                  }                
-              },
-              {
-                x: 10,
-                y: 50,
-                name: "沟通APP",
-                value: 4055,
-                symbolSize: 88,
-                draggable: true,
-                itemStyle: {                  
-                    shadowColor: "rgba(255,159,127,0.7)",
-                    color: "rgba(255,159,127,0.7)"
-                  }                
-              },
-              {
-                x: 10,
-                y: 58,
-                symbolSize: 30,
-                draggable: true,
-                itemStyle: {                  
-                    shadowColor: "rgba(77,148,255,0.7)",
-                    color: "rgba(77,148,255,0.7)"
-                  }                
-              },
-              {
-                x: 10,
-                y: 70,
-                name: "工作APP",
-                value: 2244,
-                symbolSize: 104,
-                draggable: true,
-                itemStyle: {                  
-                    shadowColor: "rgba(164,157,250,0.7)",
-                    color: "rgba(164,157,250,0.7)"
-                  }                
-              }
-            ]
-          }
-        ]
-      };
-      myChart.setOption(option);
-    },
-    initEcharts2(data, id) {
-      var myChart = this.$echarts.init(document.getElementById(id));
-      var option = {
-        backgroundColor: "#fff",
-        tooltip: {},
-        animationDurationUpdate: function(idx) {
-          return idx * 100;
-        },
-        animationEasingUpdate: "bounceIn",
-        color: ["#fff", "#fff", "#fff"],
-        series: [
-          {
-            type: "graph",
-            layout: "none",
-            symbolSize: 50,
-            label: {
-              
-                show: true,
-                fontWeight:600,
-                fontFamily:'PingFangSC-Semibold, PingFang SC',
-                fontSize:14
-              
-            },
-            data: [
-              {
-                x: 10,
-                y: 10,
-                symbolSize: 50,
-                draggable: true,
-                itemStyle: {
-                  
-
-                    shadowColor: "#FF9F7F",
-                    color: "#FF9F7F"
-                  
-                }
-              },
-              {
-                x: 10,
-                y: 16,
-                value: 6181,
-                symbolSize: 90,
-                draggable: true,
-                itemStyle: {
-                  
-
-                    shadowColor: "rgba(255,217,140,0.7)",
-                    color: "rgba(255,217,140,0.7)"
-                  }
-                
-              },
-              {
-                x: 10,
-                y: 22,
-                name: "新闻APP",
-                value: 5055,
-                symbolSize: 103,
-                draggable: true,
-                itemStyle: {
-                  
-
-                    shadowColor: "rgba(138,230,199,0.7)",
-                    color: "rgba(138,230,199,0.7)"
-                  }
-                
-              },
-              {
-                x: 10,
-                y: 31,
-                name: "学术APP",
-                value: 4055,
-                symbolSize: 88,
-                draggable: true,
-                itemStyle: {
-                  
-
-                    shadowColor: "rgba(183,200,234,0.7)",
-                    color: "rgba(183,200,234,0.7)"
-                  }
-                
-              },
-              {
-                x: 10,
-                y: 37,
-                symbolSize: 30,
-                draggable: true,
-                itemStyle: {
-                  
-
-                    shadowColor: "rgba(164,157,250,0.7)",
-                    color: "rgba(164,157,250,0.7)"
-                  }
-                
-              },
-              {
-                x: 10,
-                y: 42,
-                symbolSize: 29,
-                draggable: true,
-                itemStyle: {
-                  
-
-                    shadowColor: "rgba(252,128,159,0.7)",
-                    color: "rgba(252,128,159,0.7)"
-                  }
-                
-              },
-              {
-                x: 10,
-                y: 60,
-                name: "工作APP",
-                value: 2244,
-                symbolSize: 102,
-                draggable: true,
-                itemStyle: {
-                  
-
-                    shadowColor: "rgba(164,157,250,0.7)",
-                    color: "rgba(164,157,250,0.7)"
-                  }
-                
-              },
-              {
-                x: 10,
-                y: 70,
-                symbolSize: 33,
-                draggable: true,
-                itemStyle: {
-                  
-
-                    shadowColor: "rgba(255,159,127,0.7)",
-                    color: "rgba(255,159,127,0.7)"
-                  }
-                
-              }
-            ]
-          }
-        ]
-      };
-      myChart.setOption(option);
-    },
-    initEcharts3(data, id) {
-      var myChart = this.$echarts.init(document.getElementById(id));
-      var option = {
-        backgroundColor: "#fff",
-        tooltip: {},
-        animationDurationUpdate: function(idx) {
-          return idx * 100;
-        },
-        animationEasingUpdate: "bounceIn",
-        color: ["#fff", "#fff", "#fff"],
-        series: [
-          {
-            type: "graph",
-            layout: "none",
-            symbolSize: 50,
-            label: {
-                show: true,
-                fontWeight:600,
-                fontFamily:'PingFangSC-Semibold, PingFang SC',
-                fontSize:14
-            },
-            data: [
-              {
-                x: 10,
-                y: 12,
-                symbolSize: 40,
-                draggable: true,
-                itemStyle: {
-                    shadowColor: "rgba(138,230,199,0.7)",
-                    color: "rgba(138,230,199,0.7)"
-                  }
-              },
-              {
-                x: 10,
-                y: 20,
-                symbolSize: 80,
-                draggable: true,
-                itemStyle: {
-                    shadowColor: "rgba(252,128,159,0.7)",
-                    color: "rgba(252,128,159,0.7)"
-                  }
-              },
-              {
-                x: 10,
-                y: 17,
-                symbolSize: 38,
-                draggable: true,
-                itemStyle: {
-                    shadowColor: "rgba(255,217,140,0.7)",
-                    color: "rgba(255,217,140,0.7)"
-                  }
-              },
-              {
-                x: 10,
-                y: 27,
-                name: "娱乐APP",
-                value: 6181,
-                symbolSize: 102,
-                draggable: true,
-                itemStyle: {
-                    shadowColor: "rgba(77,148,255,0.7)",
-                    color: "rgba(77,148,255,0.7)"
-                  }
-              },
-              {
-                x: 10,
-                y: 33,
-                name: "外卖APP",
-                value: 6181,
-                symbolSize: 82,
-                draggable: true,
-                itemStyle: {
-                    shadowColor: "rgba(252,128,159,0.7)",
-                    color: "rgba(252,128,159,0.7)"
-                  }
-              },
-              {
-                x: 10,
-                y: 50,
-                name: "沟通APP",
-                value: 4055,
-                symbolSize: 88,
-                draggable: true,
-                itemStyle: {
-                    borderWidth: 0,
-                    shadowColor: "rgba(255,159,127,0.7)",
-                    color: "rgba(255,159,127,0.7)"
-                  }
-              },
-              {
-                x: 10,
-                y: 58,
-                symbolSize: 30,
-                draggable: true,
-                itemStyle: {
-                    shadowColor: "rgba(77,148,255,0.7)",
-                    color: "rgba(77,148,255,0.7)"
-                  }
-              },
-              {
-                x: 10,
-                y: 70,
-                name: "工作APP",
-                value: 2244,
-                symbolSize: 104,
-                draggable: true,
-                itemStyle: {
-                    shadowColor: "rgba(164,157,250,0.7)",
-                    color: "rgba(164,157,250,0.7)"
-                  }             
-              }
-            ]
-          }
-        ]
-      };
-      myChart.setOption(option);
-    },
-    initEcharts4(data, id) {
-      var myChart = this.$echarts.init(document.getElementById(id));
-      var option = {
-        backgroundColor: "#fff",
-        tooltip: {},
-        animationDurationUpdate: function(idx) {
-          return idx * 100;
-        },
-        animationEasingUpdate: "bounceIn",
-        color: ["#fff", "#fff", "#fff"],
-        series: [
-          {
-            type: "graph",
-            layout: "none",
-            symbolSize: 50,
-            label: {
-              
-                show: true,
-                fontWeight:600,
-                fontFamily:'PingFangSC-Semibold, PingFang SC',
-                fontSize:14
-              
-            },
-            data: [
-              {
-                x: 10,
-                y: 30,
-                name: "视频APP",
-                symbolSize: 90,
-                draggable: true,
-                itemStyle: {
-                  
-
-                    shadowColor: "rgba(255,217,140,0.7)",
-                    color: "rgba(255,217,140,0.7)"
-                  }
-                
-              },
-              {
-                x: 10,
-                y: 37,
-                symbolSize: 90,
-                draggable: true,
-                itemStyle: {
-                  
-
-                    shadowColor: "rgba(77,148,255,0.7)",
-                    color: "rgba(77,148,255,0.7)"
-                  }
-                
-              },
-              {
-                x: 10,
-                y: 50,
-                name: "沟通APP",
-                value: 4055,
-                symbolSize: 88,
-                draggable: true,
-                itemStyle: {
-                  
-
-                    shadowColor: "rgba(255,159,127,0.7)",
-                    color: "rgba(255,159,127,0.7)"
-                  }
-                
-              },
-              {
-                x: 10,
-                y: 52,
-                symbolSize: 30,
-                draggable: true,
-                itemStyle: {
-                  
-
-                    shadowColor: "rgba(77,148,255,0.7)",
-                    color: "rgba(77,148,255,0.7)"
-                  }
-                
-              }
-            ]
-          }
-        ]
-      };
-      myChart.setOption(option);
-    },
-    initEcharts5(data, id) {
-      var myChart = this.$echarts.init(document.getElementById(id));
-      var option = {
-        backgroundColor: "#fff",
-        tooltip: {},
-        animationDurationUpdate: function(idx) {
-          return idx * 100;
-        },
-        animationEasingUpdate: "bounceIn",
-        color: ["#fff", "#fff", "#fff"],
-        series: [
-          {
-            type: "graph",
-            layout: "none",
-            symbolSize: 50,
-            label: {
-              
-                show: true,
-                fontWeight:600,
-                fontFamily:'PingFangSC-Semibold, PingFang SC',
-                fontSize:14
-              
-            },
-            data: [
-              {
-                x: 10,
-                y: 10,
-                symbolSize: 40,
-                draggable: true,
-                itemStyle: {
-                  
-                    borderWidth: 4,
-
-                    shadowColor: "#8AE6C7",
-                    color: "#8AE6C7"
-                  }
-                
-              },
-              {
-                x: 10,
-                y: 15,
-                name: "娱乐APP",
-                value: 6181,
-                symbolSize: 90,
-                draggable: true,
-                itemStyle: {
-                  
-
-                    shadowColor: "rgba(77,148,255,0.7)",
-                    color: "rgba(77,148,255,0.7)"
-                  }
-                
-              },
-              {
-                x: 10,
-                y: 22,
-                name: "视频APP",
-                symbolSize: 88,
-                draggable: true,
-                itemStyle: {
-                  
-
-                    shadowColor: "rgba(255,217,140,0.7)",
-                    color: "rgba(255,217,140,0.7)"
-                  }
-                
-              },
-              {
-                x: 10,
-                y: 50,
-                name: "沟通APP",
-                value: 4055,
-                symbolSize: 88,
-                draggable: true,
-                itemStyle: {
-                  
-
-                    shadowColor: "rgba(255,159,127,0.7)",
-                    color: "rgba(255,159,127,0.7)"
-                  }
-                
-              },
-              {
-                x: 10,
-                y: 58,
-                symbolSize: 30,
-                draggable: true,
-                itemStyle: {
-                  
-
-                    shadowColor: "rgba(77,148,255,0.7)",
-                    color: "rgba(77,148,255,0.7)"
-                  
-                }
-              },
-              {
-                x: 10,
-                y: 70,
-                name: "工作APP",
-                value: 2244,
-                symbolSize: 104,
-                draggable: true,
-                itemStyle: {
-                  
-
-                    shadowColor: "rgba(164,157,250,0.7)",
-                    color: "rgba(164,157,250,0.7)"
-                  
-                }
-              }
-            ]
-          }
-        ]
-      };
-      myChart.setOption(option);
-    },
-    showPop1() {
-      this.ifShowPop1 = true;
-    },
-    hidePop1() {
-      this.ifShowPop1 = false;
-    },
-    showPop2() {
-      this.ifShowPop2 = true;
-    },
-    hidePop2() {
-      this.ifShowPop2 = false;
-    },
-    showPop3() {
-      this.ifShowPop3 = true;
-    },
-    hidePop3() {
-      this.ifShowPop3 = false;
-    },
-    showPop4() {
-      this.ifShowPop4 = true;
-    },
-    hidePop4() {
-      this.ifShowPop4 = false;
-    },
-    showPop5() {
-      this.ifShowPop5 = true;
-    },
-    hidePop5() {
-      this.ifShowPop5 = false;
     },
     getSize(){
       return 90 / 144*window.rem
@@ -2371,409 +1476,159 @@ export default {
 		// border: 1px solid #EAEDF7;
 		// padding: 24px;
 		// box-sizing: border-box;
-    .bjsbz_container{
+    .group_list_con{
       width: 100%;
-      height: 98px;
-      display: flex;
-      align-items: center;
       margin-bottom: 16px;
-      background: #FFFFFF;
-      box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-      border-radius: 8px;
-      // border: 1px solid #EAEDF7;
-      .lef_area{
-        width: 193px;
-        height: 100%;
-        border-right:1px solid #EAEDF7;
-        border-radius: 8px 0 0 8px;
-        .lef_area_top{
-          width: 100%;
-          height: 64px;
-          display: flex;
-          align-items: center;
-          .actImg_container{
-            width: 64px;
-            .avatImg{
-              width: 100%;
-            }
-          }
-          .perinfo{
-            flex: 1;
-            height: 100%;
-            padding: 8px 4px;
-            box-sizing: border-box;
-            .perinfo_t{
-              width: 100%;
-              font-size: 16px;
-              font-family: PingFangSC-Regular, PingFang SC;
-              font-weight: 400;
-              color: #242F57;
-              margin-bottom: 4px;
-            }
-            .perinfo_b{
-              width: 100%;
-              font-size: 12px;
-              font-family: PingFangSC-Regular, PingFang SC;
-              font-weight: 400;
-              color: #636E95;
-            }
-          }
-        }
-        .lef_area_bom{
-          width: 100%;
-          height: 35.3px;
-          background: #DDE9FF;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 14px;
-          font-family: PingFangSC-Medium, PingFang SC;
-          font-weight: 500;
-          color: #2373FF;
-          border-radius: 0 0 0 8px;
-          .squpImg{
-            display: block;
-            display: flex;
-            align-items: center;
-            width: 16px;
-            height: 16px;
-            margin-left: 36px;
-            line-height: 22.75px;
-          }
-          &:hover{
-            cursor: pointer;
-          }
-        }
-      }
-      .cen_area{
-        flex: 1;
-        height: 100%;
-        .cen_areaImg{
-          display: block;
-          width: 100%;
-          height: 100%;
-        }
-      }
-      .rig_area{
-        width: 300px;
-        height: 100%;
-        border-left:1px solid #EAEDF7;
-        padding:16px;
-        padding-right: 5px;
-        box-sizing: border-box;
+      .bjsbz_container{
+        width: 100%;
+        height: 98px;
         display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        border-radius: 0 8px 0 0;
-        .rig_area_lef{
-          width: 150px;
-          display: flex;
-          flex-wrap: wrap;
-          font-size: 12px;
-          font-family: PingFangSC-Regular, PingFang SC;
-          font-weight: 400;
-          color: #636E95;
-          .yl_container,.gt_container,.gz_container,.xw_container,.sp_container,.xs_container{
+        align-items: center;
+        margin-bottom: 16px;
+        background: #FFFFFF;
+        box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+        border-radius: 8px;
+        // border: 1px solid #EAEDF7;
+        .lef_area{
+          width: 193px;
+          height: 100%;
+          border-right:1px solid #EAEDF7;
+          border-radius: 8px 0 0 8px;
+          .lef_area_top{
+            width: 100%;
+            height: 64px;
             display: flex;
             align-items: center;
-            margin-bottom: 10px;
-            margin-right: 16px;
-            .yl_lef{
-              width: 8px;
-              height: 8px;
-              border-radius: 2px;
-              margin-right: 4px;
+            .actImg_container{
+              width: 64px;
+              .avatImg{
+                width: 100%;
+              }
+            }
+            .perinfo{
+              flex: 1;
+              height: 100%;
+              padding: 8px 4px;
+              box-sizing: border-box;
+              .perinfo_t{
+                width: 100%;
+                font-size: 16px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #242F57;
+                margin-bottom: 4px;
+              }
+              .perinfo_b{
+                width: 100%;
+                font-size: 12px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #636E95;
+              }
             }
           }
-        }
-        .rig_area_rig{
-          width: 120px;
-          .rig_area_til{
+          .lef_area_bom{
             width: 100%;
+            height: 35.3px;
+            background: #DDE9FF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 14px;
             font-family: PingFangSC-Medium, PingFang SC;
             font-weight: 500;
-            color: #242F57;
-            margin-bottom: 3px;
-          }
-          .rig_area_icon{
-            display: flex;
-            .bqimg{
+            color: #2373FF;
+            border-radius: 0 0 0 8px;
+            .originClass{
+              color: rgb(254,122,79);
+            }
+            .blueClass{
+              color: rgb(35,115,255);
+            }
+            span:nth-child(1){
+              margin-right: 25px;
+            }
+            .squpImg{
               display: block;
-              width: 28px;
-              height: 28px;
-              margin-right: 8px;
+              display: flex;
+              align-items: center;
+              width: 16px;
+              height: 16px;
+              margin-left: 36px;
+              line-height: 22.75px;
+            }
+            &:hover{
+              cursor: pointer;
             }
           }
         }
-      }
-      .cen_area1,.rig_area1{
-        background-color:#F0F8FF;
-      }
-      .cen_area1{
-        border-right: #FFFFFF 1px solid;
-      }
-    }
-    .echarts_container1 {
-      width: 100%;
-      height: 720px;
-      display: flex;
-      align-items: center;
-      .left_timer_container {
-        width: 140px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        .leftTimerImg {
-          display: block;
-          width: 95px;
-          height: 703px;
-        }
-      }
-      .right_qipao_container {
-        flex: 1;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        .echarts_item {
-          width: 19%;
+        .cen_area{
+          flex: 1;
           height: 100%;
-          display: flex;
-          flex-direction: column;
-          position: relative;
-          .top_panel {
+          .cen_areaImg{
+            display: block;
             width: 100%;
-            min-height: 100px;
-            border-radius: 8px;
-            border: 1px solid #eaedf7;
-            padding: 11px 12px;
-            box-sizing: border-box;
-            &:hover {
-              box-shadow: 3px 3px 8px 0px rgba(166, 171, 189, 0.3);
+            height: 100%;
+          }
+        }
+        .rig_area{
+          width: 300px;
+          height: 100%;
+          border-left:1px solid #EAEDF7;
+          padding:16px;
+          padding-right: 5px;
+          box-sizing: border-box;
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          border-radius: 0 8px 0 0;
+          .rig_area_lef{
+            width: 150px;
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 12px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #636E95;
+            .yl_container,.gt_container,.gz_container,.xw_container,.sp_container,.xs_container{
+              display: flex;
+              align-items: center;
+              margin-bottom: 10px;
+              margin-right: 16px;
+              .yl_lef{
+                width: 8px;
+                height: 8px;
+                border-radius: 2px;
+                margin-right: 4px;
+              }
             }
-            .top_t {
+          }
+          .rig_area_rig{
+            width: 120px;
+            .rig_area_til{
               width: 100%;
-              padding-bottom: 10px;
-              box-sizing: border-box;
-              border-bottom: 1px solid #c6cbde;
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              .cer_icon {
-                width: 12px;
-                height: 12px;
-                background: #2373ff;
-                border-radius: 50%;
-                margin-right: 5px;
-              }
-              .top_l{
-                display: flex;
-                align-items: center;
-                .t_text {
-                  font-size: 16px;
-                  font-family: PingFangSC-Regular, PingFang SC;
-                  font-weight: 400;
-                  color: #242f57;
-                }
-                .edit_text {
-                  font-size: 14px;
-                  font-family: PingFangSC-Regular, PingFang SC;
-                  font-weight: 400;
-                  color: #2373ff;
-                }
-              }
+              font-size: 14px;
+              font-family: PingFangSC-Medium, PingFang SC;
+              font-weight: 500;
+              color: #242F57;
+              margin-bottom: 3px;
             }
-            .cen_num {
-              margin-top: 6px;
-              font-size: 12px;
-              font-family: PingFangSC-Regular, PingFang SC;
-              font-weight: 400;
-              color: #636e95;
-              line-height: 17px;
-              .cen_num_txt {
-                color: #2373ff;
-              }
-            }
-            .tab_item {
+            .rig_area_icon{
               display: flex;
-              align-items: center;
-              margin-top: 8px;
-              .home,
-              .ggjt,
-              .gongsi {
-                padding: 1px 4px;
-                box-sizing: border-box;
-                border-radius: 11px;
+              .bqimg{
+                display: block;
+                width: 28px;
+                height: 28px;
                 margin-right: 8px;
               }
             }
           }
-          .bottom_echarts {
-            width: 100%;
-            flex: 1;
-          }
-          .model_pop {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 175px;
-            height: 268px;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04);
-            border-radius: 4px;
-            padding: 16px;
-            box-sizing: border-box;
-            .mo_title {
-              width: 100%;
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              margin-bottom: 16px;
-              .mo_title1 {
-                font-size: 14px;
-                font-family: PingFangSC-Regular, PingFang SC;
-                font-weight: 400;
-                color: #242f57;
-              }
-              .mo_title2 {
-                font-size: 14px;
-                font-family: PingFangSC-Regular, PingFang SC;
-                font-weight: 400;
-                color: #2373ff;
-              }
-            }
-            .sex_per,
-            .age_per {
-              width: 100%;
-              font-size: 14px;
-              font-family: PingFangSC-Regular, PingFang SC;
-              font-weight: 400;
-              color: #242f57;
-              margin-bottom: 16px;
-              .sex_tle,
-              .sex_per_num,
-              .age_item {
-                width: 100%;
-              }
-            }
-            .age_per {
-              margin-bottom: 27px;
-            }
-            .more {
-              width: 100%;
-              display: flex;
-              justify-content: center;
-              font-size: 14px;
-              font-family: PingFangSC-Regular, PingFang SC;
-              font-weight: 400;
-              color: #2373ff;
-            }
-          }
         }
-      }
-    }
-    .map_container {
-      width: 100%;
-      min-height: 302px;
-      padding: 20px;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      background-color: rgba(166, 171, 189, 0.08);
-      margin-bottom: 12px;
-      .map_desc_container {
-        width: 313px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        .map_title {
-          width: 290px;
-          font-size: 16px;
-          font-family: PingFangSC-Medium, PingFang SC;
-          font-weight: 500;
-          color: #242f57;
-          margin-bottom: 12px;
+        .cen_area1,.rig_area1{
+          background-color:#F0F8FF;
         }
-        .map_item {
-          width: 290px;
-          height: 46px;
-          background: #feffff;
-          border-radius: 8px;
-          display: flex;
-          align-items: center;
-          padding: 13px 16px;
-          box-sizing: border-box;
-          margin-bottom: 14px;
-          .item_icon {
-            display: block;
-            width: 18px;
-            height: 18px;
-            margin-right: 4px;
-          }
-          .item_txt {
-            font-size: 14px;
-            font-family: PingFangSC-Regular, PingFang SC;
-            font-weight: 400;
-            color: #242f57;
-          }
-        }
-      }
-      .map_content {
-        flex: 1;
-        height: 100%;
-      }
-    }
-    .radio_container {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      .radiocontent {
-        width: 500px;
-        height: 17px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        .radiocontent_item {
-          display: flex;
-          align-items: center;
-          width: 60px;
-          height: 100%;
-          .radiocontent_item_label1,
-          .radiocontent_item_label2,
-          .radiocontent_item_label3,
-          .radiocontent_item_label4,
-          .radiocontent_item_label5,
-          .radiocontent_item_label6 {
-            width: 8px;
-            height: 8px;
-            background: #4d94ff;
-            margin-right: 4px;
-            border-radius: 50%;
-          }
-          .radiocontent_item_label2 {
-            background: #ff9f7f;
-          }
-          .radiocontent_item_label3 {
-            background: #a49dfa;
-          }
-          .radiocontent_item_label4 {
-            background: #8ae6c7;
-          }
-          .radiocontent_item_label5 {
-            background: #ffd98c;
-          }
-          .radiocontent_item_label6 {
-            background: #91c2f2;
-          }
-          .radiocontent_item_txt {
-            font-size: 12px;
-            font-family: PingFangSC-Regular, PingFang SC;
-            font-weight: 400;
-            color: #636e95;
-          }
+        .cen_area1{
+          border-right: #FFFFFF 1px solid;
         }
       }
     }
