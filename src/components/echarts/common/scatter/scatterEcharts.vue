@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import api from "@/utils/api"
 export default {
   name: "scatterEcharts",
   props: {
@@ -15,16 +16,31 @@ export default {
     },
     scatterData:{
       type:Object
+    },
+    xData:{
+      type:Array
+    },
+    starr:{
+      type:Array
+    },
+    chance:{
+      type:Array
+    },
+    risk:{
+      type:Array
+    },
+    selectItem:{
+      type:Object
     }
   },
   data(){
     return {
       lengndName:"风险",
-      xName:"03-15",
-      yValue:this.scatterData.risk[14]
+      xName:this.selectItem.time,
+      yValue:this.selectItem.index,
     }
   },
-  methods: {
+  methods: {   
     initEcharts() {
       let option = this.defaultOption();
       let myEchart = this.$echarts.init(document.getElementById(this.id));
@@ -33,6 +49,7 @@ export default {
         if(params.seriesName=='正常'){
           return
         }
+        // console.log(params)
         this.lengndName = params.seriesName
         this.xName = params.name
         this.yValue = params.value
@@ -48,7 +65,10 @@ export default {
       let option = {
         color:this.colorList,
         tooltip:{
-          trigger:"item"
+          trigger:"item",
+          formatter:(params)=>{
+            return params.data.content
+          }
         },
         legend: {
           icon: 'circle',
@@ -69,7 +89,7 @@ export default {
           containLabel: true,
         },
         xAxis: {
-          data:this.scatterData.name,
+          data:this.xData,
           axisLine: {
             type:'value',
             lineStyle: {
@@ -140,21 +160,15 @@ export default {
             symbolSize:(value,params)=>{
               return value*16
             },
-            tooltip:{
-              show:false
-            },
-            data:this.scatterData.starr
+            data:this.chance
           },
           {
             type: "scatter",
             name:"风险",
             symbolSize:(value,params)=>{
-              return value*22
+              return value*16
             },
-            tooltip:{
-              show:false
-            },
-            data:this.scatterData.risk 
+            data:this.risk 
           },
           {
             type: "scatter",
@@ -162,20 +176,12 @@ export default {
             symbolSize:(value,params)=>{
               return value*40
             },
-            tooltip:{
-              formatter:(params)=>{
-                return this.scatterData.common[params.dataIndex]
-              }
-            },
-            data: this.scatterData.chance
+            data: this.starr
           },
           {
-            name:this.lengndName,
+            // name:this.lengndName,
             type: "effectScatter",
             symbolSize: 20,
-            tooltip:{
-              show:false
-            },
             data:[[this.xName,this.yValue]],
             zlevel: 1,
           },

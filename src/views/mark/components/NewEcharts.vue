@@ -17,7 +17,7 @@
           1.00>SOI>0.50视为营销机会，0.50>=SOI>=-0.50视为正常舆情，-0.50>SOI>-1.00视为风险公关事件，点击单个事件可以查看舆情传播链路解构详情分析及相应策略。
       </div>
       <div class="scatter-echarts">
-        <ScatterEcharts id="scatter" @changeSeries="changeSeries" :colorList="$linData.scatterData.colorList" :scatterData="$linData.scatterData"></ScatterEcharts>
+        <ScatterEcharts v-if="flag" id="scatter" @changeSeries="changeSeries" :colorList="$linData.scatterData.colorList" :common="common" :scatterData="$linData.scatterData" :xData="xData" :starr="starr" :chance="chance" :risk="risk" :selectItem="selectItem"></ScatterEcharts>
       </div>
       <div class="cur-value red" v-if="seriesName=='风险'">
           <div class="cur-left">
@@ -226,26 +226,56 @@ export default {
     components:{ScatterEcharts,graphEcharts,graphEcharts1,graphEcharts2,graphEcharts3,graphEchartsChance,graphEchartsChance1,graphEchartsChance2,graphEchartsChance3,treeEcharts,treeEcharts1},
     data(){
         return {
+            flag:false,
+            selectItem:{},
             seriesName:'风险',
+            xData:[],
+            starr:[],
+            chance:[],
+            risk:[],
+            common:[],
         }
     },
     methods:{
         changeSeries(name){
             this.seriesName = name
+            this.getDetail()
         },
-        getList(){
-            api.getMarkList({}).then(res=>{
-
-            }).catch(err=>{
+        async getList(){
+            try{
+                let res = await api.getMarkList({})
+                if(res.code == 200){
+                    this.starr=[]
+                    this.chance=[]
+                    this.risk=[]
+                    this.common=[]
+                    this.xData = res.data.timeScales
+                    res.data.timeScales.forEach(ele=>{
+                        let ary = res.data.list.filter(item => item.time==ele)
+                        let arr1 = ary.find(element => element.status==1)
+                        let arr2 = ary.find(element => element.status==2)
+                        let arr3 = ary.find(element => element.status==3)
+                        arr1?this.chance.push({value:arr1.index,content:arr1.content}):this.chance.push({value:0,content:""})
+                        arr2?this.starr.push({value:arr2.index,content:arr2.content}):this.starr.push({vlaue:0,content:""})
+                        arr3?this.risk.push({value:arr3.index,content:arr3.content}):this.risk.push({value:0,content:''})
+                    })
+                    this.selectItem = res.data.list.filter(item => item.selectFlag==1)[0]
+                    console.log(this.selectItem)
+                    this.seriesName = this.selectItem.status==1?'机会':this.selectItem.status==2?'正常':'风险'
+                    this.flag=true
+                }else{
+                    this.$Message.error(err.msg)
+                } 
+            }catch(err){
                 this.$Message.error(err.msg)
-            })
+            }
         },
         getDetail(){
             let params = {
                 id:"200027"
             }   
             api.getMarkDetail(params).then(res=>{
-                
+                if(res.code==200){}
             }).catch(err=>{
                 this.$Message.error(err.msg)
             })
