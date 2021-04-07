@@ -42,5 +42,9 @@ export default {
     getMarkDetail(params){
         return this.postJson("/publicSentiment/detail",params)
     },
+    //用户画像获取用户分组  
+    getGroupsList(params){
+        return this.postJson("/userProfile/getUserGroups",params)
+    }
 
 }
