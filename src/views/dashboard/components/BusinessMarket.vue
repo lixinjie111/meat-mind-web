@@ -1607,7 +1607,7 @@
 
                     .map-box {
                        margin-top: 24px;
-                       width: 100%;
+                       width: 816px;
                        height: 530px;
                     }
                 }

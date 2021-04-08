@@ -69,33 +69,33 @@
             </div> -->
           <div class="target-left">
             <div class="l-item">
-              <div class="l-item-label">常用标签</div>
-              <div class="item-list" v-for="(item, index) in target" :key="index">
-                <div class="item-con">
-                  <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
-                  <i class="iconfont iconleft-arrow21"></i>
+                <div class="l-item-label">常用标签</div>
+                <div class="item-list" v-for="(item, index) in target" :key="index">
+                    <div class="item-con">
+                        <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
+                        <i class="iconfont iconleft-arrow21"></i>
+                    </div>
                 </div>
-              </div>
             </div>
             <div class="l-item">
-              <div class="l-item-label">属性维度</div>
-              <div class="item-list" v-for="(item, index) in property" :key="index" >
-                <div class="item-con">
-                  <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
-                  <i class="iconfont iconleft-arrow21"></i>
+                <div class="l-item-label">属性维度</div>
+                <div class="item-list" v-for="(item, index) in property" :key="index" >
+                    <div class="item-con">
+                        <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
+                        <i class="iconfont iconleft-arrow21"></i>
+                    </div>
                 </div>
-              </div>
             </div>
             <div class="l-item">
-              <div class="l-item-label">用户行为</div>
-              <div class="item-list" v-for="(item, index) in behavior" :key="index" >
-                <div class="item-con">
-                  <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
-                  <i class="iconfont iconleft-arrow21"></i>
+                <div class="l-item-label">用户行为</div>
+                <div class="item-list" v-for="(item, index) in behavior" :key="index" >
+                    <div class="item-con">
+                        <div class="name" :class="{'act':item==cur}" @click="cur=item">{{ item }}</div>
+                        <i class="iconfont iconleft-arrow21"></i>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
             <div class="condition_rig">
                 <div class="con_item_container">
                     <div class="con_item_label">年龄</div>
@@ -134,7 +134,7 @@
                     </div>
                 </div>
                 <div class="con_item_container queding_container">
-                    <div class="quedingbtn" @click="submit">确定</div>
+                    <button class="btn-primary-middle" @click="submit">确定</button>
                 </div>
             </div>
         </div>
@@ -1015,7 +1015,7 @@
               var itemDom = this.$refs[art] || [];
               for(var i=0;i<itemDom.length;i++){
                   if(i==arg){
-                      itemDom[i].style="background: #2373FF;color: #FFFFFF;";
+                      itemDom[i].style="background: #2373FF;color: #FFFFFF;border-radius: 4px;";
                   }
                   else{  //如果需要多选去掉else
                       itemDom[i].style="color: #636E95;background: none;";
@@ -1703,7 +1703,7 @@
         display: flex;
         align-items: center;
         // margin-bottom: -119px;
-        margin-top: 19px;
+        margin-top: 10px;
         position: absolute;
         /*margin-left: 20px;*/
         right: 20px;
@@ -1733,7 +1733,7 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        font-size: 14px;
+                        font-size: 12px;
                         font-family: PingFangSC-Regular, PingFang SC;
                         font-weight: 400;
                         color: #242F57;
@@ -1826,35 +1826,37 @@
     .conditions_container-box{
         position: absolute;
         z-index: 999;
-        top: 84px;
+        top: 74px;
         display: flex;
         left: 20px;
         right: 20px
     }
     .conditions_container{
         flex: 1;
-        height: 48px;
-        background: #F4F7FC;
+        height: 40px;
+        background: #FFFFFF;
         border-radius: 0px 0px 4px 4px;
-        padding: 15px 6px;
-        padding-right: 10px;
-        box-sizing: border-box;
+        padding: 8px 16px 8px 12px;
+        /*box-sizing: border-box;*/
         display: flex;
         align-items: center;
         justify-content: space-between;
+        border-top: 1px solid #F0F8FF;
+
         .conditions_lef{
             height: 100%;
             display: flex;
             align-items: center;
             .condition_label,.condition_item{
-                width: 75px;
+                width: 64px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin-right: 12px;
+                margin-right: 10px;
             }
             .condition_label{
-                font-size: 14px;
+                margin-right: 0;
+                font-size: 12px;
                 font-family: PingFangSC-Regular, PingFang SC;
                 font-weight: 400;
                 color: #242F57;
@@ -1879,7 +1881,7 @@
             }
         }
         .conditions_rig{
-            font-size: 14px;
+            font-size: 12px;
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
             color: #2373FF;
@@ -1890,15 +1892,15 @@
     }
     .condition_content{
         position: absolute;
-        left: 1.9%;
-        top: 132px;
+        left: 20px;
+        top: 116px;
         // hd修改-2
-        width: 780px;
+        width: 775px;
         z-index: 1000;
-        height: 557px;
+        height: 406px;
         background: #FFF;
         box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-        border-radius: 12px;
+        border-radius: 4px;
         border: 1px solid #EAEDF7;
         display: flex;
         align-items: center;
@@ -1912,14 +1914,14 @@
     .target-left {
       width: 186px;
       height: 100%;
-      padding: 24px 0 0 24px;
+      padding: 12px 0 0 12px;
       border-right: 1px solid #eaedf7;
       .l-item {
-        margin-bottom: 24px;
+        margin-bottom: 9px;
         .l-item-label {
           width: 58px;
           height: 16px;
-          margin-bottom: 15px;
+          margin-bottom: 9px;
           font-size: 14px;
           font-family: PingFangSC-Medium, PingFang SC;
           font-weight: 500;
@@ -1935,14 +1937,12 @@
             height: 32px;
             padding: 0 16px;
             margin-right: 1px;
-            margin-bottom: 8px;
+            /*margin-bottom: 8px;*/
             .name{
-              height: 14px;
-              font-size: 14px;
+              font-size: 12px;
               font-family: PingFangSC-Regular, PingFang SC;
               font-weight: 400;
-              color: #333333;
-              line-height: 14px;
+              color: #636E95;
               cursor: pointer;
               &.act{
                 color: #2373FF;
@@ -1950,7 +1950,7 @@
             }
             > i {
               font-size: 12px;
-              color: #7c88b1;
+              color: #98A2C2;
             }
           }
         }
@@ -1959,7 +1959,7 @@
         .condition_rig{
             // flex: 1;
             height: 100%;
-            padding: 55px 0 0 22px;
+            padding: 45px 0 0 22px;
             box-sizing: border-box;
             .con_item_container{
                 // width: 100%;
@@ -1968,12 +1968,10 @@
                 margin-bottom: 8px;
                 .con_item_label{
                     width: 106px;
-                    height: 24px;
-                    font-size: 14px;
+                    font-size: 12px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
                     color: #242F57;
-                    line-height: 24px;
                 }
                 .con_item_con{
                     // flex: 1;
@@ -1984,10 +1982,10 @@
                         height: 24px;
                         padding: 0 9px;
                         line-height: 24px;
-                        margin-bottom: 16px;
+                        margin-bottom: 5px;
                         border-radius: 8px;
                         margin-right: 24px;
-                        font-size: 14px;
+                        font-size: 12px;
                         font-family: PingFangSC-Regular, PingFang SC;
                         font-weight: 400;
                         color: #636E95;
@@ -2002,19 +2000,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin-top: 30px;
-                .quedingbtn{
-                    padding: 4px 20px;
-                    border-radius: 8px;
-                    font-size: 14px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    background: rgb(35, 115, 255);
-                    color: rgb(255, 255, 255);
-                }
-                .quedingbtn:hover{
-                    cursor: pointer;
-                }
+                margin-top: 20px;
             }
         }
 
@@ -2590,7 +2576,7 @@
         .yhxw_container{
             position: absolute;
             // hd修改-5
-            width: 780px;
+            width: 774px;
             bottom: 20px;
             left: 20px;
             z-index: 999;
