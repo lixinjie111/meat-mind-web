@@ -569,69 +569,75 @@ export default {
       id:propData.id,
       time:'08:00'
     };
-    this.getMoveLineDetail(resParm,[116.402394, 39.937182],'朝阳区');
+    this.$nextTick(()=>{
+      this.getMoveLineDetail(resParm,[116.402394, 39.937182],'朝阳区');
+    });
   },
   methods: {
-    getMoveLineDetail(resParm,circle,street) {
-      api.getUserMoveLineDetail(resParm).then(res=>{
+    async getMoveLineDetail(resParm,circle,street) {
+      try{
+        let res = await api.getUserMoveLineDetail(resParm);
         if(res.code == 200){
           var detailData = res.data || [];
           if(detailData[0]){
+            var moveLineObj = detailData[0].moveLineInfo || {};
             this.rightPanelData = {
-              userStatObj: detailData[0].moveLineInfo.userStatus,
-              bqitmList:detailData[0].moveLineInfo.mediaTypes,
-              chufaObj:detailData[0].moveLineInfo.departures, 
-              mudiObj:detailData[0].moveLineInfo.destination, 
-              tonqinTypeObj:detailData[0].moveLineInfo.travelTools,
-              tongqinTimeObj:detailData[0].moveLineInfo.journeyTime,
-              agePercentage:detailData[0].moveLineInfo.agePercentage,
-              sexPercentage:detailData[0].moveLineInfo.sexPercentage,
+              userStatObj: moveLineObj.userStatus,
+              bqitmList:moveLineObj.mediaTypes,
+              chufaObj:moveLineObj.departures, 
+              mudiObj:moveLineObj.destination, 
+              tonqinTypeObj:moveLineObj.travelTools,
+              tongqinTimeObj:moveLineObj.journeyTime,
+              agePercentage:moveLineObj.agePercentage,
+              sexPercentage:moveLineObj.sexPercentage,
               manWidthobj:{
-                width:(Number(detailData[0].moveLineInfo.sexPercentage[0].percentage) -1) + '%'
+                width:(Number(moveLineObj.sexPercentage ? moveLineObj.sexPercentage[0].percentage : '1') -1) + '%'
               },
               womenWidthobj:{
-                width:(Number(detailData[0].moveLineInfo.sexPercentage[1].percentage) -1) + '%'
+                width:(Number(moveLineObj.sexPercentage ? moveLineObj.sexPercentage[1].percentage :'1') -1) + '%'
               }
             }
             this.fanganObj = detailData[0].recommendDeliveryPlan || {};
             this.yqxgList = [
               {
                 til: "触达用户：",
-                desc: detailData[0].recommendDeliveryPlan.reachUserCount,
+                desc: this.fanganObj.reachUserCount,
               },
               {
                 til: "互动量提升：",
-                desc: detailData[0].recommendDeliveryPlan.interactionIncrease,
+                desc: this.fanganObj.interactionIncrease,
               },
               {
                 til: "品牌印象提升：",
-                desc: detailData[0].recommendDeliveryPlan.brandPromotion,
+                desc: this.fanganObj.brandPromotion,
               },
               {
                 til: "销售转化率：",
-                desc: detailData[0].recommendDeliveryPlan.saleConversionRate,
+                desc: this.fanganObj.saleConversionRate,
               },
             ];
             setTimeout(()=>{
               this.clickPerTab(1);
               this.initMap(detailData,circle,street);
-            },200);
+            },500);
           }
         }else{
           this.$Message.error('获得用户分组动线详情失败！')
         }
-      }).catch(err=>{
-        this.$Message.error(err.msg)
-      });
+      }catch(err){
+        console.log('>>>>>',err)
+      };
     },
     clickPerTab(arg) {
       var conDom = this.$refs.person_con_con;
       let actLef = require("../../assets/img/yhhx/actLef.png");
       let actrig = require("../../assets/img/yhhx/actRig.png");
-      if (arg == 1) {
-        conDom.style = `background-image: url(${actLef});background-size:contain;background-repeat:no-repeat;`;
-      } else {
-        conDom.style = `background-image: url(${actrig});background-size: cover;`;
+      if(conDom){
+        if (arg == 1) {
+          conDom.style = `background-image: url(${actLef});background-size:contain;background-repeat:no-repeat;`;
+        } else {
+          conDom.style = `background-image: url(${actrig});background-size: cover;`;
+        }
       }
       if (arg == 1) {
         this.ifShowtffatj = true;
@@ -896,21 +902,22 @@ export default {
           if(attr == 'polyline0'){
             polyObj['polyline0'].setOptions(selectedOptions);
             var detailData = pList1 || [];
+            var moveLineObj = detailData[0].moveLineInfo || {};
             if(detailData[0]){
               this.rightPanelData = {
-                userStatObj: detailData[0].moveLineInfo.userStatus,
-                bqitmList:detailData[0].moveLineInfo.mediaTypes,
-                chufaObj:detailData[0].moveLineInfo.departures, 
-                mudiObj:detailData[0].moveLineInfo.destination, 
-                tonqinTypeObj:detailData[0].moveLineInfo.travelTools,
-                tongqinTimeObj:detailData[0].moveLineInfo.journeyTime,
-                agePercentage:detailData[0].moveLineInfo.agePercentage,
-                sexPercentage:detailData[0].moveLineInfo.sexPercentage,
+                userStatObj: moveLineObj.userStatus,
+                bqitmList:moveLineObj.mediaTypes,
+                chufaObj:moveLineObj.departures, 
+                mudiObj:moveLineObj.destination, 
+                tonqinTypeObj:moveLineObj.travelTools,
+                tongqinTimeObj:moveLineObj.journeyTime,
+                agePercentage:moveLineObj.agePercentage,
+                sexPercentage:moveLineObj.sexPercentage,
                 manWidthobj:{
-                  width:(Number(detailData[0].moveLineInfo.sexPercentage[0].percentage) -1) + '%'
+                  width:(Number(moveLineObj.sexPercentage?moveLineObj.sexPercentage[0].percentage:'1') -1) + '%'
                 },
                 womenWidthobj:{
-                  width:(Number(detailData[0].moveLineInfo.sexPercentage[1].percentage) -1) + '%'
+                  width:(Number(moveLineObj.sexPercentage ? moveLineObj.sexPercentage[1].percentage : '1') -1) + '%'
                 }
               }
               this.fanganObj = detailData[0].recommendDeliveryPlan || {};

@@ -21,11 +21,11 @@
 			    </div>
 			    <div class="left_desc_text">分析品牌对应的不同用户群在不同时间，不同场景，使用了哪些App/Web，以及详细的线上、线下、全方位，立体化数据展示。</div>
 		    </div>
-		    <button class="btn-primary-middle right_btn" @click="formatUser">
+		    <div class="right_btn" @click="formatUser">
 			    <!--<img :src="manIcon" class="manIcon"/>-->
 			    <i class="iconfont iconyonghuline" ></i>
 			    <span class="zdyku">自定义客群</span>
-		    </button>
+		    </div>
 	    </div>
 	    <div class="yhdx_container">
         <div class="group_list_con" v-for="item in yhGroupList" :key="item.id">
@@ -65,12 +65,12 @@
               </div>
             </div>
           </div>
-          <vDxitem v-if="ifShowDx1&&showItem" :parm="item" :key="item.id"></vDxitem>
-          <vDxitem1 v-if="item.id == currentItem && showItem" :parm="item" :key="item.id"></vDxitem1>
-          <!-- <vDxitem1 v-if="ifShowDx3 && item.id == '3'" :parm="item" :key="item.id"></vDxitem1>
-          <vDxitem1 v-if="ifShowDx4 && item.id == '4'" :parm="item" :key="item.id"></vDxitem1>
-          <vDxitem1 v-if="ifShowDx5 && item.id == '5'" :parm="item" :key="item.id"></vDxitem1>
-          <vDxitem1 v-if="ifShowDx6 && item.id == '6'" :parm="item" :key="item.id"></vDxitem1> -->
+          <vDxitem v-if="ifShowComfn(ifShowDx1 && item.id == '1')" :parm="item" :key="item.id"></vDxitem>
+          <vDxitem1 v-else-if="ifShowComfn(ifShowDx2 && item.id == '2')" :parm="item" :key="item.id"></vDxitem1>
+          <vDxitem1 v-else-if="ifShowComfn(ifShowDx3 && item.id == '3')" :parm="item" :key="item.id"></vDxitem1>
+          <vDxitem1 v-else-if="ifShowComfn(ifShowDx4 && item.id == '4')" :parm="item" :key="item.id"></vDxitem1>
+          <vDxitem1 v-else-if="ifShowComfn(ifShowDx5 && item.id == '5')" :parm="item" :key="item.id"></vDxitem1>
+          <vDxitem1 v-else-if="ifShowComfn(ifShowDx6 && item.id == '6')" :parm="item" :key="item.id"></vDxitem1>
         </div>
       </div>
 
@@ -84,7 +84,7 @@
 			    <div class="left_desc_text">基于用户分群数据，系统智能生成的用户基础画像数据，行为分析数据以及心智分析数据。</div>
 		    </div>
 		    <div class="right_select">
-			    <button class="btn-primary-middle select-btn" @click="toComparison"><i class="iconfont icontianjia"></i>用户群对比</button>
+			    <div class="select-btn" @click="toComparison"><i class="iconfont icontianjia"></i>用户群对比</div>
 <!--			    <Select class="select" value="北京上班族">-->
 <!--				    <Option value="北京上班族">北京上班族</Option>-->
 <!--			    </Select>-->
@@ -828,12 +828,16 @@ export default {
         { name: '抖音', value: '82', color: '#FF8800'},
         { name: '知乎', value: '82', color: '#FF8800'},
       ],
-      yhGroupList:[],
-      currentItem:1,
-      showItem:true,
+      yhGroupList:[]
     };
   },
-  mounted() {
+  computed:{
+    ifShowComfn(){
+      return function(value){
+        console.log(value,'111111111')
+        return value
+      }
+    }
   },
   created(){
     this.getYhGroupList();
@@ -933,12 +937,6 @@ export default {
     },
     expandfn(arg,c,r,d){
       var rigDom = this.$refs[r][0];
-      this.currentItem = arg;
-      if(arg!=1){
-        this.showItem=true;
-      }else{
-         this.showItem=false;
-      }
       console.log(d,'item')
       if(arg == 1){
         if(this.ifShowDx2){
@@ -1239,6 +1237,7 @@ export default {
 			}
 		}
 		.right_btn {
+			border: 1px solid rgba(255, 255, 255, 0.4);
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -1246,7 +1245,11 @@ export default {
 			cursor: pointer;
 			width: 116px;
 			height: 32px;
-
+			background: #2373FF;
+			box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
+			border-radius: 4px;
+			font-weight: 400;
+			color: #FFFFFF;
 			.manIcon {
 				display: block;
 				width: 24px;
@@ -1265,11 +1268,24 @@ export default {
       }
 		}
 		.right_select{
-
+			/*width: 300px;*/
+			/*height: 32px;*/
+			/*display: flex;*/
+			/*align-items: center;*/
+			/*justify-content: space-between;*/
+			/*font-size: 14px;*/
 			.select-btn {
 				width: 112px;
 				height: 32px;
 				line-height: 32px;
+				background: #2373FF;
+				box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
+				border-radius: 4px;
+				font-size: 14px;
+				font-family: PingFangSC-Regular, PingFang SC;
+				font-weight: 400;
+				color: #FFFFFF;
+				text-align: center;
 				cursor: pointer;
 
 				 >i {
@@ -1278,6 +1294,11 @@ export default {
 					margin-right: 3px;
 				 }
 			}
+			/*.select{*/
+			/*	height: 32px;*/
+			/*	background: #FFFFFF;*/
+			/*	border-radius: 4px;*/
+			/*}*/
 		}
 	}
 	.top_title_container_margin_top{
