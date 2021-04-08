@@ -251,14 +251,13 @@
 
          .show-header {
             margin-top: 16px;
-            background: #fff;
             display: flex;
             align-items: center;
             height: 64px;
             margin-bottom: 8px;
+            background: #FFFFFF;
             box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
             border-radius: 8px;
-            border: 1px solid #eaedf7;
             .blue-btn {
                 cursor: pointer;
                 display: flex;
@@ -331,11 +330,10 @@
         }
         .ztzb{
             margin-top: 16px;
-            background: #fff;
             padding: 16px 24px;
-            box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+            background: #FFFFFF;
+            box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
             border-radius: 8px;
-            border: 1px solid #eaedf7;
                 .ivu-table{
         font-size: 14px;
         font-family: PingFangSC-Regular, PingFang SC;

@@ -231,14 +231,13 @@ export default {
   .list {
     position: relative;
     .show-header {
-      background: #fff;
         display: flex;
         align-items: center;
       height: 66px;
       margin-bottom: 8px;
+      background: #FFFFFF;
       box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
       border-radius: 8px;
-      border: 1px solid #eaedf7;
             .blue-btn {
               cursor: pointer;
         display: flex;

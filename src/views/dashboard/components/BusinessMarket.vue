@@ -116,7 +116,7 @@
                                 <div class="info">
                                     <div class="num">{{index+1}}/{{groupList.length}}</div>
                                     <div class="rate flex">
-                                        <div>{{item.short}}</div>
+                                        <div><img :src="item.short"/></div>
                                         <div>
                                             <p>{{item.rate}}</p>
                                             <p>成交率</p>
@@ -575,7 +575,7 @@
                     {
 
                         name: '全部客群',
-                        short:'全',
+                        short: require("../../../assets/img/dashboard/market/avatar1.png"),
                         total: 46571,
                         rate: 80,
                         self: 23,
@@ -741,7 +741,7 @@
                     {
 
                         name: '研学青年',
-                        short:'研',
+                        short: require("../../../assets/img/dashboard/market/avatar2.png"),
                         total: 7930,
                         rate: 82,
                         self: 80,
@@ -829,7 +829,7 @@
                     {
 
                         name: '企业高管',
-                        short:'企',
+                        short: require("../../../assets/img/dashboard/market/avatar3.png"),
                         total: 3204,
                         rate: 78,
                         self: 67,
@@ -917,7 +917,7 @@
                     {
 
                         name: '北漂一族',
-                        short:'北',
+                        short: require("../../../assets/img/dashboard/market/avatar4.png"),
                         total: 18197,
                         rate: 76,
                         self: 12,
@@ -1005,7 +1005,7 @@
                     {
 
                         name: '自由职业',
-                        short:'自',
+                        short: require("../../../assets/img/dashboard/market/avatar5.png"),
                         total: 17240,
                         rate: 81,
                         self: 3,
@@ -1175,9 +1175,8 @@
                 padding: 24px;
                 width: 100%;
                 background: #FFFFFF;
-                box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+                box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
                 border-radius: 8px;
-                border: 1px solid #EAEDF7;
             }
             &:last-child{
                 .content{
@@ -1441,11 +1440,17 @@
                                           align-items: center;
                                           width: 64px;
                                           height: 64px;
-                                          background: #DBE9FF;
-                                          font-size: 38px;
-                                          font-family: PingFangSC-Medium, PingFang SC;
-                                          font-weight: 500;
-                                          color: #2373FF
+                                          /*background: #DBE9FF;*/
+                                          /*font-size: 38px;*/
+                                          /*font-family: PingFangSC-Medium, PingFang SC;*/
+                                          /*font-weight: 500;*/
+                                          /*color: #2373FF*/
+
+                                          >img {
+                                              border-radius: 4px 0 0 4px;
+                                              width: 64px;
+                                              height: 64px;
+                                          }
                                       }
 
                                       &:last-child {
@@ -1586,20 +1591,22 @@
                 .right {
                     display: block;
                     margin-left: 16px;
+                    background: #FFFFFF;
+                    border-radius: 8px;
 
                     .time-line {
-                        height: 104px;
+                        height: 105px;
                         border-radius: 8px 8px 0 0;
                         background: #FFFFFF;
 
                         >img {
                             border-radius: 8px 8px 0 0;
-                            height: 104px;
+                            height: 105px;
                         }
                     }
 
                     .map-box {
-                       margin-top: 16px;
+                       margin-top: 24px;
                        width: 100%;
                        height: 530px;
                     }

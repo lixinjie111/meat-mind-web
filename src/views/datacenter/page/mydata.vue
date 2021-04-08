@@ -695,7 +695,7 @@ export default {
         margin-top: 22px;
         padding: 12px 24px;
         background: #FFFFFF;
-        border: 1px solid #EAEDF7;
+        /*border: 1px solid #EAEDF7;*/
         box-shadow: 4px 6px 20px 0 rgba(134, 143, 191, 0.15);
         border-radius: 8px;
         .page-box {
@@ -879,7 +879,7 @@ export default {
     border-radius: 8px;
     margin: 16px 0;
     padding: 0 24px;
-    border: 1px solid #EAEDF7;
+    /*border: 1px solid #EAEDF7;*/
     background: #FFFFFF;
     box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
     padding-bottom: 16px;

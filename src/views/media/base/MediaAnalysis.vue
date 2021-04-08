@@ -209,7 +209,7 @@
 				font-weight: 500;
 				font-family: PingFangSC-Medium, PingFang SC;
 				line-height: 48px;
-				border-radius: 8px;
+				border-radius: 4px;
 				text-align: center;
 				&.light {
           			background: #F0F8FF;

@@ -5,10 +5,8 @@
       <li v-for="(item,index) in columns" :key="index" :style="item.width ? 'width: '+item.width+'px;' : ''">{{item.title}}</li>
     </ul>
     <div class="table-empty">
-      <div class="nodata">
-        <i class="iconfont iconwodeshuju"></i>
-      </div>
-      <div class="no-tip">暂无数据</div>
+        <div class="th">没有查找到数据</div>
+        <div class="td">请尝试调整时间段或筛选条件</div>
     </div>
   </div>
 </template>
@@ -35,7 +33,9 @@
       justify-content: stretch;
       height: 48px;
       background: #F4F7FC;
-      border-radius: 2px;
+      /*border-radius: 2px;*/
+      border-top: 1px solid #EAEDF7;
+      border-bottom: 1px solid #EAEDF7;
       >li{
         height: 22px;
         font-size: 14px;
@@ -65,14 +65,19 @@
           color: #FFFFFF;
         }
       }
-      .no-tip{
-        height: 20px;
-        margin-top: 4px;
-        font-size: 14px;
-        font-weight: 400;
-        color: #636E95;
-        line-height: 20px;
-      }
+        .th {
+          font-size: 14px;
+          font-weight: 500;
+          color: #242F57;
+          line-height: 26px;
+        }
+
+        .td {
+          font-size: 14px;
+          font-weight: 400;
+          color: #7C88B1;
+          line-height: 20px;
+        }
     }
   }
 </style>

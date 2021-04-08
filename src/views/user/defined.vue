@@ -66,8 +66,8 @@ export default {
     margin-bottom: 24px;
     background: #FFFFFF;
     box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
-    border-radius: 12px;
-    border: 1px solid #eaedf7;
+    border-radius: 8px;
+
     .defined-title {
       display: flex;
       height: 16px;

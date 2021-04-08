@@ -2,7 +2,7 @@
   <DetailsPage title="归因分析" backname="analysis-tool-model">
     <div class="filter-container">
       <div class="switch">
-        <div>
+        <div class="first">
           选择事件
         </div>
       </div>
@@ -132,7 +132,11 @@
       height: 64px;
       font-size: 14px;
       color: #636E95;
+
+    .first {
+      color: #242F57;
     }
+  }
 
     .item1 {
       width: 200px;

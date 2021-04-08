@@ -15,6 +15,9 @@ export default {
     },
     curColor:{
         type:String
+    },
+    detail:{
+      type:Object
     }
   },
   data(){
@@ -39,6 +42,8 @@ export default {
         })
         let links = []
         arr = JSON.parse(JSON.stringify(arr))
+        arr[0].name = this.detail.subPublicList[2].title
+        this.graphDatas.categories[3] = {name:this.detail.subPublicList[1].title}      
         for(let i = 0;i < arr.length;i++){
             if(arr[i].symbolSize>8){arr[i].symbolSize -= 8}
             if(i>0){

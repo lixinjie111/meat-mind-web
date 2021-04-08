@@ -2,7 +2,7 @@
   <DetailsPage title="留存分析" backname="analysis-tool-model">
     <div class="filter-container">
       <div class="switch">
-        <div>显示满足如下行为模式的用户留存情况：</div>
+        <div class="first">显示满足如下行为模式的用户留存情况：</div>
         <div>
           设置关联属性
           <i-switch v-model="showRelation" size="small" class="margin16"/>
@@ -268,6 +268,10 @@ export default {
     height: 64px;
     font-size: 14px;
     color: #636E95;
+
+    .first {
+      color: #242F57;
+    }
   }
 
   .item1 {

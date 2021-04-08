@@ -60,10 +60,9 @@ export default {
   margin-top: 16px;
   height: 155px;
   margin-bottom: 16px;
-  background: #ffffff;
+  background: #FFFFFF;
   box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
   border-radius: 8px;
-  border: 1px solid #eaedf7;
   .f-header {
     display: flex;
     justify-content: flex-end;

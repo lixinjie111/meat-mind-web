@@ -163,7 +163,7 @@ import dayjs from 'dayjs'
     margin-top: 22px;
     padding: 12px 24px;
     background: #FFFFFF;
-    border: 1px solid #EAEDF7;
+    /*border: 1px solid #EAEDF7;*/
     box-shadow: 4px 6px 20px 0 rgba(134, 143, 191, 0.15);
     border-radius: 8px;
     .page-box {
