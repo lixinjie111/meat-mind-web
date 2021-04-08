@@ -3,10 +3,10 @@
     <div class="header-nav"><p>用户分群</p></div>
     <div class="list">
       <div class="show-header">
-        <div class="blue-btn" @click="create">
+        <button class="btn-primary-middle blue-btn" @click="create">
           <i class="iconfont icontianjia"></i>
           <div>新建</div>
-        </div>
+        </button>
       </div>
       <TableModel :columns="columns" :tableData="tableData"></TableModel>
     </div>
@@ -239,16 +239,13 @@ export default {
       box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
       border-radius: 8px;
             .blue-btn {
-              cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 76px;
         height: 32px;
-        box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
         margin-left: 24px;
-        background: #2373ff;
-        border-radius: 4px;
+
         > i {
           width: 14px;
           height: 14px;

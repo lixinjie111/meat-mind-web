@@ -24,7 +24,7 @@
       </div>
       <div class="d-c-btn">
         <div class="cancel" @click="cancel">取消</div>
-        <div class="create" @click="create">创建</div>
+        <button class="btn-primary-middle" @click="create">创建</button>
       </div>
     </div>
   </DetailsPage>
@@ -160,12 +160,6 @@ export default {
       border: 1px solid #97A0C3;
       color: #242F57;
       margin-right: 16px;
-    }
-    .create {
-      background: #2373FF;
-      box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
-      color: #ffffff;
-
     }
   }
 }

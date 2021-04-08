@@ -55,7 +55,7 @@
         </div>
         <div class="btn-box">
           <div class="clear" @click="clear">清空</div>
-          <div class="confirm" @click="confirm">确定</div>
+          <button class="btn-primary-middle confirm" @click="confirm">确定</button>
         </div>
       </div>
       <div class="user-target">
@@ -458,13 +458,7 @@ export default {
         justify-content: center;
         width: 80px;
         height: 32px;
-        background: #3366FF;
         border-radius: 8px;
-        font-size: 14px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        color: #FFFFFF;
-        cursor: pointer;
       }
     }
   }

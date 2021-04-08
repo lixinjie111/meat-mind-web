@@ -14,7 +14,7 @@
           <span class="margin16">查看</span>
         </div>
         <div>
-          <div class="new-btn">新建漏斗</div>
+          <button class="btn-primary-middle new-btn">新建漏斗</button>
         </div>
       </div>
       <FilterEvent title=""></FilterEvent>
@@ -251,16 +251,10 @@
       .new-btn{
         width: 80px;
         height: 32px;
+        line-height: 32px;
         font-size: 14px;
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
-        line-height: 32px;
-        text-align: center;
-        color: #FFFFFF;
-        background: #2373FF;
-        box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
-        border-radius: 4px;
-        cursor: pointer;
       }
     }
 

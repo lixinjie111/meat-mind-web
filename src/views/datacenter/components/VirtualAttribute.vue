@@ -2,7 +2,7 @@
   <DetailsPage title="虚拟属性" backname="data-center-metax">
     <HeaderSearch>
       <div class="use-state">
-        <div>查看使用说明</div>
+        <button class="btn-primary-middle">查看使用说明</button>
       </div>
     </HeaderSearch>
     <TableModel :columns="columns" :tableData="tableData"></TableModel>
@@ -174,17 +174,10 @@ export default {
   padding-left:16px;
   color: #ffffff;
   cursor: pointer;
-  > div {
+  > button {
       width: 114px;
       height: 32px;
-      background: #2373FF;
-      box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
-      border-radius: 4px;
       line-height: 32px;
-      text-align: center;
-      font-size: 14px;
-      font-family: PingFangSC-Regular, PingFang SC;
-      font-weight: 400;
   }
 }
 </style>

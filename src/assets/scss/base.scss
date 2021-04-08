@@ -82,10 +82,10 @@ li {
 }
 
 .btn-basic {
-  min-width: 100px;
+  width: 100px;
   height: $button-height;
   line-height: $button-height;
-  font-family: $font-family;
+  font-family: PingFangSC-Regular, PingFang SC;
   font-size: 16px;
   font-weight: 400;
   color: #FFFFFF;
@@ -119,7 +119,7 @@ li {
 
 .btn-primary-middle {
   @extend .btn-primary;
-  min-width: 82px;
+  width: 82px;
   height: $button-height-middle;
   line-height: $button-height-middle;
   font-size: 14px;
@@ -127,7 +127,7 @@ li {
 
 .btn-primary-small {
   @extend .btn-primary;
-  min-width: 68px;
+  width: 68px;
   height: $button-height-small;
   line-height: $button-height-small;
   font-size: 12px;

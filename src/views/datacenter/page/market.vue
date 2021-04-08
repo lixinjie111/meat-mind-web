@@ -22,7 +22,7 @@
                         </div>
                         <div class="bottom">
                             <div class="try-btn" v-if="item.try">试用三天</div>
-                            <div class="blue-btn">购入</div>
+                            <button class="btn-primary-small blue-btn">购入</button>
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                         </div>
                         <div class="bottom">
                             <div class="try-btn" v-if="item.try">试用三天</div>
-                            <div class="blue-btn">购入</div>
+                            <button class="btn-primary-small blue-btn">购入</button>
                         </div>
                     </div>
                 </div>
@@ -453,15 +453,6 @@
                                 width: 56px;
                                 height: 28px;
                                 line-height: 28px;
-                                background: #2373FF;
-                                box-shadow: 2px 4px 8px 0px rgba(35, 115, 255, 0.3);
-                                border-radius: 4px;
-                                font-size: 12px;
-                                font-family: PingFangSC-Regular, PingFang SC;
-                                font-weight: 400;
-                                color: #FFFFFF;
-                                text-align: center;
-                                cursor: pointer;
                             }
                         }
                     }

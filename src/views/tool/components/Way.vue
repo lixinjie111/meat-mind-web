@@ -29,7 +29,7 @@
           <ComplexInput class="item1" :value="20" :select="2" :options="unitOptions">
           </ComplexInput>
         </div>
-        <Button type="primary">查询</Button>
+        <button class="btn-primary-middle">查询</button>
       </div>
     </div>
     <div class="data-container">
