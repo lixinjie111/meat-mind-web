@@ -11,7 +11,7 @@
                 <div class="info">
                     <div class="title">
                         <img class="top" src="../assets/img/index/title@2x.png">
-                        <div class="bottom" @click="go">体验DEMO <i class="iconfont iconleft-arrow"></i></div>
+                        <button class="btn-primary bottom" @click="go">体验DEMO <i class="iconfont iconleft-arrow"></i></button>
                     </div>
                     <div class="video">
                         <video class="player" width="100%" height="100%" autoplay loop muted :src="src"></video>
@@ -146,15 +146,6 @@
                             width: 158px;
                             height: 48px;
                             line-height: 48px;
-                            background: #2373FF;
-                            box-shadow: 4px 6px 12px 1px rgba(35, 115, 255, 0.3);
-                            border-radius: 4px;
-                            font-size: 16px;
-                            font-family: PingFangSC-Regular, PingFang SC;
-                            font-weight: 400;
-                            color: #FFFFFF;
-                            text-align: center;
-                            cursor: pointer;
                         }
                     }
 

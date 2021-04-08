@@ -90,7 +90,7 @@
                         <p>数据管理员</p>
                     </div>
                 </div>
-                <div :class="[role >= 0 ? 'active' : '','confirm']" @click="confirm">登录</div>
+                <button class="btn-primary confirm" :disabled="role < 0" @click="confirm">登录</button>
             </div>
         </Modal>
     </div>
@@ -271,20 +271,6 @@
                             width: 104px;
                             height: 40px;
                             line-height: 40px;
-                            background: #9ECBFF;
-                            box-shadow: 4px 6px 12px 1px rgba(35, 115, 255, 0.15);
-                            border-radius: 4px;
-                            font-size: 16px;
-                            font-family: PingFangSC-Regular, PingFang SC;
-                            font-weight: 400;
-                            color: #FFFFFF;
-                            text-align: center;
-                            cursor: pointer;
-
-                            &.active {
-                                background: #2373FF;
-                                box-shadow: 4px 6px 12px 1px rgba(35, 115, 255, 0.3);
-                            }
                         }
                     }
                 }

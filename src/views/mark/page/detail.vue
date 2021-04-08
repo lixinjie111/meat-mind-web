@@ -15,9 +15,9 @@
                     <img src="../../../assets/img/mark/download@2x.png" alt="">
                     <p>一键下载报告</p>
                 </div>
-                <div class="com-btn" @click="toComparison">
+                <button class="btn-primary-middle com-btn" @click="toComparison">
                     <i class="iconfont icontianjia"></i>对标品牌
-                </div>
+                </button>
             </div>
         </div>
         <!-- <div class="mark-detail-anchor">
@@ -96,16 +96,6 @@ export default {
                     width: 92px;
                     height: 32px;
                     line-height: 32px;
-                    background: #2373FF;
-                    box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
-                    border-radius: 4px;
-                    border: none;
-                    font-size: 14px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    color: #FFFFFF;
-                    text-align: center;
-                    cursor: pointer;
 
                     >i {
                         font-size: 13px;
