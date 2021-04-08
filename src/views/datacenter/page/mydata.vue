@@ -63,7 +63,7 @@
             <div>已上传文件列表</div>
             <div class="module-btns btn-box">
               <Button class="a">更新数据</Button>
-              <Button class="a" type="primary" @click="uploadModalStatus = true">上传数据</Button>
+              <button class="a btn-primary-middle" @click="uploadModalStatus = true">上传数据</button>
             </div>
           </div>
           <div class="table-warp">
@@ -93,7 +93,7 @@
           <div class="module-title">
             <div>已购买数据</div>
             <div class="module-btns btn-box">
-              <Button class="a" type="primary" @click="toMarket">购买数据包</Button>
+              <button class="a btn-primary-middle" @click="toMarket">购买数据包</button>
             </div>
           </div>
           <div class="table-warp">
@@ -896,6 +896,9 @@ export default {
         align-items: center;
         button{
           margin-left: 16px;
+        }
+        .btn-primary-middle {
+          min-width: 104px;
         }
       }
     }

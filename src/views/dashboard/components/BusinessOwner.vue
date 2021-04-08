@@ -8,18 +8,18 @@
             <div class="user-intro-container" v-if="tabActive == 1">
                 <p>早安，叶总，欢迎使用 Meta-Mind-Marketing！</p>
                 <p>营销洞察助力智能获取精准目标客群，掌握市场趋势及竞对情报，发掘商业机会，借助热点打造爆款，提供海量营销创意案例。</p>
-                <div class="report-btn" @click="showModal = true">
+                <button class="btn-primary report-btn" @click="showModal = true">
                     <i class="iconfont iconxiazai"/>
                     <span class="btn-txt">一键生成洞察报告</span>
-                </div>
+                </button>
             </div>
             <div class="user-intro-container" v-else>
                 <p>早安，叶总，欢迎使用 Meta-Mind-Marketing！</p>
                 <p>经营诊断可以智能监测营销活动效果，从客群、媒介以及品牌三个维度，针对性提出改进方案。</p>
-                <div class="report-btn" @click="showModal = true">
+                <button class="btn-primary report-btn" @click="showModal = true">
                     <i class="iconfont iconxiazai"/>
                     <span class="btn-txt">一键生成诊断报告</span>
-                </div>
+                </button>
             </div>
         </div>
         <Tab :tab-list="['营销洞察','经营诊断']" @change="changeTab"></Tab>
@@ -40,8 +40,8 @@
                     <p v-if="tabActive == 2">经营诊断报告</p>
                     <div class="flex">
                         <div @click="showModal = false" class="down-btn">关闭</div>
-                        <a v-if="tabActive == 1" :href="report1" target="_blank" download='营销洞察报告'><div class="down-btn">下载</div></a>
-                        <a v-if="tabActive == 2" :href="report2" target="_blank" download='经营诊断报告'><div class="down-btn">下载</div></a>
+                        <a v-if="tabActive == 1" :href="report1" target="_blank" download='营销洞察报告'><button class="down-btn">下载</button></a>
+                        <a v-if="tabActive == 2" :href="report2" target="_blank" download='经营诊断报告'><button class="down-btn">下载</button></a>
                     </div>
                 </div>
                 <div class="report-img-box">
@@ -135,14 +135,9 @@
                 justify-content: center;
                 width: 164px;
                 height: 40px;
-                background: #2373FF;
-                box-shadow: 3px 4px 8px 0px rgba(36, 47, 87, 0.1);
-                border-radius: 4px;
                 font-size: 14px;
                 font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
-                color: #FFFFFF;
-                cursor: pointer;
 
                 > i {
                     margin-right: 8px;

@@ -122,7 +122,7 @@
                             </div>
                             <div class="bottom">
                                 <div class="try-btn" v-if="item.try">试用三天</div>
-                                <div class="blue-btn">购入</div>
+                                <button class="btn-primary-small">购入</button>
                             </div>
                         </div>
                     </div>
@@ -648,20 +648,6 @@
                                 font-family: PingFangSC-Regular, PingFang SC;
                                 font-weight: 400;
                                 color: #242F57;
-                                text-align: center;
-                                cursor: pointer;
-                            }
-
-                            .blue-btn {
-                                width: 68px;
-                                height: 28px;
-                                line-height: 28px;
-                                background: #2373FF;
-                                border-radius: 4px;
-                                font-size: 12px;
-                                font-family: PingFangSC-Regular, PingFang SC;
-                                font-weight: 400;
-                                color: #FFFFFF;
                                 text-align: center;
                                 cursor: pointer;
                             }

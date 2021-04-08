@@ -4,7 +4,7 @@
       <div class="qdgl-panel">
         <div class="qdgl-title">
           <span class="title-left">渠道设置</span>
-          <span class="title-rt">设置</span>
+          <button class="btn-primary-middle title-rt">设置</button>
         </div>
         <div class="qdgl-box">
           <div class="qdgl-item">
@@ -397,16 +397,7 @@ export default {
       .title-rt{
         width: 76px;
         height: 32px;
-        background: #2373FF;
-        box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
-        border-radius: 4px;
-        font-size: 14px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        color: #FFFFFF;
         line-height: 32px;
-        text-align: center;
-        cursor: pointer;
       }
     }
     .qdgl-box{

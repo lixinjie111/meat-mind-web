@@ -6,10 +6,10 @@
   <DetailsPage title="Session管理" backname="data-center-metax">
     <div class="session-header">
       <div class="session-header-left">
-        <div class="blue-btn">
+        <button class="btn-primary-middle blue-btn">
           <i class="iconfont icontianjia"></i>
           <div>新建Session</div>
-        </div>
+        </button>
 
         <div class="total">当前条件共 10 个Session</div>
       </div>
@@ -158,10 +158,7 @@ export default {
       width: 125px;
       height: 32px;
       margin-right: 16px;
-      background: #2373FF;
-      box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
-      border-radius: 4px;
-      cursor: pointer;
+
       > i {
         width: 14px;
         height: 14px;

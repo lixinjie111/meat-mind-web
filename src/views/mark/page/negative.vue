@@ -31,6 +31,7 @@ export default {
         padding: 24px;
         background: #FFFFFF;
         border-radius: 8px;
+        box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
     }
 }
 </style>

@@ -39,7 +39,7 @@
       </div>
       <div class="operate-box">
         <div class="left-btn">重置</div>
-        <div class="right-btn">搜索</div>
+        <button class="btn-primary-middle right-btn">搜索</button>
       </div>
     </div>
   </div>
@@ -193,15 +193,6 @@ export default {
       .right-btn{
         width: 76px;
         height: 32px;
-        background: #2373FF;
-        border-radius: 4px;
-        box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
-        // border: 1px solid #2373FF;
-        cursor: pointer;
-        font-size: 14px;
-        font-family: PingFangSC-Regular, PingFang SC;
-        font-weight: 400;
-        color: #FFFFFF;
         line-height: 32px;
         text-align: center;
       }

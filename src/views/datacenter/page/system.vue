@@ -9,7 +9,7 @@
                     尚未接入开通该功能，请联系我们的<br>
                     <span class="link">技术人员</span> 为您开通
                 </div>
-                <div class="btn">了解详情</div>
+                <button class="btn-primary-middle btn">了解详情</button>
             </div>
             <div class="bottom">
                 <div class="bottom-title">您可以接入系统集成</div>
@@ -124,7 +124,8 @@
             line-height: 20px;
             .top{
                 padding:40px 0;
-                border-bottom:1px solid #EAEDF7; 
+                border-bottom:1px solid #EAEDF7;
+                text-align: center;
                 .topzi{
                     text-align: center;
                     .link{
@@ -137,15 +138,6 @@
                     width: 104px;
                     height: 32px;
                     line-height: 32px;
-                    background: #2373FF;
-                    box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
-                    border-radius: 4px;
-                    font-size: 14px;
-                    font-family: PingFangSC-Regular, PingFang SC;
-                    font-weight: 400;
-                    color: #FFFFFF;
-                    text-align: center;
-                    cursor: pointer;
                 }
             }
             .bottom{

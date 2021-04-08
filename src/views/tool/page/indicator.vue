@@ -3,10 +3,10 @@
         <div class="header-nav"><p>指标管理</p></div>
          <Tab :tab-list="['整体指标','客户指标']" @change="changeTab"></Tab>
          <div class="show-header">
-            <div class="blue-btn" @click="newModal = true">
+            <button class="btn-primary-middle blue-btn" @click="newModal = true">
             <i class="iconfont icontianjia"></i>
             <div>新建</div>
-            </div>
+            </button>
         </div>
         <div class="ztzb">
                 <Table :columns="columns" :data="active == 1?data:data1">
@@ -259,16 +259,12 @@
             box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
             border-radius: 8px;
             .blue-btn {
-                cursor: pointer;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 width: 74px;
                 height: 32px;
                 margin-left: 24px;
-                background: #2373ff;
-                border-radius: 4px;
-                box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
                 > i {
                     width: 14px;
                     height: 14px;

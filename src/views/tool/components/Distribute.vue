@@ -33,19 +33,21 @@
         <div class="bottom">
           <!-- <p>任意事件的总次数</p> -->
           <div class="table-warp">
-            <Table :columns="tableInfo.columns" :data="tableInfo.list">
-            </Table>
-            <div class="table-page-warp"  v-if="tableInfo.totalPage>0">
-              <Page
-                  :current="tableInfo.currentPage"
-                  :total="tableInfo.totalPage"
-                  :page-size="tableInfo.pageSize"
-                  show-total
-                  show-sizer
-                  class-name="pageS"
-                  @on-change="(page)=>tableChangePage(page, tableInfo)"
-              />
-            </div>
+            <EmptyTable :columns="tableInfo.columns">
+            </EmptyTable>
+<!--            <Table :columns="tableInfo.columns" :data="tableInfo.list">-->
+<!--            </Table>-->
+<!--            <div class="table-page-warp"  v-if="tableInfo.totalPage>0">-->
+<!--              <Page-->
+<!--                  :current="tableInfo.currentPage"-->
+<!--                  :total="tableInfo.totalPage"-->
+<!--                  :page-size="tableInfo.pageSize"-->
+<!--                  show-total-->
+<!--                  show-sizer-->
+<!--                  class-name="pageS"-->
+<!--                  @on-change="(page)=>tableChangePage(page, tableInfo)"-->
+<!--              />-->
+<!--            </div>-->
           </div>
         </div>
       </div>
@@ -56,11 +58,13 @@
 <script>
 import DetailsPage from "@/layouts/DetailsPage";
 import FilterEvent from "../base/FilterEvent";
+import EmptyTable from '../base/EmptyTable';
 import dayjs from "dayjs";
+
 export default {
   name: "Event",
   components: {
-    DetailsPage, FilterEvent
+    DetailsPage, FilterEvent, EmptyTable
   },
   watch: {
     propertyList: {
@@ -172,7 +176,6 @@ export default {
           {
             title: "文件名称",
             key: "name",
-
           },
           {
             title: "更新时间",

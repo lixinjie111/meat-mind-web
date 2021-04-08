@@ -1,10 +1,10 @@
 <template>
   <DetailsPage title="维度表" backname="data-center-metax">
     <HeaderSearch>
-      <div class="my-set">
+      <button class="btn-primary-middle my-set">
         <i class="iconfont iconsetup"></i>
         <div>自定义维度表</div>
-      </div>
+      </button>
     </HeaderSearch>
     <TableModel :columns="columns" :tableData="tableData"></TableModel>
   </DetailsPage>
@@ -134,11 +134,6 @@ export default {
   width: 130px;
   height: 32px;
   margin-left: 16px;
-  background: #2373FF;
-  color: #FFFFFF;
-  box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
-  border-radius: 4px;
-  cursor: pointer;
   >i{
     font-size: 14px;
     margin-right: 4px;

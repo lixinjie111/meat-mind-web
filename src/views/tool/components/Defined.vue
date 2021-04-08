@@ -17,7 +17,7 @@
           <li><a href="#">查看详细帮助文档</a></li>
         </ul>
         <div class="btns">
-          <Button type="primary" class="btn-blue">执行</Button>
+          <button class="btn-primary-middle">执行</button>
           <Button class="margin16 btn">另存为</Button>
           <div class="text margin16">或创建一个</div>
           <Button class="margin16 btn">新查询</Button>
@@ -143,9 +143,6 @@
         .btn {
           border: 1px solid #97A0C3;
           color: #242F57;
-        }
-        .btn-blue {
-          box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
         }
         .text {
           height: 22px;

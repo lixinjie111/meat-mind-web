@@ -90,10 +90,10 @@
                     <!-- <img :src="tvIcon" class="btn_download" /> -->
                     <span class="btntxt btntxt1">看板管理</span>
                 </div>
-                <div class="btn_container btn2">
+                <button class="btn-primary-middle btn2">
                     <i class="iconfont iconxiazai"></i>
                     <span class="btntxt">下载报表</span>
-                </div>
+                </button>
             </div>
         </div>
         <div class="kanban_item_container">
@@ -1451,14 +1451,9 @@ export default {
                 font-size: 14px;
                 font-family: PingFangSC-Regular, PingFang SC;
                 font-weight: 400;
-                color: #FFFFFF;
                 width: 130px;
-                height: 32px;
-                background: #2373FF;
-                box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
-                border-radius: 4px;
-                border: 1px solid rgba(255, 255, 255, 0.4);
                 margin-left: 12px;
+
                 .iconxiazai{
                   font-size: 14px;
                   color: #FFFFFF;
