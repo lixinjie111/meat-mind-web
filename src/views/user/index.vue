@@ -40,7 +40,7 @@
                   <div class="perinfo_b">用户数 {{item.userCount}}人</div>
                 </div>
               </div>
-              <div class="lef_area_bom" :style="item.lefbomSty" @click="expandfn(Number(item.id),'cen_area'+item.id,'rig_area'+item.id)">
+              <div class="lef_area_bom" :style="item.lefbomSty" @click="expandfn(Number(item.id),'cen_area'+item.id,'rig_area'+item.id,item)">
                 <span>{{computedText(item.id)}}</span>
                 <i v-if="computedText(item.id) == '收起动线详情'" class="iconfont iconup" :class="[(item.id == '5' || item.id == '6')? 'originClass': 'blueClass']"></i>
                 <i v-else class="iconfont icondown" :class="[(item.id == '5' || item.id == '6')? 'originClass': 'blueClass']"></i>
@@ -65,12 +65,12 @@
               </div>
             </div>
           </div>
-          <vDxitem v-if="ifShowDx1 && item.id == '1'" :parm="item"></vDxitem>
-          <vDxitem1 v-if="ifShowDx2 && item.id == '2'" :parm="item"></vDxitem1>
-          <vDxitem1 v-if="ifShowDx3 && item.id == '3'" :parm="item"></vDxitem1>
-          <vDxitem1 v-if="ifShowDx4 && item.id == '4'" :parm="item"></vDxitem1>
-          <vDxitem1 v-if="ifShowDx5 && item.id == '5'" :parm="item"></vDxitem1>
-          <vDxitem1 v-if="ifShowDx6 && item.id == '6'" :parm="item"></vDxitem1>
+          <vDxitem v-if="ifShowDx1&&showItem" :parm="item" :key="item.id"></vDxitem>
+          <vDxitem1 v-if="item.id == currentItem && showItem" :parm="item" :key="item.id"></vDxitem1>
+          <!-- <vDxitem1 v-if="ifShowDx3 && item.id == '3'" :parm="item" :key="item.id"></vDxitem1>
+          <vDxitem1 v-if="ifShowDx4 && item.id == '4'" :parm="item" :key="item.id"></vDxitem1>
+          <vDxitem1 v-if="ifShowDx5 && item.id == '5'" :parm="item" :key="item.id"></vDxitem1>
+          <vDxitem1 v-if="ifShowDx6 && item.id == '6'" :parm="item" :key="item.id"></vDxitem1> -->
         </div>
       </div>
 
@@ -828,7 +828,9 @@ export default {
         { name: '抖音', value: '82', color: '#FF8800'},
         { name: '知乎', value: '82', color: '#FF8800'},
       ],
-      yhGroupList:[]
+      yhGroupList:[],
+      currentItem:1,
+      showItem:true,
     };
   },
   mounted() {
@@ -837,12 +839,6 @@ export default {
     this.getYhGroupList();
   },
   methods: {
-    conmputIfshow(parm){
-      if(parm == 1){
-        console.log(this[parm] == true)
-      }
-      return this[parm];
-    },
     computedText(id){
       return this['vDxtxt'+id];
     },
@@ -935,8 +931,15 @@ export default {
         path:"/media"
       });
     },
-    expandfn(arg,c,r){
+    expandfn(arg,c,r,d){
       var rigDom = this.$refs[r][0];
+      this.currentItem = arg;
+      if(arg!=1){
+        this.showItem=true;
+      }else{
+         this.showItem=false;
+      }
+      console.log(d,'item')
       if(arg == 1){
         if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
@@ -1021,6 +1024,7 @@ export default {
           this.vDxtxt6 = '查看动线详情';
         }
         this.ifShowDx3 = !this.ifShowDx3;
+        console.log(this.ifShowDx3,'this.ifShowDx3')
         if(this.ifShowDx3){
           this.vDxtxt3 = '收起动线详情';
           rigDom.style='background:#F0F8FF;';
