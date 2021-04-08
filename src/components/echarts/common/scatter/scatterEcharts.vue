@@ -147,8 +147,8 @@ export default {
             backgroundColor:'#F4F7FC',
             fillerColor:'rgba(35, 115, 255, 0.2)',
             showDataShadow: false,
-            start:30, 
-            end:70,
+            start:50, 
+            end:100,
             bottom:25,
             height:22
           }

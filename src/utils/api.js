@@ -45,6 +45,10 @@ export default {
     //用户画像获取用户分组  
     getGroupsList(params){
         return this.postJson("/userProfile/getUserGroups",params)
+    },
+    //用户画像获得用户分组动线详情
+    getUserMoveLineDetail(params){
+        return this.postJson("/userProfile/getMoveLineDetail",params)
     }
 
 }

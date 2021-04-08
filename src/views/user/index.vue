@@ -65,192 +65,13 @@
               </div>
             </div>
           </div>
-          <vDxitem v-if="conmputIfshow('ifShowDx'+ item.id) && item.id == '1'"></vDxitem>
-          <vDxitem1 v-if="conmputIfshow('ifShowDx'+ item.id) && (item.id == '2' || item.id == '3' || item.id == '4' || item.id == '5' || item.id == '6')"></vDxitem1>
+          <vDxitem v-if="ifShowDx1 && item.id == '1'" :parm="item"></vDxitem>
+          <vDxitem1 v-if="ifShowDx2 && item.id == '2'" :parm="item"></vDxitem1>
+          <vDxitem1 v-if="ifShowDx3 && item.id == '3'" :parm="item"></vDxitem1>
+          <vDxitem1 v-if="ifShowDx4 && item.id == '4'" :parm="item"></vDxitem1>
+          <vDxitem1 v-if="ifShowDx5 && item.id == '5'" :parm="item"></vDxitem1>
+          <vDxitem1 v-if="ifShowDx6 && item.id == '6'" :parm="item"></vDxitem1>
         </div>
-
-        <!-- <div class="bjsbz_container">
-          <div class="lef_area">
-            <div class="lef_area_top">
-              <div class="actImg_container">
-                <img :src="avatImg" alt="" srcset="" class="avatImg">
-              </div>
-              <div class="perinfo">
-                <div class="perinfo_t">研学青年</div>
-                <div class="perinfo_b">用户数 7930人</div>
-              </div>
-            </div>
-            <div class="lef_area_bom" @click="expandfn(2,'cen_area2','rig_area2')">
-              <span>{{vDxtxt2}}</span>
-              <img v-if="vDxtxt2 == '收起动线详情'" :src="squpImg" class="squpImg"/>
-              <img v-else :src="zkdwImg" class="squpImg"/>
-            </div>
-          </div>
-          <div class="cen_area" ref="cen_area2">
-            <img v-if="vDxtxt2 == '收起动线详情'" :src="yxqnImgTime1" alt="" srcset="" class="cen_areaImg">
-            <img v-else :src="yxqnImgTime" alt="" srcset="" class="cen_areaImg">
-          </div>
-          <div class="rig_area" ref="rig_area2">
-            <div class="rig_area_lef">
-              <div class="xs_container">
-                <div class="yl_lef" style="background: #FDD352;"></div>
-                <div class="yl_rig">学术</div>
-              </div>
-              <div class="sp_container">
-                <div class="yl_lef" style="background: #2EB1FF;"></div>
-                <div class="yl_rig">交流</div>
-              </div>
-              <div class="xw_container">
-                <div class="yl_lef" style="background: #017AFF;"></div>
-                <div class="yl_rig">新闻</div>
-              </div>
-
-            </div>
-            <div class="rig_area_rig">
-              <div class="rig_area_til">偏好媒介</div>
-              <div class="rig_area_icon">
-                <img v-for="(item,index) in bjsbList" :src="item" :key="index" alt="" class="bqimg">
-              </div>
-            </div>
-          </div>
-        </div>
-        <vDxitem1 v-if="ifShowDx2"></vDxitem1> -->
-        <!-- <div class="bjsbz_container">
-          <div class="lef_area">
-            <div class="lef_area_top">
-              <div class="actImg_container">
-                <img :src="qyggImg" alt="" srcset="" class="avatImg">
-              </div>
-              <div class="perinfo">
-                <div class="perinfo_t">企业高管</div>
-                <div class="perinfo_b">用户数 3204人</div>
-              </div>
-            </div>
-            <div class="lef_area_bom" @click="expandfn(3,'cen_area3','rig_area3')">
-              <span>{{vDxtxt3}}</span>
-              <img v-if="vDxtxt3 == '收起动线详情'" :src="squpImg" class="squpImg"/>
-              <img v-else :src="zkdwImg" class="squpImg"/>
-            </div>
-          </div>
-          <div class="cen_area" ref="cen_area3">
-            <img v-if="vDxtxt3 == '收起动线详情'" :src="qyggImgTime1" alt="" srcset="" class="cen_areaImg">
-            <img v-else :src="qyggImgTime" alt="" srcset="" class="cen_areaImg">
-          </div>
-          <div class="rig_area" ref="rig_area3">
-            <div class="rig_area_lef">
-              <div class="gt_container">
-                <div class="yl_lef" style="background: #1DCEC3;"></div>
-                <div class="yl_rig">沟通</div>
-              </div>
-              <div class="gz_container">
-                <div class="yl_lef" style="background:#F16E84;"></div>
-                <div class="yl_rig">工作</div>
-              </div>
-              <div class="xw_container">
-                <div class="yl_lef" style="background: #017AFF;"></div>
-                <div class="yl_rig">新闻</div>
-              </div>
-            </div>
-            <div class="rig_area_rig">
-              <div class="rig_area_til">偏好媒介</div>
-              <div class="rig_area_icon">
-                <img v-for="(item,index) in qyggList" :src="item" :key="index" alt="" class="bqimg">
-              </div>
-            </div>
-          </div>
-        </div>
-        <vDxitem1 v-if="ifShowDx3"></vDxitem1> -->
-        <!-- <div class="bjsbz_container">
-          <div class="lef_area">
-            <div class="lef_area_top">
-              <div class="actImg_container">
-                <img :src="bpyzImg" alt="" srcset="" class="avatImg">
-              </div>
-              <div class="perinfo">
-                <div class="perinfo_t">北漂一族</div>
-                <div class="perinfo_b">用户数 18197人</div>
-              </div>
-            </div>
-            <div class="lef_area_bom" style="background: #FFE6DE;color: #FE774B;" @click="expandfn(4,'cen_area4','rig_area4')">
-              <span>{{vDxtxt4}}</span>
-              <img v-if="vDxtxt4 == '查看动线详情'" :src="czkImg" class="squpImg"/>
-              <i v-else :class="['iconfont','iconup']" class="squpImg"></i>
-            </div>
-          </div>
-          <div class="cen_area" ref="cen_area4">
-            <img v-if="vDxtxt4 == '收起动线详情'" :src="bpyzImgTime1" alt="" srcset="" class="cen_areaImg">
-            <img v-else :src="bpyzImgTime" alt="" srcset="" class="cen_areaImg">
-          </div>
-          <div class="rig_area" ref="rig_area4">
-            <div class="rig_area_lef">
-              <div class="gz_container">
-                <div class="yl_lef" style="background:#77E1DB;"></div>
-                <div class="yl_rig">沟通</div>
-              </div>
-              <div class="sp_container">
-                <div class="yl_lef" style="background: #7BABFF;"></div>
-                <div class="yl_rig">交流</div>
-              </div>
-             <div class="yl_container">
-                <div class="yl_lef" style="background: #FE774B;"></div>
-                <div class="yl_rig">娱乐</div>
-              </div>
-            </div>
-            <div class="rig_area_rig">
-              <div class="rig_area_til">偏好媒介</div>
-              <div class="rig_area_icon">
-                <img v-for="(item,index) in bpyzList" :src="item" :key="index" alt="" class="bqimg">
-              </div>
-            </div>
-          </div>
-        </div>
-        <vDxitem1 v-if="ifShowDx4"></vDxitem1> -->
-        <!-- <div class="bjsbz_container">
-          <div class="lef_area">
-            <div class="lef_area_top">
-              <div class="actImg_container">
-                <img :src="zyzyImg" alt="" srcset="" class="avatImg">
-              </div>
-              <div class="perinfo">
-                <div class="perinfo_t">自由职业</div>
-                <div class="perinfo_b">用户数 17240人</div>
-              </div>
-            </div>
-            <div class="lef_area_bom" style="background: #FFE6DE;color: #FE774B;" @click="expandfn(5,'cen_area5','rig_area5')">
-              <span>{{vDxtxt5}}</span>
-              <img v-if="vDxtxt5 == '查看动线详情'" :src="czkImg" class="squpImg"/>
-              <i v-else :class="['iconfont','iconup']" class="squpImg"></i>
-            </div>
-          </div>
-          <div class="cen_area" ref="cen_area5">
-            <img v-if="vDxtxt5 == '收起动线详情'" :src="zyzyImgTime1" alt="" srcset="" class="cen_areaImg">
-            <img v-else :src="zyzyImgTime" alt="" srcset="" class="cen_areaImg">
-          </div>
-          <div class="rig_area" ref="rig_area5">
-            <div class="rig_area_lef">
-              <div class="sp_container">
-                <div class="yl_lef" style="background: #1DCEC3;"></div>
-                <div class="yl_rig">沟通</div>
-              </div>
-              <div class="yl_container">
-                <div class="yl_lef" style="background: #FE774B;"></div>
-                <div class="yl_rig">娱乐</div>
-              </div>
-              <div class="gz_container">
-                <div class="yl_lef" style="background:#F16E84;"></div>
-                <div class="yl_rig">工作</div>
-              </div>
-            </div>
-            <div class="rig_area_rig">
-              <div class="rig_area_til">偏好媒介</div>
-              <div class="rig_area_icon">
-                <img v-for="(item,index) in zyzyList" :src="item" :key="index" alt="" class="bqimg">
-              </div>
-            </div>
-          </div>
-        </div>
-        <vDxitem1 v-if="ifShowDx5"></vDxitem1> -->
-
       </div>
 
       <!--触达用户媒介-->
@@ -803,13 +624,10 @@ import lineSp from '../../components/echarts/common/line/lineSp';
 
 import PieEcharts from '../../components/echarts/common/pie/PieEcharts';
 import PieEcharts7 from '../../components/echarts/common/pie/PieEcharts7';
-// import PieEcharts1 from '../../components/echarts/common/pie/PieEcharts1';
-import RotateChart from '../../components/echarts/common/custom/RotateChart';
 import LeidaEcharts from '../../components/echarts/common/radar/LeidaEcharts';
 import MatchEcharts from '../../components/echarts/common/radar/MatchEcharts';
 import Yibiao1Echarts from '../../components/echarts/common/gauge/Yibiao1Echarts';
 import YibiaoCharts2 from '../../components/echarts/common/gauge/YibiaoCharts2';
-// import Yuanhuan1 from '../../components/echarts/common/sunburst/Yuanhuan1';
 import Leida2Echarts from '../../components/echarts/common/radar/Leida2Echarts';
 import vDxitem from "./dxItem";
 import vDxitem1 from "./dxItem1";
@@ -822,7 +640,7 @@ import api from "@/utils/api"
 
 export default {
   components: {
-   lineAreaPieces,lineAreaPieces1,lineAreaPieces2, barEcharts,barL,barM,cLine,lineM,barC,barLine,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, PieEcharts7, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Leida2Echarts,
+   lineAreaPieces,lineAreaPieces1,lineAreaPieces2, barEcharts,barL,barM,cLine,lineM,barC,barLine,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, PieEcharts7, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Leida2Echarts,
    vDxitem,vDxitem1,vTabCard, Card, MatchDegree,Tab
   },
   name: "index",
@@ -1020,6 +838,9 @@ export default {
   },
   methods: {
     conmputIfshow(parm){
+      if(parm == 1){
+        console.log(this[parm] == true)
+      }
       return this[parm];
     },
     computedText(id){
