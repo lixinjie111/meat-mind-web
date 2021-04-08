@@ -17,7 +17,8 @@
         <Analyse :descL="descL" :descR="descR"></Analyse>
         <div class="m-d-show-echarts">
             <Half :lTitle="'品牌真实受众覆盖度'" :rTitle="'品牌真实受众匹配度'" :subDate="'2021.1.1-2021.1.31'">
-                <RotateChart slot="left" :colorList="$fjData.colorList" :myData="$fjData.box13Data"></RotateChart>
+                <!-- <RotateChart slot="left" :colorList="$fjData.colorList" :myData="$fjData.box13Data"></RotateChart> -->
+                <PieEcharts3 slot="left" :colorList="$fjData.colorList" :myData="$linData.pieData1"></PieEcharts3>
                 <MatchEcharts slot="right" :colorList="$fjData.colorList" :myData="$fjData.box15Data" ></MatchEcharts>
             </Half>
             <Half :lTitle="'核心受众年龄分布'" :rTitle="'核心受众性别分布'" :subDate="'2021.1.1-2021.1.31'">
@@ -25,7 +26,7 @@
                 <PieEcharts3 slot="right" :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieEcharts3>
             </Half>
             <Half :lTitle="'职业结构'" :rTitle="'教育背景结构'">
-                <PieEcharts3 slot="left" :colorList="$fjData.colorList" :myData="$fjData.box3Data" roseType="radius"></PieEcharts3>
+                <PieEcharts3 slot="left" :colorList="$fjData.colorList" :myData="$fjData.box3Data"></PieEcharts3>
                 <barEchartsMark slot="right" id="box1" :colorList="$lxjData.colorList" :myData="$lxjData.box1Data"></barEchartsMark>
             </Half>
             <Half :lTitle="'购买时段及频次'" :rTitle="'常用高频场景'">
