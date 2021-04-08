@@ -14,8 +14,10 @@
         <TabD :tab-list="tabList" @change="changeTab"></TabD>
         <div class="comparison-box">
             <HalfC :title="'品牌真实受众覆盖度'">
-                <RotateChart slot="left" :colorList="$fjData.colorList" :myData="$fjData.box13Data"></RotateChart>
-                <RotateChart slot="right" :colorList="$fjData.colorList" :myData="$fjData.box13Data1"></RotateChart>
+                <!-- <RotateChart slot="left" :colorList="$fjData.colorList" :myData="$fjData.box13Data"></RotateChart> -->
+                <!-- <RotateChart slot="right" :colorList="$fjData.colorList" :myData="$fjData.box13Data1"></RotateChart> -->
+                <PieEcharts3 slot="left" :colorList="$fjData.colorList" :myData="$linData.pieData1"></PieEcharts3>
+                <PieEcharts3 slot="right" :colorList="$fjData.colorList" :myData="$linData.pieData1Ck"></PieEcharts3>                
             </HalfC>
             <HalfC :title="'品牌真实受众匹配度'">
                 <MatchEcharts slot="left" :colorList="$fjData.colorList" :myData="$fjData.box15Data" ></MatchEcharts>

@@ -803,13 +803,10 @@ import lineSp from '../../components/echarts/common/line/lineSp';
 
 import PieEcharts from '../../components/echarts/common/pie/PieEcharts';
 import PieEcharts7 from '../../components/echarts/common/pie/PieEcharts7';
-// import PieEcharts1 from '../../components/echarts/common/pie/PieEcharts1';
-import RotateChart from '../../components/echarts/common/custom/RotateChart';
 import LeidaEcharts from '../../components/echarts/common/radar/LeidaEcharts';
 import MatchEcharts from '../../components/echarts/common/radar/MatchEcharts';
 import Yibiao1Echarts from '../../components/echarts/common/gauge/Yibiao1Echarts';
 import YibiaoCharts2 from '../../components/echarts/common/gauge/YibiaoCharts2';
-// import Yuanhuan1 from '../../components/echarts/common/sunburst/Yuanhuan1';
 import Leida2Echarts from '../../components/echarts/common/radar/Leida2Echarts';
 import vDxitem from "./dxItem";
 import vDxitem1 from "./dxItem1";
@@ -822,7 +819,7 @@ import api from "@/utils/api"
 
 export default {
   components: {
-   lineAreaPieces,lineAreaPieces1,lineAreaPieces2, barEcharts,barL,barM,cLine,lineM,barC,barLine,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, PieEcharts7, RotateChart, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Leida2Echarts,
+   lineAreaPieces,lineAreaPieces1,lineAreaPieces2, barEcharts,barL,barM,cLine,lineM,barC,barLine,lineS,funnel,barCH,barHM,lineO,lineSp, PieEcharts, PieEcharts7, LeidaEcharts, MatchEcharts, Yibiao1Echarts, YibiaoCharts2, Leida2Echarts,
    vDxitem,vDxitem1,vTabCard, Card, MatchDegree,Tab
   },
   name: "index",
