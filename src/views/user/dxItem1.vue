@@ -695,25 +695,11 @@ export default {
     clickTime(arg) {
       this.current = arg;
       var propData = this.parm;
-      if (arg == '06:00' || arg == '08:00' || arg == '10:00' || arg == '12:00' || arg == '24:00') {
-        var resParm = {
-          id:propData.id,
-          time:arg
-        };
-        this.getMoveLineDetail(resParm,this.street)
-      } else if (arg == '12:00' || arg == '14:00' || arg == '16:00') {
-        var resParm = {
-          id:propData.id,
-          time:arg
-        };
-        this.getMoveLineDetail(resParm,this.street)
-      } else if (arg == '18:00' || arg == '20:00') {
-        var resParm = {
-          id:propData.id,
-          time:arg
-        };
-        this.getMoveLineDetail(resParm,this.street)
-      }
+      var resParm = {
+        id:propData.id,
+        time:arg
+      };
+      this.getMoveLineDetail(resParm,this.street)
       // this.changeBqitm(arg);
     },
     initMap(pList,area) {

@@ -1454,6 +1454,7 @@ export default {
                 display: block;
                 width: 28px;
                 height: 28px;
+                border-radius: 50%;
                 margin-right: 8px;
               }
             }
