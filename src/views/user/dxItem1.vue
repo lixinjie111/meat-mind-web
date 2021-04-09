@@ -332,8 +332,8 @@
                   <div class="women" :style="rightPanelData.womenWidthobj"></div>
                 </div>
                 <div class="sex_per_container">
-                  <div class="man_per">{{rightPanelData.sexPercentage[0].percentage}}%</div>
-                  <div class="women_per">{{rightPanelData.sexPercentage[1].percentage}}%</div>
+                  <div class="man_per">{{rightPanelData.sexPercentage[0].percentage?rightPanelData.sexPercentage[0].percentage+'%':''}}</div>
+                  <div class="women_per">{{rightPanelData.sexPercentage[1].percentage?rightPanelData.sexPercentage[1].percentage+'%':''}}</div>
                 </div>
                 <div class="sex_per_container">
                   <div class="mansex">{{rightPanelData.sexPercentage[0].title}}</div>
@@ -381,65 +381,6 @@
 
 <script>
 import api from "@/utils/api";
-const allBqitm = {
-  xhs: {
-    icon: require("../../assets/img/yhhx/xhs.png"),
-  },
-  ks: {
-    icon: require("../../assets/img/yhhx/ks.png"),
-  },
-  wb: {
-    icon: require("../../assets/img/yhhx/wb.png"),
-  },
-  tt: {
-    icon: require("../../assets/img/yhhx/tt.png"),
-  },
-  zhIcon: {
-    icon: require("../../assets/img/yhhx/zhIcon.png"),
-  },
-  dyI: {
-    icon: require("../../assets/img/yhhx/dyI.png"),
-  },
-  dd: {
-    icon: require("../../assets/img/yhhx/dd.jpg"),
-  },
-  dc: {
-    icon: require("../../assets/img/yhhx/dc.jpg"),
-  },
-  bx: {
-    icon: require("../../assets/img/yhhx/bx.jpeg"),
-  },
-  wx: {
-    icon: require("../../assets/img/yhhx/wx.jpeg"),
-  },
-  qq: {
-    icon: require("../../assets/img/yhhx/qq.jpg"),
-  },
-  pyq: {
-    icon: require("../../assets/img/yhhx/pyq.png"),
-  },
-  mt: {
-    icon: require("../../assets/img/yhhx/mt.jpeg"),
-  },
-  elm: {
-    icon: require("../../assets/img/yhhx/elm.jpeg"),
-  },
-  dz: {
-    icon: require("../../assets/img/yhhx/dz.jpg"),
-  },
-  wy: {
-    icon: require("../../assets/img/yhhx/wyIcon.png"),
-  },
-  wzry: {
-    icon: require("../../assets/img/yhhx/wzry.jpeg"),
-  },
-  jdqs: {
-    icon: require("../../assets/img/yhhx/jdqs.png"),
-  },
-  xxl: {
-    icon: require("../../assets/img/yhhx/xxl.jpg"),
-  },
-};
 export default {
   name: "dxItem",
   props: ["onlyMap", "parm"],
@@ -485,7 +426,7 @@ export default {
       currentBtn: 2,
       ifShowCon: false,
       conditImg: require("../../assets/img/yhhx/conditImg.png"),
-      nilinList: ["18-24", "35-44", "45+"],
+      nilinList: ["18-24",'25-34', "35-44", "45+"],
       sexList: ["男", "女"],
       hasChildList: [
         "妈妈",
@@ -520,22 +461,7 @@ export default {
         餐饮: "#8AE6C7",
       },
       ifShowtffatj: true,
-      fanganObj: {
-        qdObj1: {
-          icon: require("../../assets/img/yhhx/tt.png"),
-          name: "今日头条",
-          money: "￥9200",
-          vdlNum: "53%",
-          timeRang: "8:00 - 9:30",
-        },
-        qdObj2: {
-          icon: require("../../assets/img/yhhx/wyIcon.png"),
-          name: "网易",
-          money: "￥3200",
-          vdlNum: "43%",
-          timeRang: "7:40 - 8:30",
-        },
-      },
+      fanganObj: {},
       yqxgList: [
         {
           til: "触达用户：",
@@ -560,7 +486,8 @@ export default {
       hasChList: [],
       xiaoFList: [],
       huyiList: [],
-      zhYList: []
+      zhYList: [],
+      street:'朝阳区'
     };
   },
   mounted() {
@@ -569,10 +496,10 @@ export default {
       id:propData.id,
       time:'08:00'
     };
-    this.getMoveLineDetail(resParm,[116.402394, 39.937182],'朝阳区');
+    this.getMoveLineDetail(resParm,this.street);
   },
   methods: {
-    async getMoveLineDetail(resParm,circle,street) {
+    async getMoveLineDetail(resParm,street) {
       try{
         let res = await api.getUserMoveLineDetail(resParm);
         if(res.code == 200){
@@ -595,6 +522,7 @@ export default {
                 width:(Number(moveLineObj.sexPercentage.length !=0 ? moveLineObj.sexPercentage[1].percentage :'1') -1) + '%'
               }
             }
+            console.log(detailData[0].recommendDeliveryPlan,'投放方案！')
             this.fanganObj = detailData[0].recommendDeliveryPlan || {};
             this.yqxgList = [
               {
@@ -616,7 +544,7 @@ export default {
             ];
             setTimeout(()=>{
               this.clickPerTab(1);
-              this.initMap(detailData,circle,street);
+              this.initMap(detailData,street);
             },500);
           }
         }else{
@@ -694,7 +622,6 @@ export default {
         this.huyiList,
         this.zhYList
       );
-      var cir1 = [116.402394, 39.937182];
       var propData = this.parm;
       var resParm = {
         id:propData.id,
@@ -706,7 +633,7 @@ export default {
         marriage:this.huyiList[0],
         career:this.zhYList[0]
       };
-      this.getMoveLineDetail(resParm,cir1,"朝阳区")
+      this.getMoveLineDetail(resParm,this.street)
     },
     nianlinClick(arg, art) {
       var itemDom = this.$refs[art] || [];
@@ -731,7 +658,6 @@ export default {
     },
     clickTimeItem(arg, val) {
       this.timerIdx = arg;
-      var cir1 = [116.402394, 39.937182];
       var propData = this.parm;
       var resParm = {
         id:propData.id,
@@ -743,7 +669,8 @@ export default {
         marriage:this.huyiList[0],
         career:this.zhYList[0]
       };
-      this.getMoveLineDetail(resParm,cir1,val)
+      this.street = val;
+      this.getMoveLineDetail(resParm,this.street)
     },
     choiceat(arg) {
       this.currentBtn = arg;
@@ -751,7 +678,6 @@ export default {
         this.ifShowTime = true;
       } else {
         this.ifShowTime = false;
-        var cir1 = [116.402394, 39.937182];
         var propData = this.parm;
         var resParm = {
           id:propData.id,
@@ -763,37 +689,34 @@ export default {
           marriage:this.huyiList[0],
           career:this.zhYList[0]
         };
-        this.getMoveLineDetail(resParm,cir1,"朝阳区")
+        this.getMoveLineDetail(resParm,this.street)
       }
     },
     clickTime(arg) {
       this.current = arg;
       var propData = this.parm;
       if (arg == '06:00' || arg == '08:00' || arg == '10:00' || arg == '12:00' || arg == '24:00') {
-        var cir1 = [116.402394, 39.937182];
         var resParm = {
           id:propData.id,
           time:arg
         };
-        this.getMoveLineDetail(resParm,cir1,"西城区")
+        this.getMoveLineDetail(resParm,this.street)
       } else if (arg == '12:00' || arg == '14:00' || arg == '16:00') {
         var resParm = {
           id:propData.id,
           time:arg
         };
-        var cir1 = [116.274969, 39.92418];
-        this.getMoveLineDetail(resParm,cir1,"海淀区")
+        this.getMoveLineDetail(resParm,this.street)
       } else if (arg == '18:00' || arg == '20:00') {
-        var cir1 = [116.401235, 39.907835];
         var resParm = {
           id:propData.id,
           time:arg
         };
-        this.getMoveLineDetail(resParm,cir1,"西城区")
+        this.getMoveLineDetail(resParm,this.street)
       }
       // this.changeBqitm(arg);
     },
-    initMap(pList, c1, area) {
+    initMap(pList,area) {
       var map = null;
       var district = null;
       var polygons = [];
@@ -807,6 +730,7 @@ export default {
       });
 
       //加载行政区划插件,以及行政区域查询部分
+      console.log(area,'areaareaarea')
       if (!district) {
         var opts = {
           subdistrict: 0, //获取边界不需要返回下级行政区
@@ -846,6 +770,7 @@ export default {
         strokeColor: "#3366FF",
       };
       var polyObj={};
+      var that = this;
       for(var i=0;i<pList1.length;i++){
         var borderwiNum=0,strokeWeNum = 0;
         var polyline = 'polyline'+i;
@@ -876,22 +801,28 @@ export default {
           zIndex: 50,
         });        
         polyObj[polyline].setMap(map);
-        var circle = new AMap.Circle({
-          center: pList1[i].locationCoordination ? JSON.parse(pList1[i].locationCoordination) : [],
-          radius: pList1[i].locationRadius ? pList1[i].locationRadius : 0, //半径
-          borderWeight: 3,
-          strokeColor: "#FF33FF",
-          strokeOpacity: 1,
-          strokeWeight: 6,
-          strokeOpacity: 0.2,
-          fillOpacity: 0.4,
-          strokeStyle: "dashed",
-          strokeDasharray: [10, 10],
-          // 线样式还支持 'dashed'
-          fillColor: "#1791fc",
-          zIndex: 50,
-        });
-        circle.setMap(map);
+        var cirList = JSON.parse(pList1[i].locationCoordination);
+        var radius = pList1[i].locationRadius ? pList1[i].locationRadius : 0; //半径
+        console.log(cirList,'圆圈圆心！！')
+        console.log(radius,'圆圈半径')
+        if(cirList.length != 0){
+          var circle = new AMap.Circle({
+            center: pList1[i].locationCoordination ? JSON.parse(pList1[i].locationCoordination) : [],
+            radius: radius,
+            borderWeight: 3,
+            strokeColor: "#FF33FF",
+            strokeOpacity: 1,
+            strokeWeight: 6,
+            strokeOpacity: 0.2,
+            fillOpacity: 0.4,
+            strokeStyle: "dashed",
+            strokeDasharray: [10, 10],
+            // 线样式还支持 'dashed'
+            fillColor: "#1791fc",
+            zIndex: 50,
+          });
+          circle.setMap(map);
+        }
       }
       polyObj['polyline0'].on("click", function (event) {
         for(var attr in polyObj){
@@ -899,8 +830,9 @@ export default {
             polyObj['polyline0'].setOptions(selectedOptions);
             var detailData = pList1 || [];
             var moveLineObj = detailData[0].moveLineInfo || {};
+            console.log(moveLineObj.userStatus,'线1用户状态')
             if(detailData[0]){
-              this.rightPanelData = {
+              that.rightPanelData = {
                 userStatObj: moveLineObj.userStatus || [{}],
                 bqitmList:moveLineObj.mediaTypes || [{name:'',mediaIcons:[{}]}],
                 chufaObj:moveLineObj.departures || [], 
@@ -916,23 +848,23 @@ export default {
                   width:(Number(moveLineObj.sexPercentage.length !=0 ? moveLineObj.sexPercentage[1].percentage : '1') -1) + '%'
                 }
               }
-              this.fanganObj = detailData[0].recommendDeliveryPlan || {};
-              this.yqxgList = [
+              that.fanganObj = detailData[0].recommendDeliveryPlan || {};
+              that.yqxgList = [
                 {
                   til: "触达用户：",
-                  desc: this.fanganObj.reachUserCount,
+                  desc: that.fanganObj.reachUserCount,
                 },
                 {
                   til: "互动量提升：",
-                  desc: this.fanganObj.interactionIncrease,
+                  desc: that.fanganObj.interactionIncrease,
                 },
                 {
                   til: "品牌印象提升：",
-                  desc: this.fanganObj.brandPromotion,
+                  desc: that.fanganObj.brandPromotion,
                 },
                 {
                   til: "销售转化率：",
-                  desc: this.fanganObj.saleConversionRate,
+                  desc: that.fanganObj.saleConversionRate,
                 },
               ];
             }
@@ -948,8 +880,9 @@ export default {
             polyObj['polyline1'].setOptions(selectedOptions);
             var detailData = pList1 || [];
             var moveLineObj = detailData[1].moveLineInfo || {};
+            console.log(moveLineObj.userStatus,'线2用户状态')
             if(detailData[1]){
-              this.rightPanelData = {
+              that.rightPanelData = {
                 userStatObj: moveLineObj.userStatus || [{}],
                 bqitmList:moveLineObj.mediaTypes || [{name:'',mediaIcons:[{}]}],
                 chufaObj:moveLineObj.departures || [], 
@@ -965,23 +898,23 @@ export default {
                   width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[1].percentage:'1') -1) + '%'
                 }
               }
-              this.fanganObj = detailData[1].recommendDeliveryPlan || {};
-              this.yqxgList = [
+              that.fanganObj = detailData[1].recommendDeliveryPlan || {};
+              that.yqxgList = [
                 {
                   til: "触达用户：",
-                  desc: this.fanganObj.reachUserCount,
+                  desc: that.fanganObj.reachUserCount,
                 },
                 {
                   til: "互动量提升：",
-                  desc: this.fanganObj.interactionIncrease,
+                  desc: that.fanganObj.interactionIncrease,
                 },
                 {
                   til: "品牌印象提升：",
-                  desc: this.fanganObj.brandPromotion,
+                  desc: that.fanganObj.brandPromotion,
                 },
                 {
                   til: "销售转化率：",
-                  desc: this.fanganObj.saleConversionRate,
+                  desc: that.fanganObj.saleConversionRate,
                 },
               ];
             }
@@ -997,8 +930,9 @@ export default {
             polyObj['polyline2'].setOptions(selectedOptions);
             var detailData = pList1 || [];
             var moveLineObj = detailData[2].moveLineInfo || {};
+            console.log(moveLineObj.userStatus,'线3用户状态')
             if(detailData[2]){
-              this.rightPanelData = {
+              that.rightPanelData = {
                 userStatObj: moveLineObj.userStatus || [{}],
                 bqitmList:moveLineObj.mediaTypes || [{name:'',mediaIcons:[{}]}],
                 chufaObj:moveLineObj.departures || [], 
@@ -1014,23 +948,23 @@ export default {
                   width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[1].percentage:'1') -1) + '%'
                 }
               }
-              this.fanganObj = detailData[2].recommendDeliveryPlan || {};
-              this.yqxgList = [
+              that.fanganObj = detailData[2].recommendDeliveryPlan || {};
+              that.yqxgList = [
                 {
                   til: "触达用户：",
-                  desc: this.fanganObj.reachUserCount,
+                  desc: that.fanganObj.reachUserCount,
                 },
                 {
                   til: "互动量提升：",
-                  desc: this.fanganObj.interactionIncrease,
+                  desc: that.fanganObj.interactionIncrease,
                 },
                 {
                   til: "品牌印象提升：",
-                  desc: this.fanganObj.brandPromotion,
+                  desc: that.fanganObj.brandPromotion,
                 },
                 {
                   til: "销售转化率：",
-                  desc: this.fanganObj.saleConversionRate,
+                  desc: that.fanganObj.saleConversionRate,
                 },
               ];
             }
@@ -1046,8 +980,9 @@ export default {
             polyObj['polyline3'].setOptions(selectedOptions);
             var detailData = pList1 || [];
             var moveLineObj = detailData[3].moveLineInfo || {};
+            console.log(moveLineObj.userStatus,'线4用户状态')
             if(detailData[3]){
-              this.rightPanelData = {
+              that.rightPanelData = {
                 userStatObj: moveLineObj.userStatus || [{}],
                 bqitmList:moveLineObj.mediaTypes || [{name:'',mediaIcons:[{}]}],
                 chufaObj:moveLineObj.departures || [], 
@@ -1063,23 +998,23 @@ export default {
                   width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[1].percentage:'1') -1) + '%'
                 }
               }
-              this.fanganObj = detailData[3].recommendDeliveryPlan || {};
-              this.yqxgList = [
+              that.fanganObj = detailData[3].recommendDeliveryPlan || {};
+              that.yqxgList = [
                 {
                   til: "触达用户：",
-                  desc: this.fanganObj.reachUserCount,
+                  desc: that.fanganObj.reachUserCount,
                 },
                 {
                   til: "互动量提升：",
-                  desc: this.fanganObj.interactionIncrease,
+                  desc: that.fanganObj.interactionIncrease,
                 },
                 {
                   til: "品牌印象提升：",
-                  desc: this.fanganObj.brandPromotion,
+                  desc: that.fanganObj.brandPromotion,
                 },
                 {
                   til: "销售转化率：",
-                  desc: this.fanganObj.saleConversionRate,
+                  desc: that.fanganObj.saleConversionRate,
                 },
               ];
             }
@@ -1095,8 +1030,9 @@ export default {
             polyObj['polyline4'].setOptions(selectedOptions);
             var detailData = pList1 || [];
             var moveLineObj = detailData[4].moveLineInfo || {};
+            console.log(moveLineObj.userStatus,'线5用户状态')
             if(detailData[4]){
-              this.rightPanelData = {
+              that.rightPanelData = {
                 userStatObj: moveLineObj.userStatus || [{}],
                 bqitmList:moveLineObj.mediaTypes || [{name:'',mediaIcons:[{}]}],
                 chufaObj:moveLineObj.departures || [], 
@@ -1112,23 +1048,23 @@ export default {
                   width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[1].percentage:'1') -1) + '%'
                 }
               }
-              this.fanganObj = detailData[4].recommendDeliveryPlan || {};
-              this.yqxgList = [
+              that.fanganObj = detailData[4].recommendDeliveryPlan || {};
+              that.yqxgList = [
                 {
                   til: "触达用户：",
-                  desc: this.fanganObj.reachUserCount,
+                  desc: that.fanganObj.reachUserCount,
                 },
                 {
                   til: "互动量提升：",
-                  desc: this.fanganObj.interactionIncrease,
+                  desc: that.fanganObj.interactionIncrease,
                 },
                 {
                   til: "品牌印象提升：",
-                  desc: this.fanganObj.brandPromotion,
+                  desc: that.fanganObj.brandPromotion,
                 },
                 {
                   til: "销售转化率：",
-                  desc: this.fanganObj.saleConversionRate,
+                  desc: that.fanganObj.saleConversionRate,
                 },
               ];
             }
@@ -1138,6 +1074,130 @@ export default {
           }
         }
       });
+      polyObj['polyline5'].on("click", function (event) {
+        for(var attr in polyObj){
+          if(attr == 'polyline5'){
+            polyObj['polyline5'].setOptions(selectedOptions);
+            var detailData = pList1 || [];
+            var moveLineObj = detailData[5].moveLineInfo || {};
+            console.log(moveLineObj.userStatus,'线6用户状态')
+            if(detailData[5]){
+              that.rightPanelData = {
+                userStatObj: moveLineObj.userStatus || [{}],
+                bqitmList:moveLineObj.mediaTypes || [{name:'',mediaIcons:[{}]}],
+                chufaObj:moveLineObj.departures || [], 
+                mudiObj:moveLineObj.destination || [], 
+                tonqinTypeObj:moveLineObj.travelTools || [{}],
+                tongqinTimeObj:moveLineObj.journeyTime || '',
+                agePercentage:moveLineObj.agePercentage || [],
+                sexPercentage:moveLineObj.sexPercentage.length !=0 ? moveLineObj.sexPercentage : [{},{}],
+                manWidthobj:{
+                  width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[0].percentage:'1') -1) + '%'
+                },
+                womenWidthobj:{
+                  width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[1].percentage:'1') -1) + '%'
+                }
+              }
+              that.fanganObj = detailData[5].recommendDeliveryPlan || {};
+              that.yqxgList = [
+                {
+                  til: "触达用户：",
+                  desc: that.fanganObj.reachUserCount,
+                },
+                {
+                  til: "互动量提升：",
+                  desc: that.fanganObj.interactionIncrease,
+                },
+                {
+                  til: "品牌印象提升：",
+                  desc: that.fanganObj.brandPromotion,
+                },
+                {
+                  til: "销售转化率：",
+                  desc: that.fanganObj.saleConversionRate,
+                },
+              ];
+            }
+          }
+          else{
+            polyObj[attr].setOptions(normalOptions);
+          }
+        }
+      });
+      polyObj['polyline6'].on("click", function (event) {
+        for(var attr in polyObj){
+          if(attr == 'polyline6'){
+            polyObj['polyline6'].setOptions(selectedOptions);
+            var detailData = pList1 || [];
+            var moveLineObj = detailData[6].moveLineInfo || {};
+            console.log(moveLineObj.userStatus,'线7用户状态')
+            if(detailData[6]){
+              that.rightPanelData = {
+                userStatObj: moveLineObj.userStatus || [{}],
+                bqitmList:moveLineObj.mediaTypes || [{name:'',mediaIcons:[{}]}],
+                chufaObj:moveLineObj.departures || [], 
+                mudiObj:moveLineObj.destination || [], 
+                tonqinTypeObj:moveLineObj.travelTools || [{}],
+                tongqinTimeObj:moveLineObj.journeyTime || '',
+                agePercentage:moveLineObj.agePercentage || [],
+                sexPercentage:moveLineObj.sexPercentage.length !=0 ? moveLineObj.sexPercentage : [{},{}],
+                manWidthobj:{
+                  width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[0].percentage:'1') -1) + '%'
+                },
+                womenWidthobj:{
+                  width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[1].percentage:'1') -1) + '%'
+                }
+              }
+              that.fanganObj = detailData[6].recommendDeliveryPlan || {};
+              that.yqxgList = [
+                {
+                  til: "触达用户：",
+                  desc: that.fanganObj.reachUserCount,
+                },
+                {
+                  til: "互动量提升：",
+                  desc: that.fanganObj.interactionIncrease,
+                },
+                {
+                  til: "品牌印象提升：",
+                  desc: that.fanganObj.brandPromotion,
+                },
+                {
+                  til: "销售转化率：",
+                  desc: that.fanganObj.saleConversionRate,
+                },
+              ];
+            }
+          }
+          else{
+            polyObj[attr].setOptions(normalOptions);
+          }
+        }
+      });
+      for(var i=0;i<pList1.length;i++){
+        var cirList = JSON.parse(pList1[i].locationCoordination);
+        var radius = pList1[i].locationRadius ? pList1[i].locationRadius : 0; 
+        console.log(cirList,'圆圈圆心！！')
+        console.log(radius,'圆圈半径')
+        if(cirList.length != 0){
+          var circle = new AMap.Circle({
+            center: pList1[i].locationCoordination ? JSON.parse(pList1[i].locationCoordination) : [],
+            radius: radius,
+            borderWeight: 3,
+            strokeColor: "#FF33FF",
+            strokeOpacity: 1,
+            strokeWeight: 6,
+            strokeOpacity: 0.2,
+            fillOpacity: 0.4,
+            strokeStyle: "dashed",
+            strokeDasharray: [10, 10],
+            // 线样式还支持 'dashed'
+            fillColor: "#1791fc",
+            zIndex: 50,
+          });
+          circle.setMap(map);
+        }
+      }
     }
   },
 };
