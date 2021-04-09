@@ -932,7 +932,7 @@ export default {
           name: "快手",
         },
       ],
-      street:''
+      street:'中国'
     };
   },
   components: {
@@ -969,7 +969,7 @@ export default {
     ];
     var cir1 = [116.310356, 39.932426];
     var cir2 = [116.433529, 39.941237];
-    this.initMap(path, path1, path2, cir1, cir2, "中国");
+    this.initMap(path, path1, path2, cir1, cir2,this.street);
     this.changMbItem(0);
     this.clickPerTab(1);
   },
@@ -1015,12 +1015,13 @@ export default {
       var conDom = this.$refs.person_con_con;
       let actLef = require("../../assets/img/yhhx/actLef.png");
       let actrig = require("../../assets/img/yhhx/actRig.png");
-      if (arg == 1) {
-        conDom.style = `background-image: url(${actLef});background-size: cover;`;
-      } else {
-        conDom.style = `background-image: url(${actrig});background-size: contain;background-repeat:no-repeat;`;
+      if(conDom){
+        if (arg == 1) {
+          conDom.style = `background-image: url(${actLef});background-size: cover;`;
+        } else {
+          conDom.style = `background-image: url(${actrig});background-size: contain;background-repeat:no-repeat;`;
+        }
       }
-
       this.ifShowtffatj = arg;
     },
     changMbItem(arg) {
@@ -1178,7 +1179,7 @@ export default {
       var cir1 = [116.310356, 39.932426];
       var cir2 = [116.433529, 39.941237];
       this.street = val;
-      this.initMap(path, path1, path2, cir1, cir2, val);
+      this.initMap(path, path1, path2, cir1, cir2,this.street);
     },
     choiceat(arg) {
       this.currentBtn = arg;
@@ -1217,15 +1218,20 @@ export default {
         ];
         var cir1 = [116.310356, 39.932426];
         var cir2 = [116.433529, 39.941237];
-        this.initMap(path, path1, path2, cir1, cir2, "中国");
+        this.initMap(path, path1, path2, cir1, cir2, this.street);
+        if(this.street == '中国'){
+          this.street = '朝阳区';
+        }
         setTimeout(() => {
-          this.initMap(path, path1, path2, cir1, cir2, "朝阳区");
+          this.timerIdx = this.districtList.indexOf(this.street);
+          this.initMap(path, path1, path2, cir1, cir2,this.street);
         }, 1000);
       }
     },
     clickTime(arg) {
       this.current = arg;
       this.ifShowMb = false;
+      console.log(this.street,'this.streetthis.streetthis.street')
       if (arg == 6 || arg == 8 || arg == 10 || arg == 22 || arg == 24) {
         // this.timeType = arg;
         var path = [
@@ -1331,7 +1337,7 @@ export default {
         ];
         var cir1 = [116.274969, 39.92418];
         var cir2 = [116.288616, 39.965768];
-        this.initMap(path, path1, path2, cir1, cir2, this.street);
+        this.initMap(path, path1, path2, cir1, cir2,this.street);
         this.rightPanelData = {
           userStatObj: {
             stat1: 37,
@@ -1400,7 +1406,7 @@ export default {
         ];
         var cir1 = [116.373332, 39.924206];
         var cir2 = [116.427341, 39.902842];
-        this.initMap(path, path1, path2, cir1, cir2, this.street);
+        this.initMap(path, path1, path2, cir1, cir2,this.street);
         this.rightPanelData = {
           userStatObj: {
             stat1: 25,
