@@ -1360,10 +1360,6 @@ const lxjEData = {
             {
                 name: 'Emo.I',
                 type: 'bar',
-                
-                itemStyle: {
-                    // barBorderRadius:2 / 144 * window.rem
-                },
                 data: [0.02, 0.03, 0.01, 0.02, 0.025, 0.013, -0.015, -0.01, 0.025, -0.06, -0.03, -0.02]
             },
             {

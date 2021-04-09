@@ -23,10 +23,14 @@
       <div class="filter">
         <div class="title">test转化漏斗</div>
         <div>
-          <RadioGroup v-model="date1" type="button" class="item1">
+          <!-- <RadioGroup v-model="date1" type="button" class="item1">
             <Radio value="1" label="趋势"></Radio>
             <Radio value="2" label="对比"></Radio>
-          </RadioGroup>
+          </RadioGroup> -->
+          <ul class="radio">
+            <li :class="{'cur':curRadio=='1'}" @click="curRadio='1'">趋势</li>
+            <li :class="{'cur':curRadio=='2'}" @click="curRadio='2'">对比</li>
+          </ul>
           <Select v-model="date2" class="item2" placeholder="显示设置">
             <Option v-for="(item,index) of date2Options" :value="index+1" :key="index+1">{{item}}</Option>
           </Select>
@@ -128,6 +132,7 @@
       });
 
       return {
+        curRadio:'1',
         conditions: [{input: ''}],
         initItem: {input: ''},
         showRelation: true,
@@ -191,7 +196,6 @@
             title: '提交订单详情',
             key: 'day0',
             render: (h, params) => {
-              console.log(params)
               return h('span', {'class': 'blue'}, params.row[params.column.key] + '人');
             }
           },
@@ -282,6 +286,37 @@
       align-items: center;
       height: 64px;
       font-size: 14px;
+      .item1 {
+        display: inline-block;
+      }
+      .radio{
+        display: inline-flex;
+        cursor: pointer;
+        >li{
+          width: 60px;
+          height: 32px;
+          font-size: 14px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #242F57;
+          background: #FFFFFF;
+          border-radius: 4px 0px 0px 4px;
+          border: 1px solid #97A0C3;
+          text-align: center;
+          line-height: 30px;
+          &:nth-child(1){
+            border-right:1px solid transparent;
+          }
+          &:nth-child(2){
+            border-left: 1px solid transparent;
+            border-radius: 0px 4px 4px 0px;
+          }
+          &.cur{
+            color:#2373FF;
+            border: 1px solid #2373FF;
+          }
+        }
+      }
     }
 
     .pager {
@@ -289,9 +324,7 @@
       display: flex;
       justify-content: flex-end;
     }
-    .item1 {
-      display: inline-block;
-    }
+
     .item2 {
       width: 100px;
       margin-left: 16px;
