@@ -381,65 +381,6 @@
 
 <script>
 import api from "@/utils/api";
-const allBqitm = {
-  xhs: {
-    icon: require("../../assets/img/yhhx/xhs.png"),
-  },
-  ks: {
-    icon: require("../../assets/img/yhhx/ks.png"),
-  },
-  wb: {
-    icon: require("../../assets/img/yhhx/wb.png"),
-  },
-  tt: {
-    icon: require("../../assets/img/yhhx/tt.png"),
-  },
-  zhIcon: {
-    icon: require("../../assets/img/yhhx/zhIcon.png"),
-  },
-  dyI: {
-    icon: require("../../assets/img/yhhx/dyI.png"),
-  },
-  dd: {
-    icon: require("../../assets/img/yhhx/dd.jpg"),
-  },
-  dc: {
-    icon: require("../../assets/img/yhhx/dc.jpg"),
-  },
-  bx: {
-    icon: require("../../assets/img/yhhx/bx.jpeg"),
-  },
-  wx: {
-    icon: require("../../assets/img/yhhx/wx.jpeg"),
-  },
-  qq: {
-    icon: require("../../assets/img/yhhx/qq.jpg"),
-  },
-  pyq: {
-    icon: require("../../assets/img/yhhx/pyq.png"),
-  },
-  mt: {
-    icon: require("../../assets/img/yhhx/mt.jpeg"),
-  },
-  elm: {
-    icon: require("../../assets/img/yhhx/elm.jpeg"),
-  },
-  dz: {
-    icon: require("../../assets/img/yhhx/dz.jpg"),
-  },
-  wy: {
-    icon: require("../../assets/img/yhhx/wyIcon.png"),
-  },
-  wzry: {
-    icon: require("../../assets/img/yhhx/wzry.jpeg"),
-  },
-  jdqs: {
-    icon: require("../../assets/img/yhhx/jdqs.png"),
-  },
-  xxl: {
-    icon: require("../../assets/img/yhhx/xxl.jpg"),
-  },
-};
 export default {
   name: "dxItem",
   props: ["onlyMap", "parm"],
@@ -485,7 +426,7 @@ export default {
       currentBtn: 2,
       ifShowCon: false,
       conditImg: require("../../assets/img/yhhx/conditImg.png"),
-      nilinList: ["18-24", "35-44", "45+"],
+      nilinList: ["18-24",'25-34', "35-44", "45+"],
       sexList: ["男", "女"],
       hasChildList: [
         "妈妈",
