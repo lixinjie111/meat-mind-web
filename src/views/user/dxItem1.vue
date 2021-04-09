@@ -569,9 +569,7 @@ export default {
       id:propData.id,
       time:'08:00'
     };
-    this.$nextTick(()=>{
-      this.getMoveLineDetail(resParm,[116.402394, 39.937182],'朝阳区');
-    });
+    this.getMoveLineDetail(resParm,[116.402394, 39.937182],'朝阳区');
   },
   methods: {
     async getMoveLineDetail(resParm,circle,street) {
@@ -582,19 +580,19 @@ export default {
           if(detailData[0]){
             var moveLineObj = detailData[0].moveLineInfo || {};
             this.rightPanelData = {
-              userStatObj: moveLineObj.userStatus,
+              userStatObj: moveLineObj.userStatus || [{}],
               bqitmList:moveLineObj.mediaTypes,
               chufaObj:moveLineObj.departures, 
               mudiObj:moveLineObj.destination, 
               tonqinTypeObj:moveLineObj.travelTools,
               tongqinTimeObj:moveLineObj.journeyTime,
-              agePercentage:moveLineObj.agePercentage,
-              sexPercentage:moveLineObj.sexPercentage,
+              agePercentage:moveLineObj.agePercentage || [],
+              sexPercentage:moveLineObj.sexPercentage.length !=0 ? moveLineObj.sexPercentage : [{},{}],
               manWidthobj:{
-                width:(Number(moveLineObj.sexPercentage ? moveLineObj.sexPercentage[0].percentage : '1') -1) + '%'
+                width:(Number(moveLineObj.sexPercentage.length !=0 ? moveLineObj.sexPercentage[0].percentage : '1') -1) + '%'
               },
               womenWidthobj:{
-                width:(Number(moveLineObj.sexPercentage ? moveLineObj.sexPercentage[1].percentage :'1') -1) + '%'
+                width:(Number(moveLineObj.sexPercentage.length !=0 ? moveLineObj.sexPercentage[1].percentage :'1') -1) + '%'
               }
             }
             this.fanganObj = detailData[0].recommendDeliveryPlan || {};
@@ -914,10 +912,10 @@ export default {
                 agePercentage:moveLineObj.agePercentage,
                 sexPercentage:moveLineObj.sexPercentage,
                 manWidthobj:{
-                  width:(Number(moveLineObj.sexPercentage?moveLineObj.sexPercentage[0].percentage:'1') -1) + '%'
+                  width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[0].percentage:'1') -1) + '%'
                 },
                 womenWidthobj:{
-                  width:(Number(moveLineObj.sexPercentage ? moveLineObj.sexPercentage[1].percentage : '1') -1) + '%'
+                  width:(Number(moveLineObj.sexPercentage.length !=0 ? moveLineObj.sexPercentage[1].percentage : '1') -1) + '%'
                 }
               }
               this.fanganObj = detailData[0].recommendDeliveryPlan || {};
@@ -951,21 +949,22 @@ export default {
           if(attr == 'polyline1'){
             polyObj['polyline1'].setOptions(selectedOptions);
             var detailData = pList1 || [];
+            var moveLineObj = detailData[1].moveLineInfo || {};
             if(detailData[1]){
               this.rightPanelData = {
-                userStatObj: detailData[1].moveLineInfo.userStatus,
-                bqitmList:detailData[1].moveLineInfo.mediaTypes,
-                chufaObj:detailData[1].moveLineInfo.departures, 
-                mudiObj:detailData[1].moveLineInfo.destination, 
-                tonqinTypeObj:detailData[1].moveLineInfo.travelTools,
-                tongqinTimeObj:detailData[1].moveLineInfo.journeyTime,
-                agePercentage:detailData[1].moveLineInfo.agePercentage,
-                sexPercentage:detailData[1].moveLineInfo.sexPercentage,
+                userStatObj: moveLineObj.userStatus,
+                bqitmList:moveLineObj.mediaTypes,
+                chufaObj:moveLineObj.departures, 
+                mudiObj:moveLineObj.destination, 
+                tonqinTypeObj:moveLineObj.travelTools,
+                tongqinTimeObj:moveLineObj.journeyTime,
+                agePercentage:moveLineObj.agePercentage,
+                sexPercentage:moveLineObj.sexPercentage,
                 manWidthobj:{
-                  width:(Number(detailData[1].moveLineInfo.sexPercentage[0].percentage) -1) + '%'
+                  width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[0].percentage:'1') -1) + '%'
                 },
                 womenWidthobj:{
-                  width:(Number(detailData[1].moveLineInfo.sexPercentage[1].percentage) -1) + '%'
+                  width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[1].percentage:'1') -1) + '%'
                 }
               }
               this.fanganObj = detailData[1].recommendDeliveryPlan || {};
@@ -999,21 +998,22 @@ export default {
           if(attr == 'polyline2'){
             polyObj['polyline2'].setOptions(selectedOptions);
             var detailData = pList1 || [];
+            var moveLineObj = detailData[2].moveLineInfo || {};
             if(detailData[2]){
               this.rightPanelData = {
-                userStatObj: detailData[2].moveLineInfo.userStatus,
-                bqitmList:detailData[2].moveLineInfo.mediaTypes,
-                chufaObj:detailData[2].moveLineInfo.departures, 
-                mudiObj:detailData[2].moveLineInfo.destination, 
-                tonqinTypeObj:detailData[2].moveLineInfo.travelTools,
-                tongqinTimeObj:detailData[2].moveLineInfo.journeyTime,
-                agePercentage:detailData[2].moveLineInfo.agePercentage,
-                sexPercentage:detailData[2].moveLineInfo.sexPercentage,
+                userStatObj: moveLineObj.userStatus,
+                bqitmList:moveLineObj.mediaTypes,
+                chufaObj:moveLineObj.departures, 
+                mudiObj:moveLineObj.destination, 
+                tonqinTypeObj:moveLineObj.travelTools,
+                tongqinTimeObj:moveLineObj.journeyTime,
+                agePercentage:moveLineObj.agePercentage,
+                sexPercentage:moveLineObj.sexPercentage,
                 manWidthobj:{
-                  width:(Number(detailData[2].moveLineInfo.sexPercentage[0].percentage) -1) + '%'
+                  width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[0].percentage:'1')-1) + '%'
                 },
                 womenWidthobj:{
-                  width:(Number(detailData[2].moveLineInfo.sexPercentage[1].percentage) -1) + '%'
+                  width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[1].percentage:'1') -1) + '%'
                 }
               }
               this.fanganObj = detailData[2].recommendDeliveryPlan || {};
@@ -1047,21 +1047,22 @@ export default {
           if(attr == 'polyline3'){
             polyObj['polyline3'].setOptions(selectedOptions);
             var detailData = pList1 || [];
+            var moveLineObj = detailData[3].moveLineInfo || {};
             if(detailData[3]){
               this.rightPanelData = {
-                userStatObj: detailData[3].moveLineInfo.userStatus,
-                bqitmList:detailData[3].moveLineInfo.mediaTypes,
-                chufaObj:detailData[3].moveLineInfo.departures, 
-                mudiObj:detailData[3].moveLineInfo.destination, 
-                tonqinTypeObj:detailData[3].moveLineInfo.travelTools,
-                tongqinTimeObj:detailData[3].moveLineInfo.journeyTime,
-                agePercentage:detailData[3].moveLineInfo.agePercentage,
-                sexPercentage:detailData[3].moveLineInfo.sexPercentage,
+                userStatObj: moveLineObj.userStatus,
+                bqitmList:moveLineObj.mediaTypes,
+                chufaObj:moveLineObj.departures, 
+                mudiObj:moveLineObj.destination, 
+                tonqinTypeObj:moveLineObj.travelTools,
+                tongqinTimeObj:moveLineObj.journeyTime,
+                agePercentage:moveLineObj.agePercentage,
+                sexPercentage:moveLineObj.sexPercentage,
                 manWidthobj:{
-                  width:(Number(detailData[3].moveLineInfo.sexPercentage[0].percentage) -1) + '%'
+                  width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[0].percentage:'1') -1) + '%'
                 },
                 womenWidthobj:{
-                  width:(Number(detailData[3].moveLineInfo.sexPercentage[1].percentage) -1) + '%'
+                  width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[1].percentage:'1') -1) + '%'
                 }
               }
               this.fanganObj = detailData[3].recommendDeliveryPlan || {};
@@ -1095,21 +1096,22 @@ export default {
           if(attr == 'polyline4'){
             polyObj['polyline4'].setOptions(selectedOptions);
             var detailData = pList1 || [];
+            var moveLineObj = detailData[4].moveLineInfo || {};
             if(detailData[4]){
               this.rightPanelData = {
-                userStatObj: detailData[4].moveLineInfo.userStatus,
-                bqitmList:detailData[4].moveLineInfo.mediaTypes,
-                chufaObj:detailData[4].moveLineInfo.departures, 
-                mudiObj:detailData[4].moveLineInfo.destination, 
-                tonqinTypeObj:detailData[4].moveLineInfo.travelTools,
-                tongqinTimeObj:detailData[4].moveLineInfo.journeyTime,
-                agePercentage:detailData[4].moveLineInfo.agePercentage,
-                sexPercentage:detailData[4].moveLineInfo.sexPercentage,
+                userStatObj: moveLineObj.userStatus,
+                bqitmList:moveLineObj.mediaTypes,
+                chufaObj:moveLineObj.departures, 
+                mudiObj:moveLineObj.destination, 
+                tonqinTypeObj:moveLineObj.travelTools,
+                tongqinTimeObj:moveLineObj.journeyTime,
+                agePercentage:moveLineObj.agePercentage,
+                sexPercentage:moveLineObj.sexPercentage,
                 manWidthobj:{
-                  width:(Number(detailData[4].moveLineInfo.sexPercentage[0].percentage) -1) + '%'
+                  width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[0].percentage:'1') -1) + '%'
                 },
                 womenWidthobj:{
-                  width:(Number(detailData[4].moveLineInfo.sexPercentage[1].percentage) -1) + '%'
+                  width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[1].percentage:'1') -1) + '%'
                 }
               }
               this.fanganObj = detailData[4].recommendDeliveryPlan || {};
