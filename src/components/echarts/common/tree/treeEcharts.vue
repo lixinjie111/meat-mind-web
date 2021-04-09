@@ -20,6 +20,11 @@ export default {
       type:Object
     }
   },
+  watch:{
+    detail(val){
+      this.initEcharts()
+    }
+  },
   methods: {
     initEcharts() {
       let option = this.defaultOption();
