@@ -120,19 +120,63 @@
     </div>
 
     <div class="condition_content" v-if="ifShowCon">
-      <div class="condition_lef">
-        <img :src="conditImg" alt="" srcset="" class="conditImg" />
+      <div class="target-left">
+        <div class="l-item">
+          <div class="l-item-label">常用标签</div>
+          <div class="item-list" v-for="(item, index) in target" :key="index">
+            <div class="item-con">
+              <div
+                      class="name"
+                      :class="{ act: item == cur }"
+                      @click="cur = item"
+              >
+                {{ item }}
+              </div>
+              <i class="iconfont iconleft-arrow21"></i>
+            </div>
+          </div>
+        </div>
+        <div class="l-item">
+          <div class="l-item-label">属性维度</div>
+          <div class="item-list" v-for="(item, index) in property" :key="index">
+            <div class="item-con">
+              <div
+                      class="name"
+                      :class="{ act: item == cur }"
+                      @click="cur = item"
+              >
+                {{ item }}
+              </div>
+              <i class="iconfont iconleft-arrow21"></i>
+            </div>
+          </div>
+        </div>
+        <div class="l-item">
+          <div class="l-item-label">用户行为</div>
+          <div class="item-list" v-for="(item, index) in behavior" :key="index">
+            <div class="item-con">
+              <div
+                      class="name"
+                      :class="{ act: item == cur }"
+                      @click="cur = item"
+              >
+                {{ item }}
+              </div>
+              <i class="iconfont iconleft-arrow21"></i>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="condition_rig">
         <div class="con_item_container">
           <div class="con_item_label">年龄</div>
           <div class="con_item_con">
             <div
-              class="con_item"
-              ref="ninlinItem"
-              v-for="(item, index) in nilinList"
-              :key="index"
-              @click="nianlinClick(index, 'ninlinItem')"
+                    class="con_item"
+                    ref="ninlinItem"
+                    v-for="(item, index) in nilinList"
+                    :key="index"
+                    @click="nianlinClick(index, 'ninlinItem')"
             >
               {{ item }}
             </div>
@@ -142,11 +186,11 @@
           <div class="con_item_label">性别</div>
           <div class="con_item_con">
             <div
-              class="con_item"
-              ref="xingbieItem"
-              v-for="(item, index) in sexList"
-              :key="index"
-              @click="nianlinClick(index, 'xingbieItem')"
+                    class="con_item"
+                    ref="xingbieItem"
+                    v-for="(item, index) in sexList"
+                    :key="index"
+                    @click="nianlinClick(index, 'xingbieItem')"
             >
               {{ item }}
             </div>
@@ -156,11 +200,11 @@
           <div class="con_item_label">有小孩</div>
           <div class="con_item_con">
             <div
-              class="con_item"
-              ref="hasChild"
-              v-for="(item, index) in hasChildList"
-              :key="index"
-              @click="nianlinClick(index, 'hasChild')"
+                    class="con_item"
+                    ref="hasChild"
+                    v-for="(item, index) in hasChildList"
+                    :key="index"
+                    @click="nianlinClick(index, 'hasChild')"
             >
               {{ item }}
             </div>
@@ -170,11 +214,11 @@
           <div class="con_item_label">消费水平</div>
           <div class="con_item_con">
             <div
-              class="con_item"
-              ref="xflevel"
-              v-for="(item, index) in xiaofeiList"
-              :key="index"
-              @click="nianlinClick(index, 'xflevel')"
+                    class="con_item"
+                    ref="xflevel"
+                    v-for="(item, index) in xiaofeiList"
+                    :key="index"
+                    @click="nianlinClick(index, 'xflevel')"
             >
               {{ item }}
             </div>
@@ -184,11 +228,11 @@
           <div class="con_item_label">婚姻</div>
           <div class="con_item_con">
             <div
-              class="con_item"
-              ref="huny"
-              v-for="(item, index) in huyList"
-              :key="index"
-              @click="nianlinClick(index, 'huny')"
+                    class="con_item"
+                    ref="huny"
+                    v-for="(item, index) in huyList"
+                    :key="index"
+                    @click="nianlinClick(index, 'huny')"
             >
               {{ item }}
             </div>
@@ -198,18 +242,18 @@
           <div class="con_item_label">职业</div>
           <div class="con_item_con">
             <div
-              class="con_item"
-              ref="jobdom"
-              v-for="(item, index) in jobList"
-              :key="index"
-              @click="nianlinClick(index, 'jobdom')"
+                    class="con_item"
+                    ref="jobdom"
+                    v-for="(item, index) in jobList"
+                    :key="index"
+                    @click="nianlinClick(index, 'jobdom')"
             >
               {{ item }}
             </div>
           </div>
         </div>
         <div class="con_item_container queding_container">
-          <div class="quedingbtn" @click="submit">确定</div>
+          <button class="btn-primary-small" @click="submit">确定</button>
         </div>
       </div>
     </div>
@@ -412,8 +456,11 @@ export default {
       timerIdx: 0,
       currentBtn: 2,
       ifShowCon: false,
-      conditImg: require("../../assets/img/yhhx/conditImg.png"),
-      nilinList: ["18-24",'25-34', "35-44", "45+"],
+      cur: "基本信息",
+      target: ["自定义标签", "基本信息", "兴趣爱好", "设备属性"],
+      property: ["用户维度", "媒介维度", "品牌维度"],
+      behavior: ["线上行为", "线下行为"],
+      nilinList:['18-24','25-34','35+'],
       sexList: ["男", "女"],
       hasChildList: [
         "妈妈",
@@ -618,7 +665,7 @@ export default {
       var itemDom = this.$refs[art] || [];
       for (var i = 0; i < itemDom.length; i++) {
         if (i == arg) {
-          itemDom[i].style = "background: #2373FF;color: #FFFFFF;";
+          itemDom[i].style = "background: #2373FF;color: #FFFFFF;border-radius: 4px;";
         } else {
           //如果需要多选去掉else
           itemDom[i].style = "color: #636E95;background: none;";
@@ -1191,45 +1238,42 @@ export default {
       height: 100%;
       display: flex;
       justify-content: center;
-      .area_timer_choice_container {
+      .area_timer_choice_container{
         width: 100%;
         height: 66px;
         display: flex;
         align-items: center;
-        background: #ffffff;
+        background: #FFFFFF;
         box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-        border: 1px solid #eaedf7;
+        border-radius: 4px 4px 0 0;
+        border: 1px solid #EAEDF7;
         z-index: 999;
-        .choice_btn_area {
+        .choice_btn_area{
           width: 88px;
           height: 100%;
-          border-right: 1px solid #eaedf7;
-          .choice_btn_top,
-          .choice_btn_bom {
+          border-right: 1px solid #EAEDF7;
+          .choice_btn_top,.choice_btn_bom{
             width: 100%;
             height: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            font-size: 12px;
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
-            color: #242f57;
-            &:hover {
+            color: #242F57;
+            &:hover{
               cursor: pointer;
             }
           }
-          .choice_btn_top {
-            padding-top: 10px;
-          }
-          .activeBtn {
-            color: #2373ff;
+          .activeBtn{
+            color: #2373FF;
           }
         }
-        .choice_content_container {
+        .choice_content_container{
           flex: 1;
           height: 100%;
-          .timer12 {
+          .timer12{
             width: 100%;
             height: 100%;
             display: flex;
@@ -1238,37 +1282,37 @@ export default {
             justify-content: center;
             padding: 0 16px;
             box-sizing: border-box;
-            .timer12_top {
+            .timer12_top{
               width: 100%;
               display: flex;
               align-items: center;
               justify-content: space-between;
             }
-            .timer12_bom {
+            .timer12_bom{
               width: 100%;
               display: flex;
               align-items: center;
               justify-content: space-between;
-              background-color: #f4f7fc;
+              background-color: #F4F7FC;
               margin-top: 4px;
               border-radius: 10px;
-              .cirle_dian {
+              .cirle_dian{
                 width: 12px;
                 height: 12px;
                 border-radius: 50%;
-                background: #c6cbde;
-                &:hover {
+                background: #C6CBDE;
+                &:hover{
                   cursor: pointer;
                 }
               }
-              .activeDian {
-                background-color: #2373ff;
-                box-shadow: 0px 2px 4px 0px #c6cbde;
-                border: 2px solid #ffffff;
+              .activeDian{
+                background-color: #2373FF;
+                box-shadow: 0px 2px 4px 0px #C6CBDE;
+                border: 2px solid #FFFFFF;
               }
             }
           }
-          .timer121 {
+          .timer121{
             width: 100%;
             height: 100%;
             display: flex;
@@ -1276,21 +1320,21 @@ export default {
             flex-wrap: wrap;
             padding: 6px 16px;
             box-sizing: border-box;
-            .timer121_item {
+            .timer121_item{
               width: 62px;
-              height: 20px;
-              background: #ffffff;
+              height: 24px;
+              background: #FFFFFF;
               border-radius: 4px;
-              border: 1px solid #eaedf7;
+              border: 1px solid #EAEDF7;
               display: flex;
               align-items: center;
               justify-content: center;
               margin-right: 12px;
               cursor: pointer;
             }
-            .activetimer {
-              border: 1px solid #2373ff;
-              color: #2373ff;
+            .activetimer{
+              border: 1px solid #2373FF;
+              color: #2373FF;
             }
           }
         }
@@ -1312,141 +1356,178 @@ export default {
     left: 20px;
     right: 20px;
   }
-  .conditions_container {
+  .conditions_container{
     flex: 1;
-    height: 48px;
-    background: #f4f7fc;
+    height: 40px;
+    background: #FFFFFF;
     border-radius: 0px 0px 4px 4px;
-    padding: 15px 6px;
-    padding-right: 10px;
-    box-sizing: border-box;
+    padding: 8px 16px 8px 12px;
+    /*box-sizing: border-box;*/
     display: flex;
     align-items: center;
     justify-content: space-between;
-    .conditions_lef {
+    border-top: 1px solid #F0F8FF;
+
+    .conditions_lef{
       height: 100%;
       display: flex;
       align-items: center;
-      .condition_label,
-      .condition_item {
-        width: 75px;
+      .condition_label,.condition_item{
+        width: 64px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-right: 12px;
+        margin-right: 10px;
       }
-      .condition_label {
-        font-size: 14px;
+      .condition_label{
+        margin-right: 0;
+        font-size: 12px;
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
-        color: #242f57;
+        color: #242F57;
       }
-      .condition_item {
+      .condition_item{
         width: 91px;
         height: 24px;
-        background: #d3e3ff;
+        background: #D3E3FF;
         border-radius: 4px;
-        border: 1px solid #eaedf7;
+        border: 1px solid #EAEDF7;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 12px;
         font-family: PingFangSC-Semibold, PingFang SC;
         font-weight: 600;
-        color: #2373ff;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        -o-text-overflow: ellipsis;
-        white-space: nowrap;
+        color: #2373FF;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        -o-text-overflow:ellipsis;
+        white-space:nowrap;
       }
     }
-    .conditions_rig {
-      font-size: 14px;
+    .conditions_rig{
+      font-size: 12px;
       font-family: PingFangSC-Regular, PingFang SC;
       font-weight: 400;
-      color: #2373ff;
+      color: #2373FF;
     }
-    .conditions_rig:hover {
+    .conditions_rig:hover{
       cursor: pointer;
     }
   }
-  .condition_content {
+  .condition_content{
     position: absolute;
-    left: 1.9%;
-    top: 132px;
+    left: 20px;
+    top: 128px;
     width: 806px;
     z-index: 1000;
-    height: 557px;
-    background: #fff;
+    height: 402px;
+    background: #FFF;
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
-    border-radius: 12px;
-    border: 1px solid #eaedf7;
+    border-radius: 4px;
+    border: 1px solid #EAEDF7;
     display: flex;
     align-items: center;
-    .condition_lef {
+    // .condition_lef{
+    //     width: 186px;
+    //     .conditImg{
+    //         display: block;
+    //         width: 100%;
+    //     }
+    // }
+    .target-left {
       width: 186px;
-      .conditImg {
-        display: block;
-        width: 100%;
+      height: 100%;
+      padding: 12px 0 0 12px;
+      border-right: 1px solid #eaedf7;
+      .l-item {
+        margin-bottom: 9px;
+        .l-item-label {
+          width: 58px;
+          height: 16px;
+          margin-bottom: 9px;
+          font-size: 14px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #242f57;
+          line-height: 16px;
+        }
+        .item-list {
+          .item-con {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 160px;
+            height: 32px;
+            padding: 0 16px;
+            margin-right: 1px;
+            /*margin-bottom: 8px;*/
+            .name{
+              font-size: 12px;
+              font-family: PingFangSC-Regular, PingFang SC;
+              font-weight: 400;
+              color: #636E95;
+              cursor: pointer;
+              &.act{
+                color: #2373FF;
+              }
+            }
+            > i {
+              font-size: 12px;
+              color: #98A2C2;
+            }
+          }
+        }
       }
     }
-    .condition_rig {
-      flex: 1;
+    .condition_rig{
+      // flex: 1;
       height: 100%;
-      padding: 55px 22px;
+      padding: 45px 22px 0 22px;
       box-sizing: border-box;
-      .con_item_container {
-        width: 100%;
+      .con_item_container{
+        // width: 100%;
         display: flex;
-        align-items: flex-start;
+        // align-items: flex-start;
         margin-bottom: 8px;
-        .con_item_label {
-          width: 106px;
-          font-size: 14px;
+        .con_item_label{
+          width: 98px;
+          font-size: 12px;
           font-family: PingFangSC-Regular, PingFang SC;
           font-weight: 400;
-          color: #242f57;
+          color: #242F57;
         }
-        .con_item_con {
-          flex: 1;
+        .con_item_con{
+          // flex: 1;
+          width: calc(100% - 106px);
           display: flex;
           flex-wrap: wrap;
-          .con_item {
-            padding: 2px 9px;
-            margin-bottom: 16px;
+          .con_item{
+            height: 24px;
+            padding: 0 9px;
+            line-height: 24px;
+            margin-bottom: 5px;
             border-radius: 8px;
-            margin-right: 43px;
-            font-size: 14px;
+            margin-right: 24px;
+            font-size: 12px;
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
-            color: #636e95;
+            color: #636E95;
             background-color: none;
-          }
-          .con_item:hover {
             cursor: pointer;
           }
+          .con_item:hover{cursor: pointer;}
         }
       }
-      .queding_container {
+      .queding_container{
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 30px;
-        .quedingbtn {
-          padding: 4px 20px;
-          border-radius: 8px;
-          font-size: 14px;
-          font-family: PingFangSC-Regular, PingFang SC;
-          font-weight: 400;
-          background: rgb(35, 115, 255);
-          color: rgb(255, 255, 255);
-        }
-        .quedingbtn:hover {
-          cursor: pointer;
-        }
+        margin-top: 20px;
       }
     }
+
   }
   .mianban_container {
     position: absolute;
@@ -1850,7 +1931,7 @@ export default {
                 box-sizing: border-box;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: flex-start;
                 .bqitm_lef {
                   font-size: 12px;
                   font-family: PingFangSC-Regular, PingFang SC;
@@ -1858,6 +1939,7 @@ export default {
                   color: #7c88b1;
                 }
                 .bqitm_rig {
+                  margin-left: 12px;
                   display: flex;
                   .bqimg {
                     width: 24px;
