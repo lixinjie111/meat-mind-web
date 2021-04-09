@@ -486,7 +486,8 @@ export default {
       hasChList: [],
       xiaoFList: [],
       huyiList: [],
-      zhYList: []
+      zhYList: [],
+      street:'朝阳区'
     };
   },
   mounted() {
@@ -495,7 +496,7 @@ export default {
       id:propData.id,
       time:'08:00'
     };
-    this.getMoveLineDetail(resParm,'朝阳区');
+    this.getMoveLineDetail(resParm,this.street);
   },
   methods: {
     async getMoveLineDetail(resParm,street) {
@@ -632,7 +633,7 @@ export default {
         marriage:this.huyiList[0],
         career:this.zhYList[0]
       };
-      this.getMoveLineDetail(resParm,"朝阳区")
+      this.getMoveLineDetail(resParm,this.street)
     },
     nianlinClick(arg, art) {
       var itemDom = this.$refs[art] || [];
@@ -668,7 +669,8 @@ export default {
         marriage:this.huyiList[0],
         career:this.zhYList[0]
       };
-      this.getMoveLineDetail(resParm,val)
+      this.street = val;
+      this.getMoveLineDetail(resParm,this.street)
     },
     choiceat(arg) {
       this.currentBtn = arg;
@@ -687,7 +689,7 @@ export default {
           marriage:this.huyiList[0],
           career:this.zhYList[0]
         };
-        this.getMoveLineDetail(resParm,"朝阳区")
+        this.getMoveLineDetail(resParm,this.street)
       }
     },
     clickTime(arg) {
@@ -698,19 +700,19 @@ export default {
           id:propData.id,
           time:arg
         };
-        this.getMoveLineDetail(resParm,"西城区")
+        this.getMoveLineDetail(resParm,this.street)
       } else if (arg == '12:00' || arg == '14:00' || arg == '16:00') {
         var resParm = {
           id:propData.id,
           time:arg
         };
-        this.getMoveLineDetail(resParm,"海淀区")
+        this.getMoveLineDetail(resParm,this.street)
       } else if (arg == '18:00' || arg == '20:00') {
         var resParm = {
           id:propData.id,
           time:arg
         };
-        this.getMoveLineDetail(resParm,"西城区")
+        this.getMoveLineDetail(resParm,this.street)
       }
       // this.changeBqitm(arg);
     },
