@@ -1131,9 +1131,109 @@ export default {
           }
         }
       });
+      polyObj['polyline5'].on("click", function (event) {
+        for(var attr in polyObj){
+          if(attr == 'polyline5'){
+            polyObj['polyline5'].setOptions(selectedOptions);
+            var detailData = pList1 || [];
+            var moveLineObj = detailData[5].moveLineInfo || {};
+            console.log(moveLineObj.userStatus,'线6用户状态')
+            if(detailData[5]){
+              that.rightPanelData = {
+                userStatObj: moveLineObj.userStatus || [{}],
+                bqitmList:moveLineObj.mediaTypes || [{name:'',mediaIcons:[{}]}],
+                chufaObj:moveLineObj.departures || [], 
+                mudiObj:moveLineObj.destination || [], 
+                tonqinTypeObj:moveLineObj.travelTools || [{}],
+                tongqinTimeObj:moveLineObj.journeyTime || '',
+                agePercentage:moveLineObj.agePercentage || [],
+                sexPercentage:moveLineObj.sexPercentage.length !=0 ? moveLineObj.sexPercentage : [{},{}],
+                manWidthobj:{
+                  width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[0].percentage:'1') -1) + '%'
+                },
+                womenWidthobj:{
+                  width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[1].percentage:'1') -1) + '%'
+                }
+              }
+              that.fanganObj = detailData[5].recommendDeliveryPlan || {};
+              that.yqxgList = [
+                {
+                  til: "触达用户：",
+                  desc: that.fanganObj.reachUserCount,
+                },
+                {
+                  til: "互动量提升：",
+                  desc: that.fanganObj.interactionIncrease,
+                },
+                {
+                  til: "品牌印象提升：",
+                  desc: that.fanganObj.brandPromotion,
+                },
+                {
+                  til: "销售转化率：",
+                  desc: that.fanganObj.saleConversionRate,
+                },
+              ];
+            }
+          }
+          else{
+            polyObj[attr].setOptions(normalOptions);
+          }
+        }
+      });
+      polyObj['polyline6'].on("click", function (event) {
+        for(var attr in polyObj){
+          if(attr == 'polyline6'){
+            polyObj['polyline6'].setOptions(selectedOptions);
+            var detailData = pList1 || [];
+            var moveLineObj = detailData[6].moveLineInfo || {};
+            console.log(moveLineObj.userStatus,'线7用户状态')
+            if(detailData[6]){
+              that.rightPanelData = {
+                userStatObj: moveLineObj.userStatus || [{}],
+                bqitmList:moveLineObj.mediaTypes || [{name:'',mediaIcons:[{}]}],
+                chufaObj:moveLineObj.departures || [], 
+                mudiObj:moveLineObj.destination || [], 
+                tonqinTypeObj:moveLineObj.travelTools || [{}],
+                tongqinTimeObj:moveLineObj.journeyTime || '',
+                agePercentage:moveLineObj.agePercentage || [],
+                sexPercentage:moveLineObj.sexPercentage.length !=0 ? moveLineObj.sexPercentage : [{},{}],
+                manWidthobj:{
+                  width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[0].percentage:'1') -1) + '%'
+                },
+                womenWidthobj:{
+                  width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[1].percentage:'1') -1) + '%'
+                }
+              }
+              that.fanganObj = detailData[6].recommendDeliveryPlan || {};
+              that.yqxgList = [
+                {
+                  til: "触达用户：",
+                  desc: that.fanganObj.reachUserCount,
+                },
+                {
+                  til: "互动量提升：",
+                  desc: that.fanganObj.interactionIncrease,
+                },
+                {
+                  til: "品牌印象提升：",
+                  desc: that.fanganObj.brandPromotion,
+                },
+                {
+                  til: "销售转化率：",
+                  desc: that.fanganObj.saleConversionRate,
+                },
+              ];
+            }
+          }
+          else{
+            polyObj[attr].setOptions(normalOptions);
+          }
+        }
+      });
       for(var i=0;i<pList1.length;i++){
         var cirList = JSON.parse(pList1[i].locationCoordination);
-        var radius = pList1[i].locationRadius ? pList1[i].locationRadius : 0; //半径
+        var radius = pList1[i].locationRadius ? pList1[i].locationRadius : 0; 
         console.log(cirList,'圆圈圆心！！')
         console.log(radius,'圆圈半径')
         if(cirList.length != 0){
