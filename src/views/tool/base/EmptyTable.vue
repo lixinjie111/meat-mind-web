@@ -39,6 +39,7 @@
       >li{
         height: 22px;
         font-size: 14px;
+        font-family: PingFangSC-Medium, PingFang SC;
         font-weight: 500;
         color: #242F57;
         line-height: 22px;

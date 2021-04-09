@@ -252,7 +252,7 @@
         .logo {
             width: 108px;
             height: 30px;
-            margin: 29px 84px 48px 50px;
+            margin: 29px 84px 37px 50px;
             background: url("../assets/img/side/logo-colour@2x.png") no-repeat center / 108px 30px;
             cursor: pointer;
         }

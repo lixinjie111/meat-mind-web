@@ -11,7 +11,7 @@
         <Select v-model="app" class="item1">
           <Option v-for="(item,index) of $abelData.appOptions" :value="index+1" :key="index+1">{{item}}</Option>
         </Select>
-        <Button @click="handleAddCondition" class="item2">
+        <Button @click="handleAddCondition" class="item2" style="border-color: #97A0C3;">
           <i class="iconfont icontianjia"></i>
           筛选条件</Button>
       </div>

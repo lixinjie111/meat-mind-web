@@ -26,7 +26,9 @@
   align-items: center;
 
   .iconClose {
+    font-size: 14px;
     cursor: pointer;
+    margin-top: -10px;
   }
 }
 </style>

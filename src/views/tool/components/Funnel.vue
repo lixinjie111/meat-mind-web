@@ -342,6 +342,20 @@
 </style>
 <style lang="scss">
   .data-container {
+    .ivu-table {
+      th{
+        height: 48px;
+        background: #F4F7FC;
+
+        .ivu-table-cell {
+          font-size: 14px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #242F57;
+        }
+      }
+    }
+
     .ivu-icon-ios-add, .ivu-icon-ios-remove {
       &:before {
         content: '\F11F';

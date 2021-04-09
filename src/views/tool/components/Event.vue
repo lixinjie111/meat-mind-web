@@ -599,10 +599,20 @@ export default {
         }
       }
       .table-warp{
-        .ivu-table th{
-          height: 48px;
-          background: #F4F7FC;
+        ::v-deep .ivu-table {
+          th{
+            height: 48px;
+            background: #F4F7FC;
+
+            .ivu-table-cell {
+              font-size: 14px;
+              font-family: PingFangSC-Medium, PingFang SC;
+              font-weight: 500;
+              color: #242F57;
+            }
+          }
         }
+
         .table-page-warp{
           margin-top: 10px;
           text-align: right;
