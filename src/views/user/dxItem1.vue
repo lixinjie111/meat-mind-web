@@ -581,11 +581,11 @@ export default {
             var moveLineObj = detailData[0].moveLineInfo || {};
             this.rightPanelData = {
               userStatObj: moveLineObj.userStatus || [{}],
-              bqitmList:moveLineObj.mediaTypes,
-              chufaObj:moveLineObj.departures, 
-              mudiObj:moveLineObj.destination, 
-              tonqinTypeObj:moveLineObj.travelTools,
-              tongqinTimeObj:moveLineObj.journeyTime,
+              bqitmList:moveLineObj.mediaTypes || [{name:'',mediaIcons:[{}]}],
+              chufaObj:moveLineObj.departures || [], 
+              mudiObj:moveLineObj.destination || [], 
+              tonqinTypeObj:moveLineObj.travelTools || [{}],
+              tongqinTimeObj:moveLineObj.journeyTime || '',
               agePercentage:moveLineObj.agePercentage || [],
               sexPercentage:moveLineObj.sexPercentage.length !=0 ? moveLineObj.sexPercentage : [{},{}],
               manWidthobj:{
@@ -836,24 +836,6 @@ export default {
         map.setFitView(polygons); //视口自适应
       });
       
-      //商圈部分
-      var circle = new AMap.Circle({
-        center: c1,
-        radius: 1200, //半径
-        borderWeight: 3,
-        strokeColor: "#FF33FF",
-        strokeOpacity: 1,
-        strokeWeight: 6,
-        strokeOpacity: 0.2,
-        fillOpacity: 0.4,
-        strokeStyle: "dashed",
-        strokeDasharray: [10, 10],
-        // 线样式还支持 'dashed'
-        fillColor: "#1791fc",
-        zIndex: 50,
-      });
-      circle.setMap(map);
-
       //地图动态路线部分
       const selectedOptions = {
         outlineColor: "#FF8800",
@@ -880,7 +862,7 @@ export default {
           strokeWeNum = 4;
         }
         polyObj[polyline] = new AMap.Polyline({
-          path:JSON.parse(pList1[i].coordinate),
+          path:pList1[i].coordinate ? JSON.parse(pList1[i].coordinate) :[],
           isOutline: true,
           outlineColor: "#ffeeff",
           borderWeight:borderwiNum,
@@ -894,6 +876,22 @@ export default {
           zIndex: 50,
         });        
         polyObj[polyline].setMap(map);
+        var circle = new AMap.Circle({
+          center: pList1[i].locationCoordination ? JSON.parse(pList1[i].locationCoordination) : [],
+          radius: pList1[i].locationRadius ? pList1[i].locationRadius : 0, //半径
+          borderWeight: 3,
+          strokeColor: "#FF33FF",
+          strokeOpacity: 1,
+          strokeWeight: 6,
+          strokeOpacity: 0.2,
+          fillOpacity: 0.4,
+          strokeStyle: "dashed",
+          strokeDasharray: [10, 10],
+          // 线样式还支持 'dashed'
+          fillColor: "#1791fc",
+          zIndex: 50,
+        });
+        circle.setMap(map);
       }
       polyObj['polyline0'].on("click", function (event) {
         for(var attr in polyObj){
@@ -903,14 +901,14 @@ export default {
             var moveLineObj = detailData[0].moveLineInfo || {};
             if(detailData[0]){
               this.rightPanelData = {
-                userStatObj: moveLineObj.userStatus,
-                bqitmList:moveLineObj.mediaTypes,
-                chufaObj:moveLineObj.departures, 
-                mudiObj:moveLineObj.destination, 
-                tonqinTypeObj:moveLineObj.travelTools,
-                tongqinTimeObj:moveLineObj.journeyTime,
-                agePercentage:moveLineObj.agePercentage,
-                sexPercentage:moveLineObj.sexPercentage,
+                userStatObj: moveLineObj.userStatus || [{}],
+                bqitmList:moveLineObj.mediaTypes || [{name:'',mediaIcons:[{}]}],
+                chufaObj:moveLineObj.departures || [], 
+                mudiObj:moveLineObj.destination || [], 
+                tonqinTypeObj:moveLineObj.travelTools || [{}],
+                tongqinTimeObj:moveLineObj.journeyTime || '',
+                agePercentage:moveLineObj.agePercentage || [],
+                sexPercentage:moveLineObj.sexPercentage.length !=0 ? moveLineObj.sexPercentage : [{},{}],
                 manWidthobj:{
                   width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[0].percentage:'1') -1) + '%'
                 },
@@ -922,19 +920,19 @@ export default {
               this.yqxgList = [
                 {
                   til: "触达用户：",
-                  desc: detailData[0].recommendDeliveryPlan.reachUserCount,
+                  desc: this.fanganObj.reachUserCount,
                 },
                 {
                   til: "互动量提升：",
-                  desc: detailData[0].recommendDeliveryPlan.interactionIncrease,
+                  desc: this.fanganObj.interactionIncrease,
                 },
                 {
                   til: "品牌印象提升：",
-                  desc: detailData[0].recommendDeliveryPlan.brandPromotion,
+                  desc: this.fanganObj.brandPromotion,
                 },
                 {
                   til: "销售转化率：",
-                  desc: detailData[0].recommendDeliveryPlan.saleConversionRate,
+                  desc: this.fanganObj.saleConversionRate,
                 },
               ];
             }
@@ -952,14 +950,14 @@ export default {
             var moveLineObj = detailData[1].moveLineInfo || {};
             if(detailData[1]){
               this.rightPanelData = {
-                userStatObj: moveLineObj.userStatus,
-                bqitmList:moveLineObj.mediaTypes,
-                chufaObj:moveLineObj.departures, 
-                mudiObj:moveLineObj.destination, 
-                tonqinTypeObj:moveLineObj.travelTools,
-                tongqinTimeObj:moveLineObj.journeyTime,
-                agePercentage:moveLineObj.agePercentage,
-                sexPercentage:moveLineObj.sexPercentage,
+                userStatObj: moveLineObj.userStatus || [{}],
+                bqitmList:moveLineObj.mediaTypes || [{name:'',mediaIcons:[{}]}],
+                chufaObj:moveLineObj.departures || [], 
+                mudiObj:moveLineObj.destination || [], 
+                tonqinTypeObj:moveLineObj.travelTools || [{}],
+                tongqinTimeObj:moveLineObj.journeyTime || '',
+                agePercentage:moveLineObj.agePercentage || [],
+                sexPercentage:moveLineObj.sexPercentage.length !=0 ? moveLineObj.sexPercentage : [{},{}],
                 manWidthobj:{
                   width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[0].percentage:'1') -1) + '%'
                 },
@@ -971,19 +969,19 @@ export default {
               this.yqxgList = [
                 {
                   til: "触达用户：",
-                  desc: detailData[1].recommendDeliveryPlan.reachUserCount,
+                  desc: this.fanganObj.reachUserCount,
                 },
                 {
                   til: "互动量提升：",
-                  desc: detailData[1].recommendDeliveryPlan.interactionIncrease,
+                  desc: this.fanganObj.interactionIncrease,
                 },
                 {
                   til: "品牌印象提升：",
-                  desc: detailData[1].recommendDeliveryPlan.brandPromotion,
+                  desc: this.fanganObj.brandPromotion,
                 },
                 {
                   til: "销售转化率：",
-                  desc: detailData[1].recommendDeliveryPlan.saleConversionRate,
+                  desc: this.fanganObj.saleConversionRate,
                 },
               ];
             }
@@ -1001,14 +999,14 @@ export default {
             var moveLineObj = detailData[2].moveLineInfo || {};
             if(detailData[2]){
               this.rightPanelData = {
-                userStatObj: moveLineObj.userStatus,
-                bqitmList:moveLineObj.mediaTypes,
-                chufaObj:moveLineObj.departures, 
-                mudiObj:moveLineObj.destination, 
-                tonqinTypeObj:moveLineObj.travelTools,
-                tongqinTimeObj:moveLineObj.journeyTime,
-                agePercentage:moveLineObj.agePercentage,
-                sexPercentage:moveLineObj.sexPercentage,
+                userStatObj: moveLineObj.userStatus || [{}],
+                bqitmList:moveLineObj.mediaTypes || [{name:'',mediaIcons:[{}]}],
+                chufaObj:moveLineObj.departures || [], 
+                mudiObj:moveLineObj.destination || [], 
+                tonqinTypeObj:moveLineObj.travelTools || [{}],
+                tongqinTimeObj:moveLineObj.journeyTime || '',
+                agePercentage:moveLineObj.agePercentage || [],
+                sexPercentage:moveLineObj.sexPercentage.length !=0 ? moveLineObj.sexPercentage : [{},{}],
                 manWidthobj:{
                   width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[0].percentage:'1')-1) + '%'
                 },
@@ -1020,19 +1018,19 @@ export default {
               this.yqxgList = [
                 {
                   til: "触达用户：",
-                  desc: detailData[2].recommendDeliveryPlan.reachUserCount,
+                  desc: this.fanganObj.reachUserCount,
                 },
                 {
                   til: "互动量提升：",
-                  desc: detailData[2].recommendDeliveryPlan.interactionIncrease,
+                  desc: this.fanganObj.interactionIncrease,
                 },
                 {
                   til: "品牌印象提升：",
-                  desc: detailData[2].recommendDeliveryPlan.brandPromotion,
+                  desc: this.fanganObj.brandPromotion,
                 },
                 {
                   til: "销售转化率：",
-                  desc: detailData[2].recommendDeliveryPlan.saleConversionRate,
+                  desc: this.fanganObj.saleConversionRate,
                 },
               ];
             }
@@ -1050,14 +1048,14 @@ export default {
             var moveLineObj = detailData[3].moveLineInfo || {};
             if(detailData[3]){
               this.rightPanelData = {
-                userStatObj: moveLineObj.userStatus,
-                bqitmList:moveLineObj.mediaTypes,
-                chufaObj:moveLineObj.departures, 
-                mudiObj:moveLineObj.destination, 
-                tonqinTypeObj:moveLineObj.travelTools,
-                tongqinTimeObj:moveLineObj.journeyTime,
-                agePercentage:moveLineObj.agePercentage,
-                sexPercentage:moveLineObj.sexPercentage,
+                userStatObj: moveLineObj.userStatus || [{}],
+                bqitmList:moveLineObj.mediaTypes || [{name:'',mediaIcons:[{}]}],
+                chufaObj:moveLineObj.departures || [], 
+                mudiObj:moveLineObj.destination || [], 
+                tonqinTypeObj:moveLineObj.travelTools || [{}],
+                tongqinTimeObj:moveLineObj.journeyTime || '',
+                agePercentage:moveLineObj.agePercentage || [],
+                sexPercentage:moveLineObj.sexPercentage.length !=0 ? moveLineObj.sexPercentage : [{},{}],
                 manWidthobj:{
                   width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[0].percentage:'1') -1) + '%'
                 },
@@ -1069,19 +1067,19 @@ export default {
               this.yqxgList = [
                 {
                   til: "触达用户：",
-                  desc: detailData[3].recommendDeliveryPlan.reachUserCount,
+                  desc: this.fanganObj.reachUserCount,
                 },
                 {
                   til: "互动量提升：",
-                  desc: detailData[3].recommendDeliveryPlan.interactionIncrease,
+                  desc: this.fanganObj.interactionIncrease,
                 },
                 {
                   til: "品牌印象提升：",
-                  desc: detailData[3].recommendDeliveryPlan.brandPromotion,
+                  desc: this.fanganObj.brandPromotion,
                 },
                 {
                   til: "销售转化率：",
-                  desc: detailData[3].recommendDeliveryPlan.saleConversionRate,
+                  desc: this.fanganObj.saleConversionRate,
                 },
               ];
             }
@@ -1099,14 +1097,14 @@ export default {
             var moveLineObj = detailData[4].moveLineInfo || {};
             if(detailData[4]){
               this.rightPanelData = {
-                userStatObj: moveLineObj.userStatus,
-                bqitmList:moveLineObj.mediaTypes,
-                chufaObj:moveLineObj.departures, 
-                mudiObj:moveLineObj.destination, 
-                tonqinTypeObj:moveLineObj.travelTools,
-                tongqinTimeObj:moveLineObj.journeyTime,
-                agePercentage:moveLineObj.agePercentage,
-                sexPercentage:moveLineObj.sexPercentage,
+                userStatObj: moveLineObj.userStatus || [{}],
+                bqitmList:moveLineObj.mediaTypes || [{name:'',mediaIcons:[{}]}],
+                chufaObj:moveLineObj.departures || [], 
+                mudiObj:moveLineObj.destination || [], 
+                tonqinTypeObj:moveLineObj.travelTools || [{}],
+                tongqinTimeObj:moveLineObj.journeyTime || '',
+                agePercentage:moveLineObj.agePercentage || [],
+                sexPercentage:moveLineObj.sexPercentage.length !=0 ? moveLineObj.sexPercentage : [{},{}],
                 manWidthobj:{
                   width:(Number(moveLineObj.sexPercentage.length !=0?moveLineObj.sexPercentage[0].percentage:'1') -1) + '%'
                 },
@@ -1118,19 +1116,19 @@ export default {
               this.yqxgList = [
                 {
                   til: "触达用户：",
-                  desc: detailData[4].recommendDeliveryPlan.reachUserCount,
+                  desc: this.fanganObj.reachUserCount,
                 },
                 {
                   til: "互动量提升：",
-                  desc: detailData[4].recommendDeliveryPlan.interactionIncrease,
+                  desc: this.fanganObj.interactionIncrease,
                 },
                 {
                   til: "品牌印象提升：",
-                  desc: detailData[4].recommendDeliveryPlan.brandPromotion,
+                  desc: this.fanganObj.brandPromotion,
                 },
                 {
                   til: "销售转化率：",
-                  desc: detailData[4].recommendDeliveryPlan.saleConversionRate,
+                  desc: this.fanganObj.saleConversionRate,
                 },
               ];
             }
