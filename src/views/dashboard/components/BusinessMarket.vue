@@ -298,7 +298,7 @@
                                 <p>脉动<span>·250ml</span></p>
                             </div>
                             <div class="right-content-left-btn">
-                                <Icon type="md-add" size="16"/>
+                                <Icon type="md-add" class="ft16"/>
                                 添加竞品
                             </div>
                         </div>
@@ -1763,11 +1763,8 @@
 
                 .right-content {
                     position: relative;
-
                     .right-content-left {
-
                         width: 30%;
-
                         .right-content-left-item {
                             position: relative;
                             padding: 12px 16px;
@@ -1821,19 +1818,22 @@
 
                         .right-content-left-btn {
                             position: absolute;
-                            left: 24px;
+                            left: 36px;
                             bottom: 24px;
                             width: 97px;
                             height: 32px;
-                            line-height: 32px;
-                            border-radius: 4px;
-                            border: 1px solid #C6CBDE;
+                            color: #C6CBDE;
                             font-size: 14px;
                             font-family: PingFangSC-Medium, PingFang SC;
                             font-weight: 400;
-                            color: #C6CBDE;
+                            line-height: 30px;  
+                            border: 1px solid #C6CBDE;
+                            border-radius: 4px;                          
                             text-align: center;
                             cursor: pointer;
+                            .ft16{
+                                font-size: 16px;
+                            }
                         }
                     }
 
