@@ -1,607 +1,606 @@
 <template>
     <!--  用户画像-->
     <div class="user-protrait">
-      <div class="header-nav">
-        <p>用户画像</p>
-      </div>
-      <!--用户动线部分-->
-	    <div class="top_title_container">
-		    <div class="left_text">
-			    <div class="left_title_text">
-				    <span>用户分群数据</span>
-				    <!--<Poptip popper-class="saas-poptip" trigger="hover" placement="right">-->
-				    <!--&lt;!&ndash; <i class="iconfont iconguanyuline1 tip-icon"></i> &ndash;&gt;-->
-				    <!--<img class="gif" src="../../assets/img/user/tip.gif" alt="">-->
-				    <!--<div slot="content">-->
-				    <!--<p><span>出行计算公式：</span>出行总人次/出行总人次*100%</p>-->
-				    <!--<p><span>空间数据化：</span>对空间进行量化，通过数字化语言，将空间进行尺度划分和重新定义，再利用技术手段来评价空间质量。在商业空间中，意味着可以分析其周边环境对消费者的使用感受影响，以及对商业运营的影响</p>-->
-				    <!--<p><span>用户动线：</span>依靠计算机快速模拟人流出行行为轨迹，依靠轨迹判断动线布置当中出现可达性、可见性与店铺通行概率问题，通过验证的方法再次修正动线设计</p>-->
-				    <!--</div>-->
-				    <!--</Poptip>-->
-			    </div>
-			    <div class="left_desc_text">分析品牌对应的不同用户群在不同时间，不同场景，使用了哪些App/Web，以及详细的线上、线下、全方位，立体化数据展示。</div>
-		    </div>
-		    <div class="right_btn" @click="formatUser">
-			    <!--<img :src="manIcon" class="manIcon"/>-->
-			    <i class="iconfont iconyonghuline" ></i>
-			    <span class="zdyku">自定义客群</span>
-		    </div>
-	    </div>
-	    <div class="yhdx_container">
-        <div class="group_list_con" v-for="item in yhGroupList" :key="item.id">
-          <div class="bjsbz_container">
-            <div class="lef_area">
-              <div class="lef_area_top">
-                <div class="actImg_container">
-                  <img :src="item.picture" alt="" srcset="" class="avatImg">
-                </div>
-                <div class="perinfo">
-                  <div class="perinfo_t">{{item.title}}</div>
-                  <div class="perinfo_b">用户数 {{item.userCount}}人</div>
-                </div>
-              </div>
-              <div class="lef_area_bom" :style="item.lefbomSty" @click="expandfn(Number(item.id),'cen_area'+item.id,'rig_area'+item.id,item)">
-                <span>{{computedText(item.id)}}</span>
-                <i v-if="computedText(item.id) == '收起动线详情'" class="iconfont iconup" :class="[(item.id == '5' || item.id == '6')? 'originClass': 'blueClass']"></i>
-                <i v-else class="iconfont icondown" :class="[(item.id == '5' || item.id == '6')? 'originClass': 'blueClass']"></i>
-              </div>
-            </div>
-            <div class="cen_area" :ref="'cen_area'+item.id">
-              <img v-if="computedText(item.id) == '收起动线详情'" :src="item.infoUrlDetail" alt="" srcset="" class="cen_areaImg">
-              <img v-else :src="item.infoUrl" alt="" srcset="" class="cen_areaImg">
-            </div>
-            <div class="rig_area rig_area1" :ref="'rig_area'+item.id" :class="{'rigActive':item.id==1}">
-              <div class="rig_area_lef">
-                <div class="gz_container" v-for="(item1,index) in item.mediaUrls" :key="index">
-                  <div class="yl_lef" :style="item1.bgcolor"></div>
-                  <div class="yl_rig">{{item1.til}}</div>
-                </div>
-              </div>
-              <div class="rig_area_rig">
-                <div class="rig_area_til">偏好媒介</div>
-                <div class="rig_area_icon">
-                  <img v-for="(item2,index) in item.mediaTypes" :src="item2" :key="index" alt="" class="bqimg">
-                </div>
-              </div>
-            </div>
-          </div>
-          <vDxitem v-if="ifShowComfn(ifShowDx1 && item.id == '1')" :parm="item" :key="item.id"></vDxitem>
-          <vDxitem1 v-else-if="ifShowComfn(ifShowDx2 && item.id == '2')" :parm="item" :key="item.id"></vDxitem1>
-          <vDxitem1 v-else-if="ifShowComfn(ifShowDx3 && item.id == '3')" :parm="item" :key="item.id"></vDxitem1>
-          <vDxitem1 v-else-if="ifShowComfn(ifShowDx4 && item.id == '4')" :parm="item" :key="item.id"></vDxitem1>
-          <vDxitem1 v-else-if="ifShowComfn(ifShowDx5 && item.id == '5')" :parm="item" :key="item.id"></vDxitem1>
-          <vDxitem1 v-else-if="ifShowComfn(ifShowDx6 && item.id == '6')" :parm="item" :key="item.id"></vDxitem1>
-        </div>
-      </div>
-
-      <!--触达用户媒介-->
-     <!-- <chuDa></chuDa> -->
-	    <div class="top_title_container top_title_container_margin_top">
-		    <div class="left_text">
-			    <div class="left_title_text">
-				    <span>用户分群详情</span>
-			    </div>
-			    <div class="left_desc_text">基于用户分群数据，系统智能生成的用户基础画像数据，行为分析数据以及心智分析数据。</div>
-		    </div>
-		    <div class="right_select">
-			    <div class="select-btn" @click="toComparison"><i class="iconfont icontianjia"></i>用户群对比</div>
-<!--			    <Select class="select" value="北京上班族">-->
-<!--				    <Option value="北京上班族">北京上班族</Option>-->
-<!--			    </Select>-->
-		    </div>
-	    </div>
+		<div class="header-nav">
+			<p>用户画像</p>
+		</div>
+		<!--用户动线部分-->
+		<div class="top_title_container">
+			<div class="left_text">
+				<div class="left_title_text">
+					<span>用户分群数据</span>
+					<!--<Poptip popper-class="saas-poptip" trigger="hover" placement="right">-->
+					<!--&lt;!&ndash; <i class="iconfont iconguanyuline1 tip-icon"></i> &ndash;&gt;-->
+					<!--<img class="gif" src="../../assets/img/user/tip.gif" alt="">-->
+					<!--<div slot="content">-->
+					<!--<p><span>出行计算公式：</span>出行总人次/出行总人次*100%</p>-->
+					<!--<p><span>空间数据化：</span>对空间进行量化，通过数字化语言，将空间进行尺度划分和重新定义，再利用技术手段来评价空间质量。在商业空间中，意味着可以分析其周边环境对消费者的使用感受影响，以及对商业运营的影响</p>-->
+					<!--<p><span>用户动线：</span>依靠计算机快速模拟人流出行行为轨迹，依靠轨迹判断动线布置当中出现可达性、可见性与店铺通行概率问题，通过验证的方法再次修正动线设计</p>-->
+					<!--</div>-->
+					<!--</Poptip>-->
+				</div>
+				<div class="left_desc_text">分析品牌对应的不同用户群在不同时间，不同场景，使用了哪些App/Web，以及详细的线上、线下、全方位，立体化数据展示。</div>
+			</div>
+			<div class="right_btn" @click="formatUser">
+				<!--<img :src="manIcon" class="manIcon"/>-->
+				<i class="iconfont iconyonghuline" ></i>
+				<span class="zdyku">自定义客群</span>
+			</div>
+		</div>
+		<div class="yhdx_container">
+		<div class="group_list_con" v-for="item in yhGroupList" :key="item.id">
+		  <div class="bjsbz_container">
+			<div class="lef_area">
+			  <div class="lef_area_top">
+				<div class="actImg_container">
+				  <img :src="item.picture" alt="" srcset="" class="avatImg">
+				</div>
+				<div class="perinfo">
+				  <div class="perinfo_t">{{item.title}}</div>
+				  <div class="perinfo_b">用户数 {{item.userCount}}人</div>
+				</div>
+			  </div>
+			  <div class="lef_area_bom" :style="item.lefbomSty" @click="expandfn(Number(item.id),'cen_area'+item.id,'rig_area'+item.id,item)">
+				<span>{{computedText(item.id)}}</span>
+				<i v-if="computedText(item.id) == '收起动线详情'" class="iconfont iconup" :class="[(item.id == '5' || item.id == '6')? 'originClass': 'blueClass']"></i>
+				<i v-else class="iconfont icondown" :class="[(item.id == '5' || item.id == '6')? 'originClass': 'blueClass']"></i>
+			  </div>
+			</div>
+			<div class="cen_area" :ref="'cen_area'+item.id">
+			  <img v-if="computedText(item.id) == '收起动线详情'" :src="item.infoUrlDetail" alt="" srcset="" class="cen_areaImg">
+			  <img v-else :src="item.infoUrl" alt="" srcset="" class="cen_areaImg">
+			</div>
+			<div class="rig_area rig_area1" :ref="'rig_area'+item.id" :class="{'rigActive':item.id==1}">
+			  <div class="rig_area_lef">
+				<div class="gz_container" v-for="(item1,index) in item.mediaUrls" :key="index">
+				  <div class="yl_lef" :style="item1.bgcolor"></div>
+				  <div class="yl_rig">{{item1.til}}</div>
+				</div>
+			  </div>
+			  <div class="rig_area_rig">
+				<div class="rig_area_til">偏好媒介</div>
+				<div class="rig_area_icon">
+				  <img v-for="(item2,index) in item.mediaTypes" :src="item2" :key="index" alt="" class="bqimg">
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <vDxitem v-if="ifShowComfn(ifShowDx1 && item.id == '1')" :parm="item" :key="item.id"></vDxitem>
+		  <vDxitem1 v-else-if="ifShowComfn(ifShowDx2 && item.id == '2')" :parm="item" :key="item.id"></vDxitem1>
+		  <vDxitem1 v-else-if="ifShowComfn(ifShowDx3 && item.id == '3')" :parm="item" :key="item.id"></vDxitem1>
+		  <vDxitem1 v-else-if="ifShowComfn(ifShowDx4 && item.id == '4')" :parm="item" :key="item.id"></vDxitem1>
+		  <vDxitem1 v-else-if="ifShowComfn(ifShowDx5 && item.id == '5')" :parm="item" :key="item.id"></vDxitem1>
+		  <vDxitem1 v-else-if="ifShowComfn(ifShowDx6 && item.id == '6')" :parm="item" :key="item.id"></vDxitem1>
+		</div>
+		</div>
+		<!--触达用户媒介-->
+		<!-- <chuDa></chuDa> -->
+		<div class="top_title_container top_title_container_margin_top">
+			<div class="left_text">
+				<div class="left_title_text">
+					<span>用户分群详情</span>
+				</div>
+				<div class="left_desc_text">基于用户分群数据，系统智能生成的用户基础画像数据，行为分析数据以及心智分析数据。</div>
+			</div>
+			<div class="right_select">
+				<div class="select-btn" @click="toComparison"><i class="iconfont icontianjia"></i>用户群对比</div>
+		<!--			    <Select class="select" value="北京上班族">-->
+		<!--				    <Option value="北京上班族">北京上班族</Option>-->
+		<!--			    </Select>-->
+			</div>
+		</div>
 		<Tab :tab-list="['基础画像','行为分析','心智分析','生命周期分析']" @change="changeTab"></Tab>
 		<!--目标用户群-->
-	    <div class="da_container" v-if="tabActive == 1">
-		    <div class="jichuhuax_area_container" id="jichuhuax_area_container">
-<!--			    <div class="jichuhuax_area_til">基础画像</div>-->
-			    <vTabCard :tabData="jchxData"></vTabCard>
-			    <div class="jichuhuax_echarts_container">
+		<div class="da_container" v-if="tabActive == 1">
+			<div class="jichuhuax_area_container" id="jichuhuax_area_container">
+		<!--			    <div class="jichuhuax_area_til">基础画像</div>-->
+				<vTabCard :tabData="jchxData"></vTabCard>
+				<div class="jichuhuax_echarts_container">
 
-				    <div class="jichuhuax_echarts_item">
-					    <div class="jichuhuax_echarts_item_title">
-						    <div class="jichuhuax_echarts_item_title_lef">
-							    <div class="nljg">年龄结构</div>
-							    <div class="range_titme">1-4当周</div>
-							    <div class="range_data">
-								    <div class="range_data_left">
-									    <span>682</span>人
-								    </div>
-								    <div class="range_data_right">
-									    合计<span>7557</span>人
-								    </div>
-							    </div>
-							    <div class="range_data1">
-								    <div class="range_data_left">
-									    <div class="range_data_box1">
-										    环比
-										    <div class="pic">
-											    <img src="../../assets/img/yhhx/jiantou.png" alt="">
-										    </div>
-										    <span>1.47%</span>
-									    </div>
-									    <div class="range_data_box1">
-										    同比
-										    <div class="pic">
-											    <img src="../../assets/img/yhhx/jiantou.png" alt="">
-										    </div>
-										    <span>4.47%</span>
-									    </div>
-								    </div>
-								    <div class="range_data_right">
-									    均值<span>839.67</span>人
-								    </div>
-							    </div>
-						    </div>
-						    <div class="jichuhuax_echarts_item_title_rig">
-							    <img :src="threeP" class="threeP" />
-						    </div>
-					    </div>
-					    <div class="jichuhuax_echarts_item_content">
-						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts>
-					    </div>
-				    </div>
+					<div class="jichuhuax_echarts_item">
+						<div class="jichuhuax_echarts_item_title">
+							<div class="jichuhuax_echarts_item_title_lef">
+								<div class="nljg">年龄结构</div>
+								<div class="range_titme">1-4当周</div>
+								<div class="range_data">
+									<div class="range_data_left">
+										<span>682</span>人
+									</div>
+									<div class="range_data_right">
+										合计<span>7557</span>人
+									</div>
+								</div>
+								<div class="range_data1">
+									<div class="range_data_left">
+										<div class="range_data_box1">
+											环比
+											<div class="pic">
+												<img src="../../assets/img/yhhx/jiantou.png" alt="">
+											</div>
+											<span>1.47%</span>
+										</div>
+										<div class="range_data_box1">
+											同比
+											<div class="pic">
+												<img src="../../assets/img/yhhx/jiantou.png" alt="">
+											</div>
+											<span>4.47%</span>
+										</div>
+									</div>
+									<div class="range_data_right">
+										均值<span>839.67</span>人
+									</div>
+								</div>
+							</div>
+							<div class="jichuhuax_echarts_item_title_rig">
+								<img :src="threeP" class="threeP" />
+							</div>
+						</div>
+						<div class="jichuhuax_echarts_item_content">
+							<PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box1Data"></PieEcharts>
+						</div>
+					</div>
 
-				    <div class="jichuhuax_echarts_item">
-					    <div class="jichuhuax_echarts_item_title">
-						    <div class="jichuhuax_echarts_item_title_lef">
-							    <div class="nljg">收入结构</div>
-							    <div class="range_titme">1-4当周</div>
-							    <div class="range_data">
-								    <div class="range_data_left">
-									    <span>782</span>人
-								    </div>
-								    <div class="range_data_right">
-									    合计<span>3557</span>人
-								    </div>
-							    </div>
-							    <div class="range_data1">
-								    <div class="range_data_left">
-									    <div class="range_data_box1">
-										    环比
-										    <div class="pic">
-											    <img src="../../assets/img/yhhx/jiantou.png" alt="">
-										    </div>
-										    <span>3.47%</span>
-									    </div>
-									    <div class="range_data_box1">
-										    同比
-										    <div class="pic">
-											    <img src="../../assets/img/yhhx/jiantou.png" alt="">
-										    </div>
-										    <span>8.47%</span>
-									    </div>
-								    </div>
-								    <div class="range_data_right">
-									    均值<span>139.67</span>人
-								    </div>
-							    </div>
-						    </div>
-						    <div class="jichuhuax_echarts_item_title_rig">
-							    <img :src="threeP" class="threeP">
-						    </div>
-					    </div>
-					    <div class="jichuhuax_echarts_item_content">
-						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box2Data"></PieEcharts>
-					    </div>
-				    </div>
+					<div class="jichuhuax_echarts_item">
+						<div class="jichuhuax_echarts_item_title">
+							<div class="jichuhuax_echarts_item_title_lef">
+								<div class="nljg">收入结构</div>
+								<div class="range_titme">1-4当周</div>
+								<div class="range_data">
+									<div class="range_data_left">
+										<span>782</span>人
+									</div>
+									<div class="range_data_right">
+										合计<span>3557</span>人
+									</div>
+								</div>
+								<div class="range_data1">
+									<div class="range_data_left">
+										<div class="range_data_box1">
+											环比
+											<div class="pic">
+												<img src="../../assets/img/yhhx/jiantou.png" alt="">
+											</div>
+											<span>3.47%</span>
+										</div>
+										<div class="range_data_box1">
+											同比
+											<div class="pic">
+												<img src="../../assets/img/yhhx/jiantou.png" alt="">
+											</div>
+											<span>8.47%</span>
+										</div>
+									</div>
+									<div class="range_data_right">
+										均值<span>139.67</span>人
+									</div>
+								</div>
+							</div>
+							<div class="jichuhuax_echarts_item_title_rig">
+								<img :src="threeP" class="threeP">
+							</div>
+						</div>
+						<div class="jichuhuax_echarts_item_content">
+							<PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box2Data"></PieEcharts>
+						</div>
+					</div>
 
-				    <div class="jichuhuax_echarts_item">
-					    <div class="jichuhuax_echarts_item_title">
-						    <div class="jichuhuax_echarts_item_title_lef">
-							    <div class="nljg">职业结构</div>
-							    <div class="range_titme">2020.12.01-2020.12.3</div>
-						    </div>
-						    <div class="jichuhuax_echarts_item_title_rig">
-							    <img :src="threeP" class="threeP">
-						    </div>
-					    </div>
-					    <div class="jichuhuax_echarts_item_content">
-						    <cLine id="box58" :colorList="$lxjData.colorList" :myData="$lxjData.box58Data"></cLine>
-					    </div>
-				    </div>
+					<div class="jichuhuax_echarts_item">
+						<div class="jichuhuax_echarts_item_title">
+							<div class="jichuhuax_echarts_item_title_lef">
+								<div class="nljg">职业结构</div>
+								<div class="range_titme">2020.12.01-2020.12.3</div>
+							</div>
+							<div class="jichuhuax_echarts_item_title_rig">
+								<img :src="threeP" class="threeP">
+							</div>
+						</div>
+						<div class="jichuhuax_echarts_item_content">
+							<cLine id="box58" :colorList="$lxjData.colorList" :myData="$lxjData.box58Data"></cLine>
+						</div>
+					</div>
 
-				    <div class="jichuhuax_echarts_item">
-					    <div class="jichuhuax_echarts_item_title">
-						    <div class="jichuhuax_echarts_item_title_lef">
-							    <div class="nljg">行业结构</div>
-							    <div class="range_titme">2020.12.01-2020.12.3</div>
-						    </div>
-						    <div class="jichuhuax_echarts_item_title_rig">
-							    <img :src="threeP" class="threeP">
-						    </div>
-					    </div>
-					    <div class="jichuhuax_echarts_item_content">
-						    <barC id="box7" :colorList="$lxjData.colorList" :myData="$lxjData.box7Data"></barC>
-					    </div>
-				    </div>
+					<div class="jichuhuax_echarts_item">
+						<div class="jichuhuax_echarts_item_title">
+							<div class="jichuhuax_echarts_item_title_lef">
+								<div class="nljg">行业结构</div>
+								<div class="range_titme">2020.12.01-2020.12.3</div>
+							</div>
+							<div class="jichuhuax_echarts_item_title_rig">
+								<img :src="threeP" class="threeP">
+							</div>
+						</div>
+						<div class="jichuhuax_echarts_item_content">
+							<barC id="box7" :colorList="$lxjData.colorList" :myData="$lxjData.box7Data"></barC>
+						</div>
+					</div>
 
-				    <div class="jichuhuax_echarts_item">
-					    <div class="jichuhuax_echarts_item_title">
-						    <div class="jichuhuax_echarts_item_title_lef">
-							    <div class="nljg">教育背景结构</div>
-							    <div class="range_titme">2020.12.01-2020.12.3</div>
-						    </div>
-						    <div class="jichuhuax_echarts_item_title_rig">
-							    <img :src="threeP" class="threeP">
-						    </div>
-					    </div>
-					    <div class="jichuhuax_echarts_item_content">
-						    <barEcharts id="box1" :colorList="$lxjData.colorList" :myData="$lxjData.box1Data"></barEcharts>
-					    </div>
-				    </div>
+					<div class="jichuhuax_echarts_item">
+						<div class="jichuhuax_echarts_item_title">
+							<div class="jichuhuax_echarts_item_title_lef">
+								<div class="nljg">教育背景结构</div>
+								<div class="range_titme">2020.12.01-2020.12.3</div>
+							</div>
+							<div class="jichuhuax_echarts_item_title_rig">
+								<img :src="threeP" class="threeP">
+							</div>
+						</div>
+						<div class="jichuhuax_echarts_item_content">
+							<barEcharts id="box1" :colorList="$lxjData.colorList" :myData="$lxjData.box1Data"></barEcharts>
+						</div>
+					</div>
 
-				    <div class="jichuhuax_echarts_item">
-					    <div class="jichuhuax_echarts_item_title">
-						    <div class="jichuhuax_echarts_item_title_lef">
-							    <div class="nljg">性别结构</div>
-							    <div class="range_titme">2020.12.01-2020.12.3</div>
-						    </div>
-						    <div class="jichuhuax_echarts_item_title_rig">
-							    <img :src="threeP" class="threeP">
-						    </div>
-					    </div>
-					    <div class="jichuhuax_echarts_item_content">
-						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieEcharts>
-					    </div>
-				    </div>
+					<div class="jichuhuax_echarts_item">
+						<div class="jichuhuax_echarts_item_title">
+							<div class="jichuhuax_echarts_item_title_lef">
+								<div class="nljg">性别结构</div>
+								<div class="range_titme">2020.12.01-2020.12.3</div>
+							</div>
+							<div class="jichuhuax_echarts_item_title_rig">
+								<img :src="threeP" class="threeP">
+							</div>
+						</div>
+						<div class="jichuhuax_echarts_item_content">
+							<PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box5Data"></PieEcharts>
+						</div>
+					</div>
 
-				    <div class="jichuhuax_echarts_item">
-					    <div class="jichuhuax_echarts_item_title">
-						    <div class="jichuhuax_echarts_item_title_lef">
-							    <div class="nljg">主要出行方式</div>
-							    <div class="range_titme">2020.12.01-2020.12.3</div>
-						    </div>
-						    <div class="jichuhuax_echarts_item_title_rig">
-							    <img :src="threeP" class="threeP">
-						    </div>
-					    </div>
-					    <div class="jichuhuax_echarts_item_content">
-						    <barEcharts id="box11" :colorList="$lxjData.colorList" :myData="$lxjData.box11Data"></barEcharts>
-					    </div>
-				    </div>
+					<div class="jichuhuax_echarts_item">
+						<div class="jichuhuax_echarts_item_title">
+							<div class="jichuhuax_echarts_item_title_lef">
+								<div class="nljg">主要出行方式</div>
+								<div class="range_titme">2020.12.01-2020.12.3</div>
+							</div>
+							<div class="jichuhuax_echarts_item_title_rig">
+								<img :src="threeP" class="threeP">
+							</div>
+						</div>
+						<div class="jichuhuax_echarts_item_content">
+							<barEcharts id="box11" :colorList="$lxjData.colorList" :myData="$lxjData.box11Data"></barEcharts>
+						</div>
+					</div>
 
-				    <div class="jichuhuax_echarts_item">
-					    <div class="jichuhuax_echarts_item_title">
-						    <div class="jichuhuax_echarts_item_title_lef">
-							    <div class="nljg">户籍籍贯结构</div>
-							    <div class="range_titme">2020.12.01-2020.12.3</div>
-						    </div>
-						    <div class="jichuhuax_echarts_item_title_rig">
-							    <img :src="threeP" class="threeP">
-						    </div>
-					    </div>
-					    <div class="jichuhuax_echarts_item_content">
-						    <barEcharts id="box12" :colorList="$lxjData.colorList" :myData="$lxjData.box12Data"></barEcharts>
-					    </div>
-				    </div>
+					<div class="jichuhuax_echarts_item">
+						<div class="jichuhuax_echarts_item_title">
+							<div class="jichuhuax_echarts_item_title_lef">
+								<div class="nljg">户籍籍贯结构</div>
+								<div class="range_titme">2020.12.01-2020.12.3</div>
+							</div>
+							<div class="jichuhuax_echarts_item_title_rig">
+								<img :src="threeP" class="threeP">
+							</div>
+						</div>
+						<div class="jichuhuax_echarts_item_content">
+							<barEcharts id="box12" :colorList="$lxjData.colorList" :myData="$lxjData.box12Data"></barEcharts>
+						</div>
+					</div>
 
-				    <div class="jichuhuax_echarts_item">
-					    <div class="jichuhuax_echarts_item_title">
-						    <div class="jichuhuax_echarts_item_title_lef">
-							    <div class="nljg">婚育状态结构</div>
-							    <div class="range_titme">2020.12.01-2020.12.3</div>
-						    </div>
-						    <div class="jichuhuax_echarts_item_title_rig">
-							    <img :src="threeP" class="threeP">
-						    </div>
-					    </div>
-					    <div class="jichuhuax_echarts_item_content">
-						    <barEcharts id="box13" :colorList="$lxjData.colorList" :myData="$lxjData.box13Data"></barEcharts>
-					    </div>
-				    </div>
+					<div class="jichuhuax_echarts_item">
+						<div class="jichuhuax_echarts_item_title">
+							<div class="jichuhuax_echarts_item_title_lef">
+								<div class="nljg">婚育状态结构</div>
+								<div class="range_titme">2020.12.01-2020.12.3</div>
+							</div>
+							<div class="jichuhuax_echarts_item_title_rig">
+								<img :src="threeP" class="threeP">
+							</div>
+						</div>
+						<div class="jichuhuax_echarts_item_content">
+							<barEcharts id="box13" :colorList="$lxjData.colorList" :myData="$lxjData.box13Data"></barEcharts>
+						</div>
+					</div>
 
-				    <div class="jichuhuax_echarts_item">
-					    <div class="jichuhuax_echarts_item_title">
-						    <div class="jichuhuax_echarts_item_title_lef">
-							    <div class="nljg">消费能力结构</div>
-							    <div class="range_titme">2020.12.01-2020.12.3</div>
-						    </div>
-						    <div class="jichuhuax_echarts_item_title_rig">
-							    <img :src="threeP" class="threeP">
-						    </div>
-					    </div>
-					    <div class="jichuhuax_echarts_item_content">
-						    <barC id="box71" :colorList="$lxjData.colorList" :myData="$lxjData.box71Data"></barC>
-					    </div>
-				    </div>
+					<div class="jichuhuax_echarts_item">
+						<div class="jichuhuax_echarts_item_title">
+							<div class="jichuhuax_echarts_item_title_lef">
+								<div class="nljg">消费能力结构</div>
+								<div class="range_titme">2020.12.01-2020.12.3</div>
+							</div>
+							<div class="jichuhuax_echarts_item_title_rig">
+								<img :src="threeP" class="threeP">
+							</div>
+						</div>
+						<div class="jichuhuax_echarts_item_content">
+							<barC id="box71" :colorList="$lxjData.colorList" :myData="$lxjData.box71Data"></barC>
+						</div>
+					</div>
 
-				    <div class="jichuhuax_echarts_item">
-					    <div class="jichuhuax_echarts_item_title">
-						    <div class="jichuhuax_echarts_item_title_lef">
-							    <div class="nljg">车辆保有结构</div>
-							    <div class="range_titme">2020.12.01-2020.12.3</div>
-						    </div>
-						    <div class="jichuhuax_echarts_item_title_rig">
-							    <img :src="threeP" class="threeP">
-						    </div>
-					    </div>
-					    <div class="jichuhuax_echarts_item_content">
-						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box4Data"></PieEcharts>
-					    </div>
-				    </div>
+					<div class="jichuhuax_echarts_item">
+						<div class="jichuhuax_echarts_item_title">
+							<div class="jichuhuax_echarts_item_title_lef">
+								<div class="nljg">车辆保有结构</div>
+								<div class="range_titme">2020.12.01-2020.12.3</div>
+							</div>
+							<div class="jichuhuax_echarts_item_title_rig">
+								<img :src="threeP" class="threeP">
+							</div>
+						</div>
+						<div class="jichuhuax_echarts_item_content">
+							<PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box4Data"></PieEcharts>
+						</div>
+					</div>
 
-				    <div class="jichuhuax_echarts_item">
-					    <div class="jichuhuax_echarts_item_title">
-						    <div class="jichuhuax_echarts_item_title_lef">
-							    <div class="nljg">居住地区</div>
-							    <div class="range_titme">2020.12.01-2020.12.3</div>
-						    </div>
-						    <div class="jichuhuax_echarts_item_title_rig">
-							    <img :src="threeP" class="threeP">
-						    </div>
-					    </div>
-					    <div class="jichuhuax_echarts_item_content">
-						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box3Data"></PieEcharts>
-					    </div>
-				    </div>
+					<div class="jichuhuax_echarts_item">
+						<div class="jichuhuax_echarts_item_title">
+							<div class="jichuhuax_echarts_item_title_lef">
+								<div class="nljg">居住地区</div>
+								<div class="range_titme">2020.12.01-2020.12.3</div>
+							</div>
+							<div class="jichuhuax_echarts_item_title_rig">
+								<img :src="threeP" class="threeP">
+							</div>
+						</div>
+						<div class="jichuhuax_echarts_item_content">
+							<PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box3Data"></PieEcharts>
+						</div>
+					</div>
 
-			    </div>
-		    </div>
-	    </div>
-	    <div class="da_container" v-if="tabActive == 2">
-		    <div class="xwfx_area_container" id="xwfx_area_container">
-<!--			    <div class="xwfx_area_til">-->
-<!--				    <span>行为分析</span>-->
-				    <!--<Poptip popper-class="saas-poptip" trigger="hover" placement="right">-->
-					    <!--&lt;!&ndash; <i class="iconfont iconguanyuline1 tip-icon"></i> &ndash;&gt;-->
-					    <!--<img class="gif" src="../../assets/img/user/tip.gif" alt="">-->
-					    <!--<div slot="content">-->
-						    <!--<p><span>基于群体智能的客户行为分析算法：</span>算法主要思路是首先将客户的消费模式作为平面上的一个点随机分布于一个平面区域内 ; 然后测量当前个体对象在局部环境的群体相似度 ,并通过概率转换函数得到拾起或放下对象的概率 ,以这个概率行动 ,经过群体大量的相互作用 ,最终得到若干聚类中心 ;最后 ,在平面区域内采用递归算法收集聚类结果 ,获得不同消费特征的客户群体</p>-->
-						    <!--<p>-->
-							    <!--<span>群体相似度的基本测量公式为:</span>-->
-							    <!--<img class="small" src="../../assets/img/yhhx/tip1.png"/>-->
-						    <!--</p>-->
-						    <!--<p>其中 Neigh ( r) 表示局部环境 ,在两维网格环境中通常表示以 r 为半径的圆形区域. d ( oi , oj ) 表示对象属性空间里的对象 o i与 o j之间的距离 , 常用方法是 ij 欧氏距离和街市距离等.α定义为群体相似系数. 它是群体相似度测量的关键系数 , 它直接影响聚类中心的个数 ,同时也影响聚类算法的收敛速度. </p>-->
-						    <!--<p><span>算法的基本过程描述如下:</span></p>-->
-						    <!--<p>1.程序初始化,初始化α, number,k,R,size,最大循环次数n等参数,随机赋给每一个模式一对(x,y)坐标 , 赋初始模式值 , 初始状态为无负载 ;</p>-->
-						    <!--<p>2.for i=1,2,⋯,n;</p>-->
-						    <!--<p>（1）对于一组中的每一只个体 ,以R为观察半径 ,利用式(1)计算群体相似度；</p>-->
-						    <!--<p>（2）以一定的步长调整α;</p>-->
-						    <!--<p>3.聚类编号serial- no初始为0;</p>-->
-						    <!--<p>4.在聚类结果平面上,选定一个未标记聚类编号的模式 p为种子;</p>-->
-						    <!--<p>5.用同一编号递归标记所有与模式 p 相距小于 dist的模式 , 即收集所有属于该聚类中心的模式。</p>-->
-					    <!--</div>-->
-				    <!--</Poptip>-->
-<!--			    </div>-->
-			    <vTabCard :tabData="xwfxData"></vTabCard>
-			    <!--          <div class="ditu_area">-->
-			    <!--            <video-->
-			    <!--              class="player"-->
-			    <!--              width="100%"-->
-			    <!--              height="100%"-->
-			    <!--              autoplay-->
-			    <!--              loop-->
-			    <!--              muted-->
-			    <!--              src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"-->
-			    <!--            ></video>-->
-			    <!--          </div>-->
-<!--			    <div class="xwfx_area_til" style="margin-bottom:12px;">不同时段APP使用情况</div>-->
-			    <div class="use_app_area">
-				    <img :src="useApp" style="width:100%;" />
-			    </div>
-			    <div class="use_echart_item">
-				    <div class="use_echart_title">不同性别APP内容偏好</div>
-				    <div class="use_echart_cont">
-					    <lineM id="box6" :colorList="$lxjData.colorList" :myData="$lxjData.box69Data"></lineM>
-				    </div>
-			    </div>
-			    <div class="use_echart_item">
-				    <div class="use_echart_title">不同年龄APP内容偏好</div>
-				    <div class="use_echart_cont">
-					    <barM id="box3" :colorList="$lxjData.colorList" :myData="$lxjData.box3Data"></barM>
-				    </div>
-			    </div>
-			    <div class="use_echart_item1_container">
-				    <div class="use_echart_item1">
-					    <div class="use_echart_title">时间段内APP使用结构</div>
-					    <div class="use_echart_cont">
-						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box7Data"></PieEcharts>
-					    </div>
-				    </div>
-				    <div class="use_echart_item1">
-					    <div class="use_echart_title">APP内容偏好结构</div>
-					    <div class="use_echart_cont">
-						    <barLine id="box10" :colorList="$lxjData.colorList" :myData="$lxjData.box10Data" :option="{
-						    grid: {
-                  left: 19,
-                  right: 19,
-                  bottom: '60',
-                  top: '10%',
-                  containLabel: true,
-                  },
-                  legend: {
-                    bottom: 12,
-                  },
-                  }"></barLine>
-					    </div>
-				    </div>
-				    <div class="use_echart_item1">
-					    <div class="use_echart_title">用户行为分布结构</div>
-					    <div class="use_echart_cont">
-						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box8Data"></PieEcharts>
-					    </div>
-				    </div>
-				    <div class="use_echart_item1">
-					    <div class="use_echart_title">用户行为消费结构</div>
-					    <div class="use_echart_cont">
-						    <cLine id="box52" :colorList="$lxjData.colorList" :myData="$lxjData.box52Data"></cLine>
-					    </div>
-				    </div>
-			    </div>
-		    </div>
-	    </div>
-	    <div class="da_container" v-if="tabActive == 3">
-		    <div class="xzfx_area_container" id="xzfx_area_container">
-<!--			    <div class="xzfx_area_title">-->
-<!--				    <span>心智分析</span>-->
-				    <!--<Poptip popper-class="saas-poptip" trigger="hover" placement="right">-->
-					    <!--&lt;!&ndash; <i class="iconfont iconguanyuline1 tip-icon"></i> &ndash;&gt;-->
-					    <!--<img class="gif" src="../../assets/img/user/tip.gif" alt="">-->
-					    <!--<div slot="content">-->
-						    <!--<p><span>心理模型</span>在人机交互和交互设计中起着重要的作用。它们与用户感知周围世界的方式有关，并且基于信念，而不是一个事实概念。但是，如果你能理解用户的心理模型，你就可以在设计中模拟这些模型，使它们更加实用和直观。 心理模型是信念的人工制品。它们是用户对任何给定系统或交互所持有的信念。在大多数情况下，信念在一定程度上会与现实生活模式相似。这一点很重要，因为用户会根据他们的心理模型来计划和预测系统内未来的行为。</p>-->
-						    <!--<p><span>客户需求智能化处理</span></p>-->
-						    <!--<p>设不完备客户需求信息系统是需求决策系统，其中 是非空的客户需求信息集，表示客户需求属性的非空有限集，表示客户需求映射决策的非空有限集，为特征属性值域，f是U和V关系集，也称为需求决策规则集。其中，f(ui,pj)=vij表示某个用户需求ui在需求特征属性pj下的属性量值是vij。令Vi(xj)是对象xj在条件属性Ci上的取值。当∀Ci( X j) = * 时，表明I中含有缺失值。根据粗糙集理论，当不同客户对相同需求的选择一致时，则具有一定的概率选择其他不同的属性值。即当c(x,b)= * 时，使用需求映射系统中在属性集b下出现概率最高的属性值代替。若存在属性值出现概率最高的次数不唯一时，则选用其他属性中相同属性值最高的替代。</p>-->
-						    <!--<p>定义经扩充的可辨识矩阵M为:<img class="small" src="../../assets/img/yhhx/tip2.png"/></p>-->
-						    <!--<p>其中:M(i,j)是可辨识矩阵中第i行第j列元素，i,j=1,2,...,n ; *表示缺失值。</p>-->
-						    <!--<p>设MASi为对象xi的缺失属性集，即:<img class="small" src="../../assets/img/yhhx/tip3.png"/></p>-->
-						    <!--<p>设NSi为 xi的对象集:<img class="small" src="../../assets/img/yhhx/tip4.png"/></p>-->
-						    <!--<p>设MOS 为需求决策表S的缺失对象集，即:<img class="small" src="../../assets/img/yhhx/tip5.png"/></p>-->
-						    <!--<p>输入：不完备信息决策表 I *= (U* , C* UD) ;</p>-->
-						    <!--<p>输出：完备的信息决策表 Ir =(Ur,CrUD) 。</p>-->
-						    <!--<img src="../../assets/img/yhhx/tip6.png"/>-->
-					    <!--</div>-->
-				    <!--</Poptip>-->
-<!--			    </div>-->
-			    <vTabCard :tabData="xzfxData"></vTabCard>
-			    <div class="yhsj_echarts">
-				    <div class="yhsj_echarts_item_title">
-					    用户视觉心智动态捕捉
-				    </div>
-				    <div class="yhsj_echarts_item_content">
-					    <barLine id="box8" :colorList="$lxjData.colorList" :myData="$lxjData.box8Data"></barLine>
-				    </div>
-			    </div>
-			    <div class="xzsk_echarts">
-				    <div class="yhsj_echarts_item_title">
-					    心智时空曲线
-				    </div>
-				    <div class="yhsj_echarts_item_content">
-					    <lineAreaPieces1 id="box9" :colorList="$lxjData.colorList" ></lineAreaPieces1>
-				    </div>
-			    </div>
-			    <div class="xinzfb_container">
-				    <div class="xinzfb_container_lef">
-					    <div class="xinzfb_container_lef_tel">心智分布</div>
-					    <div class="xinzfb_container_lef_content">
-						    <PieEcharts7 :colorList="$fjData.colorList" :myData="$fjData.box6Data"></PieEcharts7>
-					    </div>
-				    </div>
-				    <div class="xinzfb_container_rig">
-					    <div class="xinzfb_container_rig_tel">
-						    <span>
-							    心智倾向
-						    </span>
-							    <div  class="custom_poptip_box">
-							      <span class="custom_poptip_result" @click="customShow=true">{{custom}} <i :class="['iconfont', customShow ? 'iconup' : 'icondown']"></i></span>
-								    <div :class="['custom_poptip_content', { hidden: !customShow }]">
-									    <div :class="['item', { select: custom === '所有'}]" @click="customChange('所有')">所有</div>
-									    <div :class="['item', { select: custom === '汽车'}]" @click="customChange('汽车')">汽车</div>
-									    <div :class="['item', { select: custom === '餐饮'}]" @click="customChange('餐饮')">餐饮</div>
-									    <div :class="['item', { select: custom === '生活配套'}]" @click="customChange('生活配套')">生活配套</div>
-									    <div :class="['item', { select: custom === '服饰'}]" @click="customChange('服饰')">服饰</div>
-									    <div :class="['item', { select: custom === '美妆护肤'}]" @click="customChange('美妆护肤')">美妆护肤</div>
-								    </div>
-						      </div>
-						    </div>
-<!--					    <div class="xinzfb_container_lef_content">-->
-<!--						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box7Data"></PieEcharts>-->
-<!--					    </div>-->
-              <div class="xinzfb_container_lef_content">
-                <div class="xinzfb_container_lef_content_chart">
-                  <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box43Data"></PieEcharts>
-                </div>
-                <div class="xinzfb_container_lef_content_chart_match">
-                  <div class="xinzfb_container_lef_content_chart_match_item">
-                    <MatchDegree title="品牌匹配度" :data="matchDegree1"/>
-                  </div>
-                  <div class="xinzfb_container_lef_content_chart_match_item">
-                    <MatchDegree title="渠道匹配度" :data="matchDegree2" colourfol="green"/>
-                  </div>
-                </div>
-              </div>
-				    </div>
-			    </div>
-			    <div class="ppxz_container">
-				    <div class="ppxz_title">品牌心智</div>
-				    <div class="ppxz_title_desc">分心品牌当前受众的不同阶段的数据</div>
-            <div class="bottom">
-              <div class="pricle">
-                <Card :title="'认知'" :colourfol="'blue'" :number="'29385'" :data="[-87,9481]"></Card>
-              </div>
-              <div class="month">
-                <Card :title="'兴趣'" :colourfol="'purple'" :number="'21326'" :data="[-94,8781]"></Card>
-              </div>
-              <div class="view">
-                <Card :title="'购买'" :colourfol="'pink'" :number="'28532'" :data="[-78,8481]"></Card>
-              </div>
-              <div class="target">
-                <Card :title="'忠诚'" :colourfol="'orange'" :number="'25938'" :data="[-88,8941]"></Card>
-              </div>
-            </div>
-				    <div class="xinzfb_container_lef_content">
-					    <lineS id="box57" :colorList="$lxjData.colorList" :myData="$lxjData.box57Data"></lineS>
-				    </div>
-			    </div>
-			    <div class="xzcb_container">
-				    <div class="ppxz_title">心智传播网络</div>
-				    <div class="ppxz_title_desc">分析传播途径</div>
-				    <div class="xinzfb_container_lef_content">
-              <div v-for="(it, i) in circleData" :key="i"  class="xinzfb_container_lef_content_item">
-                <i-circle :percent="80" :size="getSize()" :stroke-color="it.color">
-                  <span class="demo-Circle-inner" style="font-size:24px">{{it.value}}%</span>
-                </i-circle>
-                <div class="name">{{it.name}}</div>
-              </div>
-				    </div>
-            <div class="xinzfb_container_lef_content_desc">%的计算公式是根据市场当中品牌受众用户对于品牌的喜好度，忠诚度等多维度数据综合计算而成</div>
-			    </div>
-		    </div>
-	    </div>
-	    <div class="da_container" v-if="tabActive == 4">
-		    <div class="smzqfx_area_container" id="smzqfx_area_container">
-<!--			    <div class="smzqfx_title" >生命周期分析</div>-->
-			    <vTabCard :tabData="smzqfxData"></vTabCard>
-			    <div class="xfsmlcpg_container">
-				    <div class="xfsmlcpg_title">消费生命旅程评估</div>
-				    <div class="xinzfb_container_lef_content1">
-					    <funnel id="box111" :colorList="$lxjData.colorList1" :myData="$lxjData.box111Data"></funnel>
-				    </div>
-			    </div>
-			    <div class="xfjzg_container">
-				    <div class="xfjzg_container_lef">
-					    <div class="jichuhuax_echarts_item_title">
-						    <div class="jichuhuax_echarts_item_title_lef">
-							    <div class="nljg">消费者价值评估</div>
-							    <div class="range_titme">2020.12.01-2020.12.31</div>
-						    </div>
-						    <div class="jichuhuax_echarts_item_title_rig">
-							    <img :src="threeP" class="threeP">
-						    </div>
-					    </div>
-					    <div class="jichuhuax_echarts_item_content">
-						    <lineSp id="box112" :colorList="$lxjData.colorList"></lineSp>
-					    </div>
-				    </div>
-				    <div class="xfjzg_container_rig">
-					    <div class="jichuhuax_echarts_item_title">
-						    <div class="jichuhuax_echarts_item_title_lef">
-							    <div class="nljg">加之贡献度（按标签）</div>
-							    <div class="range_titme">2020.12.01-2020.12.31</div>
-						    </div>
-						    <div class="jichuhuax_echarts_item_title_rig">
-							    <img :src="threeP" class="threeP">
-						    </div>
-					    </div>
-					    <div class="jichuhuax_echarts_item_content">
-						    <cLine id="box53" :colorList="$lxjData.colorList" :myData="$lxjData.box52Data"></cLine>
-					    </div>
-				    </div>
-			    </div>
-			    <div class="xfzsxjcfx_container">
-				    <div class="xfzsxjcfx_til">消费者时序行为决策分析</div>
-				    <div class="xfzsxjcfx_ech">
-					    <lineAreaPieces2 id="box91" :colorList="$lxjData.colorList" ></lineAreaPieces2>
-				    </div>
-			    </div>
-			    <div class="xfzsxjcfx_container">
-				    <div class="xfzsxjcfx_til">消费者行为决策预测</div>
-				    <div class="xfzsxjcfx_ech">
-					    <lineAreaPieces id="box92" :colorList="$lxjData.colorList" ></lineAreaPieces>
-				    </div>
-			    </div>
-		    </div>
-	    </div>
+				</div>
+			</div>
+		</div>
+		<div class="da_container" v-if="tabActive == 2">
+			<div class="xwfx_area_container" id="xwfx_area_container">
+		<!--			    <div class="xwfx_area_til">-->
+		<!--				    <span>行为分析</span>-->
+					<!--<Poptip popper-class="saas-poptip" trigger="hover" placement="right">-->
+						<!--&lt;!&ndash; <i class="iconfont iconguanyuline1 tip-icon"></i> &ndash;&gt;-->
+						<!--<img class="gif" src="../../assets/img/user/tip.gif" alt="">-->
+						<!--<div slot="content">-->
+							<!--<p><span>基于群体智能的客户行为分析算法：</span>算法主要思路是首先将客户的消费模式作为平面上的一个点随机分布于一个平面区域内 ; 然后测量当前个体对象在局部环境的群体相似度 ,并通过概率转换函数得到拾起或放下对象的概率 ,以这个概率行动 ,经过群体大量的相互作用 ,最终得到若干聚类中心 ;最后 ,在平面区域内采用递归算法收集聚类结果 ,获得不同消费特征的客户群体</p>-->
+							<!--<p>-->
+								<!--<span>群体相似度的基本测量公式为:</span>-->
+								<!--<img class="small" src="../../assets/img/yhhx/tip1.png"/>-->
+							<!--</p>-->
+							<!--<p>其中 Neigh ( r) 表示局部环境 ,在两维网格环境中通常表示以 r 为半径的圆形区域. d ( oi , oj ) 表示对象属性空间里的对象 o i与 o j之间的距离 , 常用方法是 ij 欧氏距离和街市距离等.α定义为群体相似系数. 它是群体相似度测量的关键系数 , 它直接影响聚类中心的个数 ,同时也影响聚类算法的收敛速度. </p>-->
+							<!--<p><span>算法的基本过程描述如下:</span></p>-->
+							<!--<p>1.程序初始化,初始化α, number,k,R,size,最大循环次数n等参数,随机赋给每一个模式一对(x,y)坐标 , 赋初始模式值 , 初始状态为无负载 ;</p>-->
+							<!--<p>2.for i=1,2,⋯,n;</p>-->
+							<!--<p>（1）对于一组中的每一只个体 ,以R为观察半径 ,利用式(1)计算群体相似度；</p>-->
+							<!--<p>（2）以一定的步长调整α;</p>-->
+							<!--<p>3.聚类编号serial- no初始为0;</p>-->
+							<!--<p>4.在聚类结果平面上,选定一个未标记聚类编号的模式 p为种子;</p>-->
+							<!--<p>5.用同一编号递归标记所有与模式 p 相距小于 dist的模式 , 即收集所有属于该聚类中心的模式。</p>-->
+						<!--</div>-->
+					<!--</Poptip>-->
+		<!--			    </div>-->
+				<vTabCard :tabData="xwfxData"></vTabCard>
+				<!--          <div class="ditu_area">-->
+				<!--            <video-->
+				<!--              class="player"-->
+				<!--              width="100%"-->
+				<!--              height="100%"-->
+				<!--              autoplay-->
+				<!--              loop-->
+				<!--              muted-->
+				<!--              src="https://yzkj-pro.oss-cn-beijing.aliyuncs.com/trafficflow.mp4"-->
+				<!--            ></video>-->
+				<!--          </div>-->
+		<!--			    <div class="xwfx_area_til" style="margin-bottom:12px;">不同时段APP使用情况</div>-->
+				<div class="use_app_area">
+					<img :src="useApp" style="width:100%;" />
+				</div>
+				<div class="use_echart_item">
+					<div class="use_echart_title">不同性别APP内容偏好</div>
+					<div class="use_echart_cont">
+						<lineM id="box6" :colorList="$lxjData.colorList" :myData="$lxjData.box69Data"></lineM>
+					</div>
+				</div>
+				<div class="use_echart_item">
+					<div class="use_echart_title">不同年龄APP内容偏好</div>
+					<div class="use_echart_cont">
+						<barM id="box3" :colorList="$lxjData.colorList" :myData="$lxjData.box3Data"></barM>
+					</div>
+				</div>
+				<div class="use_echart_item1_container">
+					<div class="use_echart_item1">
+						<div class="use_echart_title">时间段内APP使用结构</div>
+						<div class="use_echart_cont">
+							<PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box7Data"></PieEcharts>
+						</div>
+					</div>
+					<div class="use_echart_item1">
+						<div class="use_echart_title">APP内容偏好结构</div>
+						<div class="use_echart_cont">
+							<barLine id="box10" :colorList="$lxjData.colorList" :myData="$lxjData.box10Data" :option="{
+							grid: {
+				  left: 19,
+				  right: 19,
+				  bottom: '60',
+				  top: '10%',
+				  containLabel: true,
+				  },
+				  legend: {
+					bottom: 12,
+				  },
+				  }"></barLine>
+						</div>
+					</div>
+					<div class="use_echart_item1">
+						<div class="use_echart_title">用户行为分布结构</div>
+						<div class="use_echart_cont">
+							<PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box8Data"></PieEcharts>
+						</div>
+					</div>
+					<div class="use_echart_item1">
+						<div class="use_echart_title">用户行为消费结构</div>
+						<div class="use_echart_cont">
+							<cLine id="box52" :colorList="$lxjData.colorList" :myData="$lxjData.box52Data"></cLine>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="da_container" v-if="tabActive == 3">
+			<div class="xzfx_area_container" id="xzfx_area_container">
+		<!--			    <div class="xzfx_area_title">-->
+		<!--				    <span>心智分析</span>-->
+					<!--<Poptip popper-class="saas-poptip" trigger="hover" placement="right">-->
+						<!--&lt;!&ndash; <i class="iconfont iconguanyuline1 tip-icon"></i> &ndash;&gt;-->
+						<!--<img class="gif" src="../../assets/img/user/tip.gif" alt="">-->
+						<!--<div slot="content">-->
+							<!--<p><span>心理模型</span>在人机交互和交互设计中起着重要的作用。它们与用户感知周围世界的方式有关，并且基于信念，而不是一个事实概念。但是，如果你能理解用户的心理模型，你就可以在设计中模拟这些模型，使它们更加实用和直观。 心理模型是信念的人工制品。它们是用户对任何给定系统或交互所持有的信念。在大多数情况下，信念在一定程度上会与现实生活模式相似。这一点很重要，因为用户会根据他们的心理模型来计划和预测系统内未来的行为。</p>-->
+							<!--<p><span>客户需求智能化处理</span></p>-->
+							<!--<p>设不完备客户需求信息系统是需求决策系统，其中 是非空的客户需求信息集，表示客户需求属性的非空有限集，表示客户需求映射决策的非空有限集，为特征属性值域，f是U和V关系集，也称为需求决策规则集。其中，f(ui,pj)=vij表示某个用户需求ui在需求特征属性pj下的属性量值是vij。令Vi(xj)是对象xj在条件属性Ci上的取值。当∀Ci( X j) = * 时，表明I中含有缺失值。根据粗糙集理论，当不同客户对相同需求的选择一致时，则具有一定的概率选择其他不同的属性值。即当c(x,b)= * 时，使用需求映射系统中在属性集b下出现概率最高的属性值代替。若存在属性值出现概率最高的次数不唯一时，则选用其他属性中相同属性值最高的替代。</p>-->
+							<!--<p>定义经扩充的可辨识矩阵M为:<img class="small" src="../../assets/img/yhhx/tip2.png"/></p>-->
+							<!--<p>其中:M(i,j)是可辨识矩阵中第i行第j列元素，i,j=1,2,...,n ; *表示缺失值。</p>-->
+							<!--<p>设MASi为对象xi的缺失属性集，即:<img class="small" src="../../assets/img/yhhx/tip3.png"/></p>-->
+							<!--<p>设NSi为 xi的对象集:<img class="small" src="../../assets/img/yhhx/tip4.png"/></p>-->
+							<!--<p>设MOS 为需求决策表S的缺失对象集，即:<img class="small" src="../../assets/img/yhhx/tip5.png"/></p>-->
+							<!--<p>输入：不完备信息决策表 I *= (U* , C* UD) ;</p>-->
+							<!--<p>输出：完备的信息决策表 Ir =(Ur,CrUD) 。</p>-->
+							<!--<img src="../../assets/img/yhhx/tip6.png"/>-->
+						<!--</div>-->
+					<!--</Poptip>-->
+		<!--			    </div>-->
+				<vTabCard :tabData="xzfxData"></vTabCard>
+				<div class="yhsj_echarts">
+					<div class="yhsj_echarts_item_title">
+						用户视觉心智动态捕捉
+					</div>
+					<div class="yhsj_echarts_item_content">
+						<barLine id="box8" :colorList="$lxjData.colorList" :myData="$lxjData.box8Data"></barLine>
+					</div>
+				</div>
+				<div class="xzsk_echarts">
+					<div class="yhsj_echarts_item_title">
+						心智时空曲线
+					</div>
+					<div class="yhsj_echarts_item_content">
+						<lineAreaPieces1 id="box9" :colorList="$lxjData.colorList" ></lineAreaPieces1>
+					</div>
+				</div>
+				<div class="xinzfb_container">
+					<div class="xinzfb_container_lef">
+						<div class="xinzfb_container_lef_tel">心智分布</div>
+						<div class="xinzfb_container_lef_content">
+							<PieEcharts7 :colorList="$fjData.colorList" :myData="$fjData.box6Data"></PieEcharts7>
+						</div>
+					</div>
+					<div class="xinzfb_container_rig">
+						<div class="xinzfb_container_rig_tel">
+							<span>
+								心智倾向
+							</span>
+								<div  class="custom_poptip_box">
+								  <span class="custom_poptip_result" @click="customShow=true">{{custom}} <i :class="['iconfont', customShow ? 'iconup' : 'icondown']"></i></span>
+									<div :class="['custom_poptip_content', { hidden: !customShow }]">
+										<div :class="['item', { select: custom === '所有'}]" @click="customChange('所有')">所有</div>
+										<div :class="['item', { select: custom === '汽车'}]" @click="customChange('汽车')">汽车</div>
+										<div :class="['item', { select: custom === '餐饮'}]" @click="customChange('餐饮')">餐饮</div>
+										<div :class="['item', { select: custom === '生活配套'}]" @click="customChange('生活配套')">生活配套</div>
+										<div :class="['item', { select: custom === '服饰'}]" @click="customChange('服饰')">服饰</div>
+										<div :class="['item', { select: custom === '美妆护肤'}]" @click="customChange('美妆护肤')">美妆护肤</div>
+									</div>
+							  </div>
+							</div>
+		<!--					    <div class="xinzfb_container_lef_content">-->
+		<!--						    <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box7Data"></PieEcharts>-->
+		<!--					    </div>-->
+			  <div class="xinzfb_container_lef_content">
+				<div class="xinzfb_container_lef_content_chart">
+				  <PieEcharts :colorList="$fjData.colorList" :myData="$fjData.box43Data"></PieEcharts>
+				</div>
+				<div class="xinzfb_container_lef_content_chart_match">
+				  <div class="xinzfb_container_lef_content_chart_match_item">
+					<MatchDegree title="品牌匹配度" :data="matchDegree1"/>
+				  </div>
+				  <div class="xinzfb_container_lef_content_chart_match_item">
+					<MatchDegree title="渠道匹配度" :data="matchDegree2" colourfol="green"/>
+				  </div>
+				</div>
+			  </div>
+					</div>
+				</div>
+				<div class="ppxz_container">
+					<div class="ppxz_title">品牌心智</div>
+					<div class="ppxz_title_desc">分心品牌当前受众的不同阶段的数据</div>
+			<div class="bottom">
+			  <div class="pricle">
+				<Card :title="'认知'" :colourfol="'blue'" :number="'29385'" :data="[-87,9481]"></Card>
+			  </div>
+			  <div class="month">
+				<Card :title="'兴趣'" :colourfol="'purple'" :number="'21326'" :data="[-94,8781]"></Card>
+			  </div>
+			  <div class="view">
+				<Card :title="'购买'" :colourfol="'pink'" :number="'28532'" :data="[-78,8481]"></Card>
+			  </div>
+			  <div class="target">
+				<Card :title="'忠诚'" :colourfol="'orange'" :number="'25938'" :data="[-88,8941]"></Card>
+			  </div>
+			</div>
+					<div class="xinzfb_container_lef_content">
+						<lineS id="box57" :colorList="$lxjData.colorList" :myData="$lxjData.box57Data"></lineS>
+					</div>
+				</div>
+				<div class="xzcb_container">
+					<div class="ppxz_title">心智传播网络</div>
+					<div class="ppxz_title_desc">分析传播途径</div>
+					<div class="xinzfb_container_lef_content">
+			  <div v-for="(it, i) in circleData" :key="i"  class="xinzfb_container_lef_content_item">
+				<i-circle :percent="80" :size="getSize()" :stroke-color="it.color">
+				  <span class="demo-Circle-inner" style="font-size:24px">{{it.value}}%</span>
+				</i-circle>
+				<div class="name">{{it.name}}</div>
+			  </div>
+					</div>
+			<div class="xinzfb_container_lef_content_desc">%的计算公式是根据市场当中品牌受众用户对于品牌的喜好度，忠诚度等多维度数据综合计算而成</div>
+				</div>
+			</div>
+		</div>
+		<div class="da_container" v-if="tabActive == 4">
+			<div class="smzqfx_area_container" id="smzqfx_area_container">
+		<!--			    <div class="smzqfx_title" >生命周期分析</div>-->
+				<vTabCard :tabData="smzqfxData"></vTabCard>
+				<div class="xfsmlcpg_container">
+					<div class="xfsmlcpg_title">消费生命旅程评估</div>
+					<div class="xinzfb_container_lef_content1">
+						<funnel id="box111" :colorList="$lxjData.colorList1" :myData="$lxjData.box111Data"></funnel>
+					</div>
+				</div>
+				<div class="xfjzg_container">
+					<div class="xfjzg_container_lef">
+						<div class="jichuhuax_echarts_item_title">
+							<div class="jichuhuax_echarts_item_title_lef">
+								<div class="nljg">消费者价值评估</div>
+								<div class="range_titme">2020.12.01-2020.12.31</div>
+							</div>
+							<div class="jichuhuax_echarts_item_title_rig">
+								<img :src="threeP" class="threeP">
+							</div>
+						</div>
+						<div class="jichuhuax_echarts_item_content">
+							<lineSp id="box112" :colorList="$lxjData.colorList"></lineSp>
+						</div>
+					</div>
+					<div class="xfjzg_container_rig">
+						<div class="jichuhuax_echarts_item_title">
+							<div class="jichuhuax_echarts_item_title_lef">
+								<div class="nljg">加之贡献度（按标签）</div>
+								<div class="range_titme">2020.12.01-2020.12.31</div>
+							</div>
+							<div class="jichuhuax_echarts_item_title_rig">
+								<img :src="threeP" class="threeP">
+							</div>
+						</div>
+						<div class="jichuhuax_echarts_item_content">
+							<cLine id="box53" :colorList="$lxjData.colorList" :myData="$lxjData.box52Data"></cLine>
+						</div>
+					</div>
+				</div>
+				<div class="xfzsxjcfx_container">
+					<div class="xfzsxjcfx_til">消费者时序行为决策分析</div>
+					<div class="xfzsxjcfx_ech">
+						<lineAreaPieces2 id="box91" :colorList="$lxjData.colorList" ></lineAreaPieces2>
+					</div>
+				</div>
+				<div class="xfzsxjcfx_container">
+					<div class="xfzsxjcfx_til">消费者行为决策预测</div>
+					<div class="xfzsxjcfx_ech">
+						<lineAreaPieces id="box92" :colorList="$lxjData.colorList" ></lineAreaPieces>
+					</div>
+				</div>
+			</div>
+		</div>
     </div>
 </template>
 <script>
