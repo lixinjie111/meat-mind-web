@@ -42,8 +42,8 @@
 			  </div>
 			  <div class="lef_area_bom" :style="item.lefbomSty" @click="expandfn(Number(item.id),'cen_area'+item.id,'rig_area'+item.id,item)">
 				<span>{{computedText(item.id)}}</span>
-				<i v-if="computedText(item.id) == '收起动线详情'" class="iconfont iconup" :class="[(item.id == '5' || item.id == '6')? 'originClass': 'blueClass']"></i>
-				<i v-else class="iconfont icondown" :class="[(item.id == '5' || item.id == '6')? 'originClass': 'blueClass']"></i>
+				<i v-if="computedText(item.id) == '收起动线详情'" class="iconfont iconup" :class="[item.typeDesc == '推荐' ? 'originClass': 'blueClass']"></i>
+				<i v-else class="iconfont icondown" :class="[item.typeDesc == '推荐' ? 'originClass': 'blueClass']"></i>
 			  </div>
 			</div>
 			<div class="cen_area" :ref="'cen_area'+item.id">
@@ -889,7 +889,7 @@ export default {
                 })
               }
             }
-            if(item.id == '5' || item.id == '6'){
+            if(item.typeDesc == '推荐'){
               item.lefbomSty = {
                 background:'#FFE6DE',
                 color:'#FE774B'
