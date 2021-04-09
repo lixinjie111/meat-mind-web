@@ -46,6 +46,7 @@ export default {
       let myEchart = this.$echarts.init(document.getElementById(this.id));
       myEchart.setOption(option,true);
       myEchart.on('click',async (params)=>{
+        if(params.seriesType=="effectScatter"){return}
         if(params.seriesName=='正常'){
           return
         }

@@ -876,10 +876,53 @@
             <div class="gantt-sub-title">
                 根据不同时间、专题事件的品牌受众互动特征，为品牌定位、产品服务优化及传播方式提供决策性参考。
             </div>
-            <div class="gantt-echarts"></div>
+            <div class="gantt-echarts">
+                <div class="gantt-echarts-view">
+                    <div class="yaxis">
+                        <ul>
+                            <li>品牌<br/>内核</li>
+                            <li>产品<br/>服务</li>
+                            <li>品牌<br/>传播</li>
+                        </ul>
+                        <div class="yaxis-empty"></div>
+                    </div>
+                    <div class="series-main">
+                        <div class="show-main">
+                            <div class="line1">
+                                <GanttCard class="mr20 w389" :title="['品牌核心理念','品牌传播目的']" :listT="['现代人喝现代凉茶']" :listB="listB1" :curColor="'blue'"></GanttCard>
+                                <GanttCard class="w389" :title="['品牌核心理念','品牌传播目的']" :listT="['年轻人喝现代凉茶']" :listB="listB2" :curColor="'blue'"></GanttCard>
+                            </div>
+                            <div class="line2">
+                                <GanttCard class="mr65" :title="['品牌核心资产','产品支撑点']" :listT="['国医邓老','国家非遗','轻体养生']" :listB="['邓老凉茶','五味消毒饮','邓老清冠饮']" :curColor="'orange'"></GanttCard>
+                                <GanttCard :title="['品牌核心资产','产品支撑点']" :listT="['国医邓老','六味组方','朋克养生']" :listB="['香茅桃桃','邓老清冠饮','金桂降火茶']" :curColor="'orange'"></GanttCard>
+                            </div>
+                            <div class="line3">
+                                <GanttCard class="mr28" :title="['传播创意','传播平台']" :listT="listT" :listB="['淘宝','KOL带货']" :curColor="'green'"></GanttCard>
+                                <GanttCard class="mr63" :title="['传播创意','传播平台']" :listT="['SEO投入+20%']" :listB="['Baidu','Bing','360']" :curColor="'green'"></GanttCard>
+                                <GanttCard class="mr38" :title="['传播创意','传播平台']" :listT="['IP跨界合作']" :listB="['抖音','得物']" :curColor="'green'"></GanttCard>
+                                <GanttCard :title="['传播创意','传播平台']" :listT="['KOL笔记']" :listB="['小红书']" :curColor="'green'"></GanttCard>
+                            </div>
+                        </div>
+                        <div class="xaxis">
+                            <ul>
+                                <li>2020 - Q1</li>
+                                <li>2020 - Q2</li>
+                                <li>2020 - Q3</li>
+                                <li>2020 - Q4</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="xaxis-detail">
+                    <XaxisDetail :list="listQ1"></XaxisDetail>
+                    <XaxisDetail :list="listQ2"></XaxisDetail>
+                    <XaxisDetail :list="listQ3"></XaxisDetail>
+                    <XaxisDetail :list="listQ4"></XaxisDetail>
+                </div>
+            </div>
         </div>
     </div>
-</template>
+</template> 
 <script>
 import barL from '../../../components/echarts/common/bar/barL';
 import barM from '../../../components/echarts/common/bar/barM';
@@ -888,11 +931,40 @@ import barLine from '../../../components/echarts/common/bar/barLine';
 import PieEcharts from '../../../components/echarts/common/pie/PieEchartsOfTea';
 import SerachPoptip from '../../../components/common/SerachPoptip1';
 import lineM3 from '../../../components/echarts/common/line/lineM3';
+import GanttCard from '../base/GanttCard'
+import XaxisDetail from "../base/XaxisDetail"
 export default {
     name:"markView",
-    components:{barL,barM,barHM2,barLine,PieEcharts,SerachPoptip,lineM3},
+    components:{barL,barM,barHM2,barLine,PieEcharts,SerachPoptip,lineM3,GanttCard,XaxisDetail},
     data(){
         return {
+            listB1:['把"现代凉茶"打造中国凉茶标准'],
+            listB2:['把"现代凉茶"打造"药食一体"的养生饮料'],
+            listT:['KOL带货','以"治愈"为主调性改换官网Banner'],
+            listQ1:[
+                {name:"行业品牌影响力",num:"63.9",icon:"iconshangsheng",pre:"+17%"},
+                {name:"季活跃用户量（QAU）",num:"12,136",icon:"iconxiajiang",pre:"-3.7%"},
+                {name:"渠道平均投放回报率",num:"16.2%",icon:"iconshangsheng",pre:"+2.7%"},
+                {name:"Q1计划营收完成度",num:"79%",icon:"",pre:""}
+            ],            
+            listQ2:[
+                {name:"行业品牌影响力",num:"57.64",icon:"iconxiajiang",pre:"-9.8%"},
+                {name:"季活跃用户量（QAU）",num:"13,956",icon:"iconshangsheng",pre:"+15%"},
+                {name:"渠道平均投放回报率",num:"27.4%",icon:"iconshangsheng",pre:"+69.2%"},
+                {name:"Q1计划营收完成度",num:"85.2%",icon:"",pre:""}
+            ],            
+            listQ3:[
+                {name:"行业品牌影响力",num:"78.8",icon:"iconshangsheng",pre:" +12.2%"},
+                {name:"季活跃用户量（QAU）",num:"19,748",icon:"iconshangsheng",pre:"+41.5%"},
+                {name:"渠道平均投放回报率",num:"26.28%",icon:"iconxiajiang",pre:"-4.1%"},
+                {name:"Q1计划营收完成度",num:"107%",icon:"",pre:""}
+            ],  
+            listQ4:[
+                {name:"行业品牌影响力",num:"82.5",icon:"iconshangsheng",pre:" +4.8%"},
+                {name:"季活跃用户量（QAU）",num:"24,033",icon:"iconshangsheng",pre:"+21.7%"},
+                {name:"渠道平均投放回报率",num:"43.0%",icon:"iconshangsheng",pre:"+12.1%"},
+                {name:"Q1计划营收完成度",num:"93.7%",icon:"",pre:""}
+            ],                        
             pieDateValue:"2021",
             tagList:['华东地区'],
             formItem: {
@@ -949,7 +1021,7 @@ export default {
             myData3:this.$lxjData.box11430Data,  
             myData4:this.$lxjData.box1141Data,
             myData5:this.$lxjData.box1142Data,
-            myData6:this.$lxjData.box1143Data,                               
+            myData6:this.$lxjData.box1143Data,   
         } 
     },
     methods:{
@@ -1732,9 +1804,82 @@ export default {
             line-height: 22px;
          }
          .gantt-echarts{
-             margin-top: 16px;
+             margin: 16px 24px 24px;
              height: 463px;
-             background: url("../../../assets/img/mark/echarts.png") no-repeat center center / 100% 100%;
+            .gantt-echarts-view{
+                display: flex;
+                margin-bottom: 8px;
+                .yaxis{
+                    ul>li{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 32px;
+                        height: 100px;
+                        font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #636E95;
+                    }
+                    .yaxis-empty{
+                        width: 32px;
+                        height: 25px;
+                    }
+                }
+                .series-main{
+                    width: calc(100% - 32px);
+                    .show-main{
+                        padding-left: 9px;
+                        background: url("../../../assets/img/mark/xaixs@2x.png") no-repeat center center / 100% 100%;
+                        .mr20{
+                            margin-right: 20px;
+                        }
+                        .mr65{
+                            margin-right: 65px;
+                        }
+                        .mr63{
+                            margin-right: 63px;
+                        }
+                        .mr28{
+                            margin-right: 28px;
+                        }
+                        .mr38{
+                            margin-right: 38px;
+                        }
+                        .w389{
+                            width: 389px;
+                        }
+                    }
+                    .line1,.line2,.line3{
+                        height: 102px;
+                        display: flex;
+                        align-items: center;
+                    }
+                    .xaxis{
+                        padding-left: 8px;
+                        ul{
+                            display: flex;
+                            list-style: none;
+                            >li{
+                                display: inline-block;
+                                width: 25%;
+                                height: 18px;
+                                font-size: 12px;
+                                font-family: HelveticaNeue;
+                                color: #636E95;
+                                line-height: 18px;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .xaxis-detail{
+                display: flex;
+                padding-left: 30px;
+            }
+            //  background: url("../../../assets/img/mark/echarts.png") no-repeat center center / 100% 100%;
          }
      }
 }
