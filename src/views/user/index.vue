@@ -89,7 +89,7 @@
 		<!--			    </Select>-->
 			</div>
 		</div>
-		<Tab :tab-list="['基础画像','行为分析','心智分析','生命周期分析']" @change="changeTab"></Tab>
+		<Tab ref="tabChild" :tab-list="['基础画像','行为分析','心智分析','生命周期分析']" @change="changeTab"></Tab>
 		<!--目标用户群-->
 		<div class="da_container" v-if="tabActive == 1">
 			<div class="jichuhuax_area_container" id="jichuhuax_area_container">
@@ -1124,6 +1124,8 @@ export default {
           rigDom.style='background:#FFF;';
         }
       }
+      //重置tab位置
+      this.$refs.tabChild.resizeScroll();
     },
     getSize(){
       return 90 / 144*window.rem
