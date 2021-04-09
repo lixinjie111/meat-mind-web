@@ -14,12 +14,28 @@ export function setBarWidth(opt,bar){
             
         }
     })
-    if(bar=='col2'){
+    if(bar=='barM2'){
         opt.series[0].itemStyle = {
             barBorderRadius:[2 / 144 * window.rem, 2 / 144 * window.rem, 0, 0]
         }
         opt.series[1].itemStyle = {
             barBorderRadius:[0, 0, 2 / 144 * window.rem, 2 / 144 * window.rem]
+        }
+    }
+    if(bar=='barM'){
+        opt.series.map((item)=>{
+            item.itemStyle={barBorderRadius : 0}
+        })
+        opt.series[opt.series.length-1].itemStyle = {
+            barBorderRadius:[2 / 144 * window.rem, 2 / 144 * window.rem, 0, 0]
+        }
+    }
+    if(bar=='barHM'){
+        opt.series.map((item)=>{
+            item.itemStyle={barBorderRadius : 0}
+        })
+        opt.series[opt.series.length-1].itemStyle = {
+            barBorderRadius:[0, 2 / 144 * window.rem, 2 / 144 * window.rem, 0]
         }
     }
     return opt

@@ -47,7 +47,7 @@
         default: ''
       },
       events: {
-        default: ["任意事件",
+        default: ()=>["任意事件",
           "App崩溃",
           "领取权益",
           "完善资料",
