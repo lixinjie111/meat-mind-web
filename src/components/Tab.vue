@@ -23,12 +23,14 @@
             }
         },
         mounted() {
-            let tabContainer = document.querySelector('.tabs-container');
-            let origOffsetY = tabContainer.offsetTop;
-            this.tabTop = origOffsetY;
-            document.addEventListener('scroll', () => {
-                window.scrollY >= origOffsetY ? tabContainer.classList.add('sticky') : tabContainer.classList.remove('sticky');
-            });
+            setTimeout(() => {
+                let tabContainer = document.querySelector('.tabs-container');
+                let origOffsetY = tabContainer.offsetTop;
+                this.tabTop = origOffsetY;
+                document.addEventListener('scroll', () => {
+                    window.scrollY >= origOffsetY ? tabContainer.classList.add('sticky') : tabContainer.classList.remove('sticky');
+                });
+            },1000);
         },
         methods: {
             changeTab(index) {
