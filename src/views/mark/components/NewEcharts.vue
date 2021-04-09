@@ -79,7 +79,7 @@
                   <p>主要传播链路</p>
                   <span>解构单一舆情事件传播链路核心参与者</span>
                   <div class="tree-echarts-view">
-                    <treeEcharts id="tree" :colorList="$linData.colorList" :detail="detailData"></treeEcharts>
+                    <treeEcharts v-if="detailFlag" id="tree" :colorList="$linData.colorList" :detail="detailData"></treeEcharts>
                   </div>
               </div>
           </div>
@@ -90,51 +90,52 @@
                         <p>舆情关键传播点1</p>
                         <!-- <span>2021/1/22  15:03:09</span> -->
                         <!-- <div class="gh-sub-desc">【百度百家号】账号“安安科普”转发该篇新浪财经文章；</div> -->
-                        <span>{{detailData.subPublicList[0].createTime}}</span>
-                        <div class="gh-sub-desc">{{detailData.subPublicList[0].content}}</div>
+                        <span v-if="detailData.subPublicList">{{detailData.subPublicList[0].createTime}}</span>
+                        <div v-if="detailData.subPublicList" class="gh-sub-desc">{{detailData.subPublicList[0].content}}</div>
                     </div>
                     <div class="sub-index-r">
                         <graphEcharts1 v-if="seriesName=='风险'&&detailFlag" id="graph2" :graphDatas="$linData.graphData1" :detail="detailData"  :curColor="$linData.colorList[1]"></graphEcharts1>
                         <graphEchartsChance1 v-if="seriesName=='机会'&&detailFlag" id="graph22" :graphDatas="$linData.graphDataChance1"  :detail="detailData" :curColor="$linData.colorList[1]"></graphEchartsChance1>
                     </div>
                   </div>
-                  <div class="sub-bot">
+                  <div class="sub-bot" v-if="detailData.subPublicList">
                       <p>舆情应对策略建议：</p>
-                      <div class="gh-sub-desc">该账号影响力较小，公信度不高，无需回应，过度反击会引发负面舆论发酵。</div>
+                      <!-- <div class="gh-sub-desc">该账号影响力较小，公信度不高，无需回应，过度反击会引发负面舆论发酵。</div> -->
+                      <div class="gh-sub-desc" v-for="(item,index) in detailData.subPublicList[0].suggestion" :key="index">{{item}}</div>
                   </div>
               </div>
               <div class="gh-echarts-sm">
                   <div class="sub-top">
-                    <div class="sub-index-l">
+                    <div class="sub-index-l" v-if="detailData.subPublicList">
                         <p>舆情关键传播点2</p>
                         <span>{{detailData.subPublicList[1].createTime}}</span>
-                        <div class="gh-sub-desc">{{detailData.subPublicList[0].content}}</div>
+                        <div class="gh-sub-desc">{{detailData.subPublicList[1].content}}</div>
                     </div>
                     <div class="sub-index-r">
                         <graphEcharts2 v-if="seriesName=='风险'&&detailFlag" id="graph3" :graphDatas="$linData.graphData" :detail="detailData" :curColor="$linData.colorList[2]"></graphEcharts2>
                         <graphEchartsChance2 v-if="seriesName=='机会'&&detailFlag" id="graph33" :graphDatas="$linData.graphDataChance"  :detail="detailData" :curColor="$linData.colorList[2]"></graphEchartsChance2>
                     </div>
                   </div>
-                  <div class="sub-bot">
+                  <div class="sub-bot" v-if="detailData.subPublicList">
                       <p>舆情应对策略建议：</p>
-                      <div class="gh-sub-desc">该账号影响力较小，公信度不高，无需回应，过度反击会引发负面舆论发酵。</div>
+                      <div class="gh-sub-desc" v-for="(item,index) in detailData.subPublicList[1].suggestion" :key="index">{{item}}</div>
                   </div>
               </div>
               <div class="gh-echarts-sr">
                   <div class="sub-top">
-                    <div class="sub-index-l">
+                    <div class="sub-index-l" v-if="detailData.subPublicList">
                         <p>舆情关键传播点3</p>
                         <span>{{detailData.subPublicList[2].createTime}}</span>
-                        <div class="gh-sub-desc">{{detailData.subPublicList[0].content}}</div>
+                        <div class="gh-sub-desc">{{detailData.subPublicList[2].content}}</div>
                     </div>
                     <div class="sub-index-r">
                         <graphEcharts3 v-if="seriesName=='风险'&&detailFlag" id="graph4" :graphDatas="$linData.graphData" :detail="detailData"  :curColor="$linData.colorList[3]"></graphEcharts3>
                         <graphEchartsChance3 v-if="seriesName=='机会'&&detailFlag" id="graph44" :graphDatas="$linData.graphDataChance" :detail="detailData" :curColor="$linData.colorList[3]"></graphEchartsChance3>
                     </div>
                   </div>
-                  <div class="sub-bot">
+                  <div class="sub-bot" v-if="detailData.subPublicList">
                       <p>舆情应对策略建议：</p>
-                      <div class="gh-sub-desc">该账号影响力较小，公信度不高，无需回应，过度反击会引发负面舆论发酵。</div>
+                      <div class="gh-sub-desc" v-for="(item,index) in detailData.subPublicList[2].suggestion" :key="index">{{item}}</div>
                   </div>
               </div>
           </div>
@@ -247,6 +248,13 @@ export default {
             this.detailFlag = false
             this.getDetail(params.data.id)
         },
+        getListA(){
+            api.getMarkDetail({id:"200027"}).then(res=>{
+                console.log("res",res)
+            }).catch(err=>{
+                console.log('catch',err)
+            })
+        },
         async getList(){
             try{
                 let res = await api.getMarkList({})
@@ -301,6 +309,7 @@ export default {
         }
     },
     mounted(){
+        this.getListA()
         Promise.all([this.getList()]).then(res=>{
             this.getDetail(this.selectItem.id)
         })
