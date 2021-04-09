@@ -23,16 +23,19 @@
             }
         },
         mounted() {
-            setTimeout(() => {
-                let tabContainer = document.querySelector('.tabs-container');
-                let origOffsetY = tabContainer.offsetTop;
-                this.tabTop = origOffsetY;
-                document.addEventListener('scroll', () => {
-                    window.scrollY >= origOffsetY ? tabContainer.classList.add('sticky') : tabContainer.classList.remove('sticky');
-                });
-            },1000);
+            this.resizeScroll();
         },
         methods: {
+            resizeScroll() {
+                setTimeout(() => {
+                    let tabContainer = document.querySelector('.tabs-container');
+                    let origOffsetY = tabContainer.offsetTop;
+                    this.tabTop = origOffsetY;
+                    document.addEventListener('scroll', () => {
+                        window.scrollY >= origOffsetY ? tabContainer.classList.add('sticky') : tabContainer.classList.remove('sticky');
+                    });
+                },1000);
+            },
             changeTab(index) {
                 window.scrollTo(0, this.tabTop - 100);
                 this.tabActive = index;
