@@ -133,7 +133,7 @@
                     </div>
                 </div>
                 <div class="con_item_container queding_container">
-                    <button class="btn-primary-middle" @click="submit">确定</button>
+                    <button class="btn-primary-small" @click="submit">确定</button>
                 </div>
             </div>
         </div>
@@ -1495,7 +1495,7 @@
         .condition_rig{
             // flex: 1;
             height: 100%;
-            padding: 45px 0 0 22px;
+            padding: 45px 22px 0 22px;
             box-sizing: border-box;
             .con_item_container{
                 // width: 100%;
@@ -1503,7 +1503,7 @@
                 // align-items: flex-start;
                 margin-bottom: 8px;
                 .con_item_label{
-                    width: 106px;
+                    width: 98px;
                     font-size: 12px;
                     font-family: PingFangSC-Regular, PingFang SC;
                     font-weight: 400;
