@@ -253,7 +253,7 @@
           </div>
         </div>
         <div class="con_item_container queding_container">
-           <button class="btn-primary-small" @click="submit">确定</button>
+          <button class="btn-primary-small" @click="submit">确定</button>
         </div>
       </div>
     </div>
@@ -275,21 +275,29 @@
           </div>
           <div class="person_tffatj_con" v-if="ifShowtffatj">
             <div class="top_img_con">
-              <div class="top_img_con_lef" v-for="(item,index) in fanganObj.deliveryMedias" :key="index">
+              <div
+                class="top_img_con_lef"
+                v-for="(item, index) in fanganObj.deliveryMedias"
+                :key="index"
+              >
                 <img :src="item.picture" class="douyIcon" />
                 <div class="con_lef_label">{{ item.title }}</div>
                 <div class="con_lef_num">{{ item.price }}</div>
                 <div class="con_lef_label">触达率</div>
-                <div class="con_lef_num1">{{ item.reachRate}}</div>
+                <div class="con_lef_num1">{{ item.reachRate }}</div>
               </div>
             </div>
             <div class="tf_time">建议投放时间段</div>
-            <div class="tf_time_txt1" v-for="(item,index) in fanganObj.deliveryMedias" :key="index">
+            <div
+              class="tf_time_txt1"
+              v-for="(item, index) in fanganObj.deliveryMedias"
+              :key="index"
+            >
               <div class="cir_txt_con">
                 <div class="cir_con"></div>
-                <div class="qu_dao_name">{{item.title}}</div>
+                <div class="qu_dao_name">{{ item.title }}</div>
               </div>
-              <div class="tim_txt_con">{{item.deliveryTimeScope}}</div>
+              <div class="tim_txt_con">{{ item.deliveryTimeScope }}</div>
             </div>
             <div class="tf_time">预期效果</div>
             <div class="yqxg_con_con">
@@ -330,7 +338,7 @@
             <div class="tfmjchoice_con">
               <div
                 class="meijie_item"
-                :class="{ 'actBor': itm.selectFlag}"
+                :class="{ actBor: itm.selectFlag }"
                 v-for="(itm, inx) in meijieList"
                 :key="inx"
               >
@@ -520,7 +528,7 @@ const allBqitm = {
 };
 export default {
   name: "dxItem",
-  props: ["onlyMap","parm"],
+  props: ["onlyMap", "parm"],
   data() {
     return {
       current: 8,
@@ -574,7 +582,7 @@ export default {
       target: ["自定义标签", "基本信息", "兴趣爱好", "设备属性"],
       property: ["用户维度", "媒介维度", "品牌维度"],
       behavior: ["线上行为", "线下行为"],
-      nilinList:['18-24','25-34','35+'],
+      nilinList: ["18-24", "25-34", "35+"],
       sexList: ["男", "女"],
       hasChildList: [
         "妈妈",
@@ -896,7 +904,7 @@ export default {
           name: "快手",
         },
       ],
-      street:'中国'
+      street: "中国",
     };
   },
   components: {
@@ -939,20 +947,19 @@ export default {
 
     var propData = this.parm;
     var resParm = {
-      id:propData.id,
-      time:'08:00'
+      id: propData.id,
+      time: "08:00",
     };
-    this.getMoveLineDetail(resParm,this.street);
+    this.getMoveLineDetail(resParm, this.street);
   },
   methods: {
-    async getMoveLineDetail(resParm,street) {
-      try{
+    async getMoveLineDetail(resParm, street) {
+      try {
         let res = await api.getUserMoveLineDetail(resParm);
-        console.log(res,'res666')
-        if(res.code == 200){
+        if (res.code == 200) {
           var detailData = res.data || [];
-          if(detailData[0]){
-            console.log(detailData[0].recommendDeliveryPlan,'投放方案！')
+          if (detailData[0]) {
+            console.log(detailData[0].recommendDeliveryPlan, "投放方案！");
             this.fanganObj = detailData[0].recommendDeliveryPlan || {};
             var idList = [];
             var mediaData = detailData[0].medias || [];
@@ -975,109 +982,92 @@ export default {
                 desc: this.fanganObj.saleConversionRate,
               },
             ];
-            mediaData.forEach(item=>{
-              if(item.selectFlag){
+            mediaData.forEach((item) => {
+              if (item.selectFlag) {
                 idList.push(item.id);
               }
             });
             var pieParm = {
-              minBudget:this.tfys,
-              maxBudget:this.tfys1,
-              ids:idList
+              minBudget: this.tfys,
+              maxBudget: this.tfys1,
+              ids: idList,
             };
-            var self = this;
-            this.rangetList = [];
-            api.getCalcMediaBudget(pieParm).then(res=>{
-              console.log(res,'饼图数据')
-              if(res.code == 200){
-                var pieData = res.data || {};
-                var pieList = pieData.medias || [];
-                var nameList = [];
-                var valueList = [];
-                pieList.forEach(item=>{
-                  self.rangetList.push({
-                    time:item.time,
-                    name:item.name
-                  });
-                  nameList.push(item.name);
-                  valueList.push(item.cost);
-                })
-                this.chuData = {
-                  name: nameList,
-                  value: valueList
-                };
-                this.yqxgList1 = [
-                  {
-                    til: "触达率",
-                    desc: pieData.reachRate
-                  },
-                  {
-                    til: "投放成本",
-                    desc: pieData.cost
-                  },
-                ]
-              }
-              else{
-                this.$Message.error('获取饼图部分数据失败！')
-              }
-              //this.chuData = { name: nameList, value: valueList };
-            }).catch(err=>{
-              console.log('---饼图接口数据---',err)
-            });
-            setTimeout(()=>{
+            this.getPieData(pieParm);
+            setTimeout(() => {
               this.clickPerTab(1);
               // this.initMap(detailData,street);
-            },500);
+            }, 500);
           }
-        }else{
-          this.$Message.error('获得用户分组动线详情失败！')
+        } else {
+          this.$Message.error("获得用户分组动线详情失败！");
         }
-      }catch(err){
-        console.log('>>>>>',err)
-      };
+      } catch (err) {
+        console.log(">>>>>", err);
+      }
+    },
+    getPieData(pieParm) {
+      var self = this;
+      this.rangetList = [];
+      api
+        .getCalcMediaBudget(pieParm)
+        .then((res) => {
+          console.log(res, "饼图数据");
+          if (res.code == 200) {
+            var pieData = res.data || {};
+            var pieList = pieData.medias || [];
+            var nameList = [];
+            var valueList = [];
+            pieList.forEach((item) => {
+              self.rangetList.push({
+                time: item.time,
+                name: item.name,
+              });
+              nameList.push(item.name);
+              valueList.push(item.cost);
+            });
+            this.chuData = {
+              name: nameList,
+              value: valueList,
+            };
+            this.yqxgList1 = [
+              {
+                til: "触达率",
+                desc: pieData.reachRate,
+              },
+              {
+                til: "投放成本",
+                desc: pieData.cost,
+              },
+            ];
+          } else {
+            this.$Message.error("获取饼图部分数据失败！");
+          }
+        })
+        .catch((err) => {
+          console.log("---饼图接口数据---", err);
+        });
     },
     changeNews() {
-      var that = this;
-      var myDataList = this.meijieList;
-      var nameList = [];
-      var valueList = [];
-      this.rangetList = [];
-      for (var i = 0; i < myDataList.length; i++) {
-        if (myDataList[i].check) {
-          nameList.push(myDataList[i].til);
-          valueList.push(myDataList[i].num);
-        }
-      }
-      nameList.forEach((item, index) => {
-        if (item == "小红书") {
-          this.rangetList.push({
-            name: "小红书",
-            time: "19:00 - 20:30",
-          });
-        } else if (item == "快手") {
-          this.rangetList.push({
-            name: "快手",
-            time: "22:00 - 22:30",
-          });
-        } else if (item == "头条") {
-          this.rangetList.push({
-            name: "头条",
-            time: "20:00 - 21:00",
-          });
-        } else if (item == "微博") {
-          this.rangetList.push({
-            name: "微博",
-            time: "11:30 - 13:30",
-          });
+      var myDataList = this.meijieList || [];
+      var idList = [];
+      console.log(myDataList,'myDataList111')
+      myDataList.forEach((item) => {
+        if (item.selectFlag) {
+          idList.push(item.id);
         }
       });
-      this.chuData = { name: nameList, value: valueList };
+      var pieParm = {
+        minBudget: this.tfys,
+        maxBudget: this.tfys1,
+        ids: idList,
+      };
+      this.getPieData(pieParm);
     },
     clickPerTab(arg) {
       var conDom = this.$refs.person_con_con;
       let actLef = require("../../assets/img/yhhx/actLef.png");
       let actrig = require("../../assets/img/yhhx/actRig.png");
-      if(conDom){
+      if (conDom) {
         if (arg == 1) {
           conDom.style = `background-image: url(${actLef});background-size: cover;`;
         } else {
@@ -1188,7 +1178,8 @@ export default {
       var itemDom = this.$refs[art] || [];
       for (var i = 0; i < itemDom.length; i++) {
         if (i == arg) {
-          itemDom[i].style = "background: #2373FF;color: #FFFFFF;border-radius: 4px;";
+          itemDom[i].style =
+            "background: #2373FF;color: #FFFFFF;border-radius: 4px;";
         } else {
           //如果需要多选去掉else
           itemDom[i].style = "color: #636E95;background: none;";
@@ -1241,7 +1232,7 @@ export default {
       var cir1 = [116.310356, 39.932426];
       var cir2 = [116.433529, 39.941237];
       this.street = val;
-      this.initMap(path, path1, path2, cir1, cir2,this.street);
+      this.initMap(path, path1, path2, cir1, cir2, this.street);
     },
     choiceat(arg) {
       this.currentBtn = arg;
@@ -1281,19 +1272,19 @@ export default {
         var cir1 = [116.310356, 39.932426];
         var cir2 = [116.433529, 39.941237];
         this.initMap(path, path1, path2, cir1, cir2, this.street);
-        if(this.street == '中国'){
-          this.street = '朝阳区';
+        if (this.street == "中国") {
+          this.street = "朝阳区";
         }
         setTimeout(() => {
           this.timerIdx = this.districtList.indexOf(this.street);
-          this.initMap(path, path1, path2, cir1, cir2,this.street);
+          this.initMap(path, path1, path2, cir1, cir2, this.street);
         }, 1000);
       }
     },
     clickTime(arg) {
       this.current = arg;
       this.ifShowMb = false;
-      console.log(this.street,'this.streetthis.streetthis.street')
+      console.log(this.street, "this.streetthis.streetthis.street");
       if (arg == 6 || arg == 8 || arg == 10 || arg == 22 || arg == 24) {
         // this.timeType = arg;
         var path = [
@@ -1326,7 +1317,7 @@ export default {
         ];
         var cir1 = [116.310356, 39.932426];
         var cir2 = [116.433529, 39.941237];
-        this.initMap(path, path1, path2, cir1, cir2,this.street);
+        this.initMap(path, path1, path2, cir1, cir2, this.street);
         this.fanganObj = this.fanganObj1;
         this.yqxgList = [
           {
@@ -1373,7 +1364,7 @@ export default {
         ];
         var cir1 = [116.274969, 39.92418];
         var cir2 = [116.288616, 39.965768];
-        this.initMap(path, path1, path2, cir1, cir2,this.street);
+        this.initMap(path, path1, path2, cir1, cir2, this.street);
         this.fanganObj = this.fanganObj2;
         this.yqxgList = [
           {
@@ -1419,7 +1410,7 @@ export default {
         ];
         var cir1 = [116.373332, 39.924206];
         var cir2 = [116.427341, 39.902842];
-        this.initMap(path, path1, path2, cir1, cir2,this.street);
+        this.initMap(path, path1, path2, cir1, cir2, this.street);
         this.fanganObj = this.fanganObj3;
         this.yqxgList = [
           {
@@ -1742,21 +1733,22 @@ export default {
       height: 100%;
       display: flex;
       justify-content: center;
-      .area_timer_choice_container{
+      .area_timer_choice_container {
         width: 100%;
         height: 66px;
         display: flex;
         align-items: center;
-        background: #FFFFFF;
+        background: #ffffff;
         box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
         border-radius: 4px 4px 0 0;
-        border: 1px solid #EAEDF7;
+        border: 1px solid #eaedf7;
         z-index: 999;
-        .choice_btn_area{
+        .choice_btn_area {
           width: 88px;
           height: 100%;
-          border-right: 1px solid #EAEDF7;
-          .choice_btn_top,.choice_btn_bom{
+          border-right: 1px solid #eaedf7;
+          .choice_btn_top,
+          .choice_btn_bom {
             width: 100%;
             height: 50%;
             display: flex;
@@ -1765,19 +1757,19 @@ export default {
             font-size: 12px;
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
-            color: #242F57;
-            &:hover{
+            color: #242f57;
+            &:hover {
               cursor: pointer;
             }
           }
-          .activeBtn{
-            color: #2373FF;
+          .activeBtn {
+            color: #2373ff;
           }
         }
-        .choice_content_container{
+        .choice_content_container {
           flex: 1;
           height: 100%;
-          .timer12{
+          .timer12 {
             width: 100%;
             height: 100%;
             display: flex;
@@ -1786,37 +1778,37 @@ export default {
             justify-content: center;
             padding: 0 16px;
             box-sizing: border-box;
-            .timer12_top{
+            .timer12_top {
               width: 100%;
               display: flex;
               align-items: center;
               justify-content: space-between;
             }
-            .timer12_bom{
+            .timer12_bom {
               width: 100%;
               display: flex;
               align-items: center;
               justify-content: space-between;
-              background-color: #F4F7FC;
+              background-color: #f4f7fc;
               margin-top: 4px;
               border-radius: 10px;
-              .cirle_dian{
+              .cirle_dian {
                 width: 12px;
                 height: 12px;
                 border-radius: 50%;
-                background: #C6CBDE;
-                &:hover{
+                background: #c6cbde;
+                &:hover {
                   cursor: pointer;
                 }
               }
-              .activeDian{
-                background-color: #2373FF;
-                box-shadow: 0px 2px 4px 0px #C6CBDE;
-                border: 2px solid #FFFFFF;
+              .activeDian {
+                background-color: #2373ff;
+                box-shadow: 0px 2px 4px 0px #c6cbde;
+                border: 2px solid #ffffff;
               }
             }
           }
-          .timer121{
+          .timer121 {
             width: 100%;
             height: 100%;
             display: flex;
@@ -1824,21 +1816,21 @@ export default {
             flex-wrap: wrap;
             padding: 6px 16px;
             box-sizing: border-box;
-            .timer121_item{
+            .timer121_item {
               width: 62px;
               height: 24px;
-              background: #FFFFFF;
+              background: #ffffff;
               border-radius: 4px;
-              border: 1px solid #EAEDF7;
+              border: 1px solid #eaedf7;
               display: flex;
               align-items: center;
               justify-content: center;
               margin-right: 12px;
               cursor: pointer;
             }
-            .activetimer{
-              border: 1px solid #2373FF;
-              color: #2373FF;
+            .activetimer {
+              border: 1px solid #2373ff;
+              color: #2373ff;
             }
           }
         }
@@ -1860,76 +1852,77 @@ export default {
     left: 20px;
     right: 20px;
   }
-  .conditions_container{
+  .conditions_container {
     flex: 1;
     height: 40px;
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 0px 0px 4px 4px;
     padding: 8px 16px 8px 12px;
     /*box-sizing: border-box;*/
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px solid #F0F8FF;
+    border-top: 1px solid #f0f8ff;
 
-    .conditions_lef{
+    .conditions_lef {
       height: 100%;
       display: flex;
       align-items: center;
-      .condition_label,.condition_item{
+      .condition_label,
+      .condition_item {
         width: 64px;
         display: flex;
         align-items: center;
         justify-content: center;
         margin-right: 10px;
       }
-      .condition_label{
+      .condition_label {
         margin-right: 0;
         font-size: 12px;
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
-        color: #242F57;
+        color: #242f57;
       }
-      .condition_item{
+      .condition_item {
         width: 91px;
         height: 24px;
-        background: #D3E3FF;
+        background: #d3e3ff;
         border-radius: 4px;
-        border: 1px solid #EAEDF7;
+        border: 1px solid #eaedf7;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 12px;
         font-family: PingFangSC-Semibold, PingFang SC;
         font-weight: 600;
-        color: #2373FF;
-        overflow:hidden;
-        text-overflow:ellipsis;
-        -o-text-overflow:ellipsis;
-        white-space:nowrap;
+        color: #2373ff;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
-    .conditions_rig{
+    .conditions_rig {
       font-size: 12px;
       font-family: PingFangSC-Regular, PingFang SC;
       font-weight: 400;
-      color: #2373FF;
+      color: #2373ff;
     }
-    .conditions_rig:hover{
+    .conditions_rig:hover {
       cursor: pointer;
     }
   }
-  .condition_content{
+  .condition_content {
     position: absolute;
     left: 20px;
     top: 128px;
     width: 806px;
     z-index: 1000;
     height: 402px;
-    background: #FFF;
+    background: #fff;
     box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
     border-radius: 4px;
-    border: 1px solid #EAEDF7;
+    border: 1px solid #eaedf7;
     display: flex;
     align-items: center;
     // .condition_lef{
@@ -1966,47 +1959,47 @@ export default {
             padding: 0 16px;
             margin-right: 1px;
             /*margin-bottom: 8px;*/
-            .name{
+            .name {
               font-size: 12px;
               font-family: PingFangSC-Regular, PingFang SC;
               font-weight: 400;
-              color: #636E95;
+              color: #636e95;
               cursor: pointer;
-              &.act{
-                color: #2373FF;
+              &.act {
+                color: #2373ff;
               }
             }
             > i {
               font-size: 12px;
-              color: #98A2C2;
+              color: #98a2c2;
             }
           }
         }
       }
     }
-    .condition_rig{
+    .condition_rig {
       // flex: 1;
       height: 100%;
       padding: 45px 22px 0 22px;
       box-sizing: border-box;
-      .con_item_container{
+      .con_item_container {
         // width: 100%;
         display: flex;
         // align-items: flex-start;
         margin-bottom: 8px;
-        .con_item_label{
+        .con_item_label {
           width: 98px;
           font-size: 12px;
           font-family: PingFangSC-Regular, PingFang SC;
           font-weight: 400;
-          color: #242F57;
+          color: #242f57;
         }
-        .con_item_con{
+        .con_item_con {
           // flex: 1;
           width: calc(100% - 106px);
           display: flex;
           flex-wrap: wrap;
-          .con_item{
+          .con_item {
             height: 24px;
             padding: 0 9px;
             line-height: 24px;
@@ -2016,14 +2009,16 @@ export default {
             font-size: 12px;
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
-            color: #636E95;
+            color: #636e95;
             background-color: none;
             cursor: pointer;
           }
-          .con_item:hover{cursor: pointer;}
+          .con_item:hover {
+            cursor: pointer;
+          }
         }
       }
-      .queding_container{
+      .queding_container {
         width: 100%;
         display: flex;
         align-items: center;
@@ -2031,7 +2026,6 @@ export default {
         margin-top: 20px;
       }
     }
-
   }
   .mianban_container {
     position: absolute;
@@ -2154,10 +2148,10 @@ export default {
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
             color: #242f57;
-            background-color: #FFF;
+            background-color: #fff;
           }
           .tfjy1 {
-            background-color: #FFF;
+            background-color: #fff;
             padding-top: 24px;
             box-sizing: border-box;
           }
@@ -2231,7 +2225,7 @@ export default {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            background-color: #FFF;
+            background-color: #fff;
             .meijie_item {
               display: flex;
               align-items: center;
