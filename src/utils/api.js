@@ -49,6 +49,9 @@ export default {
     //用户画像获得用户分组动线详情
     getUserMoveLineDetail(params){
         return this.postJson("/userProfile/getMoveLineDetail",params)
+    },
+    //计算媒体预算投放
+    getCalcMediaBudget(params){
+        return this.postJson("/userProfile/calcMediaBudget",params)
     }
-
 }

@@ -275,35 +275,21 @@
           </div>
           <div class="person_tffatj_con" v-if="ifShowtffatj">
             <div class="top_img_con">
-              <div class="top_img_con_lef">
-                <img :src="fanganObj.qdObj1.icon" class="douyIcon" />
-                <div class="con_lef_label">{{ fanganObj.qdObj1.name }}</div>
-                <div class="con_lef_num">{{ fanganObj.qdObj1.money }}</div>
+              <div class="top_img_con_lef" v-for="(item,index) in fanganObj.deliveryMedias" :key="index">
+                <img :src="item.picture" class="douyIcon" />
+                <div class="con_lef_label">{{ item.title }}</div>
+                <div class="con_lef_num">{{ item.price }}</div>
                 <div class="con_lef_label">触达率</div>
-                <div class="con_lef_num1">{{ fanganObj.qdObj1.vdlNum }}</div>
-              </div>
-              <div class="top_img_con_rig">
-                <img :src="fanganObj.qdObj2.icon" class="douyIcon" />
-                <div class="con_lef_label">{{ fanganObj.qdObj2.name }}</div>
-                <div class="con_lef_num">{{ fanganObj.qdObj2.money }}</div>
-                <div class="con_lef_label">触达率</div>
-                <div class="con_lef_num1">{{ fanganObj.qdObj2.vdlNum }}</div>
+                <div class="con_lef_num1">{{ item.reachRate}}</div>
               </div>
             </div>
             <div class="tf_time">建议投放时间段</div>
-            <div class="tf_time_txt1">
+            <div class="tf_time_txt1" v-for="(item,index) in fanganObj.deliveryMedias" :key="index">
               <div class="cir_txt_con">
                 <div class="cir_con"></div>
-                <div class="qu_dao_name">{{ fanganObj.qdObj1.name }}</div>
+                <div class="qu_dao_name">{{item.title}}</div>
               </div>
-              <div class="tim_txt_con">{{ fanganObj.qdObj1.timeRang }}</div>
-            </div>
-            <div class="tf_time_txt2">
-              <div class="cir_txt_con">
-                <div class="cir_con" style="background: #fe774b"></div>
-                <div class="qu_dao_name">{{ fanganObj.qdObj2.name }}</div>
-              </div>
-              <div class="tim_txt_con">{{ fanganObj.qdObj2.timeRang }}</div>
+              <div class="tim_txt_con">{{item.deliveryTimeScope}}</div>
             </div>
             <div class="tf_time">预期效果</div>
             <div class="yqxg_con_con">
@@ -325,6 +311,8 @@
                 v-model="tfys"
                 placeholder="请输入价格"
                 class="input_con"
+                maxlength="9"
+                type="number"
               />
               <span class="zhi">至</span>
             </div>
@@ -334,22 +322,24 @@
                 v-model="tfys1"
                 placeholder="请输入价格"
                 class="input_con"
+                maxlength="9"
+                type="number"
               />
             </div>
             <div class="tf_time">选择投放媒介</div>
             <div class="tfmjchoice_con">
               <div
                 class="meijie_item"
-                :class="{ actBor: itm.check }"
+                :class="{ 'actBor': itm.selectFlag}"
                 v-for="(itm, inx) in meijieList"
                 :key="inx"
               >
                 <Checkbox
-                  v-model="itm.check"
+                  v-model="itm.selectFlag"
                   @on-change="changeNews(itm)"
                 ></Checkbox>
-                <img :src="itm.srcIm" class="srcIMG" />
-                <div class="qudtil">{{ itm.til }}</div>
+                <img :src="itm.picture" class="srcIMG" />
+                <div class="qudtil" :title="itm.name">{{ itm.name }}</div>
               </div>
             </div>
             <div class="tf_time tfjy1">投放建议</div>
@@ -530,7 +520,7 @@ const allBqitm = {
 };
 export default {
   name: "dxItem",
-  props: ["onlyMap"],
+  props: ["onlyMap","parm"],
   data() {
     return {
       current: 8,
@@ -614,32 +604,6 @@ export default {
         label2: "25-35岁",
         label3: "消费高",
         label4: "已婚",
-      },
-      rightPanelData: {
-        userStatObj: {
-          stat1: 16,
-          stat2: 26,
-          stat3: 39,
-          stat4: 19,
-        },
-        chufaObj: {
-          chufa1: "五道口",
-          chufa2: "西二旗",
-          chufa3: "上地",
-        },
-        mudiObj: {
-          mudi1: "中关村",
-          mudi2: "软件园",
-          mudi3: "龙泽",
-        },
-        tonqinTypeObj: {
-          tqType1: "地铁",
-          tqType1Icon: require("../../assets/img/yhhx/dtIcon.png"),
-          tqType2: "开车",
-        },
-        tongqinTimeObj: {
-          timeN: 30,
-        },
       },
       colorConfig: {
         新闻: "#017AFF",
@@ -819,8 +783,8 @@ export default {
         },
       ],
       ifShowtffatj: true,
-      tfys: "10000元",
-      tfys1: "25000元",
+      tfys: "10000",
+      tfys1: "25000",
       meijieList: [
         {
           check: true,
@@ -939,41 +903,139 @@ export default {
     PieEcharts1,
   },
   mounted() {
-    var path = [
-      [116.294134, 39.958747],
-      [116.295593, 39.947957],
-      [116.296881, 39.93236],
-      [116.310356, 39.932426],
-      [116.310013, 39.924265],
-      [116.355932, 39.923606],
-      [116.355847, 39.932295],
-      [116.433952, 39.933874],
-      [116.433952, 39.933874],
-      [116.489751, 39.93361],
-    ];
-    var path1 = [
-      [116.354029, 39.967758],
-      [116.357291, 39.944046],
-      [116.355402, 39.940888],
-      [116.356776, 39.907845],
-      [116.349222, 39.896783],
-      [116.348879, 39.873073],
-    ];
-    var path2 = [
-      [116.416903, 39.969085],
-      [116.418791, 39.952349],
-      [116.416388, 39.950801],
-      [116.416388, 39.950801],
-      [116.418019, 39.91164],
-      [116.418362, 39.900843],
-    ];
-    var cir1 = [116.310356, 39.932426];
-    var cir2 = [116.433529, 39.941237];
-    this.initMap(path, path1, path2, cir1, cir2,this.street);
-    this.changMbItem(0);
-    this.clickPerTab(1);
+    // var path = [
+    //   [116.294134, 39.958747],
+    //   [116.295593, 39.947957],
+    //   [116.296881, 39.93236],
+    //   [116.310356, 39.932426],
+    //   [116.310013, 39.924265],
+    //   [116.355932, 39.923606],
+    //   [116.355847, 39.932295],
+    //   [116.433952, 39.933874],
+    //   [116.433952, 39.933874],
+    //   [116.489751, 39.93361],
+    // ];
+    // var path1 = [
+    //   [116.354029, 39.967758],
+    //   [116.357291, 39.944046],
+    //   [116.355402, 39.940888],
+    //   [116.356776, 39.907845],
+    //   [116.349222, 39.896783],
+    //   [116.348879, 39.873073],
+    // ];
+    // var path2 = [
+    //   [116.416903, 39.969085],
+    //   [116.418791, 39.952349],
+    //   [116.416388, 39.950801],
+    //   [116.416388, 39.950801],
+    //   [116.418019, 39.91164],
+    //   [116.418362, 39.900843],
+    // ];
+    // var cir1 = [116.310356, 39.932426];
+    // var cir2 = [116.433529, 39.941237];
+    // this.initMap(path, path1, path2, cir1, cir2,this.street);
+    // this.changMbItem(0);
+    // this.clickPerTab(1);
+
+    var propData = this.parm;
+    var resParm = {
+      id:propData.id,
+      time:'08:00'
+    };
+    this.getMoveLineDetail(resParm,this.street);
   },
   methods: {
+    async getMoveLineDetail(resParm,street) {
+      try{
+        let res = await api.getUserMoveLineDetail(resParm);
+        console.log(res,'res666')
+        if(res.code == 200){
+          var detailData = res.data || [];
+          if(detailData[0]){
+            console.log(detailData[0].recommendDeliveryPlan,'投放方案！')
+            this.fanganObj = detailData[0].recommendDeliveryPlan || {};
+            var idList = [];
+            var mediaData = detailData[0].medias || [];
+            this.meijieList = mediaData;
+            this.yqxgList = [
+              {
+                til: "触达用户：",
+                desc: this.fanganObj.reachUserCount,
+              },
+              {
+                til: "互动量提升：",
+                desc: this.fanganObj.interactionIncrease,
+              },
+              {
+                til: "品牌印象提升：",
+                desc: this.fanganObj.brandPromotion,
+              },
+              {
+                til: "销售转化率：",
+                desc: this.fanganObj.saleConversionRate,
+              },
+            ];
+            mediaData.forEach(item=>{
+              if(item.selectFlag){
+                idList.push(item.id);
+              }
+            });
+            var pieParm = {
+              minBudget:this.tfys,
+              maxBudget:this.tfys1,
+              ids:idList
+            };
+            var self = this;
+            this.rangetList = [];
+            api.getCalcMediaBudget(pieParm).then(res=>{
+              console.log(res,'饼图数据')
+              if(res.code == 200){
+                var pieData = res.data || {};
+                var pieList = pieData.medias || [];
+                var nameList = [];
+                var valueList = [];
+                pieList.forEach(item=>{
+                  self.rangetList.push({
+                    time:item.time,
+                    name:item.name
+                  });
+                  nameList.push(item.name);
+                  valueList.push(item.cost);
+                })
+                this.chuData = {
+                  name: nameList,
+                  value: valueList
+                };
+                this.yqxgList1 = [
+                  {
+                    til: "触达率",
+                    desc: pieData.reachRate
+                  },
+                  {
+                    til: "投放成本",
+                    desc: pieData.cost
+                  },
+                ]
+              }
+              else{
+                this.$Message.error('获取饼图部分数据失败！')
+              }
+              //this.chuData = { name: nameList, value: valueList };
+            }).catch(err=>{
+              console.log('---饼图接口数据---',err)
+            });
+            setTimeout(()=>{
+              this.clickPerTab(1);
+              // this.initMap(detailData,street);
+            },500);
+          }
+        }else{
+          this.$Message.error('获得用户分组动线详情失败！')
+        }
+      }catch(err){
+        console.log('>>>>>',err)
+      };
+    },
     changeNews() {
       var that = this;
       var myDataList = this.meijieList;
@@ -1265,32 +1327,6 @@ export default {
         var cir1 = [116.310356, 39.932426];
         var cir2 = [116.433529, 39.941237];
         this.initMap(path, path1, path2, cir1, cir2,this.street);
-        this.rightPanelData = {
-          userStatObj: {
-            stat1: 16,
-            stat2: 26,
-            stat3: 39,
-            stat4: 19,
-          },
-          chufaObj: {
-            chufa1: "五道口",
-            chufa2: "西二旗",
-            chufa3: "上地",
-          },
-          mudiObj: {
-            mudi1: "中关村",
-            mudi2: "软件园",
-            mudi3: "龙泽",
-          },
-          tonqinTypeObj: {
-            tqType1: "地铁",
-            tqType1Icon: require("../../assets/img/yhhx/dtIcon.png"),
-            tqType2: "开车",
-          },
-          tongqinTimeObj: {
-            timeN: 30,
-          },
-        };
         this.fanganObj = this.fanganObj1;
         this.yqxgList = [
           {
@@ -1338,29 +1374,6 @@ export default {
         var cir1 = [116.274969, 39.92418];
         var cir2 = [116.288616, 39.965768];
         this.initMap(path, path1, path2, cir1, cir2,this.street);
-        this.rightPanelData = {
-          userStatObj: {
-            stat1: 37,
-            stat2: 36,
-            stat3: 22,
-            stat4: 5,
-          },
-          chufaObj: {
-            chufa1: "中关村",
-            chufa2: "软件园",
-            chufa3: "龙泽",
-          },
-          mudiObj: {
-            mudi1: "周边",
-          },
-          tonqinTypeObj: {
-            tqType1: "步行",
-            tqType1Icon: require("../../assets/img/yhhx/buxIcon.png"),
-          },
-          tongqinTimeObj: {
-            timeN: 10,
-          },
-        };
         this.fanganObj = this.fanganObj2;
         this.yqxgList = [
           {
@@ -1407,32 +1420,6 @@ export default {
         var cir1 = [116.373332, 39.924206];
         var cir2 = [116.427341, 39.902842];
         this.initMap(path, path1, path2, cir1, cir2,this.street);
-        this.rightPanelData = {
-          userStatObj: {
-            stat1: 25,
-            stat2: 28,
-            stat3: 27,
-            stat4: 20,
-          },
-          chufaObj: {
-            chufa1: "中关村",
-            chufa2: "软件园",
-            chufa3: "龙泽",
-          },
-          mudiObj: {
-            mudi1: "五道口",
-            mudi2: "西二旗",
-            mudi3: "上地",
-          },
-          tonqinTypeObj: {
-            tqType1: "地铁",
-            tqType1Icon: require("../../assets/img/yhhx/dtIcon.png"),
-            tqType2: "开车",
-          },
-          tongqinTimeObj: {
-            timeN: 30,
-          },
-        };
         this.fanganObj = this.fanganObj3;
         this.yqxgList = [
           {
@@ -2161,22 +2148,23 @@ export default {
           }
           .tf_time {
             width: 100%;
-            padding: 0 16px;
+            padding: 30px 16px 10px 16px;
             box-sizing: border-box;
-            margin-top: 30px;
-            margin-bottom: 10px;
             font-size: 14px;
             font-family: PingFangSC-Regular, PingFang SC;
             font-weight: 400;
             color: #242f57;
+            background-color: #FFF;
           }
           .tfjy1 {
-            margin-top: 24px;
+            background-color: #FFF;
+            padding-top: 24px;
+            box-sizing: border-box;
           }
           .touf_pie {
             width: 100%;
-            margin-top: 10px;
             padding: 0 16px;
+            padding-top: 10px;
             box-sizing: border-box;
             background-color: #ffffff;
             .touf_pie_con {
@@ -2243,6 +2231,7 @@ export default {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            background-color: #FFF;
             .meijie_item {
               display: flex;
               align-items: center;
@@ -2264,6 +2253,11 @@ export default {
                 font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
                 color: #242f57;
+                width: 31px;
+                margin-left: 10px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
               }
             }
             .actBor {

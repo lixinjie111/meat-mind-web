@@ -833,7 +833,6 @@ export default {
   computed:{
     ifShowComfn(){
       return function(value){
-        console.log(value,'111111111')
         return value
       }
     }
