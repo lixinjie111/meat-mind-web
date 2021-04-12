@@ -321,8 +321,9 @@
                 v-model="tfys"
                 placeholder="请输入价格"
                 class="input_con"
-                maxlength="9"
+                :maxlength="9"
                 type="number"
+                @on-blur="formitInput"
               />
               <span class="zhi">至</span>
             </div>
@@ -332,8 +333,9 @@
                 v-model="tfys1"
                 placeholder="请输入价格"
                 class="input_con"
-                maxlength="9"
+                :maxlength="9"
                 type="number"
+                @on-blur="formitInput1"
               />
             </div>
             <div class="tf_time">选择投放媒介</div>
@@ -829,6 +831,18 @@ export default {
     this.getMoveLineDetail(resParm, this.street);
   },
   methods: {
+    formitInput(e){
+      var inValue = this.tfys;
+      if(inValue.length > 9){
+        this.tfys = inValue.slice(0,9)
+      }
+    },
+    formitInput1(e){
+      var inValue = this.tfys1;
+      if(inValue.length > 9){
+        this.tfys1 = inValue.slice(0,9)
+      }
+    },
     async getMoveLineDetail(resParm, street) {
       try {
         let res = await api.getUserMoveLineDetail(resParm);
@@ -2856,6 +2870,10 @@ export default {
                 font-family: PingFangSC-Medium, PingFang SC;
                 font-weight: 500;
                 color: #2373ff;
+                width: 131px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
               }
             }
           }
@@ -2918,6 +2936,12 @@ export default {
             }
             ::v-deep .input_con .ivu-input-default {
               padding-left: 30px !important;
+            }
+            ::v-deep .input_con input::-webkit-outer-spin-button,::v-deep .input_con input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+            }
+            ::v-deep .input_con input[type="number"]{
+              -moz-appearance: textfield;
             }
             .zhi {
               font-size: 12px;
