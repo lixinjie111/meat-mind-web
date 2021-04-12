@@ -105,14 +105,16 @@
       <div
         :class="['conditions_container', { conditions_container_row: onlyMap }]"
       >
-        <div class="conditions_lef">
+        <div class="condition_total_con">
           <div class="condition_label">条件筛选</div>
-          <div
-            class="condition_item"
-            v-for="(itm, inx) in condiList"
-            :key="inx"
-          >
-            <span>{{ itm }}</span>
+          <div class="conditions_lef">
+            <div
+              class="condition_item"
+              v-for="(itm, inx) in condiList"
+              :key="inx"
+            >
+              <span>{{ itm }}</span>
+            </div>
           </div>
         </div>
         <div class="conditions_rig" @click="expandCond">更多筛选条件</div>
@@ -1346,14 +1348,14 @@ export default {
     }
   }
   .conditions_container-box.width {
-    width: 806px;
+    width: 805px;
   }
   .conditions_container-box {
     position: absolute;
     z-index: 999;
     top: 84px;
     display: flex;
-    left: 20px;
+    left: 21px;
     right: 20px;
   }
   .conditions_container{
@@ -1367,42 +1369,48 @@ export default {
     align-items: center;
     justify-content: space-between;
     border-top: 1px solid #F0F8FF;
-
-    .conditions_lef{
-      height: 100%;
+    .condition_total_con{
       display: flex;
       align-items: center;
-      .condition_label,.condition_item{
-        width: 64px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 10px;
-      }
-      .condition_label{
+      .condition_label {
+        padding-left: 8px;
+        padding-right: 22px;
+        box-sizing: border-box;
         margin-right: 0;
         font-size: 12px;
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
-        color: #242F57;
+        color: #242f57;
       }
-      .condition_item{
-        width: 91px;
-        height: 24px;
-        background: #D3E3FF;
-        border-radius: 4px;
-        border: 1px solid #EAEDF7;
+      .conditions_lef{
+        height: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
-        font-size: 12px;
-        font-family: PingFangSC-Semibold, PingFang SC;
-        font-weight: 600;
-        color: #2373FF;
-        overflow:hidden;
-        text-overflow:ellipsis;
-        -o-text-overflow:ellipsis;
-        white-space:nowrap;
+        .condition_item{
+          width: 64px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 10px;
+        }
+        .condition_item{
+          width: 91px;
+          height: 24px;
+          background: #D3E3FF;
+          border-radius: 4px;
+          border: 1px solid #EAEDF7;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px;
+          font-family: PingFangSC-Semibold, PingFang SC;
+          font-weight: 600;
+          color: #2373FF;
+          overflow:hidden;
+          text-overflow:ellipsis;
+          -o-text-overflow:ellipsis;
+          white-space:nowrap;
+        }
       }
     }
     .conditions_rig{
