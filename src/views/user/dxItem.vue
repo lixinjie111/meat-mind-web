@@ -467,13 +467,7 @@ export default {
       current: '08:00',
       currentBtn: 2,
       AMap: null,
-      switch1: true,
-      yhdxImg: require("../../assets/img/yhhx/yhdxImg.png"),
-      closeIcon: require("../../assets/img/yhhx/icon_close.png"),
-      locaIcon: require("../../assets/img/yhhx/dwIcon.png"),
       drIcon: require("../../assets/img/yhhx/drIcon.png"),
-      tbIcon: require("../../assets/img/yhhx/tbIcon.png"),
-      xhsIcon: require("../../assets/img/yhhx/xhs.png"),
       quyResult: require("../../assets/img/yhhx/quyResult.png"),
       districtList: [
         "朝阳区",
@@ -532,165 +526,12 @@ export default {
         label3: "消费高",
         label4: "已婚",
       },
-      tabconList: [
-        {
-          til: "年龄结构",
-          descList: ["20-29岁"],
-          ticList: null,
-        },
-        {
-          til: "收入结构",
-          descList: ["15-25k"],
-          ticList: null,
-        },
-        {
-          til: "职业结构",
-          descList: ["白领"],
-          ticList: null,
-        },
-        {
-          til: "行业结构",
-          descList: ["互联网"],
-          ticList: null,
-        },
-        {
-          til: "教育背景",
-          descList: ["本科以上"],
-          ticList: null,
-        },
-        {
-          til: "居住地区",
-          descList: ["一线城市"],
-          ticList: null,
-        },
-        {
-          til: "主要出行方式",
-          descList: null,
-          ticList: [
-            {
-              ic: require("../../assets/img/yhhx/ditieIcon.png"),
-              txt: "地铁（5号线、10号线、13号线）",
-            },
-            {
-              ic: require("../../assets/img/yhhx/drIcon.png"),
-              txt: "自驾",
-            },
-          ],
-        },
-      ],
-      tabconList0: [
-        {
-          til: "年龄结构",
-          descList: ["20-29岁"],
-          ticList: null,
-        },
-        {
-          til: "收入结构",
-          descList: ["15-25k"],
-          ticList: null,
-        },
-        {
-          til: "职业结构",
-          descList: ["白领"],
-          ticList: null,
-        },
-        {
-          til: "行业结构",
-          descList: ["互联网"],
-          ticList: null,
-        },
-        {
-          til: "教育背景",
-          descList: ["本科以上"],
-          ticList: null,
-        },
-        {
-          til: "居住地区",
-          descList: ["一线城市"],
-          ticList: null,
-        },
-        {
-          til: "主要出行方式",
-          descList: null,
-          ticList: [
-            {
-              ic: require("../../assets/img/yhhx/ditieIcon.png"),
-              txt: "地铁（5号线、10号线、13号线）",
-            },
-            {
-              ic: require("../../assets/img/yhhx/drIcon.png"),
-              txt: "自驾",
-            },
-          ],
-        },
-      ],
-      tabconList1: [
-        {
-          til: "APP使用结构",
-          descList: ["用户对短视频类APP偏好明显，微博成为重要社交平台"],
-          ticList: null,
-        },
-        {
-          til: "内容偏好结构",
-          descList: [
-            "通讯社交及交通出行类覆盖度高，各种类型内容均能吸引一定的忠实用户",
-          ],
-          ticList: null,
-        },
-        {
-          til: "用户行为分布结构",
-          descList: ["用户群体工作休闲两不误，放松休闲活动较多，需求强烈"],
-          ticList: null,
-        },
-        {
-          til: "不同性别APP内容偏好",
-          descList: [
-            "85%的女性喜欢开箱测评类内容；60%的男性喜欢深度测评类内容",
-          ],
-          ticList: null,
-        },
-      ],
-      tabconList2: [
-        {
-          til: "敏感/厌恶",
-          descList: ["添加剂", "卫生条件差", "糖分超标"],
-          ticList: null,
-        },
-        {
-          til: "风格偏好",
-          descList: ["INS风", "性冷淡风"],
-          ticList: null,
-        },
-        {
-          til: "话题偏好",
-          descList: ["健康运动", "金融理财", "育儿亲子"],
-          ticList: null,
-        },
-        {
-          til: "个人标签",
-          descList: ["新锐白领", "宝藏浪姐", "潮酷女孩"],
-          ticList: null,
-        },
-      ],
+      tabconList: [],
+      tabconList0: [],
+      tabconList1: [],
+      tabconList2: [],
       ifShowtcon: true,
-      yqxgList: [
-        {
-          til: "触达用户：",
-          desc: "28万",
-        },
-        {
-          til: "互动量提升：",
-          desc: "12%",
-        },
-        {
-          til: "品牌印象提升：",
-          desc: "7%",
-        },
-        {
-          til: "销售转化率：",
-          desc: "3%",
-        },
-      ],
+      yqxgList: [],
       yqxgList1: [
         {
           til: "触达率",
@@ -704,96 +545,8 @@ export default {
       ifShowtffatj: true,
       tfys: "10000",
       tfys1: "25000",
-      meijieList: [
-        {
-          check: true,
-          srcIm: require("../../assets/img/yhhx/xhs.png"),
-          til: "小红书",
-          num: 6000,
-        },
-        {
-          check: false,
-          srcIm: require("../../assets/img/yhhx/tt.png"),
-          til: "头条",
-          num: 3000,
-        },
-        {
-          check: true,
-          srcIm: require("../../assets/img/yhhx/ks.png"),
-          til: "快手",
-          num: 4000,
-        },
-        {
-          check: false,
-          srcIm: require("../../assets/img/yhhx/weib1.png"),
-          til: "微博",
-          num: 4000,
-        },
-      ],
-      fanganObj: {
-        qdObj1: {
-          icon: require("../../assets/img/yhhx/tt.png"),
-          name: "今日头条",
-          money: "￥9200",
-          vdlNum: "53%",
-          timeRang: "8:00 - 9:30",
-        },
-        qdObj2: {
-          icon: require("../../assets/img/yhhx/wyIcon.png"),
-          name: "网易",
-          money: "￥3200",
-          vdlNum: "43%",
-          timeRang: "7:40 - 8:30",
-        },
-      },
-      fanganObj1: {
-        qdObj1: {
-          icon: require("../../assets/img/yhhx/tt.png"),
-          name: "今日头条",
-          money: "￥9200",
-          vdlNum: "53%",
-          timeRang: "8:00 - 9:30",
-        },
-        qdObj2: {
-          icon: require("../../assets/img/yhhx/wyIcon.png"),
-          name: "网易",
-          money: "￥3200",
-          vdlNum: "43%",
-          timeRang: "7:40 - 8:30",
-        },
-      },
-      fanganObj2: {
-        qdObj1: {
-          icon: require("../../assets/img/yhhx/wx.jpeg"),
-          name: "微信",
-          money: "￥7200",
-          vdlNum: "43%",
-          timeRang: "12:00 - 1:00",
-        },
-        qdObj2: {
-          icon: require("../../assets/img/yhhx/dz.jpg"),
-          name: "大众点评",
-          money: "￥2200",
-          vdlNum: "30%",
-          timeRang: "11:20 - 12:30",
-        },
-      },
-      fanganObj3: {
-        qdObj1: {
-          icon: require("../../assets/img/yhhx/dyI.png"),
-          name: "抖音",
-          money: "￥17200",
-          vdlNum: "73%",
-          timeRang: "19:00 - 23:00",
-        },
-        qdObj2: {
-          icon: require("../../assets/img/yhhx/weib1.png"),
-          name: "新浪微博",
-          money: "￥5200",
-          vdlNum: "40%",
-          timeRang: "19:20 - 22:30",
-        },
-      },
+      meijieList: [],
+      fanganObj: {},
       condiList: [],
       nlList: [],
       xingbieList: [],
@@ -1363,7 +1116,8 @@ export default {
             var detailData = pList1 || [];
             if(detailData[0]){
               var firstData = detailData[0];
-              this.fanganObj = firstData.recommendDeliveryPlan || {};
+              console.log(firstData,'第一条线数据')
+              that.fanganObj = firstData.recommendDeliveryPlan || {};
               var idList = [];
               var travaList = [];
               var travaData = firstData.travelTools || [];
@@ -1374,26 +1128,26 @@ export default {
                   txt:item.title
                 });
               });
-              this.meijieList = mediaData;
-              this.yqxgList = [
+              that.meijieList = mediaData;
+              that.yqxgList = [
                 {
                   til: "触达用户：",
-                  desc: this.fanganObj.reachUserCount,
+                  desc: that.fanganObj.reachUserCount,
                 },
                 {
                   til: "互动量提升：",
-                  desc: this.fanganObj.interactionIncrease,
+                  desc: that.fanganObj.interactionIncrease,
                 },
                 {
                   til: "品牌印象提升：",
-                  desc: this.fanganObj.brandPromotion,
+                  desc: that.fanganObj.brandPromotion,
                 },
                 {
                   til: "销售转化率：",
-                  desc: this.fanganObj.saleConversionRate,
+                  desc: that.fanganObj.saleConversionRate,
                 },
               ];
-              this.tabconList0 = [
+              that.tabconList0 = [
                 {
                   til: "年龄结构",
                   descList: [firstData.ageScope],
@@ -1430,7 +1184,7 @@ export default {
                   ticList:travaList
                 },
               ];
-              this.tabconList1 = [
+              that.tabconList1 = [
                 {
                   til: "APP使用结构",
                   descList: [firstData.appUse],
@@ -1452,7 +1206,7 @@ export default {
                   ticList: null,
                 },
               ],
-              this.tabconList2 = [
+              that.tabconList2 = [
                 {
                   til: "敏感/厌恶",
                   descList: firstData.sensitiveLabel,
@@ -1474,18 +1228,20 @@ export default {
                   ticList: null,
                 },
               ],
-              this.lifeCycleDesc = firstData.lifeCycleDesc;
+              that.lifeCycleDesc = firstData.lifeCycleDesc;
+              that.clickPerTab(1);
+              that.changMbItem(0);
               mediaData.forEach((item) => {
                 if (item.selectFlag) {
                   idList.push(item.id);
                 }
               });
               var pieParm = {
-                minBudget: this.tfys,
-                maxBudget: this.tfys1,
+                minBudget: that.tfys,
+                maxBudget: that.tfys1,
                 ids: idList,
               };
-              this.getPieData(pieParm);
+              that.getPieData(pieParm);
             }
           }
           else{
@@ -1500,7 +1256,8 @@ export default {
             var detailData = pList1 || [];
             if(detailData[1]){
               var firstData = detailData[1];
-              this.fanganObj = firstData.recommendDeliveryPlan || {};
+              console.log(firstData,'第二条线数据')
+              that.fanganObj = firstData.recommendDeliveryPlan || {};
               var idList = [];
               var travaList = [];
               var travaData = firstData.travelTools || [];
@@ -1511,26 +1268,26 @@ export default {
                   txt:item.title
                 });
               });
-              this.meijieList = mediaData;
-              this.yqxgList = [
+              that.meijieList = mediaData;
+              that.yqxgList = [
                 {
                   til: "触达用户：",
-                  desc: this.fanganObj.reachUserCount,
+                  desc: that.fanganObj.reachUserCount,
                 },
                 {
                   til: "互动量提升：",
-                  desc: this.fanganObj.interactionIncrease,
+                  desc: that.fanganObj.interactionIncrease,
                 },
                 {
                   til: "品牌印象提升：",
-                  desc: this.fanganObj.brandPromotion,
+                  desc: that.fanganObj.brandPromotion,
                 },
                 {
                   til: "销售转化率：",
-                  desc: this.fanganObj.saleConversionRate,
+                  desc: that.fanganObj.saleConversionRate,
                 },
               ];
-              this.tabconList0 = [
+              that.tabconList0 = [
                 {
                   til: "年龄结构",
                   descList: [firstData.ageScope],
@@ -1567,7 +1324,7 @@ export default {
                   ticList:travaList
                 },
               ];
-              this.tabconList1 = [
+              that.tabconList1 = [
                 {
                   til: "APP使用结构",
                   descList: [firstData.appUse],
@@ -1589,7 +1346,7 @@ export default {
                   ticList: null,
                 },
               ],
-              this.tabconList2 = [
+              that.tabconList2 = [
                 {
                   til: "敏感/厌恶",
                   descList: firstData.sensitiveLabel,
@@ -1611,18 +1368,20 @@ export default {
                   ticList: null,
                 },
               ],
-              this.lifeCycleDesc = firstData.lifeCycleDesc;
+              that.lifeCycleDesc = firstData.lifeCycleDesc;
+              that.clickPerTab(1);
+              that.changMbItem(0);
               mediaData.forEach((item) => {
                 if (item.selectFlag) {
                   idList.push(item.id);
                 }
               });
               var pieParm = {
-                minBudget: this.tfys,
-                maxBudget: this.tfys1,
+                minBudget: that.tfys,
+                maxBudget: that.tfys1,
                 ids: idList,
               };
-              this.getPieData(pieParm);
+              that.getPieData(pieParm);
             }
           }
           else{
@@ -1637,7 +1396,8 @@ export default {
             var detailData = pList1 || [];
             if(detailData[2]){
               var firstData = detailData[2];
-              this.fanganObj = firstData.recommendDeliveryPlan || {};
+              console.log(firstData,'第三条线数据')
+              that.fanganObj = firstData.recommendDeliveryPlan || {};
               var idList = [];
               var travaList = [];
               var travaData = firstData.travelTools || [];
@@ -1648,26 +1408,26 @@ export default {
                   txt:item.title
                 });
               });
-              this.meijieList = mediaData;
-              this.yqxgList = [
+              that.meijieList = mediaData;
+              that.yqxgList = [
                 {
                   til: "触达用户：",
-                  desc: this.fanganObj.reachUserCount,
+                  desc: that.fanganObj.reachUserCount,
                 },
                 {
                   til: "互动量提升：",
-                  desc: this.fanganObj.interactionIncrease,
+                  desc: that.fanganObj.interactionIncrease,
                 },
                 {
                   til: "品牌印象提升：",
-                  desc: this.fanganObj.brandPromotion,
+                  desc: that.fanganObj.brandPromotion,
                 },
                 {
                   til: "销售转化率：",
-                  desc: this.fanganObj.saleConversionRate,
+                  desc: that.fanganObj.saleConversionRate,
                 },
               ];
-              this.tabconList0 = [
+              that.tabconList0 = [
                 {
                   til: "年龄结构",
                   descList: [firstData.ageScope],
@@ -1704,7 +1464,7 @@ export default {
                   ticList:travaList
                 },
               ];
-              this.tabconList1 = [
+              that.tabconList1 = [
                 {
                   til: "APP使用结构",
                   descList: [firstData.appUse],
@@ -1726,7 +1486,7 @@ export default {
                   ticList: null,
                 },
               ],
-              this.tabconList2 = [
+              that.tabconList2 = [
                 {
                   til: "敏感/厌恶",
                   descList: firstData.sensitiveLabel,
@@ -1748,18 +1508,20 @@ export default {
                   ticList: null,
                 },
               ],
-              this.lifeCycleDesc = firstData.lifeCycleDesc;
+              that.lifeCycleDesc = firstData.lifeCycleDesc;
+              that.clickPerTab(1);
+              that.changMbItem(0);
               mediaData.forEach((item) => {
                 if (item.selectFlag) {
                   idList.push(item.id);
                 }
               });
               var pieParm = {
-                minBudget: this.tfys,
-                maxBudget: this.tfys1,
+                minBudget: that.tfys,
+                maxBudget: that.tfys1,
                 ids: idList,
               };
-              this.getPieData(pieParm);
+              that.getPieData(pieParm);
             }
           }
           else{
@@ -1774,7 +1536,8 @@ export default {
             var detailData = pList1 || [];
             if(detailData[3]){
               var firstData = detailData[3];
-              this.fanganObj = firstData.recommendDeliveryPlan || {};
+              console.log(firstData,'第四条线数据')
+              that.fanganObj = firstData.recommendDeliveryPlan || {};
               var idList = [];
               var travaList = [];
               var travaData = firstData.travelTools || [];
@@ -1785,26 +1548,26 @@ export default {
                   txt:item.title
                 });
               });
-              this.meijieList = mediaData;
-              this.yqxgList = [
+              that.meijieList = mediaData;
+              that.yqxgList = [
                 {
                   til: "触达用户：",
-                  desc: this.fanganObj.reachUserCount,
+                  desc: that.fanganObj.reachUserCount,
                 },
                 {
                   til: "互动量提升：",
-                  desc: this.fanganObj.interactionIncrease,
+                  desc: that.fanganObj.interactionIncrease,
                 },
                 {
                   til: "品牌印象提升：",
-                  desc: this.fanganObj.brandPromotion,
+                  desc: that.fanganObj.brandPromotion,
                 },
                 {
                   til: "销售转化率：",
-                  desc: this.fanganObj.saleConversionRate,
+                  desc: that.fanganObj.saleConversionRate,
                 },
               ];
-              this.tabconList0 = [
+              that.tabconList0 = [
                 {
                   til: "年龄结构",
                   descList: [firstData.ageScope],
@@ -1841,7 +1604,7 @@ export default {
                   ticList:travaList
                 },
               ];
-              this.tabconList1 = [
+              that.tabconList1 = [
                 {
                   til: "APP使用结构",
                   descList: [firstData.appUse],
@@ -1863,7 +1626,7 @@ export default {
                   ticList: null,
                 },
               ],
-              this.tabconList2 = [
+              that.tabconList2 = [
                 {
                   til: "敏感/厌恶",
                   descList: firstData.sensitiveLabel,
@@ -1885,18 +1648,20 @@ export default {
                   ticList: null,
                 },
               ],
-              this.lifeCycleDesc = firstData.lifeCycleDesc;
+              that.lifeCycleDesc = firstData.lifeCycleDesc;
+              that.clickPerTab(1);
+              that.changMbItem(0);
               mediaData.forEach((item) => {
                 if (item.selectFlag) {
                   idList.push(item.id);
                 }
               });
               var pieParm = {
-                minBudget: this.tfys,
-                maxBudget: this.tfys1,
+                minBudget: that.tfys,
+                maxBudget: that.tfys1,
                 ids: idList,
               };
-              this.getPieData(pieParm);
+              that.getPieData(pieParm);
             }
           }
           else{
@@ -1911,7 +1676,8 @@ export default {
             var detailData = pList1 || [];
             if(detailData[4]){
               var firstData = detailData[4];
-              this.fanganObj = firstData.recommendDeliveryPlan || {};
+              console.log(firstData,'第五条线数据')
+              that.fanganObj = firstData.recommendDeliveryPlan || {};
               var idList = [];
               var travaList = [];
               var travaData = firstData.travelTools || [];
@@ -1922,26 +1688,26 @@ export default {
                   txt:item.title
                 });
               });
-              this.meijieList = mediaData;
-              this.yqxgList = [
+              that.meijieList = mediaData;
+              that.yqxgList = [
                 {
                   til: "触达用户：",
-                  desc: this.fanganObj.reachUserCount,
+                  desc: that.fanganObj.reachUserCount,
                 },
                 {
                   til: "互动量提升：",
-                  desc: this.fanganObj.interactionIncrease,
+                  desc: that.fanganObj.interactionIncrease,
                 },
                 {
                   til: "品牌印象提升：",
-                  desc: this.fanganObj.brandPromotion,
+                  desc: that.fanganObj.brandPromotion,
                 },
                 {
                   til: "销售转化率：",
-                  desc: this.fanganObj.saleConversionRate,
+                  desc: that.fanganObj.saleConversionRate,
                 },
               ];
-              this.tabconList0 = [
+              that.tabconList0 = [
                 {
                   til: "年龄结构",
                   descList: [firstData.ageScope],
@@ -1978,7 +1744,7 @@ export default {
                   ticList:travaList
                 },
               ];
-              this.tabconList1 = [
+              that.tabconList1 = [
                 {
                   til: "APP使用结构",
                   descList: [firstData.appUse],
@@ -2000,7 +1766,7 @@ export default {
                   ticList: null,
                 },
               ],
-              this.tabconList2 = [
+              that.tabconList2 = [
                 {
                   til: "敏感/厌恶",
                   descList: firstData.sensitiveLabel,
@@ -2022,18 +1788,20 @@ export default {
                   ticList: null,
                 },
               ],
-              this.lifeCycleDesc = firstData.lifeCycleDesc;
+              that.lifeCycleDesc = firstData.lifeCycleDesc;
+              that.clickPerTab(1);
+              that.changMbItem(0);
               mediaData.forEach((item) => {
                 if (item.selectFlag) {
                   idList.push(item.id);
                 }
               });
               var pieParm = {
-                minBudget: this.tfys,
-                maxBudget: this.tfys1,
+                minBudget: that.tfys,
+                maxBudget: that.tfys1,
                 ids: idList,
               };
-              this.getPieData(pieParm);
+              that.getPieData(pieParm);
             }
           }
           else{
@@ -2048,7 +1816,8 @@ export default {
             var detailData = pList1 || [];
             if(detailData[5]){
               var firstData = detailData[5];
-              this.fanganObj = firstData.recommendDeliveryPlan || {};
+              console.log(firstData,'第六条线数据')
+              that.fanganObj = firstData.recommendDeliveryPlan || {};
               var idList = [];
               var travaList = [];
               var travaData = firstData.travelTools || [];
@@ -2059,26 +1828,26 @@ export default {
                   txt:item.title
                 });
               });
-              this.meijieList = mediaData;
-              this.yqxgList = [
+              that.meijieList = mediaData;
+              that.yqxgList = [
                 {
                   til: "触达用户：",
-                  desc: this.fanganObj.reachUserCount,
+                  desc: that.fanganObj.reachUserCount,
                 },
                 {
                   til: "互动量提升：",
-                  desc: this.fanganObj.interactionIncrease,
+                  desc: that.fanganObj.interactionIncrease,
                 },
                 {
                   til: "品牌印象提升：",
-                  desc: this.fanganObj.brandPromotion,
+                  desc: that.fanganObj.brandPromotion,
                 },
                 {
                   til: "销售转化率：",
-                  desc: this.fanganObj.saleConversionRate,
+                  desc: that.fanganObj.saleConversionRate,
                 },
               ];
-              this.tabconList0 = [
+              that.tabconList0 = [
                 {
                   til: "年龄结构",
                   descList: [firstData.ageScope],
@@ -2115,7 +1884,7 @@ export default {
                   ticList:travaList
                 },
               ];
-              this.tabconList1 = [
+              that.tabconList1 = [
                 {
                   til: "APP使用结构",
                   descList: [firstData.appUse],
@@ -2137,7 +1906,7 @@ export default {
                   ticList: null,
                 },
               ],
-              this.tabconList2 = [
+              that.tabconList2 = [
                 {
                   til: "敏感/厌恶",
                   descList: firstData.sensitiveLabel,
@@ -2159,18 +1928,20 @@ export default {
                   ticList: null,
                 },
               ],
-              this.lifeCycleDesc = firstData.lifeCycleDesc;
+              that.lifeCycleDesc = firstData.lifeCycleDesc;
+              that.clickPerTab(1);
+              that.changMbItem(0);
               mediaData.forEach((item) => {
                 if (item.selectFlag) {
                   idList.push(item.id);
                 }
               });
               var pieParm = {
-                minBudget: this.tfys,
-                maxBudget: this.tfys1,
+                minBudget: that.tfys,
+                maxBudget: that.tfys1,
                 ids: idList,
               };
-              this.getPieData(pieParm);
+              that.getPieData(pieParm);
             }
           }
           else{
@@ -2185,7 +1956,8 @@ export default {
             var detailData = pList1 || [];
             if(detailData[6]){
               var firstData = detailData[6];
-              this.fanganObj = firstData.recommendDeliveryPlan || {};
+              console.log(firstData,'第七条线数据')
+              that.fanganObj = firstData.recommendDeliveryPlan || {};
               var idList = [];
               var travaList = [];
               var travaData = firstData.travelTools || [];
@@ -2196,26 +1968,26 @@ export default {
                   txt:item.title
                 });
               });
-              this.meijieList = mediaData;
-              this.yqxgList = [
+              that.meijieList = mediaData;
+              that.yqxgList = [
                 {
                   til: "触达用户：",
-                  desc: this.fanganObj.reachUserCount,
+                  desc: that.fanganObj.reachUserCount,
                 },
                 {
                   til: "互动量提升：",
-                  desc: this.fanganObj.interactionIncrease,
+                  desc: that.fanganObj.interactionIncrease,
                 },
                 {
                   til: "品牌印象提升：",
-                  desc: this.fanganObj.brandPromotion,
+                  desc: that.fanganObj.brandPromotion,
                 },
                 {
                   til: "销售转化率：",
-                  desc: this.fanganObj.saleConversionRate,
+                  desc: that.fanganObj.saleConversionRate,
                 },
               ];
-              this.tabconList0 = [
+              that.tabconList0 = [
                 {
                   til: "年龄结构",
                   descList: [firstData.ageScope],
@@ -2252,7 +2024,7 @@ export default {
                   ticList:travaList
                 },
               ];
-              this.tabconList1 = [
+              that.tabconList1 = [
                 {
                   til: "APP使用结构",
                   descList: [firstData.appUse],
@@ -2274,7 +2046,7 @@ export default {
                   ticList: null,
                 },
               ],
-              this.tabconList2 = [
+              that.tabconList2 = [
                 {
                   til: "敏感/厌恶",
                   descList: firstData.sensitiveLabel,
@@ -2296,18 +2068,20 @@ export default {
                   ticList: null,
                 },
               ],
-              this.lifeCycleDesc = firstData.lifeCycleDesc;
+              that.lifeCycleDesc = firstData.lifeCycleDesc;
+              that.clickPerTab(1);
+              that.changMbItem(0);
               mediaData.forEach((item) => {
                 if (item.selectFlag) {
                   idList.push(item.id);
                 }
               });
               var pieParm = {
-                minBudget: this.tfys,
-                maxBudget: this.tfys1,
+                minBudget: that.tfys,
+                maxBudget: that.tfys1,
                 ids: idList,
               };
-              this.getPieData(pieParm);
+              that.getPieData(pieParm);
             }
           }
           else{
@@ -2359,7 +2133,6 @@ export default {
   },
 };
 </script>
-
 <style lang="scss" scoped>
 .dx_Item_container {
   width: 100%;
@@ -3438,6 +3211,7 @@ export default {
             flex-direction: column;
             align-items: flex-start;
             margin-bottom: 18px;
+            margin-right: 75px;
             .tab_content_item_top {
               font-size: 14px;
               font-family: PingFangSC-Medium, PingFang SC;
