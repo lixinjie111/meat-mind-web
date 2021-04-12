@@ -933,29 +933,33 @@ export default {
         path:"/media"
       });
     },
-    expandfn(arg,c,r,d){
+    expandfn(arg,c,r){
       var rigDom = this.$refs[r][0];
-      console.log(d,'item')
+      var rigDom1 = this.$refs.rig_area1[0];
+      var rigDom2 = this.$refs.rig_area2[0];
+      var rigDom3 = this.$refs.rig_area3[0];
+      var rigDom4 = this.$refs.rig_area4[0];
+      var rigDom5 = this.$refs.rig_area5[0];
       if(arg == 1){
         if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
           this.vDxtxt2 = '查看动线详情';
+          rigDom2.style='background:#FFF;';
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
           this.vDxtxt3 = '查看动线详情';
+          rigDom3.style='background:#FFF;';
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
           this.vDxtxt4 = '查看动线详情';
+          rigDom4.style='background:#FFF;';
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
           this.vDxtxt5 = '查看动线详情';
-        }
-        else if(this.ifShowDx6){
-          this.ifShowDx6 = !this.ifShowDx6;
-          this.vDxtxt6 = '查看动线详情';
+          rigDom5.style='background:#FFF;';
         }
         this.ifShowDx1 = !this.ifShowDx1;
         if(this.ifShowDx1){
@@ -971,22 +975,22 @@ export default {
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
           this.vDxtxt1 = '查看动线详情';
+          rigDom1.style='background:#FFF;';
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
-          this.vDxtxt3 = '查看动线详情'; 
+          this.vDxtxt3 = '查看动线详情';
+          rigDom3.style='background:#FFF;'; 
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
           this.vDxtxt4 = '查看动线详情';
+          rigDom4.style='background:#FFF;';
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
           this.vDxtxt5 = '查看动线详情';
-        }
-        else if(this.ifShowDx6){
-          this.ifShowDx6 = !this.ifShowDx6;
-          this.vDxtxt6 = '查看动线详情';
+          rigDom5.style='background:#FFF;';
         }
         this.ifShowDx2 = !this.ifShowDx2;
         if(this.ifShowDx2){
@@ -1002,25 +1006,24 @@ export default {
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
           this.vDxtxt1 = '查看动线详情';
+          rigDom1.style='background:#FFF;';
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
           this.vDxtxt2 = '查看动线详情';
+          rigDom2.style='background:#FFF;';
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
           this.vDxtxt4 = '查看动线详情';
+          rigDom4.style='background:#FFF;';
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
           this.vDxtxt5 = '查看动线详情';
-        }
-        else if(this.ifShowDx6){
-          this.ifShowDx6 = !this.ifShowDx6;
-          this.vDxtxt6 = '查看动线详情';
+          rigDom5.style='background:#FFF;';
         }
         this.ifShowDx3 = !this.ifShowDx3;
-        console.log(this.ifShowDx3,'this.ifShowDx3')
         if(this.ifShowDx3){
           this.vDxtxt3 = '收起动线详情';
           rigDom.style='background:#F0F8FF;';
@@ -1034,22 +1037,22 @@ export default {
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
           this.vDxtxt1 = '查看动线详情';
+          rigDom1.style='background:#FFF;';
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
           this.vDxtxt2 = '查看动线详情';
+          rigDom2.style='background:#FFF;';
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
           this.vDxtxt3 = '查看动线详情';
+          rigDom3.style='background:#FFF;';
         }
         else if(this.ifShowDx5){
           this.ifShowDx5 = !this.ifShowDx5;
           this.vDxtxt5 = '查看动线详情';
-        }
-        else if(this.ifShowDx6){
-          this.ifShowDx6 = !this.ifShowDx6;
-          this.vDxtxt6 = '查看动线详情';
+          rigDom5.style='background:#FFF;';
         }
         this.ifShowDx4 = !this.ifShowDx4;
         if(this.ifShowDx4){
@@ -1065,22 +1068,22 @@ export default {
         if(this.ifShowDx1){
           this.ifShowDx1 = !this.ifShowDx1;
           this.vDxtxt1 = '查看动线详情';
+          rigDom1.style='background:#FFF;';
         }
         else if(this.ifShowDx2){
           this.ifShowDx2 = !this.ifShowDx2;
           this.vDxtxt2 = '查看动线详情';
+          rigDom2.style='background:#FFF;';
         }
         else if(this.ifShowDx3){
           this.ifShowDx3 = !this.ifShowDx3;
           this.vDxtxt3 = '查看动线详情';
+          rigDom3.style='background:#FFF;';
         }
         else if(this.ifShowDx4){
           this.ifShowDx4 = !this.ifShowDx4;
           this.vDxtxt4 = '查看动线详情';
-        }
-        else if(this.ifShowDx6){
-          this.ifShowDx6 = !this.ifShowDx6;
-          this.vDxtxt6 = '查看动线详情';
+          rigDom4.style='background:#FFF;';
         }
         this.ifShowDx5 = !this.ifShowDx5;
         if(this.ifShowDx5){
@@ -1089,37 +1092,6 @@ export default {
         }
         else{
           this.vDxtxt5 = '查看动线详情';
-          rigDom.style='background:#FFF;';
-        }
-      }
-      else if(arg == 6){
-        if(this.ifShowDx1){
-          this.ifShowDx1 = !this.ifShowDx1;
-          this.vDxtxt1 = '查看动线详情';
-        }
-        else if(this.ifShowDx2){
-          this.ifShowDx2 = !this.ifShowDx2;
-          this.vDxtxt2 = '查看动线详情';
-        }
-        else if(this.ifShowDx3){
-          this.ifShowDx3 = !this.ifShowDx3;
-          this.vDxtxt3 = '查看动线详情';
-        }
-        else if(this.ifShowDx4){
-          this.ifShowDx4 = !this.ifShowDx4;
-          this.vDxtxt4 = '查看动线详情';
-        }
-        else if(this.ifShowDx5){
-          this.ifShowDx5 = !this.ifShowDx5;
-          this.vDxtxt5 = '查看动线详情';
-        }
-        this.ifShowDx6 = !this.ifShowDx6;
-        if(this.ifShowDx6){
-          this.vDxtxt6 = '收起动线详情';
-          rigDom.style='background:#F0F8FF;';
-        }
-        else{
-          this.vDxtxt6 = '查看动线详情';
           rigDom.style='background:#FFF;';
         }
       }
