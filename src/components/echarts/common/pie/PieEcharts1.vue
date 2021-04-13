@@ -73,7 +73,7 @@
             show: true,
             text: this.formatNumber(tolNum),
             left:'center',
-            top:'34%',
+            top:'36%',
             textStyle: {
               color: '#242F57',
               fontSize: 20,
