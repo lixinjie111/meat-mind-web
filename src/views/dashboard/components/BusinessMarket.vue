@@ -174,8 +174,8 @@
                         <div class="time-line">
                             <img :src="item.timeImg"/>
                         </div>
-                        <div class="map-box">
-                            <vDxitem v-if="groupActive == 0" :onlyMap="true"></vDxitem>
+                        <div class="map-box" v-if="yhGroupList.length">
+                            <vDxitem v-if="groupActive == 0" :onlyMap="true" :parm="yhGroupList[0]" :key="yhGroupList[0].id"></vDxitem>
                             <vDxitem1 v-if="groupActive == 1" :onlyMap="true"></vDxitem1>
                             <vDxitem2 v-if="groupActive == 2" :onlyMap="true"></vDxitem2>
                             <vDxitem3 v-if="groupActive == 3" :onlyMap="true"></vDxitem3>
@@ -529,6 +529,7 @@
     import barLine from '@/components/echarts/common/bar/barLine';
     import NewEcharts from "@/views/mark/components/NewEcharts";
     import PieNest2 from '@/components/echarts/common/pie/PieNest2';
+    import api from "@/utils/api"
 
     export default {
         name: "BusinessMarket",
@@ -1090,10 +1091,26 @@
                         },
                         timeImg: require("../../../assets/img/dashboard/market/timeline5@2x.png")
                     }
-                ]
+                ],
+                yhGroupList: []
             }
         },
+        created() {
+            this.getYhGroupList();
+        },
         methods: {
+            getYhGroupList(){
+                api.getGroupsList().then(res=>{
+                    if(res.code == 200){
+                        this.yhGroupList = res.data;
+                    }
+                    else{
+                        this.$Message.error('获得用户分组数据失败！')
+                    }
+                }).catch(err=>{
+                    this.$Message.error(err.msg)
+                });
+            },
             toMedia() {
                 this.$router.push({ name:'media'});
             },
@@ -1111,8 +1128,7 @@
                     this.groupActive = index + 1;
                 }
             }
-        },
-        computed: {}
+        }
     }
 </script>
 
