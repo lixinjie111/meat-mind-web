@@ -109,7 +109,7 @@
                     </div>
                 </div>
                 <div class="con_item_container">
-                    <div class="con_item_label">有小孩</div>
+                    <div class="con_item_label">亲子</div>
                     <div class="con_item_con">
                         <div class="con_item" ref="hasChild" v-for="(item,index) in hasChildList" :key="index" @click="nianlinClick(index,'hasChild')">{{item}}</div>
                     </div>

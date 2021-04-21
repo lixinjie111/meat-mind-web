@@ -120,7 +120,7 @@
           </div>
           <div class="r-item">
             <!-- <Checkbox v-model="hasChild"></Checkbox> -->
-            <div class="r-item-label">有小孩:</div>
+            <div class="r-item-label">亲子:</div>
             <div class="arr">
               <div
                 class="ele"
