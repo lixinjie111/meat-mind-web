@@ -602,7 +602,7 @@ export default {
         let res = await api.getUserMoveLineDetail(resParm);
         if (res.code == 200) {
           var detailData = res.data || [];
-          console.log(detailData, "detailData");
+          // console.log(detailData, "detailData");
           if (detailData[0]) {
             var firstData = detailData[0];
             this.fanganObj = firstData.recommendDeliveryPlan || {};
@@ -738,7 +738,8 @@ export default {
           this.$Message.error("获得用户分组动线详情失败！");
         }
       } catch (err) {
-        console.log(">>>>>", err);
+        // console.log(">>>>>", err);
+        console.log(err);
       }
     },
     getPieData(pieParm) {
@@ -747,7 +748,7 @@ export default {
       api
         .getCalcMediaBudget(pieParm)
         .then((res) => {
-          console.log(res, "饼图数据");
+          // console.log(res, "饼图数据");
           if (res.code == 200) {
             var pieData = res.data || {};
             var pieList = pieData.medias || [];
@@ -780,7 +781,8 @@ export default {
           }
         })
         .catch((err) => {
-          console.log("---饼图接口数据---", err);
+          // console.log("---饼图接口数据---", err);
+          console.log(err);
         });
     },
     changeNews() {
@@ -1115,7 +1117,7 @@ export default {
             var detailData = pList1 || [];
             if(detailData[0]){
               var firstData = detailData[0];
-              console.log(firstData,'第一条线数据')
+              // console.log(firstData,'第一条线数据')
               that.fanganObj = firstData.recommendDeliveryPlan || {};
               var idList = [];
               var travaList = [];
@@ -1255,7 +1257,7 @@ export default {
             var detailData = pList1 || [];
             if(detailData[1]){
               var firstData = detailData[1];
-              console.log(firstData,'第二条线数据')
+              // console.log(firstData,'第二条线数据')
               that.fanganObj = firstData.recommendDeliveryPlan || {};
               var idList = [];
               var travaList = [];
@@ -1395,7 +1397,7 @@ export default {
             var detailData = pList1 || [];
             if(detailData[2]){
               var firstData = detailData[2];
-              console.log(firstData,'第三条线数据')
+              // console.log(firstData,'第三条线数据')
               that.fanganObj = firstData.recommendDeliveryPlan || {};
               var idList = [];
               var travaList = [];
@@ -1535,7 +1537,7 @@ export default {
             var detailData = pList1 || [];
             if(detailData[3]){
               var firstData = detailData[3];
-              console.log(firstData,'第四条线数据')
+              // console.log(firstData,'第四条线数据')
               that.fanganObj = firstData.recommendDeliveryPlan || {};
               var idList = [];
               var travaList = [];
@@ -1675,7 +1677,7 @@ export default {
             var detailData = pList1 || [];
             if(detailData[4]){
               var firstData = detailData[4];
-              console.log(firstData,'第五条线数据')
+              // console.log(firstData,'第五条线数据')
               that.fanganObj = firstData.recommendDeliveryPlan || {};
               var idList = [];
               var travaList = [];
@@ -1815,7 +1817,7 @@ export default {
             var detailData = pList1 || [];
             if(detailData[5]){
               var firstData = detailData[5];
-              console.log(firstData,'第六条线数据')
+              // console.log(firstData,'第六条线数据')
               that.fanganObj = firstData.recommendDeliveryPlan || {};
               var idList = [];
               var travaList = [];
@@ -1955,7 +1957,7 @@ export default {
             var detailData = pList1 || [];
             if(detailData[6]){
               var firstData = detailData[6];
-              console.log(firstData,'第七条线数据')
+              // console.log(firstData,'第七条线数据')
               that.fanganObj = firstData.recommendDeliveryPlan || {};
               var idList = [];
               var travaList = [];

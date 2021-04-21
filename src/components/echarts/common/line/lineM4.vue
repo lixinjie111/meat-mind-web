@@ -42,7 +42,7 @@
                     width: 2 / 144 * window.rem,
                 }
             });
-            console.log(this.myData.data);
+            // console.log(this.myData.data);
             this.initEcharts();
         },
         methods: {

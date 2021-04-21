@@ -117,7 +117,7 @@ export default {
       }
     },
     edit1(val){
-      console.log(val)
+      // console.log(val)
       this.title1=val;
     },
     look(val){

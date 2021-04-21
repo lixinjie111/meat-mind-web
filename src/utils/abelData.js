@@ -215,7 +215,7 @@ barLine:{
         tooltip: {
           show: true,
           formatter: (params) => {
-            console.log(params.dataIndex)
+            // console.log(params.dataIndex)
             return mediaTooltip(mediaHezuo[params.dataIndex].media, mediaHezuo[params.dataIndex].percent);
           }
         },

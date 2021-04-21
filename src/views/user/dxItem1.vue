@@ -551,7 +551,7 @@ export default {
                 width:(Number(moveLineObj.sexPercentage.length !=0 ? moveLineObj.sexPercentage[1].percentage :'1') -1) + '%'
               }
             }
-            console.log(detailData[0].recommendDeliveryPlan,'投放方案！')
+            // console.log(detailData[0].recommendDeliveryPlan,'投放方案！')
             this.fanganObj = detailData[0].recommendDeliveryPlan || {};
             this.yqxgList = [
               {
@@ -580,7 +580,8 @@ export default {
           this.$Message.error('获得用户分组动线详情失败！')
         }
       }catch(err){
-        console.log('>>>>>',err)
+        // console.log('>>>>>',err)
+        console.log(err)
       };
     },
     clickPerTab(arg) {
@@ -745,7 +746,7 @@ export default {
       });
 
       //加载行政区划插件,以及行政区域查询部分
-      console.log(area,'areaareaarea')
+      // console.log(area,'areaareaarea')
       if (!district) {
         var opts = {
           subdistrict: 0, //获取边界不需要返回下级行政区
@@ -843,7 +844,7 @@ export default {
             polyObj['polyline0'].setOptions(selectedOptions);
             var detailData = pList1 || [];
             var moveLineObj = detailData[0].moveLineInfo || {};
-            console.log(moveLineObj.userStatus,'线1用户状态')
+            // console.log(moveLineObj.userStatus,'线1用户状态')
             if(detailData[0]){
               that.rightPanelData = {
                 userStatObj: moveLineObj.userStatus || [{}],
@@ -893,7 +894,7 @@ export default {
             polyObj['polyline1'].setOptions(selectedOptions);
             var detailData = pList1 || [];
             var moveLineObj = detailData[1].moveLineInfo || {};
-            console.log(moveLineObj.userStatus,'线2用户状态')
+            // console.log(moveLineObj.userStatus,'线2用户状态')
             if(detailData[1]){
               that.rightPanelData = {
                 userStatObj: moveLineObj.userStatus || [{}],
@@ -943,7 +944,7 @@ export default {
             polyObj['polyline2'].setOptions(selectedOptions);
             var detailData = pList1 || [];
             var moveLineObj = detailData[2].moveLineInfo || {};
-            console.log(moveLineObj.userStatus,'线3用户状态')
+            // console.log(moveLineObj.userStatus,'线3用户状态')
             if(detailData[2]){
               that.rightPanelData = {
                 userStatObj: moveLineObj.userStatus || [{}],
@@ -993,7 +994,7 @@ export default {
             polyObj['polyline3'].setOptions(selectedOptions);
             var detailData = pList1 || [];
             var moveLineObj = detailData[3].moveLineInfo || {};
-            console.log(moveLineObj.userStatus,'线4用户状态')
+            // console.log(moveLineObj.userStatus,'线4用户状态')
             if(detailData[3]){
               that.rightPanelData = {
                 userStatObj: moveLineObj.userStatus || [{}],
@@ -1043,7 +1044,7 @@ export default {
             polyObj['polyline4'].setOptions(selectedOptions);
             var detailData = pList1 || [];
             var moveLineObj = detailData[4].moveLineInfo || {};
-            console.log(moveLineObj.userStatus,'线5用户状态')
+            // console.log(moveLineObj.userStatus,'线5用户状态')
             if(detailData[4]){
               that.rightPanelData = {
                 userStatObj: moveLineObj.userStatus || [{}],
@@ -1093,7 +1094,7 @@ export default {
             polyObj['polyline5'].setOptions(selectedOptions);
             var detailData = pList1 || [];
             var moveLineObj = detailData[5].moveLineInfo || {};
-            console.log(moveLineObj.userStatus,'线6用户状态')
+            // console.log(moveLineObj.userStatus,'线6用户状态')
             if(detailData[5]){
               that.rightPanelData = {
                 userStatObj: moveLineObj.userStatus || [{}],
@@ -1143,7 +1144,7 @@ export default {
             polyObj['polyline6'].setOptions(selectedOptions);
             var detailData = pList1 || [];
             var moveLineObj = detailData[6].moveLineInfo || {};
-            console.log(moveLineObj.userStatus,'线7用户状态')
+            // console.log(moveLineObj.userStatus,'线7用户状态')
             if(detailData[6]){
               that.rightPanelData = {
                 userStatObj: moveLineObj.userStatus || [{}],

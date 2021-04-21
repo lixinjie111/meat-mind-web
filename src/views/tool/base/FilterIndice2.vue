@@ -33,7 +33,7 @@
     name: "FilterEvent",
     data() {
       const conditionsDisabled = Array.isArray(this.buttonText) ? this.buttonText.map(()=>([])) : {}
-      console.log('conditionsDisabled', conditionsDisabled)
+      // console.log('conditionsDisabled', conditionsDisabled)
       return {
         event: 1,
         events: ["任意事件",

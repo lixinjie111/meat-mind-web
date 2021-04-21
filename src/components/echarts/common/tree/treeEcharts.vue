@@ -35,7 +35,7 @@ export default {
       });
     },
     defaultOption() {
-      console.log(this.detail)
+      // console.log(this.detail)
       let option = {
         tooltip: {
           trigger: "item",
