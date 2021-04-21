@@ -359,7 +359,7 @@
       <div class="zuhetitle">媒介组合推荐方案</div>
       <div class="media_zuhe_panel">
         <div class="title">媒介组合方案</div>
-        <div class="subTitle">基于品牌画像和用户画像，建议以短视频作为主要信息传播媒介，垂直媒介为辅的媒介组合，并辅以多KOL多内容类型的投放策略），预算建议在50～75万之间。</div>
+        <div class="subTitle">基于品牌画像和用户画像，建议以短视频作为主要信息传播媒介，垂直媒介为辅的媒介组合，并辅以多KOL多内容类型的投放策略），预算建议在120～320万之间。</div>
         <div class="navBox">
           <div class="navItem" :class="currentIndex==1?'navActive':''" @click="changeIndex(1)">
             <div class="navItem_left">
