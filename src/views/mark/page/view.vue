@@ -945,25 +945,25 @@ export default {
                 {name:"行业品牌影响力",num:"63.9",icon:"iconshangsheng",pre:"+17%"},
                 {name:"季活跃用户量（QAU）",num:"12,136",icon:"iconxiajiang",pre:"-3.7%"},
                 {name:"渠道平均投放回报率",num:"16.2%",icon:"iconshangsheng",pre:"+2.7%"},
-                {name:"Q1计划营收完成度",num:"79%",icon:"",pre:""}
+                {name:"Q1季度计划完成度",num:"79%",icon:"",pre:""}
             ],            
             listQ2:[
                 {name:"行业品牌影响力",num:"57.64",icon:"iconxiajiang",pre:"-9.8%"},
                 {name:"季活跃用户量（QAU）",num:"13,956",icon:"iconshangsheng",pre:"+15%"},
                 {name:"渠道平均投放回报率",num:"27.4%",icon:"iconshangsheng",pre:"+69.2%"},
-                {name:"Q1计划营收完成度",num:"85.2%",icon:"",pre:""}
+                {name:"Q2季度计划完成度",num:"85.2%",icon:"",pre:""}
             ],            
             listQ3:[
                 {name:"行业品牌影响力",num:"78.8",icon:"iconshangsheng",pre:" +12.2%"},
                 {name:"季活跃用户量（QAU）",num:"19,748",icon:"iconshangsheng",pre:"+41.5%"},
                 {name:"渠道平均投放回报率",num:"26.28%",icon:"iconxiajiang",pre:"-4.1%"},
-                {name:"Q1计划营收完成度",num:"107%",icon:"",pre:""}
+                {name:"Q3季度计划完成度",num:"107%",icon:"",pre:""}
             ],  
             listQ4:[
                 {name:"行业品牌影响力",num:"82.5",icon:"iconshangsheng",pre:" +4.8%"},
                 {name:"季活跃用户量（QAU）",num:"24,033",icon:"iconshangsheng",pre:"+21.7%"},
                 {name:"渠道平均投放回报率",num:"43.0%",icon:"iconshangsheng",pre:"+12.1%"},
-                {name:"Q1计划营收完成度",num:"93.7%",icon:"",pre:""}
+                {name:"Q4季度计划完成度",num:"93.7%",icon:"",pre:""}
             ],                        
             pieDateValue:"2021",
             tagList:['华东地区'],
