@@ -817,8 +817,6 @@ export default {
         polyObj[polyline].setMap(map);
         var cirList = JSON.parse(pList1[i].locationCoordination);
         var radius = pList1[i].locationRadius ? pList1[i].locationRadius : 0; //半径
-        console.log(cirList,'圆圈圆心！！')
-        console.log(radius,'圆圈半径')
         if(cirList.length != 0){
           var circle = new AMap.Circle({
             center: pList1[i].locationCoordination ? JSON.parse(pList1[i].locationCoordination) : [],
@@ -1191,8 +1189,6 @@ export default {
       for(var i=0;i<pList1.length;i++){
         var cirList = JSON.parse(pList1[i].locationCoordination);
         var radius = pList1[i].locationRadius ? pList1[i].locationRadius : 0; 
-        console.log(cirList,'圆圈圆心！！')
-        console.log(radius,'圆圈半径')
         if(cirList.length != 0){
           var circle = new AMap.Circle({
             center: pList1[i].locationCoordination ? JSON.parse(pList1[i].locationCoordination) : [],

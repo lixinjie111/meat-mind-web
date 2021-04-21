@@ -248,13 +248,6 @@ export default {
             this.detailFlag = false
             this.getDetail(params.data.id)
         },
-        getListA(){
-            api.getMarkDetail({id:"200027"}).then(res=>{
-                console.log("res",res)
-            }).catch(err=>{
-                console.log('catch',err)
-            })
-        },
         async getList(){
             try{
                 let res = await api.getMarkList({})
@@ -309,7 +302,6 @@ export default {
         }
     },
     mounted(){
-        this.getListA()
         Promise.all([this.getList()]).then(res=>{
             this.getDetail(this.selectItem.id)
         })

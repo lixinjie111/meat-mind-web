@@ -35,6 +35,7 @@ export default {
       });
     },
     defaultOption() {
+      console.log(this.detail)
       let option = {
         tooltip: {
           trigger: "item",
@@ -91,21 +92,21 @@ export default {
                     label: {
                       offset: [-30, -15],
                     },
-                    children: [
-                      {
-                        // name:"搜狐号",
-                        // value: "转发了百度百家号的文章",
-                        name:this.detail.subPublicList[0].subPublicList[0].title||"",
-                        value:this.detail.subPublicList[0].subPublicList[0].content||"",
-                        itemStyle:{
-                          color:this.colorList[1],
-                          borderWidth:0,
-                        },
-                        label: {
-                          offset: [10, 0],
-                        },
-                      }
-                    ],
+                    // children: [
+                    //   {
+                    //     // name:"搜狐号",
+                    //     // value: "转发了百度百家号的文章",
+                    //     name:this.detail.subPublicList[0].subPublicList[0].title||"",
+                    //     value:this.detail.subPublicList[0].subPublicList[0].content||"",
+                    //     itemStyle:{
+                    //       color:this.colorList[1],
+                    //       borderWidth:0,
+                    //     },
+                    //     label: {
+                    //       offset: [10, 0],
+                    //     },
+                    //   }
+                    // ],
                   },
                   {
                     // name: "知乎",
@@ -119,34 +120,34 @@ export default {
                     label: {
                       offset: [-30, 15],
                     },
-                    children: [
-                      {
-                        // name:"新浪微博",
-                        // value: "对于提问作出官方回应",
-                        name:this.detail.subPublicList[1].subPublicList[0].title||"",
-                        value:this.detail.subPublicList[1].subPublicList[0].content||"",
-                        itemStyle:{
-                          color:this.colorList[2],
-                          borderWidth:0,
-                        },
-                        label: {
-                          offset: [10, 0],
-                        },
-                      },
-                      {
-                        // name: "网易自媒体",
-                        // value: "对于提问作出官方回应",
-                        name:this.detail.subPublicList[1].subPublicList[1].title||"",
-                        value:this.detail.subPublicList[1].subPublicList[1].content||"",                        
-                        itemStyle:{
-                          color:this.colorList[2],
-                          borderWidth:0,
-                        },
-                        label: {
-                          offset: [10, 0],
-                        },
-                      },
-                    ],
+                    // children: [
+                    //   {
+                    //     // name:"新浪微博",
+                    //     // value: "对于提问作出官方回应",
+                    //     name:this.detail.subPublicList[1].subPublicList[0].title||"",
+                    //     value:this.detail.subPublicList[1].subPublicList[0].content||"",
+                    //     itemStyle:{
+                    //       color:this.colorList[2],
+                    //       borderWidth:0,
+                    //     },
+                    //     label: {
+                    //       offset: [10, 0],
+                    //     },
+                    //   },
+                    //   {
+                    //     // name: "网易自媒体",
+                    //     // value: "对于提问作出官方回应",
+                    //     name:this.detail.subPublicList[1].subPublicList[1].title||"",
+                    //     value:this.detail.subPublicList[1].subPublicList[1].content||"",                        
+                    //     itemStyle:{
+                    //       color:this.colorList[2],
+                    //       borderWidth:0,
+                    //     },
+                    //     label: {
+                    //       offset: [10, 0],
+                    //     },
+                    //   },
+                    // ],
                   },
                   {
                     // name: "抖音",
@@ -160,60 +161,60 @@ export default {
                     label: {
                       offset: [-30, 15],
                     },
-                    children: [
-                      {
-                        // name: "微信公众号",
-                        // value: "讨论了消费者吃各类美食时搭配的凉茶品牌",
-                        name:this.detail.subPublicList[2].subPublicList[0].title||"",
-                        value:this.detail.subPublicList[2].subPublicList[0].content||"",                           
-                        itemStyle:{
-                          color:this.colorList[3],
-                          borderWidth:0,
-                        },
-                        label: {
-                          offset: [10, 0],
-                        },
-                      },
-                      {
-                        // name: "一点资讯",
-                        // value: "简要描述了该事件：百万级的点赞量及万余计的转发",
-                        name:this.detail.subPublicList[2].subPublicList[1].title||"",
-                        value:this.detail.subPublicList[2].subPublicList[1].content||"",                           
-                        itemStyle:{
-                          color:this.colorList[3],
-                          borderWidth:0,
-                        },
-                        label: {
-                          offset: [10, 0],
-                        },
-                      },
-                      {
-                        // name:"企鹅号",
-                        // value:"讨论了消费者吃各类美食时搭配的凉茶品牌",
-                        name:this.detail.subPublicList[2].subPublicList[2].title||"",
-                        value:this.detail.subPublicList[2].subPublicList[2].content||"",                           
-                        itemStyle:{
-                          color:this.colorList[3],
-                          borderWidth:0,
-                        },
-                        label: {
-                          offset: [10, 0],
-                        },
-                      },
-                      {
-                        // name:"头条号",
-                        // value: "简要描述了该事件：百万级的点赞量及万余计的转发",
-                        name:this.detail.subPublicList[2].subPublicList[3].title||"",
-                        value:this.detail.subPublicList[2].subPublicList[3].content||"",                           
-                        itemStyle:{
-                          color:this.colorList[3],
-                          borderWidth:0,
-                        },
-                        label: {
-                          offset: [10, 0],
-                        },
-                      },
-                    ],
+                    // children: [
+                    //   {
+                    //     // name: "微信公众号",
+                    //     // value: "讨论了消费者吃各类美食时搭配的凉茶品牌",
+                    //     name:this.detail.subPublicList[2].subPublicList[0].title||"",
+                    //     value:this.detail.subPublicList[2].subPublicList[0].content||"",                           
+                    //     itemStyle:{
+                    //       color:this.colorList[3],
+                    //       borderWidth:0,
+                    //     },
+                    //     label: {
+                    //       offset: [10, 0],
+                    //     },
+                    //   },
+                    //   {
+                    //     // name: "一点资讯",
+                    //     // value: "简要描述了该事件：百万级的点赞量及万余计的转发",
+                    //     name:this.detail.subPublicList[2].subPublicList[1].title||"",
+                    //     value:this.detail.subPublicList[2].subPublicList[1].content||"",                           
+                    //     itemStyle:{
+                    //       color:this.colorList[3],
+                    //       borderWidth:0,
+                    //     },
+                    //     label: {
+                    //       offset: [10, 0],
+                    //     },
+                    //   },
+                    //   {
+                    //     // name:"企鹅号",
+                    //     // value:"讨论了消费者吃各类美食时搭配的凉茶品牌",
+                    //     name:this.detail.subPublicList[2].subPublicList[2].title||"",
+                    //     value:this.detail.subPublicList[2].subPublicList[2].content||"",                           
+                    //     itemStyle:{
+                    //       color:this.colorList[3],
+                    //       borderWidth:0,
+                    //     },
+                    //     label: {
+                    //       offset: [10, 0],
+                    //     },
+                    //   },
+                    //   {
+                    //     // name:"头条号",
+                    //     // value: "简要描述了该事件：百万级的点赞量及万余计的转发",
+                    //     name:this.detail.subPublicList[2].subPublicList[3].title||"",
+                    //     value:this.detail.subPublicList[2].subPublicList[3].content||"",                           
+                    //     itemStyle:{
+                    //       color:this.colorList[3],
+                    //       borderWidth:0,
+                    //     },
+                    //     label: {
+                    //       offset: [10, 0],
+                    //     },
+                    //   },
+                    // ],
                   },
                 ],
               },
@@ -221,6 +222,34 @@ export default {
           },
         ],
       };
+        option.series[0].data[0].name = this.detail.title
+        option.series[0].data[0].value = this.detail.content
+        this.detail.subPublicList.forEach((ele,index)=>{
+          option.series[0].data[0].children[index] = {
+            name:ele.title,
+            value:ele.content,
+            itemStyle:{
+              color:this.colorList[index+1],
+              borderWidth:0
+            },
+            label:{
+              offset:index?[-30,15]:[-30,-15]
+            },
+            children: ele.subPublicList.map(e=>{
+                let obj = {}
+                obj.name = e.title
+                obj.value = e.content
+                obj.itemStyle = {
+                  color:this.colorList[index+1],
+                  borderWidth:0
+                }
+                obj.label = {
+                  offset:[10,0]
+                }
+                return obj
+              })
+          }
+        })
       return option
     },
   },
