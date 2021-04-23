@@ -1,7 +1,7 @@
 <template>
     <div class="data-manager-box">
         <div class="header-nav">
-            <p>Dashboard</p>
+            <p>首页</p>
         </div>
         <div class="welcome">
             <img class="user" src="../../../assets/img/login/head3.png" alt=""/>

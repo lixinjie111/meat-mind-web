@@ -1,201 +1,5 @@
 <template>
     <div class="manage-box">
-<!--        <p class="tips">经营诊断可以智能监测营销活动效果，依据心智模型进行智能评测，针对性提出改进方案，提供海量新潮营销创意及案例</p>-->
-	    <CardList />
-	    <Card title="营业额总览">
-		    <div class="overview_new">
-			    <div class="overview_new_top">
-				    <div class="overview_new_top_item">
-					    <div class="name">去年 | 2020年3月</div>
-					    <div class="legend_box">
-						    <div class="legend" :style="{ backgroundColor: $lxjData.colorList[0] }"></div>
-						    <div class="number">￥750,000</div>
-					    </div>
-				    </div>
-				    <div class="overview_new_top_item">
-					    <div class="name">今年 | 2021年3月</div>
-					    <div class="legend_box">
-						    <div class="legend" :style="{ backgroundColor: $lxjData.colorList[1] }"></div>
-						    <div class="number">￥650,000
-						      <span class="number_target">/ 目标 800,000</span>
-						    </div>
-					    </div>
-				    </div>
-				    <div class="overview_new_top_item">
-					    <div class="name">经营状况</div>
-					    <div class="tips">
-						    <i class="iconfont iconjingshi"></i>
-						    <span>低于预期</span>
-					    </div>
-				    </div>
-			    </div>
-			    <div class="overview_new_chart">
-				    <lineM4 :colorList="$lxjData.colorList" :myData="$ljEData.ljBox37"/>
-			    </div>
-		    </div>
-
-	    </Card>
-        <!--<div class="manage-overview flex">-->
-            <!--<div class="manage-overview-left flex-start">-->
-                <!--<div class="manage-overview-chart">-->
-                    <!--<div class="manage-overview-select">-->
-                        <!--<Select class="w120" value="邓老凉茶">-->
-                            <!--<Option value="邓老凉茶">邓老凉茶</Option>-->
-                        <!--</Select>-->
-                        <!--<Select class="w120" value="淘宝旗舰店">-->
-                            <!--<Option value="淘宝旗舰店">淘宝旗舰店</Option>-->
-                        <!--</Select>-->
-                        <!--<Select class="w120" value="营收状况">-->
-                            <!--<Option value="营收状况">营收状况</Option>-->
-                        <!--</Select>-->
-                    <!--</div>-->
-                    <!--<div id="myChart" style="width:100%;height: 100%;"></div>-->
-                    <!--<div class="chart-tooltip red">-->
-                        <!--&lt;!&ndash;                        <span>￥</span>&ndash;&gt;-->
-                        <!--<div class="value">6000万</div>-->
-                        <!--<div class="month">2020年8月</div>-->
-                    <!--</div>-->
-                    <!--<div class="chart-tooltip blue">-->
-<!--&lt;!&ndash;                        <span>￥</span>&ndash;&gt;-->
-                        <!--<div class="value">7200万</div>-->
-                        <!--<div class="month">目标</div>-->
-                    <!--</div>-->
-                    <!--<div class="manage-overview-list clearfix">-->
-                        <!--<div class="manage-overview-item fl">-->
-                            <!--<p>访问店铺</p>-->
-                            <!--<p>8,639<span>人</span></p>-->
-                            <!--<Compare :data="[-12.73,3.16]"></Compare>-->
-                            <!--<div class="icon">-->
-                               <!--<i class="iconfont iconxianshangshangdian"></i>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="manage-overview-item fr">-->
-                            <!--<p>商品访客数</p>-->
-                            <!--<p>126,470<span>次</span></p>-->
-                            <!--<Compare :data="[-13.14,11.45]"></Compare>-->
-                            <!--<div class="icon">-->
-                                <!--<i class="iconfont iconyonghuline"></i>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="manage-overview-item fl">-->
-                            <!--<p>支付买家数</p>-->
-                            <!--<p>1,509<span>人</span></p>-->
-                            <!--<Compare :data="[-8.62,3.16]"></Compare>-->
-                            <!--<div class="icon">-->
-                                <!--<i class="iconfont iconyonghu"></i>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="manage-overview-item fr">-->
-                            <!--<p>平均停留时长</p>-->
-                            <!--<p>16.17<span>分</span></p>-->
-                            <!--<Compare :data="[-11.45,1.15]"></Compare>-->
-                            <!--<div class="icon">-->
-                                <!--<i class="iconfont iconshijian"></i>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="manage-overview-info">-->
-                    <!--<p>当前经营状况</p>-->
-                    <!--<div class="manage-overview-result">-->
-                        <!--<img src="../../../assets/img/dashboard/manage/icon1@2x.png"/>-->
-                        <!--<p>低于预期</p>-->
-                    <!--</div>-->
-                    <!--<p>呈现问题</p>-->
-                    <!--<ul class="orange-card-ul">-->
-                        <!--<li>新增消费者数量下降</li>-->
-                        <!--<li>已有渠道扩展乏力，品牌营销卖点接受度下降，微博平台上品牌负面舆情呈上升趋势</li>-->
-                    <!--</ul>-->
-                    <!--<p>策略建议</p>-->
-                    <!--<ul class="blue-card-ul">-->
-                        <!--<li>及时进行引流，放宽对获客目标群体的年龄限制，增大对中低收入人群的覆盖</li>-->
-                        <!--<li>扩充抖音、快手短视频平台的推广力度；优化KOL投放结构，以主播类、时尚类为主</li>-->
-                        <!--<li>打造“年轻时尚”营销卖点，及时在微博平台进行公关，并监控效果</li>-->
-                    <!--</ul>-->
-                    <!--<div class="manage-overview-btn" @click="goTo"><img  src="../../../assets/img/dashboard/manage/icon3@2x.png"/>查看全部经营分析</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="manage-overview-right">-->
-                <!--<p>心智模型智能指标评测<Icon type="ios-alert-outline" color="#7C88B1"/></p>-->
-                <!--<div class="overview-right-top">-->
-                   <!--<video class="info-player" width="100%" height="100%" autoplay loop muted-->
-                           <!--src="../../../assets/video/model.mp4"></video>-->
-                   <!--<div class="info-content">-->
-                       <!--<div class="info-top flex">-->
-                           <!--<div>-->
-                               <!--<p>综合评价指数</p>-->
-                               <!--<p>截至2020/12/14</p>-->
-                           <!--</div>-->
-                           <!--<div>-->
-                               <!--72-->
-                           <!--</div>-->
-                       <!--</div>-->
-                       <!--<div class="info-bottom flex">-->
-                           <!--<div>-->
-                               <!--<div>-->
-                                   <!--<p>77</p>-->
-                                   <!--<p>近6月最高分</p>-->
-                               <!--</div>-->
-                               <!--<img src="../../../assets/img/dashboard/manage/line1@2x.png"/>-->
-                           <!--</div>-->
-                           <!--<div>-->
-                               <!--<div>-->
-                                   <!--<p>69</p>-->
-                                   <!--<p>近6月最低分</p>-->
-                               <!--</div>-->
-                               <!--<img src="../../../assets/img/dashboard/manage/line2@2x.png"/>-->
-                           <!--</div>-->
-                       <!--</div>-->
-                   <!--</div>-->
-                <!--</div>-->
-                <!--<div class="overview-right-middle">-->
-                   <!--<div class="detail-chart flex">-->
-                       <!--<div>-->
-                          <!--<i-circle :percent="80" trail-color="#fff" :size="54" :stroke-color="['#F80069','#FF7F50']">-->
-                             <!--<span class="circle-inner circle-inner1">良好</span>-->
-                          <!--</i-circle>-->
-                          <!--<p>客群定位</p>-->
-                       <!--</div>-->
-                       <!--<div>-->
-                           <!--<i-circle :percent="80" trail-color="#fff" :size="54" :stroke-color="['#F59808','#F9C544','#FDE772','#FFD28E']">-->
-                               <!--<span class="circle-inner circle-inner2">异常</span>-->
-                           <!--</i-circle>-->
-                           <!--<p>媒介评测</p>-->
-                       <!--</div>-->
-                       <!--<div>-->
-                           <!--<i-circle :percent="80" trail-color="#fff" :size="54" :stroke-color="['#46C2F4','#BBEB63']">-->
-                               <!--<span class="circle-inner circle-inner3">普通</span>-->
-                           <!--</i-circle>-->
-                           <!--<p>品牌评价</p>-->
-                       <!--</div>-->
-                   <!--</div>-->
-                   <!--<div class="detail-info">-->
-                      <!--<div class="detail-info-item">-->
-                          <!--<p>营销覆盖度<i class="iconfont iconduigou1"></i></p>-->
-                      <!--</div>-->
-                       <!--<div class="detail-info-item">-->
-                           <!--<p>用户增长趋势<i class="iconfont iconguanyuline1"></i></p>-->
-                       <!--</div>-->
-                       <!--<div class="detail-info-item">-->
-                           <!--<p>目标客群心智拟合<i class="iconfont iconguanyuline1"></i></p>-->
-                       <!--</div>-->
-                       <!--<div class="detail-info-item">-->
-                           <!--<p>品牌联想度<i class="iconfont iconduigou1"></i></p>-->
-                       <!--</div>-->
-                       <!--<div class="detail-info-item">-->
-                           <!--<p>媒介传播能力<i class="iconfont iconguanyuline1"></i></p>-->
-                       <!--</div>-->
-                       <!--<div class="detail-info-item">-->
-                           <!--<p>网站成交金额<i class="iconfont iconduigou1"></i></p>-->
-                       <!--</div>-->
-                   <!--</div>-->
-                <!--</div>-->
-                <!--<div class="overview-right-bottom">-->
-                    <!--<p>客群心智模型评测结果</p>-->
-                    <!--<div class="result-btn"><img src="../../../assets/img/dashboard/manage/icon2@2x.png"/>客群定位较为准确</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
         <Card title="客群诊断">
             <div slot="right" class="card-right" @click="toDetail1">查看用户画像详情<i class="iconfont iconleft-arrow"></i></div>
             <div class="manage-card flex-start">
@@ -361,6 +165,267 @@
                 </div>
             </div>
         </Card>
+        <div class="market-card">
+            <div class="title">
+                <div class="left">
+                    <p>市场趋势与竞品行情</p>
+                </div>
+            </div>
+            <div class="trend-box flex">
+                <Card title="快消品市场趋势" class="left">
+                    <div slot="right" class="trend-box-select">
+                        <Select value="4年">
+                            <Option value="4年">4年</Option>
+                        </Select>
+                    </div>
+                    <div class="chart">
+                        <barLine id="bar" :colorList="$linData.colorList" :myData="$linData.barLine"></barLine>
+                    </div>
+                </Card>
+                <Card title="竞品行情" class="right">
+                    <div slot="right" class="date">
+                        <DatePicker type="daterange" :value="['2020-1-1','2020-2-29']" show-week-numbers
+                                    placement="bottom-end" placeholder="请选择时间"></DatePicker>
+                    </div>
+                    <div class="right-content flex-start">
+                        <div class="right-content-left">
+                            <div :class="['right-content-left-item',goodsActive == 1 ?'active':'']"
+                                 @click="goodsActive=1">
+                                <img src="../../../assets/img/dashboard/market/icon-redbull@2x.png"/>
+                                <p>红牛<span>·250ml</span></p>
+                            </div>
+                            <div :class="['right-content-left-item',goodsActive == 2 ?'active':'']"
+                                 @click="goodsActive=2">
+                                <img src="../../../assets/img/dashboard/market/icon-jiaduobao@2x.png"/>
+                                <p>加多宝<span>·250ml</span></p>
+                            </div>
+                            <div :class="['right-content-left-item',goodsActive == 3 ?'active':'']"
+                                 @click="goodsActive=3">
+                                <img src="../../../assets/img/dashboard/market/icon-wanglaoji@2x.png"/>
+                                <p>王老吉<span>·250ml</span></p>
+                            </div>
+                            <div :class="['right-content-left-item',goodsActive == 4 ?'active':'']"
+                                 @click="goodsActive=4">
+                                <img src="../../../assets/img/dashboard/market/icon-maidong@2x.png"/>
+                                <p>脉动<span>·250ml</span></p>
+                            </div>
+                            <div class="right-content-left-btn">
+                                <Icon type="md-add" class="ft16"/>
+                                添加竞品
+                            </div>
+                        </div>
+                        <template v-for="(item,index) in goodsList" v-if="goodsActive == index + 1">
+                            <div class="right-content-right" :key="index">
+                                <div class="right-content-right-item">
+                                    <p>月均销量</p>
+                                    <p><span>{{item.sales}}</span></p>
+                                </div>
+                                <div class="right-content-right-item">
+                                    <p>客单价</p>
+                                    <p><span>¥ {{item.price}}</span></p>
+                                </div>
+                                <div class="right-content-right-item">
+                                    <p>销量平台</p>
+                                    <p>{{item.platform}}</p>
+                                </div>
+                                <div class="right-content-right-item">
+                                    <p>营销渠道</p>
+                                    <p>{{item.channel}}</p>
+                                </div>
+                                <div class="right-content-right-item">
+                                    <p>舆情热度</p>
+                                    <p><span>{{item.hot}}</span></p>
+                                </div>
+                                <div class="right-content-right-item">
+                                    <p>舆情风向</p>
+                                    <p>{{item.direction}}</p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </Card>
+            </div>
+        </div>
+        <div class="market-card">
+            <div class="title flex">
+                <div class="left">
+                    <p>舆情热点与营销机会</p>
+                </div>
+                <div class="right">
+                    <Select value="全国">
+                        <Option value="全国">全国</Option>
+                    </Select>
+                    <Select value="近3个月">
+                        <Option value="近3个月">近3个月</Option>
+                    </Select>
+                    <Select value="百度">
+                        <Option value="百度">百度</Option>
+                    </Select>
+                </div>
+            </div>
+            <div class="content hot-box">
+                <div class="left">
+                    <div class="left-item">
+                        <p>行业关键词</p>
+                        <ul>
+                            <li>凉茶</li>
+                            <li>功能饮料</li>
+                        </ul>
+                    </div>
+                    <div class="left-line"></div>
+                    <div class="left-item">
+                        <p>关联关键词</p>
+                        <ul>
+                            <li>降火</li>
+                            <li>养生</li>
+                            <li>滋润</li>
+                        </ul>
+                    </div>
+                    <div class="left-item">
+                        <p class="mt">追加关联词汇</p>
+                        <ul>
+                            <li>礼品</li>
+                        </ul>
+                    </div>
+                    <div class="left-line"></div>
+                    <div class="left-item">
+                        <p>负向关联词</p>
+                        <ul class="orange">
+                            <li>上火</li>
+                            <li>暴躁</li>
+                            <li>虚脱</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="right-box">
+                        <div class="right-title">热点事件</div>
+                        <div class="right-list">
+                            <div class="right-item">
+                                <div class="index one">1</div>
+                                <div class="desc">黄晓明发文退出《浪姐2》，自曝心悸脾…</div>
+                                <div class="time">2021/1/10</div>
+                            </div>
+                            <div class="right-item">
+                                <div class="index two">2</div>
+                                <div class="desc">暴躁老哥抢茅台成瘾，期待茅台价格继…</div>
+                                <div class="time">2021/1/10</div>
+                            </div>
+                            <div class="right-item">
+                                <div class="index three">3</div>
+                                <div class="desc">王阳明:常快乐,便是功夫。心态好,亦是养生</div>
+                                <div class="time">2021/1/9</div>
+                            </div>
+                            <div class="right-item">
+                                <div class="index">4</div>
+                                <div class="desc">互联网打工人不懂养生?这份年度白皮书…</div>
+                                <div class="time">2021/1/8</div>
+                            </div>
+                            <div class="right-item">
+                                <div class="index">5</div>
+                                <div class="desc">暖心礼物!扬州一高校学生为上完最后一…</div>
+                                <div class="time">2021/1/5</div>
+                            </div>
+                            <div class="right-item">
+                                <div class="index">6</div>
+                                <div class="desc">最北教师:无声滋润最北国土</div>
+                                <div class="time">2021/1/2</div>
+                            </div>
+                            <div class="right-btn">
+                                <div>查看全部<i class="iconfont iconleft-arrow21"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-box">
+                        <div class="right-title">近期机会</div>
+                        <div class="right-list">
+                            <div class="right-item">
+                                <div class="index one">1</div>
+                                <div class="desc1">迎春大促</div>
+                                <div class="time1">2021/2/1 - 2021/2/28</div>
+                            </div>
+                            <div class="right-item right-item-desc">
+                                <div class="index"></div>
+                                <div class="desc2">春节喜庆欢乐气氛大大刺激了人们消费的欲望和冲动,春节促销活动,所参与促销的商品面广，数量多，力度大，容易形成连带销售。</div>
+                            </div>
+                            <div class="right-item">
+                                <div class="index two">2</div>
+                                <div class="desc1">赏灯品诗喝茶</div>
+                                <div class="time1">2021/2/20 - 2021/2/28</div>
+                            </div>
+                            <div class="right-item">
+                                <div class="index three">3</div>
+                                <div class="desc1">二月二，龙抬头</div>
+                                <div class="time1">2021/3/14 - 2021/3/20</div>
+                            </div>
+                            <div class="right-btn">
+                                <div>查看全部<i class="iconfont iconleft-arrow21"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="market-card">
+            <div class="title">
+                <div class="left">
+                    <p>行业分析报告、营销创意及案例</p>
+                </div>
+            </div>
+            <div class="content report-box flex-start">
+                <div class="left">
+                    <img src="../../../assets/img/dashboard/market/report@2x.png"/>
+                    <p>行业分析报告<br/>营销创意及案例</p>
+                    <div class="left-btn">查看全部案例</div>
+                </div>
+                <div class="right">
+                    <a target="_blank" href="/static/pdf/2020年快消品行业内容营销报告.pdf">
+                        <div class="right-item fl">
+                            <p>北京快销品<br>行业分析报告</p>
+                            <p>年度/季度/月度报告</p>
+                            <p>元知智能研究院</p>
+                        </div>
+                    </a>
+                    <div class="right-item">
+                        <p>北京软饮料<br>市场规模跟踪</p>
+                        <p>重点市场规模<br>数据跟踪及提取</p>
+                        <p>元知智能研究院</p>
+                    </div>
+                    <div class="right-item">
+                        <p>店铺分析选址<br>方法论</p>
+                        <p>宝贝优化<br>竞品分析<br>备货指导</p>
+                        <p>元知智能研究院</p>
+                    </div>
+                    <div class="right-item">
+                        <p>正负面情绪提取</p>
+                        <p>分析销售场<br>优化品牌定位</p>
+                        <p>元知智能研究院</p>
+                    </div>
+                    <div class="right-item">
+                        <p>消费者关注点提取</p>
+                        <p>提取关键评论属性<br>热销宝贝备货指导</p>
+                        <p>元知智能研究院</p>
+                    </div>
+                    <div class="right-item">
+                        <p>心智剖析产品<br>SWOT</p>
+                        <p>竞品优势对比<br>查漏补缺</p>
+                        <p>元知智能研究院</p>
+                    </div>
+                    <div class="right-item">
+                        <p>合生汇商场报告</p>
+                        <p>专业商场案例<br>启迪营销灵感</p>
+                        <p>元知智能研究院</p>
+                        <p>付费</p>
+                    </div>
+                    <div class="right-item">
+                        <p>合生通商业报告</p>
+                        <p>专业商场案例<br>启迪营销灵感</p>
+                        <p>元知智能研究院</p>
+                        <p>付费</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -372,419 +437,57 @@
     import lineM4 from '@/components/echarts/common/line/lineM4';
     import barL from '@/components/echarts/common/bar/barL';
     import cLine from '@/components/echarts/common/line/line';
-    import CardList from '@/components/common/CardList';
+    import barLine from '@/components/echarts/common/bar/barLine';
 
     export default {
         name: "BusinessManage",
-        components: {Compare, Card, barL, barM1, cLine, lineM2, CardList, lineM4},
+        components: {Compare, Card, barL, barM1, cLine, lineM2, lineM4, barLine},
         data() {
-            return {}
+            return {
+                goodsActive: 1,
+                goodsList: [
+                    {
+                        sales: '665,382',
+                        price: '7.0',
+                        platform: '淘宝/美团/拼多多',
+                        channel: '抖音/头条/朋友圈',
+                        hot: '2,192',
+                        direction: '积极'
+                    },
+                    {
+                        sales: '3,112,923',
+                        price: '6.5',
+                        platform: '淘宝/京东/美团',
+                        channel: '抖音/公众号',
+                        hot: '8,835',
+                        direction: '一般'
+                    },
+                    {
+                        sales: '3,369,562',
+                        price: '6.5',
+                        platform: '京东/淘宝/美团',
+                        channel: '快手/抖音/头条',
+                        hot: '9,080',
+                        direction: '一般'
+                    },
+                    {
+                        sales: '745,892',
+                        price: '4.5',
+                        platform: '饿了么/拼多多',
+                        channel: '抖音/快手',
+                        hot: '3,553',
+                        direction: '积极'
+                    }
+                ],
+            }
         },
         mounted() {
-            //this.initChart();
             this.initChart2();
             window.onresize = () => {
-               // this.myChart.resize();
                 this.myChart2.resize();
             }
         },
         methods: {
-            initChart() {
-                // 初始化echarts实例
-                this.myChart = this.$echarts.init(document.getElementById('myChart'));
-                // 绘制图表
-                let min = 35; //Y轴最小值
-                let max = 80; //Y轴最大值
-                let dataAxis = ['0月', '1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
-                let data = [48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72]; //目标
-                let data2 = [max - 48, max - 50, max - 52, max - 54, max - 56, max - 58, max - 60, max - 62, max - 64, max - 66, max - 68, max - 70, max - 72]; //正常区域
-                let data3 = [48, 51, 52, 53, 55, 59, 64, 61, 60]; //实际数据
-                let data4 = [50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74]; //上边界
-                let data5 = [46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70]; //下边界
-                let effectValues = [
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 60,
-                        symbolSize: 5
-                    }
-                ]; //实际数据预警点
-                let effectValues1 = [
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 72,
-                        symbolSize: 5
-                    }
-                ]; //目标最后点
-                let effectValues2 = [
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 64,
-                        symbolSize: 10
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    },
-                    {
-                        value: 0,
-                        symbolSize: 0
-                    }
-                ]; //6月份点
-                let option = {
-                    // backgroundColor: "#fff",
-                    tooltip: {
-                        trigger: 'axis',
-                        axisPointer: {
-                            type: 'line',
-                            lineStyle: {
-                                type: 'solid',
-                                width: 1,
-                                color: '#E9E9E9'
-                            }
-                        },
-                        backgroundColor: "transparent",
-                        borderWidth: 0,
-                        formatter: (params) => {
-                            let style = "";
-                            if (params[0].data < params[2].data || params[0].seriesName != '实际') {
-                                style = "display:none"
-                            } else {
-                                style = "display:block"
-                            }
-                            // + '<span>￥</span>'
-                            let str = '<div class="chart-tooltip" style="' + style + '">' +
-                                '<div class="value">' + params[0].data * 100 + '万</div>' +
-                                '<div class="month"> ' + '2020年' + params[0].name + ' </div>' +
-                                '</div>';
-                            return str;
-                        }
-                    },
-                    grid: {
-                        left: '24px',
-                        right: '24px',
-                        top: '40px',
-                        bottom: '24px',
-                        containLabel: true
-                    },
-                    xAxis: [{
-                        type: 'category',
-                        boundaryGap: false,
-                        data: dataAxis,
-                        axisLabel: {
-                            show: true,
-                            textStyle: {
-                                color: "#97A0C3",
-                                fontSize:'12'
-                            }
-                        },
-                        axisLine: {
-                            lineStyle: {
-                                type: 'solid',
-                                color: '#E9EBF1',
-                                width: 1,
-                            }
-                        }
-                    }],
-                    yAxis: [{
-                        type: 'value',
-                        name: '百万',
-                        nameTextStyle: {
-                            color: "#97A0C3",
-                        },
-                        axisLabel: {
-                            show: true,
-                            textStyle: {
-                                color: "#97A0C3",
-                                fontSize:'12'
-                            }
-                        },
-                        axisLine: {
-                            lineStyle: {
-                                color: '#E9EBF1',
-                                width: 1,
-                            },
-                        },
-                        splitLine: {
-                            show: true,
-                            lineStyle: {
-                                type: 'dashed',
-                                color: '#E9EBF1'
-                            }
-                        },
-                        min: min,
-                        max: max
-                    }],
-                    series: [
-                        {
-                            name: '实际',
-                            type: 'line',
-                            smooth: true,
-                            symbol: "none",
-                            itemStyle: {
-                                    lineStyle: {
-                                        width: 4,
-                                        type: 'solid',
-                                        color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                            offset: 0,
-                                            color: 'rgba(187, 134, 252, 1)'
-                                        }, {
-                                            offset: 1,
-                                            color: 'rgba(94, 139, 255, 1)'
-                                        }]),
-                                        shadowColor: 'rgba(3, 13, 41, .3)',
-                                        shadowBlur: 6,
-                                        shadowOffsetY: 8,
-                                    }
-                            },
-                            zlevel: 1,
-                            data: data3
-                        },
-                        {
-                            name: '上边界',
-                            type: 'line',
-                            smooth: true,
-                            symbol: "none",
-                            itemStyle: {
-                                lineStyle: {
-                                    width: 1,
-                                    type: 'dashed',
-                                    color: "rgba(35, 115, 255, .5)"
-                                }
-                            },
-                            data: data4
-                        },
-                        {
-                            name: '下边界',
-                            type: 'line',
-                            smooth: true,
-                            symbol: "none",
-                            itemStyle: {
-                                lineStyle: {
-                                    width: 1,
-                                    type: 'dashed',
-                                    color: "rgba(245, 74, 69, .5)"
-                                }
-                            },
-                            data: data5
-                        },
-                        {
-                            name: '目标',
-                            type: 'line',
-                            smooth: true,
-                            symbol: "none",
-                            stack: 100,
-                            itemStyle: {
-                                    color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                        offset: 0,
-                                        color: 'rgba(252, 212, 201, 0)'
-                                    }, {
-                                        offset: 0.5,
-                                        color: 'rgba(252, 212, 201, .5)'
-                                    }, {
-                                        offset: 1,
-                                        color: 'rgba(252, 212, 201, .8)'
-                                    }]),
-                                    lineStyle: {
-                                        width: 1,
-                                        type: 'dashed',
-                                        color: "#DFDBDD"
-                                    }
-                            },
-                            data: data,
-                        },
-                        {
-                            name: '正常',
-                            type: 'line',
-                            smooth: true,
-                            symbol: "none",
-                            stack: 100,
-                            itemStyle: {
-                                    color: new this.$echarts.graphic.LinearGradient(0, 1, 0, 0, [{
-                                        offset: 0,
-                                        color: 'rgba(184, 205, 251, 0)'
-                                    }, {
-                                        offset: 0.5,
-                                        color: 'rgba(184, 205, 251, .5)'
-                                    }, {
-                                        offset: 1,
-                                        color: 'rgba(184, 205, 251, .8)'
-                                    }]),
-                                    lineStyle: {
-                                        width: 0,
-                                        type: 'solid',
-                                        color: "#FFFFFF"
-                                    }
-                            },
-                            data: data2,
-                        },
-                        {
-                            name: "预警",
-                            type: 'effectScatter',
-                            coordinateSystem: 'cartesian2d',
-                            data: effectValues,
-                            symbol: 'circle',
-                            effectType: 'ripple',
-                            showEffectOn: 'render',
-                            cursor: 'pointer',
-                            rippleEffect: {
-                                period: 5,
-                                scale: 5,
-                                brushType: 'fill',
-                            },
-                            itemStyle: {
-                                    color: '#F54A45',
-                                    shadowBlur: 5,
-                                    shadowColor: '#F54A45'
-
-                            },
-                            zlevel: 1
-                        },
-                        {
-                            name: "最终目标",
-                            type: 'effectScatter',
-                            coordinateSystem: 'cartesian2d',
-                            data: effectValues1,
-                            symbol: 'circle',
-                            effectType: 'ripple',
-                            showEffectOn: 'render',
-                            cursor: 'pointer',
-                            rippleEffect: {
-                                period: 5,
-                                scale: 5,
-                                brushType: 'fill',
-                            },
-                            itemStyle: {
-
-                                    color: '#2373FF',
-                                    shadowBlur: 5,
-                                    shadowColor: '#2373FF'
-
-                            },
-                            zlevel: 1
-                        },
-                        {
-                            name: "6月点",
-                            type: 'scatter',
-                            symbol: 'circle',
-                            data: effectValues2,
-                            itemStyle: {
-
-                                    borderWidth: '2',
-                                    borderType: 'solid',
-                                    borderColor: '#ffffff',
-                                    color: '#999999',
-                                    shadowColor: '#515a6e',
-                                    shadowBlur: 10
-
-                            },
-                            cursor: 'pointer',
-                            zlevel: 1
-                        }
-                    ]
-                };
-                this.myChart.setOption(option);
-            },
             initChart2() {
                 this.myChart2 = this.$echarts.init(document.getElementById('myChart2'));
                 let echartData = [{
@@ -984,640 +687,54 @@
 
 <style lang="scss">
     .manage-box {
-      .chart-tooltip {
-        padding: 4px 8px;
-        background: rgba(255, 255, 255, 0.9);
-        box-shadow: 5px 4px 14px 0px rgba(55, 84, 170, 0.16), 1px 1px 0px 0px #FFFFFF;
-        border-radius: 8px;
+        .trend-box {
+            .right {
+                &.card-container {
+                    .title {
+                        padding: 0 24px;
+                    }
+                }
+            }
+        }
+    }
+    .tips-box{
+        font-size: 14px;
+        line-height: 24px;
+        width: 200px;
 
-        .value {
-            font-size: 14px;
-            font-family: PingFangSC-Medium, PingFang SC;
-            font-weight: 500;
-            color: #636E95;
-            line-height: 18px;
+        .tips-title{
+            font-weight:700;
+            color: #FFFFFF;
+
+            .tips-title-value{
+                font-size: 18px
+            }
         }
 
-        .month {
-            margin-top: 4px;
+        .tips-desc{
             font-size: 12px;
-            font-family: PingFangSC-Regular, PingFang SC;
-            font-weight: 400;
-            color: #97A0C3;
-            line-height: 16px;
-            text-align: left;
+            color: #FFFFFF;
+            line-height: 17px;
         }
 
-        /*&.red {*/
-        /*    background: rgba(255, 255, 255, 0.8);*/
-        /*    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04);*/
-        /*    border-radius: 8px;*/
-        /*}*/
-
-        /*&.blue {*/
-        /*    padding: 3px 4px;*/
-        /*    background: rgba(255, 255, 255, 0.8);*/
-        /*    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04);*/
-        /*    border-radius: 8px;*/
-
-        /*    .value {*/
-        /*        font-size: 14px;*/
-        /*        line-height: 18px;*/
-
-        /*        > span {*/
-        /*            font-size: 16px;*/
-        /*        }*/
-        /*    }*/
-
-        /*    .month {*/
-        /*        margin-top: 1px;*/
-        /*        font-size: 12px;*/
-        /*        line-height: 18px;*/
-        /*    }*/
-        /*}*/
+        .tips-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 28px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-top: 16px;
+        }
     }
-    }
-</style>
-<style lang="scss">
-.tips-box{
-  font-size: 14px;
-  line-height: 24px;
-  width: 200px;
-  .tips-title{
-    font-weight:700;
-    color: #FFFFFF;
-    .tips-title-value{
-      font-size: 18px
-    }
-  }
-  .tips-desc{
-    font-size: 12px;
-    color: #FFFFFF;
-    line-height: 17px;
-  }
-  .tips-btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 28px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 400;
-    color: #FFFFFF;
-    margin-top: 16px;
-  }
-}
-
 </style>
 <style scoped lang="scss">
     .manage-box {
-        /*padding: 0 24px 24px 24px;*/
-
-        .tips {
-            margin-top: 24px;
-            font-size: 16px;
-            font-family: PingFangSC-Regular, PingFang SC;
-            font-weight: 400;
-            color: #97A0C3;
-        }
-
-        .manage-overview {
-            margin: 24px 0;
-
-            .manage-overview-left {
-                width: calc(100% - 388px);
-                height: 618px;
-                border-radius: 12px;
-                background: #E5F5FF;
-                //background: url("../../../assets/img/dashboard/manage/overview-bg1.png") no-repeat center center / 100% 100%;
-                box-shadow: 0px 0px 8px 0px rgba(166, 171, 189, 0.3);
-
-                .manage-overview-chart {
-                    width: calc(100% - 236px);
-                    height: 310px;
-                    position: relative;
-
-                    .red {
-                        position: absolute;
-                        right: 85px;
-                        top: 200px;
-                    }
-
-                    .blue {
-                        position: absolute;
-                        right: 20px;
-                        top: 160px;
-                    }
-
-                    .manage-overview-select {
-                        padding: 24px 24px 12px 24px;
-                        display: flex;
-
-                        .w120 {
-                            margin-right: 16px;
-                            width: 120px;
-                            background: rgba(255, 255, 255, .6);
-                            border-radius: 8px;
-                        }
-
-
-                        ::v-deep .ivu-select-selection {
-                            background: rgba(255, 255, 255, .6);
-                            box-shadow: 2px 2px 7px 0px rgba(210, 213, 225, 0.5) inset, -2px -2px 7px 0px #FFFEFA inset;
-                            border-radius: 8px;
-                            border: 1px solid #C6CBDE;
-                        }
-                    }
-
-                    .manage-overview-list {
-                        padding: 0 24px 24px 24px;
-                        /*border-top: 1px solid #F4F7FC;*/
-
-                        .manage-overview-item {
-                            position: relative;
-                            margin-bottom: 12px;
-                            padding: 16px;
-                            width: calc(50% - 6px);
-                            height: 102px;
-                            border-radius: 8px;
-
-                            > p {
-                                &:nth-child(1) {
-                                    font-size: 14px;
-                                    font-family: PingFangSC-Regular, PingFang SC;
-                                    font-weight: 400;
-                                    color: #636E95;
-                                }
-
-                                &:nth-child(2) {
-                                    font-size: 24px;
-                                    font-family: HelveticaNeue-Bold, HelveticaNeue;
-                                    font-weight: bold;
-                                    color: #242F57;
-
-                                    > span {
-                                        margin-left: 4px;
-                                        font-size: 14px;
-                                        font-family: PingFangSC-Regular, PingFang SC;
-                                        font-weight: 400;
-                                        color: #636E95;
-                                    }
-                                }
-                            }
-
-                            .icon {
-                                position: absolute;
-                                right: 24px;
-                                top: 16px;
-                                width: 24px;
-                                height: 24px;
-                                line-height: 24px;
-                                background: rgba(255, 255, 255, 0.6);
-                                box-shadow: 2px 2px 5px 0px rgba(36, 47, 87, 0.06), -1px -1px 2px 0px rgba(255, 255, 255, 0.59);
-                                border-radius: 4px;
-                                border: 1px solid #FFFFFF;
-                                text-align: center;
-                            }
-
-                            &:nth-child(1) {
-                                background: rgba(219, 234, 255, 0.8);
-                                border: 1px solid #4D94FF;
-
-                                .icon {
-                                    >i {
-                                        color: #4D94FF;
-                                    }
-                                }
-                            }
-
-                            &:nth-child(2) {
-                                background: rgba(237, 235, 254, 0.8);
-                                border: 1px solid #A49DFA;
-
-                                .icon {
-                                    >i {
-                                        color: #A49DFA;
-                                    }
-                                }
-                            }
-
-                            &:nth-child(3) {
-                                background: rgba(255, 241, 244, 0.8);
-                                border: 1px solid #FC809F;
-
-                                .icon {
-                                    >i {
-                                        color: #FC809F;
-                                    }
-                                }
-                            }
-
-                            &:nth-child(4) {
-                                background: rgba(255, 250, 241, 0.8);
-                                border: 1px solid #FFD98C;
-
-                                .icon {
-                                    >i {
-                                        color: #FFD98C;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .manage-overview-info {
-                    margin: 24px 0;
-                    padding: 0 22px;
-                    width: 236px;
-                    border-left: 1px solid #FFFFFF;
-
-                    > p {
-                        padding: 24px 0 8px;
-                        font-size: 14px;
-                        font-family: PingFangSC-Medium, PingFang SC;
-                        font-weight: 500;
-                        color: #212121;
-
-                        &:first-child {
-                            padding-top: 0;
-                            font-size: 18px;
-                            font-family: PingFangSC-Medium, PingFang SC;
-                            font-weight: 500;
-                            color: #242F57;
-                        }
-                    }
-
-                    > ul {
-                        padding: 8px 0;
-                        border-radius: 8px;
-                        border: 1px dashed rgba(67, 99, 146, 0.5);
-                    }
-
-                    .manage-overview-result {
-                        padding: 0 16px;
-                        width: 100%;
-                        height: 49px;
-                        line-height: 49px;
-                        background: linear-gradient(135deg, #FB5961 0%, #FF8054 100%);
-                        box-shadow: 3px 4px 8px 0px rgba(148, 63, 66, 0.3);
-                        border-radius: 8px;
-                        border: 1px solid #FE9393;
-
-                        > p {
-                            display: inline-block;
-                            font-size: 20px;
-                            font-family: PingFangSC-Medium, PingFang SC;
-                            font-weight: 500;
-                            color: #FFFFFF;
-                        }
-
-                        > img {
-                           vertical-align: -3px;
-                           margin-right: 5px;
-                           width: 20px;
-                           height: 22px;
-                        }
-                    }
-
-                    .manage-overview-btn {
-                        margin-top: 39px;
-                        width: 100%;
-                        height: 40px;
-                        line-height: 40px;
-                        background: #FFFFFF linear-gradient(148deg, rgba(220, 225, 236, 0.2) 0%, rgba(255, 255, 255, 0.76) 100%);
-                        box-shadow: 3px 4px 8px 0px rgba(36, 47, 87, 0.1);
-                        border-radius: 8px;
-                        border: 1px solid rgba(255, 255, 255, 0.4);
-                        font-size: 14px;
-                        font-family: PingFangSC-Medium, PingFang SC;
-                        font-weight: 500;
-                        color: #242F57;
-                        text-align: center;
-                        cursor: pointer;
-
-                        > img {
-                            vertical-align: -5px;
-                            margin-right: 12px;
-                            width: 20px;
-                            height: 20px;
-                        }
-                    }
-                }
-            }
-
-            .manage-overview-right {
-                padding: 24px;
-                width: 368px;
-                height: 618px;
-                background:#E5F5FF;
-                //background: url("../../../assets/img/dashboard/manage/overview-bg2.png") no-repeat center center / 100% 100%;
-                border-radius: 12px;
-                box-shadow: 0px 0px 8px 0px rgba(166, 171, 189, 0.3);
-
-                >p {
-                    height: 22px;
-                    font-size: 18px;
-                    font-family: PingFangSC-Medium, PingFang SC;
-                    font-weight: 500;
-                    color: #242F57;
-
-                    >i {
-                        margin-left: 4px;
-                    }
-                }
-
-                .overview-right-top {
-                    position: relative;
-                    margin: 24px 0 20px;
-                    width: 320px;
-                    height: 144px;
-
-                    .info-player {
-                       position: absolute;
-                       left: 0;
-                       top: 0;
-                       border-radius: 8px;
-                       z-index: 1;
-                    }
-
-                    .info-content {
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        z-index: 2;
-
-                        .info-top {
-                            padding: 0 26px 0 21px;
-                            width: 100%;
-                            height: 96px;
-
-                            >div {
-                                &:nth-child(1) {
-                                    margin-left: 90px;
-                                    width: 120px;
-
-                                    >p {
-                                        font-size: 12px;
-                                        font-family: PingFangSC-Regular, PingFang SC;
-                                        font-weight: 400;
-                                        color: rgba(255, 255, 255, 0.65);
-
-                                        &:first-child {
-                                            font-size: 16px;
-                                            font-family: PingFangSC-Medium, PingFang SC;
-                                            font-weight: 500;
-                                            color: rgba(255, 255, 255, 1);
-                                        }
-                                    }
-                                }
-
-                                &:nth-child(2) {
-                                    font-size: 48px;
-                                    font-family: Archivo-Bold, Archivo;
-                                    font-weight: bold;
-                                    color: #FFFFFF;
-                                    line-height: 56px;
-                                    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-                                }
-                            }
-                        }
-
-                        .info-bottom {
-                            width: 100%;
-                            height: 48px;
-                            background: rgba(33, 101, 227);
-                            border-radius: 0 0 8px 8px;
-
-                            > div {
-                                padding: 0 10px 0 16px;
-                                height: 32px;
-
-                                > div {
-                                    margin-right: 16px;
-                                    display: inline-block;
-
-                                    >p {
-                                        font-size: 12px;
-                                        font-family: PingFangSC-Regular, PingFang SC;
-                                        font-weight: 400;
-                                        color: rgba(255, 255, 255, 0.65);
-                                        line-height: 16px;
-
-                                        &:first-child {
-                                            font-size: 18px;
-                                            font-family: Helvetica;
-                                            color: #4FEE3E;
-                                        }
-                                    }
-                                }
-
-                                &:nth-child(1) {
-                                    border-right: 1px solid rgba(255, 255, 255, 0.3);
-                                }
-
-                                &:nth-child(2) {
-                                    >div {
-                                        >p {
-                                            &:first-child {
-                                                color: #FF9200;
-                                            }
-                                        }
-                                    }
-                                }
-
-                                > img {
-                                    width: 50px;
-                                    height: 32px;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .overview-right-middle {
-                    padding: 0 19px;
-                    width: 320px;
-                    height: 262px;
-                    background: rgba(255, 255, 255, 0.3);
-                    border-radius: 8px;
-                    border: 1px solid #FFFFFF;
-
-                    .detail-chart {
-                       padding: 19px 0 16px 0;
-                       width: 100%;
-                       border-bottom: 1px solid #FFFFFF;
-
-                       >div {
-                         height: 78px;
-
-                         > p {
-                             font-size: 14px;
-                             font-family: PingFangSC-Medium, PingFang SC;
-                             font-weight: 500;
-                             color: #242F57;
-                             line-height: 22px;
-                         }
-
-                        .circle-inner {
-                            font-size: 14px;
-                            font-family: PingFangSC-Regular, PingFang SC;
-                            font-weight: 400;
-                        }
-
-                        .circle-inner1 {
-                            color: #FB343E;
-                        }
-
-                        .circle-inner2 {
-                            color: #FF9200;
-                        }
-
-                        .circle-inner3 {
-                            color: #4BC905;
-                        }
-                       }
-                    }
-
-                    .detail-info {
-                        .detail-info-item {
-                            margin: 21px 16px 0 0;
-                            display: inline-block;
-                            width: calc(50% - 8px);
-
-                            >p {
-                                position: relative;
-                                font-size: 14px;
-                                font-family: PingFangSC-Regular, PingFang SC;
-                                font-weight: 400;
-                                color: #242F57;
-
-                                >i {
-                                    position: absolute;
-                                    top: 0;
-                                    right: 0;
-                                    font-size: 16px;
-                                    border-radius: 50%;
-
-                                    &.iconjieshou{
-                                       color: rgba(52, 199, 36, 1);
-                                    }
-
-                                    &.iconguanyu1{
-                                        color: rgba(255, 146, 0, 1);
-                                    }
-                                }
-                            }
-
-                            &:nth-child(2n+2) {
-                                margin-right: 0;
-                            }
-                        }
-                    }
-                }
-
-                .overview-right-bottom {
-                    > p {
-                        margin: 20px 0 8px 0;
-                        font-size: 14px;
-                        font-family: PingFangSC-Medium, PingFang SC;
-                        font-weight: 500;
-                        color: #242F57;
-                    }
-
-                    .result-btn {
-                        padding: 0 12px;
-                        width: 320px;
-                        height: 48px;
-                        line-height: 48px;
-                        background: linear-gradient(144deg, rgba(12, 194, 115, .6) 0%, rgba(153, 242, 209, .6) 100%);
-                        box-shadow: 0px 0px 8px 0px rgba(68, 135, 121, 0.2);
-                        border-radius: 8px;
-                        border: 1px solid #9DE5CB;
-                        font-size: 20px;
-                        font-family: PingFangSC-Medium, PingFang SC;
-                        font-weight: 500;
-                        color: #FFFFFF;
-
-                        >img {
-                            vertical-align: -4px;
-                            margin-right: 5px;
-                            width: 20px;
-                            height: 22px;
-                        }
-                    }
-                }
-            }
-        }
-
-	    .overview_new{
-					.overview_new_top_item{
-						display: inline-block;
-						margin-right: 40px;
-						&:last-child{
-							margin-right: 0;
-						}
-						.name{
-							font-size: 16px;
-							font-weight: 400;
-							color: #7C88B1;
-							padding-left: 16px;
-						}
-						.legend_box{
-                            display: flex;
-                            align-items: center;
-							.legend{
-								width: 8px;
-								height: 8px;
-								border-radius: 50%;
-								display: inline-block;
-								margin-right: 4px;
-							}
-							.number{
-								display: inline-block;
-								font-size: 24px;
-								font-weight: 500;
-								color: #242F57;
-								.number_target{
-									font-size: 16px;
-									font-weight: 400;
-									color: #7C88B1;
-								}
-							}
-						}
-						.tips{
-                            display: flex;
-							align-items: center;
-							justify-content: center;
-							width: 160px;
-							height: 40px;
-							background: #FEDFE1;
-							border-radius: 4px;
-							font-size: 24px;
-                            font-family: PingFangSC-Medium, PingFang SC;
-							font-weight: 500;
-							color: #FF4C60;
-							margin-top: 0;
-							.iconfont{
-                                width: 24px;
-                                height: 24px;
-								font-size: 24px;
-								margin-right: 4px;
-                                line-height: 24px;
-							}
-						}
-					}
-		      .overview_new_chart{
-						height: 320px;
-			      width: 100%;
-		      }
-	      }
-
-        .last-card {
-            margin-bottom: 0;
-        }
+        padding-top: 24px;
 
         .card-right {
             font-size: 14px;
@@ -1787,6 +904,553 @@
                         .manage-card2-bottom-item-title {
                             color: #4D94FF;
                         }
+                    }
+                }
+            }
+        }
+
+        .market-card {
+            .title {
+                margin: 32px 0 16px;
+
+                .left {
+                    > p {
+                        height: 24px;
+                        font-size: 18px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #242F57;
+                        line-height: 24px;
+
+                        &:nth-child(2) {
+                            font-size: 14px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #97A0C3;
+                        }
+                    }
+                }
+
+                .right {
+                    > div {
+                        margin-left: 16px;
+                        width: 140px;
+                    }
+                }
+            }
+
+            .content {
+                padding: 24px;
+                width: 100%;
+                background: #FFFFFF;
+                box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+                border-radius: 8px;
+            }
+            &:last-child{
+                .content{
+                    border: none;
+                }
+            }
+        }
+
+        .trend-box {
+            .trend-box-select {
+                display: flex;
+
+                > div {
+                    margin-left: 16px;
+                    width: 120px;
+                }
+            }
+
+            .date {
+                > div {
+                    width: 240px;
+                }
+            }
+
+            .card-container {
+                margin-bottom: 0px;
+            }
+
+            .left {
+                width: calc(50% - 12px);
+                height: 384px;
+
+                .chart {
+                    width: 100%;
+                    height: 310px;
+                }
+            }
+
+            .right {
+                padding: 0;
+                width: calc(50% - 12px);
+                height: 384px;
+
+                .right-content {
+                    position: relative;
+                    .right-content-left {
+                        width: 30%;
+                        .right-content-left-item {
+                            position: relative;
+                            padding: 12px 16px;
+                            background: #FFFFFF;
+                            cursor: pointer;
+
+                            > img {
+                                display: inline-block;
+                                vertical-align: middle;
+                                margin-right: 8px;
+                                width: 24px;
+                                height: 24px;
+                                border-radius: 50%;
+                            }
+
+                            > p {
+                                display: inline-block;
+                                vertical-align: middle;
+                                font-size: 14px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #242F57;
+
+                                > span {
+                                    color: #97A0C3;
+                                }
+                            }
+
+                            &.active {
+                                background: #F7F9FD;
+
+                                > p {
+                                    color: #2373FF;
+
+                                    > span {
+                                        color: #2373FF;
+                                    }
+                                }
+
+                                &:before {
+                                    content: '';
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    width: 2px;
+                                    height: 48px;
+                                    background: #2373FF;
+                                }
+                            }
+                        }
+
+                        .right-content-left-btn {
+                            position: absolute;
+                            left: 36px;
+                            bottom: 24px;
+                            width: 97px;
+                            height: 32px;
+                            color: #C6CBDE;
+                            font-size: 14px;
+                            font-family: PingFangSC-Medium, PingFang SC;
+                            font-weight: 400;
+                            line-height: 30px;
+                            border: 1px solid #C6CBDE;
+                            border-radius: 4px;
+                            text-align: center;
+                            cursor: pointer;
+                            .ft16{
+                                font-size: 16px;
+                            }
+                        }
+                    }
+
+                    .right-content-right {
+                        padding: 16px 22px;
+                        width: 70%;
+                        height: 320px;
+                        background: #F7F9FD;
+
+                        .right-content-right-item {
+                            display: inline-block;
+                            width: calc(50% - 4px);
+                            height: 64px;
+                            padding: 6px 12px;
+                            margin-bottom: 8px;
+                            background: #FFFFFF;
+                            border-radius: 8px;
+                            margin-right: 8px;
+
+                            &:nth-child(2n+2) {
+                                margin-right: 0;
+                            }
+
+                            > p {
+                                font-size: 12px;
+                                font-family: PingFangSC-Regular, PingFang SC;
+                                font-weight: 400;
+                                color: #97A0C3;
+
+                                &:last-child {
+                                    margin-top: 5px;
+                                    height: 26px;
+                                    line-height: 26px;
+                                    font-size: 18px;
+                                    font-family: PingFangSC-Semibold, PingFang SC;
+                                    font-weight: 600;
+                                    color: #242F57;
+
+                                    > span {
+                                        font-size: 24px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .hot-box {
+            padding-bottom: 24px;
+
+            .left {
+                display: inline-block;
+                vertical-align: top;
+                width: 248px;
+                margin-right: 48px;
+
+                .left-item {
+                    > p {
+                        height: 22px;
+                        margin-bottom: 8px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #97A0C3;
+                        line-height: 22px;
+                        &.mt {
+                            margin-top: 16px;
+                        }
+                    }
+
+                    > ul {
+                        > li {
+                            height: 32px;
+                            line-height: 32px;
+                            display: inline-block;
+                            vertical-align: middle;
+                            padding: 0 16px;
+                            margin-right: 6px;
+                            background: #ECF3FF;
+                            border-radius: 4px;
+                            font-size: 16px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #2373FF;
+                            text-align: center;
+                        }
+
+                        &.orange {
+                            > li {
+                                color: #FF4C60;
+                                background: #FEDFE1;
+                            }
+                        }
+                    }
+                }
+
+                .left-line {
+                    margin: 16px 0;
+                    width: 248px;
+                    height: 1px;
+                    background: #EAEDF7;
+                }
+            }
+
+            .right {
+                display: inline-block;
+                vertical-align: top;
+                width: calc(100% - 296px);
+
+                .right-box {
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: top;
+                    padding-bottom: 16px;
+                    width: calc(50% - 12px);
+                    height: 453px;
+                    background: #FFFFFF;
+                    border-radius: 8px;
+                    border: 1px solid #EAEDF7;
+
+                    &:first-child {
+                        margin-right: 23px;
+                    }
+
+                    .right-title {
+                        width: 100%;
+                        height: 72px;
+                        padding: 15px 0 0 15px;
+                        background: linear-gradient(180deg, #FFF5EB 0%, rgba(255, 245, 235, 0) 100%);
+                        border-radius: 8px 8px 0px 0px;
+                        font-size: 14px;
+                        font-family: PingFangSC-Medium, PingFang SC;
+                        font-weight: 500;
+                        color: #242F57;
+                    }
+
+                    .right-list {
+                        padding: 0 15px;
+
+                        .right-item {
+                            width: 100%;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            padding: 15px 0;
+                            border-bottom: 1px solid #F4F7FC;
+
+                            &.right-item-desc {
+                                padding: 0 0 15px 0;
+                                margin-top: -7px;
+                                background: #FFFFFF;
+                                border-bottom: 1px solid #F4F7FC;
+                            }
+
+                            > div {
+                                display: inline-block;
+                                vertical-align: middle;
+
+                                &.index {
+                                    width: 20px;
+                                    font-size: 18px;
+                                    font-family: Staatliches-Regular, Staatliches;
+                                    font-weight: 400;
+                                    color: #97A0C3;
+
+                                    &.one {
+                                        color: #FA343E;
+                                    }
+
+                                    &.two {
+                                        color: #FF8800;
+                                    }
+
+                                    &.three {
+                                        color: #FFBA52;
+                                    }
+                                }
+
+                                &.desc {
+                                    /*width: 270px;*/
+                                    width: calc(100% - 90px);
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #242F57;
+                                }
+
+                                &.desc1 {
+                                    /*width: 180px;*/
+                                    width: calc(100% - 180px);
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #242F57;
+                                }
+
+                                &.desc2 {
+                                    /*width: 343px;*/
+                                    width: calc(100% - 20px);
+                                    font-size: 12px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #97A0C3;
+                                }
+
+                                &.time {
+                                    width: 70px;
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #97A0C3;
+                                    text-align: right;
+                                }
+
+                                &.time1 {
+                                    width: 170px;
+                                    font-size: 14px;
+                                    font-family: PingFangSC-Regular, PingFang SC;
+                                    font-weight: 400;
+                                    color: #97A0C3;
+                                    text-align: right;
+                                }
+                            }
+
+                            &:first-child {
+                                margin-top: -17px;
+                            }
+
+                            &:last-child {
+                                border-bottom: 0px solid #F4F7FC;
+                            }
+                        }
+
+                        .right-btn {
+                            position: absolute;
+                            left: 16px;
+                            bottom: 16px;
+                            width: calc(100% - 32px);
+                            height: 32px;
+                            line-height: 32px;
+                            background: #F4F7FC;
+                            border-radius: 8px;
+                            font-size: 14px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #97A0C3;
+                            text-align: center;
+
+                            i {
+                                font-size: 14px;
+                                margin-left: 9px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .report-box {
+            padding: 40px 40px 24px 24px !important;
+            background: #FFFFFF;
+            box-shadow: 3px 5px 10px 0px rgba(121, 131, 168, 0.15);
+            border-radius: 8px;
+            border: 1px solid #EAEDF7;
+            // background: url("../../../assets/img/dashboard/market/report-box-bg@2x.png") #ffffff no-repeat left center / 614px 560px !important;
+
+            .left {
+                width: 296px;
+                height: 442px;
+                background: #F0F8FF;
+                border-radius: 8px;
+                // background: url("../../../assets/img/dashboard/market/report-box-left-bg@2x.png") no-repeat center center / 100% 100%;
+
+                > img {
+                    width: 296px;
+                    height: 230px;
+                }
+
+                > p {
+                    margin: 24px auto 42px;
+                    // width: 168px;
+                    height: 64px;
+                    font-size: 24px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: #242F57;
+                    line-height: 32px;
+                    text-align: center;
+                }
+
+                .left-btn {
+                    margin: 0 auto;
+                    width: 232px;
+                    height: 40px;
+                    line-height: 40px;
+                    background: #FFFFFF;
+                    border-radius: 4px;
+                    font-size: 14px;
+                    font-family: PingFangSC-Regular, PingFang SC;;
+                    font-weight: 400;
+                    color: #242F57;
+                    text-align: center;
+                }
+            }
+
+            .right {
+                width: calc(100% - 336px);
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .right-item {
+                    position: relative;
+                    margin-bottom: 16px;
+                    padding: 16px;
+                    width: 176px;
+                    height: 213px;
+
+                    > p {
+                        font-size: 12px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #FFFFFF;
+
+                        &:nth-child(1) {
+                            font-size: 18px;
+                            font-family: PingFangSC-Semibold, PingFang SC;
+                            font-weight: 600;
+                        }
+
+                        &:nth-child(2) {
+                            margin: 12px 0 0;
+                            font-size: 14px;
+                            color: rgba(255, 255, 255, 0.7);
+                        }
+
+                        &:nth-child(3) {
+                            position: absolute;
+                            bottom: 16px;
+                        }
+
+                        &:nth-child(4) {
+                            position: absolute;
+                            right: 16px;
+                            bottom: 16px;
+                            width: 32px;
+                            height: 18px;
+                            line-height: 18px;
+                            background: #FFFFFF;
+                            border-radius: 4px;
+                            text-align: center;
+                            font-size: 12px;
+                            font-family: PingFangSC-Regular, PingFang SC;
+                            font-weight: 400;
+                            color: #2373FF;
+                        }
+                    }
+
+                    &:nth-child(1) {
+                        background: url("../../../assets/img/dashboard/market/report-bg1@2x.png") no-repeat center center / 100% 100%;
+                    }
+
+                    &:nth-child(2) {
+                        background: url("../../../assets/img/dashboard/market/report-bg2@2x.png") no-repeat center center / 100% 100%;
+                    }
+
+                    &:nth-child(3) {
+                        background: url("../../../assets/img/dashboard/market/report-bg3@2x.png") no-repeat center center / 100% 100%;
+                    }
+
+                    &:nth-child(4) {
+                        background: url("../../../assets/img/dashboard/market/report-bg4@2x.png") no-repeat center center / 100% 100%;
+                    }
+
+                    &:nth-child(5) {
+                        background: url("../../../assets/img/dashboard/market/report-bg5@2x.png") no-repeat center center / 100% 100%;
+                    }
+
+                    &:nth-child(6) {
+                        background: url("../../../assets/img/dashboard/market/report-bg6@2x.png") no-repeat center center / 100% 100%;
+                    }
+
+                    &:nth-child(7) {
+                        background: url("../../../assets/img/dashboard/market/report-bg7@2x.png") no-repeat center center / 100% 100%;
+                    }
+
+                    &:nth-child(8) {
+                        background: url("../../../assets/img/dashboard/market/report-bg8@2x.png") no-repeat center center / 100% 100%;
                     }
                 }
             }

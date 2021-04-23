@@ -10,19 +10,19 @@
         </template>
         <!-- 分析师 -->
         <template v-else>
-            <Analyst></Analyst>
+            <AnalystManager></AnalystManager>
         </template>
     </div>
 </template>
 
 <script>
     import BusinessOwner from "./components/BusinessOwner";
-    import Analyst from "./components/Analyst";
+    import AnalystManager from "./components/AnalystManager";
     import DataManager from "./components/DataManager";
 
     export default {
         name: "index",
-        components: {DataManager, Analyst, BusinessOwner},
+        components: {DataManager, AnalystManager, BusinessOwner},
         data() {
             return {
                 flag: this.$store.state.role

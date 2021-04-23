@@ -39,8 +39,8 @@
                 menu: [
                     {
                         name: "dashboard",
-                        label: "Dashboard",
-                        icon: "icondashboard",
+                        label: "首页",
+                        icon: "iconshouye",
                         path: "/dashboard",
                     },
                     {

@@ -1,20 +1,20 @@
 <template>
     <div class="business-box">
         <div class="header-nav">
-            <p>Dashboard</p>
+            <p>首页</p>
         </div>
         <div class="welcome">
             <img class="user" src="../../../assets/img/login/head2.png" alt=""/>
             <div class="user-intro-container" v-if="tabActive == 1">
-                <p>早安，叶总，欢迎使用 Meta-Mind-Marketing！</p>
-                <p>营销洞察助力智能获取精准目标客群，掌握市场趋势及竞对情报，发掘商业机会，借助热点打造爆款，提供海量营销创意案例。</p>
+                <p>早安，分析师，欢迎使用 Meta-Mind-Marketing！</p>
+                <p>轻松上手分析模型，探索不同业务中的关键行为，洞察指标背后的增长点。</p>
                 <button class="btn-primary report-btn" @click="showModal = true">
                     <i class="iconfont iconxiazai"/>
-                    <span class="btn-txt">一键生成洞察报告</span>
+                    <span class="btn-txt">一键生成报告</span>
                 </button>
             </div>
             <div class="user-intro-container" v-else>
-                <p>早安，叶总，欢迎使用 Meta-Mind-Marketing！</p>
+                <p>早安，分析师，欢迎使用 Meta-Mind-Marketing！</p>
                 <p>经营诊断可以智能监测营销活动效果，从客群、媒介以及品牌三个维度，针对性提出改进方案。</p>
                 <button class="btn-primary report-btn" @click="showModal = true">
                     <i class="iconfont iconxiazai"/>
@@ -22,9 +22,9 @@
                 </button>
             </div>
         </div>
-        <Tab :tab-list="['营销洞察','经营诊断']" @change="changeTab"></Tab>
+        <Tab :tab-list="['Dashboard','经营诊断']" @change="changeTab"></Tab>
         <div v-if="tabActive == 1">
-            <BusinessMarket></BusinessMarket>
+            <Analyst></Analyst>
         </div>
         <div v-else>
             <BusinessManage></BusinessManage>
@@ -36,11 +36,11 @@
                class-name="report-modal">
             <div class="report-modal-content">
                 <div class="report-title-box flex">
-                    <p v-if="tabActive == 1">营销洞察报告</p>
+                    <p v-if="tabActive == 1">报告</p>
                     <p v-if="tabActive == 2">经营诊断报告</p>
                     <div class="flex">
                         <div @click="showModal = false" class="down-btn">关闭</div>
-                        <a v-if="tabActive == 1" :href="report1" target="_blank" download='营销洞察报告'><button class="down-btn">下载</button></a>
+                        <a v-if="tabActive == 1" :href="report1" target="_blank" download='报告'><button class="down-btn">下载</button></a>
                         <a v-if="tabActive == 2" :href="report2" target="_blank" download='经营诊断报告'><button class="down-btn">下载</button></a>
                     </div>
                 </div>
@@ -54,15 +54,15 @@
 </template>
 
 <script>
-    import BusinessManage from "./BusinessManage_bak";
-    import BusinessMarket from "./BusinessMarket";
+    import BusinessManage from "./BusinessManage";
+    import Analyst from "./Analyst";
     import Tab from "@/components/Tab";
     import report1 from "../../../assets/img/dashboard/market/market-report.png";
     import report2 from "../../../assets/img/dashboard/manage/manage-report.png";
 
     export default {
         name: "BusinessOwner",
-        components: {BusinessMarket, BusinessManage, Tab},
+        components: {Analyst, BusinessManage, Tab},
         data() {
             return {
                 tabActive: 1,
