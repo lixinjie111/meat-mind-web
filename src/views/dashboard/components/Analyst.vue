@@ -324,6 +324,41 @@
                 </div>
             </div>
         </template>
+        <div class="market-card">
+            <div class="title">
+                <div class="left">
+                    <p>营销活动监测</p>
+                </div>
+            </div>
+            <div class="">
+               <button class="btn-primary-middle" @click="showModal=true">一键投放</button>
+            </div>
+        </div>
+        <Modal v-model="showModal"
+               footer-hide
+               :closable="false"
+               class-name="launch-modal">
+            <div class="launch-container">
+                <div class="launch-title flex">
+                    <p>智能投放</p>
+                    <div class="flex">
+                        <div @click="showModal = false" class="down-btn">取消</div>
+                        <button class="down-btn" @click="openSuccess">确定</button>
+                    </div>
+                </div>
+               <Launch></Launch>
+           </div>
+        </Modal>
+        <Modal v-model="showSuccessModal"
+               footer-hide
+               :closable="false"
+               class-name="launch-success-modal">
+            <div class="launch-success-container">
+                <Icon type="ios-checkmark-circle-outline" color="#08BD6C" size="48"/>
+                <p class="title">已成功为您安排广告投放</p>
+                <p class="desc">{{seconds}}s后返回首页</p>
+            </div>
+        </Modal>
     </div>
 </template>
 <script>
@@ -336,13 +371,17 @@
     import PieOne2 from '@/components/echarts/common/pie/PieOne2';
     import PieNest2 from '@/components/echarts/common/pie/PieNest2';
     import lineM4 from '@/components/echarts/common/line/lineM4';
+    import Launch from "./Launch";
     var dayjs = require('dayjs');
 
     export default {
         name: "Analyst",
-        components: {CardList, Card, vCard1, vCard2, TabC, PieOne1, PieOne2, PieNest2, lineM4},
+        components: {Launch, CardList, Card, vCard1, vCard2, TabC, PieOne1, PieOne2, PieNest2, lineM4},
         data() {
             return {
+                seconds: 5,
+                showModal: false,
+                showSuccessModal: false,
                 trImg: require("../../../assets/img/dashboard/toR.png"),
                 ppCardList: [
                     {
@@ -906,6 +945,20 @@
             };
         },
         methods: {
+            openSuccess() {
+                this.showModal = false;
+                this.showSuccessModal = true;
+                let timer = null;
+                timer = setInterval(() => {
+                    if (this.seconds > 0) {
+                        this.seconds--;
+                    } else {
+                        clearInterval(timer);
+                        this.showSuccessModal = false;
+                        this.seconds = 5;
+                    }
+                }, 1000);
+            },
             toManage() {
                 this.$router.push({
                     path: '/dashboard/manage'
@@ -939,8 +992,109 @@
     };
 </script>
 <style lang="scss">
-    .analyst-box {
+    .ivu-modal-mask {
+        background-color: rgba(0, 0, 0, .6) !important;
+    }
 
+    .launch-modal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .ivu-modal {
+            top: 0;
+            width: 1036px !important;
+            background: #FFFFFF;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            border: 1px solid #EAEDF7;
+
+            .ivu-modal-content {
+                .ivu-modal-body {
+                    padding: 0;
+                }
+            }
+        }
+
+        .launch-container {
+
+            .launch-title {
+                padding: 18px 24px;
+
+                > p {
+                    font-size: 24px;
+                    font-family: PingFangSC-Medium, PingFang SC;
+                    font-weight: 500;
+                    color: rgba(0, 0, 0, 0.85);
+                }
+
+                > div {
+                    .down-btn {
+                        width: 76px;
+                        height: 32px;
+                        line-height: 32px;
+                        background: #FFFFFF;
+                        border-radius: 4px;
+                        border: 1px solid #97A0C3;
+                        font-size: 14px;
+                        font-family: PingFangSC-Regular, PingFang SC;
+                        font-weight: 400;
+                        color: #242F57;
+                        text-align: center;
+                        cursor: pointer;
+
+                        &:last-child {
+                            margin-left: 16px;
+                            background: #2373FF;
+                            box-shadow: 3px 5px 10px 1px rgba(35, 115, 255, 0.3);
+                            border: none;
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .launch-success-modal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .ivu-modal {
+            top: 0;
+            width: 480px !important;
+            background: #FFFFFF;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            border: 1px solid #EAEDF7;
+
+            .ivu-modal-content {
+                .ivu-modal-body {
+                    padding: 0;
+                }
+            }
+        }
+
+        .launch-success-container {
+            padding: 60px 0;
+            text-align: center;
+
+            .desc {
+                font-size: 14px;
+                font-family: PingFangSC-Regular, PingFang SC;
+                font-weight: 400;
+                color: #7C88B1;
+            }
+
+            .title {
+                margin: 24px 0 16px;
+                font-size: 24px;
+                font-family: PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: rgba(0, 0, 0, 0.85);
+            }
+        }
     }
 </style>
 <style scoped lang="scss">
@@ -1759,71 +1913,6 @@
                         width: 140px;
                         height: 140px;
                     }
-
-                    // border-radius: 8px;
-                    // border: 1px solid #eaedf7;
-                    // padding: 12px;
-                    // box-sizing: border-box;
-                    //  position: relative;
-                    // .pin_title {
-                    //   width: 100%;
-                    //   font-size: 14px;
-                    //   font-family: PingFangSC-Regular, PingFang SC;
-                    //   font-weight: 400;
-                    //   color: #242f57;
-                    //   margin-bottom: 24px;
-                    // }
-                    // .pin_echarts_cont_container {
-                    //   width: 100%;
-                    //   display: flex;
-                    //   align-items: flex-end;
-                    //   .pin_content {
-                    //     position: absolute;
-                    //     width: calc(100% - 24px);
-                    //     height: calc(100% - 24px);
-                    //     opacity: 0.8;
-                    //     // left: -10px;
-                    //     left: 20px;
-                    //      top: 18px;
-                    //     // border: 2px solid #4d94ff;
-                    //   }
-                    //   .num_text {
-                    //     font-size: 30px;
-                    //     font-family: PingFangSC-Medium, PingFang SC;
-                    //     font-weight: 500;
-                    //     color: #34c724;
-                    //     position: absolute;
-                    //     right: 32px;
-                    //     bottom: 31px;
-                    //     line-height: 38px;
-                    //   }
-                    //   .fen {
-                    //     font-size: 14px;
-                    //     font-family: PingFangSC-Regular, PingFang SC;
-                    //     font-weight: 400;
-                    //     color: #7c88b1;
-                    //     position: absolute;
-                    //     right: 13px;
-                    //     bottom: 31px;
-                    //   }
-                    // }
-                    // .intro_container {
-                    //   position: absolute;
-                    //   top: 111px;
-                    //   left: 18px;
-                    //   width: 100%;
-                    //   display: flex;
-                    //   align-items: center;
-                    //   font-size: 12px;
-                    //   font-family: PingFangSC-Regular, PingFang SC;
-                    //   font-weight: 400;
-                    //   color: #7c88b1;
-                    //   line-height: 18px;
-                    //   margin-top: 12px;
-                    //   .span2 {
-                    //     color: #ff2744;
-                    //   }
-                    // }
                 }
             }
         }
