@@ -4,7 +4,7 @@
             <p>首页</p>
         </div>
         <div class="welcome">
-            <img class="user" src="../../../assets/img/login/head2.png" alt=""/>
+            <img class="user" src="../../../assets/img/login/head1.png" alt=""/>
             <div class="user-intro-container" v-if="tabActive == 1">
                 <p>早安，分析师，欢迎使用 Meta-Mind-Marketing！</p>
                 <p>轻松上手分析模型，探索不同业务中的关键行为，洞察指标背后的增长点。</p>
