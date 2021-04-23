@@ -17,6 +17,7 @@ for(let i=0;i<31;i++){
 risk[14] = -0.6
 const linData = {
     colorList: ['#2373FF', '#FE774B', '#1DCEC3', '#F16E84', '#FDD352', '#7BABFF', '#FFAE93', '#77E1DB', '#F6A8B5', '#FEE597', '#BDD5FF', '#FFD7C9', '#BBF1ED', '#FBD4DA', '#FEF1CB', '#FF9F7F'],
+    colorList1: ['#1455D9','#2373FF','#4488FF','#75B1FF','#9ECBFF', '#D3E3FF','#F0F8FF'],
     box1Data: {
         name: ['02-01', '02-06', '02-11', '02-16', '02-21', '02-26'],
         legName: ['微博', '微信', '百度', '今日头条', '地推',],
@@ -1726,6 +1727,16 @@ const linData = {
         "新浪网：邓铁涛抗击非典为中医立功 研发邓老凉茶为人民造福",
         "搜狐新闻：老品牌诞生新基因 「邓老凉茶」打造茶饮养生服务新体验",
         ]
+    },
+    funnelData:{
+      name: ['触达用户数(Acquisition)','互动用户数(Activation)','留存用户数(Retention)','消费用户数(Revenue)','忠诚用户数'],
+      value:  [
+        {value: 100, name: '触达用户数(Acquisition)'},
+        {value: 88, name: '互动用户数(Activation)'},
+        {value: 66, name: '留存用户数(Retention)'},
+        {value: 55, name: '消费用户数(Revenue)'},
+        {value: 33, name: '忠诚用户数'},
+      ]
     }
 }
 
