@@ -104,6 +104,11 @@
                                 label: "品牌运营分析",
                                 path: "/business-analysis/brand"
                             },
+                            {
+                                name: "business-analysis-activity",
+                                label: "活动运营分析",
+                                path: "/business-analysis/activity"
+                            }
                         ]
                     },
                     {

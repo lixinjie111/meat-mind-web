@@ -3,6 +3,7 @@ const overview = () => import('./page/overview.vue')
 const user = () => import('./page/user.vue')
 const channel = () => import('./page/channel.vue')
 const brand = () => import('./page/brand.vue')
+const activity = () => import('./page/activity.vue')
 const moduleName = 'business-analysis'
 
 export default [
@@ -40,6 +41,13 @@ export default [
                 meta: {title: "品牌运营分析", moduleName},
                 component: brand,
                 name: `${moduleName}-brand`
+            },
+            {
+                path: `/${moduleName}/activity`,
+                label: "活动运营分析",
+                meta: {title: "活动运营分析", moduleName},
+                component: activity,
+                name: `${moduleName}-activity`
             }
         ]
     }

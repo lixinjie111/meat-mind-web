@@ -1,0 +1,383 @@
+<template>
+  <div class="activity-show-data">
+    <div class="container-filter">
+      <div class="left">
+        <div>时间:</div>
+        <ul>
+          <li
+            v-for="(item, index) in dateList"
+            :key="index"
+            :class="{ active: active == index }"
+            @click="clickDate(index)"
+          >
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+      <div class="right">
+        <Select v-model="channel" @on-change="changeChannel" class="w120 mr24">
+          <Option
+            v-for="item in channelList"
+            :value="item.value"
+            :key="item.value"
+            >{{ item.label }}</Option
+          >
+        </Select>
+        <Select v-model="program" @on-change="changeProgram" class="w150">
+          <Option
+            v-for="item in programList"
+            :value="item.value"
+            :key="item.value"
+            >{{ item.label }}</Option
+          >
+        </Select>
+      </div>
+    </div>
+    <div class="ac-container-data">
+      <vCard1
+        v-for="item in proDataList"
+        :key="item.id"
+        :cardData="item"
+      ></vCard1>
+    </div>
+  </div>
+</template>
+<script>
+import vCard1 from "@/components/common/card1";
+var dayjs = require("dayjs");
+export default {
+  name: "ActivityShowData",
+  components: { vCard1 },
+  data() {
+    return {
+      active: 0,
+      dateList: ["今天", "近7天", "近30天", "近60天"],
+      channel: "1",
+      channelList: [
+        { value: "1", label: "全渠道" },
+        { value: "2", label: "抖音渠道" },
+        { value: "3", label: "微博渠道" },
+      ],
+      program: "1",
+      programList: [
+        { value: "1", label: "降本保质推广方案" },
+        { value: "2", label: "方案2" },
+        { value: "3", label: "方案3" },
+      ],
+      proDataList: [
+        {
+          id: 1,
+          width: "24%",
+          title: "GMV",
+          brShow:false,
+        //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
+          time: "今日",
+          numText: 1847,
+          unitText: "人",
+          leftText: "环比",
+          leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#34C724",
+          rightText: "同比",
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#34C724",
+          timer: 1111000,
+          fnType: 5,
+        },
+        {
+          id: 2,
+          width: "24%",
+          title: "品牌总曝光数",
+          brShow:false,
+        //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
+          time: "今日",
+          numText: 1847,
+          unitText: "人",
+          leftText: "环比",
+          leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#F54A45",
+          rightText: "同比",
+          rightIcon: require("../../../assets/img/dashboard/downIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#F54A45",
+          timer: 111500,
+          fnType: 5,
+        },
+        {
+          id: 3,
+          width: "24%",
+          title: "触达用户数",
+          brShow:false,
+        //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
+          time: "今日",
+          numText: 1847,
+          unitText: "人",
+          leftText: "环比",
+          leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#34C724",
+          rightText: "同比",
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#34C724",
+          timer: 1111000,
+          fnType: 5,
+        },
+        {
+          id: 4,
+          width: "24%",
+          title: "成交用户数",
+          brShow:true,
+        //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
+          time: "今日",
+          numText: 1847,
+          unitText: "人",
+          leftText: "环比",
+          leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#F54A45",
+          rightText: "同比",
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#34C724",
+          timer: 1111000,
+          fnType: 5,
+        },
+        {
+          id: 5,
+          width: "24%",
+          title: "询单转化率",
+          brShow:false,
+        //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
+          time: "今日",
+          numText: 1847,
+          unitText: "人",
+          leftText: "环比",
+          leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#34C724",
+          rightText: "同比",
+          rightIcon: require("../../../assets/img/dashboard/downIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#F54A45",
+          timer: 1111000,
+          fnType: 5,
+        },
+        {
+          id: 6,
+          width: "24%",
+          title: "互动率",
+          brShow:false,
+        //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
+          time: "今日",
+          numText: 972,
+          unitText: "个",
+          leftText: "环比",
+          leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#34C724",
+          rightText: "同比",
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#34C724",
+          timer: 1111000,
+          fnType: 5,
+        },
+        {
+          id: 7,
+          width: "24%",
+          title: "复购率",
+          brShow:false,
+        //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
+          time: "今日",
+          numText: 92.47,
+          unitText: "%",
+          leftText: "环比",
+          leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#F54A45",
+          rightText: "同比",
+          rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#34C724",
+          timer: 11100000,
+          fnType: 5,
+        },
+        {
+          id: 8,
+          width: "24%",
+          title: "渠道声量",
+          brShow:true,
+        //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
+          time: "今日",
+          numText: 26.45,
+          unitText: "%",
+          leftText: "环比",
+          leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#34C724",
+          rightText: "同比",
+          rightIcon: require("../../../assets/img/dashboard/downIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#F54A45",
+          timer: 1200000,
+          fnType: 5,
+        },
+        {
+          id: 9,
+          width: "24%",
+          title: "活跃用户数",
+          brShow:false,
+        //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
+          time: "今日",
+          numText: 26.45,
+          unitText: "%",
+          leftText: "环比",
+          leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#34C724",
+          rightText: "同比",
+          rightIcon: require("../../../assets/img/dashboard/downIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#F54A45",
+          timer: 1200000,
+          fnType: 5,
+        },
+        {
+          id: 10,
+          width: "24%",
+          title: "新增用户数",
+          brShow:false,
+        //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
+          time: "今日",
+          numText: 26.45,
+          unitText: "%",
+          leftText: "环比",
+          leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#34C724",
+          rightText: "同比",
+          rightIcon: require("../../../assets/img/dashboard/downIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#F54A45",
+          timer: 1200000,
+          fnType: 5,
+        },
+        {
+          id: 11,
+          width: "24%",
+          title: "流失用户数",
+          brShow:false,
+        //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
+          time: "今日",
+          numText: 26.45,
+          unitText: "%",
+          leftText: "环比",
+          leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#34C724",
+          rightText: "同比",
+          rightIcon: require("../../../assets/img/dashboard/downIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#F54A45",
+          timer: 1200000,
+          fnType: 5,
+        },
+        {
+          id: 12,
+          width: "24%",
+          title: "舆情事件数",
+          brShow:true,
+        //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
+          time: "今日",
+          numText: 26.45,
+          unitText: "%",
+          leftText: "环比",
+          leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
+          leftPer: "9.07%",
+          leftPerColor: "#34C724",
+          rightText: "同比",
+          rightIcon: require("../../../assets/img/dashboard/downIcon.png"),
+          rightPer: "9.07%",
+          rightPerColor: "#F54A45",
+          timer: 1200000,
+          fnType: 5,
+        },
+      ],
+    };
+  },
+  methods: {
+    changeChannel(val) {
+      this.channel = val;
+    },
+    changeProgram(val) {
+      this.program = val;
+    },
+    clickDate(val) {
+      this.active = val;
+    },
+  },
+};
+</script>
+
+<style scoped lang="scss">
+.activity-show-data {
+  padding: 24px 24px 0 24px;
+  margin-top: 24px;
+  background: #ffffff;
+  box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
+  border-radius: 8px;
+  .container-filter {
+    display: flex;
+    justify-content: space-between;
+    .left {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #242f57;
+      > div {
+        margin-right: 12px;
+      }
+      > ul {
+        display: flex;
+        > li {
+          height: 28px;
+          padding: 6px 12px;
+          line-height: 16px;
+          cursor: pointer;
+          &.active {
+            color: #ffffff;
+            background: #2373ff;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+    .right {
+      display: flex;
+      .w120 {
+        width: 120px;
+      }
+      .w150 {
+        width: 150px;
+      }
+      .mr24 {
+        margin-right: 24px;
+      }
+    }
+  }
+
+  .ac-container-data {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+}
+</style>
