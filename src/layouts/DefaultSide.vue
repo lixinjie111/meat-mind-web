@@ -244,6 +244,10 @@
                 }else{
                     this.activeName = val.name
                 }
+                this.openName.splice(0,1,val.meta.moduleName)
+                this.$nextTick(()=>{
+                    this.$refs.side_menu.updateOpened()
+                })
                 document.body.scrollTop = 0
                 document.documentElement.scrollTop = 0
             }
