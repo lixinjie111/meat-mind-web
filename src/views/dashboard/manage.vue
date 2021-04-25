@@ -51,7 +51,7 @@ export default {
           number:"6,272",
           user: "138*****6180",
           change: "手动更新",
-          type: "未使用",
+          type: "使用中",
           date: "2021-02-08 09:21:03",
           deadline: "2021-02-10 12:01:07",
           operate: ""
@@ -81,7 +81,7 @@ export default {
           number:"45",
           user: "138*****6180",
           change: "按天",
-          type: "使用中",
+          type: "未使用",
           date: "2021-02-08 09:21:03",
           deadline: "2021-02-10 12:01:07",
           operate: ""
