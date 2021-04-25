@@ -21,7 +21,7 @@
     </div>
     <div class="data-container">
       <div class="filter">
-        <div class="title">test转化漏斗</div>
+        <div class="title">转化漏斗</div>
         <div>
           <!-- <RadioGroup v-model="date1" type="button" class="item1">
             <Radio value="1" label="趋势"></Radio>

@@ -8,8 +8,7 @@
             v-for="(item, index) in dateList"
             :key="index"
             :class="{ active: active == index }"
-            @click="clickDate(index)"
-          >
+            @click="clickDate(index)">
             {{ item }}
           </li>
         </ul>
@@ -44,10 +43,16 @@
 </template>
 <script>
 import vCard1 from "@/components/common/card1";
+import {getRandom} from "@/utils/func"
 var dayjs = require("dayjs");
 export default {
   name: "ActivityShowData",
   components: { vCard1 },
+  watch:{
+      active(){
+          this.changeData()
+      }
+  },
   data() {
     return {
       active: 0,
@@ -55,14 +60,18 @@ export default {
       channel: "1",
       channelList: [
         { value: "1", label: "全渠道" },
-        { value: "2", label: "抖音渠道" },
-        { value: "3", label: "微博渠道" },
+        { value: "2", label: "抖音" },
+        { value: "3", label: "微博" },
+        { value: "4", label: "虎嗅" },
+        { value: "5", label: "大众点评" },
+        { value: "6", label: "今日头条" },
+        { value: "7", label: "微信" },
       ],
       program: "1",
       programList: [
         { value: "1", label: "降本保质推广方案" },
-        { value: "2", label: "方案2" },
-        { value: "3", label: "方案3" },
+        { value: "2", label: "低成本高转化方案" },
+        { value: "3", label: "保质持续转化方案" },
       ],
       proDataList: [
         {
@@ -72,8 +81,8 @@ export default {
           brShow:false,
         //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
           time: "今日",
-          numText: 1847,
-          unitText: "人",
+          numText: 47,
+          unitText: "万",
           leftText: "环比",
           leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
           leftPer: "9.07%",
@@ -93,7 +102,7 @@ export default {
         //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
           time: "今日",
           numText: 1847,
-          unitText: "人",
+          unitText: "",
           leftText: "环比",
           leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
           leftPer: "9.07%",
@@ -112,7 +121,7 @@ export default {
           brShow:false,
         //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
           time: "今日",
-          numText: 1847,
+          numText: 4847,
           unitText: "人",
           leftText: "环比",
           leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
@@ -152,8 +161,8 @@ export default {
           brShow:false,
         //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
           time: "今日",
-          numText: 1847,
-          unitText: "人",
+          numText: 90,
+          unitText: "%",
           leftText: "环比",
           leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
           leftPer: "9.07%",
@@ -172,8 +181,8 @@ export default {
           brShow:false,
         //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
           time: "今日",
-          numText: 972,
-          unitText: "个",
+          numText: 97,
+          unitText: "%",
           leftText: "环比",
           leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
           leftPer: "9.07%",
@@ -212,8 +221,8 @@ export default {
           brShow:true,
         //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
           time: "今日",
-          numText: 26.45,
-          unitText: "%",
+          numText: 1645,
+          unitText: "",
           leftText: "环比",
           leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
           leftPer: "9.07%",
@@ -232,8 +241,8 @@ export default {
           brShow:false,
         //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
           time: "今日",
-          numText: 26.45,
-          unitText: "%",
+          numText: 2645,
+          unitText: "人",
           leftText: "环比",
           leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
           leftPer: "9.07%",
@@ -252,8 +261,8 @@ export default {
           brShow:false,
         //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
           time: "今日",
-          numText: 26.45,
-          unitText: "%",
+          numText: 945,
+          unitText: "人",
           leftText: "环比",
           leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
           leftPer: "9.07%",
@@ -272,8 +281,8 @@ export default {
           brShow:false,
         //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
           time: "今日",
-          numText: 26.45,
-          unitText: "%",
+          numText: 300,
+          unitText: "人",
           leftText: "环比",
           leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
           leftPer: "9.07%",
@@ -292,8 +301,8 @@ export default {
           brShow:true,
         //   timeRange: dayjs(new Date()).format("YYYY-MM-DD"),
           time: "今日",
-          numText: 26.45,
-          unitText: "%",
+          numText: 1511,
+          unitText: "",
           leftText: "环比",
           leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
           leftPer: "9.07%",
@@ -311,13 +320,37 @@ export default {
   methods: {
     changeChannel(val) {
       this.channel = val;
+      this.changeData()
     },
     changeProgram(val) {
       this.program = val;
+      this.changeData()
     },
     clickDate(val) {
       this.active = val;
     },
+    changeData(){
+        this.proDataList = this.proDataList.map((item,index)=>{
+            if(index==0){
+                item.numText = getRandom(30,50)
+            }else if(index==2){
+                item.numText = getRandom(4000,5000)
+            }else if(index==1||index==3||index==7||index==11){
+                item.numText = getRandom(1800,2000)
+            }else if(index==4||index==5||index==6){
+                item.numText = getRandom(80,95)
+            }else if(index==8){
+                item.numText = getRandom(2500,3000)
+            }else if(index==9){
+                item.numText = getRandom(900,1000)
+            }else{
+                item.numText = getRandom(280,350)
+            }
+            item.leftPer = getRandom(2,9,2).toFixed(2)+"%"
+            item.rightPer = getRandom(2,9,2).toFixed(2)+"%"
+            return item
+        })
+    }
   },
 };
 </script>

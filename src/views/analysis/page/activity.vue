@@ -6,7 +6,7 @@
     <ActivityShowData></ActivityShowData>
     <div class="data-container">
       <div class="filter">
-        <div class="title">test转化漏斗</div>
+        <div class="title">活动转化漏斗</div>
         <div>
           <ul class="radio">
             <li :class="{ cur: curRadio == '1' }" @click="curRadio = '1'">

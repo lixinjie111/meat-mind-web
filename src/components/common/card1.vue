@@ -50,7 +50,7 @@ export default {
   },
   computed:{
     formNum(){
-      return this.formatNumber(this.numTxt);
+      return this.formatNumber(this.cardData.numText);
     }
   },
   methods: {
