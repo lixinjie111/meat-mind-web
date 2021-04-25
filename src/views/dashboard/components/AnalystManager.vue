@@ -57,8 +57,8 @@
     import BusinessManage from "./BusinessManage";
     import Analyst from "./Analyst";
     import Tab from "@/components/Tab";
-    import report1 from "../../../assets/img/dashboard/market/market-report.png";
-    import report2 from "../../../assets/img/dashboard/manage/manage-report.png";
+    import report1 from "../../../assets/img/dashboard/report1.png";
+    import report2 from "../../../assets/img/dashboard/report2.png";
 
     export default {
         name: "BusinessOwner",
@@ -204,6 +204,8 @@
                     }
 
                     .report-img-box {
+                        background: #f5f7f9;
+                        border-radius: 0 0 8px 8px;
                         height: 600px;
                         overflow-y: auto;
 
