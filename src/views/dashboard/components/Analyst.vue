@@ -51,20 +51,17 @@
                     <lineM4 :colorList="$lxjData.colorList" :myData="$ljEData.ljBox37"/>
                 </div>
             </div>
-
         </Card>
-        <div class="kanban_container">
+        <Card title="当前用户数量">
             <div class="kanban_item_container">
                 <div class="kanban_item1">
-                    <img :src="jylefImg" class="jylefImg">
-                    <div class="top_cir"></div>
-                    <div class="bom_cir"></div>
+                    <lineM :option="{ xAxis: { boundaryGap: false } }" :colorList="$lxjData.colorList" :myData="$ljEData.ljBox037"/>
                 </div>
                 <div class="kanban_item2">
                     <vCard2 v-for="(item,index) in jinyinLixt" :key="index" :cardData='item'></vCard2>
                 </div>
             </div>
-        </div>
+        </Card>
         <div class="xit_tab_container">
             <TabC :tab-list="['系统默认看板']"></TabC>
             <div class="tab_right">
@@ -270,6 +267,7 @@
     import TabC from "@/components/TabC";
     import PieOne1 from '@/components/echarts/common/pie/PieOne1';
     import PieOne2 from '@/components/echarts/common/pie/PieOne2';
+    import lineM from '@/components/echarts/common/line/lineM';
     import lineM4 from '@/components/echarts/common/line/lineM4';
     import ActivityShowData from "@/views/analysis/compoments/ActivityShowData";
     import Launch from "./Launch";
@@ -278,7 +276,7 @@
 
     export default {
         name: "Analyst",
-        components: {Launch, CardList, Card, vCard1, vCard2, TabC, PieOne1, PieOne2, lineM4, ActivityShowData, Media},
+        components: {Launch, CardList, Card, vCard1, vCard2, TabC, PieOne1, PieOne2, lineM, lineM4, ActivityShowData, Media},
         data() {
             return {
                 seconds: 5,
@@ -1182,96 +1180,29 @@
                     }
                 }
             }
+        }
 
-            .kanban_item_container {
-                width: 100%;
+        .kanban_item_container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+
+            .kanban_item1, .kanban_item2 {
+                width: 49%;
+            }
+
+            .kanban_item1 {
+                height: 284px;
+
+            }
+
+            .kanban_item2 {
                 display: flex;
-                align-items: center;
                 justify-content: space-between;
-                margin-bottom: 32px;
-
-                .kanban_item1, .kanban_item2 {
-                    width: 49%;
-
-                    .jylefImg {
-                        display: block;
-                        width: 100%;
-                        border-radius: 8px;
-                    }
-                }
-
-                @keyframes myaction {
-                    0% {
-                        transform: scale(1);
-                        background-color: rgba(6, 234, 255, 1);
-                    }
-                    25% {
-                        transform: scale(1.5);
-                        background-color: rgba(6, 234, 255, .8);
-                    }
-                    50% {
-                        transform: scale(1.9);
-                        background-color: rgba(6, 234, 255, .6);
-                    }
-                    100% {
-                        transform: scale(1);
-                        background-color: rgba(6, 234, 255, 1);
-                    }
-                }
-                @keyframes myaction1 {
-                    0% {
-                        transform: scale(1);
-                        background-color: rgba(248, 200, 126, 1);
-                    }
-                    25% {
-                        transform: scale(1.5);
-                        background-color: rgba(248, 200, 126, .8);
-                    }
-                    50% {
-                        transform: scale(1.9);
-                        background-color: rgba(248, 200, 126, .6);
-                    }
-                    100% {
-                        transform: scale(1);
-                        background-color: rgba(248, 200, 126, 1);
-                    }
-                }
-
-                .kanban_item1 {
-                    position: relative;
-
-                    .top_cir {
-                        position: absolute;
-                        width: 10px;
-                        height: 10px;
-                        top: 133.5px;
-                        left: 264.3px;
-                        border-radius: 50%;
-                        background-color: #06eaff;
-                        animation-name: myaction;
-                        animation-duration: 5s;
-                        animation-iteration-count: infinite;
-                    }
-
-                    .bom_cir {
-                        position: absolute;
-                        width: 10px;
-                        height: 10px;
-                        top: 165.3px;
-                        left: 264.3px;
-                        border-radius: 50%;
-                        background-color: #F8C87E;
-                        animation-name: myaction1;
-                        animation-duration: 5s;
-                        animation-iteration-count: infinite;
-                    }
-                }
-
-                .kanban_item2 {
-                    display: flex;
-                    justify-content: space-between;
-                    flex-wrap: wrap;
-                }
+                flex-wrap: wrap;
             }
         }
 

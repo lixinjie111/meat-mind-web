@@ -80,6 +80,7 @@
 			flex: 1;
 			.til_txt {
 				font-size: 14px;
+				font-family: PingFangSC-Medium, PingFang SC;
 				font-weight: 500;
 				line-height: 20px;
 			}
@@ -91,8 +92,10 @@
 					font-weight: 500;
 				}
 				.til_unit {
+					margin-left: 3px;
 					font-size: 14px;
 					font-weight: 500;
+					font-family: PingFangSC-Medium, PingFang SC;
 				}
 			}
 		}

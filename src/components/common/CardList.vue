@@ -10,8 +10,8 @@
 <script>
 	import CardListItem from './CardListItem'
 	const cardData = [
-		{ name: '月活跃用户量', value: '5489', unit: '人', icon: 'iconyonghuline' },
-		{ name: '每用户平均收入', value: '2922', unit: '元', icon: 'iconjine' },
+		{ name: '年经营目标', value: '960', unit: '万元', icon: 'iconjine' },
+		{ name: '已完成营收', value: '349', unit: '万元', icon: 'iconjine' },
 		{ name: '渠道平均投放回报率', value: '18%', icon: 'iconicon_analytics'},
 		{ name: '月计划营收完成度', value: '60%', icon: 'iconfenxiline' },
 	]
