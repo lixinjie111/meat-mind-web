@@ -330,8 +330,15 @@
                     <p>营销活动监测</p>
                 </div>
             </div>
-            <div class="">
-               <button class="btn-primary-middle" @click="showModal=true">一键投放</button>
+            <div class="active-box">
+               <ActivityShowData></ActivityShowData>
+               <div class="media-container">
+                   <div class="media-btns">
+                       <button class="btn-primary-middle" @click="showModal=true">一键投放</button>
+                       <button class="btn-primary-middle" @click="goActivity">效果监测</button>
+                   </div>
+                   <Media></Media>
+               </div>
             </div>
         </div>
         <Modal v-model="showModal"
@@ -371,12 +378,14 @@
     import PieOne2 from '@/components/echarts/common/pie/PieOne2';
     import PieNest2 from '@/components/echarts/common/pie/PieNest2';
     import lineM4 from '@/components/echarts/common/line/lineM4';
+    import ActivityShowData from "@/views/analysis/compoments/ActivityShowData";
     import Launch from "./Launch";
+    import Media from "./Media";
     var dayjs = require('dayjs');
 
     export default {
         name: "Analyst",
-        components: {Launch, CardList, Card, vCard1, vCard2, TabC, PieOne1, PieOne2, PieNest2, lineM4},
+        components: {Launch, CardList, Card, vCard1, vCard2, TabC, PieOne1, PieOne2, PieNest2, lineM4, ActivityShowData, Media},
         data() {
             return {
                 seconds: 5,
@@ -996,6 +1005,11 @@
                     path: '/media'
                 });
             },
+            goActivity() {
+                this.$router.push({
+                    path: '/business-analysis/activity'
+                });
+            },
             exppandFn(){
                 this.ifShowCard = !this.ifShowCard;
                 if(this.ifShowCard){
@@ -1117,7 +1131,6 @@
 <style scoped lang="scss">
     .analyst-box {
         width: 100%;
-        margin-bottom: 24px;
 
         .market-card {
             .title {
@@ -1431,7 +1444,7 @@
                 margin-bottom: 21px;
 
                 .title_1lef {
-                    font-size: 16px;
+                    font-size: 18px;
                     font-family: PingFangSC-Medium, PingFang SC;
                     font-weight: 500;
                     color: #242F57;
@@ -1931,6 +1944,25 @@
                         height: 140px;
                     }
                 }
+            }
+        }
+
+        .active-box {
+            .media-container {
+               margin-top: 24px;
+               position: relative;
+
+               .media-btns {
+                   position: absolute;
+                   right: 24px;
+                   top: 36px;
+
+                   >button {
+                       &:first-child {
+                           margin-right: 10px;
+                       }
+                   }
+               }
             }
         }
     }
