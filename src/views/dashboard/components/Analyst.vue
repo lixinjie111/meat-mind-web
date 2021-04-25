@@ -168,162 +168,153 @@
                 <div class="btn_container" @click="toManage">
                     <span class="btntxt btntxt1">看板管理</span>
                 </div>
-                <div class="guide_title_rig" @click="exppandFn">
-                    <div class="guide_title_rig_til">{{szTxt}}</div>
-                    <div class="guide_title_rig_icon">
-                        <i class="iconfont iconup" v-if="ifShowCard"></i>
-                        <i class="iconfont icondown" v-else></i>
+            </div>
+        </div>
+        <div class="pinpai_container">
+            <div class="title_container">
+                <div class="left_area">
+                    <span>品牌运营概览</span>
+                    <Poptip popper-class="saas-poptip small" trigger="hover" placement="right">
+                        <i class="iconfont iconguanyu tip-icon"></i>
+                        <div slot="content">
+                            <p>关注运营关键指标，快速了解品牌运营现状</p>
+                        </div>
+                    </Poptip>
+                    <div class="time_range_container">
+                        <Date-picker type="daterange" placement="bottom-end" placeholder="选择日期" style="width: 100%;"></Date-picker>
                     </div>
+                </div>
+                <div class="right_area" @click="goPinpai">
+                    <span>前往品牌画像</span>
+                    <img :src="trImg" class="trImg"/>
+                </div>
+            </div>
+            <div class="content_container">
+                <div class="pin_echarts_container">
+                    <div class="pin_txt_container">
+                        <div class="pin_txt_til">品牌测评得分</div>
+                        <div class="pin_txt_intro">击败北京</div>
+                        <div class="pin_num_con">
+                            <div class="pin_num">52.3%</div>
+                            <div class="pin_txt">的品牌</div>
+                        </div>
+                    </div>
+                    <div class="pin_container">
+                        <PieOne1 id="box301" :size="38" :value="72" title="品牌测评"></PieOne1>
+                    </div>
+                </div>
+                <vCard1 v-for="item in ppCardList" :key="item.id" :cardData="item"></vCard1>
+            </div>
+        </div>
+        <div class="pinpai_container">
+            <div class="title_container">
+                <div class="left_area">
+                    <span>用户生命周期</span>
+                    <Poptip popper-class="saas-poptip small" trigger="hover" placement="right">
+                        <i class="iconfont iconguanyu tip-icon"></i>
+                        <div slot="content">
+                            <p>了解不同阶段的用户构成，寻找提升用户价值的切入点</p>
+                        </div>
+                    </Poptip>
+                    <div class="time_range_container">
+                        <Select v-model="timeRange" style="width: 100%">
+                            <Option v-for="item in timeList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                        </Select>
+                    </div>
+                </div>
+                <div class="right_area" @click="goUser">
+                    <span>前往用户画像</span>
+                    <img :src="trImg" class="trImg"/>
+                </div>
+            </div>
+            <div class="content_container">
+                <vCard1 v-for="item in yhCardList" :key="item.id" :cardData="item"></vCard1>
+            </div>
+        </div>
+        <div class="pinpai_container">
+            <div class="title_container">
+                <div class="left_area">
+                    <span>媒介概览</span>
+                    <Poptip popper-class="saas-poptip small" trigger="hover" placement="right">
+                        <i class="iconfont iconguanyu tip-icon"></i>
+                        <div slot="content">
+                            <p>关注媒介核心指标，实时掌握媒介推广情况</p>
+                        </div>
+                    </Poptip>
+                    <div class="time_range_container">
+                    </div>
+                </div>
+                <div class="right_area" @click="goMedia">
+                    <span>前往媒介画像</span>
+                    <img :src="trImg" class="trImg"/>
+                </div>
+            </div>
+            <div class="title1_container">
+                <div class="til_label">整体流量评分</div>
+                <div class="date_container">
+                    <Date-picker type="date" placeholder="选择日期" style="width:100%;"></Date-picker>
+                </div>
+                <div class="til_label1">核心指标</div>
+            </div>
+            <div class="progress_content_container">
+                <div class="pro_lef">
+                    <div class="pie_pq_per_container">
+                        <div class="pie_container">
+                            <PieOne2 id="box302" :value="78" title="流量评分"></PieOne2>
+                        </div>
+                        <div class="per_container">
+                            <span class="per_txt">排名 前</span>
+                            <span class="per_num">86%</span>
+                        </div>
+                    </div>
+                    <div class="pinjun_container">
+                        <div class="star_container star1">
+                            <img :src="star1" class="starimg">
+                        </div>
+                        <span class="label">平均分</span>
+                        <span class="fen_text" style="color: #2373FF;">77.5</span>
+                    </div>
+                    <div class="zuigao_container">
+                        <div class="star_container star2">
+                            <img :src="star2" class="starimg">
+                        </div>
+                        <span class="label">最高分</span>
+                        <span class="fen_text" style="color: #34C724;">95.5</span>
+                    </div>
+                    <div class="zuidi_container">
+                        <div class="star_container star3">
+                            <img :src="star3" class="starimg">
+                        </div>
+                        <span class="label">最低分</span>
+                        <span class="fen_text" style="color: #FB343E;">54.3</span>
+                    </div>
+                </div>
+                <div class="cont_rig">
+                    <vCard1 v-for="item in hxzbCardList" :key="item.id" :cardData="item"></vCard1>
                 </div>
             </div>
         </div>
-        <template v-if="ifShowCard">
-            <div class="pinpai_container">
-                <div class="title_container">
-                    <div class="left_area">
-                        <span>品牌运营概览</span>
-                        <Poptip popper-class="saas-poptip small" trigger="hover" placement="right">
-                            <i class="iconfont iconguanyu tip-icon"></i>
-                            <div slot="content">
-                                <p>关注运营关键指标，快速了解品牌运营现状</p>
-                            </div>
-                        </Poptip>
-                        <div class="time_range_container">
-                            <Date-picker type="daterange" placement="bottom-end" placeholder="选择日期" style="width: 100%;"></Date-picker>
+        <div class="pinpai_container">
+            <div class="title_container">
+                <div class="left_area">
+                    <span>产品数据评估</span>
+                    <Poptip popper-class="saas-poptip small" trigger="hover" placement="right">
+                        <i class="iconfont iconguanyu tip-icon"></i>
+                        <div slot="content">
+                            <p>了解产品在企业内部的使用情况，深化管理效果</p>
                         </div>
-                    </div>
-                    <div class="right_area" @click="goPinpai">
-                        <span>前往品牌画像</span>
-                        <img :src="trImg" class="trImg"/>
-                    </div>
-                </div>
-                <div class="content_container">
-                    <div class="pin_echarts_container">
-                        <div class="pin_txt_container">
-                            <div class="pin_txt_til">品牌测评得分</div>
-                            <div class="pin_txt_intro">击败北京</div>
-                            <div class="pin_num_con">
-                                <div class="pin_num">52.3%</div>
-                                <div class="pin_txt">的品牌</div>
-                            </div>
-                        </div>
-                        <div class="pin_container">
-                            <PieOne1 id="box301" :size="38" :value="72" title="品牌测评"></PieOne1>
-                        </div>
-                    </div>
-                    <vCard1 v-for="item in ppCardList" :key="item.id" :cardData="item"></vCard1>
-                </div>
-            </div>
-            <div class="pinpai_container">
-                <div class="title_container">
-                    <div class="left_area">
-                        <span>用户生命周期</span>
-                        <Poptip popper-class="saas-poptip small" trigger="hover" placement="right">
-                            <i class="iconfont iconguanyu tip-icon"></i>
-                            <div slot="content">
-                                <p>了解不同阶段的用户构成，寻找提升用户价值的切入点</p>
-                            </div>
-                        </Poptip>
-                        <div class="time_range_container">
-                            <Select v-model="timeRange" style="width: 100%">
-                                <Option v-for="item in timeList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-                            </Select>
-                        </div>
-                    </div>
-                    <div class="right_area" @click="goUser">
-                        <span>前往用户画像</span>
-                        <img :src="trImg" class="trImg"/>
-                    </div>
-                </div>
-                <div class="content_container">
-                    <vCard1 v-for="item in yhCardList" :key="item.id" :cardData="item"></vCard1>
-                </div>
-            </div>
-            <div class="pinpai_container">
-                <div class="title_container">
-                    <div class="left_area">
-                        <span>媒介概览</span>
-                        <Poptip popper-class="saas-poptip small" trigger="hover" placement="right">
-                            <i class="iconfont iconguanyu tip-icon"></i>
-                            <div slot="content">
-                                <p>关注媒介核心指标，实时掌握媒介推广情况</p>
-                            </div>
-                        </Poptip>
-                        <div class="time_range_container">
-                        </div>
-                    </div>
-                    <div class="right_area" @click="goMedia">
-                        <span>前往媒介画像</span>
-                        <img :src="trImg" class="trImg"/>
-                    </div>
-                </div>
-                <div class="title1_container">
-                    <div class="til_label">整体流量评分</div>
-                    <div class="date_container">
-                        <Date-picker type="date" placeholder="选择日期" style="width:100%;"></Date-picker>
-                    </div>
-                    <div class="til_label1">核心指标</div>
-                </div>
-                <div class="progress_content_container">
-                    <div class="pro_lef">
-                        <div class="pie_pq_per_container">
-                            <div class="pie_container">
-                                <PieOne2 id="box302" :value="78" title="流量评分"></PieOne2>
-                            </div>
-                            <div class="per_container">
-                                <span class="per_txt">排名 前</span>
-                                <span class="per_num">86%</span>
-                            </div>
-                        </div>
-                        <div class="pinjun_container">
-                            <div class="star_container star1">
-                                <img :src="star1" class="starimg">
-                            </div>
-                            <span class="label">平均分</span>
-                            <span class="fen_text" style="color: #2373FF;">77.5</span>
-                        </div>
-                        <div class="zuigao_container">
-                            <div class="star_container star2">
-                                <img :src="star2" class="starimg">
-                            </div>
-                            <span class="label">最高分</span>
-                            <span class="fen_text" style="color: #34C724;">95.5</span>
-                        </div>
-                        <div class="zuidi_container">
-                            <div class="star_container star3">
-                                <img :src="star3" class="starimg">
-                            </div>
-                            <span class="label">最低分</span>
-                            <span class="fen_text" style="color: #FB343E;">54.3</span>
-                        </div>
-                    </div>
-                    <div class="cont_rig">
-                        <vCard1 v-for="item in hxzbCardList" :key="item.id" :cardData="item"></vCard1>
+                    </Poptip>
+                    <div class="time_range_container">
+                        <Select v-model="timeRange" style="width: 100%">
+                            <Option v-for="item in timeList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+                        </Select>
                     </div>
                 </div>
             </div>
-            <div class="pinpai_container">
-                <div class="title_container">
-                    <div class="left_area">
-                        <span>产品数据评估</span>
-                        <Poptip popper-class="saas-poptip small" trigger="hover" placement="right">
-                            <i class="iconfont iconguanyu tip-icon"></i>
-                            <div slot="content">
-                                <p>了解产品在企业内部的使用情况，深化管理效果</p>
-                            </div>
-                        </Poptip>
-                        <div class="time_range_container">
-                            <Select v-model="timeRange" style="width: 100%">
-                                <Option v-for="item in timeList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-                            </Select>
-                        </div>
-                    </div>
-                </div>
-                <div class="content_container" style=" display: flex;align-items: center;justify-content: space-between;flex-wrap: wrap;">
-                    <vCard1 v-for="item in proDataList" :key="item.id" :cardData="item"></vCard1>
-                </div>
+            <div class="content_container" style=" display: flex;align-items: center;justify-content: space-between;flex-wrap: wrap;">
+                <vCard1 v-for="item in proDataList" :key="item.id" :cardData="item"></vCard1>
             </div>
-        </template>
+        </div>
         <div class="market-card">
             <div class="title">
                 <div class="left">
@@ -948,9 +939,7 @@
                 jylefImg: require('../../../assets/img/dashboard/jylefImg.png'),
                 star1: require('../../../assets/img/dashboard/star1.png'),
                 star2: require('../../../assets/img/dashboard/star2.png'),
-                star3: require('../../../assets/img/dashboard/star3.png'),
-                ifShowCard:true,
-                szTxt:'收起'
+                star3: require('../../../assets/img/dashboard/star3.png')
             };
         },
         methods: {
@@ -1009,15 +998,6 @@
                 this.$router.push({
                     path: '/business-analysis/activity'
                 });
-            },
-            exppandFn(){
-                this.ifShowCard = !this.ifShowCard;
-                if(this.ifShowCard){
-                    this.szTxt = '收起';
-                }
-                else{
-                    this.szTxt = '展开';
-                }
             }
         }
     };
@@ -1584,7 +1564,6 @@
                 align-items: center;
 
                 .btn_container {
-                    margin-right: 20px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -1611,30 +1590,6 @@
                         font-weight: 500;
                         color: #357ffe;
                         line-height: 20px;
-                    }
-                }
-
-                .guide_title_rig {
-                    display: flex;
-                    &:hover{
-                        cursor: pointer;
-                    }
-                    .guide_title_rig_til {
-                        font-size: 14px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #636e95;
-                        margin-right: 4px;
-                    }
-                    .guide_title_rig_icon {
-                        width: 12px;
-                        height: 6px;
-                        margin-top: -2px;
-
-                        .iconshouqi{
-                            width: 100%;
-                            height: 100%;
-                        }
                     }
                 }
             }
