@@ -1283,7 +1283,7 @@
             .tab_right {
                 position: absolute;
                 right: 0;
-                top: 0;
+                top: 6px;
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;

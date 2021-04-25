@@ -56,7 +56,7 @@
                 margin-right: 32px;
                 display: inline-block;
                 vertical-align: top;
-                font-size: 20px;
+                font-size: 16px;
                 font-family: PingFangSC-Regular, PingFang SC;
                 font-weight: 400;
                 color: #97A0C3;
