@@ -14,7 +14,7 @@
                     </div>
                     <div class="bottom">
                         <p>Powered by <span>元知智能研究院</span></p>
-                        <p>量化营销过程中的信息传播全过程，评估</br>品牌、消费者、媒介之间的匹配度</p>
+                        <p>量化营销过程中的信息传播全过程,评估<br/>品牌、消费者、媒介之间的匹配度</p>
                     </div>
                 </div>
                 <div class="right flex">
