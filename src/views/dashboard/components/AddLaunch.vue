@@ -11,7 +11,7 @@
                    <div class="upload-box">
                       <i class="iconfont icontianjia"></i>
                       <p>上传素材</p>
-                      <p>图片尺寸{{item.size}}</p>
+                      <p>建议尺寸{{item.size}}</p>
                    </div>
                </Upload>
                <div v-if="file">{{file.name}}</div>

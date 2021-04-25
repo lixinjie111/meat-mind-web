@@ -1,102 +1,5 @@
 <template>
     <div class="analyst-box">
-        <div class="market-card">
-            <div class="title">
-                <div class="left">
-                    <p>MeMart元气值</p>
-                    <p>通过将信息在品牌、消费者之间通过媒介传播的全过程进行量化和动态拟合，智能评估营销活动三要素的综合表现与营销活动中出现的问题，提醒企业及时规避风险。</p>
-                </div>
-            </div>
-            <div class="me-mart-box flex">
-                <div class="left">
-                    <div class="top">
-                        <PieNest2 id="303" :myData="$abelData.nest201Data" title="综合指数" value="72"></PieNest2>
-                    </div>
-                    <div class="bottom">
-                        <p>Powered by <span>元知智能研究院</span></p>
-                        <p>量化营销过程中的信息传播全过程,评估<br/>品牌、消费者、媒介之间的匹配度</p>
-                    </div>
-                </div>
-                <div class="right flex">
-                    <div class="right-item">
-                        <div class="right-item-top">
-                            <div class="top">
-                                <div class="top-icon blue"><i class="iconfont iconyonghu"></i></div>
-                                <div class="top-title">
-                                    <p class="p-blue">78</p>
-                                    <p>客群定位</p>
-                                </div>
-                            </div>
-                            <div class="bottom">
-                                <div class="bottom-item flex">
-                                    <p>客群覆盖度</p><i class="iconfont iconduigou1"></i>
-                                </div>
-                                <div class="bottom-item flex">
-                                    <p>目标客群心智拟合度</p><i class="iconfont iconguanyu"></i>
-                                </div>
-                                <div class="bottom-item flex">
-                                    <p>用户增长趋势</p><i class="iconfont iconduigou1"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="right-item-bottom bg1">
-                            <p>客群定位 <span class="p-blue">较为准确</span></p>
-                        </div>
-                    </div>
-                    <div class="right-item">
-                        <div class="right-item-top">
-                            <div class="top">
-                                <div class="top-icon orange"><i class="iconfont iconxingxing"></i></div>
-                                <div class="top-title">
-                                    <p class="p-orange">46</p>
-                                    <p>媒介评测</p>
-                                </div>
-                            </div>
-                            <div class="bottom">
-                                <div class="bottom-item flex">
-                                    <p>媒介匹配度</p><i class="iconfont iconduigou1"></i>
-                                </div>
-                                <div class="bottom-item flex">
-                                    <p>媒介传播效率</p><i class="iconfont iconguanyu"></i>
-                                </div>
-                                <div class="bottom-item flex">
-                                    <p>品牌媒介分布</p><i class="iconfont iconguanyu"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="right-item-bottom bg2">
-                            <p>媒介评测 <span class="p-orange">存在问题</span></p>
-                        </div>
-                    </div>
-                    <div class="right-item">
-                        <div class="right-item-top">
-                            <div class="top">
-                                <div class="top-icon green"><i class="iconfont iconpinpaihuaxiang"></i></div>
-                                <div class="top-title">
-                                    <p class="p-green">32</p>
-                                    <p>品牌评价</p>
-                                </div>
-                            </div>
-                            <div class="bottom">
-                                <div class="bottom-item flex">
-                                    <p>品牌受众匹配度</p><i class="iconfont iconduigou1"></i>
-                                </div>
-                                <div class="bottom-item flex">
-                                    <p>品牌心智占有率</p><i class="iconfont iconguanyu"></i>
-                                </div>
-                                <div class="bottom-item flex">
-                                    <p>公关事件响应策略</p><i class="iconfont iconguanyu"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="right-item-bottom bg3">
-                            <p>品牌评价 <span class="p-red">有待提升</span></p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="kanban_container">
             <div class="title_1container">
                 <div class="title_1lef">
@@ -121,17 +24,17 @@
             <div class="overview_new">
                 <div class="overview_new_top">
                     <div class="overview_new_top_item">
-                        <div class="name">去年 | 2020年3月</div>
+                        <div class="name">去年 | 2020年5月</div>
                         <div class="legend_box">
                             <div class="legend" :style="{ backgroundColor: $lxjData.colorList[0] }"></div>
-                            <div class="number">￥750,000</div>
+                            <div class="number">￥760,000</div>
                         </div>
                     </div>
                     <div class="overview_new_top_item">
-                        <div class="name">今年 | 2021年3月</div>
+                        <div class="name">今年 | 2021年5月</div>
                         <div class="legend_box">
                             <div class="legend" :style="{ backgroundColor: $lxjData.colorList[1] }"></div>
-                            <div class="number">￥650,000
+                            <div class="number">￥600,000
                                 <span class="number_target">/ 目标 800,000</span>
                             </div>
                         </div>
@@ -338,7 +241,7 @@
                class-name="launch-modal">
             <div class="launch-container">
                 <div class="launch-title flex">
-                    <p>智能投放</p>
+                    <p class="flex">智能投放<span>| 如需定制化投放，请联系客服888-5566-8899</span></p>
                     <div class="flex">
                         <div @click="showModal = false" class="down-btn">取消</div>
                         <button class="down-btn" @click="openSuccess">确定</button>
@@ -367,7 +270,6 @@
     import TabC from "@/components/TabC";
     import PieOne1 from '@/components/echarts/common/pie/PieOne1';
     import PieOne2 from '@/components/echarts/common/pie/PieOne2';
-    import PieNest2 from '@/components/echarts/common/pie/PieNest2';
     import lineM4 from '@/components/echarts/common/line/lineM4';
     import ActivityShowData from "@/views/analysis/compoments/ActivityShowData";
     import Launch from "./Launch";
@@ -376,7 +278,7 @@
 
     export default {
         name: "Analyst",
-        components: {Launch, CardList, Card, vCard1, vCard2, TabC, PieOne1, PieOne2, PieNest2, lineM4, ActivityShowData, Media},
+        components: {Launch, CardList, Card, vCard1, vCard2, TabC, PieOne1, PieOne2, lineM4, ActivityShowData, Media},
         data() {
             return {
                 seconds: 5,
@@ -1037,6 +939,13 @@
                     font-family: PingFangSC-Medium, PingFang SC;
                     font-weight: 500;
                     color: rgba(0, 0, 0, 0.85);
+
+                    > span {
+                        margin-left: 6px;
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: #7C88B1;
+                    }
                 }
 
                 > div {
@@ -1152,190 +1061,6 @@
             &:last-child{
                 .content{
                     border: none;
-                }
-            }
-        }
-
-        .me-mart-box {
-            .left {
-                padding-top: 30px;
-                width: 396px;
-                height: 415px;
-                background: #ffffff;
-                box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
-                border-radius: 8px;
-                text-align: center;
-
-                .top {
-                    margin: 0 auto;
-                    width: 278px;
-                    height: 278px;
-                }
-
-                .bottom {
-                    > p {
-                        font-size: 14px;
-                        font-family: PingFangSC-Regular, PingFang SC;
-                        font-weight: 400;
-                        color: #242F57;
-
-                        &:first-child {
-                            margin-bottom: 8px;
-                            font-weight: 500;
-
-                            > span {
-                                font-family: PingFangSC-Medium, PingFang SC;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .right {
-                margin-left: 24px;
-                width: calc(100% - 420px);
-
-                .right-item {
-                    .p-blue {
-                        color: #2373FF!important;
-                    }
-
-                    .p-orange {
-                        color: #FE774B!important;
-                    }
-
-                    .p-red {
-                        color: #FF4C60!important;
-                    }
-
-                    .p-green {
-                        color: #1DCEC3!important;
-                    }
-
-                    .right-item-top {
-                        padding: 24px;
-                        min-width: 228px;
-                        height: 320px;
-                        background: #FFFFFF;
-                        box-shadow: 4px 6px 20px 0px rgba(134, 143, 191, 0.15);
-                        border-radius: 8px;
-
-                        .top {
-                            display: flex;
-
-                            .top-icon {
-                                width: 72px;
-                                height: 72px;
-                                line-height: 72px;
-                                border-radius: 12px;
-                                text-align: center;
-
-                                > i {
-                                    font-size: 40px;
-                                }
-
-                                &.blue {
-                                    background: rgba(211, 227, 255, .3);
-
-                                    > i {
-                                        color: #2373FF;
-                                    }
-                                }
-
-                                &.orange {
-                                    background: rgba(255, 230, 222, .3);
-
-                                    > i {
-                                        color: #FE774B;
-                                    }
-                                }
-
-                                &.green {
-                                    background: rgba(223,248,246, .3);
-
-                                    > i {
-                                        color: #1DCEC3;
-                                    }
-                                }
-                            }
-
-                            .top-title {
-                                margin-left: 8px;
-
-                                > p {
-                                    margin-top: 5px;
-                                    font-size: 18px;
-                                    font-family: PingFangSC-Regular, PingFang SC;
-                                    font-weight: 400;
-                                    color: #7C88B1;
-                                    line-height: 25px;
-
-                                    &:first-child {
-                                        font-size: 32px;
-                                        font-family: PingFangSC-Medium, PingFang SC;
-                                        font-weight: 500;
-                                        line-height: 32px;
-                                    }
-                                }
-                            }
-                        }
-
-                        .bottom {
-                            margin-top: 32px;
-
-                            .bottom-item {
-                                margin-top: 8px;
-                                padding: 14px 12px;
-                                width: 180px;
-                                height: 48px;
-                                background: rgba(211, 227, 255, .3);
-                                border-radius: 8px;
-
-                                > p {
-                                    font-size: 14px;
-                                    font-family: PingFangSC-Regular, PingFang SC;
-                                    font-weight: 400;
-                                    color: #242F57;
-                                }
-
-                                > i {
-                                    &.iconduigou1 {
-                                        color: #08BD6C;
-                                    }
-
-                                    &.iconguanyu {
-                                        color: #FF8359;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    .right-item-bottom {
-                        margin-top: 16px;
-                        min-width: 228px;
-                        height: 79px;
-                        line-height: 95px;
-
-                        > p {
-                            font-size: 18px;
-                            font-family: PingFangSC-Regular, PingFang SC;
-                            font-weight: 400;
-                            text-align: center;
-                        }
-
-                        &.bg1 {
-                            background: url("../../../assets/img/dashboard/market/mart1@2x.png") no-repeat center center / 100% 100%;
-                        }
-
-                        &.bg2 {
-                            background: url("../../../assets/img/dashboard/market/mart1@2x.png") no-repeat center center / 100% 100%;
-                        }
-
-                        &.bg3 {
-                            background: url("../../../assets/img/dashboard/market/mart1@2x.png") no-repeat center center / 100% 100%;
-                        }
-                    }
                 }
             }
         }

@@ -10,7 +10,7 @@
                 <p>轻松上手分析模型，探索不同业务中的关键行为，洞察指标背后的增长点。</p>
                 <button class="btn-primary report-btn" @click="showModal = true">
                     <i class="iconfont iconxiazai"/>
-                    <span class="btn-txt">一键生成报告</span>
+                    <span class="btn-txt">一键生成经营报告</span>
                 </button>
             </div>
             <div class="user-intro-container" v-else>
@@ -36,12 +36,12 @@
                class-name="report-modal">
             <div class="report-modal-content">
                 <div class="report-title-box flex">
-                    <p v-if="tabActive == 1">报告</p>
-                    <p v-if="tabActive == 2">经营诊断报告</p>
+                    <p v-if="tabActive == 1">经营报告</p>
+                    <p v-if="tabActive == 2">诊断报告</p>
                     <div class="flex">
                         <div @click="showModal = false" class="down-btn">关闭</div>
-                        <a v-if="tabActive == 1" :href="report1" target="_blank" download='报告'><button class="down-btn">下载</button></a>
-                        <a v-if="tabActive == 2" :href="report2" target="_blank" download='经营诊断报告'><button class="down-btn">下载</button></a>
+                        <a v-if="tabActive == 1" :href="report1" target="_blank" download='经营报告'><button class="down-btn">下载</button></a>
+                        <a v-if="tabActive == 2" :href="report2" target="_blank" download='诊断报告'><button class="down-btn">下载</button></a>
                     </div>
                 </div>
                 <div class="report-img-box">
