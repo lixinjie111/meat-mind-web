@@ -352,6 +352,9 @@ export default {
         })
     }
   },
+  created(){
+      this.changeData()
+  }
 };
 </script>
 
