@@ -20,7 +20,9 @@
 
 <script>
 import dayjs from 'dayjs'
+import {getRandom} from "@/utils/func"
   export default {
+    components:{getRandom},
     data() {
       return {
         uploadModal1: false,
@@ -83,24 +85,6 @@ import dayjs from 'dayjs'
         this.currentPage = page;
         this.data = this.totalList.slice((page - 1) * this.pageSize, page * this.pageSize - 1)
       },
-      /**
-       * 生成随机数
-       * @param min
-       * @param max
-       * @param precise {Number}精准小数
-       * @returns {*}
-       */
-      getRandom(min, max, precise) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        const num = Math.floor(Math.random() * (max - min + 1)) + min;
-        if (!precise) {
-          return num
-        }
-        let tmp = Math.random().toFixed(precise);
-        let number = num + Number(tmp)
-        return Number(number.toFixed(2))
-      },
       numFormat(num) {
         return (num.toString().indexOf ('.') !== -1) ? num.toLocaleString() : num.toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
       },
@@ -108,12 +92,12 @@ import dayjs from 'dayjs'
         for (let i = 0; i < total; ++i){
           const curr =  {
                 date: dayjs(new Date()).format('YYYY-MM-DD HH:mm:ss'),
-                num: this.getRandom(1000, 5000),
-                type: this.getRandom(1, 10),
-                no: `D${this.getRandom(1, 1000)}`,
-                floor: this.getRandom(1, 10),
-                sale: this.numFormat(this.getRandom(1000, 1500)),
-                profit: this.numFormat(this.getRandom(200, 300)),
+                num: getRandom(1000, 5000),
+                type: getRandom(1, 10),
+                no: `D${getRandom(1, 1000)}`,
+                floor: getRandom(1, 10),
+                sale: this.numFormat(getRandom(1000, 1500)),
+                profit: this.numFormat(getRandom(200, 300)),
               };
           this.totalList.push(curr)
         }

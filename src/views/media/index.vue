@@ -657,7 +657,9 @@
   import Half from "./base/Half"
   import Full from "./base/Full"
   import Card from "./base/Card"
+  import MediaAnalysis from './base/MediaAnalysis';
   import KOLResource from "./base/KOLResource"
+  import PortraitMatching from './base/PortraitMatching';
   import PieCaseEcharts from '../../components/echarts/common/pie/PieCaseEcharts';
   import barL from '../../components/echarts/common/bar/barL';
   import barLine from '../../components/echarts/common/bar/barLine';
@@ -673,9 +675,7 @@
   import BarLine2 from '../../components/echarts/common/bar/barLine2';
   import BarHM4 from '../../components/echarts/common/bar/barHM4';
   import barMediaGroup from '../../components/echarts/common/bar/alone/barMediaGroup';
-  import MediaAnalysis from './base/MediaAnalysis';
   import PieEcharts9 from '../../components/echarts/common/pie/PieEcharts9';
-  import PortraitMatching from './base/PortraitMatching';
   
 
   let counter = 0

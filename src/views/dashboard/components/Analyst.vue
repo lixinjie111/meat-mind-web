@@ -270,13 +270,14 @@
     import lineM from '@/components/echarts/common/line/lineM';
     import lineM4 from '@/components/echarts/common/line/lineM4';
     import ActivityShowData from "@/views/analysis/compoments/ActivityShowData";
+    import {getRandom} from "@/utils/func"
     import Launch from "./Launch";
     import Media from "./Media";
     var dayjs = require('dayjs');
 
     export default {
         name: "Analyst",
-        components: {Launch, CardList, Card, vCard1, vCard2, TabC, PieOne1, PieOne2, lineM, lineM4, ActivityShowData, Media},
+        components: {CardList, Card, vCard1, vCard2, TabC, PieOne1, PieOne2, lineM, lineM4, ActivityShowData, getRandom, Launch, Media},
         data() {
             return {
                 seconds: 5,
@@ -294,11 +295,11 @@
                         unitText: "万",
                         leftText: "环比",
                         leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#F54A45",
                         rightText: "同比",
                         rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#34C724",
                         timer: 10000,
                     },
@@ -312,11 +313,11 @@
                         unitText: "个",
                         leftText: "环比",
                         leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#F54A45",
                         rightText: "同比",
                         rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#34C724",
                         timer: 15000,
                     },
@@ -330,11 +331,11 @@
                         unitText: "人",
                         leftText: "环比",
                         leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#F54A45",
                         rightText: "同比",
                         rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#34C724",
                         timer: 20000,
                     },
@@ -348,11 +349,11 @@
                         unitText: "元",
                         leftText: "环比",
                         leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#F54A45",
                         rightText: "同比",
                         rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#34C724",
                         timer: 300000,
                     },
@@ -372,7 +373,7 @@
                         leftPerColor: "#F54A45",
                         rightText: "",
                         rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#34C724",
                         timer: 111000,
                     },
@@ -386,7 +387,7 @@
                         unitText: "人",
                         leftText: "",
                         leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#F54A45",
                         rightText: "",
                         rightIcon: "",
@@ -408,7 +409,7 @@
                         leftPerColor: "#F54A45",
                         rightText: "",
                         rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#34C724",
                         timer: 112000,
                     },
@@ -426,7 +427,7 @@
                         leftPerColor: "#F54A45",
                         rightText: "",
                         rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#34C724",
                         timer: 112000,
                     },
@@ -440,7 +441,7 @@
                         unitText: "人",
                         leftText: "",
                         leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#F54A45",
                         rightText: "",
                         rightIcon: "",
@@ -458,7 +459,7 @@
                         unitText: "",
                         leftText: "",
                         leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#F54A45",
                         rightText: "",
                         rightIcon: "",
@@ -482,7 +483,7 @@
                         leftPerColor: "#F54A45",
                         rightText: "同比上周",
                         rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#34C724",
                         timer: 111300,
                     },
@@ -496,7 +497,7 @@
                         unitText: "",
                         leftText: "同比上周",
                         leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#F54A45",
                         rightText: "",
                         rightIcon: "",
@@ -518,7 +519,7 @@
                         leftPerColor: "#F54A45",
                         rightText: "同比上周",
                         rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#34C724",
                         timer: 111500,
                     },
@@ -532,7 +533,7 @@
                         unitText: "",
                         leftText: "同比上周",
                         leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#F54A45",
                         rightText: "",
                         rightIcon: "",
@@ -554,7 +555,7 @@
                         leftPerColor: "#F54A45",
                         rightText: "同比上周",
                         rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#34C724",
                         timer: 1111700,
                     },
@@ -568,7 +569,7 @@
                         unitText: "",
                         leftText: "同比上周",
                         leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#F54A45",
                         rightText: "",
                         rightIcon: "",
@@ -590,7 +591,7 @@
                         leftPerColor: "#F54A45",
                         rightText: "同比上周",
                         rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#34C724",
                         timer: 1111800,
                     },
@@ -604,7 +605,7 @@
                         unitText: "",
                         leftText: "同比上周",
                         leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
-                        leftPer:this.getRandom(3,9,2) + '%',
+                        leftPer:getRandom(8,9,2) + '%',
                         leftPerColor: "#F54A45",
                         rightText: "",
                         rightIcon: "",
@@ -638,11 +639,11 @@
                         unitText: "人",
                         leftText: "环比",
                         leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#34C724",
                         rightText: "同比",
                         rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#34C724",
                         timer: 1111000,
                         fnType: 5
@@ -657,11 +658,11 @@
                         unitText: "人",
                         leftText: "环比",
                         leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#F54A45",
                         rightText: "同比",
                         rightIcon: require("../../../assets/img/dashboard/downIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#F54A45",
                         timer: 111500,
                         fnType: 5
@@ -676,11 +677,11 @@
                         unitText: "人",
                         leftText: "环比",
                         leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#34C724",
                         rightText: "同比",
                         rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#34C724",
                         timer: 1111000,
                         fnType: 5
@@ -695,11 +696,11 @@
                         unitText: "人",
                         leftText: "环比",
                         leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#F54A45",
                         rightText: "同比",
                         rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#34C724",
                         timer: 1111000,
                         fnType: 5
@@ -714,11 +715,11 @@
                         unitText: "人",
                         leftText: "环比",
                         leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#34C724",
                         rightText: "同比",
                         rightIcon: require("../../../assets/img/dashboard/downIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#F54A45",
                         timer: 1111000,
                         fnType: 5
@@ -733,11 +734,11 @@
                         unitText: "个",
                         leftText: "环比",
                         leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#34C724",
                         rightText: "同比",
                         rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#34C724",
                         timer: 1111000,
                         fnType: 5
@@ -752,11 +753,11 @@
                         unitText: "%",
                         leftText: "环比",
                         leftIcon: require("../../../assets/img/dashboard/downIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#F54A45",
                         rightText: "同比",
                         rightIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#34C724",
                         timer: 11100000,
                         fnType: 5
@@ -771,11 +772,11 @@
                         unitText: "%",
                         leftText: "环比",
                         leftIcon: require("../../../assets/img/dashboard/upIcon.png"),
-                        leftPer: this.getRandom(3,9,2) + '%',
+                        leftPer: getRandom(8,9,2) + '%',
                         leftPerColor: "#34C724",
                         rightText: "同比",
                         rightIcon: require("../../../assets/img/dashboard/downIcon.png"),
-                        rightPer: this.getRandom(3,9,2) + '%',
+                        rightPer: getRandom(8,9,2) + '%',
                         rightPerColor: "#F54A45",
                         timer: 1200000,
                         fnType: 5
@@ -843,24 +844,6 @@
             };
         },
         methods: {
-            /**
-             * 生成随机数
-             * @param min
-             * @param max
-             * @param precise {Number}精准小数
-             * @returns {*}
-             */
-            getRandom(min, max, precise) {
-                min = Math.ceil(min);
-                max = Math.floor(max);
-                const num = Math.floor(Math.random() * (max - min + 1)) + min;
-                if (!precise) {
-                    return num
-                }
-                let tmp = Math.random().toFixed(precise);
-                let number = num + Number(tmp)
-                return Number(number.toFixed(2))
-            },
             openSuccess() {
                 this.showModal = false;
                 this.showSuccessModal = true;
