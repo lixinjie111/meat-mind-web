@@ -79,7 +79,7 @@ export default {
                 display: flex;
                 li{
                     height: 22px;
-                    padding: 0 8px;
+                    padding: 0 6px;
                     margin-left: 4px;
                     font-size: 14px;
                     font-family: PingFangSC-Regular, PingFang SC;

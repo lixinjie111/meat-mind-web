@@ -20,16 +20,6 @@ export default {
                 return []
             }
         }
-    },
-    data(){
-        return {
-            listA:[
-                {name:"行业品牌影响力",num:"63.9",icon:"iconshangsheng",pre:"+17%"},
-                {name:"季活跃用户量（QAU）",num:"12,136",icon:"iconxiajiang",pre:"-3.7%"},
-                {name:"渠道平均投放回报率",num:"16.2%",icon:"iconshangsheng",pre:"+2.7%"},
-                {name:"Q1计划营收完成度",num:"79%",icon:"",pre:""}
-            ]
-        }
     }
 }
 </script>
