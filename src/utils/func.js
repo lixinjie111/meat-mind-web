@@ -18,5 +18,6 @@ export function getRandom(min, max, precise) {
     return num
   }
   let tmp = Math.random().toFixed(precise);
-  return num + Number(tmp)
+  let number = num + Number(tmp)
+  return Number(number.toFixed(2))
 }

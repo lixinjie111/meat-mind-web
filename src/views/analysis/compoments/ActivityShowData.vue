@@ -400,8 +400,8 @@ export default {
             }else{
                 item.numText = getRandom(280,350)
             }
-            item.leftPer = getRandom(2,9,2).toFixed(2)+"%"
-            item.rightPer = getRandom(2,9,2).toFixed(2)+"%"
+            item.leftPer = getRandom(2,9,2)+"%"
+            item.rightPer = getRandom(2,9,2)+"%"
             return item
         })
     }
