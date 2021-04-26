@@ -106,6 +106,13 @@
     .left-pane {
       padding: 0 24px 24px 24px;
 
+      .title {
+        font-size: 16px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #242F57;
+      }
+
       ul {
         margin-top: 20px;
 

@@ -134,6 +134,13 @@
       align-items: center;
       height: 64px;
       font-size: 14px;
+
+      .title {
+        font-size: 16px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #242F57;
+      }
     }
 
     .pager {

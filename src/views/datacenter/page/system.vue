@@ -110,7 +110,7 @@
         display: block;
         }
     .xtjc {
-        padding: 24px;
+        padding: 0 24px;
 
         .content{
             background: #FFFFFF;

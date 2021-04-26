@@ -244,6 +244,7 @@
 
 <style scoped lang="scss">
     .zbgl {
+        margin-bottom: 24px;
         padding:0 24px;
         position: relative;
         width: 100%;
