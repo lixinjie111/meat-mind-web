@@ -210,24 +210,6 @@ export default {
       }
       this.propertyList.splice(index, 1);
     },
-    /**
-     * 生成随机数
-     * @param min
-     * @param max
-     * @param precise {Number}精准小数
-     * @returns {*}
-     */
-    getRandom(min, max, precise) {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      const num = Math.floor(Math.random() * (max - min + 1)) + min;
-      if (!precise) {
-        return num
-      }
-      let tmp = Math.random().toFixed(precise);
-      let number = num + Number(tmp)
-      return Number(number.toFixed(2))
-    },
     generatePageData(total = this.tableInfo.totalPage){
       for (let i = 0; i < total; ++i){
         this.tableInfo.allList.push({ })

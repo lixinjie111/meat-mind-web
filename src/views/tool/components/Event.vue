@@ -92,6 +92,7 @@
 <script>
 import DetailsPage from "@/layouts/DetailsPage";
 import barEcharts2 from "@/components/echarts/common/bar/barEcharts2";
+import {getRandom} from "@/utils/func"
 import dayjs from "dayjs";
 import FilterEvent from '../base/FilterEvent';
 import FilterIndice2 from '../base/FilterIndice2';
@@ -100,7 +101,7 @@ const config = { '1': '一', '2': '二' , '3': '三' , '4': '四' , '5': '五' ,
 export default {
   name: "Event",
   components: {
-    DetailsPage, barEcharts2, FilterEvent, FilterIndice2
+    DetailsPage, barEcharts2, FilterEvent, FilterIndice2, getRandom
   },
   watch: {
     propertyList: {
@@ -382,24 +383,6 @@ export default {
       }
       this.propertyList.splice(index, 1);
     },
-    /**
-     * 生成随机数
-     * @param min
-     * @param max
-     * @param precise {Number}精准小数
-     * @returns {*}
-     */
-    getRandom(min, max, precise) {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      const num = Math.floor(Math.random() * (max - min + 1)) + min;
-      if (!precise) {
-        return num
-      }
-      let tmp = Math.random().toFixed(precise);
-      let number = num + Number(tmp)
-      return Number(number.toFixed(2))
-    },
     generatePageData(total = this.tableInfo.totalPage){
       for (let i = 0; i < total; ++i){
         const row = {}
@@ -407,7 +390,7 @@ export default {
         for (let i = 0, len = this.tableInfo.columns.length; i < len; ++i){
           const cur = this.tableInfo.columns[i];
           if(cur.key !== 'total'){
-            const num = this.getRandom(8500, 8900)
+            const num = getRandom(8500, 8900)
             row[cur.key] = this.thousandsSwitch(num)
             total += num
           }

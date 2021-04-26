@@ -63,8 +63,10 @@
 </template>
 
 <script>
+import {getRandom} from "@/utils/func"
   export default {
     props: ['label', 'name'],
+    components:{getRandom},
     data() {
       return {
         list4Act: 0,
@@ -204,24 +206,6 @@
       selectMenu() {
         this.generateData()
       },
-      /**
-       * 生成随机数
-       * @param min
-       * @param max
-       * @param precise {Number}精准小数
-       * @returns {*}
-       */
-      getRandom(min, max, precise) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        const num = Math.floor(Math.random() * (max - min + 1)) + min;
-        if (!precise) {
-          return num
-        }
-        let tmp = Math.random().toFixed(precise);
-        let number = num + Number(tmp)
-        return Number(number.toFixed(2))
-      },
       generateData(total = this.pageSize) {
         const data = []
         const name1 = ['张', '李', '王', '李', '杜', '曾', '胡', '高', '欧阳', '诸葛']
@@ -241,7 +225,7 @@
         const len = name1.length - 1
         const len2 = name2.length - 1
         for (let i = 0; i < total; i++) {
-          const huo = this.getRandom(1, 100, 2) + 'w';
+          const huo = getRandom(1, 100, 2) + 'w';
           const name_1 = name1[Math.ceil(Math.random() * len)]
           const name_2 = name2[Math.ceil(Math.random() * len2)]
           const headerI = Math.ceil(Math.random() * 9)
@@ -249,14 +233,14 @@
             {
               name: name_1 + name_2,
               huo,
-              bao: this.getRandom(90, 95),
-              fensi: `${this.getRandom(5000, 6000)}w/${this.getRandom(6000, 7000)}w`,
-              zan: this.getRandom(90, 95),
-              zuopin: this.getRandom(90, 95),
-              pinpaipipei: `${this.getRandom(90, 95, 2)}%`,
-              yonghupipei: `${this.getRandom(90, 95, 2)}%`,
-              hudong: `${this.getRandom(1, 20, 2)}亿`,
-              yxiang: this.getRandom(800, 950, 0),
+              bao: getRandom(90, 95),
+              fensi: `${getRandom(5000, 6000)}w/${getRandom(6000, 7000)}w`,
+              zan: getRandom(90, 95),
+              zuopin: getRandom(90, 95),
+              pinpaipipei: `${getRandom(90, 95, 2)}%`,
+              yonghupipei: `${getRandom(90, 95, 2)}%`,
+              hudong: `${getRandom(1, 20, 2)}亿`,
+              yxiang: getRandom(800, 950, 0),
               header: headers[headerI],
               num: `${Math.ceil(Math.random() * 10000000000)}`,
               index: (this.current - 1) * this.pageSize + i
