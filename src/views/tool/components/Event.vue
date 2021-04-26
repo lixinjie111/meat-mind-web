@@ -397,7 +397,8 @@ export default {
         return num
       }
       let tmp = Math.random().toFixed(precise);
-      return num + Number(tmp)
+      let number = num + Number(tmp)
+      return Number(number.toFixed(2))
     },
     generatePageData(total = this.tableInfo.totalPage){
       for (let i = 0; i < total; ++i){

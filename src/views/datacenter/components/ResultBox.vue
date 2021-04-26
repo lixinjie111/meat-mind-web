@@ -98,7 +98,8 @@ import dayjs from 'dayjs'
           return num
         }
         let tmp = Math.random().toFixed(precise);
-        return num + Number(tmp)
+        let number = num + Number(tmp)
+        return Number(number.toFixed(2))
       },
       numFormat(num) {
         return (num.toString().indexOf ('.') !== -1) ? num.toLocaleString() : num.toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
