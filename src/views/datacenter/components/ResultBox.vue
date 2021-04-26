@@ -22,7 +22,6 @@
 import dayjs from 'dayjs'
 import {getRandom} from "@/utils/func"
   export default {
-    components:{getRandom},
     data() {
       return {
         uploadModal1: false,

@@ -66,7 +66,6 @@
 import {getRandom} from "@/utils/func"
   export default {
     props: ['label', 'name'],
-    components:{getRandom},
     data() {
       return {
         list4Act: 0,

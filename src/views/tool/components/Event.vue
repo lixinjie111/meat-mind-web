@@ -100,9 +100,7 @@ import FilterIndice2 from '../base/FilterIndice2';
 const config = { '1': '一', '2': '二' , '3': '三' , '4': '四' , '5': '五' , '6': '六', '0': '日' }
 export default {
   name: "Event",
-  components: {
-    DetailsPage, barEcharts2, FilterEvent, FilterIndice2, getRandom
-  },
+  components: {DetailsPage, barEcharts2, FilterEvent, FilterIndice2},
   watch: {
     propertyList: {
       handler: function () {
