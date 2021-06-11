@@ -194,27 +194,27 @@
                 </div>
             </div>
         </div>
-        <div class="pinpai_container">
-            <div class="title_container">
-                <div class="left_area">
-                    <span>产品数据评估</span>
-                    <Poptip popper-class="saas-poptip small" trigger="hover" placement="right">
-                        <i class="iconfont iconguanyu tip-icon"></i>
-                        <div slot="content">
-                            <p>了解产品在企业内部的使用情况，深化管理效果</p>
-                        </div>
-                    </Poptip>
-                    <div class="time_range_container">
-                        <Select v-model="timeRange" style="width: 100%">
-                            <Option v-for="item in timeList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-                        </Select>
-                    </div>
-                </div>
-            </div>
-            <div class="content_container" style=" display: flex;align-items: center;justify-content: space-between;flex-wrap: wrap;">
-                <vCard1 v-for="item in proDataList" :key="item.id" :cardData="item"></vCard1>
-            </div>
-        </div>
+<!--        <div class="pinpai_container">-->
+<!--            <div class="title_container">-->
+<!--                <div class="left_area">-->
+<!--                    <span>产品数据评估</span>-->
+<!--                    <Poptip popper-class="saas-poptip small" trigger="hover" placement="right">-->
+<!--                        <i class="iconfont iconguanyu tip-icon"></i>-->
+<!--                        <div slot="content">-->
+<!--                            <p>了解产品在企业内部的使用情况，深化管理效果</p>-->
+<!--                        </div>-->
+<!--                    </Poptip>-->
+<!--                    <div class="time_range_container">-->
+<!--                        <Select v-model="timeRange" style="width: 100%">-->
+<!--                            <Option v-for="item in timeList" :value="item.value" :key="item.value">{{ item.label }}</Option>-->
+<!--                        </Select>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="content_container" style=" display: flex;align-items: center;justify-content: space-between;flex-wrap: wrap;">-->
+<!--                <vCard1 v-for="item in proDataList" :key="item.id" :cardData="item"></vCard1>-->
+<!--            </div>-->
+<!--        </div>-->
         <div class="market-card">
             <div class="title">
                 <div class="left">
